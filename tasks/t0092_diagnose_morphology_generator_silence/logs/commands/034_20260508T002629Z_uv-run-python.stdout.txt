@@ -1,0 +1,924 @@
+# Tasks (92)
+
+| Task ID | Name | Status | Effective Date | Dependencies | Source Suggestion |
+|---------|------|--------|----------------|--------------|-------------------|
+| `t0001_brainstorm_results_1` | Brainstorm results session 1 | completed | 2026-04-18 | — | — |
+| `t0002_literature_survey_dsgc_compartmental_models` | Literature survey: compartmental models of DS retinal ganglion cells | completed | 2026-04-19 | — | — |
+| `t0003_simulator_library_survey` | Simulator library survey for DSGC compartmental modelling | completed | 2026-04-19 | — | — |
+| `t0004_generate_target_tuning_curve` | Generate canonical target angle-to-AP-rate tuning curve | completed | 2026-04-19 | — | — |
+| `t0005_download_dsgc_morphology` | Download candidate DSGC morphology | completed | 2026-04-19 | `t0002_literature_survey_dsgc_compartmental_models` | — |
+| `t0006_brainstorm_results_2` | Brainstorm results session 2 | completed | 2026-04-19 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology` | — |
+| `t0007_install_neuron_netpyne` | Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain | completed | 2026-04-19 | — | `S-0003-01` |
+| `t0008_port_modeldb_189347` | Port ModelDB 189347 and similar DSGC compartmental models to NEURON | completed | 2026-04-20 | `t0005_download_dsgc_morphology`, `t0007_install_neuron_netpyne`, `t0009_calibrate_dendritic_diameters`, `t0012_tuning_curve_scoring_loss_library` | `S-0002-03` |
+| `t0009_calibrate_dendritic_diameters` | Calibrate dendritic diameters for dsgc-baseline-morphology | completed | 2026-04-20 | `t0005_download_dsgc_morphology` | `S-0005-02` |
+| `t0010_hunt_missed_dsgc_models` | Hunt DSGC compartmental models missed by prior survey; port runnable ones | completed | 2026-04-20 | `t0008_port_modeldb_189347` | — |
+| `t0011_response_visualization_library` | Response-visualisation library (firing rate vs angle graphs) | completed | 2026-04-20 | `t0004_generate_target_tuning_curve`, `t0008_port_modeldb_189347` | — |
+| `t0012_tuning_curve_scoring_loss_library` | Tuning-curve scoring loss library | completed | 2026-04-20 | `t0004_generate_target_tuning_curve` | `S-0002-09` |
+| `t0013_resolve_morphology_provenance` | Resolve dsgc-baseline-morphology source-paper provenance | completed | 2026-04-20 | `t0005_download_dsgc_morphology` | `S-0005-01` |
+| `t0014_brainstorm_results_3` | Brainstorm results session 3 | completed | 2026-04-19 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne` | — |
+| `t0015_literature_survey_cable_theory` | Literature survey: cable theory and dendritic filtering | completed | 2026-04-20 | — | `S-0014-01` |
+| `t0016_literature_survey_dendritic_computation` | Literature survey: dendritic computation beyond DSGCs | completed | 2026-04-20 | — | `S-0014-02` |
+| `t0017_literature_survey_patch_clamp` | Literature survey: patch-clamp recordings of RGCs and DSGCs | completed | 2026-04-20 | — | `S-0014-03` |
+| `t0018_literature_survey_synaptic_integration` | Literature survey: synaptic integration in RGC-adjacent systems | completed | 2026-04-20 | — | `S-0014-04` |
+| `t0019_literature_survey_voltage_gated_channels` | Literature survey: voltage-gated channels in retinal ganglion cells | completed | 2026-04-20 | — | `S-0014-05` |
+| `t0020_port_modeldb_189347_gabamod` | Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol | completed | 2026-04-20 | `t0008_port_modeldb_189347`, `t0012_tuning_curve_scoring_loss_library` | `S-0008-02` |
+| `t0021_brainstorm_results_4` | Brainstorm Session 4: DSGC Model Channel Testbed | completed | 2026-04-20 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod` | — |
+| `t0022_modify_dsgc_channel_testbed` | Modify DSGC port with spatially-asymmetric inhibition for channel testbed | completed | 2026-04-21 | `t0008_port_modeldb_189347`, `t0012_tuning_curve_scoring_loss_library`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels` | — |
+| `t0023_port_hanson_2019_dsgc` | Port Hanson 2019 DSGC model | intervention_blocked | 2026-04-20 | `t0008_port_modeldb_189347`, `t0012_tuning_curve_scoring_loss_library`, `t0022_modify_dsgc_channel_testbed` | — |
+| `t0024_port_de_rosenroll_2026_dsgc` | Port de Rosenroll 2026 DSGC model | completed | 2026-04-21 | `t0008_port_modeldb_189347`, `t0012_tuning_curve_scoring_loss_library`, `t0022_modify_dsgc_channel_testbed` | — |
+| `t0025_brainstorm_results_5` | Brainstorm results session 5 | completed | 2026-04-21 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc` | — |
+| `t0026_vrest_sweep_tuning_curves_dsgc` | V_rest sweep tuning curves for t0022 and t0024 DSGC ports | completed | 2026-04-21 | `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc` | — |
+| `t0027_literature_survey_morphology_ds_modeling` | Literature survey: modeling effect of cell morphology on direction selectivity | completed | 2026-04-21 | — | — |
+| `t0028_brainstorm_results_6` | Brainstorm results session 6 | completed | 2026-04-22 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling` | — |
+| `t0029_distal_dendrite_length_sweep_dsgc` | Distal-dendrite length sweep on t0022 DSGC | completed | 2026-04-22 | `t0022_modify_dsgc_channel_testbed` | `S-0027-01` |
+| `t0030_distal_dendrite_diameter_sweep_dsgc` | Distal-dendrite diameter sweep on t0022 DSGC | completed | 2026-04-22 | `t0022_modify_dsgc_channel_testbed` | `S-0027-03` |
+| `t0031_fetch_paywalled_morphology_papers` | Fetch paywalled morphology papers: Kim2014 and Sivyer2013 | not_started | 2026-04-22 | — | `S-0027-06` |
+| `t0032_brainstorm_results_7` | Brainstorm results session 7 | completed | 2026-04-22 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6` | — |
+| `t0033_plan_dsgc_morphology_channel_optimisation` | Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget | completed | 2026-04-22 | `t0002_literature_survey_dsgc_compartmental_models`, `t0019_literature_survey_voltage_gated_channels`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling` | — |
+| `t0034_distal_dendrite_length_sweep_t0024` | Distal-dendrite length sweep on t0024 DSGC | completed | 2026-04-23 | `t0024_port_de_rosenroll_2026_dsgc`, `t0029_distal_dendrite_length_sweep_dsgc` | `S-0027-01` |
+| `t0035_distal_dendrite_diameter_sweep_t0024` | Distal-dendrite diameter sweep on t0024 DSGC | completed | 2026-04-23 | `t0024_port_de_rosenroll_2026_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc` | `S-0027-03` |
+| `t0036_rerun_t0030_halved_null_gaba` | Rerun distal-diameter sweep on t0022 with halved null-GABA | completed | 2026-04-23 | `t0022_modify_dsgc_channel_testbed`, `t0030_distal_dendrite_diameter_sweep_dsgc` | `S-0030-01` |
+| `t0037_null_gaba_reduction_ladder_t0022` | Null-GABA reduction ladder on t0022 DSGC | completed | 2026-04-24 | `t0022_modify_dsgc_channel_testbed`, `t0036_rerun_t0030_halved_null_gaba` | `S-0036-01` |
+| `t0038_correct_t0033_base_gaba_to_4ns` | Correct t0033 base GABA to 4 nS on t0022 variant | completed | 2026-04-24 | `t0033_plan_dsgc_morphology_channel_optimisation`, `t0037_null_gaba_reduction_ladder_t0022` | `S-0037-02` |
+| `t0039_distal_dendrite_diameter_sweep_t0022_gaba4` | 7-diameter sweep on t0022 DSGC at GABA=4 nS | completed | 2026-04-24 | `t0022_modify_dsgc_channel_testbed`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0037_null_gaba_reduction_ladder_t0022` | `S-0037-01` |
+| `t0040_brainstorm_results_8` | Brainstorm results session 8 | completed | 2026-04-24 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4` | — |
+| `t0041_electrotonic_length_collapse_t0034_t0035` | Electrotonic-length collapse analysis of t0034 and t0035 | completed | 2026-04-24 | `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024` | `S-0035-01` |
+| `t0042_fine_grained_null_gaba_ladder_t0022` | Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022 | cancelled | 2026-04-24 | `t0022_modify_dsgc_channel_testbed`, `t0037_null_gaba_reduction_ladder_t0022` | — |
+| `t0043_nav16_kv3_nmda_restoration_t0022` | Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed | cancelled | 2026-04-24 | `t0019_literature_survey_voltage_gated_channels`, `t0022_modify_dsgc_channel_testbed`, `t0037_null_gaba_reduction_ladder_t0022` | `S-0019-03` |
+| `t0044_schachter_retest_on_t0043` | Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS | cancelled | 2026-04-24 | `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0037_null_gaba_reduction_ladder_t0022`, `t0043_nav16_kv3_nmda_restoration_t0022` | `S-0002-02` |
+| `t0045_coreneuron_vastai_speedup_benchmark` | CoreNEURON Vast.ai RTX 4090 speedup benchmark | cancelled | 2026-05-03 | `t0022_modify_dsgc_channel_testbed`, `t0033_plan_dsgc_morphology_channel_optimisation` | `S-0033-01` |
+| `t0046_reproduce_poleg_polsky_2016_exact` | Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit | completed | 2026-04-24 | `t0005_download_dsgc_morphology`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0020_port_modeldb_189347_gabamod` | — |
+| `t0047_validate_pp16_fig3_cond_noise` | Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep | completed | 2026-04-25 | `t0007_install_neuron_netpyne`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0046_reproduce_poleg_polsky_2016_exact` | — |
+| `t0048_voff_nmda1_dsi_test` | Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness | completed | 2026-04-25 | `t0007_install_neuron_netpyne`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise` | `S-0047-01` |
+| `t0049_seclamp_cond_remeasure` | Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC | completed | 2026-04-25 | `t0007_install_neuron_netpyne`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise` | `S-0047-02` |
+| `t0050_audit_syn_distribution` | Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper | completed | 2026-04-25 | `t0007_install_neuron_netpyne`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0049_seclamp_cond_remeasure` | `S-0049-01` |
+| `t0051_brainstorm_results_9` | Brainstorm results session 9 | completed | 2026-04-25 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution` | — |
+| `t0052_minimal_dsgc_scalar_gaba` | Minimal from-scratch DSGC with scalar gabaMOD inhibition | completed | 2026-04-27 | `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library` | — |
+| `t0053_minimal_dsgc_spatial_gaba` | Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition | completed | 2026-04-27 | `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library` | — |
+| `t0054_minimal_dsgc_ampa_nmda_scalar_gaba` | Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition | completed | 2026-04-28 | `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0052_minimal_dsgc_scalar_gaba` | `S-0052-03` |
+| `t0055_nmda_mg_block_dsi_recovery` | Add Mg-block NMDA to recover DSI in t0054 minimal architecture | completed | 2026-04-28 | `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba` | `S-0054-01` |
+| `t0056_brainstorm_results_10` | Brainstorm results session 10 | completed | 2026-04-28 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba` | — |
+| `t0057_tonic_gaba_sweep_t0053` | Tonic GABA + amplitude sweep on t0053 spatial DSGC | completed | 2026-04-28 | `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0053_minimal_dsgc_spatial_gaba` | `S-0053-01` |
+| `t0058_brainstorm_results_11` | Brainstorm results session 11 | completed | 2026-04-29 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053` | — |
+| `t0059_bar_locked_gaba_ampa_sweep_t0057` | Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate | completed | 2026-04-29 | `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0057_tonic_gaba_sweep_t0053` | `S-0057-04` |
+| `t0060_ampa_escape_pd_only_no_gaba` | Quick AMPA-escape test on t0059 substrate at preferred direction with GABA=0 | completed | 2026-04-29 | `t0059_bar_locked_gaba_ampa_sweep_t0057` | — |
+| `t0061_nmda_escape_pd_only_no_gaba` | Quick NMDAR-escape test on t0059 substrate at preferred direction with GABA=0 | completed | 2026-04-29 | `t0055_nmda_mg_block_dsi_recovery`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba` | — |
+| `t0062_nmda_escape_with_ampa_priming` | NMDAR-escape test with AMPA priming on t0059 substrate at PD with GABA=0 | completed | 2026-04-29 | `t0055_nmda_mg_block_dsi_recovery`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba` | — |
+| `t0063_hh_voltage_step_test` | HH voltage-step diagnostic on t0059 substrate (no synapses) | completed | 2026-04-29 | `t0059_bar_locked_gaba_ampa_sweep_t0057` | — |
+| `t0064_hh_current_step_test` | HH current-step diagnostic on t0059 substrate (no synapses) | completed | 2026-04-30 | `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0063_hh_voltage_step_test` | — |
+| `t0065_t0020_epsp_ipsp_vm_protocol` | Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol | completed | 2026-04-30 | `t0020_port_modeldb_189347_gabamod` | — |
+| `t0066_t0024_epsp_ipsp_vm_protocol` | Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol | completed | 2026-04-30 | `t0024_port_de_rosenroll_2026_dsgc`, `t0065_t0020_epsp_ipsp_vm_protocol` | — |
+| `t0067_t0065_soma_channel_addition_sweep` | Add 5 voltage-gated channels to t0065 soma; sweep densities; measure firing rate and DSI change | completed | 2026-05-01 | `t0008_port_modeldb_189347`, `t0019_literature_survey_voltage_gated_channels`, `t0065_t0020_epsp_ipsp_vm_protocol` | — |
+| `t0068_t0067_nav16_kv3_coexpression_rescue` | Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6? | completed | 2026-05-01 | `t0008_port_modeldb_189347`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep` | `S-0067-02` |
+| `t0069_t0067_ais_localised_channel_sweep` | Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS | completed | 2026-05-01 | `t0008_port_modeldb_189347`, `t0019_literature_survey_voltage_gated_channels`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep` | `S-0067-03` |
+| `t0070_writeup_two_model_beds` | Writeup of two standard DSGC model beds in HH-equation research-paper format | completed | 2026-05-01 | `t0008_port_modeldb_189347`, `t0020_port_modeldb_189347_gabamod`, `t0024_port_de_rosenroll_2026_dsgc`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol` | — |
+| `t0071_t0070_synaptic_eqs_pdf` | t0070 v2 - synaptic-current equations + typeset PDF | completed | 2026-05-01 | `t0070_writeup_two_model_beds` | — |
+| `t0072_synaptic_traces_pd_nd` | Plot synaptic conductances and currents for PD and ND on both model beds | completed | 2026-05-01 | `t0008_port_modeldb_189347`, `t0020_port_modeldb_189347_gabamod`, `t0024_port_de_rosenroll_2026_dsgc`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf` | — |
+| `t0073_brainstorm_results_12` | Brainstorm results session 12 | completed | 2026-05-01 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd` | — |
+| `t0074_channel_tuning_width_bed_a` | Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring | completed | 2026-05-02 | `t0008_port_modeldb_189347`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0067_t0065_soma_channel_addition_sweep` | `S-0068-01` |
+| `t0075_bio_realistic_ais_param_sweep` | Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A | not_started | 2026-05-01 | `t0008_port_modeldb_189347`, `t0067_t0065_soma_channel_addition_sweep`, `t0069_t0067_ais_localised_channel_sweep`, `t0074_channel_tuning_width_bed_a` | `S-0069-01` |
+| `t0076_bedb_dsi_firing_rate_mobo` | Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate) | completed | 2026-05-03 | `t0008_port_modeldb_189347`, `t0019_literature_survey_voltage_gated_channels`, `t0024_port_de_rosenroll_2026_dsgc`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0070_writeup_two_model_beds`, `t0072_synaptic_traces_pd_nd` | — |
+| `t0077_brainstorm_results_13` | Brainstorm results session 13 | completed | 2026-05-03 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo` | — |
+| `t0078_bedb_mobo_v2_ais_tiered_ahp` | Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP | completed | 2026-05-04 | `t0024_port_de_rosenroll_2026_dsgc`, `t0069_t0067_ais_localised_channel_sweep`, `t0076_bedb_dsi_firing_rate_mobo` | `S-0076-02` |
+| `t0079_brainstorm_results_14` | Brainstorm results session 14 | completed | 2026-05-04 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp` | — |
+| `t0080_bedb_mobo_v3_dendritic_spike_nsga2` | Bed B v3 MOBO with dendritic-spike machinery and NSGA-II | completed | 2026-05-04 | `t0024_port_de_rosenroll_2026_dsgc`, `t0069_t0067_ais_localised_channel_sweep`, `t0076_bedb_dsi_firing_rate_mobo`, `t0078_bedb_mobo_v2_ais_tiered_ahp` | `S-0078-01` |
+| `t0081_bedb_v3_warmstart_nsga2` | Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start | completed | 2026-05-05 | `t0024_port_de_rosenroll_2026_dsgc`, `t0069_t0067_ais_localised_channel_sweep`, `t0076_bedb_dsi_firing_rate_mobo`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2` | `S-0080-01` |
+| `t0082_brainstorm_results_15` | Brainstorm results session 15 | completed | 2026-05-05 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0079_brainstorm_results_14`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2` | — |
+| `t0083_bedb_v3_extend_nsga2_gen8plus` | Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop | completed | 2026-05-06 | `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2` | `S-0081-02` |
+| `t0084_t0081_cell_767_vm_trace_deepdive` | Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism | completed | 2026-05-05 | `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2` | `S-0081-03` |
+| `t0085_brainstorm_results_16` | Brainstorm results session 16 | completed | 2026-05-06 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0079_brainstorm_results_14`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0082_brainstorm_results_15`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive` | — |
+| `t0086_robustness_cluster_bio_comparison` | Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells | completed | 2026-05-06 | `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive` | `S-0083-02` |
+| `t0087_brainstorm_results_17` | Brainstorm results session 17 | completed | 2026-05-06 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0079_brainstorm_results_14`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0082_brainstorm_results_15`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive`, `t0085_brainstorm_results_16`, `t0086_robustness_cluster_bio_comparison` | — |
+| `t0088_recluster_marginals_and_vm_motifs` | Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive | completed | 2026-05-06 | `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive`, `t0086_robustness_cluster_bio_comparison` | `S-0086-03` |
+| `t0089_brainstorm_results_18` | Brainstorm results session 18 | completed | 2026-05-07 | `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0079_brainstorm_results_14`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0082_brainstorm_results_15`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive`, `t0085_brainstorm_results_16`, `t0086_robustness_cluster_bio_comparison`, `t0087_brainstorm_results_17`, `t0088_recluster_marginals_and_vm_motifs` | — |
+| `t0090_morphology_generator_diversity_test` | Procedural DSGC morphology generator + diversity test + validation bundle | completed | 2026-05-07 | `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0086_robustness_cluster_bio_comparison`, `t0088_recluster_marginals_and_vm_motifs` | — |
+| `t0091_morphology_extended_nsga2_v1` | First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start | not_started | 2026-05-07 | `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0086_robustness_cluster_bio_comparison`, `t0088_recluster_marginals_and_vm_motifs`, `t0090_morphology_generator_diversity_test` | — |
+| `t0092_diagnose_morphology_generator_silence` | Diagnose why t0090 procedural cells produce no action potentials | in_progress | 2026-05-07 | `t0024_port_de_rosenroll_2026_dsgc`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0090_morphology_generator_diversity_test` | `S-0090-01` |
+
+## t0001_brainstorm_results_1: Brainstorm results session 1
+
+* **Status**: completed
+* **Effective date**: 2026-04-18
+* **Dependencies**: —
+* **Source suggestion**: —
+
+Kickoff brainstorm: plan the first wave of tasks for the neuron-channels project.
+
+## t0002_literature_survey_dsgc_compartmental_models: Literature survey: compartmental models of DS retinal ganglion cells
+
+* **Status**: completed
+* **Effective date**: 2026-04-19
+* **Dependencies**: —
+* **Source suggestion**: —
+
+Survey published compartmental models of direction-selective retinal ganglion cells to inform all five project research questions.
+
+## t0003_simulator_library_survey: Simulator library survey for DSGC compartmental modelling
+
+* **Status**: completed
+* **Effective date**: 2026-04-19
+* **Dependencies**: —
+* **Source suggestion**: —
+
+Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
+
+## t0004_generate_target_tuning_curve: Generate canonical target angle-to-AP-rate tuning curve
+
+* **Status**: completed
+* **Effective date**: 2026-04-19
+* **Dependencies**: —
+* **Source suggestion**: —
+
+Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.
+
+## t0005_download_dsgc_morphology: Download candidate DSGC morphology
+
+* **Status**: completed
+* **Effective date**: 2026-04-19
+* **Dependencies**: `t0002_literature_survey_dsgc_compartmental_models`
+* **Source suggestion**: —
+
+Download a reconstructed direction-selective ganglion cell morphology (SWC) for use as the project's baseline cell.
+
+## t0006_brainstorm_results_2: Brainstorm results session 2
+
+* **Status**: completed
+* **Effective date**: 2026-04-19
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`
+* **Source suggestion**: —
+
+Second brainstorming session: plan the compartmental-simulation tooling round (install, port, calibrate, hunt, visualise, score, cite).
+
+## t0007_install_neuron_netpyne: Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain
+
+* **Status**: completed
+* **Effective date**: 2026-04-19
+* **Dependencies**: —
+* **Source suggestion**: `S-0003-01`
+
+Install NEURON 8.2.7 + NetPyNE 1.1.1, compile bundled HH MOD files, run a 1-compartment sanity simulation, and record versions, warnings, and wall-clock as an answer asset.
+
+## t0008_port_modeldb_189347: Port ModelDB 189347 and similar DSGC compartmental models to NEURON
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: `t0005_download_dsgc_morphology`, `t0007_install_neuron_netpyne`, `t0009_calibrate_dendritic_diameters`, `t0012_tuning_curve_scoring_loss_library`
+* **Source suggestion**: `S-0002-03`
+
+Port ModelDB 189347 (Poleg-Polsky 2016) as a library asset, reproduce the published tuning curve, verify envelope targets, and port any sibling DSGC compartmental models found along the way.
+
+## t0009_calibrate_dendritic_diameters: Calibrate dendritic diameters for dsgc-baseline-morphology
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: `t0005_download_dsgc_morphology`
+* **Source suggestion**: `S-0005-02`
+
+Replace the 0.125 um placeholder radii in dsgc-baseline-morphology with a literature-derived diameter taper and register the result as dsgc-baseline-morphology-calibrated.
+
+## t0010_hunt_missed_dsgc_models: Hunt DSGC compartmental models missed by prior survey; port runnable ones
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: `t0008_port_modeldb_189347`
+* **Source suggestion**: —
+
+Targeted literature + public-code search for DSGC compartmental models missed by the initial survey and the ModelDB 189347 port; download new papers and port any runnable ones to NEURON.
+
+## t0011_response_visualization_library: Response-visualisation library (firing rate vs angle graphs)
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: `t0004_generate_target_tuning_curve`, `t0008_port_modeldb_189347`
+* **Source suggestion**: —
+
+Matplotlib-based library that turns tuning-curve CSVs into Cartesian + polar firing-rate-vs-angle plots, multi-model overlays, and per-angle raster-plus-PSTH panels, saved as PNG to images/.
+
+## t0012_tuning_curve_scoring_loss_library: Tuning-curve scoring loss library
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: `t0004_generate_target_tuning_curve`
+* **Source suggestion**: `S-0002-09`
+
+Python library that scores a simulated tuning curve against the canonical target, returning a weighted scalar loss over DSI, peak, null, and HWHM residuals plus per-metric diagnostics.
+
+## t0013_resolve_morphology_provenance: Resolve dsgc-baseline-morphology source-paper provenance
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: `t0005_download_dsgc_morphology`
+* **Source suggestion**: `S-0005-01`
+
+Download both plausible Feller-lab 2018 source papers, read their Methods to identify which introduced the 141009_Pair1DSGC reconstruction, and correct dsgc-baseline-morphology source_paper_id.
+
+## t0014_brainstorm_results_3: Brainstorm results session 3
+
+* **Status**: completed
+* **Effective date**: 2026-04-19
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`
+* **Source suggestion**: —
+
+Third brainstorm: plan per-category literature-survey wave (t0015-t0019) to broaden the paper corpus beyond DSGC-specific modelling.
+
+## t0015_literature_survey_cable_theory: Literature survey: cable theory and dendritic filtering
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: —
+* **Source suggestion**: `S-0014-01`
+
+Survey 5 high-leverage cable-theory papers (scope reduced from 25 due to execution-model limits; see task_description.md) and produce a synthesis answer asset for DSGC modelling.
+
+## t0016_literature_survey_dendritic_computation: Literature survey: dendritic computation beyond DSGCs
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: —
+* **Source suggestion**: `S-0014-02`
+
+Survey ~25 papers on dendritic spikes, NMDA nonlinearities, and active-vs-passive integration outside DSGC-specific work.
+
+## t0017_literature_survey_patch_clamp: Literature survey: patch-clamp recordings of RGCs and DSGCs
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: —
+* **Source suggestion**: `S-0014-03`
+
+Survey ~25 papers on patch-clamp recordings of retinal ganglion cells providing validation targets for the DSGC compartmental model.
+
+## t0018_literature_survey_synaptic_integration: Literature survey: synaptic integration in RGC-adjacent systems
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: —
+* **Source suggestion**: `S-0014-04`
+
+Survey ~25 papers on AMPA/NMDA/GABA kinetics, E-I balance, and shunting inhibition that inform the DSGC synaptic-integration model.
+
+## t0019_literature_survey_voltage_gated_channels: Literature survey: voltage-gated channels in retinal ganglion cells
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: —
+* **Source suggestion**: `S-0014-05`
+
+Survey ~25 papers on Nav/Kv subunit expression, kinetics, and densities in RGCs to inform the Na/K optimisation work.
+
+## t0020_port_modeldb_189347_gabamod: Port ModelDB 189347 DSGC under native gabaMOD parameter-swap protocol
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0012_tuning_curve_scoring_loss_library`
+* **Source suggestion**: `S-0008-02`
+
+Reproduce Poleg-Polsky & Diamond 2016 DSGC direction selectivity using the paper's native gabaMOD scalar swap (PD=0.33, ND=0.99) instead of the spatial-rotation proxy used in t0008.
+
+## t0021_brainstorm_results_4: Brainstorm Session 4: DSGC Model Channel Testbed
+
+* **Status**: completed
+* **Effective date**: 2026-04-20
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`
+* **Source suggestion**: —
+
+Strategic planning session to create a DSGC model for channel-mechanism testing via dendritic-computation DS.
+
+## t0022_modify_dsgc_channel_testbed: Modify DSGC port with spatially-asymmetric inhibition for channel testbed
+
+* **Status**: completed
+* **Effective date**: 2026-04-21
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0012_tuning_curve_scoring_loss_library`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`
+* **Source suggestion**: —
+
+Modify modeldb_189347_dsgc to produce DSI via dendritic-computation with 12-angle moving-bar sweep and channel-modular AIS for spike-mechanism testing.
+
+## t0023_port_hanson_2019_dsgc: Port Hanson 2019 DSGC model
+
+* **Status**: intervention_blocked
+* **Effective date**: 2026-04-20
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0012_tuning_curve_scoring_loss_library`, `t0022_modify_dsgc_channel_testbed`
+* **Source suggestion**: —
+
+Port Hanson et al. 2019 DSGC as a second NEURON implementation for cross-model comparison with Poleg-Polsky-based ports. DEFERRED pending t0022 outcomes.
+
+## t0024_port_de_rosenroll_2026_dsgc: Port de Rosenroll 2026 DSGC model
+
+* **Status**: completed
+* **Effective date**: 2026-04-21
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0012_tuning_curve_scoring_loss_library`, `t0022_modify_dsgc_channel_testbed`
+* **Source suggestion**: —
+
+Port de Rosenroll et al. 2026 DSGC as a third NEURON implementation, incorporating modern channel mechanisms. DEFERRED pending t0022 outcomes.
+
+## t0025_brainstorm_results_5: Brainstorm results session 5
+
+* **Status**: completed
+* **Effective date**: 2026-04-21
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`
+* **Source suggestion**: —
+
+Review project state after t0024 and plan V_rest-sweep tuning-curve experiment on t0022 and t0024.
+
+## t0026_vrest_sweep_tuning_curves_dsgc: V_rest sweep tuning curves for t0022 and t0024 DSGC ports
+
+* **Status**: completed
+* **Effective date**: 2026-04-21
+* **Dependencies**: `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`
+* **Source suggestion**: —
+
+Sweep resting potential -90 to -20 mV in 10 mV steps on the t0022 and t0024 DSGC ports; output polar tuning curves.
+
+## t0027_literature_survey_morphology_ds_modeling: Literature survey: modeling effect of cell morphology on direction selectivity
+
+* **Status**: completed
+* **Effective date**: 2026-04-21
+* **Dependencies**: —
+* **Source suggestion**: —
+
+Survey computational/biophysical modeling papers on how dendritic morphology shapes direction selectivity in DSGCs, SACs, and other DS neurons.
+
+## t0028_brainstorm_results_6: Brainstorm results session 6
+
+* **Status**: completed
+* **Effective date**: 2026-04-22
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`
+* **Source suggestion**: —
+
+Strategic brainstorm after t0026 and t0027: decide to run three morphology sweeps on t0022 and fetch two paywalled PDFs.
+
+## t0029_distal_dendrite_length_sweep_dsgc: Distal-dendrite length sweep on t0022 DSGC
+
+* **Status**: completed
+* **Effective date**: 2026-04-22
+* **Dependencies**: `t0022_modify_dsgc_channel_testbed`
+* **Source suggestion**: `S-0027-01`
+
+Sweep distal-dendrite length on the t0022 DSGC testbed to discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms using DSI as outcome.
+
+## t0030_distal_dendrite_diameter_sweep_dsgc: Distal-dendrite diameter sweep on t0022 DSGC
+
+* **Status**: completed
+* **Effective date**: 2026-04-22
+* **Dependencies**: `t0022_modify_dsgc_channel_testbed`
+* **Source suggestion**: `S-0027-03`
+
+Sweep distal-dendrite diameter on the t0022 DSGC testbed to discriminate Schachter2010 active-dendrite amplification vs passive-filtering mechanisms using DSI as outcome.
+
+## t0031_fetch_paywalled_morphology_papers: Fetch paywalled morphology papers: Kim2014 and Sivyer2013
+
+* **Status**: not_started
+* **Effective date**: 2026-04-22
+* **Dependencies**: —
+* **Source suggestion**: `S-0027-06`
+
+Retrieve and summarise two paywalled papers (Kim2014 and Sivyer2013) that could not be downloaded during t0027 due to access issues.
+
+## t0032_brainstorm_results_7: Brainstorm results session 7
+
+* **Status**: completed
+* **Effective date**: 2026-04-22
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`
+* **Source suggestion**: —
+
+Seventh brainstorm: approve a single planning task that scopes and costs a future joint morphology + top-10 VGC DSI-maximisation optimisation on Vast.ai GPU.
+
+## t0033_plan_dsgc_morphology_channel_optimisation: Plan DSGC morphology + VGC DSI optimisation; estimate Vast.ai GPU budget
+
+* **Status**: completed
+* **Effective date**: 2026-04-22
+* **Dependencies**: `t0002_literature_survey_dsgc_compartmental_models`, `t0019_literature_survey_voltage_gated_channels`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`
+* **Source suggestion**: —
+
+Plan a future joint DSGC morphology + top-10 VGC DSI-maximisation optimisation and estimate the Vast.ai GPU wall-time and USD budget envelope. Planning only; no optimiser runs.
+
+## t0034_distal_dendrite_length_sweep_t0024: Distal-dendrite length sweep on t0024 DSGC
+
+* **Status**: completed
+* **Effective date**: 2026-04-23
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0029_distal_dendrite_length_sweep_dsgc`
+* **Source suggestion**: `S-0027-01`
+
+Sweep distal-dendrite length on the t0024 de Rosenroll DSGC port; discriminate Dan2018 passive-TR vs Sivyer2013 dendritic-spike mechanisms; primary DSI is meaningful on t0024 unlike t0029.
+
+## t0035_distal_dendrite_diameter_sweep_t0024: Distal-dendrite diameter sweep on t0024 DSGC
+
+* **Status**: completed
+* **Effective date**: 2026-04-23
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`
+* **Source suggestion**: `S-0027-03`
+
+Sweep distal-dendrite diameter on the t0024 de Rosenroll DSGC port; discriminate Schachter2010 active amplification vs passive filtering; primary DSI is meaningful on t0024 unlike t0030.
+
+## t0036_rerun_t0030_halved_null_gaba: Rerun distal-diameter sweep on t0022 with halved null-GABA
+
+* **Status**: completed
+* **Effective date**: 2026-04-23
+* **Dependencies**: `t0022_modify_dsgc_channel_testbed`, `t0030_distal_dendrite_diameter_sweep_dsgc`
+* **Source suggestion**: `S-0030-01`
+
+Rerun the t0030 distal-diameter sweep on t0022 with null-direction GABA reduced from 12 nS to 6 nS to unpin primary DSI from 1.000 and restore the Schachter2010 vs passive-filtering discriminator.
+
+## t0037_null_gaba_reduction_ladder_t0022: Null-GABA reduction ladder on t0022 DSGC
+
+* **Status**: completed
+* **Effective date**: 2026-04-24
+* **Dependencies**: `t0022_modify_dsgc_channel_testbed`, `t0036_rerun_t0030_halved_null_gaba`
+* **Source suggestion**: `S-0036-01`
+
+Sweep GABA_CONDUCTANCE_NULL_NS across {4, 2, 1, 0.5, 0} nS at baseline diameter on t0022 to find the threshold at which null firing unpins and primary DSI regains dynamic range.
+
+## t0038_correct_t0033_base_gaba_to_4ns: Correct t0033 base GABA to 4 nS on t0022 variant
+
+* **Status**: completed
+* **Effective date**: 2026-04-24
+* **Dependencies**: `t0033_plan_dsgc_morphology_channel_optimisation`, `t0037_null_gaba_reduction_ladder_t0022`
+* **Source suggestion**: `S-0037-02`
+
+Create a correction against t0033's answer asset stating that any downstream optimiser or sweep targeting t0022 must set GABA_CONDUCTANCE_NULL_NS=4.0 as the base parameter, per t0037 findings.
+
+## t0039_distal_dendrite_diameter_sweep_t0022_gaba4: 7-diameter sweep on t0022 DSGC at GABA=4 nS
+
+* **Status**: completed
+* **Effective date**: 2026-04-24
+* **Dependencies**: `t0022_modify_dsgc_channel_testbed`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0037_null_gaba_reduction_ladder_t0022`
+* **Source suggestion**: `S-0037-01`
+
+Rerun t0030's 7-diameter sweep on t0022 at GABA=4 nS (t0037 sweet spot) to measure the Schachter2010-vs-passive slope on an unpinned discriminator.
+
+## t0040_brainstorm_results_8: Brainstorm results session 8
+
+* **Status**: completed
+* **Effective date**: 2026-04-24
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`
+* **Source suggestion**: —
+
+Eighth brainstorm: cross-task test-vs-literature audit; approve four correction tasks (L/lambda analysis, GABA ladder, Nav1.6+Kv3+NMDA, Schachter re-test); reject one suggestion and reprioritise four.
+
+## t0041_electrotonic_length_collapse_t0034_t0035: Electrotonic-length collapse analysis of t0034 and t0035
+
+* **Status**: completed
+* **Effective date**: 2026-04-24
+* **Dependencies**: `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`
+* **Source suggestion**: `S-0035-01`
+
+Zero-cost post-hoc analysis: compute electrotonic length L/lambda for t0034 length sweep and t0035 diameter sweep and test for cable-theory collapse onto a single DSI-vs-L/lambda curve.
+
+## t0042_fine_grained_null_gaba_ladder_t0022: Fine-grained null-GABA ladder (3.5, 3.0, 2.5 nS) on t0022
+
+* **Status**: cancelled
+* **Effective date**: 2026-04-24
+* **Dependencies**: `t0022_modify_dsgc_channel_testbed`, `t0037_null_gaba_reduction_ladder_t0022`
+* **Source suggestion**: —
+
+Null-GABA sweep at {3.5, 3.0, 2.5} nS on t0022 baseline diameter; test whether DSI can exceed 0.5 below t0037's 4 nS sweet spot without destabilising preferred direction.
+
+## t0043_nav16_kv3_nmda_restoration_t0022: Nav1.6 + Kv3 + NMDA restoration on t0022 channel testbed
+
+* **Status**: cancelled
+* **Effective date**: 2026-04-24
+* **Dependencies**: `t0019_literature_survey_voltage_gated_channels`, `t0022_modify_dsgc_channel_testbed`, `t0037_null_gaba_reduction_ladder_t0022`
+* **Source suggestion**: `S-0019-03`
+
+Add Nav1.6 and Kv3 to AIS_DISTAL and distal dendrites of t0022; restore NMDA at PD and ND BIPs; validate peak firing rate 40-80 Hz while DSI stays within +/-0.1 of 0.429.
+
+## t0044_schachter_retest_on_t0043: Schachter 2010 re-test via 7-diameter sweep on t0043 at GABA = 4 nS
+
+* **Status**: cancelled
+* **Effective date**: 2026-04-24
+* **Dependencies**: `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0037_null_gaba_reduction_ladder_t0022`, `t0043_nav16_kv3_nmda_restoration_t0022`
+* **Source suggestion**: `S-0002-02`
+
+7-diameter sweep on the t0043 substrate (Nav1.6 + Kv3 + NMDA) at GABA = 4 nS; tests whether the Schachter 2010 concave-down active-amplification signature emerges.
+
+## t0045_coreneuron_vastai_speedup_benchmark: CoreNEURON Vast.ai RTX 4090 speedup benchmark
+
+* **Status**: cancelled
+* **Effective date**: 2026-05-03
+* **Dependencies**: `t0022_modify_dsgc_channel_testbed`, `t0033_plan_dsgc_morphology_channel_optimisation`
+* **Source suggestion**: `S-0033-01`
+
+Measure the CoreNEURON-on-GPU vs stock-NEURON-on-CPU speedup on one Vast.ai RTX 4090 to replace the unvalidated 5x assumption in t0033's cost model.
+
+## t0046_reproduce_poleg_polsky_2016_exact: Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit
+
+* **Status**: completed
+* **Effective date**: 2026-04-24
+* **Dependencies**: `t0005_download_dsgc_morphology`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0020_port_modeldb_189347_gabamod`
+* **Source suggestion**: —
+
+Rebuild ModelDB 189347 from scratch to match Poleg-Polsky 2016; audit every parameter against paper+code+supplementary; reproduce all paper tests within tolerance.
+
+## t0047_validate_pp16_fig3_cond_noise: Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep
+
+* **Status**: completed
+* **Effective date**: 2026-04-25
+* **Dependencies**: `t0007_install_neuron_netpyne`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0046_reproduce_poleg_polsky_2016_exact`
+* **Source suggestion**: —
+
+Re-run t0046 library to record per-synapse NMDA/AMPA/GABA conductances per direction (Fig 3A-E targets) and extend noise sweep to flickerVAR in {0.0, 0.1, 0.3, 0.5} for control / AP5 / 0 Mg.
+
+## t0048_voff_nmda1_dsi_test: Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness
+
+* **Status**: completed
+* **Effective date**: 2026-04-25
+* **Dependencies**: `t0007_install_neuron_netpyne`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`
+* **Source suggestion**: `S-0047-01`
+
+Re-run t0046's gNMDA sweep at exptype=2 (Voff_bipNMDA=1, voltage-independent NMDA) to test if NMDA voltage-dependence causes the DSI-vs-gNMDA collapse t0047 documented.
+
+## t0049_seclamp_cond_remeasure: Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC
+
+* **Status**: completed
+* **Effective date**: 2026-04-25
+* **Dependencies**: `t0007_install_neuron_netpyne`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`
+* **Source suggestion**: `S-0047-02`
+
+Add a SEClamp at soma of deposited DSGC and re-measure per-channel synaptic conductance under voltage clamp; compare to t0047 per-synapse direct and paper Fig 3A-E.
+
+## t0050_audit_syn_distribution: Audit deposited GABA/NMDA/AMPA synapse spatial distribution vs paper
+
+* **Status**: completed
+* **Effective date**: 2026-04-25
+* **Dependencies**: `t0007_install_neuron_netpyne`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0049_seclamp_cond_remeasure`
+* **Source suggestion**: `S-0049-01`
+
+Extract per-synapse (x,y,z) coordinates from deposited DSGC, compute PD-side vs ND-side spatial densities for NMDA/AMPA/GABA, compare to paper text descriptions; explain t0049 GABA symmetry collapse.
+
+## t0051_brainstorm_results_9: Brainstorm results session 9
+
+* **Status**: completed
+* **Effective date**: 2026-04-25
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`
+* **Source suggestion**: —
+
+Ninth brainstorm: commission two from-scratch minimal-DSGC tasks (scalar vs spatial inhibition); cancel three t0022-substrate tasks; reprioritise six follow-up suggestions.
+
+## t0052_minimal_dsgc_scalar_gaba: Minimal from-scratch DSGC with scalar gabaMOD inhibition
+
+* **Status**: completed
+* **Effective date**: 2026-04-27
+* **Dependencies**: `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`
+* **Source suggestion**: —
+
+From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, scalar gabaMOD inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
+
+## t0053_minimal_dsgc_spatial_gaba: Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition
+
+* **Status**: completed
+* **Effective date**: 2026-04-27
+* **Dependencies**: `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`
+* **Source suggestion**: —
+
+From-scratch minimal DSGC with 100 E + 100 I co-located synapses, position-gated AMPA, spatial centripetal-only inhibition, soma+AIS HH; per-direction V(t), EPSP/IPSP, PSTH, polar tuning.
+
+## t0054_minimal_dsgc_ampa_nmda_scalar_gaba: Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition
+
+* **Status**: completed
+* **Effective date**: 2026-04-28
+* **Dependencies**: `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0052_minimal_dsgc_scalar_gaba`
+* **Source suggestion**: `S-0052-03`
+
+Extend t0052 by adding co-located NMDA Exp2Syn (tau1=5, tau2=80, e=0) at each E synapse; sweep gNMDA at {0, 0.25, 0.5, 1.0} nS; characterise EPSP decay, peak rate, and DSI vs gNMDA.
+
+## t0055_nmda_mg_block_dsi_recovery: Add Mg-block NMDA to recover DSI in t0054 minimal architecture
+
+* **Status**: completed
+* **Effective date**: 2026-04-28
+* **Dependencies**: `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`
+* **Source suggestion**: `S-0054-01`
+
+Replace voltage-independent NMDA Exp2Syn in t0054 with a Jahr-Stevens Mg-block NMDA point process; re-run the gNMDA={0,0.25,0.5,1.0} sweep to test if Mg block recovers DSI.
+
+## t0056_brainstorm_results_10: Brainstorm results session 10
+
+* **Status**: completed
+* **Effective date**: 2026-04-28
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`
+* **Source suggestion**: —
+
+Tenth brainstorm: commission t0057 tonic-GABA + amplitude sweep on t0053; reject four covered suggestions; reprioritise nineteen high-priority suggestions to medium.
+
+## t0057_tonic_gaba_sweep_t0053: Tonic GABA + amplitude sweep on t0053 spatial DSGC
+
+* **Status**: completed
+* **Effective date**: 2026-04-28
+* **Dependencies**: `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0053_minimal_dsgc_spatial_gaba`
+* **Source suggestion**: `S-0053-01`
+
+Replace t0053's per-event Exp2Syn GABA with a tonic conductance gated by stimulus window; sweep per-synapse peak conductance to recover non-zero FULL-mode tuning curves.
+
+## t0058_brainstorm_results_11: Brainstorm results session 11
+
+* **Status**: completed
+* **Effective date**: 2026-04-29
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`
+* **Source suggestion**: —
+
+Eleventh brainstorm: commission t0059 bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate; reject seven covered suggestions; reprioritise eighteen high-priority suggestions to medium.
+
+## t0059_bar_locked_gaba_ampa_sweep_t0057: Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate
+
+* **Status**: completed
+* **Effective date**: 2026-04-29
+* **Dependencies**: `t0009_calibrate_dendritic_diameters`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0057_tonic_gaba_sweep_t0053`
+* **Source suggestion**: `S-0057-04`
+
+Replace t0057's global tonic GABA window with per-synapse bar-arrival-locked windows; sweep AMPA x GABA conductance grid; bundle the project-wide EPSP_PASSIVE/IPSP_PASSIVE measurement-protocol fix.
+
+## t0060_ampa_escape_pd_only_no_gaba: Quick AMPA-escape test on t0059 substrate at preferred direction with GABA=0
+
+* **Status**: completed
+* **Effective date**: 2026-04-29
+* **Dependencies**: `t0059_bar_locked_gaba_ampa_sweep_t0057`
+* **Source suggestion**: —
+
+GABA=0, theta=0 only, sweep gAMPA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS at FULL and EPSP_PASSIVE modes; plot 16 soma V(t) traces.
+
+## t0061_nmda_escape_pd_only_no_gaba: Quick NMDAR-escape test on t0059 substrate at preferred direction with GABA=0
+
+* **Status**: completed
+* **Effective date**: 2026-04-29
+* **Dependencies**: `t0055_nmda_mg_block_dsi_recovery`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`
+* **Source suggestion**: —
+
+GABA=0, theta=0 only, NMDA-only excitation (Mg-block); sweep gNMDA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS at FULL and EPSP_PASSIVE; plot 16 traces.
+
+## t0062_nmda_escape_with_ampa_priming: NMDAR-escape test with AMPA priming on t0059 substrate at PD with GABA=0
+
+* **Status**: completed
+* **Effective date**: 2026-04-29
+* **Dependencies**: `t0055_nmda_mg_block_dsi_recovery`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`
+* **Source suggestion**: —
+
+GABA=0, theta=0 only, AMPA fixed at 0.5 nS (priming) + NMDA Mg-block sweep gNMDA in {0.1, 0.5, 1, 2, 5, 10, 15, 20} nS at FULL and EPSP_PASSIVE; plot 16 traces.
+
+## t0063_hh_voltage_step_test: HH voltage-step diagnostic on t0059 substrate (no synapses)
+
+* **Status**: completed
+* **Effective date**: 2026-04-29
+* **Dependencies**: `t0059_bar_locked_gaba_ampa_sweep_t0057`
+* **Source suggestion**: —
+
+SEClamp voltage steps to {-60, -50, -40, -30, -20, -10} mV for 200 ms each on the t0059 cell (no synaptic input); HH on vs HH off; plot Vm and clamp current.
+
+## t0064_hh_current_step_test: HH current-step diagnostic on t0059 substrate (no synapses)
+
+* **Status**: completed
+* **Effective date**: 2026-04-30
+* **Dependencies**: `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0063_hh_voltage_step_test`
+* **Source suggestion**: —
+
+IClamp current steps {0.1, 0.2, 0.3, 0.5, 1.0, 2.0} nA for 200 ms each on the t0059 cell (no synapses); HH on vs HH off; plot Vm response.
+
+## t0065_t0020_epsp_ipsp_vm_protocol: Test t0020 deposited DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol
+
+* **Status**: completed
+* **Effective date**: 2026-04-30
+* **Dependencies**: `t0020_port_modeldb_189347_gabamod`
+* **Source suggestion**: —
+
+Apply the EPSP/IPSP/FULL trial-mode protocol from the from-scratch family (t0059) to the deposited Poleg-Polsky 2016 model used in t0020, recording somatic Vm in PD and ND.
+
+## t0066_t0024_epsp_ipsp_vm_protocol: Test t0024 de Rosenroll DSGC under EPSP_PASSIVE / IPSP_PASSIVE / FULL protocol
+
+* **Status**: completed
+* **Effective date**: 2026-04-30
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0065_t0020_epsp_ipsp_vm_protocol`
+* **Source suggestion**: —
+
+Apply the EPSP/IPSP/FULL trial-mode protocol from t0065 (deposited Poleg-Polsky cell) to the de Rosenroll 2026 DSGC, recording somatic Vm in PD and ND with 20 trials per cell.
+
+## t0067_t0065_soma_channel_addition_sweep: Add 5 voltage-gated channels to t0065 soma; sweep densities; measure firing rate and DSI change
+
+* **Status**: completed
+* **Effective date**: 2026-05-01
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0019_literature_survey_voltage_gated_channels`, `t0065_t0020_epsp_ipsp_vm_protocol`
+* **Source suggestion**: —
+
+Insert one of {Nav1.6, NaP, NaR, Kv3, Kv4} on the deposited Poleg-Polsky cell soma at one of 3 densities (low/med/high), 5 seeds per (channel, density, direction). 16 conditions x 2 directions x 5 seeds = 160 FULL trials.
+
+## t0068_t0067_nav16_kv3_coexpression_rescue: Nav1.6 + Kv3 co-expression: does Kv3 rescue the DSI loss caused by Nav1.6?
+
+* **Status**: completed
+* **Effective date**: 2026-05-01
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`
+* **Source suggestion**: `S-0067-02`
+
+Test whether co-inserting Kv3 with Nav1.6 on the t0065 soma rescues the direction selectivity that Nav1.6 alone erodes (t0067 DSI = 0.23 at Nav1.6_high). 9 conditions x PD/ND x 5 seeds = 90 FULL trials.
+
+## t0069_t0067_ais_localised_channel_sweep: Add virtual AIS to deposited DSGC and re-run t0067 channel sweep on AIS
+
+* **Status**: completed
+* **Effective date**: 2026-05-01
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0019_literature_survey_voltage_gated_channels`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`
+* **Source suggestion**: `S-0067-03`
+
+Append a 30 um AIS + 1 mm passive axon to the deposited Poleg-Polsky cell and re-run the t0067 channel-density sweep with all 5 channels (Nav1.6, NaP, NaR, Kv3, Kv4) inserted on the AIS instead of the soma. 16 conditions x 2 directions x 5 seeds = 160 FULL trials.
+
+## t0070_writeup_two_model_beds: Writeup of two standard DSGC model beds in HH-equation research-paper format
+
+* **Status**: completed
+* **Effective date**: 2026-05-01
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0020_port_modeldb_189347_gabamod`, `t0024_port_de_rosenroll_2026_dsgc`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`
+* **Source suggestion**: —
+
+Write a research-paper / presentation-ready document describing the project's two standard DSGC model beds (t0008 deposited Poleg-Polsky 2016 and t0024 de Rosenroll 2026 port). Start each bed with the canonical Hodgkin-Huxley membrane equation, then enumerate every conductance and define excitation and inhibition for PD and ND directions.
+
+## t0071_t0070_synaptic_eqs_pdf: t0070 v2 - synaptic-current equations + typeset PDF
+
+* **Status**: completed
+* **Effective date**: 2026-05-01
+* **Dependencies**: `t0070_writeup_two_model_beds`
+* **Source suggestion**: —
+
+Supersede t0070's writeup: add the canonical I_syn = g_syn(t,V) * (V - E) formula blocks for all 5 synapse mechanisms (bed A AMPA, NMDA, GABA, ACh; bed B Exp2Syn ACh, GABA), rewrite every equation in LaTeX math syntax, and produce a typeset PDF via Typst (single-file pip dep, no LaTeX install).
+
+## t0072_synaptic_traces_pd_nd: Plot synaptic conductances and currents for PD and ND on both model beds
+
+* **Status**: completed
+* **Effective date**: 2026-05-01
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0020_port_modeldb_189347_gabamod`, `t0024_port_de_rosenroll_2026_dsgc`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`
+* **Source suggestion**: —
+
+Run one PD trial + one ND trial on each model bed (Bed A: t0008/t0020 deposited Poleg-Polsky; Bed B: t0024 de Rosenroll), record g(t) and I(t) traces from every synapse instance, plot the population mean +/- SD per synapse type with PD and ND overlaid. Output: 2 multi-panel figures + a Typst-typeset PDF.
+
+## t0073_brainstorm_results_12: Brainstorm results session 12
+
+* **Status**: completed
+* **Effective date**: 2026-05-01
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`
+* **Source suggestion**: —
+
+Twelfth brainstorm: commission t0074 (channel tuning-width sweep on Bed A) and t0075 (bio-realistic AIS one-axis sweep); reject 9 covered/duplicate suggestions; reprioritise 3 high-priority to medium.
+
+## t0074_channel_tuning_width_bed_a: Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring
+
+* **Status**: completed
+* **Effective date**: 2026-05-02
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0067_t0065_soma_channel_addition_sweep`
+* **Source suggestion**: `S-0068-01`
+
+12-angle tuning curves on Bed A with each of {Nav1.6, NaP, NaR, Kv3, Kv4, BK, SK, Kv7} added to soma at low/med/high; vendor BK/SK/Kv7 MODs; measure HWHM and vector-sum DSI per condition.
+
+## t0075_bio_realistic_ais_param_sweep: Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A
+
+* **Status**: not_started
+* **Effective date**: 2026-05-01
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0067_t0065_soma_channel_addition_sweep`, `t0069_t0067_ais_localised_channel_sweep`, `t0074_channel_tuning_width_bed_a`
+* **Source suggestion**: `S-0069-01`
+
+Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
+
+## t0076_bedb_dsi_firing_rate_mobo: Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)
+
+* **Status**: completed
+* **Effective date**: 2026-05-03
+* **Dependencies**: `t0008_port_modeldb_189347`, `t0019_literature_survey_voltage_gated_channels`, `t0024_port_de_rosenroll_2026_dsgc`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0070_writeup_two_model_beds`, `t0072_synaptic_traces_pd_nd`
+* **Source suggestion**: —
+
+Fix Bed B (de Rosenroll) morphology; optimise 25 free parameters (12 channel densities, 3 passive, 2 calcium, 2 synapse counts, 4 spatial-rule synapse placement params, 2 synapse weights) over the joint Pareto front of DSI and PD firing rate via BoTorch qNEHVI. ~300-500 iterations, 8 directions x 20 seeds per iteration.
+
+## t0077_brainstorm_results_13: Brainstorm results session 13
+
+* **Status**: completed
+* **Effective date**: 2026-05-03
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`
+* **Source suggestion**: —
+
+Thirteenth brainstorm: commission t0078 (Bed B v2 MOBO with AIS, tier-stratified channels, slow Kv-AHP); reject 16 covered/stale suggestions; cancel t0045 (CoreNEURON benchmark superseded).
+
+## t0078_bedb_mobo_v2_ais_tiered_ahp: Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP
+
+* **Status**: completed
+* **Effective date**: 2026-05-04
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0069_t0067_ais_localised_channel_sweep`, `t0076_bedb_dsi_firing_rate_mobo`
+* **Source suggestion**: `S-0076-02`
+
+Bundled MOBO on Bed B with bio-realistic AIS, 5-tier channels, SK_E2 slow-AHP; pass = locate DSI >= 0.4 AND PD rate >= 30 Hz, or rule out.
+
+## t0079_brainstorm_results_14: Brainstorm results session 14
+
+* **Status**: completed
+* **Effective date**: 2026-05-04
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp`
+* **Source suggestion**: —
+
+Fourteenth brainstorm: commission t0080 (Bed B v3 MOBO with dendritic-spike machinery + NSGA-II); reject 3 suggestions covered by t0080.
+
+## t0080_bedb_mobo_v3_dendritic_spike_nsga2: Bed B v3 MOBO with dendritic-spike machinery and NSGA-II
+
+* **Status**: completed
+* **Effective date**: 2026-05-04
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0069_t0067_ais_localised_channel_sweep`, `t0076_bedb_dsi_firing_rate_mobo`, `t0078_bedb_mobo_v2_ais_tiered_ahp`
+* **Source suggestion**: `S-0078-01`
+
+Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.
+
+## t0081_bedb_v3_warmstart_nsga2: Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start
+
+* **Status**: completed
+* **Effective date**: 2026-05-05
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0069_t0067_ais_localised_channel_sweep`, `t0076_bedb_dsi_firing_rate_mobo`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`
+* **Source suggestion**: `S-0080-01`
+
+Re-run NSGA-II on the t0080 v3 substrate at pop=96/gen=8 (768 cells) with warm-start from 5 t0080 + 17 t0078 Pareto cells; test if joint pass becomes reachable.
+
+## t0082_brainstorm_results_15: Brainstorm results session 15
+
+* **Status**: completed
+* **Effective date**: 2026-05-05
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0079_brainstorm_results_14`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`
+* **Source suggestion**: —
+
+Fifteenth brainstorm: commission t0083 (extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop) and t0084 (Vm-trace deep-dive of cell 767); reject 3 suggestions covered by t0081.
+
+## t0083_bedb_v3_extend_nsga2_gen8plus: Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop
+
+* **Status**: completed
+* **Effective date**: 2026-05-06
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`
+* **Source suggestion**: `S-0081-02`
+
+Continue NSGA-II from t0081's gen-7 final population for at least 5 more generations with adaptive HV-plateau stop (<1% over 3-gen window); hard cap +10 gens, $5.00 cost.
+
+## t0084_t0081_cell_767_vm_trace_deepdive: Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism
+
+* **Status**: completed
+* **Effective date**: 2026-05-05
+* **Dependencies**: `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`
+* **Source suggestion**: `S-0081-03`
+
+Per-direction Vm traces of t0081 cells 767 / 637 / 762 (proximal soma, mid dendrite, distal dendrite) to attribute cell 767's joint-pass DSI to NMDA Mg-block, distal Nav1.6, NaP, or combination.
+
+## t0085_brainstorm_results_16: Brainstorm results session 16
+
+* **Status**: completed
+* **Effective date**: 2026-05-06
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0079_brainstorm_results_14`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0082_brainstorm_results_15`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive`
+* **Source suggestion**: —
+
+Sixteenth brainstorm: commission t0086 (robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells); reject 3 covered suggestions.
+
+## t0086_robustness_cluster_bio_comparison: Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells
+
+* **Status**: completed
+* **Effective date**: 2026-05-06
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive`
+* **Source suggestion**: `S-0083-02`
+
+Re-evaluate top 20 joint-pass cells at 24 dirs x 30 seeds x 5 reps; cluster Genuine cells in 54-d; compare to Kole/Werginz/Sivyer/Oesch priors.
+
+## t0087_brainstorm_results_17: Brainstorm results session 17
+
+* **Status**: completed
+* **Effective date**: 2026-05-06
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0079_brainstorm_results_14`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0082_brainstorm_results_15`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive`, `t0085_brainstorm_results_16`, `t0086_robustness_cluster_bio_comparison`
+* **Source suggestion**: —
+
+Seventeenth brainstorm: commission t0088 (re-cluster 13 Genuine+Marginal cells from t0086 + per-cluster Vm-trace deep-dive at 16 dirs); reject S-0086-03 as covered.
+
+## t0088_recluster_marginals_and_vm_motifs: Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive
+
+* **Status**: completed
+* **Effective date**: 2026-05-06
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive`, `t0086_robustness_cluster_bio_comparison`
+* **Source suggestion**: `S-0086-03`
+
+Re-cluster 6 Genuine + 7 Marginal cells from t0086 (13 total); per-cluster Vm-trace deep-dive at 16 dirs to attribute mechanism; produce mechanism-distinctness answer asset.
+
+## t0089_brainstorm_results_18: Brainstorm results session 18
+
+* **Status**: completed
+* **Effective date**: 2026-05-07
+* **Dependencies**: `t0001_brainstorm_results_1`, `t0002_literature_survey_dsgc_compartmental_models`, `t0003_simulator_library_survey`, `t0004_generate_target_tuning_curve`, `t0005_download_dsgc_morphology`, `t0006_brainstorm_results_2`, `t0007_install_neuron_netpyne`, `t0008_port_modeldb_189347`, `t0009_calibrate_dendritic_diameters`, `t0010_hunt_missed_dsgc_models`, `t0011_response_visualization_library`, `t0012_tuning_curve_scoring_loss_library`, `t0013_resolve_morphology_provenance`, `t0014_brainstorm_results_3`, `t0015_literature_survey_cable_theory`, `t0016_literature_survey_dendritic_computation`, `t0017_literature_survey_patch_clamp`, `t0018_literature_survey_synaptic_integration`, `t0019_literature_survey_voltage_gated_channels`, `t0020_port_modeldb_189347_gabamod`, `t0021_brainstorm_results_4`, `t0022_modify_dsgc_channel_testbed`, `t0024_port_de_rosenroll_2026_dsgc`, `t0025_brainstorm_results_5`, `t0026_vrest_sweep_tuning_curves_dsgc`, `t0027_literature_survey_morphology_ds_modeling`, `t0028_brainstorm_results_6`, `t0029_distal_dendrite_length_sweep_dsgc`, `t0030_distal_dendrite_diameter_sweep_dsgc`, `t0032_brainstorm_results_7`, `t0033_plan_dsgc_morphology_channel_optimisation`, `t0034_distal_dendrite_length_sweep_t0024`, `t0035_distal_dendrite_diameter_sweep_t0024`, `t0036_rerun_t0030_halved_null_gaba`, `t0037_null_gaba_reduction_ladder_t0022`, `t0038_correct_t0033_base_gaba_to_4ns`, `t0039_distal_dendrite_diameter_sweep_t0022_gaba4`, `t0040_brainstorm_results_8`, `t0041_electrotonic_length_collapse_t0034_t0035`, `t0046_reproduce_poleg_polsky_2016_exact`, `t0047_validate_pp16_fig3_cond_noise`, `t0048_voff_nmda1_dsi_test`, `t0049_seclamp_cond_remeasure`, `t0050_audit_syn_distribution`, `t0051_brainstorm_results_9`, `t0052_minimal_dsgc_scalar_gaba`, `t0053_minimal_dsgc_spatial_gaba`, `t0054_minimal_dsgc_ampa_nmda_scalar_gaba`, `t0055_nmda_mg_block_dsi_recovery`, `t0056_brainstorm_results_10`, `t0057_tonic_gaba_sweep_t0053`, `t0058_brainstorm_results_11`, `t0059_bar_locked_gaba_ampa_sweep_t0057`, `t0060_ampa_escape_pd_only_no_gaba`, `t0061_nmda_escape_pd_only_no_gaba`, `t0062_nmda_escape_with_ampa_priming`, `t0063_hh_voltage_step_test`, `t0064_hh_current_step_test`, `t0065_t0020_epsp_ipsp_vm_protocol`, `t0066_t0024_epsp_ipsp_vm_protocol`, `t0067_t0065_soma_channel_addition_sweep`, `t0068_t0067_nav16_kv3_coexpression_rescue`, `t0069_t0067_ais_localised_channel_sweep`, `t0070_writeup_two_model_beds`, `t0071_t0070_synaptic_eqs_pdf`, `t0072_synaptic_traces_pd_nd`, `t0073_brainstorm_results_12`, `t0074_channel_tuning_width_bed_a`, `t0076_bedb_dsi_firing_rate_mobo`, `t0077_brainstorm_results_13`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0079_brainstorm_results_14`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0082_brainstorm_results_15`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0084_t0081_cell_767_vm_trace_deepdive`, `t0085_brainstorm_results_16`, `t0086_robustness_cluster_bio_comparison`, `t0087_brainstorm_results_17`, `t0088_recluster_marginals_and_vm_motifs`
+* **Source suggestion**: —
+
+Eighteenth brainstorm: pivot to morphology-extended optimisation. Commission t0090 (14-knob morph generator + diversity test) and t0091 (first joint 68-d NSGA-II); 5 rejections + 3 reprioritisations.
+
+## t0090_morphology_generator_diversity_test: Procedural DSGC morphology generator + diversity test + validation bundle
+
+* **Status**: completed
+* **Effective date**: 2026-05-07
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0086_robustness_cluster_bio_comparison`, `t0088_recluster_marginals_and_vm_motifs`
+* **Source suggestion**: —
+
+Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
+
+## t0091_morphology_extended_nsga2_v1: First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
+
+* **Status**: not_started
+* **Effective date**: 2026-05-07
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0078_bedb_mobo_v2_ais_tiered_ahp`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0081_bedb_v3_warmstart_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0086_robustness_cluster_bio_comparison`, `t0088_recluster_marginals_and_vm_motifs`, `t0090_morphology_generator_diversity_test`
+* **Source suggestion**: —
+
+First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, <=8 gens, 5-anchor warm-start.
+
+## t0092_diagnose_morphology_generator_silence: Diagnose why t0090 procedural cells produce no action potentials
+
+* **Status**: in_progress
+* **Effective date**: 2026-05-07
+* **Dependencies**: `t0024_port_de_rosenroll_2026_dsgc`, `t0080_bedb_mobo_v3_dendritic_spike_nsga2`, `t0083_bedb_v3_extend_nsga2_gen8plus`, `t0090_morphology_generator_diversity_test`
+* **Source suggestion**: `S-0090-01`
+
+Side-by-side compare procedural BedB-equivalent cell vs t0024 hand-coded Bed B under the t0083 best-cell channels; identify root cause of zero spikes; propose and implement fix.
