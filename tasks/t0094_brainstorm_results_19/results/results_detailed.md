@@ -113,6 +113,24 @@ Files modified outside the brainstorm task folder:
 * `verify_logs.py t0094_brainstorm_results_19` — target 0 errors; LG-W005 / LG-W007 / LG-W008
   acceptable per skill guidance and step-4 capture.
 
+## Task Requirement Coverage
+
+The operative request from `task.json`:
+
+> Nineteenth brainstorm: greenlight t0091 launch; update t0091 deps + imports for t0092/t0093 fix;
+> reject 2 superseded suggestions.
+
+| REQ | Status | Result | Evidence |
+| --- | --- | --- | --- |
+| **REQ-1** Greenlight t0091 launch | **Done** | Researcher's launch directive recorded; budget calculation answered ($4.45 remaining vs $3.00–3.50 plan estimate; $4.00 watchdog cap; $0.95–1.45 buffer); two clarifying multi-choice questions resolved (NMDA calibration kept separate; watchdog stays at $4.00). | `logs/session_log.md`, `results/results_summary.md` Decisions section |
+| **REQ-2** Update t0091 dependencies | **Done** | `t0092_diagnose_morphology_generator_silence` and `t0093_resweep_and_t0090_correction` appended to t0091's `task.json` dependencies list. | `tasks/t0091_morphology_extended_nsga2_v1/task.json` |
+| **REQ-3** Update t0091 short_description | **Done** | Refreshed to reference t0092-patched generator instead of t0090. | `tasks/t0091_morphology_extended_nsga2_v1/task.json` |
+| **REQ-4** Update t0091 task_description.md import paths | **Done** | Six edit blocks: Motivation, In Scope, Phase A anchor 1 source, Phase B per-cell evaluation (explicit `from tasks.t0092_..code.morphology_generator_fix import generate_fixed_morphology`), Risks and Fallbacks, Cross-References. | `tasks/t0091_morphology_extended_nsga2_v1/task_description.md` |
+| **REQ-5** Reject S-0092-03 (correction overlay against t0090 generator) | **Done** | Correction `C-0094-01` set `status: rejected` with rationale citing t0093's already-committed `C-0093-01`. | `corrections/suggestion_S-0092-03.json` |
+| **REQ-6** Reject S-0090-04 (tighten LHS bounds with 9 STABLE cells) | **Done** | Correction `C-0094-02` set `status: rejected` with rationale citing t0093's 60/60 STABLE post-fix invalidating the premise. | `corrections/suggestion_S-0090-04.json` |
+| **REQ-7** Verificators all pass | **Done** | `verify_task_file` (t0094 + t0091), `verify_corrections`, `verify_suggestions`, `verify_logs` all pass with 0 errors. Expected warnings: TF-W005 (`expected_assets` empty for brainstorm task) and LG-W007 (`logs/sessions/` has no captured JSONLs). | Step 4 step log; verificator output |
+| **REQ-8** Overview rebuilt | **Done** | `materialize.py` ran successfully; `overview/tasks/task_pages/t0094_brainstorm_results_19.md` created; t0091 page refreshed. | `overview/` diff |
+
 ## Next Steps / Suggestions
 
 The immediate next step is `/execute-task t0091_morphology_extended_nsga2_v1` in a fresh worktree to
