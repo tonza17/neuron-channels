@@ -4,15 +4,15 @@ Ion channels whose opening probability depends on membrane voltage.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (21)](../papers/by-category/voltage-gated-channels.md) | [Answers
+**Detail pages**: [Papers (22)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (8)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(89)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(90)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
 ---
 
-## Papers (21)
+## Papers (22)
 
 <details>
 <summary>📖 <strong>Dendritic mGluR2 and perisomatic Kv3 signaling regulate dendritic
@@ -65,6 +65,62 @@ Kv3, dendritic mGluR2), and it quantifies the DS-relevant observables (calcium t
 shifts, somatic Vm variance, directional calcium onset at fractional radius ~0.5) that such a
 model must reproduce. Use it as a validation target when sweeping morphology or channel
 distribution in a SAC model; do not cite it as a morphology-sweep example.
+
+</details>
+
+<details>
+<summary>📖 <strong>Persistent sodium currents in neurons: potential mechanisms and
+pharmacological blockers</strong> — Müller et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1007_s00424-024-02980-7` |
+| **Authors** | Peter Müller, Andreas Draguhn, Alexei V. Egorov |
+| **Venue** | Pflügers Archiv - European Journal of Physiology (journal) |
+| **DOI** | `10.1007/s00424-024-02980-7` |
+| **URL** | https://link.springer.com/article/10.1007/s00424-024-02980-7 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1007_s00424-024-02980-7/summary.md) |
+
+Mueller, Draguhn, and Egorov publish a systematic review of persistent sodium current (INaP)
+in CNS neurons in Pfluegers Archiv (Springer Nature, open access). The motivation is that INaP
+is a clinically important regulator of excitability - implicated in epilepsy, amyotrophic
+lateral sclerosis, neuropathic pain, hemiplegic migraine, and post-injury hyperexcitability -
+but the literature is fragmented across heterogeneous voltage-clamp protocols, inconsistent
+definitions of persistent versus slowly inactivating, and a sprawling catalogue of putative
+blocker drugs whose specificities have never been compared head-to-head.
+
+The review proceeds in two parts. The first part formalises four candidate mechanisms
+(modified Hodgkin-Huxley window current; Markov gating with closed-state inactivation or modal
+gating; subtype-specific generation by Nav1.1/1.2/1.3/1.6 plus beta1/beta4 modulation;
+supra-molecular coupled gating) and four canonical voltage-clamp protocols (brief step,
+entry-into-slow inactivation, slow steady-state inactivation, slow ramp). It explicitly maps
+which protocol isolates which kinetic component, dissolving longstanding terminological
+disagreements. The second part is a 22-drug catalogue (Table 1) tabulating IC50/EC50, holding
+potential, preparation, protocol, and effects on INaP versus INaT for each substance.
+
+The headline finding is that GS967 and riluzole are the only bona fide INaP blockers - they
+act on the truly non-inactivating component across both brief-step and slow-ramp protocols at
+clinically achievable concentrations and with limited off-target action. Phenytoin and
+lacosamide are reclassified as selective enhancers of intermediate and slow inactivation
+respectively, not INaP blockers proper. All other 18 surveyed substances are disqualified by
+off-target Ca, K, GABA, or mGluR effects, by poor blood-brain-barrier penetration, or by
+inadequate slow-inactivation data. The review concludes with a methodological recommendation:
+combine brief steps, slow-inactivation steps, and slow ramps with TTX subtraction, and require
+concordant effects of two drugs or a dynamic-clamp control before claiming an INaP role for
+any physiological phenomenon.
+
+For this project, the review most important message is a negative one: there is no
+DSGC-specific INaP density measurement in the surveyed literature, so the cortical-pyramidal
+Stuart 1999 / Astman 2021 priors used in t0086 / t0088 / t0091 remain the best cross-cell
+baseline and the morphology-extended NSGA-II distal-NaP density bounds do not need to be
+revised. The methodological caution that slow ramps underestimate INaP is a prior to keep on
+file for any future patch-clamp validation step but does not affect the present in-silico
+NEURON-based optimisation pipeline. The drug catalogue is a useful reference if the project
+ever extends into dynamic-clamp INaP-cancellation experiments, where riluzole-equivalent block
+at 10 uM is the canonical reference manipulation.
 
 </details>
 
@@ -1049,7 +1105,7 @@ dendritic transients.
 
 </details>
 
-## Tasks (8)
+## Tasks (9)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -1061,6 +1117,7 @@ dendritic transients.
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
+| 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | 2026-05-08 15:55 |
 
 ## Answers (8)
 
@@ -1257,7 +1314,28 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (74 open, 15 closed)
+## Suggestions (75 open, 15 closed)
+
+<details>
+<summary>🧪 <strong>Constrained channel-only NSGA-II on fixed t0093 morphology to
+disambiguate channel-side from morphology-side priors</strong> (S-0091-08)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091's 0/57 plausible-cell verdict is universally driven by channel-side priors (NMDA
+per-spine, NaP density, GABA spatial gradient); morphology priors mostly pass. S-0086-01
+already proposes a tighter-NMDA re-run but does not specify morphology configuration nor
+combine with hard-constraint formulation. Hold morphology fixed at the t0093 verified
+BedB-equivalent (PD-rate 43.6 Hz post-fix) and run NSGA-II on a 27-d channel-only space (12
+channel densities + 9 NMDA/NaP-related + 6 GABA spatial) with all biological priors as hard
+constraints (per S-0091-05) and tightened NMDA bounds (Sivyer 2013 5e-4 uS upper cap). Tests
+whether the v3 substrate has any biologically-plausible joint-pass region in channel space
+alone with verified morphology, independent of S-0086-01's broader question. If no, the
+substrate is incompatible with priors regardless of morphology, motivating S-0091-06's
+real-cell library. Cost ~$1.50 on Vast.ai EPYC 7B13. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Re-calibrate t0083 channel densities to the post-fix procedural

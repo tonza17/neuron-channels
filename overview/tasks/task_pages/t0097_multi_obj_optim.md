@@ -8,6 +8,7 @@
 |---|---|
 | **ID** | `t0097_multi_obj_optim` |
 | **Status** | ⏳ in_progress |
+| **Started** | 2026-05-08T15:23:11Z |
 | **Task types** | `literature-survey`, `internet-research`, `answer-question` |
 | **Expected assets** | 10 paper, 1 answer |
 | **Task folder** | [`t0097_multi_obj_optim/`](../../../tasks/t0097_multi_obj_optim/) |

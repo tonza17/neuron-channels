@@ -449,6 +449,7 @@ single-neuron models</strong></summary>
 | **Expected assets** | 10 paper, 1 answer |
 | **Source suggestion** | — |
 | **Task types** | [`literature-survey`](../../../meta/task_types/literature-survey/), [`internet-research`](../../../meta/task_types/internet-research/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Start time** | 2026-05-08T15:13:18Z |
 | **End time** | 2026-05-08T15:30:00Z |
 | **Task page** | [Literature survey: multi-objective optimisation of single-neuron models](../../../overview/tasks/task_pages/t0096_literature_survey_multi_objective_neuron_optimisation.md) |
 | **Task folder** | [`t0096_literature_survey_multi_objective_neuron_optimisation/`](../../../tasks/t0096_literature_survey_multi_objective_neuron_optimisation/) |

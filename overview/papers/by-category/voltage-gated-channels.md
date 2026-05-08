@@ -1,12 +1,12 @@
-# Papers: `voltage-gated-channels` (21)
+# Papers: `voltage-gated-channels` (22)
 
-21 papers across 15 year(s).
+22 papers across 15 year(s).
 
 [Back to all papers](../README.md)
 
 ---
 
-## 2024 (2)
+## 2024 (3)
 
 <details>
 <summary>📖 Dendritic mGluR2 and perisomatic Kv3 signaling regulate dendritic
@@ -112,6 +112,62 @@ lifted from Fohlmeister 2010. The model demonstration that +/- 20% modulation of
 somatic leak suffices to reproduce sustained-vs-transient differences provides a tight prior
 for the most important search dimensions and justifies narrower bounds on K(Ca) and Cav,
 freeing search budget for the high-leverage parameters.
+
+</details>
+
+<details>
+<summary>📖 Persistent sodium currents in neurons: potential mechanisms and
+pharmacological blockers — Müller et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1007_s00424-024-02980-7` |
+| **Authors** | Peter Müller, Andreas Draguhn, Alexei V. Egorov |
+| **Venue** | Pflügers Archiv - European Journal of Physiology (journal) |
+| **DOI** | `10.1007/s00424-024-02980-7` |
+| **URL** | https://link.springer.com/article/10.1007/s00424-024-02980-7 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1007_s00424-024-02980-7/summary.md) |
+
+Mueller, Draguhn, and Egorov publish a systematic review of persistent sodium current (INaP)
+in CNS neurons in Pfluegers Archiv (Springer Nature, open access). The motivation is that INaP
+is a clinically important regulator of excitability - implicated in epilepsy, amyotrophic
+lateral sclerosis, neuropathic pain, hemiplegic migraine, and post-injury hyperexcitability -
+but the literature is fragmented across heterogeneous voltage-clamp protocols, inconsistent
+definitions of persistent versus slowly inactivating, and a sprawling catalogue of putative
+blocker drugs whose specificities have never been compared head-to-head.
+
+The review proceeds in two parts. The first part formalises four candidate mechanisms
+(modified Hodgkin-Huxley window current; Markov gating with closed-state inactivation or modal
+gating; subtype-specific generation by Nav1.1/1.2/1.3/1.6 plus beta1/beta4 modulation;
+supra-molecular coupled gating) and four canonical voltage-clamp protocols (brief step,
+entry-into-slow inactivation, slow steady-state inactivation, slow ramp). It explicitly maps
+which protocol isolates which kinetic component, dissolving longstanding terminological
+disagreements. The second part is a 22-drug catalogue (Table 1) tabulating IC50/EC50, holding
+potential, preparation, protocol, and effects on INaP versus INaT for each substance.
+
+The headline finding is that GS967 and riluzole are the only bona fide INaP blockers - they
+act on the truly non-inactivating component across both brief-step and slow-ramp protocols at
+clinically achievable concentrations and with limited off-target action. Phenytoin and
+lacosamide are reclassified as selective enhancers of intermediate and slow inactivation
+respectively, not INaP blockers proper. All other 18 surveyed substances are disqualified by
+off-target Ca, K, GABA, or mGluR effects, by poor blood-brain-barrier penetration, or by
+inadequate slow-inactivation data. The review concludes with a methodological recommendation:
+combine brief steps, slow-inactivation steps, and slow ramps with TTX subtraction, and require
+concordant effects of two drugs or a dynamic-clamp control before claiming an INaP role for
+any physiological phenomenon.
+
+For this project, the review most important message is a negative one: there is no
+DSGC-specific INaP density measurement in the surveyed literature, so the cortical-pyramidal
+Stuart 1999 / Astman 2021 priors used in t0086 / t0088 / t0091 remain the best cross-cell
+baseline and the morphology-extended NSGA-II distal-NaP density bounds do not need to be
+revised. The methodological caution that slow ramps underestimate INaP is a prior to keep on
+file for any future patch-clamp validation step but does not affect the present in-silico
+NEURON-based optimisation pipeline. The drug catalogue is a useful reference if the project
+ever extends into dynamic-clamp INaP-cancellation experiments, where riluzole-equivalent block
+at 10 uM is the canonical reference manipulation.
 
 </details>
 

@@ -1,6 +1,6 @@
-# Papers: `patch-clamp` (29)
+# Papers: `patch-clamp` (31)
 
-29 papers across 20 year(s).
+31 papers across 20 year(s).
 
 [Back to all papers](../README.md)
 
@@ -63,7 +63,62 @@ as a whole.
 
 </details>
 
-## 2024 (1)
+## 2024 (3)
+
+<details>
+<summary>📖 A new role for excitation in the retinal direction-selective circuit
+— Ankri et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1113_JP286581` |
+| **Authors** | Lea Ankri, Serena Riccitelli, Michal Rivlin-Etzion |
+| **Venue** | The Journal of Physiology (journal) |
+| **DOI** | `10.1113/JP286581` |
+| **URL** | https://physoc.onlinelibrary.wiley.com/doi/10.1113/JP286581 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1113_JP286581/summary.md) |
+
+Ankri, Riccitelli, and Rivlin-Etzion examine how prolonged photopic illumination reshapes the
+receptive field and directional code of posterior-preferring On-Off direction-selective
+ganglion cells (pDSGCs) in mouse retina. The standard textbook view, including the authors'
+own prior work, attributes retinal direction selectivity to asymmetric inhibition from
+starburst amacrine cells, with directional excitation either absent or attributed to
+space-clamp artefact. The authors set out to test whether luminance-state changes that are
+known to remodel centre-surround antagonism (Ankri 2020, Farrow 2013, Nath 2023) also
+reorganise the directional code itself.
+
+Methodologically the study combines two-photon-targeted loose-patch and whole-cell
+voltage-clamp recordings from genetically labelled pDSGCs (Drd4-EGFP and Trhr-EGFP mice) with
+252-electrode MEA recordings from wild-type retinas. Direction tuning is probed with 1 mm bars
+that traverse the centre and surround sequentially, and receptive-field structure with
+concentric spot stimuli. Two adaptation protocols are used (3-5.5 min of stationary photopic
+light, or repetitive visual stimulation with drifting gratings). Pharmacology with SR95531,
+strychnine, and L-AP4 dissects the GABAergic, glycinergic, and On-pathway contributions to the
+unmasked surround excitation.
+
+Light adaptation expands the pDSGC receptive field asymmetrically toward the preferred side
+(asymmetry index On = **0.44** vs. Off = **0.15**), more than doubles the On spike-response
+duration (**305 +/- 255 ms** -> **779 +/- 149 ms**, *P* = **1.96e-4**), and adds a delayed
+null-direction-tuned spiking phase to the cell's normal preferred-direction main phase.
+Voltage-clamp recordings show that the centre is driven by preferred-direction-tuned
+excitation while the surround is driven by null-direction-tuned excitation; inhibition becomes
+essentially symmetric. The phenomenon generalises across all four cardinal On-Off DSGC
+subtypes in the MEA data.
+
+For this project the paper has two consequences. First, it confirms that the classical
+inhibition-dominated DS substrate that t0091's compartmental model implements is the correct
+target for a non-light-adapted photopic 16-direction protocol but is one regime among at least
+two; the answer asset should explicitly scope its biological-plausibility ceiling claims to
+photopic, non-light-adapted conditions and acknowledge that the surround-direction-flipping
+excitation is a separate axis the v3 substrate does not score against. Second, the published
+**DSI-on = 0.70 +/- 0.25** and **DSI-off = 0.65 +/- 0.30** baseline values serve as a hard
+biological reference for evaluating whether any t0091 Pareto cell that achieves extremely high
+DSI is super-biological rather than realistic.
+
+</details>
 
 <details>
 <summary>📖 Differential Intrinsic Firing Properties in Sustained and Transient Mouse
@@ -116,6 +171,62 @@ lifted from Fohlmeister 2010. The model demonstration that +/- 20% modulation of
 somatic leak suffices to reproduce sustained-vs-transient differences provides a tight prior
 for the most important search dimensions and justifies narrower bounds on K(Ca) and Cav,
 freeing search budget for the high-leverage parameters.
+
+</details>
+
+<details>
+<summary>📖 Persistent sodium currents in neurons: potential mechanisms and
+pharmacological blockers — Müller et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1007_s00424-024-02980-7` |
+| **Authors** | Peter Müller, Andreas Draguhn, Alexei V. Egorov |
+| **Venue** | Pflügers Archiv - European Journal of Physiology (journal) |
+| **DOI** | `10.1007/s00424-024-02980-7` |
+| **URL** | https://link.springer.com/article/10.1007/s00424-024-02980-7 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1007_s00424-024-02980-7/summary.md) |
+
+Mueller, Draguhn, and Egorov publish a systematic review of persistent sodium current (INaP)
+in CNS neurons in Pfluegers Archiv (Springer Nature, open access). The motivation is that INaP
+is a clinically important regulator of excitability - implicated in epilepsy, amyotrophic
+lateral sclerosis, neuropathic pain, hemiplegic migraine, and post-injury hyperexcitability -
+but the literature is fragmented across heterogeneous voltage-clamp protocols, inconsistent
+definitions of persistent versus slowly inactivating, and a sprawling catalogue of putative
+blocker drugs whose specificities have never been compared head-to-head.
+
+The review proceeds in two parts. The first part formalises four candidate mechanisms
+(modified Hodgkin-Huxley window current; Markov gating with closed-state inactivation or modal
+gating; subtype-specific generation by Nav1.1/1.2/1.3/1.6 plus beta1/beta4 modulation;
+supra-molecular coupled gating) and four canonical voltage-clamp protocols (brief step,
+entry-into-slow inactivation, slow steady-state inactivation, slow ramp). It explicitly maps
+which protocol isolates which kinetic component, dissolving longstanding terminological
+disagreements. The second part is a 22-drug catalogue (Table 1) tabulating IC50/EC50, holding
+potential, preparation, protocol, and effects on INaP versus INaT for each substance.
+
+The headline finding is that GS967 and riluzole are the only bona fide INaP blockers - they
+act on the truly non-inactivating component across both brief-step and slow-ramp protocols at
+clinically achievable concentrations and with limited off-target action. Phenytoin and
+lacosamide are reclassified as selective enhancers of intermediate and slow inactivation
+respectively, not INaP blockers proper. All other 18 surveyed substances are disqualified by
+off-target Ca, K, GABA, or mGluR effects, by poor blood-brain-barrier penetration, or by
+inadequate slow-inactivation data. The review concludes with a methodological recommendation:
+combine brief steps, slow-inactivation steps, and slow ramps with TTX subtraction, and require
+concordant effects of two drugs or a dynamic-clamp control before claiming an INaP role for
+any physiological phenomenon.
+
+For this project, the review most important message is a negative one: there is no
+DSGC-specific INaP density measurement in the surveyed literature, so the cortical-pyramidal
+Stuart 1999 / Astman 2021 priors used in t0086 / t0088 / t0091 remain the best cross-cell
+baseline and the morphology-extended NSGA-II distal-NaP density bounds do not need to be
+revised. The methodological caution that slow ramps underestimate INaP is a prior to keep on
+file for any future patch-clamp validation step but does not affect the present in-silico
+NEURON-based optimisation pipeline. The drug catalogue is a useful reference if the project
+ever extends into dynamic-clamp INaP-cancellation experiments, where riluzole-equivalent block
+at 10 uM is the canonical reference manipulation.
 
 </details>
 

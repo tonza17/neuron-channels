@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-96 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **85 open** (16 high,
-62 medium, 7 low), **11 closed**.
+97 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **86 open** (16 high,
+63 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -636,6 +636,33 @@ all six output classes (V(t), EPSP, IPSP, PSTH, tuning curve, active-fraction) p
 per-direction trial-for-trial diffs in soma V(t). Goal: isolate the spatial-vs-amplitude
 mechanism contribution to DSI from the GABA-mass confound, settling the graded-vs-binary
 question at matched mean drive. Recommended task types: comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Constrained channel-only NSGA-II on fixed t0093 morphology to
+disambiguate channel-side from morphology-side priors</strong> (S-0091-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0091-08` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Source paper** | [`10.1038_nn.3565`](../../../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1038_nn.3565/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0091's 0/57 plausible-cell verdict is universally driven by channel-side priors (NMDA
+per-spine, NaP density, GABA spatial gradient); morphology priors mostly pass. S-0086-01
+already proposes a tighter-NMDA re-run but does not specify morphology configuration nor
+combine with hard-constraint formulation. Hold morphology fixed at the t0093 verified
+BedB-equivalent (PD-rate 43.6 Hz post-fix) and run NSGA-II on a 27-d channel-only space (12
+channel densities + 9 NMDA/NaP-related + 6 GABA spatial) with all biological priors as hard
+constraints (per S-0091-05) and tightened NMDA bounds (Sivyer 2013 5e-4 uS upper cap). Tests
+whether the v3 substrate has any biologically-plausible joint-pass region in channel space
+alone with verified morphology, independent of S-0086-01's broader question. If no, the
+substrate is incompatible with priors regardless of morphology, motivating S-0091-06's
+real-cell library. Cost ~$1.50 on Vast.ai EPYC 7B13. Recommended task types: experiment-run.
 
 </details>
 

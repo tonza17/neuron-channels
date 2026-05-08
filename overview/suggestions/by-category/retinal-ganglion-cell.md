@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-73 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **64 open** (11
-high, 44 medium, 9 low), **9 closed**.
+75 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **66 open** (12
+high, 45 medium, 9 low), **9 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -162,6 +162,32 @@ t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0
 at GABA_BASE_NS = 0.10 nS (12 cells, 4320 trials at 10 trials x 12 directions x 3 modes). Pass
 criterion: vector-sum DSI > 0.3 AND peak Hz >= 5 Hz. Distinct from S-0057-06 (global tonic
 window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-direction DSI re-scoring of the t0091 57-cell Pareto to
+surface DSGC subtype-specific tuning</strong> (S-0091-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0091-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0091 used vector-sum DSI across 16 directions, which is direction-blind: a cell tuned to PD
+with peak at 0 deg and a cell tuned to a non-cardinal direction (e.g., 45 deg) collapse to the
+same vector-sum DSI. The PD vs ND anchor-asymmetry test (12 vs 9, p=0.331) may be
+artifactually washed out by this collapse. Brendly2025 and Riccitelli2025 (now in the t0091
+corpus from research-internet) report DSGC subtypes with distinct preferred directions. Pure
+data-analysis on existing pareto_front.json + per-direction firing rate JSONL: re-score each
+Pareto cell with per-direction DSI (peak direction, half-width-at-half-maximum, peak-to-trough
+ratio); recompute the PD-asymmetric vs ND-asymmetric anchor test using direction-binned DSI;
+compare per-direction tuning curve shapes between bedb_like, alt_topology, and the 21
+asymmetric anchor cells. Cost: $0 (local CPU). Recommended task types: data-analysis.
 
 </details>
 
@@ -1091,6 +1117,33 @@ preserved; only type_code changes. Add a conversion script and a smoke test that
 NEURON's Import3d loader accepts the extended type codes. Cuts duplicated Strahler
 recomputation from every downstream channel-placement task. Creative_thinking.md section A3.
 Recommended task types: feature-engineering.
+
+</details>
+
+<details>
+<summary>📂 <strong>Real-cell DSGC morphology library from NeuroMorpho: test whether
+observed morphologies escape prior-violation ceiling</strong> (S-0091-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0091-06` |
+| **Kind** | dataset |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0091 confirmed HM-1 (morphology asymmetry necessary; symmetric anchor count = 0) but refuted
+HM-2 (PD vs ND direction blind, p=0.331). The procedural 14-knob generator covers a parametric
+box that biological DSGCs may or may not occupy; t0091's 57-cell Pareto stays inside that box
+but cannot escape the channel-side prior-violation ceiling. Brainstorm 18 'Option G' is the
+next move: build a NeuroMorpho.org-anchored real DSGC cell library (10-20 mouse / rabbit
+reconstructions from Briggman 2011, Wei 2011, Morrie & Feller 2018), implement a categorical
+selector + parametric deformation knobs (diameter scaling, branch pruning, soma offset), then
+re-run t0091's NSGA-II with the real-cell library replacing the procedural generator. Tests
+whether observed DSGC morphologies escape the prior-violation ceiling that procedural ones
+cannot. Larger task: needs planning first. Cost ~$2-3 for the optimisation pass. Recommended
+task types: download-dataset, build-model, write-library.
 
 </details>
 

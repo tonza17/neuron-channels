@@ -1,12 +1,42 @@
 # Answers by Date Added
 
-24 answer(s) grouped by creation date.
+25 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-05-08 (1)
+## 2026-05-08 (2)
+
+<details>
+<summary><strong>Did enabling the 14-d procedural morphology variation as an
+optimisation axis open biologically-plausible joint-pass regions of
+parameter space that the fixed-Bed-B substrate of t0080-t0088 could not
+reach?</strong></summary>
+
+**Confidence**: medium
+
+No. None of the 57 Pareto cells reach the joint plausible region across all 13 priors (9
+electrophys + 4 morphology). Worst-case aggregation flags every cell as exotic or stretched,
+driven primarily by NMDA / NaP / GABA prior deviations carried over from the v3 electrophys
+substrate. PD-asymmetric anchor 3 captured 12 cells vs ND-asymmetric anchor 4 with 9
+(one-sided permutation p=0.331).
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0091_morphology_extended_nsga2_v1/assets/answer/morphology-extension-biological-plausibility/full_answer.md) |
+| **ID** | [`morphology-extension-biological-plausibility`](../../../tasks/t0091_morphology_extended_nsga2_v1/assets/answer/morphology-extension-biological-plausibility/) |
+| **Question** | Did enabling the 14-d procedural morphology variation as an optimisation axis open biologically-plausible joint-pass regions of parameter space that the fixed-Bed-B substrate of t0080-t0088 could not reach? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-08 |
+| **Categories** | — |
+| **Paper sources** | — |
+| **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md), [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md), [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) |
+| **URL sources** | — |
+| **Created by** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+
+</details>
 
 <details>
 <summary><strong>Why do t0090's procedural cells produce zero spikes under the t0083

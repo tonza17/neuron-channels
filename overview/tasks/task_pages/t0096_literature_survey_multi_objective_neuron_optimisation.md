@@ -8,7 +8,9 @@
 |---|---|
 | **ID** | `t0096_literature_survey_multi_objective_neuron_optimisation` |
 | **Status** | ❌ cancelled |
+| **Started** | 2026-05-08T15:13:18Z |
 | **Completed** | 2026-05-08T15:30:00Z |
+| **Duration** | 16m |
 | **Task types** | `literature-survey`, `internet-research`, `answer-question` |
 | **Expected assets** | 10 paper, 1 answer |
 | **Task folder** | [`t0096_literature_survey_multi_objective_neuron_optimisation/`](../../../tasks/t0096_literature_survey_multi_objective_neuron_optimisation/) |

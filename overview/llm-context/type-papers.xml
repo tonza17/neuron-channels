@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="papers" generated_at_utc="2026-05-08T15:20:07Z">
+<llm_context_archive type_id="papers" generated_at_utc="2026-05-08T16:08:27Z">
   <archive_summary>
     <title>All Papers</title>
     <description>Complete paper corpus with full summaries, metadata, and abstracts.</description>
     <section_count>1</section_count>
-    <char_count>978014</char_count>
-    <byte_count>980069</byte_count>
-    <estimated_tokens>244503</estimated_tokens>
+    <char_count>1030270</char_count>
+    <byte_count>1032387</byte_count>
+    <estimated_tokens>257567</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -17,6 +17,9 @@
       <title>All Papers (Full Detail)</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.1523_JNEUROSCI.1979-23.2023</id>
+        <id>10.1113_JP286581</id>
+        <id>10.1007_s00424-024-02980-7</id>
         <id>10.64898_2026.02.02.701812</id>
         <id>10.1073_pnas.2415223122</id>
         <id>10.1523_JNEUROSCI.1461-23.2024</id>
@@ -93,7 +96,756 @@
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 74
+Papers: 77
+
+## GABAergic Inhibition Controls Receptive Field Size, Sensitivity, and Contrast Preference of Direction Selective Retinal Ganglion Cells Near the Threshold of Vision
+ID: 10.1523_JNEUROSCI.1979-23.2023
+Year: 2024
+Authors: Suva Roy, Xiaoyang Yao, Jay Rathinavelu, Greg D. Field
+Venue: The Journal of Neuroscience
+Venue type: journal
+DOI: 10.1523/JNEUROSCI.1979-23.2023
+URL: https://www.jneurosci.org/content/44/11/e1979232023
+Categories: direction-selectivity, retinal-ganglion-cell, synaptic-integration
+Added by task: t0091_morphology_extended_nsga2_v1
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/roy_2024_gaba-dsgc-scotopic.pdf`
+* **Published**: 2024
+* **Authors**: Suva Roy 🇺🇸, Xiaoyang Yao 🇺🇸, Jay Rathinavelu 🇺🇸, Greg D. Field
+  🇺🇸
+* **Venue**: J Neurosci 44(11):e1979232023 (March 13, 2024)
+* **DOI**: `10.1523/JNEUROSCI.1979-23.2023`
+
+#### Abstract
+
+Information about motion is encoded by direction-selective retinal ganglion cells (DSGCs). These
+cells reliably transmit this information across a broad range of light levels, spanning moonlight to
+sunlight. Previous work indicates that adaptation to low light levels causes heterogeneous changes
+to the direction tuning of ON-OFF (oo)DSGCs and suggests that superior-preferring ON-OFF DSGCs
+(s-DSGCs) are biased toward detecting stimuli rather than precisely signaling direction. Using a
+large-scale multielectrode array, we measured the absolute sensitivity of ooDSGCs and found that
+s-DSGCs are 10-fold more sensitive to dim flashes of light than other ooDSGCs. We measured their
+receptive field (RF) sizes and found that s-DSGCs also have larger receptive fields than other
+ooDSGCs; however, the size difference does not fully explain the sensitivity difference. Using a
+conditional knock-out of gap junctions and pharmacological manipulations, we demonstrate that
+GABA-mediated inhibition contributes to the difference in absolute sensitivity and receptive field
+size at low light levels, while the connexin36-mediated gap junction coupling plays a minor role. We
+further show that under scotopic conditions, ooDSGCs exhibit only an ON response, but
+pharmacologically removing GABA-mediated inhibition unmasks an OFF response. These results reveal
+that GABAergic inhibition controls and differentially modulates the responses of ooDSGCs under
+scotopic conditions.
+
+#### Overview
+
+Roy, Yao, Rathinavelu and Field investigate the cellular and circuit mechanisms that explain why
+superior-preferring ON-OFF direction-selective ganglion cells (s-DSGCs) detect dim flashes far more
+reliably than the other three cardinal ooDSGC subtypes (anterior, inferior, posterior). They record
+from ex vivo dark-adapted mouse retina using a 519-electrode planar MEA covering a 450 um hexagonal
+patch, while delivering two stimulus families: brief (2-8 ms) full-field LED flashes spanning ~0.001
+to 6.31 R*/rod, and 1 s flashed squares (60 to 160 um per side) at 900% Michelson contrast on
+uniform backgrounds from scotopic (0.2 R*/rod/s) to photopic (2000 R*/rod/s).
+
+Using a 2AFC ideal-observer analysis on spike-train responses, the authors quantify each cell
+absolute detection threshold (the flash strength yielding 84% correct, SNR = 1). They map RF extent
+by fitting 2D Gaussians to spatially-resolved ON and OFF responses, and use a published biophysical
+rod-pooling model (linear and Bayesian-nonlinear variants) to predict how RF size should propagate
+into 2AFC performance.
+
+The mechanistic dissection uses two interventions. Conditional Cx36 knock-out (FACx mice) ablates
+homotypic gap-junction coupling among s-DSGCs while leaving upstream AII-bipolar coupling intact.
+Pharmacological GABA-A blockade with 15 uM gabazine (also confirmed not further changed by the
+GABA-C antagonist TPMPA) tests the contribution of inhibition. The headline finding: GABAergic
+inhibition - not gap junctions - dominates the threshold and RF asymmetry, and additionally masks
+ooDSGC OFF responses entirely under scotopic conditions.
+
+The work motivates two new putative GABAergic amacrine cell types in the DSGC circuit: one that
+selectively suppresses anterior, posterior, and inferior ooDSGCs at scotopic levels (sparing
+s-DSGCs), and another that selectively masks the OFF channel under low light. Critically, the
+authors conclude that asymmetric inhibition cannot come from the classical starburst amacrine cell,
+because the inhibition is not direction-tuned, depends on light level, and differs across ooDSGC
+subtypes.
+
+#### Architecture, Models and Methods
+
+**Animals and tissue**: C57BL/6J wild-type mice and FACx (conditional Cx36 knock-out specific to
+s-DSGCs, from Awatramani lab) of either sex, 2-12 months old. Dark-adapted overnight, decapitated
+under infrared, dorsal peripheral retina mounted ganglion-cell-down on the MEA in carbogenated Ames
+solution at 30-32 C, pH 7.4.
+
+**Recording**: 519-electrode hexagonal MEA, 30 um inter-electrode spacing, 450 um per side. Spike
+sorting via voltage thresholding plus 5D PCA Gaussian-mixture clustering; clusters with &gt;10%
+refractory contamination or &lt;100 spikes excluded; duplicate units (&gt;25% shared spike times) removed.
+Electrical images (1 ms pre-, 3 ms post-spike voltage averages) used to determine the dorsal-ventral
+axis from RGC axon trajectories and to track cells across stimulus conditions.
+
+**Stimuli**: (1) gamma-corrected OLED at 60.35 Hz delivering flashed squares 60x60 to 160x160 um at
+900% Michelson contrast for RF mapping; (2) drifting gratings, 8 directions, 24-2400 um/s, spatial
+period 960 um (49.2 deg visual angle), 50% contrast, 8 s per presentation with 2 s gray intervals,
+3-4 repeats; (3) 490 nm LED full-field flashes (2-8 ms) over a 4 mm circular field for
+absolute-sensitivity measurement; 60 repeats per intensity at 3 s ISI, presented dim-to-bright to
+avoid adaptation of the most sensitive cells. &quot;No flash&quot; trials drawn from 60 segments of 3 s
+spontaneous activity recorded at the start of each session.
+
+**2AFC ideal-observer analysis**: Each trial spike train binned at 20 ms; a difference-of-means
+linear discriminant fit per flash strength on a training subset; held-out flash and no-flash trials
+compared by dot product against the discriminant. Performance fit by Naka-Rushton: Pc = 0.5 * C^n /
+(C^n + C50^n) + 0.5. Detection threshold = flash strength giving Pc = 0.84 (SNR = 1). Cells whose
+curves never crossed 0.84 were excluded.
+
+**Rod-pooling model**: Field 2019 biophysical rod model with continuous dark noise (Gaussian
+filtered to match measured power spectrum), Poisson-distributed single-photon responses with mean
+rm(t) and covariance from eigenvector decomposition, and Poisson thermal isomerizations at 0.005
+R*/rod/s. Mouse-specific corrections: continuous noise +22%, single-photon variability +37.5%
+relative to primate. RF area mapped to rod count via 500,000 rods/mm^2 mouse rod density; 12,000
+rods for ooDSGCs (RF sigma 0.012 mm^2) and 96,000 rods for s-DSGCs (8x larger). Linear pooling =
+optimal linear discriminant from 5,000 simulated single-photon vs 5,000 dark-noise trials. Nonlinear
+pooling = same dot product weighted by Bayesian likelihood ratio between single-photon and
+continuous-noise distributions, with flash strength acting as the prior.
+
+**Pharmacology**: 15 uM gabazine (SR-95531, GABA-A blocker), 5 min wash-in / 30 min wash-out; TPMPA
+tested for GABA-C (no additional effect).
+
+**Statistics**: One-way and two-way ANOVA with Bonferroni correction; mean +/- SEM unless noted;
+significance threshold p &lt;= 0.05.
+
+#### Results
+
+* s-DSGCs detect dim flashes at **~10-fold lower threshold** than anterior, inferior, and posterior
+  ooDSGCs (p &lt; 0.001, one-way ANOVA Bonferroni; data from 2 retinas, n=31 superior, n=29 anterior,
+  n=10 inferior, n=5 posterior).
+* s-DSGC absolute thresholds approach within **~0.5 log unit** of the most sensitive RGCs recorded
+  (likely ON sustained alpha cells, **~3-fold gap**).
+* s-DSGCs have larger ON RFs than other ooDSGCs across all light levels; the difference is maximal
+  at scotopic 0.2 R*/rod/s with **ON ratio ~8.4x and OFF ratio ~4.0x**, narrowing to **ON ~3.1x and
+  OFF ~2.3x** at photopic 2000 R*/rod/s.
+* Linear rod-pooling predicts only a **sqrt(8) ~ 3-fold** sensitivity gain from an 8-fold RF area
+  increase; optimal Bayesian-nonlinear pooling with mouse rod noise yields only a **~70%**
+  performance gain between 12,000 and 96,000 rods. RF size therefore explains roughly **half** of
+  the observed 10-fold threshold difference.
+* Locally flashed in-RF spots elicit higher gain in s-DSGCs than other ooDSGCs at 0.2 R*/rod/s: ON
+  peak **34.5 +/- 1.4 vs 22.4 +/- 5.9 spike/s**, OFF peak **15.4 +/- 1.0 vs 6.0 +/- 2.4 spike/s**.
+* Cx36 ablation in FACx s-DSGCs leaves absolute threshold unchanged (p = 0.61 superior, p = 0.32
+  others) and produces only a modest s-DSGC RF reduction (p = 0.03), with no change in other ooDSGCs
+  (p = 0.35). Gap junctions are therefore a **minor** contributor.
+* GABA-A blockade with gabazine reduces the s-DSGC vs other-ooDSGC threshold ratio from **9.4-fold
+  to 3.2-fold** (p &lt; 0.001 superior, p = 0.003 others; control n=15 superior, n=15 anterior, n=10
+  inferior, n=5 posterior). All ooDSGC types become more sensitive in absolute terms.
+* Gabazine increases ON RF area by **~40% in s-DSGCs and ~75% in other ooDSGCs**, and OFF RF area by
+  **~10x in s-DSGCs and ~30x in other ooDSGCs** under scotopic 0.2 R*/rod/s.
+* GABA-A blockade unmasks a previously absent OFF response of similar amplitude to the ON response
+  under scotopic conditions, demonstrating that inhibition gates contrast polarity at low light
+  levels.
+* Density estimates of **~80 s-DSGCs/mm^2 (Hb9)** vs **~130 posterior-DSGCs/mm^2 (DRD4)** match the
+  photopic 1.5x RF-size ratio, implying similar coverage factors across types under photopic but
+  **coverage ~3 for s-DSGCs and &lt;1 for other ooDSGCs** under scotopic conditions.
+
+#### Innovations
+
+##### Quantitative Decomposition Of S-DSGC Sensitivity Excess
+
+First study to combine MEA-wide threshold measurements, RF mapping across six log units of
+background light, and a calibrated biophysical rod-pooling model in the same animal preparation. The
+decomposition shows that the well-known ~10-fold s-DSGC absolute-sensitivity advantage is not
+explained by RF size alone (which a fully optimised nonlinear pool predicts to give only ~70% gain)
+and is dominated instead by GABAergic inhibition asymmetry.
+
+##### Conditional Cx36 Knockout As A Selective Coupling Probe
+
+Use of FACx (Awatramani lab) mice as a clean dissociation between s-DSGC homotypic gap-junction
+coupling and upstream AII / cone-bipolar coupling. This allows the authors to rule out the common
+assumption that homotypic coupling drives the s-DSGC sensitivity advantage. The absence of a
+threshold effect in FACx is the strongest direct evidence to date that Cx36 plays only a secondary
+role in scotopic absolute sensitivity for these cells.
+
+##### GABA-A As A Polarity Gate Under Scotopic Conditions
+
+Demonstration that gabazine unmasks a full-amplitude OFF response in ooDSGCs that is otherwise
+absent at scotopic light levels. This reframes the Pearson and Kerschensteiner 2015 observation of
+an &quot;ON-only ooDSGC under scotopic conditions&quot; as actively maintained by GABAergic masking, not by a
+missing OFF input. The result implies a putative second GABAergic amacrine cell that targets the OFF
+subfield (or its OFF bipolar inputs) selectively at low light.
+
+##### Two-Amacrine-Cell Hypothesis For Scotopic DSGC Circuitry
+
+Synthesis of the threshold-asymmetry and OFF-masking results into an explicit hypothesis (their Fig.
+7\) that two yet-unidentified GABAergic amacrine cell types exist in the DSGC circuit: one that
+suppresses inferior, posterior, and anterior ooDSGCs sparing s-DSGCs, and one that masks the OFF
+channel of all ooDSGCs. The authors explicitly rule out starburst amacrine cells as the source on
+three grounds (no direction tuning, light-level dependence, subtype asymmetry).
+
+#### Datasets
+
+This is a primary experimental study with no public dataset. Data are recordings from ex vivo mouse
+retina:
+
+* **C57BL/6J wild-type retinas**: ~5 retinas across the experiments. Threshold measurements pool 2
+  retinas (n = 31 superior, 29 anterior, 10 inferior, 5 posterior). RF measurements use 2 retinas (n
+  = 23 superior, 30 other). Gabazine experiments use 2 retinas (n = 15 superior, 15 anterior, 10
+  inferior, 5 posterior; replicated in a third retina).
+* **FACx Cx36 conditional knock-out**: 1 retina for thresholds (n = 14 superior, 9 anterior, 2
+  inferior, 1 posterior); 2 retinas for RF size (n = 12 superior, 15 other).
+* **MEA recordings**: 519-channel hexagonal Litke-style array, 30 um pitch, 450 um per side,
+  spike-sorted offline with 5D PCA mixture-of-Gaussians.
+* No raw datasets are released alongside this paper.
+
+#### Main Ideas
+
+* The classical starburst-amacrine direction-selective microcircuit cannot account for ooDSGC
+  scotopic asymmetry. There is a separate non-starburst GABAergic amacrine population whose density
+  / strength must vary across the ooDSGC subtypes - relevant when interpreting model GABA priors at
+  scotopic vs photopic operating points.
+* Under photopic stimulation (the regime t0091 NSGA-II sweep targets), the s-DSGC vs other-ooDSGC
+  RF-size ratio shrinks to ~1.5-3x and density-corrected coverage factors equalise. This supports
+  the project existing single-photopic operating point assumption and the Trenholm 2013 photopic
+  peak-rate prior.
+* The Roy 2024 result is about *threshold sensitivity* and *RF size at scotopic levels*, not channel
+  densities or per-spine NMDA conductance. It does NOT change the t0086 / t0088 scorecard GABA
+  spatial-gradient or per-spine NMDA priors used in t0091.
+* Gap-junction coupling among s-DSGCs is functionally minor for absolute sensitivity (FACx knockout
+  = no threshold change), so gap-junction-mediated lateral spread can be safely omitted from t0091
+  single-cell model under photopic conditions.
+* The OFF subfield of ooDSGCs is actively suppressed by GABA-A inhibition at scotopic levels. This
+  is a *low-light* phenomenon irrelevant to the project photopic regime but worth flagging if a
+  future task extends the model to scotopic operating points.
+
+#### Summary
+
+Roy, Yao, Rathinavelu, and Field address the long-standing observation that superior-preferring
+ON-OFF DSGCs (s-DSGCs) detect dim stimuli substantially more reliably than the three other cardinal
+ooDSGC subtypes (anterior, inferior, posterior). The paper asks two questions: how large is the
+s-DSGC sensitivity advantage at the absolute threshold of vision, and which of three plausible
+mechanisms (RF size, Cx36 gap-junction coupling, GABAergic inhibition asymmetry) account for it? The
+motivation comes from prior work (Yao et al. 2018) suggesting s-DSGCs sacrifice direction-tuning
+precision for stimulus detection at scotopic levels.
+
+The authors record dark-adapted mouse retina ex vivo on a 519-electrode MEA, using brief full-field
+LED flashes (2-8 ms) and spatially mapped square flashes (60-160 um, 900% contrast) across
+backgrounds spanning six log units of light intensity. They quantify absolute thresholds with a 2AFC
+ideal-observer analysis (84% correct = SNR = 1, Naka-Rushton fit) and RF area by 2D-Gaussian fits to
+ON / OFF subfield maps. A calibrated rod-pooling model with mouse-specific noise parameters and
+0.005 R*/rod/s thermal isomerization rate is used to translate RF area into predicted 2AFC
+performance. The mechanistic dissection uses FACx conditional Cx36-knockout mice to ablate s-DSGC
+homotypic coupling, and 15 uM gabazine to block GABA-A inhibition.
+
+The headline result is a **10-fold lower s-DSGC absolute threshold** that approaches within 0.5 log
+unit of the most sensitive RGCs (presumed ON sustained alpha cells). RF size differences (~8x larger
+ON subfields at scotopic 0.2 R*/rod/s) explain only **~50%** of the gap, even under optimal
+nonlinear rod pooling. Cx36 ablation has **no significant effect** on threshold and only a modest RF
+reduction in s-DSGCs. GABA-A blockade compresses the s-DSGC vs other-ooDSGC threshold ratio from
+**9.4x to 3.2x**, expands all ooDSGC RFs (especially OFF subfields by 10-30x), and unmasks a
+full-amplitude scotopic OFF response. The authors conclude that two unidentified GABAergic amacrine
+cells differentially shape ooDSGC sensitivity, RF size, and contrast polarity at low light, and
+explicitly exclude starburst amacrine cells as the source.
+
+For this project (t0091 morphology / NSGA-II Pareto-front sweep under photopic stimulation), the
+paper supplies critical context but no parameter changes. Under photopic conditions the s-DSGC
+RF-size advantage collapses to 1.5-3x with similar coverage factors across types, supporting the
+project existing single-cell, single-operating-point Pareto framing using Trenholm 2013-style
+photopic peak rates. The GABA spatial-gradient prior on the t0086 / t0088 scorecard is about
+classical-RF SAC-mediated inhibition; Roy 2024 two hypothesised non-starburst GABAergic amacrine
+cells operate at scotopic levels and are out of scope. Cx36 gap-junction coupling can safely be
+excluded from the photopic single-cell model. The paper is therefore most useful as an interpretive
+boundary - it confirms that t0091 photopic-only NSGA-II results should not be overgeneralised to
+scotopic firing-rate predictions, where additional GABAergic and OFF-masking mechanisms would
+dominate.
+
+## A new role for excitation in the retinal direction-selective circuit
+ID: 10.1113_JP286581
+Year: 2024
+Authors: Lea Ankri, Serena Riccitelli, Michal Rivlin-Etzion
+Venue: The Journal of Physiology
+Venue type: journal
+DOI: 10.1113/JP286581
+URL: https://physoc.onlinelibrary.wiley.com/doi/10.1113/JP286581
+Categories: retinal-ganglion-cell, direction-selectivity, synaptic-integration, patch-clamp
+Added by task: t0091_morphology_extended_nsga2_v1
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/ankri_2024_dsgc-light-adaptation-surround.pdf`
+* **Published**: 2024-10-27 (online), Vol 602.22, pages 6301-6328
+* **Authors**: Lea Ankri 🇮🇱, Serena Riccitelli 🇮🇱, Michal Rivlin-Etzion 🇮🇱
+* **Venue**: The Journal of Physiology (Wiley, on behalf of The Physiological Society)
+* **DOI**: `10.1113/JP286581`
+
+#### Abstract
+
+A key feature of the receptive field of neurons in the visual system is their centre-surround
+antagonism, whereby the centre and the surround exhibit responses of opposite polarity. This
+organization is thought to enhance visual acuity, but whether and how such antagonism plays a role
+in more complex processing remains poorly understood. Here, we investigate the role of centre and
+surround receptive fields in retinal direction selectivity by exposing posterior-preferring On-Off
+direction-selective ganglion cells (pDSGCs) to adaptive light and recording their response to
+globally moving objects. We reveal that light adaptation leads to surround expansion in pDSGCs. The
+pDSGCs maintain their original directional tuning in the centre receptive field, but present the
+oppositely tuned response in their surround. Notably, although inhibition is the main substrate for
+retinal direction selectivity, we found that following light adaptation, both the centre- and
+surround-mediated responses originate from directionally tuned excitatory inputs. Multi-electrode
+array recordings show similar oppositely tuned responses in other DSGC subtypes. Together, these
+data attribute a new role for excitation in the direction-selective circuit. This excitation carries
+an antagonistic centre-surround property, possibly designed to sharpen the detection of motion
+direction in the retina.
+
+#### Overview
+
+Ankri and colleagues investigate how the receptive-field organisation of posterior-preferring On-Off
+direction-selective ganglion cells (pDSGCs) reorganises under prolonged photopic illumination, a
+regime they call &quot;light-adapted&quot;. The classical retinal DS account (Briggman 2011, Wei 2011,
+Yonehara 2011, and Ankri&#x27;s own 2020 work) attributes direction selectivity almost entirely to
+asymmetric inhibition from starburst amacrine cells (SACs); excitation has historically been
+considered either non-directional or, when it appears directional, an artefact of imperfect
+voltage-clamp space-clamp. The paper challenges that view by showing that light adaptation unmasks a
+strong directionally tuned excitatory drive that survives any plausible space-clamp critique.
+
+The authors combine two-photon-targeted patch-clamp recordings (Drd4-EGFP and Trhr-EGFP mice) with
+252-electrode multi-electrode-array (MEA) recordings in C57BL/6 mice. They first demonstrate that
+photopic adaptation expands the pDSGC receptive field asymmetrically toward the preferred side
+(asymmetry index On = 0.44, Off = 0.15). They then show that this expanded surround generates a
+delayed null-direction-tuned spiking phase that is absent before adaptation. Voltage-clamp
+recordings reveal that the centre response is driven by preferred-direction-tuned excitation, and
+the surround-driven delayed phase is driven by null-direction-tuned excitation; inhibition becomes
+roughly symmetric in both regions after adaptation. Pharmacology with SR95531, strychnine, and L-AP4
+dissects which inputs gate the new excitatory phase: GABA-A blockade unmasks non-directional
+surround activity, glycinergic blockade abolishes surround excitation, and L-AP4 shows the On
+pathway is the dominant carrier. The MEA data generalise the null-tuned delayed phase to other DSGC
+subtypes (anterior, dorsal, ventral). The paper closes by linking these findings to the
+visual-cortex extraclassical antagonistic surround literature (Keller 2020), proposing that the
+centre/surround opposite-polarity directional code is a general motif for sharpening motion
+discrimination.
+
+#### Architecture, Models and Methods
+
+This is an experimental electrophysiology paper, not a computational study. The methodology covers
+four pillars:
+
+* **Animals**: Drd4-EGFP and Trhr-EGFP transgenic mice (4-12 weeks, either sex) labelled GFP in
+  pDSGCs for two-photon-targeted patch recording. Wild-type C57BL/6JOlaHsd mice were used for the
+  MEA experiments.
+
+* **Two-photon-targeted patch-clamp**: Retinas were dark-adapted for 30+ min, dissected under dim
+  red/infrared light, and perfused with carbogen-equilibrated Ames medium at 32-34 degrees C.
+  GFP-positive pDSGCs were targeted at 920 nm. Loose-patch spike recordings used 4-7 MOhm pipettes
+  filled with Ames; voltage-clamp whole-cell recordings used 5-9 MOhm pipettes with
+  Cs-methanesulfonate-based intracellular solution (110 CsMeSO3, 4 EGTA, 5 TEA-Cl, 4 Mg-ATP,
+  Na-phosphocreatine; pH 7.2; ECl = -73 mV). Excitation was isolated at 0 mV holding (after
+  liquid-junction-potential correction) and inhibition at -60 mV. Data were filtered at 2 kHz and
+  sampled at 10 kHz on a MultiClamp 700B with Digidata 1550 and pCLAMP10.
+
+* **Multi-electrode array**: 252-electrode MEAs (MultiChannel Systems, 100 or 200 micrometre pitch),
+  retina mounted ganglion-side-down on PDL-coated arrays, perfusion at 33.2 degrees C, 3.5 ml/min.
+  Signals digitised at 20 kHz; spike sorting with Kilosort2.0 + manual curation in Phy
+  (refractory-period violations &lt; 1%).
+
+* **Visual stimuli and adaptation protocols**: Two adaptation regimes were used: 3.0-5.5 min of
+  stationary photopic full-field illumination, and 3.0-5.5 min of repetitive visual stimulation
+  (RVS) with drifting gratings. Direction tuning was probed with bars travelling about 1 mm across
+  the retina (sequentially activating centre and surround), and receptive-field structure with
+  concentric spot stimuli of increasing radius. The asymmetry index (AI) was defined as a normalised
+  weighted sum of preferred-side minus null-side responses across radii. Pharmacology used SR95531
+  (50 micromolar; GABA-A block), strychnine (1 micromolar; glycine block), and L-AP4 (20 micromolar;
+  mGluR6/On-pathway block). Statistics: chi-square goodness-of-fit for normality, then paired
+  Student&#x27;s t test or non-parametric equivalents; significance reported as *P* &lt; 0.05, **P* &lt; 0.01,
+  ***P* &lt; 0.001.
+
+Sample sizes vary per figure: receptive-field expansion analysis used n = 10 cells before adaptation
+and n = 16 after stationary light; baseline DSI distribution n = 38 cells.
+
+#### Results
+
+* **Receptive field asymmetry**: Light adaptation expanded the pDSGC receptive field asymmetrically
+  toward the preferred side. Asymmetry index for the On RF reached **0.44** versus **0.15** for the
+  Off RF, with significant changes both for On (P-On = **0.002**) and Off (P-Off = **0.0001**)
+  responses across cells.
+* **Sustained On response**: Spike-response duration to spots more than doubled - On-response
+  duration before adaptation was **305.00 +/- 255.44 ms** vs. **779.33 +/- 149.21 ms** after (*P* =
+  **1.96e-4**), indicating sensitisation rather than simple gain change.
+* **Baseline directional tuning**: Before adaptation, both On and Off phases were strongly
+  preferred-direction-tuned with **DSI-on = 0.7 +/- 0.25** and **DSI-off = 0.65 +/- 0.3** (mean +/-
+  SD; n = 38 cells).
+* **Null-tuned delayed phase**: Light adaptation introduced a new delayed spiking phase tuned to the
+  null direction in addition to the preserved preferred-direction main phase, observed in pDSGCs and
+  reproduced across anterior, dorsal, and ventral DSGCs in MEA recordings.
+* **Excitation flips between centre and surround**: Voltage-clamp showed that after adaptation
+  centre excitation is preferred-direction-tuned while surround excitation is null-direction- tuned;
+  inhibition becomes essentially symmetric, removing it as the dominant directional substrate.
+* **Pharmacological dissection**: GABA-A blockade (SR95531) unmasked non-directional surround
+  activity, indicating GABAergic inhibition gates surround spatial extent; glycine blockade
+  (strychnine) abolished the null-tuned delayed surround excitation; L-AP4 (On-pathway block)
+  eliminated most of the RVS-induced On response, identifying the On pathway as the main carrier of
+  the new null-tuned phase.
+* **On/Off ratio shift**: Light adaptation reversed the On vs. Off response ratio (P-before-RVS =
+  **0.01**, P-before-stationary = **0.01**), with the On phase becoming dominant where the Off phase
+  had previously been equal or stronger.
+* **Generality across subtypes**: MEA recordings demonstrated null-tuned delayed phases in all four
+  cardinal On-Off DSGC subtypes, supporting that the phenomenon is a general motif rather than a
+  pDSGC peculiarity.
+
+#### Innovations
+
+##### Light-Adaptation-Gated Excitatory Direction Code
+
+First demonstration that a luminance-regime change can switch the dominant substrate for retinal DS
+computation from inhibition (the Briggman/Wei/Yonehara model) to excitation, with
+preferred-direction tuning in the centre and null-direction tuning in the surround. This challenges
+the textbook account that DS in the retina is a stationary, inhibition-dominated computation.
+
+##### Centre-Surround Antagonism Implemented in the Excitatory Channel
+
+The directional centre-surround antagonism is implemented within the excitatory channel itself, not
+just between excitation and inhibition. The centre carries preferred-direction excitation, the
+expanded surround carries null-direction excitation, and inhibition becomes a symmetric modulator.
+This is a structurally new circuit architecture for direction selectivity.
+
+##### Glycinergic Gating of Surround Excitation
+
+Pharmacology cleanly identifies glycinergic amacrine-cell inputs as the gatekeeper for the
+surround-mediated null-tuned excitation, and GABAergic inputs as the gatekeeper for surround spatial
+extent. This dissociation maps two distinct inhibitory pathways onto two distinct features of the
+light-adapted response.
+
+##### MEA Generalisation Across All On-Off DSGC Subtypes
+
+Multi-electrode-array recordings demonstrate that the null-tuned delayed spiking phase is not
+specific to posterior-preferring DSGCs but is a feature of all four cardinal On-Off DSGC subtypes,
+reframing the phenomenon as a fundamental retinal motif.
+
+#### Datasets
+
+This is an experimental electrophysiology paper; no public computational datasets are released or
+used. All data are first-party recordings from the authors&#x27; laboratory at the Weizmann Institute of
+Science (Department of Brain Sciences, Rehovot, Israel). The supporting information section hosts
+peer-review documents but no raw recordings. The paper does not announce a public data deposit.
+
+For our project, the actionable &quot;data&quot; are the published mean +/- SD values for spike duration, DSI
+distributions, asymmetry indices, and the qualitative signature of a null-tuned surround excitation
+phase, all of which can be used as biological-plausibility ceilings for cells produced by the t0091
+NSGA-II search.
+
+#### Main Ideas
+
+* **The classical inhibition-dominated DS substrate that the project models is correct only under
+  one luminance regime.** Light adaptation flips the surround tuning of pDSGCs and shifts the
+  dominant directional substrate to excitation. Our compartmental model and 16-direction wave
+  protocol target the photopic, non-light-adapted regime, so the Ankri 2024 phenomena do not
+  invalidate the t0091 search but do impose a known scope limit on its biological-plausibility
+  claims.
+* **Directionally tuned excitation is real, not a space-clamp artefact.** The paper provides
+  positive evidence (asymmetric On-only excitation before adaptation, asymmetric null-tuned
+  excitation after) that cannot be explained by inhibitory current distortion. For our
+  forward-modelling work this means that any future v4-substrate variant that adds directional bias
+  to AMPA inputs has direct biological precedent rather than being a modelling shortcut.
+* **DSI between 0.65 and 0.70 with substantial across-cell variability (SD = 0.25-0.30) is the
+  empirical baseline tuning strength** for healthy DSGCs in dark-adapted photopic recording. Our
+  optimisation targets above this band should be flagged as super-biological in the answer asset&#x27;s
+  biological-plausibility discussion.
+* **A delayed null-tuned spiking phase is part of the natural pDSGC response under light
+  adaptation** and is generated by surround excitation gated by glycinergic amacrine cells. This is
+  a separate axis the t0091 substrate does not score against and should be acknowledged as an
+  out-of-scope phenomenon for the current v3 substrate.
+
+#### Summary
+
+Ankri, Riccitelli, and Rivlin-Etzion examine how prolonged photopic illumination reshapes the
+receptive field and directional code of posterior-preferring On-Off direction-selective ganglion
+cells (pDSGCs) in mouse retina. The standard textbook view, including the authors&#x27; own prior work,
+attributes retinal direction selectivity to asymmetric inhibition from starburst amacrine cells,
+with directional excitation either absent or attributed to space-clamp artefact. The authors set out
+to test whether luminance-state changes that are known to remodel centre-surround antagonism (Ankri
+2020, Farrow 2013, Nath 2023) also reorganise the directional code itself.
+
+Methodologically the study combines two-photon-targeted loose-patch and whole-cell voltage-clamp
+recordings from genetically labelled pDSGCs (Drd4-EGFP and Trhr-EGFP mice) with 252-electrode MEA
+recordings from wild-type retinas. Direction tuning is probed with 1 mm bars that traverse the
+centre and surround sequentially, and receptive-field structure with concentric spot stimuli. Two
+adaptation protocols are used (3-5.5 min of stationary photopic light, or repetitive visual
+stimulation with drifting gratings). Pharmacology with SR95531, strychnine, and L-AP4 dissects the
+GABAergic, glycinergic, and On-pathway contributions to the unmasked surround excitation.
+
+Light adaptation expands the pDSGC receptive field asymmetrically toward the preferred side
+(asymmetry index On = **0.44** vs. Off = **0.15**), more than doubles the On spike-response duration
+(**305 +/- 255 ms** -&gt; **779 +/- 149 ms**, *P* = **1.96e-4**), and adds a delayed
+null-direction-tuned spiking phase to the cell&#x27;s normal preferred-direction main phase.
+Voltage-clamp recordings show that the centre is driven by preferred-direction-tuned excitation
+while the surround is driven by null-direction-tuned excitation; inhibition becomes essentially
+symmetric. The phenomenon generalises across all four cardinal On-Off DSGC subtypes in the MEA data.
+
+For this project the paper has two consequences. First, it confirms that the classical
+inhibition-dominated DS substrate that t0091&#x27;s compartmental model implements is the correct target
+for a non-light-adapted photopic 16-direction protocol but is one regime among at least two; the
+answer asset should explicitly scope its biological-plausibility ceiling claims to photopic,
+non-light-adapted conditions and acknowledge that the surround-direction-flipping excitation is a
+separate axis the v3 substrate does not score against. Second, the published **DSI-on = 0.70 +/-
+0.25** and **DSI-off = 0.65 +/- 0.30** baseline values serve as a hard biological reference for
+evaluating whether any t0091 Pareto cell that achieves extremely high DSI is super-biological rather
+than realistic.
+
+## Persistent sodium currents in neurons: potential mechanisms and pharmacological blockers
+ID: 10.1007_s00424-024-02980-7
+Year: 2024
+Authors: Peter Müller, Andreas Draguhn, Alexei V. Egorov
+Venue: Pflügers Archiv - European Journal of Physiology
+Venue type: journal
+DOI: 10.1007/s00424-024-02980-7
+URL: https://link.springer.com/article/10.1007/s00424-024-02980-7
+Categories: voltage-gated-channels, compartmental-modeling, patch-clamp
+Added by task: t0091_morphology_extended_nsga2_v1
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/muller_2024_persistent-sodium-currents-review.pdf`
+* **Published**: 2024-07-05 (online), Vol 476:1445-1473
+* **Authors**: Peter Mueller 🇩🇪, Andreas Draguhn 🇩🇪, Alexei V. Egorov 🇩🇪
+* **Venue**: Pfluegers Archiv - European Journal of Physiology (Springer Nature, CC-BY)
+* **DOI**: `10.1007/s00424-024-02980-7`
+
+#### Abstract
+
+Persistent sodium current (INaP) is an important activity-dependent regulator of neuronal
+excitability. It is involved in a variety of physiological and pathological processes, including
+pacemaking, prolongation of sensory potentials, neuronal injury, chronic pain and diseases such as
+epilepsy and amyotrophic lateral sclerosis. Despite its importance, neither the molecular basis nor
+the regulation of INaP are sufficiently understood. Of particular significance is a solid knowledge
+and widely accepted consensus about pharmacological tools for analysing the function of INaP and for
+developing new therapeutic strategies. However, the literature on INaP is heterogeneous, with
+varying definitions and methodologies used across studies. To address these issues, we provide a
+systematic review of the current state of knowledge on INaP, with focus on mechanisms and effects of
+this current in the central nervous system. We provide an overview of the specificity and efficacy
+of the most widely used INaP blockers: amiodarone, cannabidiol, carbamazepine, cenobamate,
+eslicarbazepine, ethosuximide, gabapentin, GS967, lacosamide, lamotrigine, lidocaine, NBI-921352,
+oxcarbazepine, phenytoine, PRAX-562, propofol, ranolazine, riluzole, rufinamide, topiramate,
+valproaic acid and zonisamide. We conclude that there is strong variance in the pharmacological
+effects of these drugs, and in the available information. At present, GS967 and riluzole can be
+regarded bona fide INaP blockers, while phenytoin and lacosamide are blockers that only act on the
+slowly inactivating component of sodium currents.
+
+#### Overview
+
+This is a systematic review of persistent sodium current (INaP) in CNS neurons, organised around two
+themes: (1) the biophysical and molecular mechanisms that produce a non-inactivating or slowly
+inactivating component of voltage-gated sodium current, and (2) a comprehensive pharmacological
+catalogue of 22 drugs that have been claimed to block INaP. The authors performed a PubMed search
+using
+`(persistent OR slow inactivation OR late) AND (sodium current) AND (block OR inhibit OR reduce)`,
+retrieving 2,586 hits, then applied a per-drug second pass for each candidate substance. Inclusion
+required voltage-clamp data from CNS neurons or HEK/CHO cells expressing brain-relevant
+alpha-subunits (Nav1.1, Nav1.2, Nav1.3, Nav1.6) using a recognised INaP isolation protocol.
+
+The review proposes a clear taxonomy of four candidate mechanisms underlying INaP: (i) modified
+Hodgkin-Huxley window current with non-zero asymptotic inactivation; (ii) Markov-style channel
+gating that allows inactivated-state-from-closed transitions or modal gating with sustained
+openings; (iii) subtype-specific contributions from Nav1.6, Nav1.1, Nav1.2 and Nav1.3 alpha-subunits
+plus auxiliary beta1/beta4 modulation; and (iv) supra-molecular cooperative gating between adjacent
+sodium channels. None alone explains all observations - the authors argue these mechanisms co-exist
+and reveal themselves differently across cell types and stimulus protocols.
+
+The pharmacological catalogue is the second major contribution. For each drug it tabulates
+preparation, voltage-clamp protocol (step-pulse, slow ramp, slow steady-state inactivation), IC50 or
+EC50, effect on INaP versus on transient INaT, holding potential, and the original study. The review
+concludes that GS967 and riluzole are the only drugs with consistent strong effects on INaP across
+both step and ramp protocols at submicromolar to low-micromolar concentrations and without dominant
+off-target actions; phenytoin and lacosamide selectively block the slowly inactivating component
+(intermediate and slow inactivation respectively) but spare the truly non-inactivating component;
+all other 18 drugs are confounded by off-target effects on calcium channels, GABA receptors, hERG
+potassium channels, or by missing data on slow inactivation.
+
+A persistent (pun intended) message is methodological: the term &quot;persistent&quot; is misleading,
+INaP-isolation protocols disagree, and slow voltage ramps may underestimate INaP via slow
+inactivation during the ramp itself. The authors recommend that all future INaP studies combine
+brief steps (50-100 ms), intermediate-inactivation steps (500-1000 ms), slow-inactivation steps
+(5-10 s), and slow ramps (&lt;= 50 mV/s) with TTX-subtraction controls.
+
+#### Architecture, Models and Methods
+
+This is a non-experimental review. Methods are split between the literature-search procedure and a
+critical analysis of voltage-clamp protocols.
+
+* **Literature search**: PubMed query
+  `(((persistent) OR (slow inactivation) OR (late)) AND (sodium current)) AND ((block) OR (inhibit) OR (reduce))`
+  returned **2,586 results**. Papers were screened to retain pharmacological agents with potential
+  clinical use, excluding endogenous substances, toxins (with TTX as a methodological exception),
+  insecticides, dyes, and intracellular agents like QX-314. A second drug-specific PubMed search was
+  then run for each candidate. Eligibility required voltage-clamp protocols on CNS neurons or
+  HEK/CHO cells expressing Nav1.1, Nav1.2, Nav1.3 or Nav1.6.
+
+* **Mechanistic taxonomy**: Four hypotheses are formalised. (1) The original Hodgkin-Huxley model
+  window-current is too small to explain INaP and predicts the wrong voltage dependence; the
+  Taddese-Bean modified window-current makes h-infinity depend on m-infinity and produces a residual
+  current even at depolarised potentials. (2) Markov gating models with two open states or with
+  modal gating (sustained burst-like openings) reproduce INaP equivalently to the modified
+  window-current. (3) Subtype-specific generation: Nav1.6 carries the largest CNS INaP contribution
+  but ~50 percent of INaP remains after Nav1.6 knockout in cortical layer-5 pyramidal neurons;
+  Nav1.1, Nav1.2, Nav1.3 all generate INaP; Nav1.8 and Nav1.9 carry DRG INaP but are absent from
+  cortex (single-cell transcriptomic evidence). The beta1 subunit normalises INaP, beta4 increases
+  it, and beta1 knockout makes some sodium-channel blockers paradoxically enhance INaP. (4) Coupled
+  gating: physical interactions between adjacent Nav channels alter their effective gating kinetics.
+
+* **Voltage-clamp protocol catalogue** (Fig. 2 of the paper): four protocols are formally defined.
+  (a) Brief step pulse (50-500 ms) where current at the end of the pulse is the persistent
+  component. (b) Entry-into-slow-inactivation: long depolarising prepulse (1-30 s), short
+  hyperpolarising recovery (0.5-1 s), short test pulse (15 ms). (c) Slow steady-state inactivation:
+  variable prepulse from -120 to +50 mV (1-10 s), brief recovery (0.5-1 s), test pulse (10 ms). (d)
+  Slow voltage ramp at 10-70 mV/s from -80 to +10 mV with TTX-subtraction. Each protocol picks up a
+  different subset of the inactivation manifold, and the review emphasises that brief pulses miss
+  slow inactivation while slow ramps may include it artefactually.
+
+* **Drug analysis**: 22 substances analysed: amiodarone, cannabidiol, carbamazepine, cenobamate,
+  eslicarbazepine, ethosuximide, gabapentin, GS967, lacosamide, lamotrigine, lidocaine, NBI-921352,
+  oxcarbazepine, phenytoin, PRAX-562, propofol, ranolazine, riluzole, rufinamide, topiramate, TTX,
+  valproic acid, zonisamide. Each is tabulated by IC50/EC50, preparation, protocol, holding
+  potential, and effects on INaP versus INaT (Table 1, ~5 pages of structured data).
+
+#### Results
+
+* **Best CNS INaP blockers**: GS967 and riluzole are the only two drugs with strong effects on INaP
+  across both step and ramp protocols at clinically relevant concentrations (riluzole IC50 **&lt; 10
+  uM** in step and ramp; GS967 in low-micromolar range in cortical and CA3 neurons), without
+  dominant off-target actions on Ca, K, or GABA targets.
+* **Best slow-inactivation enhancers**: Lacosamide is the prototypic slow-inactivation enhancer;
+  phenytoin selectively enhances intermediate inactivation. Both leave the truly non-inactivating
+  component largely unaffected when measured with brief 50 ms steps - they appear as INaP blockers
+  only when slow ramps or long pulses are used.
+* **Carbamazepine** is a fast-inactivation enhancer (EC50 **16 uM** for amplitude of Nav1.3 step
+  pulse, **8 mV** left shift of V0.5 of steady-state inactivation; **48 percent** ramp-amplitude
+  block at 100 uM in dentate gyrus; multiple HEK studies). It is sodium-specific but does not
+  primarily target INaP.
+* **Nav1.6 dominance**: Nav1.6 carries a major share of CNS INaP. Nav1.6 knockout in rat cortical
+  layer-5 leaves ~**50 percent** of INaP intact, indicating substantial Nav1.1/1.2/1.3 contribution.
+  The Nav1.6-driven left shift of INaP activation relative to INaT is consistent with this
+  dominance.
+* **Subunit beta-effects**: beta4 increases INaP, beta1 neutralises this. Knockout of beta1
+  paradoxically flips some sodium channel blockers into INaP enhancers, a confound for any in vivo
+  INaP pharmacology.
+* **Drugs disqualified for INaP work**: cannabidiol (IC50 ~**3 uM** for INaT in HEK Nav1.6;
+  inconsistent INaP data), ethosuximide, gabapentin, rufinamide, zonisamide (insufficient or null
+  data); ranolazine and amiodarone (poor blood-brain-barrier penetration, **only 10 percent**
+  brain/heart for amiodarone, **one third** for ranolazine); cenobamate, eslicarbazepine,
+  lamotrigine, oxcarbazepine, propofol, topiramate, valproic acid (large off-target effects on Ca
+  channels, GABA-A, hERG, mGluR5, or carbonic anhydrase).
+* **NBI-921352 and PRAX-562**: novel Nav1.6-preferential drugs from Xenon and Praxis Precision
+  Medicines respectively; show promise as INaP blockers in HEK assays but lack neuronal data.
+* **Methodological pitfall**: slow voltage ramps at 10-70 mV/s span tens of seconds, so they
+  partially measure slow inactivation rather than pure non-inactivating current. The well-known
+  ramp-direction hysteresis is a direct signature of this contamination. Faster ramps (&gt;233 mV/s)
+  instead trigger voltage-clamp escape action currents in cortical pyramidal neurons.
+* **Recommended INaP toolkit**: combine brief steps (~50 ms), intermediate-inactivation steps
+  (500-1000 ms), slow steady-state inactivation steps (5-10 s), and slow ramps (~50 mV/s) with TTX
+  subtraction. Pharmacologically, claims of INaP involvement should require concordant effects of at
+  least two drugs **or** a non-pharmacological corroboration like dynamic clamp cancellation.
+
+#### Innovations
+
+##### Comprehensive 22-Drug INaP Pharmacological Catalogue
+
+The first systematic per-drug catalogue (Table 1, ~70 study rows) of INaP pharmacology in CNS
+neurons and brain-relevant Nav-expressing heterologous cells. Each row reports preparation,
+voltage-clamp protocol, IC50/EC50, holding potential, and parallel effects on INaP versus INaT. This
+is the new community reference for choosing INaP-blocking drugs and interpreting prior literature.
+
+##### Protocol-Mechanism Correspondence
+
+Explicit mapping between voltage-clamp protocols and the inactivation kinetic component each
+isolates: brief steps probe non-inactivating current, 500-1000 ms steps probe intermediate
+inactivation, 5-10 s steps probe slow inactivation, 10-70 mV/s ramps mix all three. The review shows
+that the literature longstanding disagreement about whether phenytoin or lacosamide block INaP
+largely dissolves once protocol-component correspondence is acknowledged.
+
+##### Bona Fide vs Conditional INaP-Blocker Classification
+
+Operational distinction between bona fide INaP blockers (GS967, riluzole - act on the truly
+non-inactivating component at brief steps and at slow ramps) and conditional blockers (phenytoin,
+lacosamide - only act on slowly inactivating components). This classification reframes the
+antiseizure-drug literature, which had loosely lumped all of these as INaP blockers.
+
+##### Mechanism Pluralism
+
+Argues that no single mechanism fully accounts for INaP, and that window-current, Markov gating,
+subtype-specific generation, and supra-molecular cooperativity all coexist. The review uses this
+pluralism to explain why pharmacological isolation is inherently difficult and why no future drug is
+likely to be a perfectly clean INaP blocker.
+
+#### Datasets
+
+This is a literature-review paper - no experimental datasets are produced. The systematic-review
+inputs are listed in the methods:
+
+* **PubMed corpus**: 2,586 papers retrieved by the primary query, then filtered to ~70 studies
+  contributing to Table 1.
+* **Per-drug second-pass searches**: one PubMed query per candidate substance (22 drugs).
+* **References list**: 256 cited papers spanning 1952-2024, with strong representation of the
+  Hodgkin-Huxley, Taddese-Bean, French-Sah, Crill, Bean, Yaari, Dichter, and Catterall schools on
+  sodium-channel kinetics and pharmacology.
+
+The review Table 1 itself functions as a structured derived dataset: drug x preparation x protocol x
+IC50/EC50 x HP x effect-on-INaP x effect-on-INaT x source-citation. This table is publicly
+distributed under CC-BY 4.0 with the article.
+
+#### Main Ideas
+
+* **No DSGC-specific INaP measurement is reported** in this review. The systematic search did not
+  surface a study measuring the dendritic-to-somatic INaP density gradient in any retinal ganglion
+  cell, let alone a direction-selective ganglion cell. The cortical-pyramidal Stuart 1999 / Astman
+  2021 priors used in this project biological-plausibility scorecard remain the best available
+  cross-cell baseline; t0091 distal-NaP density bounds do not need to be revised because of new DSGC
+  data - there is no new DSGC data.
+* **Slow voltage ramps may underestimate INaP** because slow inactivation accumulates during the
+  ramp itself. This is a methodological caution for any future DSGC patch-clamp measurements but
+  does not affect t0091 NSGA-II morphology sweep, which uses NEURON Hodgkin-Huxley channels with
+  deterministic kinetics rather than empirical voltage-clamp measurements.
+* **Most CNS INaP comes from Nav1.6**, but ~50 percent persists after Nav1.6 knockout in cortical
+  layer-5. For DSGC compartmental modelling this implies that a single NaP density parameter is a
+  coarse but defensible abstraction over a heterogeneous subunit mixture - which is exactly what the
+  project existing NaP NMODL implementation assumes.
+* **beta-subunit knockout flips some blockers into INaP enhancers**. This is a confound for any
+  pharmacological validation strategy and reinforces this project policy of staying in pure
+  computational-model territory rather than attempting wet-lab pharmacology.
+* **GS967 and riluzole are the two reliable INaP-isolating drugs** for any future
+  experimental-validation step that the project might pursue. If dynamic-clamp-style in-silico
+  cancellation experiments are ever attempted, riluzole-equivalent block at 10 uM is the
+  conventional reference manipulation.
+
+#### Summary
+
+Mueller, Draguhn, and Egorov publish a systematic review of persistent sodium current (INaP) in CNS
+neurons in Pfluegers Archiv (Springer Nature, open access). The motivation is that INaP is a
+clinically important regulator of excitability - implicated in epilepsy, amyotrophic lateral
+sclerosis, neuropathic pain, hemiplegic migraine, and post-injury hyperexcitability - but the
+literature is fragmented across heterogeneous voltage-clamp protocols, inconsistent definitions of
+persistent versus slowly inactivating, and a sprawling catalogue of putative blocker drugs whose
+specificities have never been compared head-to-head.
+
+The review proceeds in two parts. The first part formalises four candidate mechanisms (modified
+Hodgkin-Huxley window current; Markov gating with closed-state inactivation or modal gating;
+subtype-specific generation by Nav1.1/1.2/1.3/1.6 plus beta1/beta4 modulation; supra-molecular
+coupled gating) and four canonical voltage-clamp protocols (brief step, entry-into-slow
+inactivation, slow steady-state inactivation, slow ramp). It explicitly maps which protocol isolates
+which kinetic component, dissolving longstanding terminological disagreements. The second part is a
+22-drug catalogue (Table 1) tabulating IC50/EC50, holding potential, preparation, protocol, and
+effects on INaP versus INaT for each substance.
+
+The headline finding is that GS967 and riluzole are the only bona fide INaP blockers - they act on
+the truly non-inactivating component across both brief-step and slow-ramp protocols at clinically
+achievable concentrations and with limited off-target action. Phenytoin and lacosamide are
+reclassified as selective enhancers of intermediate and slow inactivation respectively, not INaP
+blockers proper. All other 18 surveyed substances are disqualified by off-target Ca, K, GABA, or
+mGluR effects, by poor blood-brain-barrier penetration, or by inadequate slow-inactivation data. The
+review concludes with a methodological recommendation: combine brief steps, slow-inactivation steps,
+and slow ramps with TTX subtraction, and require concordant effects of two drugs or a dynamic-clamp
+control before claiming an INaP role for any physiological phenomenon.
+
+For this project, the review most important message is a negative one: there is no DSGC-specific
+INaP density measurement in the surveyed literature, so the cortical-pyramidal Stuart 1999 / Astman
+2021 priors used in t0086 / t0088 / t0091 remain the best cross-cell baseline and the
+morphology-extended NSGA-II distal-NaP density bounds do not need to be revised. The methodological
+caution that slow ramps underestimate INaP is a prior to keep on file for any future patch-clamp
+validation step but does not affect the present in-silico NEURON-based optimisation pipeline. The
+drug catalogue is a useful reference if the project ever extends into dynamic-clamp
+INaP-cancellation experiments, where riluzole-equivalent block at 10 uM is the canonical reference
+manipulation.
 
 ## Retinal waves shape starburst amacrine cell dendrite development through a direction-selective dendritic computation
 ID: 10.64898_2026.02.02.701812

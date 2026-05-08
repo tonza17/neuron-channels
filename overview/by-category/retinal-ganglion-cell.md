@@ -4,16 +4,16 @@ Output neurons of the retina whose axons form the optic nerve.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (40)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
+**Detail pages**: [Papers (42)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(73)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(75)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
 (2)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
 
-## Papers (40)
+## Papers (42)
 
 <details>
 <summary>📝 <strong>Retinal waves shape starburst amacrine cell dendrite development
@@ -209,6 +209,122 @@ benchmarks. It does not change the t0080 NSGA-II parameter bounds, the dendritic
 conductance ranges, or the AHP-tail metrics, but it strengthens the rationale for the project
 narrow focus on the DRD4 cell type rather than generalising claims to RGC direction encoding
 as a whole.
+
+</details>
+
+<details>
+<summary>📖 <strong>A new role for excitation in the retinal direction-selective
+circuit</strong> — Ankri et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1113_JP286581` |
+| **Authors** | Lea Ankri, Serena Riccitelli, Michal Rivlin-Etzion |
+| **Venue** | The Journal of Physiology (journal) |
+| **DOI** | `10.1113/JP286581` |
+| **URL** | https://physoc.onlinelibrary.wiley.com/doi/10.1113/JP286581 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1113_JP286581/summary.md) |
+
+Ankri, Riccitelli, and Rivlin-Etzion examine how prolonged photopic illumination reshapes the
+receptive field and directional code of posterior-preferring On-Off direction-selective
+ganglion cells (pDSGCs) in mouse retina. The standard textbook view, including the authors'
+own prior work, attributes retinal direction selectivity to asymmetric inhibition from
+starburst amacrine cells, with directional excitation either absent or attributed to
+space-clamp artefact. The authors set out to test whether luminance-state changes that are
+known to remodel centre-surround antagonism (Ankri 2020, Farrow 2013, Nath 2023) also
+reorganise the directional code itself.
+
+Methodologically the study combines two-photon-targeted loose-patch and whole-cell
+voltage-clamp recordings from genetically labelled pDSGCs (Drd4-EGFP and Trhr-EGFP mice) with
+252-electrode MEA recordings from wild-type retinas. Direction tuning is probed with 1 mm bars
+that traverse the centre and surround sequentially, and receptive-field structure with
+concentric spot stimuli. Two adaptation protocols are used (3-5.5 min of stationary photopic
+light, or repetitive visual stimulation with drifting gratings). Pharmacology with SR95531,
+strychnine, and L-AP4 dissects the GABAergic, glycinergic, and On-pathway contributions to the
+unmasked surround excitation.
+
+Light adaptation expands the pDSGC receptive field asymmetrically toward the preferred side
+(asymmetry index On = **0.44** vs. Off = **0.15**), more than doubles the On spike-response
+duration (**305 +/- 255 ms** -> **779 +/- 149 ms**, *P* = **1.96e-4**), and adds a delayed
+null-direction-tuned spiking phase to the cell's normal preferred-direction main phase.
+Voltage-clamp recordings show that the centre is driven by preferred-direction-tuned
+excitation while the surround is driven by null-direction-tuned excitation; inhibition becomes
+essentially symmetric. The phenomenon generalises across all four cardinal On-Off DSGC
+subtypes in the MEA data.
+
+For this project the paper has two consequences. First, it confirms that the classical
+inhibition-dominated DS substrate that t0091's compartmental model implements is the correct
+target for a non-light-adapted photopic 16-direction protocol but is one regime among at least
+two; the answer asset should explicitly scope its biological-plausibility ceiling claims to
+photopic, non-light-adapted conditions and acknowledge that the surround-direction-flipping
+excitation is a separate axis the v3 substrate does not score against. Second, the published
+**DSI-on = 0.70 +/- 0.25** and **DSI-off = 0.65 +/- 0.30** baseline values serve as a hard
+biological reference for evaluating whether any t0091 Pareto cell that achieves extremely high
+DSI is super-biological rather than realistic.
+
+</details>
+
+<details>
+<summary>📖 <strong>GABAergic Inhibition Controls Receptive Field Size, Sensitivity,
+and Contrast Preference of Direction Selective Retinal Ganglion Cells Near
+the Threshold of Vision</strong> — Roy et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.1979-23.2023` |
+| **Authors** | Suva Roy, Xiaoyang Yao, Jay Rathinavelu, Greg D. Field |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.1979-23.2023` |
+| **URL** | https://www.jneurosci.org/content/44/11/e1979232023 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1523_JNEUROSCI.1979-23.2023/summary.md) |
+
+Roy, Yao, Rathinavelu, and Field address the long-standing observation that
+superior-preferring ON-OFF DSGCs (s-DSGCs) detect dim stimuli substantially more reliably than
+the three other cardinal ooDSGC subtypes (anterior, inferior, posterior). The paper asks two
+questions: how large is the s-DSGC sensitivity advantage at the absolute threshold of vision,
+and which of three plausible mechanisms (RF size, Cx36 gap-junction coupling, GABAergic
+inhibition asymmetry) account for it? The motivation comes from prior work (Yao et al. 2018)
+suggesting s-DSGCs sacrifice direction-tuning precision for stimulus detection at scotopic
+levels.
+
+The authors record dark-adapted mouse retina ex vivo on a 519-electrode MEA, using brief
+full-field LED flashes (2-8 ms) and spatially mapped square flashes (60-160 um, 900% contrast)
+across backgrounds spanning six log units of light intensity. They quantify absolute
+thresholds with a 2AFC ideal-observer analysis (84% correct = SNR = 1, Naka-Rushton fit) and
+RF area by 2D-Gaussian fits to ON / OFF subfield maps. A calibrated rod-pooling model with
+mouse-specific noise parameters and 0.005 R*/rod/s thermal isomerization rate is used to
+translate RF area into predicted 2AFC performance. The mechanistic dissection uses FACx
+conditional Cx36-knockout mice to ablate s-DSGC homotypic coupling, and 15 uM gabazine to
+block GABA-A inhibition.
+
+The headline result is a **10-fold lower s-DSGC absolute threshold** that approaches within
+0.5 log unit of the most sensitive RGCs (presumed ON sustained alpha cells). RF size
+differences (~8x larger ON subfields at scotopic 0.2 R*/rod/s) explain only **~50%** of the
+gap, even under optimal nonlinear rod pooling. Cx36 ablation has **no significant effect** on
+threshold and only a modest RF reduction in s-DSGCs. GABA-A blockade compresses the s-DSGC vs
+other-ooDSGC threshold ratio from **9.4x to 3.2x**, expands all ooDSGC RFs (especially OFF
+subfields by 10-30x), and unmasks a full-amplitude scotopic OFF response. The authors conclude
+that two unidentified GABAergic amacrine cells differentially shape ooDSGC sensitivity, RF
+size, and contrast polarity at low light, and explicitly exclude starburst amacrine cells as
+the source.
+
+For this project (t0091 morphology / NSGA-II Pareto-front sweep under photopic stimulation),
+the paper supplies critical context but no parameter changes. Under photopic conditions the
+s-DSGC RF-size advantage collapses to 1.5-3x with similar coverage factors across types,
+supporting the project existing single-cell, single-operating-point Pareto framing using
+Trenholm 2013-style photopic peak rates. The GABA spatial-gradient prior on the t0086 / t0088
+scorecard is about classical-RF SAC-mediated inhibition; Roy 2024 two hypothesised
+non-starburst GABAergic amacrine cells operate at scotopic levels and are out of scope. Cx36
+gap-junction coupling can safely be excluded from the photopic single-cell model. The paper is
+therefore most useful as an interpretive boundary - it confirms that t0091 photopic-only
+NSGA-II results should not be overgeneralised to scotopic firing-rate predictions, where
+additional GABAergic and OFF-masking mechanisms would dominate.
 
 </details>
 
@@ -2105,7 +2221,7 @@ simulation.
 
 </details>
 
-## Tasks (8)
+## Tasks (9)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2117,6 +2233,7 @@ simulation.
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
+| 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | 2026-05-08 15:55 |
 
 ## Answers (11)
 
@@ -2365,7 +2482,48 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (64 open, 9 closed)
+## Suggestions (66 open, 9 closed)
+
+<details>
+<summary>📊 <strong>Per-direction DSI re-scoring of the t0091 57-cell Pareto to
+surface DSGC subtype-specific tuning</strong> (S-0091-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 used vector-sum DSI across 16 directions, which is direction-blind: a cell tuned to PD
+with peak at 0 deg and a cell tuned to a non-cardinal direction (e.g., 45 deg) collapse to the
+same vector-sum DSI. The PD vs ND anchor-asymmetry test (12 vs 9, p=0.331) may be
+artifactually washed out by this collapse. Brendly2025 and Riccitelli2025 (now in the t0091
+corpus from research-internet) report DSGC subtypes with distinct preferred directions. Pure
+data-analysis on existing pareto_front.json + per-direction firing rate JSONL: re-score each
+Pareto cell with per-direction DSI (peak direction, half-width-at-half-maximum, peak-to-trough
+ratio); recompute the PD-asymmetric vs ND-asymmetric anchor test using direction-binned DSI;
+compare per-direction tuning curve shapes between bedb_like, alt_topology, and the 21
+asymmetric anchor cells. Cost: $0 (local CPU). Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📂 <strong>Real-cell DSGC morphology library from NeuroMorpho: test whether
+observed morphologies escape prior-violation ceiling</strong> (S-0091-06)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 confirmed HM-1 (morphology asymmetry necessary; symmetric anchor count = 0) but refuted
+HM-2 (PD vs ND direction blind, p=0.331). The procedural 14-knob generator covers a parametric
+box that biological DSGCs may or may not occupy; t0091's 57-cell Pareto stays inside that box
+but cannot escape the channel-side prior-violation ceiling. Brainstorm 18 'Option G' is the
+next move: build a NeuroMorpho.org-anchored real DSGC cell library (10-20 mouse / rabbit
+reconstructions from Briggman 2011, Wei 2011, Morrie & Feller 2018), implement a categorical
+selector + parametric deformation knobs (diameter scaling, branch pruning, soma offset), then
+re-run t0091's NSGA-II with the real-cell library replacing the procedural generator. Tests
+whether observed DSGC morphologies escape the prior-violation ceiling that procedural ones
+cannot. Larger task: needs planning first. Cost ~$2-3 for the optimisation pass. Recommended
+task types: download-dataset, build-model, write-library.
+
+</details>
 
 <details>
 <summary>📚 <strong>Tighten post-fix procedural soma to match the t0024 hand-coded

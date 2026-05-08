@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-72 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **55 open** (9
-high, 41 medium, 5 low), **17 closed**.
+78 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **61 open** (10
+high, 46 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -131,6 +131,32 @@ configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), 
 (48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
 replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
+Pareto to resolve HM-3 inconclusive</strong> (S-0091-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0091-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Source paper** | [`10.1371_journal.pbio.0050185`](../../../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1371_journal.pbio.0050185/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0091 reported a Spearman rho=-0.07 between total dendritic length and DSI vector-sum across
+the 57-cell Pareto, leaving HM-3 (length-vs-DSI scaling, Hausselt2007) inconclusive because
+total length conflates field_elongation_pd with branch_density_gradient_pd and
+num_primary_branches. Pure data-analysis task on existing pareto_front.json: extract
+field_elongation_pd from each Pareto cell's 14-d morph_params vector, compute Spearman +
+Kendall correlations against DSI, PD-rate, robustness, and the 9 channel-side priors, plot
+per-anchor scatter overlays, and stratify by anchor lineage. Goal: definitively confirm or
+refute that elongation along PD is the morphology axis driving DSI in joint optimisation,
+separate from branch density. Cost: $0 (local CPU analysis on existing JSONL files).
+Recommended task types: data-analysis.
 
 </details>
 
@@ -316,6 +342,32 @@ Recommended task types: write-library, experiment-run.
 </details>
 
 <details>
+<summary>📊 <strong>alt_topology basin deep-dive: identify morphology features
+distinguishing alt_topology vs bedb_like Pareto cells</strong> (S-0091-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0091-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+16 alt_topology cells survived in the 57-cell Pareto (parity with bedb_like's 20), and the
+only strict joint-pass cell (DSI 0.51, PD 35 Hz, robust 0.79) is nearest to alt_topology in
+14-d morphology space. creative_thinking.md flags this as evidence for at least two distinct
+morphological basins of joint-pass-adjacency, but the 14-d signature distinguishing
+alt_topology from bedb_like has not been quantified. Pure data analysis on pareto_front.json +
+warm_start_population.json: PCA + UMAP on the 14-d morph vectors restricted to Pareto cells
+colour-coded by anchor; per-feature Mann-Whitney U tests on each of the 14 knobs; identify the
+top 3-5 discriminative features (likely num_primary_branches, max_strahler_depth,
+mean_branching_angle); cross-reference with biological scorecard rows. Cost: $0. Recommended
+task types: data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Bed A cross-bed validation: re-run NSGA-II on the t0080 Bed A
 morphology with the same v3 substrate</strong> (S-0086-06)</summary>
 
@@ -336,6 +388,33 @@ into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) o
 discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does
 not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x
 $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Continue t0091 NSGA-II for 6 more generations (gen 3-8) to test
+whether HV plateau or biological-plausibility shifts</strong> (S-0091-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0091-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0091 stopped at gen 2 of 8 when REQ-10 (>=8-cell Pareto) was satisfied 7x over (57 cells);
+cost watchdog never fired ($0.65 of $4.00 cap). The HV trajectory was still climbing at +68
+percent per generation (14.07 to 23.71) and plateau detection requires >=4 generations of
+history before it can fire. Run pop=96 x 6 more generations on a single Vast.ai EPYC 7B13
+64-core resume from t0091's gen-2 final population (snapshot the population from
+results/data/all_evaluations.json). Tests three open questions: (a) does HV plateau before gen
+8? (b) does any gen 3+ cell pass biological plausibility, or is universal channel-side
+violation robust to generation depth? (c) does the PD vs ND anchor count shift toward
+significance with more generations? Cost estimate: ~$1.80 (6 gens x ~12 min/gen wall-clock x
+60 parallel workers x $0.23/hr); fits remaining $3.80 project buffer. Recommended task types:
+experiment-run, data-analysis.
 
 </details>
 
@@ -855,6 +934,33 @@ experiment-run, feature-engineering.
 </details>
 
 <details>
+<summary>📊 <strong>Pareto-cell PCA + feature-importance analysis on the 14-d morph
+vectors to rank Pareto-inclusion drivers</strong> (S-0091-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0091-07` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0091 reports anchor-level Pareto counts (bedb_like 20, symmetric 0, pd_asymmetric 12,
+nd_asymmetric 9, alt_topology 16) but does not report which of the 14 morphology knobs
+individually drive Pareto inclusion. Pure data-analysis on results/data/pareto_front.json +
+all_evaluations.json: train a logistic regression / random forest classifier with the 14-d
+morph vector as input and is_in_pareto as binary label, using the 187 evaluations as the
+training set; report per-feature coefficients / SHAP values; cross-validate via
+leave-one-anchor-out splits; visualise via per-feature partial dependence plots. Goal: rank
+the 14 knobs by their causal importance for joint Pareto inclusion, beyond the anchor-level
+aggregation. This complements S-0091-01 (which is single-feature Spearman) and S-0091-04
+(which is alt-topology vs bedb-like comparison) with an exhaustive feature-importance audit.
+Cost: $0 (local CPU). Recommended task types: data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
 verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
 (S-0034-04)</summary>
@@ -1081,6 +1187,60 @@ non-monotonic length dependence, kinetic tiling is a real third mechanism and th
 result was partially a function of NMDA silencing. Requires a sibling library asset (clone of
 t0022 with NMDA enabled) to preserve t0022's immutability. ~1 hour CPU plus ~1 hour coding.
 Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>📂 <strong>Real-cell DSGC morphology library from NeuroMorpho: test whether
+observed morphologies escape prior-violation ceiling</strong> (S-0091-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0091-06` |
+| **Kind** | dataset |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0091 confirmed HM-1 (morphology asymmetry necessary; symmetric anchor count = 0) but refuted
+HM-2 (PD vs ND direction blind, p=0.331). The procedural 14-knob generator covers a parametric
+box that biological DSGCs may or may not occupy; t0091's 57-cell Pareto stays inside that box
+but cannot escape the channel-side prior-violation ceiling. Brainstorm 18 'Option G' is the
+next move: build a NeuroMorpho.org-anchored real DSGC cell library (10-20 mouse / rabbit
+reconstructions from Briggman 2011, Wei 2011, Morrie & Feller 2018), implement a categorical
+selector + parametric deformation knobs (diameter scaling, branch pruning, soma offset), then
+re-run t0091's NSGA-II with the real-cell library replacing the procedural generator. Tests
+whether observed DSGC morphologies escape the prior-violation ceiling that procedural ones
+cannot. Larger task: needs planning first. Cost ~$2-3 for the optimisation pass. Recommended
+task types: download-dataset, build-model, write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Reformulate NSGA-II with biological priors as additional
+objectives or hard constraints</strong> (S-0091-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0091-05` |
+| **Kind** | technique |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1002107`](../../../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1371_journal.pcbi.1002107/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0091 used 3-objective NSGA-II minimising (-DSI, -PD-rate, -robustness) with biological priors
+applied as a post-hoc filter (0/57 Pareto cells pass). The optimiser drifts to the upper rail
+of NMDA / NaP / GABA bounds without paying any cost. Reformulate as either (a) 4+ objective
+NSGA-II adding worst-case prior-violation sigma as a fourth objective, or (b) hard-constrained
+NSGA-II using pymoo's constraint handling with each prior as a g(x) <= 0 inequality. Hay 2011
+is direct precedent for (a). Run a small-scale pass (pop=64, 4 gens, ~$1.00) on the t0091
+substrate and compare the reformulated Pareto's biological-plausibility distribution against
+t0091's post-hoc-filter Pareto. If the reformulated Pareto includes any biologically-plausible
+joint-pass cells, the 'morphology cannot rescue priors' verdict was driven by formulation, not
+substrate. Cost ~$1.00 on Vast.ai EPYC 7B13. Recommended task types: experiment-run,
+build-model.
 
 </details>
 

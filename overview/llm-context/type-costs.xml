@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-08T15:20:07Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-08T16:08:27Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>5056</char_count>
-    <byte_count>5056</byte_count>
-    <estimated_tokens>1264</estimated_tokens>
+    <char_count>5135</char_count>
+    <byte_count>5135</byte_count>
+    <estimated_tokens>1283</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,9 +18,9 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $20.00
-Total spent: $15.55
-Budget remaining: $4.45
-Spent: 77.8%
+Total spent: $16.20
+Budget remaining: $3.80
+Spent: 81.0%
 
 ### Cost Breakdown by Category
 
@@ -29,13 +29,14 @@ Spent: 77.8%
 * vast_ai_36149741: $2.39
 * vast-ai-quadro-p4000: $1.06
 * vast_ai_36137287: $0.75
+* vast-ai-rtx-pro-4000-idle: $0.65
 * api: $0.00
 * local_compute: $0.00
 * remote_compute: $0.00
 
 ### Cost Breakdown by Service
 
-* vast_ai: $8.48
+* vast_ai: $9.13
 * vast_ai_compute: $3.93
 
 ### Per-Task Costs
@@ -123,6 +124,7 @@ Spent: 77.8%
 * t0088_recluster_marginals_and_vm_motifs: $0.00
 * t0089_brainstorm_results_18: $0.00
 * t0090_morphology_generator_diversity_test: $0.00
+* t0091_morphology_extended_nsga2_v1: $0.65
 * t0092_diagnose_morphology_generator_silence: $0.00
 * t0093_resweep_and_t0090_correction: $0.00
 * t0094_brainstorm_results_19: $0.00

@@ -1,18 +1,18 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-74-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-77-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
-  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
+  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-3-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-24-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-25-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-97-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-353-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-361-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,18 +29,18 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (33K)
-| [full](llm-context/full.xml) (531K) | [roadmap](llm-context/roadmap.xml) (108K) |
-[results](llm-context/results-deep-dive.xml) (417K) |
-[assets](llm-context/literature-and-assets.xml) (56K)
+| [full](llm-context/full.xml) (536K) | [roadmap](llm-context/roadmap.xml) (107K) |
+[results](llm-context/results-deep-dive.xml) (423K) |
+[assets](llm-context/literature-and-assets.xml) (57K)
 
-*Last updated: 2026-05-08 15:20 UTC*
+*Last updated: 2026-05-08 16:08 UTC*
 
 * **Budget**: **$16** spent of $20
 * **Remaining**: **$4**
-* **Usage**: `████████████████░░░░` 77.8%
-* **GPU Machines**: **6** provisioned across 6 tasks · **$16** GPU spend
+* **Usage**: `████████████████░░░░` 81.0%
+* **GPU Machines**: **7** provisioned across 7 tasks · **$16** GPU spend
   ([details](machines/))
-* **Provisioning**: 3 failed attempts · $0.00 wasted · 33% failure rate
+* **Provisioning**: 3 failed attempts · $0.00 wasted · 30% failure rate
 
 ---
 
@@ -53,12 +53,11 @@
 
 ---
 
-## [In Progress (2)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
 | # | Task | Started |
 |---|------|---------|
-| 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | 2026-05-08 11:35 |
-| 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0097_multi_obj_optim.md) | — |
+| 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0097_multi_obj_optim.md) | 2026-05-08 15:23 |
 
 ---
 
@@ -85,12 +84,13 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (87 total)](tasks/by-status/completed.md)
+## [Recently Completed (88 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
 | 0095 | [Brainstorm results session 20](../overview/tasks/task_pages/t0095_brainstorm_results_20.md) | [`results`](../tasks/t0095_brainstorm_results_20/results/results_detailed.md) | 2026-05-08 20:45 |
 | 0094 | [Brainstorm results session 19](../overview/tasks/task_pages/t0094_brainstorm_results_19.md) | [`results`](../tasks/t0094_brainstorm_results_19/results/results_detailed.md) | 2026-05-08 18:30 |
+| 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`results`](../tasks/t0091_morphology_extended_nsga2_v1/results/results_detailed.md) | 2026-05-08 15:55 |
 | 0093 | [Patched-generator full 60-morph re-sweep + t0090 correction overlay](../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) | [`results`](../tasks/t0093_resweep_and_t0090_correction/results/results_detailed.md) | 2026-05-08 03:55 |
 | 0092 | [Diagnose why t0090 procedural cells produce no action potentials](../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | [`results`](../tasks/t0092_diagnose_morphology_generator_silence/results/results_detailed.md) | 2026-05-08 00:55 |
 | 0090 | [Procedural DSGC morphology generator + diversity test + validation bundle](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | [`results`](../tasks/t0090_morphology_generator_diversity_test/results/results_detailed.md) | 2026-05-07 18:25 |
@@ -98,9 +98,8 @@ No blocked tasks.
 | 0088 | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) | [`results`](../tasks/t0088_recluster_marginals_and_vm_motifs/results/results_detailed.md) | 2026-05-06 21:10 |
 | 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`results`](../tasks/t0086_robustness_cluster_bio_comparison/results/results_detailed.md) | 2026-05-06 18:24 |
 | 0087 | [Brainstorm results session 17](../overview/tasks/task_pages/t0087_brainstorm_results_17.md) | [`results`](../tasks/t0087_brainstorm_results_17/results/results_detailed.md) | 2026-05-06 11:50 |
-| 0085 | [Brainstorm results session 16](../overview/tasks/task_pages/t0085_brainstorm_results_16.md) | [`results`](../tasks/t0085_brainstorm_results_16/results/results_detailed.md) | 2026-05-06 10:00 |
 
-*77 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*78 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -125,7 +124,172 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (311 open)](suggestions/)
+## [Recent Suggestions (319 open)](suggestions/)
+
+<details>
+<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
+Pareto to resolve HM-3 inconclusive</strong> (S-0091-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 reported a Spearman rho=-0.07 between total dendritic length and DSI vector-sum across
+the 57-cell Pareto, leaving HM-3 (length-vs-DSI scaling, Hausselt2007) inconclusive because
+total length conflates field_elongation_pd with branch_density_gradient_pd and
+num_primary_branches. Pure data-analysis task on existing pareto_front.json: extract
+field_elongation_pd from each Pareto cell's 14-d morph_params vector, compute Spearman +
+Kendall correlations against DSI, PD-rate, robustness, and the 9 channel-side priors, plot
+per-anchor scatter overlays, and stratify by anchor lineage. Goal: definitively confirm or
+refute that elongation along PD is the morphology axis driving DSI in joint optimisation,
+separate from branch density. Cost: $0 (local CPU analysis on existing JSONL files).
+Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-direction DSI re-scoring of the t0091 57-cell Pareto to
+surface DSGC subtype-specific tuning</strong> (S-0091-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 used vector-sum DSI across 16 directions, which is direction-blind: a cell tuned to PD
+with peak at 0 deg and a cell tuned to a non-cardinal direction (e.g., 45 deg) collapse to the
+same vector-sum DSI. The PD vs ND anchor-asymmetry test (12 vs 9, p=0.331) may be
+artifactually washed out by this collapse. Brendly2025 and Riccitelli2025 (now in the t0091
+corpus from research-internet) report DSGC subtypes with distinct preferred directions. Pure
+data-analysis on existing pareto_front.json + per-direction firing rate JSONL: re-score each
+Pareto cell with per-direction DSI (peak direction, half-width-at-half-maximum, peak-to-trough
+ratio); recompute the PD-asymmetric vs ND-asymmetric anchor test using direction-binned DSI;
+compare per-direction tuning curve shapes between bedb_like, alt_topology, and the 21
+asymmetric anchor cells. Cost: $0 (local CPU). Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Continue t0091 NSGA-II for 6 more generations (gen 3-8) to test
+whether HV plateau or biological-plausibility shifts</strong> (S-0091-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 stopped at gen 2 of 8 when REQ-10 (>=8-cell Pareto) was satisfied 7x over (57 cells);
+cost watchdog never fired ($0.65 of $4.00 cap). The HV trajectory was still climbing at +68
+percent per generation (14.07 to 23.71) and plateau detection requires >=4 generations of
+history before it can fire. Run pop=96 x 6 more generations on a single Vast.ai EPYC 7B13
+64-core resume from t0091's gen-2 final population (snapshot the population from
+results/data/all_evaluations.json). Tests three open questions: (a) does HV plateau before gen
+8? (b) does any gen 3+ cell pass biological plausibility, or is universal channel-side
+violation robust to generation depth? (c) does the PD vs ND anchor count shift toward
+significance with more generations? Cost estimate: ~$1.80 (6 gens x ~12 min/gen wall-clock x
+60 parallel workers x $0.23/hr); fits remaining $3.80 project buffer. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>alt_topology basin deep-dive: identify morphology features
+distinguishing alt_topology vs bedb_like Pareto cells</strong> (S-0091-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+16 alt_topology cells survived in the 57-cell Pareto (parity with bedb_like's 20), and the
+only strict joint-pass cell (DSI 0.51, PD 35 Hz, robust 0.79) is nearest to alt_topology in
+14-d morphology space. creative_thinking.md flags this as evidence for at least two distinct
+morphological basins of joint-pass-adjacency, but the 14-d signature distinguishing
+alt_topology from bedb_like has not been quantified. Pure data analysis on pareto_front.json +
+warm_start_population.json: PCA + UMAP on the 14-d morph vectors restricted to Pareto cells
+colour-coded by anchor; per-feature Mann-Whitney U tests on each of the 14 knobs; identify the
+top 3-5 discriminative features (likely num_primary_branches, max_strahler_depth,
+mean_branching_angle); cross-reference with biological scorecard rows. Cost: $0. Recommended
+task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Reformulate NSGA-II with biological priors as additional
+objectives or hard constraints</strong> (S-0091-05)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 used 3-objective NSGA-II minimising (-DSI, -PD-rate, -robustness) with biological priors
+applied as a post-hoc filter (0/57 Pareto cells pass). The optimiser drifts to the upper rail
+of NMDA / NaP / GABA bounds without paying any cost. Reformulate as either (a) 4+ objective
+NSGA-II adding worst-case prior-violation sigma as a fourth objective, or (b) hard-constrained
+NSGA-II using pymoo's constraint handling with each prior as a g(x) <= 0 inequality. Hay 2011
+is direct precedent for (a). Run a small-scale pass (pop=64, 4 gens, ~$1.00) on the t0091
+substrate and compare the reformulated Pareto's biological-plausibility distribution against
+t0091's post-hoc-filter Pareto. If the reformulated Pareto includes any biologically-plausible
+joint-pass cells, the 'morphology cannot rescue priors' verdict was driven by formulation, not
+substrate. Cost ~$1.00 on Vast.ai EPYC 7B13. Recommended task types: experiment-run,
+build-model.
+
+</details>
+
+<details>
+<summary>📂 <strong>Real-cell DSGC morphology library from NeuroMorpho: test whether
+observed morphologies escape prior-violation ceiling</strong> (S-0091-06)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 confirmed HM-1 (morphology asymmetry necessary; symmetric anchor count = 0) but refuted
+HM-2 (PD vs ND direction blind, p=0.331). The procedural 14-knob generator covers a parametric
+box that biological DSGCs may or may not occupy; t0091's 57-cell Pareto stays inside that box
+but cannot escape the channel-side prior-violation ceiling. Brainstorm 18 'Option G' is the
+next move: build a NeuroMorpho.org-anchored real DSGC cell library (10-20 mouse / rabbit
+reconstructions from Briggman 2011, Wei 2011, Morrie & Feller 2018), implement a categorical
+selector + parametric deformation knobs (diameter scaling, branch pruning, soma offset), then
+re-run t0091's NSGA-II with the real-cell library replacing the procedural generator. Tests
+whether observed DSGC morphologies escape the prior-violation ceiling that procedural ones
+cannot. Larger task: needs planning first. Cost ~$2-3 for the optimisation pass. Recommended
+task types: download-dataset, build-model, write-library.
+
+</details>
+
+<details>
+<summary>📊 <strong>Pareto-cell PCA + feature-importance analysis on the 14-d morph
+vectors to rank Pareto-inclusion drivers</strong> (S-0091-07)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 reports anchor-level Pareto counts (bedb_like 20, symmetric 0, pd_asymmetric 12,
+nd_asymmetric 9, alt_topology 16) but does not report which of the 14 morphology knobs
+individually drive Pareto inclusion. Pure data-analysis on results/data/pareto_front.json +
+all_evaluations.json: train a logistic regression / random forest classifier with the 14-d
+morph vector as input and is_in_pareto as binary label, using the 187 evaluations as the
+training set; report per-feature coefficients / SHAP values; cross-validate via
+leave-one-anchor-out splits; visualise via per-feature partial dependence plots. Goal: rank
+the 14 knobs by their causal importance for joint Pareto inclusion, beyond the anchor-level
+aggregation. This complements S-0091-01 (which is single-feature Spearman) and S-0091-04
+(which is alt-topology vs bedb-like comparison) with an exhaustive feature-importance audit.
+Cost: $0 (local CPU). Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Constrained channel-only NSGA-II on fixed t0093 morphology to
+disambiguate channel-side from morphology-side priors</strong> (S-0091-08)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091's 0/57 plausible-cell verdict is universally driven by channel-side priors (NMDA
+per-spine, NaP density, GABA spatial gradient); morphology priors mostly pass. S-0086-01
+already proposes a tighter-NMDA re-run but does not specify morphology configuration nor
+combine with hard-constraint formulation. Hold morphology fixed at the t0093 verified
+BedB-equivalent (PD-rate 43.6 Hz post-fix) and run NSGA-II on a 27-d channel-only space (12
+channel densities + 9 NMDA/NaP-related + 6 GABA spatial) with all biological priors as hard
+constraints (per S-0091-05) and tightened NMDA bounds (Sivyer 2013 5e-4 uS upper cap). Tests
+whether the v3 substrate has any biologically-plausible joint-pass region in channel space
+alone with verified morphology, independent of S-0086-01's broader question. If no, the
+substrate is incompatible with priors regardless of morphology, motivating S-0091-06's
+real-cell library. Cost ~$1.50 on Vast.ai EPYC 7B13. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>📚 <strong>Tighten post-fix procedural soma to match the t0024 hand-coded
@@ -164,170 +328,51 @@ should reflect the supersession overlay. Recommended task types: correction.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Investigate the synapse-XY symmetry residual (Phase D Candidate
-C) under neutral asymmetry knobs</strong> (S-0092-04)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
-
-The post-fix BedB-equivalent meets PD-rate>0 (43.6 Hz) but DSI=0.034, missing the >0.1
-criterion. Phase D root-cause analysis traced this to Candidate C: under neutral asymmetry
-knobs (soma_offset_pd_um=0, field_elongation_pd=1.0, branch_density_gradient_pd=0,
-primary_branch_pd_concentration=0) primary stems extend symmetrically around the soma and 41%
-of synapses fall outside the bar's [0, 1400] ms window for the PD direction. Quantify the
-relationship between each of the 4 asymmetry knobs and post-fix DSI by sweeping each one while
-holding the others neutral, then identify a slightly-asymmetric variant of BEDB_BASE_POINT
-(e.g. soma_offset_pd_um=+30 um or field_elongation_pd=1.2) that produces DSI>0.1 by
-construction without losing the BedB topology. The result feeds t0091's warm-start anchor
-selection. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Add a generator-side regression test battery covering
-coincident-pt3d edge cases beyond the BedB base point</strong> (S-0092-05)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
-
-The t0092 unit-test suite (4 tests) covers determinism, no-NaN on the BedB base point, soma
-area, and pt3d z-axis. It does not exercise the broader space of generator inputs that could
-trigger coincident-pt3d collapses elsewhere in the cell (e.g. degenerate dendrite stubs at
-extreme branch_prob_per_um values, AIS sections with zero asymmetry-induced offset, or
-interaction between negative branch_length_cv and the asymmetry transform). Author a
-regression test battery that calls generate_fixed_morphology on a Latin-hypercube sample of
-~50 points across the 14-knob space and asserts that every section has sec.L>1 um and
-sec.area()>10 um^2 in NEURON. This catches future bugs in the generator before they cascade
-through t0091's NSGA-II loop. Recommended task types: write-library.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-calibrate t0083 channel densities to the post-fix procedural
-cell's 707 um^2 cylinder soma</strong> (S-0092-06)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-05-08 | **Source**:
-[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
-
-The post-fix BedB-equivalent fires 61 spikes vs the hand-coded Bed B's 41 spikes under the
-same t0083 vector, because the channel densities were optimised on the 287 um^2 hand-coded
-soma but the post-fix procedural soma is 707 um^2. Rather than tightening the soma area to
-match t0024 (S-0092-02's path), the alternative is to re-run a small-scale NSGA-II pass on the
-25 channel-density parameters (indices 0-24 + the dendritic-spike block 49-53) holding
-morphology fixed at the post-fix BedB-equivalent, to find a 30-cell Pareto front under the
-larger soma. The chosen winner becomes the new t0091 channel-side warm-start anchor. ~$1-2
-cost on a single A10G; pure follow-up to t0083 with the new substrate. Recommended task types:
-experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Refresh t0091 task description + dependencies to reference t0092
-fix and t0093 correction overlay</strong> (S-0093-01)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0093_resweep_and_t0090_correction](../tasks/t0093_resweep_and_t0090_correction/)
-
-t0091_morphology_extended_nsga2_v1 is currently `not_started` with status referencing t0090's
-procedural_dsgc_morphology_generator directly (task_description.md lines 6, 32, 88, 190, 208)
-and dependencies={t0024,t0078,t0080,t0081,t0083,t0086,t0088,t0090} -- no t0092 or t0093
-dependency. Since t0093 issues a `replace` correction redirecting that library to t0092's
-procedural_dsgc_morphology_generator_fix, t0091 must be updated before launch: (a) add
-`t0092_diagnose_morphology_generator_silence` and `t0093_resweep_and_t0090_correction` to its
-`dependencies` list; (b) replace import references to
-`tasks.t0090_..code.generator.generate_morphology` with
-`tasks.t0092_..code.morphology_generator_fix.generate_fixed_morphology`; (c) document in the
-task description that the procedural cell is canonically the t0092 fix per C-0093-01. Without
-this, t0091 would re-import the unpatched generator and re-introduce the soma-pt3d collapse
-bug. Recommended task types: correction.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Investigate the 4 PD-rate=0 cells: do morphology variants shift
-direction-tuning peak away from 0 deg?</strong> (S-0093-02)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0093_resweep_and_t0090_correction](../tasks/t0093_resweep_and_t0090_correction/)
-
-4/60 post-fix cells (different/morph_18, _25, _29, similar/morph_17) fire spikes only at
-non-PD directions (e.g. morph_18: 0 spikes at 0 deg, 1 each at 45/90/135/180 deg, DSI=-1.0).
-t0083 channels were calibrated on the BedB hand-coded morphology, so it is unknown whether
-morphology variants intrinsically shift the direction-tuning peak. Re-run those 4 morphologies
-at fine angular resolution (every 15 deg) under the t0083 best-cell vector, plus 5 cells
-nearest the BedB symmetric anchor as control, and fit the angular position of the firing-rate
-peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -> peak_direction_deg,
-plus a polar-tuning-curve panel. If peaks shift systematically with asymmetry knobs, this
-resolves t0091's design question of whether per-cell PD must be re-discovered after morphology
-changes. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Pre-warm NEURON DLL + parameter-vector apply in
-ProcessPoolExecutor workers to halve sweep wall-clock</strong> (S-0093-03)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0093_resweep_and_t0090_correction](../tasks/t0093_resweep_and_t0090_correction/)
-
-The t0093 16-worker re-sweep took ~50 min vs the planned ~14 min on a 64-core EPYC -- a 3.5x
-slowdown almost entirely attributable to per-worker NEURON DLL load + first-trial
-parameter-vector apply (each worker pays the full warm-up cost on every sub-batch). Implement
-a `worker_init` callable for ProcessPoolExecutor that (a) imports neuron + h.load_file once,
-(b) compiles + loads the t0080 channel mechanism DLL, (c) runs one throwaway 50-ms stim trial
-to warm up the channel-mechanism kernels and the SciPy/NumPy inits, then signals readiness.
-Benchmark a 60-cell sweep with vs without warm-up; expected savings ~30 min on this scale.
-Bake the helper into a small `arf/scripts/utils/neuron_pool.py` library so all future sweeps
-(t0091's per-generation 96-cell evaluations, future Bed-A sweeps, the 4-channel-set sweep from
-S-0090-05) inherit the speedup. Recommended task types: write-library, infrastructure-setup.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Diagnose NEURON single-process state-leak that hung t0093
-sequential validation gate</strong> (S-0093-04)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-05-08 | **Source**:
-[t0093_resweep_and_t0090_correction](../tasks/t0093_resweep_and_t0090_correction/)
-
-The t0093 implementation initially attempted a 5-cell validation gate in `--max-workers 1`
-(sequential) mode; the run hung beyond the wall-clock window and had to be killed and
-restarted in parallel mode (which completed in 7m44s). Hypothesis: NEURON state-leak between
-cells in the same Python process -- residual Section / NetCon / Vector references pile up in
-`h` despite t0090's `_LIVE_CELLS` defense, eventually slowing or stalling `h.run()`. Reproduce
-on a 5-cell sequential run, instrument `len(h.allsec())` and `len(h.List('NetCon'))` between
-cells, and try (a) explicit `for sec in list(h.allsec()): h.delete_section(sec=sec)`, (b)
-`h('forall delete_section()')`, or (c) creating a fresh `neuron.h` namespace per cell. Output:
-fix in t0080's library or documented note + minimal reproducer. Matters for single-process
-debugging and low-parallelism interactive runs. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
-ProcessPoolExecutor</strong> (S-0090-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
-[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
-
-t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
-single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
-plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
-retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
-cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
-sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
-plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
-for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
-correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-*301 more open suggestions → [open suggestions](suggestions/)*
+*309 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (46)](suggestions/)
+## [High Priority Suggestions (48)](suggestions/)
+
+<details>
+<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
+Pareto to resolve HM-3 inconclusive</strong> (S-0091-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 reported a Spearman rho=-0.07 between total dendritic length and DSI vector-sum across
+the 57-cell Pareto, leaving HM-3 (length-vs-DSI scaling, Hausselt2007) inconclusive because
+total length conflates field_elongation_pd with branch_density_gradient_pd and
+num_primary_branches. Pure data-analysis task on existing pareto_front.json: extract
+field_elongation_pd from each Pareto cell's 14-d morph_params vector, compute Spearman +
+Kendall correlations against DSI, PD-rate, robustness, and the 9 channel-side priors, plot
+per-anchor scatter overlays, and stratify by anchor lineage. Goal: definitively confirm or
+refute that elongation along PD is the morphology axis driving DSI in joint optimisation,
+separate from branch density. Cost: $0 (local CPU analysis on existing JSONL files).
+Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-direction DSI re-scoring of the t0091 57-cell Pareto to
+surface DSGC subtype-specific tuning</strong> (S-0091-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
+
+t0091 used vector-sum DSI across 16 directions, which is direction-blind: a cell tuned to PD
+with peak at 0 deg and a cell tuned to a non-cardinal direction (e.g., 45 deg) collapse to the
+same vector-sum DSI. The PD vs ND anchor-asymmetry test (12 vs 9, p=0.331) may be
+artifactually washed out by this collapse. Brendly2025 and Riccitelli2025 (now in the t0091
+corpus from research-internet) report DSGC subtypes with distinct preferred directions. Pure
+data-analysis on existing pareto_front.json + per-direction firing rate JSONL: re-score each
+Pareto cell with per-direction DSI (peak direction, half-width-at-half-maximum, peak-to-trough
+ratio); recompute the PD-asymmetric vs ND-asymmetric anchor test using direction-binned DSI;
+compare per-direction tuning curve shapes between bedb_like, alt_topology, and the 21
+asymmetric anchor cells. Cost: $0 (local CPU). Recommended task types: data-analysis.
+
+</details>
 
 <details>
 <summary>📚 <strong>Issue a correction overlay against t0090 marking the procedural
@@ -487,49 +532,28 @@ Recommended task types: data-analysis.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Causal NaP-knockout ablation per cluster representative</strong>
-(S-0088-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0088_recluster_marginals_and_vm_motifs](../tasks/t0088_recluster_marginals_and_vm_motifs/)
-
-t0088 attributed PD-minus-ND fractional contributions correlationally (NMDA 0%, Nav1.6
-0.3-12.6%, NaP 87.4-99.7% across the 4 cluster representatives). The attribution is
-correlation-based; to causally confirm NaP as the dominant mechanism, set nap_dend_distal = 0
-in each of the 4 representative cells (1604, 1634, 767, 1639) and re-measure DSI at the 16
-directions used by t0088. Expected effect: DSI collapses to <0.2 in all 4 cells if NaP is
-causally responsible; DSI partially preserved if NMDA + Nav1.6 + GABA also contribute. Compare
-to baseline DSI_measured (cell 1604: 0.71; cell 1634: 0.20; cell 767: 0.60; cell 1639: 0.43).
-Local-CPU only: 4 cells x 16 directions x ~60 s/sim = ~64 min wall-clock, $0 cost. Recommended
-task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>Audit AIS-to-soma Nav ratio computation in cluster 1 (116x is
-+33 sigma exotic)</strong> (S-0088-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0088_recluster_marginals_and_vm_motifs](../tasks/t0088_recluster_marginals_and_vm_motifs/)
-
-t0088 cluster 1 (cells 1304, 1504, 1624, 1634) has centroid AIS-to-soma Nav ratio = 116.04,
-deviating +32.92 sigma from Werginz 2024's published 17.3 +/- 3. This is the most extreme
-single-prior violation in t0086 + t0088. Audit the ratio computation: (a) confirm
-centroid_unnormalised[NAV16_AIS_GBAR] / centroid_unnormalised[NAV16_SOMA_GBAR] is in matching
-units (S/cm^2 / S/cm^2 = dimensionless); (b) check the soma Nav lower bound is not pinning the
-centroid soma value to a near-zero value, inflating the ratio; (c) check whether the 4 cells
-in cluster 1 individually have AIS-to-soma ratios near 116 or whether the centroid is
-averaging across heterogeneous values. Pure data analysis on existing JSON outputs; ~30 min
-wall-clock, $0 cost. Recommended task types: data-analysis, correction.
-
-</details>
-
-*36 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*38 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (24 total)](answers/)
+## [Recent Answers (25 total)](answers/)
+
+<details>
+<summary><strong>Did enabling the 14-d procedural morphology variation as an
+optimisation axis open biologically-plausible joint-pass regions of
+parameter space that the fixed-Bed-B substrate of t0080-t0088 could not
+reach?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-08 | **Full answer**:
+[`morphology-extension-biological-plausibility`](../tasks/t0091_morphology_extended_nsga2_v1/assets/answer/morphology-extension-biological-plausibility/)
+
+No. None of the 57 Pareto cells reach the joint plausible region across all 13 priors (9
+electrophys + 4 morphology). Worst-case aggregation flags every cell as exotic or stretched,
+driven primarily by NMDA / NaP / GABA prior deviations carried over from the v3 electrophys
+substrate. PD-asymmetric anchor 3 captured 12 cells vs ND-asymmetric anchor 4 with 9
+(one-sided permutation p=0.331).
+
+</details>
 
 <details>
 <summary><strong>Why do t0090's procedural cells produce zero spikes under the t0083
@@ -723,32 +747,183 @@ differences beyond measurement modality.
 
 </details>
 
-<details>
-<summary><strong>Does the deposited Poleg-Polsky 2016 DSGC's spatial distribution of
-NMDA, AMPA, and GABA synapses match the paper's text descriptions, and does
-it explain the t0049 GABA PD/ND symmetry collapse under somatic
-SEClamp?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-04-25 | **Full answer**:
-[`synapse-distribution-audit-deposited-vs-paper`](../tasks/t0050_audit_syn_distribution/assets/answer/synapse-distribution-audit-deposited-vs-paper/)
-
-The spatial-distribution hypothesis (H1) is SUPPORTED on both structural and numerical
-grounds. Structurally, the deposited PD/ND swap is a single uniform scalar `gabaMOD = 0.33 +
-0.66*direction` applied to every SAC inhibitory synapse with no spatial threshold, so the
-somatic SEClamp cannot detect any spatial GABA asymmetry by construction. Numerically, all
-three channels (BIP, SACexc, SACinhib) share identical parent sections and are spatially
-symmetric around the BIPsyn-locx median (side_a/side_b = 0.972 at midline 88.77 μm) and only
-appear asymmetric (ratio 1.541) when split at the off-center soma_x = 104.6 μm. Therefore the
-t0049 GABA PD ~47.5 / ND ~48.0 nS collapse is the direct consequence of (1) a non-spatial
-gabaMOD protocol and (2) a symmetric underlying GABA distribution, exactly as H1 predicts.
-
-</details>
-
-*14 more answers → [answers](answers/)*
+*15 more answers → [answers](answers/)*
 
 ---
 
-## [Latest Papers (74 total)](papers/)
+## [Latest Papers (77 total)](papers/)
+
+<details>
+<summary>📖 <strong>GABAergic Inhibition Controls Receptive Field Size, Sensitivity,
+and Contrast Preference of Direction Selective Retinal Ganglion Cells Near
+the Threshold of Vision</strong> — Roy et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1523_JNEUROSCI.1979-23.2023` |
+| **Authors** | Suva Roy, Xiaoyang Yao, Jay Rathinavelu, Greg D. Field |
+| **Venue** | The Journal of Neuroscience (journal) |
+| **DOI** | `10.1523/JNEUROSCI.1979-23.2023` |
+| **URL** | https://www.jneurosci.org/content/44/11/e1979232023 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Full summary** | [`summary.md`](../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1523_JNEUROSCI.1979-23.2023/summary.md) |
+
+Roy, Yao, Rathinavelu, and Field address the long-standing observation that
+superior-preferring ON-OFF DSGCs (s-DSGCs) detect dim stimuli substantially more reliably than
+the three other cardinal ooDSGC subtypes (anterior, inferior, posterior). The paper asks two
+questions: how large is the s-DSGC sensitivity advantage at the absolute threshold of vision,
+and which of three plausible mechanisms (RF size, Cx36 gap-junction coupling, GABAergic
+inhibition asymmetry) account for it? The motivation comes from prior work (Yao et al. 2018)
+suggesting s-DSGCs sacrifice direction-tuning precision for stimulus detection at scotopic
+levels.
+
+The authors record dark-adapted mouse retina ex vivo on a 519-electrode MEA, using brief
+full-field LED flashes (2-8 ms) and spatially mapped square flashes (60-160 um, 900% contrast)
+across backgrounds spanning six log units of light intensity. They quantify absolute
+thresholds with a 2AFC ideal-observer analysis (84% correct = SNR = 1, Naka-Rushton fit) and
+RF area by 2D-Gaussian fits to ON / OFF subfield maps. A calibrated rod-pooling model with
+mouse-specific noise parameters and 0.005 R*/rod/s thermal isomerization rate is used to
+translate RF area into predicted 2AFC performance. The mechanistic dissection uses FACx
+conditional Cx36-knockout mice to ablate s-DSGC homotypic coupling, and 15 uM gabazine to
+block GABA-A inhibition.
+
+The headline result is a **10-fold lower s-DSGC absolute threshold** that approaches within
+0.5 log unit of the most sensitive RGCs (presumed ON sustained alpha cells). RF size
+differences (~8x larger ON subfields at scotopic 0.2 R*/rod/s) explain only **~50%** of the
+gap, even under optimal nonlinear rod pooling. Cx36 ablation has **no significant effect** on
+threshold and only a modest RF reduction in s-DSGCs. GABA-A blockade compresses the s-DSGC vs
+other-ooDSGC threshold ratio from **9.4x to 3.2x**, expands all ooDSGC RFs (especially OFF
+subfields by 10-30x), and unmasks a full-amplitude scotopic OFF response. The authors conclude
+that two unidentified GABAergic amacrine cells differentially shape ooDSGC sensitivity, RF
+size, and contrast polarity at low light, and explicitly exclude starburst amacrine cells as
+the source.
+
+For this project (t0091 morphology / NSGA-II Pareto-front sweep under photopic stimulation),
+the paper supplies critical context but no parameter changes. Under photopic conditions the
+s-DSGC RF-size advantage collapses to 1.5-3x with similar coverage factors across types,
+supporting the project existing single-cell, single-operating-point Pareto framing using
+Trenholm 2013-style photopic peak rates. The GABA spatial-gradient prior on the t0086 / t0088
+scorecard is about classical-RF SAC-mediated inhibition; Roy 2024 two hypothesised
+non-starburst GABAergic amacrine cells operate at scotopic levels and are out of scope. Cx36
+gap-junction coupling can safely be excluded from the photopic single-cell model. The paper is
+therefore most useful as an interpretive boundary - it confirms that t0091 photopic-only
+NSGA-II results should not be overgeneralised to scotopic firing-rate predictions, where
+additional GABAergic and OFF-masking mechanisms would dominate.
+
+</details>
+
+<details>
+<summary>📖 <strong>Persistent sodium currents in neurons: potential mechanisms and
+pharmacological blockers</strong> — Müller et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1007_s00424-024-02980-7` |
+| **Authors** | Peter Müller, Andreas Draguhn, Alexei V. Egorov |
+| **Venue** | Pflügers Archiv - European Journal of Physiology (journal) |
+| **DOI** | `10.1007/s00424-024-02980-7` |
+| **URL** | https://link.springer.com/article/10.1007/s00424-024-02980-7 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`patch-clamp`](../meta/categories/patch-clamp/) |
+| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Full summary** | [`summary.md`](../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1007_s00424-024-02980-7/summary.md) |
+
+Mueller, Draguhn, and Egorov publish a systematic review of persistent sodium current (INaP)
+in CNS neurons in Pfluegers Archiv (Springer Nature, open access). The motivation is that INaP
+is a clinically important regulator of excitability - implicated in epilepsy, amyotrophic
+lateral sclerosis, neuropathic pain, hemiplegic migraine, and post-injury hyperexcitability -
+but the literature is fragmented across heterogeneous voltage-clamp protocols, inconsistent
+definitions of persistent versus slowly inactivating, and a sprawling catalogue of putative
+blocker drugs whose specificities have never been compared head-to-head.
+
+The review proceeds in two parts. The first part formalises four candidate mechanisms
+(modified Hodgkin-Huxley window current; Markov gating with closed-state inactivation or modal
+gating; subtype-specific generation by Nav1.1/1.2/1.3/1.6 plus beta1/beta4 modulation;
+supra-molecular coupled gating) and four canonical voltage-clamp protocols (brief step,
+entry-into-slow inactivation, slow steady-state inactivation, slow ramp). It explicitly maps
+which protocol isolates which kinetic component, dissolving longstanding terminological
+disagreements. The second part is a 22-drug catalogue (Table 1) tabulating IC50/EC50, holding
+potential, preparation, protocol, and effects on INaP versus INaT for each substance.
+
+The headline finding is that GS967 and riluzole are the only bona fide INaP blockers - they
+act on the truly non-inactivating component across both brief-step and slow-ramp protocols at
+clinically achievable concentrations and with limited off-target action. Phenytoin and
+lacosamide are reclassified as selective enhancers of intermediate and slow inactivation
+respectively, not INaP blockers proper. All other 18 surveyed substances are disqualified by
+off-target Ca, K, GABA, or mGluR effects, by poor blood-brain-barrier penetration, or by
+inadequate slow-inactivation data. The review concludes with a methodological recommendation:
+combine brief steps, slow-inactivation steps, and slow ramps with TTX subtraction, and require
+concordant effects of two drugs or a dynamic-clamp control before claiming an INaP role for
+any physiological phenomenon.
+
+For this project, the review most important message is a negative one: there is no
+DSGC-specific INaP density measurement in the surveyed literature, so the cortical-pyramidal
+Stuart 1999 / Astman 2021 priors used in t0086 / t0088 / t0091 remain the best cross-cell
+baseline and the morphology-extended NSGA-II distal-NaP density bounds do not need to be
+revised. The methodological caution that slow ramps underestimate INaP is a prior to keep on
+file for any future patch-clamp validation step but does not affect the present in-silico
+NEURON-based optimisation pipeline. The drug catalogue is a useful reference if the project
+ever extends into dynamic-clamp INaP-cancellation experiments, where riluzole-equivalent block
+at 10 uM is the canonical reference manipulation.
+
+</details>
+
+<details>
+<summary>📖 <strong>A new role for excitation in the retinal direction-selective
+circuit</strong> — Ankri et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1113_JP286581` |
+| **Authors** | Lea Ankri, Serena Riccitelli, Michal Rivlin-Etzion |
+| **Venue** | The Journal of Physiology (journal) |
+| **DOI** | `10.1113/JP286581` |
+| **URL** | https://physoc.onlinelibrary.wiley.com/doi/10.1113/JP286581 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../meta/categories/direction-selectivity/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`patch-clamp`](../meta/categories/patch-clamp/) |
+| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
+| **Full summary** | [`summary.md`](../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1113_JP286581/summary.md) |
+
+Ankri, Riccitelli, and Rivlin-Etzion examine how prolonged photopic illumination reshapes the
+receptive field and directional code of posterior-preferring On-Off direction-selective
+ganglion cells (pDSGCs) in mouse retina. The standard textbook view, including the authors'
+own prior work, attributes retinal direction selectivity to asymmetric inhibition from
+starburst amacrine cells, with directional excitation either absent or attributed to
+space-clamp artefact. The authors set out to test whether luminance-state changes that are
+known to remodel centre-surround antagonism (Ankri 2020, Farrow 2013, Nath 2023) also
+reorganise the directional code itself.
+
+Methodologically the study combines two-photon-targeted loose-patch and whole-cell
+voltage-clamp recordings from genetically labelled pDSGCs (Drd4-EGFP and Trhr-EGFP mice) with
+252-electrode MEA recordings from wild-type retinas. Direction tuning is probed with 1 mm bars
+that traverse the centre and surround sequentially, and receptive-field structure with
+concentric spot stimuli. Two adaptation protocols are used (3-5.5 min of stationary photopic
+light, or repetitive visual stimulation with drifting gratings). Pharmacology with SR95531,
+strychnine, and L-AP4 dissects the GABAergic, glycinergic, and On-pathway contributions to the
+unmasked surround excitation.
+
+Light adaptation expands the pDSGC receptive field asymmetrically toward the preferred side
+(asymmetry index On = **0.44** vs. Off = **0.15**), more than doubles the On spike-response
+duration (**305 +/- 255 ms** -> **779 +/- 149 ms**, *P* = **1.96e-4**), and adds a delayed
+null-direction-tuned spiking phase to the cell's normal preferred-direction main phase.
+Voltage-clamp recordings show that the centre is driven by preferred-direction-tuned
+excitation while the surround is driven by null-direction-tuned excitation; inhibition becomes
+essentially symmetric. The phenomenon generalises across all four cardinal On-Off DSGC
+subtypes in the MEA data.
+
+For this project the paper has two consequences. First, it confirms that the classical
+inhibition-dominated DS substrate that t0091's compartmental model implements is the correct
+target for a non-light-adapted photopic 16-direction protocol but is one regime among at least
+two; the answer asset should explicitly scope its biological-plausibility ceiling claims to
+photopic, non-light-adapted conditions and acknowledge that the surround-direction-flipping
+excitation is a separate axis the v3 substrate does not score against. Second, the published
+**DSI-on = 0.70 +/- 0.25** and **DSI-off = 0.65 +/- 0.30** baseline values serve as a hard
+biological reference for evaluating whether any t0091 Pareto cell that achieves extremely high
+DSI is super-biological rather than realistic.
+
+</details>
 
 <details>
 <summary>📖 <strong>Differential Expression Analysis Identifies Candidate
@@ -1130,175 +1305,7 @@ simultaneously hit the peak-rate target and the DSI target.
 
 </details>
 
-<details>
-<summary>📖 <strong>Visual Stimulation Reverses the Directional Preference of
-Direction-Selective Retinal Ganglion Cells</strong> — Rivlin-Etzion et
-al., 2012</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1016_j.neuron.2012.08.041` |
-| **Authors** | Michal Rivlin-Etzion, Wei Wei, Marla B. Feller |
-| **Venue** | Neuron (journal) |
-| **DOI** | `10.1016/j.neuron.2012.08.041` |
-| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(12)00807-0 |
-| **Date added** | 2026-05-03 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../meta/categories/patch-clamp/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
-| **Full summary** | [`summary.md`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2012.08.041/summary.md) |
-
-Rivlin-Etzion, Wei, and Feller (2012, Neuron) ask whether the direction-selective response of
-mouse ON-OFF retinal ganglion cells is rigidly determined by the asymmetric SAC-DSGC wiring
-revealed by EM reconstruction, or whether it can be reshaped by recent visual experience.
-Their work targets the dominant "hardwired retina" view of direction selectivity and tests it
-directly by applying brief drifting-grating adaptation protocols and measuring whether DSGC
-preferred direction remains stable.
-
-The methodology combines two-photon-targeted loose-patch recordings from genetically labelled
-posterior-preferring ON-OFF DSGCs (DRD4-GFP and TRHR-GFP lines, P14-P88, both sexes) with
-whole-cell voltage clamp to dissect synaptic mechanisms, plus pharmacology with gabazine to
-test GABA-A involvement and L-AP4 to test ON-pathway involvement. Directional tuning is
-quantified with DSI and vector-sum metrics computed from 3 s grating responses in 12
-directions, using a pre/adaptation/post design with four adaptation protocols (P-N, Null, P-O,
-counter-phase) plus a no-stimulus control.
-
-The authors find that drifting-grating adaptation can fully reverse the PD of a substantial
-fraction of ON-OFF DSGCs (41% of 74 cells across protocols) and that this reversal is robust,
-long-lasting (persisting up to 23 min), GABA-A dependent, and mediated by a redistribution of
-asymmetric inhibition rather than by new wiring. ON-pathway crossover circuits are necessary
-for the reversal: L-AP4 blockade reduces reversal probability and reveals a delayed OFF
-response normally masked by the ON pathway. Critically, the paper reports paired DSI plus mean
-preferred-direction firing rate from the same cells: **DSI 0.78 +/- 0.19 with mean PD rate
-10.38 +/- 8.53 Hz** for stable cells (n = 8\) and **DSI 0.63 +/- 0.23 with 9.95 +/- 5.42 Hz**
-for reversed cells (n = 8), measured over the 3 s grating window.
-
-For task t0078, this paper is the primary literature anchor for revising the project's pass
-criterion from "PD rate >= 30 Hz" to "PD rate >= 10 Hz". The previously assumed 30-80 Hz mean
-PD firing rate range conflated peak rates over sub-second windows with mean rates over
-multi-second windows; this paper establishes that the mean PD firing rate of mouse ON-OFF
-DSGCs is approximately 10 Hz when measured over a 3 s window, with paired DSI of 0.78. The
-result also informs the Bayesian-optimisation utopia point used to compute hypervolume in
-t0078 and downstream model selection. A secondary implication for downstream tasks is that
-DSGC tuning is plastic on a minutes timescale, so model-fitting tasks should treat
-pre-adaptation values as the canonical target and not aggregate them with post-adaptation
-states.
-
-</details>
-
-<details>
-<summary>📖 <strong>The Contribution of Resurgent Sodium Current to High-Frequency
-Firing in Purkinje Neurons: An Experimental and Modeling Study</strong>
-— Khaliq et al., 2003</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1523_JNEUROSCI.23-12-04899.2003` |
-| **Authors** | Zayd M. Khaliq, Nathan W. Gouwens, Indira M. Raman |
-| **Venue** | The Journal of Neuroscience (journal) |
-| **DOI** | `10.1523/JNEUROSCI.23-12-04899.2003` |
-| **URL** | https://www.jneurosci.org/content/23/12/4899 |
-| **Date added** | 2026-05-03 |
-| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
-| **Full summary** | [`summary.md`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.23-12-04899.2003/summary.md) |
-
-Khaliq, Gouwens, and Raman (2003) ask whether and how the resurgent component of NaV1.6 sodium
-current promotes high-frequency action-potential firing in cerebellar Purkinje neurons. The
-question matters because resurgent current - sodium current that flows when the channel exits
-an open-channel-block state during repolarisation - is a peculiar, structurally distinctive
-feature of NaV1.6 that had been correlated with rapid firing but never causally attributed to
-it. The authors scope is somatic firing in dissociated Purkinje cells from wild-type and
-Scn8a-med mice; they hold dendrites and synaptic input out of the analysis to focus on
-intrinsic excitability.
-
-Methodologically, the paper combines whole-cell current-clamp action-potential recordings from
-acutely dissociated Purkinje somata with voltage-clamped pharmacological isolation of seven
-non-sodium currents (Kfast, Kmid, Kslow, BK, Pca, Ih, leak) and a NEURON-based
-single-compartment model that integrates these seven currents with an explicit Raman-Bean
-state-machine model of NaV1.6 sodium current. The med phenotype - which lacks NaV1.6 and
-therefore has 90 percent reduced resurgent current - is used as a natural knockout. The model
-is validated by reproducing wild-type spontaneous firing at 27 spikes/sec (matching the 29 Hz
-experimental mean) and is then used to ask which of the changes seen in med cells (lost
-resurgent current, modified Kfast V1/2, reduced leak) actually drive the slower firing.
-
-The headline finding is that resurgent kinetics specifically and consistently accelerate
-firing. Med cells fired at 9 +/- 2 Hz spontaneously vs 35 +/- 4 Hz wild-type, and at 13 +/- 5
-vs 65 +/- 7 spikes/sec under 50 pA injection, a deficit that survived even strong current
-injection (maximum sustained rate 65 +/- 10 spikes/sec med vs 107 +/- 6 wild-type). Crucially,
-the model showed that the small Kfast V1/2 shift and reduced leak found in med cells would, if
-anything, **speed** firing \- so the observed slowdown must come from the sodium-channel
-kinetics. Replacing wild-type with med-like Na kinetics in the model slowed simulated firing
-by 19-31 percent, reproducing the experimental phenotype.
-
-For the present project this paper is the kinetic foundation of the BedB substrate
-voltage-gated channel library. The bkpkj.mod calcium-activated K channel and the NaR resurgent
-sodium mod-file vendored in t0074 trace directly to this paper Equation-1 state model and
-Table 1 parameter set. For t0078 specifically, the AIS-tiered NaR optimization treats this
-paper kinetic schemes as the fixed scaffold and varies only channel density per tier - so any
-biological plausibility argument about NaR density gradients ultimately rests on the parameter
-ranges established here. The paper 19 pF single-compartment geometry also provides a minimal
-regression-test target: vendored mod-files should reproduce ~27 Hz spontaneous firing in that
-geometry before being deployed on the multi-compartment DSGC substrate.
-
-</details>
-
-<details>
-<summary>📖 <strong>Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide
-Range of Dendritic and Perisomatic Active Properties</strong> — Hay et
-al., 2011</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1371_journal.pcbi.1002107` |
-| **Authors** | Etay Hay, Sean Hill, Felix Schurmann, Henry Markram, Idan Segev |
-| **Venue** | PLoS Computational Biology (journal) |
-| **DOI** | `10.1371/journal.pcbi.1002107` |
-| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107 |
-| **Date added** | 2026-05-03 |
-| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`dendritic-computation`](../meta/categories/dendritic-computation/) |
-| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
-| **Full summary** | [`summary.md`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/summary.md) |
-
-Hay et al. (2011) address a long-standing gap in compartmental modeling of L5b cortical
-pyramidal cells: no published model simultaneously reproduced the perisomatic Na+ step-current
-f-I behavior and the BAP-activated dendritic Ca2+ ("BAC") firing observed in adult-rat slice
-recordings. The paper's research question is whether a single conductance-based model in a
-reconstructed morphology can be fit to both regimes with experimentally measured cell-to-cell
-variability, and which channel densities and Ca2+-dynamics parameters are necessary or
-sufficient for each regime.
-
-Methodologically, the authors define 20 firing features (10 perisomatic, 10 BAC), each with an
-experimental mean and SD computed across several cells. They use multi-objective optimization
-with an elitist non-dominated sorting evolutionary algorithm — population 1000, 500
-generations, 240 to 1024 CPU cores, 2-5 days runtime — to optimize 22 free parameters. The
-free parameters are the maximal densities of nine ion channels (Nat, Nap, Kp, Kt, Kv3.1,
-Ca_HVA, Ca_LVA, SK, Im) in soma and apical compartments, plus the Ca2+ buffer parameters gamma
-and tdecay. The Ih distribution is fixed to preserve subthreshold properties. Models are
-accepted when every feature falls within 2-3 SD of the experimental mean. Mechanism kinetics
-use Hodgkin-Huxley formalism with Q10 = 2.3 and a -10 mV junction-potential shift where
-applicable.
-
-The headline result is a set of about 2000 acceptable L5b PC models published in ModelDB
-(accession 139653). Single-target fits are easier (899 BAC-only, 52 perisomatic-only) but
-typically fail the other target. Joint fits achieve every feature within 2-3 SD: e.g. BAP
-amplitude **45 +/- 10 mV** at 620 um, Ca2+ spike peak **6.73 +/- 2.54 mV**, perisomatic spike
-frequencies of **9 / 14.5 / 22.5 Hz**, AP half-width of **1.31 ms**, slow AHP depth around
-**-60 mV**. Cross-target parameter analysis identifies apical Nat and apical Kv3.1 densities
-as the dominant levers controlling BAP propagation, and shows that morphology swaps degrade
-BAC features more than perisomatic features.
-
-For this project, Hay 2011 is a direct upstream dependency of t0074 and t0078: the SK_E2 and
-CaDynamics_E2 MOD files vendored under t0074 originate here, and t0078's `tau_ca_multiplier`
-extension to CaDynamics_E2 is an additional knob on the same gamma + tdecay sub-membrane shell
-formalism defined in this paper. The cited parameter ranges (gamma in 0.0005-0.05; soma tdecay
-20-1000 ms; apical tdecay 20-200 ms) provide the prior box that t0078's MOBO should explore.
-The multi-objective + per-feature-SD scoring + Pareto-acceptable-ensemble methodology is also
-the template t0078 inherits for reporting and analyzing its own MOBO results. Citing Hay 2011
-in the t0078 substrate documentation is therefore mandatory.
-
-</details>
-
-*64 more papers → [papers](papers/)*
+*67 more papers → [papers](papers/)*
 
 ---
 
@@ -1318,10 +1325,11 @@ No models yet.
 
 ---
 
-## [Latest Predictions (2 total)](predictions/)
+## [Latest Predictions (3 total)](predictions/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [Pareto front 68-d morphology-extended Bed-B v3](../tasks\t0091_morphology_extended_nsga2_v1\assets\predictions\pareto-front-68d-morphology-extended-bedb-v3\description.md) | [91](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | 2026-05-08 |
 | [V_rest sweep on t0024 DSGC channel testbed (stochastic AR(2) release)](../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0024\description.md) | [26](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | 2026-04-21 |
 | [V_rest sweep on t0022 DSGC channel testbed (deterministic)](../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0022\description.md) | [26](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | 2026-04-21 |
 
@@ -1346,7 +1354,7 @@ No models yet.
 
 ---
 
-## [Cost Leaders (6 tasks with spend)](costs/)
+## [Cost Leaders (7 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
@@ -1356,3 +1364,4 @@ No models yet.
 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`$1.59`](../tasks/t0086_robustness_cluster_bio_comparison/results/costs.json) | 2026-05-06 18:24 |
 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`$1.06`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/costs.json) | 2026-05-03 04:18 |
 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`$0.75`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/costs.json) | 2026-05-04 22:45 |
+| [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`$0.65`](../tasks/t0091_morphology_extended_nsga2_v1/results/costs.json) | 2026-05-08 15:55 |

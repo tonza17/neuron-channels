@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-08T15:20:07Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-08T16:08:27Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>225063</char_count>
-    <byte_count>225377</byte_count>
-    <estimated_tokens>56265</estimated_tokens>
+    <char_count>228786</char_count>
+    <byte_count>229107</byte_count>
+    <estimated_tokens>57196</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -198,13 +198,14 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0088_recluster_marginals_and_vm_motifs</id>
         <id>t0089_brainstorm_results_18</id>
         <id>t0090_morphology_generator_diversity_test</id>
+        <id>t0091_morphology_extended_nsga2_v1</id>
         <id>t0092_diagnose_morphology_generator_silence</id>
         <id>t0093_resweep_and_t0090_correction</id>
         <id>t0094_brainstorm_results_19</id>
         <id>t0095_brainstorm_results_20</id>
       </source_ids>
       <content>
-Completed tasks: 87
+Completed tasks: 88
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -704,6 +705,12 @@ Completed: 2026-05-07
 Short description: Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
 Result summary: Results Summary: Procedural DSGC Morphology Generator + Diversity Test + Validation Bundle Summary Delivered a deterministic 14-knob procedural DSGC morphology generator (library asset `procedural_dsgc_morphology_generator`) plus a 60-morphology diversity sweep, a Phase G validation triplet (G.1 done, G.2 / G.3 partial), and the `validation-triplet-implications-for-biological-plausibility` answer asset. **13/16 REQs done, 3 partial** — partial REQs (REQ-9 Bed-B reproducibility, REQ-11 G.2 NMDA calibration, REQ-12 G.3 NaP knockout) all share the same root cause: the procedural Bed-B-equivalent cell paired with the t0083 best-cell channel set is silent (DSI=0), so the downstream simulations...
 
+## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
+ID: t0091_morphology_extended_nsga2_v1
+Completed: 2026-05-08
+Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0091_morphology_extended_nsga2_v1&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: First Joint 68-d NSGA-II with Morphology Generator In-Loop Summary Joint 68-d NSGA-II (54-d v3 electrophys + 14-d morphology) on Bed B with the t0092 patched procedural generator inside the per-cell evaluation loop reached **gen 2 of 8** before user- directed teardown, producing a **57-cell Pareto front**. **Zero cells pass the t0086/t0088 biological-plausibility scorecard** under worst-case prior aggregation; one cell is a strict joint-pass on (DSI ≥ 0.5, PD ≥ 30 Hz, robustness ≥ 0.7) but fails the biological priors. **Total spend $0.6454** (16% of the...
+
 ## Diagnose why t0090 procedural cells produce no action potentials
 ID: t0092_diagnose_morphology_generator_silence
 Completed: 2026-05-08
@@ -736,11 +743,10 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0091_morphology_extended_nsga2_v1</id>
         <id>t0097_multi_obj_optim</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -762,17 +768,10 @@ Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
 
-## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
-ID: t0091_morphology_extended_nsga2_v1
-Status: in_progress
-Effective date: 2026-05-08
-Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction
-
 ## Literature survey: multi-objective optimisation of single-neuron models
 ID: t0097_multi_obj_optim
 Status: in_progress
-Effective date: unknown
+Effective date: 2026-05-08
 Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
       </content>
     </section>
@@ -803,10 +802,11 @@ Short description: Survey published multi-objective optimisation of single-neuro
         <id>are-cluster-motifs-mechanistically-distinct</id>
         <id>cluster-biological-plausibility-attribution</id>
         <id>validation-triplet-implications-for-biological-plausibility</id>
+        <id>morphology-extension-biological-plausibility</id>
         <id>t0090-procedural-cell-silence-root-cause</id>
       </source_ids>
       <content>
-Answers: 24
+Answers: 25
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -989,6 +989,13 @@ Categories: compartmental-modeling, direction-selectivity, voltage-gated-channel
 
 Conditional. The G.1 AIS-to-soma Nav-ratio audit shows the cluster-1 ratio is a real biological signal, not a centroid artifact: zero of four cluster-1 cells are pinned to the soma Nav lower bound and three of four cells individually exceed a ratio of 50, so the +33-sigma deviation from the Werginz 2024 prior reflects an actual model preference rather than an inflated denominator. G.2 produces a NetCon-weight to per-spine conductance calibration that lets us re-score the cluster-NMDA-exotic verdict in calibrated units, but the conversion does not by itself reduce the deviation enough to rule out a units mismatch. G.3 quantifies the causal contribution of distal NaP to the...
 
+## Did enabling the 14-d procedural morphology variation as an optimisation axis open biologically-plausible joint-pass regions of parameter space that the fixed-Bed-B substrate of t0080-t0088 could not reach?
+ID: morphology-extension-biological-plausibility
+Created by: t0091_morphology_extended_nsga2_v1 on 2026-05-08
+Confidence: medium
+
+No. None of the 57 Pareto cells reach the joint plausible region across all 13 priors (9 electrophys + 4 morphology). Worst-case aggregation flags every cell as exotic or stretched, driven primarily by NMDA / NaP / GABA prior deviations carried over from the v3 electrophys substrate. PD-asymmetric anchor 3 captured 12 cells vs ND-asymmetric anchor 4 with 9 (one-sided permutation p=0.331).
+
 ## Why do t0090&#x27;s procedural cells produce zero spikes under the t0083 best-cell channel set, and what is the fix?
 ID: t0090-procedural-cell-silence-root-cause
 Created by: t0092_diagnose_morphology_generator_silence on 2026-05-08
@@ -1002,6 +1009,9 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
       <title>Paper Summaries</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.1523_JNEUROSCI.1979-23.2023</id>
+        <id>10.1113_JP286581</id>
+        <id>10.1007_s00424-024-02980-7</id>
         <id>10.64898_2026.02.02.701812</id>
         <id>10.1073_pnas.2415223122</id>
         <id>10.1523_JNEUROSCI.1461-23.2024</id>
@@ -1078,7 +1088,28 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 74
+Papers: 77
+
+## GABAergic Inhibition Controls Receptive Field Size, Sensitivity, and Contrast Preference of Direction Selective Retinal Ganglion Cells Near the Threshold of Vision
+ID: 10.1523_JNEUROSCI.1979-23.2023
+Year: 2024
+Authors: Suva Roy, Xiaoyang Yao, Jay Rathinavelu, Greg D. Field
+Added by task: t0091_morphology_extended_nsga2_v1
+Roy, Yao, Rathinavelu, and Field address the long-standing observation that superior-preferring ON-OFF DSGCs (s-DSGCs) detect dim stimuli substantially more reliably than the three other cardinal ooDSGC subtypes (anterior, inferior, posterior). The paper asks two questions: how large is the s-DSGC sensitivity advantage at the absolute threshold of vision, and which of three plausible mechanisms (RF size, Cx36 gap-junction coupling, GABAergic inhibition asymmetry) account for it? The motivation comes from prior work (Yao et al. 2018) suggesting s-DSGCs...
+
+## A new role for excitation in the retinal direction-selective circuit
+ID: 10.1113_JP286581
+Year: 2024
+Authors: Lea Ankri, Serena Riccitelli, Michal Rivlin-Etzion
+Added by task: t0091_morphology_extended_nsga2_v1
+Ankri, Riccitelli, and Rivlin-Etzion examine how prolonged photopic illumination reshapes the receptive field and directional code of posterior-preferring On-Off direction-selective ganglion cells (pDSGCs) in mouse retina. The standard textbook view, including the authors&#x27; own prior work, attributes retinal direction selectivity to asymmetric inhibition from starburst amacrine cells, with directional excitation either absent or attributed to space-clamp artefact. The authors set out to test whether luminance-state changes that are known to remodel...
+
+## Persistent sodium currents in neurons: potential mechanisms and pharmacological blockers
+ID: 10.1007_s00424-024-02980-7
+Year: 2024
+Authors: Peter Müller, Andreas Draguhn, Alexei V. Egorov
+Added by task: t0091_morphology_extended_nsga2_v1
+Mueller, Draguhn, and Egorov publish a systematic review of persistent sodium current (INaP) in CNS neurons in Pfluegers Archiv (Springer Nature, open access). The motivation is that INaP is a clinically important regulator of excitability - implicated in epilepsy, amyotrophic lateral sclerosis, neuropathic pain, hemiplegic migraine, and post-injury hyperexcitability - but the literature is fragmented across heterogeneous voltage-clamp protocols, inconsistent definitions of persistent versus slowly inactivating, and a sprawling catalogue of putative...
 
 ## Retinal waves shape starburst amacrine cell dendrite development through a direction-selective dendritic computation
 ID: 10.64898_2026.02.02.701812
