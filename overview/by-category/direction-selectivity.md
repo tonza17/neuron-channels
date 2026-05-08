@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (45)](../papers/by-category/direction-selectivity.md) | [Answers
 (17)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(250)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(251)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
@@ -2790,7 +2790,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (219 open, 31 closed)
+## Suggestions (220 open, 31 closed)
 
 <details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
@@ -2972,6 +2972,25 @@ peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -> peak_
 plus a polar-tuning-curve panel. If peaks shift systematically with asymmetry knobs, this
 resolves t0091's design question of whether per-cell PD must be re-discovered after morphology
 changes. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-cell decoded morphology CSV dump for HM-3 follow-up</strong>
+(S-0098-01)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0098_visualise_pareto_morphologies](../../tasks/t0098_visualise_pareto_morphologies/)
+
+t0098 produced morphology charts but no per-cell decoded knob values. S-0091-04 (alt_topology
+basin deep-dive) and S-0091-07 (PCA on Pareto morph vectors) both need a CSV with one row per
+Pareto cell containing (cell_id, anchor, DSI, PD-rate, robustness, num_primary_branches,
+branch_prob_per_um, max_strahler_depth, mean_branching_angle_deg, rall_exponent,
+soma_offset_pd_um, field_elongation_pd, branch_density_gradient_pd,
+primary_branch_pd_concentration, mean_segment_length_um, soma_diameter_um, ais_length_um,
+branch_length_cv). Trivial extension of t0098's _params_from_14d helper. Also covers HM-3's
+per-cell field_elongation_pd vs DSI test which Spearman length-vs-DSI did not directly answer.
+Recommended task type: data-analysis. Cost: $0.
 
 </details>
 

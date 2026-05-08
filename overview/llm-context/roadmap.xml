@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-08T16:52:52Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-08T21:55:13Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>420525</char_count>
-    <byte_count>420940</byte_count>
-    <estimated_tokens>105131</estimated_tokens>
+    <char_count>423824</char_count>
+    <byte_count>424239</byte_count>
+    <estimated_tokens>105956</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -201,9 +201,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0094_brainstorm_results_19</id>
         <id>t0095_brainstorm_results_20</id>
         <id>t0097_multi_obj_optim</id>
+        <id>t0098_visualise_pareto_morphologies</id>
       </source_ids>
       <content>
-Completed tasks: 89
+Completed tasks: 90
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -738,6 +739,12 @@ ID: t0097_multi_obj_optim
 Completed: 2026-05-08
 Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0097_multi_obj_optim&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Literature Survey of Multi-Objective Optimisation in Single-Neuron Models Summary Catalogued **6 objective functions** (4 must-find + 2 additional) usable on top of the project&#x27;s existing Bed B NSGA-II loop, with formulas, units, NEURON-side computational recipes, and biological-plausibility notes for each. Downloaded **10 paper assets** spanning the methodology canon (Druckmann 2007, Achard &amp; De Schutter 2006, BluePyOpt / Van Geit 2016), the metabolic energy line (Attwell &amp; Laughlin 2001, Niven &amp; Laughlin 2008, Sengupta et al. 2010), the information-theoretic line...
+
+## Visualise t0091 Pareto morphologies + per-cell DSI / PD-rate charts
+ID: t0098_visualise_pareto_morphologies
+Completed: 2026-05-08
+Short description: Visualize the 57 Pareto cells from t0091 as a morphology grid plus per-cell DSI / PD-rate / scatter charts.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0098_visualise_pareto_morphologies&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Visualise t0091 Pareto Morphologies Summary Produced four reproducible visualisations of t0091&#x27;s 57-cell Pareto front: an 8x8 morphology grid (sorted by DSI descending, colored by nearest anchor, annotated with DSI/PD-rate per panel), a sorted DSI bar chart, a sorted PD-rate bar chart, and a DSI-vs-PD scatter with the strict joint-pass cell starred. Total wall-clock: **8.65 s** on the local 64-core EPYC; total cost **$0.00**. Metrics * **57 cells** rendered (matches t0091&#x27;s Pareto archive cardinality). * **Anchor distribution recomputed and verified**...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1579,6 +1586,7 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0093-03</id>
         <id>S-0097-04</id>
         <id>S-0097-05</id>
+        <id>S-0098-01</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1626,9 +1634,11 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0090-07</id>
         <id>S-0092-06</id>
         <id>S-0093-04</id>
+        <id>S-0098-02</id>
+        <id>S-0098-03</id>
       </source_ids>
       <content>
-Open suggestions: 309
+Open suggestions: 312
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -3464,6 +3474,13 @@ Kind: experiment
 Source task: t0097_multi_obj_optim
 Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front directly comparable to Niven et al. 2007&#x27;s empirical fly-photoreceptor 200-1000 bits/s super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the literature, so the experiment closes a genuine open question. Tradeoff: this experiment does not directly serve the project&#x27;s first-question DSGC mission (DSI is not optimised); ranked medium because it serves a broader scientific question rather than the project&#x27;s specific deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
 
+## Per-cell decoded morphology CSV dump for HM-3 follow-up
+ID: S-0098-01
+Priority: medium
+Kind: evaluation
+Source task: t0098_visualise_pareto_morphologies
+t0098 produced morphology charts but no per-cell decoded knob values. S-0091-04 (alt_topology basin deep-dive) and S-0091-07 (PCA on Pareto morph vectors) both need a CSV with one row per Pareto cell containing (cell_id, anchor, DSI, PD-rate, robustness, num_primary_branches, branch_prob_per_um, max_strahler_depth, mean_branching_angle_deg, rall_exponent, soma_offset_pd_um, field_elongation_pd, branch_density_gradient_pd, primary_branch_pd_concentration, mean_segment_length_um, soma_diameter_um, ais_length_um, branch_length_cv). Trivial extension of t0098&#x27;s _params_from_14d helper. Also covers HM-3&#x27;s per-cell field_elongation_pd vs DSI test which Spearman length-vs-DSI did not directly...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -3792,6 +3809,20 @@ Priority: low
 Kind: experiment
 Source task: t0093_resweep_and_t0090_correction
 The t0093 implementation initially attempted a 5-cell validation gate in `--max-workers 1` (sequential) mode; the run hung beyond the wall-clock window and had to be killed and restarted in parallel mode (which completed in 7m44s). Hypothesis: NEURON state-leak between cells in the same Python process -- residual Section / NetCon / Vector references pile up in `h` despite t0090&#x27;s `_LIVE_CELLS` defense, eventually slowing or stalling `h.run()`. Reproduce on a 5-cell sequential run, instrument `len(h.allsec())` and `len(h.List(&#x27;NetCon&#x27;))` between cells, and try (a) explicit `for sec in list(h.allsec()): h.delete_section(sec=sec)`, (b) `h(&#x27;forall delete_section()&#x27;)`, or (c) creating a fresh...
+
+## Per-anchor strip layout of the morphology grid as a complement to DSI-sorted layout
+ID: S-0098-02
+Priority: low
+Kind: evaluation
+Source task: t0098_visualise_pareto_morphologies
+The current 8x8 grid sorted by DSI mixes anchors visually. A complementary layout with one row per anchor (4 rows: bedb_like / pd_asymmetric / nd_asymmetric / alt_topology, sorted within each by DSI) would make anchor-versus-anchor comparison easier to read and would highlight the alt_topology vs bedb_like basin separation more directly. Trivial extension of t0098&#x27;s _plot_grid using groupby. Recommended task type: data-analysis. Cost: $0.
+
+## Render AIS endpoints in the morphology grid
+ID: S-0098-03
+Priority: low
+Kind: library
+Source task: t0098_visualise_pareto_morphologies
+t0090&#x27;s MorphologyResult.section_endpoints_xy does not register AIS endpoints, so t0098 omits AIS in the grid panels. A small generator extension to populate the AIS xy entries would let t0098&#x27;s grid show the AIS as a distinct colored line per panel, enabling visual cross-checks of ais_length_um across the Pareto. Either extend the generator or compute the AIS endpoint locally from soma + ais_length_um direction in t0098&#x27;s plotting code. Recommended task type: write-library. Cost: $0.
       </content>
     </section>
   </sections>

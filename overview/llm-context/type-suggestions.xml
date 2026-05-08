@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-08T16:52:52Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-08T21:55:13Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>398816</char_count>
-    <byte_count>398978</byte_count>
-    <estimated_tokens>99704</estimated_tokens>
+    <char_count>401335</char_count>
+    <byte_count>401497</byte_count>
+    <estimated_tokens>100333</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -383,9 +383,12 @@
         <id>S-0097-03</id>
         <id>S-0097-04</id>
         <id>S-0097-05</id>
+        <id>S-0098-01</id>
+        <id>S-0098-02</id>
+        <id>S-0098-03</id>
       </source_ids>
       <content>
-Suggestions: 366
+Suggestions: 369
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4489,6 +4492,39 @@ Categories: compartmental-modeling, voltage-gated-channels, retinal-ganglion-cel
 Date added: 2026-05-08
 
 Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front directly comparable to Niven et al. 2007&#x27;s empirical fly-photoreceptor 200-1000 bits/s super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the literature, so the experiment closes a genuine open question. Tradeoff: this experiment does not directly serve the project&#x27;s first-question DSGC mission (DSI is not optimised); ranked medium because it serves a broader scientific question rather than the project&#x27;s specific deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
+
+## Per-cell decoded morphology CSV dump for HM-3 follow-up
+ID: S-0098-01
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0098_visualise_pareto_morphologies
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-08
+
+t0098 produced morphology charts but no per-cell decoded knob values. S-0091-04 (alt_topology basin deep-dive) and S-0091-07 (PCA on Pareto morph vectors) both need a CSV with one row per Pareto cell containing (cell_id, anchor, DSI, PD-rate, robustness, num_primary_branches, branch_prob_per_um, max_strahler_depth, mean_branching_angle_deg, rall_exponent, soma_offset_pd_um, field_elongation_pd, branch_density_gradient_pd, primary_branch_pd_concentration, mean_segment_length_um, soma_diameter_um, ais_length_um, branch_length_cv). Trivial extension of t0098&#x27;s _params_from_14d helper. Also covers HM-3&#x27;s per-cell field_elongation_pd vs DSI test which Spearman length-vs-DSI did not directly answer. Recommended task type: data-analysis. Cost: $0.
+
+## Per-anchor strip layout of the morphology grid as a complement to DSI-sorted layout
+ID: S-0098-02
+Status: active
+Priority: low
+Kind: evaluation
+Source task: t0098_visualise_pareto_morphologies
+Categories: compartmental-modeling
+Date added: 2026-05-08
+
+The current 8x8 grid sorted by DSI mixes anchors visually. A complementary layout with one row per anchor (4 rows: bedb_like / pd_asymmetric / nd_asymmetric / alt_topology, sorted within each by DSI) would make anchor-versus-anchor comparison easier to read and would highlight the alt_topology vs bedb_like basin separation more directly. Trivial extension of t0098&#x27;s _plot_grid using groupby. Recommended task type: data-analysis. Cost: $0.
+
+## Render AIS endpoints in the morphology grid
+ID: S-0098-03
+Status: active
+Priority: low
+Kind: library
+Source task: t0098_visualise_pareto_morphologies
+Categories: compartmental-modeling
+Date added: 2026-05-08
+
+t0090&#x27;s MorphologyResult.section_endpoints_xy does not register AIS endpoints, so t0098 omits AIS in the grid panels. A small generator extension to populate the AIS xy entries would let t0098&#x27;s grid show the AIS as a distinct colored line per panel, enabling visual cross-checks of ais_length_um across the Pareto. Either extend the generator or compute the AIS endpoint locally from soma + ais_length_um direction in t0098&#x27;s plotting code. Recommended task type: write-library. Cost: $0.
       </content>
     </section>
   </sections>

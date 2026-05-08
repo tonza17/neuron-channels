@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-97-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-366-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-98-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-369-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (34K)
-| [full](llm-context/full.xml) (553K) | [roadmap](llm-context/roadmap.xml) (105K) |
-[results](llm-context/results-deep-dive.xml) (427K) |
+| [full](llm-context/full.xml) (558K) | [roadmap](llm-context/roadmap.xml) (106K) |
+[results](llm-context/results-deep-dive.xml) (431K) |
 [assets](llm-context/literature-and-assets.xml) (60K)
 
-*Last updated: 2026-05-08 16:52 UTC*
+*Last updated: 2026-05-08 21:55 UTC*
 
 * **Budget**: **$16** spent of $20
 * **Remaining**: **$4**
@@ -82,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (89 total)](tasks/by-status/completed.md)
+## [Recently Completed (90 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0098 | [Visualise t0091 Pareto morphologies + per-cell DSI / PD-rate charts](../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) | [`results`](../tasks/t0098_visualise_pareto_morphologies/results/results_detailed.md) | 2026-05-08 21:50 |
 | 0095 | [Brainstorm results session 20](../overview/tasks/task_pages/t0095_brainstorm_results_20.md) | [`results`](../tasks/t0095_brainstorm_results_20/results/results_detailed.md) | 2026-05-08 20:45 |
 | 0094 | [Brainstorm results session 19](../overview/tasks/task_pages/t0094_brainstorm_results_19.md) | [`results`](../tasks/t0094_brainstorm_results_19/results/results_detailed.md) | 2026-05-08 18:30 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0097_multi_obj_optim.md) | [`results`](../tasks/t0097_multi_obj_optim/results/results_detailed.md) | 2026-05-08 16:50 |
@@ -95,9 +96,8 @@ No blocked tasks.
 | 0090 | [Procedural DSGC morphology generator + diversity test + validation bundle](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | [`results`](../tasks/t0090_morphology_generator_diversity_test/results/results_detailed.md) | 2026-05-07 18:25 |
 | 0089 | [Brainstorm results session 18](../overview/tasks/task_pages/t0089_brainstorm_results_18.md) | [`results`](../tasks/t0089_brainstorm_results_18/results/results_detailed.md) | 2026-05-07 11:30 |
 | 0088 | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) | [`results`](../tasks/t0088_recluster_marginals_and_vm_motifs/results/results_detailed.md) | 2026-05-06 21:10 |
-| 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`results`](../tasks/t0086_robustness_cluster_bio_comparison/results/results_detailed.md) | 2026-05-06 18:24 |
 
-*79 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*80 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +122,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (324 open)](suggestions/)
+## [Recent Suggestions (327 open)](suggestions/)
 
 <details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
@@ -326,7 +326,7 @@ should reflect the supersession overlay. Recommended task types: correction.
 
 </details>
 
-*314 more open suggestions → [open suggestions](suggestions/)*
+*317 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 

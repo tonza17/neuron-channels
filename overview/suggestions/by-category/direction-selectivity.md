@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-250 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **219 open** (39
-high, 159 medium, 21 low), **31 closed**.
+251 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **220 open** (39
+high, 160 medium, 21 low), **31 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -3332,6 +3332,31 @@ full-resolution voltage / spike traces preserved, compute Gaussian-convolved ins
 rates with sigma = 25 ms over a 1400 ms window, report peak rate over the PD direction.
 Recommended task types: data-analysis (no new simulator runs needed if traces from t0083 are
 preserved; otherwise experiment-run with 2-cell budget < $0.20).
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-cell decoded morphology CSV dump for HM-3 follow-up</strong>
+(S-0098-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0098-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0098_visualise_pareto_morphologies`](../../../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0098 produced morphology charts but no per-cell decoded knob values. S-0091-04 (alt_topology
+basin deep-dive) and S-0091-07 (PCA on Pareto morph vectors) both need a CSV with one row per
+Pareto cell containing (cell_id, anchor, DSI, PD-rate, robustness, num_primary_branches,
+branch_prob_per_um, max_strahler_depth, mean_branching_angle_deg, rall_exponent,
+soma_offset_pd_um, field_elongation_pd, branch_density_gradient_pd,
+primary_branch_pd_concentration, mean_segment_length_um, soma_diameter_um, ais_length_um,
+branch_length_cv). Trivial extension of t0098's _params_from_14d helper. Also covers HM-3's
+per-cell field_elongation_pd vs DSI test which Spearman length-vs-DSI did not directly answer.
+Recommended task type: data-analysis. Cost: $0.
 
 </details>
 

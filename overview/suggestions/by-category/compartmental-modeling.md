@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-297 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **262 open** (46
-high, 184 medium, 32 low), **35 closed**.
+300 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **265 open** (46
+high, 185 medium, 34 low), **35 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -4031,6 +4031,31 @@ preserved; otherwise experiment-run with 2-cell budget < $0.20).
 </details>
 
 <details>
+<summary>📊 <strong>Per-cell decoded morphology CSV dump for HM-3 follow-up</strong>
+(S-0098-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0098-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0098_visualise_pareto_morphologies`](../../../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0098 produced morphology charts but no per-cell decoded knob values. S-0091-04 (alt_topology
+basin deep-dive) and S-0091-07 (PCA on Pareto morph vectors) both need a CSV with one row per
+Pareto cell containing (cell_id, anchor, DSI, PD-rate, robustness, num_primary_branches,
+branch_prob_per_um, max_strahler_depth, mean_branching_angle_deg, rall_exponent,
+soma_offset_pd_um, field_elongation_pd, branch_density_gradient_pd,
+primary_branch_pd_concentration, mean_segment_length_um, soma_diameter_um, ais_length_um,
+branch_length_cv). Trivial extension of t0098's _params_from_14d helper. Also covers HM-3's
+per-cell field_elongation_pd vs DSI test which Spearman length-vs-DSI did not directly answer.
+Recommended task type: data-analysis. Cost: $0.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
 verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
 (S-0034-04)</summary>
@@ -6144,6 +6169,27 @@ driver. Recommended task types: write-library.
 </details>
 
 <details>
+<summary>📊 <strong>Per-anchor strip layout of the morphology grid as a complement
+to DSI-sorted layout</strong> (S-0098-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0098-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0098_visualise_pareto_morphologies`](../../../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The current 8x8 grid sorted by DSI mixes anchors visually. A complementary layout with one row
+per anchor (4 rows: bedb_like / pd_asymmetric / nd_asymmetric / alt_topology, sorted within
+each by DSI) would make anchor-versus-anchor comparison easier to read and would highlight the
+alt_topology vs bedb_like basin separation more directly. Trivial extension of t0098's
+_plot_grid using groupby. Recommended task type: data-analysis. Cost: $0.
+
+</details>
+
+<details>
 <summary>📂 <strong>Per-cell ex-vivo two-photon image segmentation of
 141009_Pair1DSGC to produce a cell-specific diameter ground truth</strong>
 (S-0009-07)</summary>
@@ -6386,6 +6432,27 @@ within-PD-branch or within-ND-branch density gradients invisible to a single x-m
 and would provide the substrate-level data needed to design any future per-branch synaptic
 modification (cf. S-0050-01 / S-0050-02). Pure post-hoc analysis on existing
 extract_coordinates outputs. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Render AIS endpoints in the morphology grid</strong> (S-0098-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0098-03` |
+| **Kind** | library |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0098_visualise_pareto_morphologies`](../../../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0090's MorphologyResult.section_endpoints_xy does not register AIS endpoints, so t0098 omits
+AIS in the grid panels. A small generator extension to populate the AIS xy entries would let
+t0098's grid show the AIS as a distinct colored line per panel, enabling visual cross-checks
+of ais_length_um across the Pareto. Either extend the generator or compute the AIS endpoint
+locally from soma + ais_length_um direction in t0098's plotting code. Recommended task type:
+write-library. Cost: $0.
 
 </details>
 
