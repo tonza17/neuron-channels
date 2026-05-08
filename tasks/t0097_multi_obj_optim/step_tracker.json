@@ -49,11 +49,11 @@
     {
       "step": 6,
       "name": "research-code",
-      "description": "Review prior task assets (libraries, answer assets) for any reusable code or context relevant to this survey.",
-      "status": "pending",
+      "description": "Skipped: pure literature survey; no prior task code, library, or answer asset is directly reusable for the objective-function catalogue.",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/006_research-code/"
     },
     {
       "step": 7,
