@@ -1,0 +1,59 @@
+{
+  "spec_version": "3",
+  "paper_id": "no-doi_Chklovskii2002_wiring-optimization-cortical",
+  "doi": "10.1016/s0896-6273(02)00679-7",
+  "title": "Wiring Optimization in Cortical Circuits",
+  "url": "https://doi.org/10.1016/s0896-6273(02)00679-7",
+  "pdf_url": "http://www.cell.com/article/S0896627302006797/pdf",
+  "date_published": "2002-04-25",
+  "year": 2002,
+  "authors": [
+    {
+      "name": "Dmitri B. Chklovskii",
+      "country": "US",
+      "institution": "Cold Spring Harbor Laboratory",
+      "orcid": "0000-0002-4781-2546"
+    },
+    {
+      "name": "Thomas Schikorski",
+      "country": "US",
+      "institution": "Salk Institute for Biological Studies",
+      "orcid": "0000-0003-3902-2461"
+    },
+    {
+      "name": "Charles F. Stevens",
+      "country": "US",
+      "institution": "Salk Institute for Biological Studies",
+      "orcid": "0000-0002-3709-9003"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Cold Spring Harbor Laboratory",
+      "country": "US"
+    },
+    {
+      "name": "Salk Institute for Biological Studies",
+      "country": "US"
+    },
+    {
+      "name": "Howard Hughes Medical Institute",
+      "country": "US"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "cable-theory",
+    "dendritic-computation"
+  ],
+  "abstract": "Wiring a brain presents a formidable problem because neural circuits require an enormous number of fast and durable connections. We propose that evolution was likely to have optimized neural circuits to minimize conduction delays in axons, passive cable attenuation in dendrites, and the length of \"wire\" used to construct circuits, and to have maximized the density of synapses. Here we ask the question: \"What fraction of the volume should be taken up by axons and dendrites (i.e., wire) when these variables are at their optimal values?\" The biophysical properties of axons and dendrites dictate that wire should occupy 3/5 of the volume in an optimally wired gray matter. We measured the fraction of the volume occupied by each cellular component and found that the volume of wire is close to the predicted optimal value.",
+  "citation_key": "Chklovskii2002",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "The Cell Press publisher PDF (http://www.cell.com/article/S0896627302006797/pdf) is gated by Cloudflare and returns HTTP 403 to non-browser clients. Attempts via curl with browser User-Agent, urllib, and a ResearchGate mirror were all blocked. OpenAlex lists the paper as bronze OA but the only OA location is the same Cloudflare-gated Cell URL; no PMC, repository, or preprint copy exists. Manual download via an authenticated browser would be required.",
+  "added_by_task": "t0097_multi_obj_optim",
+  "date_added": "2026-05-08"
+}

@@ -1,0 +1,46 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1371_journal.pcbi.0020094",
+  "doi": "10.1371/journal.pcbi.0020094",
+  "title": "Complex Parameter Landscape for a Complex Neuron Model",
+  "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0020094",
+  "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.0020094&type=printable",
+  "date_published": "2006-07-21",
+  "year": 2006,
+  "authors": [
+    {
+      "name": "Pablo Achard",
+      "country": "BE",
+      "institution": "Theoretical Neurobiology, University of Antwerp",
+      "orcid": null
+    },
+    {
+      "name": "Erik De Schutter",
+      "country": "BE",
+      "institution": "Theoretical Neurobiology, University of Antwerp",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Theoretical Neurobiology, University of Antwerp",
+      "country": "BE"
+    }
+  ],
+  "journal": "PLoS Computational Biology",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "voltage-gated-channels"
+  ],
+  "abstract": "The electrical activity of a neuron is strongly dependent on the ionic channels present in its membrane. Modifying the maximal conductances from these channels can have a dramatic impact on neuron behavior. But the effect of such modifications can also be cancelled out by compensatory mechanisms among different channels. We used an evolution strategy with a fitness function based on phase-plane analysis to obtain 20 very different computational models of the cerebellar Purkinje cell. All these models produced very similar outputs to current injections, including tiny details of the complex firing pattern. These models were not completely isolated in the parameter space, but neither did they belong to a large continuum of good models that would exist if weak compensations between channels were sufficient. The parameter landscape of good models can best be described as a set of loosely connected hyperplanes. Our method is efficient in finding good models in this complex landscape. Unraveling the landscape is an important step towards the understanding of functional homeostasis of neurons.",
+  "citation_key": "Achard2006",
+  "summary_path": "summary.md",
+  "files": [
+    "files/achard_2006_complex-parameter-landscape.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0097_multi_obj_optim",
+  "date_added": "2026-05-08"
+}

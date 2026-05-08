@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -m meta.asset_types.paper.verificator 10.1038_nn1352 --task-id t0097_multi_obj_optim",
+  "exit_code": 1,
+  "duration_seconds": 0.115,
+  "started_at": "2026-05-08T16:42:45Z",
+  "completed_at": "2026-05-08T16:42:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "048_20260508T164245Z_python-m-meta-asset-types-paper-verifica.stdout.txt",
+  "stderr_file": "048_20260508T164245Z_python-m-meta-asset-types-paper-verifica.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 12,
+  "truncated": false
+}

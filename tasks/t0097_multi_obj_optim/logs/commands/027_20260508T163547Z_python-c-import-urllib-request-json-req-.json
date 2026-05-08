@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -c \nimport urllib.request, json\nreq=urllib.request.Request('https://api.openalex.org/works/doi:10.1038/nn1352', headers={'User-Agent':'neuron-channels (mailto:a.nikolaev@sheffield.ac.uk)'})\nd=json.loads(urllib.request.urlopen(req,timeout=30).read())\nout={\n  'open_access': d.get('open_access'),\n  'best_oa_location': d.get('best_oa_location'),\n  'primary_location': d.get('primary_location',{}).get('source',{}).get('display_name') if d.get('primary_location') else None,\n  'locations': [{'url':(l.get('pdf_url') or l.get('landing_page_url')), 'is_oa':l.get('is_oa'), 'version':l.get('version'), 'host':(l.get('source') or {}).get('display_name')} for l in (d.get('locations') or [])],\n  'authorships': [{'name':a['author']['display_name'],'institutions':[{'name':i.get('display_name'),'country':i.get('country_code')} for i in a.get('institutions',[])],'orcid':a['author'].get('orcid')} for a in d.get('authorships',[])],\n  'cited_by_count': d.get('cited_by_count'),\n  'concepts': [c['display_name'] for c in d.get('concepts',[])[:10]]\n}\nprint(json.dumps(out, indent=2))\n",
+  "exit_code": 0,
+  "duration_seconds": 0.648,
+  "started_at": "2026-05-08T16:35:47Z",
+  "completed_at": "2026-05-08T16:35:48Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "027_20260508T163547Z_python-c-import-urllib-request-json-req-.stdout.txt",
+  "stderr_file": "027_20260508T163547Z_python-c-import-urllib-request-json-req-.stderr.txt",
+  "stdout_lines": 69,
+  "stderr_lines": 0,
+  "truncated": false
+}

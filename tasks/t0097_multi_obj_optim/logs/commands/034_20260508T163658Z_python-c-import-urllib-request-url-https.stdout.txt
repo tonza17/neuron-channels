@@ -1,0 +1,3 @@
+status 200 ctype application/pdf len 558570
+downloaded 558570 bytes; head: b'%PDF-1.5'
+saved to tasks/t0097_multi_obj_optim/assets/paper/10.1038_nn1352/files/prinz_2004_disparate-circuit-parameters.pdf

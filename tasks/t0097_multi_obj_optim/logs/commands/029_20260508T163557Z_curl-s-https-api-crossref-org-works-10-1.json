@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "curl -s https://api.crossref.org/works/10.1371/journal.pcbi.0020094",
+  "exit_code": 0,
+  "duration_seconds": 0.46,
+  "started_at": "2026-05-08T16:35:57Z",
+  "completed_at": "2026-05-08T16:35:58Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "029_20260508T163557Z_curl-s-https-api-crossref-org-works-10-1.stdout.txt",
+  "stderr_file": "029_20260508T163557Z_curl-s-https-api-crossref-org-works-10-1.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

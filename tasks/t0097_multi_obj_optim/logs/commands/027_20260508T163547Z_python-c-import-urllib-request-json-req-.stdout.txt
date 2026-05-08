@@ -1,0 +1,69 @@
+{
+  "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+  },
+  "best_oa_location": null,
+  "primary_location": "Nature Neuroscience",
+  "locations": [
+    {
+      "url": "https://doi.org/10.1038/nn1352",
+      "is_oa": false,
+      "version": "publishedVersion",
+      "host": "Nature Neuroscience"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15558066",
+      "is_oa": false,
+      "version": "publishedVersion",
+      "host": "PubMed"
+    }
+  ],
+  "authorships": [
+    {
+      "name": "Astrid A. Prinz",
+      "institutions": [
+        {
+          "name": "Brandeis University",
+          "country": "US"
+        }
+      ],
+      "orcid": "https://orcid.org/0000-0001-5600-1924"
+    },
+    {
+      "name": "Dirk Bucher",
+      "institutions": [
+        {
+          "name": "Brandeis University",
+          "country": "US"
+        }
+      ],
+      "orcid": "https://orcid.org/0000-0003-4144-2895"
+    },
+    {
+      "name": "Eve Marder",
+      "institutions": [
+        {
+          "name": "Brandeis University",
+          "country": "US"
+        }
+      ],
+      "orcid": "https://orcid.org/0000-0001-9632-5448"
+    }
+  ],
+  "cited_by_count": 1178,
+  "concepts": [
+    "Stomatogastric ganglion",
+    "Neuroscience",
+    "Computer science",
+    "Synapse",
+    "Biology",
+    "Nerve net",
+    "Physics",
+    "Central pattern generator",
+    "Acoustics",
+    "Rhythm"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -c import urllib.request, json; req=urllib.request.Request('https://api.crossref.org/works/10.1038/nn1352', headers={'User-Agent':'neuron-channels (mailto:a.nikolaev@sheffield.ac.uk)'}); d=json.loads(urllib.request.urlopen(req,timeout=30).read()); m=d['message']; print(json.dumps({'title':m.get('title'),'author':m.get('author'),'published':m.get('published-print') or m.get('published-online'),'container_title':m.get('container-title'),'type':m.get('type'),'publisher':m.get('publisher'),'abstract':m.get('abstract'),'URL':m.get('URL'),'link':m.get('link'),'volume':m.get('volume'),'issue':m.get('issue'),'page':m.get('page'),'ISSN':m.get('ISSN'),'subject':m.get('subject')}, indent=2, default=str))",
+  "exit_code": 0,
+  "duration_seconds": 1.471,
+  "started_at": "2026-05-08T16:35:22Z",
+  "completed_at": "2026-05-08T16:35:24Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "023_20260508T163522Z_python-c-import-urllib-request-json-req-.stdout.txt",
+  "stderr_file": "023_20260508T163522Z_python-c-import-urllib-request-json-req-.stderr.txt",
+  "stdout_lines": 68,
+  "stderr_lines": 0,
+  "truncated": false
+}

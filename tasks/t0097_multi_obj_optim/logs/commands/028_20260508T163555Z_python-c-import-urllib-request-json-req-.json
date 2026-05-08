@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -c \nimport urllib.request, json\nreq=urllib.request.Request('https://api.semanticscholar.org/graph/v1/paper/DOI:10.1038/nn1352?fields=title,abstract,openAccessPdf,isOpenAccess,externalIds,authors,year,venue,citationCount', headers={'User-Agent':'neuron-channels (mailto:a.nikolaev@sheffield.ac.uk)'})\nd=json.loads(urllib.request.urlopen(req,timeout=30).read())\nprint(json.dumps(d, indent=2))\n",
+  "exit_code": 0,
+  "duration_seconds": 0.807,
+  "started_at": "2026-05-08T16:35:55Z",
+  "completed_at": "2026-05-08T16:35:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "028_20260508T163555Z_python-c-import-urllib-request-json-req-.stdout.txt",
+  "stderr_file": "028_20260508T163555Z_python-c-import-urllib-request-json-req-.stderr.txt",
+  "stdout_lines": 35,
+  "stderr_lines": 0,
+  "truncated": false
+}

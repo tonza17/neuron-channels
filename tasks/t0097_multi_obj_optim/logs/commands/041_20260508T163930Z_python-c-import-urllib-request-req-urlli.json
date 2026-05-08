@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -c \nimport urllib.request\nreq = urllib.request.Request('https://api.openalex.org/works/doi:10.1016/s0896-6273(02)00679-7', headers={'User-Agent':'research-bot'})\nimport json\nprint(json.dumps(json.loads(urllib.request.urlopen(req).read()), indent=2)[:5000])\n",
+  "exit_code": 0,
+  "duration_seconds": 0.67,
+  "started_at": "2026-05-08T16:39:30Z",
+  "completed_at": "2026-05-08T16:39:30Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "041_20260508T163930Z_python-c-import-urllib-request-req-urlli.stdout.txt",
+  "stderr_file": "041_20260508T163930Z_python-c-import-urllib-request-req-urlli.stderr.txt",
+  "stdout_lines": 161,
+  "stderr_lines": 0,
+  "truncated": false
+}

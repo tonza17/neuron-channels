@@ -1,0 +1,13 @@
+usage: verificator.py [-h] [--task-id TASK_ID] [paper_id]
+
+Verify paper asset folder(s)
+
+positional arguments:
+  paper_id           Paper ID (folder name) to verify. If omitted, verifies
+                     all papers in the target directory.
+
+options:
+  -h, --help         show this help message and exit
+  --task-id TASK_ID  Task ID to locate papers in
+                     tasks/<task_id>/assets/paper/. If omitted, looks in top-
+                     level assets/paper/.

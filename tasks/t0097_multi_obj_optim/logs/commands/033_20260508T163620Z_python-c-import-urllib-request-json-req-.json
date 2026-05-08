@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -c \nimport urllib.request, json\nreq=urllib.request.Request('https://archive.org/wayback/available?url=www.nature.com/articles/nn1352.pdf', headers={'User-Agent':'Mozilla/5.0 neuron-channels (mailto:a.nikolaev@sheffield.ac.uk)'})\nprint('A:', json.loads(urllib.request.urlopen(req,timeout=20).read()))\nreq=urllib.request.Request('https://archive.org/wayback/available?url=www.brandeis.edu/marder/PDFs/2004/Prinz%20et%20al%20NN%202004.pdf', headers={'User-Agent':'Mozilla/5.0 neuron-channels (mailto:a.nikolaev@sheffield.ac.uk)'})\nprint('B:', json.loads(urllib.request.urlopen(req,timeout=20).read()))\nreq=urllib.request.Request('https://archive.org/wayback/available?url=www.bio.brandeis.edu/marder/PDFs/2004/Prinz_NN_2004.pdf', headers={'User-Agent':'Mozilla/5.0 neuron-channels (mailto:a.nikolaev@sheffield.ac.uk)'})\nprint('C:', json.loads(urllib.request.urlopen(req,timeout=20).read()))\n",
+  "exit_code": 1,
+  "duration_seconds": 16.252,
+  "started_at": "2026-05-08T16:36:20Z",
+  "completed_at": "2026-05-08T16:36:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "033_20260508T163620Z_python-c-import-urllib-request-json-req-.stdout.txt",
+  "stderr_file": "033_20260508T163620Z_python-c-import-urllib-request-json-req-.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 20,
+  "truncated": false
+}

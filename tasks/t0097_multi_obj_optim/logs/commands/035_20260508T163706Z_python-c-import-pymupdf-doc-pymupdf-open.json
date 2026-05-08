@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -c \nimport pymupdf\ndoc = pymupdf.open('tasks/t0097_multi_obj_optim/assets/paper/10.1038_nn1352/files/prinz_2004_disparate-circuit-parameters.pdf')\nprint('pages:', len(doc))\nprint('--- PAGE 1 ---')\nprint(doc[0].get_text()[:3500])\n",
+  "exit_code": 1,
+  "duration_seconds": 0.103,
+  "started_at": "2026-05-08T16:37:06Z",
+  "completed_at": "2026-05-08T16:37:06Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "035_20260508T163706Z_python-c-import-pymupdf-doc-pymupdf-open.stdout.txt",
+  "stderr_file": "035_20260508T163706Z_python-c-import-pymupdf-doc-pymupdf-open.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 4,
+  "truncated": false
+}

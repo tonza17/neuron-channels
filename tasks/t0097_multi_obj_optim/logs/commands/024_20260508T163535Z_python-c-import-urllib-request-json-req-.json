@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -c import urllib.request, json; req=urllib.request.Request('https://api.unpaywall.org/v2/10.1038/nn1352?email=a.nikolaev@sheffield.ac.uk', headers={'User-Agent':'neuron-channels (mailto:a.nikolaev@sheffield.ac.uk)'}); d=json.loads(urllib.request.urlopen(req,timeout=30).read()); print(json.dumps({'is_oa':d.get('is_oa'),'best_oa_location':d.get('best_oa_location'),'oa_locations':[{'url_for_pdf':l.get('url_for_pdf'),'url':l.get('url'),'host_type':l.get('host_type'),'version':l.get('version')} for l in (d.get('oa_locations') or [])]}, indent=2, default=str))",
+  "exit_code": 0,
+  "duration_seconds": 0.54,
+  "started_at": "2026-05-08T16:35:35Z",
+  "completed_at": "2026-05-08T16:35:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "024_20260508T163535Z_python-c-import-urllib-request-json-req-.stdout.txt",
+  "stderr_file": "024_20260508T163535Z_python-c-import-urllib-request-json-req-.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

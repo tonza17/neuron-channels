@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -c \nimport urllib.request, urllib.error\ncandidates = [\n  'https://www.brandeis.edu/marder/PDFs/2004/PrinzNN2004.pdf',\n  'https://www.brandeis.edu/marder/PDFs/PrinzNN2004.pdf',\n  'http://people.brandeis.edu/~marder/PDFs/2004/PrinzNN2004.pdf',\n  'https://link.springer.com/content/pdf/10.1038/nn1352.pdf',\n  'https://www.nature.com/articles/nn1352.pdf',\n]\nfor u in candidates:\n    try:\n        req = urllib.request.Request(u, method='HEAD', headers={'User-Agent':'Mozilla/5.0 neuron-channels (mailto:a.nikolaev@sheffield.ac.uk)'})\n        with urllib.request.urlopen(req, timeout=20) as r:\n            print(u, '=>', r.status, r.headers.get('Content-Type'), r.headers.get('Content-Length'))\n    except urllib.error.HTTPError as e:\n        print(u, '=>', 'HTTP', e.code, e.reason)\n    except Exception as e:\n        print(u, '=>', 'ERR', type(e).__name__, str(e)[:80])\n",
+  "exit_code": 0,
+  "duration_seconds": 4.208,
+  "started_at": "2026-05-08T16:36:06Z",
+  "completed_at": "2026-05-08T16:36:11Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "032_20260508T163606Z_python-c-import-urllib-request-urllib-er.stdout.txt",
+  "stderr_file": "032_20260508T163606Z_python-c-import-urllib-request-urllib-er.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

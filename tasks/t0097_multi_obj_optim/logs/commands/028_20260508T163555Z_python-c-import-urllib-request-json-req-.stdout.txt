@@ -1,0 +1,35 @@
+{
+  "paperId": "321b63446acb8397d7b445e2675d757f12ffd0bb",
+  "externalIds": {
+    "MAG": "2132047598",
+    "DOI": "10.1038/nn1352",
+    "CorpusId": 6697491,
+    "PubMed": "15558066"
+  },
+  "title": "Similar network activity from disparate circuit parameters",
+  "venue": "Nature Neuroscience",
+  "year": 2004,
+  "citationCount": 1080,
+  "isOpenAccess": false,
+  "openAccessPdf": {
+    "url": "",
+    "status": "CLOSED",
+    "license": null,
+    "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1038/nn1352?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1038/nn1352, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+  },
+  "authors": [
+    {
+      "authorId": "3153451",
+      "name": "A. Prinz"
+    },
+    {
+      "authorId": "32966809",
+      "name": "Dirk M. Bucher"
+    },
+    {
+      "authorId": "2801096",
+      "name": "E. Marder"
+    }
+  ],
+  "abstract": null
+}
