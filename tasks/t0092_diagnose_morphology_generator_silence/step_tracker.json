@@ -59,10 +59,10 @@
       "step": 7,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; embed Vm trace + post-fix polar tuning + structural diff charts.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-08T00:19:25Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\007_results/"
     },
     {
       "step": 8,
