@@ -41,9 +41,9 @@
       "step": 5,
       "name": "planning",
       "description": "Synthesise research-code findings into plan/plan.md with all 11 mandatory sections; specify Phase A-E sub-steps, validation gate, correction overlay JSON shape.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T01:00:43Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T01:08:26Z",
       "log_file": "logs\\steps\\005_planning/"
     },
     {
