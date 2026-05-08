@@ -1,0 +1,2 @@
+wrote 60 cell entries to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0093_resweep_and_t0090_correction\tasks\t0093_resweep_and_t0090_correction\data\pre_post_delta.json; cells_with_nonzero_pd_rate=56; pass_criterion_met=True
+transitions_count={'nan_to_stable_firing': 51, 'nan_to_stable_silent': 0, 'unchanged_nan': 0, 'unchanged_stable_silent': 0, 'stable_silent_to_stable_firing': 9, 'regression_stable_to_nan': 0, 'regression_stable_to_diverged': 0, 'unchanged_diverged': 0, 'unchanged_disconnected': 0, 'other': 0}

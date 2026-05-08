@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0093-01",
+  "correcting_task": "t0093_resweep_and_t0090_correction",
+  "target_task": "t0090_morphology_generator_diversity_test",
+  "target_kind": "library",
+  "target_id": "procedural_dsgc_morphology_generator",
+  "action": "replace",
+  "changes": {
+    "replacement_task": "t0092_diagnose_morphology_generator_silence",
+    "replacement_id": "procedural_dsgc_morphology_generator_fix"
+  },
+  "rationale": "t0092 diagnosed t0090's procedural_dsgc_morphology_generator as emitting two coincident soma pt3d points which collapse the soma cylinder length to ~1e-9 um, producing a soma surface area of ~9.4e-14 um^2 and driving every cell to NaN voltage as soon as synaptic input is applied. t0092's procedural_dsgc_morphology_generator_fix replaces the soma pt3d points with a z-axis cylinder of length soma_diameter_um and a diameter chosen so pi*d*L matches the t0024 reference area (~220 um^2). This task (t0093) executed the full 60-morphology Phase D verification under the patched generator with the unmodified t0083 best-cell parameter vector and the same 8-direction bar protocol; results in tasks/t0093_resweep_and_t0090_correction/data/post_fix_verification_summary.json and tasks/t0093_resweep_and_t0090_correction/data/pre_post_delta.json document the per-cell post-fix stability flags, DSI values, and pre->post transitions. Downstream consumers (t0091, t0086, t0088, and any future task that procedurally builds DSGC cells from MorphologyParams) must use the patched generator; this replace overlay redirects all library lookups for procedural_dsgc_morphology_generator to procedural_dsgc_morphology_generator_fix."
+}

@@ -1,0 +1,12 @@
+{
+  "aggregator_present": false,
+  "evidence": "library aggregator not present in branch \u2014 verified via arf.scripts.common.artifacts directly",
+  "effective_task_id": "t0092_diagnose_morphology_generator_silence",
+  "effective_library_id": "procedural_dsgc_morphology_generator_fix",
+  "deleted": false,
+  "correction_id": "C-0093-01",
+  "method": "arf.scripts.common.corrections.resolve_target",
+  "correcting_task": "t0093_resweep_and_t0090_correction",
+  "original_task_id": "t0090_morphology_generator_diversity_test",
+  "original_library_id": "procedural_dsgc_morphology_generator"
+}

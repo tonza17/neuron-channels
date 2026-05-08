@@ -1,0 +1,28 @@
+{
+  "variants": [
+    {
+      "variant_id": "different_set_post_fix",
+      "label": "Different-set 30 morphologies (post-fix)",
+      "dimensions": {
+        "morphology_population": "different",
+        "channels": "t0083_best_cell",
+        "generator": "procedural_dsgc_morphology_generator_fix"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4324860574785712
+      }
+    },
+    {
+      "variant_id": "similar_set_post_fix",
+      "label": "Similar-set 30 morphologies (post-fix)",
+      "dimensions": {
+        "morphology_population": "similar",
+        "channels": "t0083_best_cell",
+        "generator": "procedural_dsgc_morphology_generator_fix"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.364623577383425
+      }
+    }
+  ]
+}

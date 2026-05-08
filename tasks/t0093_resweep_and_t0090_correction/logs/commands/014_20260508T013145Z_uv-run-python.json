@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0093_resweep_and_t0090_correction",
+  "command": "uv run python -u -m arf.scripts.verificators.verify_corrections t0093_resweep_and_t0090_correction",
+  "exit_code": 0,
+  "duration_seconds": 0.513,
+  "started_at": "2026-05-08T01:31:45Z",
+  "completed_at": "2026-05-08T01:31:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0093_resweep_and_t0090_correction",
+  "stdout_file": "014_20260508T013145Z_uv-run-python.stdout.txt",
+  "stderr_file": "014_20260508T013145Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}
