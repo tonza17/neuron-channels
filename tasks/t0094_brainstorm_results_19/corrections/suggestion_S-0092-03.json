@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0094-01",
+  "correcting_task": "t0094_brainstorm_results_19",
+  "target_task": "t0092_diagnose_morphology_generator_silence",
+  "target_kind": "suggestion",
+  "target_id": "S-0092-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0092-03 proposes issuing a correction overlay against t0090's procedural_dsgc_morphology_generator marking it as superseded by the t0092 fix. t0093 already executed exactly this work: tasks/t0093_resweep_and_t0090_correction/corrections/library_procedural_dsgc_morphology_generator.json is a `replace` correction (C-0093-01) redirecting consumers to t0092's procedural_dsgc_morphology_generator_fix; verify_corrections.py PASSES; and the library supersession check confirms downstream consumers resolve the canonical generator to the fix. The suggestion is operationally fulfilled. Rejecting as covered."
+}

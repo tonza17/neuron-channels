@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-08T04:03:49Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-08T11:23:32Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>130185</char_count>
-    <byte_count>130424</byte_count>
-    <estimated_tokens>32546</estimated_tokens>
+    <char_count>131317</char_count>
+    <byte_count>131558</byte_count>
+    <estimated_tokens>32829</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -196,9 +196,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0090_morphology_generator_diversity_test</id>
         <id>t0092_diagnose_morphology_generator_silence</id>
         <id>t0093_resweep_and_t0090_correction</id>
+        <id>t0094_brainstorm_results_19</id>
       </source_ids>
       <content>
-Completed tasks: 85
+Completed tasks: 86
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -709,6 +710,12 @@ ID: t0093_resweep_and_t0090_correction
 Completed: 2026-05-08
 Short description: Re-run t0090&#x27;s 60-morph Phase D verification under the t0092 patched generator; issue correction overlay marking t0090&#x27;s procedural_dsgc_morphology_generator as superseded by t0092&#x27;s procedural_dsgc_morphology_generator_fix.
 Result summary: Results Summary: Patched-Generator 60-Morph Re-Sweep + t0090 Correction Overlay Summary The t0092 soma-pt3d fix is fully validated at scale: **60 / 60 cells STABLE-firing** post-fix (51 NAN_VOLTAGE→firing, 9 STABLE-silent→firing, 0 regressions). Pass criterion (≥50/60 with non-zero PD-rate) met at **56/60**; stretch (≥55/60) also exceeded. Mean DSI different=0.323, similar=0.352. The `replace` correction overlay against t0090&#x27;s `procedural_dsgc_morphology_generator` library asset is in place and `verify_corrections.py` PASSES; supersession check confirms the redirect to t0092&#x27;s `procedural_dsgc_morphology_generator_fix`. Metrics * **Total cells re-swept**: **60** (30 different + 30 similar)...
+
+## Brainstorm results session 19
+ID: t0094_brainstorm_results_19
+Completed: 2026-05-08
+Short description: Nineteenth brainstorm: greenlight t0091 launch; update t0091 deps + imports for t0092/t0093 fix; reject 2 superseded suggestions.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0094_brainstorm_results_19&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 19 Summary Nineteenth strategic brainstorm, run on 2026-05-08 immediately after t0093 (`resweep_and_t0090_correction`) merged with 60/60 cells STABLE-firing under the t0092 patched generator and `C-0093-01` correction overlay in place. The researcher&#x27;s directive was direct: launch the morphology-extended NSGA-II optimisation now. The session updated t0091 (`morphology_extended_nsga2_v1`) in place — added t0092 + t0093 to dependencies, swapped the generator import path to `tasks.t0092_..code.morphology_generator_fix.generate_fixed_morphology`...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -747,8 +754,8 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
 ID: t0091_morphology_extended_nsga2_v1
 Status: not_started
 Effective date: 2026-05-07
-Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test
+Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

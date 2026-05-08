@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0094-02",
+  "correcting_task": "t0094_brainstorm_results_19",
+  "target_task": "t0090_morphology_generator_diversity_test",
+  "target_kind": "suggestion",
+  "target_id": "S-0090-04",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0090-04 proposes tightening t0091's LHS morphology bounds by fitting per-axis empirical bounds to the 9 STABLE cells from the t0090 diversity sweep, on the premise that 51/60 morphologies failed NAN_VOLTAGE under the fixed t0083 best-cell channel set. t0093's patched-generator re-sweep made 60/60 cells STABLE-firing under that same channel set, with 56/60 having PD-rate>0 and 0 regressions. The 9 STABLE pool was an artefact of the soma-pt3d collapse bug, not a real signal about which morphology parameter ranges produce stable cells. The tightening rationale is therefore invalidated, and using the original wide LHS bounds is correct for t0091. Rejecting as premise-falsified."
+}

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-08T04:03:49Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-08T11:23:32Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>383602</char_count>
-    <byte_count>383758</byte_count>
-    <estimated_tokens>95900</estimated_tokens>
+    <char_count>383606</char_count>
+    <byte_count>383762</byte_count>
+    <estimated_tokens>95901</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -4174,7 +4174,7 @@ t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every lev
 
 ## Tighten t0091 LHS morphology bounds using the 9 STABLE cells from the t0090 diversity sweep
 ID: S-0090-04
-Status: active
+Status: rejected
 Priority: high
 Kind: evaluation
 Source task: t0090_morphology_generator_diversity_test
@@ -4240,7 +4240,7 @@ The shipped t0092 fix preserves the procedural cylinder geometry: post-fix soma 
 
 ## Issue a correction overlay against t0090 marking the procedural generator as superseded by the t0092 fix
 ID: S-0092-03
-Status: active
+Status: rejected
 Priority: high
 Kind: library
 Source task: t0092_diagnose_morphology_generator_silence
