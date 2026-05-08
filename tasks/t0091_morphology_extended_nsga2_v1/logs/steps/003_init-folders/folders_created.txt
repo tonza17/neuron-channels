@@ -1,0 +1,18 @@
+Created folders:
+- tasks/t0091_morphology_extended_nsga2_v1/__init__.py
+- tasks/t0091_morphology_extended_nsga2_v1/code/__init__.py
+- tasks/t0091_morphology_extended_nsga2_v1/code/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/plan/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/research/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/results/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/results/images/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/assets/answer/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/assets/predictions/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/corrections/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/intervention/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/logs/commands/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/logs/searches/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/logs/sessions/.gitkeep
+- tasks/t0091_morphology_extended_nsga2_v1/logs/steps/.gitkeep
+
+13 directories with .gitkeep files; 2 __init__.py files.
