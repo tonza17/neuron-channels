@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Write follow-up suggestions if the visualisation surfaces patterns worth pursuing.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T21:48:10Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T21:49:19Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
