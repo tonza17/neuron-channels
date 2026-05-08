@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0093_resweep_and_t0090_correction",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_suggestions --format json --detail full --uncovered",
+  "exit_code": 0,
+  "duration_seconds": 0.692,
+  "started_at": "2026-05-08T03:51:48Z",
+  "completed_at": "2026-05-08T03:51:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0093_resweep_and_t0090_correction",
+  "stdout_file": "028_20260508T035148Z_uv-run-python.stdout.txt",
+  "stderr_file": "028_20260508T035148Z_uv-run-python.stderr.txt",
+  "stdout_lines": 4046,
+  "stderr_lines": 0,
+  "truncated": false
+}
