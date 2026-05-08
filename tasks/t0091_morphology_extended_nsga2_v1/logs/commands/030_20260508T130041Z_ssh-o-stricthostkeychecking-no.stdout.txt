@@ -1,0 +1,8 @@
+--- NEURON HH smoke test ---
+gnabar_hh default = 0.12
+NEURON HH smoke test OK
+--- nrnivmodl smoke test ---
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+-rwxr-xr-x 1 root root 17008 May  8 13:00 x86_64/.libs/libnrnmech.so

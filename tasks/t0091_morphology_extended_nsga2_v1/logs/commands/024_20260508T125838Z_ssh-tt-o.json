@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "ssh -tt -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 24984 root@ssh4.vast.ai echo CMD1; touch /root/.no_auto_tmux; ls -la /root/.no_auto_tmux; pkill -9 -f tmux; sleep 1; echo SUCCESS_DONE; exit",
+  "exit_code": 255,
+  "duration_seconds": 23.978,
+  "started_at": "2026-05-08T12:58:38Z",
+  "completed_at": "2026-05-08T12:59:02Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "024_20260508T125838Z_ssh-tt-o.stdout.txt",
+  "stderr_file": "024_20260508T125838Z_ssh-tt-o.stderr.txt",
+  "stdout_lines": 45,
+  "stderr_lines": 3,
+  "truncated": false
+}

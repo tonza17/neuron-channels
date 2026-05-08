@@ -1,0 +1,13 @@
+--- apt update ---
+--- apt install build deps ---
+update-alternatives: using /usr/bin/gfortran to provide /usr/bin/f95 (f95) in auto mode
+update-alternatives: using /usr/bin/gfortran to provide /usr/bin/f77 (f77) in auto mode
+Processing triggers for libc-bin (2.36-9+deb12u13) ...
+--- install uv ---
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+--- uv version ---
+uv 0.11.11 (x86_64-unknown-linux-gnu)

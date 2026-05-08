@@ -1,0 +1,12 @@
+smoke gbar = 1.0
+nrnivmodl smoke test OK
+--- pymoo full import chain ---
+pymoo NSGA2 + StarmapParallelization imports OK
+--- environment readiness summary ---
+Python 3.12.13
+uv 0.11.11 (x86_64-unknown-linux-gnu)
+/usr/bin/gcc
+gcc (Debian 12.2.0-14+deb12u1) 12.2.0
+/usr/bin/gfortran
+GNU Fortran (Debian 12.2.0-14+deb12u1) 12.2.0
+-rwxr-xr-x 1 root root 4466 May  8 13:00 /root/t0091_workdir/.venv/bin/nrnivmodl

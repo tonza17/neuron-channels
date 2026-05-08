@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "vastai show user --raw",
+  "exit_code": 0,
+  "duration_seconds": 3.969,
+  "started_at": "2026-05-08T12:49:47Z",
+  "completed_at": "2026-05-08T12:49:51Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "006_20260508T124947Z_vastai-show-user.stdout.txt",
+  "stderr_file": "006_20260508T124947Z_vastai-show-user.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

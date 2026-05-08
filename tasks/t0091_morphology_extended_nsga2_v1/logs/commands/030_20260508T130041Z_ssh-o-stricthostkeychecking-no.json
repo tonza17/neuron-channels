@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 24984 root@ssh4.vast.ai set -euo pipefail; cd /root/t0091_workdir; echo \"--- NEURON HH smoke test ---\"; .venv/bin/python -c \"\nfrom neuron import h\nsoma = h.Section(name=\\\"soma\\\")\nsoma.insert(\\\"hh\\\")\nprint(f\\\"gnabar_hh default = {soma(0.5).hh.gnabar}\\\")\nprint(\\\"NEURON HH smoke test OK\\\")\n\"\necho \"--- nrnivmodl smoke test ---\"\nmkdir -p /tmp/nrnsmoke && cd /tmp/nrnsmoke\ncat > smoke.mod <<MOD_EOF\nNEURON {\n  SUFFIX smoke\n  RANGE gbar\n}\nPARAMETER {\n  gbar = 0 (1/cm2)\n}\nASSIGNED {\n  v (mV)\n}\nINITIAL {}\nBREAKPOINT {}\nMOD_EOF\nPATH=/root/t0091_workdir/.venv/bin:$PATH /root/t0091_workdir/.venv/bin/nrnivmodl 2>&1 | tail -3\nls -la x86_64/.libs/libnrnmech.so 2>&1 | tail -1\n/root/t0091_workdir/.venv/bin/python -c \"\nfrom neuron import h\nh.nrn_load_dll(\\\"/tmp/nrnsmoke/x86_64/.libs/libnrnmech.so\\\")\nsoma = h.Section(name=\\\"soma\\\")\nsoma.insert(\\\"smoke\\\")\nsoma(0.5).smoke.gbar = 1.0\nprint(f\\\"smoke gbar = {soma(0.5).smoke.gbar}\\\")\nprint(\\\"nrnivmodl smoke test OK\\\")\n\"\necho \"--- pymoo NSGA2 import ---\"\n/root/t0091_workdir/.venv/bin/python -c \"\nfrom pymoo.algorithms.moo.nsga2 import NSGA2\nfrom pymoo.operators.crossover.sbx import SBX\nfrom pymoo.operators.mutation.pm import PM\nfrom pymoo.termination.collection import TerminationCollection\nfrom pymoo.termination.max_gen import MaximumGenerationTermination\nfrom pymoo.core.problem import ElementwiseProblem\nfrom pymoo.parallelization.starmap import StarmapParallelization\nprint(\\\"pymoo NSGA2 + StarmapParallelization imports OK\\\")\n\"\n",
+  "exit_code": 1,
+  "duration_seconds": 4.472,
+  "started_at": "2026-05-08T13:00:41Z",
+  "completed_at": "2026-05-08T13:00:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "030_20260508T130041Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "030_20260508T130041Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 14,
+  "truncated": false
+}

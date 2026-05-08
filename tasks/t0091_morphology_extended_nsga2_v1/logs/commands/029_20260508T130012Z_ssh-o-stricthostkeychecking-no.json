@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 24984 root@ssh4.vast.ai set -euo pipefail; export PATH=/root/.local/bin:$PATH; cd /root; mkdir -p t0091_workdir && cd t0091_workdir; echo \"--- creating venv with python 3.12 ---\"; uv venv --python 3.12 .venv 2>&1 | tail -5; echo \"--- installing neuron+pymoo+numpy+pandas+scipy+matplotlib ---\"; uv pip install --python .venv/bin/python neuron==8.2.7 pymoo==0.6.1.6 numpy scipy pandas matplotlib pydantic 2>&1 | tail -15; echo \"--- versions ---\"; .venv/bin/python -c \"import neuron, pymoo, numpy, scipy, pandas, matplotlib, pydantic; print(f\\\"neuron={neuron.__version__}\\\"); print(f\\\"pymoo={pymoo.__version__}\\\"); print(f\\\"numpy={numpy.__version__}\\\"); print(f\\\"scipy={scipy.__version__}\\\"); print(f\\\"pandas={pandas.__version__}\\\"); print(f\\\"matplotlib={matplotlib.__version__}\\\"); print(f\\\"pydantic={pydantic.__version__}\\\")\"",
+  "exit_code": 0,
+  "duration_seconds": 9.441,
+  "started_at": "2026-05-08T13:00:12Z",
+  "completed_at": "2026-05-08T13:00:21Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "029_20260508T130012Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "029_20260508T130012Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 28,
+  "stderr_lines": 4,
+  "truncated": false
+}

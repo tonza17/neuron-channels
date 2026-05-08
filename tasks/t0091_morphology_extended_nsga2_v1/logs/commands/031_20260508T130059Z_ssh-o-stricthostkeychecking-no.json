@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 24984 root@ssh4.vast.ai /root/t0091_workdir/.venv/bin/python -c \"\nimport os\nos.chdir(\\\"/tmp\\\")\nfrom neuron import h\nh.nrn_load_dll(\\\"/tmp/nrnsmoke/x86_64/.libs/libnrnmech.so\\\")\nsoma = h.Section(name=\\\"soma\\\")\nsoma.insert(\\\"smoke\\\")\nsoma(0.5).smoke.gbar = 1.0\nprint(f\\\"smoke gbar = {soma(0.5).smoke.gbar}\\\")\nprint(\\\"nrnivmodl smoke test OK\\\")\n\"\necho \"--- pymoo full import chain ---\"\n/root/t0091_workdir/.venv/bin/python -c \"\nfrom pymoo.algorithms.moo.nsga2 import NSGA2\nfrom pymoo.operators.crossover.sbx import SBX\nfrom pymoo.operators.mutation.pm import PM\nfrom pymoo.termination.collection import TerminationCollection\nfrom pymoo.termination.max_gen import MaximumGenerationTermination\nfrom pymoo.core.problem import ElementwiseProblem\nfrom pymoo.parallelization.starmap import StarmapParallelization\nprint(\\\"pymoo NSGA2 + StarmapParallelization imports OK\\\")\n\"\necho \"--- environment readiness summary ---\"\n/root/t0091_workdir/.venv/bin/python -V\n/root/.local/bin/uv --version\nwhich gcc && gcc --version | head -1\nwhich gfortran && gfortran --version | head -1\nls -la /root/t0091_workdir/.venv/bin/nrnivmodl\n",
+  "exit_code": 0,
+  "duration_seconds": 3.94,
+  "started_at": "2026-05-08T13:00:59Z",
+  "completed_at": "2026-05-08T13:01:02Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "031_20260508T130059Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "031_20260508T130059Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 4,
+  "truncated": false
+}

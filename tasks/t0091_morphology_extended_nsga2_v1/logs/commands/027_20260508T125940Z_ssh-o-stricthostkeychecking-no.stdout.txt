@@ -1,0 +1,22 @@
+--- CPU ---
+model name	: AMD EPYC 7B13 64-Core Processor
+--- nproc ---
+128
+--- cpu cores effective from env ---
+--- cgroup quota ---
+6143999 100000
+--- mem ---
+               total        used        free      shared  buff/cache   available
+Mem:             503          32         393          15          97         471
+Swap:              7           0           7
+--- disk ---
+overlay          40G 1004K   40G   1% /
+--- python ---
+Python 3.12.13
+/usr/local/bin/python3
+--- os ---
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+--- kernel ---
+Linux f9adfd35e718 5.15.0-170-generic #180-Ubuntu SMP Fri Jan 9 16:10:31 UTC 2026 x86_64 GNU/Linux
+--- public ip ---
+141.0.85.200
