@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review code, libraries, and assets from t0078, t0080, t0081, t0083, t0086, t0088, t0090, t0092, t0093: NSGA-II driver, biological scorecard, cluster framework, t0092 patched generator, t0093 correction overlay.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T12:19:30Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T12:37:08Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
