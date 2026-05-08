@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (43)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(95)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(96)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2388,7 +2388,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (84 open, 11 closed)
+## Suggestions (85 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Investigate the synapse-XY symmetry residual (Phase D Candidate
+C) under neutral asymmetry knobs</strong> (S-0092-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../../tasks/t0092_diagnose_morphology_generator_silence/)
+
+The post-fix BedB-equivalent meets PD-rate>0 (43.6 Hz) but DSI=0.034, missing the >0.1
+criterion. Phase D root-cause analysis traced this to Candidate C: under neutral asymmetry
+knobs (soma_offset_pd_um=0, field_elongation_pd=1.0, branch_density_gradient_pd=0,
+primary_branch_pd_concentration=0) primary stems extend symmetrically around the soma and 41%
+of synapses fall outside the bar's [0, 1400] ms window for the PD direction. Quantify the
+relationship between each of the 4 asymmetry knobs and post-fix DSI by sweeping each one while
+holding the others neutral, then identify a slightly-asymmetric variant of BEDB_BASE_POINT
+(e.g. soma_offset_pd_um=+30 um or field_elongation_pd=1.2) that produces DSI>0.1 by
+construction without losing the BedB topology. The result feeds t0091's warm-start anchor
+selection. Recommended task types: experiment-run, data-analysis.
+
+</details>
 
 <details>
 <summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune

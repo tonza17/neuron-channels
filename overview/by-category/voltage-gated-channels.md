@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (21)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (8)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(88)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(89)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -1257,7 +1257,26 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (73 open, 15 closed)
+## Suggestions (74 open, 15 closed)
+
+<details>
+<summary>🧪 <strong>Re-calibrate t0083 channel densities to the post-fix procedural
+cell's 707 um^2 cylinder soma</strong> (S-0092-06)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../../tasks/t0092_diagnose_morphology_generator_silence/)
+
+The post-fix BedB-equivalent fires 61 spikes vs the hand-coded Bed B's 41 spikes under the
+same t0083 vector, because the channel densities were optimised on the 287 um^2 hand-coded
+soma but the post-fix procedural soma is 707 um^2. Rather than tightening the soma area to
+match t0024 (S-0092-02's path), the alternative is to re-run a small-scale NSGA-II pass on the
+25 channel-density parameters (indices 0-24 + the dendritic-spike block 49-53) holding
+morphology fixed at the post-fix BedB-equivalent, to find a 30-cell Pareto front under the
+larger soma. The chosen winner becomes the new t0091 channel-side warm-start anchor. ~$1-2
+cost on a single A10G; pure follow-up to t0083 with the new substrate. Recommended task types:
+experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with

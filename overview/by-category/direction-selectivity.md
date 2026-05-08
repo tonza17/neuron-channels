@@ -5,10 +5,10 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (43)](../papers/by-category/direction-selectivity.md) | [Answers
-(16)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(240)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(17)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(243)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
-(15)](../libraries/by-category/direction-selectivity.md) | [Predictions
+(16)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
 
 ---
@@ -2291,7 +2291,28 @@ simulation.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 
-## Answers (16)
+## Answers (17)
+
+<details>
+<summary><strong>Why do t0090's procedural cells produce zero spikes under the t0083
+best-cell channel set, and what is the fix?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-08 | **Full answer**:
+[`t0090-procedural-cell-silence-root-cause`](../../tasks/t0092_diagnose_morphology_generator_silence/assets/answer/t0090-procedural-cell-silence-root-cause/)
+
+The t0090 generator emits the soma's two pt3d points at coincident `(x, y, 0)` coordinates, so
+NEURON computes the cumulative pt3d length as zero, overrides the prior `sec.L =
+soma_diameter_um` assignment, and the soma's surface area collapses to ~9.4e-14 µm² —
+essentially a point. Synaptic input then drives the somatic Vm to NaN within a few simulation
+steps, so every procedural cell in t0090's 60-cell sweep returns `non_finite_voltage` (51
+cells) or zero spikes (the 9 STABLE cells that happened to clear the no-stim stability check).
+The fix is the `procedural_dsgc_morphology_generator_fix` library: a thin wrapper that
+re-emits the soma's pt3d points along the z-axis so the cylinder length equals
+`soma_diameter_um` and the surface area matches the t0024 hand-coded reference (~220 µm²).
+After applying the fix the BedB-equivalent procedural cell fires 61 spikes in the PD direction
+(43.6 Hz, peak Vm ~11 mV).
+
+</details>
 
 <details>
 <summary><strong>Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit,
@@ -2652,25 +2673,63 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (211 open, 29 closed)
+## Suggestions (213 open, 30 closed)
 
 <details>
-<summary>🧪 <strong>Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits
-spikes under the t0083 channel set</strong> (S-0090-01)</summary>
+<summary>🧪 <strong>Patched-generator full 60-morph re-sweep to validate the t0092
+soma fix at scale</strong> (S-0092-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
-[t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../../tasks/t0092_diagnose_morphology_generator_silence/)
 
-The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is
-STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the
-partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration
-produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout
-deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md
-analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the
-current Bed-B base point and pick the (params, seed) combination whose procedural cell most
-closely reproduces the de Rosenroll 2026 / t0024 Bed B port's DSI and PD firing rate under the
-t0083 best-cell channel set. Then re-run Phase F, G.2, and G.3 on the corrected base point.
-Recommended task types: correction, experiment-run.
+t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
+under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
+as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
+full 60-morphology Phase D verification under the t0083 vector with the patched
+generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
+STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
+project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
+(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
+local 64-core. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate the synapse-XY symmetry residual (Phase D Candidate
+C) under neutral asymmetry knobs</strong> (S-0092-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../../tasks/t0092_diagnose_morphology_generator_silence/)
+
+The post-fix BedB-equivalent meets PD-rate>0 (43.6 Hz) but DSI=0.034, missing the >0.1
+criterion. Phase D root-cause analysis traced this to Candidate C: under neutral asymmetry
+knobs (soma_offset_pd_um=0, field_elongation_pd=1.0, branch_density_gradient_pd=0,
+primary_branch_pd_concentration=0) primary stems extend symmetrically around the soma and 41%
+of synapses fall outside the bar's [0, 1400] ms window for the PD direction. Quantify the
+relationship between each of the 4 asymmetry knobs and post-fix DSI by sweeping each one while
+holding the others neutral, then identify a slightly-asymmetric variant of BEDB_BASE_POINT
+(e.g. soma_offset_pd_um=+30 um or field_elongation_pd=1.2) that produces DSI>0.1 by
+construction without losing the BedB topology. The result feeds t0091's warm-start anchor
+selection. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-calibrate t0083 channel densities to the post-fix procedural
+cell's 707 um^2 cylinder soma</strong> (S-0092-06)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../../tasks/t0092_diagnose_morphology_generator_silence/)
+
+The post-fix BedB-equivalent fires 61 spikes vs the hand-coded Bed B's 41 spikes under the
+same t0083 vector, because the channel densities were optimised on the 287 um^2 hand-coded
+soma but the post-fix procedural soma is 707 um^2. Rather than tightening the soma area to
+match t0024 (S-0092-02's path), the alternative is to re-run a small-scale NSGA-II pass on the
+25 channel-density parameters (indices 0-24 + the dendritic-spike block 49-53) holding
+morphology fixed at the post-fix BedB-equivalent, to find a 30-cell Pareto front under the
+larger soma. The chosen winner becomes the new t0091 channel-side warm-start anchor. ~$1-2
+cost on a single A10G; pure follow-up to t0083 with the new substrate. Recommended task types:
+experiment-run.
 
 </details>
 

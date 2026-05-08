@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-95 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **84 open** (16 high,
-61 medium, 7 low), **11 closed**.
+96 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **85 open** (16 high,
+62 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1062,6 +1062,32 @@ sigmoidal, threshold-like, or linear; (2) the critical gabaMOD value at which DS
 Probes whether the paper's two-point choice lies on a plateau or a steep-response region of
 the inhibition axis, directly informing the inhibition-strength free parameter for later
 optimisation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate the synapse-XY symmetry residual (Phase D Candidate
+C) under neutral asymmetry knobs</strong> (S-0092-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0092-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The post-fix BedB-equivalent meets PD-rate>0 (43.6 Hz) but DSI=0.034, missing the >0.1
+criterion. Phase D root-cause analysis traced this to Candidate C: under neutral asymmetry
+knobs (soma_offset_pd_um=0, field_elongation_pd=1.0, branch_density_gradient_pd=0,
+primary_branch_pd_concentration=0) primary stems extend symmetrically around the soma and 41%
+of synapses fall outside the bar's [0, 1400] ms window for the PD direction. Quantify the
+relationship between each of the 4 asymmetry knobs and post-fix DSI by sweeping each one while
+holding the others neutral, then identify a slightly-asymmetric variant of BEDB_BASE_POINT
+(e.g. soma_offset_pd_um=+30 um or field_elongation_pd=1.2) that produces DSI>0.1 by
+construction without losing the BedB topology. The result feeds t0091's warm-start anchor
+selection. Recommended task types: experiment-run, data-analysis.
 
 </details>
 

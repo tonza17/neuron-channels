@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-71 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **64 open** (12
-high, 43 medium, 9 low), **7 closed**.
+73 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **65 open** (12
+high, 44 medium, 9 low), **8 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -166,6 +166,31 @@ window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Patched-generator full 60-morph re-sweep to validate the t0092
+soma fix at scale</strong> (S-0092-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0092-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
+under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
+as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
+full 60-morphology Phase D verification under the t0083 vector with the patched
+generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
+STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
+project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
+(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
+local 64-core. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Re-run t0055 Mg-block sweep on the corrected
 EPSP_PASSIVE/IPSP_PASSIVE protocol to validate the headline DSI
 recovery</strong> (S-0055-02)</summary>
@@ -212,32 +237,6 @@ baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smo
 to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a
 correction, replacing the synthetic fixture outputs. Recommended task types:
 feature-engineering, code-reproduction.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits
-spikes under the t0083 channel set</strong> (S-0090-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0090-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-07 |
-| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is
-STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the
-partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration
-produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout
-deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md
-analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the
-current Bed-B base point and pick the (params, seed) combination whose procedural cell most
-closely reproduces the de Rosenroll 2026 / t0024 Bed B port's DSI and PD firing rate under the
-t0083 best-cell channel set. Then re-run Phase F, G.2, and G.3 on the corrected base point.
-Recommended task types: correction, experiment-run.
 
 </details>
 
@@ -1375,6 +1374,31 @@ build-model, experiment-run.
 </details>
 
 <details>
+<summary>📚 <strong>Tighten post-fix procedural soma to match the t0024 hand-coded
+287 um^2 reference area</strong> (S-0092-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0092-02` |
+| **Kind** | library |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The shipped t0092 fix preserves the procedural cylinder geometry: post-fix soma area is ~707
+um^2 vs t0024's hand-coded reference 287 um^2 (2.5x mismatch). Because t0083 channel densities
+were calibrated on the smaller hand-coded soma, the post-fix BedB-equivalent overshoots the
+original Bed B (peak Vm +11 mV vs +4.65 mV; 61 vs 41 spikes). Refine the fix to emit either
+(a) a 7-pt3d frustum stack reproducing t0024's profile, or (b) a single cylinder with sec.L=15
+um, sec.diam=15/3.2 um chosen so pi*d*L matches 287 um^2 exactly. Ship as a v2 of
+generate_fixed_morphology; validate that the patched cell now produces ~41 spikes and peak Vm
+~+5 mV under the unmodified t0083 vector. This eliminates a known second-order discrepancy
+before t0091 launches. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Unblock t0023 Hanson 2019 port so REQ-6 cross-comparison can
 include 5/5 DSGC models instead of 4/5</strong> (S-0024-06)</summary>
 
@@ -1778,6 +1802,34 @@ per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_A
 `e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
 (synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
 a downstream model build, not the deposited code. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>✅ <s>Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits spikes
+under the t0083 channel set</s> — covered by <a
+href="../../../tasks/t0092_diagnose_morphology_generator_silence/"><code>t0092_diagnose_morphology_generator_silence</code></a>
+(S-0090-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is
+STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the
+partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration
+produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout
+deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md
+analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the
+current Bed-B base point and pick the (params, seed) combination whose procedural cell most
+closely reproduces the de Rosenroll 2026 / t0024 Bed B port's DSI and PD firing rate under the
+t0083 best-cell channel set. Then re-run Phase F, G.2, and G.3 on the corrected base point.
+Recommended task types: correction, experiment-run.
 
 </details>
 

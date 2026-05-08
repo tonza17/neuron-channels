@@ -1,6 +1,6 @@
 # Libraries: `compartmental-modeling`
 
-14 librar(y/ies).
+15 librar(y/ies).
 
 [Back to all libraries](../README.md)
 
@@ -726,5 +726,34 @@ t0008 spatial-rotation proxy.
 Pure-Python deterministic procedural DSGC morphology generator with 14 explicit knobs (5
 topology + 4 asymmetry + 3 geometry + 2 stochastic), structurally compatible with the t0080
 apply_parameter_vector harness.
+
+</details>
+
+<details>
+<summary>📦 <strong>Procedural DSGC Morphology Generator Fix</strong>
+(<code>procedural_dsgc_morphology_generator_fix</code>)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `procedural_dsgc_morphology_generator_fix` |
+| **Version** | 0.1.0 |
+| **Modules** | `tasks\t0092_diagnose_morphology_generator_silence\code\morphology_generator_fix.py`, `tasks\t0092_diagnose_morphology_generator_silence\code\baseline_channels.py`, `tasks\t0092_diagnose_morphology_generator_silence\code\paths.py`, `tasks\t0092_diagnose_morphology_generator_silence\code\constants.py` |
+| **Dependencies** | neuron, numpy |
+| **Date created** | 2026-05-08 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Created by** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0092_diagnose_morphology_generator_silence\assets\library\procedural_dsgc_morphology_generator_fix\description.md) |
+
+**Entry points:**
+
+* `generate_fixed_morphology` (function) — Build a procedural DSGC cell with the soma-area bug
+  patched. Drop-in compatible with t0090's generate_morphology signature: same
+  MorphologyParams + morph_seed inputs, same MorphologyResult output.
+* `insert_baseline_channels` (function) — Insert HHst + cad on soma + dendrites + AIS of one
+  cell. Idempotent; copy of t0090's verification.py:_insert_baseline_channels (task-internal
+  there, exposed here for downstream re-use).
+
+Drop-in replacement for t0090's generate_morphology that patches the soma-pt3d bug causing
+zero spikes (or NaN voltage) under the t0083 best-cell channel set.
 
 </details>

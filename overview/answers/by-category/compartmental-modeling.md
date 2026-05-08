@@ -1,6 +1,6 @@
-# Answers: `compartmental-modeling` (17)
+# Answers: `compartmental-modeling` (18)
 
-17 answer(s).
+18 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -597,5 +597,39 @@ biophysical parameter where measurement-grounded ranges exist.
 | **Task sources** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
 | **URL sources** | — |
 | **Created by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
+
+</details>
+
+<details>
+<summary><strong>Why do t0090's procedural cells produce zero spikes under the t0083
+best-cell channel set, and what is the fix?</strong></summary>
+
+**Confidence**: high
+
+The t0090 generator emits the soma's two pt3d points at coincident `(x, y, 0)` coordinates, so
+NEURON computes the cumulative pt3d length as zero, overrides the prior `sec.L =
+soma_diameter_um` assignment, and the soma's surface area collapses to ~9.4e-14 µm² —
+essentially a point. Synaptic input then drives the somatic Vm to NaN within a few simulation
+steps, so every procedural cell in t0090's 60-cell sweep returns `non_finite_voltage` (51
+cells) or zero spikes (the 9 STABLE cells that happened to clear the no-stim stability check).
+The fix is the `procedural_dsgc_morphology_generator_fix` library: a thin wrapper that
+re-emits the soma's pt3d points along the z-axis so the cylinder length equals
+`soma_diameter_um` and the surface area matches the t0024 hand-coded reference (~220 µm²).
+After applying the fix the BedB-equivalent procedural cell fires 61 spikes in the PD direction
+(43.6 Hz, peak Vm ~11 mV).
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0092_diagnose_morphology_generator_silence/assets/answer/t0090-procedural-cell-silence-root-cause/full_answer.md) |
+| **ID** | [`t0090-procedural-cell-silence-root-cause`](../../../tasks/t0092_diagnose_morphology_generator_silence/assets/answer/t0090-procedural-cell-silence-root-cause/) |
+| **Question** | Why do t0090's procedural cells produce zero spikes under the t0083 best-cell channel set, and what is the fix? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-05-08 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **URL sources** | — |
+| **Created by** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
 
 </details>

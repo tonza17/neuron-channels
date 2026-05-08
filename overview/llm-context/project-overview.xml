@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-07T18:29:58Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-08T00:34:55Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>126794</char_count>
-    <byte_count>127014</byte_count>
-    <estimated_tokens>31698</estimated_tokens>
+    <char_count>129012</char_count>
+    <byte_count>129243</byte_count>
+    <estimated_tokens>32253</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -194,9 +194,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0088_recluster_marginals_and_vm_motifs</id>
         <id>t0089_brainstorm_results_18</id>
         <id>t0090_morphology_generator_diversity_test</id>
+        <id>t0092_diagnose_morphology_generator_silence</id>
       </source_ids>
       <content>
-Completed tasks: 83
+Completed tasks: 84
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -695,6 +696,12 @@ ID: t0090_morphology_generator_diversity_test
 Completed: 2026-05-07
 Short description: Implement 14-knob procedural DSGC morphology generator; 30 very-different + 30 very-similar morphologies; visualise; Bed-B reproducibility; bundled validation triplet.
 Result summary: Results Summary: Procedural DSGC Morphology Generator + Diversity Test + Validation Bundle Summary Delivered a deterministic 14-knob procedural DSGC morphology generator (library asset `procedural_dsgc_morphology_generator`) plus a 60-morphology diversity sweep, a Phase G validation triplet (G.1 done, G.2 / G.3 partial), and the `validation-triplet-implications-for-biological-plausibility` answer asset. **13/16 REQs done, 3 partial** — partial REQs (REQ-9 Bed-B reproducibility, REQ-11 G.2 NMDA calibration, REQ-12 G.3 NaP knockout) all share the same root cause: the procedural Bed-B-equivalent cell paired with the t0083 best-cell channel set is silent (DSI=0), so the downstream simulations...
+
+## Diagnose why t0090 procedural cells produce no action potentials
+ID: t0092_diagnose_morphology_generator_silence
+Completed: 2026-05-08
+Short description: Side-by-side compare procedural BedB-equivalent cell vs t0024 hand-coded Bed B under the t0083 best-cell channels; identify root cause of zero spikes; propose and implement fix.
+Result summary: Results Summary: Diagnose t0090 Procedural Cell Silence Summary Identified the root cause of t0090&#x27;s 0/60 spike rate as a **soma `pt3dadd` collapse**: the generator emits two coincident soma pt3d points, NEURON computes cumulative pt3d distance ≈ 0 and overrides `sec.L` to ~1e-9 µm, collapsing soma area to ~9.4e-14 µm² (vs hand-coded 287 µm²). Synaptic input drives Vm to NaN within a few simulation steps. Fix landed as a thin shim `generate_fixed_morphology` that re-emits the soma&#x27;s two pt3d points along the z-axis. Post-fix the BedB-equivalent fires **43.6 Hz PD-rate** and all **5/5 STABLE-from-t0090 cells** produce spikes (stretch target was 3/5). Metrics * **Hand-coded Bed B (validation...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -764,9 +771,10 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_a
         <id>are-cluster-motifs-mechanistically-distinct</id>
         <id>cluster-biological-plausibility-attribution</id>
         <id>validation-triplet-implications-for-biological-plausibility</id>
+        <id>t0090-procedural-cell-silence-root-cause</id>
       </source_ids>
       <content>
-Answers: 23
+Answers: 24
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -948,6 +956,14 @@ Confidence: medium
 Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels
 
 Conditional. The G.1 AIS-to-soma Nav-ratio audit shows the cluster-1 ratio is a real biological signal, not a centroid artifact: zero of four cluster-1 cells are pinned to the soma Nav lower bound and three of four cells individually exceed a ratio of 50, so the +33-sigma deviation from the Werginz 2024 prior reflects an actual model preference rather than an inflated denominator. G.2 produces a NetCon-weight to per-spine conductance calibration that lets us re-score the cluster-NMDA-exotic verdict in calibrated units, but the conversion does not by itself reduce the deviation enough to rule out a units mismatch. G.3 quantifies the causal contribution of distal NaP to the...
+
+## Why do t0090&#x27;s procedural cells produce zero spikes under the t0083 best-cell channel set, and what is the fix?
+ID: t0090-procedural-cell-silence-root-cause
+Created by: t0092_diagnose_morphology_generator_silence on 2026-05-08
+Confidence: high
+Categories: compartmental-modeling, direction-selectivity
+
+The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 0)` coordinates, so NEURON computes the cumulative pt3d length as zero, overrides the prior `sec.L = soma_diameter_um` assignment, and the soma&#x27;s surface area collapses to ~9.4e-14 µm² — essentially a point. Synaptic input then drives the somatic Vm to NaN within a few simulation steps, so every procedural cell in t0090&#x27;s 60-cell sweep returns `non_finite_voltage` (51 cells) or zero spikes (the 9 STABLE cells that happened to clear the no-stim stability check). The fix is the `procedural_dsgc_morphology_generator_fix` library: a thin wrapper that re-emits the soma&#x27;s pt3d points along the z-axis so the cylinder length...
       </content>
     </section>
   </sections>

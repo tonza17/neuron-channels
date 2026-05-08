@@ -5,14 +5,14 @@
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-2-9370DB" alt="Predictions"></a>
-  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-23-CD853F" alt="Answers"></a>
+  <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-18-20B2AA" alt="Libraries"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-24-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-91-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-343-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-92-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-349-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (32K)
-| [full](llm-context/full.xml) (505K) | [roadmap](llm-context/roadmap.xml) (101K) |
-[results](llm-context/results-deep-dive.xml) (398K) |
-[assets](llm-context/literature-and-assets.xml) (55K)
+| [full](llm-context/full.xml) (517K) | [roadmap](llm-context/roadmap.xml) (103K) |
+[results](llm-context/results-deep-dive.xml) (406K) |
+[assets](llm-context/literature-and-assets.xml) (56K)
 
-*Last updated: 2026-05-07 18:29 UTC*
+*Last updated: 2026-05-08 00:34 UTC*
 
 * **Budget**: **$16** spent of $20
 * **Remaining**: **$4**
@@ -83,10 +83,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (83 total)](tasks/by-status/completed.md)
+## [Recently Completed (84 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0092 | [Diagnose why t0090 procedural cells produce no action potentials](../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | [`results`](../tasks/t0092_diagnose_morphology_generator_silence/results/results_detailed.md) | 2026-05-08 00:55 |
 | 0090 | [Procedural DSGC morphology generator + diversity test + validation bundle](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | [`results`](../tasks/t0090_morphology_generator_diversity_test/results/results_detailed.md) | 2026-05-07 18:25 |
 | 0089 | [Brainstorm results session 18](../overview/tasks/task_pages/t0089_brainstorm_results_18.md) | [`results`](../tasks/t0089_brainstorm_results_18/results/results_detailed.md) | 2026-05-07 11:30 |
 | 0088 | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) | [`results`](../tasks/t0088_recluster_marginals_and_vm_motifs/results/results_detailed.md) | 2026-05-06 21:10 |
@@ -96,9 +97,8 @@ No blocked tasks.
 | 0083 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`results`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/results_detailed.md) | 2026-05-06 08:31 |
 | 0082 | [Brainstorm results session 15](../overview/tasks/task_pages/t0082_brainstorm_results_15.md) | [`results`](../tasks/t0082_brainstorm_results_15/results/results_detailed.md) | 2026-05-05 17:30 |
 | 0084 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | [`results`](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/results/results_detailed.md) | 2026-05-05 16:45 |
-| 0081 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`results`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/results_detailed.md) | 2026-05-05 09:55 |
 
-*73 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*74 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -123,25 +123,119 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (303 open)](suggestions/)
+## [Recent Suggestions (308 open)](suggestions/)
 
 <details>
-<summary>🧪 <strong>Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits
-spikes under the t0083 channel set</strong> (S-0090-01)</summary>
+<summary>🧪 <strong>Patched-generator full 60-morph re-sweep to validate the t0092
+soma fix at scale</strong> (S-0092-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
-[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
 
-The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is
-STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the
-partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration
-produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout
-deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md
-analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the
-current Bed-B base point and pick the (params, seed) combination whose procedural cell most
-closely reproduces the de Rosenroll 2026 / t0024 Bed B port's DSI and PD firing rate under the
-t0083 best-cell channel set. Then re-run Phase F, G.2, and G.3 on the corrected base point.
-Recommended task types: correction, experiment-run.
+t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
+under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
+as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
+full 60-morphology Phase D verification under the t0083 vector with the patched
+generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
+STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
+project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
+(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
+local 64-core. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Tighten post-fix procedural soma to match the t0024 hand-coded
+287 um^2 reference area</strong> (S-0092-02)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
+
+The shipped t0092 fix preserves the procedural cylinder geometry: post-fix soma area is ~707
+um^2 vs t0024's hand-coded reference 287 um^2 (2.5x mismatch). Because t0083 channel densities
+were calibrated on the smaller hand-coded soma, the post-fix BedB-equivalent overshoots the
+original Bed B (peak Vm +11 mV vs +4.65 mV; 61 vs 41 spikes). Refine the fix to emit either
+(a) a 7-pt3d frustum stack reproducing t0024's profile, or (b) a single cylinder with sec.L=15
+um, sec.diam=15/3.2 um chosen so pi*d*L matches 287 um^2 exactly. Ship as a v2 of
+generate_fixed_morphology; validate that the patched cell now produces ~41 spikes and peak Vm
+~+5 mV under the unmodified t0083 vector. This eliminates a known second-order discrepancy
+before t0091 launches. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Issue a correction overlay against t0090 marking the procedural
+generator as superseded by the t0092 fix</strong> (S-0092-03)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
+
+t0090 is completed and immutable, but the soma pt3d-collapse bug was committed in t0090's
+library asset procedural_dsgc_morphology_generator. The t0092 fix lives in
+tasks/t0092_../code/morphology_generator_fix.py as a thin shim. To prevent downstream tasks
+(t0091, future Bed-A morph-extended runs, the t0086/t0088 cluster re-score work) from
+importing the unpatched t0090 generator and re-introducing the bug, write a correction file
+under tasks/t0092_../corrections/ that flags t0090's generator as superseded and points
+consumers to t0092's generate_fixed_morphology as the canonical entry point. Aggregator output
+should reflect the supersession overlay. Recommended task types: correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate the synapse-XY symmetry residual (Phase D Candidate
+C) under neutral asymmetry knobs</strong> (S-0092-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
+
+The post-fix BedB-equivalent meets PD-rate>0 (43.6 Hz) but DSI=0.034, missing the >0.1
+criterion. Phase D root-cause analysis traced this to Candidate C: under neutral asymmetry
+knobs (soma_offset_pd_um=0, field_elongation_pd=1.0, branch_density_gradient_pd=0,
+primary_branch_pd_concentration=0) primary stems extend symmetrically around the soma and 41%
+of synapses fall outside the bar's [0, 1400] ms window for the PD direction. Quantify the
+relationship between each of the 4 asymmetry knobs and post-fix DSI by sweeping each one while
+holding the others neutral, then identify a slightly-asymmetric variant of BEDB_BASE_POINT
+(e.g. soma_offset_pd_um=+30 um or field_elongation_pd=1.2) that produces DSI>0.1 by
+construction without losing the BedB topology. The result feeds t0091's warm-start anchor
+selection. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a generator-side regression test battery covering
+coincident-pt3d edge cases beyond the BedB base point</strong> (S-0092-05)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
+
+The t0092 unit-test suite (4 tests) covers determinism, no-NaN on the BedB base point, soma
+area, and pt3d z-axis. It does not exercise the broader space of generator inputs that could
+trigger coincident-pt3d collapses elsewhere in the cell (e.g. degenerate dendrite stubs at
+extreme branch_prob_per_um values, AIS sections with zero asymmetry-induced offset, or
+interaction between negative branch_length_cv and the asymmetry transform). Author a
+regression test battery that calls generate_fixed_morphology on a Latin-hypercube sample of
+~50 points across the 14-knob space and asserts that every section has sec.L>1 um and
+sec.area()>10 um^2 in NEURON. This catches future bugs in the generator before they cascade
+through t0091's NSGA-II loop. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-calibrate t0083 channel densities to the post-fix procedural
+cell's 707 um^2 cylinder soma</strong> (S-0092-06)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
+
+The post-fix BedB-equivalent fires 61 spikes vs the hand-coded Bed B's 41 spikes under the
+same t0083 vector, because the channel densities were optimised on the 287 um^2 hand-coded
+soma but the post-fix procedural soma is 707 um^2. Rather than tightening the soma area to
+match t0024 (S-0092-02's path), the alternative is to re-run a small-scale NSGA-II pass on the
+25 channel-density parameters (indices 0-24 + the dendritic-spike block 49-53) holding
+morphology fixed at the post-fix BedB-equivalent, to find a 30-cell Pareto front under the
+larger soma. The chosen winner becomes the new t0091 channel-side warm-start anchor. ~$1-2
+cost on a single A10G; pure follow-up to t0083 with the new substrate. Recommended task types:
+experiment-run.
 
 </details>
 
@@ -221,123 +315,46 @@ data-analysis.
 
 </details>
 
-<details>
-<summary>📊 <strong>Investigate why t0086 / t0088 cluster 1 converges to extreme
-AIS-to-soma Nav ratios (per-cell range 42.6-270.7)</strong> (S-0090-06)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-07 | **Source**:
-[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
-
-t0090 Phase G.1 audit ruled out floor-pinning and centroid-averaging artifacts: cluster-1
-cells 1304 / 1504 / 1624 / 1634 individually have AIS-to-soma Nav ratios of 139.4 / 42.6 /
-270.7 / 141.2 (all above 2.5x the Werginz 2024 mean of 17.3). Verdict: real_signal. Probe the
-loss landscape around these 4 cells: in the t0083 archive's 54-d parameter space, restrict to
-cluster-1 morph variants and visualise the DSI / PD-rate / robustness slice along (Nav_AIS,
-Nav_soma) at fixed values of all other dimensions. Either the optimiser is rationally finding
-an extreme-but-functional regime that should motivate revising the prior (a la S-0086-05's
-RGC-specific-NaP-density argument), or the loss surface is multi-modal and a tightened upper
-bound on Nav_AIS would still find joint-pass cells. Recommended task types: data-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Promote the t0090 procedural morphology generator into a
-top-level project library asset</strong> (S-0090-07)</summary>
-
-**Kind**: library | **Priority**: low | **Date**: 2026-05-07 | **Source**:
-[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
-
-The 14-knob procedural DSGC morphology generator is committed under
-tasks/t0090_morphology_generator_diversity_test/code/ as a task-folder library asset. Once
-t0091 confirms the generator works inside an NSGA-II eval loop, promote it into a top-level
-reusable library (e.g. arf/libraries/dsgc_procedural_morphology) with a stable import path,
-packaged unit tests, and a versioned release tag. This avoids the chronic problem of
-downstream tasks (t0091, the future Option G real-cell library task, future Bed-A
-morph-extended runs) needing to import from a deeply-nested task-folder path. Recommended task
-types: write-library, infrastructure-setup.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
-population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
-[t0083_bedb_v3_extend_nsga2_gen8plus](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
-
-t0083 terminated at gen 17 on the MaxGenerationTermination(10) hard cap with HV still growing
-strongly (gen 16 -> 17: +3.1%, gen 15 -> 16: +49%). The HV-plateau watchdog never fired,
-indicating the search had not converged. Run NSGA-II from t0083's gen-17 final population for
-an additional 8 generations at population 144 (vs t0083's 96) to test (a) whether the high-PD
-joint-pass region (cells 1559, 1677) continues to expand, (b) whether new high-DSI joint-pass
-cells appear above 0.77 (cell 1304's headline DSI), and (c) whether the 18-cell Pareto front
-grows or saturates. Expected cost: ~$8-12 USD on Vast.ai EPYC 7B13 (8 gens x 144 cells x 64 s
-= 20.5 h x $0.40/hr); requires the cost watchdog parameterisation fix from S-0083-04.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Per-direction Vm-trace deep-dive of cell 1304 to identify the
-headline cell's biophysical mechanism</strong> (S-0083-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0083_bedb_v3_extend_nsga2_gen8plus](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
-
-Cell 1304 (gen 13, DSI 0.7652 / PD 13.96 Hz) is the project's first cell statistically
-indistinguishable from RivlinEtzion 2012's published mouse ON-OFF DSGC stable-cell
-distribution (DSI z=-0.08, PD z=+0.42). Its biophysical mechanism has not been attributed to
-specific dendritic-spike machinery (NMDA Mg-block vs distal Nav1.6 vs NaP_dend). t0084 found
-NaP_dend dominant for cell 767 (now dominated and off-Pareto); cell 1304's parameter vector
-differs structurally from cell 767's (cf. [0.006, 0.001, 0.999, 0.995, 0.876, 0.992] vs
-[0.008, 0.018, 1.000, 1.000, 0.250, 0.000]). Re-run cell 1304 in subprocess with per-direction
-Vm recording at soma + 4 dendritic locations + AIS, then run conductance-knockout ablations
-(zero out g_NaP_dend / g_NMDA / g_Nav_dend_distal) to identify the dominant DSI driver.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Parameterise the in-loop budget watchdog hourly rate so cost
-tracking matches the actual Vast.ai offer rate</strong> (S-0083-04)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
-[t0083_bedb_v3_extend_nsga2_gen8plus](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
-
-The watchdog used by t0080 / t0081 / t0083 reads `_HOURLY_RATE_USD = 0.2382` from
-`arf.libraries.t0080_loop`, hard-coded to t0080's Norway EPYC 7B13 rate. t0083 ran on a
-$0.3209/hr Texas offer; the watchdog tracked $4.115 at gen-17 termination while the true
-charge was ~$5.55, climbing to $5.828 at instance destruction -- a $0.83 ex-post breach of the
-$5.00 cap. Fix: add `--hourly-rate-usd` to `run_loop.py` overriding `_HOURLY_RATE_USD` at
-startup; or auto-read from `logs/steps/*setup-machines*/machine_log.json`
-`selected_offer.price_per_hour`. Verify with a 1-gen smoke test on a non-default-rate offer
-matching post-run charges within 5 percent. Recommended task types: write-library.
-
-</details>
-
-*293 more open suggestions → [open suggestions](suggestions/)*
+*298 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (45)](suggestions/)
+## [High Priority Suggestions (46)](suggestions/)
 
 <details>
-<summary>🧪 <strong>Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits
-spikes under the t0083 channel set</strong> (S-0090-01)</summary>
+<summary>🧪 <strong>Patched-generator full 60-morph re-sweep to validate the t0092
+soma fix at scale</strong> (S-0092-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
-[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
 
-The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is
-STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the
-partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration
-produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout
-deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md
-analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the
-current Bed-B base point and pick the (params, seed) combination whose procedural cell most
-closely reproduces the de Rosenroll 2026 / t0024 Bed B port's DSI and PD firing rate under the
-t0083 best-cell channel set. Then re-run Phase F, G.2, and G.3 on the corrected base point.
-Recommended task types: correction, experiment-run.
+t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
+under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
+as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
+full 60-morphology Phase D verification under the t0083 vector with the patched
+generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
+STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
+project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
+(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
+local 64-core. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Issue a correction overlay against t0090 marking the procedural
+generator as superseded by the t0092 fix</strong> (S-0092-03)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
+
+t0090 is completed and immutable, but the soma pt3d-collapse bug was committed in t0090's
+library asset procedural_dsgc_morphology_generator. The t0092 fix lives in
+tasks/t0092_../code/morphology_generator_fix.py as a thin shim. To prevent downstream tasks
+(t0091, future Bed-A morph-extended runs, the t0086/t0088 cluster re-score work) from
+importing the unpatched t0090 generator and re-introducing the bug, write a correction file
+under tasks/t0092_../corrections/ that flags t0090's generator as superseded and points
+consumers to t0092's generate_fixed_morphology as the canonical entry point. Aggregator output
+should reflect the supersession overlay. Recommended task types: correction.
 
 </details>
 
@@ -497,28 +514,32 @@ wall-clock, $0 cost. Recommended task types: data-analysis, correction.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Multi-replicate confirmation of the t0081 joint-pass result with
-3-5 independent LHS + warm-start RNG seeds</strong> (S-0081-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-05 | **Source**:
-[t0081_bedb_v3_warmstart_nsga2](../tasks/t0081_bedb_v3_warmstart_nsga2/)
-
-t0081's joint-pass cell 767 (DSI 0.494 / PD 11.39 Hz) is a single-replicate observation from
-one NSGA-II chain with one Sobol/LHS seed (seed 43 for fresh LHS) and one warm-start RNG seed
-(42 for the t0078 49-d to 54-d projection). Re-run the same pop=96 / gen=8 NSGA-II
-configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), (46,47),
-(48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
-replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
-Recommended task types: experiment-run.
-
-</details>
-
-*35 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*36 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (23 total)](answers/)
+## [Recent Answers (24 total)](answers/)
+
+<details>
+<summary><strong>Why do t0090's procedural cells produce zero spikes under the t0083
+best-cell channel set, and what is the fix?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-08 | **Full answer**:
+[`t0090-procedural-cell-silence-root-cause`](../tasks/t0092_diagnose_morphology_generator_silence/assets/answer/t0090-procedural-cell-silence-root-cause/)
+
+The t0090 generator emits the soma's two pt3d points at coincident `(x, y, 0)` coordinates, so
+NEURON computes the cumulative pt3d length as zero, overrides the prior `sec.L =
+soma_diameter_um` assignment, and the soma's surface area collapses to ~9.4e-14 µm² —
+essentially a point. Synaptic input then drives the somatic Vm to NaN within a few simulation
+steps, so every procedural cell in t0090's 60-cell sweep returns `non_finite_voltage` (51
+cells) or zero spikes (the 9 STABLE cells that happened to clear the no-stim stability check).
+The fix is the `procedural_dsgc_morphology_generator_fix` library: a thin wrapper that
+re-emits the soma's pt3d points along the z-axis so the cylinder length equals
+`soma_diameter_um` and the surface area matches the t0024 hand-coded reference (~220 µm²).
+After applying the fix the BedB-equivalent procedural cell fires 61 spikes in the PD direction
+(43.6 Hz, peak Vm ~11 mV).
+
+</details>
 
 <details>
 <summary><strong>Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit,
@@ -712,27 +733,7 @@ gabaMOD protocol and (2) a symmetric underlying GABA distribution, exactly as H1
 
 </details>
 
-<details>
-<summary><strong>Do the t0034 distal-length sweep and the t0035 distal-diameter
-sweep collapse onto a single DSI-vs-L/lambda curve under Rall's cable
-theory, and should t0033 parameterise dendritic morphology in 1-D
-(electrotonic length L/lambda) or 2-D (raw length x raw diameter)?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-24 | **Full answer**:
-[`electrotonic-length-collapse-of-length-and-diameter-sweeps`](../tasks/t0041_electrotonic_length_collapse_t0034_t0035/assets/answer/electrotonic-length-collapse-of-length-and-diameter-sweeps/)
-
-No. The two sweeps do not collapse onto a single DSI-vs-L/lambda curve: in the overlapping
-L/lambda interval (0.058-0.116) the Pearson r between the paired sweeps is **+0.42** for
-primary DSI and **-0.68** for vector-sum DSI, both well below the 0.9 confirmation threshold,
-and the sign of the vector-sum r is opposite to the prediction. Pooled degree-2 polynomial
-fits leave residual RMSE of **0.040** (primary) and **0.024** (vector-sum), indicating that
-non-cable effects dominate the DSI-vs-L/lambda response. t0033 should retain the 2-D (raw
-length x raw diameter) morphology parameterisation rather than compress to 1-D L/lambda,
-because the direction of the DSI response is not determined by L/lambda alone.
-
-</details>
-
-*13 more answers → [answers](answers/)*
+*14 more answers → [answers](answers/)*
 
 ---
 
@@ -1315,10 +1316,11 @@ No models yet.
 
 ---
 
-## [Latest Libraries (17 total)](libraries/)
+## [Latest Libraries (18 total)](libraries/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [Procedural DSGC Morphology Generator Fix](../tasks\t0092_diagnose_morphology_generator_silence\assets\library\procedural_dsgc_morphology_generator_fix\description.md) | [92](../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | 2026-05-08 |
 | [Procedural DSGC Morphology Generator](../tasks\t0090_morphology_generator_diversity_test\assets\library\procedural_dsgc_morphology_generator\description.md) | [90](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | 2026-05-07 |
 | [De Rosenroll 2026 DSGC with AIS and Dendritic-Spike Machinery](../tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\assets\library\de_rosenroll_2026_dsgc_ais_dendritic_spike\description.md) | [80](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | 2026-05-04 |
 | [De Rosenroll 2026 DSGC with AIS](../tasks\t0078_bedb_mobo_v2_ais_tiered_ahp\assets\library\de_rosenroll_2026_dsgc_ais\description.md) | [78](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | 2026-05-03 |
@@ -1328,9 +1330,8 @@ No models yet.
 | [Minimal DSGC AMPA + Mg-Block NMDA + Scalar gabaMOD](../tasks\t0055_nmda_mg_block_dsi_recovery\assets\library\minimal_dsgc_mg_block_nmda\description.md) | [55](../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | 2026-04-28 |
 | [Minimal DSGC with Spatial Centripetal-Gating GABA](../tasks\t0053_minimal_dsgc_spatial_gaba\assets\library\minimal_dsgc_spatial_gaba\description.md) | [53](../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | 2026-04-25 |
 | [Minimal DSGC with Scalar gabaMOD](../tasks\t0052_minimal_dsgc_scalar_gaba\assets\library\minimal_dsgc_scalar_gaba\description.md) | [52](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | 2026-04-25 |
-| [Minimal DSGC AMPA + NMDA Scalar gabaMOD](../tasks\t0054_minimal_dsgc_ampa_nmda_scalar_gaba\assets\library\minimal_dsgc_ampa_nmda_scalar_gaba\description.md) | [54](../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | 2026-04-25 |
 
-*7 more libraries → [libraries](libraries/)*
+*8 more libraries → [libraries](libraries/)*
 
 ---
 

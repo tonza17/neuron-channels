@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-88 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **73 open** (18
-high, 45 medium, 10 low), **15 closed**.
+89 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **74 open** (18
+high, 45 medium, 11 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1696,6 +1696,31 @@ does it saturate? Test NaP at {1.0, 1.5, 2.4, 3.5, 5.0} mS/cm² on AIS at fixed 
 diam=1 μm); also test 2.4 mS/cm² at diam ∈ {0.5, 0.7, 1.0, 1.5} μm. Hypothesis: NaP gnabar ×
 AIS surface area ≈ constant for a fixed DSI effect (i.e., the cell sees the integrated NaP
 current). 9 conditions × 2 directions × 5 seeds = 90 trials, ~5 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-calibrate t0083 channel densities to the post-fix procedural
+cell's 707 um^2 cylinder soma</strong> (S-0092-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0092-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The post-fix BedB-equivalent fires 61 spikes vs the hand-coded Bed B's 41 spikes under the
+same t0083 vector, because the channel densities were optimised on the 287 um^2 hand-coded
+soma but the post-fix procedural soma is 707 um^2. Rather than tightening the soma area to
+match t0024 (S-0092-02's path), the alternative is to re-run a small-scale NSGA-II pass on the
+25 channel-density parameters (indices 0-24 + the dendritic-spike block 49-53) holding
+morphology fixed at the post-fix BedB-equivalent, to find a 30-cell Pareto front under the
+larger soma. The chosen winner becomes the new t0091 channel-side warm-start anchor. ~$1-2
+cost on a single A10G; pure follow-up to t0083 with the new substrate. Recommended task types:
+experiment-run.
 
 </details>
 

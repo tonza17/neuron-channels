@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-07T18:29:58Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-08T00:34:55Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>371857</char_count>
-    <byte_count>372013</byte_count>
-    <estimated_tokens>92964</estimated_tokens>
+    <char_count>378613</char_count>
+    <byte_count>378769</byte_count>
+    <estimated_tokens>94653</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -360,9 +360,15 @@
         <id>S-0090-05</id>
         <id>S-0090-06</id>
         <id>S-0090-07</id>
+        <id>S-0092-01</id>
+        <id>S-0092-02</id>
+        <id>S-0092-03</id>
+        <id>S-0092-04</id>
+        <id>S-0092-05</id>
+        <id>S-0092-06</id>
       </source_ids>
       <content>
-Suggestions: 343
+Suggestions: 349
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4205,6 +4211,72 @@ Categories: compartmental-modeling
 Date added: 2026-05-07
 
 The 14-knob procedural DSGC morphology generator is committed under tasks/t0090_morphology_generator_diversity_test/code/ as a task-folder library asset. Once t0091 confirms the generator works inside an NSGA-II eval loop, promote it into a top-level reusable library (e.g. arf/libraries/dsgc_procedural_morphology) with a stable import path, packaged unit tests, and a versioned release tag. This avoids the chronic problem of downstream tasks (t0091, the future Option G real-cell library task, future Bed-A morph-extended runs) needing to import from a deeply-nested task-folder path. Recommended task types: write-library, infrastructure-setup.
+
+## Patched-generator full 60-morph re-sweep to validate the t0092 soma fix at scale
+ID: S-0092-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0092_diagnose_morphology_generator_silence
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell
+Date added: 2026-05-08
+
+t0090&#x27;s diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the full 60-morphology Phase D verification under the t0083 vector with the patched generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the project-level evidence that the bug is fully fixed and surfaces any remaining failure modes (e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on local 64-core. Recommended task types: experiment-run, data-analysis.
+
+## Tighten post-fix procedural soma to match the t0024 hand-coded 287 um^2 reference area
+ID: S-0092-02
+Status: active
+Priority: medium
+Kind: library
+Source task: t0092_diagnose_morphology_generator_silence
+Categories: compartmental-modeling, retinal-ganglion-cell
+Date added: 2026-05-08
+
+The shipped t0092 fix preserves the procedural cylinder geometry: post-fix soma area is ~707 um^2 vs t0024&#x27;s hand-coded reference 287 um^2 (2.5x mismatch). Because t0083 channel densities were calibrated on the smaller hand-coded soma, the post-fix BedB-equivalent overshoots the original Bed B (peak Vm +11 mV vs +4.65 mV; 61 vs 41 spikes). Refine the fix to emit either (a) a 7-pt3d frustum stack reproducing t0024&#x27;s profile, or (b) a single cylinder with sec.L=15 um, sec.diam=15/3.2 um chosen so pi*d*L matches 287 um^2 exactly. Ship as a v2 of generate_fixed_morphology; validate that the patched cell now produces ~41 spikes and peak Vm ~+5 mV under the unmodified t0083 vector. This eliminates a known second-order discrepancy before t0091 launches. Recommended task types: write-library, experiment-run.
+
+## Issue a correction overlay against t0090 marking the procedural generator as superseded by the t0092 fix
+ID: S-0092-03
+Status: active
+Priority: high
+Kind: library
+Source task: t0092_diagnose_morphology_generator_silence
+Categories: compartmental-modeling
+Date added: 2026-05-08
+
+t0090 is completed and immutable, but the soma pt3d-collapse bug was committed in t0090&#x27;s library asset procedural_dsgc_morphology_generator. The t0092 fix lives in tasks/t0092_../code/morphology_generator_fix.py as a thin shim. To prevent downstream tasks (t0091, future Bed-A morph-extended runs, the t0086/t0088 cluster re-score work) from importing the unpatched t0090 generator and re-introducing the bug, write a correction file under tasks/t0092_../corrections/ that flags t0090&#x27;s generator as superseded and points consumers to t0092&#x27;s generate_fixed_morphology as the canonical entry point. Aggregator output should reflect the supersession overlay. Recommended task types: correction.
+
+## Investigate the synapse-XY symmetry residual (Phase D Candidate C) under neutral asymmetry knobs
+ID: S-0092-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0092_diagnose_morphology_generator_silence
+Categories: compartmental-modeling, direction-selectivity, synaptic-integration
+Date added: 2026-05-08
+
+The post-fix BedB-equivalent meets PD-rate&gt;0 (43.6 Hz) but DSI=0.034, missing the &gt;0.1 criterion. Phase D root-cause analysis traced this to Candidate C: under neutral asymmetry knobs (soma_offset_pd_um=0, field_elongation_pd=1.0, branch_density_gradient_pd=0, primary_branch_pd_concentration=0) primary stems extend symmetrically around the soma and 41% of synapses fall outside the bar&#x27;s [0, 1400] ms window for the PD direction. Quantify the relationship between each of the 4 asymmetry knobs and post-fix DSI by sweeping each one while holding the others neutral, then identify a slightly-asymmetric variant of BEDB_BASE_POINT (e.g. soma_offset_pd_um=+30 um or field_elongation_pd=1.2) that produces DSI&gt;0.1 by construction without losing the BedB topology. The result feeds t0091&#x27;s warm-start anchor selection. Recommended task types: experiment-run, data-analysis.
+
+## Add a generator-side regression test battery covering coincident-pt3d edge cases beyond the BedB base point
+ID: S-0092-05
+Status: active
+Priority: medium
+Kind: library
+Source task: t0092_diagnose_morphology_generator_silence
+Categories: compartmental-modeling
+Date added: 2026-05-08
+
+The t0092 unit-test suite (4 tests) covers determinism, no-NaN on the BedB base point, soma area, and pt3d z-axis. It does not exercise the broader space of generator inputs that could trigger coincident-pt3d collapses elsewhere in the cell (e.g. degenerate dendrite stubs at extreme branch_prob_per_um values, AIS sections with zero asymmetry-induced offset, or interaction between negative branch_length_cv and the asymmetry transform). Author a regression test battery that calls generate_fixed_morphology on a Latin-hypercube sample of ~50 points across the 14-knob space and asserts that every section has sec.L&gt;1 um and sec.area()&gt;10 um^2 in NEURON. This catches future bugs in the generator before they cascade through t0091&#x27;s NSGA-II loop. Recommended task types: write-library.
+
+## Re-calibrate t0083 channel densities to the post-fix procedural cell&#x27;s 707 um^2 cylinder soma
+ID: S-0092-06
+Status: active
+Priority: low
+Kind: experiment
+Source task: t0092_diagnose_morphology_generator_silence
+Categories: compartmental-modeling, voltage-gated-channels, direction-selectivity
+Date added: 2026-05-08
+
+The post-fix BedB-equivalent fires 61 spikes vs the hand-coded Bed B&#x27;s 41 spikes under the same t0083 vector, because the channel densities were optimised on the 287 um^2 hand-coded soma but the post-fix procedural soma is 707 um^2. Rather than tightening the soma area to match t0024 (S-0092-02&#x27;s path), the alternative is to re-run a small-scale NSGA-II pass on the 25 channel-density parameters (indices 0-24 + the dendritic-spike block 49-53) holding morphology fixed at the post-fix BedB-equivalent, to find a 30-cell Pareto front under the larger soma. The chosen winner becomes the new t0091 channel-side warm-start anchor. ~$1-2 cost on a single A10G; pure follow-up to t0083 with the new substrate. Recommended task types: experiment-run.
       </content>
     </section>
   </sections>
