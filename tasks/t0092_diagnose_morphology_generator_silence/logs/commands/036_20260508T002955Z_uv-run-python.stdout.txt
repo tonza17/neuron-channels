@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\assets\library\procedural_dsgc_morphology_generator_fix
+
+[31m[1mERRORS:[0m
+[31m  LA-E008 error: Module path does not exist: 'tasks/t0092_diagnose_morphology_generator_silence/code/morphology_generator_fix.py' (resolved to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\morphology_generator_fix.py)[0m
+[31m  LA-E008 error: Module path does not exist: 'tasks/t0092_diagnose_morphology_generator_silence/code/baseline_channels.py' (resolved to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\baseline_channels.py)[0m
+[31m  LA-E008 error: Module path does not exist: 'tasks/t0092_diagnose_morphology_generator_silence/code/paths.py' (resolved to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\paths.py)[0m
+[31m  LA-E008 error: Module path does not exist: 'tasks/t0092_diagnose_morphology_generator_silence/code/constants.py' (resolved to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\constants.py)[0m
+
+[33m[1mWARNINGS:[0m
+[33m  LA-W015 warning: Test path does not exist: 'tasks/t0092_diagnose_morphology_generator_silence/code/test_morphology_generator_fix.py' (resolved to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\test_morphology_generator_fix.py)[0m
+
+[31m[1mFAILED[0m — 4 error(s), 1 warning(s)

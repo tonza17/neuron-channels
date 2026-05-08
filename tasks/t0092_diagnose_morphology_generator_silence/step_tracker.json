@@ -77,10 +77,10 @@
       "step": 9,
       "name": "reporting",
       "description": "Run all verificators; capture session transcripts; update task.json status to completed; PR + premerge + merge.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-08T00:29:37Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\009_reporting/"
     },
     {
       "step": 10,

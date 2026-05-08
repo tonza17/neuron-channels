@@ -5,7 +5,7 @@
   "name": "Diagnose why t0090 procedural cells produce no action potentials",
   "short_description": "Side-by-side compare procedural BedB-equivalent cell vs t0024 hand-coded Bed B under the t0083 best-cell channels; identify root cause of zero spikes; propose and implement fix.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
@@ -13,7 +13,7 @@
     "t0090_morphology_generator_diversity_test"
   ],
   "start_time": "2026-05-07T21:58:19Z",
-  "end_time": null,
+  "end_time": "2026-05-08T00:55:00Z",
   "expected_assets": {
     "answer": 1,
     "library": 1
