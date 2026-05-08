@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\structural_dump.py", line 23, in <module>
+    from tasks.t0092_diagnose_morphology_generator_silence.code.build_cells import (
+    ...<2 lines>...
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\build_cells.py", line 19, in <module>
+    from tasks.t0080_bedb_mobo_v3_dendritic_spike_nsga2.code.build_cell_ais import (
+    ...<2 lines>...
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\build_cell_ais.py", line 14, in <module>
+    from numpy.typing import NDArray
+ModuleNotFoundError: No module named 'numpy'

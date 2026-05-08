@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0092_diagnose_morphology_generator_silence",
+  "command": "uv run python -u -m tasks.t0092_diagnose_morphology_generator_silence.code.post_fix_verification --skip-stretch",
+  "exit_code": 0,
+  "duration_seconds": 266.623,
+  "started_at": "2026-05-07T23:25:56Z",
+  "completed_at": "2026-05-07T23:30:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0092_diagnose_morphology_generator_silence",
+  "stdout_file": "023_20260507T232556Z_uv-run-python.stdout.txt",
+  "stderr_file": "023_20260507T232556Z_uv-run-python.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,7 @@
+primary cause: candidate_a_soma_area_mismatch
+recommended fix shape: soma_pt3d_z_axis_patch
+  candidate_a_soma_area_mismatch: CONFIRMED
+  candidate_b_pt3d_vs_l_override: REFUTED
+  candidate_c_synapse_xy_mismatch: PARTIAL
+  candidate_d_channel_application_skip: REFUTED
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\data\root_cause_analysis.json

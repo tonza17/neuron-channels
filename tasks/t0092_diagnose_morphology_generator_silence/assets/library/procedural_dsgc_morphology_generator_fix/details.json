@@ -1,0 +1,42 @@
+{
+  "spec_version": "2",
+  "library_id": "procedural_dsgc_morphology_generator_fix",
+  "name": "Procedural DSGC Morphology Generator Fix",
+  "version": "0.1.0",
+  "short_description": "Drop-in replacement for t0090's generate_morphology that patches the soma-pt3d bug causing zero spikes (or NaN voltage) under the t0083 best-cell channel set.",
+  "description_path": "description.md",
+  "module_paths": [
+    "tasks/t0092_diagnose_morphology_generator_silence/code/morphology_generator_fix.py",
+    "tasks/t0092_diagnose_morphology_generator_silence/code/baseline_channels.py",
+    "tasks/t0092_diagnose_morphology_generator_silence/code/paths.py",
+    "tasks/t0092_diagnose_morphology_generator_silence/code/constants.py"
+  ],
+  "entry_points": [
+    {
+      "name": "generate_fixed_morphology",
+      "kind": "function",
+      "module": "tasks/t0092_diagnose_morphology_generator_silence/code/morphology_generator_fix.py",
+      "description": "Build a procedural DSGC cell with the soma-area bug patched. Drop-in compatible with t0090's generate_morphology signature: same MorphologyParams + morph_seed inputs, same MorphologyResult output."
+    },
+    {
+      "name": "insert_baseline_channels",
+      "kind": "function",
+      "module": "tasks/t0092_diagnose_morphology_generator_silence/code/baseline_channels.py",
+      "description": "Insert HHst + cad on soma + dendrites + AIS of one cell. Idempotent; copy of t0090's verification.py:_insert_baseline_channels (task-internal there, exposed here for downstream re-use)."
+    }
+  ],
+  "dependencies": [
+    "neuron",
+    "numpy"
+  ],
+  "test_paths": [
+    "tasks/t0092_diagnose_morphology_generator_silence/code/test_morphology_generator_fix.py"
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0092_diagnose_morphology_generator_silence",
+  "date_created": "2026-05-08"
+}

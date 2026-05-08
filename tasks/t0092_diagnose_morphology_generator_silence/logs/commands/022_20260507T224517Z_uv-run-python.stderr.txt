@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\post_fix_verification.py", line 376, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\post_fix_verification.py", line 300, in main
+    apply_parameter_vector(cell=cell, params=pv)  # type: ignore[arg-type]
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py", line 204, in apply_parameter_vector
+    _write_passive_and_uniform(sections=soma_dend_sections, params=params)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py", line 107, in _write_passive_and_uniform
+    setattr(seg, f"gbar_{suffix}", params.uniform_density(suffix=suffix))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: gbar_kdrt80, the mechanism does not exist at soma_t90(0.5)

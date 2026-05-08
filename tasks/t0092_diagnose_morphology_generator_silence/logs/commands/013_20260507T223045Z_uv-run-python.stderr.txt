@@ -1,0 +1,26 @@
+NEURON: The user defined name already exists: Exp2NMDA
+ near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\structural_dump.py", line 392, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\structural_dump.py", line 379, in main
+    two = build_both_cells()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\code\build_cells.py", line 64, in build_both_cells
+    handcoded = build_dsgc_cell_with_ais(
+        ais_length_um=ais_length_um,
+        ais_diameter_um=ais_diameter_um,
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\build_cell_ais.py", line 60, in build_dsgc_cell_with_ais
+    base: DSGCCell = build_dsgc_cell()
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py", line 253, in build_dsgc_cell
+    h = load_neuron()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0024_port_de_rosenroll_2026_dsgc\code\build_cell.py", line 77, in load_neuron
+    h.nrn_load_dll(dll_path)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+RuntimeError: hocobj_call error

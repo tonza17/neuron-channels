@@ -1,0 +1,48 @@
+{
+  "spec_version": "1",
+  "n_ach_target": 338,
+  "n_gaba_target": 349,
+  "placer_seed": 42,
+  "procedural_bedb": {
+    "cell_kind": "procedural_bedb",
+    "n_ach_placed": 338,
+    "n_gaba_placed": 349,
+    "syn_centroid_xy": [
+      -18.662394559995057,
+      -22.42065355975555
+    ],
+    "syn_bbox_min_xy": [
+      -133.02867126464844,
+      -142.24693298339844
+    ],
+    "syn_bbox_max_xy": [
+      138.4367218017578,
+      106.55726623535156
+    ],
+    "pd_arrival_min_ms": -93.02867126464844,
+    "pd_arrival_max_ms": 178.4367218017578,
+    "pd_arrival_mean_ms": 21.337605440004943,
+    "pd_arrival_fraction_in_window": 0.5895196506550219
+  },
+  "handcoded_bedb": {
+    "cell_kind": "handcoded_bedb",
+    "n_ach_placed": 338,
+    "n_gaba_placed": 349,
+    "syn_centroid_xy": [
+      95.80411786352877,
+      134.01255377446026
+    ],
+    "syn_bbox_min_xy": [
+      20.214799880981445,
+      24.16990089416504
+    ],
+    "syn_bbox_max_xy": [
+      196.43600463867188,
+      216.64999389648438
+    ],
+    "pd_arrival_min_ms": -41.7383788228035,
+    "pd_arrival_max_ms": 134.48282593488693,
+    "pd_arrival_mean_ms": 33.850939159743824,
+    "pd_arrival_fraction_in_window": 0.7976710334788938
+  }
+}

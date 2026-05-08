@@ -1,0 +1,26 @@
+{
+  "variants": [
+    {
+      "variant_id": "pre_fix_procedural_bedb",
+      "label": "Pre-fix procedural BedB-equivalent",
+      "dimensions": {
+        "morphology": "procedural_bedb_unpatched",
+        "channels": "t0083_best_cell"
+      },
+      "metrics": {
+        "direction_selectivity_index": null
+      }
+    },
+    {
+      "variant_id": "post_fix_procedural_bedb",
+      "label": "Post-fix procedural BedB-equivalent",
+      "dimensions": {
+        "morphology": "procedural_bedb_t0092_fixed",
+        "channels": "t0083_best_cell"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.03389830508474573
+      }
+    }
+  ]
+}

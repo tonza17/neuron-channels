@@ -1,0 +1,26 @@
+{
+  "spec_version": "2",
+  "answer_id": "t0090-procedural-cell-silence-root-cause",
+  "question": "Why do t0090's procedural cells produce zero spikes under the t0083 best-cell channel set, and what is the fix?",
+  "short_title": "t0090 procedural cell silence root cause",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0024_port_de_rosenroll_2026_dsgc",
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0083_bedb_v3_extend_nsga2_gen8plus",
+    "t0090_morphology_generator_diversity_test"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0092_diagnose_morphology_generator_silence",
+  "date_created": "2026-05-08"
+}

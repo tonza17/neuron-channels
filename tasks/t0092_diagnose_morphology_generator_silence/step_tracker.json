@@ -50,10 +50,10 @@
       "step": 6,
       "name": "implementation",
       "description": "Implement Phase A structural dump, Phase B synapse comparison, Phase C Vm trace comparison, Phase D root-cause analysis, Phase E generator fix library, Phase F post-fix validation; produce library asset and answer asset.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-07T22:24:25Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_implementation/"
     },
     {
       "step": 7,

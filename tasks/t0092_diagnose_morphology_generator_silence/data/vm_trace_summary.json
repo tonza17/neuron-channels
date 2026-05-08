@@ -1,0 +1,29 @@
+{
+  "spec_version": "1",
+  "tstop_ms": 1400.0,
+  "dt_ms": 0.1,
+  "direction_deg": 0.0,
+  "seed": 1000,
+  "procedural_bedb": {
+    "cell_kind": "procedural_bedb",
+    "spike_count": 0,
+    "peak_vm_mv": NaN,
+    "time_to_peak_ms": NaN,
+    "epsp_area_mv_ms": NaN,
+    "npy_path": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0092_diagnose_morphology_generator_silence\\tasks\\t0092_diagnose_morphology_generator_silence\\data\\vm_trace_procedural.npy",
+    "error": "non_finite_voltage"
+  },
+  "handcoded_bedb": {
+    "cell_kind": "handcoded_bedb",
+    "spike_count": 41,
+    "peak_vm_mv": 4.646290179620339,
+    "time_to_peak_ms": 753.3000000000001,
+    "epsp_area_mv_ms": 4653.929143331369,
+    "npy_path": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0092_diagnose_morphology_generator_silence\\tasks\\t0092_diagnose_morphology_generator_silence\\data\\vm_trace_handcoded.npy",
+    "error": null
+  },
+  "validation_gate": {
+    "handcoded_spikes": true,
+    "diagnosis": "handcoded_spikes_proceed_to_phase_d"
+  }
+}

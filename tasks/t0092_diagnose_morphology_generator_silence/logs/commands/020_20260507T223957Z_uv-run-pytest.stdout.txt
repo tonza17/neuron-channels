@@ -1,0 +1,14 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 4 items
+
+tasks/t0092_diagnose_morphology_generator_silence/code/test_morphology_generator_fix.py::test_soma_area_within_tolerance PASSED [ 25%]
+tasks/t0092_diagnose_morphology_generator_silence/code/test_morphology_generator_fix.py::test_determinism PASSED [ 50%]
+tasks/t0092_diagnose_morphology_generator_silence/code/test_morphology_generator_fix.py::test_no_nan_on_bedb_base_point PASSED [ 75%]
+tasks/t0092_diagnose_morphology_generator_silence/code/test_morphology_generator_fix.py::test_soma_pt3d_z_axis PASSED [100%]
+
+============================== 4 passed in 0.88s ==============================

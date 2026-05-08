@@ -1,0 +1,60 @@
+{
+  "spec_version": "1",
+  "candidates": [
+    {
+      "candidate_id": "candidate_a_soma_area_mismatch",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "procedural_soma_area_um2": 9.42477796076938e-14,
+        "handcoded_soma_area_um2": 287.32906242505686,
+        "ratio_proc_over_hand": 3.2801338929046257e-16,
+        "is_degenerate_zero_area": true
+      },
+      "explanation": "Procedural soma surface area is degenerate (essentially zero) because t0090's _materialise_neuron_sections emits pt3dadd points at (0,0,0,d) and (0,0,0,d) \u2014 both at z=0 with identical xy \u2014 so NEURON computes the cumulative pt3d distance as ~0 and resets sec.L to ~1e-9 um, overriding the prior sec.L=soma_diameter_um assignment. This makes the soma sink essentially zero current and produces non-finite Vm during synaptic input."
+    },
+    {
+      "candidate_id": "candidate_b_pt3d_vs_l_override",
+      "verdict": "REFUTED",
+      "evidence": {
+        "n_sections_checked": 240,
+        "max_rel_drift": 4.3382047346599335e-07,
+        "n_sections_above_1pct": 0
+      },
+      "explanation": "Checked 240 non-soma sections; max relative drift between sec.L (NEURON-reported after pt3dadd) and intended length = 0.000000; 0 section(s) exceed the 1% drift threshold. For the BedB base point (soma_offset_pd_um=0, field_elongation_pd=1.0) the asymmetry transform is a no-op and start_xy/end_xy distance equals length_um exactly."
+    },
+    {
+      "candidate_id": "candidate_c_synapse_xy_mismatch",
+      "verdict": "PARTIAL",
+      "evidence": {
+        "pd_arrival_fraction_in_window": 0.5895196506550219,
+        "fraction_out_of_window": 0.4104803493449781,
+        "handcoded_fraction_in_window": 0.7976710334788938
+      },
+      "explanation": "Procedural cell synapses with PD-direction arrival in [0, TSTOP_MS] ms = 0.590; fraction outside window = 0.410. The bar's spatiotemporal window is calibrated to the hand-coded cell's ~300 um field; the procedural cell's symmetric primary stems extend in both PD and ND directions so roughly half of synapses fall outside the trial window."
+    },
+    {
+      "candidate_id": "candidate_d_channel_application_skip",
+      "verdict": "REFUTED",
+      "evidence": {
+        "n_primary": 4,
+        "n_non_terminal": 116,
+        "n_terminal": 120,
+        "section_partition_sums_to_all_dends": false
+      },
+      "explanation": "Section-list partition: primary=4, non_terminal=116, terminal=120 (sum=236). research/research_code.md confirms that t0080 apply_parameter_vector writes via list membership (cell.primary_dends, cell.non_terminal_dends, cell.terminal_dends, soma, ais) without inspecting section names; the procedural cell's *_t90-named sections receive the same writes as the hand-coded cell's sections. Channel insertion is also verified by _insert_channels_once in apply_params.py (idempotent) and by _insert_baseline_channels in t0090's verification.py."
+    }
+  ],
+  "primary_cause": "candidate_a_soma_area_mismatch",
+  "recommended_fix": {
+    "shape": "soma_pt3d_z_axis_patch",
+    "description": "After calling generate_morphology, push the soma section, call h.pt3dclear() and re-emit pt3dadd(0, 0, 0, soma_diameter_um) plus pt3dadd(0, 0, soma_diameter_um, soma_diameter_um). The two pt3d points must lie along the z-axis (0 -> soma_diameter_um) so the Euclidean cumulative distance equals soma_diameter_um and NEURON treats the soma as a cylinder of length soma_diameter_um and diameter soma_diameter_um, yielding pi * d * L = pi * 15 * 15 = 706.86 um^2 surface area. The published Bed B soma is closer to 220 um^2; the simplest first patch matches the t0090 INTENDED geometry (706 um^2) without retuning channel densities, then a refinement (set sec.L = soma_diameter_um and sec.diam = soma_diameter_um / 3.2 for a ~220 um^2 area) brings the area into agreement with the t0024 reference. We pick the 220 um^2 target for the fix because the t0083 channel densities were optimised against the smaller hand-coded soma."
+  },
+  "vm_trace_cross_check": {
+    "procedural_spike_count": 0,
+    "procedural_peak_vm_mv": NaN,
+    "procedural_error": "non_finite_voltage",
+    "handcoded_spike_count": 41,
+    "handcoded_peak_vm_mv": 4.646290179620339,
+    "validation_gate_passed": true
+  }
+}

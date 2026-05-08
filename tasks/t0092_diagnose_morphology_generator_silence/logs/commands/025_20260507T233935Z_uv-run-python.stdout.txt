@@ -1,0 +1,10 @@
+BedB-fixed: PD-rate=43.57 Hz, DSI=0.03389830508474573
+  different/morph_00: PD-rate=2.14 Hz, DSI=0.49999999999999994
+  different/morph_13: PD-rate=1.43 Hz, DSI=1.0
+  different/morph_14: PD-rate=36.43 Hz, DSI=0.9615384615384615
+  different/morph_15: PD-rate=37.86 Hz, DSI=-0.03636363636363642
+  different/morph_19: PD-rate=14.29 Hz, DSI=0.2121212121212121
+pass: False
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\data\post_fix_verification.json
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\results\images\post_fix_polar_tuning.png
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\results\metrics.json
