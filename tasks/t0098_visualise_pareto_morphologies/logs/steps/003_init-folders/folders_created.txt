@@ -1,0 +1,17 @@
+Created folders:
+- code/__init__.py
+- code/.gitkeep
+- plan/.gitkeep
+- research/.gitkeep
+- results/.gitkeep
+- results/images/.gitkeep
+- assets/.gitkeep
+- corrections/.gitkeep
+- intervention/.gitkeep
+- logs/commands/.gitkeep
+- logs/searches/.gitkeep
+- logs/sessions/.gitkeep
+- logs/steps/.gitkeep
+- __init__.py
+
+12 directories with .gitkeep files; 2 __init__.py files.
