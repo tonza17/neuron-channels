@@ -1,0 +1,57 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1007_s00424-024-02980-7",
+  "doi": "10.1007/s00424-024-02980-7",
+  "title": "Persistent sodium currents in neurons: potential mechanisms and pharmacological blockers",
+  "url": "https://link.springer.com/article/10.1007/s00424-024-02980-7",
+  "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00424-024-02980-7.pdf",
+  "date_published": "2024-07-05",
+  "year": 2024,
+  "authors": [
+    {
+      "name": "Peter Müller",
+      "country": "DE",
+      "institution": "University of Tübingen (Hertie Institute for Clinical Brain Research)",
+      "orcid": "0000-0001-9630-2553"
+    },
+    {
+      "name": "Andreas Draguhn",
+      "country": "DE",
+      "institution": "Heidelberg University",
+      "orcid": "0000-0002-6243-5582"
+    },
+    {
+      "name": "Alexei V. Egorov",
+      "country": "DE",
+      "institution": "Heidelberg University",
+      "orcid": "0000-0003-4899-8407"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Tübingen (Hertie Institute for Clinical Brain Research)",
+      "country": "DE"
+    },
+    {
+      "name": "Heidelberg University",
+      "country": "DE"
+    }
+  ],
+  "journal": "Pflügers Archiv - European Journal of Physiology",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "compartmental-modeling",
+    "patch-clamp"
+  ],
+  "abstract": "Persistent sodium current (INaP) is an important activity-dependent regulator of neuronal excitability. It is involved in a variety of physiological and pathological processes, including pacemaking, prolongation of sensory potentials, neuronal injury, chronic pain and diseases such as epilepsy and amyotrophic lateral sclerosis. Despite its importance, neither the molecular basis nor the regulation of INaP are sufficiently understood. Of particular significance is a solid knowledge and widely accepted consensus about pharmacological tools for analysing the function of INaP and for developing new therapeutic strategies. However, the literature on INaP is heterogeneous, with varying definitions and methodologies used across studies. To address these issues, we provide a systematic review of the current state of knowledge on INaP, with focus on mechanisms and effects of this current in the central nervous system. We provide an overview of the specificity and efficacy of the most widely used INaP blockers: amiodarone, cannabidiol, carbamazepine, cenobamate, eslicarbazepine, ethosuximide, gabapentin, GS967, lacosamide, lamotrigine, lidocaine, NBI-921352, oxcarbazepine, phenytoine, PRAX-562, propofol, ranolazine, riluzole, rufinamide, topiramate, valproaic acid and zonisamide. We conclude that there is strong variance in the pharmacological effects of these drugs, and in the available information. At present, GS967 and riluzole can be regarded bona fide INaP blockers, while phenytoin and lacosamide are blockers that only act on the slowly inactivating component of sodium currents.",
+  "citation_key": "Muller2024",
+  "summary_path": "summary.md",
+  "files": [
+    "files/muller_2024_persistent-sodium-currents-review.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0091_morphology_extended_nsga2_v1",
+  "date_added": "2026-05-08"
+}

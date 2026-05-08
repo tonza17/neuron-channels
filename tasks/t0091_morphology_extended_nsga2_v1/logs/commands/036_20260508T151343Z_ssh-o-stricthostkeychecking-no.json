@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 24984 root@ssh4.vast.ai ls -la /root/t0091_workdir/ 2>&1 | head -40; echo '---PARETO---'; find /root/t0091_workdir -name 'pop_*.json' -o -name 'pareto*.json' -o -name 'hv*.json' -o -name '*progress*.json' 2>/dev/null | head -20",
+  "exit_code": 0,
+  "duration_seconds": 2.931,
+  "started_at": "2026-05-08T15:13:43Z",
+  "completed_at": "2026-05-08T15:13:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "036_20260508T151343Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "036_20260508T151343Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 18,
+  "stderr_lines": 2,
+  "truncated": false
+}

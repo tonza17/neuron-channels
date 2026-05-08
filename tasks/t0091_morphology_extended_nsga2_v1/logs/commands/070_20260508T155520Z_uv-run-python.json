@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "uv run python -u -m meta.asset_types.answer.verificator --task-id t0091_morphology_extended_nsga2_v1 morphology-extension-biological-plausibility",
+  "exit_code": 0,
+  "duration_seconds": 0.393,
+  "started_at": "2026-05-08T15:55:20Z",
+  "completed_at": "2026-05-08T15:55:20Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "070_20260508T155520Z_uv-run-python.stdout.txt",
+  "stderr_file": "070_20260508T155520Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

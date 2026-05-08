@@ -1,0 +1,13 @@
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.2290/hr from machine_log.json (REQ-X)
+[nsga2_driver] using 60 parallel workers
+[nsga2_driver] starting NSGA-II: pop=96 max_gen=8 hard_cap=$4.00 rate=$0.2290/hr
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       91 |     29 |             - |             -
+[gen 1] HV=14.0656  pop_size=91  cost_so_far=$0.0728  elapsed=1145s
+     2 |      187 |     39 |  0.0219957232 |         ideal
+[gen 2] HV=23.7104  pop_size=96  cost_so_far=$0.2110  elapsed=3318s
+---TOP DSI---

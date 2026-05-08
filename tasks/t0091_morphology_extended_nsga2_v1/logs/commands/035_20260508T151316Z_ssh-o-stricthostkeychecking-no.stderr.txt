@@ -1,0 +1,4 @@
+Warning: Identity file U:/.ssh/id_ed25519 not accessible: No such file or directory.
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+root@ssh4.vast.ai: Permission denied (publickey).

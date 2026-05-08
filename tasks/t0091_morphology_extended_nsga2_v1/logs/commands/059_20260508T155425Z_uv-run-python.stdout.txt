@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0091_morphology_extended_nsga2_v1\assets\predictions\t0091_morphology_extended_nsga2_v1
+
+[31m[1mERRORS:[0m
+[31m  PR-E003 error: files/ directory does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0091_morphology_extended_nsga2_v1\assets\predictions\t0091_morphology_extended_nsga2_v1\files[0m
+[31m  PR-E001 error: details.json does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0091_morphology_extended_nsga2_v1\assets\predictions\t0091_morphology_extended_nsga2_v1\details.json[0m
+[31m  PR-E002 error: description.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0091_morphology_extended_nsga2_v1\assets\predictions\t0091_morphology_extended_nsga2_v1\description.md[0m
+
+[31m[1mFAILED[0m — 3 error(s), 0 warning(s)

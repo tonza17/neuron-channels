@@ -1,0 +1,40 @@
+usage: vastai execute id COMMAND
+
+positional arguments:
+ id                                id of instance to execute on
+ COMMAND                           bash command surrounded by single quotes
+
+options:
+ -h, --help                        show this help message and exit
+ --schedule {HOURLY,DAILY,WEEKLY}  try to schedule a command to run hourly, daily, or weekly. Valid values are HOURLY, DAILY, WEEKLY  For ex. --schedule DAILY
+ --start_date START_DATE           Start date/time in format 'YYYY-MM-DD HH:MM:SS PM' (UTC). Default is now. (optional)
+ --end_date END_DATE               End date/time in format 'YYYY-MM-DD HH:MM:SS PM' (UTC). Default is 7 days from now. (optional)
+ --day DAY                         Day of week you want scheduled job to run on (0-6, where 0=Sunday) or "*". Default will be 0. For ex. --day 0
+ --hour HOUR                       Hour of day you want scheduled job to run on (0-23) or "*" (UTC). Default will be 0. For ex. --hour 16
+
+Global options (available for all commands):
+ --url URL                         Server REST API URL
+ --retry RETRY                     Retry limit
+ --explain                         Output verbose explanation of mapping of CLI calls to HTTPS API endpoints
+ --raw                             Output machine-readable json
+ --full                            Print full results instead of paging with `less` for commands that support it
+ --curl                            Show a curl equivalency to the call
+ --api-key API_KEY                 API Key to use. defaults to using the one stored in C:\Users\md1avn\.config\vastai\vast_api_key
+ --version                         Show CLI version
+ --no-color                        Disable colored output for commands that support it
+
+________________________________________________________________________________
+
+Examples:
+  vastai execute 99999 'ls -l -o -r'
+  vastai execute 99999 'rm -r home/delete_this.txt'
+  vastai execute 99999 'du -d2 -h'
+
+available commands:
+  ls                 List directory contents
+  rm                 Remote files or directories
+  du                 Summarize device usage for a set of files
+
+Return value:
+Returns the output of the command which was executed on the instance, if successful. May take a few seconds to retrieve the results.
+________________________________________________________________________________

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "uv run python -u -m meta.asset_types.predictions.verificator t0091_morphology_extended_nsga2_v1 pareto-front-68d-morphology-extended-bedb-v3",
+  "exit_code": 2,
+  "duration_seconds": 0.44,
+  "started_at": "2026-05-08T15:55:06Z",
+  "completed_at": "2026-05-08T15:55:06Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "067_20260508T155506Z_uv-run-python.stdout.txt",
+  "stderr_file": "067_20260508T155506Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}

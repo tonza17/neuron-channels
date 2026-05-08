@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0091_morphology_extended_nsga2_v1\tasks\t0091_morphology_extended_nsga2_v1\task.json
+
+[32m[1mPASSED[0m — no errors or warnings

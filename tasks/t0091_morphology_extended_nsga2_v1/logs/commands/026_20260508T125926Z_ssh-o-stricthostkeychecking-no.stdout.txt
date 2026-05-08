@@ -1,0 +1,5 @@
+HELLO
+f9adfd35e718
+root
+128
+VERSION="12 (bookworm)"

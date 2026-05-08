@@ -1,0 +1,6 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+  File "<string>", line 1
+    import json; d=json.load(open("/root/t0091_workdir/tasks/t0091_morphology_extended_nsga2_v1/results/data/all_evaluations.json")); cells = d["evaluations"] if "evaluations" in d else d; print("Total evaluations:", len(cells)); cells_sorted = sorted([c for c in cells if c.get("objectives") and c["objectives"][0] is not None], key=lambda c: c["objectives"][0]); print("Top 5 by DSI (objective 0, lower = better DSI in NSGA-II minimization):"); [print(f"  cell {c.get(\"cell_id\", i)}: obj={c[\"objectives\"]}, anchor={c.get(\"anchor\", \"?\")}, gen={c.get(\"generation\", \"?\")}") for i,c in enumerate(cells_sorted[:5])]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+SyntaxError: unexpected character after line continuation character

@@ -1,0 +1,18 @@
+total 3920
+drwxr-xr-x  6 root    root       4096 May  8 13:36 .
+drwx------  1 root    root       4096 May  8 13:00 ..
+drwxr-xr-x  5 root    root        178 May  8 13:00 .venv
+drwxr-xr-x  8 1144306 1049089    4096 May  8 11:38 arf
+drwxr-xr-x  2 root    root         35 May  8 14:00 logs
+-rw-r--r--  1 root    root       4230 May  8 13:26 paths.py
+-rw-r--r--  1 root    root    2488055 May  8 13:22 payload.tgz
+-rw-r--r--  1 1144306 1049089    2758 May  8 11:36 pyproject.toml
+-rwxr-xr-x  1 root    root        341 May  8 13:36 run_nsga2.sh
+-rw-r--r--  1 root    root      73398 May  8 13:24 t0024_lib.tgz
+-rw-r--r--  1 root    root     942089 May  8 13:26 t0083_data.tgz
+-rw-r--r--  1 root    root      44738 May  8 13:34 t0091_code_update.tgz
+drwxr-xr-x 11 root    root       4096 May  8 14:00 tasks
+-rw-r--r--  1 1144306 1049089  424985 May  8 11:37 uv.lock
+---PARETO---
+/root/t0091_workdir/tasks/t0091_morphology_extended_nsga2_v1/results/data/hv_trajectory.json
+/root/t0091_workdir/tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/data/pareto_front.json

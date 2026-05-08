@@ -1,0 +1,22 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0091_morphology_extended_nsga2_v1\tasks\t0091_morphology_extended_nsga2_v1\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260508T114345Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 017_20260508T125240Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 018_20260508T125251Z_ssh-tt-o.json has non-zero exit code: 4294967295[0m
+[33m  LG-W004 warning: Command log 018_20260508T125443Z_ssh-t-o.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 019_20260508T125454Z_ssh-tt-o.json has non-zero exit code: 4294967295[0m
+[33m  LG-W004 warning: Command log 021_20260508T125737Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 022_20260508T125749Z_ssh-tt-o.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 023_20260508T125825Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 024_20260508T125838Z_ssh-tt-o.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 030_20260508T130041Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 035_20260508T151316Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 038_20260508T151415Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 042_20260508T152757Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 045_20260508T152827Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 16 warning(s)

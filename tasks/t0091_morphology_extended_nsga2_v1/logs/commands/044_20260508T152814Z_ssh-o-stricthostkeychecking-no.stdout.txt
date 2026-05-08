@@ -1,0 +1,24 @@
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.2290/hr from machine_log.json (REQ-X)
+[nsga2_driver] using 60 parallel workers
+[nsga2_driver] starting NSGA-II: pop=96 max_gen=8 hard_cap=$4.00 rate=$0.2290/hr
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       91 |     29 |             - |             -
+[gen 1] HV=14.0656  pop_size=91  cost_so_far=$0.0728  elapsed=1145s
+     2 |      187 |     39 |  0.0219957232 |         ideal
+[gen 2] HV=23.7104  pop_size=96  cost_so_far=$0.2110  elapsed=3318s
+---DATA---
+total 960
+drwxr-xr-x 2 1144306 1049089   4096 May  8 14:19 .
+drwxr-xr-x 4 1144306 1049089     64 May  8 13:09 ..
+-rw-r--r-- 1 root    root       405 May  8 14:00 algorithm_config.json
+-rw-r--r-- 1 root    root    385684 May  8 14:55 all_evaluations.json
+-rw-r--r-- 1 1144306 1049089   4506 May  8 13:20 anchor_definitions.json
+-rw-r--r-- 1 1144306 1049089   5786 May  8 13:20 biological_priors_68d.json
+-rw-r--r-- 1 root    root       149 May  8 14:00 evaluation_seeds.json
+-rw-r--r-- 1 root    root       392 May  8 14:55 hv_trajectory.json
+-rw-r--r-- 1 root    root    376942 May  8 14:55 nsga2_checkpoint.json
+-rw-r--r-- 1 1144306 1049089 177234 May  8 13:20 warm_start_population.json
