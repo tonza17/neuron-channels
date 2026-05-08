@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-05-08T14:41:11Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-05-08T15:20:07Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
     <section_count>95</section_count>
-    <char_count>2125333</char_count>
-    <byte_count>2133215</byte_count>
-    <estimated_tokens>531333</estimated_tokens>
+    <char_count>2125807</char_count>
+    <byte_count>2133691</byte_count>
+    <estimated_tokens>531451</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -738,7 +738,7 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
         <id>t0091_morphology_extended_nsga2_v1</id>
-        <id>t0096_literature_survey_multi_objective_neuron_optimisation</id>
+        <id>t0097_multi_obj_optim</id>
       </source_ids>
       <content>
 Planned or active tasks: 5
@@ -1301,10 +1301,15 @@ exceeds threshold).
   re-run with tightened bounds, kept high for post-t0091 follow-up).
 
 ## Literature survey: multi-objective optimisation of single-neuron models
-ID: t0096_literature_survey_multi_objective_neuron_optimisation
-Status: not_started
+ID: t0097_multi_obj_optim
+Status: in_progress
 Effective date: unknown
 Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
+
+&gt; **Note**: This task supersedes `t0096_literature_survey_multi_objective_neuron_optimisation`,
+&gt; which was created with a slug too long for Windows worktree paths to handle (the absolute path
+&gt; exceeded Windows&#x27; 260-char limit when combined with deep existing task paths). The content here is
+&gt; identical; only the task ID and slug are shorter.
 
 #### Motivation
 
@@ -1518,9 +1523,11 @@ download + reading; 30-60 min internet survey + codebase review; 30-60 min answe
 
 #### Cross-References
 
+* **t0096_literature_survey_multi_objective_neuron_optimisation** — superseded predecessor
+  (cancelled in this PR due to Windows worktree path-length limit).
 * **t0091_morphology_extended_nsga2_v1** — current MOBO frontier (DSI + firing rate); catalogue&#x27;s
   recipes must compose with t0091&#x27;s trial-output format.
-* **t0095_brainstorm_results_20** — commissioned this task.
+* **t0095_brainstorm_results_20** — commissioned t0096 (this task&#x27;s predecessor).
 * **t0002_literature_survey_dsgc_compartmental_models** — prior literature survey for stylistic
   consistency.
 * **t0015 / t0016 / t0017 / t0018 / t0019 / t0027** — prior literature surveys for stylistic

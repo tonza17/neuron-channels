@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-08T14:41:11Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-08T15:20:07Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
     <section_count>160</section_count>
-    <char_count>2808043</char_count>
-    <byte_count>2815092</byte_count>
-    <estimated_tokens>702010</estimated_tokens>
+    <char_count>2807967</char_count>
+    <byte_count>2815016</byte_count>
+    <estimated_tokens>701991</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -734,7 +734,7 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
         <id>t0091_morphology_extended_nsga2_v1</id>
-        <id>t0096_literature_survey_multi_objective_neuron_optimisation</id>
+        <id>t0097_multi_obj_optim</id>
       </source_ids>
       <content>
 Planned or active tasks: 5
@@ -767,8 +767,8 @@ Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology)
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction
 
 ## Literature survey: multi-objective optimisation of single-neuron models
-ID: t0096_literature_survey_multi_objective_neuron_optimisation
-Status: not_started
+ID: t0097_multi_obj_optim
+Status: in_progress
 Effective date: unknown
 Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
       </content>

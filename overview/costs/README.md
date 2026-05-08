@@ -17,7 +17,7 @@ threshold.
 | Default per-task limit | $5.00 USD |
 | Tasks with cost records | 87 |
 | Tasks with non-zero spend | 6 |
-| Skipped tasks | 9 |
+| Skipped tasks | 10 |
 
 ## Service Totals
 
@@ -65,3 +65,4 @@ threshold.
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
 | `t0091_morphology_extended_nsga2_v1` | results/costs.json is missing or invalid |
 | `t0096_literature_survey_multi_objective_neuron_optimisation` | results/costs.json is missing or invalid |
+| `t0097_multi_obj_optim` | results/costs.json is missing or invalid |
