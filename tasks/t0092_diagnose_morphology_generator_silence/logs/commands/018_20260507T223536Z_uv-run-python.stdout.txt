@@ -1,0 +1,7 @@
+procedural: spikes=0, peak_vm=nan mV, epsp_area=nan mV*ms, error=non_finite_voltage
+handcoded:  spikes=41, peak_vm=4.65 mV, epsp_area=4653.93 mV*ms, error=None
+validation_gate: handcoded_spikes_proceed_to_phase_d
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\data\vm_trace_procedural.npy
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\data\vm_trace_handcoded.npy
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\results\images\vm_trace_comparison.png
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\data\vm_trace_summary.json

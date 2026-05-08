@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0.0,
+  "breakdown": {},
+  "note": "All phases ran on the local 64-core EPYC. No remote machines or paid APIs used. Diagnostic + fix completed within the local CPU budget."
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0092_diagnose_morphology_generator_silence",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_suggestions --format json --detail full --uncovered",
+  "exit_code": 1,
+  "duration_seconds": 0.914,
+  "started_at": "2026-05-08T00:26:13Z",
+  "completed_at": "2026-05-08T00:26:14Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0092_diagnose_morphology_generator_silence",
+  "stdout_file": "032_20260508T002613Z_uv-run-python.stdout.txt",
+  "stderr_file": "032_20260508T002613Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 13,
+  "truncated": false
+}

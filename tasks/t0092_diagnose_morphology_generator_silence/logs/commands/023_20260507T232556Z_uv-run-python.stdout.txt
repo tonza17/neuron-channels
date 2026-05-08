@@ -1,0 +1,6 @@
+Skipping stretch block (--skip-stretch or --max-stretch-cells=0).
+BedB-fixed: PD-rate=43.57 Hz, DSI=0.03389830508474573
+pass: False
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\data\post_fix_verification.json
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\results\images\post_fix_polar_tuning.png
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\results\metrics.json

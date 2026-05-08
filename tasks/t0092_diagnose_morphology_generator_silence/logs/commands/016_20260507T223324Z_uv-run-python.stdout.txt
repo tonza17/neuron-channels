@@ -1,0 +1,4 @@
+procedural soma area: 0.00 um^2
+handcoded  soma area: 287.33 um^2
+soma area ratio (proc / hand): 0.000
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\data\structural_comparison.json

@@ -1,0 +1,27 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0092_diagnose_morphology_generator_silence\tasks\t0092_diagnose_morphology_generator_silence\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260507T220309Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 002_20260507T220502Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 003_20260507T220529Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 004_20260507T220539Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 010_20260507T222310Z_python-m-arf-scripts-verificators-verify.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 011_20260507T222913Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 012_20260507T222919Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 013_20260507T223045Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 014_20260507T223214Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 015_20260507T223230Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 022_20260507T224517Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 028_20260508T002523Z_python-m-arf-scripts-aggregators-aggrega.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 029_20260508T002535Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 032_20260508T002613Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 036_20260508T002955Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 15 words (minimum: 20)[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 16 words (minimum: 20)[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 10 words (minimum: 20)[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 5 words (minimum: 20)[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 21 warning(s)
