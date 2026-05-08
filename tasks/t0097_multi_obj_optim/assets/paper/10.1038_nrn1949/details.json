@@ -1,0 +1,47 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nrn1949",
+  "doi": "10.1038/nrn1949",
+  "title": "Variability, compensation and homeostasis in neuron and network function",
+  "url": "https://www.nature.com/articles/nrn1949",
+  "pdf_url": "https://www.nature.com/articles/nrn1949.pdf",
+  "date_published": "2006-07-01",
+  "year": 2006,
+  "authors": [
+    {
+      "name": "Eve Marder",
+      "country": "US",
+      "institution": "Brandeis University",
+      "orcid": null
+    },
+    {
+      "name": "Jean-Marc Goaillard",
+      "country": "US",
+      "institution": "Brandeis University",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Brandeis University",
+      "country": "US"
+    }
+  ],
+  "journal": "Nature Reviews Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "compartmental-modeling",
+    "synaptic-integration"
+  ],
+  "abstract": "Neurons in most animals live a very long time relative to the half-lives of all of the proteins that govern excitability and synaptic transmission. Consequently, homeostatic mechanisms are necessary to ensure stable neuronal and network function over an animal's lifetime. To understand how these homeostatic mechanisms might function, it is crucial to understand how tightly regulated synaptic and intrinsic properties must be for adequate network performance, and the extent to which compensatory mechanisms allow for multiple solutions to the production of similar behaviour. Here, we use examples from theoretical and experimental studies of invertebrates and vertebrates to explore several issues relevant to understanding the precision of tuning of synaptic and intrinsic currents for the operation of functional neuronal circuits.",
+  "citation_key": "Marder2006",
+  "summary_path": "summary.md",
+  "files": [
+    "files/marder_2006_variability-homeostasis.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0097_multi_obj_optim",
+  "date_added": "2026-05-08"
+}
