@@ -1,4 +1,4 @@
-# ❌ Literature survey: multi-objective optimisation of single-neuron models
+# ⏳ Literature survey: multi-objective optimisation of single-neuron models
 
 [Back to all tasks](../README.md)
 
@@ -6,20 +6,23 @@
 
 | Field | Value |
 |---|---|
-| **ID** | `t0096_literature_survey_multi_objective_neuron_optimisation` |
-| **Status** | ❌ cancelled |
-| **Completed** | 2026-05-08T15:30:00Z |
+| **ID** | `t0097_multi_obj_optim` |
+| **Status** | ⏳ in_progress |
 | **Task types** | `literature-survey`, `internet-research`, `answer-question` |
 | **Expected assets** | 10 paper, 1 answer |
-| **Task folder** | [`t0096_literature_survey_multi_objective_neuron_optimisation/`](../../../tasks/t0096_literature_survey_multi_objective_neuron_optimisation/) |
+| **Task folder** | [`t0097_multi_obj_optim/`](../../../tasks/t0097_multi_obj_optim/) |
 
 <details>
 <summary><strong>Task Description</strong></summary>
 
-*Source:
-[`task_description.md`](../../../tasks/t0096_literature_survey_multi_objective_neuron_optimisation/task_description.md)*
+*Source: [`task_description.md`](../../../tasks/t0097_multi_obj_optim/task_description.md)*
 
 # Literature Survey: Multi-Objective Optimisation of Single-Neuron Compartmental Models
+
+> **Note**: This task supersedes `t0096_literature_survey_multi_objective_neuron_optimisation`,
+> which was created with a slug too long for Windows worktree paths to handle (the absolute path
+> exceeded Windows' 260-char limit when combined with deep existing task paths). The content here is
+> identical; only the task ID and slug are shorter.
 
 ## Motivation
 
@@ -241,9 +244,11 @@ writing; 15-30 min suggestions + reporting + verification.
 
 ## Cross-References
 
+* **t0096_literature_survey_multi_objective_neuron_optimisation** — superseded predecessor
+  (cancelled in this PR due to Windows worktree path-length limit).
 * **t0091_morphology_extended_nsga2_v1** — current MOBO frontier (DSI + firing rate);
   catalogue's recipes must compose with t0091's trial-output format.
-* **t0095_brainstorm_results_20** — commissioned this task.
+* **t0095_brainstorm_results_20** — commissioned t0096 (this task's predecessor).
 * **t0002_literature_survey_dsgc_compartmental_models** — prior literature survey for
   stylistic consistency.
 * **t0015 / t0016 / t0017 / t0018 / t0019 / t0027** — prior literature surveys for stylistic

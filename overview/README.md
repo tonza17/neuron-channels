@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-96-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-97-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-353-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -33,7 +33,7 @@
 [results](llm-context/results-deep-dive.xml) (417K) |
 [assets](llm-context/literature-and-assets.xml) (56K)
 
-*Last updated: 2026-05-08 14:41 UTC*
+*Last updated: 2026-05-08 15:20 UTC*
 
 * **Budget**: **$16** spent of $20
 * **Remaining**: **$4**
@@ -53,19 +53,19 @@
 
 ---
 
-## [In Progress (1)](tasks/by-status/in_progress.md)
+## [In Progress (2)](tasks/by-status/in_progress.md)
 
 | # | Task | Started |
 |---|------|---------|
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | 2026-05-08 11:35 |
+| 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0097_multi_obj_optim.md) | — |
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0096 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0096_literature_survey_multi_objective_neuron_optimisation.md) | [`description`](../tasks/t0096_literature_survey_multi_objective_neuron_optimisation/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
 
