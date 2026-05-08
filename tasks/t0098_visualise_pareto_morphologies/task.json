@@ -5,13 +5,13 @@
   "name": "Visualise t0091 Pareto morphologies + per-cell DSI / PD-rate charts",
   "short_description": "Visualize the 57 Pareto cells from t0091 as a morphology grid plus per-cell DSI / PD-rate / scatter charts.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0091_morphology_extended_nsga2_v1",
     "t0092_diagnose_morphology_generator_silence",
     "t0093_resweep_and_t0090_correction"
   ],
-  "start_time": null,
+  "start_time": "2026-05-08T21:34:05Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
