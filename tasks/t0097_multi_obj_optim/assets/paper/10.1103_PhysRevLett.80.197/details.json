@@ -1,0 +1,59 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1103_PhysRevLett.80.197",
+  "doi": "10.1103/PhysRevLett.80.197",
+  "title": "Entropy and Information in Neural Spike Trains",
+  "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.80.197",
+  "pdf_url": "https://arxiv.org/pdf/cond-mat/9603127",
+  "date_published": "1998-01-05",
+  "year": 1998,
+  "authors": [
+    {
+      "name": "Steven P. Strong",
+      "country": "US",
+      "institution": "NEC Research Institute",
+      "orcid": null
+    },
+    {
+      "name": "Roland Koberle",
+      "country": "US",
+      "institution": "NEC Research Institute",
+      "orcid": null
+    },
+    {
+      "name": "Rob R. de Ruyter van Steveninck",
+      "country": "US",
+      "institution": "NEC Research Institute",
+      "orcid": null
+    },
+    {
+      "name": "William Bialek",
+      "country": "US",
+      "institution": "NEC Research Institute",
+      "orcid": "0000-0003-2104-2487"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "NEC Research Institute",
+      "country": "US"
+    },
+    {
+      "name": "Princeton University",
+      "country": "US"
+    }
+  ],
+  "journal": "Physical Review Letters",
+  "venue_type": "journal",
+  "categories": [],
+  "abstract": "The nervous system represents time dependent signals in sequences of discrete action potentials or spikes; all spikes are identical so that information is carried only in the spike arrival times. We show how to quantify this information, in bits, free from any assumptions about which features of the spike train or input signal are most important, and we apply this approach to the analysis of experiments on a motion sensitive neuron in the fly visual system. This neuron transmits information about the visual stimulus, at rates of up to 90 bits/s, within a factor of two of the physical limit set by the entropy of the spike train itself.",
+  "citation_key": "Strong1998",
+  "summary_path": "summary.md",
+  "files": [
+    "files/strong_1998_entropy-spike-trains.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0097_multi_obj_optim",
+  "date_added": "2026-05-08"
+}

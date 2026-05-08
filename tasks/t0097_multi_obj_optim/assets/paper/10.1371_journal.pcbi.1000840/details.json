@@ -1,0 +1,66 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1371_journal.pcbi.1000840",
+  "doi": "10.1371/journal.pcbi.1000840",
+  "title": "Action Potential Energy Efficiency Varies Among Neuron Types in Vertebrates and Invertebrates",
+  "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000840",
+  "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1000840&type=printable",
+  "date_published": "2010-07-01",
+  "year": 2010,
+  "authors": [
+    {
+      "name": "Biswa Sengupta",
+      "country": "GB",
+      "institution": "University of Cambridge",
+      "orcid": null
+    },
+    {
+      "name": "Martin Stemmler",
+      "country": "DE",
+      "institution": "Bernstein Center for Computational Neuroscience Munich, LMU Munich",
+      "orcid": null
+    },
+    {
+      "name": "Simon B. Laughlin",
+      "country": "GB",
+      "institution": "University of Cambridge",
+      "orcid": null
+    },
+    {
+      "name": "Jeremy E. Niven",
+      "country": "GB",
+      "institution": "University of Cambridge",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Cambridge",
+      "country": "GB"
+    },
+    {
+      "name": "Bernstein Center for Computational Neuroscience Munich, LMU Munich",
+      "country": "DE"
+    },
+    {
+      "name": "Smithsonian Tropical Research Institute",
+      "country": "PA"
+    }
+  ],
+  "journal": "PLOS Computational Biology",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "compartmental-modeling"
+  ],
+  "abstract": "The initiation and propagation of action potentials (APs) places high demands on the energetic resources of neural tissue. Each AP forces ATP-driven ion pumps to work harder to restore the ionic concentration gradients, thus consuming more energy. Here, we ask whether the ionic currents underlying the AP can be predicted theoretically from the principle of minimum energy consumption. A long-held supposition that APs are energetically wasteful, based on theoretical analysis of the squid giant axon AP, has recently been overturned by studies that measured the currents contributing to the AP in several mammalian neurons. In the single compartment models studied here, AP energy consumption varies greatly among vertebrate and invertebrate neurons, with several mammalian neuron models using close to the capacitive minimum of energy needed. Strikingly, energy consumption can increase by more than ten-fold simply by changing the overlap of the Na+ and K+ currents during the AP without changing the APs shape. As a consequence, the height and width of the AP are poor predictors of energy consumption. In the Hodgkin-Huxley model of the squid axon, optimizing the kinetics or number of Na+ and K+ channels can whittle down the number of ATP molecules needed for each AP by a factor of four. In contrast to the squid AP, the temporal profile of the currents underlying APs of some mammalian neurons are nearly perfectly matched to the optimized properties of ionic conductances so as to minimize the ATP cost.",
+  "citation_key": "Sengupta2010",
+  "summary_path": "summary.md",
+  "files": [
+    "files/sengupta_2010_ap-energy-efficiency.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0097_multi_obj_optim",
+  "date_added": "2026-05-08"
+}

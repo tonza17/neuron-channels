@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "uv run python -m meta.asset_types.paper.verificator --task-id t0097_multi_obj_optim 10.1103_PhysRevLett.80.197",
+  "exit_code": 0,
+  "duration_seconds": 0.351,
+  "started_at": "2026-05-08T16:23:03Z",
+  "completed_at": "2026-05-08T16:23:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "014_20260508T162303Z_uv-run-python.stdout.txt",
+  "stderr_file": "014_20260508T162303Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}
