@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-90 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **75 open** (18
-high, 46 medium, 11 low), **15 closed**.
+93 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **78 open** (20
+high, 47 medium, 11 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -83,6 +83,52 @@ centroid soma value to a near-zero value, inflating the ratio; (c) check whether
 in cluster 1 individually have AIS-to-soma ratios near 116 or whether the centroid is
 averaging across heterogeneous values. Pure data analysis on existing JSON outputs; ~30 min
 wall-clock, $0 cost. Recommended task types: data-analysis, correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising
+ATP-per-spike</strong> (S-0097-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000840`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1000840/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per
+spike). Remme et al. 2018's MSO function-vs-energy MOBO provides a direct methodology template
+generalising to NEURON. DSGC's GABAergic-style fast-spiking should produce
+Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower
+energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e`
+per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed
+per-task default; flag for explicit budget approval.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and robustness under +/-10%
+channel-density perturbation</strong> (S-0097-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1038_nrn1949`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1038_nrn1949/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Directly addresses the researcher's recurring biological-plausibility concern with pure-DSI
+maximisation (Marder-style population-statistic robustness is the field-standard treatment).
+Falsifiable prediction: high-DSI / high-robustness corner lies along compensatory hyperplanes,
+refuting the hypothesis that DSI maximisation drives the optimiser to fragile parameter-space
+extremes. Recipe: K=50-200 +/-10% perturbations per Pareto point; minimise SD of DSI. Budget:
+36-72 h Vast.ai EPYC at $0.30/h, total $11-22 (multiplies t0091's per-individual cost by
+K=50-200) — request explicit $25 budget cap or reduce population/generations.
 
 </details>
 
@@ -581,6 +627,29 @@ the dominant-mechanism story may differ if NaP were instead on the AIS. Test by 
 density, and re-evaluating DSI / PD rate / fractional contribution. Hypothesis: AIS-localised
 NaP would shift dominance toward Nav1.6 or NMDA at the dendrite. Local CPU; 48 runs. Cost ~$0.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising MI and minimising ATP-per-spike
+(bits-per-ATP front)</strong> (S-0097-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1103_PhysRevLett.80.197`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1103_PhysRevLett.80.197/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front
+directly comparable to Niven et al. 2007's empirical fly-photoreceptor 200-1000 bits/s
+super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the
+literature, so the experiment closes a genuine open question. Tradeoff: this experiment does
+not directly serve the project's first-question DSGC mission (DSI is not optimised); ranked
+medium because it serves a broader scientific question rather than the project's specific
+deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
 
 </details>
 

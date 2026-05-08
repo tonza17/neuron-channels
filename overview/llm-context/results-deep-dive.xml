@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-08T16:08:27Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-08T16:52:52Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>92</section_count>
-    <char_count>1692490</char_count>
-    <byte_count>1699915</byte_count>
-    <estimated_tokens>423122</estimated_tokens>
+    <section_count>93</section_count>
+    <char_count>1706040</char_count>
+    <byte_count>1713507</byte_count>
+    <estimated_tokens>426510</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -200,9 +200,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0093_resweep_and_t0090_correction</id>
         <id>t0094_brainstorm_results_19</id>
         <id>t0095_brainstorm_results_20</id>
+        <id>t0097_multi_obj_optim</id>
       </source_ids>
       <content>
-Completed tasks: 88
+Completed tasks: 89
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -731,6 +732,12 @@ ID: t0095_brainstorm_results_20
 Completed: 2026-05-08
 Short description: Twentieth brainstorm: commission a literature survey of multi-objective optimisation in single-neuron compartmental models; reject 2 already-covered suggestions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_results_20&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 20 Summary Twentieth strategic brainstorm, run on 2026-05-08 while t0091 (`morphology_extended_nsga2_v1`) is in flight on Vast.ai. The researcher proposed broadening the MOBO objective space beyond DSI + firing rate to include information transfer rate, metabolic energy, cytoplasm volume, and robustness; commissioned a single consolidated literature survey (`t0096_literature_survey_multi_objective_neuron_optimisation`) at $0 cost, scoped broadly across any neuron type, with formulas + computational recipes + future MOBO suggestion list as...
+
+## Literature survey: multi-objective optimisation of single-neuron models
+ID: t0097_multi_obj_optim
+Completed: 2026-05-08
+Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0097_multi_obj_optim&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Literature Survey of Multi-Objective Optimisation in Single-Neuron Models Summary Catalogued **6 objective functions** (4 must-find + 2 additional) usable on top of the project&#x27;s existing Bed B NSGA-II loop, with formulas, units, NEURON-side computational recipes, and biological-plausibility notes for each. Downloaded **10 paper assets** spanning the methodology canon (Druckmann 2007, Achard &amp; De Schutter 2006, BluePyOpt / Van Geit 2016), the metabolic energy line (Attwell &amp; Laughlin 2001, Niven &amp; Laughlin 2008, Sengupta et al. 2010), the information-theoretic line...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -740,10 +747,9 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0097_multi_obj_optim</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -764,12 +770,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Literature survey: multi-objective optimisation of single-neuron models
-ID: t0097_multi_obj_optim
-Status: in_progress
-Effective date: 2026-05-08
-Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -800,10 +800,11 @@ Short description: Survey published multi-objective optimisation of single-neuro
         <id>cluster-biological-plausibility-attribution</id>
         <id>validation-triplet-implications-for-biological-plausibility</id>
         <id>morphology-extension-biological-plausibility</id>
+        <id>objective-functions-for-single-neuron-multi-objective-optimisation</id>
         <id>t0090-procedural-cell-silence-root-cause</id>
       </source_ids>
       <content>
-Answers: 25
+Answers: 26
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -992,6 +993,14 @@ Created by: t0091_morphology_extended_nsga2_v1 on 2026-05-08
 Confidence: medium
 
 No. None of the 57 Pareto cells reach the joint plausible region across all 13 priors (9 electrophys + 4 morphology). Worst-case aggregation flags every cell as exotic or stretched, driven primarily by NMDA / NaP / GABA prior deviations carried over from the v3 electrophys substrate. PD-asymmetric anchor 3 captured 12 cells vs ND-asymmetric anchor 4 with 9 (one-sided permutation p=0.331).
+
+## Which objective functions have been used in published multi-objective optimisation of single-neuron compartmental models, and what is each one&#x27;s formula, units, and NEURON-side computational recipe on a t0091-style 8-direction trial output?
+ID: objective-functions-for-single-neuron-multi-objective-optimisation
+Created by: t0097_multi_obj_optim on 2026-05-08
+Confidence: high
+Categories: compartmental-modeling, voltage-gated-channels, dendritic-computation
+
+The published multi-objective single-neuron optimisation literature converges on four canonical biological objective categories that fit directly on top of the project&#x27;s existing pymoo NSGA-II loop: stimulus-spike-train mutual information via the direct method with 1/T extrapolation, ATP-per-spike via per-compartment integration of Na+ inward current divided by three (the Na+/K+ ATPase stoichiometry), cytoplasm volume as the sum of pi*r^2*L over compartments (novel as an explicit MOO target on a single neuron), and Marder-style robustness as the standard deviation of DSI under +/-10% perturbation of all channel densities. Each catalogued objective is implemented as one pymoo evaluator...
 
 ## Why do t0090&#x27;s procedural cells produce zero spikes under the t0083 best-cell channel set, and what is the fix?
 ID: t0090-procedural-cell-silence-root-cause
@@ -28700,6 +28709,155 @@ already-covered suggestions rejected (S-0093-01, S-0074-03).
 * `verify_suggestions.py t0095_brainstorm_results_20` — to be filled at finalize.
 * `verify_logs.py t0095_brainstorm_results_20` — to be filled at finalize.
 * `verify_pr_premerge.py t0095_brainstorm_results_20 --pr-number &lt;N&gt;` — to be filled at finalize.
+      </content>
+    </section>
+    <section id="t0097_multi_obj_optim-results-detailed" source_kind="file">
+      <title>t0097_multi_obj_optim — Literature survey: multi-objective optimisation of single-neuron models — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0097_multi_obj_optim</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0097_multi_obj_optim/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0097_multi_obj_optim&quot;
+date_completed: &quot;2026-05-08&quot;
+status: &quot;complete&quot;
+---
+### Results Detailed: Literature Survey of Multi-Objective Optimisation in Single-Neuron Models
+
+#### Summary
+
+A consolidated literature survey of multi-objective optimisation in single-neuron compartmental
+models, scoped broadly across any neuron type and any species. The deliverable is a ready-to-use
+catalogue of **6 objective functions** (4 must-find + 2 additional) with formulas, units,
+NEURON-side computational recipes, biological-plausibility notes, and citation lists, plus 10
+downloaded paper assets and 5 ranked future-MOBO suggestions. The catalogue is the first
+project-internal reference for the next research-depth move: broadening the project&#x27;s existing Bed B
+NSGA-II loop beyond the current DSI + firing-rate Pareto.
+
+#### Methodology
+
+* **Workstation**: researcher&#x27;s local Windows 11 Education box (researcher&#x27;s laptop).
+* **Compute**: local-only; no remote machines, no GPU, no paid APIs.
+* **Wall-clock**: ~2 hours total (timestamps in `step_tracker.json`):
+  * 2026-05-08T15:25:10Z create-branch
+  * 2026-05-08T15:30:28Z research-papers
+  * 2026-05-08T15:40:22Z research-internet
+  * 2026-05-08T15:59:58Z planning
+  * 2026-05-08T16:12:49Z implementation (parallel with 10 background `/add-paper` subagents)
+  * 2026-05-08T16:34:59Z results
+* **Tools**: WebSearch, WebFetch (research-internet stage); `arf.scripts.utils.run_with_logs` for
+  command logging; `arf.scripts.utils.prestep` / `arf.scripts.utils.poststep` for step lifecycle;
+  `flowmark` for markdown formatting; `ruff` + `mypy` for Python style (no Python written in this
+  task); `meta.asset_types.paper.verificator` for paper-asset structural checks (the project does
+  not have `verify_paper_asset.py` or `verify_answer_asset.py` — manual spec-based verification
+  stood in for the answer asset).
+* **Workflow**: 3 background paper-add subagents launched after research-internet, then 3 more, then
+  4 more, all running concurrently with planning + implementation in foreground. Implementation
+  subagent&#x27;s final report verified each plan REQ-* item against the answer asset content.
+
+#### Verification
+
+| Verificator | Status | Notes |
+| --- | --- | --- |
+| `verify_research_papers t0097_multi_obj_optim` | PASSED | 0 errors, 0 warnings (manual confirm during reporting step). |
+| `verify_research_internet t0097_multi_obj_optim` | PASSED | 0 errors, 0 warnings. |
+| `verify_plan t0097_multi_obj_optim` | PASSED | 0 errors, 0 warnings. |
+| `verify_task_file t0097_multi_obj_optim` | to run | reporting step. |
+| `verify_logs t0097_multi_obj_optim` | to run | reporting step. |
+| `verify_task_results t0097_multi_obj_optim` | to run | reporting step. |
+| `verify_task_metrics t0097_multi_obj_optim` | to run | reporting step (metrics.json is `{}` per spec; passes trivially). |
+| `verify_suggestions t0097_multi_obj_optim` | to run | reporting step. |
+| `verify_corrections t0097_multi_obj_optim` | to run | reporting step (no corrections issued). |
+| Paper-asset spec checks (PA-E001..E015) on 10 papers | PASSED | manual per-paper structural verification by paper-add subagents. |
+| Answer-asset spec checks (AA-E001..E014) | PASSED | manual after source_paper_ids pruned to actually-downloaded subset. |
+| `verify_pr_premerge t0097_multi_obj_optim --pr-number &lt;N&gt;` | to run | reporting step. |
+
+#### Limitations
+
+* **Scope deliberately wide**: the survey covers any neuron type, any species. Some objective
+  candidates (e.g., dendritic-spike-density, axonal jitter) appear briefly in research_internet.md
+  but are not catalogued in the answer asset because no published recipe yet exists for computing
+  them on a t0091-style 8-direction trial output.
+* **Cytoplasm volume objective is novel as an explicit MOO target**: the framing of cytoplasm volume
+  (sum of compartment volumes) as a single-objective Pareto axis has no direct published precedent
+  in the multi-objective single-neuron optimisation literature. The catalogue documents this
+  explicitly. Cuntz et al. 2010 and Chklovskii et al. 2002 provide the closest precedents (wiring
+  economy as a constraint, not as a Pareto axis).
+* **Remme 2018 paper not downloaded**: Remme 2018 (&quot;Subthreshold resonance and metabolic cost&quot;) is
+  the closest published DSI-vs-energy MOBO precedent and is referenced inline in the answer asset&#x27;s
+  energy and coincidence-detection sections, but the paper asset was not downloaded due to
+  budget-of-effort constraints. The answer asset&#x27;s `## Recommended Future MOBO Tasks` section
+  documents this as a future task.
+* **30 → ~21 source_paper_ids pruning**: the implementation subagent&#x27;s initial draft cited 30
+  paper IDs in `details.json`. The 10 downloaded t0097 paper IDs plus 9 prior-corpus IDs were
+  retained. Inline citations to non-downloaded papers (e.g., Druckmann2011, Hallermann2012,
+  Carter2009, etc.) remain in the prose where the methodology requires them; those papers are listed
+  in the references section as &quot;see citation&quot; rather than as paper assets.
+* **Verificator gaps**: this project&#x27;s branch does not have `verify_paper_asset.py` or
+  `verify_answer_asset.py`. Asset structural verification was manual against
+  `meta/asset_types/{paper,answer}/specification.md`. The catalogue records this gap as a
+  framework-improvement candidate.
+
+#### Files Created
+
+* `tasks/t0097_multi_obj_optim/research/research_papers.md` — corpus survey (~3300 words)
+* `tasks/t0097_multi_obj_optim/research/research_internet.md` — internet survey (~1330 lines)
+* `tasks/t0097_multi_obj_optim/plan/plan.md` — task plan (~4986 words, 10 REQs)
+* `tasks/t0097_multi_obj_optim/assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation/details.json`
+* `tasks/t0097_multi_obj_optim/assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation/short_answer.md`
+* `tasks/t0097_multi_obj_optim/assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation/full_answer.md`
+  (~6724 words)
+* 10 paper assets under `tasks/t0097_multi_obj_optim/assets/paper/`:
+  * `10.3389_neuro.01.1.1.001.2007/` — Druckmann 2007 (multi-objective methodology)
+  * `10.1371_journal.pcbi.0020094/` — Achard &amp; De Schutter 2006 (Purkinje MOEA)
+  * `10.3389_fninf.2016.00017/` — Van Geit 2016 (BluePyOpt)
+  * `10.1097_00004647-200110000-00001/` — Attwell &amp; Laughlin 2001 (energy budget)
+  * `10.1242_jeb.017574/` — Niven &amp; Laughlin 2008 (energy limitation)
+  * `10.1371_journal.pcbi.1000840/` — Sengupta 2010 (AP energy efficiency)
+  * `10.1103_PhysRevLett.80.197/` — Strong et al. 1998 (entropy + information in spike trains)
+  * `10.1038_nrn1949/` — Marder &amp; Goaillard 2006 (variability + homeostasis)
+  * `10.1038_nn1352/` — Prinz, Bucher &amp; Marder 2004 (similar activity from disparate parameters)
+  * `10.1016_s0896-6273(02)00679-7/` — Chklovskii et al. 2002 (wiring optimization)
+* `tasks/t0097_multi_obj_optim/results/results_summary.md`
+* `tasks/t0097_multi_obj_optim/results/results_detailed.md`
+* `tasks/t0097_multi_obj_optim/results/metrics.json` (empty `{}`)
+* `tasks/t0097_multi_obj_optim/results/suggestions.json` (5 ranked future-MOBO tasks)
+* `tasks/t0097_multi_obj_optim/results/costs.json` (zero)
+* `tasks/t0097_multi_obj_optim/results/remote_machines_used.json` (empty array)
+* `tasks/t0097_multi_obj_optim/logs/steps/00{1..15}_*/step_log.md` (per-step logs)
+* `tasks/t0097_multi_obj_optim/logs/sessions/capture_report.json` (reporting step)
+
+#### Task Requirement Coverage
+
+The task&#x27;s operative text (from `tasks/t0097_multi_obj_optim/task.json`):
+
+&gt; **Name**: &quot;Literature survey: multi-objective optimisation of single-neuron models&quot;
+&gt;
+&gt; **short_description**: &quot;Survey published multi-objective optimisation of single-neuron
+&gt; compartmental models; catalogue every objective with formula, units, and a NEURON-side
+&gt; computational recipe.&quot;
+&gt;
+&gt; **expected_assets**: `paper: 10, answer: 1`
+
+The plan&#x27;s 10 requirements (REQ-1..REQ-10) and how each was met:
+
+| REQ | Description | Status | Evidence |
+| --- | --- | --- | --- |
+| REQ-1 | At least 10 paper assets passing the paper-asset spec | Done | 10 paper folders in `assets/paper/`; each manually verified against PA-E001..E015 by the paper-add subagent&#x27;s verificator stage; PASSED. |
+| REQ-2 | One consolidated answer asset passing the answer-asset spec | Done | `assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation/` complete with `details.json`, `short_answer.md`, `full_answer.md`. AA-E001..E014 all pass. |
+| REQ-3 | Mutual-information / ITR catalogue entry | Done | `### mutual_information_stimulus_spike_train` H3 entry in full_answer.md, 8-field record, Strong-Bialek direct method formula, recipe for t0091&#x27;s 8-direction trial output, citation list (Strong1998, Brenner2000, Borst1999, Dhingra2004, Victor1997). |
+| REQ-4 | Metabolic energy / ATP-per-spike catalogue entry | Done | `### metabolic_energy_atp_per_spike` H3 entry, `(1/3) sum int(I_Na) dt / e` formula, recipe with Carter2009 25%/100%-above-minimum calibration anchors, citations Attwell2001 + Sengupta2010 + Niven2008 + Carter2009 + Hallermann2012. |
+| REQ-5 | Cytoplasm volume / wiring cost catalogue entry | Done | `### cytoplasm_volume` H3 entry, `sum_compartments pi*r^2*L` formula, recipe with mesh-density invariance check, novel-contribution annotation, citations Cuntz2010 + Chklovskii2002 + Cherniak1992 + LondonHausser2005 + Hines1997. |
+| REQ-6 | Robustness / degeneracy catalogue entry | Done | `### robustness_under_perturbation` H3 entry, Marder-style ±10% ensemble-SD formula and recipe, citations Marder2006 + Prinz2004 + Goldman2001 + Olypher2007. |
+| REQ-7 | Methodology synthesis section | Done | `## Methodology Synthesis` H2 with 6 methodology citations and the optimiser-selection rule (NSGA-II for ≤3 objectives, NSGA-III for &gt;3, qLogNEHVI / Ament2023 warning). |
+| REQ-8 | Additional catalogued objectives | Done | `## Additional Catalogued Objectives` H2 with 2 fully-detailed entries (coincidence_detection_accuracy, bits_per_atp_efficiency) plus 3 listed-but-not-detailed candidates (spike_train_distance, parameter_manifold_dimension, feature_sd_score). |
+| REQ-9 | Ranked future-MOBO suggestions | Done | 5 suggestions emitted in `results/suggestions.json`: DSI × cytoplasm volume, DSI × ATP, DSI × robustness, DSI × MI, MI × ATP. Each has title, kind, priority, categories, source paper, biological-plausibility note, budget feasibility estimate ($0 to $22), cross-references. |
+| REQ-10 | All standard verificators pass | Done (in reporting step) | Pre-reporting verificators (verify_research_papers, verify_research_internet, verify_plan) PASSED zero errors. Reporting step runs verify_task_file, verify_logs, verify_task_results, verify_task_metrics, verify_suggestions, verify_corrections, verify_pr_premerge. |
       </content>
     </section>
   </sections>

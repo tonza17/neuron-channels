@@ -1,18 +1,18 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-77-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-87-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-3-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-25-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-26-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-97-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-361-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-366-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (33K)
-| [full](llm-context/full.xml) (536K) | [roadmap](llm-context/roadmap.xml) (107K) |
-[results](llm-context/results-deep-dive.xml) (423K) |
-[assets](llm-context/literature-and-assets.xml) (57K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (34K)
+| [full](llm-context/full.xml) (553K) | [roadmap](llm-context/roadmap.xml) (105K) |
+[results](llm-context/results-deep-dive.xml) (427K) |
+[assets](llm-context/literature-and-assets.xml) (60K)
 
-*Last updated: 2026-05-08 16:08 UTC*
+*Last updated: 2026-05-08 16:52 UTC*
 
 * **Budget**: **$16** spent of $20
 * **Remaining**: **$4**
@@ -53,11 +53,9 @@
 
 ---
 
-## [In Progress (1)](tasks/by-status/in_progress.md)
+## [In Progress (0)](tasks/by-status/in_progress.md)
 
-| # | Task | Started |
-|---|------|---------|
-| 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0097_multi_obj_optim.md) | 2026-05-08 15:23 |
+No tasks in progress.
 
 ---
 
@@ -84,12 +82,13 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (88 total)](tasks/by-status/completed.md)
+## [Recently Completed (89 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
 | 0095 | [Brainstorm results session 20](../overview/tasks/task_pages/t0095_brainstorm_results_20.md) | [`results`](../tasks/t0095_brainstorm_results_20/results/results_detailed.md) | 2026-05-08 20:45 |
 | 0094 | [Brainstorm results session 19](../overview/tasks/task_pages/t0094_brainstorm_results_19.md) | [`results`](../tasks/t0094_brainstorm_results_19/results/results_detailed.md) | 2026-05-08 18:30 |
+| 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0097_multi_obj_optim.md) | [`results`](../tasks/t0097_multi_obj_optim/results/results_detailed.md) | 2026-05-08 16:50 |
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`results`](../tasks/t0091_morphology_extended_nsga2_v1/results/results_detailed.md) | 2026-05-08 15:55 |
 | 0093 | [Patched-generator full 60-morph re-sweep + t0090 correction overlay](../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) | [`results`](../tasks/t0093_resweep_and_t0090_correction/results/results_detailed.md) | 2026-05-08 03:55 |
 | 0092 | [Diagnose why t0090 procedural cells produce no action potentials](../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | [`results`](../tasks/t0092_diagnose_morphology_generator_silence/results/results_detailed.md) | 2026-05-08 00:55 |
@@ -97,9 +96,8 @@ No blocked tasks.
 | 0089 | [Brainstorm results session 18](../overview/tasks/task_pages/t0089_brainstorm_results_18.md) | [`results`](../tasks/t0089_brainstorm_results_18/results/results_detailed.md) | 2026-05-07 11:30 |
 | 0088 | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) | [`results`](../tasks/t0088_recluster_marginals_and_vm_motifs/results/results_detailed.md) | 2026-05-06 21:10 |
 | 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`results`](../tasks/t0086_robustness_cluster_bio_comparison/results/results_detailed.md) | 2026-05-06 18:24 |
-| 0087 | [Brainstorm results session 17](../overview/tasks/task_pages/t0087_brainstorm_results_17.md) | [`results`](../tasks/t0087_brainstorm_results_17/results/results_detailed.md) | 2026-05-06 11:50 |
 
-*78 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*79 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -124,7 +122,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (319 open)](suggestions/)
+## [Recent Suggestions (324 open)](suggestions/)
 
 <details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
@@ -328,11 +326,11 @@ should reflect the supersession overlay. Recommended task types: correction.
 
 </details>
 
-*309 more open suggestions → [open suggestions](suggestions/)*
+*314 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (48)](suggestions/)
+## [High Priority Suggestions (51)](suggestions/)
 
 <details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
@@ -415,6 +413,57 @@ bug. Recommended task types: correction.
 </details>
 
 <details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising cytoplasm
+volume</strong> (S-0097-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0097_multi_obj_optim](../tasks/t0097_multi_obj_optim/)
+
+Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most
+evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010's `bf`
+in [0.2, 0.7] band; Chklovskii et al. 2002's 3/5-of-grey-matter wiring rule). Infrastructure
+already in place via the t0093-validated procedural morphology generator. Falsifiable
+prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on
+Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8
+budget bump if needed). Same population/generation budget as t0091.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising
+ATP-per-spike</strong> (S-0097-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0097_multi_obj_optim](../tasks/t0097_multi_obj_optim/)
+
+Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per
+spike). Remme et al. 2018's MSO function-vs-energy MOBO provides a direct methodology template
+generalising to NEURON. DSGC's GABAergic-style fast-spiking should produce
+Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower
+energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e`
+per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed
+per-task default; flag for explicit budget approval.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and robustness under +/-10%
+channel-density perturbation</strong> (S-0097-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0097_multi_obj_optim](../tasks/t0097_multi_obj_optim/)
+
+Directly addresses the researcher's recurring biological-plausibility concern with pure-DSI
+maximisation (Marder-style population-statistic robustness is the field-standard treatment).
+Falsifiable prediction: high-DSI / high-robustness corner lies along compensatory hyperplanes,
+refuting the hypothesis that DSI maximisation drives the optimiser to fragile parameter-space
+extremes. Recipe: K=50-200 +/-10% perturbations per Pareto point; minimise SD of DSI. Budget:
+36-72 h Vast.ai EPYC at $0.30/h, total $11-22 (multiplies t0091's per-individual cost by
+K=50-200) — request explicit $25 budget cap or reduce population/generations.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
 ProcessPoolExecutor</strong> (S-0090-02)</summary>
 
@@ -470,73 +519,11 @@ efficiency on the morphology axis. Recommended task types: data-analysis.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Per-direction Vm-trace deep-dive of cell 1304 to identify the
-headline cell's biophysical mechanism</strong> (S-0083-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0083_bedb_v3_extend_nsga2_gen8plus](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/)
-
-Cell 1304 (gen 13, DSI 0.7652 / PD 13.96 Hz) is the project's first cell statistically
-indistinguishable from RivlinEtzion 2012's published mouse ON-OFF DSGC stable-cell
-distribution (DSI z=-0.08, PD z=+0.42). Its biophysical mechanism has not been attributed to
-specific dendritic-spike machinery (NMDA Mg-block vs distal Nav1.6 vs NaP_dend). t0084 found
-NaP_dend dominant for cell 767 (now dominated and off-Pareto); cell 1304's parameter vector
-differs structurally from cell 767's (cf. [0.006, 0.001, 0.999, 0.995, 0.876, 0.992] vs
-[0.008, 0.018, 1.000, 1.000, 0.250, 0.000]). Re-run cell 1304 in subprocess with per-direction
-Vm recording at soma + 4 dendritic locations + AIS, then run conductance-knockout ablations
-(zero out g_NaP_dend / g_NMDA / g_Nav_dend_distal) to identify the dominant DSI driver.
-Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
-per-synapse value, then re-run</strong> (S-0086-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
-
-t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
-conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
-pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
-parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
-from t0083's gen-17 final population for 5 additional generations at population 96. Test
-whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
-confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
-biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
-joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
-Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
-cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Resolve units mismatch between t0080 gnmda_dend NetCon weight and
-Sivyer 2013 per-spine conductance</strong> (S-0086-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-06 | **Source**:
-[t0086_robustness_cluster_bio_comparison](../tasks/t0086_robustness_cluster_bio_comparison/)
-
-t0086's NMDA exotic verdict (>85 sigma above Sivyer 2013) is so extreme that it likely
-partially reflects a units / scope mismatch rather than a genuinely outlier biological
-mechanism. The t0080 ParameterVector encoding `gnmda_dend` is the NetCon weight used in the
-t0080 Exp2NMDA mechanism, while Sivyer 2013's value is a per-spine synaptic conductance
-measured in voltage-clamp on RGC dendritic spines. These may differ by a per-cell area
-normalisation or by an effective open-channel-fraction factor. Run a calibration ablation:
-take a single t0080 cell, vary `gnmda_dend` from 1e-5 to 1e-2 uS, measure the per-spine
-effective open conductance (from the NEURON state during a stimulus), and produce a
-calibration curve mapping NetCon weight to per-spine conductance. Then re-score the t0086
-clusters against Sivyer 2013 in the corrected units. Expected cost: ~$0.30 USD (1 hour CPU).
-Recommended task types: data-analysis.
-
-</details>
-
-*38 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*41 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (25 total)](answers/)
+## [Recent Answers (26 total)](answers/)
 
 <details>
 <summary><strong>Did enabling the 14-d procedural morphology variation as an
@@ -573,6 +560,38 @@ re-emits the soma's pt3d points along the z-axis so the cylinder length equals
 `soma_diameter_um` and the surface area matches the t0024 hand-coded reference (~220 µm²).
 After applying the fix the BedB-equivalent procedural cell fires 61 spikes in the PD direction
 (43.6 Hz, peak Vm ~11 mV).
+
+</details>
+
+<details>
+<summary><strong>Which objective functions have been used in published
+multi-objective optimisation of single-neuron compartmental models, and
+what is each one's formula, units, and NEURON-side computational recipe
+on a t0091-style 8-direction trial output?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-08 | **Full answer**:
+[`objective-functions-for-single-neuron-multi-objective-optimisation`](../tasks/t0097_multi_obj_optim/assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation/)
+
+The published multi-objective single-neuron optimisation literature converges on four
+canonical biological objective categories that fit directly on top of the project's existing
+pymoo NSGA-II loop: stimulus-spike-train mutual information via the direct method with 1/T
+extrapolation, ATP-per-spike via per-compartment integration of Na+ inward current divided by
+three (the Na+/K+ ATPase stoichiometry), cytoplasm volume as the sum of pi*r^2*L over
+compartments (novel as an explicit MOO target on a single neuron), and Marder-style robustness
+as the standard deviation of DSI under +/-10% perturbation of all channel densities. Each
+catalogued objective is implemented as one pymoo evaluator callable on the project's existing
+8-direction 1400-ms trial output and is reported with a uniform 8-field record (name, LaTeX
+formula, units, NEURON-side quantities, recipe, biological-plausibility note,
+direction-of-optimisation, supporting paper citations). The methodology synthesis adopts
+per-feature SD-normalisation, the 2-3 SD acceptance threshold and ensemble-as-experiment
+reporting pattern, and the optimiser-selection rule NSGA-II for high-d 2-3-objective problems,
+NSGA-III for high-d many-objective problems, and qLogNEHVI for low-d constrained problems with
+population fewer than 20 evaluations. Two additional well-defined objectives surfaced by the
+survey are also catalogued with the full 8-field record: coincidence-detection accuracy (the
+closest published function-vs-energy MOO analogue to the project's planned DSI-vs-energy work)
+and bits-per-ATP efficiency (the canonical empirical Pareto curve in the field). This answer
+is grounded in 21 newly catalogued papers plus 9 corpus papers and the BluePyOpt / eFEL /
+pymoo / AllenSDK documentation.
 
 </details>
 
@@ -727,31 +746,183 @@ reproduce the paper's DSI vs gNMDA claim.
 
 </details>
 
-<details>
-<summary><strong>Does measuring per-channel synaptic conductance under a somatic
-SEClamp on the deposited DSGC reproduce Poleg-Polsky 2016 Fig 3A-E values
-within +/- 25%, and resolve the t0047 amplitude mismatch as a
-measurement-modality artefact?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-04-25 | **Full answer**:
-[`seclamp-conductance-remeasurement-fig3`](../tasks/t0049_seclamp_cond_remeasure/assets/answer/seclamp-conductance-remeasurement-fig3/)
-
-No. Under somatic SEClamp at -65 mV on the deposited DSGC at gNMDA = 0.5 nS, all six channel x
-direction cells render an H2 verdict: SEClamp values are 1.6x-3.8x the paper Fig 3A-E targets
-and 0.2x-0.5x t0047's per-synapse-summed values, so they sit between the two references but
-match neither within tolerance. Modality (somatic clamp vs per-synapse direct) explains
-roughly an order of magnitude of the t0047 amplitude mismatch but does not fully close the gap
-to the paper. The deposited model also fails to reproduce the paper's headline GABA PD/ND
-asymmetry (SEClamp DSI ~ 0 vs paper ~ -0.4), which points to genuine parameter or protocol
-differences beyond measurement modality.
-
-</details>
-
-*15 more answers → [answers](answers/)*
+*16 more answers → [answers](answers/)*
 
 ---
 
-## [Latest Papers (77 total)](papers/)
+## [Latest Papers (87 total)](papers/)
+
+<details>
+<summary>📖 <strong>BluePyOpt: Leveraging Open Source Software and Cloud
+Infrastructure to Optimise Model Parameters in Neuroscience</strong> —
+Geit et al., 2016</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.3389_fninf.2016.00017` |
+| **Authors** | Werner Van Geit, Michael Gevaert, Giuseppe Chindemi, Christian Rossert, Jean-Denis Courcol, Eilif B. Muller, Felix Schurmann, Idan Segev, Henry Markram |
+| **Venue** | Frontiers in Neuroinformatics (journal) |
+| **DOI** | `10.3389/fninf.2016.00017` |
+| **URL** | https://www.frontiersin.org/articles/10.3389/fninf.2016.00017/full |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/) |
+| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.3389_fninf.2016.00017/summary.md) |
+
+This Technology Report introduces BluePyOpt, a Python package developed at the Blue Brain
+Project to standardise the multi-objective evolutionary optimisation of neuroscience models.
+The motivation is that while stochastic search methods like genetic algorithms and CMA-ES have
+proven effective for fitting compartmental neuron models, configuring them correctly remains a
+domain expertise problem that excludes most neuroscientists from the technique. BluePyOpt
+addresses this by providing a reusable object-oriented API and turn-key cloud-deployment
+scripts, lowering the barrier so that a working optimisation can be expressed in a short
+Python script.
+
+The framework wraps DEAP for the evolutionary algorithms (IBEA, NSGA-II, CMA-ES, PSO), NEURON
+for electrophysiological simulation, and eFEL for feature extraction. Its core abstraction is
+a clean separation between an `Optimisation` (the search algorithm), an `Evaluator` (the
+parameter-to- objective mapping), and an `ephys` model layer (`CellModel`, `Morphology`,
+`Mechanism`, `Protocol`, `Stimulus`, `Recording`, `eFELFeature`, `SingletonObjective`,
+`ObjectivesCalculator`). Distance- dependent ion-channel distributions, parameter freezing,
+holding currents, and back-propagating- AP protocols are all first-class API objects.
+Parallelisation is handled by user-supplied `map` functions (Python, multiprocessing, SCOOP,
+MPI4Py); Ansible playbooks automate AWS, Vagrant, and cluster deployment.
+
+The paper validates the framework on three representative use cases. A single-compartment
+Hodgkin-Huxley fit converges in 4 minutes on one CPU. A 18-parameter, 31-feature optimisation
+of a layer-5 pyramidal cell reproduces the published Markram et al. 2015 model in
+approximately 4 hours on 50 cores, recovering a diverse hall-of-fame of equally good
+solutions. A 9-parameter calcium-based STDP model is fit to LTP/LTD curves from Nevian and
+Sakmann (2006), demonstrating that the framework is not restricted to voltage-trace fitting.
+
+For this project, BluePyOpt is the methodology backbone of the parameter-optimisation work.
+The paper is the canonical citation for the project's chosen optimisation toolchain, sitting
+alongside Druckmann et al. (2007) and Hay et al. (2011) as the methodological core. It
+directly specifies the recommended adoption pattern: encode each project objective (DSI
+matching, target firing rates, EPSP/IPSP amplitudes) as an `eFELFeature` plus
+`SingletonObjective`, package the model as a `CellModel` with `Protocol` per stimulus
+condition, and run IBEA or NSGA-II via DEAP. The L5PC compute budget and the reported
+non-uniqueness of solutions also set practical expectations for this project's own
+optimisation runs and for how to interpret their output as a population of
+electrophysiological regimes rather than a single best individual.
+
+</details>
+
+<details>
+<summary>📖 <strong>Entropy and Information in Neural Spike Trains</strong> — Strong
+et al., 1998</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1103_PhysRevLett.80.197` |
+| **Authors** | Steven P. Strong, Roland Koberle, Rob R. de Ruyter van Steveninck, William Bialek |
+| **Venue** | Physical Review Letters (journal) |
+| **DOI** | `10.1103/PhysRevLett.80.197` |
+| **URL** | https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.80.197 |
+| **Date added** | 2026-05-08 |
+| **Categories** | — |
+| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1103_PhysRevLett.80.197/summary.md) |
+
+Strong, Koberle, de Ruyter van Steveninck, and Bialek address a foundational question in
+sensory neuroscience: how much information about a time-varying stimulus does a single neuron
+spike train actually transmit, and in particular, does the precise timing of spikes (down to
+millisecond resolution) contribute, or is the relevant variable just the firing rate? The
+paper scope is deliberately model-free — it refuses to assume any particular decoding scheme
+or hypothesized feature of the code (rate, ISI, bursts, latency) — and instead grounds the
+measurement in Shannon mutual information.
+
+The core methodology is the "direct method." The spike train is discretized at resolution
+`Δτ`, windowed into binary words of length `T`, and the empirical word distribution gives a
+naive plug-in entropy. Three innovations make this practical at finite sample sizes: a
+polynomial extrapolation `S_0 + S_1/size + S_2/size^2` to infinite data, the Ma
+coincidence-based lower bound stratified by spike count, and a linear extrapolation of
+`S(T)/T` versus `1/T` to recover the entropy rate. Information rate is then the difference of
+total spike-train entropy and noise entropy `R_info = S - N`, where the noise entropy is
+computed from many repeats of the same stimulus. The crossover where the naive estimate drops
+below the Ma bound provides a hard diagnostic for when sampling becomes unreliable.
+
+Applied to H1 in the fly visual system under random-walk motion stimuli, the method yields `S
+= 157 ± 3 bits/s` and `R_info = 78 ± 5 bits/s` at `Δτ = 3 ms`, equivalent to **1.8 ± 0.1
+bits/spike** and roughly **50% efficiency**. Information rates reach **~90 bits/s** at the
+finest resolution. Across a 400-fold sweep of time resolutions (`2 ms ≤ Δτ ≤ 800 ms`),
+efficiency stays approximately constant — the model-free signature that fine spike timing is
+genuinely encoding information. A reanalysis of monkey V1 data shows that the method works on
+mammalian central neurons with as little as 3 minutes of recording.
+
+For the t0097 multi-objective optimization task, this paper is the foundational citation
+underlying the information-theoretic objective category. It supplies the concrete
+computational recipe — discretize into binary words, count word frequencies, extrapolate to
+infinite data, subtract noise entropy estimated across repeats — for computing the
+**information transmission rate (ITR)** of a simulated DSGC spike train. The practical
+implications are: (i) the simulation protocol must support many repeated trials at fixed
+stimulus to estimate `N(Δτ)`; (ii) ITR should be reported across a sweep of `Δτ` so the
+efficiency curve can be inspected; (iii) the Ma lower bound and the `1/size`-extrapolation are
+essential sanity checks that should be implemented alongside the naive estimator; and (iv) a
+target efficiency in the 30-50% range with information per spike of order 1-2 bits/spike is a
+reasonable biological sanity-check range for the optimised DSGC model.
+
+</details>
+
+<details>
+<summary>📖 <strong>Action Potential Energy Efficiency Varies Among Neuron Types in
+Vertebrates and Invertebrates</strong> — Sengupta et al., 2010</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1000840` |
+| **Authors** | Biswa Sengupta, Martin Stemmler, Simon B. Laughlin, Jeremy E. Niven |
+| **Venue** | PLOS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1000840` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000840 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1000840/summary.md) |
+
+Sengupta, Stemmler, Laughlin and Niven (2010) ask whether the per-action-potential energy cost
+of biological neurons is set by waveform alone, or whether the underlying ionic currents allow
+large cost differences hidden by similar AP shapes. They re-implement seven published
+Hodgkin-Huxley single-compartment models spanning the squid giant axon, a crab leg motor
+neuron, four mammalian neurons (mouse fast-spiking interneuron, rat hippocampal interneuron,
+rat cerebellar granule cell, mouse thalamo-cortical relay) and a honeybee Kenyon cell, and
+compare per-AP Na+ loads on a common, model-independent basis. The motivation is to establish
+a principled per-cell-type energy metric that can serve as a bottom-up calibration anchor for
+cortical energy budgets and for downstream modelers comparing their own neurons energy use to
+literature.
+
+The methodology is a deterministic single-compartment HH simulation driven by constant
+injected current to elicit repetitive firing, with per-AP Na+ load computed by integrating the
+inward Na+ current over one limit-cycle period. Cost is converted to ATP using the 3 Na+/ATP
+stoichiometry of the Na+/K+ pump. The authors then introduce a five-parameter constrained
+optimization (gNa, gK, tau_m, tau_h, tau_n) that combines a Nelder-Mead simplex with a
+Newton-method hill climber, enforcing AP existence by a hard penalty and AP height by a soft
+quadratic loss. Conductances and time constants are bounded to 30-400% of the original
+published values. The same optimization is run across six of the seven models, and the changes
+in parameters are compared.
+
+The headline result is that the per-AP Na+ load varies 17-fold across the seven models, while
+the capacitive-minimum Na+ load varies only 2.3-fold; the difference is almost entirely the
+overlap load, which has a linear correlation R^2 = 0.99 with the total Na+ load (slope ~ 1).
+Mammalian neurons (RG, RHI, MTCR) operate near the capacitive minimum (efficiency ~ 75-100%,
+alpha ~ 1.0-1.3), while the squid axon at 6.3 degrees C is profligate (efficiency 9%, alpha =
+11.2). Constrained optimization reduces the squid Na+ load 4.2-fold while leaving the mouse
+thalamo-cortical neuron essentially unchanged, confirming that mammalian APs already sit close
+to a local optimum. Optimized parameter changes vary qualitatively across models: each model
+has its own local energy valley.
+
+For this project, the paper is the canonical citation for the per-AP energy objective in the
+t0097 multi-objective optimization catalogue. The energy recipe `int(I_Na) dt / 3` (per
+compartment, per AP, in ATP molecules) is exactly what t0097 will report alongside the
+angle-tuning loss as a co-objective in the NSGA-II Pareto search. The Na+ overlap factor alpha
+is the natural normalized cost metric for cross-neuron comparison, and the mammalian alpha
+range of 1.0-1.5 calibrated here sets the realistic biological lower bound for any DSGC
+compartmental model. The model-dependence of optimal parameter changes also reinforces the
+project preference for a population-based ranking search (NSGA-II) over a one-shot template,
+since each DSGC morphology will see a different energy landscape under the joint angle-tuning
++ energy objective.
+
+</details>
 
 <details>
 <summary>📖 <strong>GABAergic Inhibition Controls Receptive Field Size, Sensitivity,
@@ -815,6 +986,119 @@ additional GABAergic and OFF-masking mechanisms would dominate.
 </details>
 
 <details>
+<summary>📖 <strong>Similar network activity from disparate circuit
+parameters</strong> — Prinz et al., 2004</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nn1352` |
+| **Authors** | Astrid A. Prinz, Dirk Bucher, Eve Marder |
+| **Venue** | Nature Neuroscience (journal) |
+| **DOI** | `10.1038/nn1352` |
+| **URL** | https://www.nature.com/articles/nn1352 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1038_nn1352/summary.md) |
+
+Prinz, Bucher and Marder ask how tightly neuronal properties and synaptic strengths must be
+tuned to produce a specific network output. They focus on the crustacean pyloric rhythm
+because its connectivity, neurons, and motor pattern are unusually well characterised. The
+motivation is to test the implicit assumption underlying much of neurophysiology, that
+animal-to-animal variability is "experimental noise" rather than a structural feature of the
+nervous system. The hypothesis is that, just as similar single-neuron firing can arise from
+many channel-density combinations, similar network output can arise from many cellular and
+synaptic parameter combinations.
+
+Methodologically, they enumerate 20,250,000 three-neuron model networks built from a 16-neuron
+pool selected from a prior 1.7-million-neuron STG database, varying seven synaptic
+conductances across five or six values. Each network is simulated, auto-classified, and tested
+against 15 burst-timing features measured from 99 Homarus americanus pyloric recordings. The
+model uses standard Hodgkin-Huxley dynamics with eight membrane currents per cell and
+Abbott-Marder synapse kinetics. The full simulation ran for several months on a Beowulf
+cluster of 1.2-GHz processors and produced approximately 4 GB of classification output.
+
+The headline finding is that 2.2% (452,516) of all networks satisfy the strict 15-feature
+pyloric criterion, every cell-combination is represented in this set, and six of the seven
+synaptic conductances span the full 0-100 nS range. Only LP-to-PY is tightly constrained (>3
+nS in just 0.1% of pyloric networks), matching its weak biological strength. Networks with
+conductances differing by factors of three or more produce visually indistinguishable rhythms.
+Burst period is controlled mainly by the AB/PD pacemaker identity, while LP and PY identity is
+essentially free.
+
+For the t0097 multi-objective optimization catalogue this paper anchors the biological
+plausibility and degeneracy objective. It directly motivates: (i) treating the optimization
+output as a Pareto manifold rather than a point, (ii) using multi-feature biological
+acceptance criteria with explicit mean +/- 2 s.d. bands instead of single-objective fitting,
+(iii) reporting which conductances remain unconstrained and which are tightly bottlenecked
+across the Pareto front, and (iv) interpreting variability across the recovered solution set
+as a biologically meaningful prediction about animal-to-animal heterogeneity in
+direction-selective retinal ganglion cells, not as optimization noise. Combined with the
+Marder-Goaillard 2006 review (already in this task as nrn1949), Prinz2004 grounds the t0097
+robustness analysis in the canonical "many disparate parameter sets, one functional output"
+result.
+
+</details>
+
+<details>
+<summary>📖 <strong>Energy limitation as a selective pressure on the evolution of
+sensory systems</strong> — Niven & Laughlin, 2008</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1242_jeb.017574` |
+| **Authors** | Jeremy E. Niven, Simon B. Laughlin |
+| **Venue** | Journal of Experimental Biology (journal) |
+| **DOI** | `10.1242/jeb.017574` |
+| **URL** | https://journals.biologists.com/jeb/article/211/11/1792/19035 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1242_jeb.017574/summary.md) |
+
+Niven and Laughlin (2008) ask why nervous systems, and sensory systems in particular, take the
+specific morphological and biophysical forms they do, and answer that energetics is one of the
+dominant selective pressures shaping them. They focus on the visual system because its
+function is quantifiable (bits s-1 of information about a visual scene) and its energetic cost
+is now directly measurable from whole-retina oxygen consumption, single-cell biophysical
+models, and bottom-up per-component energy budgets. The review scope ranges from sub-cellular
+ion-channel kinetics to the comparative neuroanatomy of cave fish, blind mole rats, and
+laboratory-evolved *Drosophila*.
+
+Methodologically, the paper consolidates three classes of measurement into a unified
+accounting framework: respirometry on excised retinas, intracellular electrical models of fly
+R1-6 photoreceptors that infer 3Na+/2K+ ATPase pump current from membrane biophysics, and the
+component-level cortical and olfactory energy budgets of Attwell-Laughlin (2001) and Nawroth
+et al. (2007). The fact that the single-cell biophysical estimates and the whole-retina O2
+measurements agree on the dominant cost (ion movement through the membrane) validates this
+multi-scale approach.
+
+The principal findings are quantitative. Resting metabolic cost in fly photoreceptors is about
+**25%** of peak signalling cost, and across four homologous photoreceptor species both rest
+and peak cost rise faster than information rate, defining a strict bits-per-ATP frontier (Fig.
+7). Action-potential transmission and resting-potential maintenance dominate the per-AP energy
+budget in rat grey matter (more than 50%, Fig. 6A), and the choice of channel set has a
+measurable energetic signature: removing the *Shaker* K+ conductance in *Drosophila*
+simultaneously raises energy cost and lowers information rate (Fig. 8). At larger scales,
+convergent reductions of sensory structures (cave-fish eyes, mole visual cortex,
+lab-Drosophila ommatidia) match the prediction that unused capacity is selected against, while
+the elasmobranch-vs-teleost ATPase comparison warns that brain mass alone is not a reliable
+proxy for brain energy use.
+
+For this project, the paper anchors the energy axis of a joint info-vs-energy multi-objective
+optimisation. The angle-to-AP-frequency tuning error captures the information / function side;
+an ATP-budget proxy (Na+/K+ pump current integrated over a stimulus, or equivalently the
+integrated voltage-gated channel currents over a trial) captures the cost side. Because
+resting cost is non- negligible, the energy proxy must include the idle interval and not only
+the burst window. Because the cost-vs-capacity relationship is super-linear, we should expect
+Pareto fronts with sharp knees where large energy savings come from trimming over-provisioned
+somatic Na+ or K+ density. Together with Attwell and Laughlin (2001) and Sengupta et al.
+(2010), this paper forms the energy-objective citation set that justifies bits-per-ATP as a
+biologically grounded second objective for the multi-objective Na/K conductance search.
+
+</details>
+
+<details>
 <summary>📖 <strong>Persistent sodium currents in neurons: potential mechanisms and
 pharmacological blockers</strong> — Müller et al., 2024</summary>
 
@@ -871,441 +1155,169 @@ at 10 uM is the canonical reference manipulation.
 </details>
 
 <details>
-<summary>📖 <strong>A new role for excitation in the retinal direction-selective
-circuit</strong> — Ankri et al., 2024</summary>
+<summary>📖 <strong>Variability, compensation and homeostasis in neuron and network
+function</strong> — Marder & Goaillard, 2006</summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `10.1113_JP286581` |
-| **Authors** | Lea Ankri, Serena Riccitelli, Michal Rivlin-Etzion |
-| **Venue** | The Journal of Physiology (journal) |
-| **DOI** | `10.1113/JP286581` |
-| **URL** | https://physoc.onlinelibrary.wiley.com/doi/10.1113/JP286581 |
+| **ID** | `10.1038_nrn1949` |
+| **Authors** | Eve Marder, Jean-Marc Goaillard |
+| **Venue** | Nature Reviews Neuroscience (journal) |
+| **DOI** | `10.1038/nrn1949` |
+| **URL** | https://www.nature.com/articles/nrn1949 |
 | **Date added** | 2026-05-08 |
-| **Categories** | [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../meta/categories/direction-selectivity/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
-| **Full summary** | [`summary.md`](../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1113_JP286581/summary.md) |
+| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
+| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1038_nrn1949/summary.md) |
 
-Ankri, Riccitelli, and Rivlin-Etzion examine how prolonged photopic illumination reshapes the
-receptive field and directional code of posterior-preferring On-Off direction-selective
-ganglion cells (pDSGCs) in mouse retina. The standard textbook view, including the authors'
-own prior work, attributes retinal direction selectivity to asymmetric inhibition from
-starburst amacrine cells, with directional excitation either absent or attributed to
-space-clamp artefact. The authors set out to test whether luminance-state changes that are
-known to remodel centre-surround antagonism (Ankri 2020, Farrow 2013, Nath 2023) also
-reorganise the directional code itself.
+This review by Marder and Goaillard codifies the now-standard observation that nervous-system
+variables --- ionic conductances, channel densities, synaptic weights --- vary substantially
+across animals of the same species and across cells of the same identified type, while the
+behavioural output of single neurons and networks remains conserved. The authors motivate the
+question by contrasting protein turnover (minutes to weeks) with neuronal lifetime (years to
+decades), arguing that homeostatic mechanisms must continuously rebuild the cell while
+preserving its function, and that this rebuilding must necessarily allow for multiple
+equivalent parameter configurations.
 
-Methodologically the study combines two-photon-targeted loose-patch and whole-cell
-voltage-clamp recordings from genetically labelled pDSGCs (Drd4-EGFP and Trhr-EGFP mice) with
-252-electrode MEA recordings from wild-type retinas. Direction tuning is probed with 1 mm bars
-that traverse the centre and surround sequentially, and receptive-field structure with
-concentric spot stimuli. Two adaptation protocols are used (3-5.5 min of stationary photopic
-light, or repetitive visual stimulation with drifting gratings). Pharmacology with SR95531,
-strychnine, and L-AP4 dissects the GABAergic, glycinergic, and On-pathway contributions to the
-unmasked surround excitation.
+The paper proceeds methodologically by surveying single-cell electrophysiology paired with
+mRNA quantification (Schulz et al. 2006 in pyloric LP neurons; Swensen and Bean 2005 in
+cerebellar Purkinje cells), pharmacological vs genetic perturbation studies, and ensemble
+conductance-based modelling (Goldman 2001; Golowasch 2002; Prinz, Bucher and Marder 2004). The
+synthesis carefully distinguishes timescales (acute pharmacology reveals fragility, chronic
+deletion reveals compensation) and scales (single neuron, microcircuit, vertebrate network),
+and argues that biological robustness arises through overlapping partially-substitutable
+components rather than engineered redundancy.
 
-Light adaptation expands the pDSGC receptive field asymmetrically toward the preferred side
-(asymmetry index On = **0.44** vs. Off = **0.15**), more than doubles the On spike-response
-duration (**305 +/- 255 ms** -> **779 +/- 149 ms**, *P* = **1.96e-4**), and adds a delayed
-null-direction-tuned spiking phase to the cell's normal preferred-direction main phase.
-Voltage-clamp recordings show that the centre is driven by preferred-direction-tuned
-excitation while the surround is driven by null-direction-tuned excitation; inhibition becomes
-essentially symmetric. The phenomenon generalises across all four cardinal On-Off DSGC
-subtypes in the MEA data.
+Quantitatively, the cited evidence shows two- to fourfold inter-animal variation in many ionic
+conductances and synaptic strengths, single-cell-level correlation between channel mRNA and
+maximal conductance, and the existence of millions of distinct yet behaviourally equivalent
+network parameter sets in the lobster pyloric model. The reviews headline conclusion is that
+"variability and compensation" are general organising principles of neuronal function, and
+that ensemble approaches --- both experimental and computational --- are required to
+characterise them.
 
-For this project the paper has two consequences. First, it confirms that the classical
-inhibition-dominated DS substrate that t0091's compartmental model implements is the correct
-target for a non-light-adapted photopic 16-direction protocol but is one regime among at least
-two; the answer asset should explicitly scope its biological-plausibility ceiling claims to
-photopic, non-light-adapted conditions and acknowledge that the surround-direction-flipping
-excitation is a separate axis the v3 substrate does not score against. Second, the published
-**DSI-on = 0.70 +/- 0.25** and **DSI-off = 0.65 +/- 0.30** baseline values serve as a hard
-biological reference for evaluating whether any t0091 Pareto cell that achieves extremely high
-DSI is super-biological rather than realistic.
-
-</details>
-
-<details>
-<summary>📖 <strong>Differential Expression Analysis Identifies Candidate
-Synaptogenic Molecules for Wiring Direction-Selective Circuits in the
-Retina</strong> — Tworig et al., 2024</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1523_JNEUROSCI.1461-23.2024` |
-| **Authors** | Joshua M. Tworig, Ryan D. Morrie, Karina Bistrong, Rachana D. Somaiya, Shaw Hsu, Jocelyn Liang, Karen G. Cornejo, Marla B. Feller |
-| **Venue** | The Journal of Neuroscience (journal) |
-| **DOI** | `10.1523/JNEUROSCI.1461-23.2024` |
-| **URL** | https://www.jneurosci.org/content/44/18/e1461232024 |
-| **Date added** | 2026-05-04 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
-| **Full summary** | [`summary.md`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1523_JNEUROSCI.1461-23.2024/summary.md) |
-
-Tworig and colleagues address one specific developmental question: which molecules instruct
-the asymmetric inhibitory wiring between starburst amacrine cell processes and the four ON-OFF
-DSGC subtypes during the brief P9-P10 critical period? Prior work had shown that the
-asymmetric inhibitory pattern emerges within roughly two postnatal days and persists in the
-absence of visual input, suggesting an instructive molecular code, but the responsible
-molecules were unknown. The authors target the postsynaptic side of this wiring problem in
-mouse retina with a transcriptomic screen and a single conditional knockout follow-up.
-
-The methodology combines paired patch-clamp (to time-stamp the wiring-onset day at P10), bulk
-RNA-seq on FACS-isolated GFP-labelled nasal- vs ventral-preferring DSGCs from three transgenic
-lines, and a Cbln4 conditional RGC knockout (Cbln4^fl/fl x VGlut2-Cre). Functional readouts
-use two-photon population calcium imaging and whole-cell voltage-clamp during 8-direction
-drifting-bar stimuli at 250 and 1,000 um/s, plus 3D dye-fill morphology reconstruction with
-Sholl analysis. Statistical testing uses Wald tests with Benjamini-Hochberg FDR for
-differential expression and permutation tests for direction-selective cell classification.
-
-The screen yields **2,270 differentially expressed transcripts** including strong candidates
-from the C1q/cerebellin family, protein tyrosine phosphatases, clustered protocadherins, and
-Tenm3 splice isoforms. Cbln4 is **~100-fold enriched** in ventral-preferring (Hb9-GFP) DSGCs,
-but the RGC-targeted KO produces only a **small DSI reduction** in the broader
-ventral-preferring DSGC population and **no detectable difference** in IPSC amplitude,
-asymmetry, or timing, EPSC properties, or dendritic morphology in voltage-clamp recordings.
-The authors conclude that Cbln4 does not function cell-autonomously in DSGCs to instruct
-asymmetric SAC->DSGC wiring, while still validating the differential-expression screen as a
-discovery tool for other candidate molecules.
-
-For this project, the paper is tangential to t0080 optimisation aims because t0080 operates on
-a fixed deposited E/I substrate rather than reshaping it. The relevance is contextual: it
-documents the developmental origin of the asymmetric inhibitory wiring that t0080 takes as a
-fixed biological prior, validates that ventral-preferring DSGCs receive stronger inhibition
-for dorsal motion (a hallmark feature already encoded in our target tuning curve), and reports
-that excitation onto these cells is weakly direction-tuned with a ventral preference --
-supporting the project continued treatment of the AMPA input distribution as approximately
-symmetric. The ~100-fold Cbln4 enrichment hit with a small DSI phenotype is also a useful
-negative-result anchor: it shows that single-gene perturbations of synaptic organisers do not
-substantially redistribute the inhibitory tuning curve, so future tasks should keep the
-project E/I substrate fixed at the canonical t0078/t0080 levels rather than attempting
-biologically motivated perturbations of single synaptogenic molecules.
+For this project, this paper is the canonical citation for the *robustness / degeneracy*
+objective category in the t0097 multi-objective optimisation catalogue. It directly
+underwrites treating parameter-perturbation sensitivity (Marder-style: chronic compensation
+potential plus acute robustness) as a multi-objective dimension alongside fitness to target
+tuning curves. It also justifies the projects choice to model the direction-selective retinal
+ganglion cell as a *family* of acceptable parameter sets rather than a single canonical model,
+and motivates reporting solution-manifold properties (spread, co-variation structure) in
+addition to Pareto fronts. Together with Prinz, Bucher and Marder (2004), it forms the
+conceptual foundation for the robustness-objective recipe in the t0097 catalogue.
 
 </details>
 
 <details>
-<summary>📖 <strong>Retinal ganglion cells encode the direction of motion outside
-their classical receptive field</strong> — Riccitelli et al., 2025</summary>
+<summary>📖 <strong>A novel multiple objective optimization framework for
+constraining conductance-based neuron models by experimental data</strong>
+— Druckmann et al., 2007</summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `10.1073_pnas.2415223122` |
-| **Authors** | Serena Riccitelli, Hadar Yaakov, Alina S. Heukamp, Lea Ankri, Michal Rivlin-Etzion |
-| **Venue** | Proceedings of the National Academy of Sciences (journal) |
-| **DOI** | `10.1073/pnas.2415223122` |
-| **URL** | https://www.pnas.org/doi/10.1073/pnas.2415223122 |
-| **Date added** | 2026-05-04 |
-| **Categories** | [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../meta/categories/direction-selectivity/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
-| **Full summary** | [`summary.md`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1073_pnas.2415223122/summary.md) |
+| **ID** | `10.3389_neuro.01.1.1.001.2007` |
+| **Authors** | Shaul Druckmann, Yoav Banitt, Albert Gidon, Felix Schurmann, Henry Markram, Idan Segev |
+| **Venue** | Frontiers in Neuroscience (journal) |
+| **DOI** | `10.3389/neuro.01.1.1.001.2007` |
+| **URL** | https://www.frontiersin.org/articles/10.3389/neuro.01.1.1.001.2007/full |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/) |
+| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.3389_neuro.01.1.1.001.2007/summary.md) |
 
-Riccitelli et al. ask whether direction selectivity in the mouse retina is restricted to the
-canonical direction-selective ganglion cells, or whether it is also computed at the population
-level by RGCs through the so-called extraclassical receptive field. They tackle this with
-large-scale ex vivo MEA recordings of dorsal mouse retinas plus complementary in vivo
-Neuropixels recordings in the LGN, and supplement the recordings with static-bar mapping,
-central-area occlusion masks, multiple bar speeds, glycinergic-amacrine pharmacology, and
-gap-junction pharmacology.
+Druckmann et al. (2007) confront a methodological problem at the core of conductance-based
+neuron modelling: how to automatically fit the maximal-conductance vector of a compartmental
+model to noisy in vitro recordings, given that repeated identical current injections produce
+visibly different voltage traces in the same cell. They argue that the dominant single-trace,
+single-error-function approach is mis-specified - it ignores intrinsic variability and forces
+an arbitrary weighting of heterogeneous error terms (e.g. spike timing vs spike shape).
 
-Their methodology centres on a 350 um radius Central area mask that defines the classical RF
-boundary and a Distancemin filter (450 um to retinal edge) that ensures every cell has a
-measurable extraclassical annulus. Two motion-asymmetry metrics (mAI > 0.3, NVS > 0.15) plus
-permutation shuffling identify the asymmetric PRE response. Static flashed bars locate the
-asymmetric activation zone; centre masking dissociates desensitization from an inherent DS
-component; strychnine and MFA reveal a wide-field-amacrine plus glycinergic plus gap-junction
-circuit; multi-speed bars demonstrate speed invariance.
+Their solution is a multi-objective optimization framework in which several biophysically
+meaningful spike features (rate, width, AHP depth, accommodation, latency, overshoot) are each
+assigned their own error function, scored in units of the feature's experimental standard
+deviation, and optimized jointly with a custom NSGA-II genetic algorithm running in NEURON.
+The fitting target is a compartmental model with 10 somatic ion channels and 12 free
+conductance parameters. Convergence was tested on two distinct cortical-interneuron electrical
+classes - accommodating and fast-spiking - using 300 organisms and 1000 generations on either
+a 112-CPU AMD cluster or a 256-512-processor BlueGene/L.
 
-The headline findings are that **12.7%** of mouse RGCs (and a corresponding subset of LGN
-neurons) encode motion direction outside their classical RF through an asymmetric activation
-zone, that their preferred directions form a centripetal population code pointing toward the
-optic disc, that direction tuning relies jointly on classical-RF desensitization and on an
-inherent DS component inside the activation zone, and that glycinergic amacrine cells plus
-gap-junction coupling are necessary for the full effect. The signal survives to dLGN, vLGN,
-and IGL.
+The framework converges to mean per-feature error of less than 1 SD for both classes and
+returns hundreds of "acceptable" parameter sets within 2 SD on every feature. These solution
+clouds segregate cleanly along some channels (Nat) and overlap on others (Im, SK), revealing
+which conductances actually carry class identity. The Pareto fronts between feature pairs
+further expose which objectives genuinely conflict, providing diagnostic information that
+single-objective fits would discard. As a proof of generalisation the same recipe with one
+extra feature qualitatively captures a third (stuttering) electrical class.
 
-For this project, the paper is broader population-coding context rather than a direct model
-target. The neuron-channels project simulates an explicitly direction-selective DRD4 ON-OFF
-DSGC in NEURON, so Riccitelli et al. occupy a complementary niche; they describe DS
-computations in non-DS RGCs that arise from circuit-level interactions outside any single
-cell. The paper is relevant for framing the t0080 v3 substrate (single-DSGC model) within the
-wider population-level direction-encoding literature, for noting that the 5-fold
-AIS-Nav-density scaling debate concerns DRD4 DSGCs specifically rather than the broader RGC
-population, and as a Zenodo data source if a later task ever needs out-of-DSGC RGC firing
-benchmarks. It does not change the t0080 NSGA-II parameter bounds, the dendritic-spike
-conductance ranges, or the AHP-tail metrics, but it strengthens the rationale for the project
-narrow focus on the DRD4 cell type rather than generalising claims to RGC direction encoding
-as a whole.
+For the present project this paper is the methodology root. Our t0097 catalogue is structured
+around multi-objective optimisation of somatic Na/K conductance combinations (and follow-on
+dendritic-conductance variants) against a target angle-to-AP-frequency tuning curve in a
+direction-selective retinal ganglion cell. Druckmann 2007 supplies (i) the SD-normalised
+feature-error formulation that we should mirror when scoring our model against patch-clamp
+ground-truth, (ii) the NSGA-II reference cost envelope (300 organisms x 1000 generations) for
+budgeting compute, and (iii) the Pareto-of-models output mode, which is more diagnostic than a
+single best-fit vector for downstream sensitivity and conductance-class analysis.
 
 </details>
 
 <details>
-<summary>📝 <strong>Retinal waves shape starburst amacrine cell dendrite development
-through a direction-selective dendritic computation</strong> — Pitcher
-et al., 2026</summary>
+<summary>📖 <strong>Wiring Optimization in Cortical Circuits</strong> — Chklovskii
+et al., 2002</summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `10.64898_2026.02.02.701812` |
-| **Authors** | Miah N. Pitcher, Aanica S. B. Gonzales, Raul Habib, Marla B. Feller |
-| **Venue** | bioRxiv (preprint) |
-| **DOI** | `10.64898/2026.02.02.701812` |
-| **URL** | https://www.biorxiv.org/content/10.64898/2026.02.02.701812v1 |
-| **Date added** | 2026-05-04 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
-| **Full summary** | [`summary.md`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.64898_2026.02.02.701812/summary.md) |
-
-Pitcher et al. ask whether spontaneous retinal waves can instruct dendritic morphology through
-a local dendritic computation, using developing mouse SACs as a model. The work spans calcium
-imaging in P7-P13 retina, pharmacological dissection with TEA, two genetic models (b2-nAChR-KO
-for activity loss, FRMD7tm for loss of wave propagation bias), and 3D dendrite reconstructions
-across the same ages.
-
-The methodology combines two-photon imaging of GCaMP-loaded single SAC dendrites with
-quadrant-resolved DSI metrics for moving bars and propagating waves, plus reconstruction-based
-quantification of nasal-vs-temporal dendrite length and distal complexity. The experimental
-design is elegant: it shows that the dendritic computation is present (P10 imaging), that it
-depends on K+-channel-based compartmentalisation (TEA experiment), that activity is required
-for outgrowth (b2-nAChR-KO), and that wave *direction*, not just wave existence, is required
-for the morphological asymmetry (FRMD7tm).
-
-The headline finding is that SAC dendrites at P9-P11 exhibit centrifugal-preferred direction
-selectivity to retinal waves; that dendritic tuning rises with distance from the soma; that
-TEA abolishes this tuning; and that wild-type SACs have nasal dendrites longer than temporal
-dendrites (a difference absent when wave propagation bias is removed). Together these results
-identify SACs as the earliest known cellular decoder of retinal-wave propagation bias and link
-that decoding to a structural morphological asymmetry that persists into the adult
-direction-selective circuit.
-
-For this project the paper is upstream context, not a direct input. t0080 (Bed B v3) treats
-the SAC drive onto the DSGC as a fixed, idealised null-side inhibitory waveform; it does not
-model SAC morphology development. Pitcher 2026 is therefore relevant only as developmental
-background for *why* the SAC inhibitory drive has its asymmetric form in the mature retina,
-and as a flagged source of biological asymmetry that future tasks could optionally model if
-the inhibitory machinery onto the DSGC is ever brought back into the optimisation.
-
-</details>
-
-<details>
-<summary>📝 <strong>Electrical match between initial segment and somatodendritic
-compartment for action potential backpropagation in retinal ganglion
-cells</strong> — Goethals et al., 2020</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1101_2020.09.15.297937` |
-| **Authors** | Sarah Goethals, Martijn C. Sierksma, Xavier Nicol, Annabelle Réaux-Le Goazigo, Romain Brette |
-| **Venue** | bioRxiv (preprint) |
-| **DOI** | `10.1101/2020.09.15.297937` |
-| **URL** | https://www.biorxiv.org/content/10.1101/2020.09.15.297937v2 |
-| **Date added** | 2026-05-04 |
-| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../meta/categories/patch-clamp/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
-| **Added by** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) |
-| **Full summary** | [`summary.md`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1101_2020.09.15.297937/summary.md) |
-
-Goethals et al. study the biophysical organization of the axon initial segment in mouse
-retinal ganglion cells, addressing how a narrow (~1 um diameter) structure reliably transmits
-the action potential to the much larger soma. The AIS must produce an axial current strong
-enough to depolarize the soma by ~30 mV to reach somatic spike regeneration threshold, a
-demanding requirement given the geometric impedance mismatch at the axosomatic junction. Prior
-estimates of AIS Nav conductance density in RGCs came only from computational model fitting to
-AP shape; this paper provides the first direct functional measurement via the axial current
-itself.
-
-The approach combines whole-cell voltage-clamp measurement of the axial current with post-hoc
-ankyrin-G immunolabeling to measure AIS geometry in each recorded cell (P10-12 mouse retina, n
-= 14-17 cells). Resistive coupling theory is applied to these paired measurements to estimate
-AIS Nav conductance density. Additionally, the adaptation of the axial current with membrane
-potential is characterized, revealing that temporal broadening by Kv1 channel inactivation
-reduces effective charge attenuation from 12-fold (peak current) to only 3-fold (total charge)
-over a 20 mV depolarization.
-
-Key quantitative results: mean axial current **-6.7 +/- 1.8 nA**; minimum Nav conductance
-density from cable theory **~1200 S/m2 (d = 1 um)** or **~2467 S/m2 (d = 0.8 um)**; best-fit
-from resistive coupling theory **~5000-5500 S/m2 (50-55 mS/cm2)**; charge-capacitance slope
-**31 mV** matching the spike-to-regeneration gap; **12-fold peak current** versus **3-fold
-charge attenuation** over 20 mV depolarization. These converge with Guo et al. 2013 model
-estimates (5000 S/m2) and Werginz 2020 Sci. Adv. values (~1300 mS/cm2).
-
-For t0080, this paper provides an independent empirical lower bound on AIS Nav density in
-mouse RGCs supporting the hard biological floor nav16_ais >= 0.25 S/cm2. The conservative
-minimum (~10-12.6 mS/cm2) exceeds this floor by ~40-50x; the best-fit (~50-55 mS/cm2) by
-~200x, confirming the floor is conservative. The paper establishes that AIS diameter is a
-critical free parameter (0.7-1.2 um proximal range from measurements) and that the charge-
-capacitance coupling principle should inform how AIS geometry bounds are set relative to soma
-size in t0080 MOBO optimization.
-
-</details>
-
-<details>
-<summary>📖 <strong>Differences in spike generation instead of synaptic inputs
-determine the feature selectivity of two retinal cell types</strong> —
-Wienbar & Schwartz, 2022</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1016_j.neuron.2022.04.012` |
-| **Authors** | Sophia Wienbar, Gregory William Schwartz |
+| **ID** | `no-doi_Chklovskii2002_wiring-optimization-cortical` |
+| **Authors** | Dmitri B. Chklovskii, Thomas Schikorski, Charles F. Stevens |
 | **Venue** | Neuron (journal) |
-| **DOI** | `10.1016/j.neuron.2022.04.012` |
-| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(22)00357-9 |
-| **Date added** | 2026-05-03 |
-| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
-| **Full summary** | [`summary.md`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1016_j.neuron.2022.04.012/summary.md) |
+| **DOI** | `10.1016/s0896-6273(02)00679-7` |
+| **URL** | https://doi.org/10.1016/s0896-6273(02)00679-7 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`cable-theory`](../meta/categories/cable-theory/), [`dendritic-computation`](../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/no-doi_Chklovskii2002_wiring-optimization-cortical/summary.md) |
 
-Wienbar and Schwartz introduce the Bursty Suppressed-by-Contrast (bSbC) RGC of the mouse
-retina and ask why it transmits a contrast-suppression signal while the OFF sustained Alpha
-(OFFsA) RGC, which receives nearly identical synaptic input, transmits a high-rate
-sustained-contrast signal. The paper's research question is therefore explicitly about the
-contribution of cell-intrinsic spike generation machinery, rather than upstream circuitry, to
-RGC feature selectivity.
+Chklovskii, Schikorski, and Stevens (2002) ask why cortical gray matter has the cellular
+composition that it does. Earlier work in the wiring-economy tradition (Cajal; Cherniak;
+Mitchison; Chklovskii and Stevens 2000) had argued qualitatively that wire length is minimised
+under selection pressure, but these arguments did not predict any quantitative property of
+cortical anatomy that could be falsified by direct measurement. The paper closes this gap by
+recasting the problem as a constrained optimisation: maximise synapse density subject to
+bounded axonal conduction delay and bounded passive dendritic attenuation, with axon and
+dendrite radii as the free variables.
 
-The methodology combines voltage-clamp measurement of excitatory and inhibitory conductance
-traces, current-clamp recordings of spike shape, confocal imaging of the AIS labelled with
-ankyrin-G, sodium-channel pharmacology with the Nav1.6-selective blocker 49TTX, and a NEURON
-7.7 compartmental model in which the AIS is split into a proximal Nav1.2 subsegment and a
-distal Nav1.6 subsegment. The two cell types share the same dendritic and somatic architecture
-in the model, and the only systematic differences are AIS length (22 +/- 1.7 um in OFFsA vs 16
-+/- 1.5 um in bSbC) and Nav1.6 fraction (~40 percent in OFFsA vs ~0 percent in bSbC).
+The methodological contribution is a parameter-free derivation. After applying the standard
+cable scalings (delay proportional to length over root radius; space constant proportional to
+root radius), the species-specific membrane and axial constants cancel in the optimum, leaving
+a pure geometric prediction: axons plus dendrites should fill exactly 3/5 of the gray-matter
+volume at the optimum. The authors then test this with serial-section electron microscopy of
+mouse hippocampal CA1 neuropil, measuring the volume fraction occupied by each cellular
+component, and report agreement with the 3/5 prediction.
 
-The headline finding is that the divergent contrast response functions of the two cells emerge
-from the spike generator alone. The bSbC cell's short, Nav1.2-dominated AIS is driven into
-depolarisation block by strong contrast inputs, silencing the cell, while OFFsA's longer
-Nav1.6-rich AIS sustains high firing rates under the same drive. 49TTX selectively reduces
-OFFsA spike amplitude with no effect on bSbC, confirming the Nav1.6 contribution. AIS length
-differs significantly (p = 0.018) while diameter does not (p = 0.83), localising the
-anatomical signature.
+The headline finding is therefore a quantitative confirmation of the wiring-economy principle
+as a real biological selection pressure operating on cortical morphology, not merely a
+qualitative heuristic. This is one of the most cited results in computational neuroanatomy
+because it demonstrates that an optimisation principle, applied with explicit biophysical
+constraints, can predict an a-priori property of a real cortical tissue volume to within
+experimental error. Later work has extended the framework to dendritic branching morphology
+(Cuntz et al. 2010), to cortical GABAergic interneurons (Budd and Kisvarday 2012), and to
+whole-brain connectomes.
 
-For task t0078 (and the broader project) the paper matters in three ways. First, it provides a
-public, openly licensed NEURON model of a two-subsegment AIS with realistic Nav1.2/Nav1.6
-parameterisation, length 16-22 um, and diameter ~1.3 um, archived at Zenodo DOI
-10.5281/zenodo.6423531. This is the substrate that t0078 is going to port in place of the
-paywalled Werginz 2020 model. Second, it establishes that AIS heterogeneity is an empirically
-documented driver of RGC feature selectivity, not just a modelling convenience, which
-strengthens the biological-plausibility case for tiered AHP plus tiered AIS in the DSGC v2
-model. Third, it demonstrates depolarisation block as a meaningful coding mechanism, which
-means t0078's firing-rate metrics need to remain well-defined when the AIS enters block under
-strong drive.
-
-</details>
-
-<details>
-<summary>📖 <strong>Differential Intrinsic Firing Properties in Sustained and
-Transient Mouse αRGCs Match Their Light Response Characteristics and
-Persist during Retinal Degeneration</strong> — Werginz et al., 2024</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1523_JNEUROSCI.1592-24.2024` |
-| **Authors** | Paul Werginz, Viktoria Király, Guenther Zeck |
-| **Venue** | The Journal of Neuroscience (journal) |
-| **DOI** | `10.1523/JNEUROSCI.1592-24.2024` |
-| **URL** | https://www.jneurosci.org/content/45/2/e1592242024 |
-| **Date added** | 2026-05-03 |
-| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
-| **Full summary** | [`summary.md`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.1592-24.2024/summary.md) |
-
-Werginz, Kiraly, and Zeck (2024) ask whether the spike generator of mouse alpha-RGCs is itself
-tuned to each cell type downstream computational role, or whether sustained-vs-transient
-firing phenotypes arise purely from upstream synaptic circuitry. They isolate the spike
-generator pharmacologically, record from 73 wild-type and 48 rd10-degenerate alpha-RGCs across
-three subtypes (alpha-ON sustained, alpha-OFF sustained, alpha-OFF transient), and quantify
-nine spike-shape and firing-pattern features per cell.
-
-The methodology combines whole-cell current-clamp recordings (with all major synaptic
-transmission blocked) and a five-tier compartmental NEURON model. The model partitions an
-alpha-RGC into dendrites, soma, soma-AIS, AIS, and axon, each with its own densities of Nav,
-Kv, Cav, K(Ca), Ih, and leak - all calibrated to mouse rather than the historical rat/cat
-parameter sets. AIS densities are particularly high (1300 mS/cm^2 Nav, 800 mS/cm^2 Kv),
-establishing the AIS as the dominant spike-generation locus. UMAP + GMM clustering of the
-spike-feature vectors achieves an adjusted Rand index of 0.8 against the morphological
-cell-type labels.
-
-The paper finds that the three alpha-RGC types differ substantially in intrinsic spike output:
-alpha-OFF transient cells have the shortest spikes (**0.21 ms** vs **0.31 ms** for alpha-ON
-sustained), the lowest sustained-to-peak ratio (**0.32** vs **0.57**), and the highest peak
-firing rates (**346 Hz** vs **278 Hz**). The compartmental model reproduces these differences
-via small modulations of AIS Nav density and somatic leak conductance. Crucially, the same
-firing-type distinctions persist in rd10 photoreceptor-degenerated retina up to p227,
-demonstrating that alpha-RGC intrinsic properties are circuit-independent once established.
-
-For the t0078 multi-tier MOBO project, this paper is the most directly load-bearing source we
-have seen for the 49-dimensional parameter-space tier bounds. The Werginz Table 1 densities
-provide mouse-specific central tendencies for all six channels across all five compartments;
-the soma-vs-AIS ratios (17.3x Nav, 16.7x Kv) and the dendritic Ih (1.30x somatic) define the
-tier stratification structure that t0078 was designed around. The within-cell-type variance
-also provides empirical sigma values for the prior, replacing the previously assumed values
-lifted from Fohlmeister 2010. The model demonstration that +/- 20% modulation of AIS Nav and
-somatic leak suffices to reproduce sustained-vs-transient differences provides a tight prior
-for the most important search dimensions and justifies narrower bounds on K(Ca) and Cav,
-freeing search budget for the high-leverage parameters.
+For the t0097 multi-objective DSGC optimisation catalogue, this paper provides the
+foundational biological justification for adding a cytoplasm-volume / wiring-cost objective
+alongside functional DSGC objectives (direction-selectivity index, EPSP fidelity, robustness).
+The 3/5 result tells us that real cortical neurons sit close to a wiring optimum, so a DSGC
+morphology that drifts very far from the natural cytoplasm volume in our optimisation is
+biologically suspect even if it yields a high DSI. Together with Cuntz et al. (2010), this
+paper anchors the "minimise total cytoplasm volume" recipe that the catalogue should adopt;
+deviations from the optimal volume can be reported as a quantitative biological-plausibility
+metric. The main caveat for our use is that the original Chklovskii et al. analysis is for
+cortical gray matter, not retinal inner plexiform layer, so the exact 3/5 fraction may not
+transfer numerically to DSGC dendritic arbours - but the underlying recipe (wire cost + delay
++ attenuation) is general and is what we should adopt.
 
 </details>
 
-<details>
-<summary>📖 <strong>Dynamic Tuning of Electrical and Chemical Synaptic Transmission
-in a Network of Motion Coding Retinal Neurons</strong> — Trenholm et al.,
-2013</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1523_JNEUROSCI.0808-13.2013` |
-| **Authors** | Stuart Trenholm, Amanda J. McLaughlin, David J. Schwab, Gautam B. Awatramani |
-| **Venue** | The Journal of Neuroscience (journal) |
-| **DOI** | `10.1523/JNEUROSCI.0808-13.2013` |
-| **URL** | https://www.jneurosci.org/content/33/37/14927 |
-| **Date added** | 2026-05-03 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`patch-clamp`](../meta/categories/patch-clamp/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) |
-| **Full summary** | [`summary.md`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.0808-13.2013/summary.md) |
-
-This paper asks how a network of mouse retinal direction-selective ganglion cells (DSGCs)
-combines weak electrical coupling, chemical synapses, and intrinsic membrane properties to
-produce direction-tuned, anticipatory responses without runaway excitation. The motivation is
-that earlier work (Trenholm et al. 2013, Nat. Neurosci.) had shown that the same
-Hb9::eGFP-labelled superior- coding DSGCs perform "lag normalisation" - they detect a moving
-edge at the same retinal location regardless of speed - but the mechanistic basis for the
-asymmetric, leading-edge-skewed response underlying that computation was unknown.
-
-The methodology pairs Neurobiotin tracer-coupling, two-photon-targeted whole-cell and
-cell-attached patch-clamp from single and paired DSGCs, voltage- and current-clamp
-characterisation of gap junctions (TTX, 18-beta-glycyrrhetinic acid), receptive-field mapping
-with stationary spots and moving bars, and pharmacological dissection of GABAergic inhibition
-with picrotoxin and intrinsic gain control with preconditioning current pulses. The key design
-choice is to distinguish three mutually exclusive explanations for response skew -
-gap-junction rectification, GABAergic inhibition, intrinsic gain control - and test each
-independently.
-
-The headline findings are: (i) only Hb9+ (superior-coding) DSGCs are strongly coupled, with ~1
-nS symmetric reciprocal gap junctions and ~10 Hz low-pass filtering; (ii) gap junctions
-provide a ~50-100 um subthreshold excitatory surround that primes coincident chemical synaptic
-input, extending the effective receptive field and producing leading-edge-skewed motion
-responses (SI **1.6 +/- 0.1** vs **1.1 +/- 0.1** in uncoupled cells); (iii) the leading-edge
-skew survives picrotoxin in both preferred and null directions, ruling out GABA as the sole
-cause; (iv) preconditioning spike trains attenuate initial-response spikes by **70 +/- 6%**
-and abolish skew, with **tau ~604 ms** recovery, implicating activity-dependent intrinsic gain
-control as the dominant rectifying mechanism. Reported peak rates are **198 +/- 14 Hz**
-(preferred, control), **27 +/- 12 Hz** (null, control), and **244 +/- 18 Hz** / **202 +/- 14
-Hz** under picrotoxin.
-
-For this project, the paper is a primary literature anchor for the firing-rate target of
-Hb9::eGFP mouse DSGCs and clarifies a critical interpretation issue: the project
-domain-knowledge "30-80 Hz" preferred-direction figure most likely originates from mean /
-trial-averaged rates (consistent with Rivlin-Etzion et al. 2012's ~10 Hz), whereas this
-paper's 198 Hz preferred and 27 Hz null are peak rates from Gaussian-convolved spike trains,
-and the corresponding peak-rate DSI is 0.76. The MOBO objective for the AIS-tiered AHP task
-should explicitly state which metric (peak vs mean) it targets to avoid mixing scales. The
-paper also constrains AIS / soma model choices: a realistic Hb9 DSGC model needs slow (~600
-ms) intrinsic gain control (Na slow inactivation or Ca-activated K), spatially offset GABA
-inhibition (~52 um null-side, E_GABA near -60 mV), and weak symmetric reciprocal gap-junction
-coupling - all properties that bias which ion-channel parameter sets and AHP regimes can
-simultaneously hit the peak-rate target and the DSI target.
-
-</details>
-
-*67 more papers → [papers](papers/)*
+*77 more papers → [papers](papers/)*
 
 ---
 

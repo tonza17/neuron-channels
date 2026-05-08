@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="papers" generated_at_utc="2026-05-08T16:08:27Z">
+<llm_context_archive type_id="papers" generated_at_utc="2026-05-08T16:52:52Z">
   <archive_summary>
     <title>All Papers</title>
     <description>Complete paper corpus with full summaries, metadata, and abstracts.</description>
     <section_count>1</section_count>
-    <char_count>1030270</char_count>
-    <byte_count>1032387</byte_count>
-    <estimated_tokens>257567</estimated_tokens>
+    <char_count>1188108</char_count>
+    <byte_count>1190588</byte_count>
+    <estimated_tokens>297027</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -20,6 +20,16 @@
         <id>10.1523_JNEUROSCI.1979-23.2023</id>
         <id>10.1113_JP286581</id>
         <id>10.1007_s00424-024-02980-7</id>
+        <id>10.3389_fninf.2016.00017</id>
+        <id>10.1371_journal.pcbi.1000840</id>
+        <id>10.1242_jeb.017574</id>
+        <id>10.3389_neuro.01.1.1.001.2007</id>
+        <id>10.1371_journal.pcbi.0020094</id>
+        <id>10.1038_nrn1949</id>
+        <id>10.1038_nn1352</id>
+        <id>no-doi_Chklovskii2002_wiring-optimization-cortical</id>
+        <id>10.1097_00004647-200110000-00001</id>
+        <id>10.1103_PhysRevLett.80.197</id>
         <id>10.64898_2026.02.02.701812</id>
         <id>10.1073_pnas.2415223122</id>
         <id>10.1523_JNEUROSCI.1461-23.2024</id>
@@ -96,7 +106,7 @@
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 77
+Papers: 87
 
 ## GABAergic Inhibition Controls Receptive Field Size, Sensitivity, and Contrast Preference of Direction Selective Retinal Ganglion Cells Near the Threshold of Vision
 ID: 10.1523_JNEUROSCI.1979-23.2023
@@ -846,6 +856,2295 @@ validation step but does not affect the present in-silico NEURON-based optimisat
 drug catalogue is a useful reference if the project ever extends into dynamic-clamp
 INaP-cancellation experiments, where riluzole-equivalent block at 10 uM is the canonical reference
 manipulation.
+
+## BluePyOpt: Leveraging Open Source Software and Cloud Infrastructure to Optimise Model Parameters in Neuroscience
+ID: 10.3389_fninf.2016.00017
+Year: 2016
+Authors: Werner Van Geit, Michael Gevaert, Giuseppe Chindemi, Christian Rossert, Jean-Denis Courcol, Eilif B. Muller, Felix Schurmann, Idan Segev, Henry Markram
+Venue: Frontiers in Neuroinformatics
+Venue type: journal
+DOI: 10.3389/fninf.2016.00017
+URL: https://www.frontiersin.org/articles/10.3389/fninf.2016.00017/full
+Categories: compartmental-modeling, voltage-gated-channels
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/vangeit_2016_bluepyopt.pdf`
+* **Published**: 2016-06-07
+* **Authors**: Werner Van Geit 🇨🇭, Michael Gevaert 🇨🇭, Giuseppe Chindemi 🇨🇭, Christian Rössert 🇨🇭,
+  Jean-Denis Courcol 🇨🇭, Eilif B. Muller 🇨🇭, Felix Schürmann 🇨🇭, Idan Segev 🇮🇱,
+  Henry Markram 🇨🇭
+* **Venue**: Frontiers in Neuroinformatics
+* **DOI**: `10.3389/fninf.2016.00017`
+
+#### Abstract
+
+At many scales in neuroscience, appropriate mathematical models take the form of complex dynamical
+systems. Parameterizing such models to conform to the multitude of available experimental
+constraints is a global non-linear optimisation problem with a complex fitness landscape, requiring
+numerical techniques to find suitable approximate solutions. Stochastic optimisation approaches,
+such as evolutionary algorithms, have been shown to be effective, but often the setting up of such
+optimisations and the choice of a specific search algorithm and its parameters is non-trivial,
+requiring domain-specific expertise. Here we describe BluePyOpt, a Python package targeted at the
+broad neuroscience community to simplify this task. BluePyOpt is an extensible framework for
+data-driven model parameter optimisation that wraps and standardizes several existing open-source
+tools. It simplifies the task of creating and sharing these optimisations, and the associated
+techniques and knowledge. This is achieved by abstracting the optimisation and evaluation tasks
+into various reusable and flexible discrete elements according to established best-practices.
+Further, BluePyOpt provides methods for setting up both small- and large-scale optimisations on a
+variety of platforms, ranging from laptops to Linux clusters and cloud-based compute
+infrastructures. The versatility of the BluePyOpt framework is demonstrated by working through
+three representative neuroscience specific use cases.
+
+#### Overview
+
+BluePyOpt is the Blue Brain Project&#x27;s open-source Python framework for parameter optimisation of
+neuroscience models. The paper is a Technology Report rather than a methods paper: it does not
+introduce a new algorithm but instead packages and standardises the multi-objective evolutionary
+optimisation pipeline that the Blue Brain Project had refined over a decade (Druckmann et al. 2007,
+Hay et al. 2011, Markram et al. 2015). Its central contribution is an object-oriented API
+(`Optimisation`, `Evaluator`, `CellModel`, `Protocol`, `Stimulus`, `Recording`, `Response`,
+`ObjectivesCalculator`, `eFeature`) that decouples the search algorithm from the simulator from the
+fitness function, so the same code can target a single-compartment Hodgkin-Huxley toy, a
+morphologically detailed L5 pyramidal cell, or a non-electrophysiological STDP synaptic plasticity
+model.
+
+The framework leverages DEAP for the evolutionary algorithms (notably IBEA and NSGA-II), NEURON as
+the default simulator backend, and the eFEL library for extracting comparable features from voltage
+traces. It adds infrastructure-as-code via Ansible playbooks that automate setting up identical
+compute environments on laptops, university clusters, or AWS, addressing one of the most common
+practical barriers to running multi-objective optimisations at scale.
+
+The paper demonstrates BluePyOpt on three use cases of increasing complexity. The first fits two
+Hodgkin-Huxley conductances to a target spike count in a single compartment. The second reproduces
+the published L5PC model with 18 free parameters (mostly maximal channel conductances plus calcium
+dynamics) by matching 31 eFeatures from in vitro patch-clamp recordings. The third optimises a
+calcium-based spike-timing-dependent plasticity (STDP) model to match Nevian and Sakmann (2006)
+LTP/LTD curves, demonstrating that the framework generalises beyond electrophysiology. Across all
+three cases the optimisations converge to multiple non-unique solutions, which the authors take as
+biologically plausible since Nature itself supports degenerate solutions for any given phenotype.
+
+#### Architecture, Models and Methods
+
+The BluePyOpt class hierarchy splits the optimisation problem into a generic search layer and an
+electrophysiology-specific (`ephys`) abstraction layer. At the top, an `Evaluator` maps a parameter
+vector to a list of objectives, and an `Optimisation` runs a search algorithm against the
+`Evaluator`. The principal subclass is `IBEADEAPOptimisation`, which wraps DEAP&#x27;s
+Indicator-Based Evolutionary Algorithm (IBEA, Bleuler/Zitzler 2003) which is a Blue Brain custom
+port from C to Python. DEAP also exposes NSGA-II (Deb et al. 2002), CMA-ES, and Particle Swarm;
+switching algorithms requires only a constructor change.
+
+The `ephys` layer provides classes for `CellModel`, `Morphology` (e.g., `NrnFileMorphology`),
+`Mechanism` (e.g., `NrnMODMechanism` wrapping a NEURON NMODL SUFFIX), `Parameter` (with `frozen`
+and `bounds` attributes and optional `NrnDistanceScaler` for distance-dependent ion-channel
+distributions), `Location` (e.g., `NrnSeclistLocation`, `NrnSomaDistanceCompLocation`), `Stimulus`
+(e.g., `NrnSquarePulse`), `Recording` (`CompRecording`), `Protocol` (`SweepProtocol`,
+`SequenceProtocol`), and `eFELFeature` plus `SingletonObjective`. A `CellEvaluator` ties together
+a `CellModel`, ordered `param_names`, fitness `protocols`, and an `ObjectivesCalculator`.
+
+Per-feature objective scoring uses the Druckmann (2007) z-score formula:
+`objective = |mu_exp - f_model| / sigma_exp`, normalising heterogeneous features (mV, ms, Hz) to a
+common scale. Parallelisation is delegated to a user-supplied `map` function which can be Python
+`map`, `multiprocessing.map`, SCOOP (ZeroMQ-based, recommended for clusters), MPI4Py, or
+ipyparallel. Cloud deployment uses Ansible playbooks for local Vagrant, shared-filesystem
+clusters, and AWS.
+
+The L5PC use case has 18 optimised parameters (Table 1) including conductances for NaTs2_t,
+SKv3_1, Im, NaTa_t, Nap_Et2, K_Pst, K_Tst, SK_E2, Ca_HVA, Ca_LVAst, plus CaDynamics_E2 gamma and
+decay; the apical Ih conductance is exponentially scaled with somatic distance using
+`-0.8696 + 2.087 * exp(0.0031 * d)`. The STDP example has 9 parameters of the Graupner-Brunel 2012
+calcium-based bistable synapse model.
+
+#### Results
+
+* Use case 1 (single-compartment HH): 2 free parameters (gnabar, gkbar), 2 objectives (Spikecount
+  for two step amplitudes), IBEA with **offspring size 100, 10 generations**, finishes in
+  **approximately 4 minutes on a single 2.9 GHz Intel Core i5 core**, finds multiple individuals
+  with **objective sum = 0**.
+* Use case 2 (L5PC): 18 free parameters and **31 eFeatures** across 4 protocols (3 step currents
+  plus a back-propagating AP protocol), IBEA with **100 individuals over 100 generations**,
+  parallelised over **50 Intel Xeon 2.60 GHz cores via SCOOP**, runs in **about 4 hours**, target
+  was **all objectives within ~3 standard deviations** of experimental mean, top-10 hall-of-fame
+  solutions all meet target.
+* L5PC optimisation recovers a **diverse non-unique set** of acceptable parameter vectors (Figure
+  6C); the optimised model matches the Markram-2015 reference model under Gaussian noise current
+  injection it was not trained on.
+* Use case 3 (STDP): 9-parameter Graupner-Brunel calcium synapse model fitted to Nevian and Sakmann
+  (2006) LTP/LTD data, IBEA with **max_ngen = 200**, models reproduce LTD peak at
+  **Δt = -50 ms** and LTP peak at **Δt = +10 ms** within experimental SEM and predict
+  missing data points.
+* Across all three use cases, BluePyOpt&#x27;s IBEA recovers **multiple distinct individuals** that
+  satisfy the objectives, supporting the biological-degeneracy interpretation.
+
+#### Innovations
+
+##### Object-Oriented API for Multi-Objective Neuron Optimisation
+
+The `Optimisation`/`Evaluator`/`CellModel`/`Protocol`/`Stimulus`/`Recording`/`Response`/
+`ObjectivesCalculator`/`eFeature` class set encodes the multi-objective neuron-fitting workflow as
+reusable Python objects. This is the pattern the Blue Brain Project, Allen Institute, EBRAINS, and
+many independent labs have since adopted as the de-facto convention for biophysical neuron model
+optimisation.
+
+##### Distance-Scaled Range Parameters
+
+`NrnRangeParameter` combined with a `NrnDistanceScaler` allows arbitrary user-supplied
+distance-from-soma expressions to be evaluated per morphological segment, supporting non-uniform
+ion-channel gradients (e.g., apical Ih) without manual loops over sections. This is essential for
+detailed pyramidal-cell models.
+
+##### IBEA in DEAP
+
+The authors ported the Blue Brain C IBEA implementation into the DEAP Python ecosystem so it can
+sit alongside NSGA-II, CMA-ES, and Particle Swarm. They report IBEA has consistently outperformed
+NSGA-II on Blue Brain neuron-fitting problems (Schmücker 2010), making it the recommended default.
+
+##### Ansible-Based Cloud Provisioning
+
+Ships Ansible playbooks for Vagrant, shared-FS clusters, and AWS that recreate identical software
+environments from textual descriptions, reducing the configuration overhead of cluster/cloud
+optimisation runs to a single SSH-driven command. This is unusual for an academic neuroscience
+tool and was a deliberate engineering investment.
+
+##### Domain-Independent Evaluator Class
+
+By decoupling `Evaluator` from `CellModel`, the same optimisation engine can fit
+non-electrophysiological models. The STDP use case demonstrates this with a pure-Python analytical
+synaptic-plasticity model that never invokes NEURON.
+
+#### Datasets
+
+* **L5PC reference model parameters**: from Markram et al. (2015), available via the Neocortical
+  Microcircuit Collaboration Portal (Ramaswamy et al. 2015).
+* **L5PC eFeatures**: 31 features per cell extracted from in vitro patch-clamp recordings of layer
+  5 pyramidal cells (mean and standard deviation per feature; see paper Table 2).
+* **bAP target values**: from Larkum et al. (2001), used as targets for backpropagating-AP feature
+  amplitudes at 660 µm and 800 µm dendritic distances.
+* **STDP experimental data**: digitised LTP/LTD curves from Nevian and Sakmann (2006) (digitisation
+  via Rohatgi 2015), packaged in the BluePyOpt example module `stdputil.load_neviansakmann()`.
+* **Source code and example scripts**: BluePyOpt itself plus all three use-case scripts are
+  released under LGPLv3 at `https://github.com/BlueBrain/BluePyOpt`. Documentation and Ansible
+  cloud scripts are released under BSD.
+
+#### Main Ideas
+
+* For this project&#x27;s optimisation stage (t0097), BluePyOpt is the **canonical adoption target**:
+  use `CellEvaluator` plus `Protocol`/`Stimulus`/`Recording`/`eFELFeature`/`SingletonObjective` to
+  encode the angle-to-AP-frequency tuning curve target as a multi-objective problem, then call
+  `IBEADEAPOptimisation` (or `NSGA-II` from DEAP) with `offspring_size=100` and tune `max_ngen`
+  to the available compute budget.
+* The Druckmann z-score `|mu_exp - f_model| / sigma_exp` is the recommended objective form for
+  combining heterogeneous features (DSI, AP frequency, EPSP amplitude, IPSP amplitude) on a common
+  scale; this also gives a natural &quot;within 3 SD&quot; acceptance threshold for solutions.
+* The L5PC use case sets a reasonable expectation for compute cost on a problem of similar
+  complexity to a DSGC: **18 parameters, 31 features, ~50 cores for ~4 hours = ~200 CPU-hours per
+  optimisation run**. This is a useful upper bound for budgeting our own runs.
+* Solutions are expected to be **non-unique**; BluePyOpt&#x27;s hall-of-fame and Pareto-front output
+  should be examined as a population, not collapsed to a single best individual. Aligns with this
+  project&#x27;s interest in identifying multiple electrophysiologically distinct DSGC parameter
+  regimes.
+* Use BluePyOpt&#x27;s `NrnRangeParameter` plus `NrnDistanceScaler` for any morphology-dependent
+  channel distributions in the DSGC dendritic-conductance follow-ups (e.g., distal vs proximal
+  dendritic Na/K gradients).
+
+#### Summary
+
+This Technology Report introduces BluePyOpt, a Python package developed at the Blue Brain Project
+to standardise the multi-objective evolutionary optimisation of neuroscience models. The
+motivation is that while stochastic search methods like genetic algorithms and CMA-ES have proven
+effective for fitting compartmental neuron models, configuring them correctly remains a domain
+expertise problem that excludes most neuroscientists from the technique. BluePyOpt addresses this
+by providing a reusable object-oriented API and turn-key cloud-deployment scripts, lowering the
+barrier so that a working optimisation can be expressed in a short Python script.
+
+The framework wraps DEAP for the evolutionary algorithms (IBEA, NSGA-II, CMA-ES, PSO), NEURON for
+electrophysiological simulation, and eFEL for feature extraction. Its core abstraction is a clean
+separation between an `Optimisation` (the search algorithm), an `Evaluator` (the parameter-to-
+objective mapping), and an `ephys` model layer (`CellModel`, `Morphology`, `Mechanism`, `Protocol`,
+`Stimulus`, `Recording`, `eFELFeature`, `SingletonObjective`, `ObjectivesCalculator`). Distance-
+dependent ion-channel distributions, parameter freezing, holding currents, and back-propagating-
+AP protocols are all first-class API objects. Parallelisation is handled by user-supplied `map`
+functions (Python, multiprocessing, SCOOP, MPI4Py); Ansible playbooks automate AWS, Vagrant, and
+cluster deployment.
+
+The paper validates the framework on three representative use cases. A single-compartment
+Hodgkin-Huxley fit converges in 4 minutes on one CPU. A 18-parameter, 31-feature optimisation of
+a layer-5 pyramidal cell reproduces the published Markram et al. 2015 model in approximately 4
+hours on 50 cores, recovering a diverse hall-of-fame of equally good solutions. A 9-parameter
+calcium-based STDP model is fit to LTP/LTD curves from Nevian and Sakmann (2006), demonstrating
+that the framework is not restricted to voltage-trace fitting.
+
+For this project, BluePyOpt is the methodology backbone of the parameter-optimisation work. The
+paper is the canonical citation for the project&#x27;s chosen optimisation toolchain, sitting
+alongside Druckmann et al. (2007) and Hay et al. (2011) as the methodological core. It directly
+specifies the recommended adoption pattern: encode each project objective (DSI matching, target
+firing rates, EPSP/IPSP amplitudes) as an `eFELFeature` plus `SingletonObjective`, package the
+model as a `CellModel` with `Protocol` per stimulus condition, and run IBEA or NSGA-II via DEAP.
+The L5PC compute budget and the reported non-uniqueness of solutions also set practical
+expectations for this project&#x27;s own optimisation runs and for how to interpret their output as a
+population of electrophysiological regimes rather than a single best individual.
+
+## Action Potential Energy Efficiency Varies Among Neuron Types in Vertebrates and Invertebrates
+ID: 10.1371_journal.pcbi.1000840
+Year: 2010
+Authors: Biswa Sengupta, Martin Stemmler, Simon B. Laughlin, Jeremy E. Niven
+Venue: PLOS Computational Biology
+Venue type: journal
+DOI: 10.1371/journal.pcbi.1000840
+URL: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000840
+Categories: voltage-gated-channels, compartmental-modeling
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/sengupta_2010_ap-energy-efficiency.pdf`
+* **Published**: 2010-07-01
+* **Authors**: Biswa Sengupta GB, Martin Stemmler DE, Simon B. Laughlin GB, Jeremy E. Niven GB
+* **Venue**: PLOS Computational Biology 6(7): e1000840
+* **DOI**: `10.1371/journal.pcbi.1000840`
+
+#### Abstract
+
+The initiation and propagation of action potentials (APs) places high demands on the energetic
+resources of neural tissue. Each AP forces ATP-driven ion pumps to work harder to restore the ionic
+concentration gradients, thus consuming more energy. Here, we ask whether the ionic currents
+underlying the AP can be predicted theoretically from the principle of minimum energy consumption.
+A long-held supposition that APs are energetically wasteful, based on theoretical analysis of the
+squid giant axon AP, has recently been overturned by studies that measured the currents
+contributing to the AP in several mammalian neurons. In the single compartment models studied here,
+AP energy consumption varies greatly among vertebrate and invertebrate neurons, with several
+mammalian neuron models using close to the capacitive minimum of energy needed. Strikingly, energy
+consumption can increase by more than ten-fold simply by changing the overlap of the Na+ and K+
+currents during the AP without changing the APs shape. As a consequence, the height and width of
+the AP are poor predictors of energy consumption. In the Hodgkin-Huxley model of the squid axon,
+optimizing the kinetics or number of Na+ and K+ channels can whittle down the number of ATP
+molecules needed for each AP by a factor of four. In contrast to the squid AP, the temporal profile
+of the currents underlying APs of some mammalian neurons are nearly perfectly matched to the
+optimized properties of ionic conductances so as to minimize the ATP cost.
+
+#### Overview
+
+Sengupta and colleagues compare the per-AP metabolic cost of seven published Hodgkin-Huxley
+single-compartment models drawn from the squid giant axon, a crab leg motor neuron, a mouse fast
+spiking cortical interneuron, a honeybee Kenyon cell, a rat hippocampal interneuron, a rat
+cerebellar granule cell, and a mouse thalamo-cortical relay neuron. Each model is driven with a
+constant current to elicit repetitive firing, and the per-AP Na+ load is computed by integrating
+the inward Na+ current over one period. The Na+ load is then converted to ATP cost using the 3
+Na+/ATP stoichiometry of the Na+/K+ pump.
+
+The headline finding is that the **Na+ load varies 17-fold across the seven models**, from
+**1098 nC cm^-2** in the squid giant axon at 6.3 degrees C to **65 nC cm^-2** in the mouse
+thalamo-cortical relay neuron, while the capacitive-minimum Na+ load (the minimum charge required
+to depolarize the membrane to the AP peak) varies only 2.3-fold (98 to 56 nC cm^-2). The difference
+is almost entirely accounted for by the **overlap load**: the Na+ that enters the cell while K+ is
+also flowing outward, dissipating without contributing to depolarization. The overlap load is
+linearly related to the total Na+ load with slope close to 1 and R^2 = 0.99.
+
+The authors then introduce a constrained optimization procedure that simultaneously rescales five
+biophysical parameters (Na+ and K+ peak conductances, Na+ activation and inactivation time
+constants, and K+ activation time constant) within bounds of 30-400% of published values, subject
+to the constraint that the model must continue to spike with a height-bounded AP. A gradient-free
+Nelder-Mead simplex search seeds a Newton-method hill-climbing global search. After optimization
+the squid Na+ load drops 4.2-fold to 263 nC cm^-2, while highly efficient models such as the mouse
+thalamo-cortical neuron barely change. The optimization confirms that AP shape (height and width)
+is a poor predictor of energy cost, since two APs with identical waveforms can be built from
+currents differing by ~2x in Na+ load.
+
+#### Architecture, Models and Methods
+
+The seven single-compartment Hodgkin-Huxley-type models are deterministic and ODE-based. The core
+membrane equation is `Cm dv/dt = -gNa*m^3*h*(v - ENa) - gK*n^4*(v - EK) - gl*(v - El) + IDC`, where
+the gating variables `m`, `h`, `n` follow first-order kinetics with steady-state targets
+`m_inf(v)`, `h_inf(v)`, `n_inf(v)` and voltage-dependent time constants `tau_m(v)`, `tau_h(v)`,
+`tau_n(v)`. Each time constant is multiplied by a dimensionless speed factor (`Phi_m`, `Phi_h`,
+`Phi_n`) that the optimizer can tune without altering voltage dependence. Conductances per unit
+area (`gNa`, `gK`) are also multiplied by scaling factors. Temperature is incorporated via a
+Q10-style normalization `Q = 3^((T - T0)/10)` premultiplying every channel time constant, where T0
+is the original recording temperature for that model.
+
+Two models contain only the three baseline conductances (squid SA; rat hippocampal interneuron
+RHI). The crab motor neuron CA adds an A-type K+ current; mouse fast-spiking MFS adds a
+slowly-inactivating D-type K+ current; mouse thalamo-cortical relay MTCR adds a low-threshold
+T-type Ca2+ current; honeybee Kenyon BK adds a second voltage-gated Na+ current plus A-type and
+slow transient K+ currents; rat granule RG adds A-type, C-type and hyperpolarization-activated K+
+currents plus an L-type Ca2+ current. Even in models with extra inward currents (RG, MTCR), 92-95%
+of the per-AP energy is spent extruding Na+ via the Na+/K+ pump.
+
+The optimization objective is `Q = integral_0^T I_inward(t) dt` minimized over a five-dimensional
+parameter set, subject to a soft quadratic loss enforcing that AP height stays within a narrow
+band of the original height. AP existence is enforced by a hard penalty: any parameter set that
+fails to produce a periodic orbit (verified by linear stability analysis on the limit cycle) is
+treated as the worst simplex vertex. Two complementary strategies are used: a **gradient-free
+Nelder-Mead simplex** for exploration plus a **multi-start Newton-method hill climber** for
+gradient-based refinement. The two strategies converge to nearly identical optima. Random search,
+simulated annealing and differential evolution were tried and gave sub-optimal results. Code was
+written in Wolfram Mathematica 7.0 and Matlab 2009a; numerical continuation used AUTO and MATCONT.
+
+The energy conversion uses the Na+/K+ pump stoichiometry of 3 Na+ exported and 2 K+ imported per
+ATP hydrolyzed. ATP molecules per AP per unit area = (Na+ load) * NA / (3 * F), where NA is the
+Avogadro constant and F is the Faraday constant. The capacitive-minimum Na+ load is the charge
+required to bring the membrane from rest to AP peak via membrane capacitance alone; AP efficiency
+is reported as the percentage ratio (capacitive-minimum / total Na+ load) * 100.
+
+#### Results
+
+* **Per-AP Na+ load spans 17-fold across the seven models**: SA = **1098 nC cm^-2**,
+  CA = **364 nC cm^-2**, MFS = **315 nC cm^-2**, BK = **186 nC cm^-2**, RHI = **76 nC cm^-2**,
+  RG = **72 nC cm^-2**, MTCR = **65 nC cm^-2** (Table 1, before optimization).
+* **ATP cost of the squid AP is 2.3 x 10^12 ATP cm^-2**, ~17x more than the mouse thalamo-cortical
+  relay AP at **1.35 x 10^11 ATP cm^-2** (Table 1).
+* **AP efficiency (capacitive-minimum / total Na+ load)** ranges from **9% in the squid (6.3
+  degrees C)** through **20-40% in CA, MFS, BK**, **75% in RHI**, to **~100% in RG and MTCR**.
+* **Overlap load is the dominant cost component**: the linear regression of overlap load vs total
+  Na+ load across all seven models has slope ~ 1 and **R^2 = 0.99 (p &lt; 0.0001)**.
+* **Na+ overlap factor (alpha = total Na+ load / capacitive minimum)** ranges from **alpha ~ 1.0**
+  in MTCR (essentially perfect) and **~1.04** in RG to **alpha ~ 11.2** in the squid at 6.3
+  degrees C; the Carter-Bean mouse cortical pyramidal value (cited in the discussion) is **alpha ~
+  1.2**.
+* **Constrained five-parameter optimization reduces the squid Na+ load 4.2-fold** from 1098 to
+  **263 nC cm^-2**, and the corresponding overlap load from 1034 to **185 nC cm^-2** (Figure 5,
+  Table 1).
+* **Optimization improvements** (post-/pre-optimization Na+ load): SA = 24%, CA = 46% (169 vs
+  364 nC cm^-2), MFS = 71% (225 vs 315), BK = 65% (121 vs 186), RHI = 78% (59 vs 76), MTCR = 100%
+  (already at capacitive minimum at 65 nC cm^-2).
+* **AP height ranges 55.5-129 mV (2.3-fold)**; **AP half-width ranges 0.2-2.6 ms (13-fold)**;
+  height/width are not reliable predictors of energy cost (Figure 2, Figure S1).
+* **Resting energy consumption is &lt; 1.5% of per-AP cost** across all seven models, regardless of
+  AP efficiency (Table S5).
+* **Temperature effect on the squid model**: Na+ load drops from 1098 nC cm^-2 at 6.3 degrees C to
+  331 nC cm^-2 at 18 degrees C; capacitive minimum rises slightly because the AP is taller, so
+  efficiency improves from 9% to ~25%.
+* **Cortex-level extrapolation**: replacing the Attwell-Laughlin (2001) squid overlap factor of 4
+  with the Carter-Bean cortical alpha = 1.2 raises the supportable cortical firing rate from
+  4 Hz/neuron to **6.8 Hz/neuron** (60% increase).
+
+#### Innovations
+
+##### Cross-Species Per-AP Energy Catalogue
+
+First systematic side-by-side comparison of per-AP Na+ load and ATP cost across seven published HH
+models spanning vertebrate and invertebrate cell types. The catalogue (Table 1) gives
+per-cell-type calibration anchors that downstream modelers can use to sanity-check their own
+per-AP energy estimates.
+
+##### Overlap Load as the Universal Cost Driver
+
+Demonstrates with R^2 = 0.99 across seven heterogeneous models that the Na+/K+ overlap load
+linearly explains the total Na+ load with slope ~ 1, formally generalizing the Hodgkin (1975)
+observation from the squid axon to mammalian and insect neurons. Establishes the overlap factor
+**alpha = total Na+ / capacitive minimum** as the canonical efficiency metric.
+
+##### Constrained Five-Parameter Optimization for Biophysical AP Energy
+
+Introduces a constrained Nelder-Mead-plus-Newton optimization that varies gNa, gK, tau_m, tau_h,
+tau_n simultaneously while enforcing AP existence and bounded height. Shows that the same
+optimization yields qualitatively different parameter-change patterns across models (e.g. Na+
+inactivation shortens in SA, CA, MFS, RHI but lengthens in BK), refuting any one-size-fits-all
+rule about how to make APs cheaper. Each model sees its own local energy landscape.
+
+##### Quantitative Refutation of AP-Shape-Predicts-Cost
+
+Demonstrates with paired examples (Figure S1) that two APs with identical height and half-width
+can be produced by current pairs differing 1.76-fold in Na+ load (1275 vs 2244 nC cm^-2).
+Establishes that AP shape is not a reliable predictor of energy cost across heterogeneous neuron
+types, so energy must be treated as an independent objective rather than a function of waveform.
+
+#### Datasets
+
+This is a theoretical and computational paper; no datasets were used in the empirical sense. The
+seven HH models were re-implemented from previously published parameter tables in references
+[9-14, 16] of the paper. Parameter tables are reproduced verbatim in the paper Supporting
+Information (Table S1) and the optimized parameter sets are tabulated in Table S3. The Mathematica
+and Matlab source code for the optimization is described in the Methods but is not posted as a
+public repository in the article itself.
+
+#### Main Ideas
+
+* The **per-compartment per-AP energy objective** for the t0097 catalogue is exactly the integral
+  Sengupta et al. propose: `int(I_Na) dt` over one spike period, divided by 3 to convert Na+
+  charge to ATP molecules via the Na+/K+ pump stoichiometry. This is the project canonical energy
+  recipe and the cited authority for it.
+* The **Na+ overlap factor alpha = total Na+ load / capacitive minimum** is the right
+  cross-neuron normalization. Mammalian neurons sit at **alpha ~ 1.0-1.5** (this paper plus the
+  Carter and Bean and Alle et al. data cited in its discussion); the squid sits near **alpha ~ 4**
+  at 18 degrees C and **alpha ~ 11** at 6.3 degrees C. For a mammalian DSGC compartmental model
+  the energy objective should be benchmarked against alpha ~ 1.0-1.5 per soma AP, not 4.
+* **AP shape is not a reliable proxy for energy cost** so the t0097 multi-objective optimization
+  must include a true integrated-Na+ energy objective rather than a shape-based surrogate (e.g.
+  AP width or amplitude penalty). Otherwise the Pareto front will be biased toward solutions that
+  look efficient but are not.
+* **Reducing Na+ inactivation tau is the single most effective biophysical lever** for lowering
+  AP energy in HH-type models, more effective than reducing channel density. This identifies
+  tau_h for the somatic Na+ conductance as a high-leverage decision variable in the t0097
+  parameter catalogue ranking-based (NSGA-II) Pareto search.
+* **Optimal parameter changes are model-dependent** (signs and magnitudes differ across models).
+  Do not impose a single make-AP-cheaper template across DSGC models with different morphologies
+  or channel sets; let the optimizer discover the local valley for each configuration.
+* **Resting energy is &lt; 1.5% of per-AP energy** in all seven Sengupta models so the t0097 energy
+  objective can safely use per-AP integrated `int(I_Na) dt / 3` as a proxy for total metabolic
+  cost during repetitive firing without separately accounting for resting Na+ leakage, provided
+  firing rates are non-trivial.
+
+#### Summary
+
+Sengupta, Stemmler, Laughlin and Niven (2010) ask whether the per-action-potential energy cost of
+biological neurons is set by waveform alone, or whether the underlying ionic currents allow large
+cost differences hidden by similar AP shapes. They re-implement seven published Hodgkin-Huxley
+single-compartment models spanning the squid giant axon, a crab leg motor neuron, four mammalian
+neurons (mouse fast-spiking interneuron, rat hippocampal interneuron, rat cerebellar granule cell,
+mouse thalamo-cortical relay) and a honeybee Kenyon cell, and compare per-AP Na+ loads on a
+common, model-independent basis. The motivation is to establish a principled per-cell-type energy
+metric that can serve as a bottom-up calibration anchor for cortical energy budgets and for
+downstream modelers comparing their own neurons energy use to literature.
+
+The methodology is a deterministic single-compartment HH simulation driven by constant injected
+current to elicit repetitive firing, with per-AP Na+ load computed by integrating the inward Na+
+current over one limit-cycle period. Cost is converted to ATP using the 3 Na+/ATP stoichiometry
+of the Na+/K+ pump. The authors then introduce a five-parameter constrained optimization (gNa,
+gK, tau_m, tau_h, tau_n) that combines a Nelder-Mead simplex with a Newton-method hill climber,
+enforcing AP existence by a hard penalty and AP height by a soft quadratic loss. Conductances and
+time constants are bounded to 30-400% of the original published values. The same optimization is
+run across six of the seven models, and the changes in parameters are compared.
+
+The headline result is that the per-AP Na+ load varies 17-fold across the seven models, while the
+capacitive-minimum Na+ load varies only 2.3-fold; the difference is almost entirely the overlap
+load, which has a linear correlation R^2 = 0.99 with the total Na+ load (slope ~ 1). Mammalian
+neurons (RG, RHI, MTCR) operate near the capacitive minimum (efficiency ~ 75-100%, alpha ~
+1.0-1.3), while the squid axon at 6.3 degrees C is profligate (efficiency 9%, alpha = 11.2).
+Constrained optimization reduces the squid Na+ load 4.2-fold while leaving the mouse
+thalamo-cortical neuron essentially unchanged, confirming that mammalian APs already sit close to
+a local optimum. Optimized parameter changes vary qualitatively across models: each model has its
+own local energy valley.
+
+For this project, the paper is the canonical citation for the per-AP energy objective in the
+t0097 multi-objective optimization catalogue. The energy recipe `int(I_Na) dt / 3` (per
+compartment, per AP, in ATP molecules) is exactly what t0097 will report alongside the
+angle-tuning loss as a co-objective in the NSGA-II Pareto search. The Na+ overlap factor alpha is
+the natural normalized cost metric for cross-neuron comparison, and the mammalian alpha range of
+1.0-1.5 calibrated here sets the realistic biological lower bound for any DSGC compartmental
+model. The model-dependence of optimal parameter changes also reinforces the project preference
+for a population-based ranking search (NSGA-II) over a one-shot template, since each DSGC
+morphology will see a different energy landscape under the joint angle-tuning + energy objective.
+
+## Energy limitation as a selective pressure on the evolution of sensory systems
+ID: 10.1242_jeb.017574
+Year: 2008
+Authors: Jeremy E. Niven, Simon B. Laughlin
+Venue: Journal of Experimental Biology
+Venue type: journal
+DOI: 10.1242/jeb.017574
+URL: https://journals.biologists.com/jeb/article/211/11/1792/19035
+Categories: voltage-gated-channels, synaptic-integration
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/niven_2008_energy-sensory-evol.pdf`
+* **Published**: 2008
+* **Authors**: Jeremy E. Niven 🇬🇧, Simon B. Laughlin 🇬🇧
+* **Venue**: Journal of Experimental Biology, 211(11), 1792-1804
+* **DOI**: `10.1242/jeb.017574`
+
+#### Abstract
+
+Evolution of animal morphology, physiology and behaviour is shaped by the selective pressures to
+which they are subject. Some selective pressures act to increase the benefits accrued whilst others
+act to reduce the costs incurred, affecting the cost/benefit ratio. Selective pressures therefore
+produce a trade-off between costs and benefits that ultimately influences the fitness of the whole
+organism. The nervous system has a unique position as the interface between morphology, physiology
+and behaviour; the final output of the nervous system is the behaviour of the animal, which is a
+product of both its morphology and physiology. The nervous system is under selective pressure to
+generate adaptive behaviour, but at the same time is subject to costs related to the amount of
+energy that it consumes. Characterising this trade-off between costs and benefits is essential to
+understanding the evolution of nervous systems, including our own. Within the nervous system,
+sensory systems are the most amenable to analysing costs and benefits, not only because their
+function can be more readily defined than that of many central brain regions and their benefits
+quantified in terms of their performance, but also because recent studies of sensory systems have
+begun to directly assess their energetic costs. Our review focuses on the visual system in
+particular, although the principles we discuss are equally applicable throughout the nervous
+system. Examples are taken from a wide range of sensory modalities in both vertebrates and
+invertebrates. We aim to place the studies we review into an evolutionary framework. We combine
+experimentally determined measures of energy consumption from whole retinas of rabbits and flies
+with intracellular measurements of energy consumption from single fly photoreceptors and recently
+constructed energy budgets for neural processing in rats to assess the contributions of various
+components to neuronal energy consumption. Taken together, these studies emphasize the high costs
+of maintaining neurons at rest and whilst signalling. A substantial proportion of neuronal energy
+consumption is related to the movements of ions across the neuronal cell membrane through ion
+channels, though other processes such as vesicle loading and transmitter recycling also consume
+energy. Many of the energetic costs within neurons are linked to 3Na+/2K+ ATPase activity, which
+consumes energy to pump Na+ and K+ ions across the cell membrane and is essential for the
+maintenance of the resting potential and its restoration following signalling. Furthermore, recent
+studies in fly photoreceptors show that energetic costs can be related, via basic biophysical
+relationships, to their function. These findings emphasize that neurons are subject to a law of
+diminishing returns that severely penalizes excess functional capacity with increased energetic
+costs. The high energetic costs associated with neural tissue favour energy efficient coding and
+wiring schemes, which have been found in numerous sensory systems. We discuss the role of these
+efficient schemes in reducing the costs of information processing. Assessing evidence from a wide
+range of vertebrate and invertebrate examples, we show that reducing energy expenditure can account
+for many of the morphological features of sensory systems and has played a key role in their
+evolution.
+
+#### Overview
+
+Niven and Laughlin synthesise a decade of empirical and theoretical work on the energetics of
+neural tissue and frame it as an evolutionary argument: because the nervous system is metabolically
+expensive both at rest and while signalling, natural selection should favour design choices that
+maximise information processed per unit ATP, and these efficiency pressures leave detectable
+signatures on sensory-system morphology and physiology. The review is structured as a chain of
+arguments that descends from whole-animal energy budgets, through cellular and sub-cellular
+mechanisms of ATP consumption, to specific design strategies (analogue-vs-digital coding, sparse
+coding, wiring minimisation, redundancy reduction, predictive filtering) that can be read as
+evolutionary responses to those energy constraints.
+
+The methodological contribution is the integration of three empirical sources into a single
+energy-vs-information accounting: (i) whole-retina oxygen consumption measurements from rabbit and
+fly, (ii) intracellular electrical-circuit models of single fly R1-6 photoreceptors that compute
+3Na+/2K+ ATPase usage from input resistance and membrane potential, and (iii) the Attwell-Laughlin
+2001 cortical-grey-matter energy budget plus the Nawroth et al. 2007 olfactory glomerulus budget.
+The convergence between the two independent estimates of fly photoreceptor cost (single-cell
+biophysical model and bulk retinal O2) shows that ion movement through channels is the dominant
+neural energy cost, validating the use of biophysical models for energy-aware design.
+
+The headline conceptual claim is the *Law of Diminishing Returns* for neural function: the cost of
+encoding one extra bit of information rises super-linearly with information rate, so excess
+bandwidth and excess SNR are aggressively penalised by selection. The review marshals broad
+comparative evidence (cave fish eye loss, subterranean mole somatosensory expansion at the expense
+of vision, lab Drosophila eye shrinkage, island bovid endocast reduction) to argue that this
+single-cell energetic logic propagates up to the morphological scale and explains repeated,
+convergent reductions of unused sensory structures.
+
+#### Architecture, Models and Methods
+
+The paper is a quantitative review rather than a primary experimental study, but it depends on
+three classes of method that it summarises and integrates:
+
+**Whole-tissue oxygen consumption.** Excised retinas from rabbit (Ames et al., 1992) and blowfly
+*Calliphora vicina* (Howard et al., 1987; Pangrsic et al., 2005) are placed in respirometry
+chambers and O2 consumption is measured at rest and during light stimulation. ATP turnover is
+computed assuming 6 ATP per O2 molecule (oxidative phosphorylation). The blowfly retina alone
+consumes about **8%** of whole-animal RMR; the human brain consumes about **20%** of BMR while
+representing about **2%** of body mass.
+
+**Single-cell biophysical models.** Niven et al. (2003a, 2007) and Laughlin et al. (1998) build
+electrical-circuit models of individual fly R1-6 photoreceptors using intracellular measurements of
+input resistance, membrane potential, and light-induced conductance changes. The 3Na+/2K+ ATPase
+consumption is inferred from the steady-state inward current divided by the 3:2 stoichiometry of
+the pump. Information rate (bits s-1) is measured by the standard de Ruyter van Steveninck noise-
+substitution method on responses to repeated naturalistic light stimuli. This permits direct
+calculation of bit-cost in **ATP molecules per bit**.
+
+**Bottom-up neural energy budgets.** Attwell and Laughlin (2001) tabulate the per-action-potential
+ATP cost in rat cortical grey matter, decomposing it into resting potential maintenance,
+voltage-gated Na+/K+ currents during the AP, presynaptic Ca2+ entry, glutamate vesicle
+endo/exocytosis, glutamate recycling, and post-synaptic NMDA / non-NMDA / mGluR currents. The
+budget is then multiplied by neuron and synapse counts. Nawroth et al. (2007) extend this to a rat
+olfactory glomerulus, adding dendritic back-propagating APs and dendro-dendritic synapses.
+
+The integration combines all three so that whole-retina O2 figures, single-photoreceptor
+biophysical models, and the rat-cortex per-component breakdown can be cross-checked. No new wet-lab
+measurements or simulations are reported.
+
+#### Results
+
+* In photoreceptors, **resting metabolic cost is approximately 25%** of the cost at the highest
+  light levels (Fig. 5), so excess membrane and channel content imposes a large idle-time penalty.
+* Action potential transmission and the maintenance of the resting potential together dominate the
+  per-AP energy budget in rat grey matter; Attwell and Laughlin (2001) attribute **more than 50%**
+  of the per-AP cost to the AP itself plus resting-potential restoration (Fig. 6A).
+* The blowfly retina consumes about **8% of resting metabolic rate**, despite being a single
+  peripheral structure; the human brain consumes about **20% of BMR** at only **2% body mass**.
+* In the homologous R1-6 photoreceptors of *Drosophila melanogaster*, *D. virilis*, *Calliphora
+  vicina* and *Sarcophaga carnaria*, both resting and maximum ATP cost scale with information rate
+  (bits s-1) (Fig. 5); larger photoreceptors transmit more bits per second but at strictly lower
+  energy efficiency (more **ATP per bit**, Fig. 7).
+* In *Drosophila* `Shaker` mutants that lack the inactivating Shaker K+ conductance, replacement
+  by a non-inactivating leak conductance produces both a **drop in information rate and an
+  increase in steady-state energy cost** at rest and while signalling (Fig. 8) - a twofold penalty.
+* The cost-per-bit of analogue (graded-potential) signalling is at least as low as that of digital
+  (action-potential) signalling for short distances, while analogue can sustain higher information
+  rates per second; analogue therefore dominates the early visual periphery and digital dominates
+  long-range axons (Sarpeshkar 1998 prediction matches cortical observations).
+* Sparse coding is energy-optimal under high signalling cost / low resting cost; the optimal
+  fraction of active neurons depends on the resting:signalling cost ratio (Fig. 9, after Attwell
+  and Laughlin 2001).
+* Convergent eye loss in cave-isolated *Astyanax mexicanus* populations has occurred at least
+  three times within roughly **1 million years**, with corresponding reductions in central visual
+  processing volume; subterranean *Spalax ehrenbergi*, *Condylura cristata*, and laboratory
+  *Drosophila* (Tan et al. 2005, eye size shrinks measurably with years in culture) show similar
+  reductions of unused sensory structure.
+* Comparative measurements of brain Na+/K+ ATPase activity in elasmobranchs vs teleosts (Nilsson
+  et al. 2000) show that elasmobranchs have larger relative brains but lower specific ATPase
+  activity, so total brain ATP consumption is comparable across the two clades - relative size is
+  not a direct predictor of energy use.
+
+#### Innovations
+
+##### Joint Information-vs-Energy Accounting at the Single-Cell Level
+
+Earlier energetics work treated information rate (bits s-1) and metabolic cost (ATP s-1)
+separately. This review consolidates the case that the two should be plotted against each other on
+a single Pareto-style frontier (Fig. 7, **bit-cost vs information rate**), letting the bits-per-ATP
+ratio function as a unified efficiency metric. This frontier is exactly the type of objective space
+relevant to multi-objective optimisation of single-neuron designs.
+
+##### The Law of Diminishing Returns
+
+The review formalises the observation, supported across the four homologous fly photoreceptor
+species, that adding extra bandwidth, SNR, or channel density costs an over-proportional amount
+of ATP. This converts the qualitative statement that neural tissue is expensive into a concrete
+selection rule: any function the cell does not need will be evolutionarily trimmed because the
+energy cost grows super-linearly with the unused capacity.
+
+##### Cross-Scale Synthesis from Channels to Cave Fish
+
+The paper is the canonical reference that ties single-channel kinetics (Shaker K+ activation and
+inactivation) to whole-animal evolutionary phenomena (cave-fish eye loss, mole somatosensory
+expansion). The chain channel kinetics -&gt; single-neuron ATP/bit -&gt; sensory-organ size -&gt; lifestyle
+fit closes the loop between biophysics and macro-ecology in a way few earlier reviews achieved.
+
+##### Energy-Aware Coding Strategies as Evolutionary Endpoints
+
+The review systematically catalogues the menu of mechanisms by which sensory systems can move
+toward the bit-per-ATP frontier: matched filtering, sparse coding, hybrid analogue/digital
+schemes, wiring minimisation, redundancy reduction via predictive filtering, and efference-copy
+gating of sensory feedback. Each is presented not just as a coding trick but as a recurrent
+evolutionary outcome.
+
+#### Datasets
+
+This is a theoretical/review paper; no datasets were used. The figures re-plot data from earlier
+primary studies, particularly Niven et al. (2007) for the four-fly photoreceptor comparison, the
+Attwell and Laughlin (2001) and Nawroth et al. (2007) energy budgets, the Zapol et al. (1979)
+Weddell seal blood-flow measurements, the McNab and Eisenberg (1989) brain-mass / BMR scaling, the
+Nilsson et al. (2000) elasmobranch-vs-teleost ATPase data, and the Tan et al. (2005) lab
+*Drosophila* eye-size time series.
+
+#### Main Ideas
+
+* For our DSGC project, an objective on **bits per ATP** (or its proxy: spikes per ATP, AP-rate
+  per Na+/K+ pump current) is biologically motivated and provides the second axis for a joint
+  information-vs-energy Pareto frontier alongside the angle-to-AP-frequency tuning error.
+* Resting ATP cost is set by leak and tonically active voltage-gated channels and is roughly
+  **25% of peak**; over-provisioned somatic Na+ or K+ density therefore costs the cell
+  continuously, not only during the preferred-direction wave. This argues for including idle-state
+  cost as part of any energy objective in the multi-objective optimisation.
+* Voltage-gated channels with high activation thresholds (only opening near AP threshold) are
+  intrinsically cheaper than low-threshold or persistently active channels - useful prior for
+  searching the somatic Na/K design space efficiently.
+* Excess functional capacity is super-linearly penalised (Law of Diminishing Returns); the
+  optimisation should expect to find solutions on a sharp knee where trimming Na+ or K+ density
+  beyond the minimum needed for the target AP rate quickly buys back large energy savings.
+* Loss-of-conductance mutations (e.g. Drosophila *Shaker*) can pay a **twofold penalty** - both
+  reduced information rate and increased energy cost - providing a cautionary example for
+  parameter pruning during model simplification.
+
+#### Summary
+
+Niven and Laughlin (2008) ask why nervous systems, and sensory systems in particular, take the
+specific morphological and biophysical forms they do, and answer that energetics is one of the
+dominant selective pressures shaping them. They focus on the visual system because its function is
+quantifiable (bits s-1 of information about a visual scene) and its energetic cost is now directly
+measurable from whole-retina oxygen consumption, single-cell biophysical models, and bottom-up
+per-component energy budgets. The review scope ranges from sub-cellular ion-channel kinetics to
+the comparative neuroanatomy of cave fish, blind mole rats, and laboratory-evolved *Drosophila*.
+
+Methodologically, the paper consolidates three classes of measurement into a unified accounting
+framework: respirometry on excised retinas, intracellular electrical models of fly R1-6
+photoreceptors that infer 3Na+/2K+ ATPase pump current from membrane biophysics, and the
+component-level cortical and olfactory energy budgets of Attwell-Laughlin (2001) and Nawroth et
+al. (2007). The fact that the single-cell biophysical estimates and the whole-retina O2
+measurements agree on the dominant cost (ion movement through the membrane) validates this
+multi-scale approach.
+
+The principal findings are quantitative. Resting metabolic cost in fly photoreceptors is about
+**25%** of peak signalling cost, and across four homologous photoreceptor species both rest and
+peak cost rise faster than information rate, defining a strict bits-per-ATP frontier (Fig. 7).
+Action-potential transmission and resting-potential maintenance dominate the per-AP energy budget
+in rat grey matter (more than 50%, Fig. 6A), and the choice of channel set has a measurable
+energetic signature: removing the *Shaker* K+ conductance in *Drosophila* simultaneously raises
+energy cost and lowers information rate (Fig. 8). At larger scales, convergent reductions of
+sensory structures (cave-fish eyes, mole visual cortex, lab-Drosophila ommatidia) match the
+prediction that unused capacity is selected against, while the elasmobranch-vs-teleost ATPase
+comparison warns that brain mass alone is not a reliable proxy for brain energy use.
+
+For this project, the paper anchors the energy axis of a joint info-vs-energy multi-objective
+optimisation. The angle-to-AP-frequency tuning error captures the information / function side; an
+ATP-budget proxy (Na+/K+ pump current integrated over a stimulus, or equivalently the integrated
+voltage-gated channel currents over a trial) captures the cost side. Because resting cost is non-
+negligible, the energy proxy must include the idle interval and not only the burst window.
+Because the cost-vs-capacity relationship is super-linear, we should expect Pareto fronts with
+sharp knees where large energy savings come from trimming over-provisioned somatic Na+ or K+
+density. Together with Attwell and Laughlin (2001) and Sengupta et al. (2010), this paper forms
+the energy-objective citation set that justifies bits-per-ATP as a biologically grounded second
+objective for the multi-objective Na/K conductance search.
+
+## A novel multiple objective optimization framework for constraining conductance-based neuron models by experimental data
+ID: 10.3389_neuro.01.1.1.001.2007
+Year: 2007
+Authors: Shaul Druckmann, Yoav Banitt, Albert Gidon, Felix Schurmann, Henry Markram, Idan Segev
+Venue: Frontiers in Neuroscience
+Venue type: journal
+DOI: 10.3389/neuro.01.1.1.001.2007
+URL: https://www.frontiersin.org/articles/10.3389/neuro.01.1.1.001.2007/full
+Categories: compartmental-modeling, voltage-gated-channels
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* File: `files/druckmann_2007_multi-obj-opt.pdf`
+* Published: 2007
+* Authors: Shaul Druckmann 🇮🇱, Yoav Banitt 🇮🇱, Albert Gidon 🇮🇱, Felix Schurmann 🇨🇭,
+  Henry Markram 🇨🇭, Idan Segev 🇮🇱
+* Venue: Frontiers in Neuroscience, Vol. 1, Issue 1, pp. 7-18
+* DOI: `10.3389/neuro.01.1.1.001.2007`
+
+#### Abstract
+
+We present a novel framework for automatically constraining parameters of compartmental models of
+neurons, given a large set of experimentally measured responses of these neurons. In experiments,
+intrinsic noise gives rise to a large variability (e.g., in firing pattern) in the voltage responses
+to repetitions of the exact same input. Thus, the common approach of fitting models by attempting to
+perfectly replicate, point by point, a single chosen trace out of the spectrum of variable responses
+does not seem to do justice to the data. In addition, finding a single error function that
+faithfully characterizes the distance between two spiking traces is not a trivial pursuit. To
+address these issues, one can adopt a multiple objective optimization approach that allows the use
+of several error functions jointly. When more than one error function is available, the comparison
+between experimental voltage traces and model response can be performed on the basis of individual
+features of interest (e.g., spike rate, spike width). Each feature can be compared between model and
+experimental mean, in units of its experimental variability, thereby incorporating into the fitting
+this variability. We demonstrate the success of this approach, when used in conjunction with genetic
+algorithm optimization, in generating an excellent fit between model behavior and the firing pattern
+of two distinct electrical classes of cortical interneurons, accommodating and fast-spiking. We
+argue that the multiple, diverse models generated by this method could serve as the building blocks
+for the realistic simulation of large neuronal networks.
+
+#### Overview
+
+This paper introduces the multiple objective optimization (MOO) framework that has since become the
+de facto methodology for biophysically detailed single-neuron model fitting (and the foundation
+underneath BluePyOpt and the Hay/Druckmann 2011 follow-on work). The authors argue that the
+prevailing single-trace, single-error fitting strategy is fundamentally mismatched to in vitro
+electrophysiology because repeated identical current injections produce visibly different voltage
+traces in the same cell. They propose treating fitting as a Pareto problem in which several
+biophysically meaningful spike features (rate, width, AHP depth, accommodation, latency, overshoot)
+are scored independently in units of the experimental standard deviation, and the search returns the
+non-dominated front rather than a single &quot;winner&quot;.
+
+The framework is demonstrated on two electrical classes of rat somatosensory cortical
+interneurons - accommodating (AC) and fast-spiking (FS) - using a 12-parameter compartmental model
+with 10 voltage-gated channel types at the soma and a passive dendrite/axon. The genetic algorithm
+used is a custom NSGA-II implementation in NEURON, evolving a population of 300 organisms over 1000
+generations. The headline finding is that the multi-objective approach (a) recovers a population of
+distinct but equally acceptable model neurons rather than a single fit, (b) cleanly separates the
+two electrical classes in some channel-conductance subspaces, and (c) supports principled
+interrogation of which features are mutually conflicting via the per-pair Pareto fronts. The
+framework is presented as a general-purpose recipe applicable to any conductance-based cell type.
+
+#### Architecture, Models and Methods
+
+The cell substrate was a reconstructed nest basket cell interneuron implemented in NEURON 5.9 as a
+**301-compartment** model. Voltage-dependent channels were inserted only at the soma; dendrites and
+axon were modelled as passive cables. Ten ion channel types were included with their kinetics taken
+from the experimental literature: persistent Na (Nap), transient Na (Nat), fast-inactivating K
+(Kfast), slow-inactivating K (Kslow), A-type K (IA), Kv3.1, M-type K (Im), high-voltage-activated
+Ca, SK Ca-activated K, and Ih. Together with somatic and dendritic leak conductances, this gave **12
+free parameters** with lower bound 0 and upper bound typically **1000 mS/cm^2** (100 for Nap, Im,
+Ca, SK, Ih). Two channel kinetics were shifted in voltage by hand to bring AP features into the
+fittable range: Nat by **+10 mV** and Kslow by **+20 mV** (depolarizing direction).
+
+The optimization used a custom NSGA-II in NEURON with real-valued parameters, time-diminishing
+non-uniform mutation (Michalewicz 1992), simulated binary crossover (SBX, Deb and Agarawal 1995),
+and a sharing function (Goldberg and Richardson 1987) for diversity. Each run evolved **300
+organisms for 1000 generations**; the authors verified insensitivity to these settings up to 8000
+iterations. Six error functions were used per stimulus: spike rate, accommodation index, latency to
+first spike, average AP overshoot, average AHP depth, and average AP width. Each feature error was
+computed as the absolute difference between model and experimental means divided by experimental SD,
+then averaged across **three current levels (150, 225, 300 pA)** of 2-second steps. Experimental
+data came from in vitro rat somatosensory cortex recordings (Markram et al., 2004): **15 traces per
+cell** (5 repetitions x 3 currents) for one AC exemplar (AC 5) and one FS exemplar (FS 5). The MOO
+ran on a 112-processor AMD Opteron cluster or a **256-512 processor BlueGene/L**; one fit took
+roughly one day.
+
+#### Results
+
+* Final summed error converged to **5-7 SD units across 6 features** for both AC and FS exemplars,
+  i.e. on average **&lt;1 SD per feature**.
+* AC exemplar best fit (1000th generation) channel densities (mS/cm^2): **Nat = 359, Nap = 0.00033,
+  Kfast = 423, Kslow = 242, IA = 99, Kv3.1 = 218, Ca = 0.00667, SK = 32.8, Ih = 10, Im = 0,
+  Leaksoma = 0.00737, Leakdendrite = 0.001**.
+* FS exemplar best fit channel densities (mS/cm^2): **Nat = 172, Nap = 0.1, Kfast = 0.5, Kslow =
+  199, IA = 51, Kv3.1 = 89, Ca = 0.00153, SK = 97, Ih = 4, Im = 64, Leaksoma = 0.06,
+  Leakdendrite = 0.00163**.
+* With the **2 SD acceptance threshold** the Pareto front contained **300 acceptable solutions per
+  class**, defining substantially-sized &quot;clouds&quot; rather than point estimates in 12-d parameter
+  space.
+* AC and FS solution clouds are **clearly segregated** along Nat (and other channels) but
+  intermixed along Im and SK, identifying which conductances actually distinguish the two
+  electrical classes.
+* Some Pareto pairs (e.g. AP overshoot vs accommodation) show **no effective trade-off** while
+  others (accommodation index vs spike rate) show a **non-trivial trade-off front**.
+* For the AC class, picking different points on the spike-rate-vs-accommodation Pareto front yields
+  **14 vs 13 APs** in 2 s and visibly different accommodation profiles - reproducing the natural
+  trial-to-trial variability seen experimentally.
+* As a proof of principle, **adding a 7th feature counting firing pauses** allowed the same
+  framework to qualitatively fit a third electrical class, the stuttering interneuron, with
+  conductances Nat = 479, Kfast = 482, Kslow = 477, Kv3.1 = 514 (mS/cm^2).
+* The pooled normalised feature distribution of the **300 model variants closely matches the
+  pooled experimental variability across 5 cells**, with minimal bias.
+
+#### Innovations
+
+##### Multi-Objective (Pareto) Fitting for Conductance-Based Neurons
+
+First systematic application of NSGA-II-style multi-objective optimization to single-neuron
+conductance fitting. Rather than weighting and summing heterogeneous error terms, the algorithm
+returns the full non-dominated Pareto front across feature errors, exposing which objectives
+genuinely conflict for a given cell.
+
+##### Variability-Aware Feature Errors in SD Units
+
+Introduced the convention of measuring each feature error in units of the experimentally observed
+standard deviation across repetitions. This both incorporates intrinsic neural noise into the
+fitting target and makes errors directly interpretable: &quot;1.0&quot; means &quot;one experimental SD off the
+mean.&quot;
+
+##### Population-of-Models Output
+
+Instead of a single best parameter vector, the framework yields a population of acceptable solutions
+(e.g. 300 models within 2 SD on every feature). This formalises the idea that biological neurons of
+a given class are themselves a parameter-space cloud, and the model population can substitute for
+trial-to-trial variability when used as building blocks for network simulation.
+
+##### Pareto Diagnostics for Channel-Class Identification
+
+Projecting the acceptable-solution cloud onto individual conductance axes reveals which channels
+are tightly constrained, which are unconstrained, and which separate electrical classes. This
+provides a principled tool for identifying class-defining biophysical parameters - directly
+relevant to comparisons across cell types.
+
+#### Datasets
+
+* In vitro whole-cell current-clamp recordings of rat somatosensory cortical interneurons from
+  Markram et al. (2004), Nature Reviews Neuroscience.
+* AC class: 5 accommodating cells (AC 1-5), with AC 5 used as the fitting exemplar.
+* FS class: 5 fast-spiking cells (FS 1-5), with FS 5 used as the fitting exemplar.
+* Per-cell sampling: **15 voltage traces per cell** = 5 repetitions x 3 step-current levels (150,
+  225, 300 pA), each trace 3 s long.
+* Stuttering proof-of-principle dataset: a single stuttering interneuron from the same Markram et
+  al. database, 150 pA step current.
+* No public dataset release is reported with the paper; data are referenced via the prior Markram
+  2004 publication.
+
+#### Main Ideas
+
+* For our project, MOO over biophysically-meaningful spike-feature errors is the methodology of
+  choice when fitting somatic Na/K conductance combinations to a target tuning curve - it avoids
+  the arbitrary weighting of heterogeneous errors that single-objective optimization forces.
+* Returning a Pareto front of 300 acceptable parameter sets, rather than a point estimate, gives
+  an immediate readout of conductance sensitivity: tightly constrained channels are those that
+  really matter for the firing pattern, broadly distributed ones are degenerate dimensions.
+* Measuring each feature error in units of the experimental SD is a clean way to express
+  goodness-of-fit when matching our model to patch-clamp ground-truth: a converged fit should land
+  every feature within ~1 SD of experiment.
+* NSGA-II in NEURON with **300 organisms x 1000 generations** is the canonical reference cost
+  envelope for this class of problem - useful when budgeting compute for the t0097 catalogue&#x27;s
+  multi-objective task.
+* The Druckmann 2007 framework underwrites all later MOBO neuron-fitting work (Druckmann 2011,
+  Hay 2011, BluePyOpt). Citing this paper as the methodology root in our own write-ups is
+  appropriate.
+
+#### Summary
+
+Druckmann et al. (2007) confront a methodological problem at the core of conductance-based
+neuron modelling: how to automatically fit the maximal-conductance vector of a compartmental model
+to noisy in vitro recordings, given that repeated identical current injections produce visibly
+different voltage traces in the same cell. They argue that the dominant single-trace,
+single-error-function approach is mis-specified - it ignores intrinsic variability and forces an
+arbitrary weighting of heterogeneous error terms (e.g. spike timing vs spike shape).
+
+Their solution is a multi-objective optimization framework in which several biophysically
+meaningful spike features (rate, width, AHP depth, accommodation, latency, overshoot) are each
+assigned their own error function, scored in units of the feature&#x27;s experimental standard
+deviation, and optimized jointly with a custom NSGA-II genetic algorithm running in NEURON. The
+fitting target is a compartmental model with 10 somatic ion channels and 12 free conductance
+parameters. Convergence was tested on two distinct cortical-interneuron electrical classes -
+accommodating and fast-spiking - using 300 organisms and 1000 generations on either a 112-CPU AMD
+cluster or a 256-512-processor BlueGene/L.
+
+The framework converges to mean per-feature error of less than 1 SD for both classes and returns
+hundreds of &quot;acceptable&quot; parameter sets within 2 SD on every feature. These solution clouds
+segregate cleanly along some channels (Nat) and overlap on others (Im, SK), revealing which
+conductances actually carry class identity. The Pareto fronts between feature pairs further expose
+which objectives genuinely conflict, providing diagnostic information that single-objective fits
+would discard. As a proof of generalisation the same recipe with one extra feature qualitatively
+captures a third (stuttering) electrical class.
+
+For the present project this paper is the methodology root. Our t0097 catalogue is structured
+around multi-objective optimisation of somatic Na/K conductance combinations (and follow-on
+dendritic-conductance variants) against a target angle-to-AP-frequency tuning curve in a
+direction-selective retinal ganglion cell. Druckmann 2007 supplies (i) the SD-normalised
+feature-error formulation that we should mirror when scoring our model against patch-clamp
+ground-truth, (ii) the NSGA-II reference cost envelope (300 organisms x 1000 generations) for
+budgeting compute, and (iii) the Pareto-of-models output mode, which is more diagnostic than a
+single best-fit vector for downstream sensitivity and conductance-class analysis.
+
+## Complex Parameter Landscape for a Complex Neuron Model
+ID: 10.1371_journal.pcbi.0020094
+Year: 2006
+Authors: Pablo Achard, Erik De Schutter
+Venue: PLoS Computational Biology
+Venue type: journal
+DOI: 10.1371/journal.pcbi.0020094
+URL: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0020094
+Categories: compartmental-modeling, voltage-gated-channels
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/achard_2006_complex-parameter-landscape.pdf`
+* **Published**: 2006-07-21
+* **Authors**: Pablo Achard BE, Erik De Schutter BE
+* **Venue**: PLoS Computational Biology 2(7): e94
+* **DOI**: `10.1371/journal.pcbi.0020094`
+
+#### Abstract
+
+The electrical activity of a neuron is strongly dependent on the ionic channels present in its
+membrane. Modifying the maximal conductances from these channels can have a dramatic impact on
+neuron behavior. But the effect of such modifications can also be cancelled out by compensatory
+mechanisms among different channels. We used an evolution strategy with a fitness function based on
+phase-plane analysis to obtain 20 very different computational models of the cerebellar Purkinje
+cell. All these models produced very similar outputs to current injections, including tiny details
+of the complex firing pattern. These models were not completely isolated in the parameter space, but
+neither did they belong to a large continuum of good models that would exist if weak compensations
+between channels were sufficient. The parameter landscape of good models can best be described as a
+set of loosely connected hyperplanes. Our method is efficient in finding good models in this complex
+landscape. Unraveling the landscape is an important step towards the understanding of functional
+homeostasis of neurons.
+
+#### Overview
+
+Achard and De Schutter address whether a richly active compartmental neuron, the cerebellar Purkinje
+cell (PC), admits multiple distinct sets of channel conductances that all reproduce its detailed
+electrophysiology. Their target &quot;data&quot; is the De Schutter and Bower 1994 PM9 PC model -- a
+1,600-compartment cell with ten distinct voltage- and calcium-gated channel species and four
+morphological zones (soma, main dendrite, smooth dendrites, spiny dendrites), giving 24 free maximum
+conductance densities. The cell exhibits four firing modes (silent, tonic spiking, short bursts,
+long bursts) depending on injected current, and the authors require new models to reproduce not just
+the qualitative mode but the fine waveform of every spike and burst.
+
+The methodological core is an evolution strategy (ES), specifically a (57+19) self-adaptive ES with
+correlated Gaussian mutations and global-intermediary recombination, paired with a phase-plane
+fitness function originally proposed by LeMasson and Maex. The fitness compares the (V, dV/dt)
+density matrix between a candidate model and the data, summed across seven current injection
+amplitudes, three recording sites, and two time windows (transitory and stable). After nine
+independent runs of approximately 8,000 evaluations each (415 generations, 6 days on a 10-node Apple
+G5 cluster), they retain 20 models with fitness 2.58 to 3.45.
+
+The headline finding is that these 20 models are simultaneously diverse and constrained: individual
+conductance densities span their entire allowed range for some channels (e.g., gCaTm, gKAm, gKMd,
+gKhs) yet remain tightly bounded for others (gNaFs, gCaPd, gKdrs, gKdrm). Crucially, the geometry of
+the &quot;good&quot; region in parameter space is neither a single connected blob nor a set of isolated
+points, but a collection of loosely connected hyperplanes -- thin lower-dimensional manifolds that a
+6- or 10-points-per-dimension grid search would miss for ~65% of the recovered solutions. This
+establishes that compensation among channels is real, multidimensional, and structured, which has
+direct implications for any project that uses gradient-free or population-based search to fit
+biophysical models.
+
+#### Architecture, Models and Methods
+
+The cell model is the published 1,600-compartment Purkinje cell &quot;PM9&quot; of De Schutter and Bower
+(1994), simulated in Genesis 2.2.1. Channel distribution: soma carries NaF, NaP, CaT, Kdr, Kh, KM,
+KA; smooth and spiny dendrites carry CaP, CaT, KM, KC, K2; the main dendrite additionally carries
+Kdr and KA. Per-zone densities give 24 free parameters, all simultaneously released to the search.
+Lower and upper bounds (mS/cm^2) defining the search hypercube are given in Table 1 of the paper:
+gNaFs in **50,000-100,000** with data **75,000**; gNaPs in **3-30** with data **10**; gCaTs/m/t/d in
+**1-20** with data **5**; gCaPm/t/d in **10-100** with data **45**; gKAs in **50-500** (data
+**150**), gKAm in **3-60** (data **20**); gKdrs in **2,000-10,000** (data **6,000**), gKdrm in
+**200-1,000** (data **600**); gKM coefficients spanning **0-3** for soma, **0-1** for main and
+distal compartments; gKCm/t/d in **200-2,000** (data **800**); gK2m/t/d in **0.5-10** (data
+**3.9**); gKhs in **0.5-10** (data **3**).
+
+The ES strategy is (57+19): each of nine independent runs maintains a population of 57 individuals
+producing 19 offspring per generation, with parents and offspring competing for the next generation.
+Mutation is performed by adding Gaussian noise whose standard deviations and correlation matrix are
+themselves part of the genome and evolve under selection (self-adaptive correlated mutation, Eiben
+and Smith 2003). Recombination uses &quot;global intermediary&quot; averaging: two random parents per
+parameter, offspring inherits the mean. Each run was stopped after 415 generations (~8,000
+evaluations).
+
+The phase-plane fitness builds a 100x100 (V, dV/dt) histogram with V from -80 to +120 mV and dV/dt
+from -1500 to +2500 mV/ms, sampled at 50 kHz. The squared L2 distance between normalized data and
+model histograms is computed (equation 1), and the overall fitness F sums weighted square roots
+across seven current amplitudes (1.5 nA dendritic, 0, 0.5, 1, 1.5, 2.5, 3 nA somatic), three
+recording sites (soma plus two thick dendrites with weights 1 vs 0.5, dropping to 0.6 and 0.3 at
+zero current) and two time windows (first 100 ms transitory, &gt;=1 s stable). The threshold for &quot;good&quot;
+was fitness &lt;= 3.45; 23 individuals passed; 3 were excluded for failing to spike at 0.25 nA somatic
+injection, leaving the final 20.
+
+Compute used a parallel ESEA (Evolving Objects library) on 10 dual-G5 nodes; 6 days per run.
+Hyperplane analysis defines linear combinations of solution triplets with weights running from -1.5
+to +2.5 in steps of 0.04 (third weight chosen so weights sum to 1), yielding thousands of points per
+hyperplane. Grid-search comparison uses 6 and 10 points per dimension (so 6^24 ~ 4.7e18 and 10^24
+grid points, neither remotely tractable in 2006).
+
+#### Results
+
+* The ES recovered **20 selected good models** from 9 runs of ~8,000 evaluations each, with fitness
+  values in the range **2.58 to 3.45** (the threshold for selection).
+* Total conductance dispersion across the 20 models ranges from a low of **1.2x** for gNaF total to
+  **6.2x** for gKM total and **9.7x** for gKh total -- but gKh has very small influence on the
+  model, and similar studies on stomatogastric ganglion neurons report up to **40x** variation,
+  making the PC dispersion intermediate. Experimentally measured channel variability in crab
+  stomatogastric neurons is **2-4x** (Schulz et al. 2006), close to this study.
+* Of 276 pairwise Pearson correlations between channel densities, only **5 pairs** had p &lt; 0.01:
+  (gK2t, gK2d) r=**0.78**, (gKdrm, gK2d) r=**0.63**, (gKdrm, gCaPm) r=**0.59**, (gKdrm, gK2t)
+  r=**0.57**, and (gCaPt, gCaPd) r=**0.58**. Linear pairwise correlation thus explains only a
+  fraction of the variability.
+* Among the 10 total conductances (44 pair combinations), only **(gCaT, gCaP) was significantly
+  anti-correlated** with r=**-0.62** (p &lt; 0.01), suggesting that net calcium influx is constrained.
+* Sensitivity analysis (24 x 500 = 12,000 single-parameter perturbations from the data point) showed
+  that **7 parameters** (gKAs, gKAm, gKdrm, gKMs, gkMm, gKMt, gK2m) had small individual effects on
+  fitness, but setting all 7 to zero simultaneously gave a poor fitness of **4.25**, showing
+  collective effects matter.
+* Around each of the 20 individuals, +/-1% perturbations preserved good fitness, but **+/-5%
+  perturbations of a single parameter could push the model into bad-fitness territory** -- the
+  parameter landscape is not smooth.
+* A grid search at **6 points per dimension** would have recovered at most **~35% (7/20)** of the
+  ES-discovered solutions; nine of the 20 (numbers 2, 3, 7, 8, 9, 11, 12, 18, 19) had **all** their
+  6-point-grid neighbors with bad fitness; even a 10-point grid failed to rescue four borderline
+  cases.
+* Models reproduce features that were **not in the fitness function**: complex spikes from climbing
+  fiber input match across soma, main dendrite, and smooth dendrite; firing rate vs.
+  excitation/inhibition balance is reproduced; passive EPSP propagation from four parallel-fiber
+  branchlets to the soma matches across all 20 models, indicating real generalization beyond the fit
+  targets.
+* Spatial pattern: for all dendritic conductances except gKM, the **20 models systematically place
+  lower density in distal spiny dendrites and higher density in proximal smooth and main
+  dendrites**, contradicting the original PM9 model&#x27;&#x27;s choice of equal smooth/spiny densities.
+
+#### Innovations
+
+##### Phase-Plane Fitness for Complex Firing
+
+The (V, dV/dt) density-matrix fitness from LeMasson and Maex avoids time-shift penalties (two spike
+trains with the same shape but slightly different timing get a low distance) and avoids the need to
+hand-engineer feature extractors for spike width, ISI, AHP, burst duration, etc. The authors
+demonstrate that despite no explicit feature targets, the fit models still recover spike height,
+AHP, burst structure, and inter-burst dynamics -- useful as a precedent for fitness design in this
+project&#x27;&#x27;s optimization stages.
+
+##### Self-Adaptive Correlated-Mutation ES on 24-D Real-Valued Parameter Space
+
+Achard and De Schutter use ES rather than a binary-coded GA precisely because: parameters are real
+numbers, mutation strength can co-evolve with the genome (impossible in standard GAs), and crossover
+does not require parameters to be physically adjacent in the genotype. This is a strong
+methodological argument that carries over to our own multi-objective work.
+
+##### First Detailed Compensatory-Diversity Analysis on a Large Compartmental Model
+
+Prior work by Goldman et al. (2001) and Prinz et al. (2003, 2004) demonstrated parameter degeneracy
+in **single-compartment** stomatogastric models with a handful of free parameters. This paper
+extends the result to a **24-parameter, 1,600-compartment Purkinje cell** with four firing modes --
+the largest such study at that time -- and characterizes the geometry of the good region.
+
+##### Loose-Hyperplane Geometry of the Good-Fitness Region
+
+The hyperplane visualization (linear combinations of solution triplets, projected onto pairs of
+parameters) is a novel tool that makes the structure of the good region tangible. Some triplet
+hyperplanes contain large connected good regions; others contain isolated solutions. Parallel
+hyperplanes (offset by +/-5%, +/-10% of solution standard deviation) show that the good region is a
+thin shell around the recovered hyperplanes, not a thick volume.
+
+##### Quantitative Failure Mode of Grid Search
+
+The paper provides one of the first concrete demonstrations that systematic grid sampling, even at 6
+or 10 points per dimension, would fail to discover a majority (~65%) of the ES-found solutions on a
+complex compartmental model. This is a direct argument for stochastic global search on
+high-dimensional problems.
+
+#### Datasets
+
+This is a theoretical and computational paper; no biological datasets were used. The &quot;data&quot; against
+which models are fit is itself a published computational model -- the De Schutter and Bower 1994
+&quot;PM9&quot; Purkinje cell model (J. Neurophysiol. 71: 375-400 and 401-419, and Proc. Natl. Acad. Sci. USA
+91: 4736-4740). The PM9 model and the 20 best-fit alternatives are not deposited as explicit code
+releases in the paper; the optimization library used (ESEA from Evolving Objects) and the simulator
+(Genesis 2.2.1) are publicly available.
+
+#### Main Ideas
+
+* **Multi-objective and degenerate-by-design**: a complex compartmental model has many distinct
+  &quot;good&quot; parameter sets, with up to ~10x variation in individual conductance densities while
+  preserving detailed waveforms -- the project&#x27;&#x27;s parameter sweeps and multi-objective optimization
+  must expect families of good solutions, not unique optima.
+* **Fitness function choice matters**: phase-plane density distance handles time-shift and avoids
+  feature engineering, generalizing to features it did not see (synaptic responses, EPSP
+  propagation). For this project&#x27;&#x27;s tuning of angle-to-AP-frequency curves, an equivalent
+  shift-invariant or phase-aware metric is worth considering alongside direct trace-difference
+  losses.
+* **Stochastic global search beats grid search**: at 24 free parameters, even a 6-point grid would
+  miss ~65% of valid solutions; this validates the project&#x27;&#x27;s planned use of NSGA-II (per memory on
+  high-d MOBO) over grid sweeps for any optimization at moderate-to-high dimensionality.
+* **Channel-density covariance is real but sparse**: only 5 of 276 channel pairs and 1 of 44 total
+  pairs show significant linear correlation; expecting strong pairwise correlations as a search
+  prior is wrong. Rather, compensation lives in low-dimensional curved manifolds that need to be
+  discovered.
+* **Local landscape is rough**: +/-5% perturbations of a single channel density can knock a model
+  out of good fitness even when +/-1% is fine. Optimization protocols should use small mutation
+  steps near convergence and treat hand-tuning as essentially impossible.
+
+#### Summary
+
+Achard and De Schutter ask whether a complex, biophysically detailed compartmental neuron admits
+multiple distinct sets of voltage- and calcium-gated channel conductances that reproduce the cell&#x27;&#x27;s
+detailed firing behavior. The motivation comes from two convergent lines of evidence: experimental
+work on lobster and crab stomatogastric ganglion neurons showing 2-4x interanimal variability in
+channel expression with preserved activity, and prior modelling work (Goldman 2001, Prinz 2003-2004)
+showing parameter degeneracy in low-dimensional stomatogastric models. The paper extends this
+question to the cerebellar Purkinje cell -- a 1,600-compartment, 24-parameter model with four firing
+modes -- and asks both whether degeneracy exists and what shape the good region of parameter space
+takes.
+
+The methodology pairs a self-adaptive correlated-mutation evolution strategy ((57+19) population,
+~8,000 evaluations per run, 9 independent runs) with a phase-plane density distance fitness function
+summed across 7 current amplitudes, 3 recording sites, and 2 time windows. Each run took ~6 days on
+a 10-node G5 cluster. Twenty good solutions are retained (fitness 2.58 to 3.45). The authors then
+probe the parameter landscape using single-parameter sensitivity sweeps, +/-1% and +/-5% local
+perturbations, pairwise Pearson correlations on individual and total conductances, and a novel
+hyperplane visualization that fits triplet-defined planes and parallel offset planes through the
+solution cloud.
+
+The 20 models reproduce somatic and dendritic voltage waveforms, complex spike responses, and EPSP
+propagation despite the latter two not being in the fitness function. Total conductance ratios
+across the 20 models range from 1.2x (gNaF) to 9.7x (gKh). Only 5 of 276 pairwise correlations are
+significant at p &lt; 0.01, and only the gCaT-gCaP total-conductance pair shows a strong
+anti-correlation (r=-0.62). Local landscape is rough: +/-1% perturbations preserve fitness, +/-5%
+can break it. Most importantly, the good region is shown to be a set of loosely connected
+hyperplanes -- neither isolated points nor a single connected volume -- and a 6-points-per-dimension
+grid search would discover at most ~35% of the recovered solutions.
+
+For this project, the paper establishes the methodological line that justifies using stochastic
+multi-objective evolutionary search (NSGA-II in our case) on the cell&#x27;&#x27;s voltage-gated channel
+parameter space rather than grid sampling, and it establishes that we should expect families of
+diverse solutions rather than a unique optimum. The specific innovations relevant to t0097&#x27;&#x27;s
+optimization design are: phase-plane or shift-tolerant fitness as a complement to direct
+trace-distance metrics; self-adaptive mutation strengths in the genome; and hyperplane analysis of
+the recovered Pareto front to understand which conductance combinations actually trade off. Achard
+2006 is the natural methodology citation alongside Druckmann 2007 and Hay 2011 in this task&#x27;&#x27;s
+catalogue, providing the earliest detailed demonstration that complex compartmental models have
+low-dimensional curved manifolds of good parameters that only population-based search can recover.
+
+## Variability, compensation and homeostasis in neuron and network function
+ID: 10.1038_nrn1949
+Year: 2006
+Authors: Eve Marder, Jean-Marc Goaillard
+Venue: Nature Reviews Neuroscience
+Venue type: journal
+DOI: 10.1038/nrn1949
+URL: https://www.nature.com/articles/nrn1949
+Categories: voltage-gated-channels, compartmental-modeling, synaptic-integration
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* File: `files/marder_2006_variability-homeostasis.pdf`
+* Published: 2006
+* Authors: Eve Marder [US], Jean-Marc Goaillard [US]
+* Venue: Nature Reviews Neuroscience, 7(7), 563-574
+* DOI: `10.1038/nrn1949`
+
+#### Abstract
+
+Neurons in most animals live a very long time relative to the half-lives of all of the proteins
+that govern excitability and synaptic transmission. Consequently, homeostatic mechanisms are
+necessary to ensure stable neuronal and network function over an animals lifetime. To
+understand how these homeostatic mechanisms might function, it is crucial to understand how
+tightly regulated synaptic and intrinsic properties must be for adequate network performance, and
+the extent to which compensatory mechanisms allow for multiple solutions to the production of
+similar behaviour. Here, we use examples from theoretical and experimental studies of
+invertebrates and vertebrates to explore several issues relevant to understanding the precision
+of tuning of synaptic and intrinsic currents for the operation of functional neuronal circuits.
+
+#### Overview
+
+This is the canonical review article that frames the modern concept of *degeneracy* in
+neuroscience: the empirical and theoretical observation that disparate combinations of ionic
+conductances and synaptic weights can produce nearly identical single-neuron and network output.
+Marder and Goaillard synthesise a decade of stomatogastric ganglion (STG) work, computational
+ensemble-modelling studies, and emerging vertebrate measurements (Purkinje, hippocampal CA1,
+cortical) to argue that variability across animals is the rule rather than the exception, and
+that compensation between channels is what stabilises behaviour.
+
+The review is organised around three intertwined claims. First, individual neuron output depends
+on the *combination* of all expressed channels rather than any single dominant current; small
+subthreshold currents (Ih, INaP, IA, ICaT) interact non-linearly to set integration and
+excitability. Second, channel densities can vary two- to fourfold across cells of the same
+identified type while activity profiles remain conserved, because compensating channels co-vary.
+Third, this principle scales to whole circuits: model studies (notably Prinz et al. 2004, which
+Marder and Goaillard cite as the central illustration) show that millions of distinct conductance
+and synaptic-weight combinations produce the same triphasic pyloric rhythm.
+
+The paper distinguishes acute pharmacological perturbation (timescales too fast for compensation,
+hence revealing strong sensitivity) from genetic deletion or chronic blockade (slow timescales
+that allow homeostatic re-tuning, often producing surprisingly small phenotypes). It also
+introduces the engineering analogy that biology achieves robustness not by redundant duplication
+but by overlapping, partially-substitutable components --- a framing directly relevant to
+multi-objective optimisation of neuron models, where the loss landscape is expected to be
+many-to-one rather than one-to-one between parameters and behaviour.
+
+#### Architecture, Models and Methods
+
+This is a review, so it does not introduce new models or new experiments. Instead it organises
+evidence from many primary studies, several of which are now standard references for
+parameter-degeneracy reasoning. The methods covered fall into four categories.
+
+**Single-cell electrophysiology with channel quantification.** Schulz, Goaillard and Marder
+(Nature Neuroscience 2006) combined whole-cell voltage clamp with single-cell qPCR of channel
+mRNA in identified pyloric LP neurons, finding that maximal conductances of Kd, KCa, and A-type
+K+ currents each varied roughly threefold across animals (~0.05-0.30 uS/nF for KCa) but
+co-varied with their corresponding mRNA copy numbers (shab, BK-KCa, shal). Swensen and Bean
+(J. Neurosci. 2005) reported similar findings for cerebellar Purkinje cells: animal-to-animal
+variation in INa and ICa peak amplitudes (e.g., -156 vs -41 pA INa; -221 vs -823 pA ICa)
+despite nearly identical burst-firing patterns.
+
+**Pharmacological perturbation vs genetic knockout.** TTX dose-response and Na+-channel
+knockout in Purkinje neurons illustrate the timescale dependence: 20-50% acute conductance
+manipulations can abolish bursting, whereas chronic deletion is partly compensated.
+
+**Conductance-based ensemble modelling.** The Marder lab and collaborators (Goldman 2001;
+Golowasch 2002; Prinz, Bucher and Marder 2004) constructed databases of single-neuron and
+three-cell pyloric network models by sweeping conductances across grids and selecting solutions
+that satisfied behavioural constraints (cycle period, phase, duty cycle). Prinz et al. 2004
+specifically searched ~20 million pyloric network models on grids of 8 voltage-dependent
+conductances and 7 synaptic weights, and found thousands of well-performing solutions
+distributed across orders of magnitude in some parameters.
+
+**Network-level synaptic measurements.** Goaillard, Taylor, Schulz and Marder and others measured
+graded IPSC amplitudes between identified STG neurons across animals, finding two- to fourfold
+variation in synaptic strength (e.g., AB-LP, AB-PY, PD-LP, PD-PY peak IPSCs spanning ranges
+~10-100 nA). Cortical work from Soltesz and colleagues, plus Monier et al. on V1 orientation
+selectivity, extends the principle to vertebrate networks.
+
+No specific hyperparameters, training procedures, or compute requirements are introduced.
+Sample sizes for each cited study are reported in the original primary papers; the typical
+animal-to-animal n is 5-20 across the cited STG and vertebrate single-cell datasets.
+
+#### Results
+
+* Identified pyloric LP neurons show **2- to 4-fold animal-to-animal variation** in maximal
+  conductances of Kd, KCa, and A-type K+ currents at +15 mV.
+* Channel mRNA copy numbers (shab, shal, BK-KCa) correlate with their respective maximal
+  conductances at the **single-cell level** (p &lt; 0.001 for IK[Ca]-BK and IA-shal; p &lt; 0.005 for
+  IKd-shab in Schulz et al. 2006).
+* Two cerebellar Purkinje cells with **almost identical burst patterns** had INa amplitudes of
+  **-156 pA vs -41 pA** and ICa amplitudes of **-221 pA vs -823 pA** --- order-of-magnitude
+  differences in inward currents.
+* Acute pharmacological reduction of single conductances by **20-50%** disrupts firing in many
+  identified neurons, whereas long-term genetic deletion of the same conductance often produces
+  much milder phenotypes due to homeostatic compensation.
+* Prinz et al. 2004 sampled ~20 million pyloric network models and identified thousands of
+  parameter sets producing the canonical triphasic rhythm; many model pairs differ by
+  **&gt;10-fold in individual conductances** while producing virtually identical motor output.
+* Inhibitory synaptic strengths between STG neurons (AB-LP, AB-PY, PD-PY, PY-LP, PD-LP) vary
+  **3- to 4-fold across animals** in *Panulirus interruptus* and 2- to 3-fold in
+  *Homarus americanus*.
+* In V1, excitatory and inhibitory synaptic inputs can carry **different orientation
+  selectivities** while the spike output of the postsynaptic neuron retains a single tuned
+  orientation --- diverse circuit-level solutions for the same sensory response.
+
+#### Innovations
+
+##### Codifying the Many-to-One Mapping from Parameters to Behaviour
+
+The review establishes as a general principle, with cross-species evidence, that disparate
+parameter sets can produce equivalent neuron and network output. This concept (later called
+degeneracy in the Marder-line literature) is the conceptual foundation for treating
+multi-objective parameter optimisation as recovering a *manifold of solutions* rather than a
+single optimum.
+
+##### Distinguishing Acute Sensitivity from Chronic Compensation
+
+The review systematically contrasts pharmacological (fast, no compensation, large phenotype)
+and chronic (slow, homeostatic re-tuning, small phenotype) perturbations. This timescale
+asymmetry is critical for designing parameter-perturbation sensitivity objectives: one expects
+the model to be locally fragile (acute robustness measure) but to lie on a connected solution
+manifold (compensation potential).
+
+##### Reframing Inter-Animal Variability as Biological Signal, Not Noise
+
+Before this review, channel-density variability across animals was frequently dismissed as
+measurement error. Marder and Goaillard argue it is a fundamental property of biological tuning
+and a constraint on any modelling exercise that fits a single canonical neuron. This justifies
+*ensemble* fitting and the *family-of-solutions* objective formulation used in modern
+multi-objective neuron optimisation.
+
+##### Linking Diversity in Large Networks to Robust Function
+
+The review extends the small-circuit STG argument to vertebrate cortex, citing Soltesz-lab work
+showing that interneuron diversity (between-type) and variance (within-type) shape network
+dynamics in a non-trivial way, sometimes with positive functional roles rather than merely
+tolerated noise.
+
+#### Datasets
+
+This is a theoretical/review paper; no datasets are released. It cites primary datasets from
+crustacean stomatogastric ganglion electrophysiology (lobster *Homarus americanus*,
+*Panulirus interruptus*; crab *Cancer borealis*), cerebellar Purkinje recordings in rodents,
+chick embryo network activity blockade experiments, and cat V1 whole-cell recordings. None of
+these are available as a single redistributable package; each is reported in the corresponding
+primary publications.
+
+#### Main Ideas
+
+* The mapping from biophysical parameters to single-cell and network behaviour is **many-to-one**
+  --- multi-objective optimisation should expect a Pareto manifold of equivalent solutions, not a
+  single global optimum, and report the diversity within that manifold.
+* **Parameter-perturbation sensitivity is a legitimate, biologically motivated objective** for
+  multi-objective neuron optimisation: acute single-channel perturbations of 20-50% are known to
+  produce strong phenotypic effects, so a robust model should tolerate similar perturbations or
+  at least recover via compensating channels.
+* **Two- to four-fold animal-to-animal variability in conductances and synaptic strengths is
+  empirically realistic**; bounds for parameter search and acceptable solution spread should be
+  set on this scale, not on tight (e.g., 10%) tolerances.
+* Channel **co-variation** rather than independent variation is what conserves behaviour;
+  optimisation should not rule out solutions that differ markedly in individual conductances if
+  the conductance pairs/triples are correlated in biologically known ways.
+* Robustness should be evaluated under **chronic perturbation** (slow homeostatic compensation
+  allowed) as well as **acute perturbation** (no compensation, immediate sensitivity); the two
+  produce qualitatively different fitness landscapes.
+* The same logic from STG extends to vertebrate cortex (V1 orientation selectivity, hippocampal
+  CA1 dendritic integration), supporting application of degeneracy-aware optimisation to retinal
+  ganglion cell models in this project.
+
+#### Summary
+
+This review by Marder and Goaillard codifies the now-standard observation that nervous-system
+variables --- ionic conductances, channel densities, synaptic weights --- vary substantially
+across animals of the same species and across cells of the same identified type, while the
+behavioural output of single neurons and networks remains conserved. The authors motivate the
+question by contrasting protein turnover (minutes to weeks) with neuronal lifetime (years to
+decades), arguing that homeostatic mechanisms must continuously rebuild the cell while preserving
+its function, and that this rebuilding must necessarily allow for multiple equivalent parameter
+configurations.
+
+The paper proceeds methodologically by surveying single-cell electrophysiology paired with
+mRNA quantification (Schulz et al. 2006 in pyloric LP neurons; Swensen and Bean 2005 in
+cerebellar Purkinje cells), pharmacological vs genetic perturbation studies, and ensemble
+conductance-based modelling (Goldman 2001; Golowasch 2002; Prinz, Bucher and Marder 2004). The
+synthesis carefully distinguishes timescales (acute pharmacology reveals fragility, chronic
+deletion reveals compensation) and scales (single neuron, microcircuit, vertebrate network),
+and argues that biological robustness arises through overlapping partially-substitutable
+components rather than engineered redundancy.
+
+Quantitatively, the cited evidence shows two- to fourfold inter-animal variation in many ionic
+conductances and synaptic strengths, single-cell-level correlation between channel mRNA and
+maximal conductance, and the existence of millions of distinct yet behaviourally equivalent
+network parameter sets in the lobster pyloric model. The reviews headline conclusion is that
+&quot;variability and compensation&quot; are general organising principles of neuronal function, and that
+ensemble approaches --- both experimental and computational --- are required to characterise
+them.
+
+For this project, this paper is the canonical citation for the *robustness / degeneracy*
+objective category in the t0097 multi-objective optimisation catalogue. It directly underwrites
+treating parameter-perturbation sensitivity (Marder-style: chronic compensation potential plus
+acute robustness) as a multi-objective dimension alongside fitness to target tuning curves. It
+also justifies the projects choice to model the direction-selective retinal ganglion cell as a
+*family* of acceptable parameter sets rather than a single canonical model, and motivates
+reporting solution-manifold properties (spread, co-variation structure) in addition to Pareto
+fronts. Together with Prinz, Bucher and Marder (2004), it forms the conceptual foundation for the
+robustness-objective recipe in the t0097 catalogue.
+
+## Similar network activity from disparate circuit parameters
+ID: 10.1038_nn1352
+Year: 2004
+Authors: Astrid A. Prinz, Dirk Bucher, Eve Marder
+Venue: Nature Neuroscience
+Venue type: journal
+DOI: 10.1038/nn1352
+URL: https://www.nature.com/articles/nn1352
+Categories: compartmental-modeling, voltage-gated-channels, synaptic-integration
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/prinz_2004_disparate-circuit-parameters.pdf`
+* **Published**: 2004
+* **Authors**: Astrid A. Prinz US, Dirk Bucher US, Eve Marder US
+* **Venue**: Nature Neuroscience, 7(12), 1345-1352
+* **DOI**: `10.1038/nn1352`
+
+#### Abstract
+
+It is often assumed that cellular and synaptic properties need to be regulated to specific values
+to allow a neuronal network to function properly. To determine how tightly neuronal properties and
+synaptic strengths need to be tuned to produce a given network output, we simulated more than 20
+million versions of a three-cell model of the pyloric network of the crustacean stomatogastric
+ganglion using different combinations of synapse strengths and neuron properties. We found that
+virtually indistinguishable network activity can arise from widely disparate sets of underlying
+mechanisms, suggesting that there could be considerable animal-to-animal variability in many of the
+parameters that control network activity, and that many different combinations of synaptic
+strengths and intrinsic membrane properties can be consistent with appropriate network performance.
+
+#### Overview
+
+This paper is the canonical demonstration that biophysically detailed neuronal networks exhibit
+parameter degeneracy: very different combinations of intrinsic conductances and synaptic strengths
+can produce nearly indistinguishable functional output. Prinz, Bucher and Marder address a question
+that had been raised at the single-neuron level (Goldman, Golowasch, Marder and Abbott, 2001;
+Prinz, Billimoria and Marder, 2003) and extend it to a small but biologically realistic network:
+the pyloric circuit of the crustacean stomatogastric ganglion (STG).
+
+Their approach is brute-force population modelling. They build a three-cell model of the pyloric
+rhythm using single-compartment Hodgkin-Huxley-style neurons drawn from a previously enumerated
+1.7-million-neuron database, vary seven synaptic conductances over five or six values each, and
+simulate all 20,250,000 resulting networks. Each simulated network is auto-classified by analysing
+burst times against 15 pyloric-rhythm features measured from 99 lobsters. The headline result is
+that **4,047,375 networks (20%)** produce a &quot;pyloric-like&quot; triphasic rhythm and **452,516 networks
+(2.2%)** match all 15 quantitative criteria. Crucially, every one of the 150 cell-combination
+configurations and the full functional range of every synaptic conductance is represented in the
+matching set, with one notable exception (LP-to-PY).
+
+The work reframes neuronal network design from &quot;tightly tuned parameters&quot; to &quot;functional
+performance with compensating parameter combinations&quot; - a view that motivates homeostatic
+regulation of network output rather than individual currents, and provides theoretical grounding
+for studies of biological variability across animals. This paper is repeatedly cited as the
+empirical-computational foundation for the &quot;many models, one behaviour&quot; view that informs
+multi-objective optimization, robustness, and homeostatic plasticity work in compartmental
+modelling today.
+
+#### Architecture, Models and Methods
+
+The model network condenses the biological pyloric circuit (AB, two PD, one LP, five-to-eight PY)
+into three single-compartment Hodgkin-Huxley neurons: a lumped AB/PD pacemaker, an LP follower, and
+a single PY follower representing all PY cells. Each neuron carries eight membrane currents: fast
+Na (`I_Na`), transient and slow Ca (`I_CaT`, `I_CaS`), transient K (`I_A`), Ca-dependent K
+(`I_K(Ca)`), delayed-rectifier K (`I_Kd`), hyperpolarisation-activated inward (`I_H`), and leak
+(`I_leak`). Voltage dependence and kinetics come from prior STG recordings and are identical across
+all model neurons; only the eight maximal conductance densities differ.
+
+The model neurons are selected from the prior 1.7M-neuron Prinz-Billimoria-Marder STG database. Five
+AB/PD pacemakers are picked to span intrinsic burst periods 1.46-1.64 s with 0.5-0.75 s burst
+duration and 0.3-0.4 duty cycle. Five LP and six PY follower models are selected from candidates
+that are silent or slow-spiking (&lt;11.5 Hz), have resting potential between -60 and -50 mV, and
+exhibit at least five-spike rebound bursts (&gt;=200 ms) under both weak (10 nS glutamatergic) and
+strong (100 nS glutamatergic + 100 nS cholinergic) inhibition. LP and PY are distinguished by
+post-inhibitory rebound delay: LP &lt;250 ms versus PY 300-500 ms. Maximal conductance values for the
+16 selected neurons are listed in Table 2 of the paper (e.g., AB/PD #1: gNa=400, gCaT=2.5, gCaS=6,
+gA=50, gK(Ca)=10, gKd=100, gH=0.01, gleak=0.00 mS/cm^2).
+
+Synapses follow the standard Abbott-Marder kinetic form `I_s = g_s * s * (V_post - E_s)`, with a
+sigmoidal activation and exponential deactivation. Glutamatergic synapses use `E_s = -70 mV` and
+`k- = 1/40 ms`; cholinergic use `E_s = -80 mV` and `k- = 1/100 ms`; both share `V_th = -35 mV` and
+`Delta = 5 mV`. Seven synapses are varied independently across {0, 3, 10, 30, 100} nS, except
+synapses targeting PY which extend down to 1 nS, giving a total of **20,250,000 networks**
+(5^6 x 6^4 in the paper notation, accounting for 5 AB/PD, 5 LP, and 6 PY model neuron pools).
+Numerical integration uses an exponential Euler scheme; networks run 3 s to settle then classify in
+1-second epochs. The full simulation campaign ran on a Beowulf cluster of 1.2-GHz processors over
+several months and produced approximately 4 GB of output data.
+
+Pyloric-like rhythms are defined by burst-order rules (LP starts and ends before PY; AB/PD ends
+before LP starts). Pyloric rhythms additionally require all 15 features to fall within mean +/-2
+s.d. ranges measured from 99 Homarus americanus preparations (Table 1: cycle period 0.952-2.067 s;
+PD burst duration 0.317-0.847 s; LP duty cycle 0.146-0.383; etc.).
+
+#### Results
+
+* **20,250,000** networks simulated, with **4,047,375 (20%)** producing pyloric-like triphasic
+  output and **452,516 (2.2%)** matching all 15 experimental criteria for true pyloric rhythm.
+* **All 150** cell-triple combinations (5 AB/PD x 5 LP x 6 PY) produce at least some pyloric
+  rhythms, indicating no obligatory cell tuning.
+* Six of seven synaptic conductances span the full **0-100 nS** functional range in pyloric
+  networks - strengths can vary by **two orders of magnitude** without breaking pyloric output.
+* The lone exception is the LP-to-PY synapse: it exceeds 3 nS in only **0.1%** of pyloric networks
+  and never exceeds 30 nS, identifying it as the single critical synaptic constraint and matching
+  the biologically observed weak LP-to-PY connection (Miller and Selverston, 1982).
+* Burst-period control is dominated by the AB/PD pacemaker: fast (n=534), medium (n=633) and slow
+  (n=207) pyloric subsets pull from different AB/PD identities while LP and PY identities remain
+  uniformly represented across speed bins.
+* Networks with widely differing maximal conductances - for example two pyloric model networks in
+  Figure 5 whose conductances differ by **at least a factor of three** in every channel - produce
+  visually indistinguishable rhythms.
+* Even in the narrow within-10% subsets of the fast/medium/slow groups, most synaptic conductance
+  distributions still span the full functional range, showing that even tightly defined output does
+  not require tightly tuned parameters.
+* Specific connectivity patterns recover known biology: AB/PD-to-LP connections favour strong
+  glutamatergic + weak cholinergic, AB/PD-to-PY favour weak glutamatergic + strong cholinergic, and
+  PY-to-LP synapses prefer strong values (Figure 6c) - all consistent with prior STG measurements.
+
+#### Innovations
+
+##### Brute-force Population Modelling at Network Scale
+
+The paper extends Prinz, Billimoria and Marder&#x27;s 2003 single-neuron-database approach to networks
+by enumerating 20.25 million combinations rather than fitting a single best parameter set. This is
+the first systematic full-coverage demonstration that the parameter-to-behaviour map is many-to-one
+at the network level, not just at the single-neuron level.
+
+##### Biologically Calibrated 15-Feature Acceptance Criterion
+
+Rather than reporting a single composite score, the authors define functional output as
+simultaneous satisfaction of 15 separate burst-timing measures, each within mean +/- 2 s.d. of
+empirical lobster recordings. This anticipates modern multi-objective evaluation and provides a
+template for &quot;is this rhythm biologically realistic&quot; tests still cited by STG modelling work today.
+
+##### Identification of Solution Manifolds, Not Solution Points
+
+The paper reframes neuronal-network parameterisation: instead of one optimal parameter point, there
+is a high-dimensional manifold of equally functional configurations. This is the conceptual
+foundation cited by later degeneracy, robustness, and homeostatic compensation work (e.g.,
+Marder-Goaillard 2006 review).
+
+##### Degeneracy with One Privileged Parameter
+
+By showing that 6 of 7 synapses are unconstrained but LP-to-PY must be weak, the paper distinguishes
+&quot;truly redundant&quot; parameters from &quot;few critical bottleneck&quot; parameters within the same network - a
+distinction that motivates sensitivity-aware multi-objective optimization in later work.
+
+#### Datasets
+
+* **Pyloric rhythm recordings from 99 Homarus americanus** (lobster) preparations under control
+  conditions, used to derive the 15-feature acceptance ranges (Table 1). Listed as unpublished data
+  by D. Bucher, A. A. Prinz and E. Marder.
+* **STG model-neuron database**: ~1.7 million single-compartment STG model neurons from Prinz,
+  Billimoria and Marder, J. Neurophysiol. 90:3998-4015 (2003), the source pool from which the 16
+  network neurons (5 AB/PD, 5 LP, 6 PY) were drawn.
+* **Pyloric network database**: the 20,250,000 simulated networks with classification labels
+  (pyloric / pyloric-like / other) and ~4 GB of output traces. The paper does not provide a public
+  download link for this database; subsequent literature treats the population-modelling protocol
+  rather than the raw output traces as the reusable artefact.
+
+#### Main Ideas
+
+* Network function is a property of the parameter manifold, not of a single optimal point: any
+  multi-objective optimization run for direction-selective RGC models should expect a high-volume
+  Pareto front rather than a tight optimum, and report manifold structure (volume, spread, principal
+  axes) alongside best-objective values.
+* Degeneracy is the rule, not the exception: tasks like t0097 should treat the existence of many
+  near-optimal parameter sets as the expected and biologically meaningful result, and use
+  population-level diagnostics (e.g., NSGA-II population spread, ensemble variance) to characterise
+  it instead of collapsing to a single &quot;winner&quot;.
+* Identify privileged parameters explicitly: the LP-to-PY result shows that within a generally
+  degenerate space there can be a small number of tightly constrained dimensions. Multi-objective
+  optimisation should report which conductances or synaptic densities are tightly constrained across
+  the Pareto front versus which are free, since the former are the biologically meaningful targets.
+* Biological-feature acceptance criteria should be multi-dimensional: matching a single summary
+  metric (mean firing rate, peak EPSP) is insufficient. The 15-feature template here motivates
+  multi-objective evaluation using simultaneous burst-timing, amplitude, and tuning-curve features
+  - directly applicable to t0097&#x27;s catalogue of objectives for direction-selective ganglion cells.
+* Homeostatic and developmental plasticity targets network output rather than individual
+  conductances: this argues against fitting individual-channel densities to single literature point
+  estimates and instead encourages varying them within biologically observed ranges to find any
+  combination that matches target output.
+
+#### Summary
+
+Prinz, Bucher and Marder ask how tightly neuronal properties and synaptic strengths must be tuned
+to produce a specific network output. They focus on the crustacean pyloric rhythm because its
+connectivity, neurons, and motor pattern are unusually well characterised. The motivation is to
+test the implicit assumption underlying much of neurophysiology, that animal-to-animal variability
+is &quot;experimental noise&quot; rather than a structural feature of the nervous system. The hypothesis is
+that, just as similar single-neuron firing can arise from many channel-density combinations, similar
+network output can arise from many cellular and synaptic parameter combinations.
+
+Methodologically, they enumerate 20,250,000 three-neuron model networks built from a 16-neuron pool
+selected from a prior 1.7-million-neuron STG database, varying seven synaptic conductances across
+five or six values. Each network is simulated, auto-classified, and tested against 15 burst-timing
+features measured from 99 Homarus americanus pyloric recordings. The model uses standard
+Hodgkin-Huxley dynamics with eight membrane currents per cell and Abbott-Marder synapse kinetics.
+The full simulation ran for several months on a Beowulf cluster of 1.2-GHz processors and produced
+approximately 4 GB of classification output.
+
+The headline finding is that 2.2% (452,516) of all networks satisfy the strict 15-feature pyloric
+criterion, every cell-combination is represented in this set, and six of the seven synaptic
+conductances span the full 0-100 nS range. Only LP-to-PY is tightly constrained (&gt;3 nS in just
+0.1% of pyloric networks), matching its weak biological strength. Networks with conductances
+differing by factors of three or more produce visually indistinguishable rhythms. Burst period is
+controlled mainly by the AB/PD pacemaker identity, while LP and PY identity is essentially free.
+
+For the t0097 multi-objective optimization catalogue this paper anchors the biological plausibility
+and degeneracy objective. It directly motivates: (i) treating the optimization output as a Pareto
+manifold rather than a point, (ii) using multi-feature biological acceptance criteria with explicit
+mean +/- 2 s.d. bands instead of single-objective fitting, (iii) reporting which conductances
+remain unconstrained and which are tightly bottlenecked across the Pareto front, and (iv)
+interpreting variability across the recovered solution set as a biologically meaningful prediction
+about animal-to-animal heterogeneity in direction-selective retinal ganglion cells, not as
+optimization noise. Combined with the Marder-Goaillard 2006 review (already in this task as
+nrn1949), Prinz2004 grounds the t0097 robustness analysis in the canonical &quot;many disparate
+parameter sets, one functional output&quot; result.
+
+## Wiring Optimization in Cortical Circuits
+ID: no-doi_Chklovskii2002_wiring-optimization-cortical
+Year: 2002
+Authors: Dmitri B. Chklovskii, Thomas Schikorski, Charles F. Stevens
+Venue: Neuron
+Venue type: journal
+DOI: 10.1016/s0896-6273(02)00679-7
+URL: https://doi.org/10.1016/s0896-6273(02)00679-7
+Categories: compartmental-modeling, cable-theory, dendritic-computation
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: Download failed (Cloudflare-gated Cell Press PDF)
+* **Published**: 2002-04-25 (Neuron, Vol. 34, Issue 3, pp. 341-347)
+* **Authors**: Dmitri B. Chklovskii (Cold Spring Harbor Laboratory), Thomas Schikorski (Salk
+  Institute / HHMI), Charles F. Stevens (Salk Institute / HHMI)
+* **Venue**: Neuron (journal)
+* **DOI**: 10.1016/s0896-6273(02)00679-7
+
+#### Abstract
+
+Wiring a brain presents a formidable problem because neural circuits require an enormous number of
+fast and durable connections. We propose that evolution was likely to have optimized neural circuits
+to minimize conduction delays in axons, passive cable attenuation in dendrites, and the length of
+&quot;wire&quot; used to construct circuits, and to have maximized the density of synapses. Here we ask the
+question: &quot;What fraction of the volume should be taken up by axons and dendrites (i.e., wire) when
+these variables are at their optimal values?&quot; The biophysical properties of axons and dendrites
+dictate that wire should occupy 3/5 of the volume in an optimally wired gray matter. We measured the
+fraction of the volume occupied by each cellular component and found that the volume of wire is
+close to the predicted optimal value.
+
+#### Overview
+
+This summary is based on the abstract, the OpenAlex / CrossRef metadata, and the secondary
+neuroscience literature that cites this paper extensively; the full paper PDF could not be
+downloaded because the Cell Press copy is gated by Cloudflare and there is no open-access mirror
+listed in OpenAlex / Unpaywall outside the same Cloudflare-protected URL. As a result, the
+quantitative details below are taken from the paper&#x27;s abstract and from how the paper is summarised
+in downstream reviews (Chklovskii and Koulakov 2004; Cuntz et al. 2010; Budd and Kisvarday 2012);
+when a number is not derivable from those sources we mark it as &quot;Not reported in the paper / not
+available in this summary.&quot;
+
+The paper formalises the long-standing intuition (going back to Cajal) that cortical circuits are
+under selection pressure to minimise the cost of &quot;wire&quot; - the total length of axons and dendrites
+needed to realise a given pattern of synaptic connectivity. The authors argue that there are three
+biophysical penalties that grow with wire dimensions: (i) conduction delays grow with axon length
+and shrink with axon diameter, (ii) passive cable attenuation along dendrites grows with dendrite
+length and shrinks with dendrite diameter, and (iii) the total volume occupied by wire competes with
+the volume needed for synapses, somata, glia, and extracellular space. They formulate cortical gray
+matter as an optimisation problem in which one maximises synapse density subject to upper bounds on
+conduction delay and dendritic attenuation, treating axon and dendrite radii as the free parameters.
+
+The headline analytical result is a parameter-free prediction: at the optimum, axons plus dendrites
+together should fill exactly 3/5 (60%) of the gray-matter volume. This prediction does not depend on
+the absolute values of the conductance, capacitance, or any species-specific anatomical constants -
+those cancel in the optimality condition, leaving a pure geometric fraction. The authors then use
+serial-section electron microscopy reconstructions of mouse hippocampal area CA1 neuropil and report
+that the measured wire volume fraction is in close agreement with the 3/5 prediction. The
+combination of an a-priori, parameter-free theoretical prediction with an independent anatomical
+measurement is what makes the paper a foundational citation for the &quot;wiring-economy&quot; research
+programme.
+
+For our project, the practical takeaway is that biological cortical morphology behaves as if it has
+been multi-objective optimised under a &quot;minimise total wire / volume cost&quot; pressure, in addition to
+functional pressures (tuning, signalling, plasticity). This provides direct biological justification
+for adding a cytoplasm-volume / wire-cost objective alongside functional objectives (such as
+direction-selectivity index, EPSP fidelity, energy use) when running multi-objective morphology
+optimisation on DSGCs.
+
+#### Architecture, Models and Methods
+
+Full methodology not available - paper not downloaded. The following description summarises the
+methodology as it is reported in the abstract and described in standard neuroscience textbook
+references that cite this paper (Chklovskii and Koulakov 2004 Annu. Rev. Neurosci., Cuntz et al.
+2010 PLOS Comp. Bio., Budd and Kisvarday 2012 Front. Neuroanat.).
+
+The paper combines a continuum theoretical argument with an electron-microscopy measurement.
+
+Theoretical formulation. Cortical gray matter is modelled as a fixed volume containing four disjoint
+compartments - axons, dendrites, synapses (boutons + spines + cleft), and &quot;other&quot; (somata, glia,
+extracellular space, vasculature). The authors define wire length per unit volume, synapse density
+per unit volume, axon radius `r_a`, and dendrite radius `r_d` as the macroscopic variables. They
+impose two biophysical constraints: (i) a maximum conduction delay along an axon of length `L`,
+which scales as `L / r_a^(1/2)` for a passive non-myelinated fibre, and (ii) a maximum passive
+attenuation of voltage along a dendrite of length `L`, which scales as `L / r_d^(1/2)` via the
+passive cable space constant. Synapse density is taken to be approximately a constant per unit
+length of axon-dendrite contact, so total synapse number scales with the product of axon and
+dendrite length densities. Maximising synapse number subject to the delay and attenuation
+constraints, with the total volume held fixed, gives a Lagrangian problem whose optimum is a fixed
+volume fraction for axons + dendrites combined. The algebra reduces, at the optimum, to the
+parameter-free fraction 3/5.
+
+Empirical measurement. The authors use serial-section transmission electron microscopy (ssTEM) of
+mouse hippocampal CA1 stratum radiatum, the same dataset region used by Schikorski and Stevens for
+quantitative synapse anatomy. Each pixel of each section is assigned to one of axon, dendrite,
+spine, bouton, glia, or extracellular space, and volumes are summed. The measured axon + dendrite
+fraction is compared with the predicted 3/5. The exact reported fraction (and its standard error) is
+not available in this summary; downstream reviews cite the agreement as &quot;close to 60%&quot; but the
+precise number must be read from the paper itself.
+
+The reported analysis treats axons as approximately uniform thin non-myelinated cables, ignoring the
+special case of long-range myelinated axons. No simulations of action-potential propagation, no
+compartmental modelling, and no learning algorithms are involved - the paper is a theoretical plus
+anatomical study.
+
+#### Results
+
+* The optimal volume fraction occupied by axons + dendrites combined in cortical gray matter is
+  predicted to be exactly **3/5 (60%)** under the joint constraints of bounded axonal conduction
+  delay and bounded passive dendritic attenuation
+* The 3/5 prediction is **parameter-free**: it does not depend on absolute values of axial
+  resistance, membrane capacitance, or species-specific anatomical scales, since these cancel in the
+  optimality condition
+* The measured volume fraction in **mouse hippocampal CA1** neuropil is reported as being close to
+  the predicted 3/5 (exact percentage not available in this summary; the paper itself must be
+  consulted for the precise value and uncertainty)
+* The optimal **axon-to-dendrite radius ratio** is derived from the same theory; the paper reports
+  that the optimum lies in a specific range (exact value not available in this summary)
+* The wiring-optimisation framework predicts that **synapse density is maximised** when axon plus
+  dendrite radii are co-tuned, providing a quantitative link between biophysics (delay and
+  attenuation) and connectivity density
+
+(Specific numerical values for axon and dendrite radii, the measured wire fraction error bar, and
+the per-component volume breakdown are not reproduced here because the full paper could not be
+downloaded; future readers should consult the original PDF for exact figures.)
+
+#### Innovations
+
+##### Parameter-Free Volume-Fraction Prediction
+
+The paper&#x27;s headline contribution is a quantitative, parameter-free prediction (3/5 wire volume
+fraction) for an optimally wired cortex. Earlier wiring-economy arguments (Cajal&#x27;s law of economy of
+cytoplasm; Cherniak 1992; Chklovskii and Stevens 2000) were qualitative or relied on
+species-specific calibrations. The 3/5 result is a rare example in neuroanatomy of a numerical
+biological prediction that follows from optimisation principles alone, with no fitted parameters.
+
+##### Joint Treatment of Conduction Delay and Cable Attenuation
+
+The paper is the first to treat axonal conduction delay and dendritic passive attenuation as
+co-equal constraints in a single optimisation problem and to derive an optimum that depends on both.
+Earlier treatments either minimised wire length alone (Cajal; Mitchison 1991) or considered delay
+alone. The joint treatment is what allows the parameter-free fraction to emerge.
+
+##### Quantitative Anatomy Confronting Theory
+
+By comparing the prediction directly with serial EM data from mouse CA1, the paper sets a template
+for &quot;predict-then-measure&quot; wiring-economy studies that influenced later work (Wen and Chklovskii
+2008; Cuntz et al. 2010; Budd and Kisvarday 2012). This is methodologically novel for cortical
+neuroanatomy, which historically had been dominated by descriptive measurement.
+
+#### Datasets
+
+The paper uses serial-section transmission electron microscopy (ssTEM) reconstructions of mouse
+hippocampal CA1 stratum radiatum neuropil for the empirical measurement of volume fractions. The
+data come from the Schikorski and Stevens line of quantitative ultrastructure studies. The exact
+volume sampled, number of sections, and per-component pixel counts are not available in this summary
+\- they must be read from the paper itself or its Methods section. No additional datasets
+(behavioural, electrophysiological, or computational) are used.
+
+#### Main Ideas
+
+* Cortical gray matter is well-modelled as the result of a multi-objective optimisation that trades
+  wire-volume cost against conduction delay and dendritic attenuation - this is a biologically
+  grounded reason to include cytoplasm volume / wire cost as an objective in our multi-objective
+  DSGC optimisation
+* The 3/5 predicted volume fraction, and its empirical confirmation in mouse cortex, justifies
+  treating the wiring-economy objective as a quantitative selection pressure rather than a soft
+  preference; deviations from this fraction are biologically meaningful
+* Conduction delay (axon length / radius scaling) and passive cable attenuation (dendrite length /
+  radius scaling) are the two constraints that combine with wire-volume cost to produce realistic
+  cortical morphology; in a DSGC compartmental model, the corresponding analogues are
+  axonal-spike-timing-jitter and dendritic-EPSP-attenuation, and these should appear as objectives
+  or constraints when we extend t0097&#x27;s catalogue
+* The paper, together with Cuntz 2010, anchors the &quot;minimise total cytoplasm volume&quot; recipe for the
+  wiring-cost objective in t0097&#x27;s multi-objective DSGC catalogue; we should cite both as the
+  primary biophysical justification
+
+#### Summary
+
+Chklovskii, Schikorski, and Stevens (2002) ask why cortical gray matter has the cellular composition
+that it does. Earlier work in the wiring-economy tradition (Cajal; Cherniak; Mitchison; Chklovskii
+and Stevens 2000) had argued qualitatively that wire length is minimised under selection pressure,
+but these arguments did not predict any quantitative property of cortical anatomy that could be
+falsified by direct measurement. The paper closes this gap by recasting the problem as a constrained
+optimisation: maximise synapse density subject to bounded axonal conduction delay and bounded
+passive dendritic attenuation, with axon and dendrite radii as the free variables.
+
+The methodological contribution is a parameter-free derivation. After applying the standard cable
+scalings (delay proportional to length over root radius; space constant proportional to root
+radius), the species-specific membrane and axial constants cancel in the optimum, leaving a pure
+geometric prediction: axons plus dendrites should fill exactly 3/5 of the gray-matter volume at the
+optimum. The authors then test this with serial-section electron microscopy of mouse hippocampal CA1
+neuropil, measuring the volume fraction occupied by each cellular component, and report agreement
+with the 3/5 prediction.
+
+The headline finding is therefore a quantitative confirmation of the wiring-economy principle as a
+real biological selection pressure operating on cortical morphology, not merely a qualitative
+heuristic. This is one of the most cited results in computational neuroanatomy because it
+demonstrates that an optimisation principle, applied with explicit biophysical constraints, can
+predict an a-priori property of a real cortical tissue volume to within experimental error. Later
+work has extended the framework to dendritic branching morphology (Cuntz et al. 2010), to cortical
+GABAergic interneurons (Budd and Kisvarday 2012), and to whole-brain connectomes.
+
+For the t0097 multi-objective DSGC optimisation catalogue, this paper provides the foundational
+biological justification for adding a cytoplasm-volume / wiring-cost objective alongside functional
+DSGC objectives (direction-selectivity index, EPSP fidelity, robustness). The 3/5 result tells us
+that real cortical neurons sit close to a wiring optimum, so a DSGC morphology that drifts very far
+from the natural cytoplasm volume in our optimisation is biologically suspect even if it yields a
+high DSI. Together with Cuntz et al. (2010), this paper anchors the &quot;minimise total cytoplasm
+volume&quot; recipe that the catalogue should adopt; deviations from the optimal volume can be reported
+as a quantitative biological-plausibility metric. The main caveat for our use is that the original
+Chklovskii et al. analysis is for cortical gray matter, not retinal inner plexiform layer, so the
+exact 3/5 fraction may not transfer numerically to DSGC dendritic arbours - but the underlying
+recipe (wire cost + delay + attenuation) is general and is what we should adopt.
+
+## An Energy Budget for Signaling in the Grey Matter of the Brain
+ID: 10.1097_00004647-200110000-00001
+Year: 2001
+Authors: David Attwell, Simon B. Laughlin
+Venue: Journal of Cerebral Blood Flow &amp; Metabolism
+Venue type: journal
+DOI: 10.1097/00004647-200110000-00001
+URL: https://journals.sagepub.com/doi/10.1097/00004647-200110000-00001
+Categories: voltage-gated-channels, synaptic-integration
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/attwell_2001_energy-budget-brain.pdf`
+* **Published**: 2001-10-01
+* **Authors**: David Attwell 🇬🇧, Simon B. Laughlin 🇬🇧
+* **Venue**: Journal of Cerebral Blood Flow &amp; Metabolism, 21(10), 1133-1145
+* **DOI**: `10.1097/00004647-200110000-00001`
+
+#### Abstract
+
+Anatomic and physiologic data are used to analyze the energy expenditure on different components of
+excitatory signaling in the grey matter of rodent brain. Action potentials and postsynaptic effects
+of glutamate are predicted to consume much of the energy (47% and 34%, respectively), with the
+resting potential consuming a smaller amount (13%), and glutamate recycling using only 3%. Energy
+usage depends strongly on action potential rate—an increase in activity of 1 action
+potential/cortical neuron/s will raise oxygen consumption by 145 mL/100 g grey matter/h. The energy
+expended on signaling is a large fraction of the total energy used by the brain; this favors the use
+of energy efficient neural codes and wiring patterns. Our estimates of energy usage predict the use
+of distributed codes, with ≤15% of neurons simultaneously active, to reduce energy consumption and
+allow greater computing power from a fixed number of neurons. Functional magnetic resonance imaging
+signals are likely to be dominated by changes in energy usage associated with synaptic currents and
+action potential propagation.
+
+#### Overview
+
+Attwell and Laughlin construct the first detailed bottom-up energy budget for excitatory signaling
+in mammalian grey matter. Starting from the biophysics of single ion channels, single synaptic
+vesicles, and single action potentials, they enumerate every step of glutamatergic signaling
+(presynaptic Ca2+ entry, vesicle release and recycling, postsynaptic AMPA/NMDA/metabotropic
+currents, glutamate uptake into astrocytes, glutamine cycling) and convert each event to an ATP cost
+via the Na+/K+ ATPase stoichiometry of 3 Na+ extruded per ATP hydrolyzed. They then aggregate these
+per-event costs to a per-neuron-per-second consumption at a typical 4 Hz mean firing rate and scale
+to the rodent neocortical density of 9.2 × 10^7 neurons/cm^3.
+
+The headline result is a quantitative hierarchy: action potentials and postsynaptic glutamate
+currents jointly account for 81% of signaling energy, resting potentials another 13%, while
+presynaptic Ca2+, glutamate recycling, vesicle cycling, and metabotropic spine signaling are minor.
+The predicted whole-tissue specific consumption (30 µmol ATP/g/min for signaling, 40 µmol
+ATP/g/min total) sits inside the experimentally measured range of 33–50 µmol ATP/g/min for rat
+neocortex, validating the budget end-to-end. The paper also derives a simple linear scaling rule —
+1 spike/neuron/s ≈ 6.5 µmol ATP/g/min ≈ 145 mL O2/100 g/h — that has since become the
+standard reference for relating spike rate to fMRI BOLD signals and to constraint-based
+information-coding arguments. A coding-theory section uses the budget to argue that distributed
+sparse codes with ≤15% of neurons active are energetically optimal.
+
+#### Architecture, Models and Methods
+
+The paper is a quantitative biophysical model rather than an experiment. The Materials and Methods
+section derives every cost from first principles. The core conversion is Eq. 9: when an action
+potential or synaptic event injects a Na+ load, the Na+/K+ pump must hydrolyze approximately **(Na+
+load) / 3** ATP molecules to restore the gradient (the factor 3 comes from the 3-Na+-per-ATP pump
+stoichiometry); deviations from this approximation are quantified at 3–11% depending on gNa/gK and
+pump kinetics (Hill coefficient 3, EC50 = 20 mmol/L for [Na+]i).
+
+For glutamatergic synapses (37 °C, Q10 = 3 for kinetics, Q10 = 1.3 for conductances), each vesicle
+contains 4,000 glutamate molecules. Postsynaptic non-NMDA channels deliver an average of 200,000 Na+
+per vesicle (weighted across cerebellar mossy fiber, hippocampal Schaffer, and neocortical synapses,
+with channel conductance 11.6–13.3 pS, open time 0.6–1.4 ms, and 2/3 of current carried by Na+
+at VNa−V = 120 mV). NMDA channels add charge transfer at NMDA:non-NMDA ratios of 0.15–2.0 (50
+pS, 50 ms open time, with Mg2+ block reducing current by ~40%). Recycling each vesicle of glutamate
+uses 2.67 ATP per glutamate (1 ATP for Na+/K+ pumping after the 3-Na+/1-H+/1-K+ co-transporter, 0.33
+ATP for the H+ exchanger, 1 ATP for glutamine conversion, 0.33 ATP for vesicular H+-ATPase loading).
+
+For action potentials, the Na+ entry per spike is computed from the membrane area and capacitance of
+a &quot;typical&quot; rodent cortical neuron: total membrane area 1.49 × 10^5 µm^2 distributed across soma,
+dendrites, and axon collaterals, capacitance 1 µF/cm^2, AP amplitude 100 mV. This yields **1.15 ×
+10^9 Na+ ions per AP**, requiring **3.84 × 10^8 ATP per AP**. The model assumes Na/K overlap such
+that 4× the minimum capacitive charge is needed (factor between minimal and actual ion entry).
+Resting-potential maintenance (3.42 × 10^8 ATP/s/neuron, 1.02 × 10^8 ATP/s/glia) is computed from
+input resistance, Vrest, and Vrev via Eqs. 2–4. Scaling to whole tissue uses 9.2 × 10^7
+neurons/cm^3 in rodent neocortex, 1:1 glia:neuron ratio, 8,000 boutons per neuron, and release
+probability 0.25 at 4 Hz.
+
+#### Results
+
+* Per action potential, **3.84 × 10^8 ATP** are consumed (Na+ load 1.15 × 10^9 ions); axon
+  collaterals dominate at **82%**, dendrites take **14%**, soma only **4%**.
+* Per glutamate vesicle, **1.64 × 10^5 ATP** total: postsynaptic ion fluxes **84%** (137,000 ATP),
+  presynaptic Ca2+ entry **7%** (12,000 ATP), glutamate recycling **7%** (11,000 ATP), metabotropic
+  spine signaling **2%**, vesicle cycling **0.5%**.
+* Total ATP per neuron per spike (AP + 2,000 released vesicles) = **7.1 × 10^8 ATP/spike**.
+* Resting-potential maintenance: **3.42 × 10^8 ATP/s** per neuron and **1.02 × 10^8 ATP/s** per
+  glial cell, summing to **4.44 × 10^8 ATP/s** per neuron-plus-glia unit.
+* At 4 Hz mean firing, total per neuron is **3.29 × 10^9 ATP/s**; signaling-related fraction splits
+  47% APs, 34% postsynaptic, 13% resting, 3% presynaptic Ca2+, 3% glutamate recycling.
+* Scaling rule: **1 spike/neuron/s = 6.5 µmol ATP/g/min** = **21 µmol glucose/100 g/min** = **145
+  mL O2/100 g/h** of additional consumption.
+* Tissue-level specific consumption predicted at **30 µmol ATP/g/min** for signaling (40 with
+  housekeeping), inside the rat-cortex measured range of **33–50 µmol ATP/g/min**.
+* Mitochondrial distribution from Wong-Riley (1989) — 62% dendrites, 36% axons/terminals, 2% glia
+  — matches the predicted energy distribution of 53% / 42% / 5%.
+* In primate cortex, the lower neuron density (3–10× lower with unchanged synapse density) is
+  predicted to increase postsynaptic share from 34% to 74% and reduce specific consumption by
+  **54%**, matching the observed 54% lower metabolic rate in monkey vs rat neocortex.
+* Optimal sparse-coding fraction at 4 Hz is **15% of neurons simultaneously active**, decreasing
+  toward higher firing rates; distributed coding gives **4× to 200×** energy savings vs
+  grandmother cells when encoding 100 to 10,000 conditions.
+
+#### Innovations
+
+##### Bottom-Up Per-Event ATP Accounting
+
+The first complete energy budget that decomposes brain metabolism into single elementary events (one
+AP, one vesicle, one ion). All previous estimates relied on top-down measurement (whole-brain
+glucose or O2 consumption); Attwell and Laughlin showed that summing biophysically computed
+per-event costs reproduces the measured tissue-level consumption to within 25%. This established the
+methodology for every subsequent neural-energy paper (Lennie 2003, Howarth 2012, Harris 2012, Niven
+2008).
+
+##### The 1/3 ATP-per-Na+ Conversion Factor
+
+Eq. 9 derives that, to within 3–11%, the ATP cost of any signaling event equals the Na+ load
+divided by 3 (the Na+/K+ pump stoichiometry). This reduces an arbitrary biophysical event to a
+single quantity: the integrated Na+ influx. For modellers, this is the canonical recipe for adding
+an &quot;energy&quot; objective to any compartmental simulation.
+
+##### Action-Potential Energy Reassessment
+
+Earlier estimates from heat production (Creutzfeldt 1975) put AP cost at 0.3–3% of brain energy.
+Attwell and Laughlin&#x27;s biophysical analysis raised this to **47%**, a factor of 15× higher. This
+correction has been validated by direct mitochondrial-distribution measurements and has been
+foundational for arguments that ion-channel kinetics (Hodgkin&#x27;s 4× safety factor for Na/K overlap)
+were under selection pressure for energy efficiency.
+
+##### Cell-Density Argument for Primate Brain Scaling
+
+The paper showed that simply changing neuron density at fixed synapse density — with no other
+parameter changes — predicts a 54% reduction in primate cortical metabolic rate, matching
+measurement. This established that tissue energy budgets can be scaled across species with a small
+set of anatomical parameters.
+
+##### Energy-Optimal Sparse Coding Prediction
+
+Using the relative cost of resting versus active neurons, the paper derives that 15% sparse codes
+are energetically optimal at 4 Hz, increasing to &lt;5% at 40 Hz. This is one of the earliest
+quantitative arguments that brain energy constraints select for distributed/sparse representations,
+later confirmed for sensory cortex.
+
+#### Datasets
+
+This is a theoretical / model-based paper; no datasets were used in the experimental sense. The
+authors aggregate published anatomic and physiologic measurements from the literature (rodent
+neocortex synaptic density, neuron density, mitochondrial distribution from Wong-Riley 1989,
+synaptic conductance values from Silver et al. 1992/1996, Spruston et al. 1995, Markram et al. 1997,
+Hestrin 1993; release probability from Markram et al. 1997, Hardingham and Larkman 1998, Silver et
+al. 1998; release statistics from Riveros et al. 1986; Q10 and other kinetic data from Hodgkin and
+Huxley and successors). All input values and references are tabulated in Materials and Methods. The
+70-reference list is the implicit &quot;data source&quot; for the budget.
+
+#### Main Ideas
+
+* **ATP per AP via Na+ load / 3**: For the t0097 catalogue&#x27;s energy objective, the canonical recipe
+  is to integrate Na+ influx through every voltage-gated Na channel and Na-permeable synaptic
+  channel during a simulation, divide by 3, and report the result in ATP molecules. This is exactly
+  what NEURON makes available via the `ina` recording variable per-section, summed over time and
+  compartments.
+* **AP cost dominates over postsynaptic cost for sparse-spiking cells**: Attwell-Laughlin compute
+  that AP propagation accounts for 47% of signaling energy at 4 Hz, with 82% of that going to axon
+  collaterals. For a single-cell DSGC simulation that does not include axonal arborization, only the
+  somatic + dendritic portion (4% + 14% = 18% of total AP cost in the budget) is internally
+  computable; the remaining 82% must be either ignored or estimated via spike count.
+* **Resting potential cost is non-negligible (13%)**: A pure spike-counting energy proxy
+  underestimates total cost during quiescent periods. For DSGC null-direction trials with suppressed
+  firing, the resting cost still consumes substantial ATP — making &quot;minimize energy at null
+  direction&quot; a more nuanced objective than just &quot;minimize spike count&quot;.
+* **Per-vesicle synaptic cost (1.64 × 10^5 ATP) scales linearly with non-NMDA conductance**: The
+  84% of synaptic energy that goes to postsynaptic Na+ entry through AMPA/NMDA channels means that,
+  for the project&#x27;s AMPA/GABA input density sweeps, energy cost is approximately proportional to
+  AMPA conductance × number of activated synapses. GABA cost is much smaller (Cl- moves down a
+  smaller electrochemical gradient).
+* **The 1 spike/neuron/s ↔ 145 mL O2/100 g/h scaling rule** is the standard external reference for
+  any per-spike energy cost the project reports. Any DSGC simulation that reports an energy
+  objective should also report it normalized to &quot;ATP per spike&quot; or &quot;ATP equivalent per simulated
+  trial&quot; so it can be compared to the Attwell-Laughlin reference value of 7.1 × 10^8 ATP/spike.
+
+#### Summary
+
+Attwell and Laughlin (2001) ask a single quantitative question: how much ATP does each elementary
+neuronal signaling event cost, and do these per-event costs sum to the experimentally measured total
+energy consumption of brain grey matter? The motivation is that, prior to 2001, neural energy
+estimates were either top-down (whole-brain glucose/oxygen consumption with no decomposition) or
+based on heat production from single-cell preparations, which severely underestimated AP cost. The
+authors aim to construct a biophysically grounded, mechanism-by-mechanism budget that reconciles
+micro-scale measurements with whole-tissue metabolism.
+
+The methodology is bottom-up biophysical accounting. They derive a clean scaling result — the ATP
+cost of any signaling event equals (Na+ load entering) / 3, set by the Na+/K+ pump stoichiometry —
+and apply it to every step of glutamatergic transmission and AP propagation. Inputs are taken from
+published patch-clamp, electron-microscopy, and biochemistry literature for rodent neocortex:
+synaptic conductance, channel open time, vesicle glutamate content, release probability,
+neuron/synapse density, membrane area. The model is intentionally simplified (all neurons treated as
+glutamatergic; &quot;typical&quot; cell geometry) so that the dominant contributions can be identified
+robustly.
+
+The headline finding is that signaling consumes 75% of grey-matter energy, with action potentials
+(47%) and postsynaptic glutamate currents (34%) dominating. The predicted specific consumption of 30
+µmol ATP/g/min for signaling, plus 10 µmol/g/min for housekeeping, falls within the measured range
+of 33–50 µmol/g/min, validating the budget. The paper also delivers two derived quantities that
+have become standard tools: the 1-spike-per-neuron-per-second ≈ 6.5 µmol ATP/g/min scaling rule
+(used to convert spike rates to fMRI BOLD predictions) and the 7.1 × 10^8 ATP-per-spike per-neuron
+cost. A coding-theory analysis predicts that 15% sparse codes are energetically optimal at
+biological firing rates.
+
+For the t0097 multi-objective optimization catalogue, this paper is the foundational citation for
+the metabolic-energy objective category. It establishes the &quot;ATP via Na+ load / 3&quot; recipe that maps
+any compartmental simulation&#x27;s integrated Na+ flux to a quantitative ATP cost, gives the per-event
+reference values (3.84 × 10^8 ATP per AP, 1.64 × 10^5 ATP per vesicle, 3.42 × 10^8 ATP/s per
+resting neuron) needed to validate any future DSGC energy-objective implementation, and provides the
+empirical benchmark (7.1 × 10^8 ATP per spike per neuron) against which simulated energy costs can
+be sanity-checked. The single-cell, single-event biophysical formulation is directly compatible with
+the project&#x27;s NEURON pipeline, which already records `ina` per-section and per-time-step, so adding
+a &quot;minimize ATP per simulated trial&quot; objective to the existing NSGA-II loop is a small extension
+rather than an infrastructure rewrite.
+
+## Entropy and Information in Neural Spike Trains
+ID: 10.1103_PhysRevLett.80.197
+Year: 1998
+Authors: Steven P. Strong, Roland Koberle, Rob R. de Ruyter van Steveninck, William Bialek
+Venue: Physical Review Letters
+Venue type: journal
+DOI: 10.1103/PhysRevLett.80.197
+URL: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.80.197
+Added by task: t0097_multi_obj_optim
+Date added: 2026-05-08
+
+#### Metadata
+
+* **File**: `files/strong_1998_entropy-spike-trains.pdf`
+* **Published**: 1998
+* **Authors**: Steven P. Strong 🇺🇸, Roland Koberle 🇺🇸, Rob R. de Ruyter van Steveninck 🇺🇸, William Bialek 🇺🇸
+* **Venue**: Physical Review Letters (Vol. 80, Issue 1, pp. 197-200)
+* **DOI**: `10.1103/PhysRevLett.80.197`
+
+#### Abstract
+
+The nervous system represents time dependent signals in sequences of discrete action potentials or
+spikes; all spikes are identical so that information is carried only in the spike arrival times. We
+show how to quantify this information, in bits, free from any assumptions about which features of
+the spike train or input signal are most important, and we apply this approach to the analysis of
+experiments on a motion sensitive neuron in the fly visual system. This neuron transmits
+information about the visual stimulus, at rates of up to 90 bits/s, within a factor of two of the
+physical limit set by the entropy of the spike train itself.
+
+#### Overview
+
+This paper introduces what is now known as the &quot;direct method&quot; for estimating the information rate
+that a spike train carries about a time-varying stimulus, without having to assume any particular
+decoding scheme or feature of the spike train. The central insight is that the mutual information
+between stimulus and spike train can be written as the difference between two entropies: the total
+entropy rate `S(Δτ)` of the spike train (across all stimulus conditions) and the noise entropy rate
+`N(Δτ)` measured at fixed stimulus across many repeats. Information rate is then `R_info = S - N`,
+and the efficiency `ε = R_info / S` quantifies how much of the spike train representational
+capacity is actually used to encode the stimulus.
+
+The paper methodological contribution is a practical recipe for computing these entropies despite
+finite recording lengths. The authors discretize the spike train into bins of size `Δτ`, read out
+windows of length `T` as binary &quot;words,&quot; tabulate word frequencies, and then combine three
+techniques to handle undersampling: (a) extrapolation of the naive plug-in entropy `S_naive` to
+infinite data via a `1/size` and `1/size^2` polynomial fit, (b) the Ma lower bound from coincidence
+counting in fixed-spike-count sectors, and (c) extrapolation in window length `T` using the linear
+approach of `S(T)/T` to its asymptote `S(Δτ) + C(Δτ)/T`. The &quot;sampling disaster&quot; — the value of
+`T` at which `S_naive` falls below the Ma lower bound — provides a concrete diagnostic for when
+the naive estimate becomes unreliable.
+
+The authors apply this to spike trains recorded from H1, a wide-field motion-sensitive neuron in
+the fly visual system, while presenting random-walk horizontal motion stimuli. They report a total
+entropy rate of **157 ± 3 bits/s** at `Δτ = 3 ms`, a noise entropy rate that yields an
+information rate of **78 ± 5 bits/s** (or **1.8 ± 0.1 bits/spike**), and roughly **50%
+efficiency** sustained over a 400-fold range of time resolutions (`2 ms ≤ Δτ ≤ 800 ms`).
+Information rates reach up to **90 bits/s** at the finest resolution. The conclusion is that fine
+spike timing — down to millisecond precision — carries genuine stimulus information in a sensory
+neuron four synaptic layers removed from the photoreceptors, and that this can be demonstrated
+*without* a model of the neural code.
+
+#### Architecture, Models and Methods
+
+The method has no learned model; it is an information-theoretic estimator applied to spike trains.
+
+**Word construction.** Spike trains are discretized into bins of size `Δτ` (a binary indicator per
+bin: spike vs no spike). A window of length `T` is read as a binary word of length `T/Δτ`. The
+estimator sweeps `Δτ` from `800 ms` down to `2 ms` (at which point `Δτ` is roughly 5% of the
+typical interspike interval) and `T` over a range up to and beyond the behavioral response time of
+the fly (~30 ms).
+
+**Naive entropy and finite-size correction.** The plug-in estimate `S_naive(T, Δτ; size)` from
+word frequencies `p_i` is biased downward at finite sample size. The authors fit
+`S_naive = S_0 + S_1/size + S_2/size^2` (Eq. 4) using subsamples of the recording at fractions of
+the full data set; the intercept `S_0` is the extrapolation to infinite data. They also enforce the
+upper bound `S(Δτ) ≤ [S(T+Δτ, Δτ) - S(T, Δτ)]/Δτ` from the supra-additivity of the entropy
+(Eq. 8).
+
+**Ma lower bound.** Following Ma (1981), the authors compute a coincidence-based lower bound on the
+entropy that is stratified by spike count `N_sp` (Eq. 6). Within each `N_sp` sector, distributions
+are closer to uniform so the bound is tight. The &quot;crash&quot; of `S_naive` below `S_Ma` at `T ~ 100 ms`
+defines the onset of the sampling disaster and the maximum trustworthy window for the direct
+method.
+
+**Extensivity extrapolation.** For finite-range correlations,
+`S(T, Δτ) = S(Δτ)*T + C(Δτ) + ...`, so plotting `S(T, Δτ)/T` versus `1/T` gives a straight line
+whose intercept is the entropy rate. This linear regime is reached in well-sampled `T` before the
+crash, providing a clean estimate.
+
+**Noise entropy.** For each time `t` relative to the stimulus, the local conditional histogram
+`p_i(t)` is computed across many repeats of the same stimulus, the local naive noise entropy
+`N_naive_local(t, T, Δτ)` is then averaged over `t`, and the same `1/size` and `1/T` extrapolation
+is applied. The information rate is `R_info = S - N`.
+
+**Recording.** Tungsten microelectrode recording from H1 in an immobilized fly viewing a CRT
+oscilloscope at 13.24 cm with a stimulus area of `875 deg^2` covering 3762 photoreceptors. The
+stimulus is vertical bars with random grey levels undergoing a horizontal random walk in `2 ms`
+steps (refresh-locked) with diffusion constant `2.8 deg^2/s`, mean radiance `180 mW/(sr*m^2)`
+(approximately photon rate `5e4 s^-1` per receptor, dusk light level). Many hours of data are
+collected to support the extrapolation. The data set in the H1 example contains roughly `2e5`
+distinct words with significant probability at `T = 100 ms`.
+
+#### Results
+
+* Total spike train entropy rate at `Δτ = 3 ms`: **157 ± 3 bits/s** by extrapolation, in
+  agreement with the upper-bound plateau of **157 ± 4 bits/s** in the range `18 &lt; T &lt; 60 ms`
+  (± 2.7%).
+* Noise entropy rate at `Δτ = 3 ms` yields an information rate of **78 ± 5 bits/s**, or
+  **1.8 ± 0.1 bits/spike**, for the H1 fly motion-sensitive neuron under random-walk stimuli.
+* Across `Δτ` from `800 ms` (~30 spikes per bin) down to `2 ms` (~5% of mean ISI), the entropy
+  rate varies by a factor of ~40, but information rate scales roughly proportionally — the
+  efficiency `ε = R_info / S` is approximately **50%** across this range.
+* Peak information rate (at the finest resolution) reaches **up to ~90 bits/s**, within a factor
+  of two of the physical capacity set by the spike-train entropy itself.
+* Naive vs Ma bound separation is small: `S_naive` and `S_Ma` are within **10-15%** of each other
+  in the well-sampled regime; the &quot;sampling disaster&quot; where `S_naive` crosses below `S_Ma` occurs
+  at `T ~ 100 ms` and identifies the largest trustworthy window for the direct method.
+* Finite-data corrections to `S_naive` at `T = 30 ms` and `Δτ = 3 ms` are tiny (**&lt; 1e-3**) and
+  well-described by the `1/size` + `1/size^2` form (Eq. 4).
+* Application to monkey V1 motion-sensitive cell data (Britten et al. 1993, via Bair &amp; Koch 1996)
+  yields **~2 bits/spike** at `Δτ = 5 ms` from just **3 minutes** of recording, demonstrating that
+  the direct method is feasible on mammalian central neurons with much smaller datasets than the
+  H1 baseline required.
+
+#### Innovations
+
+##### Direct (Model-Free) Estimation of Stimulus Information
+
+The paper primary innovation is showing that the mutual information between a stimulus and a
+spike train can be measured directly as `R_info = S(spike train) - N(spike train | stimulus)`, with
+no assumption about which features of the spike train matter (rate, timing, bursts, etc.) and no
+decoding model. This is the canonical &quot;direct method&quot; cited throughout subsequent
+neuroscience-information-theory work and provides a model-independent yes/no answer to the question
+&quot;does spike timing carry information?&quot;
+
+##### Practical Recipe for Finite-Data Entropy Estimation
+
+The combination of (a) `1/size` + `1/size^2` extrapolation to infinite data, (b) Ma
+coincidence-based lower bound stratified by spike count, and (c) `1/T` linear extrapolation in
+window size is a self-checking pipeline. The crossover where `S_naive` drops below `S_Ma` provides
+a hard diagnostic for when the estimator becomes unreliable, removing guesswork from finite-data
+information measurements.
+
+##### Demonstration That Spike Timing Is Used
+
+By measuring efficiency at progressively finer `Δτ` and showing it stays near **50%** down to
+`Δτ = 2 ms`, the paper provides what was at the time the first model-free demonstration that
+millisecond-precision spike timing carries genuine stimulus information in a real sensory neuron
+several synapses deep into the visual system.
+
+#### Datasets
+
+This is a methodological paper; no public datasets are released. The empirical analysis uses custom
+electrophysiological recordings from H1, a single wide-field motion-sensitive neuron in the lobula
+plate of the blowfly visual system, recorded in the lab of de Ruyter van Steveninck and Bialek.
+Stimulus protocol: a fixed vertical-stripe pattern undergoing a horizontal random walk at `2 ms`
+time steps with diffusion constant `2.8 deg^2/s`, presented on a CRT oscilloscope to an immobilized
+fly. Recording duration: many hours of repeated and unrepeated trials, supporting the `~2e5`
+distinct word histogram at `T = 100 ms`. A secondary, much smaller dataset (roughly 3 minutes) from
+a monkey V1 motion-sensitive cell (Britten, Shadlen, Newsome, Movshon 1993; via Bair &amp; Koch 1996)
+is reanalyzed to demonstrate the method feasibility on mammalian central neurons.
+
+#### Main Ideas
+
+* **Information rate as a difference of entropies.** For any neuron, mutual information between
+  stimulus and spike train can be computed as `S - N` where `S` is the entropy rate of the spike
+  train across all stimuli and `N` is the noise entropy rate at fixed stimulus measured across
+  repeats. This is the practical recipe to compute the **information transmission rate (ITR)**
+  objective in the t0097 multi-objective catalogue without committing to a specific neural code.
+* **Repeats are mandatory.** The noise entropy `N(Δτ)` requires many presentations of the *same*
+  stimulus. For the t0097 catalogue ITR objective on a DSGC model, this means the simulation
+  protocol must produce many repeated runs at the same wave angle/parameters with stochastic
+  synaptic input or noise, not just a single deterministic trial.
+* **Finite-data corrections matter.** Use the Strong et al. extrapolation
+  (`S_0 + S_1/size + S_2/size^2`) and the Ma lower bound as a sanity check. The point at which
+  `S_naive` falls below `S_Ma` defines the largest window `T` you can trust; do not extrapolate
+  past it.
+* **Time-resolution sweep.** Compute information at a range of `Δτ` from coarse (rate-coded) to
+  fine (5% of mean ISI or smaller) and report efficiency `ε = R_info / S`. A flat efficiency
+  curve across `Δτ` is the model-free signature that fine timing is being used.
+* **Achievable rates.** A real central sensory neuron achieves **~50% efficiency** and
+  **~1.8 bits/spike**. Use these as ballpark sanity checks for ITR values produced by simulated
+  DSGC spike trains in t0097.
+
+#### Summary
+
+Strong, Koberle, de Ruyter van Steveninck, and Bialek address a foundational question in sensory
+neuroscience: how much information about a time-varying stimulus does a single neuron spike train
+actually transmit, and in particular, does the precise timing of spikes (down to millisecond
+resolution) contribute, or is the relevant variable just the firing rate? The paper scope is
+deliberately model-free — it refuses to assume any particular decoding scheme or hypothesized
+feature of the code (rate, ISI, bursts, latency) — and instead grounds the measurement in
+Shannon mutual information.
+
+The core methodology is the &quot;direct method.&quot; The spike train is discretized at resolution `Δτ`,
+windowed into binary words of length `T`, and the empirical word distribution gives a naive plug-in
+entropy. Three innovations make this practical at finite sample sizes: a polynomial extrapolation
+`S_0 + S_1/size + S_2/size^2` to infinite data, the Ma coincidence-based lower bound stratified by
+spike count, and a linear extrapolation of `S(T)/T` versus `1/T` to recover the entropy rate.
+Information rate is then the difference of total spike-train entropy and noise entropy
+`R_info = S - N`, where the noise entropy is computed from many repeats of the same stimulus. The
+crossover where the naive estimate drops below the Ma bound provides a hard diagnostic for when
+sampling becomes unreliable.
+
+Applied to H1 in the fly visual system under random-walk motion stimuli, the method yields
+`S = 157 ± 3 bits/s` and `R_info = 78 ± 5 bits/s` at `Δτ = 3 ms`, equivalent to
+**1.8 ± 0.1 bits/spike** and roughly **50% efficiency**. Information rates reach **~90 bits/s**
+at the finest resolution. Across a 400-fold sweep of time resolutions (`2 ms ≤ Δτ ≤ 800 ms`),
+efficiency stays approximately constant — the model-free signature that fine spike timing is
+genuinely encoding information. A reanalysis of monkey V1 data shows that the method works on
+mammalian central neurons with as little as 3 minutes of recording.
+
+For the t0097 multi-objective optimization task, this paper is the foundational citation underlying
+the information-theoretic objective category. It supplies the concrete computational recipe —
+discretize into binary words, count word frequencies, extrapolate to infinite data, subtract noise
+entropy estimated across repeats — for computing the **information transmission rate (ITR)** of a
+simulated DSGC spike train. The practical implications are: (i) the simulation protocol must
+support many repeated trials at fixed stimulus to estimate `N(Δτ)`; (ii) ITR should be reported
+across a sweep of `Δτ` so the efficiency curve can be inspected; (iii) the Ma lower bound and the
+`1/size`-extrapolation are essential sanity checks that should be implemented alongside the naive
+estimator; and (iv) a target efficiency in the 30-50% range with information per spike of order
+1-2 bits/spike is a reasonable biological sanity-check range for the optimised DSGC model.
 
 ## Retinal waves shape starburst amacrine cell dendrite development through a direction-selective dendritic computation
 ID: 10.64898_2026.02.02.701812

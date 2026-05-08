@@ -4,14 +4,14 @@ Mathematical framework describing voltage spread in passive and active cables.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (10)](../papers/by-category/cable-theory.md) | [Answers
+**Detail pages**: [Papers (11)](../papers/by-category/cable-theory.md) | [Answers
 (3)](../answers/by-category/cable-theory.md) | [Suggestions
 (29)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
 
-## Papers (10)
+## Papers (11)
 
 <details>
 <summary>📖 <strong>Non-uniform weighting of local motion inputs underlies dendritic
@@ -336,6 +336,63 @@ complex retinal DS model must improve upon.
 </details>
 
 <details>
+<summary>📖 <strong>Wiring Optimization in Cortical Circuits</strong> — Chklovskii
+et al., 2002</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `no-doi_Chklovskii2002_wiring-optimization-cortical` |
+| **Authors** | Dmitri B. Chklovskii, Thomas Schikorski, Charles F. Stevens |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/s0896-6273(02)00679-7` |
+| **URL** | https://doi.org/10.1016/s0896-6273(02)00679-7 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`cable-theory`](../../meta/categories/cable-theory/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0097_multi_obj_optim`](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0097_multi_obj_optim/assets/paper/no-doi_Chklovskii2002_wiring-optimization-cortical/summary.md) |
+
+Chklovskii, Schikorski, and Stevens (2002) ask why cortical gray matter has the cellular
+composition that it does. Earlier work in the wiring-economy tradition (Cajal; Cherniak;
+Mitchison; Chklovskii and Stevens 2000) had argued qualitatively that wire length is minimised
+under selection pressure, but these arguments did not predict any quantitative property of
+cortical anatomy that could be falsified by direct measurement. The paper closes this gap by
+recasting the problem as a constrained optimisation: maximise synapse density subject to
+bounded axonal conduction delay and bounded passive dendritic attenuation, with axon and
+dendrite radii as the free variables.
+
+The methodological contribution is a parameter-free derivation. After applying the standard
+cable scalings (delay proportional to length over root radius; space constant proportional to
+root radius), the species-specific membrane and axial constants cancel in the optimum, leaving
+a pure geometric prediction: axons plus dendrites should fill exactly 3/5 of the gray-matter
+volume at the optimum. The authors then test this with serial-section electron microscopy of
+mouse hippocampal CA1 neuropil, measuring the volume fraction occupied by each cellular
+component, and report agreement with the 3/5 prediction.
+
+The headline finding is therefore a quantitative confirmation of the wiring-economy principle
+as a real biological selection pressure operating on cortical morphology, not merely a
+qualitative heuristic. This is one of the most cited results in computational neuroanatomy
+because it demonstrates that an optimisation principle, applied with explicit biophysical
+constraints, can predict an a-priori property of a real cortical tissue volume to within
+experimental error. Later work has extended the framework to dendritic branching morphology
+(Cuntz et al. 2010), to cortical GABAergic interneurons (Budd and Kisvarday 2012), and to
+whole-brain connectomes.
+
+For the t0097 multi-objective DSGC optimisation catalogue, this paper provides the
+foundational biological justification for adding a cytoplasm-volume / wiring-cost objective
+alongside functional DSGC objectives (direction-selectivity index, EPSP fidelity, robustness).
+The 3/5 result tells us that real cortical neurons sit close to a wiring optimum, so a DSGC
+morphology that drifts very far from the natural cytoplasm volume in our optimisation is
+biologically suspect even if it yields a high DSI. Together with Cuntz et al. (2010), this
+paper anchors the "minimise total cytoplasm volume" recipe that the catalogue should adopt;
+deviations from the optimal volume can be reported as a quantitative biological-plausibility
+metric. The main caveat for our use is that the original Chklovskii et al. analysis is for
+cortical gray matter, not retinal inner plexiform layer, so the exact 3/5 fraction may not
+transfer numerically to DSGC dendritic arbours - but the underlying recipe (wire cost + delay
++ attenuation) is general and is what we should adopt.
+
+</details>
+
+<details>
 <summary>📖 <strong>The NEURON Simulation Environment</strong> — Hines & Carnevale,
 1997</summary>
 
@@ -530,7 +587,7 @@ than reduced analytical models.
 
 </details>
 
-## Tasks (4)
+## Tasks (5)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -538,6 +595,7 @@ than reduced analytical models.
 | 0015 | [Literature survey: cable theory and dendritic filtering](../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) | completed | 2026-04-20 10:00 |
 | 0016 | [Literature survey: dendritic computation beyond DSGCs](../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) | completed | 2026-04-20 10:36 |
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
+| 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 
 ## Answers (3)
 

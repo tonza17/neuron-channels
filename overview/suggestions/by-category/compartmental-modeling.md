@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-292 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **257 open** (43
-high, 182 medium, 32 low), **35 closed**.
+297 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **262 open** (46
+high, 184 medium, 32 low), **35 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -188,6 +188,75 @@ centroid soma value to a near-zero value, inflating the ratio; (c) check whether
 in cluster 1 individually have AIS-to-soma ratios near 116 or whether the centroid is
 averaging across heterogeneous values. Pure data analysis on existing JSON outputs; ~30 min
 wall-clock, $0 cost. Recommended task types: data-analysis, correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising
+ATP-per-spike</strong> (S-0097-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000840`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1000840/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per
+spike). Remme et al. 2018's MSO function-vs-energy MOBO provides a direct methodology template
+generalising to NEURON. DSGC's GABAergic-style fast-spiking should produce
+Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower
+energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e`
+per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed
+per-task default; flag for explicit budget approval.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising cytoplasm
+volume</strong> (S-0097-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1002107`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1002107/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most
+evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010's `bf`
+in [0.2, 0.7] band; Chklovskii et al. 2002's 3/5-of-grey-matter wiring rule). Infrastructure
+already in place via the t0093-validated procedural morphology generator. Falsifiable
+prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on
+Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8
+budget bump if needed). Same population/generation budget as t0091.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and robustness under +/-10%
+channel-density perturbation</strong> (S-0097-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1038_nrn1949`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1038_nrn1949/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Directly addresses the researcher's recurring biological-plausibility concern with pure-DSI
+maximisation (Marder-style population-statistic robustness is the field-standard treatment).
+Falsifiable prediction: high-DSI / high-robustness corner lies along compensatory hyperplanes,
+refuting the hypothesis that DSI maximisation drives the optimiser to fragile parameter-space
+extremes. Recipe: K=50-200 +/-10% perturbations per Pareto point; minimise SD of DSI. Budget:
+36-72 h Vast.ai EPYC at $0.30/h, total $11-22 (multiplies t0091's per-individual cost by
+K=50-200) — request explicit $25 budget cap or reduce population/generations.
 
 </details>
 
@@ -1613,6 +1682,52 @@ into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) o
 discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does
 not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x
 $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and information transfer
+rate</strong> (S-0097-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1103_PhysRevLett.80.197`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1103_PhysRevLett.80.197/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Recipe is well-established (Strong-Bialek direct method with 1/T extrapolation) and validates
+against Dhingra & Smith 2004's ~60% gray-level loss benchmark. Caveat: the project's
+8-direction protocol has only 3 bits of stimulus uncertainty, so the MI estimator's ceiling is
+3 bits per trial regardless of spike train. Validate the recipe against existing DSGC trial
+output before launching the full MOBO. Budget: 18-36 h Vast.ai EPYC at $0.30/h, total $5-11.
+MI is post-hoc on simulation output, so cost overhead is mostly in extra population to
+populate the MI Pareto direction. Priority dropped to medium pending recipe validation.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising MI and minimising ATP-per-spike
+(bits-per-ATP front)</strong> (S-0097-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1103_PhysRevLett.80.197`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1103_PhysRevLett.80.197/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front
+directly comparable to Niven et al. 2007's empirical fly-photoreceptor 200-1000 bits/s
+super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the
+literature, so the experiment closes a genuine open question. Tradeoff: this experiment does
+not directly serve the project's first-question DSGC mission (DSI is not optimised); ranked
+medium because it serves a broader scientific question rather than the project's specific
+deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
 
 </details>
 

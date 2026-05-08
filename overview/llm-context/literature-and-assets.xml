@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-08T16:08:27Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-08T16:52:52Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>228786</char_count>
-    <byte_count>229107</byte_count>
-    <estimated_tokens>57196</estimated_tokens>
+    <char_count>239001</char_count>
+    <byte_count>239326</byte_count>
+    <estimated_tokens>59750</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -203,9 +203,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0093_resweep_and_t0090_correction</id>
         <id>t0094_brainstorm_results_19</id>
         <id>t0095_brainstorm_results_20</id>
+        <id>t0097_multi_obj_optim</id>
       </source_ids>
       <content>
-Completed tasks: 88
+Completed tasks: 89
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -734,6 +735,12 @@ ID: t0095_brainstorm_results_20
 Completed: 2026-05-08
 Short description: Twentieth brainstorm: commission a literature survey of multi-objective optimisation in single-neuron compartmental models; reject 2 already-covered suggestions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_results_20&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 20 Summary Twentieth strategic brainstorm, run on 2026-05-08 while t0091 (`morphology_extended_nsga2_v1`) is in flight on Vast.ai. The researcher proposed broadening the MOBO objective space beyond DSI + firing rate to include information transfer rate, metabolic energy, cytoplasm volume, and robustness; commissioned a single consolidated literature survey (`t0096_literature_survey_multi_objective_neuron_optimisation`) at $0 cost, scoped broadly across any neuron type, with formulas + computational recipes + future MOBO suggestion list as...
+
+## Literature survey: multi-objective optimisation of single-neuron models
+ID: t0097_multi_obj_optim
+Completed: 2026-05-08
+Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0097_multi_obj_optim&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Literature Survey of Multi-Objective Optimisation in Single-Neuron Models Summary Catalogued **6 objective functions** (4 must-find + 2 additional) usable on top of the project&#x27;s existing Bed B NSGA-II loop, with formulas, units, NEURON-side computational recipes, and biological-plausibility notes for each. Downloaded **10 paper assets** spanning the methodology canon (Druckmann 2007, Achard &amp; De Schutter 2006, BluePyOpt / Van Geit 2016), the metabolic energy line (Attwell &amp; Laughlin 2001, Niven &amp; Laughlin 2008, Sengupta et al. 2010), the information-theoretic line...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -743,10 +750,9 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0097_multi_obj_optim</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -767,12 +773,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Literature survey: multi-objective optimisation of single-neuron models
-ID: t0097_multi_obj_optim
-Status: in_progress
-Effective date: 2026-05-08
-Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -803,10 +803,11 @@ Short description: Survey published multi-objective optimisation of single-neuro
         <id>cluster-biological-plausibility-attribution</id>
         <id>validation-triplet-implications-for-biological-plausibility</id>
         <id>morphology-extension-biological-plausibility</id>
+        <id>objective-functions-for-single-neuron-multi-objective-optimisation</id>
         <id>t0090-procedural-cell-silence-root-cause</id>
       </source_ids>
       <content>
-Answers: 25
+Answers: 26
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -996,6 +997,14 @@ Confidence: medium
 
 No. None of the 57 Pareto cells reach the joint plausible region across all 13 priors (9 electrophys + 4 morphology). Worst-case aggregation flags every cell as exotic or stretched, driven primarily by NMDA / NaP / GABA prior deviations carried over from the v3 electrophys substrate. PD-asymmetric anchor 3 captured 12 cells vs ND-asymmetric anchor 4 with 9 (one-sided permutation p=0.331).
 
+## Which objective functions have been used in published multi-objective optimisation of single-neuron compartmental models, and what is each one&#x27;s formula, units, and NEURON-side computational recipe on a t0091-style 8-direction trial output?
+ID: objective-functions-for-single-neuron-multi-objective-optimisation
+Created by: t0097_multi_obj_optim on 2026-05-08
+Confidence: high
+Categories: compartmental-modeling, voltage-gated-channels, dendritic-computation
+
+The published multi-objective single-neuron optimisation literature converges on four canonical biological objective categories that fit directly on top of the project&#x27;s existing pymoo NSGA-II loop: stimulus-spike-train mutual information via the direct method with 1/T extrapolation, ATP-per-spike via per-compartment integration of Na+ inward current divided by three (the Na+/K+ ATPase stoichiometry), cytoplasm volume as the sum of pi*r^2*L over compartments (novel as an explicit MOO target on a single neuron), and Marder-style robustness as the standard deviation of DSI under +/-10% perturbation of all channel densities. Each catalogued objective is implemented as one pymoo evaluator...
+
 ## Why do t0090&#x27;s procedural cells produce zero spikes under the t0083 best-cell channel set, and what is the fix?
 ID: t0090-procedural-cell-silence-root-cause
 Created by: t0092_diagnose_morphology_generator_silence on 2026-05-08
@@ -1012,6 +1021,16 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>10.1523_JNEUROSCI.1979-23.2023</id>
         <id>10.1113_JP286581</id>
         <id>10.1007_s00424-024-02980-7</id>
+        <id>10.3389_fninf.2016.00017</id>
+        <id>10.1371_journal.pcbi.1000840</id>
+        <id>10.1242_jeb.017574</id>
+        <id>10.3389_neuro.01.1.1.001.2007</id>
+        <id>10.1371_journal.pcbi.0020094</id>
+        <id>10.1038_nrn1949</id>
+        <id>10.1038_nn1352</id>
+        <id>no-doi_Chklovskii2002_wiring-optimization-cortical</id>
+        <id>10.1097_00004647-200110000-00001</id>
+        <id>10.1103_PhysRevLett.80.197</id>
         <id>10.64898_2026.02.02.701812</id>
         <id>10.1073_pnas.2415223122</id>
         <id>10.1523_JNEUROSCI.1461-23.2024</id>
@@ -1088,7 +1107,7 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 77
+Papers: 87
 
 ## GABAergic Inhibition Controls Receptive Field Size, Sensitivity, and Contrast Preference of Direction Selective Retinal Ganglion Cells Near the Threshold of Vision
 ID: 10.1523_JNEUROSCI.1979-23.2023
@@ -1110,6 +1129,76 @@ Year: 2024
 Authors: Peter Müller, Andreas Draguhn, Alexei V. Egorov
 Added by task: t0091_morphology_extended_nsga2_v1
 Mueller, Draguhn, and Egorov publish a systematic review of persistent sodium current (INaP) in CNS neurons in Pfluegers Archiv (Springer Nature, open access). The motivation is that INaP is a clinically important regulator of excitability - implicated in epilepsy, amyotrophic lateral sclerosis, neuropathic pain, hemiplegic migraine, and post-injury hyperexcitability - but the literature is fragmented across heterogeneous voltage-clamp protocols, inconsistent definitions of persistent versus slowly inactivating, and a sprawling catalogue of putative...
+
+## BluePyOpt: Leveraging Open Source Software and Cloud Infrastructure to Optimise Model Parameters in Neuroscience
+ID: 10.3389_fninf.2016.00017
+Year: 2016
+Authors: Werner Van Geit, Michael Gevaert, Giuseppe Chindemi, Christian Rossert
+Added by task: t0097_multi_obj_optim
+This Technology Report introduces BluePyOpt, a Python package developed at the Blue Brain Project to standardise the multi-objective evolutionary optimisation of neuroscience models. The motivation is that while stochastic search methods like genetic algorithms and CMA-ES have proven effective for fitting compartmental neuron models, configuring them correctly remains a domain expertise problem that excludes most neuroscientists from the technique. BluePyOpt addresses this by providing a reusable object-oriented API and turn-key cloud-deployment scripts...
+
+## Action Potential Energy Efficiency Varies Among Neuron Types in Vertebrates and Invertebrates
+ID: 10.1371_journal.pcbi.1000840
+Year: 2010
+Authors: Biswa Sengupta, Martin Stemmler, Simon B. Laughlin, Jeremy E. Niven
+Added by task: t0097_multi_obj_optim
+Sengupta, Stemmler, Laughlin and Niven (2010) ask whether the per-action-potential energy cost of biological neurons is set by waveform alone, or whether the underlying ionic currents allow large cost differences hidden by similar AP shapes. They re-implement seven published Hodgkin-Huxley single-compartment models spanning the squid giant axon, a crab leg motor neuron, four mammalian neurons (mouse fast-spiking interneuron, rat hippocampal interneuron, rat cerebellar granule cell, mouse thalamo-cortical relay) and a honeybee Kenyon cell, and compare...
+
+## Energy limitation as a selective pressure on the evolution of sensory systems
+ID: 10.1242_jeb.017574
+Year: 2008
+Authors: Jeremy E. Niven, Simon B. Laughlin
+Added by task: t0097_multi_obj_optim
+Niven and Laughlin (2008) ask why nervous systems, and sensory systems in particular, take the specific morphological and biophysical forms they do, and answer that energetics is one of the dominant selective pressures shaping them. They focus on the visual system because its function is quantifiable (bits s-1 of information about a visual scene) and its energetic cost is now directly measurable from whole-retina oxygen consumption, single-cell biophysical models, and bottom-up per-component energy budgets. The review scope ranges from sub-cellular...
+
+## A novel multiple objective optimization framework for constraining conductance-based neuron models by experimental data
+ID: 10.3389_neuro.01.1.1.001.2007
+Year: 2007
+Authors: Shaul Druckmann, Yoav Banitt, Albert Gidon, Felix Schurmann
+Added by task: t0097_multi_obj_optim
+Druckmann et al. (2007) confront a methodological problem at the core of conductance-based neuron modelling: how to automatically fit the maximal-conductance vector of a compartmental model to noisy in vitro recordings, given that repeated identical current injections produce visibly different voltage traces in the same cell. They argue that the dominant single-trace, single-error-function approach is mis-specified - it ignores intrinsic variability and forces an arbitrary weighting of heterogeneous error terms (e.g. spike timing vs spike shape). Their...
+
+## Complex Parameter Landscape for a Complex Neuron Model
+ID: 10.1371_journal.pcbi.0020094
+Year: 2006
+Authors: Pablo Achard, Erik De Schutter
+Added by task: t0097_multi_obj_optim
+Achard and De Schutter ask whether a complex, biophysically detailed compartmental neuron admits multiple distinct sets of voltage- and calcium-gated channel conductances that reproduce the cell&#x27;&#x27;s detailed firing behavior. The motivation comes from two convergent lines of evidence: experimental work on lobster and crab stomatogastric ganglion neurons showing 2-4x interanimal variability in channel expression with preserved activity, and prior modelling work (Goldman 2001, Prinz 2003-2004) showing parameter degeneracy in low-dimensional stomatogastric...
+
+## Variability, compensation and homeostasis in neuron and network function
+ID: 10.1038_nrn1949
+Year: 2006
+Authors: Eve Marder, Jean-Marc Goaillard
+Added by task: t0097_multi_obj_optim
+This review by Marder and Goaillard codifies the now-standard observation that nervous-system variables --- ionic conductances, channel densities, synaptic weights --- vary substantially across animals of the same species and across cells of the same identified type, while the behavioural output of single neurons and networks remains conserved. The authors motivate the question by contrasting protein turnover (minutes to weeks) with neuronal lifetime (years to decades), arguing that homeostatic mechanisms must continuously rebuild the cell while...
+
+## Similar network activity from disparate circuit parameters
+ID: 10.1038_nn1352
+Year: 2004
+Authors: Astrid A. Prinz, Dirk Bucher, Eve Marder
+Added by task: t0097_multi_obj_optim
+Prinz, Bucher and Marder ask how tightly neuronal properties and synaptic strengths must be tuned to produce a specific network output. They focus on the crustacean pyloric rhythm because its connectivity, neurons, and motor pattern are unusually well characterised. The motivation is to test the implicit assumption underlying much of neurophysiology, that animal-to-animal variability is &quot;experimental noise&quot; rather than a structural feature of the nervous system. The hypothesis is that, just as similar single-neuron firing can arise from many...
+
+## Wiring Optimization in Cortical Circuits
+ID: no-doi_Chklovskii2002_wiring-optimization-cortical
+Year: 2002
+Authors: Dmitri B. Chklovskii, Thomas Schikorski, Charles F. Stevens
+Added by task: t0097_multi_obj_optim
+Chklovskii, Schikorski, and Stevens (2002) ask why cortical gray matter has the cellular composition that it does. Earlier work in the wiring-economy tradition (Cajal; Cherniak; Mitchison; Chklovskii and Stevens 2000) had argued qualitatively that wire length is minimised under selection pressure, but these arguments did not predict any quantitative property of cortical anatomy that could be falsified by direct measurement. The paper closes this gap by recasting the problem as a constrained optimisation: maximise synapse density subject to bounded axonal...
+
+## An Energy Budget for Signaling in the Grey Matter of the Brain
+ID: 10.1097_00004647-200110000-00001
+Year: 2001
+Authors: David Attwell, Simon B. Laughlin
+Added by task: t0097_multi_obj_optim
+Attwell and Laughlin (2001) ask a single quantitative question: how much ATP does each elementary neuronal signaling event cost, and do these per-event costs sum to the experimentally measured total energy consumption of brain grey matter? The motivation is that, prior to 2001, neural energy estimates were either top-down (whole-brain glucose/oxygen consumption with no decomposition) or based on heat production from single-cell preparations, which severely underestimated AP cost. The authors aim to construct a biophysically grounded...
+
+## Entropy and Information in Neural Spike Trains
+ID: 10.1103_PhysRevLett.80.197
+Year: 1998
+Authors: Steven P. Strong, Roland Koberle, Rob R. de Ruyter van Steveninck, William Bialek
+Added by task: t0097_multi_obj_optim
+Strong, Koberle, de Ruyter van Steveninck, and Bialek address a foundational question in sensory neuroscience: how much information about a time-varying stimulus does a single neuron spike train actually transmit, and in particular, does the precise timing of spikes (down to millisecond resolution) contribute, or is the relevant variable just the firing rate? The paper scope is deliberately model-free — it refuses to assume any particular decoding scheme or hypothesized feature of the code (rate, ISI, bursts, latency) — and instead grounds the...
 
 ## Retinal waves shape starburst amacrine cell dendrite development through a direction-selective dendritic computation
 ID: 10.64898_2026.02.02.701812

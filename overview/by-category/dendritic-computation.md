@@ -4,15 +4,15 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (43)](../papers/by-category/dendritic-computation.md) | [Answers
-(8)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(78)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+**Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
+(9)](../answers/by-category/dendritic-computation.md) | [Suggestions
+(79)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
 ---
 
-## Papers (43)
+## Papers (44)
 
 <details>
 <summary>📝 <strong>Retinal waves shape starburst amacrine cell dendrite development
@@ -1712,6 +1712,63 @@ subscription before citing any specific numerical claim from it.
 </details>
 
 <details>
+<summary>📖 <strong>Wiring Optimization in Cortical Circuits</strong> — Chklovskii
+et al., 2002</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `no-doi_Chklovskii2002_wiring-optimization-cortical` |
+| **Authors** | Dmitri B. Chklovskii, Thomas Schikorski, Charles F. Stevens |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/s0896-6273(02)00679-7` |
+| **URL** | https://doi.org/10.1016/s0896-6273(02)00679-7 |
+| **Date added** | 2026-05-08 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`cable-theory`](../../meta/categories/cable-theory/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+| **Added by** | [`t0097_multi_obj_optim`](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0097_multi_obj_optim/assets/paper/no-doi_Chklovskii2002_wiring-optimization-cortical/summary.md) |
+
+Chklovskii, Schikorski, and Stevens (2002) ask why cortical gray matter has the cellular
+composition that it does. Earlier work in the wiring-economy tradition (Cajal; Cherniak;
+Mitchison; Chklovskii and Stevens 2000) had argued qualitatively that wire length is minimised
+under selection pressure, but these arguments did not predict any quantitative property of
+cortical anatomy that could be falsified by direct measurement. The paper closes this gap by
+recasting the problem as a constrained optimisation: maximise synapse density subject to
+bounded axonal conduction delay and bounded passive dendritic attenuation, with axon and
+dendrite radii as the free variables.
+
+The methodological contribution is a parameter-free derivation. After applying the standard
+cable scalings (delay proportional to length over root radius; space constant proportional to
+root radius), the species-specific membrane and axial constants cancel in the optimum, leaving
+a pure geometric prediction: axons plus dendrites should fill exactly 3/5 of the gray-matter
+volume at the optimum. The authors then test this with serial-section electron microscopy of
+mouse hippocampal CA1 neuropil, measuring the volume fraction occupied by each cellular
+component, and report agreement with the 3/5 prediction.
+
+The headline finding is therefore a quantitative confirmation of the wiring-economy principle
+as a real biological selection pressure operating on cortical morphology, not merely a
+qualitative heuristic. This is one of the most cited results in computational neuroanatomy
+because it demonstrates that an optimisation principle, applied with explicit biophysical
+constraints, can predict an a-priori property of a real cortical tissue volume to within
+experimental error. Later work has extended the framework to dendritic branching morphology
+(Cuntz et al. 2010), to cortical GABAergic interneurons (Budd and Kisvarday 2012), and to
+whole-brain connectomes.
+
+For the t0097 multi-objective DSGC optimisation catalogue, this paper provides the
+foundational biological justification for adding a cytoplasm-volume / wiring-cost objective
+alongside functional DSGC objectives (direction-selectivity index, EPSP fidelity, robustness).
+The 3/5 result tells us that real cortical neurons sit close to a wiring optimum, so a DSGC
+morphology that drifts very far from the natural cytoplasm volume in our optimisation is
+biologically suspect even if it yields a high DSI. Together with Cuntz et al. (2010), this
+paper anchors the "minimise total cytoplasm volume" recipe that the catalogue should adopt;
+deviations from the optimal volume can be reported as a quantitative biological-plausibility
+metric. The main caveat for our use is that the original Chklovskii et al. analysis is for
+cortical gray matter, not retinal inner plexiform layer, so the exact 3/5 fraction may not
+transfer numerically to DSGC dendritic arbours - but the underlying recipe (wire cost + delay
++ attenuation) is general and is what we should adopt.
+
+</details>
+
+<details>
 <summary>📖 <strong>Diverse Synaptic Mechanisms Generate Direction Selectivity in
 the Rabbit Retina</strong> — Taylor & Vaney, 2002</summary>
 
@@ -2246,7 +2303,7 @@ than reduced analytical models.
 
 </details>
 
-## Tasks (10)
+## Tasks (11)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2260,8 +2317,41 @@ than reduced analytical models.
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
+| 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 
-## Answers (8)
+## Answers (9)
+
+<details>
+<summary><strong>Which objective functions have been used in published
+multi-objective optimisation of single-neuron compartmental models, and
+what is each one's formula, units, and NEURON-side computational recipe
+on a t0091-style 8-direction trial output?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-08 | **Full answer**:
+[`objective-functions-for-single-neuron-multi-objective-optimisation`](../../tasks/t0097_multi_obj_optim/assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation/)
+
+The published multi-objective single-neuron optimisation literature converges on four
+canonical biological objective categories that fit directly on top of the project's existing
+pymoo NSGA-II loop: stimulus-spike-train mutual information via the direct method with 1/T
+extrapolation, ATP-per-spike via per-compartment integration of Na+ inward current divided by
+three (the Na+/K+ ATPase stoichiometry), cytoplasm volume as the sum of pi*r^2*L over
+compartments (novel as an explicit MOO target on a single neuron), and Marder-style robustness
+as the standard deviation of DSI under +/-10% perturbation of all channel densities. Each
+catalogued objective is implemented as one pymoo evaluator callable on the project's existing
+8-direction 1400-ms trial output and is reported with a uniform 8-field record (name, LaTeX
+formula, units, NEURON-side quantities, recipe, biological-plausibility note,
+direction-of-optimisation, supporting paper citations). The methodology synthesis adopts
+per-feature SD-normalisation, the 2-3 SD acceptance threshold and ensemble-as-experiment
+reporting pattern, and the optimiser-selection rule NSGA-II for high-d 2-3-objective problems,
+NSGA-III for high-d many-objective problems, and qLogNEHVI for low-d constrained problems with
+population fewer than 20 evaluations. Two additional well-defined objectives surfaced by the
+survey are also catalogued with the full 8-field record: coincidence-detection accuracy (the
+closest published function-vs-energy MOO analogue to the project's planned DSI-vs-energy work)
+and bits-per-ATP efficiency (the canonical empirical Pareto curve in the field). This answer
+is grounded in 21 newly catalogued papers plus 9 corpus papers and the BluePyOpt / eFEL /
+pymoo / AllenSDK documentation.
+
+</details>
 
 <details>
 <summary><strong>When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is
@@ -2444,7 +2534,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (61 open, 17 closed)
+## Suggestions (62 open, 17 closed)
 
 <details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
@@ -2587,6 +2677,23 @@ peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -> peak_
 plus a polar-tuning-curve panel. If peaks shift systematically with asymmetry knobs, this
 resolves t0091's design question of whether per-cell PD must be re-discovered after morphology
 changes. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising cytoplasm
+volume</strong> (S-0097-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
+[t0097_multi_obj_optim](../../tasks/t0097_multi_obj_optim/)
+
+Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most
+evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010's `bf`
+in [0.2, 0.7] band; Chklovskii et al. 2002's 3/5-of-grey-matter wiring rule). Infrastructure
+already in place via the t0093-validated procedural morphology generator. Falsifiable
+prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on
+Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8
+budget bump if needed). Same population/generation budget as t0091.
 
 </details>
 

@@ -6,7 +6,7 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (42)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(75)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(77)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
 (2)](../predictions/by-category/retinal-ganglion-cell.md)
@@ -2482,7 +2482,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (66 open, 9 closed)
+## Suggestions (68 open, 9 closed)
 
 <details>
 <summary>📊 <strong>Per-direction DSI re-scoring of the t0091 57-cell Pareto to
@@ -2541,6 +2541,40 @@ um, sec.diam=15/3.2 um chosen so pi*d*L matches 287 um^2 exactly. Ship as a v2 o
 generate_fixed_morphology; validate that the patched cell now produces ~41 spikes and peak Vm
 ~+5 mV under the unmodified t0083 vector. This eliminates a known second-order discrepancy
 before t0091 launches. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and information transfer
+rate</strong> (S-0097-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0097_multi_obj_optim](../../tasks/t0097_multi_obj_optim/)
+
+Recipe is well-established (Strong-Bialek direct method with 1/T extrapolation) and validates
+against Dhingra & Smith 2004's ~60% gray-level loss benchmark. Caveat: the project's
+8-direction protocol has only 3 bits of stimulus uncertainty, so the MI estimator's ceiling is
+3 bits per trial regardless of spike train. Validate the recipe against existing DSGC trial
+output before launching the full MOBO. Budget: 18-36 h Vast.ai EPYC at $0.30/h, total $5-11.
+MI is post-hoc on simulation output, so cost overhead is mostly in extra population to
+populate the MI Pareto direction. Priority dropped to medium pending recipe validation.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising MI and minimising ATP-per-spike
+(bits-per-ATP front)</strong> (S-0097-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0097_multi_obj_optim](../../tasks/t0097_multi_obj_optim/)
+
+Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front
+directly comparable to Niven et al. 2007's empirical fly-photoreceptor 200-1000 bits/s
+super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the
+literature, so the experiment closes a genuine open question. Tradeoff: this experiment does
+not directly serve the project's first-question DSGC mission (DSI is not optimised); ranked
+medium because it serves a broader scientific question rather than the project's specific
+deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
 
 </details>
 

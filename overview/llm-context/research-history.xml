@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-08T16:08:27Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-08T16:52:52Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>163</section_count>
-    <char_count>2941875</char_count>
-    <byte_count>2949070</byte_count>
-    <estimated_tokens>735468</estimated_tokens>
+    <section_count>165</section_count>
+    <char_count>3052757</char_count>
+    <byte_count>3060040</byte_count>
+    <estimated_tokens>763189</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -200,9 +200,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0093_resweep_and_t0090_correction</id>
         <id>t0094_brainstorm_results_19</id>
         <id>t0095_brainstorm_results_20</id>
+        <id>t0097_multi_obj_optim</id>
       </source_ids>
       <content>
-Completed tasks: 88
+Completed tasks: 89
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -731,6 +732,12 @@ ID: t0095_brainstorm_results_20
 Completed: 2026-05-08
 Short description: Twentieth brainstorm: commission a literature survey of multi-objective optimisation in single-neuron compartmental models; reject 2 already-covered suggestions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_results_20&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 20 Summary Twentieth strategic brainstorm, run on 2026-05-08 while t0091 (`morphology_extended_nsga2_v1`) is in flight on Vast.ai. The researcher proposed broadening the MOBO objective space beyond DSI + firing rate to include information transfer rate, metabolic energy, cytoplasm volume, and robustness; commissioned a single consolidated literature survey (`t0096_literature_survey_multi_objective_neuron_optimisation`) at $0 cost, scoped broadly across any neuron type, with formulas + computational recipes + future MOBO suggestion list as...
+
+## Literature survey: multi-objective optimisation of single-neuron models
+ID: t0097_multi_obj_optim
+Completed: 2026-05-08
+Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0097_multi_obj_optim&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Literature Survey of Multi-Objective Optimisation in Single-Neuron Models Summary Catalogued **6 objective functions** (4 must-find + 2 additional) usable on top of the project&#x27;s existing Bed B NSGA-II loop, with formulas, units, NEURON-side computational recipes, and biological-plausibility notes for each. Downloaded **10 paper assets** spanning the methodology canon (Druckmann 2007, Achard &amp; De Schutter 2006, BluePyOpt / Van Geit 2016), the metabolic energy line (Attwell &amp; Laughlin 2001, Niven &amp; Laughlin 2008, Sengupta et al. 2010), the information-theoretic line...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -740,10 +747,9 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0097_multi_obj_optim</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -764,12 +770,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Literature survey: multi-objective optimisation of single-neuron models
-ID: t0097_multi_obj_optim
-Status: in_progress
-Effective date: 2026-05-08
-Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -800,10 +800,11 @@ Short description: Survey published multi-objective optimisation of single-neuro
         <id>cluster-biological-plausibility-attribution</id>
         <id>validation-triplet-implications-for-biological-plausibility</id>
         <id>morphology-extension-biological-plausibility</id>
+        <id>objective-functions-for-single-neuron-multi-objective-optimisation</id>
         <id>t0090-procedural-cell-silence-root-cause</id>
       </source_ids>
       <content>
-Answers: 25
+Answers: 26
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -992,6 +993,14 @@ Created by: t0091_morphology_extended_nsga2_v1 on 2026-05-08
 Confidence: medium
 
 No. None of the 57 Pareto cells reach the joint plausible region across all 13 priors (9 electrophys + 4 morphology). Worst-case aggregation flags every cell as exotic or stretched, driven primarily by NMDA / NaP / GABA prior deviations carried over from the v3 electrophys substrate. PD-asymmetric anchor 3 captured 12 cells vs ND-asymmetric anchor 4 with 9 (one-sided permutation p=0.331).
+
+## Which objective functions have been used in published multi-objective optimisation of single-neuron compartmental models, and what is each one&#x27;s formula, units, and NEURON-side computational recipe on a t0091-style 8-direction trial output?
+ID: objective-functions-for-single-neuron-multi-objective-optimisation
+Created by: t0097_multi_obj_optim on 2026-05-08
+Confidence: high
+Categories: compartmental-modeling, voltage-gated-channels, dendritic-computation
+
+The published multi-objective single-neuron optimisation literature converges on four canonical biological objective categories that fit directly on top of the project&#x27;s existing pymoo NSGA-II loop: stimulus-spike-train mutual information via the direct method with 1/T extrapolation, ATP-per-spike via per-compartment integration of Na+ inward current divided by three (the Na+/K+ ATPase stoichiometry), cytoplasm volume as the sum of pi*r^2*L over compartments (novel as an explicit MOO target on a single neuron), and Marder-style robustness as the standard deviation of DSI under +/-10% perturbation of all channel densities. Each catalogued objective is implemented as one pymoo evaluator...
 
 ## Why do t0090&#x27;s procedural cells produce zero spikes under the t0083 best-cell channel set, and what is the fix?
 ID: t0090-procedural-cell-silence-root-cause
@@ -49846,6 +49855,1842 @@ Not applicable.
 #### References
 
 None.
+      </content>
+    </section>
+    <section id="t0097_multi_obj_optim-research_papers" source_kind="file">
+      <title>t0097_multi_obj_optim — Literature survey: multi-objective optimisation of single-neuron models — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0097_multi_obj_optim</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0097_multi_obj_optim/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0097_multi_obj_optim&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 22
+papers_cited: 9
+categories_consulted:
+  - &quot;compartmental-modeling&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;cable-theory&quot;
+  - &quot;voltage-gated-channels&quot;
+  - &quot;retinal-ganglion-cell&quot;
+date_completed: &quot;2026-05-08&quot;
+status: &quot;partial&quot;
+---
+#### Task Objective
+
+This task is a literature survey of multi-objective optimisation (MOO) of single-neuron
+compartmental models, broadening the project beyond the DSI-plus-firing-rate objective pair used in
+every prior MOBO/MOEA task here (t0076, t0078, t0080, t0081, t0083, t0086, t0091). The deliverable
+is a catalogue of every objective function used in the published single-neuron MOO literature with
+formula, units, NEURON-side computational recipe, and biological plausibility notes, together with a
+ranked list of future MOBO tasks this project should commission. Four objective categories are
+mandatory in the catalogue: information transfer rate, metabolic energy / ATP per spike, cytoplasm
+volume / wiring cost, and robustness / degeneracy. The species and cell type are unrestricted; the
+must-find category list is what scopes the survey.
+
+The frontmatter `status` is `partial` because the project&#x27;s existing paper corpus is dominated by
+DSGC/direction-selectivity work (see the Gaps and Limitations section). Only a small fraction of the
+already-downloaded papers genuinely address the survey&#x27;s methodological scope. The bulk of the
+methodology and biological-objective literature for this survey will come from the next stage,
+`research-internet`, which will pull in Druckmann 2007/2011, Achard &amp; De Schutter 2006,
+BluePyOpt/Van Geit, Attwell &amp; Laughlin 2001, Niven &amp; Laughlin 2008, Sengupta et al. 2010, Marder &amp;
+Goaillard 2006, Prinz, Bucher &amp; Marder 2004, and the Bialek/Strong/De Ruyter van Steveninck
+information-theory canon. This file documents only what the existing corpus genuinely contributes.
+
+#### Category Selection Rationale
+
+Five categories from `meta/categories/` were consulted: `compartmental-modeling` (the fundamental
+substrate of every paper relevant to single-neuron MOO), `dendritic-computation` (overlaps with
+wiring economy and morphology-vs-function trade-offs), `cable-theory` (overlaps with
+cytoplasm-volume and electrotonic-compartmentalisation reasoning), `voltage-gated-channels` (because
+ATP-per-spike is computed from HH ionic currents), and `retinal-ganglion-cell` (because the
+project&#x27;s downstream consumer is a DSGC and the only existing information-transfer-rate measurement
+in the corpus, Dhingra &amp; Smith 2004, is in an RGC).
+
+Excluded categories: `direction-selectivity` was scanned but contributes only DSGC-mechanism papers
+that do not address MOO methodology or biological objective functions; the few papers that do touch
+multi-objective fitting (e.g., Hay et al. 2011) live under `compartmental-modeling`. `patch-clamp`
+and `synaptic-integration` were briefly inspected but their papers are data-acquisition-focused and
+do not address optimisation methodology. The project does not yet have dedicated categories for
+`multi-objective-optimisation`, `metabolic-energy`, `wiring-economy`, or `information-theory`; the
+research-internet stage should propose these as new categories if the catalogue grows large enough
+to warrant them.
+
+#### Key Findings
+
+##### Multi-Objective Optimisation Is the Standard for Conductance-Based Single-Neuron Fits
+
+The corpus contains exactly one canonical methodology paper that uses MOO end-to-end on a
+compartmental model: Hay et al. 2011 [Hay2011]. They fit conductance densities of nine ion channels
+plus Ca-buffer parameters in a thick-tufted L5b pyramidal cell to **20 firing-feature objectives**
+(10 perisomatic step-current features, 10 BAP-activated Ca-spike &quot;BAC&quot; features), each expressed in
+units of the corresponding experimental SD. The optimiser is an elitist non-dominated sorting
+evolutionary algorithm — the same NSGA-style algorithm pymoo currently runs in t0091 — with
+**population 1000, 500 generations, 22 free parameters, 240-1024 CPU cores, 2-5 days of wall
+clock**. Models are accepted when every feature lies within **2-3 SD** of the experimental mean. The
+published artefact is a set of about **2000 acceptable models** (ModelDB accession 139653) that
+serve as a Pareto-acceptable ensemble rather than a single best fit.
+
+[Hay2011] establishes a methodology pattern that this project&#x27;s t0078, t0080 and t0091 already
+inherit indirectly through BluePyOpt-derived MOD files, but with a much broader objective set than
+the project&#x27;s current DSI+firing-rate pair. Two single-target sub-fits in the same paper give a
+quantitative case for joint optimisation: BAC-only fitting yields **899 acceptable models** but
+those models then fail perisomatic targets (e.g., the example BAC-only fit had apical Nat density
+**82.5 pS/um^2** below the BAC-acceptable range of **101-133.5 pS/um^2** when the perisomatic
+constraint was added back in); perisomatic-only fitting yields only **52 acceptable models**. The
+two single-target acceptable sets do not overlap on the joint feature space. **Best practice**: when
+a project has two distinct firing regimes or two distinct physiological constraints, fit both
+jointly under MOO rather than fitting one and validating against the other.
+
+The acquisition-function side of the methodology has moved on since 2011. The current
+state-of-the-art for noisy multi-objective Bayesian optimisation is **qLogNEHVI** [Ament2023], which
+fixes a vanishing-gradient pathology in the canonical EHVI/qNEHVI used by BoTorch. Across
+benchmarks, canonical qNEHVI plateaus while qLogNEHVI continues to improve (e.g., on a 30D
+multi-objective cell-network problem, qLogEHVI reaches a hypervolume of **about 0.06** vs canonical
+qEHVI topping out near **0.04**; on 16D Ackley with batch q=32, joint-optimised qLogEI matches or
+exceeds sequential-greedy qLogEI). [Ament2023] proves (Theorem 1) that as the BO loop closes its
+optimality gap and the GP posterior becomes informative, canonical EI&#x27;s argument falls into a
+floating-point regime where the function evaluates to literal zero across most of the domain and
+multistart gradient-based optimisation degenerates into random search. **Hypothesis**: the
+inconsistent and budget-blown MOBO results in this project&#x27;s t0078 (qNEHVI-based) versus its
+NSGA-II-based replacements (t0080, t0091) are at least partially attributable to this
+vanishing-gradient pathology rather than a fundamental algorithmic deficit of EI-family acquisitions
+— this is exactly the failure mode [Ament2023] documents, and it is the reason the personal-memory
+note from earlier MOBO follow-ups recommends NSGA-II via pymoo for &gt;40-d problems instead of BoTorch
+qLogNEHVI.
+
+##### Cytoplasm Volume / Wiring Economy as a Biological Objective
+
+[Cuntz2010] gives the only formal cytoplasm-volume objective function in the existing corpus, and it
+does so as Cajal&#x27;s law of conservation of cytoplasm. Their core construction grows a dendritic arbor
+as the solution to a locally optimised graph that simultaneously minimises (i) total wiring length
+(sum of segment lengths, i.e., a stand-in for total cytoplasm volume since the diameters are
+assigned post-hoc by Rall&#x27;s 3/2 rule) and (ii) path length from the root to every carrier point. The
+two costs are combined into a single scalar objective:
+
+```text
+total_cost = wiring_cost + bf * path_length_cost
+```
+
+with `bf` a balancing factor weighing material cost against conduction time. **Best practice** from
+[Cuntz2010]: across fly LPTCs, mammalian CA1 pyramidal cells and cerebellar Purkinje cells,
+biologically realistic arbors cluster at **bf in [0.2, 0.7]**; the limits **bf = 0** (pure
+minimum-spanning-tree, maximally branched, minimum cytoplasm) and **bf -&gt; infinity** (star graph
+from root, minimum conduction time, maximum cytoplasm) are unphysical. Synthetic Cuntz arbors match
+real reconstructions on **total dendritic length within a few percent** when grown on the real
+cell&#x27;s spanning-field density profile.
+
+[Cuntz2010]&#x27;s construction directly grounds the catalogue&#x27;s `cytoplasm_volume` objective in biology:
+cytoplasm-cost is not just a regulariser, it is one half of an actual evolutionary trade-off the
+cell faces against conduction time. **Hypothesis**: a Pareto front jointly optimising DSI against
+cytoplasm volume on a procedurally generated DSGC morphology will trace out the same
+material-vs-time balancing curve [Cuntz2010] documents on natural arbors, with the highest-DSI
+solutions clustering at **bf** values consistent with real DSGC reconstructions. Recipe (per
+compartment): cytoplasm volume = sum over compartments of `pi * r^2 * L` where `r` and `L` are the
+NEURON section radius and length. Wiring cost as an alternative is just the bare sum of `L`,
+ignoring diameters; surface area as a third alternative is sum of `2 * pi * r * L`.
+
+[KochPoggio1982] provides historical context: the very first formal cable-theoretic argument that
+**dendritic morphology has a functional interpretation** rather than being arbitrary uses passive
+cable theory on cat retinal ganglion cells with **R_i = 70 ohm.cm, C_m = 2 uF/cm^2, R_m = 2500
+ohm.cm^2** to argue that branching geometry plus shunting inhibition can compute direction
+selectivity. Together with [Mainen1996], which shows that dendritic morphology alone is sufficient
+to determine firing pattern (regular-spiking vs bursting vs fast-spiking) when the same channel set
+is distributed across all morphologies, these papers motivate **morphology as a legitimate free axis
+in any multi-objective single-neuron fit**. They do not themselves use MOO, but they demolish the
+alternative position that morphology is an irrelevant fixed background in conductance-density
+optimisation. [FohlmeisterMiller1997] reinforces the same point in the project&#x27;s home cell type
+(amphibian RGC): cell geometry (soma-dendritic-axon proportions) controls the f-I curve in
+multicompartmental ganglion-cell models with five nonlinear ion channels plus leak.
+
+##### Information Transfer Rate from a Retinal Ganglion Cell
+
+[Dhingra2004] is the corpus&#x27;s only direct measurement of information-transfer rate in a retinal
+ganglion cell, and it provides a methodologically clean recipe that the catalogue can adopt
+verbatim. The authors record intracellular sharp-electrode responses from brisk-transient guinea-pig
+RGCs in flat-mounted retina at **37 deg C** to a flashed spot over the receptive-field centre, then
+apply ideal-observer analysis to the graded-potential trace and to the spike train separately. Key
+quantitative results: **detection threshold from graded potential = 1.5% contrast; from spikes =
+3.8% contrast** (~2.5x degradation by the spike generator); **spikes carry roughly 60% fewer
+distinguishable gray levels** than the graded potential; the graded-potential dipper onsets at **~2%
+contrast** and the spike dipper at **~4% contrast**. The information loss is dominated by the
+spike-generator threshold nonlinearity, not by stochastic noise. Critically, [Dhingra2004] documents
+an explicit trade-off: **depolarisation reduces detection threshold but also reduces dynamic range**
+— a Pareto trade-off in the same RGC type the project simulates.
+
+For a t0091-style 8-direction trial-output format, the [Dhingra2004]-style recipe is: bin spike
+counts in fixed time windows over the trial; compute mutual information between stimulus direction
+(the discrete 8-way label) and the spike-count vector (or the graded-potential vector if HH is off,
+which is exactly the EPSP/IPSP-passive trio in the project&#x27;s standard simulation protocol). This is
+a &quot;direct method&quot; estimate; the data length per direction in the project&#x27;s 1400-ms fixed trial is
+short, so a Strong-style extrapolation correction or a Panzeri-Treves bias correction will be needed
+in the full-data regime. **Hypothesis** from [Dhingra2004]: jointly optimising DSI vs
+mutual-information between stimulus angle and spike-count, on the project&#x27;s 8-direction protocol,
+will recover a Pareto front whose endpoints behave qualitatively like [Dhingra2004]&#x27;s depolarisation
+experiment — high-DSI/low-MI extreme (over-tuned, narrow dynamic range) versus high-MI/lower-DSI
+extreme (broad-tuned, full dynamic range).
+
+##### Dendritic Computation as a Scaffold for Objective-Function Design
+
+[LondonHausser2005] is the canonical review of dendritic computation and articulates the design
+space the catalogue must populate: dendrites can act as **passive cables, active spike conductors,
+amplifiers, coincidence detectors, and direction-discriminators**, each with characteristic
+biophysical signatures. The review does not itself use MOO, but it documents the menu of single-cell
+computations that a multi-objective optimiser could optimise *for* (information transfer,
+coincidence detection, directional tuning, etc.) and *against* (energy, cytoplasm, robustness). For
+the catalogue, the review&#x27;s value is that it justifies why information-transfer rate,
+dendritic-spike-count, and direction-tuning sharpness are *all* legitimate biological objectives
+rather than arbitrary engineering metrics. **Best practice** that emerges across
+[LondonHausser2005], [Cuntz2010] and [KochPoggio1982]: every dendritic-computation objective should
+be paired with a dendritic-cost objective (cytoplasm, wiring length, or membrane area) so the
+optimiser cannot escape the trade-off by inflating the morphology arbitrarily.
+
+##### NEURON Is the Implementation Substrate Across the Field
+
+Every methodologically relevant paper in the corpus runs in NEURON or NEURON-compatible code:
+[Hay2011] explicitly uses NEURON 7.x with **Ra = 100 ohm.cm, Cm = 1 uF/cm^2 (soma/axon) or 2 uF/cm^2
+(basal/apical, correcting for spines), ELeak = -90 mV, ENa = +50 mV, EK = -85 mV, EIh = -45 mV, Q10
+= 2.3, junction-potential shift -10 mV**; [Cuntz2010] generates morphologies intended for direct
+import into NEURON via Rall-3/2-rule diameter assignment; [Dhingra2004]&#x27;s threshold-nonlinearity
+model is a one-compartment HH spike generator. The project&#x27;s existing NEURON-based pipeline
+(validated end-to-end by t0091 over 68 free parameters) is the right substrate for the catalogue.
+**Best practice** from [Hines1997]: discretise compartments at &lt;= 20 um (Hay 2011 follows this
+convention exactly, giving ~200 compartments per L5b PC). The same discretisation rule should be
+applied to the project&#x27;s procedurally generated DSGC morphologies when computing cytoplasm-volume or
+wiring-cost objectives so the answer is robust to mesh-density artefacts.
+
+#### Methodology Insights
+
+* **Pareto-acceptable ensemble, not a single best fit**: from [Hay2011] — accept all solutions
+  whose every feature is within 2-3 SD of the target rather than picking the single
+  hypervolume-maximising point. Report the full Pareto front and the ensemble distribution. t0091&#x27;s
+  reporting should follow this convention, not the single-best-model convention.
+
+* **Per-feature SD-normalisation of objectives**: from [Hay2011] — express every objective in
+  units of the corresponding experimental SD (or, when no experimental SD is available, the
+  best-effort biological tolerance). This is the canonical solution to the &quot;objectives in
+  incompatible units&quot; problem the catalogue will face when mixing bits-per-second (information),
+  ATP-per-spike (energy), um^3 (volume), and dimensionless DSI.
+
+* **NSGA-II / NSGA-III preferred over BoTorch qLogNEHVI for &gt;= 40-dimensional MOBO**: the combined
+  evidence from [Ament2023] (qLogNEHVI fixes vanishing gradients but is still GP-based and thus
+  O(N^3) in the number of evaluations) and the project&#x27;s own t0078 budget overrun (memory note)
+  recommends NSGA-II via pymoo for the catalogue&#x27;s high-d MOBO follow-ups. qLogNEHVI remains the
+  right tool for low-d (&lt;= 20) constrained problems with budget for GP evaluation.
+
+* **`bf` in [0.2, 0.7] as the biologically realistic morphology generator range** (from
+  [Cuntz2010]): the cytoplasm-vs-conduction-time balancing factor that defines biologically
+  realistic dendritic arbors lives in this band. When the catalogue&#x27;s wiring/cytoplasm objective is
+  paired with morphology generation, the prior on `bf` should be Uniform(0.2, 0.7) rather than the
+  wider engineering-default of Uniform(0, 5).
+
+* **Information-transfer recipe from [Dhingra2004]**: bin spike counts in fixed windows; use
+  ideal-observer / mutual-information between stimulus class and spike-count vector. For the
+  project&#x27;s 8-direction, 1400-ms trial format, expect the direct-method MI estimator to be
+  bias-prone — apply Strong-style extrapolation or Panzeri-Treves NSB correction. Validate against
+  [Dhingra2004]&#x27;s ~60% gray-level loss as a sanity check on the spike-generator-induced MI
+  reduction.
+
+* **Cytoplasm-volume recipe**: sum over NEURON sections of `pi * r^2 * L` after discretising every
+  section to &lt;= 20 um per compartment ([Hines1997]/[Hay2011] convention). For the project&#x27;s
+  procedurally generated morphologies, the morphology generator already has access to all
+  per-section radii and lengths, so the objective is a one-line computation in the existing
+  morphology code.
+
+* **Discretisation invariance check**: any catalogue objective that integrates over the morphology
+  (cytoplasm, wiring, surface area, ATP-from-currents) must be regression-tested across two
+  compartment-density settings (e.g., 20 um and 10 um). [Hay2011]&#x27;s 20-um convention is the floor;
+  doubling resolution should not change the objective by more than a few percent or the recipe needs
+  revisiting.
+
+* **Robustness as an explicit objective rather than a sanity check**: although no paper in the
+  existing corpus implements a Marder-style perturbation-sensitivity objective, the parameter-band
+  analysis [Hay2011] performs on the Pareto-acceptable ensemble (e.g., apical Nat acceptable in
+  [101, 133.5] pS/um^2 for BAC firing) is the same idea. The catalogue should include &quot;DSI standard
+  deviation under +/- 10% perturbation of all channel densities&quot; as a robustness objective, computed
+  from a small Monte Carlo sample around each Pareto point in the final reporting stage.
+
+#### Gaps and Limitations
+
+* **No methodology paper on Druckmann-style multi-objective single-neuron optimisation in the
+  corpus**: the canonical Druckmann 2007 (&quot;A novel multiple objective optimization framework for
+  constraining conductance-based neuron models by experimental data&quot;) and Druckmann 2011 (eFEL
+  precursor) are not yet downloaded. These are the most-cited methodology references in the field
+  and the research-internet stage must download both. Achard &amp; De Schutter 2006 (first MOEA Purkinje
+  fit) and Van Geit / NeuroFitter / BluePyOpt are also missing. This is the single largest gap.
+
+* **No biological energy-budget paper in the corpus**: Attwell &amp; Laughlin 2001 (&quot;An energy budget
+  for signaling in the grey matter of the brain&quot;), Niven &amp; Laughlin 2008 (&quot;Energy limitation as a
+  selective pressure on the evolution of sensory systems&quot;), and Sengupta et al. 2010 (&quot;Action
+  potential energy efficiency varies among neuron types in vertebrates and invertebrates&quot;) are
+  absent. The catalogue&#x27;s `metabolic_energy_per_spike` recipe will have to be reconstructed from
+  research-internet sources. Only the HH-current substrate that lets us *implement* the recipe
+  (e.g., [Hay2011], [FohlmeisterMiller1997]) is in the corpus.
+
+* **No robustness/degeneracy paper in the corpus**: Marder &amp; Goaillard 2006 (&quot;Variability,
+  compensation and homeostasis in neuron and network function&quot;) and Prinz, Bucher &amp; Marder 2004
+  (&quot;Similar network activity from disparate circuit parameters&quot;) are absent. The
+  `robustness_under_perturbation` recipe will have to come entirely from research-internet.
+
+* **No information-theory canon in the corpus**: Bialek&#x27;s spike-train mutual-information work,
+  Strong et al.&#x27;s &quot;Entropy and information in neural spike trains&quot; (the direct-method and
+  extrapolation-correction reference), Brunel &amp; Nadal&#x27;s Fisher-information / discrimination-capacity
+  framework, and Victor &amp; Purpura / van Rossum spike-train metrics are all absent. [Dhingra2004]&#x27;s
+  ideal-observer recipe is the only existing anchor and it is RGC-specific, not a general framework.
+  Research-internet must close this gap.
+
+* **No wiring-cost / cytoplasm-volume measurement on real DSGC morphology**: [Cuntz2010] grows
+  synthetic arbors but does not ground-truth cytoplasm volume against real DSGC reconstructions.
+  This is a true open question in the field and the catalogue should flag it as such — the
+  project&#x27;s own DSGC morphologies (t0005/t0008/t0009/t0023/t0024/t0033) are an opportunity to
+  produce that measurement as a side effect of the catalogued objective implementation.
+
+* **Existing corpus is DSGC-dominated**: of the 22 papers reviewed, only 9 are cited here. Most of
+  the rest are DSGC-mechanism papers (Hanson 2019, Poleg-Polsky &amp; Diamond 2016, Vaney 2012, Sivyer
+  2010/2013, Sethuramanujam 2016/2017, Park 2014, Briggman 2011, Ding 2016, Trenholm 2013, Wienbar
+  2022, Riccitelli 2025, etc.) that are highly relevant to DSI as an objective but do not themselves
+  use MOO and do not introduce new objective functions. This is consistent with the task&#x27;s explicit
+  warning: the bulk of the t0097 literature must come from research-internet.
+
+* **No paper in the corpus uses both DSI and a non-DSI objective in a multi-objective Pareto
+  setup**: the canonical &quot;DSI vs &lt;X&gt;&quot; pairs the catalogue must populate (X in
+  {information-transfer-rate, ATP-per-spike, cytoplasm-volume, robustness}) are not represented yet.
+  This is the open research gap the catalogue itself is designed to fill, and the research-internet
+  stage should preferentially seek out *any* paper that pairs DSI (or any selectivity index) with
+  energy or wiring or robustness, even outside the retina.
+
+#### Recommendations for This Task
+
+1. **Treat the existing corpus as a methodology and cell-substrate baseline only**: the answer
+   asset&#x27;s MOO-methodology section will draw heavily from [Hay2011] (joint perisomatic+BAC fit,
+   ensemble-as-experiment analysis, 22-parameter NSGA-II, 2-3 SD acceptance threshold) and from
+   [Ament2023] (qLogNEHVI replacement for canonical qNEHVI; vanishing-gradient diagnosis). For the
+   four mandatory objective categories, defer biological-objective-origin sourcing to
+   research-internet.
+
+2. **Implement the cytoplasm-volume objective from [Cuntz2010]&#x27;s Cajal-cytoplasm-conservation
+   formula**: `volume = sum over compartments of pi * r^2 * L`. Validate by reproducing
+   [Cuntz2010]&#x27;s claim that biologically realistic Cuntz-MST trees recover total dendritic length
+   within a few percent of real reconstructions when grown on the matching density profile. Use
+   [Cuntz2010]&#x27;s `bf in [0.2, 0.7]` as the biologically realistic prior for procedural morphology
+   generation in any future joint DSI-vs-volume MOBO.
+
+3. **Adopt [Dhingra2004]&#x27;s ideal-observer recipe as the base information-transfer-rate estimator**:
+   bin spike counts per direction; compute MI between stimulus class and spike-count vector; correct
+   for short-data bias with Strong extrapolation or NSB. Use the project&#x27;s existing 8-direction,
+   1400-ms trial output directly. Validate against [Dhingra2004]&#x27;s ~60% gray-level loss as a sanity
+   check.
+
+4. **Adopt [Hay2011]&#x27;s per-feature-SD normalisation and Pareto-acceptable-ensemble reporting**:
+   express every objective in units of the corresponding experimental SD (or biological tolerance
+   when SD is unavailable); report the full Pareto front and the ensemble parameter distribution
+   rather than the single hypervolume-maximising point. This is the canonical reporting pattern in
+   the field.
+
+5. **Recommend NSGA-II via pymoo over BoTorch qLogNEHVI for any catalogued &gt;40-dimensional MOBO
+   follow-up**: based on [Ament2023]&#x27;s diagnosis that qLogNEHVI still relies on a GP (O(N^3)
+   scaling) and on the project&#x27;s own t0078 budget overrun. Reserve qLogNEHVI for low-d (&lt;= 20)
+   constrained MOBO where the GP cost is bearable.
+
+6. **Defer to research-internet for the energy, robustness, and information-theory canon**: the
+   answer asset&#x27;s per-objective recipes for ATP-per-spike, parameter-perturbation robustness, and
+   stimulus-spike mutual-information all require sources not in the existing corpus. The
+   research-internet stage must download Attwell &amp; Laughlin 2001, Niven &amp; Laughlin 2008, Sengupta et
+   al. 2010, Marder &amp; Goaillard 2006, Prinz, Bucher &amp; Marder 2004, Druckmann 2007/2011, Achard &amp; De
+   Schutter 2006, Strong et al. 1998, and Bialek/De Ruyter van Steveninck spike-train MI papers.
+   Without these, the catalogue will be incomplete.
+
+7. **Flag cytoplasm volume as a novel objective contribution**: no paper in the existing corpus has
+   *implemented* cytoplasm volume as an explicit MOO objective in a single-neuron compartmental fit.
+   [Cuntz2010] uses it as a generator constraint, not as an optimisation target. The project has a
+   genuine opportunity to produce a methodologically novel result by running DSI vs cytoplasm-volume
+   MOBO on its existing DSGC substrate, even if research-internet does not turn up a published
+   precedent.
+
+#### Paper Index
+
+##### [Hay2011]
+
+* **Title**: Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and
+  Perisomatic Active Properties
+* **Authors**: Hay, E., Hill, S., Schurmann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **Asset**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `dendritic-computation`
+* **Relevance**: Canonical multi-objective optimisation reference for conductance-based
+  single-neuron models. 20-objective NSGA-style fit of L5b pyramidal cells with population 1000, 500
+  generations, 22 free parameters, 2-3 SD acceptance threshold, and ensemble-as-experiment parameter
+  analysis. The methodology template t0091 already inherits.
+
+##### [Cuntz2010]
+
+* **Title**: One Rule to Grow Them All: A General Theory of Neuronal Branching and Its Practical
+  Application
+* **Authors**: Cuntz, H., Forstner, F., Borst, A., Hausser, M.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000877`
+* **Asset**:
+  `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000877/`
+* **Categories**: `compartmental-modeling`, `dendritic-computation`, `cable-theory`
+* **Relevance**: Cajal-cytoplasm-conservation grounding for the cytoplasm-volume objective. Defines
+  the wiring vs path-length trade-off via the balancing factor `bf`, with biologically realistic
+  arbors clustering at `bf` in [0.2, 0.7]. Directly supplies the catalogue&#x27;s cytoplasm-volume recipe
+  and the morphology-generator prior for downstream joint DSI-vs-volume MOBO.
+
+##### [Ament2023]
+
+* **Title**: Unexpected Improvements to Expected Improvement for Bayesian Optimization
+* **Authors**: Ament, S., Daulton, S., Eriksson, D., Balandat, M., Bakshy, E.
+* **Year**: 2023
+* **DOI**: `no-doi_Ament2023_logei-bo`
+* **Asset**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/no-doi_Ament2023_logei-bo/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: Diagnoses and fixes the vanishing-gradient pathology of the canonical EHVI/qNEHVI
+  acquisition functions used in BoTorch. qLogNEHVI is the drop-in replacement for any future
+  BO-based catalogued MOBO; together with the project&#x27;s own NSGA-II preference for high-d problems,
+  this paper sets the optimiser-selection rule in the answer asset.
+
+##### [Dhingra2004]
+
+* **Title**: Spike Generator Limits Efficiency of Information Transfer in a Retinal Ganglion Cell
+* **Authors**: Dhingra, N. K., Smith, R. G.
+* **Year**: 2004
+* **DOI**: `10.1523/jneurosci.5346-03.2004`
+* **Asset**:
+  `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1523_jneurosci.5346-03.2004/`
+* **Categories**: `retinal-ganglion-cell`, `voltage-gated-channels`, `compartmental-modeling`
+* **Relevance**: Only direct measurement of information-transfer rate in a retinal ganglion cell in
+  the existing corpus. Provides the ideal-observer recipe (1.5% vs 3.8% contrast detection threshold
+  from graded potential vs spikes; ~60% gray-level loss; sensitivity-vs-dynamic-range trade-off)
+  that the catalogue&#x27;s `mutual_information_stimulus_spike_train` objective adopts as its base
+  estimator. Directly applicable to the project&#x27;s 8-direction trial format.
+
+##### [KochPoggio1982]
+
+* **Title**: Retinal ganglion cells: a functional interpretation of dendritic morphology
+* **Authors**: Koch, C., Poggio, T.
+* **Year**: 1982
+* **DOI**: `10.1098/rstb.1982.0084`
+* **Asset**: `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1098_rstb.1982.0084/`
+* **Categories**: `cable-theory`, `retinal-ganglion-cell`, `dendritic-computation`
+* **Relevance**: Historical anchor for the claim that dendritic morphology has a functional
+  interpretation rather than being arbitrary. Justifies including morphology as a free axis in any
+  catalogued multi-objective single-neuron fit and supplies canonical passive-cable parameters
+  (`R_i = 70 ohm.cm, C_m = 2 uF/cm^2, R_m = 2500 ohm.cm^2`) for the project&#x27;s RGC compartmental
+  models.
+
+##### [Mainen1996]
+
+* **Title**: Influence of dendritic structure on firing pattern in model neocortical neurons
+* **Authors**: Mainen, Z. F., Sejnowski, T. J.
+* **Year**: 1996
+* **DOI**: `10.1038/382363a0`
+* **Asset**: `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1038_382363a0/`
+* **Categories**: `cable-theory`, `dendritic-computation`, `compartmental-modeling`
+* **Relevance**: Demonstrates that dendritic morphology alone determines firing pattern when the
+  same channel set is distributed across all morphologies. Supports treating morphology as a free
+  axis in joint MOO and justifies the cytoplasm-volume objective as biologically meaningful (the
+  cell pays a real material cost that buys functionally distinct firing).
+
+##### [FohlmeisterMiller1997]
+
+* **Title**: Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal
+  Ganglion Cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **Asset**:
+  `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1152_jn.1997.78.4.1948/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Relevance**: Project home cell type. Five-channel multicompartmental amphibian RGC model in
+  which cell geometry controls f-I behaviour. Validates that the project&#x27;s existing HH-channel
+  substrate is the right place to compute the catalogue&#x27;s ATP-per-spike objective (Na+, K+, leak
+  ionic currents are all explicitly modelled).
+
+##### [Hines1997]
+
+* **Title**: The NEURON Simulation Environment
+* **Authors**: Hines, M. L., Carnevale, N. T.
+* **Year**: 1997
+* **DOI**: `10.1162/neco.1997.9.6.1179`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/`
+* **Categories**: `compartmental-modeling`, `cable-theory`, `voltage-gated-channels`
+* **Relevance**: Canonical reference for the simulation substrate every catalogued objective will
+  ultimately be evaluated on. Establishes the &lt;= 20-um compartment discretisation convention that
+  cytoplasm-volume, wiring-cost, ATP-from-currents, and surface-area objectives all depend on for
+  mesh-density invariance.
+
+##### [LondonHausser2005]
+
+* **Title**: Dendritic Computation
+* **Authors**: London, M., Hausser, M.
+* **Year**: 2005
+* **DOI**: `10.1146/annurev.neuro.28.061604.135703`
+* **Asset**:
+  `tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1146_annurev.neuro.28.061604.135703/`
+* **Categories**: `dendritic-computation`, `cable-theory`, `compartmental-modeling`
+* **Relevance**: Canonical review of dendritic computation. Justifies why information-transfer rate,
+  dendritic-spike count, coincidence detection and direction-tuning sharpness are all legitimate
+  biological objectives rather than arbitrary engineering metrics, and supports the pairing rule
+  that every dendritic-computation objective should be paired with a dendritic-cost objective in the
+  catalogue.
+      </content>
+    </section>
+    <section id="t0097_multi_obj_optim-research_internet" source_kind="file">
+      <title>t0097_multi_obj_optim — Literature survey: multi-objective optimisation of single-neuron models — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0097_multi_obj_optim</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0097_multi_obj_optim/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0097_multi_obj_optim&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 18
+sources_cited: 42
+papers_discovered: 21
+date_completed: &quot;2026-05-08&quot;
+status: &quot;complete&quot;
+---
+#### Task Objective
+
+Survey the published literature on multi-objective optimisation (MOO) of single-neuron compartmental
+models and broaden the project&#x27;s MOBO objective space beyond the DSI-plus-firing-rate pair used in
+every prior optimisation task here (t0076, t0078, t0080, t0081, t0083, t0086, t0091). The internet
+research stage closes the four canonical-objective gaps identified in `research_papers.md`
+(information transfer rate, metabolic energy / ATP per spike, cytoplasm volume / wiring economy,
+robustness / degeneracy) and the methodology gap (Druckmann, Achard &amp; De Schutter, Van Geit /
+NeuroFitter / BluePyOpt, NSGA-II / NSGA-III, eFEL). It produces a ranked catalogue of objective
+functions that can be implemented on top of the project&#x27;s existing pymoo NSGA-II loop without
+infrastructure rewrites.
+
+#### Gaps Addressed
+
+This section explicitly addresses every gap from the Gaps and Limitations section of
+`research_papers.md`:
+
+1. **No methodology paper on Druckmann-style multi-objective single-neuron optimisation in the
+   corpus** — **Resolved**. Located the canonical methodology line: Druckmann et al. 2007
+   [Druckmann2007] (the framework paper), Druckmann et al. 2011 [Druckmann2011] (the
+   stimulus-protocol paper that became the eFEL reference application), Achard &amp; De Schutter 2006
+   [Achard2006] (first MOEA Purkinje fit and the parameter-landscape-as-hyperplanes finding), Van
+   Geit et al. 2007 [VanGeit2007] (NeuroFitter, phase-plane trajectory density error metric), Van
+   Geit et al. 2016 [VanGeit2016] (BluePyOpt, the project&#x27;s de-facto methodology cousin), the
+   BluePyOpt repository [BluePyOpt-GH] and its Read the Docs API [BluePyOpt-Docs]. Also located eFEL
+   [eFEL-GH] and the systematic Allen-cell-types-database fits by Gouwens et al. 2018 [Gouwens2018]
+   together with the AllenSDK biophysical-model docs [AllenSDK-Docs].
+
+2. **No biological energy-budget paper in the corpus** — **Resolved**. Located the canonical
+   energy-budget line: Attwell &amp; Laughlin 2001 [Attwell2001] (the brain-grey-matter ATP budget,
+   action potentials = 47% of signalling cost), Niven &amp; Laughlin 2008 [Niven2008] (energy as a
+   selective pressure on sensory-system evolution), Sengupta et al. 2010 [Sengupta2010] (action
+   potential energy efficiency varies by neuron type, Na/K overlap as the controlling parameter),
+   Carter &amp; Bean 2009 [Carter2009] (sodium entry efficiency, fast-spiking GABAergic cells use 2x the
+   theoretical minimum sodium), Hallermann et al. 2012 [Hallermann2012] (state and location
+   dependence of metabolic cost — the Na/K charge-overlap recipe explicitly applied to a cortical
+   pyramidal model), Niven et al. 2007 [Niven2007] (fly photoreceptor energy-information trade-off,
+   the canonical bits-per-ATP Pareto curve).
+
+3. **No robustness/degeneracy paper in the corpus** — **Resolved**. Located Marder &amp; Goaillard
+   2006 [Marder2006] (the canonical review of variability, compensation and homeostasis), Prinz,
+   Bucher &amp; Marder 2004 [Prinz2004] (20 million STG models showing similar network activity from
+   disparate parameters — the empirical foundation for treating robustness as a population
+   statistic), Goldman et al. 2001 [Goldman2001] (global structure / compensatory directions /
+   activity-pattern manifold in a 5-conductance model), Olypher &amp; Calabrese 2007 [Olypher2007]
+   (implicit-function theorem framework for compensatory parameter manifolds — the formal
+   mathematics underlying &quot;neutral directions&quot; in conductance space).
+
+4. **No information-theory canon in the corpus** — **Resolved**. Located Strong et al. 1998
+   [Strong1998] (the direct method and extrapolation correction for spike-train MI; the Bialek-group
+   canonical paper), Borst &amp; Theunissen 1999 [Borst1999] (the canonical review of information theory
+   and neural coding in *Nature Neuroscience*), Brenner et al. 2000 [Brenner2000] (synergy in a
+   neural code, joint-vs-marginal MI decomposition for spike pairs), Victor &amp; Purpura 1997
+   [Victor1997] (metric-space analysis of spike trains; provides spike-distance metrics that
+   complement direct MI estimation), Koch 1999 [Koch1999] (the canonical single-neuron
+   information-processing textbook for context).
+
+5. **No wiring-cost / cytoplasm-volume measurement on real DSGC morphology** — **Partially
+   resolved**. Located the canonical wiring-economy line: Cherniak 1992 [Cherniak1992] (Steiner-tree
+   formalism, local volume optimisation as the dominant objective at branch junctions), Chklovskii
+   et al. 2002 [Chklovskii2002] (cortex is wired so that wire occupies ~3/5 of grey-matter volume,
+   matching the optimum predicted from minimising delays + attenuation + length), Wen &amp; Chklovskii
+   2006 [Wen2006] (relating arbor structure to function via wiring optimisation). DSGC-specific
+   ground-truth remains unmeasured in the literature; the catalogue confirms that this is a genuine
+   open question and that the project&#x27;s existing DSGC morphologies make a measurement feasible as a
+   side effect of implementing the cytoplasm-volume objective.
+
+6. **Existing corpus is DSGC-dominated** — **Resolved by design**. The discovered-paper list below
+   is deliberately broad: cerebellar Purkinje (Achard &amp; De Schutter), STG / pyloric crustacean
+   (Prinz, Marder &amp; Goaillard, Goldman, Olypher &amp; Calabrese), L5 cortical pyramidal (Druckmann, Hay
+   already in corpus, Hallermann), fly photoreceptors (Niven, Anderson, Laughlin), MSO mammalian
+   auditory brainstem (Remme), and Allen-mouse-V1 (Gouwens). The methodology line is cell-agnostic.
+
+7. **No paper in the corpus uses both DSI and a non-DSI objective in a multi-objective Pareto
+   setup** — **Partially resolved**. No paper directly pairs DSI with energy/wiring/robustness,
+   but Remme et al. 2018 [Remme2018] is a strong precedent: it pairs *coincidence-detection
+   function* with *energy* in MSO neurons and is methodologically the closest published analogue to
+   the project&#x27;s planned DSI-vs-energy MOBO. Treating Remme as the methodology template, a
+   DSI-vs-energy experiment is a direct compositional generalisation.
+
+#### Search Strategy
+
+**Sources searched**: Google Scholar, PubMed / PMC, PLOS journals (Computational Biology, Biology),
+Frontiers (Neuroinformatics, Neuroscience), *Nature Communications* / *Nature Reviews Neuroscience*
+/ *Nature Neuroscience*, *Journal of Neuroscience*, *Journal of Cerebral Blood Flow and Metabolism*,
+*Journal of Experimental Biology*, *Physical Review Letters*, *IEEE Transactions on Evolutionary
+Computation*, *Neural Computation*, GitHub (BlueBrain/BluePyOpt, BlueBrain/eFEL,
+anyoptimization/pymoo), Read the Docs (BluePyOpt, AllenSDK, pymoo), ModelDB (citations and model
+accessions), Semantic Scholar, ResearchGate.
+
+**Queries executed** (18 total, exact text):
+
+*Methodology line:*
+
+1. `Druckmann 2007 &quot;novel multiple objective optimization framework&quot; conductance-based neuron models Frontiers Neuroscience`
+2. `Achard De Schutter 2006 &quot;complex parameter landscape&quot; Purkinje cell evolutionary algorithm PLOS Computational Biology`
+3. `Van Geit BluePyOpt 2016 Frontiers Neuroinformatics Bluepyopt python optimization neuron models`
+4. `Van Geit Achard 2007 Neurofitter automated tuning neuron compartmental models software`
+5. `Druckmann 2011 cortical pyramidal cell efeatures &quot;evolutionary algorithm&quot; eFEL multi-objective`
+6. `Druckmann Berger Schurmann Hill Markram Segev 2011 &quot;effective stimuli for constructing reliable neuron models&quot; PLOS Computational Biology`
+7. `Markram 2018 &quot;systematic generation of biophysically detailed models for diverse cortical neuron types&quot; Nature Communications`
+8. `Deb 2002 NSGA-II &quot;fast and elitist multiobjective genetic algorithm&quot; IEEE Transactions Evolutionary Computation`
+9. `Blank Deb 2020 pymoo &quot;multi-objective optimization in python&quot; IEEE Access`
+10. `Deb Jain 2014 NSGA-III &quot;evolutionary many-objective optimization algorithm using reference-point&quot; IEEE Trans Evol Comput`
+11. `Zitzler Thiele 1998 &quot;multiobjective evolutionary algorithms comparative case study and the strength Pareto approach&quot;`
+
+*Energy / metabolic line:*
+
+12. `Attwell Laughlin 2001 &quot;energy budget for signaling in the grey matter of the brain&quot; Journal Cerebral Blood Flow Metabolism`
+13. `Niven Laughlin 2008 &quot;energy limitation as a selective pressure on the evolution of sensory systems&quot; Journal Experimental Biology`
+14. `Sengupta 2010 &quot;action potential energy efficiency varies among neuron types&quot; PLOS Computational Biology Na K overlap`
+15. `Carter Bean 2009 sodium potassium overlap action potential energy efficiency cortical neurons Neuron`
+16. `Hallermann de Kock 2012 &quot;state and location dependence of action potential metabolic cost&quot; Nature Neuroscience cortical pyramidal`
+17. `Niven Anderson Laughlin 2007 &quot;fly photoreceptor energy bits per second&quot; Current Biology information-energy trade-off`
+18. `&quot;function and energy consumption constrain neuronal biophysics&quot; coincidence detection 2018 PLOS Computational Biology Mainen`
+    *(returned Remme et al. 2018)*
+
+*Robustness / degeneracy line:*
+
+* `Marder Goaillard 2006 &quot;Variability compensation and homeostasis in neuron and network function&quot; Nature Reviews Neuroscience`
+* `Prinz Bucher Marder 2004 &quot;similar network activity from disparate circuit parameters&quot; Nature Neuroscience`
+* `Goldman Golowasch Marder Abbott 2001 &quot;global structure robustness and modulation of neuronal models&quot; Journal Neuroscience`
+* `Olypher Calabrese 2007 &quot;using constraints on neuronal activity to reveal compensatory changes in neuronal parameters&quot; Journal Neurophysiology`
+
+*Information theory line:*
+
+* `Strong Koberle de Ruyter van Steveninck Bialek 1998 &quot;entropy and information in neural spike trains&quot; Physical Review Letters`
+* `Borst Theunissen 1999 &quot;information theory and neural coding&quot; Nature Neuroscience review`
+* `Brenner Strong Koberle Bialek de Ruyter 2000 &quot;synergy in a neural code&quot; Neural Computation`
+* `&quot;victor purpura&quot; 1996 &quot;spike train metrics&quot; Network Computation Neural Systems metric-space spike timing`
+
+*Wiring economy line:*
+
+* `Chklovskii Schikorski Stevens 2002 &quot;wiring optimization in cortical circuits&quot; Neuron`
+* `Cherniak 1992 &quot;local optimization of neuron arbors&quot; Biological Cybernetics dendritic tree minimum`
+* `Wen Chklovskii 2008 &quot;neuronal arbor optimization&quot; &quot;neuronal architecture&quot; &quot;wire-saving&quot; dendrite axon volume`
+
+*Codebase / Pareto-analysis surveys (WebFetch):*
+
+* `https://github.com/BlueBrain/BluePyOpt` *(API surface, IBEA/DEAP integration, archive status)*
+* `https://github.com/BlueBrain/eFEL` *(feature library, C++/Python split)*
+* `https://bluepyopt.readthedocs.io/en/latest/index.html` *(modules and class layout)*
+* `https://pymoo.org/` *(NSGA-II/-III/MOEA-D, hypervolume/IGD/GD+, mixed-variable, joblib parallel)*
+* `&quot;paretoset&quot; OR &quot;DEAP&quot; OR &quot;platypus&quot; python pareto front non-dominated sorting library hypervolume indicator`
+
+**Date range**: No restriction (canonical references span 1992-2025). Methodology codebase
+documentation pulled May 2026.
+
+**Inclusion criteria**: A source must satisfy at least one of (a) supplies a formula or
+implementation recipe for one of the four must-find objective categories, (b) is a methodology
+reference for multi-objective single-neuron compartmental fitting in NEURON or NEURON-compatible
+code, (c) provides a Pareto-analysis primitive (NSGA-II/III, hypervolume, IGD) the project&#x27;s pymoo
+loop already uses, or (d) provides a published precedent for pairing a function objective with a
+biological cost objective on a single compartmental neuron.
+
+**Exclusion criteria**: Network-level optimisation (multi-neuron); reinforcement-learning or
+deep-learning policy optimisation; phenomenological integrate-and-fire models without compartmental
+structure; engineering MOO benchmarks unconnected to neuron modelling.
+
+**Search iterations**: Queries 6-7, 14-18 and Remme/Olypher were follow-ups prompted by initial
+results. Query 15 (Carter &amp; Bean) was triggered by Sengupta et al.&#x27;s repeated citation of it as the
+empirical anchor for Na/K overlap. Query 18 (Remme) was triggered by Sengupta et al.&#x27;s downstream
+citation graph and surfaced the closest published analogue to the project&#x27;s planned DSI-vs-energy
+MOBO. The wiring-economy line was iterated last because [Cuntz2010] is already in the corpus and the
+gap was explicitly the *missing* canonical ancestors.
+
+#### Key Findings
+
+##### Druckmann-Style Multi-Objective Methodology Is the Field&#x27;s De-Facto Standard
+
+[Druckmann2007] introduced the multi-objective evolutionary framework that every subsequent
+methodology paper (including [Hay2011] already in the corpus) inherits, and the project&#x27;s own
+NSGA-II loop indirectly inherits via BluePyOpt-derived MOD files. The framework expresses every
+electrophysiological feature (spike count, spike width, AHP depth, etc.) as an independent objective
+whose target is the experimental mean and whose unit is the experimental SD; the optimiser returns
+the Pareto front of feature combinations rather than a single best fit. [Druckmann2011]
+[Druckmann2011] extends the framework with a stimulus-protocol design study showing that a
+combination of step + ramp current injections provides the most informative constraints on
+parameters. The [Druckmann2007] framework was operationalised first as NeuroFitter [VanGeit2007],
+which combined NEURON with stochastic optimisation algorithms via a phase-plane-trajectory-density
+error metric (insensitive to spike-time jitter), and then as **BluePyOpt** [VanGeit2016] which
+became the field standard. BluePyOpt wraps DEAP and ships an IBEA selector by default; the
+[BluePyOpt-GH] repository (archived Feb 2025; further development at the Open Brain Institute) and
+the [BluePyOpt-Docs] documentation expose `bluepyopt.ephys.evaluators.CellEvaluator`,
+`bluepyopt.ephys.protocols.StepProtocol`, and `bluepyopt.ephys.efeatures` as the canonical
+evaluator/protocol/feature triple. eFEL [eFEL-GH] is the underlying C++ feature library (40.7% C++,
+57.9% Python wrapper) supplying features such as `AP_amplitude`, `voltage_base`, `bpap_attenuation`
+and `ais_initiation`. [Gouwens2018] applied the entire stack to **170 individual neurons** of the
+Allen mouse V1 cell types database, fitting 10 active conductances per cell to electrophysiological
+features under BluePyOpt — the largest published systematic application of the methodology. The
+**AllenSDK biophysical-model documentation** [AllenSDK-Docs] confirms NEURON as the simulation
+substrate, with both perisomatic-only and all-active model variants available.
+
+**Best practice** from [VanGeit2016] / [Gouwens2018]: structure the optimisation as
+`CellEvaluator(cell_model, params, protocols, fitness_calculator)` where `fitness_calculator`
+returns one objective per `eFeature`; this matches the project&#x27;s NSGA-II per-direction-DSI +
+firing-rate evaluator pattern with minimal modification. **Hypothesis**: switching the project&#x27;s
+hand-written t0091 evaluator for BluePyOpt&#x27;s `CellEvaluator` would preserve every objective the
+project currently computes and add eFEL-derived features (spike threshold, AHP depth, etc.) as a
+side-effect, enabling a Druckmann-style 20+ objective fit on the project&#x27;s existing DSGC substrate.
+
+##### Achard &amp; De Schutter 2006: Parameter Landscapes Are Loose Hyperplanes, Not Single Optima
+
+[Achard2006] performed the first MOEA fit of a complex (Purkinje) cell with 24 free conductance
+densities. Using an evolution strategy and a phase-plane fitness function, they obtained **20 very
+different models** all reproducing the experimental firing pattern — including the fine details of
+the complex spike. The **parameter landscape of acceptable solutions is a set of loosely connected
+hyperplanes**, not a single basin. **Best practice**: grid search and random search will miss these
+hyperplanes; only directed search (evolutionary or gradient-based with diversity preservation)
+recovers them. **Hypothesis**: the project&#x27;s t0091 NSGA-II run on 68-d morphology + channels will
+produce a hyperplane structure analogous to [Achard2006]&#x27;s; the project should report this structure
+explicitly (e.g., PCA of the Pareto-acceptable ensemble) rather than reporting only the
+hypervolume-maximising point. This is consistent with [Hay2011]&#x27;s ensemble-as-experiment pattern
+already in `research_papers.md`.
+
+##### Energy as a Selectable Pressure: Attwell-Laughlin Budget and ATP-per-Spike Recipes
+
+[Attwell2001] derived the canonical energy budget for cortical signalling using stoichiometric
+Na+/K+/Ca2+ accounting on the rat grey-matter neuron: **action potentials consume 47% of total
+signalling ATP, postsynaptic glutamate effects 34%, resting potential 13%, glutamate recycling 3%**.
+[Niven2008] elevates this from a budget to a selective pressure: across sensory systems, evolution
+demonstrably reduces metabolic cost subject to functional constraints. [Niven2007] supplies the
+clearest empirical Pareto curve in the literature: across four fly species, photoreceptor
+information rates from **200 bits/s (D. melanogaster) to 1000 bits/s (S. carnaria)** scale
+super-linearly with ATP cost, with a fixed cost of **~20% of maximum consumption** — a
+bits-per-ATP Pareto front is *measurable in the same cell type across species*.
+
+[Sengupta2010] makes the recipe operational: ATP per spike = (Na+ influx during AP) / 3, where the
+factor 3 reflects three Na+ ions exchanged per ATP by the Na+/K+ pump. The neuron&#x27;s **Na/K-current
+overlap** during the AP controls the multiplier above the theoretical minimum: in mammalian cortical
+pyramidal cells the overlap is small (~25% above minimum, [Carter2009]); in fast-spiking cerebellar
+Purkinje cells and cortical interneurons the overlap is large (~100% above minimum, [Carter2009]).
+[Hallermann2012] applies the recipe at compartment level in a cortical pyramidal NEURON model: AIS
+and nodes of Ranvier have the highest cost-per-area, but backpropagation into dendrites and axon
+collaterals dominates total cell energy consumption. **Best practice** for the project&#x27;s catalogue:
+compute ATP-per-spike per compartment by integrating Na+ inward current `INa` over each AP and
+dividing by 3; sum over compartments per trial; report total ATP per direction and total ATP per
+spike. **Hypothesis**: the DSGC&#x27;s GABAergic-style fast-spiking behaviour ([Carter2009] family)
+implies the cell already pays a high Na/K-overlap penalty, so a DSI-vs-energy Pareto front should
+expand toward dramatically lower energy as Na+ density and overlap are jointly reduced — at the
+cost of DSI sharpness.
+
+[Remme2018] is the **methodologically closest published analogue** to the project&#x27;s planned
+DSI-vs-energy experiment: in mammalian MSO coincidence-detector neurons, function (coincidence
+detection accuracy) and energy (Attwell-Laughlin-style ATP per AP integrated across compartments)
+are jointly optimised in a conductance-based NEURON model, and the Pareto front predicts optimal
+ranges for cell morphology and membrane properties. **The MSO coincidence-detection precedent
+generalises directly to the DSGC direction-selectivity computation.** This contradicts no finding in
+`research_papers.md`; it provides a methodology template the corpus did not previously contain.
+
+##### Robustness / Degeneracy Is Best Treated as a Population Statistic
+
+[Prinz2004] simulated **20 million** versions of the three-cell crustacean pyloric network with
+combinatorial channel-density and synapse-strength variation, finding &quot;virtually indistinguishable
+network activity from widely disparate sets of underlying mechanisms&quot; — the empirical foundation
+for the modern view that there is no single best parameter set, only a *manifold* of acceptable
+sets. [Marder2006] is the canonical synthesis: variability across animals + compensation across
+parameters + homeostasis across time produce stable function from inherently variable parts.
+[Goldman2001] showed that even a small (5-conductance) neuron model has **directions in parameter
+space** along which the activity pattern is invariant (&quot;compensatory directions&quot;). [Olypher2007]
+gives the formal mathematics: by the implicit-function theorem, the manifold of parameter sets
+producing fixed activity characteristics has codimension equal to the number of independent fixed
+characteristics, and locally these manifolds are smooth.
+
+For the catalogue&#x27;s `robustness_under_perturbation` objective the recipe is: at each Pareto point,
+sample +/- 10% (or +/- 20%) Gaussian or uniform perturbations of all channel densities (Marder-style
+ensemble); recompute DSI for each perturbed sample; report the standard deviation (or the fraction
+of samples whose DSI drops below a threshold) as the robustness objective. **Best practice** from
+[Prinz2004] and [Goldman2001]: report robustness as a population statistic across an ensemble of
+perturbations rather than a single sensitivity number; the [Olypher2007] formal framework provides
+the principled choice of which directions to perturb. **Hypothesis**: a Pareto front jointly
+optimising DSI vs robustness (DSI-stability under +/- 10% channel-density perturbation) on the
+project&#x27;s DSGC substrate will recover [Goldman2001]&#x27;s compensatory-direction structure automatically
+— the highest-DSI / highest-robustness corner will lie along the compensatory hyperplane rather
+than at a parameter-space extreme.
+
+##### Information Transfer Rate: Strong-Bialek Direct Method and Bias-Corrected Estimators
+
+[Strong1998] introduced the **direct method** for estimating mutual information (MI) between
+stimulus and spike train: discretise the spike train into binary words of length T at resolution dt,
+compute the empirical word distribution, take the entropy, subtract a noise-entropy estimate at each
+fixed stimulus, and **extrapolate to infinite data length** using a 1/T linear regression to correct
+for finite-data bias. The fly H1 motion-sensitive neuron measurements topped out at **90 bits/s —
+within a factor of 2 of the spike-train entropy ceiling**. [Borst1999] is the canonical
+neuroscience-readers&#x27; review of information theory and neural coding; [Brenner2000] extends the
+direct method to spike pairs and demonstrates that pairs close in time carry more than 2x the
+information of single spikes (positive synergy in the H1 code).
+
+For the project&#x27;s t0091-style 8-direction trial-output format, the recommended recipe is: bin spike
+counts in 25-50 ms windows over the trial; treat the 8-way stimulus direction as the discrete input
+class; estimate H(spike-count vector | direction) via a direct method per direction; subtract from
+H(spike-count vector across all directions); apply Strong&#x27;s 1/T extrapolation correction *or* a
+Panzeri-Treves NSB Bayesian-bias correction (which works better for short data). [Victor1997]
+supplies an alternative path: compute the Victor-Purpura cost-distance between spike trains, then
+treat the inter-class median distance / intra-class median distance ratio as a discrimination metric
+— this avoids binning artefacts but is not directly an MI value. **Hypothesis**: the [Dhingra2004]
+result already in the corpus (~60% gray-level loss spikes-vs-graded-potential) gives a
+within-cell-type calibration anchor for the project&#x27;s recipe; if the Strong-style estimate on the
+project&#x27;s DSGC trial output recovers comparable loss between graded-potential MI (HH off, EPSP/IPSP
+trio) and spike-train MI (HH on), the recipe is validated. [Koch1999] supplies the textbook context
+tying single-cell information capacity to cable theory.
+
+##### Wiring Economy: 3/5 Volume Rule and the Cytoplasm-Volume Recipe
+
+[Cherniak1992] established that local branch-junction geometry minimises **volume**, not length, at
+finer-than-segment scale. [Chklovskii2002] extended this to a quantitative cortical-circuit
+prediction: minimising delays + cable attenuation + wire length predicts that wire (axons +
+dendrites) should occupy **3/5 of grey-matter volume**, and direct measurement of cortical tissue
+matches this ratio. [Wen2006] formalises the link between wiring optimisation and arbor structure /
+function. Together with [Cuntz2010] (already in corpus), these references ground the
+cytoplasm-volume objective biologically: cytoplasm is not just a regulariser, it is one half of an
+evolutionarily-tuned trade-off the cell faces against conduction time and computational fidelity.
+
+The catalogue&#x27;s `cytoplasm_volume` recipe is unchanged from `research_papers.md`: sum over NEURON
+sections of `pi * r^2 * L` after discretising every section to &lt;= 20 um per compartment. **Best
+practice**: pair every dendritic-computation objective (DSI, MI, coincidence, etc.) with at least
+one wiring-economy cost objective so the optimiser cannot escape by inflating the morphology
+arbitrarily — this is the rule [LondonHausser2005] (in the existing corpus) implies and that
+[Chklovskii2002] makes evolutionarily explicit. **Hypothesis**: a Pareto front jointly optimising
+DSI against cytoplasm volume on the project&#x27;s procedurally generated DSGC morphologies will
+qualitatively match [Cuntz2010]&#x27;s `bf in [0.2, 0.7]` band — the high-DSI corner will lie at
+biologically realistic cytoplasm densities, not at degenerate extremes.
+
+##### NSGA-II / NSGA-III via pymoo Is the Right Optimiser for This Project
+
+[Deb2002] established NSGA-II as the canonical fast-and-elitist Pareto sorting algorithm with
+O(MN^2) complexity, where M is the number of objectives and N the population size. [Deb2014]
+extended it to NSGA-III for many-objective problems (&gt;3 objectives) using reference-point-based
+nondominated sorting, which is necessary when scaling beyond ~3 objectives because crowding distance
+becomes ineffective. [Zitzler1999] established the SPEA family and the comparative-study methodology
+that drives the field&#x27;s empirical-benchmark practice. [Blank2020] ships pymoo, the project&#x27;s
+optimiser, and exposes **NSGA-II, NSGA-III, R-NSGA-III, U-NSGA-III, MOEA/D, AGE-MOEA, AGE-MOEA2,
+RVEA, SMS-EMOA**; performance indicators **GD, GD+, IGD, IGD+, Hypervolume, KKTPM**; and joblib +
+GPU parallelisation through pymoo Read the Docs [pymoo-Docs]. The complementary Python ecosystem
+includes **DEAP** [DEAP-Docs] (the underlying selector library BluePyOpt wraps), **Platypus**
+(multi-objective-focused engineering library), and **paretoset** [paretoset-PyPI] (lightweight
+non-dominated-set utility for post-hoc analysis).
+
+**Best practice** from [Deb2014] / [Blank2020]: switch from NSGA-II to NSGA-III when the catalogue
+exceeds 3 objectives (the planned DSI + energy + cytoplasm + robustness + MI Pareto would be 5
+objectives, so NSGA-III is mandatory); use hypervolume as the primary convergence indicator with a
+fixed reference point above the worst observed values per objective. **Hypothesis** (extending
+`research_papers.md`): the NSGA-II vs qLogNEHVI [Ament2023] decision in the corpus is supplemented
+here by a third option — **NSGA-III for &gt;3-objective settings** — which is what the project will
+need once the catalogue is operationalised. The [Ament2023] qLogNEHVI advantage is restricted to
+low-d (&lt;= 20) constrained problems; NSGA-II is right for high-d 2-3 objective problems; NSGA-III is
+right for high-d many-objective problems. The project&#x27;s catalogue lives in the third regime.
+
+#### Methodology Insights
+
+* **Use BluePyOpt&#x27;s `CellEvaluator(cell_model, params, protocols, fitness_calculator)` pattern as
+  the structural template for the catalogue&#x27;s evaluator** [VanGeit2016] [BluePyOpt-Docs]. Keep the
+  project&#x27;s existing pymoo loop as the optimiser (BluePyOpt itself is built on DEAP/IBEA, but the
+  evaluator/protocol/feature triple is library-agnostic and directly portable to pymoo). This
+  preserves the t0091 NSGA-II workflow while gaining eFEL-feature compatibility.
+
+* **Adopt eFEL [eFEL-GH] as the feature-extraction substrate** for any catalogued objective that
+  reduces to a per-spike or per-trace feature (spike count, AP amplitude, AHP depth, ISI CV, voltage
+  base, etc.). For directional / information / energy / volume objectives, supply a custom feature;
+  for everything else, eFEL has it.
+
+* **Adopt NSGA-III via pymoo for &gt;3-objective catalogue runs** [Deb2014] [Blank2020]. The
+  catalogue&#x27;s planned 5-way DSI + MI + energy + volume + robustness Pareto exceeds NSGA-II&#x27;s
+  effective range. NSGA-III&#x27;s reference-point structure also gives the operator explicit control
+  over which Pareto regions are preferentially sampled — important when the runtime budget per
+  evaluation is heavy.
+
+* **Compute ATP per spike as `int(INa) dt / 3` per compartment per AP, summed over compartments**
+  [Sengupta2010] [Carter2009] [Hallermann2012]. The factor 3 reflects the Na/K-ATPase stoichiometry.
+  Use NEURON&#x27;s `INa` recording per section (already implemented in the project&#x27;s EPSP/IPSP/FULL trio
+  for HH-on traces) and integrate over each AP window. Validate the recipe against [Carter2009]&#x27;s
+  25%/100%-above-minimum benchmarks on the project&#x27;s existing HH model.
+
+* **Compute information transfer rate via Strong-Bialek direct method with 1/T extrapolation**
+  [Strong1998]. For the project&#x27;s 8-direction, 1400-ms trial: bin spikes at dt = 5 ms, build binary
+  words of length T = 25-100 ms, repeat across many trials per direction, estimate H(spike word |
+  direction) and H(spike word) by counting, take the difference, repeat at multiple T values, fit a
+  1/T regression and take the intercept. Apply Panzeri-Treves NSB correction as a second estimator
+  for cross-validation.
+
+* **Compute robustness as the standard deviation (or below-threshold fraction) of DSI under +/- 10%
+  random perturbation of all channel densities** [Prinz2004] [Goldman2001] [Olypher2007]. Use a
+  Monte Carlo sample of size 50-200 around each Pareto point. Report the full distribution, not just
+  the SD, in the final analysis stage.
+
+* **Compute cytoplasm volume as `sum_compartments(pi * r^2 * L)` after enforcing &lt;= 20 um
+  compartmentation** [Hines1997] [Cherniak1992] [Chklovskii2002] [Cuntz2010]. Validate mesh-density
+  invariance by comparing 20 um and 10 um discretisations. The project&#x27;s existing morphology
+  generator already exposes `r` and `L` per section, so the recipe is a one-line addition.
+
+* **Pair every function objective with at least one biological-cost objective** [LondonHausser2005]
+  [Chklovskii2002] [Cuntz2010]. The dendritic-computation literature converges on this pairing rule
+  because lone function objectives admit non-physical solutions (the project&#x27;s recurring concern
+  with pure-DSI maximisation). The catalogue&#x27;s recommended pairs: DSI vs cytoplasm volume, DSI vs
+  ATP-per-spike, MI vs ATP-per-spike, DSI vs robustness, MI vs cytoplasm volume.
+
+* **Report the Pareto-acceptable ensemble, not a single best fit** [Hay2011] [Achard2006]
+  [Prinz2004]. Use PCA / clustering on the ensemble parameter distribution to expose
+  compensatory-direction structure [Goldman2001] [Olypher2007]. This is the canonical reporting
+  pattern in the field and the natural extension of the project&#x27;s existing Pareto-front reporting.
+
+* **Per-objective experimental-SD normalisation when SDs are available** [Druckmann2007] [Hay2011].
+  For objectives without an experimental SD (cytoplasm volume on a procedurally generated morphology
+  has no experimental SD per se), use a best-effort biological tolerance band; for ATP-per-spike,
+  use the Sengupta et al. cross-cell-type range as the tolerance.
+
+* **Use hypervolume as the primary convergence indicator** [Blank2020] [Zitzler1999]; supplement
+  with IGD when a reference Pareto front is available [Deb2014]. The pymoo `pymoo.indicators.hv.HV`
+  and `pymoo.indicators.igd.IGD` classes are drop-in.
+
+#### Discovered Papers
+
+The following papers are not yet in the project&#x27;s corpus and should be downloaded / catalogued. The
+orchestrator will spawn `/add-paper` for each.
+
+##### [Druckmann2007]
+
+* **Title**: A novel multiple objective optimization framework for constraining conductance-based
+  neuron models by experimental data
+* **Authors**: Druckmann, S., Banitt, Y., Gidon, A., Schuermann, F., Markram, H., Segev, I.
+* **Year**: 2007
+* **DOI**: `10.3389/neuro.01.1.1.001.2007`
+* **URL**:
+  &lt;https://www.frontiersin.org/journals/neuroscience/articles/10.3389/neuro.01.1.1.001.2007/full&gt;
+* **Suggested categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Why download**: The canonical multi-objective methodology paper for conductance-based
+  single-neuron models. Establishes the per-feature SD-normalisation and Pareto-front-of-features
+  framework that every subsequent paper (including [Hay2011] in corpus) inherits.
+
+##### [Druckmann2011]
+
+* **Title**: Effective stimuli for constructing reliable neuron models
+* **Authors**: Druckmann, S., Berger, T. K., Schuermann, F., Hill, S., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002133`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002133&gt;
+* **Suggested categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Why download**: Stimulus-protocol design study showing step + ramp combinations best constrain
+  conductance-based models. Direct precursor of eFEL feature design.
+
+##### [Achard2006]
+
+* **Title**: Complex parameter landscape for a complex neuron model
+* **Authors**: Achard, P., De Schutter, E.
+* **Year**: 2006
+* **DOI**: `10.1371/journal.pcbi.0020094`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0020094&gt;
+* **Suggested categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Why download**: First MOEA fit of a complex Purkinje model with 24 free conductances. The
+  parameter-landscape-as-loose-hyperplanes finding directly informs how the project should report
+  its NSGA-II Pareto-acceptable ensemble.
+
+##### [VanGeit2007]
+
+* **Title**: Neurofitter: a parameter tuning package for a wide range of electrophysiological neuron
+  models
+* **Authors**: Van Geit, W., Achard, P., De Schutter, E.
+* **Year**: 2007
+* **DOI**: `10.3389/neuro.11.001.2007`
+* **URL**:
+  &lt;https://www.frontiersin.org/journals/neuroinformatics/articles/10.3389/neuro.11.001.2007/full&gt;
+* **Suggested categories**: `compartmental-modeling`
+* **Why download**: First parameter-tuning package interfacing NEURON with stochastic optimisation.
+  Phase-plane-trajectory-density error metric is jitter-insensitive and may be useful for the
+  project&#x27;s stochastic-input simulations.
+
+##### [VanGeit2016]
+
+* **Title**: BluePyOpt: leveraging open source software and cloud infrastructure to optimise model
+  parameters in neuroscience
+* **Authors**: Van Geit, W., Gevaert, M., Chindemi, G., Roessert, C., Courcol, J.-D., Muller, E.,
+  Schuermann, F., Segev, I., Markram, H.
+* **Year**: 2016
+* **DOI**: `10.3389/fninf.2016.00017`
+* **URL**:
+  &lt;https://www.frontiersin.org/journals/neuroinformatics/articles/10.3389/fninf.2016.00017/full&gt;
+* **Suggested categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Why download**: The canonical multi-objective optimisation toolchain in the field. The
+  CellEvaluator/Protocol/EFeature triple is the structural template the project&#x27;s catalogue should
+  adopt.
+
+##### [Gouwens2018]
+
+* **Title**: Systematic generation of biophysically detailed models for diverse cortical neuron
+  types
+* **Authors**: Gouwens, N. W., Berg, J., Feng, D., Sorensen, S. A., Zeng, H., Hawrylycz, M. J.,
+  Koch, C., Arkhipov, A.
+* **Year**: 2018
+* **DOI**: `10.1038/s41467-017-02718-3`
+* **URL**: &lt;https://www.nature.com/articles/s41467-017-02718-3&gt;
+* **Suggested categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Why download**: Largest published systematic application of BluePyOpt-style optimisation — 170
+  individual mouse V1 neurons fit to electrophysiological features. Establishes the field&#x27;s
+  high-throughput Druckmann-methodology benchmark.
+
+##### [Attwell2001]
+
+* **Title**: An energy budget for signaling in the grey matter of the brain
+* **Authors**: Attwell, D., Laughlin, S. B.
+* **Year**: 2001
+* **DOI**: `10.1097/00004647-200110000-00001`
+* **URL**: &lt;https://journals.sagepub.com/doi/10.1097/00004647-200110000-00001&gt;
+* **Suggested categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Why download**: Canonical brain energy budget. Establishes the stoichiometric Na+/K+/Ca2+
+  framework for translating ionic flux into ATP cost — the foundation of the catalogue&#x27;s
+  metabolic-energy-per-spike recipe.
+
+##### [Niven2008]
+
+* **Title**: Energy limitation as a selective pressure on the evolution of sensory systems
+* **Authors**: Niven, J. E., Laughlin, S. B.
+* **Year**: 2008
+* **DOI**: `10.1242/jeb.017574`
+* **URL**: &lt;https://journals.biologists.com/jeb/article/211/11/1792/9506&gt;
+* **Suggested categories**: `voltage-gated-channels`, `retinal-ganglion-cell`
+* **Why download**: Establishes energy as a selective pressure (not just a budget). Justifies
+  treating ATP-per-spike as a hard biological objective rather than a soft regulariser.
+
+##### [Sengupta2010]
+
+* **Title**: Action potential energy efficiency varies among neuron types in vertebrates and
+  invertebrates
+* **Authors**: Sengupta, B., Stemmler, M., Laughlin, S. B., Niven, J. E.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000840`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000840&gt;
+* **Suggested categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Why download**: Operationalises ATP-per-spike via Na/K-current overlap. Directly supplies the
+  catalogue&#x27;s metabolic-energy recipe and establishes that overlap can be a 10x energy multiplier.
+
+##### [Carter2009]
+
+* **Title**: Sodium entry during action potentials of mammalian neurons: incomplete inactivation and
+  reduced metabolic efficiency in fast-spiking neurons
+* **Authors**: Carter, B. C., Bean, B. P.
+* **Year**: 2009
+* **DOI**: `10.1016/j.neuron.2009.12.011`
+* **URL**: &lt;https://www.sciencedirect.com/science/article/pii/S0896627309010010&gt;
+* **Suggested categories**: `voltage-gated-channels`
+* **Why download**: Empirical anchor for the Na/K-overlap metric. Shows fast-spiking GABAergic cells
+  use 2x the theoretical-minimum sodium — the calibration benchmark for the project&#x27;s
+  ATP-per-spike recipe.
+
+##### [Hallermann2012]
+
+* **Title**: State and location dependence of action potential metabolic cost in cortical pyramidal
+  neurons
+* **Authors**: Hallermann, S., de Kock, C. P. J., Stuart, G. J., Kole, M. H. P.
+* **Year**: 2012
+* **DOI**: `10.1038/nn.3132`
+* **URL**: &lt;https://www.nature.com/articles/nn.3132&gt;
+* **Suggested categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Why download**: Applies the Na/K-overlap recipe at compartment level in a NEURON pyramidal
+  model. Direct methodology template for the project&#x27;s per-compartment ATP integration.
+
+##### [Niven2007]
+
+* **Title**: Fly photoreceptors demonstrate energy-information trade-offs in neural coding
+* **Authors**: Niven, J. E., Anderson, J. C., Laughlin, S. B.
+* **Year**: 2007
+* **DOI**: `10.1371/journal.pbio.0050116`
+* **URL**: &lt;https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050116&gt;
+* **Suggested categories**: `voltage-gated-channels`, `retinal-ganglion-cell`
+* **Why download**: The canonical empirical bits-per-ATP Pareto curve in the literature (200-1000
+  bits/s across fly species; super-linear cost-vs-information). Sets the empirical baseline against
+  which the project&#x27;s DSI-vs-information-vs-energy front can be benchmarked.
+
+##### [Remme2018]
+
+* **Title**: Function and energy consumption constrain neuronal biophysics in a canonical
+  computation: coincidence detection
+* **Authors**: Remme, M. W. H., Rinzel, J., Schreiber, S.
+* **Year**: 2018
+* **DOI**: `10.1371/journal.pcbi.1006612`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006612&gt;
+* **Suggested categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Why download**: Methodologically the closest published analogue to the project&#x27;s planned
+  DSI-vs-energy MOBO. Pairs MSO coincidence-detection function with Attwell-Laughlin-style energy in
+  a NEURON conductance-based model and recovers the Pareto front of cell properties.
+
+##### [Marder2006]
+
+* **Title**: Variability, compensation and homeostasis in neuron and network function
+* **Authors**: Marder, E., Goaillard, J.-M.
+* **Year**: 2006
+* **DOI**: `10.1038/nrn1949`
+* **URL**: &lt;https://www.nature.com/articles/nrn1949&gt;
+* **Suggested categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Why download**: Canonical review of robustness / compensation / homeostasis. Justifies treating
+  the project&#x27;s robustness objective as a population statistic over a parameter manifold rather than
+  a single sensitivity number.
+
+##### [Prinz2004]
+
+* **Title**: Similar network activity from disparate circuit parameters
+* **Authors**: Prinz, A. A., Bucher, D., Marder, E.
+* **Year**: 2004
+* **DOI**: `10.1038/nn1352`
+* **URL**: &lt;https://www.nature.com/articles/nn1352&gt;
+* **Suggested categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Why download**: Empirical foundation of the manifold-of-acceptable-solutions view. The
+  20-million-parameter STG database is the methodological template for the project&#x27;s Marder-style
+  DSI-stability robustness objective.
+
+##### [Goldman2001]
+
+* **Title**: Global structure, robustness, and modulation of neuronal models
+* **Authors**: Goldman, M. S., Golowasch, J., Marder, E., Abbott, L. F.
+* **Year**: 2001
+* **DOI**: `10.1523/JNEUROSCI.21-14-05229.2001`
+* **URL**: &lt;https://www.jneurosci.org/content/21/14/5229&gt;
+* **Suggested categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Why download**: Compensatory-direction analysis on a 5-conductance model. Mathematical and
+  empirical underpinning for reporting the project&#x27;s DSI-vs-robustness Pareto front along
+  compensatory hyperplanes rather than along arbitrary parameter axes.
+
+##### [Olypher2007]
+
+* **Title**: Using constraints on neuronal activity to reveal compensatory changes in neuronal
+  parameters
+* **Authors**: Olypher, A. V., Calabrese, R. L.
+* **Year**: 2007
+* **DOI**: `10.1152/jn.00842.2007`
+* **URL**: &lt;https://pubmed.ncbi.nlm.nih.gov/17855581/&gt;
+* **Suggested categories**: `compartmental-modeling`
+* **Why download**: Implicit-function-theorem framework for the dimension and structure of parameter
+  manifolds compatible with fixed activity. Formal justification for the Marder-style perturbation
+  recipe and for [Goldman2001]&#x27;s compensatory-direction analysis.
+
+##### [Strong1998]
+
+* **Title**: Entropy and information in neural spike trains
+* **Authors**: Strong, S. P., Koberle, R., de Ruyter van Steveninck, R. R., Bialek, W.
+* **Year**: 1998
+* **DOI**: `10.1103/PhysRevLett.80.197`
+* **URL**: &lt;https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.80.197&gt;
+* **Suggested categories**: `retinal-ganglion-cell`, `compartmental-modeling`
+* **Why download**: Canonical direct method + 1/T extrapolation correction for spike-train MI.
+  Directly supplies the catalogue&#x27;s information-transfer-rate recipe; the methodological reference
+  for any rigorous MI estimate from a finite-trial neural recording.
+
+##### [Borst1999]
+
+* **Title**: Information theory and neural coding
+* **Authors**: Borst, A., Theunissen, F. E.
+* **Year**: 1999
+* **DOI**: `10.1038/14731`
+* **URL**: &lt;https://www.nature.com/articles/nn1199_947&gt;
+* **Suggested categories**: `retinal-ganglion-cell`, `compartmental-modeling`
+* **Why download**: The canonical neuroscience-readers&#x27; review of information theory and neural
+  coding. Useful as the introductory framing reference for the catalogue&#x27;s MI section.
+
+##### [Brenner2000]
+
+* **Title**: Synergy in a neural code
+* **Authors**: Brenner, N., Strong, S. P., Koberle, R., Bialek, W., de Ruyter van Steveninck, R. R.
+* **Year**: 2000
+* **DOI**: `10.1162/089976600300015259`
+* **URL**: &lt;https://direct.mit.edu/neco/article-abstract/12/7/1531/6387&gt;
+* **Suggested categories**: `retinal-ganglion-cell`, `compartmental-modeling`
+* **Why download**: Extends Strong et al. to spike-pair coding with explicit synergy decomposition.
+  Useful when the project&#x27;s DSGC trial output is rich enough to compute pair-MI as a refined
+  information objective.
+
+##### [Chklovskii2002]
+
+* **Title**: Wiring optimization in cortical circuits
+* **Authors**: Chklovskii, D. B., Schikorski, T., Stevens, C. F.
+* **Year**: 2002
+* **DOI**: `10.1016/S0896-6273(02)00679-7`
+* **URL**: &lt;https://www.sciencedirect.com/science/article/pii/S0896627302006797&gt;
+* **Suggested categories**: `cable-theory`, `compartmental-modeling`, `dendritic-computation`
+* **Why download**: Quantitative cortical-circuit wiring-optimisation prediction (3/5-volume rule).
+  Evolutionary justification for the catalogue&#x27;s cytoplasm-volume objective and for the
+  function-objective + cost-objective pairing rule.
+
+#### Optional Discovered Papers (Lower Priority)
+
+These five additional references are catalogued for completeness but ranked behind the 21 primary
+discoveries above. They should be downloaded only if budget permits or if specific catalogue
+sections require them.
+
+##### [Cherniak1992]
+
+* **Title**: Local optimization of neuron arbors
+* **Authors**: Cherniak, C.
+* **Year**: 1992
+* **DOI**: `10.1007/BF00204115`
+* **URL**: &lt;https://link.springer.com/article/10.1007/BF00204115&gt;
+* **Suggested categories**: `cable-theory`, `dendritic-computation`
+* **Why download**: Establishes Steiner-tree formalism for neuron arbors and that local volume
+  minimisation dominates over length / surface / speed at branch junctions. Historical anchor for
+  the cytoplasm-volume objective.
+
+##### [Wen2006]
+
+* **Title**: Wiring optimization can relate neuronal structure and function
+* **Authors**: Wen, Q., Chklovskii, D. B.
+* **Year**: 2006
+* **DOI**: `10.1073/pnas.0506806103`
+* **URL**: &lt;https://www.pnas.org/doi/10.1073/pnas.0506806103&gt;
+* **Suggested categories**: `cable-theory`, `dendritic-computation`
+* **Why download**: Connects wiring-optimisation theory to specific dendritic / axonal arbor
+  structure-function relationships. Useful supplement to [Chklovskii2002] for the catalogue&#x27;s
+  cytoplasm-volume biological-justification section.
+
+##### [Victor1997]
+
+* **Title**: Metric-space analysis of spike trains: theory, algorithms and application
+* **Authors**: Victor, J. D., Purpura, K. P.
+* **Year**: 1997
+* **DOI**: `10.1088/0954-898X_8_2_003`
+* **URL**: &lt;https://www.tandfonline.com/doi/abs/10.1088/0954-898X_8_2_003&gt;
+* **Suggested categories**: `retinal-ganglion-cell`, `compartmental-modeling`
+* **Why download**: Spike-distance metrics that complement direct MI estimation. Useful when MI
+  estimation is bias-prone (short-data regime) or as a binning-free discrimination measure.
+
+##### [Deb2002]
+
+* **Title**: A fast and elitist multiobjective genetic algorithm: NSGA-II
+* **Authors**: Deb, K., Pratap, A., Agarwal, S., Meyarivan, T.
+* **Year**: 2002
+* **DOI**: `10.1109/4235.996017`
+* **URL**: &lt;https://ieeexplore.ieee.org/document/996017/&gt;
+* **Suggested categories**: `compartmental-modeling`
+* **Why download**: Canonical NSGA-II reference. The project&#x27;s pymoo NSGA-II loop already implements
+  this algorithm; the citation is needed for any methodology section referencing the optimiser&#x27;s
+  complexity, crowding distance, or non-dominated sorting.
+
+##### [Deb2014]
+
+* **Title**: An evolutionary many-objective optimization algorithm using reference-point-based
+  nondominated sorting approach, Part I: solving problems with box constraints
+* **Authors**: Deb, K., Jain, H.
+* **Year**: 2014
+* **DOI**: `10.1109/TEVC.2013.2281535`
+* **URL**: &lt;https://ieeexplore.ieee.org/document/6600851/&gt;
+* **Suggested categories**: `compartmental-modeling`
+* **Why download**: NSGA-III reference. Mandatory citation if the catalogue&#x27;s &gt;3-objective follow-up
+  tasks are commissioned.
+
+#### Recommendations for This Task
+
+1. **Download all 21 primary discovered papers** (Druckmann2007, Druckmann2011, Achard2006,
+   VanGeit2007, VanGeit2016, Gouwens2018, Attwell2001, Niven2008, Sengupta2010, Carter2009,
+   Hallermann2012, Niven2007, Remme2018, Marder2006, Prinz2004, Goldman2001, Olypher2007,
+   Strong1998, Borst1999, Brenner2000, Chklovskii2002). Five lower-priority discoveries
+   (Cherniak1992, Wen2006, Victor1997, Deb2002, Deb2014) are nice-to-have. Together they cover every
+   gap from `research_papers.md`.
+
+2. **Adopt the BluePyOpt structural template (CellEvaluator + protocols + eFeature) for the
+   catalogue&#x27;s evaluator** — keep pymoo NSGA-II as the optimiser; port the
+   evaluator/protocol/feature triple. Updates `research_papers.md` recommendation 1, which deferred
+   methodology-toolchain choice to research-internet.
+
+3. **Switch from NSGA-II to NSGA-III when the catalogue&#x27;s MOBO follow-ups exceed 3 objectives**
+   [Deb2014] [Blank2020]. Updates `research_papers.md` recommendation 5, which only contrasted
+   NSGA-II vs qLogNEHVI. The full optimiser-selection rule is now: qLogNEHVI for low-d (&lt;= 20)
+   constrained problems; NSGA-II for high-d 2-3 objective problems; NSGA-III for high-d
+   many-objective problems.
+
+4. **Implement the four catalogued objective recipes immediately** — cytoplasm volume (already
+   trivial from morphology generator), ATP-per-spike from `int(INa) dt / 3` per compartment,
+   information transfer rate via Strong-Bialek direct method with 1/T extrapolation, and robustness
+   as Marder-style +/- 10% perturbation SD. All four are computable from t0091&#x27;s existing trial
+   output without infrastructure rewrites.
+
+5. **Pair every function objective with at least one biological-cost objective** [LondonHausser2005]
+   [Chklovskii2002] [Cuntz2010]. Recommended catalogue pairs: DSI vs cytoplasm volume, DSI vs
+   ATP-per-spike, DSI vs robustness, MI vs ATP-per-spike, MI vs cytoplasm volume. This is a new
+   methodology constraint not present in `research_papers.md`&#x27;s recommendations.
+
+6. **Treat Remme et al. 2018 as the closest published analogue and cite it as the canonical
+   precedent for the project&#x27;s planned DSI-vs-energy MOBO** [Remme2018]. The MSO
+   coincidence-detection protocol generalises directly to the DSGC direction-selectivity
+   computation.
+
+7. **Validate the catalogue&#x27;s metabolic-energy recipe against [Carter2009] benchmarks** (~25%
+   above-minimum for cortical pyramidal cells, ~100% above-minimum for fast-spiking neurons) on the
+   project&#x27;s existing HH model before launching any DSI-vs-energy MOBO. This is a cheap sanity check
+   that should be a planning-stage prerequisite.
+
+8. **Validate the catalogue&#x27;s information-transfer recipe against [Dhingra2004] (~60%
+   spike-vs-graded-potential gray-level loss in a real RGC) on the project&#x27;s HH-on / HH-off trial
+   trio**. This is the within-cell-type calibration anchor identified in `research_papers.md`
+   methodology insights.
+
+#### Tool and Library Landscape
+
+* **BluePyOpt** [VanGeit2016] [BluePyOpt-GH] [BluePyOpt-Docs]: BlueBrain&#x27;s open-source
+  multi-objective optimisation framework for compartmental neuron models. Wraps DEAP and ships an
+  IBEA selector. Last release 1.14.17 (Nov 2024); GitHub repo archived Feb 2025; future development
+  at the Open Brain Institute. Modules: `bluepyopt.ephys.evaluators` (CellEvaluator),
+  `bluepyopt.ephys.protocols` (StepProtocol etc.), `bluepyopt.ephys.efeatures`,
+  `bluepyopt.objectives`, `bluepyopt.deapext` (DEAP integration). Active import surface for any
+  catalogue evaluator port.
+
+* **eFEL** [eFEL-GH]: Electrophys feature extraction library, C++ core (40.7%) + Python wrapper
+  (57.9%). Headline features: `AP_amplitude`, `voltage_base`, `bpap_attenuation`, `ais_initiation`,
+  plus dozens more (spike count, AHP depth, ISI CV, time-to-first-spike, etc.). Drop-in feature
+  library for the catalogue evaluator.
+
+* **pymoo** [Blank2020] [pymoo-Docs]: the project&#x27;s optimiser. Algorithms: NSGA-II, R-NSGA-II,
+  NSGA-III, R-NSGA-III, U-NSGA-III, MOEA/D, AGE-MOEA, AGE-MOEA2, RVEA, SMS-EMOA, CMOPSO. Indicators:
+  GD, GD+, IGD, IGD+, Hypervolume, KKTPM. Mixed variables (binary, discrete, permutation, custom);
+  vectorised matrix ops, joblib, GPU acceleration, custom parallelisation.
+
+* **DEAP** [DEAP-Docs]: BluePyOpt&#x27;s underlying selector library; supports the Generalized Reduced
+  Run-Time Complexity Non-Dominated Sorting Algorithm; computes hypervolume that is dominated by a
+  non-dominated set (assumes minimisation).
+
+* **Platypus** (Python): multi-objective-focused engineering library; alternative to pymoo if the
+  project ever needs algorithms not in pymoo. Lower priority for the catalogue.
+
+* **paretoset** [paretoset-PyPI]: lightweight non-dominated-set utility, useful for post-hoc Pareto
+  analysis on the project&#x27;s NSGA-II output without invoking the full pymoo Indicator API.
+
+* **AllenSDK** [AllenSDK-Docs]: Allen Institute software development kit; ships biophysical-model
+  loaders for the [Gouwens2018] models in both perisomatic-only and all-active variants; runs on
+  NEURON. Useful as a methodology cross-check / external comparison if the catalogue&#x27;s results need
+  cross-cell-type validation.
+
+* **NeuroFitter** [VanGeit2007]: predecessor to BluePyOpt. Phase-plane-trajectory-density error
+  metric. Source code on SourceForge (legacy). Mostly of historical interest.
+
+#### Source Index
+
+##### [Druckmann2007]
+
+* **Type**: paper
+* **Title**: A novel multiple objective optimization framework for constraining conductance-based
+  neuron models by experimental data
+* **Authors**: Druckmann, S., Banitt, Y., Gidon, A., Schuermann, F., Markram, H., Segev, I.
+* **Year**: 2007
+* **DOI**: `10.3389/neuro.01.1.1.001.2007`
+* **URL**:
+  &lt;https://www.frontiersin.org/journals/neuroscience/articles/10.3389/neuro.01.1.1.001.2007/full&gt;
+* **Peer-reviewed**: yes (Frontiers in Neuroscience)
+* **Relevance**: Canonical multi-objective methodology paper; per-feature SD-normalisation +
+  Pareto-front-of-features framework adopted by the catalogue.
+
+##### [Druckmann2011]
+
+* **Type**: paper
+* **Title**: Effective stimuli for constructing reliable neuron models
+* **Authors**: Druckmann, S., Berger, T. K., Schuermann, F., Hill, S., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002133`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002133&gt;
+* **Peer-reviewed**: yes (PLOS Computational Biology)
+* **Relevance**: Stimulus-protocol design study; precursor to eFEL feature design.
+
+##### [Achard2006]
+
+* **Type**: paper
+* **Title**: Complex parameter landscape for a complex neuron model
+* **Authors**: Achard, P., De Schutter, E.
+* **Year**: 2006
+* **DOI**: `10.1371/journal.pcbi.0020094`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0020094&gt;
+* **Peer-reviewed**: yes (PLOS Computational Biology)
+* **Relevance**: First MOEA Purkinje fit; loose-hyperplanes parameter-landscape finding informs the
+  project&#x27;s Pareto-acceptable-ensemble reporting.
+
+##### [VanGeit2007]
+
+* **Type**: paper
+* **Title**: Neurofitter: a parameter tuning package for a wide range of electrophysiological neuron
+  models
+* **Authors**: Van Geit, W., Achard, P., De Schutter, E.
+* **Year**: 2007
+* **DOI**: `10.3389/neuro.11.001.2007`
+* **URL**:
+  &lt;https://www.frontiersin.org/journals/neuroinformatics/articles/10.3389/neuro.11.001.2007/full&gt;
+* **Peer-reviewed**: yes (Frontiers in Neuroinformatics)
+* **Relevance**: Predecessor to BluePyOpt; phase-plane-trajectory-density error metric.
+
+##### [VanGeit2016]
+
+* **Type**: paper
+* **Title**: BluePyOpt: leveraging open source software and cloud infrastructure to optimise model
+  parameters in neuroscience
+* **Authors**: Van Geit, W., Gevaert, M., Chindemi, G., et al.
+* **Year**: 2016
+* **DOI**: `10.3389/fninf.2016.00017`
+* **URL**:
+  &lt;https://www.frontiersin.org/journals/neuroinformatics/articles/10.3389/fninf.2016.00017/full&gt;
+* **Peer-reviewed**: yes (Frontiers in Neuroinformatics)
+* **Relevance**: Canonical MOO toolchain in the field; the project&#x27;s catalogue evaluator template.
+
+##### [Gouwens2018]
+
+* **Type**: paper
+* **Title**: Systematic generation of biophysically detailed models for diverse cortical neuron
+  types
+* **Authors**: Gouwens, N. W., Berg, J., Feng, D., et al.
+* **Year**: 2018
+* **DOI**: `10.1038/s41467-017-02718-3`
+* **URL**: &lt;https://www.nature.com/articles/s41467-017-02718-3&gt;
+* **Peer-reviewed**: yes (Nature Communications)
+* **Relevance**: 170-cell systematic Druckmann-methodology benchmark on Allen mouse V1 data.
+
+##### [Attwell2001]
+
+* **Type**: paper
+* **Title**: An energy budget for signaling in the grey matter of the brain
+* **Authors**: Attwell, D., Laughlin, S. B.
+* **Year**: 2001
+* **DOI**: `10.1097/00004647-200110000-00001`
+* **URL**: &lt;https://journals.sagepub.com/doi/10.1097/00004647-200110000-00001&gt;
+* **Peer-reviewed**: yes (Journal of Cerebral Blood Flow and Metabolism)
+* **Relevance**: Stoichiometric Na+/K+/Ca2+ energy budget; foundation of ATP-per-spike recipe.
+
+##### [Niven2008]
+
+* **Type**: paper
+* **Title**: Energy limitation as a selective pressure on the evolution of sensory systems
+* **Authors**: Niven, J. E., Laughlin, S. B.
+* **Year**: 2008
+* **DOI**: `10.1242/jeb.017574`
+* **URL**: &lt;https://journals.biologists.com/jeb/article/211/11/1792/9506&gt;
+* **Peer-reviewed**: yes (Journal of Experimental Biology)
+* **Relevance**: Energy as selective pressure; justifies treating ATP-per-spike as a hard biological
+  objective.
+
+##### [Sengupta2010]
+
+* **Type**: paper
+* **Title**: Action potential energy efficiency varies among neuron types in vertebrates and
+  invertebrates
+* **Authors**: Sengupta, B., Stemmler, M., Laughlin, S. B., Niven, J. E.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000840`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000840&gt;
+* **Peer-reviewed**: yes (PLOS Computational Biology)
+* **Relevance**: Operationalises ATP-per-spike via Na/K-current overlap; supplies the recipe.
+
+##### [Carter2009]
+
+* **Type**: paper
+* **Title**: Sodium entry during action potentials of mammalian neurons: incomplete inactivation and
+  reduced metabolic efficiency in fast-spiking neurons
+* **Authors**: Carter, B. C., Bean, B. P.
+* **Year**: 2009
+* **DOI**: `10.1016/j.neuron.2009.12.011`
+* **URL**: &lt;https://www.sciencedirect.com/science/article/pii/S0896627309010010&gt;
+* **Peer-reviewed**: yes (Neuron)
+* **Relevance**: Empirical Na/K-overlap calibration benchmarks (25%/100% above-minimum).
+
+##### [Hallermann2012]
+
+* **Type**: paper
+* **Title**: State and location dependence of action potential metabolic cost in cortical pyramidal
+  neurons
+* **Authors**: Hallermann, S., de Kock, C. P. J., Stuart, G. J., Kole, M. H. P.
+* **Year**: 2012
+* **DOI**: `10.1038/nn.3132`
+* **URL**: &lt;https://www.nature.com/articles/nn.3132&gt;
+* **Peer-reviewed**: yes (Nature Neuroscience)
+* **Relevance**: Per-compartment ATP integration in a NEURON pyramidal model; methodology template.
+
+##### [Niven2007]
+
+* **Type**: paper
+* **Title**: Fly photoreceptors demonstrate energy-information trade-offs in neural coding
+* **Authors**: Niven, J. E., Anderson, J. C., Laughlin, S. B.
+* **Year**: 2007
+* **DOI**: `10.1371/journal.pbio.0050116`
+* **URL**: &lt;https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050116&gt;
+* **Peer-reviewed**: yes (PLOS Biology)
+* **Relevance**: Canonical empirical bits-per-ATP Pareto curve across fly species.
+
+##### [Remme2018]
+
+* **Type**: paper
+* **Title**: Function and energy consumption constrain neuronal biophysics in a canonical
+  computation: coincidence detection
+* **Authors**: Remme, M. W. H., Rinzel, J., Schreiber, S.
+* **Year**: 2018
+* **DOI**: `10.1371/journal.pcbi.1006612`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006612&gt;
+* **Peer-reviewed**: yes (PLOS Computational Biology)
+* **Relevance**: Closest published analogue to the project&#x27;s DSI-vs-energy MOBO; MSO
+  function-vs-energy Pareto in a NEURON conductance model.
+
+##### [Marder2006]
+
+* **Type**: paper
+* **Title**: Variability, compensation and homeostasis in neuron and network function
+* **Authors**: Marder, E., Goaillard, J.-M.
+* **Year**: 2006
+* **DOI**: `10.1038/nrn1949`
+* **URL**: &lt;https://www.nature.com/articles/nrn1949&gt;
+* **Peer-reviewed**: yes (Nature Reviews Neuroscience)
+* **Relevance**: Canonical robustness review; manifold-of-acceptable-solutions framing.
+
+##### [Prinz2004]
+
+* **Type**: paper
+* **Title**: Similar network activity from disparate circuit parameters
+* **Authors**: Prinz, A. A., Bucher, D., Marder, E.
+* **Year**: 2004
+* **DOI**: `10.1038/nn1352`
+* **URL**: &lt;https://www.nature.com/articles/nn1352&gt;
+* **Peer-reviewed**: yes (Nature Neuroscience)
+* **Relevance**: 20-million-parameter STG database; methodology template for Marder-style
+  perturbation robustness objective.
+
+##### [Goldman2001]
+
+* **Type**: paper
+* **Title**: Global structure, robustness, and modulation of neuronal models
+* **Authors**: Goldman, M. S., Golowasch, J., Marder, E., Abbott, L. F.
+* **Year**: 2001
+* **DOI**: `10.1523/JNEUROSCI.21-14-05229.2001`
+* **URL**: &lt;https://www.jneurosci.org/content/21/14/5229&gt;
+* **Peer-reviewed**: yes (Journal of Neuroscience)
+* **Relevance**: Compensatory-direction analysis; foundation for reporting robustness Pareto along
+  hyperplanes.
+
+##### [Olypher2007]
+
+* **Type**: paper
+* **Title**: Using constraints on neuronal activity to reveal compensatory changes in neuronal
+  parameters
+* **Authors**: Olypher, A. V., Calabrese, R. L.
+* **Year**: 2007
+* **DOI**: `10.1152/jn.00842.2007`
+* **URL**: &lt;https://pubmed.ncbi.nlm.nih.gov/17855581/&gt;
+* **Peer-reviewed**: yes (Journal of Neurophysiology)
+* **Relevance**: Implicit-function-theorem framework for parameter-manifold dimension and structure.
+
+##### [Strong1998]
+
+* **Type**: paper
+* **Title**: Entropy and information in neural spike trains
+* **Authors**: Strong, S. P., Koberle, R., de Ruyter van Steveninck, R. R., Bialek, W.
+* **Year**: 1998
+* **DOI**: `10.1103/PhysRevLett.80.197`
+* **URL**: &lt;https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.80.197&gt;
+* **Peer-reviewed**: yes (Physical Review Letters)
+* **Relevance**: Direct method + 1/T extrapolation correction; the catalogue&#x27;s MI recipe.
+
+##### [Borst1999]
+
+* **Type**: paper
+* **Title**: Information theory and neural coding
+* **Authors**: Borst, A., Theunissen, F. E.
+* **Year**: 1999
+* **DOI**: `10.1038/14731`
+* **URL**: &lt;https://www.nature.com/articles/nn1199_947&gt;
+* **Peer-reviewed**: yes (Nature Neuroscience)
+* **Relevance**: Canonical neuroscience-readers&#x27; review of information theory and neural coding.
+
+##### [Brenner2000]
+
+* **Type**: paper
+* **Title**: Synergy in a neural code
+* **Authors**: Brenner, N., Strong, S. P., Koberle, R., Bialek, W., de Ruyter van Steveninck, R. R.
+* **Year**: 2000
+* **DOI**: `10.1162/089976600300015259`
+* **URL**: &lt;https://direct.mit.edu/neco/article-abstract/12/7/1531/6387&gt;
+* **Peer-reviewed**: yes (Neural Computation)
+* **Relevance**: Spike-pair coding extension of Strong et al.; useful for refined pair-MI catalogue
+  objective.
+
+##### [Chklovskii2002]
+
+* **Type**: paper
+* **Title**: Wiring optimization in cortical circuits
+* **Authors**: Chklovskii, D. B., Schikorski, T., Stevens, C. F.
+* **Year**: 2002
+* **DOI**: `10.1016/S0896-6273(02)00679-7`
+* **URL**: &lt;https://www.sciencedirect.com/science/article/pii/S0896627302006797&gt;
+* **Peer-reviewed**: yes (Neuron)
+* **Relevance**: 3/5-volume rule; evolutionary justification for the cytoplasm-volume objective and
+  function-cost pairing.
+
+##### [Cherniak1992]
+
+* **Type**: paper
+* **Title**: Local optimization of neuron arbors
+* **Authors**: Cherniak, C.
+* **Year**: 1992
+* **DOI**: `10.1007/BF00204115`
+* **URL**: &lt;https://link.springer.com/article/10.1007/BF00204115&gt;
+* **Peer-reviewed**: yes (Biological Cybernetics)
+* **Relevance**: Steiner-tree formalism + local volume minimisation at branch junctions.
+
+##### [Wen2006]
+
+* **Type**: paper
+* **Title**: Wiring optimization can relate neuronal structure and function
+* **Authors**: Wen, Q., Chklovskii, D. B.
+* **Year**: 2006
+* **DOI**: `10.1073/pnas.0506806103`
+* **URL**: &lt;https://www.pnas.org/doi/10.1073/pnas.0506806103&gt;
+* **Peer-reviewed**: yes (PNAS)
+* **Relevance**: Wiring-optimisation theory linked to specific arbor structure-function.
+
+##### [Victor1997]
+
+* **Type**: paper
+* **Title**: Metric-space analysis of spike trains: theory, algorithms and application
+* **Authors**: Victor, J. D., Purpura, K. P.
+* **Year**: 1997
+* **DOI**: `10.1088/0954-898X_8_2_003`
+* **URL**: &lt;https://www.tandfonline.com/doi/abs/10.1088/0954-898X_8_2_003&gt;
+* **Peer-reviewed**: yes (Network: Computation in Neural Systems)
+* **Relevance**: Spike-distance metrics complementing direct MI estimation.
+
+##### [Deb2002]
+
+* **Type**: paper
+* **Title**: A fast and elitist multiobjective genetic algorithm: NSGA-II
+* **Authors**: Deb, K., Pratap, A., Agarwal, S., Meyarivan, T.
+* **Year**: 2002
+* **DOI**: `10.1109/4235.996017`
+* **URL**: &lt;https://ieeexplore.ieee.org/document/996017/&gt;
+* **Peer-reviewed**: yes (IEEE Transactions on Evolutionary Computation)
+* **Relevance**: Canonical NSGA-II reference for the project&#x27;s optimiser.
+
+##### [Deb2014]
+
+* **Type**: paper
+* **Title**: An evolutionary many-objective optimization algorithm using reference-point-based
+  nondominated sorting approach, Part I: solving problems with box constraints
+* **Authors**: Deb, K., Jain, H.
+* **Year**: 2014
+* **DOI**: `10.1109/TEVC.2013.2281535`
+* **URL**: &lt;https://ieeexplore.ieee.org/document/6600851/&gt;
+* **Peer-reviewed**: yes (IEEE Transactions on Evolutionary Computation)
+* **Relevance**: NSGA-III reference for &gt;3-objective catalogue follow-ups.
+
+##### [Blank2020]
+
+* **Type**: paper
+* **Title**: pymoo: multi-objective optimization in Python
+* **Authors**: Blank, J., Deb, K.
+* **Year**: 2020
+* **DOI**: `10.1109/ACCESS.2020.2990567`
+* **URL**: &lt;https://ieeexplore.ieee.org/document/9078759&gt;
+* **Peer-reviewed**: yes (IEEE Access)
+* **Relevance**: Canonical pymoo reference; the project&#x27;s optimiser.
+
+##### [Zitzler1999]
+
+* **Type**: paper
+* **Title**: Multiobjective evolutionary algorithms: a comparative case study and the strength
+  Pareto approach
+* **Authors**: Zitzler, E., Thiele, L.
+* **Year**: 1999
+* **DOI**: `10.1109/4235.797969`
+* **URL**: &lt;https://ieeexplore.ieee.org/document/797969/&gt;
+* **Peer-reviewed**: yes (IEEE Transactions on Evolutionary Computation)
+* **Relevance**: SPEA-family + comparative-benchmark methodology; foundation of pymoo&#x27;s hypervolume
+  / IGD primitives.
+
+##### [Koch1999]
+
+* **Type**: paper
+* **Title**: Biophysics of Computation: Information Processing in Single Neurons
+* **Authors**: Koch, C.
+* **Year**: 1999
+* **DOI**: `10.1093/oso/9780195104912.001.0001`
+* **URL**: &lt;https://global.oup.com/academic/product/biophysics-of-computation-9780195181999&gt;
+* **Peer-reviewed**: yes (Oxford University Press textbook)
+* **Relevance**: Canonical single-neuron information-processing textbook; framing reference for the
+  catalogue&#x27;s MI section.
+
+##### [BluePyOpt-GH]
+
+* **Type**: repository
+* **Title**: BluePyOpt — Blue Brain Python Optimisation Library
+* **Author/Org**: Blue Brain Project, EPFL (now Open Brain Institute)
+* **Date**: 2024-11
+* **URL**: &lt;https://github.com/BlueBrain/BluePyOpt&gt;
+* **Last updated**: 2024-11 (latest release 1.14.17); repo archived Feb 2025; future development at
+  Open Brain Institute
+* **Peer-reviewed**: no (accompanies peer-reviewed publication [VanGeit2016])
+* **Relevance**: The canonical multi-objective optimisation library for compartmental neuron models.
+  Module layout (CellEvaluator + protocols + efeatures) is the structural template the catalogue
+  should adopt.
+
+##### [BluePyOpt-Docs]
+
+* **Type**: documentation
+* **Title**: BluePyOpt Read the Docs
+* **Author/Org**: Blue Brain Project
+* **URL**: &lt;https://bluepyopt.readthedocs.io/en/latest/index.html&gt;
+* **Peer-reviewed**: no
+* **Relevance**: API surface (bluepyopt.ephys.evaluators, bluepyopt.ephys.protocols,
+  bluepyopt.ephys.efeatures, bluepyopt.objectives) for porting catalogue evaluators.
+
+##### [eFEL-GH]
+
+* **Type**: repository
+* **Title**: eFEL — Electrophys Feature Extraction Library
+* **Author/Org**: Blue Brain Project
+* **Date**: 2025
+* **URL**: &lt;https://github.com/BlueBrain/eFEL&gt;
+* **Peer-reviewed**: no
+* **Relevance**: C++ feature library (40.7% C++, 57.9% Python); supplies headline features
+  (AP_amplitude, voltage_base, bpap_attenuation, ais_initiation, plus dozens more) used by every
+  Druckmann-methodology fit.
+
+##### [pymoo-Docs]
+
+* **Type**: documentation
+* **Title**: pymoo: Multi-objective Optimization in Python
+* **Author/Org**: anyoptimization (J. Blank, K. Deb)
+* **URL**: &lt;https://pymoo.org/&gt;
+* **Peer-reviewed**: no (accompanies peer-reviewed [Blank2020])
+* **Relevance**: Algorithm catalogue (NSGA-II, NSGA-III, MOEA/D, etc.), indicators (HV, IGD, GD+),
+  parallelisation support; the project&#x27;s optimiser documentation.
+
+##### [DEAP-Docs]
+
+* **Type**: documentation
+* **Title**: DEAP — Distributed Evolutionary Algorithms in Python
+* **Author/Org**: DEAP Project
+* **URL**: &lt;https://deap.readthedocs.io/&gt;
+* **Peer-reviewed**: no
+* **Relevance**: BluePyOpt&#x27;s underlying selector library; supports non-dominated sorting and
+  hypervolume.
+
+##### [paretoset-PyPI]
+
+* **Type**: documentation
+* **Title**: paretoset PyPI page
+* **Author/Org**: tommyod (Tommy Odland)
+* **URL**: &lt;https://pypi.org/project/paretoset/&gt;
+* **Peer-reviewed**: no
+* **Relevance**: Lightweight non-dominated-set utility for post-hoc Pareto analysis on the project&#x27;s
+  NSGA-II output.
+
+##### [AllenSDK-Docs]
+
+* **Type**: documentation
+* **Title**: AllenSDK Biophysical Models
+* **Author/Org**: Allen Institute for Brain Science
+* **URL**: &lt;https://allensdk.readthedocs.io/en/latest/biophysical_models.html&gt;
+* **Peer-reviewed**: no (accompanies peer-reviewed [Gouwens2018])
+* **Relevance**: Methodology cross-check / external comparison resource; runs Gouwens2018 models on
+  NEURON.
+
+##### [Hay2011]
+
+* **Type**: paper
+* **Title**: Models of neocortical layer 5b pyramidal cells capturing a wide range of dendritic and
+  perisomatic active properties
+* **Authors**: Hay, E., Hill, S., Schuermann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107&gt;
+* **Peer-reviewed**: yes (PLOS Computational Biology)
+* **Relevance**: Already in corpus
+  (`tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/`). The
+  20-objective NSGA-style L5b pyramidal fit referenced for the Pareto-acceptable-ensemble reporting
+  pattern.
+
+##### [Cuntz2010]
+
+* **Type**: paper
+* **Title**: One rule to grow them all: a general theory of neuronal branching and its practical
+  application
+* **Authors**: Cuntz, H., Forstner, F., Borst, A., Hausser, M.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000877`
+* **URL**: &lt;https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000877&gt;
+* **Peer-reviewed**: yes (PLOS Computational Biology)
+* **Relevance**: Already in corpus
+  (`tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000877/`).
+  Cajal-cytoplasm-conservation grounding for the cytoplasm-volume objective.
+
+##### [Dhingra2004]
+
+* **Type**: paper
+* **Title**: Spike generator limits efficiency of information transfer in a retinal ganglion cell
+* **Authors**: Dhingra, N. K., Smith, R. G.
+* **Year**: 2004
+* **DOI**: `10.1523/jneurosci.5346-03.2004`
+* **URL**: &lt;https://www.jneurosci.org/content/24/10/2914&gt;
+* **Peer-reviewed**: yes (Journal of Neuroscience)
+* **Relevance**: Already in corpus
+  (`tasks/t0015_literature_survey_cable_theory/assets/paper/10.1523_jneurosci.5346-03.2004/`). The
+  ideal-observer recipe and within-cell-type calibration anchor for the project&#x27;s MI estimator.
+
+##### [Ament2023]
+
+* **Type**: paper
+* **Title**: Unexpected improvements to expected improvement for Bayesian optimization
+* **Authors**: Ament, S., Daulton, S., Eriksson, D., Balandat, M., Bakshy, E.
+* **Year**: 2023
+* **DOI**: `no-doi_Ament2023_logei-bo`
+* **URL**: &lt;https://arxiv.org/abs/2310.20708&gt;
+* **Peer-reviewed**: yes (NeurIPS 2023)
+* **Relevance**: Already in corpus
+  (`tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/no-doi_Ament2023_logei-bo/`). qLogNEHVI
+  fixes vanishing gradients in EHVI/qNEHVI; the optimiser-selection rule referenced for low-d
+  constrained MOBO.
+
+##### [Hines1997]
+
+* **Type**: paper
+* **Title**: The NEURON simulation environment
+* **Authors**: Hines, M. L., Carnevale, N. T.
+* **Year**: 1997
+* **DOI**: `10.1162/neco.1997.9.6.1179`
+* **URL**: &lt;https://direct.mit.edu/neco/article/9/6/1179/6063&gt;
+* **Peer-reviewed**: yes (Neural Computation)
+* **Relevance**: Already in corpus
+  (`tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/`).
+  The &lt;= 20 um compartment-discretisation convention for mesh-density invariance.
+
+##### [LondonHausser2005]
+
+* **Type**: paper
+* **Title**: Dendritic computation
+* **Authors**: London, M., Hausser, M.
+* **Year**: 2005
+* **DOI**: `10.1146/annurev.neuro.28.061604.135703`
+* **URL**: &lt;https://www.annualreviews.org/doi/10.1146/annurev.neuro.28.061604.135703&gt;
+* **Peer-reviewed**: yes (Annual Review of Neuroscience)
+* **Relevance**: Already in corpus
+  (`tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1146_annurev.neuro.28.061604.135703/`).
+  Justifies the function-objective + cost-objective pairing rule.
       </content>
     </section>
   </sections>

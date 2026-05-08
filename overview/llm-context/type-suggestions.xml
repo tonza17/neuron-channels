@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-08T16:08:27Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-08T16:52:52Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>394017</char_count>
-    <byte_count>394173</byte_count>
-    <estimated_tokens>98504</estimated_tokens>
+    <char_count>398816</char_count>
+    <byte_count>398978</byte_count>
+    <estimated_tokens>99704</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -378,9 +378,14 @@
         <id>S-0093-02</id>
         <id>S-0093-03</id>
         <id>S-0093-04</id>
+        <id>S-0097-01</id>
+        <id>S-0097-02</id>
+        <id>S-0097-03</id>
+        <id>S-0097-04</id>
+        <id>S-0097-05</id>
       </source_ids>
       <content>
-Suggestions: 361
+Suggestions: 366
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4424,6 +4429,66 @@ Categories: compartmental-modeling
 Date added: 2026-05-08
 
 The t0093 implementation initially attempted a 5-cell validation gate in `--max-workers 1` (sequential) mode; the run hung beyond the wall-clock window and had to be killed and restarted in parallel mode (which completed in 7m44s). Hypothesis: NEURON state-leak between cells in the same Python process -- residual Section / NetCon / Vector references pile up in `h` despite t0090&#x27;s `_LIVE_CELLS` defense, eventually slowing or stalling `h.run()`. Reproduce on a 5-cell sequential run, instrument `len(h.allsec())` and `len(h.List(&#x27;NetCon&#x27;))` between cells, and try (a) explicit `for sec in list(h.allsec()): h.delete_section(sec=sec)`, (b) `h(&#x27;forall delete_section()&#x27;)`, or (c) creating a fresh `neuron.h` namespace per cell. Output: fix in t0080&#x27;s library or documented note + minimal reproducer. Matters for single-process debugging and low-parallelism interactive runs. Recommended task types: experiment-run.
+
+## Bed B NSGA-II maximising DSI and minimising cytoplasm volume
+ID: S-0097-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0097_multi_obj_optim
+Source paper: 10.1371_journal.pcbi.1002107
+Categories: compartmental-modeling, dendritic-computation
+Date added: 2026-05-08
+
+Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010&#x27;s `bf` in [0.2, 0.7] band; Chklovskii et al. 2002&#x27;s 3/5-of-grey-matter wiring rule). Infrastructure already in place via the t0093-validated procedural morphology generator. Falsifiable prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8 budget bump if needed). Same population/generation budget as t0091.
+
+## Bed B NSGA-II maximising DSI and minimising ATP-per-spike
+ID: S-0097-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0097_multi_obj_optim
+Source paper: 10.1371_journal.pcbi.1000840
+Categories: compartmental-modeling, voltage-gated-channels
+Date added: 2026-05-08
+
+Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per spike). Remme et al. 2018&#x27;s MSO function-vs-energy MOBO provides a direct methodology template generalising to NEURON. DSGC&#x27;s GABAergic-style fast-spiking should produce Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e` per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed per-task default; flag for explicit budget approval.
+
+## Bed B NSGA-II maximising DSI and robustness under +/-10% channel-density perturbation
+ID: S-0097-03
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0097_multi_obj_optim
+Source paper: 10.1038_nrn1949
+Categories: compartmental-modeling, voltage-gated-channels
+Date added: 2026-05-08
+
+Directly addresses the researcher&#x27;s recurring biological-plausibility concern with pure-DSI maximisation (Marder-style population-statistic robustness is the field-standard treatment). Falsifiable prediction: high-DSI / high-robustness corner lies along compensatory hyperplanes, refuting the hypothesis that DSI maximisation drives the optimiser to fragile parameter-space extremes. Recipe: K=50-200 +/-10% perturbations per Pareto point; minimise SD of DSI. Budget: 36-72 h Vast.ai EPYC at $0.30/h, total $11-22 (multiplies t0091&#x27;s per-individual cost by K=50-200) — request explicit $25 budget cap or reduce population/generations.
+
+## Bed B NSGA-II maximising DSI and information transfer rate
+ID: S-0097-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0097_multi_obj_optim
+Source paper: 10.1103_PhysRevLett.80.197
+Categories: compartmental-modeling, retinal-ganglion-cell
+Date added: 2026-05-08
+
+Recipe is well-established (Strong-Bialek direct method with 1/T extrapolation) and validates against Dhingra &amp; Smith 2004&#x27;s ~60% gray-level loss benchmark. Caveat: the project&#x27;s 8-direction protocol has only 3 bits of stimulus uncertainty, so the MI estimator&#x27;s ceiling is 3 bits per trial regardless of spike train. Validate the recipe against existing DSGC trial output before launching the full MOBO. Budget: 18-36 h Vast.ai EPYC at $0.30/h, total $5-11. MI is post-hoc on simulation output, so cost overhead is mostly in extra population to populate the MI Pareto direction. Priority dropped to medium pending recipe validation.
+
+## Bed B NSGA-II maximising MI and minimising ATP-per-spike (bits-per-ATP front)
+ID: S-0097-05
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0097_multi_obj_optim
+Source paper: 10.1103_PhysRevLett.80.197
+Categories: compartmental-modeling, voltage-gated-channels, retinal-ganglion-cell
+Date added: 2026-05-08
+
+Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front directly comparable to Niven et al. 2007&#x27;s empirical fly-photoreceptor 200-1000 bits/s super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the literature, so the experiment closes a genuine open question. Tradeoff: this experiment does not directly serve the project&#x27;s first-question DSGC mission (DSI is not optimised); ranked medium because it serves a broader scientific question rather than the project&#x27;s specific deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
       </content>
     </section>
   </sections>

@@ -1,7 +1,7 @@
 # Suggestions: `dendritic-computation`
 
-78 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **61 open** (10
+79 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **62 open** (11
 high, 46 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
@@ -34,6 +34,29 @@ vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against Pole
 spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
 addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising cytoplasm
+volume</strong> (S-0097-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1002107`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1002107/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most
+evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010's `bf`
+in [0.2, 0.7] band; Chklovskii et al. 2002's 3/5-of-grey-matter wiring rule). Infrastructure
+already in place via the t0093-validated procedural morphology generator. Falsifiable
+prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on
+Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8
+budget bump if needed). Same population/generation budget as t0091.
 
 </details>
 

@@ -8,24 +8,27 @@
 
 ## 2026-05-08 (7)
 
-## ⏳ In Progress
+## ✅ Completed
 
 <details>
-<summary>⏳ 0097 — <strong>Literature survey: multi-objective optimisation of
+<summary>✅ 0097 — <strong>Literature survey: multi-objective optimisation of
 single-neuron models</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0097_multi_obj_optim` |
-| **Status** | in_progress |
+| **Status** | completed |
 | **Effective date** | 2026-05-08 |
 | **Dependencies** | — |
 | **Expected assets** | 10 paper, 1 answer |
 | **Source suggestion** | — |
 | **Task types** | [`literature-survey`](../../../meta/task_types/literature-survey/), [`internet-research`](../../../meta/task_types/internet-research/), [`answer-question`](../../../meta/task_types/answer-question/) |
 | **Start time** | 2026-05-08T15:23:11Z |
+| **End time** | 2026-05-08T16:50:00Z |
+| **Step progress** | 10/15 |
 | **Task page** | [Literature survey: multi-objective optimisation of single-neuron models](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
 | **Task folder** | [`t0097_multi_obj_optim/`](../../../tasks/t0097_multi_obj_optim/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0097_multi_obj_optim/results/results_detailed.md) |
 
 # Literature Survey: Multi-Objective Optimisation of Single-Neuron Compartmental Models
 
@@ -264,9 +267,36 @@ writing; 15-30 min suggestions + reporting + verification.
 * **t0015 / t0016 / t0017 / t0018 / t0019 / t0027** — prior literature surveys for stylistic
   consistency and for any cross-cited references.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> ---
+> spec_version: "1"
+> task_id: "t0097_multi_obj_optim"
+> date_completed: "2026-05-08"
+> status: "complete"
+> ---
+> **Results Summary: Literature Survey of Multi-Objective Optimisation in Single-Neuron
+> Models**
+>
+> **Summary**
+>
+> Catalogued **6 objective functions** (4 must-find + 2 additional) usable on top of the
+> project's
+> existing Bed B NSGA-II loop, with formulas, units, NEURON-side computational recipes, and
+> biological-plausibility notes for each. Downloaded **10 paper assets** spanning the
+> methodology
+> canon (Druckmann 2007, Achard & De Schutter 2006, BluePyOpt / Van Geit 2016), the metabolic
+> energy
+> line (Attwell & Laughlin 2001, Niven & Laughlin 2008, Sengupta et al. 2010), the
+> information-theoretic line (Strong et al. 1998), the robustness / degeneracy line (Marder &
+> Goaillard 2006, Prinz, Bucher & Marder 2004), and the wiring economy line (Chklovskii et al.
+> 2002).
+> Produced one consolidated answer asset
+> (`objective-functions-for-single-neuron-multi-objective-optimisation`, 6724 words) plus 5
+> ranked
+> future-MOBO suggestions in `results/suggestions.json`. Cost: $0.
+
+</details>
 
 <details>
 <summary>✅ 0095 — <strong>Brainstorm results session 20</strong></summary>
