@@ -59,9 +59,9 @@
       "step": 7,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, costs.json, remote_machines_used.json; embed all 3 charts; cover task requirements.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T03:43:40Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T03:48:15Z",
       "log_file": "logs\\steps\\007_results/"
     },
     {
