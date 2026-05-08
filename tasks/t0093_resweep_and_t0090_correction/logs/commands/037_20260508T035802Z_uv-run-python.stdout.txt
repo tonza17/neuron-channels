@@ -1,0 +1,22 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0093_resweep_and_t0090_correction\tasks\t0093_resweep_and_t0090_correction\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260508T005128Z_python-m-arf-scripts-aggregators-aggrega.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 004_20260508T005142Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 010_20260508T010605Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 012_20260508T011438Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 013_20260508T011448Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 016_20260508T013339Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 026_20260508T035137Z_python-m-arf-scripts-aggregators-aggrega.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 027_20260508T035142Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 10 words (minimum: 20)[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 10 words (minimum: 20)[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 6 words (minimum: 20)[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 5 words (minimum: 20)[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 11 words (minimum: 20)[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 8 words (minimum: 20)[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 16 warning(s)
