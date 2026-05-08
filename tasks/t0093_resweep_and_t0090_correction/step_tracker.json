@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0093_resweep_and_t0090_correction branch from main and create worktree.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T00:44:52Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T00:48:11Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
