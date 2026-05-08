@@ -3,10 +3,14 @@
 ## Motivation
 
 Brainstorm session 18 (t0089) commissioned a strategic pivot from electrophys-only optimisation
-(t0080-t0088) to morphology-extended optimisation. t0090 delivers the procedural DSGC morphology
-generator (14 morphology knobs) plus a validated diversity test plus a Bed-B reproducibility check.
-This task t0091 is the first NSGA-II run that calls the generator inside the evaluation loop,
-jointly optimising morphology + electrophys in a 68-d parameter space.
+(t0080-t0088) to morphology-extended optimisation. t0090 delivered the procedural DSGC morphology
+generator (14 morphology knobs) but committed a soma-`pt3dadd` collapse bug; t0092 diagnosed the
+root cause and shipped `generate_fixed_morphology` as a thin shim; t0093 ran the full 60-cell
+re-sweep under the patched generator (60/60 STABLE-firing, 56/60 with PD-rate>0, 0 regressions) and
+issued correction `C-0093-01` (`replace`) redirecting the canonical procedural generator to t0092's
+fix. **t0091 imports the t0092 patched generator, not t0090's unpatched one.** This task is the
+first NSGA-II run that calls the patched generator inside the evaluation loop, jointly optimising
+morphology + electrophys in a 68-d parameter space.
 
 The strategic question is whether enabling morphology in the optimisation opens
 biologically-plausible joint-pass regions that t0080-t0088's fixed-Bed-B substrate could not reach.
@@ -29,7 +33,8 @@ soma-displacement-toward-PD as a functional DS mechanism (Schachter 2010, Trenho
 
 ### In Scope
 
-* 68-d NSGA-II (54-d v3 electrophys + 14-d morphology) using the t0090 procedural generator
+* 68-d NSGA-II (54-d v3 electrophys + 14-d morphology) using the t0092 patched procedural generator
+  (`generate_fixed_morphology`, canonicalised by C-0093-01)
 * Pop 96, up to 8 generations, adaptive HV-plateau stop, cost watchdog
 * 5-anchor warm-start population (Bed-B-like + symmetric + PD-asymmetric + ND-asymmetric +
   alternative-topology), each anchor cloned with ~19 t0083 Pareto electrophys variants
@@ -57,7 +62,7 @@ Anchors:
 
 | Anchor | Description | Source |
 | --- | --- | --- |
-| 1 | Bed-B-like (matches existing t0083 substrate; the "do not regress from t0083 baseline" anchor) | t0090 Phase F validated point |
+| 1 | Bed-B-like (matches existing t0083 substrate; the "do not regress from t0083 baseline" anchor) | t0093 patched-generator Bed-B reproducibility (43.6 Hz PD-rate post-fix on the BedB-equivalent point) |
 | 2 | Symmetric: `soma_offset_pd_um=0`, `field_elongation_pd=1.0`, `branch_density_gradient_pd=0`, `primary_branch_pd_concentration=0` | Tests whether DS can emerge purely from channel/synapse mechanism without morphological asymmetry |
 | 3 | PD-asymmetric: soma offset +100 um toward PD, field elongated 2x along PD, branches biased toward PD | Tests whether morphological asymmetry along PD opens biologically-plausible joint-pass |
 | 4 | ND-asymmetric: mirror of #3, soma offset -100 um | Mirror sanity check; if optimiser preserves #3 and discards #4, that is strong evidence for soma-displacement-toward-PD as a functional DS mechanism |
@@ -85,10 +90,12 @@ Settings:
 * Crossover: SBX with eta = 15
 * Mutation: polynomial mutation with eta = 20, prob = 1 / 68
 * Cost watchdog: $4.00 hard cap (well below remaining $4.44 buffer)
-* Per-cell evaluation: t0090 generator builds NEURON model from 14 morph params; 54 channel /
-  synapse params inserted into generated sections; 5 evaluation seeds for inner replication;
-  bar-rotation simulation at 16 directions; objectives = (DSI vector-sum, PD firing rate, robustness
-  across seeds).
+* Per-cell evaluation:
+  `from tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix import generate_fixed_morphology`
+  builds the NEURON model from 14 morph params (the soma-pt3d collapse bug is fixed at the source);
+  54 channel / synapse params inserted into generated sections; 5 evaluation seeds for inner
+  replication; bar-rotation simulation at 16 directions; objectives = (DSI vector-sum, PD firing
+  rate, robustness across seeds).
 
 **Hardware**: Vast.ai EPYC 7B13 64-core. 96 cells x 5 seeds x 16 directions x ~60 s/sim / 64
 parallel = ~12 minutes per generation. 8 generations: ~1.6 hours / generation x 8 = ~12.8 hours.
@@ -187,8 +194,9 @@ exceeds threshold).
   (only if budget allows).
 * **Cost overshoot**: cost watchdog at $4.00 hard cap; drop to 6 gens if approaching.
 * **Generator instability under NSGA-II mutation**: if mutated morph_params produce degenerate
-  morphologies, the eval function returns a penalty objective; t0090 Phase D verification should
-  have caught most degenerate parameter combinations.
+  morphologies, the eval function returns a penalty objective. t0093's patched-generator re-sweep
+  showed 60/60 STABLE under the t0083 channel set across the wide LHS sample, so the patched
+  generator covers the morphology parameter space without NaN_VOLTAGE failures.
 * **Anchor 4 ND-asymmetric cells fail to reproduce on the optimiser's seed**: indicates the
   warm-start anchor is unstable; replace with a symmetric anchor variant.
 * **All anchors converge to anchor 1 (Bed-B-like)**: acceptable negative; useful finding; motivates
@@ -205,7 +213,15 @@ exceeds threshold).
 ## Cross-References
 
 * **t0089_brainstorm_results_18** — commissioning brainstorm session.
-* **t0090_morphology_generator_diversity_test** — generator dependency.
+* **t0090_morphology_generator_diversity_test** — original generator dependency (superseded by
+  t0092 / t0093 fix).
+* **t0092_diagnose_morphology_generator_silence** — patched generator
+  (`generate_fixed_morphology`); canonical entry point for morphology construction.
+* **t0093_resweep_and_t0090_correction** — full 60-cell verification of the patched generator
+  (60/60 STABLE-firing) and `replace` correction overlay `C-0093-01` redirecting the canonical
+  procedural DSGC morphology generator to t0092's fix.
+* **t0094_brainstorm_results_19** — brainstorm session that updated this task's dependencies and
+  import paths to reference t0092 / t0093 (covers S-0093-01).
 * **t0083_bedb_v3_extend_nsga2_gen8plus** — warm-start electrophys archive source.
 * **t0086_robustness_cluster_bio_comparison**, **t0088_recluster_marginals_and_vm_motifs** —
   biological-plausibility framework.

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-08T04:03:49Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-08T11:23:32Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>89</section_count>
-    <char_count>1648928</char_count>
-    <byte_count>1656155</byte_count>
-    <estimated_tokens>412232</estimated_tokens>
+    <section_count>90</section_count>
+    <char_count>1657259</char_count>
+    <byte_count>1664514</byte_count>
+    <estimated_tokens>414314</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -197,9 +197,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0090_morphology_generator_diversity_test</id>
         <id>t0092_diagnose_morphology_generator_silence</id>
         <id>t0093_resweep_and_t0090_correction</id>
+        <id>t0094_brainstorm_results_19</id>
       </source_ids>
       <content>
-Completed tasks: 85
+Completed tasks: 86
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -710,6 +711,12 @@ ID: t0093_resweep_and_t0090_correction
 Completed: 2026-05-08
 Short description: Re-run t0090&#x27;s 60-morph Phase D verification under the t0092 patched generator; issue correction overlay marking t0090&#x27;s procedural_dsgc_morphology_generator as superseded by t0092&#x27;s procedural_dsgc_morphology_generator_fix.
 Result summary: Results Summary: Patched-Generator 60-Morph Re-Sweep + t0090 Correction Overlay Summary The t0092 soma-pt3d fix is fully validated at scale: **60 / 60 cells STABLE-firing** post-fix (51 NAN_VOLTAGE→firing, 9 STABLE-silent→firing, 0 regressions). Pass criterion (≥50/60 with non-zero PD-rate) met at **56/60**; stretch (≥55/60) also exceeded. Mean DSI different=0.323, similar=0.352. The `replace` correction overlay against t0090&#x27;s `procedural_dsgc_morphology_generator` library asset is in place and `verify_corrections.py` PASSES; supersession check confirms the redirect to t0092&#x27;s `procedural_dsgc_morphology_generator_fix`. Metrics * **Total cells re-swept**: **60** (30 different + 30 similar)...
+
+## Brainstorm results session 19
+ID: t0094_brainstorm_results_19
+Completed: 2026-05-08
+Short description: Nineteenth brainstorm: greenlight t0091 launch; update t0091 deps + imports for t0092/t0093 fix; reject 2 superseded suggestions.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0094_brainstorm_results_19&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 19 Summary Nineteenth strategic brainstorm, run on 2026-05-08 immediately after t0093 (`resweep_and_t0090_correction`) merged with 60/60 cells STABLE-firing under the t0092 patched generator and `C-0093-01` correction overlay in place. The researcher&#x27;s directive was direct: launch the morphology-extended NSGA-II optimisation now. The session updated t0091 (`morphology_extended_nsga2_v1`) in place — added t0092 + t0093 to dependencies, swapped the generator import path to `tasks.t0092_..code.morphology_generator_fix.generate_fixed_morphology`...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -748,8 +755,8 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
 ID: t0091_morphology_extended_nsga2_v1
 Status: not_started
 Effective date: 2026-05-07
-Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test
+Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -27945,6 +27952,139 @@ The resolved long description in `task_description.md` covers Phase A (re-sweep 
 | **REQ-8** | **Done** | Library supersession check confirms downstream consumers resolve the canonical procedural DSGC morphology generator to t0092&#x27;s fix. Library aggregator not present in this branch — verified via `arf.scripts.common.artifacts` directly. | `data/library_supersession_check.json`, `code/library_supersession_check.py` |
 | **REQ-9** | **Done** | `results/metrics.json` uses explicit-variant format with two variants (`different_set_post_fix`, `similar_set_post_fix`) containing only the registered metric `direction_selectivity_index`. `verify_task_metrics.py` PASSES. | `results/metrics.json`, mean DSI 0.43/0.36 |
 | **REQ-10** | **Done** | Quality gates clean: `ruff check . &amp;&amp; ruff format .` pass; `mypy -p tasks.t0093_..code` passes (1 source file, no errors). | Step 6 step log; commit log shows clean ruff/mypy invocations |
+      </content>
+    </section>
+    <section id="t0094_brainstorm_results_19-results-detailed" source_kind="file">
+      <title>t0094_brainstorm_results_19 — Brainstorm results session 19 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0094_brainstorm_results_19</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0094_brainstorm_results_19/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0094_brainstorm_results_19&quot;
+---
+
+### Detailed Results: Brainstorm Session 19
+
+#### Summary
+
+Nineteenth brainstorm session: greenlit t0091 launch, updated t0091 in place to reference the
+t0092-patched generator and add t0092/t0093 to its dependencies, and rejected two suggestions
+(S-0092-03, S-0090-04) falsified by the t0093 outcome. Zero session cost; zero remote compute.
+
+#### Methodology
+
+1. Aggregated project state via `aggregate_tasks.py`, `aggregate_suggestions.py` (uncovered, by
+   priority), and `aggregate_costs.py`. The `aggregate_answers.py` aggregator does not exist in
+   this branch; answer assets were enumerated via direct glob.
+2. Read full results summaries for tasks completed since t0089: t0090 (morphology generator +
+   diversity test), t0092 (silence diagnosis + fix), t0093 (full re-sweep + correction overlay).
+3. Read full t0089 (`brainstorm_results_18`) results_summary to identify what&#x27;s been completed
+   since the previous brainstorm and what was planned.
+4. Re-ran the overview materializer to ensure project state is current on GitHub.
+5. Formed an independent priority reassessment of the 12 active high-priority suggestions; flagged
+   S-0092-03 (already done by t0093) and S-0090-04 (premise invalidated by 60/60 STABLE) as
+   reject candidates.
+6. Presented project state to researcher with concrete metrics, mean DSI, budget breakdown.
+7. Answered three researcher questions: (a) plain-language explanation of the soma-pt3d bug,
+   the fix, and the validation evidence; (b) per-cell DSI spread (mean 0.32–0.35, examples
+   embedded in results_detailed.md); (c) location of per-cell DSI data
+   (`tasks/t0093_resweep_and_t0090_correction/data/post_fix_verification_summary.json`).
+8. Received launch directive; answered budget question (yes, $4.45 remaining vs $3.00–3.50
+   estimate; $0.95–1.45 buffer); resolved two clarifying multi-choice questions (NMDA calibration
+   stays separate; cost watchdog stays at $4.00).
+9. Created `tasks/t0094_brainstorm_results_19/` with the full mandatory folder structure.
+10. Updated t0091 task.json (deps + short_description) and task_description.md (motivation, scope,
+    Phase A anchor source, Phase B per-cell evaluation import path, risk text, cross-references).
+11. Wrote 2 suggestion-rejection correction files in `corrections/`.
+12. Wrote step logs for the four brainstorm phases.
+13. Wrote session log capturing the full chat transcript for this brainstorm.
+14. Captured CLI session transcripts via `capture_task_sessions`.
+15. Ran the four mandatory verificators (verify_task_file, verify_corrections,
+    verify_suggestions, verify_logs).
+16. Re-ran the overview materializer to reflect the updated task state.
+17. Formatted markdown with `flowmark`, ran `ruff` and `mypy` (no Python sources changed).
+18. Committed, pushed, opened PR, ran pre-merge verificator, merged.
+
+#### Metrics
+
+| Metric | Value |
+| --- | --- |
+| New tasks created | 0 |
+| Tasks updated | 1 |
+| Tasks cancelled | 0 |
+| Suggestions rejected | 2 (S-0092-03, S-0090-04) |
+| Suggestions reprioritised | 0 |
+| Corrections written | 2 |
+| New suggestions created | 0 |
+| Answer assets created | 0 |
+| Session duration | ~30 minutes interactive |
+| Session cost | $0.00 |
+| Estimated cost of commissioned tasks | $3.00–3.50 (t0091 only) |
+
+#### Limitations
+
+Planning task; no experiments were run. The validity of the launch decision rests entirely on the
+t0093 outcome (60/60 STABLE, 56/60 with PD-rate&gt;0); if a downstream issue with the patched
+generator emerges during t0091&#x27;s NSGA-II run, t0091&#x27;s cost watchdog at $4.00 will halt the run
+before the $4.45 budget cap is breached and a follow-up brainstorm will need to triage.
+
+#### Files Created
+
+* `tasks/t0094_brainstorm_results_19/__init__.py`
+* `tasks/t0094_brainstorm_results_19/task.json`
+* `tasks/t0094_brainstorm_results_19/task_description.md`
+* `tasks/t0094_brainstorm_results_19/step_tracker.json`
+* `tasks/t0094_brainstorm_results_19/plan/plan.md`
+* `tasks/t0094_brainstorm_results_19/research/research_papers.md`
+* `tasks/t0094_brainstorm_results_19/research/research_internet.md`
+* `tasks/t0094_brainstorm_results_19/research/research_code.md`
+* `tasks/t0094_brainstorm_results_19/assets/.gitkeep`
+* `tasks/t0094_brainstorm_results_19/intervention/.gitkeep`
+* `tasks/t0094_brainstorm_results_19/corrections/suggestion_S-0092-03.json`
+* `tasks/t0094_brainstorm_results_19/corrections/suggestion_S-0090-04.json`
+* `tasks/t0094_brainstorm_results_19/results/results_summary.md`
+* `tasks/t0094_brainstorm_results_19/results/results_detailed.md`
+* `tasks/t0094_brainstorm_results_19/results/metrics.json`
+* `tasks/t0094_brainstorm_results_19/results/suggestions.json`
+* `tasks/t0094_brainstorm_results_19/results/costs.json`
+* `tasks/t0094_brainstorm_results_19/results/remote_machines_used.json`
+* `tasks/t0094_brainstorm_results_19/logs/session_log.md`
+* `tasks/t0094_brainstorm_results_19/logs/commands/.gitkeep`
+* `tasks/t0094_brainstorm_results_19/logs/searches/.gitkeep`
+* `tasks/t0094_brainstorm_results_19/logs/sessions/.gitkeep` (replaced by capture_report.json
+  + .jsonl files at finalise step)
+* `tasks/t0094_brainstorm_results_19/logs/steps/001_review-project-state/step_log.md`
+* `tasks/t0094_brainstorm_results_19/logs/steps/002_discuss-decisions/step_log.md`
+* `tasks/t0094_brainstorm_results_19/logs/steps/003_apply-decisions/step_log.md`
+* `tasks/t0094_brainstorm_results_19/logs/steps/004_finalize/step_log.md`
+
+Files modified outside the brainstorm task folder:
+
+* `tasks/t0091_morphology_extended_nsga2_v1/task.json` — added t0092 and t0093 to dependencies;
+  refreshed short_description.
+* `tasks/t0091_morphology_extended_nsga2_v1/task_description.md` — refreshed Motivation, In Scope,
+  Phase A anchor source, Phase B per-cell evaluation, Risks and Fallbacks, Cross-References.
+
+#### Verification
+
+* `verify_task_file.py t0094_brainstorm_results_19` — target 0 errors.
+* `verify_task_file.py t0091_morphology_extended_nsga2_v1` — target 0 errors after the update.
+* `verify_corrections.py t0094_brainstorm_results_19` — target 0 errors for 2 correction files.
+* `verify_suggestions.py t0094_brainstorm_results_19` — target 0 errors (empty array).
+* `verify_logs.py t0094_brainstorm_results_19` — target 0 errors; LG-W005 / LG-W007 / LG-W008
+  acceptable per skill guidance and step-4 capture.
+
+#### Next Steps / Suggestions
+
+The immediate next step is `/execute-task t0091_morphology_extended_nsga2_v1` in a fresh worktree
+to actually run the joint 68-d NSGA-II. No new suggestions emitted by this brainstorm; future
+brainstorms will sweep the active high-priority backlog once t0091 lands.
       </content>
     </section>
   </sections>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-08T04:03:49Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-08T11:23:32Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>418008</char_count>
-    <byte_count>418433</byte_count>
-    <estimated_tokens>104502</estimated_tokens>
+    <char_count>418699</char_count>
+    <byte_count>419132</byte_count>
+    <estimated_tokens>104674</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -197,9 +197,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0090_morphology_generator_diversity_test</id>
         <id>t0092_diagnose_morphology_generator_silence</id>
         <id>t0093_resweep_and_t0090_correction</id>
+        <id>t0094_brainstorm_results_19</id>
       </source_ids>
       <content>
-Completed tasks: 85
+Completed tasks: 86
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -710,6 +711,12 @@ ID: t0093_resweep_and_t0090_correction
 Completed: 2026-05-08
 Short description: Re-run t0090&#x27;s 60-morph Phase D verification under the t0092 patched generator; issue correction overlay marking t0090&#x27;s procedural_dsgc_morphology_generator as superseded by t0092&#x27;s procedural_dsgc_morphology_generator_fix.
 Result summary: Results Summary: Patched-Generator 60-Morph Re-Sweep + t0090 Correction Overlay Summary The t0092 soma-pt3d fix is fully validated at scale: **60 / 60 cells STABLE-firing** post-fix (51 NAN_VOLTAGE→firing, 9 STABLE-silent→firing, 0 regressions). Pass criterion (≥50/60 with non-zero PD-rate) met at **56/60**; stretch (≥55/60) also exceeded. Mean DSI different=0.323, similar=0.352. The `replace` correction overlay against t0090&#x27;s `procedural_dsgc_morphology_generator` library asset is in place and `verify_corrections.py` PASSES; supersession check confirms the redirect to t0092&#x27;s `procedural_dsgc_morphology_generator_fix`. Metrics * **Total cells re-swept**: **60** (30 different + 30 similar)...
+
+## Brainstorm results session 19
+ID: t0094_brainstorm_results_19
+Completed: 2026-05-08
+Short description: Nineteenth brainstorm: greenlight t0091 launch; update t0091 deps + imports for t0092/t0093 fix; reject 2 superseded suggestions.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0094_brainstorm_results_19&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 19 Summary Nineteenth strategic brainstorm, run on 2026-05-08 immediately after t0093 (`resweep_and_t0090_correction`) merged with 60/60 cells STABLE-firing under the t0092 patched generator and `C-0093-01` correction overlay in place. The researcher&#x27;s directive was direct: launch the morphology-extended NSGA-II optimisation now. The session updated t0091 (`morphology_extended_nsga2_v1`) in place — added t0092 + t0093 to dependencies, swapped the generator import path to `tasks.t0092_..code.morphology_generator_fix.generate_fixed_morphology`...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1050,16 +1057,20 @@ For each condition, compute:
 ID: t0091_morphology_extended_nsga2_v1
 Status: not_started
 Effective date: 2026-05-07
-Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test
+Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction
 
 #### Motivation
 
 Brainstorm session 18 (t0089) commissioned a strategic pivot from electrophys-only optimisation
-(t0080-t0088) to morphology-extended optimisation. t0090 delivers the procedural DSGC morphology
-generator (14 morphology knobs) plus a validated diversity test plus a Bed-B reproducibility check.
-This task t0091 is the first NSGA-II run that calls the generator inside the evaluation loop,
-jointly optimising morphology + electrophys in a 68-d parameter space.
+(t0080-t0088) to morphology-extended optimisation. t0090 delivered the procedural DSGC morphology
+generator (14 morphology knobs) but committed a soma-`pt3dadd` collapse bug; t0092 diagnosed the
+root cause and shipped `generate_fixed_morphology` as a thin shim; t0093 ran the full 60-cell
+re-sweep under the patched generator (60/60 STABLE-firing, 56/60 with PD-rate&gt;0, 0 regressions) and
+issued correction `C-0093-01` (`replace`) redirecting the canonical procedural generator to t0092&#x27;s
+fix. **t0091 imports the t0092 patched generator, not t0090&#x27;s unpatched one.** This task is the
+first NSGA-II run that calls the patched generator inside the evaluation loop, jointly optimising
+morphology + electrophys in a 68-d parameter space.
 
 The strategic question is whether enabling morphology in the optimisation opens
 biologically-plausible joint-pass regions that t0080-t0088&#x27;s fixed-Bed-B substrate could not reach.
@@ -1082,7 +1093,8 @@ soma-displacement-toward-PD as a functional DS mechanism (Schachter 2010, Trenho
 
 ##### In Scope
 
-* 68-d NSGA-II (54-d v3 electrophys + 14-d morphology) using the t0090 procedural generator
+* 68-d NSGA-II (54-d v3 electrophys + 14-d morphology) using the t0092 patched procedural generator
+  (`generate_fixed_morphology`, canonicalised by C-0093-01)
 * Pop 96, up to 8 generations, adaptive HV-plateau stop, cost watchdog
 * 5-anchor warm-start population (Bed-B-like + symmetric + PD-asymmetric + ND-asymmetric +
   alternative-topology), each anchor cloned with ~19 t0083 Pareto electrophys variants
@@ -1110,7 +1122,7 @@ Anchors:
 
 | Anchor | Description | Source |
 | --- | --- | --- |
-| 1 | Bed-B-like (matches existing t0083 substrate; the &quot;do not regress from t0083 baseline&quot; anchor) | t0090 Phase F validated point |
+| 1 | Bed-B-like (matches existing t0083 substrate; the &quot;do not regress from t0083 baseline&quot; anchor) | t0093 patched-generator Bed-B reproducibility (43.6 Hz PD-rate post-fix on the BedB-equivalent point) |
 | 2 | Symmetric: `soma_offset_pd_um=0`, `field_elongation_pd=1.0`, `branch_density_gradient_pd=0`, `primary_branch_pd_concentration=0` | Tests whether DS can emerge purely from channel/synapse mechanism without morphological asymmetry |
 | 3 | PD-asymmetric: soma offset +100 um toward PD, field elongated 2x along PD, branches biased toward PD | Tests whether morphological asymmetry along PD opens biologically-plausible joint-pass |
 | 4 | ND-asymmetric: mirror of #3, soma offset -100 um | Mirror sanity check; if optimiser preserves #3 and discards #4, that is strong evidence for soma-displacement-toward-PD as a functional DS mechanism |
@@ -1138,10 +1150,12 @@ Settings:
 * Crossover: SBX with eta = 15
 * Mutation: polynomial mutation with eta = 20, prob = 1 / 68
 * Cost watchdog: $4.00 hard cap (well below remaining $4.44 buffer)
-* Per-cell evaluation: t0090 generator builds NEURON model from 14 morph params; 54 channel /
-  synapse params inserted into generated sections; 5 evaluation seeds for inner replication;
-  bar-rotation simulation at 16 directions; objectives = (DSI vector-sum, PD firing rate, robustness
-  across seeds).
+* Per-cell evaluation:
+  `from tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix import generate_fixed_morphology`
+  builds the NEURON model from 14 morph params (the soma-pt3d collapse bug is fixed at the source);
+  54 channel / synapse params inserted into generated sections; 5 evaluation seeds for inner
+  replication; bar-rotation simulation at 16 directions; objectives = (DSI vector-sum, PD firing
+  rate, robustness across seeds).
 
 **Hardware**: Vast.ai EPYC 7B13 64-core. 96 cells x 5 seeds x 16 directions x ~60 s/sim / 64
 parallel = ~12 minutes per generation. 8 generations: ~1.6 hours / generation x 8 = ~12.8 hours.
@@ -1240,8 +1254,9 @@ exceeds threshold).
   (only if budget allows).
 * **Cost overshoot**: cost watchdog at $4.00 hard cap; drop to 6 gens if approaching.
 * **Generator instability under NSGA-II mutation**: if mutated morph_params produce degenerate
-  morphologies, the eval function returns a penalty objective; t0090 Phase D verification should
-  have caught most degenerate parameter combinations.
+  morphologies, the eval function returns a penalty objective. t0093&#x27;s patched-generator re-sweep
+  showed 60/60 STABLE under the t0083 channel set across the wide LHS sample, so the patched
+  generator covers the morphology parameter space without NaN_VOLTAGE failures.
 * **Anchor 4 ND-asymmetric cells fail to reproduce on the optimiser&#x27;s seed**: indicates the
   warm-start anchor is unstable; replace with a symmetric anchor variant.
 * **All anchors converge to anchor 1 (Bed-B-like)**: acceptable negative; useful finding; motivates
@@ -1258,7 +1273,15 @@ exceeds threshold).
 #### Cross-References
 
 * **t0089_brainstorm_results_18** — commissioning brainstorm session.
-* **t0090_morphology_generator_diversity_test** — generator dependency.
+* **t0090_morphology_generator_diversity_test** — original generator dependency (superseded by
+  t0092 / t0093 fix).
+* **t0092_diagnose_morphology_generator_silence** — patched generator
+  (`generate_fixed_morphology`); canonical entry point for morphology construction.
+* **t0093_resweep_and_t0090_correction** — full 60-cell verification of the patched generator
+  (60/60 STABLE-firing) and `replace` correction overlay `C-0093-01` redirecting the canonical
+  procedural DSGC morphology generator to t0092&#x27;s fix.
+* **t0094_brainstorm_results_19** — brainstorm session that updated this task&#x27;s dependencies and
+  import paths to reference t0092 / t0093 (covers S-0093-01).
 * **t0083_bedb_v3_extend_nsga2_gen8plus** — warm-start electrophys archive source.
 * **t0086_robustness_cluster_bio_comparison**, **t0088_recluster_marginals_and_vm_motifs** —
   biological-plausibility framework.
@@ -1530,9 +1553,7 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0090-01</id>
         <id>S-0090-02</id>
         <id>S-0090-03</id>
-        <id>S-0090-04</id>
         <id>S-0092-01</id>
-        <id>S-0092-03</id>
         <id>S-0093-01</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
@@ -1794,7 +1815,7 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0093-04</id>
       </source_ids>
       <content>
-Open suggestions: 300
+Open suggestions: 298
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2062,26 +2083,12 @@ Kind: evaluation
 Source task: t0090_morphology_generator_diversity_test
 t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 / t0088 cluster centroids&#x27; NMDA per-synapse exotic-ness against Sivyer 2013&#x27;s published 0.1 nS in the corrected units. The output is a definitive verdict on whether t0086 / t0088&#x27;s NMDA ~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier biological mechanism. Recommended task types...
 
-## Tighten t0091 LHS morphology bounds using the 9 STABLE cells from the t0090 diversity sweep
-ID: S-0090-04
-Priority: high
-Kind: evaluation
-Source task: t0090_morphology_generator_diversity_test
-51/60 morphologies in the t0090 diversity sweep failed NAN_VOLTAGE under the fixed t0083 best-cell channel set, consistent with Mainen 1996 morphology-determines-firing-pattern. Both ends of the parameter range fail (e.g. 10-dendrite and 199-dendrite cells), so this is a parameter-combination issue rather than a topology-size issue. Before launching t0091&#x27;s joint 68-d NSGA-II, fit per-axis empirical bounds to the 9 STABLE cells (across both different and similar populations) and use those tightened bounds for the LHS warm-start sample, instead of the wide-open Phase B bounds. This keeps the population in the ~30 percent regime that produces STABLE cells under any fixed channel set...
-
 ## Patched-generator full 60-morph re-sweep to validate the t0092 soma fix at scale
 ID: S-0092-01
 Priority: high
 Kind: experiment
 Source task: t0092_diagnose_morphology_generator_silence
 t0090&#x27;s diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the full 60-morphology Phase D verification under the t0083 vector with the patched generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the project-level evidence that the bug is fully fixed and surfaces any remaining failure modes (e.g. asymmetry-knob extreme values that survive the soma fix). Pure...
-
-## Issue a correction overlay against t0090 marking the procedural generator as superseded by the t0092 fix
-ID: S-0092-03
-Priority: high
-Kind: library
-Source task: t0092_diagnose_morphology_generator_silence
-t0090 is completed and immutable, but the soma pt3d-collapse bug was committed in t0090&#x27;s library asset procedural_dsgc_morphology_generator. The t0092 fix lives in tasks/t0092_../code/morphology_generator_fix.py as a thin shim. To prevent downstream tasks (t0091, future Bed-A morph-extended runs, the t0086/t0088 cluster re-score work) from importing the unpatched t0090 generator and re-introducing the bug, write a correction file under tasks/t0092_../corrections/ that flags t0090&#x27;s generator as superseded and points consumers to t0092&#x27;s generate_fixed_morphology as the canonical entry point. Aggregator output should reflect the supersession overlay. Recommended task types: correction.
 
 ## Refresh t0091 task description + dependencies to reference t0092 fix and t0093 correction overlay
 ID: S-0093-01

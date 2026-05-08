@@ -3,7 +3,7 @@
   "task_id": "t0091_morphology_extended_nsga2_v1",
   "task_index": 91,
   "name": "First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start",
-  "short_description": "First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0090 generator in eval loop; pop 96, <=8 gens, 5-anchor warm-start.",
+  "short_description": "First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, <=8 gens, 5-anchor warm-start.",
   "long_description_file": "task_description.md",
   "status": "not_started",
   "dependencies": [
@@ -14,7 +14,9 @@
     "t0083_bedb_v3_extend_nsga2_gen8plus",
     "t0086_robustness_cluster_bio_comparison",
     "t0088_recluster_marginals_and_vm_motifs",
-    "t0090_morphology_generator_diversity_test"
+    "t0090_morphology_generator_diversity_test",
+    "t0092_diagnose_morphology_generator_silence",
+    "t0093_resweep_and_t0090_correction"
   ],
   "start_time": null,
   "end_time": null,
