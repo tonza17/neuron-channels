@@ -50,9 +50,9 @@
       "step": 6,
       "name": "implementation",
       "description": "Implement Phase A re-sweep driver (60 morphs under patched generator), Phase B pre/post delta analysis, Phase C visualisations (grid + paired bars + transition flow), Phase D correction overlay JSON, Phase E metrics.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T01:08:39Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T03:43:26Z",
       "log_file": "logs\\steps\\006_implementation/"
     },
     {
