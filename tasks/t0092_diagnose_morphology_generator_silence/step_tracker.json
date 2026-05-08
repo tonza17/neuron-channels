@@ -68,9 +68,9 @@
       "step": 8,
       "name": "suggestions",
       "description": "Formulate suggestions.json based on findings; especially what t0091 needs from the patched generator and any follow-up corrections to t0080 / t0024 if those turn out to be the root cause.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T00:24:18Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T00:29:10Z",
       "log_file": "logs\\steps\\008_suggestions/"
     },
     {
