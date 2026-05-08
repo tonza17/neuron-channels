@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "uv run python -m arf.scripts.verificators.verify_research_internet t0097_multi_obj_optim",
+  "exit_code": 1,
+  "duration_seconds": 0.51,
+  "started_at": "2026-05-08T15:54:05Z",
+  "completed_at": "2026-05-08T15:54:06Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "003_20260508T155405Z_uv-run-python.stdout.txt",
+  "stderr_file": "003_20260508T155405Z_uv-run-python.stderr.txt",
+  "stdout_lines": 14,
+  "stderr_lines": 0,
+  "truncated": false
+}

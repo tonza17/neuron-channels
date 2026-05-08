@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0097_multi_obj_optim\tasks\t0097_multi_obj_optim\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [Ament2023] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Cuntz2010] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Dhingra2004] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Hay2011] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Hines1997] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [LondonHausser2005] has no matching Source Index entry[0m
+[31m  RI-E007 error: Source Index has 36 entries but frontmatter says sources_cited=26[0m
+
+[31m[1mFAILED[0m — 7 error(s), 0 warning(s)

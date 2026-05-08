@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search the internet for canonical multi-objective single-neuron optimisation papers, codebases (BluePyOpt, NeuroFitter, pymoo), and review articles.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-08T15:40:22Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
