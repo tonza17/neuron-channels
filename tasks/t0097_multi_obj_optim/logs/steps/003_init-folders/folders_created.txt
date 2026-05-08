@@ -1,0 +1,23 @@
+Folders created by init_task_folders.py for t0097_multi_obj_optim:
+
+assets/
+assets/answer/
+assets/paper/
+code/
+corrections/
+intervention/
+logs/
+logs/commands/
+logs/searches/
+logs/sessions/
+logs/steps/
+plan/
+research/
+results/
+
+Files created:
+__init__.py
+code/__init__.py
+.gitkeep markers in 13 empty directories
+
+Created at: 2026-05-08T15:29:22Z
