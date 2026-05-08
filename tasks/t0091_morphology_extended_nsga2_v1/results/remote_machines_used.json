@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "36344985",
+    "gpu": "RTX-PRO-4000-idle",
+    "gpu_count": 1,
+    "ram_gb": 252,
+    "duration_hours": 2.6322,
+    "cost_usd": 0.6454
+  }
+]

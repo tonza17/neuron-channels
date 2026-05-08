@@ -1,0 +1,14 @@
+{
+  "total_cost_usd": 0.6454,
+  "breakdown": {
+    "vast-ai-rtx-pro-4000-idle": {
+      "cost_usd": 0.6454,
+      "description": "Vast.ai instance 36344985 (AMD EPYC 7B13 64-core, 252 GB RAM, idle RTX PRO 4000 GPU not used; CPU-only NEURON+pymoo NSGA-II workload). Continuous instance uptime 2.6322 h from 2026-05-08T12:52:06Z to 2026-05-08T15:30:01Z at billed dph_total $0.2452/hr (covers setup ~$0.04, killed first NSGA-II run ~$0.07, successful run gens 1-2 ~$0.21, and post-gen-2 idle/monitoring/teardown ~$0.32). NSGA-II completed only 2 of 8 planned generations before teardown; subsequent generations did not finish."
+    }
+  },
+  "services": {
+    "vast_ai": 0.6454
+  },
+  "budget_limit": 4.0,
+  "note": "Underspent the $4.00 plan hard cap. NSGA-II reached gen 2 only (HV=23.71); no further generations completed before user-directed teardown, so the 57-cell Pareto from gen-2 union is the final result."
+}

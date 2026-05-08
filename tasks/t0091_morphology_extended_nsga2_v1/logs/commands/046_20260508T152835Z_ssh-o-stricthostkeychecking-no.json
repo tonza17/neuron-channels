@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 24984 root@ssh4.vast.ai python3 -c 'import json; d=json.load(open(\"/root/t0091_workdir/tasks/t0091_morphology_extended_nsga2_v1/results/data/all_evaluations.json\")); print(type(d).__name__); print(\"keys:\", list(d.keys()) if isinstance(d,dict) else \"list of\", len(d) if isinstance(d,list) else 0)'",
+  "exit_code": 0,
+  "duration_seconds": 2.858,
+  "started_at": "2026-05-08T15:28:35Z",
+  "completed_at": "2026-05-08T15:28:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "046_20260508T152835Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "046_20260508T152835Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 2,
+  "truncated": false
+}

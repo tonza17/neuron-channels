@@ -1,0 +1,3 @@
+total: 187
+sample keys: ['generation', 'vector_68d', 'objective_F_minimised', 'dsi_vector_sum', 'pd_rate_hz', 'robustness']
+per gen: Counter({2: 96, 1: 91})

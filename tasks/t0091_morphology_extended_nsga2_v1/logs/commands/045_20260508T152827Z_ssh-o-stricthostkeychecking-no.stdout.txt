@@ -1,0 +1,22 @@
+12 /root/t0091_workdir/logs/nsga2_run.log
+---HV---
+{
+  "trajectory": [
+    {
+      "generation": 1,
+      "hypervolume": 14.065644040429909,
+      "cumulative_cost_usd": 0.07280716302638889,
+      "elapsed_s": 1144.566755,
+      "n_evaluations": 0
+    },
+    {
+      "generation": 2,
+      "hypervolume": 23.71043182149095,
+      "cumulative_cost_usd": 0.21103144617277778,
+      "elapsed_s": 3317.524918,
+      "n_evaluations": 91
+    }
+  ]
+}
+---EVAL_COUNT---
+total evaluations: 1
