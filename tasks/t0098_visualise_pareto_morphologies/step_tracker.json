@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0098_visualise_pareto_morphologies branch from main and plan 7 active steps.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T21:37:23Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T21:38:41Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
