@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review NSGA-II / DSGC morphology / biological-plausibility papers in the corpus to inform the joint 68-d optimisation design.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T11:49:53Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T12:03:23Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
