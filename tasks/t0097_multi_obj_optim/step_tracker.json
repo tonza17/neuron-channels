@@ -1,0 +1,140 @@
+{
+  "task_id": "t0097_multi_obj_optim",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0097_multi_obj_optim branch from main and worktree.",
+      "status": "in_progress",
+      "started_at": "2026-05-08T15:25:10Z",
+      "completed_at": null,
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify all dependencies are completed (none for this task).",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create the mandatory task folder structure including assets/paper, assets/answer.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Review papers already in the project corpus relevant to multi-objective optimisation, neural energy, information theory, and morphology cost.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Search the internet for canonical multi-objective single-neuron optimisation papers, codebases (BluePyOpt, NeuroFitter, pymoo), and review articles.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review prior task assets (libraries, answer assets) for any reusable code or context relevant to this survey.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Synthesize research outputs into plan/plan.md with download list, answer-asset structure, and verification criteria.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: literature-survey task runs locally with no remote compute.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Download canonical papers as paper assets; write the consolidated answer asset cataloguing every objective with formula + units + NEURON-side computational recipe.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines were provisioned.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: literature-survey task; no out-of-the-box analysis required beyond the catalogue itself.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json (empty), costs.json (zero), remote_machines_used.json (empty).",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Skipped: literature-survey task produces no quantitative metrics to compare against published results.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate ranked future-MOBO suggestions in results/suggestions.json based on the catalogued objectives.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task completed, push, PR, premerge, merge.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    }
+  ]
+}
