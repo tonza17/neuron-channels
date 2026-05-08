@@ -5,7 +5,7 @@
   "name": "First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start",
   "short_description": "First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, <=8 gens, 5-anchor warm-start.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0078_bedb_mobo_v2_ais_tiered_ahp",
@@ -18,7 +18,7 @@
     "t0092_diagnose_morphology_generator_silence",
     "t0093_resweep_and_t0090_correction"
   ],
-  "start_time": null,
+  "start_time": "2026-05-08T11:35:57Z",
   "end_time": null,
   "expected_assets": {
     "answer": 1,
