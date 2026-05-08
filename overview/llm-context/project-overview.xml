@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-08T00:34:55Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-08T04:03:49Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>129012</char_count>
-    <byte_count>129243</byte_count>
-    <estimated_tokens>32253</estimated_tokens>
+    <char_count>130185</char_count>
+    <byte_count>130424</byte_count>
+    <estimated_tokens>32546</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -195,9 +195,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0089_brainstorm_results_18</id>
         <id>t0090_morphology_generator_diversity_test</id>
         <id>t0092_diagnose_morphology_generator_silence</id>
+        <id>t0093_resweep_and_t0090_correction</id>
       </source_ids>
       <content>
-Completed tasks: 84
+Completed tasks: 85
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -702,6 +703,12 @@ ID: t0092_diagnose_morphology_generator_silence
 Completed: 2026-05-08
 Short description: Side-by-side compare procedural BedB-equivalent cell vs t0024 hand-coded Bed B under the t0083 best-cell channels; identify root cause of zero spikes; propose and implement fix.
 Result summary: Results Summary: Diagnose t0090 Procedural Cell Silence Summary Identified the root cause of t0090&#x27;s 0/60 spike rate as a **soma `pt3dadd` collapse**: the generator emits two coincident soma pt3d points, NEURON computes cumulative pt3d distance ≈ 0 and overrides `sec.L` to ~1e-9 µm, collapsing soma area to ~9.4e-14 µm² (vs hand-coded 287 µm²). Synaptic input drives Vm to NaN within a few simulation steps. Fix landed as a thin shim `generate_fixed_morphology` that re-emits the soma&#x27;s two pt3d points along the z-axis. Post-fix the BedB-equivalent fires **43.6 Hz PD-rate** and all **5/5 STABLE-from-t0090 cells** produce spikes (stretch target was 3/5). Metrics * **Hand-coded Bed B (validation...
+
+## Patched-generator full 60-morph re-sweep + t0090 correction overlay
+ID: t0093_resweep_and_t0090_correction
+Completed: 2026-05-08
+Short description: Re-run t0090&#x27;s 60-morph Phase D verification under the t0092 patched generator; issue correction overlay marking t0090&#x27;s procedural_dsgc_morphology_generator as superseded by t0092&#x27;s procedural_dsgc_morphology_generator_fix.
+Result summary: Results Summary: Patched-Generator 60-Morph Re-Sweep + t0090 Correction Overlay Summary The t0092 soma-pt3d fix is fully validated at scale: **60 / 60 cells STABLE-firing** post-fix (51 NAN_VOLTAGE→firing, 9 STABLE-silent→firing, 0 regressions). Pass criterion (≥50/60 with non-zero PD-rate) met at **56/60**; stretch (≥55/60) also exceeded. Mean DSI different=0.323, similar=0.352. The `replace` correction overlay against t0090&#x27;s `procedural_dsgc_morphology_generator` library asset is in place and `verify_corrections.py` PASSES; supersession check confirms the redirect to t0092&#x27;s `procedural_dsgc_morphology_generator_fix`. Metrics * **Total cells re-swept**: **60** (30 different + 30 similar)...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

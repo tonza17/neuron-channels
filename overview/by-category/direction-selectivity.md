@@ -6,9 +6,9 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (43)](../papers/by-category/direction-selectivity.md) | [Answers
 (17)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(243)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(244)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (2)](../datasets/by-category/direction-selectivity.md) | [Libraries
-(16)](../libraries/by-category/direction-selectivity.md) | [Predictions
+(15)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (2)](../predictions/by-category/direction-selectivity.md)
 
 ---
@@ -2673,26 +2673,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (213 open, 30 closed)
-
-<details>
-<summary>🧪 <strong>Patched-generator full 60-morph re-sweep to validate the t0092
-soma fix at scale</strong> (S-0092-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0092_diagnose_morphology_generator_silence](../../tasks/t0092_diagnose_morphology_generator_silence/)
-
-t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
-under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
-as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
-full 60-morphology Phase D verification under the t0083 vector with the patched
-generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
-STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
-project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
-(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
-local 64-core. Recommended task types: experiment-run, data-analysis.
-
-</details>
+## Suggestions (213 open, 31 closed)
 
 <details>
 <summary>🧪 <strong>Investigate the synapse-XY symmetry residual (Phase D Candidate
@@ -2730,6 +2711,26 @@ morphology fixed at the post-fix BedB-equivalent, to find a 30-cell Pareto front
 larger soma. The chosen winner becomes the new t0091 channel-side warm-start anchor. ~$1-2
 cost on a single A10G; pure follow-up to t0083 with the new substrate. Recommended task types:
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate the 4 PD-rate=0 cells: do morphology variants shift
+direction-tuning peak away from 0 deg?</strong> (S-0093-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0093_resweep_and_t0090_correction](../../tasks/t0093_resweep_and_t0090_correction/)
+
+4/60 post-fix cells (different/morph_18, _25, _29, similar/morph_17) fire spikes only at
+non-PD directions (e.g. morph_18: 0 spikes at 0 deg, 1 each at 45/90/135/180 deg, DSI=-1.0).
+t0083 channels were calibrated on the BedB hand-coded morphology, so it is unknown whether
+morphology variants intrinsically shift the direction-tuning peak. Re-run those 4 morphologies
+at fine angular resolution (every 15 deg) under the t0083 best-cell vector, plus 5 cells
+nearest the BedB symmetric anchor as control, and fit the angular position of the firing-rate
+peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -> peak_direction_deg,
+plus a polar-tuning-curve panel. If peaks shift systematically with asymmetry knobs, this
+resolves t0091's design question of whether per-cell PD must be re-discovered after morphology
+changes. Recommended task types: experiment-run, data-analysis.
 
 </details>
 

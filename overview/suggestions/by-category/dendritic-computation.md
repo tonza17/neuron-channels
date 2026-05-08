@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-71 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **54 open** (9
-high, 40 medium, 5 low), **17 closed**.
+72 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **55 open** (9
+high, 41 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -700,6 +700,32 @@ is a known resonance and input-impedance shaper that could partly explain why di
 reads flat on both t0022 and t0024 (t0030 and t0035 both null). If ablation of Ih causes the
 diameter sweep to become non-flat, h-current is masking the mechanism. Distinct from S-0009-03
 which targeted Ih calibration, not ablation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate the 4 PD-rate=0 cells: do morphology variants shift
+direction-tuning peak away from 0 deg?</strong> (S-0093-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0093-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+4/60 post-fix cells (different/morph_18, _25, _29, similar/morph_17) fire spikes only at
+non-PD directions (e.g. morph_18: 0 spikes at 0 deg, 1 each at 45/90/135/180 deg, DSI=-1.0).
+t0083 channels were calibrated on the BedB hand-coded morphology, so it is unknown whether
+morphology variants intrinsically shift the direction-tuning peak. Re-run those 4 morphologies
+at fine angular resolution (every 15 deg) under the t0083 best-cell vector, plus 5 cells
+nearest the BedB symmetric anchor as control, and fit the angular position of the firing-rate
+peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -> peak_direction_deg,
+plus a polar-tuning-curve panel. If peaks shift systematically with asymmetry knobs, this
+resolves t0091's design question of whether per-cell PD must be re-discovered after morphology
+changes. Recommended task types: experiment-run, data-analysis.
 
 </details>
 

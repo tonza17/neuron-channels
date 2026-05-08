@@ -8,7 +8,7 @@ Output neurons of the retina whose axons form the optic nerve.
 (11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
 (73)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (2)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
-(10)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
+(9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
 (2)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
@@ -2365,26 +2365,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (65 open, 8 closed)
-
-<details>
-<summary>🧪 <strong>Patched-generator full 60-morph re-sweep to validate the t0092
-soma fix at scale</strong> (S-0092-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0092_diagnose_morphology_generator_silence](../../tasks/t0092_diagnose_morphology_generator_silence/)
-
-t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
-under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
-as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
-full 60-morphology Phase D verification under the t0083 vector with the patched
-generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
-STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
-project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
-(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
-local 64-core. Recommended task types: experiment-run, data-analysis.
-
-</details>
+## Suggestions (64 open, 9 closed)
 
 <details>
 <summary>📚 <strong>Tighten post-fix procedural soma to match the t0024 hand-coded

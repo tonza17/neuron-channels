@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
 73 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **65 open** (12
-high, 44 medium, 9 low), **8 closed**.
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **64 open** (11
+high, 44 medium, 9 low), **9 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -162,31 +162,6 @@ t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0
 at GABA_BASE_NS = 0.10 nS (12 cells, 4320 trials at 10 trials x 12 directions x 3 modes). Pass
 criterion: vector-sum DSI > 0.3 AND peak Hz >= 5 Hz. Distinct from S-0057-06 (global tonic
 window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Patched-generator full 60-morph re-sweep to validate the t0092
-soma fix at scale</strong> (S-0092-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0092-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-08 |
-| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
-under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
-as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
-full 60-morphology Phase D verification under the t0083 vector with the patched
-generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
-STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
-project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
-(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
-local 64-core. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -1746,6 +1721,33 @@ virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs
 1-compartment sanity simulation, and records the installed versions, install-time warnings,
 and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
 but did not install it; the next simulation task needs a validated environment.
+
+</details>
+
+<details>
+<summary>✅ <s>Patched-generator full 60-morph re-sweep to validate the t0092 soma
+fix at scale</s> — covered by <a
+href="../../../tasks/t0093_resweep_and_t0090_correction/"><code>t0093_resweep_and_t0090_correction</code></a>
+(S-0092-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0092-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
+under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
+as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
+full 60-morphology Phase D verification under the t0083 vector with the patched
+generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
+STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
+project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
+(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
+local 64-core. Recommended task types: experiment-run, data-analysis.
 
 </details>
 

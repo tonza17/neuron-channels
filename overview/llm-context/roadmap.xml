@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-08T00:34:55Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-08T04:03:49Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>413182</char_count>
-    <byte_count>413599</byte_count>
-    <estimated_tokens>103295</estimated_tokens>
+    <char_count>418008</char_count>
+    <byte_count>418433</byte_count>
+    <estimated_tokens>104502</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -196,9 +196,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0089_brainstorm_results_18</id>
         <id>t0090_morphology_generator_diversity_test</id>
         <id>t0092_diagnose_morphology_generator_silence</id>
+        <id>t0093_resweep_and_t0090_correction</id>
       </source_ids>
       <content>
-Completed tasks: 84
+Completed tasks: 85
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -703,6 +704,12 @@ ID: t0092_diagnose_morphology_generator_silence
 Completed: 2026-05-08
 Short description: Side-by-side compare procedural BedB-equivalent cell vs t0024 hand-coded Bed B under the t0083 best-cell channels; identify root cause of zero spikes; propose and implement fix.
 Result summary: Results Summary: Diagnose t0090 Procedural Cell Silence Summary Identified the root cause of t0090&#x27;s 0/60 spike rate as a **soma `pt3dadd` collapse**: the generator emits two coincident soma pt3d points, NEURON computes cumulative pt3d distance ≈ 0 and overrides `sec.L` to ~1e-9 µm, collapsing soma area to ~9.4e-14 µm² (vs hand-coded 287 µm²). Synaptic input drives Vm to NaN within a few simulation steps. Fix landed as a thin shim `generate_fixed_morphology` that re-emits the soma&#x27;s two pt3d points along the z-axis. Post-fix the BedB-equivalent fires **43.6 Hz PD-rate** and all **5/5 STABLE-from-t0090 cells** produce spikes (stretch target was 3/5). Metrics * **Hand-coded Bed B (validation...
+
+## Patched-generator full 60-morph re-sweep + t0090 correction overlay
+ID: t0093_resweep_and_t0090_correction
+Completed: 2026-05-08
+Short description: Re-run t0090&#x27;s 60-morph Phase D verification under the t0092 patched generator; issue correction overlay marking t0090&#x27;s procedural_dsgc_morphology_generator as superseded by t0092&#x27;s procedural_dsgc_morphology_generator_fix.
+Result summary: Results Summary: Patched-Generator 60-Morph Re-Sweep + t0090 Correction Overlay Summary The t0092 soma-pt3d fix is fully validated at scale: **60 / 60 cells STABLE-firing** post-fix (51 NAN_VOLTAGE→firing, 9 STABLE-silent→firing, 0 regressions). Pass criterion (≥50/60 with non-zero PD-rate) met at **56/60**; stretch (≥55/60) also exceeded. Mean DSI different=0.323, similar=0.352. The `replace` correction overlay against t0090&#x27;s `procedural_dsgc_morphology_generator` library asset is in place and `verify_corrections.py` PASSES; supersession check confirms the redirect to t0092&#x27;s `procedural_dsgc_morphology_generator_fix`. Metrics * **Total cells re-swept**: **60** (30 different + 30 similar)...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1526,6 +1533,7 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0090-04</id>
         <id>S-0092-01</id>
         <id>S-0092-03</id>
+        <id>S-0093-01</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -1735,6 +1743,8 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0092-02</id>
         <id>S-0092-04</id>
         <id>S-0092-05</id>
+        <id>S-0093-02</id>
+        <id>S-0093-03</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1781,9 +1791,10 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0088-06</id>
         <id>S-0090-07</id>
         <id>S-0092-06</id>
+        <id>S-0093-04</id>
       </source_ids>
       <content>
-Open suggestions: 296
+Open suggestions: 300
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2071,6 +2082,13 @@ Priority: high
 Kind: library
 Source task: t0092_diagnose_morphology_generator_silence
 t0090 is completed and immutable, but the soma pt3d-collapse bug was committed in t0090&#x27;s library asset procedural_dsgc_morphology_generator. The t0092 fix lives in tasks/t0092_../code/morphology_generator_fix.py as a thin shim. To prevent downstream tasks (t0091, future Bed-A morph-extended runs, the t0086/t0088 cluster re-score work) from importing the unpatched t0090 generator and re-introducing the bug, write a correction file under tasks/t0092_../corrections/ that flags t0090&#x27;s generator as superseded and points consumers to t0092&#x27;s generate_fixed_morphology as the canonical entry point. Aggregator output should reflect the supersession overlay. Recommended task types: correction.
+
+## Refresh t0091 task description + dependencies to reference t0092 fix and t0093 correction overlay
+ID: S-0093-01
+Priority: high
+Kind: technique
+Source task: t0093_resweep_and_t0090_correction
+t0091_morphology_extended_nsga2_v1 is currently `not_started` with status referencing t0090&#x27;s procedural_dsgc_morphology_generator directly (task_description.md lines 6, 32, 88, 190, 208) and dependencies={t0024,t0078,t0080,t0081,t0083,t0086,t0088,t0090} -- no t0092 or t0093 dependency. Since t0093 issues a `replace` correction redirecting that library to t0092&#x27;s procedural_dsgc_morphology_generator_fix, t0091 must be updated before launch: (a) add `t0092_diagnose_morphology_generator_silence` and `t0093_resweep_and_t0090_correction` to its `dependencies` list; (b) replace import references to `tasks.t0090_..code.generator.generate_morphology` with...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3535,6 +3553,20 @@ Kind: library
 Source task: t0092_diagnose_morphology_generator_silence
 The t0092 unit-test suite (4 tests) covers determinism, no-NaN on the BedB base point, soma area, and pt3d z-axis. It does not exercise the broader space of generator inputs that could trigger coincident-pt3d collapses elsewhere in the cell (e.g. degenerate dendrite stubs at extreme branch_prob_per_um values, AIS sections with zero asymmetry-induced offset, or interaction between negative branch_length_cv and the asymmetry transform). Author a regression test battery that calls generate_fixed_morphology on a Latin-hypercube sample of ~50 points across the 14-knob space and asserts that every section has sec.L&gt;1 um and sec.area()&gt;10 um^2 in NEURON. This catches future bugs in the generator...
 
+## Investigate the 4 PD-rate=0 cells: do morphology variants shift direction-tuning peak away from 0 deg?
+ID: S-0093-02
+Priority: medium
+Kind: experiment
+Source task: t0093_resweep_and_t0090_correction
+4/60 post-fix cells (different/morph_18, _25, _29, similar/morph_17) fire spikes only at non-PD directions (e.g. morph_18: 0 spikes at 0 deg, 1 each at 45/90/135/180 deg, DSI=-1.0). t0083 channels were calibrated on the BedB hand-coded morphology, so it is unknown whether morphology variants intrinsically shift the direction-tuning peak. Re-run those 4 morphologies at fine angular resolution (every 15 deg) under the t0083 best-cell vector, plus 5 cells nearest the BedB symmetric anchor as control, and fit the angular position of the firing-rate peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -&gt; peak_direction_deg, plus a polar-tuning-curve panel. If peaks shift...
+
+## Pre-warm NEURON DLL + parameter-vector apply in ProcessPoolExecutor workers to halve sweep wall-clock
+ID: S-0093-03
+Priority: medium
+Kind: library
+Source task: t0093_resweep_and_t0090_correction
+The t0093 16-worker re-sweep took ~50 min vs the planned ~14 min on a 64-core EPYC -- a 3.5x slowdown almost entirely attributable to per-worker NEURON DLL load + first-trial parameter-vector apply (each worker pays the full warm-up cost on every sub-batch). Implement a `worker_init` callable for ProcessPoolExecutor that (a) imports neuron + h.load_file once, (b) compiles + loads the t0080 channel mechanism DLL, (c) runs one throwaway 50-ms stim trial to warm up the channel-mechanism kernels and the SciPy/NumPy inits, then signals readiness. Benchmark a 60-cell sweep with vs without warm-up; expected savings ~30 min on this scale. Bake the helper into a small...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -3856,6 +3888,13 @@ Priority: low
 Kind: experiment
 Source task: t0092_diagnose_morphology_generator_silence
 The post-fix BedB-equivalent fires 61 spikes vs the hand-coded Bed B&#x27;s 41 spikes under the same t0083 vector, because the channel densities were optimised on the 287 um^2 hand-coded soma but the post-fix procedural soma is 707 um^2. Rather than tightening the soma area to match t0024 (S-0092-02&#x27;s path), the alternative is to re-run a small-scale NSGA-II pass on the 25 channel-density parameters (indices 0-24 + the dendritic-spike block 49-53) holding morphology fixed at the post-fix BedB-equivalent, to find a 30-cell Pareto front under the larger soma. The chosen winner becomes the new t0091 channel-side warm-start anchor. ~$1-2 cost on a single A10G; pure follow-up to t0083 with the new...
+
+## Diagnose NEURON single-process state-leak that hung t0093 sequential validation gate
+ID: S-0093-04
+Priority: low
+Kind: experiment
+Source task: t0093_resweep_and_t0090_correction
+The t0093 implementation initially attempted a 5-cell validation gate in `--max-workers 1` (sequential) mode; the run hung beyond the wall-clock window and had to be killed and restarted in parallel mode (which completed in 7m44s). Hypothesis: NEURON state-leak between cells in the same Python process -- residual Section / NetCon / Vector references pile up in `h` despite t0090&#x27;s `_LIVE_CELLS` defense, eventually slowing or stalling `h.run()`. Reproduce on a 5-cell sequential run, instrument `len(h.allsec())` and `len(h.List(&#x27;NetCon&#x27;))` between cells, and try (a) explicit `for sec in list(h.allsec()): h.delete_section(sec=sec)`, (b) `h(&#x27;forall delete_section()&#x27;)`, or (c) creating a fresh...
       </content>
     </section>
   </sections>

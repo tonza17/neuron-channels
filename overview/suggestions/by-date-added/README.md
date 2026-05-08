@@ -1,12 +1,12 @@
 # Suggestions by Date Added
 
-349 suggestion(s) grouped by derived added date.
+353 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## 2026-05-08 (6)
+## 2026-05-08 (10)
 
 ## High Priority
 
@@ -35,27 +35,30 @@ should reflect the supersession overlay. Recommended task types: correction.
 </details>
 
 <details>
-<summary>🧪 <strong>Patched-generator full 60-morph re-sweep to validate the t0092
-soma fix at scale</strong> (S-0092-01)</summary>
+<summary>🔧 <strong>Refresh t0091 task description + dependencies to reference t0092
+fix and t0093 correction overlay</strong> (S-0093-01)</summary>
 
 | Field | Value |
 |---|---|
-| **ID** | `S-0092-01` |
-| **Kind** | experiment |
+| **ID** | `S-0093-01` |
+| **Kind** | technique |
 | **Date added** | 2026-05-08 |
-| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
+| **Source task** | [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) |
 | **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
 
-t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
-under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
-as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
-full 60-morphology Phase D verification under the t0083 vector with the patched
-generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
-STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
-project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
-(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
-local 64-core. Recommended task types: experiment-run, data-analysis.
+t0091_morphology_extended_nsga2_v1 is currently `not_started` with status referencing t0090's
+procedural_dsgc_morphology_generator directly (task_description.md lines 6, 32, 88, 190, 208)
+and dependencies={t0024,t0078,t0080,t0081,t0083,t0086,t0088,t0090} -- no t0092 or t0093
+dependency. Since t0093 issues a `replace` correction redirecting that library to t0092's
+procedural_dsgc_morphology_generator_fix, t0091 must be updated before launch: (a) add
+`t0092_diagnose_morphology_generator_silence` and `t0093_resweep_and_t0090_correction` to its
+`dependencies` list; (b) replace import references to
+`tasks.t0090_..code.generator.generate_morphology` with
+`tasks.t0092_..code.morphology_generator_fix.generate_fixed_morphology`; (c) document in the
+task description that the procedural cell is canonically the t0092 fix per C-0093-01. Without
+this, t0091 would re-import the unpatched generator and re-introduce the soma-pt3d collapse
+bug. Recommended task types: correction.
 
 </details>
 
@@ -87,6 +90,32 @@ through t0091's NSGA-II loop. Recommended task types: write-library.
 </details>
 
 <details>
+<summary>🧪 <strong>Investigate the 4 PD-rate=0 cells: do morphology variants shift
+direction-tuning peak away from 0 deg?</strong> (S-0093-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0093-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+4/60 post-fix cells (different/morph_18, _25, _29, similar/morph_17) fire spikes only at
+non-PD directions (e.g. morph_18: 0 spikes at 0 deg, 1 each at 45/90/135/180 deg, DSI=-1.0).
+t0083 channels were calibrated on the BedB hand-coded morphology, so it is unknown whether
+morphology variants intrinsically shift the direction-tuning peak. Re-run those 4 morphologies
+at fine angular resolution (every 15 deg) under the t0083 best-cell vector, plus 5 cells
+nearest the BedB symmetric anchor as control, and fit the angular position of the firing-rate
+peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -> peak_direction_deg,
+plus a polar-tuning-curve panel. If peaks shift systematically with asymmetry knobs, this
+resolves t0091's design question of whether per-cell PD must be re-discovered after morphology
+changes. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Investigate the synapse-XY symmetry residual (Phase D Candidate
 C) under neutral asymmetry knobs</strong> (S-0092-04)</summary>
 
@@ -109,6 +138,32 @@ holding the others neutral, then identify a slightly-asymmetric variant of BEDB_
 (e.g. soma_offset_pd_um=+30 um or field_elongation_pd=1.2) that produces DSI>0.1 by
 construction without losing the BedB topology. The result feeds t0091's warm-start anchor
 selection. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Pre-warm NEURON DLL + parameter-vector apply in
+ProcessPoolExecutor workers to halve sweep wall-clock</strong> (S-0093-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0093-03` |
+| **Kind** | library |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0093 16-worker re-sweep took ~50 min vs the planned ~14 min on a 64-core EPYC -- a 3.5x
+slowdown almost entirely attributable to per-worker NEURON DLL load + first-trial
+parameter-vector apply (each worker pays the full warm-up cost on every sub-batch). Implement
+a `worker_init` callable for ProcessPoolExecutor that (a) imports neuron + h.load_file once,
+(b) compiles + loads the t0080 channel mechanism DLL, (c) runs one throwaway 50-ms stim trial
+to warm up the channel-mechanism kernels and the SciPy/NumPy inits, then signals readiness.
+Benchmark a 60-cell sweep with vs without warm-up; expected savings ~30 min on this scale.
+Bake the helper into a small `arf/scripts/utils/neuron_pool.py` library so all future sweeps
+(t0091's per-generation 96-cell evaluations, future Bed-A sweeps, the 4-channel-set sweep from
+S-0090-05) inherit the speedup. Recommended task types: write-library, infrastructure-setup.
 
 </details>
 
@@ -140,6 +195,32 @@ before t0091 launches. Recommended task types: write-library, experiment-run.
 ## Low Priority
 
 <details>
+<summary>🧪 <strong>Diagnose NEURON single-process state-leak that hung t0093
+sequential validation gate</strong> (S-0093-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0093-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0093 implementation initially attempted a 5-cell validation gate in `--max-workers 1`
+(sequential) mode; the run hung beyond the wall-clock window and had to be killed and
+restarted in parallel mode (which completed in 7m44s). Hypothesis: NEURON state-leak between
+cells in the same Python process -- residual Section / NetCon / Vector references pile up in
+`h` despite t0090's `_LIVE_CELLS` defense, eventually slowing or stalling `h.run()`. Reproduce
+on a 5-cell sequential run, instrument `len(h.allsec())` and `len(h.List('NetCon'))` between
+cells, and try (a) explicit `for sec in list(h.allsec()): h.delete_section(sec=sec)`, (b)
+`h('forall delete_section()')`, or (c) creating a fresh `neuron.h` namespace per cell. Output:
+fix in t0080's library or documented note + minimal reproducer. Matters for single-process
+debugging and low-parallelism interactive runs. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Re-calibrate t0083 channel densities to the post-fix procedural
 cell's 707 um^2 cylinder soma</strong> (S-0092-06)</summary>
 
@@ -161,6 +242,35 @@ morphology fixed at the post-fix BedB-equivalent, to find a 30-cell Pareto front
 larger soma. The chosen winner becomes the new t0091 channel-side warm-start anchor. ~$1-2
 cost on a single A10G; pure follow-up to t0083 with the new substrate. Recommended task types:
 experiment-run.
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>Patched-generator full 60-morph re-sweep to validate the t0092 soma
+fix at scale</s> — covered by <a
+href="../../../tasks/t0093_resweep_and_t0090_correction/"><code>t0093_resweep_and_t0090_correction</code></a>
+(S-0092-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0092-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
+under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
+as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
+full 60-morphology Phase D verification under the t0083 vector with the patched
+generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
+STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
+project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
+(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
+local 64-core. Recommended task types: experiment-run, data-analysis.
 
 </details>
 

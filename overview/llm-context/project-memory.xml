@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-08T00:34:55Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-08T04:03:49Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>192297</char_count>
-    <byte_count>192572</byte_count>
-    <estimated_tokens>48074</estimated_tokens>
+    <char_count>192407</char_count>
+    <byte_count>192690</byte_count>
+    <estimated_tokens>48101</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -200,9 +200,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0089_brainstorm_results_18</id>
         <id>t0090_morphology_generator_diversity_test</id>
         <id>t0092_diagnose_morphology_generator_silence</id>
+        <id>t0093_resweep_and_t0090_correction</id>
       </source_ids>
       <content>
-Completed tasks: 84
+Completed tasks: 85
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -707,6 +708,12 @@ ID: t0092_diagnose_morphology_generator_silence
 Completed: 2026-05-08
 Short description: Side-by-side compare procedural BedB-equivalent cell vs t0024 hand-coded Bed B under the t0083 best-cell channels; identify root cause of zero spikes; propose and implement fix.
 Result summary: Results Summary: Diagnose t0090 Procedural Cell Silence Summary Identified the root cause of t0090&#x27;s 0/60 spike rate as a **soma `pt3dadd` collapse**: the generator emits two coincident soma pt3d points, NEURON computes cumulative pt3d distance ≈ 0 and overrides `sec.L` to ~1e-9 µm, collapsing soma area to ~9.4e-14 µm² (vs hand-coded 287 µm²). Synaptic input drives Vm to NaN within a few simulation steps. Fix landed as a thin shim `generate_fixed_morphology` that re-emits the soma&#x27;s two pt3d points along the z-axis. Post-fix the BedB-equivalent fires **43.6 Hz PD-rate** and all **5/5 STABLE-from-t0090 cells** produce spikes (stretch target was 3/5). Metrics * **Hand-coded Bed B (validation...
+
+## Patched-generator full 60-morph re-sweep + t0090 correction overlay
+ID: t0093_resweep_and_t0090_correction
+Completed: 2026-05-08
+Short description: Re-run t0090&#x27;s 60-morph Phase D verification under the t0092 patched generator; issue correction overlay marking t0090&#x27;s procedural_dsgc_morphology_generator as superseded by t0092&#x27;s procedural_dsgc_morphology_generator_fix.
+Result summary: Results Summary: Patched-Generator 60-Morph Re-Sweep + t0090 Correction Overlay Summary The t0092 soma-pt3d fix is fully validated at scale: **60 / 60 cells STABLE-firing** post-fix (51 NAN_VOLTAGE→firing, 9 STABLE-silent→firing, 0 regressions). Pass criterion (≥50/60 with non-zero PD-rate) met at **56/60**; stretch (≥55/60) also exceeded. Mean DSI different=0.323, similar=0.352. The `replace` correction overlay against t0090&#x27;s `procedural_dsgc_morphology_generator` library asset is in place and `verify_corrections.py` PASSES; supersession check confirms the redirect to t0092&#x27;s `procedural_dsgc_morphology_generator_fix`. Metrics * **Total cells re-swept**: **60** (30 different + 30 similar)...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1365,11 +1372,10 @@ Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leav
         <id>dsgc_active_channel_pack</id>
         <id>de_rosenroll_2026_dsgc_ais</id>
         <id>de_rosenroll_2026_dsgc_ais_dendritic_spike</id>
-        <id>procedural_dsgc_morphology_generator</id>
         <id>procedural_dsgc_morphology_generator_fix</id>
       </source_ids>
       <content>
-Libraries: 18
+Libraries: 17
 
 ## ModelDB 189347 DSGC Port
 ID: modeldb_189347_dsgc
@@ -1482,13 +1488,6 @@ Version: 0.1.0
 Created by task: t0080_bedb_mobo_v3_dendritic_spike_nsga2
 Module paths: tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\build_cell_ais.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\extend_with_ais.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\constants.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\trial_helpers.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\parametric_placer.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\trial_driver.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\recorder.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\bootstrap.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\paths.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\nsga2_loop.py, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\bkt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\calt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\catt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\iht80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kdrt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv3t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv4t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\kv7t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\napt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\nart80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\nav16t80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\skahpt80.mod, tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\mods\skt80.mod
 The library packages the v3 Bed B substrate and the NSGA-II MOBO harness used to search it. It extends the t0078 substrate with dendritic-spike machinery (Mg-block NMDA, distal Nav1.6 + NaP) and replaces the BoTorch qLogNEHVI optimiser with pymoo NSGA-II, eliminating the O(N^3) scaling that bottlenecked t0078. Hard biological bounds on the AIS Nav parameters are enforced through the parameter bounds and a single...
-
-## Procedural DSGC Morphology Generator
-ID: procedural_dsgc_morphology_generator
-Version: 0.1.0
-Created by task: t0090_morphology_generator_diversity_test
-Module paths: tasks\t0090_morphology_generator_diversity_test\code\morphology_params.py, tasks\t0090_morphology_generator_diversity_test\code\generator.py, tasks\t0090_morphology_generator_diversity_test\code\verification.py, tasks\t0090_morphology_generator_diversity_test\code\constants.py, tasks\t0090_morphology_generator_diversity_test\code\paths.py, tasks\t0090_morphology_generator_diversity_test\code\load_default_params.py
-`procedural_dsgc_morphology_generator` is the deliverable library of t0090 and the input substrate for t0091&#x27;s joint 68-d NSGA-II run. It exposes 14 explicit knobs spanning topology, asymmetry, and geometry; produces deterministic NEURON sections; and emits a `MorphologyResult` that is structurally compatible with the t0080 `apply_parameter_vector` harness without any changes to upstream code. The library was...
 
 ## Procedural DSGC Morphology Generator Fix
 ID: procedural_dsgc_morphology_generator_fix

@@ -6,9 +6,9 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (43)](../papers/by-category/dendritic-computation.md) | [Answers
 (8)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(71)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(72)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
-(2)](../libraries/by-category/dendritic-computation.md)
+(1)](../libraries/by-category/dendritic-computation.md)
 
 ---
 
@@ -2444,7 +2444,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (54 open, 17 closed)
+## Suggestions (55 open, 17 closed)
+
+<details>
+<summary>🧪 <strong>Investigate the 4 PD-rate=0 cells: do morphology variants shift
+direction-tuning peak away from 0 deg?</strong> (S-0093-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
+[t0093_resweep_and_t0090_correction](../../tasks/t0093_resweep_and_t0090_correction/)
+
+4/60 post-fix cells (different/morph_18, _25, _29, similar/morph_17) fire spikes only at
+non-PD directions (e.g. morph_18: 0 spikes at 0 deg, 1 each at 45/90/135/180 deg, DSI=-1.0).
+t0083 channels were calibrated on the BedB hand-coded morphology, so it is unknown whether
+morphology variants intrinsically shift the direction-tuning peak. Re-run those 4 morphologies
+at fine angular resolution (every 15 deg) under the t0083 best-cell vector, plus 5 cells
+nearest the BedB symmetric anchor as control, and fit the angular position of the firing-rate
+peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -> peak_direction_deg,
+plus a polar-tuning-curve panel. If peaks shift systematically with asymmetry knobs, this
+resolves t0091's design question of whether per-cell PD must be re-discovered after morphology
+changes. Recommended task types: experiment-run, data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger

@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-243 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **213 open** (38
-high, 154 medium, 21 low), **30 closed**.
+244 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **213 open** (37
+high, 155 medium, 21 low), **31 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -616,31 +616,6 @@ configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), 
 (48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
 replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Patched-generator full 60-morph re-sweep to validate the t0092
-soma fix at scale</strong> (S-0092-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0092-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-08 |
-| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
-under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
-as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
-full 60-morphology Phase D verification under the t0083 vector with the patched
-generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
-STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
-project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
-(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
-local 64-core. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -2728,6 +2703,32 @@ sigmoidal, threshold-like, or linear; (2) the critical gabaMOD value at which DS
 Probes whether the paper's two-point choice lies on a plateau or a steep-response region of
 the inhibition axis, directly informing the inhibition-strength free parameter for later
 optimisation. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate the 4 PD-rate=0 cells: do morphology variants shift
+direction-tuning peak away from 0 deg?</strong> (S-0093-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0093-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+4/60 post-fix cells (different/morph_18, _25, _29, similar/morph_17) fire spikes only at
+non-PD directions (e.g. morph_18: 0 spikes at 0 deg, 1 each at 45/90/135/180 deg, DSI=-1.0).
+t0083 channels were calibrated on the BedB hand-coded morphology, so it is unknown whether
+morphology variants intrinsically shift the direction-tuning peak. Re-run those 4 morphologies
+at fine angular resolution (every 15 deg) under the t0083 best-cell vector, plus 5 cells
+nearest the BedB symmetric anchor as control, and fit the angular position of the firing-rate
+peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -> peak_direction_deg,
+plus a polar-tuning-curve panel. If peaks shift systematically with asymmetry knobs, this
+resolves t0091's design question of whether per-cell PD must be re-discovered after morphology
+changes. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -5654,6 +5655,33 @@ report the mean parameter vector, dominant mechanism (NaP_dend / NMDA / Nav_dend
 Pareto position. Output: motif table + cluster heatmap PNG + per-motif Vm trace. Critical for
 t0084 follow-up: t0084 found NaP_dend dominant for cell 767 -- is the same true for cell
 1304's motif? Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>Patched-generator full 60-morph re-sweep to validate the t0092 soma
+fix at scale</s> — covered by <a
+href="../../../tasks/t0093_resweep_and_t0090_correction/"><code>t0093_resweep_and_t0090_correction</code></a>
+(S-0092-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0092-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0090's diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells
+under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug
+as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the
+full 60-morphology Phase D verification under the t0083 vector with the patched
+generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach
+STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the
+project-level evidence that the bug is fully fixed and surfaces any remaining failure modes
+(e.g. asymmetry-knob extreme values that survive the soma fix). Pure simulation; ~30 min on
+local 64-core. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
