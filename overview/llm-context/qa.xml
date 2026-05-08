@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-05-08T11:23:32Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-05-08T14:41:11Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>455301</char_count>
-    <byte_count>455959</byte_count>
-    <estimated_tokens>113825</estimated_tokens>
+    <char_count>456820</char_count>
+    <byte_count>457478</byte_count>
+    <estimated_tokens>114205</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -197,9 +197,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0092_diagnose_morphology_generator_silence</id>
         <id>t0093_resweep_and_t0090_correction</id>
         <id>t0094_brainstorm_results_19</id>
+        <id>t0095_brainstorm_results_20</id>
       </source_ids>
       <content>
-Completed tasks: 86
+Completed tasks: 87
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -716,6 +717,12 @@ ID: t0094_brainstorm_results_19
 Completed: 2026-05-08
 Short description: Nineteenth brainstorm: greenlight t0091 launch; update t0091 deps + imports for t0092/t0093 fix; reject 2 superseded suggestions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0094_brainstorm_results_19&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 19 Summary Nineteenth strategic brainstorm, run on 2026-05-08 immediately after t0093 (`resweep_and_t0090_correction`) merged with 60/60 cells STABLE-firing under the t0092 patched generator and `C-0093-01` correction overlay in place. The researcher&#x27;s directive was direct: launch the morphology-extended NSGA-II optimisation now. The session updated t0091 (`morphology_extended_nsga2_v1`) in place — added t0092 + t0093 to dependencies, swapped the generator import path to `tasks.t0092_..code.morphology_generator_fix.generate_fixed_morphology`...
+
+## Brainstorm results session 20
+ID: t0095_brainstorm_results_20
+Completed: 2026-05-08
+Short description: Twentieth brainstorm: commission a literature survey of multi-objective optimisation in single-neuron compartmental models; reject 2 already-covered suggestions.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_results_20&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 20 Summary Twentieth strategic brainstorm, run on 2026-05-08 while t0091 (`morphology_extended_nsga2_v1`) is in flight on Vast.ai. The researcher proposed broadening the MOBO objective space beyond DSI + firing rate to include information transfer rate, metabolic energy, cytoplasm volume, and robustness; commissioned a single consolidated literature survey (`t0096_literature_survey_multi_objective_neuron_optimisation`) at $0 cost, scoped broadly across any neuron type, with formulas + computational recipes + future MOBO suggestion list as...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -726,9 +733,10 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0094_brainstorm_
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
         <id>t0091_morphology_extended_nsga2_v1</id>
+        <id>t0096_literature_survey_multi_objective_neuron_optimisation</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -752,10 +760,16 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
 
 ## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
 ID: t0091_morphology_extended_nsga2_v1
-Status: not_started
-Effective date: 2026-05-07
+Status: in_progress
+Effective date: 2026-05-08
 Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction
+
+## Literature survey: multi-objective optimisation of single-neuron models
+ID: t0096_literature_survey_multi_objective_neuron_optimisation
+Status: not_started
+Effective date: unknown
+Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

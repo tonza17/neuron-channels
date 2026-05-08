@@ -1,0 +1,22 @@
+{
+  "spec_version": 4,
+  "task_id": "t0096_literature_survey_multi_objective_neuron_optimisation",
+  "task_index": 96,
+  "name": "Literature survey: multi-objective optimisation of single-neuron models",
+  "short_description": "Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.",
+  "long_description_file": "task_description.md",
+  "status": "not_started",
+  "dependencies": [],
+  "start_time": null,
+  "end_time": null,
+  "expected_assets": {
+    "paper": 10,
+    "answer": 1
+  },
+  "task_types": [
+    "literature-survey",
+    "internet-research",
+    "answer-question"
+  ],
+  "source_suggestion": null
+}

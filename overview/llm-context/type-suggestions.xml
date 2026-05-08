@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-08T11:23:32Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-08T14:41:11Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>383606</char_count>
-    <byte_count>383762</byte_count>
-    <estimated_tokens>95901</estimated_tokens>
+    <char_count>383610</char_count>
+    <byte_count>383766</byte_count>
+    <estimated_tokens>95902</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -3463,7 +3463,7 @@ NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate 
 
 ## AIS-localised Kv7 follow-up (t0075 candidate)
 ID: S-0074-03
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0074_channel_tuning_width_bed_a
@@ -4284,7 +4284,7 @@ The post-fix BedB-equivalent fires 61 spikes vs the hand-coded Bed B&#x27;s 41 s
 
 ## Refresh t0091 task description + dependencies to reference t0092 fix and t0093 correction overlay
 ID: S-0093-01
-Status: active
+Status: rejected
 Priority: high
 Kind: technique
 Source task: t0093_resweep_and_t0090_correction
