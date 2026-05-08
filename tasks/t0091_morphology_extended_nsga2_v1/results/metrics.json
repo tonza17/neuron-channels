@@ -1,0 +1,75 @@
+{
+  "variants": [
+    {
+      "variant_id": "anchor-bedb-like",
+      "label": "Anchor bedb_like",
+      "dimensions": {
+        "anchor": "bedb_like",
+        "n_cells": 20
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.1102828413095696,
+        "tuning_curve_reliability": 0.763168718117299
+      }
+    },
+    {
+      "variant_id": "anchor-symmetric",
+      "label": "Anchor symmetric",
+      "dimensions": {
+        "anchor": "symmetric",
+        "n_cells": 0
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "tuning_curve_reliability": null
+      }
+    },
+    {
+      "variant_id": "anchor-pd-asymmetric",
+      "label": "Anchor pd_asymmetric",
+      "dimensions": {
+        "anchor": "pd_asymmetric",
+        "n_cells": 12
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.17646153646965027,
+        "tuning_curve_reliability": 0.720214942360968
+      }
+    },
+    {
+      "variant_id": "anchor-nd-asymmetric",
+      "label": "Anchor nd_asymmetric",
+      "dimensions": {
+        "anchor": "nd_asymmetric",
+        "n_cells": 9
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.45128268517138026,
+        "tuning_curve_reliability": 0.7278477943828441
+      }
+    },
+    {
+      "variant_id": "anchor-alt-topology",
+      "label": "Anchor alt_topology",
+      "dimensions": {
+        "anchor": "alt_topology",
+        "n_cells": 16
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2627128883635463,
+        "tuning_curve_reliability": 0.7859482536435738
+      }
+    },
+    {
+      "variant_id": "all-pareto",
+      "label": "All Pareto cells",
+      "dimensions": {
+        "anchor": "any",
+        "n_cells": 57
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.22084466042432208
+      }
+    }
+  ]
+}

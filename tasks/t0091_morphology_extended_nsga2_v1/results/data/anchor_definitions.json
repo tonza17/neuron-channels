@@ -1,0 +1,192 @@
+{
+  "n_anchors": 5,
+  "anchor_names": [
+    "bedb_like",
+    "symmetric",
+    "pd_asymmetric",
+    "nd_asymmetric",
+    "alt_topology"
+  ],
+  "anchors": [
+    {
+      "anchor_index": 0,
+      "anchor_name": "bedb_like",
+      "morphology_params": {
+        "num_primary_branches": 4,
+        "branch_prob_per_um": 0.04,
+        "max_strahler_depth": 6,
+        "mean_branching_angle_deg": 45.0,
+        "rall_exponent": 1.5,
+        "soma_offset_pd_um": 0.0,
+        "field_elongation_pd": 1.0,
+        "branch_density_gradient_pd": 0.0,
+        "primary_branch_pd_concentration": 0.0,
+        "mean_segment_length_um": 25.0,
+        "soma_diameter_um": 15.0,
+        "ais_length_um": 31.0,
+        "morph_seed": 1234,
+        "branch_length_cv": 0.1
+      },
+      "vector_14d": [
+        4.0,
+        0.04,
+        6.0,
+        45.0,
+        1.5,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        25.0,
+        15.0,
+        31.0,
+        1234.0,
+        0.1
+      ]
+    },
+    {
+      "anchor_index": 1,
+      "anchor_name": "symmetric",
+      "morphology_params": {
+        "num_primary_branches": 4,
+        "branch_prob_per_um": 0.04,
+        "max_strahler_depth": 6,
+        "mean_branching_angle_deg": 45.0,
+        "rall_exponent": 1.5,
+        "soma_offset_pd_um": 0.0,
+        "field_elongation_pd": 1.0,
+        "branch_density_gradient_pd": 0.0,
+        "primary_branch_pd_concentration": 0.0,
+        "mean_segment_length_um": 25.0,
+        "soma_diameter_um": 15.0,
+        "ais_length_um": 31.0,
+        "morph_seed": 2,
+        "branch_length_cv": 0.1
+      },
+      "vector_14d": [
+        4.0,
+        0.04,
+        6.0,
+        45.0,
+        1.5,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        25.0,
+        15.0,
+        31.0,
+        2.0,
+        0.1
+      ]
+    },
+    {
+      "anchor_index": 2,
+      "anchor_name": "pd_asymmetric",
+      "morphology_params": {
+        "num_primary_branches": 4,
+        "branch_prob_per_um": 0.04,
+        "max_strahler_depth": 6,
+        "mean_branching_angle_deg": 45.0,
+        "rall_exponent": 1.5,
+        "soma_offset_pd_um": 100.0,
+        "field_elongation_pd": 2.0,
+        "branch_density_gradient_pd": 0.5,
+        "primary_branch_pd_concentration": 0.5,
+        "mean_segment_length_um": 25.0,
+        "soma_diameter_um": 15.0,
+        "ais_length_um": 31.0,
+        "morph_seed": 3,
+        "branch_length_cv": 0.1
+      },
+      "vector_14d": [
+        4.0,
+        0.04,
+        6.0,
+        45.0,
+        1.5,
+        100.0,
+        2.0,
+        0.5,
+        0.5,
+        25.0,
+        15.0,
+        31.0,
+        3.0,
+        0.1
+      ]
+    },
+    {
+      "anchor_index": 3,
+      "anchor_name": "nd_asymmetric",
+      "morphology_params": {
+        "num_primary_branches": 4,
+        "branch_prob_per_um": 0.04,
+        "max_strahler_depth": 6,
+        "mean_branching_angle_deg": 45.0,
+        "rall_exponent": 1.5,
+        "soma_offset_pd_um": -100.0,
+        "field_elongation_pd": 2.0,
+        "branch_density_gradient_pd": -0.5,
+        "primary_branch_pd_concentration": -0.5,
+        "mean_segment_length_um": 25.0,
+        "soma_diameter_um": 15.0,
+        "ais_length_um": 31.0,
+        "morph_seed": 4,
+        "branch_length_cv": 0.1
+      },
+      "vector_14d": [
+        4.0,
+        0.04,
+        6.0,
+        45.0,
+        1.5,
+        -100.0,
+        2.0,
+        -0.5,
+        -0.5,
+        25.0,
+        15.0,
+        31.0,
+        4.0,
+        0.1
+      ]
+    },
+    {
+      "anchor_index": 4,
+      "anchor_name": "alt_topology",
+      "morphology_params": {
+        "num_primary_branches": 7,
+        "branch_prob_per_um": 0.04,
+        "max_strahler_depth": 5,
+        "mean_branching_angle_deg": 45.0,
+        "rall_exponent": 1.5,
+        "soma_offset_pd_um": 0.0,
+        "field_elongation_pd": 1.0,
+        "branch_density_gradient_pd": 0.0,
+        "primary_branch_pd_concentration": 0.0,
+        "mean_segment_length_um": 15.0,
+        "soma_diameter_um": 15.0,
+        "ais_length_um": 31.0,
+        "morph_seed": 5,
+        "branch_length_cv": 0.1
+      },
+      "vector_14d": [
+        7.0,
+        0.04,
+        5.0,
+        45.0,
+        1.5,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        15.0,
+        15.0,
+        31.0,
+        5.0,
+        0.1
+      ]
+    }
+  ]
+}

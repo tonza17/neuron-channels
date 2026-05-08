@@ -1,0 +1,34 @@
+{
+  "trajectory": [
+    {
+      "generation": 1,
+      "hypervolume": 14.065644040429909,
+      "cumulative_cost_usd": 0.07280716302638889,
+      "elapsed_s": 1144.566755,
+      "n_evaluations": 0
+    },
+    {
+      "generation": 2,
+      "hypervolume": 23.71043182149095,
+      "cumulative_cost_usd": 0.21103144617277778,
+      "elapsed_s": 3317.524918,
+      "n_evaluations": 91
+    }
+  ]
+}---LOGS---
+total 8
+drwxr-xr-x 2 root root   35 May  8 14:00 .
+drwxr-xr-x 6 root root 4096 May  8 13:36 ..
+-rw-r--r-- 1 root root  707 May  8 14:55 nsga2_run.log
+---DATA---
+total 960
+drwxr-xr-x 2 1144306 1049089   4096 May  8 14:19 .
+drwxr-xr-x 4 1144306 1049089     64 May  8 13:09 ..
+-rw-r--r-- 1 root    root       405 May  8 14:00 algorithm_config.json
+-rw-r--r-- 1 root    root    385684 May  8 14:55 all_evaluations.json
+-rw-r--r-- 1 1144306 1049089   4506 May  8 13:20 anchor_definitions.json
+-rw-r--r-- 1 1144306 1049089   5786 May  8 13:20 biological_priors_68d.json
+-rw-r--r-- 1 root    root       149 May  8 14:00 evaluation_seeds.json
+-rw-r--r-- 1 root    root       392 May  8 14:55 hv_trajectory.json
+-rw-r--r-- 1 root    root    376942 May  8 14:55 nsga2_checkpoint.json
+-rw-r--r-- 1 1144306 1049089 177234 May  8 13:20 warm_start_population.json

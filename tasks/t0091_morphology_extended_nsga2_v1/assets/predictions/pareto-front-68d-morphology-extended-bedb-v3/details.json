@@ -1,0 +1,33 @@
+{
+  "spec_version": "2",
+  "predictions_id": "pareto-front-68d-morphology-extended-bedb-v3",
+  "name": "Pareto front 68-d morphology-extended Bed-B v3",
+  "short_description": "Per-cell DSI / PD / robustness / 14-d morphology / 54-d electrophys for the Pareto front of the t0091 joint 68-d NSGA-II run.",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "DSGC compartmental model with t0092-patched procedural morphology + 54-d electrophys parameter vector applied via t0080 apply_params.",
+  "dataset_ids": [],
+  "prediction_format": "jsonl",
+  "prediction_schema": "Each line is a JSON object with fields: cell_id (int), dsi_vector_sum (float), pd_rate_hz (float), robustness (float in [0, 1]), morphology_vector_14d (list[float]), electrophys_vector_54d (list[float]), nearest_anchor (str: one of bedb_like, symmetric, pd_asymmetric, nd_asymmetric, alt_topology, or random), verdict_biological (str: plausible, stretched, or exotic), v_opt_um_per_s (float or null), effective_dendritic_length_um (float or null).",
+  "instance_count": 57,
+  "files": [
+    {
+      "path": "files/pareto_cells.jsonl",
+      "description": "Per-Pareto-cell record with DSI / PD / robustness / 14-d morphology / 54-d electrophys / nearest-anchor / biological-verdict / cable-theory v_opt / effective dendritic length.",
+      "format": "jsonl"
+    }
+  ],
+  "categories": [],
+  "source_paper_ids": [],
+  "source_task_ids": [
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0083_bedb_v3_extend_nsga2_gen8plus",
+    "t0086_robustness_cluster_bio_comparison",
+    "t0088_recluster_marginals_and_vm_motifs",
+    "t0090_morphology_generator_diversity_test",
+    "t0092_diagnose_morphology_generator_silence",
+    "t0093_resweep_and_t0090_correction"
+  ],
+  "created_by_task": "t0091_morphology_extended_nsga2_v1",
+  "date_created": "2026-05-08"
+}

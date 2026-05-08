@@ -1,0 +1,27 @@
+{
+  "spec_version": "2",
+  "answer_id": "morphology-extension-biological-plausibility",
+  "question": "Did enabling the 14-d procedural morphology variation as an optimisation axis open biologically-plausible joint-pass regions of parameter space that the fixed-Bed-B substrate of t0080-t0088 could not reach?",
+  "short_title": "Did morphology variation reach biologically plausible cells?",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0083_bedb_v3_extend_nsga2_gen8plus",
+    "t0086_robustness_cluster_bio_comparison",
+    "t0088_recluster_marginals_and_vm_motifs",
+    "t0090_morphology_generator_diversity_test",
+    "t0092_diagnose_morphology_generator_silence",
+    "t0093_resweep_and_t0090_correction"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0091_morphology_extended_nsga2_v1",
+  "date_created": "2026-05-08"
+}

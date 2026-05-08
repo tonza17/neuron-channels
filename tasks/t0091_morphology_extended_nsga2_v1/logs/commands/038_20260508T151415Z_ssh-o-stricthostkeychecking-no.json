@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0091_morphology_extended_nsga2_v1",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 24984 root@ssh4.vast.ai tail -100 /root/t0091_workdir/logs/nsga2_run.log; echo '---TOP DSI---'; python3 -c 'import json; d=json.load(open(\"/root/t0091_workdir/tasks/t0091_morphology_extended_nsga2_v1/results/data/all_evaluations.json\")); cells = d[\"evaluations\"] if \"evaluations\" in d else d; print(\"Total evaluations:\", len(cells)); cells_sorted = sorted([c for c in cells if c.get(\"objectives\") and c[\"objectives\"][0] is not None], key=lambda c: c[\"objectives\"][0]); print(\"Top 5 by DSI (objective 0, lower = better DSI in NSGA-II minimization):\"); [print(f\"  cell {c.get(\\\"cell_id\\\", i)}: obj={c[\\\"objectives\\\"]}, anchor={c.get(\\\"anchor\\\", \\\"?\\\")}, gen={c.get(\\\"generation\\\", \\\"?\\\")}\") for i,c in enumerate(cells_sorted[:5])]'",
+  "exit_code": 1,
+  "duration_seconds": 2.716,
+  "started_at": "2026-05-08T15:14:15Z",
+  "completed_at": "2026-05-08T15:14:18Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0091_morphology_extended_nsga2_v1",
+  "stdout_file": "038_20260508T151415Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "038_20260508T151415Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 13,
+  "stderr_lines": 6,
+  "truncated": false
+}
