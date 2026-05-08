@@ -1,0 +1,4 @@
+pdfplumber NO No module named 'pdfplumber'
+PyPDF2 NO No module named 'PyPDF2'
+pypdf NO No module named 'pypdf'
+fitz NO No module named 'fitz'

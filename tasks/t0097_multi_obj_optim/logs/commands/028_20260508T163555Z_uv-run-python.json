@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "uv run python -u -c \nimport pymupdf\ndoc = pymupdf.open('tasks/t0097_multi_obj_optim/assets/paper/10.3389_fninf.2016.00017/files/vangeit_2016_bluepyopt.pdf')\nprint('Pages:', len(doc))\nprint('Title (metadata):', doc.metadata.get('title'))\nprint('=== PAGE 1 (first 2000 chars) ===')\nprint(doc[0].get_text()[:2000])\n",
+  "exit_code": 1,
+  "duration_seconds": 0.746,
+  "started_at": "2026-05-08T16:35:55Z",
+  "completed_at": "2026-05-08T16:35:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "028_20260508T163555Z_uv-run-python.stdout.txt",
+  "stderr_file": "028_20260508T163555Z_uv-run-python.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 8,
+  "truncated": false
+}

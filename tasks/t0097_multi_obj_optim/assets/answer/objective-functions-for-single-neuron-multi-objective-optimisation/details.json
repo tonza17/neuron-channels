@@ -1,0 +1,51 @@
+{
+  "spec_version": "2",
+  "answer_id": "objective-functions-for-single-neuron-multi-objective-optimisation",
+  "question": "Which objective functions have been used in published multi-objective optimisation of single-neuron compartmental models, and what is each one's formula, units, and NEURON-side computational recipe on a t0091-style 8-direction trial output?",
+  "short_title": "Catalogue of multi-objective single-neuron objective functions",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "voltage-gated-channels",
+    "dendritic-computation"
+  ],
+  "answer_methods": [
+    "papers",
+    "internet"
+  ],
+  "source_paper_ids": [
+    "10.3389_neuro.01.1.1.001.2007",
+    "10.1371_journal.pcbi.0020094",
+    "10.3389_fninf.2016.00017",
+    "10.1097_00004647-200110000-00001",
+    "10.1242_jeb.017574",
+    "10.1371_journal.pcbi.1000840",
+    "10.1038_nrn1949",
+    "10.1038_nn1352",
+    "10.1103_PhysRevLett.80.197",
+    "no-doi_Chklovskii2002_wiring-optimization-cortical",
+    "10.1371_journal.pcbi.1002107",
+    "10.1371_journal.pcbi.1000877",
+    "no-doi_Ament2023_logei-bo",
+    "10.1523_jneurosci.5346-03.2004",
+    "10.1098_rstb.1982.0084",
+    "10.1038_382363a0",
+    "10.1152_jn.1997.78.4.1948",
+    "10.1162_neco.1997.9.6.1179",
+    "10.1146_annurev.neuro.28.061604.135703"
+  ],
+  "source_urls": [
+    "https://github.com/BlueBrain/BluePyOpt",
+    "https://bluepyopt.readthedocs.io/en/latest/index.html",
+    "https://github.com/BlueBrain/eFEL",
+    "https://pymoo.org/",
+    "https://allensdk.readthedocs.io/en/latest/biophysical_models.html"
+  ],
+  "source_task_ids": [
+    "t0091_morphology_extended_nsga2_v1"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0097_multi_obj_optim",
+  "date_created": "2026-05-08"
+}

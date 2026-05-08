@@ -1,0 +1,50 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1242_jeb.017574",
+  "doi": "10.1242/jeb.017574",
+  "title": "Energy limitation as a selective pressure on the evolution of sensory systems",
+  "url": "https://journals.biologists.com/jeb/article/211/11/1792/19035",
+  "pdf_url": "https://journals.biologists.com/jeb/article-pdf/211/11/1792/1262412/1792.pdf",
+  "date_published": "2008-06-01",
+  "year": 2008,
+  "authors": [
+    {
+      "name": "Jeremy E. Niven",
+      "country": "GB",
+      "institution": "University of Cambridge",
+      "orcid": null
+    },
+    {
+      "name": "Simon B. Laughlin",
+      "country": "GB",
+      "institution": "University of Cambridge",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Cambridge",
+      "country": "GB"
+    },
+    {
+      "name": "Smithsonian Tropical Research Institute",
+      "country": "PA"
+    }
+  ],
+  "journal": "Journal of Experimental Biology",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "synaptic-integration"
+  ],
+  "abstract": "Evolution of animal morphology, physiology and behaviour is shaped by the selective pressures to which they are subject. Some selective pressures act to increase the benefits accrued whilst others act to reduce the costs incurred, affecting the cost/benefit ratio. Selective pressures therefore produce a trade-off between costs and benefits that ultimately influences the fitness of the whole organism. The nervous system has a unique position as the interface between morphology, physiology and behaviour; the final output of the nervous system is the behaviour of the animal, which is a product of both its morphology and physiology. The nervous system is under selective pressure to generate adaptive behaviour, but at the same time is subject to costs related to the amount of energy that it consumes. Characterising this trade-off between costs and benefits is essential to understanding the evolution of nervous systems, including our own. Within the nervous system, sensory systems are the most amenable to analysing costs and benefits, not only because their function can be more readily defined than that of many central brain regions and their benefits quantified in terms of their performance, but also because recent studies of sensory systems have begun to directly assess their energetic costs. Our review focuses on the visual system in particular, although the principles we discuss are equally applicable throughout the nervous system. Examples are taken from a wide range of sensory modalities in both vertebrates and invertebrates. We aim to place the studies we review into an evolutionary framework. We combine experimentally determined measures of energy consumption from whole retinas of rabbits and flies with intracellular measurements of energy consumption from single fly photoreceptors and recently constructed energy budgets for neural processing in rats to assess the contributions of various components to neuronal energy consumption. Taken together, these studies emphasize the high costs of maintaining neurons at rest and whilst signalling. A substantial proportion of neuronal energy consumption is related to the movements of ions across the neuronal cell membrane through ion channels, though other processes such as vesicle loading and transmitter recycling also consume energy. Many of the energetic costs within neurons are linked to 3Na+/2K+ ATPase activity, which consumes energy to pump Na+ and K+ ions across the cell membrane and is essential for the maintenance of the resting potential and its restoration following signalling. Furthermore, recent studies in fly photoreceptors show that energetic costs can be related, via basic biophysical relationships, to their function. These findings emphasize that neurons are subject to a law of diminishing returns that severely penalizes excess functional capacity with increased energetic costs. The high energetic costs associated with neural tissue favour energy efficient coding and wiring schemes, which have been found in numerous sensory systems. We discuss the role of these efficient schemes in reducing the costs of information processing. Assessing evidence from a wide range of vertebrate and invertebrate examples, we show that reducing energy expenditure can account for many of the morphological features of sensory systems and has played a key role in their evolution.",
+  "citation_key": "Niven2008",
+  "summary_path": "summary.md",
+  "files": [
+    "files/niven_2008_energy-sensory-evol.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0097_multi_obj_optim",
+  "date_added": "2026-05-08"
+}

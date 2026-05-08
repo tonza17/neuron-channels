@@ -5,10 +5,10 @@
   "name": "Literature survey: multi-objective optimisation of single-neuron models",
   "short_description": "Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [],
   "start_time": "2026-05-08T15:23:11Z",
-  "end_time": null,
+  "end_time": "2026-05-08T16:50:00Z",
   "expected_assets": {
     "paper": 10,
     "answer": 1

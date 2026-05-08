@@ -1,0 +1,53 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nn1352",
+  "doi": "10.1038/nn1352",
+  "title": "Similar network activity from disparate circuit parameters",
+  "url": "https://www.nature.com/articles/nn1352",
+  "pdf_url": "https://www.hms.harvard.edu/bss/neuro/bornlab/nb204/papers/prinz-marder-2004.pdf",
+  "date_published": "2004-11-21",
+  "year": 2004,
+  "authors": [
+    {
+      "name": "Astrid A. Prinz",
+      "country": "US",
+      "institution": "Brandeis University",
+      "orcid": "0000-0001-5600-1924"
+    },
+    {
+      "name": "Dirk Bucher",
+      "country": "US",
+      "institution": "Brandeis University",
+      "orcid": "0000-0003-4144-2895"
+    },
+    {
+      "name": "Eve Marder",
+      "country": "US",
+      "institution": "Brandeis University",
+      "orcid": "0000-0001-9632-5448"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Brandeis University",
+      "country": "US"
+    }
+  ],
+  "journal": "Nature Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "voltage-gated-channels",
+    "synaptic-integration"
+  ],
+  "abstract": "It is often assumed that cellular and synaptic properties need to be regulated to specific values to allow a neuronal network to function properly. To determine how tightly neuronal properties and synaptic strengths need to be tuned to produce a given network output, we simulated more than 20 million versions of a three-cell model of the pyloric network of the crustacean stomatogastric ganglion using different combinations of synapse strengths and neuron properties. We found that virtually indistinguishable network activity can arise from widely disparate sets of underlying mechanisms, suggesting that there could be considerable animal-to-animal variability in many of the parameters that control network activity, and that many different combinations of synaptic strengths and intrinsic membrane properties can be consistent with appropriate network performance.",
+  "citation_key": "Prinz2004",
+  "summary_path": "summary.md",
+  "files": [
+    "files/prinz_2004_disparate-circuit-parameters.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0097_multi_obj_optim",
+  "date_added": "2026-05-08"
+}

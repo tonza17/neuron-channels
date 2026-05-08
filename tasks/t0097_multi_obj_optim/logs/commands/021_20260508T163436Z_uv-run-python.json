@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "uv run python -u -m meta.asset_types.paper.aggregator --format ids",
+  "exit_code": 0,
+  "duration_seconds": 1.053,
+  "started_at": "2026-05-08T16:34:36Z",
+  "completed_at": "2026-05-08T16:34:37Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "021_20260508T163436Z_uv-run-python.stdout.txt",
+  "stderr_file": "021_20260508T163436Z_uv-run-python.stderr.txt",
+  "stdout_lines": 80,
+  "stderr_lines": 0,
+  "truncated": false
+}

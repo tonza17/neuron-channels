@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0097_multi_obj_optim/assets/paper/no-doi_Chklovskii2002_wiring-optimization-cortical/summary.md",
+  "exit_code": 0,
+  "duration_seconds": 0.576,
+  "started_at": "2026-05-08T16:48:20Z",
+  "completed_at": "2026-05-08T16:48:20Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "055_20260508T164820Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "055_20260508T164820Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

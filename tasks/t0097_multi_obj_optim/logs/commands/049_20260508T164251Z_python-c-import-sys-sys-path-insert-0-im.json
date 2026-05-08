@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0097_multi_obj_optim",
+  "command": "python -c import sys; sys.path.insert(0, '.'); import importlib.util; print(importlib.util.find_spec('yaml'))",
+  "exit_code": 0,
+  "duration_seconds": 0.058,
+  "started_at": "2026-05-08T16:42:51Z",
+  "completed_at": "2026-05-08T16:42:51Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0097_multi_obj_optim",
+  "stdout_file": "049_20260508T164251Z_python-c-import-sys-sys-path-insert-0-im.stdout.txt",
+  "stderr_file": "049_20260508T164251Z_python-c-import-sys-sys-path-insert-0-im.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}
