@@ -1,0 +1,16 @@
+corrections/
+intervention/
+plan/
+research/
+results/
+results/images/
+data/
+assets/
+logs/
+logs/searches/
+logs/sessions/
+logs/steps/
+logs/commands/
+code/
+__init__.py
+code/__init__.py

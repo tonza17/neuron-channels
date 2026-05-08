@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0093_resweep_and_t0090_correction\tasks\t0093_resweep_and_t0090_correction\code\write_metrics.py", line 143, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0093_resweep_and_t0090_correction\tasks\t0093_resweep_and_t0090_correction\code\write_metrics.py", line 134, in main
+    payload = build_metrics_payload(post_fix_path=DATA_POST_FIX_VERIFICATION_JSON)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0093_resweep_and_t0090_correction\tasks\t0093_resweep_and_t0090_correction\code\write_metrics.py", line 101, in build_metrics_payload
+    raw = json.loads(post_fix_path.read_text())
+                     ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\pathlib\_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\pathlib\_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0093_resweep_and_t0090_correction\\tasks\\t0093_resweep_and_t0090_correction\\data\\post_fix_verification_summary.json'

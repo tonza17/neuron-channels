@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0093_resweep_and_t0090_correction",
+  "command": "python -c from tasks.t0093_resweep_and_t0090_correction.code import paths, constants; paths.ensure_directories(); print('OK')",
+  "exit_code": 0,
+  "duration_seconds": 0.104,
+  "started_at": "2026-05-08T01:13:05Z",
+  "completed_at": "2026-05-08T01:13:05Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0093_resweep_and_t0090_correction",
+  "stdout_file": "011_20260508T011305Z_python-c-from-tasks-t0093-resweep-and-t0.stdout.txt",
+  "stderr_file": "011_20260508T011305Z_python-c-from-tasks-t0093-resweep-and-t0.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0.0,
+  "breakdown": {},
+  "note": "Local 64-core EPYC only; no remote machines, no paid APIs. Re-sweep ran with 16 workers in ~50 min wall-clock."
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0093_resweep_and_t0090_correction",
+  "command": "uv run python -u -m tasks.t0093_resweep_and_t0090_correction.code.visualization",
+  "exit_code": 0,
+  "duration_seconds": 5.994,
+  "started_at": "2026-05-08T03:42:00Z",
+  "completed_at": "2026-05-08T03:42:06Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0093_resweep_and_t0090_correction",
+  "stdout_file": "021_20260508T034200Z_uv-run-python.stdout.txt",
+  "stderr_file": "021_20260508T034200Z_uv-run-python.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 0,
+  "truncated": false
+}
