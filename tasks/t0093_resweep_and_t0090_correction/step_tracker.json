@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-code",
       "description": "Re-read t0090 verification.py (re-sweep driver pattern), t0092 morphology_generator_fix.py (patched API), corrections specification, library aggregator behaviour with corrections overlay.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T00:50:27Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T01:00:30Z",
       "log_file": "logs\\steps\\004_research-code/"
     },
     {
