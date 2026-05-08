@@ -1,0 +1,24 @@
+{
+  "spec_version": 4,
+  "task_id": "t0093_resweep_and_t0090_correction",
+  "task_index": 93,
+  "name": "Patched-generator full 60-morph re-sweep + t0090 correction overlay",
+  "short_description": "Re-run t0090's 60-morph Phase D verification under the t0092 patched generator; issue correction overlay marking t0090's procedural_dsgc_morphology_generator as superseded by t0092's procedural_dsgc_morphology_generator_fix.",
+  "long_description_file": "task_description.md",
+  "status": "in_progress",
+  "dependencies": [
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0083_bedb_v3_extend_nsga2_gen8plus",
+    "t0090_morphology_generator_diversity_test",
+    "t0092_diagnose_morphology_generator_silence"
+  ],
+  "start_time": "2026-05-08T00:43:40Z",
+  "end_time": null,
+  "expected_assets": {},
+  "task_types": [
+    "experiment-run",
+    "data-analysis",
+    "correction"
+  ],
+  "source_suggestion": "S-0092-01"
+}
