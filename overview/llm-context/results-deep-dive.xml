@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-08T11:23:32Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-08T14:41:11Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>90</section_count>
-    <char_count>1657259</char_count>
-    <byte_count>1664514</byte_count>
-    <estimated_tokens>414314</estimated_tokens>
+    <section_count>91</section_count>
+    <char_count>1667426</char_count>
+    <byte_count>1674703</byte_count>
+    <estimated_tokens>416856</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -198,9 +198,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0092_diagnose_morphology_generator_silence</id>
         <id>t0093_resweep_and_t0090_correction</id>
         <id>t0094_brainstorm_results_19</id>
+        <id>t0095_brainstorm_results_20</id>
       </source_ids>
       <content>
-Completed tasks: 86
+Completed tasks: 87
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -717,6 +718,12 @@ ID: t0094_brainstorm_results_19
 Completed: 2026-05-08
 Short description: Nineteenth brainstorm: greenlight t0091 launch; update t0091 deps + imports for t0092/t0093 fix; reject 2 superseded suggestions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0094_brainstorm_results_19&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 19 Summary Nineteenth strategic brainstorm, run on 2026-05-08 immediately after t0093 (`resweep_and_t0090_correction`) merged with 60/60 cells STABLE-firing under the t0092 patched generator and `C-0093-01` correction overlay in place. The researcher&#x27;s directive was direct: launch the morphology-extended NSGA-II optimisation now. The session updated t0091 (`morphology_extended_nsga2_v1`) in place — added t0092 + t0093 to dependencies, swapped the generator import path to `tasks.t0092_..code.morphology_generator_fix.generate_fixed_morphology`...
+
+## Brainstorm results session 20
+ID: t0095_brainstorm_results_20
+Completed: 2026-05-08
+Short description: Twentieth brainstorm: commission a literature survey of multi-objective optimisation in single-neuron compartmental models; reject 2 already-covered suggestions.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_results_20&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 20 Summary Twentieth strategic brainstorm, run on 2026-05-08 while t0091 (`morphology_extended_nsga2_v1`) is in flight on Vast.ai. The researcher proposed broadening the MOBO objective space beyond DSI + firing rate to include information transfer rate, metabolic energy, cytoplasm volume, and robustness; commissioned a single consolidated literature survey (`t0096_literature_survey_multi_objective_neuron_optimisation`) at $0 cost, scoped broadly across any neuron type, with formulas + computational recipes + future MOBO suggestion list as...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -727,9 +734,10 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0094_brainstorm_
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
         <id>t0091_morphology_extended_nsga2_v1</id>
+        <id>t0096_literature_survey_multi_objective_neuron_optimisation</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -753,10 +761,16 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
 
 ## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
 ID: t0091_morphology_extended_nsga2_v1
-Status: not_started
-Effective date: 2026-05-07
+Status: in_progress
+Effective date: 2026-05-08
 Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction
+
+## Literature survey: multi-objective optimisation of single-neuron models
+ID: t0096_literature_survey_multi_objective_neuron_optimisation
+Status: not_started
+Effective date: unknown
+Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -27968,7 +27982,6 @@ The resolved long description in `task_description.md` covers Phase A (re-sweep 
 spec_version: &quot;2&quot;
 task_id: &quot;t0094_brainstorm_results_19&quot;
 ---
-
 ### Detailed Results: Brainstorm Session 19
 
 #### Summary
@@ -27980,20 +27993,20 @@ t0092-patched generator and add t0092/t0093 to its dependencies, and rejected tw
 #### Methodology
 
 1. Aggregated project state via `aggregate_tasks.py`, `aggregate_suggestions.py` (uncovered, by
-   priority), and `aggregate_costs.py`. The `aggregate_answers.py` aggregator does not exist in
-   this branch; answer assets were enumerated via direct glob.
+   priority), and `aggregate_costs.py`. The `aggregate_answers.py` aggregator does not exist in this
+   branch; answer assets were enumerated via direct glob.
 2. Read full results summaries for tasks completed since t0089: t0090 (morphology generator +
    diversity test), t0092 (silence diagnosis + fix), t0093 (full re-sweep + correction overlay).
-3. Read full t0089 (`brainstorm_results_18`) results_summary to identify what&#x27;s been completed
-   since the previous brainstorm and what was planned.
+3. Read full t0089 (`brainstorm_results_18`) results_summary to identify what&#x27;s been completed since
+   the previous brainstorm and what was planned.
 4. Re-ran the overview materializer to ensure project state is current on GitHub.
 5. Formed an independent priority reassessment of the 12 active high-priority suggestions; flagged
-   S-0092-03 (already done by t0093) and S-0090-04 (premise invalidated by 60/60 STABLE) as
-   reject candidates.
+   S-0092-03 (already done by t0093) and S-0090-04 (premise invalidated by 60/60 STABLE) as reject
+   candidates.
 6. Presented project state to researcher with concrete metrics, mean DSI, budget breakdown.
-7. Answered three researcher questions: (a) plain-language explanation of the soma-pt3d bug,
-   the fix, and the validation evidence; (b) per-cell DSI spread (mean 0.32–0.35, examples
-   embedded in results_detailed.md); (c) location of per-cell DSI data
+7. Answered three researcher questions: (a) plain-language explanation of the soma-pt3d bug, the
+   fix, and the validation evidence; (b) per-cell DSI spread (mean 0.32–0.35, examples embedded in
+   results_detailed.md); (c) location of per-cell DSI data
    (`tasks/t0093_resweep_and_t0090_correction/data/post_fix_verification_summary.json`).
 8. Received launch directive; answered budget question (yes, $4.45 remaining vs $3.00–3.50
    estimate; $0.95–1.45 buffer); resolved two clarifying multi-choice questions (NMDA calibration
@@ -28005,8 +28018,8 @@ t0092-patched generator and add t0092/t0093 to its dependencies, and rejected tw
 12. Wrote step logs for the four brainstorm phases.
 13. Wrote session log capturing the full chat transcript for this brainstorm.
 14. Captured CLI session transcripts via `capture_task_sessions`.
-15. Ran the four mandatory verificators (verify_task_file, verify_corrections,
-    verify_suggestions, verify_logs).
+15. Ran the four mandatory verificators (verify_task_file, verify_corrections, verify_suggestions,
+    verify_logs).
 16. Re-ran the overview materializer to reflect the updated task state.
 17. Formatted markdown with `flowmark`, ran `ruff` and `mypy` (no Python sources changed).
 18. Committed, pushed, opened PR, ran pre-merge verificator, merged.
@@ -28030,9 +28043,9 @@ t0092-patched generator and add t0092/t0093 to its dependencies, and rejected tw
 #### Limitations
 
 Planning task; no experiments were run. The validity of the launch decision rests entirely on the
-t0093 outcome (60/60 STABLE, 56/60 with PD-rate&gt;0); if a downstream issue with the patched
-generator emerges during t0091&#x27;s NSGA-II run, t0091&#x27;s cost watchdog at $4.00 will halt the run
-before the $4.45 budget cap is breached and a follow-up brainstorm will need to triage.
+t0093 outcome (60/60 STABLE, 56/60 with PD-rate&gt;0); if a downstream issue with the patched generator
+emerges during t0091&#x27;s NSGA-II run, t0091&#x27;s cost watchdog at $4.00 will halt the run before the
+$4.45 budget cap is breached and a follow-up brainstorm will need to triage.
 
 #### Files Created
 
@@ -28080,11 +28093,151 @@ Files modified outside the brainstorm task folder:
 * `verify_logs.py t0094_brainstorm_results_19` — target 0 errors; LG-W005 / LG-W007 / LG-W008
   acceptable per skill guidance and step-4 capture.
 
+#### Task Requirement Coverage
+
+The operative request from `task.json`:
+
+&gt; Nineteenth brainstorm: greenlight t0091 launch; update t0091 deps + imports for t0092/t0093 fix;
+&gt; reject 2 superseded suggestions.
+
+| REQ | Status | Result | Evidence |
+| --- | --- | --- | --- |
+| **REQ-1** Greenlight t0091 launch | **Done** | Researcher&#x27;s launch directive recorded; budget calculation answered ($4.45 remaining vs $3.00–3.50 plan estimate; $4.00 watchdog cap; $0.95–1.45 buffer); two clarifying multi-choice questions resolved (NMDA calibration kept separate; watchdog stays at $4.00). | `logs/session_log.md`, `results/results_summary.md` Decisions section |
+| **REQ-2** Update t0091 dependencies | **Done** | `t0092_diagnose_morphology_generator_silence` and `t0093_resweep_and_t0090_correction` appended to t0091&#x27;s `task.json` dependencies list. | `tasks/t0091_morphology_extended_nsga2_v1/task.json` |
+| **REQ-3** Update t0091 short_description | **Done** | Refreshed to reference t0092-patched generator instead of t0090. | `tasks/t0091_morphology_extended_nsga2_v1/task.json` |
+| **REQ-4** Update t0091 task_description.md import paths | **Done** | Six edit blocks: Motivation, In Scope, Phase A anchor 1 source, Phase B per-cell evaluation (explicit `from tasks.t0092_..code.morphology_generator_fix import generate_fixed_morphology`), Risks and Fallbacks, Cross-References. | `tasks/t0091_morphology_extended_nsga2_v1/task_description.md` |
+| **REQ-5** Reject S-0092-03 (correction overlay against t0090 generator) | **Done** | Correction `C-0094-01` set `status: rejected` with rationale citing t0093&#x27;s already-committed `C-0093-01`. | `corrections/suggestion_S-0092-03.json` |
+| **REQ-6** Reject S-0090-04 (tighten LHS bounds with 9 STABLE cells) | **Done** | Correction `C-0094-02` set `status: rejected` with rationale citing t0093&#x27;s 60/60 STABLE post-fix invalidating the premise. | `corrections/suggestion_S-0090-04.json` |
+| **REQ-7** Verificators all pass | **Done** | `verify_task_file` (t0094 + t0091), `verify_corrections`, `verify_suggestions`, `verify_logs` all pass with 0 errors. Expected warnings: TF-W005 (`expected_assets` empty for brainstorm task) and LG-W007 (`logs/sessions/` has no captured JSONLs). | Step 4 step log; verificator output |
+| **REQ-8** Overview rebuilt | **Done** | `materialize.py` ran successfully; `overview/tasks/task_pages/t0094_brainstorm_results_19.md` created; t0091 page refreshed. | `overview/` diff |
+
 #### Next Steps / Suggestions
 
-The immediate next step is `/execute-task t0091_morphology_extended_nsga2_v1` in a fresh worktree
-to actually run the joint 68-d NSGA-II. No new suggestions emitted by this brainstorm; future
+The immediate next step is `/execute-task t0091_morphology_extended_nsga2_v1` in a fresh worktree to
+actually run the joint 68-d NSGA-II. No new suggestions emitted by this brainstorm; future
 brainstorms will sweep the active high-priority backlog once t0091 lands.
+      </content>
+    </section>
+    <section id="t0095_brainstorm_results_20-results-detailed" source_kind="file">
+      <title>t0095_brainstorm_results_20 — Brainstorm results session 20 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0095_brainstorm_results_20</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0095_brainstorm_results_20/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0095_brainstorm_results_20&quot;
+date_completed: &quot;2026-05-08&quot;
+status: &quot;complete&quot;
+---
+### Results Detailed: Brainstorm Session 20
+
+#### Summary
+
+Twentieth strategic brainstorm. Researcher requested broadening the MOBO objective space.
+Commissioned t0096_literature_survey_multi_objective_neuron_optimisation as a single $0 consolidated
+literature survey covering any-neuron multi-objective optimisation methodology and biological
+objective-function origin papers, with formulas + computational recipes as deliverables. Two
+already-covered suggestions rejected (S-0093-01, S-0074-03).
+
+#### Methodology
+
+1. **Aggregation**: ran `aggregate_tasks --format json --detail short`,
+   `aggregate_suggestions --format json --detail short --uncovered`,
+   `aggregate_costs --format json --detail short`. Confirmed 94 completed, 1 in-progress (t0091), 2
+   not-started (t0031, t0075); 264 active uncovered suggestions (10 high, 207 medium, 47 low);
+   $20.00 budget, $15.55 spent (77.7%), $4.45 remaining. Drilled into the 10 high-priority
+   suggestions in full detail.
+
+2. **Recent-task review**: read `results_summary.md` for t0090, t0092, t0093, t0094 to reconstruct
+   the morphology-generator bug-find-and-fix cycle and confirm the t0091 launch context.
+
+3. **Independent priority reassessment**: re-evaluated each high-priority suggestion against current
+   state. Identified S-0093-01 as covered (t0094 did the t0091 update in-place) and S-0074-03 as
+   covered (t0075 already planned). Flagged S-0086-01 for outcome-dependent deprioritisation but did
+   not act on it.
+
+4. **State presentation to researcher**: summarised tasks, suggestions, budget, dependency chain,
+   and reassessed priorities. Recommended browser review of overview/tasks and overview/suggestions.
+
+5. **Researcher directive**: strategic broadening — current MOBO optimises DSI + firing rate; move
+   to multi-objective frontier including ITR, energy, cytoplasm volume, robustness, etc. Requested
+   extensive literature search across any neuron type.
+
+6. **Three-question clarification**: scope (any neuron / any species / any modality), bundling (one
+   consolidated survey), output depth (catalogue + formulas + computational recipes). The fourth
+   must-have objectives multi-select was not answered; defaulted to the researcher&#x27;s three named
+   objectives plus robustness.
+
+7. **Confirmation**: explicit &quot;fire away&quot; from researcher.
+
+8. **Apply decisions**: scaffolded `tasks/t0095_brainstorm_results_20/` with full mandatory
+   structure; invoked `/create-task` with the t0096 description; wrote 2 correction files; wrote
+   step logs, session log, results files; ran verificators; materialised overview; committed;
+   pushed; PR opened; pre-merge verificator passed; merged.
+
+#### Metrics
+
+| Metric | Value |
+| --- | --- |
+| New tasks created | 1 |
+| Tasks updated | 0 |
+| Tasks cancelled | 0 |
+| Suggestions rejected | 2 |
+| Suggestions reprioritised | 0 |
+| Corrections written | 2 |
+| New suggestions created | 0 |
+| Answer assets created | 0 |
+| Session duration | ~45 min |
+| Session cost | $0.00 |
+
+#### Limitations
+
+* Planning task, no experiments run.
+* The strategic decision to commission only the literature survey (and no immediate
+  outcome-dependent MOBO tasks) means the project&#x27;s headline MOBO frontier stays at DSI + firing
+  rate until t0091 lands and t0096 is executed.
+* The medium-priority suggestion backlog (207 items) was deliberately not pruned in this session.
+
+#### Files Created
+
+* `tasks/t0095_brainstorm_results_20/__init__.py`
+* `tasks/t0095_brainstorm_results_20/task.json`
+* `tasks/t0095_brainstorm_results_20/task_description.md`
+* `tasks/t0095_brainstorm_results_20/step_tracker.json`
+* `tasks/t0095_brainstorm_results_20/plan/plan.md`
+* `tasks/t0095_brainstorm_results_20/research/research_papers.md`
+* `tasks/t0095_brainstorm_results_20/research/research_internet.md`
+* `tasks/t0095_brainstorm_results_20/research/research_code.md`
+* `tasks/t0095_brainstorm_results_20/corrections/suggestion_S-0093-01.json`
+* `tasks/t0095_brainstorm_results_20/corrections/suggestion_S-0074-03.json`
+* `tasks/t0095_brainstorm_results_20/results/results_summary.md`
+* `tasks/t0095_brainstorm_results_20/results/results_detailed.md`
+* `tasks/t0095_brainstorm_results_20/results/metrics.json`
+* `tasks/t0095_brainstorm_results_20/results/suggestions.json`
+* `tasks/t0095_brainstorm_results_20/results/costs.json`
+* `tasks/t0095_brainstorm_results_20/results/remote_machines_used.json`
+* `tasks/t0095_brainstorm_results_20/logs/session_log.md`
+* `tasks/t0095_brainstorm_results_20/logs/steps/001_review-project-state/step_log.md`
+* `tasks/t0095_brainstorm_results_20/logs/steps/002_discuss-decisions/step_log.md`
+* `tasks/t0095_brainstorm_results_20/logs/steps/003_apply-decisions/step_log.md`
+* `tasks/t0095_brainstorm_results_20/logs/steps/004_finalize/step_log.md`
+* `tasks/t0096_literature_survey_multi_objective_neuron_optimisation/task.json`
+* `tasks/t0096_literature_survey_multi_objective_neuron_optimisation/task_description.md`
+
+#### Verification
+
+* `verify_task_file.py t0095_brainstorm_results_20` — to be filled at finalize.
+* `verify_task_file.py t0096_literature_survey_multi_objective_neuron_optimisation` — to be filled
+  at finalize.
+* `verify_corrections.py t0095_brainstorm_results_20` — to be filled at finalize.
+* `verify_suggestions.py t0095_brainstorm_results_20` — to be filled at finalize.
+* `verify_logs.py t0095_brainstorm_results_20` — to be filled at finalize.
+* `verify_pr_premerge.py t0095_brainstorm_results_20 --pr-number &lt;N&gt;` — to be filled at finalize.
       </content>
     </section>
   </sections>

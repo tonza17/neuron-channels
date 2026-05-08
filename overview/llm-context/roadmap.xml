@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-08T11:23:32Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-08T14:41:11Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>418699</char_count>
-    <byte_count>419132</byte_count>
-    <estimated_tokens>104674</estimated_tokens>
+    <char_count>430487</char_count>
+    <byte_count>430944</byte_count>
+    <estimated_tokens>107621</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -198,9 +198,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0092_diagnose_morphology_generator_silence</id>
         <id>t0093_resweep_and_t0090_correction</id>
         <id>t0094_brainstorm_results_19</id>
+        <id>t0095_brainstorm_results_20</id>
       </source_ids>
       <content>
-Completed tasks: 86
+Completed tasks: 87
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -717,6 +718,12 @@ ID: t0094_brainstorm_results_19
 Completed: 2026-05-08
 Short description: Nineteenth brainstorm: greenlight t0091 launch; update t0091 deps + imports for t0092/t0093 fix; reject 2 superseded suggestions.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0094_brainstorm_results_19&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 19 Summary Nineteenth strategic brainstorm, run on 2026-05-08 immediately after t0093 (`resweep_and_t0090_correction`) merged with 60/60 cells STABLE-firing under the t0092 patched generator and `C-0093-01` correction overlay in place. The researcher&#x27;s directive was direct: launch the morphology-extended NSGA-II optimisation now. The session updated t0091 (`morphology_extended_nsga2_v1`) in place — added t0092 + t0093 to dependencies, swapped the generator import path to `tasks.t0092_..code.morphology_generator_fix.generate_fixed_morphology`...
+
+## Brainstorm results session 20
+ID: t0095_brainstorm_results_20
+Completed: 2026-05-08
+Short description: Twentieth brainstorm: commission a literature survey of multi-objective optimisation in single-neuron compartmental models; reject 2 already-covered suggestions.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0095_brainstorm_results_20&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 20 Summary Twentieth strategic brainstorm, run on 2026-05-08 while t0091 (`morphology_extended_nsga2_v1`) is in flight on Vast.ai. The researcher proposed broadening the MOBO objective space beyond DSI + firing rate to include information transfer rate, metabolic energy, cytoplasm volume, and robustness; commissioned a single consolidated literature survey (`t0096_literature_survey_multi_objective_neuron_optimisation`) at $0 cost, scoped broadly across any neuron type, with formulas + computational recipes + future MOBO suggestion list as...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -727,9 +734,10 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0094_brainstorm_
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
         <id>t0091_morphology_extended_nsga2_v1</id>
+        <id>t0096_literature_survey_multi_objective_neuron_optimisation</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1055,8 +1063,8 @@ For each condition, compute:
 
 ## First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start
 ID: t0091_morphology_extended_nsga2_v1
-Status: not_started
-Effective date: 2026-05-07
+Status: in_progress
+Effective date: 2026-05-08
 Short description: First joint 68-d NSGA-II (54-d electrophys + 14-d morphology) with t0092-patched generator in eval loop; pop 96, &lt;=8 gens, 5-anchor warm-start.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0078_bedb_mobo_v2_ais_tiered_ahp, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0081_bedb_v3_warmstart_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0086_robustness_cluster_bio_comparison, t0088_recluster_marginals_and_vm_motifs, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction
 
@@ -1287,6 +1295,232 @@ exceeds threshold).
   biological-plausibility framework.
 * Source suggestions: none directly (new direction). Indirect inheritance from S-0086-01 (NSGA-II
   re-run with tightened bounds, kept high for post-t0091 follow-up).
+
+## Literature survey: multi-objective optimisation of single-neuron models
+ID: t0096_literature_survey_multi_objective_neuron_optimisation
+Status: not_started
+Effective date: unknown
+Short description: Survey published multi-objective optimisation of single-neuron compartmental models; catalogue every objective with formula, units, and a NEURON-side computational recipe.
+
+#### Motivation
+
+The morphology + channel optimisation pipeline is now production-ready: t0091
+(`morphology_extended_nsga2_v1`) is currently running the first joint 68-d NSGA-II (54-d electrophys
+\+ 14-d morphology) on the t0092-patched procedural generator validated at scale by t0093. Every
+multi-objective optimisation task this project has run so far (t0076, t0078, t0080, t0081, t0083,
+t0086, t0091) has used the same two objectives: direction selectivity index (DSI) and firing rate.
+That objective pair was the right choice for the project&#x27;s first-question (&quot;which channels maximise
+DS?&quot;) phase, but it leaves the broader multi-objective landscape unexplored.
+
+The researcher&#x27;s strategic directive (brainstorm session 20, 2026-05-08) is to broaden the
+optimisation objective space:
+
+&gt; Now that we have working optimisation for both morphology and channel composition we can optimise
+&gt; for different things. Currently we optimise for DSI and firing rate. However I would like to
+&gt; compare results for all sorts of stuff. For example, I would like to optimise for DSI and
+&gt; information transfer rate; DSI and energy spent, DSI and minimisation of citoplasm volume etc.
+&gt; Perform an extensive literature search and find papers that use different forms of optimisation.
+&gt; It does not need to be DSGC but can be any neurons.
+
+This task is the literature-research foundation for that broadening. It catalogues every objective
+function used in the published multi-objective single-neuron optimisation literature, delivers
+formulas + computational recipes for each, and produces a ranked list of future MOBO tasks to
+commission once budget permits. The deliverable is intentionally actionable: each catalogued
+objective must be implementable on top of the existing Bed B NSGA-II loop without infrastructure
+rewrites.
+
+The task is also the right test of biological plausibility as an optimisation criterion. The
+researcher&#x27;s recurring concern across this project has been that pure DSI maximisation admits
+non-physical solutions; jointly optimising DSI vs energy, vs cytoplasm volume, or vs robustness
+forces the optimiser into bio-realistic regions of the parameter space. The survey should explicitly
+document, per objective, whether published work treats it as a biological constraint or only as a
+performance proxy.
+
+#### Scope
+
+##### In Scope
+
+* **Multi-objective methodology papers** covering single-neuron compartmental models: Druckmann et
+  al. 2007 (&quot;A novel multiple objective optimization framework for constraining conductance-based
+  neuron models by experimental data&quot;), Druckmann et al. 2011 (eFEL precursor), Achard &amp; De Schutter
+  2006 (first MOEA Purkinje fits), Van Geit et al. (NeuroFitter / BluePyOpt), Rumbell et al.
+  (cortical L5 PC MOBO), Hay et al. 2011 (BBP cortical L5 multi-objective).
+* **Information-theoretic objective functions**: mutual information between stimulus and spike train
+  (Bialek, De Ruyter van Steveninck, Strong et al.), Fisher information / discrimination capacity
+  (Brunel, Nadal), channel capacity, stimulus-reconstruction MSE, spike-train metrics (Victor &amp;
+  Purpura, van Rossum).
+* **Metabolic / energy objective functions**: ATP per spike, total ionic flux, Na+/K+ pump cost
+  (Attwell &amp; Laughlin 2001 &quot;An energy budget for signaling in the grey matter of the brain&quot;),
+  bits-per-ATP energy efficiency (Niven &amp; Laughlin 2008, Sengupta et al. 2010 &quot;Action potential
+  energy efficiency varies among neuron types in vertebrates and invertebrates&quot;).
+* **Structural / wiring objective functions**: total dendritic length, total membrane area,
+  cytoplasm / dendritic volume, wiring economy (Chklovskii et al., Cuntz, Forstner, Borst &amp; Hausser
+  2010 &quot;One rule to grow them all&quot;).
+* **Robustness / degeneracy objective functions**: parameter-perturbation sensitivity, noise
+  tolerance (Marder &amp; Goaillard 2006 &quot;Variability, compensation and homeostasis in neuron and
+  network function&quot;; Prinz, Bucher &amp; Marder 2004 &quot;Similar network activity from disparate circuit
+  parameters&quot;).
+* **Temporal / coding objective functions**: latency, jitter, spike-timing precision, bandwidth,
+  dynamic range.
+* **Methods / codebases**: BluePyOpt (Van Geit), NeuroFitter, NSGA-II + NSGA-III in pymoo, MOEA
+  literature (Deb et al.), Pareto-front analysis methods (hypervolume, IGD, R2 indicator).
+
+##### Out of Scope
+
+* Network-level optimisation (multi-neuron). Stay on single-neuron compartmental models.
+* Reinforcement-learning / deep-learning policy optimisation. Stay on classical MOBO / MOEA.
+* Phenomenological integrate-and-fire models without compartmental structure (mention briefly if
+  they yield reusable objectives, but do not deep-dive).
+
+#### Must-Find Objective Categories
+
+The survey must deliver formula + units + NEURON-side computational recipe for at least one
+representative objective in each of these four categories:
+
+1. **Information transfer rate / mutual information** — between stimulus angle and spike-train
+   output for our DSGC case. Concrete recipe must specify how to estimate MI from a t0091-style
+   8-direction trial output (e.g., binned spike counts per direction, direct method, or
+   extrapolation method).
+
+2. **Metabolic energy / ATP per spike** — computable from HH ionic currents in NEURON. Concrete
+   recipe must specify which currents to integrate (Na+ influx, K+ efflux, leak) and the conversion
+   factor from charge to ATP molecules (3 Na+ exchanged per ATP via Na+/K+ ATPase).
+
+3. **Cytoplasm volume / wiring cost** — computable directly from morphology. Concrete recipe: sum
+   over compartments of pi * r^2 * L; or total surface area as an alternative; or wiring cost = sum
+   of section lengths weighted by diameter.
+
+4. **Robustness / degeneracy** — parameter-perturbation sensitivity of DSI; multi-conductance
+   solution-space volume. Concrete recipe must specify a Marder-style protocol: e.g., +/- 10 percent
+   random perturbation of all channel densities and report DSI standard deviation as the objective.
+
+If the literature search uncovers more well-defined objective categories not in this list, add them
+to the catalogue and rank them by biological plausibility and computational feasibility.
+
+#### Approach
+
+##### Stage 1: Research Papers
+
+Survey methodology and biological objective-function origin papers. Download canonical citations for
+each objective category. Read full text where available; abstract + supplementary info otherwise.
+Produce `research/research_papers.md` with:
+
+* Per-objective subsection grouping the 2-3 canonical papers
+* Per-paper extracted formula, units, computational recipe
+* Notes on biological plausibility and how the objective would interact with DSI in a
+  multi-objective setting
+
+##### Stage 2: Research Internet
+
+Survey codebases, tutorials, review articles, and online resources for multi-objective single-neuron
+optimisation. Targets: BluePyOpt (Van Geit, github.com/BlueBrain/BluePyOpt), NeuroFitter, eFEL,
+pymoo NSGA-II + NSGA-III tutorials, Pareto-front diagnostic libraries (pyDOE, paretoset). Document
+API surfaces and example usage that the project could adopt without rewrites. Produce
+`research/research_internet.md`.
+
+##### Stage 3: Answer Asset
+
+Synthesise findings into a single answer asset
+`objective-functions-for-single-neuron-multi-objective-optimisation` (under `assets/answer/`). Each
+catalogued objective gets a uniform record:
+
+| Field | Content |
+| --- | --- |
+| Name | e.g. `mutual_information_stimulus_spike_train` |
+| Mathematical formula | LaTeX |
+| Units | e.g. bits per second, ATP per spike, um^3 |
+| NEURON-side quantities required | Vm trace, ionic currents, spike times, morphology, etc. |
+| Recipe | Step-by-step computation from a t0091-style 8-direction trial output |
+| Biological plausibility | Notes on whether the objective is a hard biological constraint or a soft proxy |
+| Direction-of-optimisation | Maximise / minimise / target value |
+| Papers using it | At least 2 citations |
+
+##### Stage 4: Suggestions
+
+Emit a ranked list of future MOBO tasks in `results/suggestions.json`. Each suggestion must include:
+
+* Title (e.g. &quot;Bed B NSGA-II maximising DSI and ITR&quot;)
+* Kind, priority
+* Categories, source_paper if applicable
+* Biological plausibility notes
+* Budget feasibility estimate (Vast.ai EPYC + GPU hours)
+* Cross-references to the catalogued objective entries
+
+Suggestions must be ranked by combined biological-plausibility and budget-feasibility scores. Aim
+for 3-6 ranked suggestions; do not pad.
+
+#### Cost Estimation
+
+* **Total**: $0
+* **Compute**: none. Local-only.
+* **Paid services**: none.
+* **Risk-of-going-over**: zero. The task is paper download + reading + writing.
+
+#### Step by Step
+
+1. `init-folders`, `check-deps` (no deps to check).
+2. Stage 1: research papers — download 10+ canonical papers; read; populate
+   `research/research_papers.md`; create paper assets.
+3. Stage 2: research internet — survey codebases, tutorials, review articles; populate
+   `research/research_internet.md`.
+4. Stage 3: answer asset — write the consolidated objective-function catalogue.
+5. Stage 4: suggestions — write `results/suggestions.json` with the ranked future-MOBO list.
+6. Reporting — write `results/results_summary.md` and `results/results_detailed.md`; run
+   verificators; PR; merge.
+
+#### Remote Machines
+
+None.
+
+#### Assets Needed
+
+None. The task downloads its own paper assets.
+
+#### Expected Assets
+
+* `paper`: at least 10 (covering methodology + four must-find categories)
+* `answer`: 1 (the consolidated objective-function catalogue)
+
+#### Time Estimation
+
+Approximately 2-4 hours wall-clock by an autonomous research agent. Roughly: 60-90 min paper
+download + reading; 30-60 min internet survey + codebase review; 30-60 min answer asset writing;
+15-30 min suggestions + reporting + verification.
+
+#### Risks &amp; Fallbacks
+
+* **Paywalled paper not accessible** via Sci-Hub or institutional proxy: mark in `intervention/` and
+  proceed with abstract + citation analysis. Do not block the task.
+* **Cytoplasm volume has no direct precedent** in single-neuron optimisation literature: use the
+  wiring-cost / total-length proxy and flag it as a novel objective contribution. The computational
+  recipe is already trivial (sum over compartments of pi * r^2 * L) so the objective stays usable
+  even without a published precedent.
+* **Answer asset becomes too long** (&gt;5000 words): split per category but keep one consolidated
+  `short_answer.md` as the entry point. Each category subsection in `full_answer.md` may be a
+  separate H2 section.
+* **Literature search dilutes** because too many off-target papers come up: enforce the Out-of-Scope
+  filter; prefer 2-3 canonical citations per category over comprehensive coverage.
+
+#### Verification Criteria
+
+* All four must-find objective categories covered with formulas and computational recipes.
+* At least 5 multi-objective compartmental-model methodology papers reviewed.
+* At least 10 paper assets created and passing the paper asset verificator.
+* Answer asset passes `meta/asset_types/answer/specification.md`.
+* At least 3 ranked, budget-realistic future MOBO suggestions emitted in `results/suggestions.json`.
+* All standard task verificators pass: `verify_task_file`, `verify_logs`, `verify_research_papers`,
+  `verify_research_internet`, `verify_assets`, `verify_suggestions`, `verify_task_results`,
+  `verify_pr_premerge`.
+
+#### Cross-References
+
+* **t0091_morphology_extended_nsga2_v1** — current MOBO frontier (DSI + firing rate); catalogue&#x27;s
+  recipes must compose with t0091&#x27;s trial-output format.
+* **t0095_brainstorm_results_20** — commissioned this task.
+* **t0002_literature_survey_dsgc_compartmental_models** — prior literature survey for stylistic
+  consistency.
+* **t0015 / t0016 / t0017 / t0018 / t0019 / t0027** — prior literature surveys for stylistic
+  consistency and for any cross-cited references.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1545,7 +1779,6 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0070-01</id>
         <id>S-0074-01</id>
         <id>S-0074-02</id>
-        <id>S-0074-03</id>
         <id>S-0076-04</id>
         <id>S-0081-02</id>
         <id>S-0081-03</id>
@@ -1554,7 +1787,6 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0090-02</id>
         <id>S-0090-03</id>
         <id>S-0092-01</id>
-        <id>S-0093-01</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -1815,7 +2047,7 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0093-04</id>
       </source_ids>
       <content>
-Open suggestions: 298
+Open suggestions: 296
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2027,13 +2259,6 @@ Kind: evaluation
 Source task: t0074_channel_tuning_width_bed_a
 NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate or vector-sum DSI. Creative-thinking hypothesised NaR&#x27;s slow `s` reactivation gate creates a sub-threshold floor that pushes ND-direction firing above zero, broadening the curve symmetrically. Test: load per_trial_full.csv, filter rows where condition_id in (nar_high, nar_med, baseline) and angle in (90, 120, 150, 180, 210, 240) deg, count trials with n_spikes &gt; 0. Hypothesis confirmed if NaR_high has &gt; 30% of trials firing at angle 90-180 deg vs baseline ~5%. Cost: pure-data analysis, no new sims (~15 min coding). If confirmed, NaR is a natural candidate for AIS-localised follow-up since AIS-localised NaR could...
 
-## AIS-localised Kv7 follow-up (t0075 candidate)
-ID: S-0074-03
-Priority: high
-Kind: experiment
-Source task: t0074_channel_tuning_width_bed_a
-Kv7 was inert at all 3 somatic densities tested in t0074 (vector-sum DSI delta &lt; 0.003 at every density). Compare-literature confirmed this matches Hu 2007 / Shah 2008&#x27;s prediction that Kv7&#x27;s canonical site is the AIS, not the soma. Build a virtual AIS section on Bed A (30 µm, between soma and virtual axon, with HHst at 5x somatic density), and re-run the 3-density Kv7 sweep with insertion on the AIS rather than the soma. This was already proposed as the t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005 mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current&#x27;s slow accumulation is well-suited to the AIS firing regime.
-
 ## Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 + Kv3 effect at the t0076 best-joint operating point
 ID: S-0076-04
 Priority: high
@@ -2089,13 +2314,6 @@ Priority: high
 Kind: experiment
 Source task: t0092_diagnose_morphology_generator_silence
 t0090&#x27;s diversity sweep produced 51/60 NAN_VOLTAGE cells and 9/60 STABLE-but-silent cells under the t0083 best-cell channels. The t0092 diagnostic confirmed the soma pt3d-collapse bug as the load-bearing cause and validated the fix on only 5 STABLE-from-t0090 cells. Re-run the full 60-morphology Phase D verification under the t0083 vector with the patched generate_fixed_morphology to confirm that (a) the 51 NAN_VOLTAGE-pre-fix cells now reach STABLE, and (b) more than the current 5 cells produce non-zero PD-rate. This produces the project-level evidence that the bug is fully fixed and surfaces any remaining failure modes (e.g. asymmetry-knob extreme values that survive the soma fix). Pure...
-
-## Refresh t0091 task description + dependencies to reference t0092 fix and t0093 correction overlay
-ID: S-0093-01
-Priority: high
-Kind: technique
-Source task: t0093_resweep_and_t0090_correction
-t0091_morphology_extended_nsga2_v1 is currently `not_started` with status referencing t0090&#x27;s procedural_dsgc_morphology_generator directly (task_description.md lines 6, 32, 88, 190, 208) and dependencies={t0024,t0078,t0080,t0081,t0083,t0086,t0088,t0090} -- no t0092 or t0093 dependency. Since t0093 issues a `replace` correction redirecting that library to t0092&#x27;s procedural_dsgc_morphology_generator_fix, t0091 must be updated before launch: (a) add `t0092_diagnose_morphology_generator_silence` and `t0093_resweep_and_t0090_correction` to its `dependencies` list; (b) replace import references to `tasks.t0090_..code.generator.generate_morphology` with...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01

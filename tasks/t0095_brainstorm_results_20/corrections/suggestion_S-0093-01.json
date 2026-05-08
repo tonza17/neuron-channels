@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0095-01",
+  "correcting_task": "t0095_brainstorm_results_20",
+  "target_task": "t0093_resweep_and_t0090_correction",
+  "target_kind": "suggestion",
+  "target_id": "S-0093-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0093-01 proposes refreshing t0091's task description and dependencies to reference the t0092 fix and t0093 correction overlay. t0094_brainstorm_results_19 already executed exactly this work in-place: t0091's task.json adds t0092_diagnose_morphology_generator_silence and t0093_resweep_and_t0090_correction to its dependencies; task_description.md Phase B per-cell evaluation now imports `tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix.generate_fixed_morphology`; the Phase A anchor 1 source is updated to t0093's patched-generator Bed-B reproducibility; the short_description references the patched generator; and Cross-References extends with t0092, t0093, t0094. The suggestion is operationally fulfilled. Rejecting as covered."
+}

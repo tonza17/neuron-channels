@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0095-02",
+  "correcting_task": "t0095_brainstorm_results_20",
+  "target_task": "t0074_channel_tuning_width_bed_a",
+  "target_kind": "suggestion",
+  "target_id": "S-0074-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "file_changes": null,
+  "rationale": "S-0074-03 proposes an AIS-localised Kv7 follow-up tagged as a t0075 candidate. The follow-up is already planned and committed as `t0075_bio_realistic_ais_param_sweep` (status `not_started`), which attaches a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}, calibrates a baseline, and runs an 8-axis one-at-a-time sensitivity sweep covering AIS-localised Kv7. The suggestion is operationally fulfilled by the existing planned task. Rejecting as covered."
+}

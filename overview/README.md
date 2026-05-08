@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-94-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-96-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-353-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (33K)
-| [full](llm-context/full.xml) (526K) | [roadmap](llm-context/roadmap.xml) (105K) |
-[results](llm-context/results-deep-dive.xml) (414K) |
+| [full](llm-context/full.xml) (531K) | [roadmap](llm-context/roadmap.xml) (108K) |
+[results](llm-context/results-deep-dive.xml) (417K) |
 [assets](llm-context/literature-and-assets.xml) (56K)
 
-*Last updated: 2026-05-08 11:23 UTC*
+*Last updated: 2026-05-08 14:41 UTC*
 
 * **Budget**: **$16** spent of $20
 * **Remaining**: **$4**
@@ -53,9 +53,11 @@
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | 2026-05-08 11:35 |
 
 ---
 
@@ -63,9 +65,9 @@ No tasks in progress.
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
+| 0096 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0096_literature_survey_multi_objective_neuron_optimisation.md) | [`description`](../tasks/t0096_literature_survey_multi_objective_neuron_optimisation/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
-| 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`description`](../tasks/t0091_morphology_extended_nsga2_v1/task_description.md) | 2026-05-07 |
 
 ---
 
@@ -83,10 +85,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (86 total)](tasks/by-status/completed.md)
+## [Recently Completed (87 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0095 | [Brainstorm results session 20](../overview/tasks/task_pages/t0095_brainstorm_results_20.md) | [`results`](../tasks/t0095_brainstorm_results_20/results/results_detailed.md) | 2026-05-08 20:45 |
 | 0094 | [Brainstorm results session 19](../overview/tasks/task_pages/t0094_brainstorm_results_19.md) | [`results`](../tasks/t0094_brainstorm_results_19/results/results_detailed.md) | 2026-05-08 18:30 |
 | 0093 | [Patched-generator full 60-morph re-sweep + t0090 correction overlay](../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) | [`results`](../tasks/t0093_resweep_and_t0090_correction/results/results_detailed.md) | 2026-05-08 03:55 |
 | 0092 | [Diagnose why t0090 procedural cells produce no action potentials](../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | [`results`](../tasks/t0092_diagnose_morphology_generator_silence/results/results_detailed.md) | 2026-05-08 00:55 |
@@ -96,9 +99,8 @@ No blocked tasks.
 | 0086 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`results`](../tasks/t0086_robustness_cluster_bio_comparison/results/results_detailed.md) | 2026-05-06 18:24 |
 | 0087 | [Brainstorm results session 17](../overview/tasks/task_pages/t0087_brainstorm_results_17.md) | [`results`](../tasks/t0087_brainstorm_results_17/results/results_detailed.md) | 2026-05-06 11:50 |
 | 0085 | [Brainstorm results session 16](../overview/tasks/task_pages/t0085_brainstorm_results_16.md) | [`results`](../tasks/t0085_brainstorm_results_16/results/results_detailed.md) | 2026-05-06 10:00 |
-| 0083 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`results`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/results_detailed.md) | 2026-05-06 08:31 |
 
-*76 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*77 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
