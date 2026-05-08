@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for recent NSGA-II in high-d biology, mixed integer-real handling in pymoo, and DSGC morphology priors not in the existing corpus.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-08T12:03:46Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
