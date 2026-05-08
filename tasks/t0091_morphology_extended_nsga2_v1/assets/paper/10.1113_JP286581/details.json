@@ -1,0 +1,54 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1113_JP286581",
+  "doi": "10.1113/JP286581",
+  "title": "A new role for excitation in the retinal direction-selective circuit",
+  "url": "https://physoc.onlinelibrary.wiley.com/doi/10.1113/JP286581",
+  "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1113/JP286581",
+  "date_published": "2024-10-27",
+  "year": 2024,
+  "authors": [
+    {
+      "name": "Lea Ankri",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": "0000-0002-7622-6239"
+    },
+    {
+      "name": "Serena Riccitelli",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": "0000-0003-4369-4586"
+    },
+    {
+      "name": "Michal Rivlin-Etzion",
+      "country": "IL",
+      "institution": "Weizmann Institute of Science",
+      "orcid": "0000-0002-1310-3370"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Weizmann Institute of Science",
+      "country": "IL"
+    }
+  ],
+  "journal": "The Journal of Physiology",
+  "venue_type": "journal",
+  "categories": [
+    "retinal-ganglion-cell",
+    "direction-selectivity",
+    "synaptic-integration",
+    "patch-clamp"
+  ],
+  "abstract": "A key feature of the receptive field of neurons in the visual system is their centre-surround antagonism, whereby the centre and the surround exhibit responses of opposite polarity. This organization is thought to enhance visual acuity, but whether and how such antagonism plays a role in more complex processing remains poorly understood. Here, we investigate the role of centre and surround receptive fields in retinal direction selectivity by exposing posterior-preferring On-Off direction-selective ganglion cells (pDSGCs) to adaptive light and recording their response to globally moving objects. We reveal that light adaptation leads to surround expansion in pDSGCs. The pDSGCs maintain their original directional tuning in the centre receptive field, but present the oppositely tuned response in their surround. Notably, although inhibition is the main substrate for retinal direction selectivity, we found that following light adaptation, both the centre- and surround-mediated responses originate from directionally tuned excitatory inputs. Multi-electrode array recordings show similar oppositely tuned responses in other DSGC subtypes. Together, these data attribute a new role for excitation in the direction-selective circuit. This excitation carries an antagonistic centre-surround property, possibly designed to sharpen the detection of motion direction in the retina.",
+  "citation_key": "Ankri2024",
+  "summary_path": "summary.md",
+  "files": [
+    "files/ankri_2024_dsgc-light-adaptation-surround.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0091_morphology_extended_nsga2_v1",
+  "date_added": "2026-05-08"
+}
