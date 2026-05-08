@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review papers already in the project corpus relevant to multi-objective optimisation, neural energy, information theory, and morphology cost.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-08T15:30:28Z",
-      "completed_at": null,
+      "completed_at": "2026-05-08T15:39:58Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
