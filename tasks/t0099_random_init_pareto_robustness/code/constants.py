@@ -46,8 +46,8 @@ from tasks.t0099_random_init_pareto_robustness.code.constants_morphology import 
 
 # t0099-specific run schedule.
 T0099_SEEDS: tuple[int, ...] = (11, 22, 33)
-T0099_HARD_BUDGET_PER_SEED_USD: float = 1.00
-T0099_TASK_BUDGET_TOTAL_USD: float = 3.15
+T0099_HARD_BUDGET_PER_SEED_USD: float = 5.00
+T0099_TASK_BUDGET_TOTAL_USD: float = 20.00
 
 assert len(T0099_SEEDS) == 3, f"expected 3 seeds, got {len(T0099_SEEDS)}"
 assert T0099_HARD_BUDGET_PER_SEED_USD > 0
