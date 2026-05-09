@@ -1,0 +1,3 @@
+[random_init] seed=11 wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\init_pop_seed11.json shape=(96, 68)
+[random_init] seed=22 wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\init_pop_seed22.json shape=(96, 68)
+[random_init] seed=33 wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\init_pop_seed33.json shape=(96, 68)

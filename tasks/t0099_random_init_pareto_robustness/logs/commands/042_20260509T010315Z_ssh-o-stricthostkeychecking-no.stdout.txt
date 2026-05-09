@@ -1,0 +1,34 @@
+---run_three_seeds.log tail---
+[run_three_seeds] repo root: /root/t0099_workdir/neuron-channels
+[run_three_seeds] Phase A: building random init populations
+[random_init] seed=11 wrote /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/init_pop_seed11.json shape=(96, 68)
+[random_init] seed=22 wrote /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/init_pop_seed22.json shape=(96, 68)
+[random_init] seed=33 wrote /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/init_pop_seed33.json shape=(96, 68)
+[run_three_seeds] Compiling t0080 MOD library if not already present
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[run_three_seeds] bootstrap imported successfully
+============================================================
+[run_three_seeds] Seed 11 starting at 2026-05-09T00:58:06Z
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.1490/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=11] using 60 parallel workers
+[nsga2_driver seed=11] starting: pop=96 max_gen=8 hard_cap=$1.00 rate=$0.1490/hr
+---data files---
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/001_20260509T002315Z_uv-run-python.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/002_20260509T002526Z_vastai-show-ssh-keys.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/003_20260509T002545Z_vastai-search-offers.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/004_20260509T002553Z_vastai-search-offers.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/005_20260509T002603Z_vastai-search-offers.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/006_20260509T002615Z_vastai-search-offers.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/007_20260509T002628Z_vastai-search-offers.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/008_20260509T002639Z_vastai-search-offers.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/009_20260509T002655Z_vastai-create-instance.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/010_20260509T002704Z_vastai-create-instance.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/011_20260509T002737Z_vastai-show-instances.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/012_20260509T002748Z_vastai-show-instances.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/013_20260509T002758Z_vastai-destroy-instance.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/014_20260509T002805Z_vastai-destroy-instance.json
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/logs/commands/015_20260509T002813Z_vastai-destroy-instance.json

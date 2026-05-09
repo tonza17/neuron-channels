@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 12908 -o StrictHostKeyChecking=no root@ssh9.vast.ai cd /root/t0099_workdir && git clone --branch task/t0099_random_init_pareto_robustness --depth 5 https://github.com/tonza17/neuron-channels.git 2>&1 | tail -5; ls /root/t0099_workdir/neuron-channels | head -5",
+  "exit_code": 0,
+  "duration_seconds": 21.133,
+  "started_at": "2026-05-09T00:51:19Z",
+  "completed_at": "2026-05-09T00:51:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "033_20260509T005119Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "033_20260509T005119Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 83,
+  "stderr_lines": 2,
+  "truncated": false
+}

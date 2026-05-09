@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 12908 -o StrictHostKeyChecking=no root@ssh9.vast.ai cd /root/t0099_workdir/neuron-channels && tmux kill-session -t t0099 2>/dev/null; tmux new-session -d -s t0099 'bash tasks/t0099_random_init_pareto_robustness/code/run_three_seeds.sh 2>&1 | tee /root/t0099_workdir/run_three_seeds.log; echo EXIT_CODE=$?; sleep 600'; sleep 2; tmux ls",
+  "exit_code": 0,
+  "duration_seconds": 4.762,
+  "started_at": "2026-05-09T00:58:02Z",
+  "completed_at": "2026-05-09T00:58:07Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "039_20260509T005802Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "039_20260509T005802Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 2,
+  "truncated": false
+}
