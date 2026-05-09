@@ -5,7 +5,7 @@
   "name": "Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto",
   "short_description": "Run 3 random-init NSGA-II seeds (no warm-start) at $1 each; compare anchor distribution + bio-plausibility vs t0091.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
     "t0083_bedb_v3_extend_nsga2_gen8plus",
@@ -15,7 +15,7 @@
     "t0092_diagnose_morphology_generator_silence",
     "t0093_resweep_and_t0090_correction"
   ],
-  "start_time": null,
+  "start_time": "2026-05-09T00:19:13Z",
   "end_time": null,
   "expected_assets": {
     "predictions": 3,
