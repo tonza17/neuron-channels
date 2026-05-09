@@ -68,9 +68,9 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision Vast.ai EPYC 7B13 64-core CPU instance for 3 sequential NSGA-II runs.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-09T00:24:08Z",
-      "completed_at": null,
+      "completed_at": "2026-05-09T00:34:22Z",
       "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
