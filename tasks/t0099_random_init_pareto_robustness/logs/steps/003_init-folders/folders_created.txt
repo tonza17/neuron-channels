@@ -1,0 +1,2 @@
+Created 13 directories with .gitkeep files; 2 __init__.py files. Includes
+assets/predictions/ and assets/answer/ per expected_assets in task.json.
