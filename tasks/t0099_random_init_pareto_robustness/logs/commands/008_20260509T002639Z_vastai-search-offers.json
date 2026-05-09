@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "vastai search offers cpu_cores_effective>=60 cpu_ram>=200 reliability>=0.98 rentable=true verified=true rented=false --order dph --limit 60 --raw",
+  "exit_code": 0,
+  "duration_seconds": 2.283,
+  "started_at": "2026-05-09T00:26:39Z",
+  "completed_at": "2026-05-09T00:26:42Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "008_20260509T002639Z_vastai-search-offers.stdout.txt",
+  "stderr_file": "008_20260509T002639Z_vastai-search-offers.stderr.txt",
+  "stdout_lines": 6919,
+  "stderr_lines": 0,
+  "truncated": false
+}

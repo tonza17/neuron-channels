@@ -1,0 +1,6 @@
+Thread Safe
+ -> [32mCompiling[0m smoke.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+-rwxr-xr-x 1 root root 17008 May  9 00:31 x86_64/.libs/libnrnmech.so

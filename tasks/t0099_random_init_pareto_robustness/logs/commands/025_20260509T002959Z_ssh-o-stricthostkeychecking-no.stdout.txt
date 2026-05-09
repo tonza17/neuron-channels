@@ -1,0 +1,4 @@
+Using CPython 3.12.13 interpreter at: /usr/local/bin/python3.12
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+lrwxrwxrwx 1 root root 25 May  9 00:30 .venv/bin/python -> /usr/local/bin/python3.12

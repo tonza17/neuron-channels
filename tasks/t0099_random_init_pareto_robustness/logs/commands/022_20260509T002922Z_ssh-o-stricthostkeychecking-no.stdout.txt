@@ -1,0 +1,15 @@
+=== CPU ===
+model name	: AMD EPYC 7B13 64-Core Processor
+=== effective cgroup quota ===
+6143999 100000
+=== memory ===
+               total        used        free      shared  buff/cache   available
+Mem:             503          26         373           0         107         476
+Swap:              7           0           7
+=== disk ===
+overlay          40G 1016K   40G   1% /
+=== ip ===
+172.17.0.2
+=== python ===
+Python 3.12.13
+/usr/local/bin/python3

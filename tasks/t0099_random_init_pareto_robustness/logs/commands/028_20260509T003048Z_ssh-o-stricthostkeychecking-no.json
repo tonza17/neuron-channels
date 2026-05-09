@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 12908 root@ssh9.vast.ai cd /root/t0099_workdir && mkdir -p smoke_mod && cat > smoke_mod/smoke.mod <<EOF\nNEURON {\n    SUFFIX smoke\n    RANGE gbar\n}\n\nPARAMETER {\n    gbar = 0 (S/cm2)\n}\n\nASSIGNED { v (mV) }\n\nBREAKPOINT { :no-op }\nEOF\ncd smoke_mod && /root/t0099_workdir/.venv/bin/nrnivmodl 2>&1 | tail -10\nls -la x86_64/.libs/libnrnmech.so 2>&1\ncd /root/t0099_workdir/smoke_mod && /root/t0099_workdir/.venv/bin/python -c \"\nfrom neuron import h\nh.nrn_load_dll(\\\"./x86_64/.libs/libnrnmech.so\\\")\nsoma = h.Section(name=\\\"s\\\")\nsoma.insert(\\\"smoke\\\")\nsoma(0.5).smoke.gbar = 1.0\nprint(\\\"smoke insert OK with gbar=1.0\\\")\n\"\n",
+  "exit_code": 1,
+  "duration_seconds": 3.759,
+  "started_at": "2026-05-09T00:30:48Z",
+  "completed_at": "2026-05-09T00:30:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "028_20260509T003048Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "028_20260509T003048Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 11,
+  "stderr_lines": 7,
+  "truncated": false
+}
