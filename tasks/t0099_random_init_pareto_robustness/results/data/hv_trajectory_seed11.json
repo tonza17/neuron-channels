@@ -1,0 +1,39 @@
+{
+  "trajectory": [
+    {
+      "generation": 1,
+      "hypervolume": 0.1409348146276512,
+      "cumulative_cost_usd": 0.09383764080083333,
+      "elapsed_s": 2267.218167,
+      "n_evaluations": 0
+    },
+    {
+      "generation": 2,
+      "hypervolume": 0.6925857859778151,
+      "cumulative_cost_usd": 0.29422497511249995,
+      "elapsed_s": 7108.791345,
+      "n_evaluations": 96
+    },
+    {
+      "generation": 3,
+      "hypervolume": 0.7178577337114913,
+      "cumulative_cost_usd": 0.5139792272763889,
+      "elapsed_s": 12418.290055,
+      "n_evaluations": 192
+    },
+    {
+      "generation": 4,
+      "hypervolume": 0.8316006171661912,
+      "cumulative_cost_usd": 0.7869535377574999,
+      "elapsed_s": 19013.642523,
+      "n_evaluations": 288
+    },
+    {
+      "generation": 5,
+      "hypervolume": 1.0723367587866104,
+      "cumulative_cost_usd": 1.129244909355,
+      "elapsed_s": 27283.769622,
+      "n_evaluations": 384
+    }
+  ]
+}

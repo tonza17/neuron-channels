@@ -1,0 +1,28 @@
+}
+[run_three_seeds] Seed 11 completed at 2026-05-09T08:32:51Z
+============================================================
+[run_three_seeds] Seed 22 starting at 2026-05-09T08:32:51Z
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.1490/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=22] using 60 parallel workers
+[nsga2_driver seed=22] starting: pop=96 max_gen=8 hard_cap=$5.00 rate=$0.1490/hr
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       96 |      5 |             - |             -
+[seed 22 gen 1] HV=0.1306  pop_size=96  cost_so_far=$0.1291  elapsed=3120s
+     2 |      192 |     10 |  0.9261709155 |         ideal
+[seed 22 gen 2] HV=0.2914  pop_size=96  cost_so_far=$0.2682  elapsed=6479s
+     3 |      288 |     11 |  0.6009251257 |         ideal
+[seed 22 gen 3] HV=0.5265  pop_size=96  cost_so_far=$0.4306  elapsed=10405s
+     4 |      384 |     15 |  0.1403508772 |         ideal
+[seed 22 gen 4] HV=1.9345  pop_size=96  cost_so_far=$0.6519  elapsed=15750s
+     5 |      480 |     17 |  0.0443555973 |             f
+[seed 22 gen 5] HV=4.7125  pop_size=96  cost_so_far=$0.9113  elapsed=22017s
+     6 |      576 |     27 |  0.0655737705 |         ideal
+[seed 22 gen 6] HV=4.9772  pop_size=96  cost_so_far=$1.1765  elapsed=28426s
+---DATA---
+-rw-r--r-- 1 root root 1064756 May  9 08:32 /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/all_evaluations_seed11.json
+-rw-r--r-- 1 root root 1278302 May  9 16:26 /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/all_evaluations_seed22.json

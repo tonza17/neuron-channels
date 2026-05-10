@@ -1,0 +1,9 @@
+--seed 11 gens---
+[seed 11 gen 1] HV=0.1409  pop_size=96  cost_so_far=$0.0938  elapsed=2267s
+[seed 11 gen 2] HV=0.6926  pop_size=96  cost_so_far=$0.2942  elapsed=7109s
+[seed 11 gen 3] HV=0.7179  pop_size=96  cost_so_far=$0.5140  elapsed=12418s
+[seed 11 gen 4] HV=0.8316  pop_size=96  cost_so_far=$0.7870  elapsed=19014s
+[seed 11 gen 5] HV=1.0723  pop_size=96  cost_so_far=$1.1292  elapsed=27284s
+---seed 11 end---
+---seed 22 hard_cap---
+[nsga2_driver seed=22] starting: pop=96 max_gen=8 hard_cap=$5.00 rate=$0.1490/hr

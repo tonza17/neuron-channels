@@ -1,0 +1,5 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+grep: /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/__pycache__/constants.cpython-313.pyc: binary file matches
+grep: /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/__pycache__/nsga2_driver.cpython-312.pyc: binary file matches
+grep: /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/__pycache__/constants.cpython-312.pyc: binary file matches

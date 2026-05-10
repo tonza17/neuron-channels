@@ -1,0 +1,9 @@
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/constants.py:8:* ``T0099_HARD_BUDGET_PER_SEED_USD`` â€” $1.00 per seed (was $4.00 in t0091).
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/constants.py:49:T0099_HARD_BUDGET_PER_SEED_USD: float = 1.00
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/constants.py:53:assert T0099_HARD_BUDGET_PER_SEED_USD > 0
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/constants.py:54:assert sum([T0099_HARD_BUDGET_PER_SEED_USD] * len(T0099_SEEDS)) <= T0099_TASK_BUDGET_TOTAL_USD
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/constants.py:81:    "T0099_HARD_BUDGET_PER_SEED_USD",
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/nsga2_driver.py:55:    T0099_HARD_BUDGET_PER_SEED_USD,
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/nsga2_driver.py:225:        "hard_budget_per_seed_usd": T0099_HARD_BUDGET_PER_SEED_USD,
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/nsga2_driver.py:241:        hard_budget_usd=T0099_HARD_BUDGET_PER_SEED_USD,
+/root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/nsga2_driver.py:281:        f"hard_cap=${T0099_HARD_BUDGET_PER_SEED_USD:.2f} rate=${rate:.4f}/hr"

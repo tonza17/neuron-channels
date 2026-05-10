@@ -1,0 +1,51 @@
+{
+  "anchor_names": [
+    "bedb_like",
+    "symmetric",
+    "pd_asymmetric",
+    "nd_asymmetric",
+    "alt_topology"
+  ],
+  "columns": [
+    {
+      "label": "seed11",
+      "counts": [
+        2,
+        0,
+        7,
+        5,
+        5
+      ]
+    },
+    {
+      "label": "seed22",
+      "counts": [
+        4,
+        0,
+        4,
+        2,
+        12
+      ]
+    },
+    {
+      "label": "seed33",
+      "counts": [
+        1,
+        0,
+        9,
+        0,
+        4
+      ]
+    },
+    {
+      "label": "t0091",
+      "counts": [
+        20,
+        0,
+        12,
+        9,
+        16
+      ]
+    }
+  ]
+}

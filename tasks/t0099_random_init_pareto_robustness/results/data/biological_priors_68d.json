@@ -1,0 +1,136 @@
+{
+  "n_priors": 13,
+  "notes": "GABA spatial-gradient priors apply to classical-RF SAC-mediated DS only (not Riccitelli 2025 glycinergic extraclassical pathway). Per REQ-22.",
+  "priors": [
+    {
+      "parameter_name": "nav16_ais_gbar_kole2008",
+      "param_index": 4,
+      "published_mean": 0.375,
+      "published_sigma": 0.125,
+      "paper_id": "10.1038_nn.2153",
+      "citation": "Kole 2008 (Nat Neurosci)",
+      "units": "S/cm^2",
+      "description": "AIS Nav density (Kole 2008): 0.25-0.5 S/cm^2 typical RGC AIS. Conservative sigma of 0.125 covers the published range."
+    },
+    {
+      "parameter_name": "nav16_ais_gbar_werginz2024",
+      "param_index": 4,
+      "published_mean": 1.3,
+      "published_sigma": 0.3,
+      "paper_id": "werginz_2024",
+      "citation": "Werginz 2024 (RGC physio update)",
+      "units": "S/cm^2",
+      "description": "AIS Nav density (Werginz 2024): 1.3 S/cm^2 modeled value matching RGC AIS spike threshold. Sigma 0.3 (~25 percent)."
+    },
+    {
+      "parameter_name": "nav16_dend_distal_oesch2005",
+      "param_index": 52,
+      "published_mean": 0.05,
+      "published_sigma": 0.02,
+      "paper_id": "oesch_2005",
+      "citation": "Oesch 2005 (RGC dendritic spike)",
+      "units": "S/cm^2",
+      "description": "Distal dendritic Nav1.6 density (Oesch 2005): 0.05 S/cm^2 supports DSGC dendritic spikes. Sigma 0.02 (~40 percent)."
+    },
+    {
+      "parameter_name": "nap_dend_distal_stuart1999",
+      "param_index": 53,
+      "published_mean": 0.0005,
+      "published_sigma": 0.0002,
+      "paper_id": "stuart_1999",
+      "citation": "Stuart 1999 / Goldfinger 2000",
+      "units": "S/cm^2",
+      "description": "Distal NaP density (Stuart 1999, Goldfinger 2000): 0.0005 S/cm^2. Sigma 0.0002."
+    },
+    {
+      "parameter_name": "gnmda_dend_sivyer2013",
+      "param_index": 49,
+      "published_mean": 0.0001,
+      "published_sigma": 5e-05,
+      "paper_id": "sivyer_2013",
+      "citation": "Sivyer 2013",
+      "units": "uS",
+      "description": "Dendritic NMDA per-synapse conductance (Sivyer 2013): ~0.1 nS = 1e-4 uS. Sigma 5e-5."
+    },
+    {
+      "parameter_name": "voff_nmda_branco2010",
+      "param_index": 51,
+      "published_mean": 0.0,
+      "published_sigma": 5.0,
+      "paper_id": "branco_hausser_2010",
+      "citation": "Branco & Hausser 2010",
+      "units": "mV",
+      "description": "NMDA Mg-block voff offset (Branco-Hausser 2010): published Mg-block midpoint at ~-25 mV; the t0080 Exp2NMDA implementation uses VOFF as a deviation from the canonical -25 mV midpoint, so 0 mV = published. Sigma 5 mV captures published variability."
+    },
+    {
+      "parameter_name": "rho0_gaba_de_rosenroll_2026",
+      "param_index": 43,
+      "published_mean": 1.0,
+      "published_sigma": 0.5,
+      "paper_id": "de_rosenroll_2026",
+      "citation": "de Rosenroll 2026",
+      "units": "dimensionless",
+      "description": "GABA spatial baseline (de Rosenroll 2026): rho0=1.0 in the canonical linear gradient model. Sigma 0.5."
+    },
+    {
+      "parameter_name": "lambda_gaba_um_de_rosenroll_2026",
+      "param_index": 44,
+      "published_mean": 80.0,
+      "published_sigma": 30.0,
+      "paper_id": "de_rosenroll_2026",
+      "citation": "de Rosenroll 2026",
+      "units": "micrometers",
+      "description": "GABA spatial decay length (de Rosenroll 2026): ~80 um. Sigma 30."
+    },
+    {
+      "parameter_name": "ais_to_soma_nav_ratio_werginz2024",
+      "param_index": -1,
+      "published_mean": 17.3,
+      "published_sigma": 3.0,
+      "paper_id": "werginz_2024",
+      "citation": "Werginz 2024",
+      "units": "dimensionless",
+      "description": "AIS-to-soma Nav ratio (Werginz 2024): 17.3x. Computed as centroid[NAV16_AIS_GBAR] / centroid[NAV16_SOMA_GBAR]. The t0080 constraint enforces ratio >= 5, so we are checking how close it is to the 17.3x published target."
+    },
+    {
+      "parameter_name": "soma_offset_pd_um_schachter_trenholm",
+      "param_index": 59,
+      "published_mean": 0.0,
+      "published_sigma": 50.0,
+      "paper_id": "10.1523_JNEUROSCI.0989-10.2010",
+      "citation": "Schachter 2010 / Trenholm 2013 displacement bounds",
+      "units": "micrometers",
+      "description": "Soma offset along PD axis: anatomical near-symmetric prior at 0 um with sigma 50 um spanning published RGC soma displacement bounds."
+    },
+    {
+      "parameter_name": "field_elongation_pd_briggman2011",
+      "param_index": 60,
+      "published_mean": 1.0,
+      "published_sigma": 0.3,
+      "paper_id": "briggman_2011",
+      "citation": "Briggman 2011 dendritic field aspect ratios",
+      "units": "dimensionless",
+      "description": "Dendritic field elongation along PD: published RGC field aspect ratios cluster near 1 with modest variance; sigma 0.3."
+    },
+    {
+      "parameter_name": "branch_density_gradient_pd_vaney2012",
+      "param_index": 61,
+      "published_mean": 0.0,
+      "published_sigma": 0.3,
+      "paper_id": "vaney_2012",
+      "citation": "Vaney 2012 anatomical-symmetry prior",
+      "units": "dimensionless",
+      "description": "Branch density gradient along PD: anatomical-symmetry prior; Vaney 2012 reports approximately symmetric branching on average."
+    },
+    {
+      "parameter_name": "primary_branch_pd_concentration_vaney2012",
+      "param_index": 62,
+      "published_mean": 0.0,
+      "published_sigma": 0.3,
+      "paper_id": "vaney_2012",
+      "citation": "Vaney 2012 anatomical-symmetry prior",
+      "units": "dimensionless",
+      "description": "Primary branch PD concentration: anatomical-symmetry prior; Vaney 2012 reports near-zero net concentration in average DSGCs."
+    }
+  ]
+}

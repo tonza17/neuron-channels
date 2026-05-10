@@ -1,0 +1,19 @@
+---SEED 22 GENS---
+[seed 22 gen 1] HV=0.1306  pop_size=96  cost_so_far=$0.1291  elapsed=3120s
+[seed 22 gen 2] HV=0.2914  pop_size=96  cost_so_far=$0.2682  elapsed=6479s
+[seed 22 gen 3] HV=0.5265  pop_size=96  cost_so_far=$0.4306  elapsed=10405s
+[seed 22 gen 4] HV=1.9345  pop_size=96  cost_so_far=$0.6519  elapsed=15750s
+[seed 22 gen 5] HV=4.7125  pop_size=96  cost_so_far=$0.9113  elapsed=22017s
+[seed 22 gen 6] HV=4.9772  pop_size=96  cost_so_far=$1.1765  elapsed=28426s
+[seed 22 gen 7] HV=5.0891  pop_size=96  cost_so_far=$1.5457  elapsed=37345s
+---SEED 33 GENS---
+---TRANSITIONS---
+[run_three_seeds] Seed 11 starting at 2026-05-09T00:58:06Z
+[nsga2_driver seed=11] starting: pop=96 max_gen=8 hard_cap=$1.00 rate=$0.1490/hr
+  "n_generations_completed": 5
+[run_three_seeds] Seed 11 completed at 2026-05-09T08:32:51Z
+[run_three_seeds] Seed 22 starting at 2026-05-09T08:32:51Z
+[nsga2_driver seed=22] starting: pop=96 max_gen=8 hard_cap=$5.00 rate=$0.1490/hr
+---DATA FILES---
+-rw-r--r-- 1 root root 1064756 May  9 08:32 /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/all_evaluations_seed11.json
+-rw-r--r-- 1 root root 1492290 May  9 18:55 /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/all_evaluations_seed22.json

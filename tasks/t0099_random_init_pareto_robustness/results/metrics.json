@@ -1,0 +1,52 @@
+{
+  "variants": [
+    {
+      "variant_id": "random-init-seed11",
+      "label": "Random-init seed 11",
+      "dimensions": {
+        "task_seed": 11,
+        "init_method": "lhs_random",
+        "n_cells": 19
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.11205527939562165
+      }
+    },
+    {
+      "variant_id": "random-init-seed22",
+      "label": "Random-init seed 22",
+      "dimensions": {
+        "task_seed": 22,
+        "init_method": "lhs_random",
+        "n_cells": 22
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.2916346303531964
+      }
+    },
+    {
+      "variant_id": "random-init-seed33",
+      "label": "Random-init seed 33",
+      "dimensions": {
+        "task_seed": 33,
+        "init_method": "lhs_random",
+        "n_cells": 14
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.059080984225970294
+      }
+    },
+    {
+      "variant_id": "t0091-warmstart-reference",
+      "label": "t0091 warm-start reference",
+      "dimensions": {
+        "task_seed": -1,
+        "init_method": "5_anchor_warmstart",
+        "n_cells": 57
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.22084466042432208
+      }
+    }
+  ]
+}

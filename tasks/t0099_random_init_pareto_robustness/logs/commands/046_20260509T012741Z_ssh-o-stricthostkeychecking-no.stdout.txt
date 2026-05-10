@@ -1,0 +1,17 @@
+t0099: 1 windows (created Sat May  9 00:58:05 2026)
+---log tail---
+[random_init] seed=11 wrote /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/init_pop_seed11.json shape=(96, 68)
+[random_init] seed=22 wrote /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/init_pop_seed22.json shape=(96, 68)
+[random_init] seed=33 wrote /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/init_pop_seed33.json shape=(96, 68)
+[run_three_seeds] Compiling t0080 MOD library if not already present
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[run_three_seeds] bootstrap imported successfully
+============================================================
+[run_three_seeds] Seed 11 starting at 2026-05-09T00:58:06Z
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.1490/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=11] using 60 parallel workers
+[nsga2_driver seed=11] starting: pop=96 max_gen=8 hard_cap=$1.00 rate=$0.1490/hr
