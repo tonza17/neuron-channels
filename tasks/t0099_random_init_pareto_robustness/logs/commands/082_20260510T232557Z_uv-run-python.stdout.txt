@@ -1,0 +1,12 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 019_20260509T002848Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 028_20260509T003048Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 029_20260509T003101Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 054_20260509T034155Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 6 warning(s)

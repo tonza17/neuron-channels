@@ -1,0 +1,12 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\compare_literature.md
+
+[31m[1mERRORS:[0m
+[31m  CL-E001 error: compare_literature.md has no YAML frontmatter[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Summary[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Comparison Table[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Methodology Differences[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Analysis[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Limitations[0m
+
+[31m[1mFAILED[0m — 6 error(s), 0 warning(s)

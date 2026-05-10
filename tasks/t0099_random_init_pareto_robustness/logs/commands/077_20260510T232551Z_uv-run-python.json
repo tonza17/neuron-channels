@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "uv run python -u -m arf.scripts.verificators.verify_task_dependencies t0099_random_init_pareto_robustness",
+  "exit_code": 0,
+  "duration_seconds": 0.305,
+  "started_at": "2026-05-10T23:25:51Z",
+  "completed_at": "2026-05-10T23:25:51Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "077_20260510T232551Z_uv-run-python.stdout.txt",
+  "stderr_file": "077_20260510T232551Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

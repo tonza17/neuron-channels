@@ -1,6 +1,6 @@
 ---
 spec_version: "2"
-answer_id: "random_init_reproducibility_and_warmstart_dependence"
+answer_id: "random-init-reproducibility-and-warmstart-dependence"
 answered_by_task: "t0099_random_init_pareto_robustness"
 date_answered: "2026-05-10"
 confidence: "medium"
