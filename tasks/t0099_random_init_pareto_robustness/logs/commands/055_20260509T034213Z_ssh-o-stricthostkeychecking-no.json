@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 12908 root@ssh9.vast.ai sed -n '45,55p' /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code/constants.py",
+  "exit_code": 0,
+  "duration_seconds": 3.002,
+  "started_at": "2026-05-09T03:42:13Z",
+  "completed_at": "2026-05-09T03:42:16Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "055_20260509T034213Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "055_20260509T034213Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 11,
+  "stderr_lines": 2,
+  "truncated": false
+}

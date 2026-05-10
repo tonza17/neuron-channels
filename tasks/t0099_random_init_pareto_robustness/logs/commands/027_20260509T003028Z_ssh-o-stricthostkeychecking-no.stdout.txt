@@ -1,0 +1,12 @@
+neuron version: 8.2.7+
+hh.gnabar default: 0.12
+pymoo version: 0.6.1.6
+NSGA2 import OK
+StarmapParallelization import OK (new path)
+ElementwiseProblem import OK
+LHS import OK
+numpy: 2.4.4
+scipy: 1.17.1
+pandas: 3.0.2
+matplotlib: 3.10.9
+pydantic: 2.13.4

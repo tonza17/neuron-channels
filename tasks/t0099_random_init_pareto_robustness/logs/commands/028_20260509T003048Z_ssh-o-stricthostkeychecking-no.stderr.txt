@@ -1,0 +1,7 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+ValueError: argument not a density mechanism name.

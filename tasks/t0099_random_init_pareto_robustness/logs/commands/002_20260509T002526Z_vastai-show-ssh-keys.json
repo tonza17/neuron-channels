@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "vastai show ssh-keys",
+  "exit_code": 0,
+  "duration_seconds": 4.527,
+  "started_at": "2026-05-09T00:25:26Z",
+  "completed_at": "2026-05-09T00:25:30Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "002_20260509T002526Z_vastai-show-ssh-keys.stdout.txt",
+  "stderr_file": "002_20260509T002526Z_vastai-show-ssh-keys.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

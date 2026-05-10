@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "bash -c tar -cz -C tasks/t0099_random_init_pareto_robustness/code . | ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 12908 -o StrictHostKeyChecking=no root@ssh9.vast.ai 'tar -xz -C /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/code'",
+  "exit_code": 0,
+  "duration_seconds": 4.017,
+  "started_at": "2026-05-09T00:52:10Z",
+  "completed_at": "2026-05-09T00:52:14Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "034_20260509T005210Z_bash-c-tar-cz-c-tasks-t0099-random-init-.stdout.txt",
+  "stderr_file": "034_20260509T005210Z_bash-c-tar-cz-c-tasks-t0099-random-init-.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}

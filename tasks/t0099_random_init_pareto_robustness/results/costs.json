@@ -1,0 +1,34 @@
+{
+  "total_cost_usd": 7.71,
+  "breakdown": {
+    "vast-ai-setup": {
+      "description": "Provisioning + environment setup (created_at 2026-05-09T00:26:56Z to seed-11 nsga2_driver start ~01:04Z); ~37 min at $0.16519/hr.",
+      "cost_usd": 0.04
+    },
+    "vast-ai-seed11": {
+      "description": "NSGA-II seed 11 nsga2_driver runtime (per-seed cost watchdog reading); budget overrun intervention triggered (see intervention/budget_overrun_seed11.md); seed completed normally before destroy.",
+      "cost_usd": 1.13
+    },
+    "vast-ai-seed22": {
+      "description": "NSGA-II seed 22 nsga2_driver runtime (per-seed cost watchdog reading).",
+      "cost_usd": 1.96
+    },
+    "vast-ai-seed33": {
+      "description": "NSGA-II seed 33 nsga2_driver runtime (per-seed cost watchdog reading); finished 2026-05-10T20:33:48Z.",
+      "cost_usd": 3.41
+    },
+    "vast-ai-driver-overhead": {
+      "description": "Inter-seed transitions, run_three_seeds.sh shell overhead, init_pop generation, json writes, and small unmetered slices outside the per-seed nsga2_driver clock; ~$0.74 across the 3 seeds.",
+      "cost_usd": 0.74
+    },
+    "vast-ai-idle": {
+      "description": "Idle billing from seed-33 finish (2026-05-10T20:33:48Z) to instance destroy (2026-05-10T23:07:56Z) = 2.57h at $0.16519/hr; instance was burning post-completion until manual teardown.",
+      "cost_usd": 0.43
+    }
+  },
+  "services": {
+    "vast_ai": 7.71
+  },
+  "budget_limit": 20.0,
+  "note": "CPU-only NEURON+pymoo NSGA-II workload on AMD EPYC 7B13 64-core (Norway, machine_id 55836, instance 36372909) at instance billing $0.16519/hr (offer base $0.1490/hr + storage). Total instance uptime 46.679h. Per-seed costs are nsga2_driver-internal cost watchdog readings ($1.13 / $1.96 / $3.41 = $6.50). Setup + driver overhead + post-seed-33 idle billing accounts for the remaining ~$1.21. Well under the $20 task budget cap. The seed-11 budget_overrun_seed11.md intervention was an in-run overshoot of an old conservative per-seed cap and did not affect total task spend."
+}

@@ -1,0 +1,6 @@
+ -> [32mCompiling[0m skahpt80.c
+ -> [32mCompiling[0m skt80.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+-rwxr-xr-x 1 root root 118704 May  9 00:53 x86_64/.libs/libnrnmech.so

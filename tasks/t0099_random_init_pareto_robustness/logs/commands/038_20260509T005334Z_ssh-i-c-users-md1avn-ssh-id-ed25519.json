@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 12908 -o StrictHostKeyChecking=no root@ssh9.vast.ai cd /root/t0099_workdir/neuron-channels/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods && /root/t0099_workdir/.venv/bin/nrnivmodl . 2>&1 | tail -5; ls -la x86_64/.libs/libnrnmech.so 2>/dev/null || ls -la x86_64/libnrnmech.so 2>/dev/null",
+  "exit_code": 0,
+  "duration_seconds": 4.681,
+  "started_at": "2026-05-09T00:53:34Z",
+  "completed_at": "2026-05-09T00:53:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "038_20260509T005334Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "038_20260509T005334Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 2,
+  "truncated": false
+}

@@ -1,0 +1,26 @@
+neuron-channels
+run_three_seeds.log
+smoke_mod
+---tmux---
+t0099: 1 windows (created Sat May  9 00:58:05 2026)
+---find data---
+/root/t0099_workdir/.venv/lib/python3.12/site-packages/grapheme/data/derived_core_property.json
+/root/t0099_workdir/.venv/lib/python3.12/site-packages/grapheme/data/grapheme_break_property.json
+/root/t0099_workdir/.venv/lib/python3.12/site-packages/pydantic_core-2.46.4.dist-info/sboms/pydantic-core.cyclonedx.json
+/root/t0099_workdir/.venv/lib/python3.12/site-packages/setuptools/config/distutils.schema.json
+/root/t0099_workdir/.venv/lib/python3.12/site-packages/setuptools/config/setuptools.schema.json
+/root/t0099_workdir/.venv/lib/python3.12/site-packages/scipy/stats/tests/data/studentized_range_mpmath_ref.json
+/root/t0099_workdir/.venv/lib/python3.12/site-packages/pillow-12.2.0.dist-info/sboms/auditwheel.cdx.json
+/root/t0099_workdir/neuron-channels/.claude/settings.json
+/root/t0099_workdir/neuron-channels/meta/categories/cable-theory/description.json
+/root/t0099_workdir/neuron-channels/meta/categories/compartmental-modeling/description.json
+/root/t0099_workdir/neuron-channels/meta/categories/dendritic-computation/description.json
+/root/t0099_workdir/neuron-channels/meta/categories/direction-selectivity/description.json
+/root/t0099_workdir/neuron-channels/meta/categories/patch-clamp/description.json
+/root/t0099_workdir/neuron-channels/meta/categories/retinal-ganglion-cell/description.json
+/root/t0099_workdir/neuron-channels/meta/categories/synaptic-integration/description.json
+/root/t0099_workdir/neuron-channels/meta/categories/voltage-gated-channels/description.json
+/root/t0099_workdir/neuron-channels/meta/metrics/direction_selectivity_index/description.json
+/root/t0099_workdir/neuron-channels/meta/metrics/tuning_curve_hwhm_deg/description.json
+/root/t0099_workdir/neuron-channels/meta/metrics/tuning_curve_reliability/description.json
+/root/t0099_workdir/neuron-channels/meta/metrics/tuning_curve_rmse/description.json

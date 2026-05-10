@@ -1,0 +1,33 @@
+{
+  "spec_version": "2",
+  "predictions_id": "random-init-pareto-seed22",
+  "name": "Random-init Pareto front seed 22",
+  "short_description": "Per-cell DSI / PD-rate / robustness / 14-d morphology / 54-d electrophys for the Pareto front of t0099 NSGA-II run with random LHS initial population and RNG seed 22 (compare against t0091's warm-start Pareto).",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "DSGC compartmental model with t0092-patched procedural morphology + 54-d electrophys vector, evaluated by 16-direction x 5-seed NSGA-II starting from a Latin Hypercube Sample of the 68-d parameter space.",
+  "dataset_ids": [],
+  "prediction_format": "jsonl",
+  "prediction_schema": "Each line is a JSON object with fields: cell_id (int), task_seed (int), dsi_vector_sum (float), pd_rate_hz (float), robustness (float in [0, 1]), morphology_vector_14d (list[float]), electrophys_vector_54d (list[float]), nearest_anchor_index (int), nearest_anchor_name (str: bedb_like / symmetric / pd_asymmetric / nd_asymmetric / alt_topology), nearest_anchor_distance_normalised (float), verdict_biological (str: plausible / stretched / exotic / no_data).",
+  "instance_count": 22,
+  "files": [
+    {
+      "path": "files/pareto_cells.jsonl",
+      "description": "Per-Pareto-cell record for the random-init NSGA-II run with task seed 22.",
+      "format": "jsonl"
+    }
+  ],
+  "categories": [],
+  "source_paper_ids": [],
+  "source_task_ids": [
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0083_bedb_v3_extend_nsga2_gen8plus",
+    "t0086_robustness_cluster_bio_comparison",
+    "t0090_morphology_generator_diversity_test",
+    "t0091_morphology_extended_nsga2_v1",
+    "t0092_diagnose_morphology_generator_silence",
+    "t0093_resweep_and_t0090_correction"
+  ],
+  "created_by_task": "t0099_random_init_pareto_robustness",
+  "date_created": "2026-05-10"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "36372909",
+    "gpu": "RTX 5060 Ti (idle, unused; CPU-only NEURON+pymoo workload)",
+    "gpu_count": 1,
+    "ram_gb": 252,
+    "duration_hours": 46.679,
+    "cost_usd": 7.71
+  }
+]

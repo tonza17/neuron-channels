@@ -1,0 +1,77 @@
+{
+  "t0099_seeds": [
+    11,
+    22,
+    33
+  ],
+  "anchor_names": [
+    "bedb_like",
+    "symmetric",
+    "pd_asymmetric",
+    "nd_asymmetric",
+    "alt_topology"
+  ],
+  "per_seed": [
+    {
+      "seed": 11,
+      "n_pareto_cells": 19,
+      "n_strict_joint_pass": 0,
+      "n_plausible": 0,
+      "n_stretched": 0,
+      "n_exotic": 19,
+      "counts_per_anchor": [
+        2,
+        0,
+        7,
+        5,
+        5
+      ]
+    },
+    {
+      "seed": 22,
+      "n_pareto_cells": 22,
+      "n_strict_joint_pass": 0,
+      "n_plausible": 0,
+      "n_stretched": 0,
+      "n_exotic": 22,
+      "counts_per_anchor": [
+        4,
+        0,
+        4,
+        2,
+        12
+      ]
+    },
+    {
+      "seed": 33,
+      "n_pareto_cells": 14,
+      "n_strict_joint_pass": 0,
+      "n_plausible": 0,
+      "n_stretched": 0,
+      "n_exotic": 14,
+      "counts_per_anchor": [
+        1,
+        0,
+        9,
+        0,
+        4
+      ]
+    }
+  ],
+  "t0091_reference": {
+    "seed": -1,
+    "n_pareto_cells": 57,
+    "n_strict_joint_pass": 1,
+    "n_plausible": 0,
+    "n_stretched": 0,
+    "n_exotic": 57,
+    "counts_per_anchor": [
+      20,
+      0,
+      12,
+      9,
+      16
+    ]
+  },
+  "t0091_label": "t0091 (warm-start)"
+}

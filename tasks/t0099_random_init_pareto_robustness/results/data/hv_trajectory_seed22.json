@@ -1,0 +1,60 @@
+{
+  "trajectory": [
+    {
+      "generation": 1,
+      "hypervolume": 0.13057195005995917,
+      "cumulative_cost_usd": 0.12912218742972223,
+      "elapsed_s": 3119.730703,
+      "n_evaluations": 0
+    },
+    {
+      "generation": 2,
+      "hypervolume": 0.2914064470456343,
+      "cumulative_cost_usd": 0.26816159823,
+      "elapsed_s": 6479.072172,
+      "n_evaluations": 96
+    },
+    {
+      "generation": 3,
+      "hypervolume": 0.5264937650233185,
+      "cumulative_cost_usd": 0.43064011418305553,
+      "elapsed_s": 10404.727591,
+      "n_evaluations": 192
+    },
+    {
+      "generation": 4,
+      "hypervolume": 1.934549731066412,
+      "cumulative_cost_usd": 0.6518704851758333,
+      "elapsed_s": 15749.890917,
+      "n_evaluations": 288
+    },
+    {
+      "generation": 5,
+      "hypervolume": 4.712452986865253,
+      "cumulative_cost_usd": 0.9112737348519444,
+      "elapsed_s": 22017.351983,
+      "n_evaluations": 384
+    },
+    {
+      "generation": 6,
+      "hypervolume": 4.977247241490385,
+      "cumulative_cost_usd": 1.1765284612472222,
+      "elapsed_s": 28426.19101,
+      "n_evaluations": 480
+    },
+    {
+      "generation": 7,
+      "hypervolume": 5.089082637482695,
+      "cumulative_cost_usd": 1.545672028475,
+      "elapsed_s": 37345.09599,
+      "n_evaluations": 576
+    },
+    {
+      "generation": 8,
+      "hypervolume": 9.804177076019283,
+      "cumulative_cost_usd": 1.9589879989538888,
+      "elapsed_s": 47331.253666,
+      "n_evaluations": 672
+    }
+  ]
+}

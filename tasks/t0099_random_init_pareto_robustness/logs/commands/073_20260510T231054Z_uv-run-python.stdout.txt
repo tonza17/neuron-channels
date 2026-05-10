@@ -1,0 +1,28 @@
+=== Phase C: per-seed analysis ===
+[biological_priors] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\biological_priors_68d.json with 13 priors
+[anchor_classifier seed=11] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\anchor_tracking_seed11.json: 19 cells; counts [2, 0, 7, 5, 5]
+[biological_scorecard] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\images\biological_heatmap_seed11.png
+[biological_scorecard] seed=11 wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\biological_scorecard_seed11.json: 19 cells x 13 priors
+[per_seed_analysis] seed=11 strict_joint_pass=0
+[anchor_classifier seed=22] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\anchor_tracking_seed22.json: 22 cells; counts [4, 0, 4, 2, 12]
+[biological_scorecard] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\images\biological_heatmap_seed22.png
+[biological_scorecard] seed=22 wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\biological_scorecard_seed22.json: 22 cells x 13 priors
+[per_seed_analysis] seed=22 strict_joint_pass=0
+[anchor_classifier seed=33] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\anchor_tracking_seed33.json: 14 cells; counts [1, 0, 9, 0, 4]
+[biological_scorecard] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\images\biological_heatmap_seed33.png
+[biological_scorecard] seed=33 wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\biological_scorecard_seed33.json: 14 cells x 13 priors
+[per_seed_analysis] seed=33 strict_joint_pass=0
+=== Phase D: cross-seed analysis ===
+[cross_seed_analysis] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\cross_seed_summary.json
+[cross_seed_analysis] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\data\anchor_distribution_table.json
+[cross_seed_analysis] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\images\hv_trajectory_cross_seed.png
+[cross_seed_analysis] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\images\anchor_distribution_heatmap.png
+[cross_seed_analysis] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\images\pareto_overlay_dsi_pdrate_robust.png
+=== metrics.json ===
+[metrics_builder] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\results\metrics.json with 4 variants
+=== Phase E + F: build assets ===
+[build_assets] wrote predictions asset for seed 11 -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed11
+[build_assets] wrote predictions asset for seed 22 -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed22
+[build_assets] wrote predictions asset for seed 33 -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed33
+[build_assets] wrote answer asset -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0099_random_init_pareto_robustness\tasks\t0099_random_init_pareto_robustness\assets\answer\random_init_reproducibility_and_warmstart_dependence
+=== run_local_analysis done ===

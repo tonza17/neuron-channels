@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "bash tasks/t0099_random_init_pareto_robustness/code/sync_results_back.sh",
+  "exit_code": 0,
+  "duration_seconds": 14.353,
+  "started_at": "2026-05-10T23:04:49Z",
+  "completed_at": "2026-05-10T23:05:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "069_20260510T230449Z_bash-tasks-t0099-random-init-pareto-robu.stdout.txt",
+  "stderr_file": "069_20260510T230449Z_bash-tasks-t0099-random-init-pareto-robu.stderr.txt",
+  "stdout_lines": 30,
+  "stderr_lines": 6,
+  "truncated": false
+}

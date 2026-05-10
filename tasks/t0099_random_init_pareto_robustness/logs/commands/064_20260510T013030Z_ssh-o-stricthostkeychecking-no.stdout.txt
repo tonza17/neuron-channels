@@ -1,0 +1,11 @@
+---SEED 33 GENS---
+[run_three_seeds] Seed 33 starting at 2026-05-09T21:41:43Z
+[nsga2_driver seed=33] starting: pop=96 max_gen=8 hard_cap=$5.00 rate=$0.1490/hr
+[seed 33 gen 1] HV=0.2681  pop_size=96  cost_so_far=$0.0701  elapsed=1693s
+[seed 33 gen 2] HV=0.3721  pop_size=96  cost_so_far=$0.1716  elapsed=4146s
+[seed 33 gen 3] HV=0.5053  pop_size=96  cost_so_far=$0.3344  elapsed=8080s
+[seed 33 gen 4] HV=0.9044  pop_size=96  cost_so_far=$0.5496  elapsed=13278s
+---DATA---
+-rw-r--r-- 1 root root 1064756 May  9 08:32 /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/all_evaluations_seed11.json
+-rw-r--r-- 1 root root 1706215 May  9 21:41 /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/all_evaluations_seed22.json
+-rw-r--r-- 1 root root  850697 May 10 01:23 /root/t0099_workdir/neuron-channels/tasks/t0099_random_init_pareto_robustness/results/data/all_evaluations_seed33.json

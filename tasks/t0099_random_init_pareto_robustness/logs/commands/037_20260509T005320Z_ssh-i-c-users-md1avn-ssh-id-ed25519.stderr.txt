@@ -1,0 +1,11 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Translating Exp2NMDA.mod into /root/t0099_workdir/neuron-channels/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/Exp2NMDA.c
+Translating HHst_noiseless.mod into /root/t0099_workdir/neuron-channels/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/HHst_noiseless.c
+Translating cadecay.mod into /root/t0099_workdir/neuron-channels/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/cadecay.c
+Thread Safe
+Thread Safe
+Notice: This mechanism cannot be used with CVODE
+Thread Safe

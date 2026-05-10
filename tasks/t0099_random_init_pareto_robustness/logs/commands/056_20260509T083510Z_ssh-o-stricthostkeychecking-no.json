@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0099_random_init_pareto_robustness",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 12908 root@ssh9.vast.ai echo '--seed 11 gens---'; grep -E '\\[seed 11 gen' /root/t0099_workdir/run_three_seeds.log; echo '---seed 11 end---'; grep -A2 -E 'Seed 11 (ended|cost watchdog|HV plateau)' /root/t0099_workdir/run_three_seeds.log; echo '---seed 22 hard_cap---'; grep -E 'seed=22.*starting:' /root/t0099_workdir/run_three_seeds.log",
+  "exit_code": 0,
+  "duration_seconds": 2.914,
+  "started_at": "2026-05-09T08:35:10Z",
+  "completed_at": "2026-05-09T08:35:13Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0099_random_init_pareto_robustness",
+  "stdout_file": "056_20260509T083510Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "056_20260509T083510Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 2,
+  "truncated": false
+}

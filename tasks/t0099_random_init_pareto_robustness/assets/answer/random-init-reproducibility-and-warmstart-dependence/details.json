@@ -1,0 +1,26 @@
+{
+  "spec_version": "2",
+  "answer_id": "random-init-reproducibility-and-warmstart-dependence",
+  "question": "Are the qualitative findings of t0091's joint 68-d NSGA-II run (anchor distribution, biological-plausibility verdict, strict joint-pass count) reproducible under different RNG seeds, and was t0091's 5-anchor warm-start load-bearing \u2014 would a purely random initial population have found the same Pareto front?",
+  "short_title": "Random-init reproducibility + warm-start dependence",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0083_bedb_v3_extend_nsga2_gen8plus",
+    "t0086_robustness_cluster_bio_comparison",
+    "t0090_morphology_generator_diversity_test",
+    "t0091_morphology_extended_nsga2_v1",
+    "t0092_diagnose_morphology_generator_silence",
+    "t0093_resweep_and_t0090_correction"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0099_random_init_pareto_robustness",
+  "date_created": "2026-05-10"
+}
