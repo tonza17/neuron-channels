@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (30)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (9)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(93)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(94)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -1797,7 +1797,24 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (78 open, 15 closed)
+## Suggestions (79 open, 15 closed)
+
+<details>
+<summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
+warm-start was load-bearing</strong> (S-0099-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
+cells vs t0091's 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the
+diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1
+only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass
+emerges -> anchor 1 was load-bearing alone. Outcome (b): no joint-pass -> warm-start diversity
+itself was load-bearing. Either narrows future morphology-extended NSGA-II design
+substantially. Cost ~$3.50 single seed.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Constrained channel-only NSGA-II on fixed t0093 morphology to

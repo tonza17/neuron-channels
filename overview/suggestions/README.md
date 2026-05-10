@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-369 suggestions **327 open** (51 high, 226 medium, 50 low), **42 closed**.
+374 suggestions **332 open** (53 high, 228 medium, 51 low), **42 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -143,6 +143,29 @@ count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and rep
 vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters
 the 30-100 Hz band and the cell leaves the binary on/off regime, so DSI dynamics become
 biologically informative. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
+warm-start was load-bearing</strong> (S-0099-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0099-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-10 |
+| **Source task** | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/) |
+
+t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
+cells vs t0091's 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the
+diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1
+only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass
+emerges -> anchor 1 was load-bearing alone. Outcome (b): no joint-pass -> warm-start diversity
+itself was load-bearing. Either narrows future morphology-extended NSGA-II design
+substantially. Cost ~$3.50 single seed.
 
 </details>
 
@@ -794,6 +817,27 @@ configuration on the v3 substrate with 3-5 different seed pairs (e.g., (44,45), 
 (48,49)) and report joint-pass rate, HV trajectory variance, and Pareto-front overlap across
 replicates. Reuse the t0081 harness verbatim. Cost ~$5-10 across 3-5 replicates at $2.39 each.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto
+cells (HM-3 follow-up)</strong> (S-0099-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0099-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-10 |
+| **Source task** | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both
+t0091 and t0099. Pure data-analysis on the now-available 57+19+22+14 = 112 Pareto cells:
+extract per-cell field_elongation_pd from each cell's 14-d morphology vector, plot vs DSI
+vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could resolve a
+2-task-old open question.
 
 </details>
 
@@ -4244,6 +4288,26 @@ comparative-analysis.
 </details>
 
 <details>
+<summary>📚 <strong>NEURON worker process restart between gens to test if memory
+accumulation explains per-gen wall-clock doubling</strong> (S-0099-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0099-04` |
+| **Kind** | library |
+| **Date added** | 2026-05-10 |
+| **Source task** | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+t0099 observed gen 1 = 38-52 min, gen 8 = 167+ min for the same workload. Hypothesis: NEURON
+state accumulation across pop=96 cell builds per gen. Test: modify nsga2_driver to spawn fresh
+worker pool every 2 gens. If late-gen wall-clock improves by >20%, the memory-accumulation
+hypothesis is confirmed. Cost $1-2 single seed.
+
+</details>
+
+<details>
 <summary>🧪 <strong>NMDA decay-time tau2 sweep at fixed gNMDA on t0054 to disentangle
 conductance amplitude from kinetic time constant</strong> (S-0054-05)</summary>
 
@@ -4762,6 +4826,26 @@ curve (the AIS spike-onset polar histogram) to get a richer cross-direction attr
 whether the NaP-dominant verdict holds across all directions or only at PD-flanking
 directions. Pure data analysis on existing .npz files; ~1 hour wall-clock, $0 cost.
 Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Pool t0091 + t0099 anchor counts to confirm HM-2 (PD-asymmetric
+> ND-asymmetric) at higher n</strong> (S-0099-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0099-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-10 |
+| **Source task** | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+t0099 revised HM-2 from REFUTED to CONFIRMED by pooling 3 random-init seed counts (PD-asymm 20
+vs ND-asymm 7, p~0.013). Add t0091's 12 vs 9 to get full sample: 32 vs 16 (p~0.02). Confirms
+Schachter 2010 / Briggman 2011 prediction at n=4 datasets. Pure data-analysis; could form the
+basis for an answer asset on the soma-displacement-toward-PD mechanism.
 
 </details>
 
@@ -6912,6 +6996,26 @@ preferred), and characterising whether the GABA shunt-driven DS scales linearly 
 or has a threshold. Sweep cost: 12 angles x 3 modes x 20 trials x ~30 s/trial = ~6 hours.
 Could parallelise across CPU cores (each angle independent) to reduce wall-clock to ~1.5
 hours.
+
+</details>
+
+<details>
+<summary>🧪 <strong>20-generation single-seed random-init NSGA-II to test whether
+longer search bridges the joint-pass gap</strong> (S-0099-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0099-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-10 |
+| **Source task** | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+t0099 capped at 8 gens per seed. Hay 2011 used 1000 gens for similar problems. Test: one
+random-init seed at 20 gens with $10 cap to see if random-init can eventually bridge the
+joint-pass corner that warm-start reached at gen 2. If yes, warm-start was a 10x speedup not a
+fundamental enabler. If no after 20 gens, warm-start remains essential. Cost ~$10 single seed.
 
 </details>
 

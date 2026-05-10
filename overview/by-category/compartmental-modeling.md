@@ -6,7 +6,7 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (40)](../papers/by-category/compartmental-modeling.md) | [Answers
 (19)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(300)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(305)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (14)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (2)](../predictions/by-category/compartmental-modeling.md)
@@ -2592,7 +2592,81 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (265 open, 35 closed)
+## Suggestions (270 open, 35 closed)
+
+<details>
+<summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
+warm-start was load-bearing</strong> (S-0099-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
+cells vs t0091's 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the
+diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1
+only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass
+emerges -> anchor 1 was load-bearing alone. Outcome (b): no joint-pass -> warm-start diversity
+itself was load-bearing. Either narrows future morphology-extended NSGA-II design
+substantially. Cost ~$3.50 single seed.
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto
+cells (HM-3 follow-up)</strong> (S-0099-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../../tasks/t0099_random_init_pareto_robustness/)
+
+HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both
+t0091 and t0099. Pure data-analysis on the now-available 57+19+22+14 = 112 Pareto cells:
+extract per-cell field_elongation_pd from each cell's 14-d morphology vector, plot vs DSI
+vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could resolve a
+2-task-old open question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Pool t0091 + t0099 anchor counts to confirm HM-2 (PD-asymmetric
+> ND-asymmetric) at higher n</strong> (S-0099-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 revised HM-2 from REFUTED to CONFIRMED by pooling 3 random-init seed counts (PD-asymm 20
+vs ND-asymm 7, p~0.013). Add t0091's 12 vs 9 to get full sample: 32 vs 16 (p~0.02). Confirms
+Schachter 2010 / Briggman 2011 prediction at n=4 datasets. Pure data-analysis; could form the
+basis for an answer asset on the soma-displacement-toward-PD mechanism.
+
+</details>
+
+<details>
+<summary>📚 <strong>NEURON worker process restart between gens to test if memory
+accumulation explains per-gen wall-clock doubling</strong> (S-0099-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 observed gen 1 = 38-52 min, gen 8 = 167+ min for the same workload. Hypothesis: NEURON
+state accumulation across pop=96 cell builds per gen. Test: modify nsga2_driver to spawn fresh
+worker pool every 2 gens. If late-gen wall-clock improves by >20%, the memory-accumulation
+hypothesis is confirmed. Cost $1-2 single seed.
+
+</details>
+
+<details>
+<summary>🧪 <strong>20-generation single-seed random-init NSGA-II to test whether
+longer search bridges the joint-pass gap</strong> (S-0099-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 capped at 8 gens per seed. Hay 2011 used 1000 gens for similar problems. Test: one
+random-init seed at 20 gens with $10 cap to see if random-init can eventually bridge the
+joint-pass corner that warm-start reached at gen 2. If yes, warm-start was a 10x speedup not a
+fundamental enabler. If no after 20 gens, warm-start remains essential. Cost ~$10 single seed.
+
+</details>
 
 <details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091

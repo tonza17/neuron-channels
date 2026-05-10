@@ -1,10 +1,46 @@
 # Answers by Date Added
 
-26 answer(s) grouped by creation date.
+27 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
+
+## 2026-05-10 (1)
+
+<details>
+<summary><strong>Are the qualitative findings of t0091's joint 68-d NSGA-II run
+(anchor distribution, biological-plausibility verdict, strict joint-pass
+count) reproducible under different RNG seeds, and was t0091's 5-anchor
+warm-start load-bearing — would a purely random initial population have
+found the same Pareto front?</strong></summary>
+
+**Confidence**: medium
+
+**Q1 (reproducibility): Yes** — across 3 random-init seeds (Pareto sizes 19/22/14), every seed
+reaches the same headline verdict as t0091: zero biologically-plausible joint-pass cells, zero
+symmetric-anchor Pareto cells. **Q2 (warm-start dependence): Yes** — t0091 found 1 strict
+joint-pass cell from its 5-anchor warm-started Pareto (57 cells); none of the 3 random-init
+seeds (55 cells total) recover that region within 5–8 generations and $1–5 per-seed budget.
+The warm-start was load-bearing specifically for the high-PD-rate dimension: random-init
+reaches t0091's DSI threshold (best 0.49) but only half its PD-rate (best 18.7 Hz vs t0091's
+35 Hz).
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0099_random_init_pareto_robustness/assets/answer/random-init-reproducibility-and-warmstart-dependence/full_answer.md) |
+| **ID** | [`random-init-reproducibility-and-warmstart-dependence`](../../../tasks/t0099_random_init_pareto_robustness/assets/answer/random-init-reproducibility-and-warmstart-dependence/) |
+| **Question** | Are the qualitative findings of t0091's joint 68-d NSGA-II run (anchor distribution, biological-plausibility verdict, strict joint-pass count) reproducible under different RNG seeds, and was t0091's 5-anchor warm-start load-bearing — would a purely random initial population have found the same Pareto front? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-10 |
+| **Categories** | — |
+| **Paper sources** | — |
+| **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md), [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) |
+| **URL sources** | — |
+| **Created by** | [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) |
+
+</details>
 
 ## 2026-05-08 (3)
 

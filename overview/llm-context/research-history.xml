@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-08T21:55:13Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-10T23:35:30Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
     <section_count>165</section_count>
-    <char_count>3053836</char_count>
-    <byte_count>3061119</byte_count>
-    <estimated_tokens>763459</estimated_tokens>
+    <char_count>3056115</char_count>
+    <byte_count>3063416</byte_count>
+    <estimated_tokens>764028</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -202,9 +202,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0095_brainstorm_results_20</id>
         <id>t0097_multi_obj_optim</id>
         <id>t0098_visualise_pareto_morphologies</id>
+        <id>t0099_random_init_pareto_robustness</id>
       </source_ids>
       <content>
-Completed tasks: 90
+Completed tasks: 91
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -745,6 +746,12 @@ ID: t0098_visualise_pareto_morphologies
 Completed: 2026-05-08
 Short description: Visualize the 57 Pareto cells from t0091 as a morphology grid plus per-cell DSI / PD-rate / scatter charts.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0098_visualise_pareto_morphologies&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Visualise t0091 Pareto Morphologies Summary Produced four reproducible visualisations of t0091&#x27;s 57-cell Pareto front: an 8x8 morphology grid (sorted by DSI descending, colored by nearest anchor, annotated with DSI/PD-rate per panel), a sorted DSI bar chart, a sorted PD-rate bar chart, and a DSI-vs-PD scatter with the strict joint-pass cell starred. Total wall-clock: **8.65 s** on the local 64-core EPYC; total cost **$0.00**. Metrics * **57 cells** rendered (matches t0091&#x27;s Pareto archive cardinality). * **Anchor distribution recomputed and verified**...
+
+## Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto
+ID: t0099_random_init_pareto_robustness
+Completed: 2026-05-10
+Short description: Run 3 random-init NSGA-II seeds (no warm-start) at $1 each; compare anchor distribution + bio-plausibility vs t0091.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0099_random_init_pareto_robustness&quot; date_completed: &quot;2026-05-10&quot; status: &quot;complete&quot; --- Results Summary: Random-Init NSGA-II Reproducibility Test Summary Three NSGA-II runs from totally random LHS-sampled initial populations (seeds 11, 22, 33), no anchor warm-start, on the same 68-d substrate t0091 used. **0 of 55 Pareto cells across all 3 seeds qualified as strict joint-pass (DSI≥0.5, PD≥30Hz, robust≥0.7), versus 1 such cell in t0091&#x27;s 57-cell warm-start Pareto.** This is direct evidence that t0091&#x27;s 5-anchor warm-start was load-bearing for reaching the joint-pass corner of objective space within an 8-generation budget — and refines the claim further...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -809,9 +816,10 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>morphology-extension-biological-plausibility</id>
         <id>objective-functions-for-single-neuron-multi-objective-optimisation</id>
         <id>t0090-procedural-cell-silence-root-cause</id>
+        <id>random-init-reproducibility-and-warmstart-dependence</id>
       </source_ids>
       <content>
-Answers: 26
+Answers: 27
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1016,6 +1024,13 @@ Confidence: high
 Categories: compartmental-modeling, direction-selectivity
 
 The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 0)` coordinates, so NEURON computes the cumulative pt3d length as zero, overrides the prior `sec.L = soma_diameter_um` assignment, and the soma&#x27;s surface area collapses to ~9.4e-14 µm² — essentially a point. Synaptic input then drives the somatic Vm to NaN within a few simulation steps, so every procedural cell in t0090&#x27;s 60-cell sweep returns `non_finite_voltage` (51 cells) or zero spikes (the 9 STABLE cells that happened to clear the no-stim stability check). The fix is the `procedural_dsgc_morphology_generator_fix` library: a thin wrapper that re-emits the soma&#x27;s pt3d points along the z-axis so the cylinder length...
+
+## Are the qualitative findings of t0091&#x27;s joint 68-d NSGA-II run (anchor distribution, biological-plausibility verdict, strict joint-pass count) reproducible under different RNG seeds, and was t0091&#x27;s 5-anchor warm-start load-bearing — would a purely random initial population have found the same Pareto front?
+ID: random-init-reproducibility-and-warmstart-dependence
+Created by: t0099_random_init_pareto_robustness on 2026-05-10
+Confidence: medium
+
+**Q1 (reproducibility): Yes** — across 3 random-init seeds (Pareto sizes 19/22/14), every seed reaches the same headline verdict as t0091: zero biologically-plausible joint-pass cells, zero symmetric-anchor Pareto cells. **Q2 (warm-start dependence): Yes** — t0091 found 1 strict joint-pass cell from its 5-anchor warm-started Pareto (57 cells); none of the 3 random-init seeds (55 cells total) recover that region within 5–8 generations and $1–5 per-seed budget. The warm-start was load-bearing specifically for the high-PD-rate dimension: random-init reaches t0091&#x27;s DSI threshold (best 0.49) but only half its PD-rate (best 18.7 Hz vs t0091&#x27;s 35 Hz).
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">

@@ -4,15 +4,15 @@
   <a href="papers/"><img src="https://img.shields.io/badge/Papers-87-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
-  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-3-9370DB" alt="Predictions"></a>
+  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-6-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-26-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-27-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-98-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-369-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-99-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-374-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,19 +28,19 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (34K)
-| [full](llm-context/full.xml) (558K) | [roadmap](llm-context/roadmap.xml) (106K) |
-[results](llm-context/results-deep-dive.xml) (431K) |
-[assets](llm-context/literature-and-assets.xml) (60K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (35K)
+| [full](llm-context/full.xml) (565K) | [roadmap](llm-context/roadmap.xml) (107K) |
+[results](llm-context/results-deep-dive.xml) (437K) |
+[assets](llm-context/literature-and-assets.xml) (61K)
 
-*Last updated: 2026-05-08 21:55 UTC*
+*Last updated: 2026-05-10 23:35 UTC*
 
-* **Budget**: **$16** spent of $20
-* **Remaining**: **$4**
-* **Usage**: `████████████████░░░░` 81.0%
-* **GPU Machines**: **7** provisioned across 7 tasks · **$16** GPU spend
+* **Budget**: **$24** spent of $20
+* **Remaining**: **$0**
+* **Usage**: `████████████████████████` 119.5%
+* **GPU Machines**: **8** provisioned across 8 tasks · **$24** GPU spend
   ([details](machines/))
-* **Provisioning**: 3 failed attempts · $0.00 wasted · 30% failure rate
+* **Provisioning**: 4 failed attempts · $0.00 wasted · 33% failure rate
 
 ---
 
@@ -82,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (90 total)](tasks/by-status/completed.md)
+## [Recently Completed (91 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0099 | [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`results`](../tasks/t0099_random_init_pareto_robustness/results/results_detailed.md) | 2026-05-10 23:35 |
 | 0098 | [Visualise t0091 Pareto morphologies + per-cell DSI / PD-rate charts](../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) | [`results`](../tasks/t0098_visualise_pareto_morphologies/results/results_detailed.md) | 2026-05-08 21:50 |
 | 0095 | [Brainstorm results session 20](../overview/tasks/task_pages/t0095_brainstorm_results_20.md) | [`results`](../tasks/t0095_brainstorm_results_20/results/results_detailed.md) | 2026-05-08 20:45 |
 | 0094 | [Brainstorm results session 19](../overview/tasks/task_pages/t0094_brainstorm_results_19.md) | [`results`](../tasks/t0094_brainstorm_results_19/results/results_detailed.md) | 2026-05-08 18:30 |
@@ -95,9 +96,8 @@ No blocked tasks.
 | 0092 | [Diagnose why t0090 procedural cells produce no action potentials](../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | [`results`](../tasks/t0092_diagnose_morphology_generator_silence/results/results_detailed.md) | 2026-05-08 00:55 |
 | 0090 | [Procedural DSGC morphology generator + diversity test + validation bundle](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | [`results`](../tasks/t0090_morphology_generator_diversity_test/results/results_detailed.md) | 2026-05-07 18:25 |
 | 0089 | [Brainstorm results session 18](../overview/tasks/task_pages/t0089_brainstorm_results_18.md) | [`results`](../tasks/t0089_brainstorm_results_18/results/results_detailed.md) | 2026-05-07 11:30 |
-| 0088 | [Re-cluster t0086 13 cells and per-cluster Vm-trace deep-dive](../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) | [`results`](../tasks/t0088_recluster_marginals_and_vm_motifs/results/results_detailed.md) | 2026-05-06 21:10 |
 
-*80 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*81 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +122,81 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (327 open)](suggestions/)
+## [Recent Suggestions (332 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
+warm-start was load-bearing</strong> (S-0099-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
+cells vs t0091's 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the
+diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1
+only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass
+emerges -> anchor 1 was load-bearing alone. Outcome (b): no joint-pass -> warm-start diversity
+itself was load-bearing. Either narrows future morphology-extended NSGA-II design
+substantially. Cost ~$3.50 single seed.
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto
+cells (HM-3 follow-up)</strong> (S-0099-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
+
+HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both
+t0091 and t0099. Pure data-analysis on the now-available 57+19+22+14 = 112 Pareto cells:
+extract per-cell field_elongation_pd from each cell's 14-d morphology vector, plot vs DSI
+vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could resolve a
+2-task-old open question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Pool t0091 + t0099 anchor counts to confirm HM-2 (PD-asymmetric
+> ND-asymmetric) at higher n</strong> (S-0099-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 revised HM-2 from REFUTED to CONFIRMED by pooling 3 random-init seed counts (PD-asymm 20
+vs ND-asymm 7, p~0.013). Add t0091's 12 vs 9 to get full sample: 32 vs 16 (p~0.02). Confirms
+Schachter 2010 / Briggman 2011 prediction at n=4 datasets. Pure data-analysis; could form the
+basis for an answer asset on the soma-displacement-toward-PD mechanism.
+
+</details>
+
+<details>
+<summary>📚 <strong>NEURON worker process restart between gens to test if memory
+accumulation explains per-gen wall-clock doubling</strong> (S-0099-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 observed gen 1 = 38-52 min, gen 8 = 167+ min for the same workload. Hypothesis: NEURON
+state accumulation across pop=96 cell builds per gen. Test: modify nsga2_driver to spawn fresh
+worker pool every 2 gens. If late-gen wall-clock improves by >20%, the memory-accumulation
+hypothesis is confirmed. Cost $1-2 single seed.
+
+</details>
+
+<details>
+<summary>🧪 <strong>20-generation single-seed random-init NSGA-II to test whether
+longer search bridges the joint-pass gap</strong> (S-0099-05)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 capped at 8 gens per seed. Hay 2011 used 1000 gens for similar problems. Test: one
+random-init seed at 20 gens with $10 cap to see if random-init can eventually bridge the
+joint-pass corner that warm-start reached at gen 2. If yes, warm-start was a 10x speedup not a
+fundamental enabler. If no after 20 gens, warm-start remains essential. Cost ~$10 single seed.
+
+</details>
 
 <details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
@@ -226,111 +300,43 @@ build-model.
 
 </details>
 
-<details>
-<summary>📂 <strong>Real-cell DSGC morphology library from NeuroMorpho: test whether
-observed morphologies escape prior-violation ceiling</strong> (S-0091-06)</summary>
-
-**Kind**: dataset | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-t0091 confirmed HM-1 (morphology asymmetry necessary; symmetric anchor count = 0) but refuted
-HM-2 (PD vs ND direction blind, p=0.331). The procedural 14-knob generator covers a parametric
-box that biological DSGCs may or may not occupy; t0091's 57-cell Pareto stays inside that box
-but cannot escape the channel-side prior-violation ceiling. Brainstorm 18 'Option G' is the
-next move: build a NeuroMorpho.org-anchored real DSGC cell library (10-20 mouse / rabbit
-reconstructions from Briggman 2011, Wei 2011, Morrie & Feller 2018), implement a categorical
-selector + parametric deformation knobs (diameter scaling, branch pruning, soma offset), then
-re-run t0091's NSGA-II with the real-cell library replacing the procedural generator. Tests
-whether observed DSGC morphologies escape the prior-violation ceiling that procedural ones
-cannot. Larger task: needs planning first. Cost ~$2-3 for the optimisation pass. Recommended
-task types: download-dataset, build-model, write-library.
-
-</details>
-
-<details>
-<summary>📊 <strong>Pareto-cell PCA + feature-importance analysis on the 14-d morph
-vectors to rank Pareto-inclusion drivers</strong> (S-0091-07)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-t0091 reports anchor-level Pareto counts (bedb_like 20, symmetric 0, pd_asymmetric 12,
-nd_asymmetric 9, alt_topology 16) but does not report which of the 14 morphology knobs
-individually drive Pareto inclusion. Pure data-analysis on results/data/pareto_front.json +
-all_evaluations.json: train a logistic regression / random forest classifier with the 14-d
-morph vector as input and is_in_pareto as binary label, using the 187 evaluations as the
-training set; report per-feature coefficients / SHAP values; cross-validate via
-leave-one-anchor-out splits; visualise via per-feature partial dependence plots. Goal: rank
-the 14 knobs by their causal importance for joint Pareto inclusion, beyond the anchor-level
-aggregation. This complements S-0091-01 (which is single-feature Spearman) and S-0091-04
-(which is alt-topology vs bedb-like comparison) with an exhaustive feature-importance audit.
-Cost: $0 (local CPU). Recommended task types: data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Constrained channel-only NSGA-II on fixed t0093 morphology to
-disambiguate channel-side from morphology-side priors</strong> (S-0091-08)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-t0091's 0/57 plausible-cell verdict is universally driven by channel-side priors (NMDA
-per-spine, NaP density, GABA spatial gradient); morphology priors mostly pass. S-0086-01
-already proposes a tighter-NMDA re-run but does not specify morphology configuration nor
-combine with hard-constraint formulation. Hold morphology fixed at the t0093 verified
-BedB-equivalent (PD-rate 43.6 Hz post-fix) and run NSGA-II on a 27-d channel-only space (12
-channel densities + 9 NMDA/NaP-related + 6 GABA spatial) with all biological priors as hard
-constraints (per S-0091-05) and tightened NMDA bounds (Sivyer 2013 5e-4 uS upper cap). Tests
-whether the v3 substrate has any biologically-plausible joint-pass region in channel space
-alone with verified morphology, independent of S-0086-01's broader question. If no, the
-substrate is incompatible with priors regardless of morphology, motivating S-0091-06's
-real-cell library. Cost ~$1.50 on Vast.ai EPYC 7B13. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Tighten post-fix procedural soma to match the t0024 hand-coded
-287 um^2 reference area</strong> (S-0092-02)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
-
-The shipped t0092 fix preserves the procedural cylinder geometry: post-fix soma area is ~707
-um^2 vs t0024's hand-coded reference 287 um^2 (2.5x mismatch). Because t0083 channel densities
-were calibrated on the smaller hand-coded soma, the post-fix BedB-equivalent overshoots the
-original Bed B (peak Vm +11 mV vs +4.65 mV; 61 vs 41 spikes). Refine the fix to emit either
-(a) a 7-pt3d frustum stack reproducing t0024's profile, or (b) a single cylinder with sec.L=15
-um, sec.diam=15/3.2 um chosen so pi*d*L matches 287 um^2 exactly. Ship as a v2 of
-generate_fixed_morphology; validate that the patched cell now produces ~41 spikes and peak Vm
-~+5 mV under the unmodified t0083 vector. This eliminates a known second-order discrepancy
-before t0091 launches. Recommended task types: write-library, experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Issue a correction overlay against t0090 marking the procedural
-generator as superseded by the t0092 fix</strong> (S-0092-03)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
-
-t0090 is completed and immutable, but the soma pt3d-collapse bug was committed in t0090's
-library asset procedural_dsgc_morphology_generator. The t0092 fix lives in
-tasks/t0092_../code/morphology_generator_fix.py as a thin shim. To prevent downstream tasks
-(t0091, future Bed-A morph-extended runs, the t0086/t0088 cluster re-score work) from
-importing the unpatched t0090 generator and re-introducing the bug, write a correction file
-under tasks/t0092_../corrections/ that flags t0090's generator as superseded and points
-consumers to t0092's generate_fixed_morphology as the canonical entry point. Aggregator output
-should reflect the supersession overlay. Recommended task types: correction.
-
-</details>
-
-*317 more open suggestions → [open suggestions](suggestions/)*
+*322 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (51)](suggestions/)
+## [High Priority Suggestions (53)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
+warm-start was load-bearing</strong> (S-0099-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
+
+t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
+cells vs t0091's 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the
+diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1
+only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass
+emerges -> anchor 1 was load-bearing alone. Outcome (b): no joint-pass -> warm-start diversity
+itself was load-bearing. Either narrows future morphology-extended NSGA-II design
+substantially. Cost ~$3.50 single seed.
+
+</details>
+
+<details>
+<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto
+cells (HM-3 follow-up)</strong> (S-0099-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
+
+HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both
+t0091 and t0099. Pure data-analysis on the now-available 57+19+22+14 = 112 Pareto cells:
+extract per-cell field_elongation_pd from each cell's 14-d morphology vector, plot vs DSI
+vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could resolve a
+2-task-old open question.
+
+</details>
 
 <details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
@@ -482,48 +488,32 @@ correlational analysis suggested. Recommended task types: experiment-run, data-a
 
 </details>
 
-<details>
-<summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
-to land the cluster re-score</strong> (S-0090-03)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
-[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
-
-t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
-NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus
-simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build
-the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 /
-t0088 cluster centroids' NMDA per-synapse exotic-ness against Sivyer 2013's published 0.1 nS
-in the corrected units. The output is a definitive verdict on whether t0086 / t0088's NMDA
-~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier
-biological mechanism. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>Tighten t0091 LHS morphology bounds using the 9 STABLE cells
-from the t0090 diversity sweep</strong> (S-0090-04)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
-[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
-
-51/60 morphologies in the t0090 diversity sweep failed NAN_VOLTAGE under the fixed t0083
-best-cell channel set, consistent with Mainen 1996 morphology-determines-firing-pattern. Both
-ends of the parameter range fail (e.g. 10-dendrite and 199-dendrite cells), so this is a
-parameter-combination issue rather than a topology-size issue. Before launching t0091's joint
-68-d NSGA-II, fit per-axis empirical bounds to the 9 STABLE cells (across both different and
-similar populations) and use those tightened bounds for the LHS warm-start sample, instead of
-the wide-open Phase B bounds. This keeps the population in the ~30 percent regime that
-produces STABLE cells under any fixed channel set, materially improving NSGA-II sample
-efficiency on the morphology axis. Recommended task types: data-analysis.
-
-</details>
-
-*41 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*43 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (26 total)](answers/)
+## [Recent Answers (27 total)](answers/)
+
+<details>
+<summary><strong>Are the qualitative findings of t0091's joint 68-d NSGA-II run
+(anchor distribution, biological-plausibility verdict, strict joint-pass
+count) reproducible under different RNG seeds, and was t0091's 5-anchor
+warm-start load-bearing — would a purely random initial population have
+found the same Pareto front?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-10 | **Full answer**:
+[`random-init-reproducibility-and-warmstart-dependence`](../tasks/t0099_random_init_pareto_robustness/assets/answer/random-init-reproducibility-and-warmstart-dependence/)
+
+**Q1 (reproducibility): Yes** — across 3 random-init seeds (Pareto sizes 19/22/14), every seed
+reaches the same headline verdict as t0091: zero biologically-plausible joint-pass cells, zero
+symmetric-anchor Pareto cells. **Q2 (warm-start dependence): Yes** — t0091 found 1 strict
+joint-pass cell from its 5-anchor warm-started Pareto (57 cells); none of the 3 random-init
+seeds (55 cells total) recover that region within 5–8 generations and $1–5 per-seed budget.
+The warm-start was load-bearing specifically for the high-PD-rate dimension: random-init
+reaches t0091's DSI threshold (best 0.49) but only half its PD-rate (best 18.7 Hz vs t0091's
+35 Hz).
+
+</details>
 
 <details>
 <summary><strong>Did enabling the 14-d procedural morphology variation as an
@@ -728,25 +718,7 @@ metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on t
 
 </details>
 
-<details>
-<summary><strong>Does setting Voff_bipNMDA = 1 (voltage-independent NMDA, the
-deposited 0 Mg2+ condition) reproduce Poleg-Polsky and Diamond 2016's claim
-that DSI vs gNMDA is approximately constant ~0.30 across 0-3 nS?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-25 | **Full answer**:
-[`dsi-flatness-test-voltage-independent-nmda`](../tasks/t0048_voff_nmda1_dsi_test/assets/answer/dsi-flatness-test-voltage-independent-nmda/)
-
-No. Voltage-independent NMDA partially flattens the DSI-vs-gNMDA curve — the 0-3 nS range
-collapses from 0.174 (Voff_bipNMDA = 0 baseline) to 0.066, satisfying the H1 range threshold
-of 0.10 — but the slope test still trends downward at -0.024 per nS, above the 0.02 H1 cutoff
-and never within +/- 0.05 of the paper's claimed 0.30. The combined verdict is therefore H2
-(flatter than the deposited control but still not flat at 0.30): the Voff = 1 curve runs at
-0.04-0.10 across the entire range, not at 0.30. The Voff_bipNMDA = 1 swap by itself does not
-reproduce the paper's DSI vs gNMDA claim.
-
-</details>
-
-*16 more answers → [answers](answers/)*
+*17 more answers → [answers](answers/)*
 
 ---
 
@@ -1337,10 +1309,13 @@ No models yet.
 
 ---
 
-## [Latest Predictions (3 total)](predictions/)
+## [Latest Predictions (6 total)](predictions/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [Random-init Pareto front seed 33](../tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed33\description.md) | [99](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 2026-05-10 |
+| [Random-init Pareto front seed 22](../tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed22\description.md) | [99](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 2026-05-10 |
+| [Random-init Pareto front seed 11](../tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed11\description.md) | [99](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 2026-05-10 |
 | [Pareto front 68-d morphology-extended Bed-B v3](../tasks\t0091_morphology_extended_nsga2_v1\assets\predictions\pareto-front-68d-morphology-extended-bedb-v3\description.md) | [91](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | 2026-05-08 |
 | [V_rest sweep on t0024 DSGC channel testbed (stochastic AR(2) release)](../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0024\description.md) | [26](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | 2026-04-21 |
 | [V_rest sweep on t0022 DSGC channel testbed (deterministic)](../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0022\description.md) | [26](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | 2026-04-21 |
@@ -1366,10 +1341,11 @@ No models yet.
 
 ---
 
-## [Cost Leaders (7 tasks with spend)](costs/)
+## [Cost Leaders (8 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
+| [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`$7.71`](../tasks/t0099_random_init_pareto_robustness/results/costs.json) | 2026-05-10 23:35 |
 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`$5.83`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/costs.json) | 2026-05-06 08:31 |
 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`$3.93`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/costs.json) | 2026-05-04 16:25 |
 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`$2.39`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/costs.json) | 2026-05-05 09:55 |

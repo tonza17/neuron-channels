@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-08T21:55:13Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-10T23:35:30Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>423824</char_count>
-    <byte_count>424239</byte_count>
-    <estimated_tokens>105956</estimated_tokens>
+    <char_count>429276</char_count>
+    <byte_count>429709</byte_count>
+    <estimated_tokens>107319</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -202,9 +202,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0095_brainstorm_results_20</id>
         <id>t0097_multi_obj_optim</id>
         <id>t0098_visualise_pareto_morphologies</id>
+        <id>t0099_random_init_pareto_robustness</id>
       </source_ids>
       <content>
-Completed tasks: 90
+Completed tasks: 91
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -745,6 +746,12 @@ ID: t0098_visualise_pareto_morphologies
 Completed: 2026-05-08
 Short description: Visualize the 57 Pareto cells from t0091 as a morphology grid plus per-cell DSI / PD-rate / scatter charts.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0098_visualise_pareto_morphologies&quot; date_completed: &quot;2026-05-08&quot; status: &quot;complete&quot; --- Results Summary: Visualise t0091 Pareto Morphologies Summary Produced four reproducible visualisations of t0091&#x27;s 57-cell Pareto front: an 8x8 morphology grid (sorted by DSI descending, colored by nearest anchor, annotated with DSI/PD-rate per panel), a sorted DSI bar chart, a sorted PD-rate bar chart, and a DSI-vs-PD scatter with the strict joint-pass cell starred. Total wall-clock: **8.65 s** on the local 64-core EPYC; total cost **$0.00**. Metrics * **57 cells** rendered (matches t0091&#x27;s Pareto archive cardinality). * **Anchor distribution recomputed and verified**...
+
+## Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto
+ID: t0099_random_init_pareto_robustness
+Completed: 2026-05-10
+Short description: Run 3 random-init NSGA-II seeds (no warm-start) at $1 each; compare anchor distribution + bio-plausibility vs t0091.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0099_random_init_pareto_robustness&quot; date_completed: &quot;2026-05-10&quot; status: &quot;complete&quot; --- Results Summary: Random-Init NSGA-II Reproducibility Test Summary Three NSGA-II runs from totally random LHS-sampled initial populations (seeds 11, 22, 33), no anchor warm-start, on the same 68-d substrate t0091 used. **0 of 55 Pareto cells across all 3 seeds qualified as strict joint-pass (DSI≥0.5, PD≥30Hz, robust≥0.7), versus 1 such cell in t0091&#x27;s 57-cell warm-start Pareto.** This is direct evidence that t0091&#x27;s 5-anchor warm-start was load-bearing for reaching the joint-pass corner of objective space within an 8-generation budget — and refines the claim further...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1111,9 +1118,10 @@ For each condition, compute:
         <id>morphology-extension-biological-plausibility</id>
         <id>objective-functions-for-single-neuron-multi-objective-optimisation</id>
         <id>t0090-procedural-cell-silence-root-cause</id>
+        <id>random-init-reproducibility-and-warmstart-dependence</id>
       </source_ids>
       <content>
-Answers: 26
+Answers: 27
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1318,6 +1326,13 @@ Confidence: high
 Categories: compartmental-modeling, direction-selectivity
 
 The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 0)` coordinates, so NEURON computes the cumulative pt3d length as zero, overrides the prior `sec.L = soma_diameter_um` assignment, and the soma&#x27;s surface area collapses to ~9.4e-14 µm² — essentially a point. Synaptic input then drives the somatic Vm to NaN within a few simulation steps, so every procedural cell in t0090&#x27;s 60-cell sweep returns `non_finite_voltage` (51 cells) or zero spikes (the 9 STABLE cells that happened to clear the no-stim stability check). The fix is the `procedural_dsgc_morphology_generator_fix` library: a thin wrapper that re-emits the soma&#x27;s pt3d points along the z-axis so the cylinder length...
+
+## Are the qualitative findings of t0091&#x27;s joint 68-d NSGA-II run (anchor distribution, biological-plausibility verdict, strict joint-pass count) reproducible under different RNG seeds, and was t0091&#x27;s 5-anchor warm-start load-bearing — would a purely random initial population have found the same Pareto front?
+ID: random-init-reproducibility-and-warmstart-dependence
+Created by: t0099_random_init_pareto_robustness on 2026-05-10
+Confidence: medium
+
+**Q1 (reproducibility): Yes** — across 3 random-init seeds (Pareto sizes 19/22/14), every seed reaches the same headline verdict as t0091: zero biologically-plausible joint-pass cells, zero symmetric-anchor Pareto cells. **Q2 (warm-start dependence): Yes** — t0091 found 1 strict joint-pass cell from its 5-anchor warm-started Pareto (57 cells); none of the 3 random-init seeds (55 cells total) recover that region within 5–8 generations and $1–5 per-seed budget. The warm-start was load-bearing specifically for the high-PD-rate dimension: random-init reaches t0091&#x27;s DSI threshold (best 0.49) but only half its PD-rate (best 18.7 Hz vs t0091&#x27;s 35 Hz).
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -1367,6 +1382,8 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0097-01</id>
         <id>S-0097-02</id>
         <id>S-0097-03</id>
+        <id>S-0099-01</id>
+        <id>S-0099-02</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -1587,6 +1604,8 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0097-04</id>
         <id>S-0097-05</id>
         <id>S-0098-01</id>
+        <id>S-0099-03</id>
+        <id>S-0099-04</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1636,9 +1655,10 @@ The t0090 generator emits the soma&#x27;s two pt3d points at coincident `(x, y, 
         <id>S-0093-04</id>
         <id>S-0098-02</id>
         <id>S-0098-03</id>
+        <id>S-0099-05</id>
       </source_ids>
       <content>
-Open suggestions: 312
+Open suggestions: 317
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -1940,6 +1960,20 @@ Priority: high
 Kind: experiment
 Source task: t0097_multi_obj_optim
 Directly addresses the researcher&#x27;s recurring biological-plausibility concern with pure-DSI maximisation (Marder-style population-statistic robustness is the field-standard treatment). Falsifiable prediction: high-DSI / high-robustness corner lies along compensatory hyperplanes, refuting the hypothesis that DSI maximisation drives the optimiser to fragile parameter-space extremes. Recipe: K=50-200 +/-10% perturbations per Pareto point; minimise SD of DSI. Budget: 36-72 h Vast.ai EPYC at $0.30/h, total $11-22 (multiplies t0091&#x27;s per-individual cost by K=50-200) — request explicit $25 budget cap or reduce population/generations.
+
+## Anchor-1-only warm-start NSGA-II to isolate which part of t0091&#x27;s warm-start was load-bearing
+ID: S-0099-01
+Priority: high
+Kind: experiment
+Source task: t0099_random_init_pareto_robustness
+t0099 confirmed t0091&#x27;s 5-anchor warm-start was load-bearing (0/55 random-init joint-pass cells vs t0091&#x27;s 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1 only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass emerges -&gt; anchor 1 was load-bearing alone. Outcome (b): no joint-pass -&gt; warm-start diversity itself was load-bearing. Either narrows future morphology-extended NSGA-II design substantially. Cost ~$3.50 single seed.
+
+## Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto cells (HM-3 follow-up)
+ID: S-0099-02
+Priority: high
+Kind: evaluation
+Source task: t0099_random_init_pareto_robustness
+HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both t0091 and t0099. Pure data-analysis on the now-available 57+19+22+14 = 112 Pareto cells: extract per-cell field_elongation_pd from each cell&#x27;s 14-d morphology vector, plot vs DSI vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could resolve a 2-task-old open question.
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3481,6 +3515,20 @@ Kind: evaluation
 Source task: t0098_visualise_pareto_morphologies
 t0098 produced morphology charts but no per-cell decoded knob values. S-0091-04 (alt_topology basin deep-dive) and S-0091-07 (PCA on Pareto morph vectors) both need a CSV with one row per Pareto cell containing (cell_id, anchor, DSI, PD-rate, robustness, num_primary_branches, branch_prob_per_um, max_strahler_depth, mean_branching_angle_deg, rall_exponent, soma_offset_pd_um, field_elongation_pd, branch_density_gradient_pd, primary_branch_pd_concentration, mean_segment_length_um, soma_diameter_um, ais_length_um, branch_length_cv). Trivial extension of t0098&#x27;s _params_from_14d helper. Also covers HM-3&#x27;s per-cell field_elongation_pd vs DSI test which Spearman length-vs-DSI did not directly...
 
+## Pool t0091 + t0099 anchor counts to confirm HM-2 (PD-asymmetric &gt; ND-asymmetric) at higher n
+ID: S-0099-03
+Priority: medium
+Kind: evaluation
+Source task: t0099_random_init_pareto_robustness
+t0099 revised HM-2 from REFUTED to CONFIRMED by pooling 3 random-init seed counts (PD-asymm 20 vs ND-asymm 7, p~0.013). Add t0091&#x27;s 12 vs 9 to get full sample: 32 vs 16 (p~0.02). Confirms Schachter 2010 / Briggman 2011 prediction at n=4 datasets. Pure data-analysis; could form the basis for an answer asset on the soma-displacement-toward-PD mechanism.
+
+## NEURON worker process restart between gens to test if memory accumulation explains per-gen wall-clock doubling
+ID: S-0099-04
+Priority: medium
+Kind: library
+Source task: t0099_random_init_pareto_robustness
+t0099 observed gen 1 = 38-52 min, gen 8 = 167+ min for the same workload. Hypothesis: NEURON state accumulation across pop=96 cell builds per gen. Test: modify nsga2_driver to spawn fresh worker pool every 2 gens. If late-gen wall-clock improves by &gt;20%, the memory-accumulation hypothesis is confirmed. Cost $1-2 single seed.
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -3823,6 +3871,13 @@ Priority: low
 Kind: library
 Source task: t0098_visualise_pareto_morphologies
 t0090&#x27;s MorphologyResult.section_endpoints_xy does not register AIS endpoints, so t0098 omits AIS in the grid panels. A small generator extension to populate the AIS xy entries would let t0098&#x27;s grid show the AIS as a distinct colored line per panel, enabling visual cross-checks of ais_length_um across the Pareto. Either extend the generator or compute the AIS endpoint locally from soma + ais_length_um direction in t0098&#x27;s plotting code. Recommended task type: write-library. Cost: $0.
+
+## 20-generation single-seed random-init NSGA-II to test whether longer search bridges the joint-pass gap
+ID: S-0099-05
+Priority: low
+Kind: experiment
+Source task: t0099_random_init_pareto_robustness
+t0099 capped at 8 gens per seed. Hay 2011 used 1000 gens for similar problems. Test: one random-init seed at 20 gens with $10 cap to see if random-init can eventually bridge the joint-pass corner that warm-start reached at gen 2. If yes, warm-start was a 10x speedup not a fundamental enabler. If no after 20 gens, warm-start remains essential. Cost ~$10 single seed.
       </content>
     </section>
   </sections>

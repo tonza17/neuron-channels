@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $16.20 of $20.00 USD. $3.80 remains overall and $3.80 remains before the 100% stop
+Spent $23.91 of $20.00 USD. $0.00 remains overall and $0.00 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,22 +8,22 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $20.00 USD |
-| Total spent | $16.20 USD |
-| Budget left | $3.80 USD |
-| Budget left before stop threshold | $3.80 USD |
-| Spent percent | 80.98% |
+| Total spent | $23.91 USD |
+| Budget left | $0.00 USD |
+| Budget left before stop threshold | $0.00 USD |
+| Spent percent | 119.53% |
 | Warn threshold | 80% ($16.00) |
 | Stop threshold | 100% ($20.00) |
 | Default per-task limit | $5.00 USD |
-| Tasks with cost records | 90 |
-| Tasks with non-zero spend | 7 |
+| Tasks with cost records | 91 |
+| Tasks with non-zero spend | 8 |
 | Skipped tasks | 8 |
 
 ## Service Totals
 
 | Key | Cost (USD) |
 |-----|------------|
-| `vast_ai` | $9.13 |
+| `vast_ai` | $16.84 |
 | `vast_ai_compute` | $3.93 |
 
 ## Breakdown Totals
@@ -32,10 +32,16 @@ threshold.
 |-----|------------|
 | `vast-ai-cpu-epyc-7b13` | $7.42 |
 | `vast-ai-rtx5060ti` | $3.93 |
+| `vast-ai-seed33` | $3.41 |
 | `vast_ai_36149741` | $2.39 |
+| `vast-ai-seed22` | $1.96 |
+| `vast-ai-seed11` | $1.13 |
 | `vast-ai-quadro-p4000` | $1.06 |
 | `vast_ai_36137287` | $0.75 |
+| `vast-ai-driver-overhead` | $0.74 |
 | `vast-ai-rtx-pro-4000-idle` | $0.65 |
+| `vast-ai-idle` | $0.43 |
+| `vast-ai-setup` | $0.04 |
 | `api` | $0.00 |
 | `local_compute` | $0.00 |
 | `remote_compute` | $0.00 |
@@ -53,6 +59,7 @@ threshold.
 | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | completed | $5.83 | $5.00 | yes |
 | [`t0086_robustness_cluster_bio_comparison`](../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | completed | $1.59 | $3.50 | no |
 | [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | $0.65 | $4.00 | no |
+| [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | completed | $7.71 | $20.00 | no |
 
 ## Skipped Tasks
 
