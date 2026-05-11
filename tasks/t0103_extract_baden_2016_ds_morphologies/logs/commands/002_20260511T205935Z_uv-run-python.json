@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_metrics --format json --detail full",
+  "exit_code": 0,
+  "duration_seconds": 0.399,
+  "started_at": "2026-05-11T20:59:35Z",
+  "completed_at": "2026-05-11T20:59:35Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "002_20260511T205935Z_uv-run-python.stdout.txt",
+  "stderr_file": "002_20260511T205935Z_uv-run-python.stderr.txt",
+  "stdout_lines": 49,
+  "stderr_lines": 0,
+  "truncated": false
+}
