@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0099 is completed and its results/data/ JSON inputs are present on main.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-11T01:17:39Z",
-      "completed_at": null,
+      "completed_at": "2026-05-11T01:17:59Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
