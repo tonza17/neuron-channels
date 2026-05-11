@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "python -u -c \nimport urllib.request as ur\n# Find the real PoW JS by reading main.mjs\nurl = 'https://datadryad.org/.within.website/x/cmd/anubis/static/js/main.mjs?cacheBuster=1.24.0'\nreq = ur.Request(url, headers={'User-Agent': 'Mozilla/5.0'})\nwith ur.urlopen(req, timeout=15) as r:\n    body = r.read().decode()\nprint(body)\n",
+  "exit_code": 0,
+  "duration_seconds": 0.708,
+  "started_at": "2026-05-11T22:21:45Z",
+  "completed_at": "2026-05-11T22:21:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "082_20260511T222145Z_python-u-c.stdout.txt",
+  "stderr_file": "082_20260511T222145Z_python-u-c.stderr.txt",
+  "stdout_lines": 33,
+  "stderr_lines": 0,
+  "truncated": false
+}

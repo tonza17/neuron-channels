@@ -1,0 +1,7 @@
+Step 1: visit dataset page
+Step 2: fetch file_stream/3407 (expect Anubis challenge)
+  final=https://datadryad.org/downloads/file_stream/3407, ct=text/html; charset=UTF-8, len=2481
+  first 80 bytes: b'<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="utf-8">\n    <meta nam'
+
+Saved tasks\t0103_extract_baden_2016_ds_morphologies\data\README_for_BadenEtAl_RGCs_2016_v1.pdf: 2481 bytes, sha256=e7e326cdb5e18dd7187d9c73d6d4698b89bd9d1036e42ad569a2fc465dbd521f
+Is PDF? False

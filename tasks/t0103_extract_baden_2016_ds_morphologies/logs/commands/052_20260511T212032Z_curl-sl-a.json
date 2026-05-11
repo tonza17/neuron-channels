@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -sL -A Mozilla/5.0 --max-time 60 https://archive.org/wayback/available?url=datadryad.org/downloads/file_stream/3406",
+  "exit_code": 0,
+  "duration_seconds": 5.661,
+  "started_at": "2026-05-11T21:20:32Z",
+  "completed_at": "2026-05-11T21:20:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "052_20260511T212032Z_curl-sl-a.stdout.txt",
+  "stderr_file": "052_20260511T212032Z_curl-sl-a.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

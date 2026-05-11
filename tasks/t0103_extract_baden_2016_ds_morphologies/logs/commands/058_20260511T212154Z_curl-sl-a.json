@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -sL -A Mozilla/5.0 --max-time 60 https://gin.g-node.org/api/v1/repos/search?q=baden+2016&type=mirror",
+  "exit_code": 0,
+  "duration_seconds": 0.617,
+  "started_at": "2026-05-11T21:21:54Z",
+  "completed_at": "2026-05-11T21:21:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "058_20260511T212154Z_curl-sl-a.stdout.txt",
+  "stderr_file": "058_20260511T212154Z_curl-sl-a.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

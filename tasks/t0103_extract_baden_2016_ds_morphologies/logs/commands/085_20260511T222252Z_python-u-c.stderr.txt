@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<string>", line 118, in <module>
+    size, sha = download_file(opener, cj, fid, name)
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 91, in download_file
+    get_anubis_auth(opener, cj, target_url)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 53, in get_anubis_auth
+    body = r.read().decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe2 in position 10: invalid continuation byte

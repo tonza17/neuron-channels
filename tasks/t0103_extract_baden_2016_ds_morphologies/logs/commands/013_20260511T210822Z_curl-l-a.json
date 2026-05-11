@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -L -A Mozilla/5.0 --max-time 180 -o tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/files/baden_2016_functional_diversity_rgc.pdf https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4734159/pdf/",
+  "exit_code": 0,
+  "duration_seconds": 0.967,
+  "started_at": "2026-05-11T21:08:22Z",
+  "completed_at": "2026-05-11T21:08:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "013_20260511T210822Z_curl-l-a.stdout.txt",
+  "stderr_file": "013_20260511T210822Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 10,
+  "truncated": false
+}

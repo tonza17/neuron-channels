@@ -1,0 +1,49 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host www.ebi.ac.uk:443 was resolved.
+* IPv6: (none)
+* IPv4: 193.62.193.80
+*   Trying 193.62.193.80:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server accepted http/1.1
+* Connected to www.ebi.ac.uk (193.62.193.80) port 443
+* using HTTP/1.x
+> GET /europepmc/webservices/rest/article/PMC/4724341/fullTextXML HTTP/1.1
+
+> Host: www.ebi.ac.uk
+
+> User-Agent: Mozilla/5.0
+
+> Accept: */*
+
+>
+
+* Request completely sent off
+* schannel: remote party requests renegotiation
+* schannel: renegotiating SSL/TLS connection
+* schannel: SSL/TLS connection renegotiated
+< HTTP/1.1 404 Not Found
+
+< Strict-Transport-Security: max-age=0
+
+< Date: Mon, 11 May 2026 21:10:55 GMT
+
+< Access-Control-Max-Age: 3600
+
+< Access-Control-Allow-Origin: *
+
+< Connection: keep-alive
+
+< Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+< Access-Control-Allow-Headers: Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+
+< Content-Length: 0
+
+<
+
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+* Connection #0 to host www.ebi.ac.uk left intact

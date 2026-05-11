@@ -1,0 +1,19 @@
+HTTP/1.1 404 NOT FOUND
+Server: nginx
+Date: Mon, 11 May 2026 21:20:23 GMT
+Content-Type: text/html
+Connection: keep-alive
+server-timing: captures_list;dur=0.689851, exclusion.robots;dur=0.055928, exclusion.robots.policy;dur=0.040140, esindex;dur=0.012873, cdx.remote;dur=31.350978, LoadShardBlock;dur=681.916619, PetaboxLoader3.datanode;dur=524.237748, PetaboxLoader3.resolve;dur=50.982909, spncheck.live;dur=263.582056
+x-app-server: wwwb-app204-dc6
+x-ts: 404
+x-tr: 1005
+server-timing: TR;dur=0,Tw;dur=0,Tc;dur=1
+set-cookie: wb-p-SERVER=wwwb-app204; path=/
+X-location: All
+X-AS: 2856
+X-RL: 0
+X-NA: 0
+X-Page-Cache: MISS
+X-NID: British Telecommunications PLC
+Referrer-Policy: no-referrer-when-downgrade
+Permissions-Policy: interest-cohort=()

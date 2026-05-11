@@ -1,0 +1,20 @@
+HTTP/1.1 405 Method Not Allowed
+Date: Mon, 11 May 2026 21:19:57 GMT
+Content-Type: text/plain; charset=utf-8
+Connection: keep-alive
+Set-Cookie: AWSALBTG=ujm/jUar+grmEHfmbdF1Mb1+X5/jcyKlpWN1xuoylqXH6hq2timlbNUHd6N1lr9+0flIm5o0oLi2dcPqbCAORS/Bej+73f+xnuTLOmGllYM66Sc3J8H4AonjHs//rcLTSKJKzSSQF54AURwARnMQu8G0LkTiZVmxDFvWjYZgW8Gy/1ky8eo=; Expires=Mon, 18 May 2026 21:19:57 GMT; Path=/
+Set-Cookie: AWSALBTGCORS=ujm/jUar+grmEHfmbdF1Mb1+X5/jcyKlpWN1xuoylqXH6hq2timlbNUHd6N1lr9+0flIm5o0oLi2dcPqbCAORS/Bej+73f+xnuTLOmGllYM66Sc3J8H4AonjHs//rcLTSKJKzSSQF54AURwARnMQu8G0LkTiZVmxDFvWjYZgW8Gy/1ky8eo=; Expires=Mon, 18 May 2026 21:19:57 GMT; Path=/; SameSite=None; Secure
+Set-Cookie: AWSALB=cCGw69i6nFBdFL8BhiZfE3nKfEW//+zpNSC6ay/vJaCxsZVMInmsP1SiJ1Iz1yP4o61FdRqyAs4V4hDXY7VB9wTP0SNqnv3Dic2YhO1qnnVOxyv4KTtlhcDrFR6H; Expires=Mon, 18 May 2026 21:19:57 GMT; Path=/
+Set-Cookie: AWSALBCORS=cCGw69i6nFBdFL8BhiZfE3nKfEW//+zpNSC6ay/vJaCxsZVMInmsP1SiJ1Iz1yP4o61FdRqyAs4V4hDXY7VB9wTP0SNqnv3Dic2YhO1qnnVOxyv4KTtlhcDrFR6H; Expires=Mon, 18 May 2026 21:19:57 GMT; Path=/; SameSite=None; Secure
+Server: Apache/2.4.66 (Amazon Linux) OpenSSL/3.5.5
+x-frame-options: SAMEORIGIN
+x-xss-protection: 0
+x-content-type-options: nosniff
+x-permitted-cross-domain-policies: none
+referrer-policy: strict-origin-when-cross-origin
+x-api-version: 2.1.0
+vary: Accept
+cache-control: no-cache
+content-security-policy:
+x-request-id: d0867ff0-1ff0-4b56-8978-d4291269835c
+x-runtime: 0.020076

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "python -u -c \n# Use curl_cffi which mimics real browser TLS fingerprint, may bypass AWS WAF\nimport subprocess, sys\ntry:\n    import curl_cffi\n    print(f'curl_cffi available, version {curl_cffi.__version__}')\nexcept ImportError:\n    print('curl_cffi not installed — installing...')\n    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--quiet', 'curl_cffi'])\n    import curl_cffi\n    print('installed')\n",
+  "exit_code": 1,
+  "duration_seconds": 3.912,
+  "started_at": "2026-05-11T22:29:32Z",
+  "completed_at": "2026-05-11T22:29:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "089_20260511T222932Z_python-u-c.stdout.txt",
+  "stderr_file": "089_20260511T222932Z_python-u-c.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 22,
+  "truncated": false
+}

@@ -1,0 +1,12 @@
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0103_extract_baden_2016_ds_morphologies\tasks\t0103_extract_baden_2016_ds_morphologies\assets\dataset\baden-2016-ds-cells\files\baden-2016-ds-cells.parquet (5,100,470 bytes)
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0103_extract_baden_2016_ds_morphologies\tasks\t0103_extract_baden_2016_ds_morphologies\assets\dataset\baden-2016-ds-cells\details.json
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0103_extract_baden_2016_ds_morphologies\tasks\t0103_extract_baden_2016_ds_morphologies\assets\dataset\baden-2016-ds-cells\description.md
+Total cells: 1238
+  G  2 (OFF DS): 162
+  G  6 ((ON-)OFF JAM-B mix): 104
+  G 12 (ON-OFF DS 1): 397
+  G 13 (ON-OFF DS 2): 129
+  G 16 (ON DS trans.): 99
+  G 25 (ON DS sust. 1): 76
+  G 26 (ON slow): 141
+  G 29 (ON local sust. OS): 130

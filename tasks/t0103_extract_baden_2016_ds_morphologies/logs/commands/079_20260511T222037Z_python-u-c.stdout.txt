@@ -1,0 +1,9 @@
+404 http://retinal-functomics.net/wp-content/uploads/2015/12/BadenEtAl_RGCs_2016_v1.mat
+404 http://retinal-functomics.net/wp-content/uploads/2016/12/BadenEtAl_RGCs_2016_v1.mat
+404 http://retinal-functomics.net/wp-content/uploads/2016/BadenEtAl_RGCs_2016_v1.mat
+404 http://retinal-functomics.net/data/BadenEtAl_RGCs_2016_v1.mat
+404 http://retinal-functomics.net/data/Baden_et_al_2016/BadenEtAl_RGCs_2016_v1.mat
+404 https://retinal-functomics.net/wp-content/uploads/2015/12/BadenEtAl_RGCs_2016_v1.mat
+404 https://retinal-functomics.net/wp-content/uploads/2016/12/BadenEtAl_RGCs_2016_v1.mat
+404 https://retinal-functomics.net/wp-content/uploads/2016/BadenEtAl_RGCs_2016_v1.mat
+404 https://retinal-functomics.net/data/BadenEtAl_RGCs_2016_v1.mat

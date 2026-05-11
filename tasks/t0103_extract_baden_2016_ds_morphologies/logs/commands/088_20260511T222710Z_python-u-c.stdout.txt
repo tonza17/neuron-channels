@@ -1,0 +1,8 @@
+Step 1: visit dataset page
+  status=200, ct=text/html; charset=utf-8, len_body=35794
+Step 2: fetch https://datadryad.org/downloads/file_stream/3407
+  final=https://datadryad.org/downloads/file_stream/3407, ct=text/html; charset=UTF-8, len=2481
+  first 100 bytes: b'<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="utf-8">\n    <meta name="viewport" content'
+  is_anubis=False, is_waf=True, is_pdf=False
+
+FAIL: response is not a PDF

@@ -1,0 +1,14 @@
+[file_id=3406] BadenEtAl_RGCs_2016_v1.mat
+  Solving PoW (difficulty=4)...
+  PoW solved: nonce=129626, hash=000022e6f900502f..., 193ms
+  status=200, content-type=text/plain, content-length=426025871, final=https://dryad-assetstore-merritt-west.s3.us-west-2.amazonaws.com/ark%3A/13030/m5...
+    progress: 50.0 MB
+    progress: 100.0 MB
+    progress: 150.0 MB
+    progress: 200.0 MB
+    progress: 250.0 MB
+    progress: 300.0 MB
+    progress: 350.0 MB
+    progress: 400.0 MB
+  done: 426025871 bytes, sha256=6a8fba740efbce1e72584fda23a637a078ddb74f3f5d8a064ed231d10b6c4737
+[file_id=3407] README_for_BadenEtAl_RGCs_2016_v1.pdf

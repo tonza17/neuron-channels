@@ -1,0 +1,8 @@
+302 https://merritt.cdlib.org/d/ark%3A%2Fb5072%2Ffk2j10mc35: The HTTP server returned a redirect error that would lead to an infinite loop.
+The last 30x error message was:
+Found
+302 https://merritt.cdlib.org/m/dryad_v2: The HTTP server returned a redirect error that would lead to an infinite loop.
+The last 30x error message was:
+Found
+404 https://merritt.cdlib.org/object/ark:/b5072/fk2j10mc35: Not Found
+404 https://merritt.cdlib.org/object/ark%3A%2Fb5072%2Ffk2j10mc35: Not Found
