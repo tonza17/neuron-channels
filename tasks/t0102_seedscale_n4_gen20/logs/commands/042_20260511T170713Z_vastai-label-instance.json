@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "vastai label instance 36556586 neuron-channels/t0102_seedscale_n4_gen20",
+  "exit_code": 0,
+  "duration_seconds": 1.706,
+  "started_at": "2026-05-11T17:07:13Z",
+  "completed_at": "2026-05-11T17:07:15Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "042_20260511T170713Z_vastai-label-instance.stdout.txt",
+  "stderr_file": "042_20260511T170713Z_vastai-label-instance.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

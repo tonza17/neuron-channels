@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36586 root@ssh4.vast.ai curl -LsSf https://astral.sh/uv/install.sh | sh 2>&1 | tail -5 && /root/.local/bin/uv --version",
+  "exit_code": 0,
+  "duration_seconds": 4.015,
+  "started_at": "2026-05-11T17:09:59Z",
+  "completed_at": "2026-05-11T17:10:04Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "052_20260511T170959Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "052_20260511T170959Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 2,
+  "truncated": false
+}

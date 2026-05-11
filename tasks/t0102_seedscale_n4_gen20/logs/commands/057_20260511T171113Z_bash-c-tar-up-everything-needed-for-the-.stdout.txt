@@ -1,0 +1,2 @@
+-rw-r--r-- 1 md1avn 1049089 9313858 May 11 18:11 /tmp/t0102_remote_payload.tar.gz
+8.9M	/tmp/t0102_remote_payload.tar.gz

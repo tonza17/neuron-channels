@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36586 root@ssh4.vast.ai mkdir -p /root/t0102_workdir && ls -la /root/t0102_workdir",
+  "exit_code": 0,
+  "duration_seconds": 2.669,
+  "started_at": "2026-05-11T17:09:11Z",
+  "completed_at": "2026-05-11T17:09:14Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "050_20260511T170911Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "050_20260511T170911Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 2,
+  "truncated": false
+}

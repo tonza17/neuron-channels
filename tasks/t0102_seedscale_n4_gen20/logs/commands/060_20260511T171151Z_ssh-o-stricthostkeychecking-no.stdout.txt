@@ -1,0 +1,24 @@
+-rw-r--r-- 1 1144306 1049089 2077 May 11 14:09 bkt80.mod
+-rw-r--r-- 1 1144306 1049089 1818 May 11 14:09 calt80.mod
+-rw-r--r-- 1 1144306 1049089 1471 May 11 14:09 catt80.mod
+-rw-r--r-- 1 1144306 1049089 1603 May 11 14:09 iht80.mod
+-rw-r--r-- 1 1144306 1049089 1628 May 11 14:09 kdrt80.mod
+ -> [32mCompiling[0m skahpt80.c
+ -> [32mCompiling[0m skt80.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+total 580
+drwxr-xr-x 3 root    root      4096 May 11 17:11 .
+drwxr-xr-x 3 1144306 1049089   4096 May 11 17:11 ..
+drwxr-xr-x 2 root    root        35 May 11 17:11 .libs
+-rw-r--r-- 1 root    root     15929 May 11 17:11 bkt80.c
+-rw-r--r-- 1 root    root     15224 May 11 17:11 bkt80.o
+-rw-r--r-- 1 root    root     15121 May 11 17:11 calt80.c
+-rw-r--r-- 1 root    root     13432 May 11 17:11 calt80.o
+-rw-r--r-- 1 root    root     14762 May 11 17:11 catt80.c
+-rw-r--r-- 1 root    root     13080 May 11 17:11 catt80.o
+total 120
+drwxr-xr-x 2 root root     35 May 11 17:11 .
+drwxr-xr-x 3 root root   4096 May 11 17:11 ..
+-rwxr-xr-x 1 root root 118704 May 11 17:11 libnrnmech.so

@@ -1,0 +1,9 @@
+t0083 best electrophys: dsi=0.7061, pd_rate_hz=39.1786
+anchor1 bedb_like @ N_EVAL_SEEDS=4 directions=8:
+  dsi_vector_sum=0.0262
+  pd_rate_hz=45.3571
+  robustness=0.8370
+  is_unstable=False, n_errors=0
+  elapsed=150.71s
+  Expected from t0093 fingerprint: PD-rate ~43.6 Hz +/- 1.0 Hz
+  Within tolerance: False

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "vastai search offers cpu_cores_effective>=32 cpu_ram>=100 dph<=2.0 reliability>=0.98 rentable=true verified=true rented=false --order dph --limit 60 --raw",
+  "exit_code": 0,
+  "duration_seconds": 2.113,
+  "started_at": "2026-05-11T17:00:14Z",
+  "completed_at": "2026-05-11T17:00:16Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "025_20260511T170014Z_vastai-search-offers.stdout.txt",
+  "stderr_file": "025_20260511T170014Z_vastai-search-offers.stderr.txt",
+  "stdout_lines": 4300,
+  "stderr_lines": 0,
+  "truncated": false
+}

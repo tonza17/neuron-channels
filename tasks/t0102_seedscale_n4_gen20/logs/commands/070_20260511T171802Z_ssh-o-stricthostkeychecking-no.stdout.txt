@@ -1,0 +1,12 @@
+6120000
+100000
+/sys/fs/cgroup/cpuacct
+/sys/fs/cgroup/cpu
+/sys/fs/cgroup/cpuset
+/sys/fs/cgroup/cpuset/cpuset.memory_pressure
+/sys/fs/cgroup/cpuset/cpuset.memory_migrate
+/sys/fs/cgroup/cpuset/cpuset.mem_exclusive
+/sys/fs/cgroup/cpuset/cpuset.memory_spread_slab
+/sys/fs/cgroup/cpuset/cpuset.cpu_exclusive
+/sys/fs/cgroup/cpuset/cpuset.effective_mems
+/sys/fs/cgroup/cpuset/cpuset.effective_cpus

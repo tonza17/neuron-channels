@@ -1,0 +1,11 @@
+CONNECTED
+Linux 155289b00671 5.15.0-52-generic #58~20.04.1 SMP Sat Oct 12 02:38:22 UTC 2024 x86_64 GNU/Linux
+255
+model name	: AMD EPYC 7B13 64-Core Processor
+               total        used        free      shared  buff/cache   available
+Mem:             503          72         277          36         193         431
+Swap:              7           0           7
+overlay          40G  424K   40G   1% /
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"

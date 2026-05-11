@@ -1,0 +1,7 @@
+neuron: 8.2.7+
+NEURON h loaded OK
+pymoo: 0.6.1.6
+NSGA2 import OK
+LHS import OK
+StarmapParallelization import OK
+numpy: 2.4.4 scipy: 1.17.1
