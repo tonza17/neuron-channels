@@ -14,10 +14,10 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify all 9 dependency tasks (t0024, t0080, t0083, t0090, t0091, t0092, t0093, t0099, t0101) are completed and their assets are reusable.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-11T14:13:48Z",
       "completed_at": null,
-      "log_file": "logs/steps/002_check-deps/"
+      "log_file": "logs\\steps\\002_check-deps/"
     },
     {
       "step": 3,
