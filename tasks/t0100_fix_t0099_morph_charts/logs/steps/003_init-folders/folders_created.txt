@@ -1,0 +1,8 @@
+Folders created by init_task_folders.py for t0100_fix_t0099_morph_charts:
+
+assets/, code/, corrections/, intervention/, logs/{commands,searches,sessions,steps},
+plan/, research/, results/{images,}.
+.gitkeep markers added to 12 empty directories.
+__init__.py created at task root and in code/.
+
+Created at: 2026-05-11T01:18:15Z
