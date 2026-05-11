@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-11T01:29:22Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-11T13:54:31Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>430394</char_count>
-    <byte_count>430829</byte_count>
-    <estimated_tokens>107598</estimated_tokens>
+    <char_count>434156</char_count>
+    <byte_count>434593</byte_count>
+    <estimated_tokens>108539</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -204,9 +204,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0098_visualise_pareto_morphologies</id>
         <id>t0099_random_init_pareto_robustness</id>
         <id>t0100_fix_t0099_morph_charts</id>
+        <id>t0101_brainstorm_results_21</id>
       </source_ids>
       <content>
-Completed tasks: 92
+Completed tasks: 93
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -759,6 +760,12 @@ ID: t0100_fix_t0099_morph_charts
 Completed: 2026-05-11
 Short description: Fix t0099 morphology-chart rendering: `vector_68d[:14]` was wrong (electrophys); replace with `vector_68d[54:]` (morphology). Re-render 2 PNGs. Optimisation unaffected.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0100_fix_t0099_morph_charts&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Fix t0099 Morphology Charts Summary t0099&#x27;s two morphology charts (`headline_best_cells.png`, `cross_seed_top5_morphology_grid.png`) were broken because `build_morphology_charts.py:114` used `vector_68d[:14]` (electrophys block) instead of `vector_68d[54:]` (morphology block) when reconstructing each cell&#x27;s morphology. The generator received nonsense parameters and emitted zero dendrite sections, so the charts showed only giant filled circles. **Optimisation results are unaffected** — every NSGA-II / evaluator / scorecard / anchor-classifier code path uses the...
+
+## Brainstorm results session 21
+ID: t0101_brainstorm_results_21
+Completed: 2026-05-11
+Short description: Brainstorm 21: Poleg-Polsky 2026 spec deep-dive vs. our NSGA-II history; commission 68-d t0102 (seeds=2, N_SEEDS=4, gens=20); record 3 new suggestions; budget 20-&gt;35 USD.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0101_brainstorm_results_21&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 21 — Poleg-Polsky 2026 Deep-Dive Summary Twenty-first strategic brainstorm, triggered by a researcher request to extract numerical specs from Poleg-Polsky 2026 (`10.1038/s41467-026-70288-4`) and compare them against our NSGA-II / MOBO history. The session (a) read seven concrete answers directly from the PDF, (b) flagged several fabricated claims in our existing `summary.md`, (c) commissioned a follow-up NSGA-II task `t0102_seedscale_n4_gen20` at GA-seeds=2 / N_SEEDS=4 / gens=20 on the 68-d substrate, and (d) recorded the project-budget bump...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1391,6 +1398,7 @@ Confidence: medium
         <id>S-0097-03</id>
         <id>S-0099-01</id>
         <id>S-0099-02</id>
+        <id>S-0101-01</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -1613,6 +1621,8 @@ Confidence: medium
         <id>S-0098-01</id>
         <id>S-0099-03</id>
         <id>S-0099-04</id>
+        <id>S-0101-02</id>
+        <id>S-0101-03</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1665,7 +1675,7 @@ Confidence: medium
         <id>S-0099-05</id>
       </source_ids>
       <content>
-Open suggestions: 317
+Open suggestions: 320
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -1981,6 +1991,13 @@ Priority: high
 Kind: evaluation
 Source task: t0099_random_init_pareto_robustness
 HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both t0091 and t0099. Pure data-analysis on the now-available 57+19+22+14 = 112 Pareto cells: extract per-cell field_elongation_pd from each cell&#x27;s 14-d morphology vector, plot vs DSI vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could resolve a 2-task-old open question.
+
+## Correct fabricated content in Poleg-Polsky 2026 summary.md via the corrections mechanism
+ID: S-0101-01
+Priority: high
+Kind: evaluation
+Source task: t0101_brainstorm_results_21
+tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has claims absent from the paper: (a) wrong title (published &#x27;supporting elementary motion detection&#x27;); (b) wrong primitives (&#x27;NMDA multiplicative gating&#x27;, &#x27;velocity-dependent coincidence detection&#x27;, &#x27;distance-graded delay lines&#x27;); (c) wrong search axes (&#x27;A-type potassium density&#x27;); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives: H&amp;R, anti-H&amp;R, amplitude, temporal-alignment, B&amp;L, anti-B&amp;L, pause-in-inhibition, directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3535,6 +3552,20 @@ Priority: medium
 Kind: library
 Source task: t0099_random_init_pareto_robustness
 t0099 observed gen 1 = 38-52 min, gen 8 = 167+ min for the same workload. Hypothesis: NEURON state accumulation across pop=96 cell builds per gen. Test: modify nsga2_driver to spawn fresh worker pool every 2 gens. If late-gen wall-clock improves by &gt;20%, the memory-accumulation hypothesis is confirmed. Cost $1-2 single seed.
+
+## Lock N_SEEDS=4 as project-wide default if t0102 reproduces t0099 DSI/PD scatter
+ID: S-0101-02
+Priority: medium
+Kind: library
+Source task: t0101_brainstorm_results_21
+N_SEEDS=20 in tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/constants.py:43 is propagated as the noise-replicate count into every downstream NSGA-II task (t0081, t0083, t0091, t0099). If t0102&#x27;s DSI/PD per-cell estimates at N_SEEDS=4 fall within +/- 1 std of t0099&#x27;s matched cells at N_SEEDS=20, lower the project-wide default to 4 (5x cheaper per evaluation). Implementation: corrections/library_modeldb_189347_dsgc_dendritic.json or a small library-update task; document the empirical comparison in a results table. Cost $0 if the comparison data is already in t0102.
+
+## PP-style ablation: budget-matched comparison of few-seeds-many-gens vs many-seeds-few-gens on 68-d substrate
+ID: S-0101-03
+Priority: medium
+Kind: experiment
+Source task: t0101_brainstorm_results_21
+Poleg-Polsky 2026 uses 50-100 GA seeds at pop=10, 300-1000 generations. Our convention is 1-2 GA seeds at pop=96, 8-17 generations. Hold total candidate budget fixed (e.g., 20 000 evaluations) and compare two configurations on the same 68-d substrate: (a) 2 seeds x pop=96 x 100 gens (closer to our convention, extreme generations), (b) 20 seeds x pop=10 x 100 gens (PP convention). Score: number of unique Pareto cells discovered, hypervolume, joint-pass cells, anchor diversity. Cost ~$10 at $0.24/hr Vast.ai for ~40 hours (one instance, both configurations sequentially). Could revise our future MOBO design from BoTorch-style large-pop NSGA-II toward PP-style many-seed (1+9)-ES if (b) wins on...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05

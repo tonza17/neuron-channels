@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-100-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-374-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-101-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-377-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,15 +29,15 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (35K)
-| [full](llm-context/full.xml) (568K) | [roadmap](llm-context/roadmap.xml) (108K) |
-[results](llm-context/results-deep-dive.xml) (440K) |
+| [full](llm-context/full.xml) (570K) | [roadmap](llm-context/roadmap.xml) (109K) |
+[results](llm-context/results-deep-dive.xml) (442K) |
 [assets](llm-context/literature-and-assets.xml) (61K)
 
-*Last updated: 2026-05-11 01:29 UTC*
+*Last updated: 2026-05-11 13:54 UTC*
 
-* **Budget**: **$24** spent of $20
-* **Remaining**: **$0**
-* **Usage**: `████████████████████████` 119.5%
+* **Budget**: **$24** spent of $35
+* **Remaining**: **$11**
+* **Usage**: `██████████████░░░░░░` 68.3%
 * **GPU Machines**: **8** provisioned across 8 tasks · **$24** GPU spend
   ([details](machines/))
 * **Provisioning**: 4 failed attempts · $0.00 wasted · 33% failure rate
@@ -82,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (92 total)](tasks/by-status/completed.md)
+## [Recently Completed (93 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0101 | [Brainstorm results session 21](../overview/tasks/task_pages/t0101_brainstorm_results_21.md) | [`results`](../tasks/t0101_brainstorm_results_21/results/results_detailed.md) | 2026-05-11 13:50 |
 | 0100 | [Re-render t0099 morphology charts with correct 68-d slice](../overview/tasks/task_pages/t0100_fix_t0099_morph_charts.md) | [`results`](../tasks/t0100_fix_t0099_morph_charts/results/results_detailed.md) | 2026-05-11 01:27 |
 | 0099 | [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`results`](../tasks/t0099_random_init_pareto_robustness/results/results_detailed.md) | 2026-05-10 23:35 |
 | 0098 | [Visualise t0091 Pareto morphologies + per-cell DSI / PD-rate charts](../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) | [`results`](../tasks/t0098_visualise_pareto_morphologies/results/results_detailed.md) | 2026-05-08 21:50 |
@@ -95,9 +96,8 @@ No blocked tasks.
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`results`](../tasks/t0091_morphology_extended_nsga2_v1/results/results_detailed.md) | 2026-05-08 15:55 |
 | 0093 | [Patched-generator full 60-morph re-sweep + t0090 correction overlay](../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) | [`results`](../tasks/t0093_resweep_and_t0090_correction/results/results_detailed.md) | 2026-05-08 03:55 |
 | 0092 | [Diagnose why t0090 procedural cells produce no action potentials](../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | [`results`](../tasks/t0092_diagnose_morphology_generator_silence/results/results_detailed.md) | 2026-05-08 00:55 |
-| 0090 | [Procedural DSGC morphology generator + diversity test + validation bundle](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | [`results`](../tasks/t0090_morphology_generator_diversity_test/results/results_detailed.md) | 2026-05-07 18:25 |
 
-*82 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*83 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +122,62 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (332 open)](suggestions/)
+## [Recent Suggestions (335 open)](suggestions/)
+
+<details>
+<summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via
+the corrections mechanism</strong> (S-0101-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-11 | **Source**:
+[t0101_brainstorm_results_21](../tasks/t0101_brainstorm_results_21/)
+
+tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has
+claims absent from the paper: (a) wrong title (published 'supporting elementary motion
+detection'); (b) wrong primitives ('NMDA multiplicative gating', 'velocity-dependent
+coincidence detection', 'distance-graded delay lines'); (c) wrong search axes ('A-type
+potassium density'); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives:
+H&R, anti-H&R, amplitude, temporal-alignment, B&L, anti-B&L, pause-in-inhibition,
+directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task
+writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verified content
+(quotes in t0101 session_log). Cost $0.
+
+</details>
+
+<details>
+<summary>📚 <strong>Lock N_SEEDS=4 as project-wide default if t0102 reproduces t0099
+DSI/PD scatter</strong> (S-0101-02)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-11 | **Source**:
+[t0101_brainstorm_results_21](../tasks/t0101_brainstorm_results_21/)
+
+N_SEEDS=20 in tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/constants.py:43 is
+propagated as the noise-replicate count into every downstream NSGA-II task (t0081, t0083,
+t0091, t0099). If t0102's DSI/PD per-cell estimates at N_SEEDS=4 fall within +/- 1 std of
+t0099's matched cells at N_SEEDS=20, lower the project-wide default to 4 (5x cheaper per
+evaluation). Implementation: corrections/library_modeldb_189347_dsgc_dendritic.json or a small
+library-update task; document the empirical comparison in a results table. Cost $0 if the
+comparison data is already in t0102.
+
+</details>
+
+<details>
+<summary>🧪 <strong>PP-style ablation: budget-matched comparison of
+few-seeds-many-gens vs many-seeds-few-gens on 68-d substrate</strong>
+(S-0101-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-11 | **Source**:
+[t0101_brainstorm_results_21](../tasks/t0101_brainstorm_results_21/)
+
+Poleg-Polsky 2026 uses 50-100 GA seeds at pop=10, 300-1000 generations. Our convention is 1-2
+GA seeds at pop=96, 8-17 generations. Hold total candidate budget fixed (e.g., 20 000
+evaluations) and compare two configurations on the same 68-d substrate: (a) 2 seeds x pop=96 x
+100 gens (closer to our convention, extreme generations), (b) 20 seeds x pop=10 x 100 gens (PP
+convention). Score: number of unique Pareto cells discovered, hypervolume, joint-pass cells,
+anchor diversity. Cost ~$10 at $0.24/hr Vast.ai for ~40 hours (one instance, both
+configurations sequentially). Could revise our future MOBO design from BoTorch-style large-pop
+NSGA-II toward PP-style many-seed (1+9)-ES if (b) wins on diversity.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
@@ -238,73 +293,30 @@ asymmetric anchor cells. Cost: $0 (local CPU). Recommended task types: data-anal
 
 </details>
 
-<details>
-<summary>🧪 <strong>Continue t0091 NSGA-II for 6 more generations (gen 3-8) to test
-whether HV plateau or biological-plausibility shifts</strong> (S-0091-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-t0091 stopped at gen 2 of 8 when REQ-10 (>=8-cell Pareto) was satisfied 7x over (57 cells);
-cost watchdog never fired ($0.65 of $4.00 cap). The HV trajectory was still climbing at +68
-percent per generation (14.07 to 23.71) and plateau detection requires >=4 generations of
-history before it can fire. Run pop=96 x 6 more generations on a single Vast.ai EPYC 7B13
-64-core resume from t0091's gen-2 final population (snapshot the population from
-results/data/all_evaluations.json). Tests three open questions: (a) does HV plateau before gen
-8? (b) does any gen 3+ cell pass biological plausibility, or is universal channel-side
-violation robust to generation depth? (c) does the PD vs ND anchor count shift toward
-significance with more generations? Cost estimate: ~$1.80 (6 gens x ~12 min/gen wall-clock x
-60 parallel workers x $0.23/hr); fits remaining $3.80 project buffer. Recommended task types:
-experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>alt_topology basin deep-dive: identify morphology features
-distinguishing alt_topology vs bedb_like Pareto cells</strong> (S-0091-04)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-16 alt_topology cells survived in the 57-cell Pareto (parity with bedb_like's 20), and the
-only strict joint-pass cell (DSI 0.51, PD 35 Hz, robust 0.79) is nearest to alt_topology in
-14-d morphology space. creative_thinking.md flags this as evidence for at least two distinct
-morphological basins of joint-pass-adjacency, but the 14-d signature distinguishing
-alt_topology from bedb_like has not been quantified. Pure data analysis on pareto_front.json +
-warm_start_population.json: PCA + UMAP on the 14-d morph vectors restricted to Pareto cells
-colour-coded by anchor; per-feature Mann-Whitney U tests on each of the 14 knobs; identify the
-top 3-5 discriminative features (likely num_primary_branches, max_strahler_depth,
-mean_branching_angle); cross-reference with biological scorecard rows. Cost: $0. Recommended
-task types: data-analysis.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Reformulate NSGA-II with biological priors as additional
-objectives or hard constraints</strong> (S-0091-05)</summary>
-
-**Kind**: technique | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-t0091 used 3-objective NSGA-II minimising (-DSI, -PD-rate, -robustness) with biological priors
-applied as a post-hoc filter (0/57 Pareto cells pass). The optimiser drifts to the upper rail
-of NMDA / NaP / GABA bounds without paying any cost. Reformulate as either (a) 4+ objective
-NSGA-II adding worst-case prior-violation sigma as a fourth objective, or (b) hard-constrained
-NSGA-II using pymoo's constraint handling with each prior as a g(x) <= 0 inequality. Hay 2011
-is direct precedent for (a). Run a small-scale pass (pop=64, 4 gens, ~$1.00) on the t0091
-substrate and compare the reformulated Pareto's biological-plausibility distribution against
-t0091's post-hoc-filter Pareto. If the reformulated Pareto includes any biologically-plausible
-joint-pass cells, the 'morphology cannot rescue priors' verdict was driven by formulation, not
-substrate. Cost ~$1.00 on Vast.ai EPYC 7B13. Recommended task types: experiment-run,
-build-model.
-
-</details>
-
-*322 more open suggestions → [open suggestions](suggestions/)*
+*325 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (53)](suggestions/)
+## [High Priority Suggestions (54)](suggestions/)
+
+<details>
+<summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via
+the corrections mechanism</strong> (S-0101-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-11 | **Source**:
+[t0101_brainstorm_results_21](../tasks/t0101_brainstorm_results_21/)
+
+tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has
+claims absent from the paper: (a) wrong title (published 'supporting elementary motion
+detection'); (b) wrong primitives ('NMDA multiplicative gating', 'velocity-dependent
+coincidence detection', 'distance-graded delay lines'); (c) wrong search axes ('A-type
+potassium density'); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives:
+H&R, anti-H&R, amplitude, temporal-alignment, B&L, anti-B&L, pause-in-inhibition,
+directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task
+writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verified content
+(quotes in t0101 session_log). Cost $0.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
@@ -469,26 +481,7 @@ K=50-200) — request explicit $25 budget cap or reduce population/generations.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
-ProcessPoolExecutor</strong> (S-0090-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
-[t0090_morphology_generator_diversity_test](../tasks/t0090_morphology_generator_diversity_test/)
-
-t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
-single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
-plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
-retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
-cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
-sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
-plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
-for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
-correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-*43 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*44 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

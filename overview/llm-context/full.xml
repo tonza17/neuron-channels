@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-05-11T01:29:22Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-05-11T13:54:31Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>100</section_count>
-    <char_count>2270136</char_count>
-    <byte_count>2278465</byte_count>
-    <estimated_tokens>567534</estimated_tokens>
+    <section_count>101</section_count>
+    <char_count>2280624</char_count>
+    <byte_count>2288977</byte_count>
+    <estimated_tokens>570156</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -208,9 +208,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0098_visualise_pareto_morphologies</id>
         <id>t0099_random_init_pareto_robustness</id>
         <id>t0100_fix_t0099_morph_charts</id>
+        <id>t0101_brainstorm_results_21</id>
       </source_ids>
       <content>
-Completed tasks: 92
+Completed tasks: 93
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -763,6 +764,12 @@ ID: t0100_fix_t0099_morph_charts
 Completed: 2026-05-11
 Short description: Fix t0099 morphology-chart rendering: `vector_68d[:14]` was wrong (electrophys); replace with `vector_68d[54:]` (morphology). Re-render 2 PNGs. Optimisation unaffected.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0100_fix_t0099_morph_charts&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Fix t0099 Morphology Charts Summary t0099&#x27;s two morphology charts (`headline_best_cells.png`, `cross_seed_top5_morphology_grid.png`) were broken because `build_morphology_charts.py:114` used `vector_68d[:14]` (electrophys block) instead of `vector_68d[54:]` (morphology block) when reconstructing each cell&#x27;s morphology. The generator received nonsense parameters and emitted zero dendrite sections, so the charts showed only giant filled circles. **Optimisation results are unaffected** — every NSGA-II / evaluator / scorecard / anchor-classifier code path uses the...
+
+## Brainstorm results session 21
+ID: t0101_brainstorm_results_21
+Completed: 2026-05-11
+Short description: Brainstorm 21: Poleg-Polsky 2026 spec deep-dive vs. our NSGA-II history; commission 68-d t0102 (seeds=2, N_SEEDS=4, gens=20); record 3 new suggestions; budget 20-&gt;35 USD.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0101_brainstorm_results_21&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 21 — Poleg-Polsky 2026 Deep-Dive Summary Twenty-first strategic brainstorm, triggered by a researcher request to extract numerical specs from Poleg-Polsky 2026 (`10.1038/s41467-026-70288-4`) and compare them against our NSGA-II / MOBO history. The session (a) read seven concrete answers directly from the PDF, (b) flagged several fabricated claims in our existing `summary.md`, (c) commissioned a follow-up NSGA-II task `t0102_seedscale_n4_gen20` at GA-seeds=2 / N_SEEDS=4 / gens=20 on the 68-d substrate, and (d) recorded the project-budget bump...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -37086,7 +37093,7 @@ warm-start anchor was dominated and removed during gen 1+2 selection across ever
 The task&#x27;s operative text (from `tasks/t0100_fix_t0099_morph_charts/task.json`):
 
 &gt; **Name**: &quot;Re-render t0099 morphology charts with correct 68-d slice&quot;
-&gt; 
+&gt;
 &gt; **short_description**: &quot;Fix t0099 morphology-chart rendering: `vector_68d[:14]` was wrong
 &gt; (electrophys); replace with `vector_68d[54:]` (morphology). Re-render 2 PNGs. Optimisation
 &gt; unaffected.&quot;
@@ -37102,6 +37109,175 @@ The task_description.md plan items and how each was met:
 | Write results files (summary, detailed, metrics, costs, machines, suggestions) | Done | All 6 files present in `results/`. |
 | Verificators pass | In progress | Pre-reporting verificators (ruff, mypy, visual) PASSED. Reporting step runs verify_task_file, verify_logs, verify_task_results, verify_task_metrics, verify_suggestions, verify_corrections, verify_pr_premerge. |
 | Confirm optimisation results in t0099 are unaffected | Done | All NSGA-II / evaluator / scorecard / anchor-classifier code paths verified to use `[54:]`; only the post-hoc chart script was buggy. t0099&#x27;s reported metrics, anchor distributions, and 0-of-55 joint-pass finding all remain valid. |
+      </content>
+    </section>
+    <section id="t0101_brainstorm_results_21-results-detailed" source_kind="file">
+      <title>t0101_brainstorm_results_21 — Brainstorm results session 21 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0101_brainstorm_results_21</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0101_brainstorm_results_21/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0101_brainstorm_results_21&quot;
+date_completed: &quot;2026-05-11&quot;
+status: &quot;complete&quot;
+---
+### Results Detailed: Brainstorm Session 21 — Poleg-Polsky 2026 Deep-Dive
+
+#### Summary
+
+Decision-recording brainstorm. See `results_summary.md` for the headline outcomes. This document
+captures the full methodology trail and the verbatim numbers extracted from the Poleg-Polsky 2026
+PDF for the audit record.
+
+#### Methodology
+
+1. Researcher submitted seven questions about Poleg-Polsky 2026 covering parameter count, morphology
+   optimisation, seed count, generation count, novel mechanisms, DSI values, and biological realism.
+2. The existing `summary.md` for the paper was identified as untrustworthy in a quick triage
+   (mentions &quot;NMDA multiplicative gating&quot;, &quot;velocity-dependent coincidence detection&quot;, &quot;A-type
+   potassium density&quot; — none in the paper). The PDF at
+   `tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/files/polegpolsky_2026_ml-motion-primitives.pdf`
+   was extracted via `pdftotext -layout` and read end-to-end.
+3. Answers were compiled with exact quotes and section references.
+4. The researcher asked how seeds/generations compare to our optimisations; the task aggregator was
+   used to enumerate the NSGA-II/MOBO lineage (t0076, t0078, t0080, t0081, t0083, t0091, t0099) and
+   the relevant `results_summary.md` files were read to extract pop, gens, seeds, cost, and headline
+   metrics.
+5. The researcher confirmed (via two `AskUserQuestion` rounds) the interpretation of the parameter
+   knobs and the substrate / starting-condition for the follow-up task.
+6. The cost aggregator surfaced a $3.91 budget overrun; researcher approved a bump to $35 total / $8
+   per-task, committed directly to main as `dd9ac77f`.
+7. Brainstorm-results task scaffolded on branch `task/t0101_brainstorm_results_21`. Decisions
+   recorded.
+
+#### Poleg-Polsky 2026: Verified Numbers
+
+(All taken from the PDF, not from `summary.md`.)
+
+* **Title**: &quot;Machine learning discovers numerous new computational principles supporting elementary
+  motion detection&quot; (Nat. Commun. 17:3424, 2026).
+* **Author**: Alon Poleg-Polsky (sole author, University of Colorado Anschutz).
+* **Morphology**: 352-segment DSGC (cited from ref 49 = Poleg-Polsky and Diamond 2016, ModelDB
+  189347\) plus a 69-segment cortical L2/3 pyramidal cell. Fixed morphologies — not optimised.
+* **Free parameters**: 10-12 per presynaptic group; 4 excitatory groups in most runs (~40-48
+  params); +4 inhibitory groups when present (~88-96 params); +2 postsynaptic (passive g 1e-5-1e-3
+  S/cm^2, axial resistance 50-200 ohm-cm). Unconstrained ~90 free params total.
+* **Seeds**: minimum 50, typical 100 independent randomly-initialised GA restarts per circuit
+  configuration.
+* **Generations**: 300 typical, 1000 for low-performing configurations.
+* **Population per generation**: 10 NEURON models in parallel (1 elite + 9 mutated).
+* **Mutation**: each parameter scaled by N(1, 0.10) + U(-0.015, +0.015). Parameters either
+  &quot;independent&quot; (per-group) or &quot;shared&quot; (mutated in group 1, copied to others).
+* **8 computational primitives, 4 novel** (excitatory: H&amp;R, anti-H&amp;R, **amplitude**,
+  **temporal-alignment**; inhibitory: B&amp;L, **anti-B&amp;L**, **pause-in-inhibition**,
+  directionally-tuned inhibition).
+* **DSI values** (subthreshold somatic peak voltage, vector sum over 12 directions x 5 speeds): 2.4
+  +/- 0.1% (symmetric control), 22.1 +/- 0.8% (RF size only), 23.8 +/- 1.6% (kinetics only), 27.9
+  +/- 1% (unconstrained excitation), 50.8 +/- 0.8% (B&amp;L weight only), 66.8 +/- 2.4% (inhibitory
+  kinetic), **73.1 +/- 2.4%** (fully unconstrained excitation + inhibition).
+* **Biological realism**: phenomenological RF + 2D Gaussians, no real synaptic kinetics, no NMDA /
+  AMPA / GABA mod files, no SAC, HH off by default. Passive g range upper end (1e-3 S/cm^2 = Rm ~1
+  kohm-cm^2) is implausibly leaky for real neurons. Morphology, ~100 bipolar input count, and 0.25-4
+  mm/s bar velocities are realistic.
+
+#### Discrepancies with `summary.md` (drives suggestion S-0101-01)
+
+| Claim in `summary.md` | Actual paper content |
+| --- | --- |
+| Title &quot;...underlying direction selectivity in the retina&quot; | &quot;...supporting elementary motion detection&quot; |
+| &quot;velocity-dependent coincidence detection&quot; | not in the paper |
+| &quot;distance-graded delay lines&quot; | not in the paper |
+| &quot;NMDA-mediated multiplicative gating&quot; | not in the paper |
+| &quot;A-type potassium density as a search axis&quot; | not in the paper |
+| Scope &quot;retinal circuit&quot; | retinal DSGC + cortical L2/3 pyramidal |
+
+#### Our Optimisation Lineage (for budget comparison with PP-2026)
+
+| Task | Algorithm | Dim | Pop | Gens | GA seeds | $ | Outcome |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| t0078 BoTorch qLogNEHVI | qLogNEHVI BO | 49 | - | 491 acq | 1 | $3.93 | pass narrowly missed (DSI=0.316, PD=9.68 Hz) |
+| t0080 NSGA-II | NSGA-II | 54 | 24 | 8 | 1 | $0.75 | pass missed |
+| t0081 NSGA-II warm-start | NSGA-II | 54 | 96 | 8 | 1 | $2.39 | pass MET (cell 767: DSI=0.494, PD=11.39 Hz) |
+| t0083 NSGA-II extension | NSGA-II | 54 | 96 | gens 8-17 | 1 | $5.83 | 15 joint-pass cells, HV 16.33-&gt;35.58 |
+| t0091 NSGA-II 68-d | NSGA-II | 68 | 96 | 2 of 8 | 1+anchor | $0.65 | 1 strict joint-pass cell |
+| t0099 NSGA-II 68-d random-init | NSGA-II | 68 | 96 | 5/8/8 | 3 | $7.71 | 0 strict joint-pass cells / 55 Pareto cells |
+
+* **N_SEEDS** (within-cell noise replicates, `tasks/t0080_*/code/constants.py:43`): 20 per
+  direction. 8 directions x 20 trials = 160 sims per parameter-vector evaluation.
+* **Total candidates evaluated in our largest single lineage** (t0081+t0083 = 1 728); **per-cell sim
+  count 160** -&gt; ~276 480 sims, $8.22 cumulative.
+* **PP-2026 per-configuration**: 10 pop x 300 gens x 100 seeds = ~300 000 candidates, but each
+  candidate is far cheaper (deterministic phenomenological RF, 60 stim conditions, no real channel
+  kinetics).
+
+#### Metrics
+
+| Item | Count |
+| --- | --- |
+| New tasks created | 1 |
+| New suggestions recorded | 3 |
+| Suggestions rejected | 0 |
+| Suggestions reprioritised | 0 |
+| Tasks cancelled | 0 |
+| Corrections written | 0 |
+| Answer assets produced | 0 |
+| Project budget delta (USD) | +15 |
+
+#### Limitations
+
+* Planning-only task. No experiments run, no metrics produced.
+* The Poleg-Polsky 2026 numbers above are derived from PDF text extraction; if any figure-caption
+  number was lost in extraction, the downstream summary.md correction task (S-0101-01) should
+  re-verify against the figure captions.
+* No formal independent re-read of summary.md was performed — the discrepancy list above is from a
+  single pass and should be confirmed by S-0101-01 before the corrections file is written.
+
+#### Files Created
+
+* `tasks/t0101_brainstorm_results_21/__init__.py`
+* `tasks/t0101_brainstorm_results_21/task.json`
+* `tasks/t0101_brainstorm_results_21/task_description.md`
+* `tasks/t0101_brainstorm_results_21/step_tracker.json`
+* `tasks/t0101_brainstorm_results_21/plan/plan.md`
+* `tasks/t0101_brainstorm_results_21/research/research_papers.md`
+* `tasks/t0101_brainstorm_results_21/research/research_internet.md`
+* `tasks/t0101_brainstorm_results_21/research/research_code.md`
+* `tasks/t0101_brainstorm_results_21/results/results_summary.md`
+* `tasks/t0101_brainstorm_results_21/results/results_detailed.md`
+* `tasks/t0101_brainstorm_results_21/results/metrics.json`
+* `tasks/t0101_brainstorm_results_21/results/suggestions.json`
+* `tasks/t0101_brainstorm_results_21/results/costs.json`
+* `tasks/t0101_brainstorm_results_21/results/remote_machines_used.json`
+* `tasks/t0101_brainstorm_results_21/logs/session_log.md`
+* `tasks/t0101_brainstorm_results_21/logs/steps/001_review-project-state/step_log.md`
+* `tasks/t0101_brainstorm_results_21/logs/steps/002_discuss-decisions/step_log.md`
+* `tasks/t0101_brainstorm_results_21/logs/steps/003_apply-decisions/step_log.md`
+* `tasks/t0101_brainstorm_results_21/logs/steps/004_finalize/step_log.md`
+
+Modified outside this task (on main, separate commit):
+
+* `project/budget.json` — total_budget 20 -&gt; 35, per_task_default_limit 5 -&gt; 8
+
+#### Verification
+
+* `verify_task_file t0101_brainstorm_results_21` — PASSED.
+* `verify_corrections t0101_brainstorm_results_21` — PASSED.
+* `verify_suggestions t0101_brainstorm_results_21` — PASSED.
+* `verify_logs t0101_brainstorm_results_21` — PASSED with expected `TS-W001`, `LG-W005`.
+
+#### Next Steps
+
+1. Push branch, open PR, run pre-merge verificator, merge.
+2. Re-checkout main and create `task/t0102_seedscale_n4_gen20` branch.
+3. Scaffold t0102 task folder via `/create-task`.
+4. Execute t0102 via `/execute-task`.
+5. After t0102 completes, pick up S-0101-01 (Poleg-Polsky summary.md correction).
       </content>
     </section>
   </sections>

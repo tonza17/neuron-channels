@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-11T01:29:22Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-11T13:54:31Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>165</section_count>
-    <char_count>3057233</char_count>
-    <byte_count>3064536</byte_count>
-    <estimated_tokens>764308</estimated_tokens>
+    <section_count>168</section_count>
+    <char_count>3063929</char_count>
+    <byte_count>3071246</byte_count>
+    <estimated_tokens>765982</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -204,9 +204,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0098_visualise_pareto_morphologies</id>
         <id>t0099_random_init_pareto_robustness</id>
         <id>t0100_fix_t0099_morph_charts</id>
+        <id>t0101_brainstorm_results_21</id>
       </source_ids>
       <content>
-Completed tasks: 92
+Completed tasks: 93
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -759,6 +760,12 @@ ID: t0100_fix_t0099_morph_charts
 Completed: 2026-05-11
 Short description: Fix t0099 morphology-chart rendering: `vector_68d[:14]` was wrong (electrophys); replace with `vector_68d[54:]` (morphology). Re-render 2 PNGs. Optimisation unaffected.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0100_fix_t0099_morph_charts&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Fix t0099 Morphology Charts Summary t0099&#x27;s two morphology charts (`headline_best_cells.png`, `cross_seed_top5_morphology_grid.png`) were broken because `build_morphology_charts.py:114` used `vector_68d[:14]` (electrophys block) instead of `vector_68d[54:]` (morphology block) when reconstructing each cell&#x27;s morphology. The generator received nonsense parameters and emitted zero dendrite sections, so the charts showed only giant filled circles. **Optimisation results are unaffected** — every NSGA-II / evaluator / scorecard / anchor-classifier code path uses the...
+
+## Brainstorm results session 21
+ID: t0101_brainstorm_results_21
+Completed: 2026-05-11
+Short description: Brainstorm 21: Poleg-Polsky 2026 spec deep-dive vs. our NSGA-II history; commission 68-d t0102 (seeds=2, N_SEEDS=4, gens=20); record 3 new suggestions; budget 20-&gt;35 USD.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0101_brainstorm_results_21&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 21 — Poleg-Polsky 2026 Deep-Dive Summary Twenty-first strategic brainstorm, triggered by a researcher request to extract numerical specs from Poleg-Polsky 2026 (`10.1038/s41467-026-70288-4`) and compare them against our NSGA-II / MOBO history. The session (a) read seven concrete answers directly from the PDF, (b) flagged several fabricated claims in our existing `summary.md`, (c) commissioned a follow-up NSGA-II task `t0102_seedscale_n4_gen20` at GA-seeds=2 / N_SEEDS=4 / gens=20 on the 68-d substrate, and (d) recorded the project-budget bump...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -51720,6 +51727,142 @@ sections require them.
 * **Relevance**: Already in corpus
   (`tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1146_annurev.neuro.28.061604.135703/`).
   Justifies the function-objective + cost-objective pairing rule.
+      </content>
+    </section>
+    <section id="t0101_brainstorm_results_21-research_papers" source_kind="file">
+      <title>t0101_brainstorm_results_21 — Brainstorm results session 21 — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0101_brainstorm_results_21</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0101_brainstorm_results_21/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+This is a decision-recording brainstorm task and does not perform formal research. The session did,
+however, surface findings from one previously-downloaded paper that are summarised here for the
+audit trail.
+
+#### Methodology Review
+
+The Poleg-Polsky 2026 PDF
+(`tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/files/polegpolsky_2026_ml-motion-primitives.pdf`)
+was read end-to-end and its Methods section was extracted via `pdftotext -layout`. The text was
+compared against the existing `summary.md` in the same asset folder. The session log
+(`logs/session_log.md`) contains the verbatim numbers and the discrepancies discovered.
+
+#### Key Findings
+
+* Poleg-Polsky 2026 uses 50-100 independent GA seeds and 300-1000 generations at pop=10 per
+  configuration, on a fixed 352-segment DSGC morphology with only passive g and Ra in the search
+  space (no morphology optimisation, no NMDA / GABA / AMPA mod files, no SAC, HH off by default).
+* DSI in the paper is computed from subthreshold somatic peak voltage (not spikes); values range
+  from 2.4% (symmetric negative control) to 73.1% (fully unconstrained excitation + inhibition).
+* The eight reported computational primitives are H&amp;R, anti-H&amp;R, amplitude, temporal-alignment, B&amp;L,
+  anti-B&amp;L, pause-in-inhibition, and directionally-tuned inhibition. The &quot;novel&quot; four are amplitude,
+  temporal-alignment, anti-B&amp;L, and pause-in-inhibition.
+* The existing `summary.md` describes a different set of primitives (&quot;NMDA multiplicative gating&quot;,
+  &quot;velocity-dependent coincidence detection&quot;, &quot;distance-graded delay lines&quot;) that do not appear in
+  the published paper.
+
+#### Recommended Approach
+
+Defer the `summary.md` correction to a downstream task (recorded as high-priority suggestion
+S-0101-01). Do not modify a completed task&#x27;s folder; use the framework&#x27;s corrections mechanism.
+
+#### References
+
+* Poleg-Polsky, A. (2026). Machine learning discovers numerous new computational principles
+  supporting elementary motion detection. *Nature Communications* 17, 3424.
+  `tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/`
+      </content>
+    </section>
+    <section id="t0101_brainstorm_results_21-research_internet" source_kind="file">
+      <title>t0101_brainstorm_results_21 — Brainstorm results session 21 — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0101_brainstorm_results_21</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0101_brainstorm_results_21/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+Brainstorm sessions do not perform internet research. All decisions reached here are based on
+already-downloaded papers and our own task results.
+
+#### Methodology Review
+
+Not applicable.
+
+#### Key Findings
+
+Not applicable.
+
+#### Recommended Approach
+
+Not applicable.
+
+#### References
+
+None.
+      </content>
+    </section>
+    <section id="t0101_brainstorm_results_21-research_code" source_kind="file">
+      <title>t0101_brainstorm_results_21 — Brainstorm results session 21 — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0101_brainstorm_results_21</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0101_brainstorm_results_21/research/research_code.md</path>
+      </repo_paths>
+      <content>
+#### Objective
+
+No research required for brainstorming session.
+
+#### Background
+
+Brainstorm sessions do not perform code research. The session did inspect one project code constant
+during the discussion (recorded here for the audit trail).
+
+#### Methodology Review
+
+`tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/constants.py:43` defines `N_SEEDS: int = 20`,
+the noise-replicate count per direction reused by every downstream NSGA-II / MOBO task (t0081,
+t0083, t0091, t0099, the proposed t0102). This constant is the per-cell trial count; the GA-level
+&quot;seed&quot; count is implicit and equal to 1 in every task except t0099 (3 seeds).
+
+#### Key Findings
+
+* Our per-cell evaluation cost is `8 directions x 20 trials = 160 NEURON sims per parameter vector`,
+  vs. Poleg-Polsky&#x27;s `12 directions x 5 speeds x 1 trial = 60 sims per parameter vector`.
+* Dropping `N_SEEDS` from 20 to 4 (factor of 5) is the cheapest single knob to free budget for more
+  GA-level seeds or more generations.
+
+#### Recommended Approach
+
+Use the new constant only inside the new task (`t0102`) for now; do not propagate the lower default
+into `t0080`&#x27;s code until t0102 shows the DSI/PD scatter remains acceptable. Tracked as
+medium-priority suggestion S-0101-02.
+
+#### References
+
+* `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/constants.py:43`
+* `tasks/t0099_random_init_pareto_robustness/results/results_summary.md`
+* `tasks/t0091_morphology_extended_nsga2_v1/results/results_summary.md`
       </content>
     </section>
   </sections>

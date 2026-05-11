@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-255 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **224 open** (41
-high, 161 medium, 22 low), **31 closed**.
+257 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **226 open** (42
+high, 162 medium, 22 low), **31 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -305,6 +305,31 @@ collapses DSI by the most, t0084's NaP-dominant correlative finding is causally 
 otherwise the attribution shifts. ~96 runs on local CPU. Distinct from S-0084-01 which sweeps
 NaP density continuously; S-0084-05 tests all three channels simultaneously with binary
 on/off. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via
+the corrections mechanism</strong> (S-0101-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0101-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-11 |
+| **Source task** | [`t0101_brainstorm_results_21`](../../../overview/tasks/task_pages/t0101_brainstorm_results_21.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../../tasks/t0101_brainstorm_results_21/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has
+claims absent from the paper: (a) wrong title (published 'supporting elementary motion
+detection'); (b) wrong primitives ('NMDA multiplicative gating', 'velocity-dependent
+coincidence detection', 'distance-graded delay lines'); (c) wrong search axes ('A-type
+potassium density'); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives:
+H&R, anti-H&R, amplitude, temporal-alignment, B&L, anti-B&L, pause-in-inhibition,
+directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task
+writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verified content
+(quotes in t0101 session_log). Cost $0.
 
 </details>
 
@@ -3689,6 +3714,31 @@ Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included
 register the resulting Python package as a library asset under `assets/library/`. This makes
 the DSGC reference implementation available to every downstream simulation task without
 re-download.
+
+</details>
+
+<details>
+<summary>🧪 <strong>PP-style ablation: budget-matched comparison of
+few-seeds-many-gens vs many-seeds-few-gens on 68-d substrate</strong>
+(S-0101-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0101-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-11 |
+| **Source task** | [`t0101_brainstorm_results_21`](../../../overview/tasks/task_pages/t0101_brainstorm_results_21.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../../tasks/t0101_brainstorm_results_21/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Poleg-Polsky 2026 uses 50-100 GA seeds at pop=10, 300-1000 generations. Our convention is 1-2
+GA seeds at pop=96, 8-17 generations. Hold total candidate budget fixed (e.g., 20 000
+evaluations) and compare two configurations on the same 68-d substrate: (a) 2 seeds x pop=96 x
+100 gens (closer to our convention, extreme generations), (b) 20 seeds x pop=10 x 100 gens (PP
+convention). Score: number of unique Pareto cells discovered, hypervolume, joint-pass cells,
+anchor diversity. Cost ~$10 at $0.24/hr Vast.ai for ~40 hours (one instance, both
+configurations sequentially). Could revise our future MOBO design from BoTorch-style large-pop
+NSGA-II toward PP-style many-seed (1+9)-ES if (b) wins on diversity.
 
 </details>
 

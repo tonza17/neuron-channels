@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
 (9)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(79)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(80)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2534,7 +2534,26 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (62 open, 17 closed)
+## Suggestions (63 open, 17 closed)
+
+<details>
+<summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via
+the corrections mechanism</strong> (S-0101-01)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-11 | **Source**:
+[t0101_brainstorm_results_21](../../tasks/t0101_brainstorm_results_21/)
+
+tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has
+claims absent from the paper: (a) wrong title (published 'supporting elementary motion
+detection'); (b) wrong primitives ('NMDA multiplicative gating', 'velocity-dependent
+coincidence detection', 'distance-graded delay lines'); (c) wrong search axes ('A-type
+potassium density'); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives:
+H&R, anti-H&R, amplitude, temporal-alignment, B&L, anti-B&L, pause-in-inhibition,
+directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task
+writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verified content
+(quotes in t0101 session_log). Cost $0.
+
+</details>
 
 <details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
