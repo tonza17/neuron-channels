@@ -5,10 +5,10 @@
   "name": "Extract direction-selective cell data from Baden et al. 2016",
   "short_description": "Download Baden 2016 (Dryad d9v38) and extract data only for direction-selective groups 2, 17, 18, 19, 22, 35, 36, 40. Output: 1 dataset + 1 paper asset.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [],
   "start_time": "2026-05-11T20:51:26Z",
-  "end_time": null,
+  "end_time": "2026-05-12T01:55:00Z",
   "expected_assets": {
     "dataset": 1,
     "paper": 1
