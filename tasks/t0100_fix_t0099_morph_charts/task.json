@@ -5,11 +5,11 @@
   "name": "Re-render t0099 morphology charts with correct 68-d slice",
   "short_description": "Fix t0099 morphology-chart rendering: `vector_68d[:14]` was wrong (electrophys); replace with `vector_68d[54:]` (morphology). Re-render 2 PNGs. Optimisation unaffected.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0099_random_init_pareto_robustness"
   ],
-  "start_time": null,
+  "start_time": "2026-05-11T01:14:24Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
