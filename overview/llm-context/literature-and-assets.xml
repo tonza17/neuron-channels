@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-11T01:29:22Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-11T13:54:31Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>243477</char_count>
-    <byte_count>243822</byte_count>
-    <estimated_tokens>60869</estimated_tokens>
+    <char_count>244559</char_count>
+    <byte_count>244906</byte_count>
+    <estimated_tokens>61139</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -207,9 +207,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0098_visualise_pareto_morphologies</id>
         <id>t0099_random_init_pareto_robustness</id>
         <id>t0100_fix_t0099_morph_charts</id>
+        <id>t0101_brainstorm_results_21</id>
       </source_ids>
       <content>
-Completed tasks: 92
+Completed tasks: 93
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -762,6 +763,12 @@ ID: t0100_fix_t0099_morph_charts
 Completed: 2026-05-11
 Short description: Fix t0099 morphology-chart rendering: `vector_68d[:14]` was wrong (electrophys); replace with `vector_68d[54:]` (morphology). Re-render 2 PNGs. Optimisation unaffected.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0100_fix_t0099_morph_charts&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Fix t0099 Morphology Charts Summary t0099&#x27;s two morphology charts (`headline_best_cells.png`, `cross_seed_top5_morphology_grid.png`) were broken because `build_morphology_charts.py:114` used `vector_68d[:14]` (electrophys block) instead of `vector_68d[54:]` (morphology block) when reconstructing each cell&#x27;s morphology. The generator received nonsense parameters and emitted zero dendrite sections, so the charts showed only giant filled circles. **Optimisation results are unaffected** — every NSGA-II / evaluator / scorecard / anchor-classifier code path uses the...
+
+## Brainstorm results session 21
+ID: t0101_brainstorm_results_21
+Completed: 2026-05-11
+Short description: Brainstorm 21: Poleg-Polsky 2026 spec deep-dive vs. our NSGA-II history; commission 68-d t0102 (seeds=2, N_SEEDS=4, gens=20); record 3 new suggestions; budget 20-&gt;35 USD.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0101_brainstorm_results_21&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 21 — Poleg-Polsky 2026 Deep-Dive Summary Twenty-first strategic brainstorm, triggered by a researcher request to extract numerical specs from Poleg-Polsky 2026 (`10.1038/s41467-026-70288-4`) and compare them against our NSGA-II / MOBO history. The session (a) read seven concrete answers directly from the PDF, (b) flagged several fabricated claims in our existing `summary.md`, (c) commissioned a follow-up NSGA-II task `t0102_seedscale_n4_gen20` at GA-seeds=2 / N_SEEDS=4 / gens=20 on the 68-d substrate, and (d) recorded the project-budget bump...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

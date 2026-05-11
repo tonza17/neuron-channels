@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-11T01:29:22Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-11T13:54:31Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>5446</char_count>
-    <byte_count>5446</byte_count>
-    <estimated_tokens>1361</estimated_tokens>
+    <char_count>5483</char_count>
+    <byte_count>5483</byte_count>
+    <estimated_tokens>1370</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -17,10 +17,10 @@
       <title>Project Costs (Full Detail)</title>
       <source_name>aggregate_costs_full</source_name>
       <content>
-Total budget: $20.00
+Total budget: $35.00
 Total spent: $23.91
-Budget remaining: $0.00
-Spent: 119.5%
+Budget remaining: $11.09
+Spent: 68.3%
 
 ### Cost Breakdown by Category
 
@@ -139,6 +139,7 @@ Spent: 119.5%
 * t0098_visualise_pareto_morphologies: $0.00
 * t0099_random_init_pareto_robustness: $7.71
 * t0100_fix_t0099_morph_charts: $0.00
+* t0101_brainstorm_results_21: $0.00
       </content>
     </section>
   </sections>

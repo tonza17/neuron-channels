@@ -1,21 +1,21 @@
 # Project Costs
 
-Spent $23.91 of $20.00 USD. $0.00 remains overall and $0.00 remains before the 100% stop
+Spent $23.91 of $35.00 USD. $11.09 remains overall and $11.09 remains before the 100% stop
 threshold.
 
 ## Budget Summary
 
 | Field | Value |
 |-------|-------|
-| Total budget | $20.00 USD |
+| Total budget | $35.00 USD |
 | Total spent | $23.91 USD |
-| Budget left | $0.00 USD |
-| Budget left before stop threshold | $0.00 USD |
-| Spent percent | 119.53% |
-| Warn threshold | 80% ($16.00) |
-| Stop threshold | 100% ($20.00) |
-| Default per-task limit | $5.00 USD |
-| Tasks with cost records | 92 |
+| Budget left | $11.09 USD |
+| Budget left before stop threshold | $11.09 USD |
+| Spent percent | 68.30% |
+| Warn threshold | 80% ($28.00) |
+| Stop threshold | 100% ($35.00) |
+| Default per-task limit | $8.00 USD |
+| Tasks with cost records | 93 |
 | Tasks with non-zero spend | 8 |
 | Skipped tasks | 8 |
 
@@ -46,7 +46,7 @@ threshold.
 | `local_compute` | $0.00 |
 | `remote_compute` | $0.00 |
 
-84 task cost record(s) are zero-cost and omitted from the main spend table.
+85 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
@@ -54,8 +54,8 @@ threshold.
 |------|--------|-------------|-------------|------------|
 | [`t0076_bedb_dsi_firing_rate_mobo`](../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | completed | $1.06 | $5.00 | no |
 | [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | $3.93 | $5.00 | no |
-| [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | $0.75 | $5.00 | no |
-| [`t0081_bedb_v3_warmstart_nsga2`](../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | completed | $2.39 | $5.00 | no |
+| [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | $0.75 | $8.00 | no |
+| [`t0081_bedb_v3_warmstart_nsga2`](../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | completed | $2.39 | $8.00 | no |
 | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | completed | $5.83 | $5.00 | yes |
 | [`t0086_robustness_cluster_bio_comparison`](../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | completed | $1.59 | $3.50 | no |
 | [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | $0.65 | $4.00 | no |

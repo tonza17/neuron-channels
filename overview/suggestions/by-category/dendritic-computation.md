@@ -1,7 +1,7 @@
 # Suggestions: `dendritic-computation`
 
-79 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **62 open** (11
+80 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **63 open** (12
 high, 46 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
@@ -108,6 +108,31 @@ collapses DSI by the most, t0084's NaP-dominant correlative finding is causally 
 otherwise the attribution shifts. ~96 runs on local CPU. Distinct from S-0084-01 which sweeps
 NaP density continuously; S-0084-05 tests all three channels simultaneously with binary
 on/off. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via
+the corrections mechanism</strong> (S-0101-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0101-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-11 |
+| **Source task** | [`t0101_brainstorm_results_21`](../../../overview/tasks/task_pages/t0101_brainstorm_results_21.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../../tasks/t0101_brainstorm_results_21/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has
+claims absent from the paper: (a) wrong title (published 'supporting elementary motion
+detection'); (b) wrong primitives ('NMDA multiplicative gating', 'velocity-dependent
+coincidence detection', 'distance-graded delay lines'); (c) wrong search axes ('A-type
+potassium density'); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives:
+H&R, anti-H&R, amplitude, temporal-alignment, B&L, anti-B&L, pause-in-inhibition,
+directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task
+writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verified content
+(quotes in t0101 session_log). Cost $0.
 
 </details>
 

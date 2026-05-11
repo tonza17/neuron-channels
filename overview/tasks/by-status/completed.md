@@ -1,12 +1,126 @@
 # ✅ Tasks: Completed
 
-92 tasks. ✅ **92 completed**.
+93 tasks. ✅ **93 completed**.
 
 [Back to all tasks](../README.md)
 
 ---
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0101 — <strong>Brainstorm results session 21</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0101_brainstorm_results_21` |
+| **Status** | completed |
+| **Effective date** | 2026-05-11 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md), [`t0004_generate_target_tuning_curve`](../../../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md), [`t0005_download_dsgc_morphology`](../../../overview/tasks/task_pages/t0005_download_dsgc_morphology.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0009_calibrate_dendritic_diameters`](../../../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0011_response_visualization_library`](../../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md), [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md), [`t0017_literature_survey_patch_clamp`](../../../overview/tasks/task_pages/t0017_literature_survey_patch_clamp.md), [`t0018_literature_survey_synaptic_integration`](../../../overview/tasks/task_pages/t0018_literature_survey_synaptic_integration.md), [`t0019_literature_survey_voltage_gated_channels`](../../../overview/tasks/task_pages/t0019_literature_survey_voltage_gated_channels.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0022_modify_dsgc_channel_testbed`](../../../overview/tasks/task_pages/t0022_modify_dsgc_channel_testbed.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0026_vrest_sweep_tuning_curves_dsgc`](../../../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md), [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0029_distal_dendrite_length_sweep_dsgc`](../../../overview/tasks/task_pages/t0029_distal_dendrite_length_sweep_dsgc.md), [`t0030_distal_dendrite_diameter_sweep_dsgc`](../../../overview/tasks/task_pages/t0030_distal_dendrite_diameter_sweep_dsgc.md), [`t0032_brainstorm_results_7`](../../../overview/tasks/task_pages/t0032_brainstorm_results_7.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0036_rerun_t0030_halved_null_gaba`](../../../overview/tasks/task_pages/t0036_rerun_t0030_halved_null_gaba.md), [`t0037_null_gaba_reduction_ladder_t0022`](../../../overview/tasks/task_pages/t0037_null_gaba_reduction_ladder_t0022.md), [`t0038_correct_t0033_base_gaba_to_4ns`](../../../overview/tasks/task_pages/t0038_correct_t0033_base_gaba_to_4ns.md), [`t0039_distal_dendrite_diameter_sweep_t0022_gaba4`](../../../overview/tasks/task_pages/t0039_distal_dendrite_diameter_sweep_t0022_gaba4.md), [`t0040_brainstorm_results_8`](../../../overview/tasks/task_pages/t0040_brainstorm_results_8.md), [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md), [`t0048_voff_nmda1_dsi_test`](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md), [`t0049_seclamp_cond_remeasure`](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md), [`t0050_audit_syn_distribution`](../../../overview/tasks/task_pages/t0050_audit_syn_distribution.md), [`t0051_brainstorm_results_9`](../../../overview/tasks/task_pages/t0051_brainstorm_results_9.md), [`t0052_minimal_dsgc_scalar_gaba`](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md), [`t0053_minimal_dsgc_spatial_gaba`](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md), [`t0054_minimal_dsgc_ampa_nmda_scalar_gaba`](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md), [`t0055_nmda_mg_block_dsi_recovery`](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md), [`t0056_brainstorm_results_10`](../../../overview/tasks/task_pages/t0056_brainstorm_results_10.md), [`t0057_tonic_gaba_sweep_t0053`](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md), [`t0058_brainstorm_results_11`](../../../overview/tasks/task_pages/t0058_brainstorm_results_11.md), [`t0059_bar_locked_gaba_ampa_sweep_t0057`](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md), [`t0060_ampa_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0060_ampa_escape_pd_only_no_gaba.md), [`t0061_nmda_escape_pd_only_no_gaba`](../../../overview/tasks/task_pages/t0061_nmda_escape_pd_only_no_gaba.md), [`t0062_nmda_escape_with_ampa_priming`](../../../overview/tasks/task_pages/t0062_nmda_escape_with_ampa_priming.md), [`t0063_hh_voltage_step_test`](../../../overview/tasks/task_pages/t0063_hh_voltage_step_test.md), [`t0064_hh_current_step_test`](../../../overview/tasks/task_pages/t0064_hh_current_step_test.md), [`t0065_t0020_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md), [`t0066_t0024_epsp_ipsp_vm_protocol`](../../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md), [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md), [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md), [`t0069_t0067_ais_localised_channel_sweep`](../../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md), [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md), [`t0071_t0070_synaptic_eqs_pdf`](../../../overview/tasks/task_pages/t0071_t0070_synaptic_eqs_pdf.md), [`t0072_synaptic_traces_pd_nd`](../../../overview/tasks/task_pages/t0072_synaptic_traces_pd_nd.md), [`t0073_brainstorm_results_12`](../../../overview/tasks/task_pages/t0073_brainstorm_results_12.md), [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md), [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md), [`t0077_brainstorm_results_13`](../../../overview/tasks/task_pages/t0077_brainstorm_results_13.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0079_brainstorm_results_14`](../../../overview/tasks/task_pages/t0079_brainstorm_results_14.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md), [`t0082_brainstorm_results_15`](../../../overview/tasks/task_pages/t0082_brainstorm_results_15.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md), [`t0085_brainstorm_results_16`](../../../overview/tasks/task_pages/t0085_brainstorm_results_16.md), [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md), [`t0087_brainstorm_results_17`](../../../overview/tasks/task_pages/t0087_brainstorm_results_17.md), [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md), [`t0089_brainstorm_results_18`](../../../overview/tasks/task_pages/t0089_brainstorm_results_18.md), [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md), [`t0094_brainstorm_results_19`](../../../overview/tasks/task_pages/t0094_brainstorm_results_19.md), [`t0095_brainstorm_results_20`](../../../overview/tasks/task_pages/t0095_brainstorm_results_20.md), [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0098_visualise_pareto_morphologies`](../../../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md), [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0100_fix_t0099_morph_charts`](../../../overview/tasks/task_pages/t0100_fix_t0099_morph_charts.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-05-11T13:30:00Z |
+| **End time** | 2026-05-11T13:50:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 21](../../../overview/tasks/task_pages/t0101_brainstorm_results_21.md) |
+| **Task folder** | [`t0101_brainstorm_results_21/`](../../../tasks/t0101_brainstorm_results_21/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0101_brainstorm_results_21/results/results_detailed.md) |
+
+# t0101 — Brainstorm Session 21: Poleg-Polsky 2026 Deep-Dive
+
+## Context
+
+Researcher asked seven concrete questions about Poleg-Polsky 2026 (Nature Communications,
+`10.1038/s41467-026-70288-4`): parameter count, morphology optimisation, seed count,
+generation count, novel mechanisms, DSI values, and biological realism. Answers were read
+directly from the downloaded PDF
+(`tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/files/polegpolsky_2026_ml-motion-primitives.pdf`)
+rather than from the existing `summary.md`, which we discovered contains several fabricated
+claims (wrong title, "NMDA multiplicative gating", "velocity-dependent coincidence detection",
+"distance-graded delay lines", "A-type K density" — none of which appear in the published
+paper).
+
+A side-by-side comparison with our NSGA-II / MOBO history (t0076 -> t0078 -> t0080 -> t0081 ->
+t0083 -> t0091 -> t0099) revealed three orders of magnitude in candidate budget per
+"configuration": Poleg-Polsky runs ~50-100 independent GA restarts of a pop=10,
+300-1000-generation (1+9)-ES per study configuration (~300k candidates per configuration,
+deterministic), whereas our largest lineage (t0081 + t0083) totals 1 728 candidates from a
+single warm-started seed at pop=96, gens 0-17 with N_SEEDS=20 noise replicates per direction
+(160 sims per candidate).
+
+The researcher decided to spawn one follow-up NSGA-II task that re-balances the budget in
+PP-2026's favour: 2 GA seeds instead of 1, N_SEEDS reduced from 20 to 4 (factor of 5),
+generations extended from 8-17 to 20, on the same 68-d joint electrophys+morphology substrate
+as t0091 / t0099 with random initialisation (no anchor warm-start). Expected cost ~$4-6.
+
+The session also surfaced a budget overrun: the project had spent $23.91 against a $20 ceiling
+(119.5%). Researcher approved a budget bump to $35 total / $8 per-task, committed directly to
+main prior to this brainstorm task per the framework's "infrastructure changes outside task
+folders" rule.
+
+## Decisions
+
+1. **Create t0102_seedscale_n4_gen20** — follow-up NSGA-II on 68-d substrate, GA seeds=2
+   (random init, seeds 44 and 55 to avoid overlap with t0099's 11/22/33), N_SEEDS=4, gens=20,
+   pop=96. Cost cap $8.
+
+2. **Record three new suggestions**:
+   - **HIGH**: correct the fabricated content in
+     `tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md`
+     using the corrections mechanism.
+   - **MEDIUM**: if t0102 succeeds at N_SEEDS=4 with DSI/PD scatter comparable to t0099, lock
+     4 as the new default noise-replicate count and update
+     `tasks/t0080_*/code/constants.py:43`.
+   - **MEDIUM**: PP-style ablation — run a budget-matched comparison between (a) our current
+     1-2 GA seeds at gens 17-20 and (b) a PP-style 10-20 GA seeds at gens 8 each on the same
+     68-d substrate; test whether more restarts at fewer generations yields more diverse
+     Pareto cells.
+
+3. **No suggestion rejections, no task cancellations, no reprioritisations** — the brainstorm
+   is forward-creating only.
+
+## Scope
+
+This is a pure decision-recording task. No experiments, no code, no asset production. The
+follow-up optimisation work happens in `t0102_seedscale_n4_gen20`; correction of the
+Poleg-Polsky 2026 `summary.md` is left as a high-priority suggestion to be picked up by a
+future task.
+
+## Out of Scope
+
+* Actually running the NSGA-II (t0102's job).
+* Correcting the Poleg-Polsky 2026 `summary.md` (deferred suggestion).
+* Re-baselining N_SEEDS or population size as a framework-wide default (deferred suggestion).
+
+**Results summary:**
+
+> ---
+> spec_version: "1"
+> task_id: "t0101_brainstorm_results_21"
+> date_completed: "2026-05-11"
+> status: "complete"
+> ---
+> **Results Summary: Brainstorm Session 21 — Poleg-Polsky 2026 Deep-Dive**
+>
+> **Summary**
+>
+> Twenty-first strategic brainstorm, triggered by a researcher request to extract numerical
+> specs from
+> Poleg-Polsky 2026 (`10.1038/s41467-026-70288-4`) and compare them against our NSGA-II / MOBO
+> history. The session (a) read seven concrete answers directly from the PDF, (b) flagged
+> several
+> fabricated claims in our existing `summary.md`, (c) commissioned a follow-up NSGA-II task
+> `t0102_seedscale_n4_gen20` at GA-seeds=2 / N_SEEDS=4 / gens=20 on the 68-d substrate, and
+> (d)
+> recorded the project-budget bump from 20 -> 35 USD (per-task 5 -> 8) that was committed to
+> main
+> prior to the brainstorm task.
+>
+> **Session Overview**
+>
+
+</details>
 
 <details>
 <summary>✅ 0100 — <strong>Re-render t0099 morphology charts with correct 68-d

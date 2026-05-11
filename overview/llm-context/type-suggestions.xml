@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-11T01:29:22Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-11T13:54:31Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>404994</char_count>
-    <byte_count>405156</byte_count>
-    <estimated_tokens>101248</estimated_tokens>
+    <char_count>408113</char_count>
+    <byte_count>408275</byte_count>
+    <estimated_tokens>102028</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -391,9 +391,12 @@
         <id>S-0099-03</id>
         <id>S-0099-04</id>
         <id>S-0099-05</id>
+        <id>S-0101-01</id>
+        <id>S-0101-02</id>
+        <id>S-0101-03</id>
       </source_ids>
       <content>
-Suggestions: 374
+Suggestions: 377
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4585,6 +4588,41 @@ Categories: compartmental-modeling, direction-selectivity
 Date added: 2026-05-10
 
 t0099 capped at 8 gens per seed. Hay 2011 used 1000 gens for similar problems. Test: one random-init seed at 20 gens with $10 cap to see if random-init can eventually bridge the joint-pass corner that warm-start reached at gen 2. If yes, warm-start was a 10x speedup not a fundamental enabler. If no after 20 gens, warm-start remains essential. Cost ~$10 single seed.
+
+## Correct fabricated content in Poleg-Polsky 2026 summary.md via the corrections mechanism
+ID: S-0101-01
+Status: active
+Priority: high
+Kind: evaluation
+Source task: t0101_brainstorm_results_21
+Source paper: 10.1038_s41467-026-70288-4
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation
+Date added: 2026-05-11
+
+tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has claims absent from the paper: (a) wrong title (published &#x27;supporting elementary motion detection&#x27;); (b) wrong primitives (&#x27;NMDA multiplicative gating&#x27;, &#x27;velocity-dependent coincidence detection&#x27;, &#x27;distance-graded delay lines&#x27;); (c) wrong search axes (&#x27;A-type potassium density&#x27;); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives: H&amp;R, anti-H&amp;R, amplitude, temporal-alignment, B&amp;L, anti-B&amp;L, pause-in-inhibition, directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verified content (quotes in t0101 session_log). Cost $0.
+
+## Lock N_SEEDS=4 as project-wide default if t0102 reproduces t0099 DSI/PD scatter
+ID: S-0101-02
+Status: active
+Priority: medium
+Kind: library
+Source task: t0101_brainstorm_results_21
+Categories: compartmental-modeling
+Date added: 2026-05-11
+
+N_SEEDS=20 in tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/constants.py:43 is propagated as the noise-replicate count into every downstream NSGA-II task (t0081, t0083, t0091, t0099). If t0102&#x27;s DSI/PD per-cell estimates at N_SEEDS=4 fall within +/- 1 std of t0099&#x27;s matched cells at N_SEEDS=20, lower the project-wide default to 4 (5x cheaper per evaluation). Implementation: corrections/library_modeldb_189347_dsgc_dendritic.json or a small library-update task; document the empirical comparison in a results table. Cost $0 if the comparison data is already in t0102.
+
+## PP-style ablation: budget-matched comparison of few-seeds-many-gens vs many-seeds-few-gens on 68-d substrate
+ID: S-0101-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0101_brainstorm_results_21
+Source paper: 10.1038_s41467-026-70288-4
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-11
+
+Poleg-Polsky 2026 uses 50-100 GA seeds at pop=10, 300-1000 generations. Our convention is 1-2 GA seeds at pop=96, 8-17 generations. Hold total candidate budget fixed (e.g., 20 000 evaluations) and compare two configurations on the same 68-d substrate: (a) 2 seeds x pop=96 x 100 gens (closer to our convention, extreme generations), (b) 20 seeds x pop=10 x 100 gens (PP convention). Score: number of unique Pareto cells discovered, hypervolume, joint-pass cells, anchor diversity. Cost ~$10 at $0.24/hr Vast.ai for ~40 hours (one instance, both configurations sequentially). Could revise our future MOBO design from BoTorch-style large-pop NSGA-II toward PP-style many-seed (1+9)-ES if (b) wins on diversity.
       </content>
     </section>
   </sections>

@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-374 suggestions **332 open** (53 high, 228 medium, 51 low), **42 closed**.
+377 suggestions **335 open** (54 high, 230 medium, 51 low), **42 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -433,6 +433,31 @@ collapses DSI by the most, t0084's NaP-dominant correlative finding is causally 
 otherwise the attribution shifts. ~96 runs on local CPU. Distinct from S-0084-01 which sweeps
 NaP density continuously; S-0084-05 tests all three channels simultaneously with binary
 on/off. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via
+the corrections mechanism</strong> (S-0101-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0101-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-11 |
+| **Source task** | [`t0101_brainstorm_results_21`](../../overview/tasks/task_pages/t0101_brainstorm_results_21.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../tasks/t0101_brainstorm_results_21/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+
+tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has
+claims absent from the paper: (a) wrong title (published 'supporting elementary motion
+detection'); (b) wrong primitives ('NMDA multiplicative gating', 'velocity-dependent
+coincidence detection', 'distance-graded delay lines'); (c) wrong search axes ('A-type
+potassium density'); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives:
+H&R, anti-H&R, amplitude, temporal-alignment, B&L, anti-B&L, pause-in-inhibition,
+directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task
+writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verified content
+(quotes in t0101 session_log). Cost $0.
 
 </details>
 
@@ -4009,6 +4034,29 @@ Important for characterising how fragile the operational window really is.
 </details>
 
 <details>
+<summary>📚 <strong>Lock N_SEEDS=4 as project-wide default if t0102 reproduces t0099
+DSI/PD scatter</strong> (S-0101-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0101-02` |
+| **Kind** | library |
+| **Date added** | 2026-05-11 |
+| **Source task** | [`t0101_brainstorm_results_21`](../../overview/tasks/task_pages/t0101_brainstorm_results_21.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+N_SEEDS=20 in tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/constants.py:43 is
+propagated as the noise-replicate count into every downstream NSGA-II task (t0081, t0083,
+t0091, t0099). If t0102's DSI/PD per-cell estimates at N_SEEDS=4 fall within +/- 1 std of
+t0099's matched cells at N_SEEDS=20, lower the project-wide default to 4 (5x cheaper per
+evaluation). Implementation: corrections/library_modeldb_189347_dsgc_dendritic.json or a small
+library-update task; document the empirical comparison in a results table. Cost $0 if the
+comparison data is already in t0102.
+
+</details>
+
+<details>
 <summary>📂 <strong>Manually fetch and attach the Poleg-Polsky 2016 supplementary
 PDF (NIHMS766337, PMC4795984)</strong> (S-0046-05)</summary>
 
@@ -4986,6 +5034,31 @@ Strahler-calibrated asset by per-branch axial resistance, total surface area, an
 per-compartment radius deltas. Expected primary-radius shift ~15% (3.69 to ~3.1 um) at the
 measured 2-way branching ratio. Creative_thinking.md section A2. Recommended task types:
 write-library, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>PP-style ablation: budget-matched comparison of
+few-seeds-many-gens vs many-seeds-few-gens on 68-d substrate</strong>
+(S-0101-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0101-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-11 |
+| **Source task** | [`t0101_brainstorm_results_21`](../../overview/tasks/task_pages/t0101_brainstorm_results_21.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../tasks/t0101_brainstorm_results_21/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+Poleg-Polsky 2026 uses 50-100 GA seeds at pop=10, 300-1000 generations. Our convention is 1-2
+GA seeds at pop=96, 8-17 generations. Hold total candidate budget fixed (e.g., 20 000
+evaluations) and compare two configurations on the same 68-d substrate: (a) 2 seeds x pop=96 x
+100 gens (closer to our convention, extreme generations), (b) 20 seeds x pop=10 x 100 gens (PP
+convention). Score: number of unique Pareto cells discovered, hypervolume, joint-pass cells,
+anchor diversity. Cost ~$10 at $0.24/hr Vast.ai for ~40 hours (one instance, both
+configurations sequentially). Could revise our future MOBO design from BoTorch-style large-pop
+NSGA-II toward PP-style many-seed (1+9)-ES if (b) wins on diversity.
 
 </details>
 
