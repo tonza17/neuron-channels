@@ -1,0 +1,12 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0102_seedscale_n4_gen20\tasks\t0102_seedscale_n4_gen20\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [Budoff2025] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Diaz2017] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Hay2011] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [VanGeit2016] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [correct] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [dominance] has no matching Source Index entry[0m
+
+[31m[1mFAILED[0m — 6 error(s), 0 warning(s)

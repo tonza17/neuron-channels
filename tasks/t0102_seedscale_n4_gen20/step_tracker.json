@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for recent (2025-2026) literature on NSGA-II hyperparameter scheduling and noise replicate ablation in evolutionary multi-objective optimisation of neuron models.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-11T15:53:47Z",
       "completed_at": null,
-      "log_file": "logs/steps/005_research-internet/"
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
