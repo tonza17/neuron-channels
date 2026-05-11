@@ -23,9 +23,9 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create mandatory task folder structure including assets/predictions and assets/answer subdirs for the 2 predictions + 1 answer asset.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-11T14:15:03Z",
-      "completed_at": null,
+      "completed_at": "2026-05-11T14:16:17Z",
       "log_file": "logs\\steps\\003_init-folders/"
     },
     {
