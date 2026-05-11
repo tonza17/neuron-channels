@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -s -L -A Mozilla/5.0 --max-time 60 https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=10.1038/nature16468&retmode=json",
+  "exit_code": 0,
+  "duration_seconds": 0.685,
+  "started_at": "2026-05-11T21:09:45Z",
+  "completed_at": "2026-05-11T21:09:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "016_20260511T210945Z_curl-s-l.stdout.txt",
+  "stderr_file": "016_20260511T210945Z_curl-s-l.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,13 @@
+Step 1: visit dataset page (warm-up)
+  rc=0, len=35770, is_html=True
+Step 2: GET file_stream/3407
+  rc=0, len=4328
+  first 200: '<!doctype html><html lang="en"><head><title>Validating...</title><link rel="stylesheet" href="/.within.website/x/xess/xess.min.css?cachebuster=1.24.0"><meta name="viewport" content="width=device-width'
+  is_anubis=True, is_waf=False, is_pdf=False
+  PoW solved: nonce=2873, 3ms
+  pass-challenge: rc=47, body[:80]='302 https://datadryad.org/downloads/file_stream/3407'
+Step 3: re-fetch
+  rc=0, body[:300]='HTTP=200 URL=https://dryad-assetstore-merritt-west.s3.us-west-2.amazonaws.com/ark%3A/13030/m5dz57h8%7C1%7Cproducer/README_for_BadenEtAl_RGCs_2016_v1.pdf?response-content-disposition=attachment%3B%20filename%3DREADME_for_BadenEtAl_RGCs_2016_v1.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKI'
+  saved len=69619, first 16=b'%PDF-1.5\r%\xe2\xe3\xcf\xd3\r\n'
+
+SUCCESS: tasks\t0103_extract_baden_2016_ds_morphologies\data\README_for_BadenEtAl_RGCs_2016_v1.pdf 69619 bytes sha256=585e93a7277a8389c3f89d630df0ed9cbae6c89254d05866a5133fbb813648ea

@@ -1,0 +1,54 @@
+final_url=https://datadryad.org/downloads/file_stream/3407
+status=200
+ct=text/html; charset=utf-8
+cl=None
+body_len=4337
+--- first 3000 bytes ---
+<!doctype html><html lang="en"><head><title>Validating...</title><link rel="stylesheet" href="/.within.website/x/xess/xess.min.css?cachebuster=1.24.0"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><style>
+        body,
+        html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .centered-div {
+            text-align: center;
+        }
+
+        #status {
+            font-variant-numeric: tabular-nums;
+        }
+
+        #progress {
+          display: none;
+          width: 90%;
+          width: min(20rem, 90%);
+          height: 2rem;
+          border-radius: 1rem;
+          overflow: hidden;
+          margin: 1rem 0 2rem;
+					outline-offset: 2px;
+					outline: #b16286 solid 4px;
+				}
+
+        .bar-inner {
+            background-color: #b16286;
+            height: 100%;
+            width: 0;
+            transition: width 0.25s ease-in;
+        }
+    	</style><link rel="stylesheet" href="/.within.website/x/cmd/anubis/static/css/custom.css"><script id="anubis_version" type="application/json">"1.24.0"
+</script><script id="anubis_challenge" type="application/json">{"rules":{"algorithm":"fast","difficulty":4},"challenge":{"issuedAt":"2026-05-11T22:21:04.95223209Z","metadata":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36","X-Real-Ip":"95.144.147.179"},"id":"019e1921-2c38-737a-9cd9-02c7a9b9d275","method":"fast","randomData":"823a1b870855eabe52e8d972203a5e09b327c682402ee9749ed02b83c0131b25d9a1777a6c1c71b9e1c349927a4caafa49b0339192957c3100ffebbab4e72548","policyRuleHash":"ac980f49c4d35fab","difficulty":4,"spent":false}}
+</script><script id="anubis_base_prefix" type="application/json">""
+</script><script id="anubis_public_url" type="application/json">""
+</script></head><body id="top"><script type="ignore"><a href="/.within.website/x/cmd/anubis/api/honeypot/406d8c76-45f3-4c3c-a309-2044cf9958d8/init">Don't click me</a></script><main><h1 id="title" class="centered-div">Validating...</h1><div class="centered-div"><img id="image" style="width:100%;max-width:256px;" src="/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0"> <img style="display:none;" style="width:100%;max-width:256px;" src="/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0"><p id="status">Loading...</p><script async type="module" src="/.within.website/x/cmd/anubis/static/js/main.mjs?cacheBuster=1.24.0"></script><div id="progress" role="progressbar" aria-labelledby="status"><div class="bar-inner"></div></div><details><p>You are seeing this because the administrator of this website has set up Anubis to protect the server against the scourge of AI companies aggressively scraping websites. This can and does cause downtime for the websites, which makes
+--- cookies ---
+  AWSALBTG=u0n4OwgqnSviISiGTd842dMpTwwamOi/OmVEsb/MydZkizBoFf... domain=datadryad.org
+  AWSALBTGCORS=u0n4OwgqnSviISiGTd842dMpTwwamOi/OmVEsb/MydZkizBoFf... domain=datadryad.org
+  AWSALB=3j5fyU3NJZyuReFXLvM2bg3ImxCeLbUcJohcEwwPpFwax18qsh... domain=datadryad.org
+  AWSALBCORS=3j5fyU3NJZyuReFXLvM2bg3ImxCeLbUcJohcEwwPpFwax18qsh... domain=datadryad.org
+  techaro.lol-anubis-cookie-verification=019e1921-2c38-737a-9cd9-02c7a9b9d275... domain=datadryad.org

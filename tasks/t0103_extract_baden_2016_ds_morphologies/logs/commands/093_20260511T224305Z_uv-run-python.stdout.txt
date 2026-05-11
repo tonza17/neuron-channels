@@ -1,0 +1,10 @@
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0103_extract_baden_2016_ds_morphologies\tasks\t0103_extract_baden_2016_ds_morphologies\code\group_count_check.json with 8 entries.
+  G  2 (OFF DS): produced=162, source=162, paper=162, delta_pct=+0.00%
+  G  6 ((ON-)OFF JAM-B mix): produced=104, source=104, paper=n/a, delta_pct=+0.00%
+  G 12 (ON-OFF DS 1): produced=397, source=397, paper=n/a, delta_pct=+0.00%
+  G 13 (ON-OFF DS 2): produced=129, source=129, paper=n/a, delta_pct=+0.00%
+  G 16 (ON DS trans.): produced=99, source=99, paper=n/a, delta_pct=+0.00%
+  G 25 (ON DS sust. 1): produced=76, source=76, paper=n/a, delta_pct=+0.00%
+  G 26 (ON slow): produced=141, source=141, paper=n/a, delta_pct=+0.00%
+  G 29 (ON local sust. OS): produced=130, source=130, paper=n/a, delta_pct=+0.00%
+All groups within 5% of source count.

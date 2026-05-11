@@ -1,0 +1,47 @@
+After dataset page: 5 cookies
+  AWSALBTG=AxoWm9noqwEfmxJmkQTJ08Uv0tRBDcWn6u/ITWLa... domain=datadryad.org
+  AWSALBTGCORS=AxoWm9noqwEfmxJmkQTJ08Uv0tRBDcWn6u/ITWLa... domain=datadryad.org
+  AWSALB=kLJp2+Yy/RKZSNkVlZcukUlDyVASb9qI0CyEc6DM... domain=datadryad.org
+  AWSALBCORS=kLJp2+Yy/RKZSNkVlZcukUlDyVASb9qI0CyEc6DM... domain=datadryad.org
+  _dash2_session=UCuEuEqXOERLQ3UWoqZKnFumhJdNybcE4dlqRlQt... domain=datadryad.org
+
+Challenge page final_url=https://datadryad.org/downloads/file_stream/3407, body_len=4328
+Challenge JSON parsed:
+{
+  "rules": {
+    "algorithm": "fast",
+    "difficulty": 4
+  },
+  "challenge": {
+    "issuedAt": "2026-05-11T22:22:25.225755556Z",
+    "metadata": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+      "X-Real-Ip": "95.144.147.179"
+    },
+    "id": "019e1922-65c9-7b7c-8edb-9dc7bcbf52cc",
+    "method": "fast",
+    "randomData": "496ddbb239f9c835aec0f1c311015e5261a1023f2cc201d8db00554e3822559760bffbd665e9e13f5
+
+Solving PoW: difficulty=4, data=496ddbb239f9c835aec0f1c311015e..., id=019e1922-65c9-7b7c-8edb-9dc7bcbf52cc
+Found: nonce=45909, hash=00009dcf78f2a9284aaed86a2163a184..., elapsed=189ms
+
+Submitting pass-challenge: https://datadryad.org/.within.website/x/cmd/anubis/api/pass-challenge?id=019e1922-65c9-7b7c-8edb-9dc7bcbf52cc&response=0...
+pass-challenge HTTPError 302: Found
+  Location=https://datadryad.org/downloads/file_stream/3407
+  Set-Cookie=AWSALBTG=CFHoG3E/mEGj9RdnrBNIGnnD01OhKo05IrIG/3xeGabaqn+i3mR2u5y0z1nRhuoeqmASML6mjFBsGg5iANsuMRUM6NI588ewxgSoJK8M9virYuZvP2U0UdU0ixVDDVhJDJUTL9iXUtgVu+ivFZ2RA25+zjHaXEUKDjk59f5UtqSIUFqbono=; Expires=M
+
+Cookies after pass-challenge: 7
+  AWSALBTG=CFHoG3E/mEGj9RdnrBNIGnnD01OhKo05IrIG/3xe... domain=datadryad.org
+  AWSALBTGCORS=CFHoG3E/mEGj9RdnrBNIGnnD01OhKo05IrIG/3xe... domain=datadryad.org
+  AWSALB=GEIfs3g9+xEaxvw1kgKcm8cLcDe3763yz9AgXUcD... domain=datadryad.org
+  AWSALBCORS=GEIfs3g9+xEaxvw1kgKcm8cLcDe3763yz9AgXUcD... domain=datadryad.org
+  _dash2_session=UCuEuEqXOERLQ3UWoqZKnFumhJdNybcE4dlqRlQt... domain=datadryad.org
+  techaro.lol-anubis-cookie-verification=019e1922-65c9-7b7c-8edb-9dc7bcbf52cc... domain=datadryad.org
+  techaro.lol-anubis-auth=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJ... domain=datadryad.org
+
+Re-fetching https://datadryad.org/downloads/file_stream/3407
+final_url=https://dryad-assetstore-merritt-west.s3.us-west-2.amazonaws.com/ark%3A/13030/m5dz57h8%7C1%7Cproducer/README_for_BadenEtAl_RGCs_2016_v1.pdf?response-content-disposition=attachment%3B%20filename%3DREADME_for_BadenEtAl_RGCs_2016_v1.pdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2KERHV5E3OITXZXC%2F20260511%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260511T222226Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=dce6a0c54e8db376422e50cf7168a3d5b98359660521eb4a8ef5796294a2d512, status=200
+  content-type=text/plain
+  content-length=69619
+  content-disposition=attachment; filename=README_for_BadenEtAl_RGCs_2016_v1.pdf
+  first 200 bytes: b'%PDF-1.5\r%\xe2\xe3\xcf\xd3\r\n14 0 obj\r<</Linearized 1/L 69619/O 16/E 63808/N 2/T 69303/H [ 471 192]>>\rendobj\r                  \r\n27 0 obj\r<</DecodeParms<</Columns 4/Predictor 12>>/Filter/FlateDecode/ID[<A853235725'

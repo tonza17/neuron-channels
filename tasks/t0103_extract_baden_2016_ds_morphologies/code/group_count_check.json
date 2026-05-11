@@ -1,0 +1,66 @@
+[
+  {
+    "group_id": 2,
+    "label": "OFF DS",
+    "produced_count": 162,
+    "source_mat_count": 162,
+    "paper_reported_count": 162,
+    "delta_pct": 0.0
+  },
+  {
+    "group_id": 6,
+    "label": "(ON-)OFF JAM-B mix",
+    "produced_count": 104,
+    "source_mat_count": 104,
+    "paper_reported_count": null,
+    "delta_pct": 0.0
+  },
+  {
+    "group_id": 12,
+    "label": "ON-OFF DS 1",
+    "produced_count": 397,
+    "source_mat_count": 397,
+    "paper_reported_count": null,
+    "delta_pct": 0.0
+  },
+  {
+    "group_id": 13,
+    "label": "ON-OFF DS 2",
+    "produced_count": 129,
+    "source_mat_count": 129,
+    "paper_reported_count": null,
+    "delta_pct": 0.0
+  },
+  {
+    "group_id": 16,
+    "label": "ON DS trans.",
+    "produced_count": 99,
+    "source_mat_count": 99,
+    "paper_reported_count": null,
+    "delta_pct": 0.0
+  },
+  {
+    "group_id": 25,
+    "label": "ON DS sust. 1",
+    "produced_count": 76,
+    "source_mat_count": 76,
+    "paper_reported_count": null,
+    "delta_pct": 0.0
+  },
+  {
+    "group_id": 26,
+    "label": "ON slow",
+    "produced_count": 141,
+    "source_mat_count": 141,
+    "paper_reported_count": null,
+    "delta_pct": 0.0
+  },
+  {
+    "group_id": 29,
+    "label": "ON local sust. OS",
+    "produced_count": 130,
+    "source_mat_count": 130,
+    "paper_reported_count": null,
+    "delta_pct": 0.0
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -L -A Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -H Referer: https://datadryad.org/dataset/doi:10.5061/dryad.d9v38 -e https://datadryad.org/dataset/doi:10.5061/dryad.d9v38 --cookie-jar tasks/t0103_extract_baden_2016_ds_morphologies/data/.cookies --cookie tasks/t0103_extract_baden_2016_ds_morphologies/data/.cookies --max-time 60 -o tasks/t0103_extract_baden_2016_ds_morphologies/data/README_for_BadenEtAl_RGCs_2016_v1.pdf https://datadryad.org/downloads/file_stream/3407",
+  "exit_code": 0,
+  "duration_seconds": 0.64,
+  "started_at": "2026-05-11T21:18:11Z",
+  "completed_at": "2026-05-11T21:18:12Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "044_20260511T211811Z_curl-l-a.stdout.txt",
+  "stderr_file": "044_20260511T211811Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 6,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -L -A Mozilla/5.0 --max-time 180 -o tasks/t0103_extract_baden_2016_ds_morphologies/data/baden_2016_biorxiv.pdf https://www.biorxiv.org/content/early/2015/12/05/036301.full.pdf",
+  "exit_code": 0,
+  "duration_seconds": 0.213,
+  "started_at": "2026-05-11T21:12:06Z",
+  "completed_at": "2026-05-11T21:12:06Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "025_20260511T211206Z_curl-l-a.stdout.txt",
+  "stderr_file": "025_20260511T211206Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}

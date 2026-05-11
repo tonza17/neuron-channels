@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "note": "Zero external costs. Local data download (Baden 2016 PDF reproduction from PMC, Dryad d9v38 .mat via Anubis-bypass, MATLAB visualisation zip) and local extraction only. No remote compute, no paid API calls."
+}

@@ -1,0 +1,22 @@
+error: externally-managed-environment
+
+This environment is externally managed
+
+This Python installation is managed by uv and should not be modified.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+    import curl_cffi
+ModuleNotFoundError: No module named 'curl_cffi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--quiet', 'curl_cffi'])
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\subprocess.py", line 419, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['C:\\Users\\md1avn\\AppData\\Roaming\\uv\\python\\cpython-3.13-windows-x86_64-none\\python.exe', '-m', 'pip', 'install', '--quiet', 'curl_cffi']' returned non-zero exit status 1.

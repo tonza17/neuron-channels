@@ -1,0 +1,18 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0103_extract_baden_2016_ds_morphologies\tasks\t0103_extract_baden_2016_ds_morphologies\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260511T205637Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 004_20260511T205952Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 062_20260511T213108Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 085_20260511T222252Z_python-u-c.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 089_20260511T222932Z_python-u-c.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 091_20260511T223750Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 095_20260511T224555Z_uv-run-ruff.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 107_20260511T224837Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 112_20260511T225005Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 126_20260511T230430Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 12 warning(s)

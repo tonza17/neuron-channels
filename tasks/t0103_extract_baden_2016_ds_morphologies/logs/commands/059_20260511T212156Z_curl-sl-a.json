@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -sL -A Mozilla/5.0 --max-time 60 https://github.com/search?q=BadenEtAl_RGCs_2016_v1&type=code",
+  "exit_code": 0,
+  "duration_seconds": 0.404,
+  "started_at": "2026-05-11T21:21:56Z",
+  "completed_at": "2026-05-11T21:21:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "059_20260511T212156Z_curl-sl-a.stdout.txt",
+  "stderr_file": "059_20260511T212156Z_curl-sl-a.stderr.txt",
+  "stdout_lines": 1051,
+  "stderr_lines": 0,
+  "truncated": false
+}

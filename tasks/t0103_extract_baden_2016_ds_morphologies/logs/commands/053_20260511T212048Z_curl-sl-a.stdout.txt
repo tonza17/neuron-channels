@@ -1,0 +1,1 @@
+{"url": "datadryad.org/resource/doi:10.5061/dryad.d9v38", "archived_snapshots": {"closest": {"status": "200", "available": true, "url": "http://web.archive.org/web/20180202080955/http://datadryad.org:80/resource/doi:10.5061/dryad.d9v38", "timestamp": "20180202080955"}}}

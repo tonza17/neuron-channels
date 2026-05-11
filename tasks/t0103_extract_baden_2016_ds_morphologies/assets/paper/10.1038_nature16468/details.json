@@ -1,0 +1,86 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nature16468",
+  "doi": "10.1038/nature16468",
+  "title": "The functional diversity of retinal ganglion cells in the mouse",
+  "url": "https://www.nature.com/articles/nature16468",
+  "pdf_url": null,
+  "date_published": "2016-01-21",
+  "year": 2016,
+  "authors": [
+    {
+      "name": "Tom Baden",
+      "country": "DE",
+      "institution": "Bernstein Centre for Computational Neuroscience, Tübingen",
+      "orcid": null
+    },
+    {
+      "name": "Philipp Berens",
+      "country": "DE",
+      "institution": "Bernstein Centre for Computational Neuroscience, Tübingen",
+      "orcid": null
+    },
+    {
+      "name": "Katrin Franke",
+      "country": "DE",
+      "institution": "Bernstein Centre for Computational Neuroscience, Tübingen",
+      "orcid": null
+    },
+    {
+      "name": "Miroslav Román Rosón",
+      "country": "DE",
+      "institution": "Bernstein Centre for Computational Neuroscience, Tübingen",
+      "orcid": null
+    },
+    {
+      "name": "Matthias Bethge",
+      "country": "DE",
+      "institution": "Max Planck Institute of Biological Cybernetics, Tübingen",
+      "orcid": null
+    },
+    {
+      "name": "Thomas Euler",
+      "country": "DE",
+      "institution": "Centre for Integrative Neuroscience, University of Tübingen",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Bernstein Centre for Computational Neuroscience, Tübingen",
+      "country": "DE"
+    },
+    {
+      "name": "Centre for Integrative Neuroscience, University of Tübingen",
+      "country": "DE"
+    },
+    {
+      "name": "Institute for Ophthalmic Research, Tübingen",
+      "country": "DE"
+    },
+    {
+      "name": "Max Planck Institute of Biological Cybernetics, Tübingen",
+      "country": "DE"
+    },
+    {
+      "name": "Baylor College of Medicine, Houston",
+      "country": "US"
+    }
+  ],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell"
+  ],
+  "abstract": "In the vertebrate visual system, all output of the retina is carried by retinal ganglion cells. Each type encodes distinct visual features in parallel for transmission to the brain. How many such \"output channels\" exist and what each encodes is an area of intense debate. In mouse, anatomical estimates range between 15-20 channels, and only a handful are functionally understood. Combining two-photon calcium imaging to obtain dense retinal recordings and unsupervised clustering of the resulting sample of >11,000 cells, we here show that the mouse retina harbours substantially more than 30 functional output channels. These include all known and several new ganglion cell types, as verified by genetic and anatomical criteria. Therefore, information channels from the mouse's eye to the mouse's brain are considerably more diverse than shown thus far by anatomical studies, suggesting an encoding strategy resembling that used in state-of-the-art artificial vision systems.",
+  "citation_key": "Baden2016",
+  "summary_path": "summary.md",
+  "files": [
+    "files/baden_2016_functional_diversity_rgc.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0103_extract_baden_2016_ds_morphologies",
+  "date_added": "2026-05-11"
+}

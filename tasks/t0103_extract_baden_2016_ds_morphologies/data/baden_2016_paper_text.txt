@@ -1,0 +1,1076 @@
+Original Research  n  NEURORADIOLOGY
+496
+radiology.rsna.org  n  Radiology: Volume 278: Number 2—February 2016
+1 From the Department of Radiology, Henan Provincial
+People’s Hospital & the People’s Hospital of Zhengzhou
+University, No. 7 Weiwu Road, Zhengzhou, Henan 450003,
+China (Y.B., D.S., B.M., M.W.); Software Technology School
+of Zhengzhou University (Y.L.); Institute of Automation,
+Chinese Academy of Sciences, Beijing, China (J.T.); Division
+of MRI, First Affiliated Hospital of Zhengzhou University,
+Zhengzhou Henan, China (J.C.); Department of Radiology,
+Wayne State University, Detroit, Mich (E.M.H.); Magnetic
+Resonance Innovations, Detroit, Mich (E.M.H.); and Division
+of MR Research, Department of Radiology, Johns Hopkins
+University, Baltimore, Md (X.H., B.M., J.Z., M.W.). Received
+September 10, 2014; revision requested November 3; revi-
+sion received February 17, 2015; accepted March 25; final
+version accepted June 4. Supported in part by the National
+Natural Science Foundation of China (grants 81271565,
+31470047, and 81271534), Distinguished Young Scholar
+in Scientific and Technical Innovation Foundation of Henan
+Province, China (grant 124100510016), Science and
+Technology Foundation of Public Health of Henan Province,
+China (grants 201202018 and 201003095), and National
+Clinical Key Specialty of China. Address correspondence
+to M.W. (e-mail: mywang@ha.edu.cn).
+q RSNA, 2015
+Purpose:
+To quantitatively compare the potential of various diffusion
+parameters obtained from monoexponential, biexponential,
+and stretched exponential diffusion-weighted imaging models
+and diffusion kurtosis imaging in the grading of gliomas.
+Materials and
+Methods:
+This study was approved by the local ethics committee, and
+written informed consent was obtained from all subjects. Both
+diffusion-weighted imaging and diffusion kurtosis imaging were
+performed in 69 patients with pathologically proven gliomas by
+using a 3-T magnetic resonance (MR) imaging unit. An isotro-
+pic apparent diffusion coefficient (ADC), true ADC, pseudo-
+ADC, and perfusion fraction were calculated from diffusion-
+weighted images by using a biexponential model. A water
+molecular diffusion heterogeneity index and distributed dif-
+fusion coefficient were calculated from diffusion-weighted im-
+ages by using a stretched exponential model. Mean diffusivity,
+fractional anisotropy, and mean kurtosis were calculated from
+diffusion kurtosis images. All values were compared between
+high-grade and low-grade gliomas by using a Mann-Whitney
+U test. Receiver operating characteristic and Spearman rank
+correlation analysis were used for statistical evaluations.
+Results:
+ADC, true ADC, perfusion fraction, water molecular diffu-
+sion heterogeneity index, distributed diffusion coefficient, and
+mean diffusivity values were significantly lower in high-grade
+gliomas than in low-grade gliomas (U = 109, 56, 129, 6, 206,
+and 229, respectively; P , .05). Pseudo-ADC and mean kurto-
+sis values were significantly higher in high-grade gliomas than
+in low-grade gliomas (U = 98 and 8, respectively; P , .05).
+Both water molecular diffusion heterogeneity index (area un-
+der the receiver operating characteristic curve [AUC] = 0.993)
+and mean kurtosis (AUC = 0.991) had significantly greater
+AUC values than ADC (AUC = 0.866), mean diffusivity (AUC =
+0.722), and fractional anisotropy (AUC = 0.500) in the differ-
+entiation of low-grade and high-grade gliomas (P , .05).
+Conclusion:
+Water molecular diffusion heterogeneity index and mean
+kurtosis values may provide additional information and im-
+prove the grading of gliomas compared with conventional
+diffusion parameters.
+q RSNA, 2015
+Online supplemental material is available for this article.
+Yan Bai, MD
+Yusong Lin, PhD
+Jie Tian, PhD
+Dapeng Shi, MD, PhD
+Jingliang Cheng, MD, PhD
+E. Mark Haacke, PhD
+Xiaohua Hong, MD
+Bo Ma, MD
+Jinyuan Zhou, PhD
+Meiyun Wang, MD, PhD
+Grading of Gliomas by Using
+Monoexponential, Biexponential,
+and Stretched Exponential
+Diffusion-weighted MR Imaging
+and Diffusion Kurtosis MR
+Imaging1
+This copy is for personal use only. To order printed copies, contact reprints@rsna.org
+Radiology: Volume 278: Number 2—February 2016  n  radiology.rsna.org
+497
+NEURORADIOLOGY: Glioma Grading with Diffusion-weighted MR Imaging and Diffusion Kurtosis MR Imaging
+Bai et al
+Since DWI with different models and
+DKI may demonstrate different aspects
+of tissue properties, it should be valu-
+able to explore and compare their roles
+in the grading of gliomas. To our knowl-
+edge, however, no comparison of these
+different diffusion imaging approaches
+in the identification of glioma grade has
+been investigated so far. The purpose
+of this study was to quantitatively com-
+pare the potential of various diffusion
+parameters obtained from monoexpo-
+nential, biexponential, and stretched
+exponential DWI models and DKI in
+the grading of gliomas.
+Materials and Methods
+Patient Population
+This prospective study was approved
+by the local institutional review board.
+well as fractional anisotropy (FA) and
+mean diffusivity obtained from diffusion-
+tensor imaging, have been used to grade
+gliomas (4–6). However, contradictory
+findings about the values of ADC, FA,
+and mean diffusivity in the grading of gli-
+omas have been reported by several re-
+searchers (4–9). ADC values calculated
+by using a monoexponential model may
+not be able to accurately reflect water
+molecular diffusion in vivo, because it
+is influenced by the microcirculation of
+blood in capillaries (10). In addition, FA
+and mean diffusivity values derived from
+diffusion-tensor imaging by assuming
+unrestricted and free water diffusion,
+called Gaussian diffusion distribution,
+can reflect quantitative information
+about the direction and magnitude
+of water molecular diffusion. Yet, the
+complex microstructures in biological
+tissue result in hindered and restricted
+diffusion of water molecules, which
+leads to a non-Gaussian distribution
+(11). Thus, FA and mean diffusivity have
+limitations in the accurate evaluation of
+water molecular diffusion.
+Some previous researchers have sug-
+gested that biexponential or stretched
+exponential DWI models and diffusion
+kurtosis imaging (DKI) might provide
+more accurate information about water
+diffusion (12–14). The biexponential in-
+travoxel incoherent motion DWI model,
+proposed by Le Bihan et al (12,15), might
+allow separation of water molecular diffu-
+sion from microcirculation. However, its
+value has not been well explored until
+recent years. The stretched exponential
+DWI model, introduced by Bennett et al
+(13), was used to describe the heteroge-
+neity of intravoxel diffusion rates and the
+distributed diffusion effect. DKI has been
+used to measure non-Gaussian diffusion,
+which has the potential to characterize
+both normal and pathologic tissue better
+than diffusion-tensor imaging (16,17).
+Published online before print
+10.1148/radiol.2015142173  Content codes:
+
+Radiology 2016; 278:496–504
+Abbreviations:
+ADC = apparent diffusion coefficient
+ADCfast = pseudo-ADC
+ADCslow = true ADC
+AUC = area under the receiver operating characteristic
+curve
+DDC = distributed diffusion coefficient
+DKI = diffusion kurtosis imaging
+DWI = diffusion-weighted imaging
+f = perfusion fraction
+FA = fractional anisotropy
+MK = mean kurtosis
+a = water molecular diffusion heterogeneity index
+WHO = World Health Organization
+Author contributions:
+Guarantors of integrity of entire study, Y.B., B.M., M.W.;
+study concepts/study design or data acquisition or data
+analysis/interpretation, all authors; manuscript drafting or
+manuscript revision for important intellectual content, all
+authors; approval of final version of submitted manuscript,
+all authors; agrees to ensure any questions related to the
+work are appropriately resolved, all authors; literature
+research, Y.B., D.S., B.M., J.Z., M.W.; clinical studies, Y.B.,
+D.S., B.M., M.W.; experimental studies, Y.B., B.M.; statistical
+analysis, Y.B., Y.L., J.T., X.H., B.M., M.W.; and manuscript
+editing, Y.B., Y.L., J.T., D.S., J.C., E.M.H., B.M., J.Z., M.W.
+Funding:
+This research was supported by the National Institutes of
+Health (grants R01EB009731 and R01CA166171).
+Conflicts of interest are listed at the end of this article.
+Advances in Knowledge
+n
+n Except for fractional anisotropy
+(FA), all the other diffusion pa-
+rameters were significantly dif-
+ferent in high-grade gliomas as
+compared with low-grade gliomas
+(P , .05), including isotropic
+apparent diffusion coefficient
+(ADC), true ADC, pseudo-ADC,
+and perfusion fraction, calculated
+from diffusion-weighted imaging
+(DWI) by using a biexponential
+model; water molecular diffusion
+heterogeneity index (a) and dis-
+tributed diffusion coefficient, cal-
+culated from DWI by using a
+stretched exponential model; and
+mean diffusivity and mean kurto-
+sis (MK), calculated from diffu-
+sion kurtosis images.
+n
+n The areas under the receiver op-
+erating characteristic curves
+(AUCs) for both a (AUC = 0.993)
+and MK (AUC = 0.991) were sig-
+nificantly greater than those of
+conventional diffusion parame-
+ters, including ADC (AUC =
+0.866), mean diffusivity (AUC =
+0.722), and FA (AUC = 0.500), in
+the grading of gliomas (P , .05).
+Implication for Patient Care
+n
+n Both a and MK had significantly
+greater AUC values than ADC,
+mean diffusivity, and FA in the
+grading of gliomas (P , .05),
+which may improve the diagnosis
+and management of gliomas.
+C
+erebral glioma is the most com-
+mon type of primary brain tumor
+and is classified into four grades
+according to the World Health Organiza-
+tion (WHO) (1). The grading of glioma
+has clinical significance in determin-
+ing a treatment strategy and evaluating
+prognosis. Conventional unenhanced
+magnetic resonance (MR) imaging and
+gadolinium-based contrast material–en-
+hanced T1-weighted imaging are usually
+used to grade gliomas. However, they
+sometimes fail to provide a reliable pre-
+diction of glioma grade because of the
+overlap of image manifestations in the
+different grades of gliomas (2,3).
+Diffusion MR imaging techniques,
+such as diffusion-weighted imaging (DWI)
+and diffusion-tensor imaging, are non-
+invasive techniques that are sensitive to
+water molecular diffusion in biological
+tissue (4,5). An isotropic apparent dif-
+fusion coefficient (ADC) obtained from
+DWI with a monoexponential model, as
+498
+radiology.rsna.org  n  Radiology: Volume 278: Number 2—February 2016
+NEURORADIOLOGY: Glioma Grading with Diffusion-weighted MR Imaging and Diffusion Kurtosis MR Imaging
+Bai et al
+sensitization and S(0) represents the
+signal intensity in the absence of diffu-
+sion sensitization.
+Three parameters—perfusion frac-
+tion (f), pseudo-ADC (ADCfast), and
+true ADC (ADCslow)—were calculated
+by using biexponential intravoxel inco-
+herent motion analysis (10):
+S(b)/S(0) 5 [f · exp (2b · ADCfast)] 1
+[(1 2 f) · exp(2b· ADCslow)].
+By using a stretched exponential DWI
+model, the water molecular diffusion
+heterogeneity index (a) and the distrib-
+uted diffusion coefficient (DDC) were
+obtained by using the following method
+(13):
+S(b)/S(0) 5 exp[2(b · DDC)a],
+where a is related to the intravoxel
+water molecular diffusion heterogene-
+ity, which varies between 0 and 1. A
+numerically high a value represents the
+low intravoxel diffusion heterogeneity
+(approaching the monoexponential de-
+cay). The DDC represents the mean in-
+travoxel diffusion rate.
+In addition to FA and mean diffusiv-
+ity, mean kurtosis (MK) was calculated
+from DKI. The diffusion kurtosis model
+is described as follows (16):
+S(b)/S(0) 5 exp (2b · Dapp 1 1
+6
+b2 ·
+Dapp
+2 · Kapp)
+and
+
+app
+1
+MK
+(1/ )
+(
+)
+n
+i
+i
+n
+K
+=
+=
+å
+,
+where Dapp is ADC, Kapp is the Kapp
+along the ith direction, and n is the
+25 directions in which diffusion mea-
+surements are performed. The MK
+value is derived by averaging all 25
+Kapp values.
+In our study, we used the least-
+squares fit for linear fitting with the
+monoexponential and DKI models and
+the Levenberg-Marquardt fit for non-
+linear fitting with biexponential and
+stretched exponential models, which
+were commonly applied by fitting al-
+gorithms in previous studies (Fig 1, A,
+and Fig 2, A) (19,22).
+4000, and 5000 sec/mm2; with one sig-
+nal acquired for b = 0–800 sec/mm2,
+two signals acquired for b = 1000–2000
+sec/mm2, three signals acquired for b =
+2500–4000 sec/mm2, and four signals
+acquired for b = 5000 sec/mm2) were
+used in three diffusion directions. The
+total acquisition time for DWI, which
+provided data for monoexponential,
+biexponential, and stretched exponen-
+tial model fitting, was 5 minutes 32
+seconds. DKI was performed by using
+six b values that ranged from 0 to 2500
+sec/mm2 (0, 500, 1000, 1500, 2000,
+and 2500 sec/mm2, with one signal ac-
+quired) with 25 diffusion directions for
+every b value, 7000/80, section thick-
+ness of 4 mm, gap of 0 mm, field of
+view of 24 3 24 cm, and matrix of 128
+3 128. The total acquisition time for
+DKI was 8 minutes 28 seconds.
+According
+to
+previous
+studies
+(11,18,19), the selections for distri­
+butions of b values and numbers of
+signals acquired in our study are trad-
+eoffs between acquisition times and
+signal-to-noise ratios in the models.
+The signal-to-noise ratios in the tem-
+poral lobe for b of 5000 sec/mm2 im-
+ages in biexponential and stretched
+exponential models and b of 2500 sec/
+mm2 images in the DKI model were
+calculated to be 12–15 and 19–25, re-
+spectively. When compared with some
+other studies (18,20,21), the signal-to-
+noise ratios in these diffusion models
+of our study are reliable even with the
+highest b values.
+Image Data Analysis and Processing
+Images were obtained and transferred
+to a workstation (Advantage Worksta-
+tion 4.5; GE Medical Systems) for pro-
+cessing. They were independently pro-
+cessed by two neuroradiologists (Y.B.
+and M.W., who had 7 and 16 years of
+neurological MR imaging experience,
+respectively) who were blinded to the
+histopathologic results.
+The ADC value was calculated from
+all 15 b values by using a monoexponen-
+tial model as follows (10):
+S(b)/S(0) 5 exp(2b · ADC),
+where S(b) represents the signal in-
+tensity in the presence of diffusion
+Written informed consent was obtained
+from every patient before participation.
+A total of 69 patients (31 men and 38
+women; age range, 25–68 years; mean
+age, 46 years) with cerebral gliomas that
+were undergoing MR imaging between
+April 2012 and May 2014 were enrolled
+in this study (Table E1 [online]). The
+inclusion criteria were as follows: (a)
+MR imaging was performed in patients
+prior to the treatment of gliomas and
+(b) a histopathologic diagnosis based
+on the WHO 2007 criteria, including
+astrocytoma, oligodendroglioma, and
+oligoastrocytoma, was assigned after
+surgical resection of gliomas within 10
+days after the completion of the MR
+imaging examination. The exclusion cri-
+teria were the following: (a) MR data
+were not available owing to head move-
+ment artifacts and (b) the solid tumor
+component was unavailable for analysis
+(,20 mm2). Finally, five patients with
+head movement artifacts and two pa-
+tients with unavailable solid tumor
+components were excluded, and a total
+of 62 patients were included.
+Image Data Acquisition
+All patients underwent imaging by using
+a 3-T MR imaging unit (Discovery MR
+750; GE Medical Systems, Milwaukee,
+Wis) and an eight-channel head coil
+(GE Medical Systems).
+Conventional MR imaging was per-
+formed with a fast spin-echo sequence.
+Axial T1-weighted images were ob-
+tained with a repetition time (msec)/
+echo time (msec) of 1593/24, while
+axial T2-weighted images were ob-
+tained with 4600/110. Axial T1-weight-
+ed sequences were repeated after the
+intravenous administration of a single
+dose of gadopentetate dimeglumine
+(Magnevist; Bayer Schering Pharma,
+Berlin, Germany).
+DWI and DKI were performed be-
+fore the injection of contrast agents.
+DWI was performed by using a single-
+shot echo-planar sequence in the axial
+plane, 4000/112, section thickness of 4
+mm, gap of 0 mm, field of view of 24 3
+24 cm, and matrix of 128 3 128. Six-
+teen b values from 0 to 5000 sec/mm2
+(0, 50, 100, 150, 200, 300, 400, 500,
+800, 1000, 1500, 2000, 2500, 3000,
+Radiology: Volume 278: Number 2—February 2016  n  radiology.rsna.org
+499
+NEURORADIOLOGY: Glioma Grading with Diffusion-weighted MR Imaging and Diffusion Kurtosis MR Imaging
+Bai et al
+hemorrhage, large vessels, edema, and
+calcifications were avoided to ensure
+more accurate measurements. Then,
+the selected regions of interest with the
+lowest mean ADC values on ADC maps
+components within white matter on the
+ADC maps to obtain measurements.
+The areas of the regions of interest
+varied from 20 to 45 mm2 (mean area,
+37 mm2), and areas of necrosis, cyst,
+The two blinded neuroradiologists
+(Y.B. and M.W.) analyzed all the images
+independently. For every patient, each
+neuroradiologist placed three regions
+of interest in the different solid tumor
+Figure 1
+Figure 1:  High-grade glioblastoma ( WHO grade IV ) in the left temporal lobe (arrows) in a 61-year-old woman. A, The curves of different fits were derived from DWI
+by using monoexponential, biexponential, and stretched exponential models and DKI. B, T1-weighted MR image shows that the tumor is hypointense. C, T2-weighted
+MR image shows that the tumor is hyperintense. D, Gadolinium-based contrast material–enhanced T1-weighted MR image shows that the tumor has irregular
+enhancement. In the solid tumor component that enhances with gadolinium-based contrast material, E, the ADC map and, F, the ADCslow map show decreased values.
+G, The ADCfast map shows increased values, and, H, the f map, I, a map, J, DDC map, and, K, mean diffusivity map show decreased values. The, L, FA and, M, MK
+maps show increased values.
+500
+radiology.rsna.org  n  Radiology: Volume 278: Number 2—February 2016
+NEURORADIOLOGY: Glioma Grading with Diffusion-weighted MR Imaging and Diffusion Kurtosis MR Imaging
+Bai et al
+high-grade and low-grade gliomas. The
+Wilcoxon signed rank test was used to
+compare ADC and ADCslow values cal-
+culated from all subjects. Results with
+P values less than .05 were consid-
+ered to indicate a significant difference.
+Chicago, Ill). The mean results of each
+parameter for each subject according
+to the two radiologists were used for
+quantitative statistical analyses. The
+Mann-Whitney U test was used for the
+comparison of each parameter between
+were copied to the maps of all the other
+parameters from the same patient.
+Statistical Analysis
+All statistical analyses were performed
+with SPSS software (version 17.0; SPSS,
+Figure 2
+Figure 2:  Low-grade astrocytoma ( WHO grade II) in the right temporal lobe (arrows) in a 43-year-old woman. A, The curves of different fits were derived from DWI
+by using monoexponential, biexponential, and stretched exponential models and DKI. B, T1-weighted MR image shows that the tumor is hypointense. C, T2-weighted
+MR image shows that the tumor is hyperintense. D, Gadolinium-based contrast-enhanced T1-weighted MR image shows that the tumor has no enhancement. In the
+tumor, E, the ADC map and, F, the ADCslow map show increased values. G, The ADCfast map shows decreased values. The, H, f map, I, a map, J, DDC map, and, K,
+mean diffusivity map show increased values. The, L, FA and, M, MK map show decreased values.
+Radiology: Volume 278: Number 2—February 2016  n  radiology.rsna.org
+501
+NEURORADIOLOGY: Glioma Grading with Diffusion-weighted MR Imaging and Diffusion Kurtosis MR Imaging
+Bai et al
+67.8% (19 of 28 gliomas) for Y.B. and
+76.4% (26 of 34 gliomas) and 71.4%
+(20 of 28 gliomas) for M.W. in the de-
+termination of high-grade gliomas.
+Figure 1, B–M, and Figure 2, B–M,
+show the manifestations of high- and
+low-grade gliomas on T1- and T2-
+weighted
+images,
+gadolinium-based
+contrast material–enhanced T1-weight-
+ed images, and ADC, ADCfast, ADCslow,
+f, a, DDC, mean diffusivity, FA, and
+MK maps. Figure 3 shows the quanti-
+tative comparison of differences in dif-
+fusion parameters between the two gli-
+oma groups. ADC, ADCslow, f, a, DDC,
+and mean diffusivity values were sig-
+nificantly lower in high-grade gliomas
+than in low-grade gliomas (P , .05).
+Additionally, ADCfast and MK were sig-
+nificantly higher in high-grade gliomas
+than in low-grade gliomas (P , .05).
+However, FA did not show a significant
+difference between the two groups
+(P . .05).
+Results
+Thirty-four of 62 patients (55%) were
+confirmed with pathologic examination
+to have high-grade (WHO grades III
+and IV) gliomas, and the remaining 28
+patients (45%) had low-grade (WHO
+grade II) gliomas. The diagnoses of the
+patient group included WHO grade II
+astrocytomas (n = 15), grade II oligo-
+dendrogliomas (n = 8), grade II oligoas-
+trocytomas (n = 5), grade III anaplastic
+astrocytomas (n = 8), grade III anaplas-
+tic oligodendrogliomas (n = 2), grade
+III anaplastic oligoastrocytomas (n = 5),
+and grade IV glioblastomas (n = 19).
+Thirty of 34 high-grade gliomas
+(88%) and six of 28 low-grade gliomas
+(21%) demonstrated enhancement on
+the contrast-enhanced T1-weighted im-
+ages. For the two radiologists (Y.B. and
+M.W.), the respective sensitivity and
+specificity for conventional MR imag-
+ing were 73.5% (25 of 34 gliomas) and
+Correlations among all parameters
+were assessed by using Spearman rank
+correlation. Sidak corrections (with a
+0.95 confidence level), which can re-
+duce the type I error, were used for
+multiple comparisons. Receiver oper-
+ating characteristic curves were gen-
+erated for each parameter to assess
+the area under the receiver operating
+characteristic curve (AUC) and to de-
+termine which parameter was optimal
+for the grading of gliomas. The cutoff
+points were selected by using the max-
+imized values of the Youden indexes.
+Then, the sensitivity and specificity
+at the threshold values for each dif-
+fusion parameter were determined in
+the grading of gliomas. Interrater re-
+liability between the two independent
+quantitative analyses was assessed by
+using an intraclass correlation coeffi-
+cient. Results with P values less than
+.05 were considered to indicate a sig-
+nificant difference.
+Figure 3
+Figure 3:  Bar graphs of ADC, ADCfast, ADCslow, f, a, DDC, FA, mean diffusivity (MD), and MK values averaged across high-
+grade (n = 34) and low-grade (n = 28) gliomas. Error bars = standard deviations across subjects. ADC, ADCfast, ADCslow,
+DDC, and MD are in units of 3 1023 mm2/sec. Parameters not marked with asterisks are not significant. ∗∗ = P , .01,
+∗∗∗ = P , .001.
+502
+radiology.rsna.org  n  Radiology: Volume 278: Number 2—February 2016
+NEURORADIOLOGY: Glioma Grading with Diffusion-weighted MR Imaging and Diffusion Kurtosis MR Imaging
+Bai et al
+that ADCfast was significantly higher in
+high-grade gliomas than in low-grade
+gliomas, whereas f was significantly
+higher in low-grade gliomas than in
+high-grade gliomas. These current re-
+sults were consistent with the findings
+from previous studies (3,26,29,30).
+The discordance between f and
+other perfusion parameters obtained by
+using contrast media may be caused by
+differences in imaging techniques (29).
+Furthermore, water molecules are less
+restricted in the relatively larger extra-
+cellular space in a low-grade glioma (4),
+which may contribute to the increase
+of the fast diffusion fraction. How-
+ever, Sehy et al (31) reported that fast
+may be affected in opposite ways. Thus,
+ADC calculated from the monoexpo-
+nential model is limited in grading gli-
+omas, leading to contradictory results
+(4,6,7,24,25). However, ADCslow de-
+rived from biexponential intravoxel in-
+coherent motion can remove the influ-
+ence of perfusion, so it may reflect the
+true diffusion coefficient.
+Perfusion parameters, such as cere-
+bral blood flow and cerebral blood vol-
+ume, have previously been shown to be
+helpful in grading gliomas (3,26). Previ-
+ous studies (27,28) showed that ADCfast
+and f were associated with perfusion
+quantitatively in the human brain. The
+results of our current study showed
+ADCslow was significantly lower than
+ADC in all subjects (P , .05).
+When looking at the receiver oper-
+ating characteristic curves in discrim-
+inating high-grade gliomas from low-
+grade gliomas (Fig 4), AUC values were
+0.993 for a, 0.991 for MK, 0.939 for
+ADCslow, 0.900 for ADCfast, 0.866 for
+ADC, 0.782 for DDC, 0.722 for mean
+diffusivity, and 0.500 for FA. The AUC
+values for both a and MK were signif-
+icantly greater than those for ADC,
+mean diffusivity, and FA in the grading
+of gliomas (P , .05). Table 1 shows the
+sensitivity and specificity of diffusion
+parameters at optimal cutoff values in
+differentiating low-grade from high-
+grade gliomas.
+The quantitative correlation analysis
+showed that there were strong correla-
+tions between ADC and ADCslow, ADC-
+fast, f, a, mean diffusivity, and MK (P ,
+.001) (Table 2). After Sidak corrections
+for multiple comparisons, MK corre-
+lated with all the other parameters (P
+, .001) except FA (P . .05). In partic-
+ular, there was a strong negative corre-
+lation between MK and a in gliomas (r
+= 20.742, P , .001).
+The overall mean intraclass correla-
+tion coefficient between the two indepen-
+dent radiologists was 0.873 (P , .001).
+Discussion
+In this study, our results showed that
+both a and MK had significantly greater
+diagnostic properties than did conven-
+tional diffusion parameters, including
+ADC, mean diffusivity, and FA, in dif-
+ferentiating low-grade gliomas from
+high-grade gliomas. As such, MK may
+serve as an optimal diffusion parameter
+for grading gliomas in clinical practice.
+One previous study on DWI in the
+evaluation of cellularity in gliomas re-
+ported by Sugahara et al (4) and another
+study on the neuropathologic diagnosis
+of brain tumors reported by Pollo (23)
+demonstrated that both tumor cellu-
+larity and vascularity were higher in
+high-grade gliomas than in low-grade
+gliomas. Since high tumor cellularity
+can decrease ADC values, whereas the
+high vascularity may increase the ADC
+(4,10,12), the DWI signal attenuation
+Figure 4
+Figure 4:  (a) Receiver operating characteristic curves for ADC, ADCslow, a, DDC, and mean diffusivity (MD)
+in distinguishing high- from low-grade gliomas. (b) Receiver operating characteristic curves for ADCfast, MK,
+and FA in distinguishing high- from low-grade gliomas.
+Table 1
+Sensitivity and Specificity of Diffusion Parameters at Optimal Cutoff Values in
+Differentiating Low- from High-Grade Gliomas
+Diffusion Parameter
+Optimal Cutoff Value
+Sensitivity (%)
+Specificity (%)
+ADC
+0.696*
+89.3 (25/28)
+79.4 (27/34)
+ADCfast
+2.215*
+89.3 (25/28)
+85.3 (29/34)
+ADCslow
+0.552*
+85.7 (24/28)
+91.2 (31/34)
+a
+0.813
+92.9 (26/28)
+100 (34/34)
+DDC
+0.896*
+60.7 (17/28)
+85.3 (29/34)
+FA
+0.062
+89.3 (25/28)
+20.6 (7/34)
+Mean diffusivity
+0.937*
+78.6 (22/28)
+64.7 (22/34)
+MK
+0.616
+92.9 (26/28)
+100 (34/34)
+Note.—Numbers in parentheses are the data used to calculate percentages.
+* Values are in units of 3 1023 mm2/sec.
+Radiology: Volume 278: Number 2—February 2016  n  radiology.rsna.org
+503
+NEURORADIOLOGY: Glioma Grading with Diffusion-weighted MR Imaging and Diffusion Kurtosis MR Imaging
+Bai et al
+the detailed histologic characteristics
+should be investigated further.
+In conclusion, our results suggest
+that a and MK may provide additional
+information for the grading of gliomas
+compared with conventional diffusion
+parameters, which would be helpful
+in improving therapy strategies and
+prognoses.
+Acknowledgments: The authors thank Mary
+McAllister, MA, in the Department of Radiology
+at Johns Hopkins University, Baltimore, Mary-
+land, for editorial assistance; Zhenyu Zhou,
+PhD, Dandan Zheng, PhD, and Fei Sun, PhD, at
+GE Healthcare, Beijing, China, for technical sup-
+port; and Yong Zhang, PhD, at GE Healthcare,
+Shanghai, China, for technical support.
+Disclosures of Conflicts of Interest: Y.B. dis-
+closed no relevant relationships. Y.L. disclosed
+no relevant relationships. J.T. disclosed no rel-
+evant relationships. D.S. disclosed no relevant
+relationships. J.C. disclosed no relevant rela-
+tionships. E.M.H. disclosed no relevant relation-
+ships. X.H. disclosed no relevant relationships.
+B.M. disclosed no relevant relationships. J.Z.
+disclosed no relevant relationships. M.W. dis-
+closed no relevant relationships.
+References
+	 1.	 Louis DN, Ohgaki H, Wiestler OD, et al.
+The 2007 WHO classification of tumours
+of the central nervous system. Acta Neuro-
+pathol (Berl) 2007;114(2):97–109.
+	 2.	 Scott JN, Brasher PM, Sevick RJ, Rewcastle
+NB, Forsyth PA. How often are nonenhancing
+supratentorial gliomas malignant? A popula-
+tion study. Neurology 2002;59(6):947–949.
+	 3.	 Law M, Young R, Babb J, et al. Comparing
+perfusion metrics obtained from a single
+compartment versus pharmacokinetic mod-
+eling methods using dynamic susceptibility
+derived from diffusion-tensor imaging
+were not consistently helpful in the
+grading of gliomas (8,9), since dif-
+fusion-tensor imaging might not be
+accurate enough to reflect the actual
+non-Gaussian diffusion distribution in
+biological tissue. As an extension of
+diffusion-tensor imaging, DKI can pro-
+vide an additional measurement, MK,
+to characterize the complexity of the
+microenvironment and has the poten-
+tial to allow measurement of the non-
+Gaussian diffusion in biological tissue.
+On the basis of our results, MK showed
+better separation between high- and
+low-grade gliomas than FA and mean
+diffusivity, which was in agreement
+with some recent studies (9,11).
+It is thought that a may reflect mi-
+crostructural heterogeneity (13), and
+MK may indicate microstructural com-
+plexity (9). Although the exact mean-
+ings of a and MK in vivo are still not
+fully understood (9,22), the strong cor-
+relation between them in gliomas in our
+current results suggest that a and MK
+may be similar in demonstrating the
+pathologic characteristics of gliomas.
+This study had some limitations.
+First, the patient population was rel-
+atively small, and the subtypes of gli-
+omas were not evaluated. Second, the
+regions of interest were selected in the
+solid parts of the tumors instead of
+the entire gliomas in this study, which
+might lead to some selection bias ow-
+ing to the histologic heterogeneity of
+gliomas. In the future, the association
+of different DWI models and DKI with
+diffusion fraction could arise from the
+intracellular space of the Xenopus oo-
+cyte. However, in another study by Sehy
+et al (32), the authors mentioned the
+importance of noting that restrictions
+of water motion due to the presence of
+cell membranes were more prominent
+in mammalian brains than in oocytes.
+As compared with glioma cells (33), the
+ADC values may increase in the intra-
+cellular space of oocytes because of the
+larger cell sizes (32), which contributes
+to fast diffusion fraction.
+The stretched exponential model
+can overcome the limitations of the
+hypothesis about fast and slow dif-
+fusion compartments and the slow
+exchange between them in a biexpo-
+nential model. DDC can be considered
+the composite of individual ADCs,
+weighted by the volume fraction of
+water molecules in each part of the
+continuous distribution of ADCs (34).
+A previous study demonstrated that
+the heterogeneity index of high-grade
+gliomas was significantly different from
+that of normal brain structures (19).
+Our current results demonstrated that
+a was significantly lower in high-grade
+gliomas than in low-grade gliomas.
+One possible explanation of our find-
+ings is that high-grade gliomas exhibit
+more intravoxel diffusion heterogene-
+ity than low-grade gliomas because
+they possess more histologic heteroge-
+neity, such as heterogeneous cellular-
+ity and tortuous vascular hyperplasia
+(35). Some other previous studies have
+shown that FA and mean diffusivity
+Table 2
+Spearman Rank Correlation Coefficients between DWI and DKI Measurements
+Parameter
+ADC Value
+ADCfast Value
+ADCslow Value
+f Value
+a Value
+DDC Value
+FA Value
+Mean Diffusivity
+ADCfast
+20.480*
+…
+…
+…
+…
+…
+…
+…
+ADCslow
+0.786*
+20.492*
+…
+…
+…
+…
+…
+…
+f
+0.874*
+20.419
+0.713*
+…
+…
+…
+…
+…
+a
+0.684*
+20.669*
+0.871*
+0.625*
+…
+…
+…
+…
+DDC
+0.834*
+20.217
+0.754*
+0.897*
+0.621*
+…
+…
+…
+FA
+20.306
+20.175
+20.214
+20.342
+20.184
+20.246
+…
+…
+Mean diffusivity
+0.709*
+20.427
+0.523*
+0.709*
+0.449*
+0.596*
+20.297
+…
+MK
+20.720*
+0.638*
+20.685*
+20.612*
+20.742*
+20.513*
+0.221
+20.559*
+Note.—Values not marked with a footnote are not significant.
+* Value is significant with Sidak corrections for multiple comparisons (P , .001).
+504
+radiology.rsna.org  n  Radiology: Volume 278: Number 2—February 2016
+NEURORADIOLOGY: Glioma Grading with Diffusion-weighted MR Imaging and Diffusion Kurtosis MR Imaging
+Bai et al
+contrast-enhanced perfusion MR imaging
+with glioma grade. AJNR Am J Neuroradiol
+2006;27(9):1975–1982.
+	 4.	 Sugahara T, Korogi Y, Kochi M, et al. Use-
+fulness of diffusion-weighted MRI with
+echo-planar technique in the evaluation of
+cellularity in gliomas. J Magn Reson Imaging
+1999;9(1):53–60.
+	 5.	 Stadlbauer A, Ganslandt O, Buslei R, et al.
+Gliomas: histopathologic evaluation of chang-
+es in directionality and magnitude of water
+diffusion at diffusion-tensor MR imaging.
+Radiology 2006;240(3):803–810.
+	 6.	 Kang Y, Choi SH, Kim YJ, et al. Gliomas:
+histogram analysis of apparent diffusion
+coefficient maps with standard- or high-b-
+value diffusion-weighted MR imaging—cor-
+relation with tumor grade. Radiology 2011;
+261(3):882–890.
+	 7.	 Lam WW, Poon WS, Metreweli C. Diffusion
+MR imaging in glioma: does it have any role
+in the pre-operation determination of grad-
+ing of glioma? Clin Radiol 2002;57(3):219–
+225.
+	 8.	 Lee HY, Na DG, Song IC, et al. Diffusion-
+tensor imaging for glioma grading at 3-T
+magnetic resonance imaging: analysis of
+fractional anisotropy and mean diffusivity. J
+Comput Assist Tomogr 2008;32(2):298–303.
+	 9.	 Van Cauter S, Veraart J, Sijbers J, et al.
+Gliomas: diffusion kurtosis MR imaging in
+grading. Radiology 2012;263(2):492–501.
+	10.	 Le Bihan D, Breton E, Lallemand D, Aubin
+ML, Vignaud J, Laval-Jeantet M. Separa-
+tion of diffusion and perfusion in intravoxel
+incoherent motion MR imaging. Radiology
+1988;168(2):497–505.
+	11.	 Raab P, Hattingen E, Franz K, Zanella FE,
+Lanfermann H. Cerebral gliomas: diffusional
+kurtosis imaging analysis of microstructural
+differences. Radiology 2010;254(3):876–881.
+	12.	 Le Bihan D, Breton E, Lallemand D, Grenier
+P, Cabanis E, Laval-Jeantet M. MR imaging
+of intravoxel incoherent motions: applica-
+tion to diffusion and perfusion in neurologic
+disorders. Radiology 1986;161(2):401–407.
+	13.	 Bennett KM, Schmainda KM, Bennett RT,
+Rowe DB, Lu H, Hyde JS. Characterization of
+continuously distributed cortical water diffu-
+sion rates with a stretched-exponential model.
+Magn Reson Med 2003;50(4):727–734.
+	14.	 De Santis S, Gabrielli A, Palombo M, Mara-
+viglia B, Capuani S. Non-Gaussian diffusion
+imaging: a brief practical review. Magn Re-
+son Imaging 2011;29(10):1410–1416.
+	15.	 Le Bihan D. Intravoxel incoherent motion
+perfusion MR imaging: a wake-up call. Radi-
+ology 2008;249(3):748–752.
+	16.	 Jensen JH, Helpern JA, Ramani A, Lu H,
+Kaczynski K. Diffusional kurtosis imaging:
+the quantification of non-Gaussian water dif-
+fusion by means of magnetic resonance im-
+aging. Magn Reson Med 2005;53(6):1432–
+1440.
+	17.	 Lu H, Jensen JH, Ramani A, Helpern JA.
+Three-dimensional characterization of non-
+Gaussian water diffusion in humans using
+diffusion kurtosis imaging. NMR Biomed
+2006;19(2):236–247.
+	18.	 Zhou XJ, Gao Q, Abdullah O, Magin RL.
+Studies of anomalous diffusion in the human
+brain using fractional order calculus. Magn
+Reson Med 2010;63(3):562–569.
+	19.	 Kwee TC, Galbán CJ, Tsien C, et al. Intra-
+voxel water diffusion heterogeneity imaging
+of human high-grade gliomas. NMR Biomed
+2010;23(2):179–187.
+	20.	 Jones DK. The effect of gradient sampling
+schemes on measures derived from diffu-
+sion tensor MRI: a Monte Carlo study. Magn
+Reson Med 2004;51(4):807–815.
+	21.	 Gao Y, Zhang Y, Wong CS, et al. Diffusion
+abnormalities in temporal lobes of children
+with temporal lobe epilepsy: a preliminary
+diffusional kurtosis imaging study and com-
+parison with diffusion tensor imaging. NMR
+Biomed 2012;25(12):1369–1377.
+	22.	 Yuan J, Yeung DK, Mok GS, et al. Non-
+Gaussian analysis of diffusion weighted im-
+aging in head and neck at 3T: a pilot study
+in patients with nasopharyngeal carcinoma.
+PLoS ONE 2014;9(1):e87024.
+	23.	 Pollo B. Neuropathological diagnosis of brain
+tumours. Neurol Sci 2011;32(2 Suppl 2):
+S209–S211.
+	24.	 Rollin N, Guyotat J, Streichenberger N,
+Honnorat J, Tran Minh VA, Cotton F. Clini-
+cal relevance of diffusion and perfusion mag-
+netic resonance imaging in assessing intra-
+axial brain tumors. Neuroradiology 2006;
+48(3):150–159.
+	25.	 Di Costanzo A, Scarabino T, Trojsi F, et al.
+Multiparametric 3T MR approach to the
+assessment of cerebral gliomas: tumor ex-
+tent and malignancy. Neuroradiology 2006;
+48(9):622–631.
+	26.	 Mills SJ, Patankar TA, Haroon HA, Balériaux
+D, Swindell R, Jackson A. Do cerebral blood
+volume and contrast transfer coefficient pre-
+dict prognosis in human glioma? AJNR Am J
+Neuroradiol 2006;27(4):853–858.
+	27.	 Wirestam R, Borg M, Brockstedt S, Lind-
+gren A, Holtås S, Ståhlberg F. Perfusion-
+related parameters in intravoxel incoherent
+motion MR imaging compared with CBV
+and CBF measured by dynamic susceptibili-
+ty-contrast MR technique. Acta Radiol 2001;
+42(2):123–128.
+	28.	 Federau C, Maeder P, O’Brien K, Browaeys
+P, Meuli R, Hagmann P. Quantitative mea-
+surement of brain perfusion with intravoxel
+incoherent motion MR imaging. Radiology
+2012;265(3):874–881.
+	29.	 Sumi M, Nakamura T. Head and neck tumors:
+assessment of perfusion-related parameters
+and diffusion coefficients based on the intra-
+voxel incoherent motion model. AJNR Am J
+Neuroradiol 2013;34(2):410–416.
+	30.	 Ganten MK, Schuessler M, Bäuerle T, et al.
+The role of perfusion effects in monitoring
+of chemoradiotherapy of rectal carcinoma
+using diffusion-weighted imaging. Cancer
+Imaging 2013;13(4):548–556.
+	31.	 Sehy JV, Ackerman JJ, Neil JJ. Evidence
+that both fast and slow water ADC compo-
+nents arise from intracellular space. Magn
+Reson Med 2002;48(5):765–770.
+	32.	 Sehy JV, Zhao L, Xu J, Rayala HJ, Acker-
+man JJ, Neil JJ. Effects of physiologic chal-
+lenge on the ADC of intracellular water
+in the Xenopus oocyte. Magn Reson Med
+2004;52(2):239–247.
+	33.	 Ko L, Koestner A, Wechsler W. Morpholog-
+ical characterization of nitrosourea-induced
+glioma cell lines and clones. Acta Neuro-
+pathol (Berl) 1980;51(1):23–31.
+	34.	 Bennett KM, Hyde JS, Schmainda KM.
+Water diffusion heterogeneity index in the
+human brain is insensitive to the orientation
+of applied magnetic field gradients. Magn
+Reson Med 2006;56(2):235–239.
+35. Behin A, Hoang-Xuan K, Carpentier AF, De-
+lattre JY. Primary brain tumours in adults.
+Lancet 2003;361(9354):323–331.

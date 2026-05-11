@@ -1,0 +1,71 @@
+{
+  "spec_version": "2",
+  "dataset_id": "baden-2016-ds-cells",
+  "name": "Baden 2016 RGC direction-selective subset",
+  "version": "v1",
+  "short_description": "Per-cell functional fingerprints (chirp, moving-bar, colour, RF) and metadata for 1,238 cells from the 8 paper-authoritative direction-selective groups of Baden et al. 2016. No morphologies — Baden 2016 is a functional dataset.",
+  "description_path": "description.md",
+  "source_paper_id": "10.1038_nature16468",
+  "url": "https://datadryad.org/dataset/doi:10.5061/dryad.d9v38",
+  "download_url": "https://doi.org/10.5061/dryad.d9v38",
+  "year": 2016,
+  "date_published": "2016-01-21",
+  "authors": [
+    {
+      "name": "Tom Baden",
+      "country": "DE",
+      "institution": "University of Tübingen",
+      "orcid": "0000-0002-7758-6536"
+    },
+    {
+      "name": "Philipp Berens",
+      "country": "DE",
+      "institution": "University of Tübingen",
+      "orcid": "0000-0002-0199-4727"
+    },
+    {
+      "name": "Katrin Franke",
+      "country": "DE",
+      "institution": "University of Tübingen",
+      "orcid": null
+    },
+    {
+      "name": "Miroslav Román Rosón",
+      "country": "DE",
+      "institution": "University of Tübingen",
+      "orcid": null
+    },
+    {
+      "name": "Matthias Bethge",
+      "country": "DE",
+      "institution": "University of Tübingen",
+      "orcid": null
+    },
+    {
+      "name": "Thomas Euler",
+      "country": "DE",
+      "institution": "University of Tübingen",
+      "orcid": "0000-0002-4567-6966"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Tübingen",
+      "country": "DE"
+    }
+  ],
+  "license": "CC0-1.0",
+  "access_kind": "public",
+  "size_description": "1238 retinal ganglion / displaced amacrine cells from the 8 paper-authoritative DS-containing groups (G2/G6/G12/G13/G16/G25/G26/G29) of Baden 2016, one row per cell with functional traces (chirp 249 samples, moving-bar 32 samples, moving-bar by 8 directions 256 samples, colour 96 samples, RF temporal kernel 80 samples) and per-cell selectivity indices, soma area/volume, RF Gaussian fit, immuno (ChAT, GAD, melanopsin, SMI-32) and genetics (PV, PCP2) flags. NO per-cell IPL stratification depth and NO morphology in the Dryad release.",
+  "files": [
+    {
+      "path": "files/baden-2016-ds-cells.parquet",
+      "description": "Per-cell Parquet table for the 8 DS groups. One row per cell; functional traces stored as nested list<float32> columns (scalar feature columns retain native precision). Stimulus time axes and the moving-bar direction-major layout are recorded in the Parquet file-level key/value metadata under key `baden_2016_ds_cells_metadata`.",
+      "format": "parquet"
+    }
+  ],
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell"
+  ]
+}

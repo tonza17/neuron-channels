@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -L -A Mozilla/5.0 --max-time 60 https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4724341/fullTextXML -o tasks/t0103_extract_baden_2016_ds_morphologies/data/baden_2016_fulltext.xml",
+  "exit_code": 0,
+  "duration_seconds": 0.501,
+  "started_at": "2026-05-11T21:10:36Z",
+  "completed_at": "2026-05-11T21:10:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "019_20260511T211036Z_curl-l-a.stdout.txt",
+  "stderr_file": "019_20260511T211036Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -s -L --max-time 30 https://api.unpaywall.org/v2/10.1038/nature16468?email=a.nikolaev@sheffield.ac.uk",
+  "exit_code": 0,
+  "duration_seconds": 0.477,
+  "started_at": "2026-05-11T21:12:52Z",
+  "completed_at": "2026-05-11T21:12:53Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "029_20260511T211252Z_curl-s-l.stdout.txt",
+  "stderr_file": "029_20260511T211252Z_curl-s-l.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

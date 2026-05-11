@@ -1,0 +1,4 @@
+first fetch: final=https://datadryad.org/downloads/file_stream/3407, ct=text/html; charset=UTF-8, cl=2481, len=2481
+
+Saved tasks\t0103_extract_baden_2016_ds_morphologies\data\README_for_BadenEtAl_RGCs_2016_v1.pdf: 2481 bytes, sha256=d131218b603ea982c7254b71c657ba9b1817c0dd6b79eb120a01d50b8246b500
+first 16 bytes: b'<!DOCTYPE html>\n'

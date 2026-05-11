@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="no-js">
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=oZ57VlYl" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("http://web.archive.org/web");
+  __wm.wombat("http://datadryad.org:80/resource/doi:10.5061/dryad.d9v38","20180202080955","http://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1517558995");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<link rel="shortcut icon" href="/web/20180202080955im_/http://datadryad.org/themes/Mirage/images/favicon.ico"/>
+<link rel="apple-touch-icon" href="/web/20180202080955im_/http://datadryad.org/themes/Mirage/images/apple-touch-icon.png"/>
+<meta name="Generator" content="DSpace"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/reset.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/base.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/helper.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/jquery-ui-1.9.1.custom.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/style.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/authority-control.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/jquery-ui-1.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/jquery.bxslider.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/jquery.dataTables.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/superfish.css"/>
+<link type="text/css" rel="stylesheet" media="handheld" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/handheld.css"/>
+<link type="text/css" rel="stylesheet" media="print" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/print.css"/>
+<link type="text/css" rel="stylesheet" media="all" href="/web/20180202080955cs_/http://datadryad.org/themes/Mirage/lib/css/media.css"/>
+<script type="text/javascript">
+                //Clear default text of emty text areas on focus
+                function tFocus(element)
+                {
+                if (element.value == ' '){element.value='';}
+                }
+                //Clear default text of emty text areas on submit
+                function tSubmit(form)
+                {
+
+                //add "" to search text so the seach with doi and hdl will return item
+                var defaultedElements = document.getElementsByTagName("textarea");
+                Â  Â for (var i = 0; i != defaultedElements.length; i++) {
+                Â  Â  Â  Â if (defaultedElements[i].value == ' ') {
+                Â  Â  Â  Â  Â  Â defaultedElements[i].value = '';
+                Â  Â  Â  Â }
+                Â  Â }
+                Â  Â var queryTexts = document.getElementsByName("query");
+                Â  Â for (var i = 0; i != queryTexts.length; i++) {
+                Â  Â  Â  Â var value = queryTexts[i].value;
+                Â  Â  Â  Â if (value.indexOf(' ') == - 1) {
+                Â  Â  Â  Â  Â  Â if (value.indexOf("doi:") == 0 || value.indexOf("DOI:") == 0 || value.indexOf("http:") == 0 || value.indexOf("pmid:") == 0 || value.indexOf("PMID:") == 0) {
+                Â  Â  Â  Â  Â  Â  Â  Â queryTexts[i].value = '"' + value + '"';
+                Â  Â  Â  Â  Â  Â }
+                Â  Â  Â  Â  Â  Â 
+                Â  Â  Â  Â  Â  Â if (value.indexOf("hdl:") == 0) {
+                Â  Â  Â  Â  Â  Â  Â  Â queryTexts[i].value = value.substring(4, value.length);
+                Â  Â  Â  Â  Â  Â }
+                Â  Â  Â  Â }
+                Â  Â }
+
+
+                var defaultedElements = document.getElementsByTagName("textarea");
+                for (var i=0; i != defaultedElements.length; i++){
+                if (defaultedElements[i].value == ' '){
+                defaultedElements[i].value='';}}
+                }
+                //Disable pressing 'enter' key to submit a form (otherwise pressing 'enter' causes a submission to start over)
+                function disableEnterKey(e)
+                {
+                var key;
+
+                if(window.event)
+                key = window.event.keyCode; //Internet Explorer
+                else
+                key = e.which; //Firefox and Netscape
+
+                if(key == 13) //if "Enter" pressed, then disable!
+                return false;
+                else
+                return true;
+                }
+
+                function FnArray()
+                {
+                this.funcs = new Array;
+                }
+
+                FnArray.prototype.add = function(f)
+                {
+                if( typeof f!= "function" )
+                {
+                f = new Function(f);
+                }
+                this.funcs[this.funcs.length] = f;
+                };
+
+                FnArray.prototype.execute = function()
+                {
+                for( var i=0; i
+                < this.funcs.length; i++ )
+                {
+                this.funcs[i]();
+                }
+                };
+
+                var runAfterJSImports = new FnArray();
+            </script>
+<script xmlns:i18n="http://apache.org/cocoon/i18n/2.1" type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/modernizr-1.5.min.js">
+                Â 
+            </script>
+<title>Data from: The functional diversity of retinal ganglion cells in the mouse - Dryad</title><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><meta name="DC.creator" content="Baden, Tom"/><meta name="DC.creator" content="Berens, Philipp"/><meta name="DC.creator" content="Franke, Katrin"/><meta name="DC.creator" content="RomÃ¡n RosÃ³n, Miroslav"/><meta name="DC.creator" content="Bethge, Matthias"/><meta name="DC.creator" content="Euler, Thomas"/><meta name="DCTERMS.dateAccepted" content="2016-01-06T22:19:58Z" scheme="DCTERMS.W3CDTF"/><meta name="DCTERMS.available" content="2016-01-06T22:19:58Z" scheme="DCTERMS.W3CDTF"/><meta name="DCTERMS.issued" content="2016-01-06" scheme="DCTERMS.W3CDTF"/><meta name="DC.identifier" content="doi:10.5061/dryad.d9v38"/><meta name="DCTERMS.bibliographicCitation" content="Baden T, Berens P, Franke K, RomÃ¡n RosÃ³n M, Bethge M, Euler T (2016) The functional diversity of retinal ganglion cells in the mouse. Nature 529: 345â€“350."/><meta name="DC.identifier" content="http://hdl.handle.net/10255/dryad.106416" scheme="DCTERMS.URI"/><meta name="DC.description" content="In the vertebrate visual system, all output of the retina is carried by retinal ganglion cells. Each type encodes distinct visual features in parallel for transmission to the brain. How many such â€˜output channelsâ€™ exist and what each encodes are areas of intense debate. In the mouse, anatomical estimates range from 15 to 20 channels, and only a handful are functionally understood. By combining two-photon calcium imaging to obtain dense retinal recordings and unsupervised clustering of the resulting sample of more than 11,000 cells, here we show that the mouse retina harbours substantially more than 30 functional output channels. These include all known and several new ganglion cell types, as verified by genetic and anatomical criteria. Therefore, information channels from the mouse eye to the mouse brain are considerably more diverse than shown thus far by anatomical studies, suggesting an encoding strategy resembling that used in state-of-the-art artificial vision systems."/><meta name="DCTERMS.hasPart" content="doi:10.5061/dryad.d9v38/1"/><meta name="DCTERMS.isReferencedBy" content="doi:10.1038/nature.16468"/><meta name="DC.subject" content="retina"/><meta name="DC.subject" content="ganglion cell"/><meta name="DC.subject" content="clustering"/><meta name="DC.subject" content="cell types"/><meta name="DC.subject" content="early vision"/><meta name="DC.subject" content="mouse"/><meta name="DC.subject" content="mammal"/><meta name="DC.subject" content="two-photon"/><meta name="DC.subject" content="machine learning"/><meta name="DC.title" content="Data from: The functional diversity of retinal ganglion cells in the mouse"/><meta name="DC.type" content="Article"/></head><!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+                <!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
+                <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
+                <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
+                <!--[if (gt IE 9)|!(IE)]><!--><body><!--<![endif]-->
+<div id="ds-main">
+<div id="ds-header-wrapper">
+<div class="clearfix" id="ds-header">
+<a class="accessibly-hidden" href="#ds-body" id="skip-nav">Skip navigation</a>
+<a id="ds-header-logo-link" href="/web/20180202080955/http://datadryad.org/">
+<span id="ds-header-logo-prod" class="ds-header-logo">Â </span>
+<span id="ds-header-logo-text">mirage</span>
+</a>
+<h1 class="pagetitle visuallyhidden">Data from: The functional diversity of retinal ganglion cells in the mouse</h1>
+<h2 class="static-pagetitle visuallyhidden">Dryad Repository</h2>
+<div xmlns:i18n="http://apache.org/cocoon/i18n/2.1" id="sharing-tools">
+<a href="http://web.archive.org/web/20180202080955/http://twitter.com/datadryad">
+<img alt="Follow us on Twitter" src="/web/20180202080955im_/http://datadryad.org/themes/Mirage/images/dryad_twit_icon.png"/>
+</a>
+<a href="http://web.archive.org/web/20180202080955/http://www.facebook.com/DataDryad">
+<img alt="Find us on Facebook" src="/web/20180202080955im_/http://datadryad.org/themes/Mirage/images/dryad_fb_icon2.png"/>
+</a>
+<a href="http://web.archive.org/web/20180202080955/http://blog.datadryad.org/feed/">
+<img alt="RSS feed - Dryad News" src="/web/20180202080955im_/http://datadryad.org/themes/Mirage/images/dryad_rss_icon.png"/>
+</a>
+</div>
+<div id="main-menu">
+<ul class="sf-menu">
+<li>
+<a href="">About</a>
+<ul>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/organization">The organization</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/ourTeam">Our team</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/repository">Repository features and technology</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/policies">Policies</a>
+</li>
+<li>
+<a target="_blank" href="http://web.archive.org/web/20180202080955/http://blog.datadryad.org/">Blog: News and views</a>
+</li>
+<li>
+<a target="_blank" href="/web/20180202080955/http://datadryad.org/pages/dryadlab">DryadLab: Research data for educators</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/employment">Employment opportunities</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/membershipMeeting">Membership meeting</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/faq">FAQs</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="">For researchers</a>
+<ul>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/handle/10255/3/submit">Submit data</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Search#advanced">Use data</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/journalLookup">Look up your journal</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/reusabilityBestPractices">Open data best practices</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/faq">FAQs</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/payment">Payment</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/institutionalSponsors">Institutional sponsors</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/policies">Terms of service</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="">For organizations</a>
+<ul>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/bePartOfDryad">Be part of Dryad</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/submissionIntegration">Submission integration</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/membershipOverview">Membership</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/membershipMeeting">Membership meeting</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/paymentPlans">Payment plans</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/paymentPlanComparisonTool">Payment plan comparison tool</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/feedback">Contact us</a>
+</li>
+<li class="no-hover-highlight">
+<a href="/web/20180202080955/http://datadryad.org/login">
+<span id="login-item">Log in</span>
+<span class="accessibly-hidden"> or </span>
+<span id="sign-up-item">Sign up</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="ds-trail-wrapper">
+<ul id="ds-trail">
+<li class="ds-trail-link first-link ">
+<a href="/web/20180202080955/http://datadryad.org/">Dryad Digital Repository</a>
+</li>
+<li xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns="http://di.tamu.edu/DRI/1.0/" class="ds-trail-arrow">â†’</li>
+<li class="ds-trail-link ">
+<a href="/web/20180202080955/http://datadryad.org/handle/10255/1">Main</a>
+</li>
+<li class="ds-trail-arrow">â†’</li>
+<li class="ds-trail-link ">
+<a href="/web/20180202080955/http://datadryad.org/handle/10255/3">Dryad Data Packages</a>
+</li>
+<li class="ds-trail-arrow">â†’</li>
+<li class="ds-trail-link last-link">View Item</li>
+</ul>
+</div>
+<div xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns="http://di.tamu.edu/DRI/1.0/" class="hidden" id="no-js-warning-wrapper">
+<div id="no-js-warning">
+<div class="notice failure">JavaScript is disabled for your browser. Some features of this site may not work without it.</div>
+</div>
+</div>
+<div id="ds-content-wrapper">
+<div class="clearfix" id="ds-content">
+<div id="ds-body">
+<div id="org_datadryad_dspace_xmlui_aspect_browse_ItemViewer_div_item-view" class="ds-static-div primary">
+<!-- External Metadata URL: cocoon://metadata/handle/10255/dryad.106416/mets.xml-->
+<div xmlns:confman="org.dspace.core.ConfigurationManager" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mets="http://www.loc.gov/METS/" xmlns:dri="http://di.tamu.edu/DRI/1.0/" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" class="publication-header">
+<p class="pub-title">Data from: The functional diversity of retinal ganglion cells in the mouse</p>
+<p class="pub-authors">Baden T, <a href="/web/20180202080955/http://datadryad.org/discover?query=0000-0002-0199-4727&amp;submit=Go">Berens P</a>, Franke K, RomÃ¡n RosÃ³n M, Bethge M, Euler T</p>
+<p>Date Published: January 6, 2016</p>
+<p>DOI: https://doi.org/10.5061/dryad.d9v38</p>
+</div>
+<div xmlns:confman="org.dspace.core.ConfigurationManager" xmlns:util="org.dspace.app.xmlui.utils.XSLUtils" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mets="http://www.loc.gov/METS/" xmlns:dri="http://di.tamu.edu/DRI/1.0/" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" class="ds-static-div primary">
+<h2 class="ds-list-head">Files in this package</h2>
+<div class="file-list">
+<p style="font-size: 0.9em;" class="license-badges">Content in the Dryad
+        Digital Repository is offered "as is." By downloading files, you agree
+        to the <a href="/web/20180202080955/http://datadryad.org/pages/policies" target="_blank">Dryad Terms of Service</a>.
+        To the extent possible under law, the authors have waived all copyright
+        and related or neighboring rights to this data. <a class="single-image-link" target="_blank" href="http://web.archive.org/web/20180202080955/http://creativecommons.org/publicdomain/zero/1.0/">
+<img alt="CC0 (opens a new window)" src="/web/20180202080955im_/http://datadryad.org/themes/Dryad/images/cc-zero.png"/>
+</a>
+<a class="single-image-link" target="_blank" href="http://web.archive.org/web/20180202080955/http://opendefinition.org/">
+<img alt="Open Data (opens a new window)" src="/web/20180202080955im_/http://datadryad.org/themes/Dryad/images/opendata.png"/>
+</a>
+</p>
+<!--External Metadata URL:
+            cocoon://metadata/handle/10255/dryad.106420/mets.xml-->
+<table class="package-file-description">
+<tbody>
+<tr>
+<th>Title</th>
+<th>Optical recordings of &gt;11,000 RGCs</th>
+<tr>
+<th>Downloaded</th>
+<td>336 times</td>
+</tr>
+<tr>
+<th>Description</th>
+<td>The dataset contains recordings of 11,210 retinal ganglion cells from the mouse retina obtained by two-photon calcium imaging with the synthetic calcium indicator OGB-1 to a standardized set of stimuli (see Baden et al. 2016 for details). In addition, the dataset contains morphological, genetic and immunohistochemical metadata, where available.</td>
+</tr>
+</tr>
+<tr>
+<th>Download</th>
+<td>
+<a href="/web/20180202080955/http://datadryad.org/bitstream/handle/10255/dryad.106420/README.pdf?sequence=1">README.pdf (69.61 Kb)</a>
+</td>
+</tr>
+<tr>
+<th>Download</th>
+<td>
+<a href="/web/20180202080955/http://datadryad.org/bitstream/handle/10255/dryad.106420/BadenEtAl_RGCs_2016_v1.mat?sequence=2">BadenEtAl_RGCs_2016_v1.mat (426.0 Mb)</a>
+</td>
+</tr>
+<tr>
+<th>Details</th>
+<td>
+<a href="/web/20180202080955/http://datadryad.org/resource/doi:10.5061/dryad.d9v38/1">View File Details</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div xmlns:confman="org.dspace.core.ConfigurationManager" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mets="http://www.loc.gov/METS/" xmlns:dri="http://di.tamu.edu/DRI/1.0/" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" class="ds-static-div primary">
+<div class="secondary">
+<p class="ds-paragraph">When using this data, please cite the original publication:</p>
+<div class="citation-sample">Baden T, Berens P, Franke K, RomÃ¡n RosÃ³n M, Bethge M, Euler T (2016) The functional diversity of retinal ganglion cells in the mouse. Nature 529: 345â€“350. <a href="http://web.archive.org/web/20180202080955/https://doi.org/10.1038/nature.16468">https://doi.org/10.1038/nature.16468</a>
+</div>
+<p class="ds-paragraph">Additionally, please cite the Dryad data package: </p>
+<div class="citation-sample">Baden T, <a href="/web/20180202080955/http://datadryad.org/discover?query=0000-0002-0199-4727&amp;submit=Go">Berens P</a>, Franke K, RomÃ¡n RosÃ³n M, Bethge M, Euler T (2016) Data from: The functional diversity of retinal ganglion cells in the mouse. <span>Dryad Digital Repository. </span>
+<a href="http://web.archive.org/web/20180202080955/https://doi.org/10.5061/dryad.d9v38">https://doi.org/10.5061/dryad.d9v38</a>
+</div>
+<div style="padding-right: 20px; padding-bottom: 5px;" align="right">
+<a title="Click to open and close" id="cite" href="/web/20180202080955/http://datadryad.org/cite">Cite</a>  |  <a title="Click to open and close" id="share" href="/web/20180202080955/http://datadryad.org/share">Share</a>
+<div id="citemediv">
+<table style="width: 100%;">
+<tr>
+<td style="text-decoration: underline;" align="left">Download the data package citation in the following formats:</td>
+</tr>
+<tr>
+<td>
+                                            Â Â 
+                                            <a href="/web/20180202080955/http://datadryad.org/resource/doi:10.5061/dryad.d9v38/citation/ris">RIS </a>
+<span class="italics">(compatible with EndNote, Reference Manager, ProCite, RefWorks)</span>
+</td>
+</tr>
+<tr>
+<td>
+                                            Â Â 
+                                            <a href="/web/20180202080955/http://datadryad.org/resource/doi:10.5061/dryad.d9v38/citation/bib">BibTex </a>
+<span class="italics">(compatible with BibDesk, LaTeX)</span>
+</td>
+</tr>
+</table>
+</div>
+<div id="sharemediv">
+<table style="width: 100%;">
+<tr>
+<td>
+<a class="DiggThisButton DiggCompact" href="http://web.archive.org/web/20180202080955/http://digg.com/submit?url=https://doi.org/doi:10.5061/dryad.d9v38&amp;title=Data+from%3A+The+functional+diversity+of+retinal+ganglion+cells+in+the+mouse"> </a>
+</td>
+<td>
+<a href="http://web.archive.org/web/20180202080955/http://reddit.com/submit" onclick="
+                                                    window.open('http://web.archive.org/web/20180202080955/http://reddit.com/submit?url='+encodeURIComponent(
+
+                                    '
+                                https://doi.org/doi:10.5061/dryad.d9v38
+                                    '
+                                )+'&amp;title=
+                                                Data+from%3A+The+functional+diversity+of+retinal+ganglion+cells+in+the+mouse
+                                                    ',
+                                                    'reddit','toolbar=no,width=550,height=550'); return false
+                                                ">
+<img alt="Reddit" src="http://web.archive.org/web/20180202080955im_/http://reddit.com/static/spreddit7.gif" border="0px;"/> </a>
+</td>
+<td>
+<a href="http://web.archive.org/web/20180202080955/http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="datadryad" data-url="http://web.archive.org/web/20180202080955/https://doi.org/doi:10.5061/dryad.d9v38">Tweet</a>
+</td>
+<td>
+<iframe src="http://web.archive.org/web/20180202080955if_/http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdoi.org%2Fdoi%3A10.5061%2Fdryad.d9v38&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:70px;
+                                                    height:21px;
+                                                " allowtransparency="true"> </iframe>
+</td>
+<td>
+<a href="http://web.archive.org/web/20180202080955/http://www.mendeley.com/import/?url=http://datadryad.org/resource/doi:10.5061/dryad.d9v38">
+<img alt="Mendeley" src="http://web.archive.org/web/20180202080955im_/http://www.mendeley.com/graphics/mendeley.png" border="0px;"/>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<script xmlns:confman="org.dspace.core.ConfigurationManager" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mets="http://www.loc.gov/METS/" xmlns:dri="http://di.tamu.edu/DRI/1.0/" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" type="application/ld+json">{
+  "@context" : "http://web.archive.org/web/20180202080955/http://schema.org/",
+  "@type" : "Dataset",
+  "@id" : "http://web.archive.org/web/20180202080955/https://doi.org/10.5061/dryad.d9v38",
+  "url" : "http://web.archive.org/web/20180202080955/https://doi.org/10.5061/dryad.d9v38",
+  "name" : "Data from: The functional diversity of retinal ganglion cells in the mouse",
+  "author" : [ {
+    "@type" : "Person",
+    "givenName" : "Tom",
+    "familyName" : "Baden"
+  }, {
+    "@type" : "Person",
+    "@id" : "http://web.archive.org/web/20180202080955/http://orcid.org/0000-0002-0199-4727",
+    "givenName" : "Philipp",
+    "familyName" : "Berens"
+  }, {
+    "@type" : "Person",
+    "givenName" : "Katrin",
+    "familyName" : "Franke"
+  }, {
+    "@type" : "Person",
+    "givenName" : "Miroslav",
+    "familyName" : "RomÃ¡n RosÃ³n"
+  }, {
+    "@type" : "Person",
+    "givenName" : "Matthias",
+    "familyName" : "Bethge"
+  }, {
+    "@type" : "Person",
+    "givenName" : "Thomas",
+    "familyName" : "Euler"
+  } ],
+  "datePublished" : "2016-01-06",
+  "description" : "In the vertebrate visual system, all output of the retina is carried by retinal ganglion cells. Each type encodes distinct visual features in parallel for transmission to the brain. How many such â€˜output channelsâ€™ exist and what each encodes are areas of intense debate. In the mouse, anatomical estimates range from 15 to 20 channels, and only a handful are functionally understood. By combining two-photon calcium imaging to obtain dense retinal recordings and unsupervised clustering of the resulting sample of more than 11,000 cells, here we show that the mouse retina harbours substantially more than 30 functional output channels. These include all known and several new ganglion cell types, as verified by genetic and anatomical criteria. Therefore, information channels from the mouse eye to the mouse brain are considerably more diverse than shown thus far by anatomical studies, suggesting an encoding strategy resembling that used in state-of-the-art artificial vision systems.",
+  "keywords" : [ "retina", "ganglion cell", "clustering", "cell types", "early vision", "mouse", "mammal", "two-photon", "machine learning" ],
+  "citation" : "doi:10.1038/nature.16468",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "Dryad Digital Repository",
+    "url" : "http://web.archive.org/web/20180202080955/https://datadryad.org"
+  }
+}</script>
+<div xmlns:confman="org.dspace.core.ConfigurationManager" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mets="http://www.loc.gov/METS/" xmlns:dri="http://di.tamu.edu/DRI/1.0/" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" class="ds-static-div primary">
+<div class="item-summary-view-metadata">
+<table class="package-metadata">
+<tbody>
+<tr>
+<th>Pageviews</th>
+<td>720</td>
+</tr>
+<span style="display:none;" class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft_id=doi%3A10.5061%2Fdryad.d9v38&amp;rft_id=Baden+T%2C+Berens+P%2C+Franke+K%2C+Rom%C3%A1n+Ros%C3%B3n+M%2C+Bethge+M%2C+Euler+T+%282016%29+The+functional+diversity+of+retinal+ganglion+cells+in+the+mouse.+Nature+529%3A+345%E2%80%93350.&amp;rft_id=http%3A%2F%2Fhdl.handle.net%2F10255%2Fdryad.106416&amp;rfr_id=info%3Asid%2Fdatadryad.org%3Arepo&amp;rft.contributor=Baden%2C+Tom&amp;rft.contributor=Berens%2C+Philipp&amp;rft.contributor=Franke%2C+Katrin&amp;rft.contributor=Rom%C3%A1n+Ros%C3%B3n%2C+Miroslav&amp;rft.contributor=Bethge%2C+Matthias&amp;rft.contributor=Euler%2C+Thomas&amp;rft.date=2016-01-06T22%3A19%3A58Z&amp;rft.date=2016-01-06T22%3A19%3A58Z&amp;rft.date=2016-01-06&amp;rft.identifier=doi%3A10.5061%2Fdryad.d9v38&amp;rft.identifier=Baden+T%2C+Berens+P%2C+Franke+K%2C+Rom%C3%A1n+Ros%C3%B3n+M%2C+Bethge+M%2C+Euler+T+%282016%29+The+functional+diversity+of+retinal+ganglion+cells+in+the+mouse.+Nature+529%3A+345%E2%80%93350.&amp;rft.identifier=http%3A%2F%2Fhdl.handle.net%2F10255%2Fdryad.106416&amp;rft.description=In+the+vertebrate+visual+system%2C+all+output+of+the+retina+is+carried+by+retinal+ganglion+cells.+Each+type+encodes+distinct+visual+features+in+parallel+for+transmission+to+the+brain.+How+many+such+%E2%80%98output+channels%E2%80%99+exist+and+what+each+encodes+are+areas+of+intense+debate.+In+the+mouse%2C+anatomical+estimates+range+from+15+to+20+channels%2C+and+only+a+handful+are+functionally+understood.+By+combining+two-photon+calcium+imaging+to+obtain+dense+retinal+recordings+and+unsupervised+clustering+of+the+resulting+sample+of+more+than+11%2C000+cells%2C+here+we+show+that+the+mouse+retina+harbours+substantially+more+than+30+functional+output+channels.+These+include+all+known+and+several+new+ganglion+cell+types%2C+as+verified+by+genetic+and+anatomical+criteria.+Therefore%2C+information+channels+from+the+mouse+eye+to+the+mouse+brain+are+considerably+more+diverse+than+shown+thus+far+by+anatomical+studies%2C+suggesting+an+encoding+strategy+resembling+that+used+in+state-of-the-art+artificial+vision+systems.&amp;rft.relation=doi%3A10.5061%2Fdryad.d9v38%2F1&amp;rft.relation=doi%3A10.1038%2Fnature.16468&amp;rft.subject=retina&amp;rft.subject=ganglion+cell&amp;rft.subject=clustering&amp;rft.subject=cell+types&amp;rft.subject=early+vision&amp;rft.subject=mouse&amp;rft.subject=mammal&amp;rft.subject=two-photon&amp;rft.subject=machine+learning&amp;rft.title=Data+from%3A+The+functional+diversity+of+retinal+ganglion+cells+in+the+mouse&amp;rft.type=Article&amp;rft.publicationName=Nature">Â </span>
+<tr>
+<th>Keywords</th>
+<td>
+<a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Go&amp;fq=dc.subject%3Aretina&amp;filtertype=*&amp;filter=&amp;rpp=20&amp;sort_by=score&amp;order=DESC">retina</a>, <a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Go&amp;fq=dc.subject%3Aganglion+cell&amp;filtertype=*&amp;filter=&amp;rpp=20&amp;sort_by=score&amp;order=DESC">ganglion cell</a>, <a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Go&amp;fq=dc.subject%3Aclustering&amp;filtertype=*&amp;filter=&amp;rpp=20&amp;sort_by=score&amp;order=DESC">clustering</a>, <a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Go&amp;fq=dc.subject%3Acell+types&amp;filtertype=*&amp;filter=&amp;rpp=20&amp;sort_by=score&amp;order=DESC">cell types</a>, <a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Go&amp;fq=dc.subject%3Aearly+vision&amp;filtertype=*&amp;filter=&amp;rpp=20&amp;sort_by=score&amp;order=DESC">early vision</a>, <a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Go&amp;fq=dc.subject%3Amouse&amp;filtertype=*&amp;filter=&amp;rpp=20&amp;sort_by=score&amp;order=DESC">mouse</a>, <a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Go&amp;fq=dc.subject%3Amammal&amp;filtertype=*&amp;filter=&amp;rpp=20&amp;sort_by=score&amp;order=DESC">mammal</a>, <a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Go&amp;fq=dc.subject%3Atwo-photon&amp;filtertype=*&amp;filter=&amp;rpp=20&amp;sort_by=score&amp;order=DESC">two-photon</a>, <a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Go&amp;fq=dc.subject%3Amachine+learning&amp;filtertype=*&amp;filter=&amp;rpp=20&amp;sort_by=score&amp;order=DESC">machine learning</a>
+</td>
+<td/>
+</tr>
+<tr>
+<td colspan="2">
+<div class="article-abstract">
+<b>Abstract</b>
+<br/>In the vertebrate visual system, all output of the retina is carried by retinal ganglion cells. Each type encodes distinct visual features in parallel for transmission to the brain. How many such â€˜output channelsâ€™ exist and what each encodes are areas of intense debate. In the mouse, anatomical estimates range from 15 to 20 channels, and only a handful are functionally understood. By combining two-photon calcium imaging to obtain dense retinal recordings and unsupervised clustering of the resulting sample of more than 11,000 cells, here we show that the mouse retina harbours substantially more than 30 functional output channels. These include all known and several new ganglion cell types, as verified by genetic and anatomical criteria. Therefore, information channels from the mouse eye to the mouse brain are considerably more diverse than shown thus far by anatomical studies, suggesting an encoding strategy resembling that used in state-of-the-art artificial vision systems.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div xmlns:confman="org.dspace.core.ConfigurationManager" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mets="http://www.loc.gov/METS/" xmlns:dri="http://di.tamu.edu/DRI/1.0/" xmlns:i18n="http://apache.org/cocoon/i18n/2.1" style="padding: 10px; margin-top: 5px; margin-bottom: 5px;">
+<a href="?show=full">Show Full Metadata</a>
+</div>
+</div>
+</div>
+<div id="ds-options-wrapper">
+<div id="ds-options">
+<div class="simple-box" id="submit-data-sidebar-box">
+<div id="file_news_div_news" class="ds-static-div primary">
+<p class="ds-paragraph">
+<a class="submitnowbutton" href="/web/20180202080955/http://datadryad.org/handle/10255/3/submit">Submit data now</a>
+</p>
+<p style="margin: 1em 0 4px;">
+<a href="/web/20180202080955/http://datadryad.org/pages/faq#deposit">How and why?</a>
+</p>
+</div>
+</div>
+<div class="NOT-simple-box">
+<div class="home-col-1">
+<h1 class="ds-div-head">Search for data
+            </h1>
+<form xmlns="http://di.tamu.edu/DRI/1.0/" style="overflow: hidden;" onsubmit="javascript:tSubmit(this);" method="get" action="/web/20180202080955/http://datadryad.org/discover" class="ds-interactive-div primary" id="aspect_discovery_SiteViewer_div_front-page-search">
+<p class="ds-paragraph">
+<input style="width: 175px;" value="" type="text" title="Enter keyword, author, title, DOI, etc. Example: herbivory" placeholder="Enter keyword, DOI, etc." name="query" class="ds-text-field" id="aspect_discovery_SiteViewer_field_query"/>
+<input style="margin-right: -4px;" value="Go" type="submit" name="submit" class="ds-button-field" id="aspect_discovery_SiteViewer_field_submit"/>
+<a href="/web/20180202080955/http://datadryad.org/discover?query=&amp;submit=Search" style="float:left; font-size: 95%;">Advanced search</a>
+</p>
+</form>
+</div>
+</div>
+<div class="NOT-simple-box">
+<h1 id="ds_connect_with_dryad_head" class="ds-div-head ds_connect_with_dryad_head">Be part of Dryad
+        </h1>
+<div style="font-size: 14px;" class="ds-static-div primary" id="ds_connect_with_dryad">
+<p style="margin-bottom: 0;">
+                We encourage organizations to:</p>
+<ul style="list-style: none; margin-left: 1em;">
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/membershipOverview">Become a member</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/payment">Sponsor data publishing fees</a>
+</li>
+<li>
+<a href="/web/20180202080955/http://datadryad.org/pages/submissionIntegration">Integrate your journal(s)</a>, or</li>
+<li>All of the above</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div id="ds-footer-wrapper">
+<div id="ds-footer">
+<div id="ds-footer-right">
+<a href="/web/20180202080955/http://datadryad.org/pages/policies">Terms of Service</a>
+		     |
+                    <a xmlns:i18n="http://apache.org/cocoon/i18n/2.1" href="/web/20180202080955/http://datadryad.org/feedback">Contact Us</a>
+</div>
+<p xmlns:i18n="http://apache.org/cocoon/i18n/2.1" style="margin: 0;">
+        Dryad is a nonprofit repository for data underlying the international scientific and medical literature.</p>
+<p xmlns:i18n="http://apache.org/cocoon/i18n/2.1" style="clear: both; float: right; margin-top: 11px; color: #999;">Latest build Thu, 1 Feb 2018 03:19:02 EST. Served by  North Carolina State University</p>
+<!--Git Commit Hash: edf046d06c94cc01b4238b661b768ae428f6608c-->
+<div xmlns:i18n="http://apache.org/cocoon/i18n/2.1" style="color: #999;" id="ds-footer-left">Powered by  <a xmlns:i18n="http://apache.org/cocoon/i18n/2.1" target="_blank" href="http://web.archive.org/web/20180202080955/http://www.dspace.org/" class="single-image-link">
+<img alt="DSpace" src="/web/20180202080955im_/http://datadryad.org/themes/Mirage/images/powered-by-dspace.png" class="powered-by"/>
+<span class="accessibly-hidden"> (opens in a new window)</span>
+</a>
+</div>
+<a class="hidden" href="/web/20180202080955/http://datadryad.org/htmlmap">sitemap</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">var JsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+            document.write(unescape("%3Cscript src='" + JsHost + "ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">!window.jQuery && document.write('<script type="text/javascript" src="/static/js/jquery-1.9.1.min.js">Â <\/script>')</script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/jquery-migrate-1.1.1.min.js">
+            Â 
+        </script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/jquery.bxslider.min.js">
+            Â 
+        </script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/jquery.dataTables.js">
+            Â 
+        </script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/jquery.hoverIntent.js">
+            Â 
+        </script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/superfish.js">
+            Â 
+        </script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/supersubs.js">
+            Â 
+        </script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/supposition-BLACK-BLOG-MODS.js">
+            Â 
+        </script>
+<script type="text/javascript">
+            $('input#aspect_discovery_SimpleSearch_field_query').attr('placeholder','Enter keyword, author, title, DOI, etc. Example: herbivory');
+        </script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/jquery.complete-placeholder.min.js">
+            Â 
+        </script>
+<script src="http://web.archive.org/web/20180202080955js_/http://platform.twitter.com/widgets.js" language="javascript" type="text/javascript">Â </script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/jquery-ui-1.9.1.custom.min.js">
+                Â 
+            </script>
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/utils.js">
+                Â 
+            </script><!--[if lt IE 7 ]>
+<script type="text/javascript" src="/themes/Mirage/lib/js/DD_belatedPNG_0.0.8a.js?v=1">
+            Â 
+        </script>
+<script type="text/javascript">DD_belatedPNG.fix('.ds-header-logo');DD_belatedPNG.fix('#ds-footer-logo');jQuery.each(jQuery('img[src$=png]'), function() {DD_belatedPNG.fixPng(this);});</script><![endif]-->
+<script type="text/javascript" src="/web/20180202080955js_/http://datadryad.org/themes/Mirage/lib/js/dryad-pages.js">
+            Â 
+        </script>
+<script type="text/javascript">
+            runAfterJSImports.execute();
+        </script>
+<script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-16949847-1']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'http://web.archive.org/web/20180202080955/https://ssl' : 'http://web.archive.org/web/20180202080955/http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+           </script>
+<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//web.archive.org/web/20180202080955/http://widget.uservoice.com/oW4J4by2WMgw3H4qYuJsDQ.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+<script>
+        UserVoice = window.UserVoice || [];
+        function showClassicWidget() {
+          UserVoice.push(['showLightbox', 'classic_widget', {
+            mode: 'feedback',
+            primary_color: '#88c033',
+            link_color: '#333333',
+            forum_id: 197408,
+            feedback_tab_name: 'Ideas Forum'
+          }]);
+        }
+        </script></body></html>
+<!--
+     FILE ARCHIVED ON 08:09:55 Feb 02, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 21:21:05 May 11, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.806
+  exclusion.robots: 0.051
+  exclusion.robots.policy: 0.037
+  esindex: 0.019
+  cdx.remote: 31.55
+  LoadShardBlock: 251.421 (3)
+  PetaboxLoader3.datanode: 73.452 (4)
+  PetaboxLoader3.resolve: 415.737 (2)
+  load_resource: 427.639
+-->

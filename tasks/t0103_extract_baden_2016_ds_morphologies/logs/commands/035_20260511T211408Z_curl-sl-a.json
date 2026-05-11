@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "command": "curl -sL -A Mozilla/5.0 --max-time 30 -I http://retinal-functomics.net/wp-content/uploads/2015/12/Baden_et_al_2016_visualization.zip",
+  "exit_code": 0,
+  "duration_seconds": 0.191,
+  "started_at": "2026-05-11T21:14:08Z",
+  "completed_at": "2026-05-11T21:14:09Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0103_extract_baden_2016_ds_morphologies",
+  "stdout_file": "035_20260511T211408Z_curl-sl-a.stdout.txt",
+  "stderr_file": "035_20260511T211408Z_curl-sl-a.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}

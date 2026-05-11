@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Date: Mon, 11 May 2026 21:14:09 GMT
+Server: Apache/2.4.67 (Unix)
+Last-Modified: Fri, 20 Apr 2018 14:02:17 GMT
+ETag: "15f8-56a4822ca0857"
+Accept-Ranges: bytes
+Content-Length: 5624
+Content-Type: application/zip

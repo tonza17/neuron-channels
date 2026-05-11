@@ -1,0 +1,140 @@
+{
+  "task_id": "t0103_extract_baden_2016_ds_morphologies",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0103_extract_baden_2016_ds_morphologies branch from main.",
+      "status": "completed",
+      "started_at": "2026-05-11T20:53:38Z",
+      "completed_at": "2026-05-11T20:55:26Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify no dependencies block this task (task.json declares no dependencies).",
+      "status": "completed",
+      "started_at": "2026-05-11T20:55:43Z",
+      "completed_at": "2026-05-11T20:56:15Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create the mandatory task folder structure including assets/paper/, assets/dataset/, plan/, results/, logs/, intervention/, corrections/.",
+      "status": "completed",
+      "started_at": "2026-05-11T20:56:29Z",
+      "completed_at": "2026-05-11T20:57:57Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: mechanical download-dataset + download-paper task; sources are already specified in task_description.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: all source URLs (Dryad DOI, paper DOI, visualisation zip, README) are already enumerated in task_description.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Skipped: no dependencies and no prior task code is required to run the loader; any Dryad/Matlab format discoveries will be documented inline in plan/implementation step logs.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Design the Baden 2016 download, cluster-mapping reconciliation, per-cell extraction, and dataset asset assembly workflow.",
+      "status": "completed",
+      "started_at": "2026-05-11T20:58:51Z",
+      "completed_at": "2026-05-11T21:05:25Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: local data download and extraction; no remote compute required.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Download paper PDF, Dryad bundle, visualisation zip, and README; build loader; extract per-cell records for the 8 DS groups; produce dataset and paper assets.",
+      "status": "completed",
+      "started_at": "2026-05-11T21:06:00Z",
+      "completed_at": "2026-05-11T22:57:27Z",
+      "log_file": "logs\\steps\\009_implementation/"
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines were set up.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: mechanical extraction task; alternative approaches not required.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; embed diagnostic charts.",
+      "status": "completed",
+      "started_at": "2026-05-11T22:57:56Z",
+      "completed_at": "2026-05-11T23:02:37Z",
+      "log_file": "logs\\steps\\012_results/"
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Skipped: extraction task; no quantitative performance metrics to compare against published results.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Formulate follow-up task suggestions (e.g., source DS-cell morphologies if Baden 2016 lacks them).",
+      "status": "completed",
+      "started_at": "2026-05-11T23:03:09Z",
+      "completed_at": "2026-05-11T23:07:01Z",
+      "log_file": "logs\\steps\\014_suggestions/"
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task.json completed.",
+      "status": "completed",
+      "started_at": "2026-05-11T23:07:16Z",
+      "completed_at": "2026-05-11T23:08:49Z",
+      "log_file": "logs\\steps\\015_reporting/"
+    }
+  ]
+}

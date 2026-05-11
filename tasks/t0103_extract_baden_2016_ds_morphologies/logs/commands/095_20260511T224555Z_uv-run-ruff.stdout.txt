@@ -1,0 +1,14 @@
+F841 Local variable `label_map` is assigned to but never used
+   --> tasks\t0103_extract_baden_2016_ds_morphologies\code\build_per_cell_dataset.py:193:5
+    |
+191 | ) -> _PerCellArrays:
+192 |     """Build per-cell columnar arrays for the filtered cell index list."""
+193 |     label_map: dict[int, str] = DS_GROUP_LABELS
+    |     ^^^^^^^^^
+194 |     group_ids: np.ndarray = baden.group_idx[cell_indices].astype(np.int64)
+195 |     return _PerCellArrays(
+    |
+help: Remove assignment to unused variable `label_map`
+
+Found 2 errors (1 fixed, 1 remaining).
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).
