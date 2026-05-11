@@ -1,8 +1,8 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-87-4169E1" alt="Papers"></a>
-  <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-3-2E8B57" alt="Datasets"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-88-4169E1" alt="Papers"></a>
+  <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-4-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-6-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-101-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-377-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-103-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-385-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (35K)
-| [full](llm-context/full.xml) (570K) | [roadmap](llm-context/roadmap.xml) (109K) |
-[results](llm-context/results-deep-dive.xml) (442K) |
-[assets](llm-context/literature-and-assets.xml) (61K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (36K)
+| [full](llm-context/full.xml) (578K) | [roadmap](llm-context/roadmap.xml) (113K) |
+[results](llm-context/results-deep-dive.xml) (447K) |
+[assets](llm-context/literature-and-assets.xml) (62K)
 
-*Last updated: 2026-05-11 13:54 UTC*
+*Last updated: 2026-05-11 23:14 UTC*
 
 * **Budget**: **$24** spent of $35
 * **Remaining**: **$11**
@@ -53,9 +53,11 @@
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-11 14:08 |
 
 ---
 
@@ -82,10 +84,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (93 total)](tasks/by-status/completed.md)
+## [Recently Completed (94 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0103 | [Extract direction-selective cell data from Baden et al. 2016](../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | [`results`](../tasks/t0103_extract_baden_2016_ds_morphologies/results/results_detailed.md) | 2026-05-12 01:55 |
 | 0101 | [Brainstorm results session 21](../overview/tasks/task_pages/t0101_brainstorm_results_21.md) | [`results`](../tasks/t0101_brainstorm_results_21/results/results_detailed.md) | 2026-05-11 13:50 |
 | 0100 | [Re-render t0099 morphology charts with correct 68-d slice](../overview/tasks/task_pages/t0100_fix_t0099_morph_charts.md) | [`results`](../tasks/t0100_fix_t0099_morph_charts/results/results_detailed.md) | 2026-05-11 01:27 |
 | 0099 | [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`results`](../tasks/t0099_random_init_pareto_robustness/results/results_detailed.md) | 2026-05-10 23:35 |
@@ -95,9 +98,8 @@ No blocked tasks.
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0097_multi_obj_optim.md) | [`results`](../tasks/t0097_multi_obj_optim/results/results_detailed.md) | 2026-05-08 16:50 |
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`results`](../tasks/t0091_morphology_extended_nsga2_v1/results/results_detailed.md) | 2026-05-08 15:55 |
 | 0093 | [Patched-generator full 60-morph re-sweep + t0090 correction overlay](../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) | [`results`](../tasks/t0093_resweep_and_t0090_correction/results/results_detailed.md) | 2026-05-08 03:55 |
-| 0092 | [Diagnose why t0090 procedural cells produce no action potentials](../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | [`results`](../tasks/t0092_diagnose_morphology_generator_silence/results/results_detailed.md) | 2026-05-08 00:55 |
 
-*83 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*84 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +124,151 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (335 open)](suggestions/)
+## [Recent Suggestions (343 open)](suggestions/)
+
+<details>
+<summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
+cluster IDs</strong> (S-0103-01)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+Baden 2016's Dryad release contains no dendritic morphology. Bae et al. 2018 (EyeWire/E2198
+dense EM dataset) published reconstructed RGC morphologies and explicitly linked many of them
+to Baden 2016 functional cluster IDs. Download Bae 2018 morphologies for the 8
+paper-authoritative DS clusters {2, 6, 12, 13, 16, 25, 26, 29} and emit one dataset asset of
+SWC/JSON morphologies keyed by Baden cluster ID. This is the most direct way to ground t0090's
+morphology-generator parameter envelopes (field diameter, branch count, total length,
+asymmetry) in real biological DS-cell shapes. Recommended task types: download-dataset,
+download-paper.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download Ran et al. 2020 ON-OFF DS-cell morphologies as a
+complementary morphology source</strong> (S-0103-02)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+Ran et al. 2020 (Nat Commun) provides dye-fill reconstructions of mouse ON-OFF DS RGCs with
+co-recorded preferred-direction labels. The Baden 2016 Dryad release does not include
+morphologies, and Ran 2020 covers exactly the ON-OFF DS subtypes (Baden clusters G12/G13) most
+relevant to the t0024 ON-OFF DSGC modelling line. Download the published SWC files (or extract
+from supplementary materials), register them as a dataset asset, and tag each morphology with
+its preferred-direction angle and any Baden-cluster correspondence available. Useful as a
+second, independent morphology source against Bae 2018 for the t0090 envelope grounding.
+Recommended task types: download-dataset, download-paper.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ground t0090 morphology-generator parameter envelopes in the
+Baden 2016 + Bae/Ran morphologies</strong> (S-0103-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+t0090's morphology generator currently samples field diameter, branch count, total length, and
+asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103
+Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that
+the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for
+each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions
+(mean +/- SD per Baden DS group) and replaces t0090's parametric ranges, then re-runs a small
+NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells.
+This is the original motivation for downloading Baden 2016 in the first place. Recommended
+task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a reusable Dryad-with-Anubis-PoW downloader
+library</strong> (S-0103-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+t0103 had to implement a ~30-line pure-hashlib Anubis 1.24.0 proof-of-work solver inline to
+unlock the Dryad d9v38 release, after discovering that vanilla CLI tools get blocked by an
+anti-scraper PoW challenge and the v2 REST API requires OAuth. Extract this into a small
+reusable library under `arf/scripts/utils/` (or a standalone Python package) that wraps
+`Dryad-with-Anubis` downloads: resolve DOI -> solve PoW -> fetch presigned S3 URL -> stream to
+disk -> verify SHA-256. Adds Wayback fallback and progress reporting. Future Baden-lab dataset
+tasks (Bae 2018 if also on Dryad, Goetz 2022, Franke 2017) avoid re-implementing this.
+Recommended task types: write-library, infrastructure-setup.
+
+</details>
+
+<details>
+<summary>📂 <strong>Re-emit Baden 2016 DS subset at float64 precision split into
+per-group Parquets</strong> (S-0103-05)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+The t0103 dataset asset down-casts the 5 trace columns (chirp 249, bar 32, bar-dir-major 256,
+color 96, RF 80) from float64 to float32 to fit the 5 MiB pre-merge limit on the single
+combined Parquet. For downstream ML or statistical analysis where float32 rounding becomes a
+concern (e.g. PCA over chirp traces, GP regression on RF kernels), re-emit one Parquet per
+Baden cluster at float64 precision, store via git-LFS or a sibling dataset asset, and update
+`details.json` to point at the higher-precision payload. Add a brief schema check that the
+per-group float64 Parquets and the original float32 combined Parquet agree to within rounding.
+Recommended task types: feature-engineering, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Swap the typeset PMC reproduction for the Nature publisher PDF
+of Baden 2016</strong> (S-0103-06)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+The Baden 2016 paper asset's PDF is a typeset reproduction of the PMC fulltext XML
+(PMC4724341) because Nature's publisher PDF is paywalled and PMC's interactive viewer is
+JS-protected. All scientific content is faithful, but typography and figure layout do not
+match the publisher version, which makes it awkward to cite figure positions or compare with
+print-version page references. A small follow-up task can obtain the publisher PDF via
+institutional access (Sheffield) and swap it in via the corrections mechanism, leaving the
+typeset version as a fallback. Recommended task types: download-paper, correction.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Recover per-cell IPL stratification depth profiles from Baden
+2016 scan-level structural data</strong> (S-0103-07)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+The Baden 2016 Dryad release exposes a scan-level structural volume and per-scan ROI metadata,
+but no per-cell IPL stratification profile (paper Fig. 2 IPL profiles are derived per-group,
+not per-cell). t0103 substituted per-group mean RF diameter as the secondary statistic. A
+follow-up task can re-project per-cell ROIs onto the scan-level IPL volume to reconstruct an
+approximate per-cell stratification depth profile, validating against the paper's per-group
+means as ground truth. This would unlock per-cell IPL depth as a feature for downstream
+modelling tasks (e.g. matching modelled dendritic terminations to biological IPL bands).
+Recommended task types: data-analysis, feature-engineering.
+
+</details>
+
+<details>
+<summary>📊 <strong>Build a Baden-grounded null distribution of DSI/OSI for
+t0091/t0099/t0102 Pareto evaluation</strong> (S-0103-08)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+t0103 extracted DSI and OSI per cell for 1,238 DS cells across 8 Baden DS groups (DSI mean
+~0.40-0.46, max ~0.73-0.76, OSI mean ~0.15-0.20). The NSGA-II Pareto fronts from
+t0091/t0099/t0102 currently lack a biological null distribution to compare DSI/OSI against --
+they are evaluated only against the t0024 canonical reference. Build a small task that
+produces a per-Baden-group DSI/OSI empirical CDF chart, overlays the Pareto-front DSI/OSI
+distributions, and reports the percentile of each Pareto cell relative to its presumed Baden
+cluster. This is a cheap, high-value sanity check on whether the optimised cells fall inside
+the biological envelope. Recommended task types: data-analysis, comparative-analysis.
+
+</details>
 
 <details>
 <summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via
@@ -160,144 +306,66 @@ comparison data is already in t0102.
 
 </details>
 
-<details>
-<summary>🧪 <strong>PP-style ablation: budget-matched comparison of
-few-seeds-many-gens vs many-seeds-few-gens on 68-d substrate</strong>
-(S-0101-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-11 | **Source**:
-[t0101_brainstorm_results_21](../tasks/t0101_brainstorm_results_21/)
-
-Poleg-Polsky 2026 uses 50-100 GA seeds at pop=10, 300-1000 generations. Our convention is 1-2
-GA seeds at pop=96, 8-17 generations. Hold total candidate budget fixed (e.g., 20 000
-evaluations) and compare two configurations on the same 68-d substrate: (a) 2 seeds x pop=96 x
-100 gens (closer to our convention, extreme generations), (b) 20 seeds x pop=10 x 100 gens (PP
-convention). Score: number of unique Pareto cells discovered, hypervolume, joint-pass cells,
-anchor diversity. Cost ~$10 at $0.24/hr Vast.ai for ~40 hours (one instance, both
-configurations sequentially). Could revise our future MOBO design from BoTorch-style large-pop
-NSGA-II toward PP-style many-seed (1+9)-ES if (b) wins on diversity.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
-warm-start was load-bearing</strong> (S-0099-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-10 | **Source**:
-[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
-
-t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
-cells vs t0091's 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the
-diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1
-only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass
-emerges -> anchor 1 was load-bearing alone. Outcome (b): no joint-pass -> warm-start diversity
-itself was load-bearing. Either narrows future morphology-extended NSGA-II design
-substantially. Cost ~$3.50 single seed.
-
-</details>
-
-<details>
-<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto
-cells (HM-3 follow-up)</strong> (S-0099-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-10 | **Source**:
-[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
-
-HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both
-t0091 and t0099. Pure data-analysis on the now-available 57+19+22+14 = 112 Pareto cells:
-extract per-cell field_elongation_pd from each cell's 14-d morphology vector, plot vs DSI
-vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could resolve a
-2-task-old open question.
-
-</details>
-
-<details>
-<summary>📊 <strong>Pool t0091 + t0099 anchor counts to confirm HM-2 (PD-asymmetric
-> ND-asymmetric) at higher n</strong> (S-0099-03)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-10 | **Source**:
-[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
-
-t0099 revised HM-2 from REFUTED to CONFIRMED by pooling 3 random-init seed counts (PD-asymm 20
-vs ND-asymm 7, p~0.013). Add t0091's 12 vs 9 to get full sample: 32 vs 16 (p~0.02). Confirms
-Schachter 2010 / Briggman 2011 prediction at n=4 datasets. Pure data-analysis; could form the
-basis for an answer asset on the soma-displacement-toward-PD mechanism.
-
-</details>
-
-<details>
-<summary>📚 <strong>NEURON worker process restart between gens to test if memory
-accumulation explains per-gen wall-clock doubling</strong> (S-0099-04)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-10 | **Source**:
-[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
-
-t0099 observed gen 1 = 38-52 min, gen 8 = 167+ min for the same workload. Hypothesis: NEURON
-state accumulation across pop=96 cell builds per gen. Test: modify nsga2_driver to spawn fresh
-worker pool every 2 gens. If late-gen wall-clock improves by >20%, the memory-accumulation
-hypothesis is confirmed. Cost $1-2 single seed.
-
-</details>
-
-<details>
-<summary>🧪 <strong>20-generation single-seed random-init NSGA-II to test whether
-longer search bridges the joint-pass gap</strong> (S-0099-05)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-05-10 | **Source**:
-[t0099_random_init_pareto_robustness](../tasks/t0099_random_init_pareto_robustness/)
-
-t0099 capped at 8 gens per seed. Hay 2011 used 1000 gens for similar problems. Test: one
-random-init seed at 20 gens with $10 cap to see if random-init can eventually bridge the
-joint-pass corner that warm-start reached at gen 2. If yes, warm-start was a 10x speedup not a
-fundamental enabler. If no after 20 gens, warm-start remains essential. Cost ~$10 single seed.
-
-</details>
-
-<details>
-<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
-Pareto to resolve HM-3 inconclusive</strong> (S-0091-01)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-t0091 reported a Spearman rho=-0.07 between total dendritic length and DSI vector-sum across
-the 57-cell Pareto, leaving HM-3 (length-vs-DSI scaling, Hausselt2007) inconclusive because
-total length conflates field_elongation_pd with branch_density_gradient_pd and
-num_primary_branches. Pure data-analysis task on existing pareto_front.json: extract
-field_elongation_pd from each Pareto cell's 14-d morph_params vector, compute Spearman +
-Kendall correlations against DSI, PD-rate, robustness, and the 9 channel-side priors, plot
-per-anchor scatter overlays, and stratify by anchor lineage. Goal: definitively confirm or
-refute that elongation along PD is the morphology axis driving DSI in joint optimisation,
-separate from branch density. Cost: $0 (local CPU analysis on existing JSONL files).
-Recommended task types: data-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>Per-direction DSI re-scoring of the t0091 57-cell Pareto to
-surface DSGC subtype-specific tuning</strong> (S-0091-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-t0091 used vector-sum DSI across 16 directions, which is direction-blind: a cell tuned to PD
-with peak at 0 deg and a cell tuned to a non-cardinal direction (e.g., 45 deg) collapse to the
-same vector-sum DSI. The PD vs ND anchor-asymmetry test (12 vs 9, p=0.331) may be
-artifactually washed out by this collapse. Brendly2025 and Riccitelli2025 (now in the t0091
-corpus from research-internet) report DSGC subtypes with distinct preferred directions. Pure
-data-analysis on existing pareto_front.json + per-direction firing rate JSONL: re-score each
-Pareto cell with per-direction DSI (peak direction, half-width-at-half-maximum, peak-to-trough
-ratio); recompute the PD-asymmetric vs ND-asymmetric anchor test using direction-binned DSI;
-compare per-direction tuning curve shapes between bedb_like, alt_topology, and the 21
-asymmetric anchor cells. Cost: $0 (local CPU). Recommended task types: data-analysis.
-
-</details>
-
-*325 more open suggestions → [open suggestions](suggestions/)*
+*333 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (54)](suggestions/)
+## [High Priority Suggestions (57)](suggestions/)
+
+<details>
+<summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
+cluster IDs</strong> (S-0103-01)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+Baden 2016's Dryad release contains no dendritic morphology. Bae et al. 2018 (EyeWire/E2198
+dense EM dataset) published reconstructed RGC morphologies and explicitly linked many of them
+to Baden 2016 functional cluster IDs. Download Bae 2018 morphologies for the 8
+paper-authoritative DS clusters {2, 6, 12, 13, 16, 25, 26, 29} and emit one dataset asset of
+SWC/JSON morphologies keyed by Baden cluster ID. This is the most direct way to ground t0090's
+morphology-generator parameter envelopes (field diameter, branch count, total length,
+asymmetry) in real biological DS-cell shapes. Recommended task types: download-dataset,
+download-paper.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download Ran et al. 2020 ON-OFF DS-cell morphologies as a
+complementary morphology source</strong> (S-0103-02)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+Ran et al. 2020 (Nat Commun) provides dye-fill reconstructions of mouse ON-OFF DS RGCs with
+co-recorded preferred-direction labels. The Baden 2016 Dryad release does not include
+morphologies, and Ran 2020 covers exactly the ON-OFF DS subtypes (Baden clusters G12/G13) most
+relevant to the t0024 ON-OFF DSGC modelling line. Download the published SWC files (or extract
+from supplementary materials), register them as a dataset asset, and tag each morphology with
+its preferred-direction angle and any Baden-cluster correspondence available. Useful as a
+second, independent morphology source against Bae 2018 for the t0090 envelope grounding.
+Recommended task types: download-dataset, download-paper.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ground t0090 morphology-generator parameter envelopes in the
+Baden 2016 + Bae/Ran morphologies</strong> (S-0103-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+t0090's morphology generator currently samples field diameter, branch count, total length, and
+asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103
+Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that
+the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for
+each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions
+(mean +/- SD per Baden DS group) and replaces t0090's parametric ranges, then re-runs a small
+NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells.
+This is the original motivation for downloading Baden 2016 in the first place. Recommended
+task types: experiment-run, data-analysis.
+
+</details>
 
 <details>
 <summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via
@@ -430,58 +498,7 @@ bug. Recommended task types: correction.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising cytoplasm
-volume</strong> (S-0097-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0097_multi_obj_optim](../tasks/t0097_multi_obj_optim/)
-
-Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most
-evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010's `bf`
-in [0.2, 0.7] band; Chklovskii et al. 2002's 3/5-of-grey-matter wiring rule). Infrastructure
-already in place via the t0093-validated procedural morphology generator. Falsifiable
-prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on
-Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8
-budget bump if needed). Same population/generation budget as t0091.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising
-ATP-per-spike</strong> (S-0097-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0097_multi_obj_optim](../tasks/t0097_multi_obj_optim/)
-
-Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per
-spike). Remme et al. 2018's MSO function-vs-energy MOBO provides a direct methodology template
-generalising to NEURON. DSGC's GABAergic-style fast-spiking should produce
-Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower
-energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e`
-per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed
-per-task default; flag for explicit budget approval.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising DSI and robustness under +/-10%
-channel-density perturbation</strong> (S-0097-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0097_multi_obj_optim](../tasks/t0097_multi_obj_optim/)
-
-Directly addresses the researcher's recurring biological-plausibility concern with pure-DSI
-maximisation (Marder-style population-statistic robustness is the field-standard treatment).
-Falsifiable prediction: high-DSI / high-robustness corner lies along compensatory hyperplanes,
-refuting the hypothesis that DSI maximisation drives the optimiser to fragile parameter-space
-extremes. Recipe: K=50-200 +/-10% perturbations per Pareto point; minimise SD of DSI. Budget:
-36-72 h Vast.ai EPYC at $0.30/h, total $11-22 (multiplies t0091's per-individual cost by
-K=50-200) — request explicit $25 budget cap or reduce population/generations.
-
-</details>
-
-*44 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*47 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -715,7 +732,66 @@ metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on t
 
 ---
 
-## [Latest Papers (87 total)](papers/)
+## [Latest Papers (88 total)](papers/)
+
+<details>
+<summary>📖 <strong>The functional diversity of retinal ganglion cells in the
+mouse</strong> — Baden et al., 2016</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nature16468` |
+| **Authors** | Tom Baden, Philipp Berens, Katrin Franke, Miroslav Román Rosón, Matthias Bethge, Thomas Euler |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/nature16468` |
+| **URL** | https://www.nature.com/articles/nature16468 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/) |
+| **Added by** | [`t0103_extract_baden_2016_ds_morphologies`](../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Full summary** | [`summary.md`](../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/summary.md) |
+
+Baden, Berens, Franke, Roman Roson, Bethge, and Euler used dense two-photon calcium imaging of
+RGC somata in whole-mount mouse retina, combined with a standardised stimulus battery (chirp,
+moving bar, full-field, coloured, checkerboard) and unsupervised probabilistic clustering, to
+produce a near-saturating taxonomy of mouse RGC functional types. Across 11,210 cell
+recordings from 15 retinas, they identify a minimum of 32 RGC functional groups — nearly
+double the prior anatomical estimate of 15-20 — plus an additional ~17 displaced amacrine cell
+groups.
+
+The clustering strategy is methodologically important: rather than mixing direction-selective
+and non-DS cells in a single clustering pass, the authors first apply a permutation-based DS
+significance test (cell_dp < 0.05) and cluster the two subsets independently, then merge
+similar clusters back together with explicit evidence. This yields 24 DS clusters merged into
+8 DS- dominated groups (G2, G6, G12, G13, G16, G25, G26, G29) that account for 70% of all
+1,757 DS cells. They confirm cluster identities via independent juxtacellular
+electrophysiology with biocytin fills, immunohistochemistry for known markers (GAD67, SMI-32,
+melanopsin), and genetic labels in PV-Cre and Pcp2 transgenic lines. Cluster quality is high
+for major groups (median posterior > 0.9) and coverage factors typically cluster around 1,
+supporting interpretation as single types.
+
+The paper's primary results are quantitatively striking. Of 11,210 imaged GCL somata, 7,982
+were RGCs; the remaining cells were displaced amacrines or unclassifiable. Of the RGCs, 1,757
+(35%) were direction-selective at the cell_dp < 0.05 significance threshold. The 32 RGC groups
+break down into 9 OFF + 12 ON + 3 ON-OFF non-DS groups and 2 OFF + 4 ON + 2 ON-OFF DS groups.
+Cluster posterior quality exceeds 0.9 for the major groups, coverage factors cluster around 1
+for most groups, and biocytin morphologies in a 245-cell validation subset confirm
+cluster-to-morphology correspondence for the classical alpha, JAM-B, and ON-OFF DS types.
+
+For this project, the Baden 2016 paper and the accompanying Dryad release define the canonical
+reference dataset for direction-selective RGC properties in the mouse retina. The 8
+DS-containing groups, their cluster-mean moving-bar responses, IPL stratification depths, and
+scalar indices (DSi, OSi, response quality) are the targets that any DSGC compartmental
+simulation in this project must match. The per-cell traces enable construction of
+biologically-grounded parameter envelopes for the t0090 morphology generator and validation
+distributions for the t0102 joint-pass corner. The principal limitation is that morphological
+reconstructions are not provided for the bulk of recorded cells — DS-cell morphologies for
+downstream modelling must be sourced from a complementary paper such as Bae et al. 2018 or Ran
+et al. 2020. The cell-level reconciliation of the user- supplied cluster IDs `[2, 17, 18, 19,
+22, 35, 36, 40]` against the authoritative paper taxonomy is recorded in
+`code/visualization_code_notes.md`; only G2 from the user list is in the paper's DS-group set,
+which is documented as a blocking intervention in `intervention/cluster_id_mismatch.json`.
+
+</details>
 
 <details>
 <summary>📖 <strong>BluePyOpt: Leveraging Open Source Software and Cloud
@@ -1225,71 +1301,15 @@ single best-fit vector for downstream sensitivity and conductance-class analysis
 
 </details>
 
-<details>
-<summary>📖 <strong>Wiring Optimization in Cortical Circuits</strong> — Chklovskii
-et al., 2002</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `no-doi_Chklovskii2002_wiring-optimization-cortical` |
-| **Authors** | Dmitri B. Chklovskii, Thomas Schikorski, Charles F. Stevens |
-| **Venue** | Neuron (journal) |
-| **DOI** | `10.1016/s0896-6273(02)00679-7` |
-| **URL** | https://doi.org/10.1016/s0896-6273(02)00679-7 |
-| **Date added** | 2026-05-08 |
-| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`cable-theory`](../meta/categories/cable-theory/), [`dendritic-computation`](../meta/categories/dendritic-computation/) |
-| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/no-doi_Chklovskii2002_wiring-optimization-cortical/summary.md) |
-
-Chklovskii, Schikorski, and Stevens (2002) ask why cortical gray matter has the cellular
-composition that it does. Earlier work in the wiring-economy tradition (Cajal; Cherniak;
-Mitchison; Chklovskii and Stevens 2000) had argued qualitatively that wire length is minimised
-under selection pressure, but these arguments did not predict any quantitative property of
-cortical anatomy that could be falsified by direct measurement. The paper closes this gap by
-recasting the problem as a constrained optimisation: maximise synapse density subject to
-bounded axonal conduction delay and bounded passive dendritic attenuation, with axon and
-dendrite radii as the free variables.
-
-The methodological contribution is a parameter-free derivation. After applying the standard
-cable scalings (delay proportional to length over root radius; space constant proportional to
-root radius), the species-specific membrane and axial constants cancel in the optimum, leaving
-a pure geometric prediction: axons plus dendrites should fill exactly 3/5 of the gray-matter
-volume at the optimum. The authors then test this with serial-section electron microscopy of
-mouse hippocampal CA1 neuropil, measuring the volume fraction occupied by each cellular
-component, and report agreement with the 3/5 prediction.
-
-The headline finding is therefore a quantitative confirmation of the wiring-economy principle
-as a real biological selection pressure operating on cortical morphology, not merely a
-qualitative heuristic. This is one of the most cited results in computational neuroanatomy
-because it demonstrates that an optimisation principle, applied with explicit biophysical
-constraints, can predict an a-priori property of a real cortical tissue volume to within
-experimental error. Later work has extended the framework to dendritic branching morphology
-(Cuntz et al. 2010), to cortical GABAergic interneurons (Budd and Kisvarday 2012), and to
-whole-brain connectomes.
-
-For the t0097 multi-objective DSGC optimisation catalogue, this paper provides the
-foundational biological justification for adding a cytoplasm-volume / wiring-cost objective
-alongside functional DSGC objectives (direction-selectivity index, EPSP fidelity, robustness).
-The 3/5 result tells us that real cortical neurons sit close to a wiring optimum, so a DSGC
-morphology that drifts very far from the natural cytoplasm volume in our optimisation is
-biologically suspect even if it yields a high DSI. Together with Cuntz et al. (2010), this
-paper anchors the "minimise total cytoplasm volume" recipe that the catalogue should adopt;
-deviations from the optimal volume can be reported as a quantitative biological-plausibility
-metric. The main caveat for our use is that the original Chklovskii et al. analysis is for
-cortical gray matter, not retinal inner plexiform layer, so the exact 3/5 fraction may not
-transfer numerically to DSGC dendritic arbours - but the underlying recipe (wire cost + delay
-+ attenuation) is general and is what we should adopt.
-
-</details>
-
-*77 more papers → [papers](papers/)*
+*78 more papers → [papers](papers/)*
 
 ---
 
-## [Latest Datasets (3 total)](datasets/)
+## [Latest Datasets (4 total)](datasets/)
 
 | Name | Size | Source | Added |
 |------|------|--------|-------|
+| [Baden 2016 RGC direction-selective subset](../tasks\t0103_extract_baden_2016_ds_morphologies\assets\dataset\baden-2016-ds-cells\description.md) | 1238 retinal ganglion / displaced amacrine cells from the 8 paper-authoritative DS-containing groups (G2/G6/G12/G13/G16/G25/G26/G29) of Baden 2016, one row per cell with functional traces (chirp 249 samples, moving-bar 32 samples, moving-bar by 8 directions 256 samples, colour 96 samples, RF temporal kernel 80 samples) and per-cell selectivity indices, soma area/volume, RF Gaussian fit, immuno (ChAT, GAD, melanopsin, SMI-32) and genetics (PV, PCP2) flags. NO per-cell IPL stratification depth and NO morphology in the Dryad release. | [103](../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | 2026-05-12 |
 | [DSGC Baseline Morphology (141009_Pair1DSGC), Diameter-Calibrated](../tasks\t0009_calibrate_dendritic_diameters\assets\dataset\dsgc-baseline-morphology-calibrated\description.md) | 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leaves, 1,536.25 um total dendritic length; Strahler-order-calibrated diameters from Poleg-Polsky & Diamond 2016 ModelDB 189347 (Hanson geoffder/Spatial-Offset-DSGC-NEURON-Model mirror). Four distinct radii: soma 4.118 um, primary 3.694 um, mid 1.653 um, terminal 0.439 um. | [9](../overview/tasks/task_pages/t0009_calibrate_dendritic_diameters.md) | 2026-04-20 |
 | [Target Direction Tuning Curve (synthetic)](../tasks\t0004_generate_target_tuning_curve\assets\dataset\target-tuning-curve\description.md) | 12 angles (30 deg spacing) with 20 synthetic noisy trials per angle = 12 mean rates and 240 per-trial rates. | [4](../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | 2026-04-19 |
 | [DSGC Baseline Morphology (Feller 141009_Pair1DSGC)](../tasks\t0005_download_dsgc_morphology\assets\dataset\dsgc-baseline-morphology\description.md) | 6,736 compartments (19 soma, 6,717 dendrite, 0 axon) with 129 branch points and 131 leaves; ~1.54 mm total dendritic path length. CNG-standardized SWC, ~227 KB. | [5](../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) | 2026-04-19 |

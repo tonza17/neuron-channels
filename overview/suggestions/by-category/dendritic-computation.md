@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-80 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **63 open** (12
-high, 46 medium, 5 low), **17 closed**.
+83 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **66 open** (14
+high, 47 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -137,6 +137,30 @@ writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verifi
 </details>
 
 <details>
+<summary>📂 <strong>Download Ran et al. 2020 ON-OFF DS-cell morphologies as a
+complementary morphology source</strong> (S-0103-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-02` |
+| **Kind** | dataset |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Ran et al. 2020 (Nat Commun) provides dye-fill reconstructions of mouse ON-OFF DS RGCs with
+co-recorded preferred-direction labels. The Baden 2016 Dryad release does not include
+morphologies, and Ran 2020 covers exactly the ON-OFF DS subtypes (Baden clusters G12/G13) most
+relevant to the t0024 ON-OFF DSGC modelling line. Download the published SWC files (or extract
+from supplementary materials), register them as a dataset asset, and tag each morphology with
+its preferred-direction angle and any Baden-cluster correspondence available. Useful as a
+second, independent morphology source against Bae 2018 for the t0090 envelope grounding.
+Recommended task types: download-dataset, download-paper.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Experimentally test NMDA-spike contribution to DSGC direction
 selectivity via compartmental simulation</strong> (S-0016-03)</summary>
 
@@ -156,6 +180,31 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ground t0090 morphology-generator parameter envelopes in the
+Baden 2016 + Bae/Ran morphologies</strong> (S-0103-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0090's morphology generator currently samples field diameter, branch count, total length, and
+asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103
+Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that
+the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for
+each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions
+(mean +/- SD per Baden DS group) and replaces t0090's parametric ranges, then re-runs a small
+NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells.
+This is the original motivation for downloading Baden 2016 in the first place. Recommended
+task types: experiment-run, data-analysis.
 
 </details>
 
@@ -1262,6 +1311,30 @@ re-run t0091's NSGA-II with the real-cell library replacing the procedural gener
 whether observed DSGC morphologies escape the prior-violation ceiling that procedural ones
 cannot. Larger task: needs planning first. Cost ~$2-3 for the optimisation pass. Recommended
 task types: download-dataset, build-model, write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Recover per-cell IPL stratification depth profiles from Baden
+2016 scan-level structural data</strong> (S-0103-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-07` |
+| **Kind** | technique |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The Baden 2016 Dryad release exposes a scan-level structural volume and per-scan ROI metadata,
+but no per-cell IPL stratification profile (paper Fig. 2 IPL profiles are derived per-group,
+not per-cell). t0103 substituted per-group mean RF diameter as the secondary statistic. A
+follow-up task can re-project per-cell ROIs onto the scan-level IPL volume to reconstruct an
+approximate per-cell stratification depth profile, validating against the paper's per-group
+means as ground truth. This would unlock per-cell IPL depth as a feature for downstream
+modelling tasks (e.g. matching modelled dendritic terminations to biological IPL bands).
+Recommended task types: data-analysis, feature-engineering.
 
 </details>
 

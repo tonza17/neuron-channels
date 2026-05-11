@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-77 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **68 open** (12
-high, 47 medium, 9 low), **9 closed**.
+84 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **75 open** (14
+high, 51 medium, 10 low), **9 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -85,6 +85,54 @@ count and gabaMOD design, re-run the 12-direction x 10-trial FULL sweep, and rep
 vector-sum DSI, HWHM, and reliability per gAMPA. Goal: locate the gAMPA where peak rate enters
 the 30-100 Hz band and the cell leaves the binary on/off regime, so DSI dynamics become
 biologically informative. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
+cluster IDs</strong> (S-0103-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-01` |
+| **Kind** | dataset |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Baden 2016's Dryad release contains no dendritic morphology. Bae et al. 2018 (EyeWire/E2198
+dense EM dataset) published reconstructed RGC morphologies and explicitly linked many of them
+to Baden 2016 functional cluster IDs. Download Bae 2018 morphologies for the 8
+paper-authoritative DS clusters {2, 6, 12, 13, 16, 25, 26, 29} and emit one dataset asset of
+SWC/JSON morphologies keyed by Baden cluster ID. This is the most direct way to ground t0090's
+morphology-generator parameter envelopes (field diameter, branch count, total length,
+asymmetry) in real biological DS-cell shapes. Recommended task types: download-dataset,
+download-paper.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download Ran et al. 2020 ON-OFF DS-cell morphologies as a
+complementary morphology source</strong> (S-0103-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-02` |
+| **Kind** | dataset |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Ran et al. 2020 (Nat Commun) provides dye-fill reconstructions of mouse ON-OFF DS RGCs with
+co-recorded preferred-direction labels. The Baden 2016 Dryad release does not include
+morphologies, and Ran 2020 covers exactly the ON-OFF DS subtypes (Baden clusters G12/G13) most
+relevant to the t0024 ON-OFF DSGC modelling line. Download the published SWC files (or extract
+from supplementary materials), register them as a dataset asset, and tag each morphology with
+its preferred-direction angle and any Baden-cluster correspondence available. Useful as a
+second, independent morphology source against Bae 2018 for the t0090 envelope grounding.
+Recommended task types: download-dataset, download-paper.
 
 </details>
 
@@ -438,6 +486,54 @@ Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's work
 Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our
 actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged
 as the main Arbor adoption risk.
+
+</details>
+
+<details>
+<summary>📊 <strong>Build a Baden-grounded null distribution of DSI/OSI for
+t0091/t0099/t0102 Pareto evaluation</strong> (S-0103-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-08` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0103 extracted DSI and OSI per cell for 1,238 DS cells across 8 Baden DS groups (DSI mean
+~0.40-0.46, max ~0.73-0.76, OSI mean ~0.15-0.20). The NSGA-II Pareto fronts from
+t0091/t0099/t0102 currently lack a biological null distribution to compare DSI/OSI against --
+they are evaluated only against the t0024 canonical reference. Build a small task that
+produces a per-Baden-group DSI/OSI empirical CDF chart, overlays the Pareto-front DSI/OSI
+distributions, and reports the percentile of each Pareto cell relative to its presumed Baden
+cluster. This is a cheap, high-value sanity check on whether the optimised cells fall inside
+the biological envelope. Recommended task types: data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Build a reusable Dryad-with-Anubis-PoW downloader
+library</strong> (S-0103-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-04` |
+| **Kind** | library |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | — |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0103 had to implement a ~30-line pure-hashlib Anubis 1.24.0 proof-of-work solver inline to
+unlock the Dryad d9v38 release, after discovering that vanilla CLI tools get blocked by an
+anti-scraper PoW challenge and the v2 REST API requires OAuth. Extract this into a small
+reusable library under `arf/scripts/utils/` (or a standalone Python package) that wraps
+`Dryad-with-Anubis` downloads: resolve DOI -> solve PoW -> fetch presigned S3 URL -> stream to
+disk -> verify SHA-256. Adds Wayback fallback and progress reporting. Future Baden-lab dataset
+tasks (Bae 2018 if also on Dryad, Goetz 2022, Franke 2017) avoid re-implementing this.
+Recommended task types: write-library, infrastructure-setup.
 
 </details>
 
@@ -1094,6 +1190,30 @@ cleaner option. Recommended task types: feature-engineering, experiment-run.
 </details>
 
 <details>
+<summary>📂 <strong>Re-emit Baden 2016 DS subset at float64 precision split into
+per-group Parquets</strong> (S-0103-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-05` |
+| **Kind** | dataset |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The t0103 dataset asset down-casts the 5 trace columns (chirp 249, bar 32, bar-dir-major 256,
+color 96, RF 80) from float64 to float32 to fit the 5 MiB pre-merge limit on the single
+combined Parquet. For downstream ML or statistical analysis where float32 rounding becomes a
+concern (e.g. PCA over chirp traces, GP regression on RF kernels), re-emit one Parquet per
+Baden cluster at float64 precision, store via git-LFS or a sibling dataset asset, and update
+`details.json` to point at the higher-precision payload. Add a brief schema check that the
+per-group float64 Parquets and the original float32 combined Parquet agree to within rounding.
+Recommended task types: feature-engineering, data-analysis.
+
+</details>
+
+<details>
 <summary>🔧 <strong>Re-implement placeBIP() to spatially gate gabaMOD by per-synapse
 locx</strong> (S-0050-01)</summary>
 
@@ -1190,6 +1310,30 @@ re-run t0091's NSGA-II with the real-cell library replacing the procedural gener
 whether observed DSGC morphologies escape the prior-violation ceiling that procedural ones
 cannot. Larger task: needs planning first. Cost ~$2-3 for the optimisation pass. Recommended
 task types: download-dataset, build-model, write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Recover per-cell IPL stratification depth profiles from Baden
+2016 scan-level structural data</strong> (S-0103-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-07` |
+| **Kind** | technique |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+The Baden 2016 Dryad release exposes a scan-level structural volume and per-scan ROI metadata,
+but no per-cell IPL stratification profile (paper Fig. 2 IPL profiles are derived per-group,
+not per-cell). t0103 substituted per-group mean RF diameter as the secondary statistic. A
+follow-up task can re-project per-cell ROIs onto the scan-level IPL volume to reconstruct an
+approximate per-cell stratification depth profile, validating against the paper's per-group
+means as ground truth. This would unlock per-cell IPL depth as a feature for downstream
+modelling tasks (e.g. matching modelled dendritic terminations to biological IPL bands).
+Recommended task types: data-analysis, feature-engineering.
 
 </details>
 
@@ -1689,6 +1833,29 @@ within-PD-branch or within-ND-branch density gradients invisible to a single x-m
 and would provide the substrate-level data needed to design any future per-branch synaptic
 modification (cf. S-0050-01 / S-0050-02). Pure post-hoc analysis on existing
 extract_coordinates outputs. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Swap the typeset PMC reproduction for the Nature publisher PDF
+of Baden 2016</strong> (S-0103-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-06` |
+| **Kind** | library |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The Baden 2016 paper asset's PDF is a typeset reproduction of the PMC fulltext XML
+(PMC4724341) because Nature's publisher PDF is paywalled and PMC's interactive viewer is
+JS-protected. All scientific content is faithful, but typography and figure layout do not
+match the publisher version, which makes it awkward to cite figure positions or compare with
+print-version page references. A small follow-up task can obtain the publisher PDF via
+institutional access (Sheffield) and swap it in via the corrections mechanism, leaving the
+typeset version as a fallback. Recommended task types: download-paper, correction.
 
 </details>
 

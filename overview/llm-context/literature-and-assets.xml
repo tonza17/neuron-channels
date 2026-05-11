@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-11T13:54:31Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-11T23:14:27Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>244559</char_count>
-    <byte_count>244906</byte_count>
-    <estimated_tokens>61139</estimated_tokens>
+    <char_count>248351</char_count>
+    <byte_count>248704</byte_count>
+    <estimated_tokens>62087</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -208,9 +208,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0099_random_init_pareto_robustness</id>
         <id>t0100_fix_t0099_morph_charts</id>
         <id>t0101_brainstorm_results_21</id>
+        <id>t0103_extract_baden_2016_ds_morphologies</id>
       </source_ids>
       <content>
-Completed tasks: 93
+Completed tasks: 94
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -769,6 +770,12 @@ ID: t0101_brainstorm_results_21
 Completed: 2026-05-11
 Short description: Brainstorm 21: Poleg-Polsky 2026 spec deep-dive vs. our NSGA-II history; commission 68-d t0102 (seeds=2, N_SEEDS=4, gens=20); record 3 new suggestions; budget 20-&gt;35 USD.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0101_brainstorm_results_21&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 21 — Poleg-Polsky 2026 Deep-Dive Summary Twenty-first strategic brainstorm, triggered by a researcher request to extract numerical specs from Poleg-Polsky 2026 (`10.1038/s41467-026-70288-4`) and compare them against our NSGA-II / MOBO history. The session (a) read seven concrete answers directly from the PDF, (b) flagged several fabricated claims in our existing `summary.md`, (c) commissioned a follow-up NSGA-II task `t0102_seedscale_n4_gen20` at GA-seeds=2 / N_SEEDS=4 / gens=20 on the 68-d substrate, and (d) recorded the project-budget bump...
+
+## Extract direction-selective cell data from Baden et al. 2016
+ID: t0103_extract_baden_2016_ds_morphologies
+Completed: 2026-05-12
+Short description: Download Baden 2016 (Dryad d9v38) and extract data only for direction-selective groups 2, 17, 18, 19, 22, 35, 36, 40. Output: 1 dataset + 1 paper asset.
+Result summary: t0103 Results Summary Summary Extracted **1,238 per-cell records** from Baden et al. 2016 across the eight paper-authoritative direction-selective groups `{2, 6, 12, 13, 16, 25, 26, 29}` into a 4.864 MiB Parquet dataset asset, and registered the Baden 2016 paper itself as a paper asset. Both assets pass their verificators with zero errors and zero warnings. Metrics * **1,238** per-cell records extracted across **8 DS groups**: G2:162, G6:104, G12:397, G13:129, G16:99, G25:76, G26:141, G29:130. * **40 columns per cell**: 35 scalar features (cluster, selectivity, quality, RF, soma, immuno, genetics, cell-of-origin) + 5 nested `list&lt;float32&gt;` trace columns (chirp 249 samples, moving-bar 32...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -778,9 +785,10 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0101_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0102_seedscale_n4_gen20</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -801,6 +809,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## 68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init
+ID: t0102_seedscale_n4_gen20
+Status: in_progress
+Effective date: 2026-05-11
+Short description: 68-d NSGA-II on Bed B+morph: 2 random-init GA seeds (44, 55), N_SEEDS=4, gens=20, pop=96. Tests if 5x noise drop + 2.5x gens recovers joint-pass corner vs t0099 null. $8 cap.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0090_morphology_generator_diversity_test, t0091_morphology_extended_nsga2_v1, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction, t0099_random_init_pareto_robustness, t0101_brainstorm_results_21
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1054,6 +1069,7 @@ Confidence: medium
       <title>Paper Summaries</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.1038_nature16468</id>
         <id>10.1523_JNEUROSCI.1979-23.2023</id>
         <id>10.1113_JP286581</id>
         <id>10.1007_s00424-024-02980-7</id>
@@ -1143,7 +1159,14 @@ Confidence: medium
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 87
+Papers: 88
+
+## The functional diversity of retinal ganglion cells in the mouse
+ID: 10.1038_nature16468
+Year: 2016
+Authors: Tom Baden, Philipp Berens, Katrin Franke, Miroslav Román Rosón
+Added by task: t0103_extract_baden_2016_ds_morphologies
+Baden, Berens, Franke, Roman Roson, Bethge, and Euler used dense two-photon calcium imaging of RGC somata in whole-mount mouse retina, combined with a standardised stimulus battery (chirp, moving bar, full-field, coloured, checkerboard) and unsupervised probabilistic clustering, to produce a near-saturating taxonomy of mouse RGC functional types. Across 11,210 cell recordings from 15 retinas, they identify a minimum of 32 RGC functional groups — nearly double the prior anatomical estimate of 15-20 — plus an additional ~17 displaced amacrine cell groups...
 
 ## GABAergic Inhibition Controls Receptive Field Size, Sensitivity, and Contrast Preference of Direction Selective Retinal Ganglion Cells Near the Threshold of Vision
 ID: 10.1523_JNEUROSCI.1979-23.2023
@@ -1762,9 +1785,10 @@ Barlow and Levick investigate the mechanism of direction selectivity in on-off r
         <id>dsgc-baseline-morphology</id>
         <id>target-tuning-curve</id>
         <id>dsgc-baseline-morphology-calibrated</id>
+        <id>baden-2016-ds-cells</id>
       </source_ids>
       <content>
-Datasets: 3
+Datasets: 4
 
 ## DSGC Baseline Morphology (Feller 141009_Pair1DSGC)
 ID: dsgc-baseline-morphology
@@ -1789,6 +1813,14 @@ Access: public
 Added by task: t0009_calibrate_dendritic_diameters
 Size: 6,736 compartments (19 soma + 6,717 dendrite), 129 branch points, 131 leaves, 1,536.25 um total dendritic length; Strahler-order-calibrated diameters from Poleg-Polsky &amp; Diamond 2016 ModelDB 189347 (Hanson geoffder/Spatial-Offset-DSGC-NEURON-Model mirror). Four distinct radii: soma 4.118 um, primary 3.694 um, mid 1.653 um, terminal 0.439 um.
 `dsgc-baseline-morphology-calibrated` is a literature-grounded diameter calibration of the t0005 mouse ON-OFF DSGC SWC. It preserves the full 6,736-compartment topology of the CNG source while replacing the uniform 0.125 µm placeholder radius with a per-Strahler-order taper harvested from the Poleg-Polsky &amp; Diamond 2016 NEURON model. The resulting morphology has four distinct radii — soma 4.118 µm, primary dendrite...
+
+## Baden 2016 RGC direction-selective subset
+ID: baden-2016-ds-cells
+Year: 2016
+Access: public
+Added by task: t0103_extract_baden_2016_ds_morphologies
+Size: 1238 retinal ganglion / displaced amacrine cells from the 8 paper-authoritative DS-containing groups (G2/G6/G12/G13/G16/G25/G26/G29) of Baden 2016, one row per cell with functional traces (chirp 249 samples, moving-bar 32 samples, moving-bar by 8 directions 256 samples, colour 96 samples, RF temporal kernel 80 samples) and per-cell selectivity indices, soma area/volume, RF Gaussian fit, immuno (ChAT, GAD, melanopsin, SMI-32) and genetics (PV, PCP2) flags. NO per-cell IPL stratification depth and NO morphology in the Dryad release.
+This dataset is the direction-selective subset of the Baden et al. 2016 *Nature* release of functional fingerprints for ~11,000 mouse RGCs / dACs. Each of the 1238 rows is one cell drawn from the 8 paper-authoritative DS groups (G2, G6, G12, G13, G16, G25, G26, G29), with every per-cell field exposed by the Dryad .mat container that is meaningful per-cell: cluster/group assignment, selectivity indices and their...
       </content>
     </section>
     <section id="libraries" source_kind="aggregator">

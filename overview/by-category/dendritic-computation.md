@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
 (9)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(80)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(83)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md)
 
@@ -2534,7 +2534,62 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (63 open, 17 closed)
+## Suggestions (66 open, 17 closed)
+
+<details>
+<summary>📂 <strong>Download Ran et al. 2020 ON-OFF DS-cell morphologies as a
+complementary morphology source</strong> (S-0103-02)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+Ran et al. 2020 (Nat Commun) provides dye-fill reconstructions of mouse ON-OFF DS RGCs with
+co-recorded preferred-direction labels. The Baden 2016 Dryad release does not include
+morphologies, and Ran 2020 covers exactly the ON-OFF DS subtypes (Baden clusters G12/G13) most
+relevant to the t0024 ON-OFF DSGC modelling line. Download the published SWC files (or extract
+from supplementary materials), register them as a dataset asset, and tag each morphology with
+its preferred-direction angle and any Baden-cluster correspondence available. Useful as a
+second, independent morphology source against Bae 2018 for the t0090 envelope grounding.
+Recommended task types: download-dataset, download-paper.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ground t0090 morphology-generator parameter envelopes in the
+Baden 2016 + Bae/Ran morphologies</strong> (S-0103-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+t0090's morphology generator currently samples field diameter, branch count, total length, and
+asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103
+Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that
+the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for
+each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions
+(mean +/- SD per Baden DS group) and replaces t0090's parametric ranges, then re-runs a small
+NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells.
+This is the original motivation for downloading Baden 2016 in the first place. Recommended
+task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Recover per-cell IPL stratification depth profiles from Baden
+2016 scan-level structural data</strong> (S-0103-07)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+The Baden 2016 Dryad release exposes a scan-level structural volume and per-scan ROI metadata,
+but no per-cell IPL stratification profile (paper Fig. 2 IPL profiles are derived per-group,
+not per-cell). t0103 substituted per-group mean RF diameter as the secondary statistic. A
+follow-up task can re-project per-cell ROIs onto the scan-level IPL volume to reconstruct an
+approximate per-cell stratification depth profile, validating against the paper's per-group
+means as ground truth. This would unlock per-cell IPL depth as a feature for downstream
+modelling tasks (e.g. matching modelled dendritic terminations to biological IPL bands).
+Recommended task types: data-analysis, feature-engineering.
+
+</details>
 
 <details>
 <summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via

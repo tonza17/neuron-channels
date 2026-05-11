@@ -1,6 +1,6 @@
-# Papers: `retinal-ganglion-cell` (42)
+# Papers: `retinal-ganglion-cell` (43)
 
-42 papers across 21 year(s).
+43 papers across 21 year(s).
 
 [Back to all papers](../README.md)
 
@@ -1100,7 +1100,7 @@ in the DSGC dendrites.
 
 </details>
 
-## 2016 (5)
+## 2016 (6)
 
 <details>
 <summary>📖 A Central Role for Mixed Acetylcholine/GABA Transmission in Direction
@@ -1352,6 +1352,65 @@ inputs to proximal zones away from the output zone -- guiding AMPA vs. GABA plac
 DSGC dendritic model; and (3) mouse-specific synaptic geometry (inhibitory inputs at proximal
 third, excitatory at proximal two-thirds) to validate against when choosing GABA input
 distributions in the project compartmental DSGC model.
+
+</details>
+
+<details>
+<summary>📖 The functional diversity of retinal ganglion cells in the mouse — Baden
+et al., 2016</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nature16468` |
+| **Authors** | Tom Baden, Philipp Berens, Katrin Franke, Miroslav Román Rosón, Matthias Bethge, Thomas Euler |
+| **Venue** | Nature (journal) |
+| **DOI** | `10.1038/nature16468` |
+| **URL** | https://www.nature.com/articles/nature16468 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Added by** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/summary.md) |
+
+Baden, Berens, Franke, Roman Roson, Bethge, and Euler used dense two-photon calcium imaging of
+RGC somata in whole-mount mouse retina, combined with a standardised stimulus battery (chirp,
+moving bar, full-field, coloured, checkerboard) and unsupervised probabilistic clustering, to
+produce a near-saturating taxonomy of mouse RGC functional types. Across 11,210 cell
+recordings from 15 retinas, they identify a minimum of 32 RGC functional groups — nearly
+double the prior anatomical estimate of 15-20 — plus an additional ~17 displaced amacrine cell
+groups.
+
+The clustering strategy is methodologically important: rather than mixing direction-selective
+and non-DS cells in a single clustering pass, the authors first apply a permutation-based DS
+significance test (cell_dp < 0.05) and cluster the two subsets independently, then merge
+similar clusters back together with explicit evidence. This yields 24 DS clusters merged into
+8 DS- dominated groups (G2, G6, G12, G13, G16, G25, G26, G29) that account for 70% of all
+1,757 DS cells. They confirm cluster identities via independent juxtacellular
+electrophysiology with biocytin fills, immunohistochemistry for known markers (GAD67, SMI-32,
+melanopsin), and genetic labels in PV-Cre and Pcp2 transgenic lines. Cluster quality is high
+for major groups (median posterior > 0.9) and coverage factors typically cluster around 1,
+supporting interpretation as single types.
+
+The paper's primary results are quantitatively striking. Of 11,210 imaged GCL somata, 7,982
+were RGCs; the remaining cells were displaced amacrines or unclassifiable. Of the RGCs, 1,757
+(35%) were direction-selective at the cell_dp < 0.05 significance threshold. The 32 RGC groups
+break down into 9 OFF + 12 ON + 3 ON-OFF non-DS groups and 2 OFF + 4 ON + 2 ON-OFF DS groups.
+Cluster posterior quality exceeds 0.9 for the major groups, coverage factors cluster around 1
+for most groups, and biocytin morphologies in a 245-cell validation subset confirm
+cluster-to-morphology correspondence for the classical alpha, JAM-B, and ON-OFF DS types.
+
+For this project, the Baden 2016 paper and the accompanying Dryad release define the canonical
+reference dataset for direction-selective RGC properties in the mouse retina. The 8
+DS-containing groups, their cluster-mean moving-bar responses, IPL stratification depths, and
+scalar indices (DSi, OSi, response quality) are the targets that any DSGC compartmental
+simulation in this project must match. The per-cell traces enable construction of
+biologically-grounded parameter envelopes for the t0090 morphology generator and validation
+distributions for the t0102 joint-pass corner. The principal limitation is that morphological
+reconstructions are not provided for the bulk of recorded cells — DS-cell morphologies for
+downstream modelling must be sourced from a complementary paper such as Bae et al. 2018 or Ran
+et al. 2020. The cell-level reconciliation of the user- supplied cluster IDs `[2, 17, 18, 19,
+22, 35, 36, 40]` against the authoritative paper taxonomy is recorded in
+`code/visualization_code_notes.md`; only G2 from the user list is in the paper's DS-group set,
+which is documented as a blocking intervention in `intervention/cluster_id_mismatch.json`.
 
 </details>
 

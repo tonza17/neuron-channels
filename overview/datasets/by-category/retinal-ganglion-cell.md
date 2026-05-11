@@ -1,10 +1,30 @@
 # Datasets: `retinal-ganglion-cell`
 
-2 dataset(s).
+3 dataset(s).
 
 [Back to all datasets](../README.md)
 
 ---
+
+<details>
+<summary>📂 <strong>Baden 2016 RGC direction-selective subset vv1</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `baden-2016-ds-cells` |
+| **Year** | 2016 |
+| **Authors** | Tom Baden, Philipp Berens, Katrin Franke, Miroslav Román Rosón, Matthias Bethge, Thomas Euler |
+| **URL** | https://datadryad.org/dataset/doi:10.5061/dryad.d9v38 |
+| **License** | CC0-1.0 |
+| **Access** | public |
+| **Size** | 1238 retinal ganglion / displaced amacrine cells from the 8 paper-authoritative DS-containing groups (G2/G6/G12/G13/G16/G25/G26/G29) of Baden 2016, one row per cell with functional traces (chirp 249 samples, moving-bar 32 samples, moving-bar by 8 directions 256 samples, colour 96 samples, RF temporal kernel 80 samples) and per-cell selectivity indices, soma area/volume, RF Gaussian fit, immuno (ChAT, GAD, melanopsin, SMI-32) and genetics (PV, PCP2) flags. NO per-cell IPL stratification depth and NO morphology in the Dryad release. |
+| **Date added** | 2026-05-12 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Added by** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Description** | [`description.md`](../../../tasks\t0103_extract_baden_2016_ds_morphologies\assets\dataset\baden-2016-ds-cells\description.md) |
+| **Summary** | Per-cell functional fingerprints (chirp, moving-bar, colour, RF) and metadata for 1,238 cells from the 8 paper-authoritative direction-selective groups of Baden et al. 2016. No morphologies — Baden 2016 is a functional dataset. |
+
+</details>
 
 <details>
 <summary>📂 <strong>DSGC Baseline Morphology (141009_Pair1DSGC), Diameter-Calibrated

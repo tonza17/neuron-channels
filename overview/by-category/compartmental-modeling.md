@@ -6,7 +6,7 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (40)](../papers/by-category/compartmental-modeling.md) | [Answers
 (19)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(308)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(311)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (14)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (2)](../predictions/by-category/compartmental-modeling.md)
@@ -2592,7 +2592,62 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (273 open, 35 closed)
+## Suggestions (276 open, 35 closed)
+
+<details>
+<summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
+cluster IDs</strong> (S-0103-01)</summary>
+
+**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+Baden 2016's Dryad release contains no dendritic morphology. Bae et al. 2018 (EyeWire/E2198
+dense EM dataset) published reconstructed RGC morphologies and explicitly linked many of them
+to Baden 2016 functional cluster IDs. Download Bae 2018 morphologies for the 8
+paper-authoritative DS clusters {2, 6, 12, 13, 16, 25, 26, 29} and emit one dataset asset of
+SWC/JSON morphologies keyed by Baden cluster ID. This is the most direct way to ground t0090's
+morphology-generator parameter envelopes (field diameter, branch count, total length,
+asymmetry) in real biological DS-cell shapes. Recommended task types: download-dataset,
+download-paper.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ground t0090 morphology-generator parameter envelopes in the
+Baden 2016 + Bae/Ran morphologies</strong> (S-0103-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+t0090's morphology generator currently samples field diameter, branch count, total length, and
+asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103
+Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that
+the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for
+each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions
+(mean +/- SD per Baden DS group) and replaces t0090's parametric ranges, then re-runs a small
+NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells.
+This is the original motivation for downloading Baden 2016 in the first place. Recommended
+task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Build a Baden-grounded null distribution of DSI/OSI for
+t0091/t0099/t0102 Pareto evaluation</strong> (S-0103-08)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0103_extract_baden_2016_ds_morphologies](../../tasks/t0103_extract_baden_2016_ds_morphologies/)
+
+t0103 extracted DSI and OSI per cell for 1,238 DS cells across 8 Baden DS groups (DSI mean
+~0.40-0.46, max ~0.73-0.76, OSI mean ~0.15-0.20). The NSGA-II Pareto fronts from
+t0091/t0099/t0102 currently lack a biological null distribution to compare DSI/OSI against --
+they are evaluated only against the t0024 canonical reference. Build a small task that
+produces a per-Baden-group DSI/OSI empirical CDF chart, overlays the Pareto-front DSI/OSI
+distributions, and reports the percentile of each Pareto cell relative to its presumed Baden
+cluster. This is a cheap, high-value sanity check on whether the optimised cells fall inside
+the biological envelope. Recommended task types: data-analysis, comparative-analysis.
+
+</details>
 
 <details>
 <summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via

@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-257 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **226 open** (42
-high, 162 medium, 22 low), **31 closed**.
+261 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **230 open** (45
+high, 163 medium, 22 low), **31 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -359,6 +359,54 @@ away from t0068 defaults? Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
+cluster IDs</strong> (S-0103-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-01` |
+| **Kind** | dataset |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Baden 2016's Dryad release contains no dendritic morphology. Bae et al. 2018 (EyeWire/E2198
+dense EM dataset) published reconstructed RGC morphologies and explicitly linked many of them
+to Baden 2016 functional cluster IDs. Download Bae 2018 morphologies for the 8
+paper-authoritative DS clusters {2, 6, 12, 13, 16, 25, 26, 29} and emit one dataset asset of
+SWC/JSON morphologies keyed by Baden cluster ID. This is the most direct way to ground t0090's
+morphology-generator parameter envelopes (field diameter, branch count, total length,
+asymmetry) in real biological DS-cell shapes. Recommended task types: download-dataset,
+download-paper.
+
+</details>
+
+<details>
+<summary>📂 <strong>Download Ran et al. 2020 ON-OFF DS-cell morphologies as a
+complementary morphology source</strong> (S-0103-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-02` |
+| **Kind** | dataset |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Ran et al. 2020 (Nat Commun) provides dye-fill reconstructions of mouse ON-OFF DS RGCs with
+co-recorded preferred-direction labels. The Baden 2016 Dryad release does not include
+morphologies, and Ran 2020 covers exactly the ON-OFF DS subtypes (Baden clusters G12/G13) most
+relevant to the t0024 ON-OFF DSGC modelling line. Download the published SWC files (or extract
+from supplementary materials), register them as a dataset asset, and tag each morphology with
+its preferred-direction angle and any Baden-cluster correspondence available. Useful as a
+second, independent morphology source against Bae 2018 for the t0090 envelope grounding.
+Recommended task types: download-dataset, download-paper.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Experimentally test NMDA-spike contribution to DSGC direction
 selectivity via compartmental simulation</strong> (S-0016-03)</summary>
 
@@ -450,6 +498,31 @@ gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak H
 Goal: produce a quantitative voltage-vs-conductance saturation curve that future
 scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
 suppression. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Ground t0090 morphology-generator parameter envelopes in the
+Baden 2016 + Bae/Ran morphologies</strong> (S-0103-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0090's morphology generator currently samples field diameter, branch count, total length, and
+asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103
+Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that
+the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for
+each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions
+(mean +/- SD per Baden DS group) and replaces t0090's parametric ranges, then re-runs a small
+NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells.
+This is the original motivation for downloading Baden 2016 in the first place. Recommended
+task types: experiment-run, data-analysis.
 
 </details>
 
@@ -1571,6 +1644,30 @@ plateau); (c) larger pop=64 / gen=3 (same total cells but much wider parent pool
 Pareto-front diversity, HV at termination, and DSI/PD reach. Cost ~$0.75 per variant; ~$2.25
 total or run as one bundled task. Recommended task types: experiment-run,
 comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Build a Baden-grounded null distribution of DSI/OSI for
+t0091/t0099/t0102 Pareto evaluation</strong> (S-0103-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0103-08` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0103_extract_baden_2016_ds_morphologies`](../../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
+| **Source paper** | [`10.1038_nature16468`](../../../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0103 extracted DSI and OSI per cell for 1,238 DS cells across 8 Baden DS groups (DSI mean
+~0.40-0.46, max ~0.73-0.76, OSI mean ~0.15-0.20). The NSGA-II Pareto fronts from
+t0091/t0099/t0102 currently lack a biological null distribution to compare DSI/OSI against --
+they are evaluated only against the t0024 canonical reference. Build a small task that
+produces a per-Baden-group DSI/OSI empirical CDF chart, overlays the Pareto-front DSI/OSI
+distributions, and reports the percentile of each Pareto cell relative to its presumed Baden
+cluster. This is a cheap, high-value sanity check on whether the optimised cells fall inside
+the biological envelope. Recommended task types: data-analysis, comparative-analysis.
 
 </details>
 

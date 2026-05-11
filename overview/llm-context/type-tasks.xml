@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-11T13:54:31Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-11T23:14:27Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>1100542</char_count>
-    <byte_count>1105012</byte_count>
-    <estimated_tokens>275135</estimated_tokens>
+    <char_count>1121738</char_count>
+    <byte_count>1126304</byte_count>
+    <estimated_tokens>280434</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -118,9 +118,11 @@
         <id>t0099_random_init_pareto_robustness</id>
         <id>t0100_fix_t0099_morph_charts</id>
         <id>t0101_brainstorm_results_21</id>
+        <id>t0102_seedscale_n4_gen20</id>
+        <id>t0103_extract_baden_2016_ds_morphologies</id>
       </source_ids>
       <content>
-Total tasks: 101
+Total tasks: 103
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -18938,6 +18940,391 @@ prior to the brainstorm task.
    per-task cap.
 3. Pick up `S-0101-01` as the next high-priority correction task once t0102 completes (it does not
    block t0102 since the correction only affects the PP-2026 asset, not the NSGA-II substrate).
+
+## 68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init
+ID: t0102_seedscale_n4_gen20
+Status: in_progress
+Effective date: 2026-05-11
+Short description: 68-d NSGA-II on Bed B+morph: 2 random-init GA seeds (44, 55), N_SEEDS=4, gens=20, pop=96. Tests if 5x noise drop + 2.5x gens recovers joint-pass corner vs t0099 null. $8 cap.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0090_morphology_generator_diversity_test, t0091_morphology_extended_nsga2_v1, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction, t0099_random_init_pareto_robustness, t0101_brainstorm_results_21
+Task types: experiment-run, data-analysis, answer-question
+Start time: 2026-05-11T14:08:37Z
+
+#### Context
+
+Commissioned by t0101 (brainstorm session 21) after a Poleg-Polsky 2026 deep-dive showed PP runs
+50-100 independent GA-restart seeds at pop=10, 300-1000 generations, while our convention is 1-3
+seeds at pop=24-96, 8-17 generations. t0099 ran 3 random-init seeds (11/22/33) at pop=96, 5-8
+generations, N_SEEDS=20 and produced **zero strict joint-pass cells across 55 Pareto cells**,
+demonstrating that the t0091 5-anchor warm-start was load-bearing for the joint-pass corner.
+
+This task rebalances the budget toward PP&#x27;s seed/generation profile while staying on our 68-d
+substrate (54-d electrophys + 14-d morphology):
+
+* **GA seeds**: 2 (random-init, seeds 44 and 55 — no overlap with t0099&#x27;s 11/22/33).
+* **Noise replicates `N_SEEDS`**: 4 (reduced from 20 by factor of 5).
+* **Generations**: 20 (up from t0099&#x27;s 5-8).
+* **Population**: 96 (default).
+* **Warm-start**: none — purely random LHS-sampled initial populations like t0099.
+
+#### Goal
+
+Test the hypothesis: at constant Vast.ai budget, replacing 20 within-cell noise replicates with 4
+and extending generations 2.5x recovers the joint-pass corner of objective space without needing the
+warm-start that t0091 used. If it does, we have a cheaper recipe for NSGA-II on this substrate; if
+it does not, the warm-start was the load-bearing ingredient.
+
+#### Approach
+
+Use `tasks/t0099_random_init_pareto_robustness/code/run_loop.py` as the substrate (literally —
+same 68-d evaluation pipeline, same morphology generator, same evaluation library) but override two
+parameters and one count:
+
+1. **`N_SEEDS` constant override**: import-shadow the value from t0080&#x27;s `constants.py` inside the
+   t0102 driver so the substrate is unmodified but the per-cell evaluation uses 4 trial-seeds.
+   Validate that the substrate-consistency smoke gate (REQ-7 in t0081) still passes within widened
+   tolerance for the lower replicate count.
+2. **NSGA-II generations**: set `n_gen = 20` in the pymoo driver.
+3. **GA seeds**: run two NSGA-II processes with `seed=44` and `seed=55` (LHS-init), pop=96 each, on
+   the **same Vast.ai instance, sequentially** (not parallel; one instance is enough since total
+   wall-clock at 5x cheaper eval should fit in ~20 hours).
+
+Output one predictions asset per seed (96 init + 20 gens x 96 = 2 016 cells per seed) plus one
+answer asset comparing t0102 vs t0099 vs t0091 on (DSI, PD, joint-pass count, robustness, anchor
+distribution).
+
+#### Cost Estimation
+
+| Item | Estimate |
+| --- | --- |
+| Vast.ai instance | $0.24/hr (RTX 4090 / EPYC 7B13 64-core, same as t0099) |
+| Per-cell eval at N=4 | ~5x faster than t0099&#x27;s N=20 |
+| Cells per seed | 96 + 20 x 96 = 2 016 |
+| Cells total | 4 032 |
+| Wall-clock estimate | ~20-25 hours (4 032 cells x ~18 s = ~20 h) |
+| **Predicted spend** | **~$5-6** |
+| **Hard cost cap** | **$8** (per-task limit after 2026-05-11 budget bump) |
+
+#### Step by Step
+
+Canonical step IDs from `arf/specifications/task_steps_specification.md`:
+
+1. `preflight` — verify dependencies completed; smoke-test that t0099&#x27;s pipeline runs locally on
+   one cell with `N_SEEDS=4`.
+2. `research-papers` — re-read Poleg-Polsky 2026 Methods on seed/generation balance; document the
+   PP-2026 numbers in `research/research_papers.md`.
+3. `research-code` — audit `tasks/t0080_*/code/`, `tasks/t0099_*/code/`, and the morphology
+   generator at `tasks/t0090_*/code/` to confirm the substrate is reusable verbatim.
+4. `planning` — produce `plan/plan.md` with the exact cost / time / risk table; agree
+   REQ-1..REQ-N.
+5. `setup-machines` — provision one Vast.ai instance; record `machine_log.json`.
+6. `implementation` —
+   * 6a. SCP code to instance.
+   * 6b. Run substrate-consistency smoke gate at N_SEEDS=4 (REQ-7-equivalent).
+   * 6c. Run NSGA-II seed=44, pop=96, gens=20.
+   * 6d. Run NSGA-II seed=55, pop=96, gens=20.
+   * 6e. Pull predictions back, build per-seed predictions assets.
+7. `destroy-machines` — Vast.ai instance teardown; record final cost.
+8. `analysis` — clustering, anchor distribution, hypervolume curves, joint-pass tally;
+   side-by-side comparison plots vs t0091 / t0099.
+9. `reporting` — write `results/results_summary.md`, `results/results_detailed.md`, embed plots in
+   `results/images/`, populate `metrics.json` and `suggestions.json`.
+
+#### Remote Machines
+
+One Vast.ai instance, matching t0099&#x27;s spec:
+
+* GPU tier: not required (NEURON is CPU-bound)
+* CPU: AMD EPYC 7B13, 64 effective cores
+* RAM: 503 GB (default)
+* Location: Norway preferred (consistent with t0099 pricing $0.24/hr)
+* Hard runtime cap: 30 hours per `tasks/t0099_*/results/results_summary.md` `RM-W003` envelope
+
+#### Assets Needed
+
+* Substrate: `tasks/t0024_port_de_rosenroll_2026_dsgc` Bed B compartmental model
+* Driver: `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/`
+* NSGA-II loop: `tasks/t0099_random_init_pareto_robustness/code/run_loop.py`
+* Morphology generator: `tasks/t0093_resweep_and_t0090_correction/code/` (post-patch)
+* Anchor / clustering: `tasks/t0086_robustness_cluster_bio_comparison/code/`
+
+#### Expected Assets
+
+* 2 predictions assets (one per seed, 2 016 cells each).
+* 1 answer asset: &quot;Does N_SEEDS=4 + gens=20 + 2 random-init seeds recover joint-pass corner?&quot;
+
+#### Time Estimation
+
+* Local prep + smoke + provisioning: 1-2 h
+* Vast.ai NSGA-II runs (2 seeds sequential): 18-24 h
+* Analysis + reporting: 3-4 h
+* **Total wall-clock**: 22-30 h.
+
+#### Risks &amp; Fallbacks
+
+* **Risk**: per-cell DSI/PD variance at N_SEEDS=4 is so high that NSGA-II selection becomes random,
+  yielding no joint-pass cells regardless of generation count. **Fallback**: in the analysis step,
+  recompute DSI/PD on a held-out set of high-Pareto cells at N_SEEDS=20 and report the variance gap.
+  If gap &gt; 1 SD on either axis, declare N_SEEDS=4 too noisy and recommend N_SEEDS=8 in a follow-up.
+
+* **Risk**: per-seed wall-clock grows super-linearly due to NEURON memory accumulation (a known
+  failure pattern from t0099 `S-0099-04`). **Fallback**: restart Python worker between generations
+  (S-0099-04 suggestion). If still too slow, cut second seed at gen 15.
+
+* **Risk**: Vast.ai instance fails to provision in $0.24/hr range; takes &gt;$0.40/hr instead.
+  **Fallback**: still under $8 cap if wall-clock stays within 20 hours.
+
+* **Risk**: t0090 / t0093 morphology generator silently produces empty trees again. **Fallback**:
+  smoke gate REQ-7-equivalent must pass before committing to long run.
+
+#### Verification Criteria
+
+* `verify_task_metrics t0102_seedscale_n4_gen20` passes with 0 errors.
+* `verify_machines_destroyed t0102_seedscale_n4_gen20` confirms Vast.ai instance is destroyed.
+* `verify_research_code t0102_seedscale_n4_gen20` and `verify_plan t0102_seedscale_n4_gen20` pass.
+* Both predictions assets validate.
+* Total cost in `results/costs.json` does not exceed $8.00.
+* At least one of the following is true (positive or negative result both publishable):
+  - **Positive**: &gt;= 1 strict joint-pass cell (DSI &gt;= 0.5, PD &gt;= 30 Hz, robustness &gt;= 0.7) found in
+    at least one seed.
+  - **Negative**: 0 strict joint-pass cells in either seed, confirming t0099&#x27;s null result is robust
+    to the seed/generation re-balance.
+
+#### Out of Scope
+
+* Modifying `tasks/t0080_*/code/constants.py` N_SEEDS default (deferred suggestion S-0101-02).
+* Correcting Poleg-Polsky 2026 `summary.md` (deferred suggestion S-0101-01).
+* Few-seeds-many-gens vs many-seeds-few-gens budget-matched ablation (deferred suggestion
+  S-0101-03).
+* Adding new biological mechanisms or expanding the search space beyond the 68-d substrate.
+
+## Extract direction-selective cell data from Baden et al. 2016
+ID: t0103_extract_baden_2016_ds_morphologies
+Status: completed
+Effective date: 2026-05-12
+Short description: Download Baden 2016 (Dryad d9v38) and extract data only for direction-selective groups 2, 17, 18, 19, 22, 35, 36, 40. Output: 1 dataset + 1 paper asset.
+Task types: download-dataset, download-paper
+Start time: 2026-05-11T20:51:26Z
+End time: 2026-05-12T01:55:00Z
+
+#### Motivation
+
+The project&#x27;s DSGC compartmental modelling work (t0024 substrate plus the morphology generator
+lineage t0090/t0092/t0093) currently relies on a single canonical morphology from De Rosenroll et
+al. 2026 and parametric variants synthesised by the t0090 generator. To ground the parameter ranges
+(dendritic field diameter, branch count, total length, asymmetry) in biological data we need a
+population of real, identified direction-selective (DS) RGC morphologies and their co-recorded
+functional fingerprints from a single well-characterised source.
+
+Baden, Berens, Franke, Román Rosón, Bethge &amp; Euler (2016), &quot;The functional diversity of retinal
+ganglion cells in the mouse&quot;, Nature 529:345–350, classified ~11 000 mouse RGCs and displaced
+amacrine cells into &gt;40 functional groups using two-photon Ca2+ imaging and a battery of light
+stimuli. The dataset on Dryad accompanies the paper and contains, per cell: cluster assignment, soma
+position, IPL stratification depth, response traces, and (for a subset) morphological
+reconstructions obtained from dye fills during the patch-clamp follow-ups.
+
+This task downloads the source materials and extracts data only for the 8 DS groups the user has
+identified, producing one dataset asset that the downstream modelling tasks (extending t0090&#x27;s
+parameter envelopes, validating t0102&#x27;s joint-pass corner, building Baden-grounded null
+distributions) can import directly. The Baden 2016 paper itself is also added as a paper asset.
+
+#### Sources
+
+* **Paper**: Baden et al. 2016, *Nature*, DOI
+  [10.1038/nature16468](https://www.nature.com/articles/nature16468).
+* **Dataset**: Dryad, DOI
+  [10.5061/dryad.d9v38](https://datadryad.org/dataset/doi:10.5061/dryad.d9v38).
+* **MATLAB visualisation code**: the lab-distributed zip at
+  `http://retinal-functomics.net/wp-content/uploads/2015/12/Baden_et_al_2016_visualization.zip`.
+  This zip contains the canonical scripts that map cluster IDs to cell counts, IPL depth, and
+  morphological summary statistics — use it as the authoritative reference for the cluster→data
+  mapping and any non-obvious data layout choices.
+* **README**: `https://datadryad.org/downloads/file_stream/3407` — Dryad-hosted text README that
+  documents the file layout and field meanings.
+
+#### Scope
+
+##### Groups to extract (DS only)
+
+Extract data **only** for the following 8 direction-selective groups from the Baden 2016 taxonomy:
+
+* Group **2** — OFF-type direction-selective cell.
+* Group **17** — ON–OFF direction-selective subtype.
+* Group **18** — ON–OFF direction-selective subtype.
+* Group **19** — ON–OFF direction-selective subtype.
+* Group **22** — ON direction-selective cell.
+* Group **35** — displaced amacrine / DS-related (cluster numbering in the extended &gt;32 group
+  taxonomy used by the Dryad release).
+* Group **36** — displaced amacrine / DS-related.
+* Group **40** — displaced amacrine / DS-related.
+
+If the Dryad data layout or the visualisation-zip scripts label these clusters with names that do
+not match &quot;DS&quot; — e.g. an off-by-one or numbering scheme that puts the 4 canonical ON–OFF DS
+subtypes in different IDs — the implementation step must reconcile the user&#x27;s group list against
+the labels in the actual data using the visualisation scripts as the authoritative mapping, and
+record the resolution in `research/research_code.md`. Do not silently substitute different groups
+— if the user-specified IDs cannot be located, write an intervention file.
+
+##### What to extract per group
+
+For each of the 8 groups, extract every per-cell field available in the Dryad release. At minimum
+this should include, when present in the data:
+
+* Cluster / group ID and confidence.
+* Soma position (retinal location: x, y or eccentricity/dorsoventral coordinates).
+* IPL stratification depth profile.
+* Functional response traces to the standard Baden 2016 stimulus set (chirp, moving bars,
+  full-field, coloured, etc.) and any extracted features (DS index, OS index, polarity, transience,
+  preferred direction, response quality, etc.).
+* Morphological reconstruction, if available — dendritic tree (SWC or equivalent point list) and
+  any derived per-cell shape statistics (field diameter, total dendritic length, branch points,
+  asymmetry vector).
+* Cell-of-origin metadata: retina ID, eye, dorsoventral location, age, sex if recorded.
+
+If the Dryad release does **not** contain morphological reconstructions for these groups (plausible
+— Baden 2016 is primarily a functional dataset, and morphologies for DS cells may have been added
+in a companion paper such as Bae et al. 2018, Ran et al. 2020, or others), document the absence
+explicitly in `research/research_code.md` and in the dataset asset&#x27;s `description.md`. Continue to
+extract whatever per-cell data is present — the downstream modelling tasks still benefit from the
+functional fingerprints and stratification depths even without morphologies.
+
+##### Out of scope
+
+* Re-classifying the Baden 2016 data into new groups.
+* Re-analysing the raw Ca2+ traces — extract them as-is and let downstream tasks decide what to do
+  with them.
+* Refitting the visualisation scripts or porting them from MATLAB to Python beyond the minimum
+  needed to read the data files. If a MATLAB→Python data load is needed, prefer using `scipy.io`
+  or `mat73` rather than rewriting analysis code.
+* Adding non-DS Baden groups (their data are not needed for the DSGC modelling line).
+* Cross-paper integration with later Baden lab releases (e.g. Bae 2018, Goetz 2022) — those are
+  separate tasks if they turn out to be needed.
+
+#### Approach
+
+1. Download the Baden 2016 paper PDF and register it as a paper asset under
+   `assets/paper/10.1038_nature16468/` following `meta/asset_types/paper/specification.md`.
+
+2. Download the Dryad bundle (the full archive) into a task-local `data/` folder via `wget`/`curl`,
+   recording byte sizes and SHA-256 hashes. The Dryad doi resolves to a download page that may
+   package multiple files; pull every file in the archive.
+
+3. Download the visualisation MATLAB zip and extract it into `data/visualization_code/`. Inspect the
+   top-level scripts to identify (a) which Dryad file contains the cluster assignments, (b) which
+   field name holds the cluster ID, and (c) where per-cell traces and any morphological data are
+   stored.
+
+4. Download the Dryad README from `https://datadryad.org/downloads/file_stream/3407` and save it
+   under `data/`. Cross-reference its field list against what the visualisation scripts actually
+   load.
+
+5. Write a small Python loader in `code/` that:
+   * Loads the per-cell cluster assignments.
+   * Filters to the 8 DS groups listed above.
+   * Pulls every available per-cell field for those cells (functional traces, IPL depth, soma
+     position, morphology if present, etc.) into a clean per-cell record.
+   * Writes the result to a single dataset asset under `assets/dataset/baden-2016-ds-cells/`, using
+     a Parquet or JSONL container (whichever is the simpler match for the source field shapes).
+
+6. Verify the per-group cell counts against the counts reported in Figure 2 of Baden 2016 (or in the
+   visualisation scripts&#x27; summary outputs) and record the comparison in
+   `results/results_detailed.md`. A material discrepancy (&gt;5%) is a finding worth flagging; an exact
+   match validates the filter logic.
+
+7. Produce at least two diagnostic charts in `results/images/`:
+   * One chart showing cell counts and IPL stratification per extracted group.
+   * One chart showing one representative response trace per group (e.g. the cluster mean to the
+     moving-bar stimulus that defines DS).
+
+#### Expected Assets
+
+* **1 dataset asset** under `assets/dataset/baden-2016-ds-cells/` containing the extracted per-cell
+  records for groups 2, 17, 18, 19, 22, 35, 36, and 40.
+
+* **1 paper asset** under `assets/paper/10.1038_nature16468/` for the Baden 2016 paper itself (full
+  v3 spec compliance — abstract, full-text summary, citation_key `Baden2016`, categories
+  `direction-selectivity` and `retinal-ganglion-cell`).
+
+#### Cost Estimation
+
+* Compute: $0. Local data download and extraction only. No remote machine, no paid API.
+* Network: downloading the Dryad archive (estimated &lt;1 GB) and one PDF — well within bandwidth
+  budget.
+
+#### Time Estimation
+
+* Download and decompress: 30-60 minutes.
+* MATLAB-zip inspection and loader prototyping: 1-3 hours.
+* Dataset asset assembly and diagnostic charts: 1-2 hours.
+* **Total wall-clock**: 3-6 hours, all local.
+
+#### Risks &amp; Fallbacks
+
+* **Risk**: Dryad URL or visualisation zip have rotted. **Fallback**: fetch the dataset from the
+  paper&#x27;s GitHub mirror or contact the corresponding author. If unrecoverable, mark the dataset
+  asset&#x27;s download_status as failed and record the failure with full evidence in `intervention/`.
+
+* **Risk**: User-specified group IDs do not match the Dryad cluster numbering. **Fallback**: use the
+  visualisation scripts to map cluster IDs to functional cell-type labels and reconcile. If
+  reconciliation is ambiguous, write an intervention file before producing the dataset asset.
+
+* **Risk**: Morphological reconstructions are not in this Dryad release (Baden 2016 is primarily a
+  functional dataset). **Fallback**: extract whatever IS available (functional traces, IPL
+  stratification, soma position) and clearly state the morphology gap in the dataset asset&#x27;s
+  `description.md`; recommend a follow-up task to source DS-cell morphologies from a complementary
+  paper such as Bae et al. 2018 or Ran et al. 2020 — but defer that as a separate task, do NOT
+  expand scope here.
+
+* **Risk**: MATLAB `.mat` files use the HDF5 v7.3 format that `scipy.io.loadmat` cannot read.
+  **Fallback**: use `mat73` (or `h5py` directly) — add as a project-level dependency in
+  `pyproject.toml` if not present.
+
+#### Verification Criteria
+
+* `verify_task_file t0103_extract_baden_2016_ds_morphologies` passes with 0 errors.
+* The dataset asset passes its verificator (paths to be filled in during planning).
+* The paper asset passes its verificator.
+* Per-group cell counts in the produced dataset asset are reported in `results_detailed.md` and
+  cross-checked against either Baden 2016 Figure 2 or the visualisation scripts&#x27; own summaries.
+* At least one diagnostic chart per the Approach is embedded in `results_detailed.md`.
+
+#### Out of Scope (explicit)
+
+* Running NEURON simulations on the extracted morphologies — that is a downstream task.
+* Building a parametric generator that mimics the Baden DS-cell morphologies — also downstream.
+* Re-classifying or re-clustering Baden&#x27;s data.
+* Extending to non-DS groups.
+* Integrating other Baden-lab data releases beyond the 2016 Nature paper.
+
+### Results Summary
+
+#### Summary
+
+Extracted **1,238 per-cell records** from Baden et al. 2016 across the eight paper-authoritative
+direction-selective groups `{2, 6, 12, 13, 16, 25, 26, 29}` into a 4.864 MiB Parquet dataset asset,
+and registered the Baden 2016 paper itself as a paper asset. Both assets pass their verificators
+with zero errors and zero warnings.
+
+#### Metrics
+
+* **1,238** per-cell records extracted across **8 DS groups**: G2:162, G6:104, G12:397, G13:129,
+  G16:99, G25:76, G26:141, G29:130.
+* **40 columns per cell**: 35 scalar features (cluster, selectivity, quality, RF, soma, immuno,
+  genetics, cell-of-origin) + 5 nested `list&lt;float32&gt;` trace columns (chirp 249 samples, moving-bar
+  32, moving-bar direction-major 256, colour 96, RF kernel 80).
+* **Cross-check delta vs source `.mat` `group_idx`**: **0.00% for all 8 groups**. G2 also matches
+  the paper&#x27;s explicit Extended-Data-Fig.-4 cell count of n=162 exactly.
+* **No registered project metrics** apply to this extraction task; `metrics.json` is `{}`.
+
+#### Verification
+
+* `meta.asset_types.paper.verificator --task-id t0103_extract_baden_2016_ds_morphologies` →
+  **PASSED** (0 errors, 0 warnings).
+* `meta.asset_types.dataset.verificator --task-id t0103_extract_baden_2016_ds_morphologies` →
+  **PASSED** (0 errors, 0 warnings).
+* `ruff check`, `ruff format`, `mypy -p tasks.t0103_extract_baden_2016_ds_morphologies.code` → all
+  green.
+* `verify_plan` → PASSED (0 errors, 0 warnings).
       </content>
     </section>
   </sections>
