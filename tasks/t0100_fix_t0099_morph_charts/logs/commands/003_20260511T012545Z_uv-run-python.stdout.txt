@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0100_fix_t0099_morph_charts\tasks\t0100_fix_t0099_morph_charts\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0100_fix_t0099_morph_charts\tasks\t0100_fix_t0099_morph_charts\logs\sessions\capture_report.json.
