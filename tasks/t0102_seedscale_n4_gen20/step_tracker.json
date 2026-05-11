@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Audit t0099 run_loop.py, t0080 constants.py, t0086 clustering, t0093 morphology generator; document import-shadow strategy for N_SEEDS override.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-11T16:04:13Z",
-      "completed_at": null,
+      "completed_at": "2026-05-11T16:16:15Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
