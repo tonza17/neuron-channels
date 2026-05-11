@@ -1,0 +1,49 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.48550_arXiv.2401.14014",
+  "doi": "10.48550/arXiv.2401.14014",
+  "title": "Theoretical Analysis of Explicit Averaging and Novel Sign Averaging in Comparison-Based Search",
+  "url": "https://arxiv.org/abs/2401.14014",
+  "pdf_url": "https://arxiv.org/pdf/2401.14014",
+  "date_published": "2024-01-25",
+  "year": 2024,
+  "authors": [
+    {
+      "name": "Daiki Morinaga",
+      "country": "JP",
+      "institution": "University of Tsukuba",
+      "orcid": "0009-0009-7937-7567"
+    },
+    {
+      "name": "Youhei Akimoto",
+      "country": "JP",
+      "institution": "University of Tsukuba",
+      "orcid": "0000-0003-2760-8123"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Tsukuba",
+      "country": "JP"
+    },
+    {
+      "name": "RIKEN AIP",
+      "country": "JP"
+    }
+  ],
+  "journal": "preprint",
+  "venue_type": "preprint",
+  "categories": [
+    "compartmental-modeling"
+  ],
+  "abstract": "In black-box optimization, noise in the objective function is inevitable. Noise disrupts the ranking of candidate solutions in comparison-based optimization, possibly deteriorating the search performance compared with a noiseless scenario. Explicit averaging takes the sample average of noisy objective function values and is widely used as a simple and versatile noise-handling technique. Although it is suitable for various applications, it is ineffective if the mean is not finite. We theoretically reveal that explicit averaging has a negative effect on the estimation of ground-truth rankings when assuming stably distributed noise without a finite mean. Alternatively, sign averaging is proposed as a simple but robust noise-handling technique. We theoretically prove that the sign averaging estimates the order of the medians of the noisy objective function values of a pair of points with arbitrarily high probability as the number of samples increases. Its advantages over explicit averaging and its robustness are also confirmed through numerical experiments.",
+  "citation_key": "Morinaga2024",
+  "summary_path": "summary.md",
+  "files": [
+    "files/morinaga_2024_sign-averaging-noisy-search.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0102_seedscale_n4_gen20",
+  "date_added": "2026-05-11"
+}
