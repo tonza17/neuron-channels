@@ -1,0 +1,53 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.swevo.2016.09.002",
+  "doi": "10.1016/j.swevo.2016.09.002",
+  "title": "Noisy evolutionary optimization algorithms – A comprehensive survey",
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S2210650216303030",
+  "pdf_url": null,
+  "date_published": "2016-11-18",
+  "year": 2017,
+  "authors": [
+    {
+      "name": "Pratyusha Rakshit",
+      "country": "IN",
+      "institution": "Jadavpur University",
+      "orcid": "0000-0001-7350-2958"
+    },
+    {
+      "name": "Amit Konar",
+      "country": "IN",
+      "institution": "Jadavpur University",
+      "orcid": "0000-0002-9474-5956"
+    },
+    {
+      "name": "Swagatam Das",
+      "country": "IN",
+      "institution": "Indian Statistical Institute",
+      "orcid": "0000-0001-6843-4508"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Jadavpur University",
+      "country": "IN"
+    },
+    {
+      "name": "Indian Statistical Institute",
+      "country": "IN"
+    }
+  ],
+  "journal": "Swarm and Evolutionary Computation",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling"
+  ],
+  "abstract": "The full abstract could not be retrieved: the paper is a paywalled Elsevier publication and no open-access version was available via CrossRef, Semantic Scholar, OpenAlex, or Unpaywall at the time of asset creation. The paper is a comprehensive survey of evolutionary optimization in noisy environments. According to the publisher's bibliographic record (Swarm and Evolutionary Computation, Volume 33, April 2017, pages 18-45), it covers strategies for handling noise in fitness evaluations across evolutionary algorithms, including explicit averaging (resampling), implicit averaging, statistical hypothesis-test-based selection, modified evolutionary operators, and noise-tolerant variants of canonical algorithms (GA, DE, PSO, ES, EDA). See the Overview section of the summary document for further context.",
+  "citation_key": "Rakshit2017",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Paywalled Elsevier journal article (Swarm and Evolutionary Computation, doi:10.1016/j.swevo.2016.09.002). No open-access version was discovered via CrossRef, Semantic Scholar (openAccessPdf status CLOSED), OpenAlex (is_oa false, oa_status closed, best_oa_location null), or Unpaywall (is_oa false, oa_locations empty). The publisher's ScienceDirect landing page is JavaScript-rendered and does not expose the abstract via standard HTML scraping. No author preprint copy was located on Jadavpur University, Indian Statistical Institute, or arXiv. The paper still has value for this task as a metadata reference to the canonical noisy-EA taxonomy.",
+  "added_by_task": "t0102_seedscale_n4_gen20",
+  "date_added": "2026-05-11"
+}
