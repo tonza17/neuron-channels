@@ -23,9 +23,9 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create code/, results/images/, results/, corrections/, logs/ subdirectories.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-11T01:18:15Z",
-      "completed_at": null,
+      "completed_at": "2026-05-11T01:18:33Z",
       "log_file": "logs\\steps\\003_init-folders/"
     },
     {
