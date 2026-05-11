@@ -1,0 +1,15 @@
+{
+  "task_id": "t0100_fix_t0099_morph_charts",
+  "checked_at": "2026-05-11T01:17:39Z",
+  "result": "passed",
+  "dependencies": [
+    {
+      "task_id": "t0099_random_init_pareto_robustness",
+      "status": "completed",
+      "satisfied": true
+    }
+  ],
+  "errors": 0,
+  "warnings": 0,
+  "notes": "t0099 results/data/{pareto_front_seed{11,22,33}.json, anchor_tracking_seed{11,22,33}.json} confirmed present on main; t0091 results/data/{pareto_front.json, anchor_tracking.json} also present (needed for reference cell in headline figure)."
+}
