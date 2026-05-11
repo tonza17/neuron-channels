@@ -1,0 +1,46 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1101_2025.02.10.637538",
+  "doi": "10.1101/2025.02.10.637538",
+  "title": "A Complete Spatial Map of Mouse Retinal Ganglion Cells Reveals Density and Gene Expression Specializations",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.02.10.637538v1",
+  "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2025/02/12/2025.02.10.637538.full.pdf",
+  "date_published": "2025-02-12",
+  "year": 2025,
+  "authors": [
+    {
+      "name": "Samuel A. Budoff",
+      "country": "US",
+      "institution": "University of Colorado Anschutz Medical Center, Department of Physiology and Biophysics",
+      "orcid": "0000-0003-2279-9004"
+    },
+    {
+      "name": "Alon Poleg-Polsky",
+      "country": "US",
+      "institution": "University of Colorado Anschutz Medical Center, Department of Physiology and Biophysics",
+      "orcid": "0000-0003-1327-5129"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Colorado Anschutz Medical Center",
+      "country": "US"
+    }
+  ],
+  "journal": "bioRxiv",
+  "venue_type": "preprint",
+  "categories": [
+    "retinal-ganglion-cell",
+    "direction-selectivity"
+  ],
+  "abstract": "Retinal ganglion cells (RGCs) transmit visual information from the eye to the brain. In mice, several RGC subtypes show nonuniform spatial distributions, potentially mediating specific visual functions. However, the full extent of RGC specialization remains unknown. Here, we used en-face cryosectioning, spatial transcriptomics, and machine learning to map the spatial distribution of all RGC subtypes identified in previous single-cell studies. While two-thirds of RGC subtypes were evenly distributed, others showed strong biases toward ventral or dorso-temporal regions associated with sky vision and the area retinae temporalis (ART), the predicted homolog of the area centralis. Additionally, we observed unexpected spatial variation in gene expression within several subtypes along the dorso-ventral axis or within vs. outside the ART, independent of RGC density profiles. Finally, we found limited correlations between the gene profiles of the ART and the primate macula, suggesting divergent specialization between the mouse and primate central vision.",
+  "citation_key": "Budoff2025",
+  "summary_path": "summary.md",
+  "files": [
+    "files/budoff_2025_rgc-spatial-map.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0102_seedscale_n4_gen20",
+  "date_added": "2026-05-11"
+}
