@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify no dependencies block this task (task.json declares no dependencies).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-11T20:55:43Z",
-      "completed_at": null,
+      "completed_at": "2026-05-11T20:56:15Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
