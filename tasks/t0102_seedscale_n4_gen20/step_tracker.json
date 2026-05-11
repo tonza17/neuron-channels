@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0102_seedscale_n4_gen20 worktree and plan step list (all 8 optional steps included per experiment-run + answer-question + data-analysis task type union).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-11T14:11:14Z",
-      "completed_at": null,
+      "completed_at": "2026-05-11T14:13:15Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
