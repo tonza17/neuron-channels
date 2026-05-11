@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-99-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-100-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-374-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (35K)
-| [full](llm-context/full.xml) (565K) | [roadmap](llm-context/roadmap.xml) (107K) |
-[results](llm-context/results-deep-dive.xml) (437K) |
+| [full](llm-context/full.xml) (568K) | [roadmap](llm-context/roadmap.xml) (108K) |
+[results](llm-context/results-deep-dive.xml) (440K) |
 [assets](llm-context/literature-and-assets.xml) (61K)
 
-*Last updated: 2026-05-10 23:35 UTC*
+*Last updated: 2026-05-11 01:29 UTC*
 
 * **Budget**: **$24** spent of $20
 * **Remaining**: **$0**
@@ -82,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (91 total)](tasks/by-status/completed.md)
+## [Recently Completed (92 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0100 | [Re-render t0099 morphology charts with correct 68-d slice](../overview/tasks/task_pages/t0100_fix_t0099_morph_charts.md) | [`results`](../tasks/t0100_fix_t0099_morph_charts/results/results_detailed.md) | 2026-05-11 01:27 |
 | 0099 | [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`results`](../tasks/t0099_random_init_pareto_robustness/results/results_detailed.md) | 2026-05-10 23:35 |
 | 0098 | [Visualise t0091 Pareto morphologies + per-cell DSI / PD-rate charts](../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) | [`results`](../tasks/t0098_visualise_pareto_morphologies/results/results_detailed.md) | 2026-05-08 21:50 |
 | 0095 | [Brainstorm results session 20](../overview/tasks/task_pages/t0095_brainstorm_results_20.md) | [`results`](../tasks/t0095_brainstorm_results_20/results/results_detailed.md) | 2026-05-08 20:45 |
@@ -95,9 +96,8 @@ No blocked tasks.
 | 0093 | [Patched-generator full 60-morph re-sweep + t0090 correction overlay](../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) | [`results`](../tasks/t0093_resweep_and_t0090_correction/results/results_detailed.md) | 2026-05-08 03:55 |
 | 0092 | [Diagnose why t0090 procedural cells produce no action potentials](../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | [`results`](../tasks/t0092_diagnose_morphology_generator_silence/results/results_detailed.md) | 2026-05-08 00:55 |
 | 0090 | [Procedural DSGC morphology generator + diversity test + validation bundle](../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | [`results`](../tasks/t0090_morphology_generator_diversity_test/results/results_detailed.md) | 2026-05-07 18:25 |
-| 0089 | [Brainstorm results session 18](../overview/tasks/task_pages/t0089_brainstorm_results_18.md) | [`results`](../tasks/t0089_brainstorm_results_18/results/results_detailed.md) | 2026-05-07 11:30 |
 
-*81 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*82 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 

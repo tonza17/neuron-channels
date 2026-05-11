@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-10T23:35:30Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-11T01:29:22Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>242359</char_count>
-    <byte_count>242702</byte_count>
-    <estimated_tokens>60589</estimated_tokens>
+    <char_count>243477</char_count>
+    <byte_count>243822</byte_count>
+    <estimated_tokens>60869</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -206,9 +206,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0097_multi_obj_optim</id>
         <id>t0098_visualise_pareto_morphologies</id>
         <id>t0099_random_init_pareto_robustness</id>
+        <id>t0100_fix_t0099_morph_charts</id>
       </source_ids>
       <content>
-Completed tasks: 91
+Completed tasks: 92
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -755,6 +756,12 @@ ID: t0099_random_init_pareto_robustness
 Completed: 2026-05-10
 Short description: Run 3 random-init NSGA-II seeds (no warm-start) at $1 each; compare anchor distribution + bio-plausibility vs t0091.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0099_random_init_pareto_robustness&quot; date_completed: &quot;2026-05-10&quot; status: &quot;complete&quot; --- Results Summary: Random-Init NSGA-II Reproducibility Test Summary Three NSGA-II runs from totally random LHS-sampled initial populations (seeds 11, 22, 33), no anchor warm-start, on the same 68-d substrate t0091 used. **0 of 55 Pareto cells across all 3 seeds qualified as strict joint-pass (DSI≥0.5, PD≥30Hz, robust≥0.7), versus 1 such cell in t0091&#x27;s 57-cell warm-start Pareto.** This is direct evidence that t0091&#x27;s 5-anchor warm-start was load-bearing for reaching the joint-pass corner of objective space within an 8-generation budget — and refines the claim further...
+
+## Re-render t0099 morphology charts with correct 68-d slice
+ID: t0100_fix_t0099_morph_charts
+Completed: 2026-05-11
+Short description: Fix t0099 morphology-chart rendering: `vector_68d[:14]` was wrong (electrophys); replace with `vector_68d[54:]` (morphology). Re-render 2 PNGs. Optimisation unaffected.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0100_fix_t0099_morph_charts&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Fix t0099 Morphology Charts Summary t0099&#x27;s two morphology charts (`headline_best_cells.png`, `cross_seed_top5_morphology_grid.png`) were broken because `build_morphology_charts.py:114` used `vector_68d[:14]` (electrophys block) instead of `vector_68d[54:]` (morphology block) when reconstructing each cell&#x27;s morphology. The generator received nonsense parameters and emitted zero dendrite sections, so the charts showed only giant filled circles. **Optimisation results are unaffected** — every NSGA-II / evaluator / scorecard / anchor-classifier code path uses the...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
