@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-261 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **230 open** (45
-high, 163 medium, 22 low), **31 closed**.
+268 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **237 open** (49
+high, 166 medium, 22 low), **31 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -334,6 +334,61 @@ writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verifi
 </details>
 
 <details>
+<summary>🧪 <strong>Dang 2023 theory-grounded NSGA-II at pop>=290 (mu = n log n
+floor) with N_EVAL_SEEDS=4, gens=10</strong> (S-0102-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0102-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Source paper** | [`10.48550_arXiv.2306.04525`](../../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2306.04525/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Dang 2023 Theorem 8 requires mu = Omega(n log n) for noisy NSGA-II to retain polynomial
+expected runtime under Bernoulli or Gaussian noise. For our 68-d substrate, the theoretical
+floor is Omega(68 * log(68)) = approximately 290; t0102 ran at pop=96, three times below this
+floor. compare_literature.md Methodology Differences identifies this as a principled lever to
+pull before concluding the substrate is structurally empty of joint-pass cells. Run a single
+random-init NSGA-II at pop=320 (slightly above the Dang floor for headroom), gens=10,
+N_EVAL_SEEDS=4, 1 GA seed -- total budget approximately 3200 evaluations, comparable to t0102.
+If pop>=290 finds joint-pass cells where pop=96 found none, the population-floor argument is
+empirically confirmed; if not, the substrate-limitation reading hardens. Recommended task
+types: experiment-run, comparative-analysis. Cost: ~$5-7 on Vast.ai (single seed at higher pop
+offsets the fewer generations).
+
+</details>
+
+<details>
+<summary>📊 <strong>Direct re-evaluation of t0083 / t0091 anchor library at
+N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation</strong>
+(S-0102-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0102-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+creative_analysis.md Section 4 proposes a < $0.20 follow-up that disambiguates
+'substrate-limited vs algorithm-limited' definitively. Take the 5 anchor families from t0091's
+warm-start (alt_topology, symmetric, bedb_like, t0083 anchors 1559 and 1677) and re-evaluate
+each at N_EVAL_SEEDS=4 with no NSGA-II/LHS/mutation -- just per-cell evaluation. Count how
+many clear the strict joint-pass corner. Outcome A (zero clear): joint corner is empirically
+unreachable on this substrate at N=4 regardless of algorithm; further NSGA-II is futile.
+Outcome B (>= 1 clears): NSGA-II at random init is failing to find what is empirically
+present; algorithm replacement (IBEA/CMAES) justified. Also re-evaluate t0091's joint-pass
+cell (DSI=0.511, PD=35.1 Hz, rob=0.79) at N=4 to test the noise-floor prediction. Recommended
+task types: baseline-evaluation, comparative-analysis. Cost: < $0.20 (~95 evaluations, no GA,
+~30 min on Vast.ai).
+
+</details>
+
+<details>
 <summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
 Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
 
@@ -452,6 +507,32 @@ most surprising finding from t0067 and warrants quantitative refinement.
 </details>
 
 <details>
+<summary>🔧 <strong>Fix DSI vector-sum objective: gate by minimum total spike count
+to eliminate silenced-cell DSI=1.0 artifact</strong> (S-0102-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0102-01` |
+| **Kind** | technique |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Finding 1 in results_detailed.md: 27 t0102 cells reach DSI = 1.0 because vector-sum DSI in
+evaluator.py divides by near-zero total spike count on silenced cells, with floating-point
+dust producing a spurious 'perfect selectivity' score that pulls half the NSGA-II Pareto into
+the silence corner. Single-line fix: return 0.0 when total_spike_count across 16 directions is
+< 10. Bug affects the entire t0080-t0102 lineage; highest-leverage change for recovering
+joint-pass cells at fixed algorithm and budget. Implementation: patch evaluator.py in a new
+task that copies the t0099 substrate, add a silenced-cell unit test, re-run random-init
+NSGA-II at pop=96, gens=8, 1 GA seed, N=4. Expected: joint-pass yield > 0 from random init;
+DSI distribution loses its 1.0 spike. Recommended task types: write-library, experiment-run.
+Cost: ~$2-3 (one pop=96 x 8-gen Vast.ai run).
+
+</details>
+
+<details>
 <summary>🧪 <strong>GABA-reduction ladder on Mg-block t0055 architecture to find a
 DSI-preserving operating point with peak Hz >= 5</strong> (S-0055-03)</summary>
 
@@ -550,6 +631,33 @@ spatial bar rotation, biophysically grounded) and either (a) port it to Bed A by
 gabaMOD scalar with per-synapse spatial gating (extending S-0050-01), or (b) define a shared
 effective-inhibition-strength calibration curve. Recommended task types: experiment-run,
 comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget (pop=96, gens=15,
+N=4, 2 GA seeds) on Bed B + morphology substrate</strong> (S-0102-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0102-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1012039`](../../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.1371_journal.pcbi.1012039/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Mohacsi 2024 (Neuroptimus benchmark, PLOS Comp Bio) reports IBEA is 'clearly the best among
+the multi-objective methods' on six neuron-fitting benchmarks including Hay 2011 L5PC,
+outperforming all three NSGA-II implementations tested. t0102 only tested NSGA-II, leaving
+algorithm choice as an unexamined factor in the 0/4800 random-init joint-pass yield. Port the
+t0099 substrate to pymoo's IBEA (or DEAP/BluePyOpt IBEA wrapper) at matched budget (pop=96,
+gens=15, N_EVAL_SEEDS=4, 2 GA seeds, $8 cap), apply the S-0102-01 DSI fix if available, and
+compare front structure to t0099+t0102. Expected: IBEA's hypervolume-density selection avoids
+placing half the front in the DSI=1/PD=0 corner that NSGA-II crowding distance keeps;
+joint-pass yield improves even if the corner remains hard. Run after or alongside S-0102-02.
+Recommended task types: experiment-run, comparative-analysis. Cost: ~$6-8 matched to t0102
+envelope (IBEA's O(N^2) overhead manageable at pop=96).
 
 </details>
 
@@ -1545,6 +1653,33 @@ direction. Recommended task type: answer-question, comparative-analysis.
 </details>
 
 <details>
+<summary>📊 <strong>Anchor-distance lineage trace: quantify t0091 joint-pass cell as
+one-mutation descendant of alt_topology anchor</strong> (S-0102-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0102-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+creative_analysis.md Section 2 reframes t0091's joint-pass cell (DSI=0.511, PD=35.1 Hz,
+rob=0.79, source_generation=2) as a one-mutation descendant of alt_topology anchor row 84 --
+not a de novo NSGA-II discovery. The cell sits 3.55 normalised units from row 84 vs >= 11
+units to any other anchor; expected mutated dims per offspring ~1.0. Load-bearing
+methodological reframing for any paper draft. Formalise as analysis: (i) pairwise Euclidean
+distance from each t0091/t0099/t0102 Pareto cell to every t0091 warm-start anchor and every
+t0083 anchor; (ii) classify each joint-pass-adjacent cell as 'anchor-near' (< 5 units) vs
+'GA-discovered' (>= 10 units); (iii) histogram + scatter of distance vs source_generation.
+Outcome: empirical answer to 'how much of NSGA-II output is searched vs preserved-from-init'
+across t0080-t0102. Recommended task types: data-analysis, comparative-analysis. Cost: ~$0
+(offline analysis on stored JSONLs).
+
+</details>
+
+<details>
 <summary>🧪 <strong>AR(2) rho sweep at t0024 baseline morphology to isolate
 stochastic-release smoothing from cable biophysics</strong> (S-0034-02)</summary>
 
@@ -1741,6 +1876,34 @@ direction_deg, **overrides) -> CellBundle` API returning a uniformly-shaped bund
 synapse handles, recordings, mode metadata). The library must internally translate the FULL /
 EPSP_PASSIVE / IPSP_PASSIVE trio into bed-specific implementations using the t0070 writeup as
 its specification. Recommended task types: write-library, infrastructure-setup.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Calcium-clearance perturbation sweep on the 27 silenced-cell
+DSI=1.0 vectors to test silence-as-mechanism hypothesis</strong>
+(S-0102-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0102-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+creative_analysis.md Section 7 proposes a mechanistic reading: the 27 t0102 cells with DSI >=
+0.99 / PD < 0.1 are not bugs but the GA's discovery of a lateral-inhibition silencing regime
+(slow Ca clearance, strong sAHP, weak ACh drive) consistent with Poleg-Polsky 2026 SAC gating.
+Take each of the 27 cells, fix the 68-d vector except CAD_TAUR_MS (Ca clearance tau, dim 38),
+sweep that dim from ~65 ms down to 5 ms in 10 logarithmic steps, re-evaluate DSI/PD/rob at
+N_EVAL_SEEDS=8. Question: when Ca clearance is restored, do these cells collapse to the
+high-PD low-DSI corner (silence was the only DSI mechanism), or do some land in the joint
+corner (Ca clearance is the active constraint and the rest of the vector is joint-viable)?
+Outcome: 27 x 10 grid mapping silence-to-joint escape paths. Doubles as slice-physiology
+prediction (BAPTA Ca chelation should disinhibit SAC/DSGC firing). Recommended task types:
+experiment-run, data-analysis. Cost: < $0.50 (270 evaluations, no GA).
 
 </details>
 
@@ -3119,6 +3282,33 @@ unpinned). A 0.5 nS-spaced sweep over {5.0, 4.5, 4.0, 3.5, 3.0} nS at baseline d
 t0022 (5 levels x 12 angles x 10 trials = 600 trials, ~20 min local CPU) would localise the
 threshold to within 0.5 nS and reveal whether the DSI vs GABA curve is sharp or gradual.
 Important for characterising how fragile the operational window really is.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Morinaga 2024 sign-averaging objective formulation to handle
+heavy-tailed DSI noise (alpha close to 1) at fixed budget</strong>
+(S-0102-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0102-07` |
+| **Kind** | technique |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Source paper** | [`10.48550_arXiv.2401.14014`](../../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2401.14014/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Morinaga 2024 (arXiv 2401.14014) Theorem 3 shows explicit averaging is only effective when the
+per-objective noise stability index alpha > 1. compare_literature.md argues our DSI vector-sum
+near zero-spike cells is heavy-tailed with alpha ~1, making K=4 averaging 'nearly inert'.
+Theorem 9 proposes sign-averaging as a comparison-based alternative robust under heavy tails
+at the same compute cost. Steps: (i) compute per-objective alpha on the t0093 anchor library
+at N=20 (offline); (ii) if alpha < 1 for DSI, reformulate NSGA-II selection via sign-averaging
+(count replicates favouring A over B) instead of mean ranking; (iii) run a 1-seed NSGA-II at
+matched budget with sign-averaging. Complementary to S-0102-01 (DSI fix targets the
+floating-point bug; this targets noise-handling theory). Recommended task types:
+write-library, experiment-run. Cost: ~$3-5 (one pop=96 run plus offline analysis).
 
 </details>
 

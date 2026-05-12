@@ -6,7 +6,7 @@
 
 ---
 
-## 2026-05-12 (1)
+## 2026-05-12 (2)
 
 ## ✅ Completed
 
@@ -263,26 +263,25 @@ without morphologies.
 
 </details>
 
-## 2026-05-11 (3)
-
-## ⏳ In Progress
-
 <details>
-<summary>⏳ 0102 — <strong>68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random
+<summary>✅ 0102 — <strong>68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random
 init</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0102_seedscale_n4_gen20` |
-| **Status** | in_progress |
-| **Effective date** | 2026-05-11 |
+| **Status** | completed |
+| **Effective date** | 2026-05-12 |
 | **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0093_resweep_and_t0090_correction`](../../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md), [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0101_brainstorm_results_21`](../../../overview/tasks/task_pages/t0101_brainstorm_results_21.md) |
 | **Expected assets** | 2 predictions, 1 answer |
 | **Source suggestion** | — |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/), [`data-analysis`](../../../meta/task_types/data-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
 | **Start time** | 2026-05-11T14:08:37Z |
+| **End time** | 2026-05-12T18:44:00Z |
+| **Step progress** | 15/15 |
 | **Task page** | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
 | **Task folder** | [`t0102_seedscale_n4_gen20/`](../../../tasks/t0102_seedscale_n4_gen20/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0102_seedscale_n4_gen20/results/results_detailed.md) |
 
 # t0102 — 68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init
 
@@ -437,7 +436,40 @@ One Vast.ai instance, matching t0099's spec:
   S-0101-03).
 * Adding new biological mechanisms or expanding the search space beyond the 68-d substrate.
 
+**Results summary:**
+
+> **Results Summary: t0102 Seed-scale N=4, Gen=20 Random-Init NSGA-II**
+>
+> **Summary**
+>
+> Both random-init NSGA-II GA seeds (44, 55) completed at `N_EVAL_SEEDS=4` on the 68-d Bed B +
+> morphology DSGC substrate but were terminated by the per-seed $4 cost watchdog before
+> reaching
+> generation 20 (seed 44: 14/20 gens, seed 55: 13/20 gens). Across all **2,592** evaluated
+> cells,
+> **zero** cleared the strict joint-pass corner (DSI >= 0.5 AND PD-rate >= 30 Hz AND
+> robustness >=
+> 0.7) and **zero** cleared even the loosest 2-axis variant (DSI >= 0.5 AND PD >= 5 Hz). The
+> 5x noise
+> drop + 2.5x generation extension hypothesis from the brainstorm is therefore rejected;
+> t0099's
+> negative result replicates at a different seed/gen/noise budget. A previously unreported
+> floating-point artifact in the DSI vector-sum objective was uncovered: 27 cells with max DSI
+> = 1.0
+> are silenced cells (PD = 0 Hz) where divide-by-near-zero in the vector-sum formula produces
+> a
+> spurious "perfect DSI" signal — the real DSI corner sits at DSI ~= 0.35 with PD >= 5 Hz.
+>
+> **Metrics**
+>
+> * **Total cells evaluated**: **2,592** (1,344 seed 44 + 1,248 seed 55)
+> * **Strict joint-pass cells** (DSI >= 0.5 AND PD >= 30 Hz AND rob >= 0.7): **0** in both
+>   seeds
+> * **2-axis loose joint-pass cells** (DSI >= 0.5 AND PD >= 5 Hz): **0** across both seeds
+
 </details>
+
+## 2026-05-11 (2)
 
 ## ✅ Completed
 

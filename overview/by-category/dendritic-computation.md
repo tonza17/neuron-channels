@@ -6,9 +6,10 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
 (9)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(83)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(84)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
-(1)](../libraries/by-category/dendritic-computation.md)
+(1)](../libraries/by-category/dendritic-computation.md) | [Predictions
+(2)](../predictions/by-category/dendritic-computation.md)
 
 ---
 
@@ -2534,7 +2535,29 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (66 open, 17 closed)
+## Suggestions (67 open, 17 closed)
+
+<details>
+<summary>🧪 <strong>Calcium-clearance perturbation sweep on the 27 silenced-cell
+DSI=1.0 vectors to test silence-as-mechanism hypothesis</strong>
+(S-0102-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 7 proposes a mechanistic reading: the 27 t0102 cells with DSI >=
+0.99 / PD < 0.1 are not bugs but the GA's discovery of a lateral-inhibition silencing regime
+(slow Ca clearance, strong sAHP, weak ACh drive) consistent with Poleg-Polsky 2026 SAC gating.
+Take each of the 27 cells, fix the 68-d vector except CAD_TAUR_MS (Ca clearance tau, dim 38),
+sweep that dim from ~65 ms down to 5 ms in 10 logarithmic steps, re-evaluate DSI/PD/rob at
+N_EVAL_SEEDS=8. Question: when Ca clearance is restored, do these cells collapse to the
+high-PD low-DSI corner (silence was the only DSI mechanism), or do some land in the joint
+corner (Ca clearance is the active constraint and the rest of the vector is joint-viable)?
+Outcome: 27 x 10 grid mapping silence-to-joint escape paths. Doubles as slice-physiology
+prediction (BAPTA Ca chelation should disinhibit SAC/DSGC firing). Recommended task types:
+experiment-run, data-analysis. Cost: < $0.50 (270 evaluations, no GA).
+
+</details>
 
 <details>
 <summary>📂 <strong>Download Ran et al. 2020 ON-OFF DS-cell morphologies as a

@@ -1,18 +1,18 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-88-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-94-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-4-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
-  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-6-9370DB" alt="Predictions"></a>
+  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-8-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-27-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-28-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-103-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-385-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-393-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,18 +29,18 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (36K)
-| [full](llm-context/full.xml) (578K) | [roadmap](llm-context/roadmap.xml) (113K) |
-[results](llm-context/results-deep-dive.xml) (447K) |
-[assets](llm-context/literature-and-assets.xml) (62K)
+| [full](llm-context/full.xml) (589K) | [roadmap](llm-context/roadmap.xml) (113K) |
+[results](llm-context/results-deep-dive.xml) (457K) |
+[assets](llm-context/literature-and-assets.xml) (64K)
 
-*Last updated: 2026-05-11 23:14 UTC*
+*Last updated: 2026-05-12 19:00 UTC*
 
-* **Budget**: **$24** spent of $35
-* **Remaining**: **$11**
-* **Usage**: `██████████████░░░░░░` 68.3%
-* **GPU Machines**: **8** provisioned across 8 tasks · **$24** GPU spend
+* **Budget**: **$36** spent of $35
+* **Remaining**: **$0**
+* **Usage**: `█████████████████████` 102.8%
+* **GPU Machines**: **9** provisioned across 9 tasks · **$36** GPU spend
   ([details](machines/))
-* **Provisioning**: 4 failed attempts · $0.00 wasted · 33% failure rate
+* **Provisioning**: 4 failed attempts · $0.00 wasted · 31% failure rate
 
 ---
 
@@ -53,11 +53,9 @@
 
 ---
 
-## [In Progress (1)](tasks/by-status/in_progress.md)
+## [In Progress (0)](tasks/by-status/in_progress.md)
 
-| # | Task | Started |
-|---|------|---------|
-| 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-11 14:08 |
+No tasks in progress.
 
 ---
 
@@ -84,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (94 total)](tasks/by-status/completed.md)
+## [Recently Completed (95 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | [`results`](../tasks/t0102_seedscale_n4_gen20/results/results_detailed.md) | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | [`results`](../tasks/t0103_extract_baden_2016_ds_morphologies/results/results_detailed.md) | 2026-05-12 01:55 |
 | 0101 | [Brainstorm results session 21](../overview/tasks/task_pages/t0101_brainstorm_results_21.md) | [`results`](../tasks/t0101_brainstorm_results_21/results/results_detailed.md) | 2026-05-11 13:50 |
 | 0100 | [Re-render t0099 morphology charts with correct 68-d slice](../overview/tasks/task_pages/t0100_fix_t0099_morph_charts.md) | [`results`](../tasks/t0100_fix_t0099_morph_charts/results/results_detailed.md) | 2026-05-11 01:27 |
@@ -97,9 +96,8 @@ No blocked tasks.
 | 0094 | [Brainstorm results session 19](../overview/tasks/task_pages/t0094_brainstorm_results_19.md) | [`results`](../tasks/t0094_brainstorm_results_19/results/results_detailed.md) | 2026-05-08 18:30 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0097_multi_obj_optim.md) | [`results`](../tasks/t0097_multi_obj_optim/results/results_detailed.md) | 2026-05-08 16:50 |
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`results`](../tasks/t0091_morphology_extended_nsga2_v1/results/results_detailed.md) | 2026-05-08 15:55 |
-| 0093 | [Patched-generator full 60-morph re-sweep + t0090 correction overlay](../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md) | [`results`](../tasks/t0093_resweep_and_t0090_correction/results/results_detailed.md) | 2026-05-08 03:55 |
 
-*84 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*85 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -124,7 +122,176 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (343 open)](suggestions/)
+## [Recent Suggestions (351 open)](suggestions/)
+
+<details>
+<summary>🔧 <strong>Fix DSI vector-sum objective: gate by minimum total spike count
+to eliminate silenced-cell DSI=1.0 artifact</strong> (S-0102-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+Finding 1 in results_detailed.md: 27 t0102 cells reach DSI = 1.0 because vector-sum DSI in
+evaluator.py divides by near-zero total spike count on silenced cells, with floating-point
+dust producing a spurious 'perfect selectivity' score that pulls half the NSGA-II Pareto into
+the silence corner. Single-line fix: return 0.0 when total_spike_count across 16 directions is
+< 10. Bug affects the entire t0080-t0102 lineage; highest-leverage change for recovering
+joint-pass cells at fixed algorithm and budget. Implementation: patch evaluator.py in a new
+task that copies the t0099 substrate, add a silenced-cell unit test, re-run random-init
+NSGA-II at pop=96, gens=8, 1 GA seed, N=4. Expected: joint-pass yield > 0 from random init;
+DSI distribution loses its 1.0 spike. Recommended task types: write-library, experiment-run.
+Cost: ~$2-3 (one pop=96 x 8-gen Vast.ai run).
+
+</details>
+
+<details>
+<summary>📊 <strong>Direct re-evaluation of t0083 / t0091 anchor library at
+N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation</strong>
+(S-0102-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 4 proposes a < $0.20 follow-up that disambiguates
+'substrate-limited vs algorithm-limited' definitively. Take the 5 anchor families from t0091's
+warm-start (alt_topology, symmetric, bedb_like, t0083 anchors 1559 and 1677) and re-evaluate
+each at N_EVAL_SEEDS=4 with no NSGA-II/LHS/mutation -- just per-cell evaluation. Count how
+many clear the strict joint-pass corner. Outcome A (zero clear): joint corner is empirically
+unreachable on this substrate at N=4 regardless of algorithm; further NSGA-II is futile.
+Outcome B (>= 1 clears): NSGA-II at random init is failing to find what is empirically
+present; algorithm replacement (IBEA/CMAES) justified. Also re-evaluate t0091's joint-pass
+cell (DSI=0.511, PD=35.1 Hz, rob=0.79) at N=4 to test the noise-floor prediction. Recommended
+task types: baseline-evaluation, comparative-analysis. Cost: < $0.20 (~95 evaluations, no GA,
+~30 min on Vast.ai).
+
+</details>
+
+<details>
+<summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget (pop=96, gens=15,
+N=4, 2 GA seeds) on Bed B + morphology substrate</strong> (S-0102-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+Mohacsi 2024 (Neuroptimus benchmark, PLOS Comp Bio) reports IBEA is 'clearly the best among
+the multi-objective methods' on six neuron-fitting benchmarks including Hay 2011 L5PC,
+outperforming all three NSGA-II implementations tested. t0102 only tested NSGA-II, leaving
+algorithm choice as an unexamined factor in the 0/4800 random-init joint-pass yield. Port the
+t0099 substrate to pymoo's IBEA (or DEAP/BluePyOpt IBEA wrapper) at matched budget (pop=96,
+gens=15, N_EVAL_SEEDS=4, 2 GA seeds, $8 cap), apply the S-0102-01 DSI fix if available, and
+compare front structure to t0099+t0102. Expected: IBEA's hypervolume-density selection avoids
+placing half the front in the DSI=1/PD=0 corner that NSGA-II crowding distance keeps;
+joint-pass yield improves even if the corner remains hard. Run after or alongside S-0102-02.
+Recommended task types: experiment-run, comparative-analysis. Cost: ~$6-8 matched to t0102
+envelope (IBEA's O(N^2) overhead manageable at pop=96).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Dang 2023 theory-grounded NSGA-II at pop>=290 (mu = n log n
+floor) with N_EVAL_SEEDS=4, gens=10</strong> (S-0102-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+Dang 2023 Theorem 8 requires mu = Omega(n log n) for noisy NSGA-II to retain polynomial
+expected runtime under Bernoulli or Gaussian noise. For our 68-d substrate, the theoretical
+floor is Omega(68 * log(68)) = approximately 290; t0102 ran at pop=96, three times below this
+floor. compare_literature.md Methodology Differences identifies this as a principled lever to
+pull before concluding the substrate is structurally empty of joint-pass cells. Run a single
+random-init NSGA-II at pop=320 (slightly above the Dang floor for headroom), gens=10,
+N_EVAL_SEEDS=4, 1 GA seed -- total budget approximately 3200 evaluations, comparable to t0102.
+If pop>=290 finds joint-pass cells where pop=96 found none, the population-floor argument is
+empirically confirmed; if not, the substrate-limitation reading hardens. Recommended task
+types: experiment-run, comparative-analysis. Cost: ~$5-7 on Vast.ai (single seed at higher pop
+offsets the fewer generations).
+
+</details>
+
+<details>
+<summary>📊 <strong>Anchor-distance lineage trace: quantify t0091 joint-pass cell as
+one-mutation descendant of alt_topology anchor</strong> (S-0102-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 2 reframes t0091's joint-pass cell (DSI=0.511, PD=35.1 Hz,
+rob=0.79, source_generation=2) as a one-mutation descendant of alt_topology anchor row 84 --
+not a de novo NSGA-II discovery. The cell sits 3.55 normalised units from row 84 vs >= 11
+units to any other anchor; expected mutated dims per offspring ~1.0. Load-bearing
+methodological reframing for any paper draft. Formalise as analysis: (i) pairwise Euclidean
+distance from each t0091/t0099/t0102 Pareto cell to every t0091 warm-start anchor and every
+t0083 anchor; (ii) classify each joint-pass-adjacent cell as 'anchor-near' (< 5 units) vs
+'GA-discovered' (>= 10 units); (iii) histogram + scatter of distance vs source_generation.
+Outcome: empirical answer to 'how much of NSGA-II output is searched vs preserved-from-init'
+across t0080-t0102. Recommended task types: data-analysis, comparative-analysis. Cost: ~$0
+(offline analysis on stored JSONLs).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Calcium-clearance perturbation sweep on the 27 silenced-cell
+DSI=1.0 vectors to test silence-as-mechanism hypothesis</strong>
+(S-0102-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 7 proposes a mechanistic reading: the 27 t0102 cells with DSI >=
+0.99 / PD < 0.1 are not bugs but the GA's discovery of a lateral-inhibition silencing regime
+(slow Ca clearance, strong sAHP, weak ACh drive) consistent with Poleg-Polsky 2026 SAC gating.
+Take each of the 27 cells, fix the 68-d vector except CAD_TAUR_MS (Ca clearance tau, dim 38),
+sweep that dim from ~65 ms down to 5 ms in 10 logarithmic steps, re-evaluate DSI/PD/rob at
+N_EVAL_SEEDS=8. Question: when Ca clearance is restored, do these cells collapse to the
+high-PD low-DSI corner (silence was the only DSI mechanism), or do some land in the joint
+corner (Ca clearance is the active constraint and the rest of the vector is joint-viable)?
+Outcome: 27 x 10 grid mapping silence-to-joint escape paths. Doubles as slice-physiology
+prediction (BAPTA Ca chelation should disinhibit SAC/DSGC firing). Recommended task types:
+experiment-run, data-analysis. Cost: < $0.50 (270 evaluations, no GA).
+
+</details>
+
+<details>
+<summary>🔧 <strong>Morinaga 2024 sign-averaging objective formulation to handle
+heavy-tailed DSI noise (alpha close to 1) at fixed budget</strong>
+(S-0102-07)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+Morinaga 2024 (arXiv 2401.14014) Theorem 3 shows explicit averaging is only effective when the
+per-objective noise stability index alpha > 1. compare_literature.md argues our DSI vector-sum
+near zero-spike cells is heavy-tailed with alpha ~1, making K=4 averaging 'nearly inert'.
+Theorem 9 proposes sign-averaging as a comparison-based alternative robust under heavy tails
+at the same compute cost. Steps: (i) compute per-objective alpha on the t0093 anchor library
+at N=20 (offline); (ii) if alpha < 1 for DSI, reformulate NSGA-II selection via sign-averaging
+(count replicates favouring A over B) instead of mean ranking; (iii) run a 1-seed NSGA-II at
+matched budget with sign-averaging. Complementary to S-0102-01 (DSI fix targets the
+floating-point bug; this targets noise-handling theory). Recommended task types:
+write-library, experiment-run. Cost: ~$3-5 (one pop=96 run plus offline analysis).
+
+</details>
+
+<details>
+<summary>📚 <strong>Vast.ai cost-watchdog parameterisation: idle-timeout teardown and
+post-watchdog termination to prevent $3+ idle overrun</strong> (S-0102-08)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+t0102 cost overrun ($12.07 vs $8 plan cap) decomposed as $8.46 productive NSGA-II compute
+(per-seed $4 watchdog behaved as designed) plus $3.51 idle uptime: $0.11 setup, ~$1.5 from a
+dead initial subagent before recovery, ~$2 post-watchdog billing before teardown.
+results_detailed.md Limitations records this. Harden the cost-watchdog infrastructure: (i)
+idle-CPU watchdog that destroys the instance if no NEURON worker processes have run for > 15
+minutes; (ii) chain the per-seed cost watchdog directly into instance teardown rather than
+just terminating the NSGA-II loop; (iii) standardise the offer-rate hourly-price source (t0102
+billed $0.4852/hr while the watchdog read $0.4690/hr base, drift ~$0.1/hr over 24 h). Small
+library change in arf/scripts/utils plus task-level orchestration. Recommended task types:
+write-library, infrastructure-setup. Cost: ~$0 development + recovered ~$3/task in subsequent
+runs.
+
+</details>
 
 <details>
 <summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
@@ -162,155 +329,95 @@ Recommended task types: download-dataset, download-paper.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Ground t0090 morphology-generator parameter envelopes in the
-Baden 2016 + Bae/Ran morphologies</strong> (S-0103-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-t0090's morphology generator currently samples field diameter, branch count, total length, and
-asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103
-Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that
-the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for
-each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions
-(mean +/- SD per Baden DS group) and replaces t0090's parametric ranges, then re-runs a small
-NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells.
-This is the original motivation for downloading Baden 2016 in the first place. Recommended
-task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Build a reusable Dryad-with-Anubis-PoW downloader
-library</strong> (S-0103-04)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-t0103 had to implement a ~30-line pure-hashlib Anubis 1.24.0 proof-of-work solver inline to
-unlock the Dryad d9v38 release, after discovering that vanilla CLI tools get blocked by an
-anti-scraper PoW challenge and the v2 REST API requires OAuth. Extract this into a small
-reusable library under `arf/scripts/utils/` (or a standalone Python package) that wraps
-`Dryad-with-Anubis` downloads: resolve DOI -> solve PoW -> fetch presigned S3 URL -> stream to
-disk -> verify SHA-256. Adds Wayback fallback and progress reporting. Future Baden-lab dataset
-tasks (Bae 2018 if also on Dryad, Goetz 2022, Franke 2017) avoid re-implementing this.
-Recommended task types: write-library, infrastructure-setup.
-
-</details>
-
-<details>
-<summary>📂 <strong>Re-emit Baden 2016 DS subset at float64 precision split into
-per-group Parquets</strong> (S-0103-05)</summary>
-
-**Kind**: dataset | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-The t0103 dataset asset down-casts the 5 trace columns (chirp 249, bar 32, bar-dir-major 256,
-color 96, RF 80) from float64 to float32 to fit the 5 MiB pre-merge limit on the single
-combined Parquet. For downstream ML or statistical analysis where float32 rounding becomes a
-concern (e.g. PCA over chirp traces, GP regression on RF kernels), re-emit one Parquet per
-Baden cluster at float64 precision, store via git-LFS or a sibling dataset asset, and update
-`details.json` to point at the higher-precision payload. Add a brief schema check that the
-per-group float64 Parquets and the original float32 combined Parquet agree to within rounding.
-Recommended task types: feature-engineering, data-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Swap the typeset PMC reproduction for the Nature publisher PDF
-of Baden 2016</strong> (S-0103-06)</summary>
-
-**Kind**: library | **Priority**: low | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-The Baden 2016 paper asset's PDF is a typeset reproduction of the PMC fulltext XML
-(PMC4724341) because Nature's publisher PDF is paywalled and PMC's interactive viewer is
-JS-protected. All scientific content is faithful, but typography and figure layout do not
-match the publisher version, which makes it awkward to cite figure positions or compare with
-print-version page references. A small follow-up task can obtain the publisher PDF via
-institutional access (Sheffield) and swap it in via the corrections mechanism, leaving the
-typeset version as a fallback. Recommended task types: download-paper, correction.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Recover per-cell IPL stratification depth profiles from Baden
-2016 scan-level structural data</strong> (S-0103-07)</summary>
-
-**Kind**: technique | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-The Baden 2016 Dryad release exposes a scan-level structural volume and per-scan ROI metadata,
-but no per-cell IPL stratification profile (paper Fig. 2 IPL profiles are derived per-group,
-not per-cell). t0103 substituted per-group mean RF diameter as the secondary statistic. A
-follow-up task can re-project per-cell ROIs onto the scan-level IPL volume to reconstruct an
-approximate per-cell stratification depth profile, validating against the paper's per-group
-means as ground truth. This would unlock per-cell IPL depth as a feature for downstream
-modelling tasks (e.g. matching modelled dendritic terminations to biological IPL bands).
-Recommended task types: data-analysis, feature-engineering.
-
-</details>
-
-<details>
-<summary>📊 <strong>Build a Baden-grounded null distribution of DSI/OSI for
-t0091/t0099/t0102 Pareto evaluation</strong> (S-0103-08)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-t0103 extracted DSI and OSI per cell for 1,238 DS cells across 8 Baden DS groups (DSI mean
-~0.40-0.46, max ~0.73-0.76, OSI mean ~0.15-0.20). The NSGA-II Pareto fronts from
-t0091/t0099/t0102 currently lack a biological null distribution to compare DSI/OSI against --
-they are evaluated only against the t0024 canonical reference. Build a small task that
-produces a per-Baden-group DSI/OSI empirical CDF chart, overlays the Pareto-front DSI/OSI
-distributions, and reports the percentile of each Pareto cell relative to its presumed Baden
-cluster. This is a cheap, high-value sanity check on whether the optimised cells fall inside
-the biological envelope. Recommended task types: data-analysis, comparative-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>Correct fabricated content in Poleg-Polsky 2026 summary.md via
-the corrections mechanism</strong> (S-0101-01)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-11 | **Source**:
-[t0101_brainstorm_results_21](../tasks/t0101_brainstorm_results_21/)
-
-tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has
-claims absent from the paper: (a) wrong title (published 'supporting elementary motion
-detection'); (b) wrong primitives ('NMDA multiplicative gating', 'velocity-dependent
-coincidence detection', 'distance-graded delay lines'); (c) wrong search axes ('A-type
-potassium density'); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives:
-H&R, anti-H&R, amplitude, temporal-alignment, B&L, anti-B&L, pause-in-inhibition,
-directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task
-writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with PDF-verified content
-(quotes in t0101 session_log). Cost $0.
-
-</details>
-
-<details>
-<summary>📚 <strong>Lock N_SEEDS=4 as project-wide default if t0102 reproduces t0099
-DSI/PD scatter</strong> (S-0101-02)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-11 | **Source**:
-[t0101_brainstorm_results_21](../tasks/t0101_brainstorm_results_21/)
-
-N_SEEDS=20 in tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/constants.py:43 is
-propagated as the noise-replicate count into every downstream NSGA-II task (t0081, t0083,
-t0091, t0099). If t0102's DSI/PD per-cell estimates at N_SEEDS=4 fall within +/- 1 std of
-t0099's matched cells at N_SEEDS=20, lower the project-wide default to 4 (5x cheaper per
-evaluation). Implementation: corrections/library_modeldb_189347_dsgc_dendritic.json or a small
-library-update task; document the empirical comparison in a results table. Cost $0 if the
-comparison data is already in t0102.
-
-</details>
-
-*333 more open suggestions → [open suggestions](suggestions/)*
+*341 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (57)](suggestions/)
+## [High Priority Suggestions (61)](suggestions/)
+
+<details>
+<summary>🔧 <strong>Fix DSI vector-sum objective: gate by minimum total spike count
+to eliminate silenced-cell DSI=1.0 artifact</strong> (S-0102-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+Finding 1 in results_detailed.md: 27 t0102 cells reach DSI = 1.0 because vector-sum DSI in
+evaluator.py divides by near-zero total spike count on silenced cells, with floating-point
+dust producing a spurious 'perfect selectivity' score that pulls half the NSGA-II Pareto into
+the silence corner. Single-line fix: return 0.0 when total_spike_count across 16 directions is
+< 10. Bug affects the entire t0080-t0102 lineage; highest-leverage change for recovering
+joint-pass cells at fixed algorithm and budget. Implementation: patch evaluator.py in a new
+task that copies the t0099 substrate, add a silenced-cell unit test, re-run random-init
+NSGA-II at pop=96, gens=8, 1 GA seed, N=4. Expected: joint-pass yield > 0 from random init;
+DSI distribution loses its 1.0 spike. Recommended task types: write-library, experiment-run.
+Cost: ~$2-3 (one pop=96 x 8-gen Vast.ai run).
+
+</details>
+
+<details>
+<summary>📊 <strong>Direct re-evaluation of t0083 / t0091 anchor library at
+N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation</strong>
+(S-0102-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 4 proposes a < $0.20 follow-up that disambiguates
+'substrate-limited vs algorithm-limited' definitively. Take the 5 anchor families from t0091's
+warm-start (alt_topology, symmetric, bedb_like, t0083 anchors 1559 and 1677) and re-evaluate
+each at N_EVAL_SEEDS=4 with no NSGA-II/LHS/mutation -- just per-cell evaluation. Count how
+many clear the strict joint-pass corner. Outcome A (zero clear): joint corner is empirically
+unreachable on this substrate at N=4 regardless of algorithm; further NSGA-II is futile.
+Outcome B (>= 1 clears): NSGA-II at random init is failing to find what is empirically
+present; algorithm replacement (IBEA/CMAES) justified. Also re-evaluate t0091's joint-pass
+cell (DSI=0.511, PD=35.1 Hz, rob=0.79) at N=4 to test the noise-floor prediction. Recommended
+task types: baseline-evaluation, comparative-analysis. Cost: < $0.20 (~95 evaluations, no GA,
+~30 min on Vast.ai).
+
+</details>
+
+<details>
+<summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget (pop=96, gens=15,
+N=4, 2 GA seeds) on Bed B + morphology substrate</strong> (S-0102-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+Mohacsi 2024 (Neuroptimus benchmark, PLOS Comp Bio) reports IBEA is 'clearly the best among
+the multi-objective methods' on six neuron-fitting benchmarks including Hay 2011 L5PC,
+outperforming all three NSGA-II implementations tested. t0102 only tested NSGA-II, leaving
+algorithm choice as an unexamined factor in the 0/4800 random-init joint-pass yield. Port the
+t0099 substrate to pymoo's IBEA (or DEAP/BluePyOpt IBEA wrapper) at matched budget (pop=96,
+gens=15, N_EVAL_SEEDS=4, 2 GA seeds, $8 cap), apply the S-0102-01 DSI fix if available, and
+compare front structure to t0099+t0102. Expected: IBEA's hypervolume-density selection avoids
+placing half the front in the DSI=1/PD=0 corner that NSGA-II crowding distance keeps;
+joint-pass yield improves even if the corner remains hard. Run after or alongside S-0102-02.
+Recommended task types: experiment-run, comparative-analysis. Cost: ~$6-8 matched to t0102
+envelope (IBEA's O(N^2) overhead manageable at pop=96).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Dang 2023 theory-grounded NSGA-II at pop>=290 (mu = n log n
+floor) with N_EVAL_SEEDS=4, gens=10</strong> (S-0102-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
+
+Dang 2023 Theorem 8 requires mu = Omega(n log n) for noisy NSGA-II to retain polynomial
+expected runtime under Bernoulli or Gaussian noise. For our 68-d substrate, the theoretical
+floor is Omega(68 * log(68)) = approximately 290; t0102 ran at pop=96, three times below this
+floor. compare_literature.md Methodology Differences identifies this as a principled lever to
+pull before concluding the substrate is structurally empty of joint-pass cells. Run a single
+random-init NSGA-II at pop=320 (slightly above the Dang floor for headroom), gens=10,
+N_EVAL_SEEDS=4, 1 GA seed -- total budget approximately 3200 evaluations, comparable to t0102.
+If pop>=290 finds joint-pass cells where pop=96 found none, the population-floor argument is
+empirically confirmed; if not, the substrate-limitation reading hardens. Recommended task
+types: experiment-run, comparative-analysis. Cost: ~$5-7 on Vast.ai (single seed at higher pop
+offsets the fewer generations).
+
+</details>
 
 <details>
 <summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
@@ -418,91 +525,33 @@ vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could 
 
 </details>
 
-<details>
-<summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on the 57-cell t0091
-Pareto to resolve HM-3 inconclusive</strong> (S-0091-01)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-t0091 reported a Spearman rho=-0.07 between total dendritic length and DSI vector-sum across
-the 57-cell Pareto, leaving HM-3 (length-vs-DSI scaling, Hausselt2007) inconclusive because
-total length conflates field_elongation_pd with branch_density_gradient_pd and
-num_primary_branches. Pure data-analysis task on existing pareto_front.json: extract
-field_elongation_pd from each Pareto cell's 14-d morph_params vector, compute Spearman +
-Kendall correlations against DSI, PD-rate, robustness, and the 9 channel-side priors, plot
-per-anchor scatter overlays, and stratify by anchor lineage. Goal: definitively confirm or
-refute that elongation along PD is the morphology axis driving DSI in joint optimisation,
-separate from branch density. Cost: $0 (local CPU analysis on existing JSONL files).
-Recommended task types: data-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>Per-direction DSI re-scoring of the t0091 57-cell Pareto to
-surface DSGC subtype-specific tuning</strong> (S-0091-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0091_morphology_extended_nsga2_v1](../tasks/t0091_morphology_extended_nsga2_v1/)
-
-t0091 used vector-sum DSI across 16 directions, which is direction-blind: a cell tuned to PD
-with peak at 0 deg and a cell tuned to a non-cardinal direction (e.g., 45 deg) collapse to the
-same vector-sum DSI. The PD vs ND anchor-asymmetry test (12 vs 9, p=0.331) may be
-artifactually washed out by this collapse. Brendly2025 and Riccitelli2025 (now in the t0091
-corpus from research-internet) report DSGC subtypes with distinct preferred directions. Pure
-data-analysis on existing pareto_front.json + per-direction firing rate JSONL: re-score each
-Pareto cell with per-direction DSI (peak direction, half-width-at-half-maximum, peak-to-trough
-ratio); recompute the PD-asymmetric vs ND-asymmetric anchor test using direction-binned DSI;
-compare per-direction tuning curve shapes between bedb_like, alt_topology, and the 21
-asymmetric anchor cells. Cost: $0 (local CPU). Recommended task types: data-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Issue a correction overlay against t0090 marking the procedural
-generator as superseded by the t0092 fix</strong> (S-0092-03)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0092_diagnose_morphology_generator_silence](../tasks/t0092_diagnose_morphology_generator_silence/)
-
-t0090 is completed and immutable, but the soma pt3d-collapse bug was committed in t0090's
-library asset procedural_dsgc_morphology_generator. The t0092 fix lives in
-tasks/t0092_../code/morphology_generator_fix.py as a thin shim. To prevent downstream tasks
-(t0091, future Bed-A morph-extended runs, the t0086/t0088 cluster re-score work) from
-importing the unpatched t0090 generator and re-introducing the bug, write a correction file
-under tasks/t0092_../corrections/ that flags t0090's generator as superseded and points
-consumers to t0092's generate_fixed_morphology as the canonical entry point. Aggregator output
-should reflect the supersession overlay. Recommended task types: correction.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Refresh t0091 task description + dependencies to reference t0092
-fix and t0093 correction overlay</strong> (S-0093-01)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0093_resweep_and_t0090_correction](../tasks/t0093_resweep_and_t0090_correction/)
-
-t0091_morphology_extended_nsga2_v1 is currently `not_started` with status referencing t0090's
-procedural_dsgc_morphology_generator directly (task_description.md lines 6, 32, 88, 190, 208)
-and dependencies={t0024,t0078,t0080,t0081,t0083,t0086,t0088,t0090} -- no t0092 or t0093
-dependency. Since t0093 issues a `replace` correction redirecting that library to t0092's
-procedural_dsgc_morphology_generator_fix, t0091 must be updated before launch: (a) add
-`t0092_diagnose_morphology_generator_silence` and `t0093_resweep_and_t0090_correction` to its
-`dependencies` list; (b) replace import references to
-`tasks.t0090_..code.generator.generate_morphology` with
-`tasks.t0092_..code.morphology_generator_fix.generate_fixed_morphology`; (c) document in the
-task description that the procedural cell is canonically the t0092 fix per C-0093-01. Without
-this, t0091 would re-import the unpatched generator and re-introduce the soma-pt3d collapse
-bug. Recommended task types: correction.
-
-</details>
-
-*47 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*51 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (27 total)](answers/)
+## [Recent Answers (28 total)](answers/)
+
+<details>
+<summary><strong>Does running 68-d NSGA-II at N_EVAL_SEEDS=4 noise replicates,
+gens=20, pop=96, 2 random-init GA seeds (44, 55), no warm-start, recover
+the strict joint-pass corner (DSI>=0.5 AND PD-rate>=30 Hz AND
+robustness>=0.7) of the Bed B + morphology compartmental DSGC
+substrate?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-12 | **Full answer**:
+[`does-n4-gens20-2seeds-recover-joint-pass-corner`](../tasks/t0102_seedscale_n4_gen20/assets/answer/does-n4-gens20-2seeds-recover-joint-pass-corner/)
+
+No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells cleared the strict
+joint-pass corner, and zero cells cleared even the loosest 2-axis test (DSI>=0.5 AND PD>=5
+Hz), because DSI and PD-rate are strongly bimodally anti-correlated on this substrate. The
+headline max-DSI of 1.0 in both seeds turned out to be a floating-point artifact of the
+vector-sum DSI formula on silenced cells with PD=0 Hz; the real DSI ceiling under N=4 noise
+replicates is roughly 0.35. The earlier t0091 single joint-pass cell, previously framed as an
+NSGA-II discovery, is reframed here as a one-mutation polynomial-mutation descendant of an
+alt_topology warm-start anchor, so removing the warm-start removes the entire joint-pass
+signal.
+
+</details>
 
 <details>
 <summary><strong>Are the qualitative findings of t0091's joint 68-d NSGA-II run
@@ -709,30 +758,353 @@ on every biophysical parameter where measurement-grounded ranges exist.
 
 </details>
 
-<details>
-<summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky
-2016's Fig 3A-F per-synapse conductance balance and DSI-vs-gNMDA flatness,
-and does the extended noise sweep match the paper's qualitative
-shape?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-04-25 | **Full answer**:
-[`polegpolsky-2016-fig3-conductances-validation`](../tasks/t0047_validate_pp16_fig3_cond_noise/assets/answer/polegpolsky-2016-fig3-conductances-validation/)
-
-No. Every per-synapse-class summed peak conductance at the code-pinned gNMDA = 0.5 nS is 6-9x
-the paper's Fig 3A-E target on the summed scale and well below it on the per-synapse-mean
-scale, so neither interpretation reconciles. DSI as a function of gNMDA peaks at 0.19 near
-b2gnmda = 0.5 nS and decays toward zero by 3.0 nS, never crossing the paper's claimed flat
-~0.30 band. The extended noise sweep shows DSI declining qualitatively as flickerVAR rises in
-the control and 0Mg conditions but the trend is weaker than the paper reports, and the ROC AUC
-metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on this circuit.
-
-</details>
-
-*17 more answers → [answers](answers/)*
+*18 more answers → [answers](answers/)*
 
 ---
 
-## [Latest Papers (88 total)](papers/)
+## [Latest Papers (94 total)](papers/)
+
+<details>
+<summary>📖 <strong>Noisy evolutionary optimization algorithms – A comprehensive
+survey</strong> — Rakshit et al., 2017</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.swevo.2016.09.002` |
+| **Authors** | Pratyusha Rakshit, Amit Konar, Swagatam Das |
+| **Venue** | Swarm and Evolutionary Computation (journal) |
+| **DOI** | `10.1016/j.swevo.2016.09.002` |
+| **URL** | https://www.sciencedirect.com/science/article/abs/pii/S2210650216303030 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../tasks/t0102_seedscale_n4_gen20/assets/paper/10.1016_j.swevo.2016.09.002/summary.md) |
+
+Rakshit, Konar, and Das (2017) is a comprehensive survey of evolutionary optimisation under
+noisy fitness evaluation, published in *Swarm and Evolutionary Computation* (Vol. 33, pp.
+18-45). The paper addresses the general problem that real-world fitness functions — including
+simulation-based ones — often return stochastic values, and that standard evolutionary
+algorithms can be misled by this noise into discarding good candidates or promoting bad ones.
+The survey scope spans the major EA families (GA, DE, PSO, ES, EDA, multi-objective EA) and
+the major noise-handling strategies developed across roughly two decades of literature.
+
+Because the paper is a survey, its "methodology" is its organising framework rather than an
+experiment. Based on the title and the well-established public knowledge of this paper
+contribution, the framework taxonomises noise-handling techniques into named families —
+explicit averaging (resampling), implicit averaging (population scaling),
+statistical-test-based selection (hypothesis tests, racing, indifference-zone procedures),
+surrogate-model-assisted selection, and noise-modified evolutionary operators — and reviews
+how each canonical EA family has been adapted to use them. The paper consolidates 203
+references. Specific design decisions and analytical comparisons made by the authors cannot be
+reproduced here because the full text was not available; a future task may wish to re-attempt
+download via institutional access.
+
+The paper headline contribution, as widely understood, is the unified taxonomy itself: prior
+to this survey the noisy-EA literature was scattered across many specialised papers, and this
+survey is the most-cited single reference (top 1% of its cohort by OpenAlex; **~150 citing
+works**) that organises the design space. Specific quantitative findings, recommendations, or
+rankings made by the paper are not reported in this summary because the full text was not
+obtained.
+
+For the present project, this survey is the foundational reference for understanding the
+trade-off space that motivates task `t0102_seedscale_n4_gen20`. The current task uses n=4
+seeds per candidate across 20 generations — a form of explicit averaging with `r=4` in the
+survey terminology. The survey provides the conceptual basis for justifying that choice, for
+designing follow-up tasks that compare against implicit averaging (larger populations, fewer
+seeds) or statistical-test-based selection (racing/Mann-Whitney), and for connecting
+biological-plausibility constraints to noise-handling cost budgets in subsequent MOBO
+follow-ups (per the project NSGA-II preference for high-dimensional MOBO). If a future task
+needs the paper specific quantitative findings or named algorithms, it should re-attempt
+download via institutional Elsevier access.
+
+</details>
+
+<details>
+<summary>📝 <strong>Theoretical Analysis of Explicit Averaging and Novel Sign
+Averaging in Comparison-Based Search</strong> — Morinaga & Akimoto, 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.48550_arXiv.2401.14014` |
+| **Authors** | Daiki Morinaga, Youhei Akimoto |
+| **Venue** | preprint (preprint) |
+| **DOI** | `10.48550/arXiv.2401.14014` |
+| **URL** | https://arxiv.org/abs/2401.14014 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2401.14014/summary.md) |
+
+Morinaga and Akimoto address a fundamental and previously under-analysed question in noisy
+black-box optimisation: when does explicit averaging - the default seed-replicate strategy in
+ES, CMA-ES, NSGA-II, and most evolutionary optimisers - actually improve solution ranking, and
+when does it fail? Prior work largely assumed Gaussian or bounded-variance noise; this paper
+drops that assumption and analyses the full family of stable-distribution noises parameterised
+by a single stability index alpha in (0, 2].
+
+The methodology centres on the Order Estimation Probability (OEP), the probability that K
+noisy paired evaluations recover the true ranking of two candidate solutions. The authors
+prove two theorems with sharp characterisations. Theorem 3 dissects explicit averaging into
+three regimes: beneficial (alpha > 1, OEP converges to 1 at rate K^(1 - 1/alpha)), neutral
+(alpha = 1, OEP is constant in K), and actively harmful (alpha < 1, OEP strictly decreases as
+K grows). Theorem 9 then proves that a newly introduced sign-averaging estimator - which
+counts majority direction over K paired comparisons rather than averaging magnitudes -
+converges to OEP = 1 for every alpha in (0, 2] under only mild continuity and
+median-additivity assumptions, requiring no finite moment of the noise.
+
+The headline findings are that explicit averaging is provably worse than no averaging for
+heavy-tailed (infinite-mean) noise, that sign averaging is a free, drop-in fix that works
+universally, and that the alpha index of the noise distribution is the right and complete
+diagnostic for choosing between them. Numerical experiments at a range of alpha values confirm
+all four predicted regimes of explicit averaging and the alpha-independent robustness of sign
+averaging.
+
+For this project, where t0102 explicitly probes seed-scale behaviour with N_SEEDS = 4 over 20
+NSGA-II generations, the paper supplies the theoretical taxonomy that the experiment will land
+in. The working hypothesis is that DSGC fitness objectives sit at alpha well above 1
+(EPSP/IPSP integrals, passive-mode metrics) where K = 4 explicit averaging is effective at
+slow-polynomial rate, but that some firing-rate-derived objectives may sit closer to alpha = 1
+where averaging is nearly inert. This anchors the present task scope to the "noisy but
+algorithm survives" regime predicted by Theorem 3 and motivates a follow-up where sign
+averaging replaces explicit averaging for heavy-tailed objectives specifically.
+
+</details>
+
+<details>
+<summary>📖 <strong>Evaluation and comparison of methods for neuronal parameter
+optimization using the Neuroptimus software framework</strong> — Mohacsi
+et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1012039` |
+| **Authors** | Mate Mohacsi, Mark Patrik Torok, Sara Saray, Luca Tar, Gabor Farkas, Szabolcs Kali |
+| **Venue** | PLOS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1012039` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012039 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../tasks/t0102_seedscale_n4_gen20/assets/paper/10.1371_journal.pcbi.1012039/summary.md) |
+
+Mohacsi et al. address a long-standing methodological gap in computational neuroscience:
+parameter optimisation of biophysical neuron models is unavoidable, but the field has no
+agreed benchmark and no clear answer to which algorithm to use. The authors develop
+Neuroptimus, an open-source PyQt5/CLI framework that gives users uniform access to more than
+20 optimisation algorithms from SciPy, Inspyred, Pygmo, BluePyOpt and a standalone Cmaes
+package. The framework is targeted at NEURON-based single-cell models but supports any
+black-box model via file IO.
+
+The bulk of the paper is a controlled benchmark: each algorithm gets exactly 10000 model
+evaluations, hierarchical algorithms use pop=100 and gens=100, and every algorithm is repeated
+10 times per problem. The benchmark suite spans single-compartment Hodgkin-Huxley with 3
+parameters, voltage-clamp synaptic fitting with 4 parameters, morphologically detailed passive
+cells with 3 parameters, simplified active models with 9 parameters, an AdEx
+integrate-and-fire model with 10 parameters, and a fully detailed CA1 pyramidal cell with 12
+parameters and feature-distribution targets. A seventh use case applies the same framework to
+a 12-parameter biochemical signalling cascade model.
+
+The headline finding is that **CMAES dominates** every benchmark, **PSO is a close runner-up**
+(with three implementations giving nearly identical results), and **IBEA is the best
+multi-objective method**. **NSGA-II in any of its three implementations sits mid-pack on
+multi-objective problems**, and is worse than random search on the simplest 3-parameter HH
+benchmark. **Local search methods (Nelder-Mead, L-BFGS-B, basinhopping) collapse on hard
+problems**. The performance gap between best and worst algorithms reaches two orders of
+magnitude on the simplified active model (Use Case 4). Implementation matters less than
+expected within an algorithm family, with the notable exception that Inspyreds NSGA-II is
+significantly weaker than Pygmos and BluePyOpts. The paper releases all benchmark results as a
+live database that other researchers can extend.
+
+For our t0102 NSGA-II work this paper is directly load-bearing evidence on the central
+question of whether NSGA-II at our compute budget is likely to find good solutions on a
+68-parameter problem. The paper says no - NSGA-II is mid-pack on 9-12 parameter problems even
+at 10000 evaluations, and the authors explicitly recommend CMAES, PSO or IBEA over NSGA-II for
+neuronal optimisation. Our t0102 configuration (pop=96, gens=20, 1920 evaluations per seed) is
+roughly 1/5 of their per-run budget on problems with ~5x higher dimensionality, so any null
+result we get for NSGA-II is consistent with the published literature rather than a new
+finding about our problem. If the project decides to continue multi-objective optimisation it
+should switch to IBEA via BluePyOpt; if it instead moves to single-objective scalarisation,
+CMAES (parallelisable variant) is the clearest evidence-based default. The papers online
+database also provides a forward-looking opportunity to contribute our DSGC tuning runs as
+additional benchmark data.
+
+</details>
+
+<details>
+<summary>🏤 <strong>Analysing the Robustness of NSGA-II under Noise</strong> — Dang
+et al., 2023</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.48550_arXiv.2306.04525` |
+| **Authors** | Duc-Cuong Dang, Andre Opris, Bahare Salehi, Dirk Sudholt |
+| **Venue** | Proceedings of the Genetic and Evolutionary Computation Conference (GECCO '23) (conference) |
+| **DOI** | `10.48550/arXiv.2306.04525` |
+| **URL** | https://arxiv.org/abs/2306.04525 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2306.04525/summary.md) |
+
+Dang, Opris, Salehi, and Sudholt present the first theoretical runtime analysis of NSGA-II
+under noisy multi-objective optimisation, addressing the open question of *when* the popular
+NSGA-II algorithm outperforms the idealised GSEMO baseline. Previous theoretical work had
+matched the two algorithms only at the same asymptotic complexity, leaving NSGA-II apparent
+practical advantages unexplained. The authors close this gap by constructing a noisy benchmark
+setting in which NSGA-II is provably polynomial-time while GSEMO is provably exponential-time.
+
+The methodology combines a worst-case **(delta, p)-Bernoulli noise model** in which a fixed
+offset `delta = n + 1` is added to all objectives with probability `p` per evaluation with
+drift analysis on standard bi-objective benchmarks (LOTZ, OMM). The authors prove a sharp
+**phase transition at p = 1/2**: below this threshold NSGA-II with population size `mu =
+Omega(n log n)` covers the Pareto front in polynomial expected time (Theorem 8), while above
+`p = 10/19 ~ 0.526` the expected runtime is exponential (Theorem 10). Experimental
+confirmation uses problem sizes n = 20, 30, 40 with 50 runs each, and includes Gaussian-noise
+experiments showing qualitatively similar phase-transition behaviour.
+
+The headline empirical findings match the theory cleanly. NSGA-II achieves 100% success on
+noisy LOTZ for every `p < 0.5` and 0% for `p in {0.5, 0.6}`. GSEMO never covers more than 40%
+of the Pareto front under any non-trivial noise. Under Gaussian noise, NSGA-II success rate
+drops from 100% at `sigma = n * 2^-4` to 0% at `sigma = n * 2^-1`. The mechanism behind
+NSGA-II robustness is its crowding-distance survival rule, which retains dominated individuals
+across generations and prevents noise-induced incumbent loss, the failure mode that destroys
+GSEMO.
+
+This paper matters for the neuron-channels project because t0102 (and the entire NSGA-II line
+of work) optimises a DSGC compartmental model whose objective values are inherently noisy:
+each configuration is evaluated on a small number of stochastic synaptic-input seeds (N_SEEDS
+= 4 in t0102). The phase-transition theorem provides a theoretical anchor that the chosen seed
+count puts the experiment well below the critical noise probability of 1/2, so NSGA-II should
+retain its polynomial-time guarantees. The paper also clarifies a practical design principle:
+NSGA-II crowding-distance retention is what buys noise robustness, so degenerate populations
+or aggressive archive-pruning would forfeit this protection. The requirement that `mu =
+Omega(n log n)` is suggestive: at 68-dimensional problems, a population of 96 may be on the
+smaller side, and if t0102 fails to recover a joint-pass corner this paper indicates that a
+larger population (not more seeds) is a principled next lever.
+
+</details>
+
+<details>
+<summary>📝 <strong>Adaptive Resampling with Bootstrap for Noisy Multi-Objective
+Optimization Problems</strong> — Budszuhn et al., 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.48550_arXiv.2503.21495` |
+| **Authors** | Timo Budszuhn, Mark Joachim Krallmann, Daniel Horn |
+| **Venue** | arXiv preprint (preprint) |
+| **DOI** | `10.48550/arXiv.2503.21495` |
+| **URL** | https://arxiv.org/abs/2503.21495 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2503.21495/summary.md) |
+
+Budszuhn, Krallmann, and Horn study the resource-allocation problem at the heart of noisy
+multi-objective optimization: every evaluation either explores a new candidate or sharpens an
+existing estimate, and the algorithm must decide which without knowing the noise distribution.
+Their target is NSGA-II, an elitist algorithm that is particularly damaged by overestimated
+points. Prior work either fixes a static number of evaluations per point, uses rank or
+variance heuristics, or assumes Gaussian noise to estimate a probability of dominance. None of
+these adapt to unknown noise shape.
+
+The authors' contribution is Adaptive Resampling with Bootstrap (ARB), a sequential decision
+function that bootstraps the sample-mean distribution at each point, estimates the probability
+of dominating any current Pareto-front member from 100 paired bootstrap draws, and triggers
+resampling only when that probability lies in a tunable window (alpha_l, alpha_u). To make the
+bootstrap work after a single observation, they maintain a population-level pool E of the 100
+most recent scaled residuals and mix global draws with point-local draws, weighting the local
+component more heavily as N grows. The full evaluation uses UPC benchmark functions with
+Gaussian and chi-squared noise at six standard deviations, NSGA-II popSize 40, and 30
+replications of 50,000 evaluations per setting.
+
+ARB is the most flexible algorithm tested. With realistic pre-study parameter selection it
+ranks second across all noise regimes and significantly beats RTEA in **64.7 percent** of
+scenarios and the other dynamic NSGA-II resamplers in **71.0 percent**. The only competitor
+that wins overall is static N = 1 (no resampling), and only because chi-squared noise is
+one-sided bounded -- when overestimation is impossible, paying for resamples is pure waste.
+Under Gaussian noise, RTEA's strict elitism does well but is still beaten by ARB on average.
+The headline finding is therefore not "ARB is universally best" but "ARB is the only strategy
+that does not collapse on at least one noise type, because its decision rule is
+distribution-free".
+
+This paper matters for t0102 because the current DSGC compartmental-modelling pipeline fixes
+the number of stochastic-seed evaluations (N_SEEDS) statically per design point -- exactly the
+static N strategy the paper compares against. ARB is the natural candidate for a follow-up
+suggestion S-0102-NEW-01 that would replace that constant with an adaptive resampler driven by
+the probability of dominance over the running Pareto front of (loss, cost) or (loss,
+biological plausibility). Before adoption we must verify that DSGC noise is closer to Gaussian
+than to a bounded chi-squared shape -- if seed-to-seed loss variation is heavily right-skewed
+and one-sided, the paper's own results suggest static N might still be near-optimal and the
+engineering cost of ARB would not pay back. Heteroscedasticity across morphologies is also
+untested in the paper and must be checked empirically before any production switch.
+
+</details>
+
+<details>
+<summary>📝 <strong>A Complete Spatial Map of Mouse Retinal Ganglion Cells Reveals
+Density and Gene Expression Specializations</strong> — Budoff &
+Poleg-Polsky, 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1101_2025.02.10.637538` |
+| **Authors** | Samuel A. Budoff, Alon Poleg-Polsky |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.1101/2025.02.10.637538` |
+| **URL** | https://www.biorxiv.org/content/10.1101/2025.02.10.637538v1 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../tasks/t0102_seedscale_n4_gen20/assets/paper/10.1101_2025.02.10.637538/summary.md) |
+
+Budoff and Poleg-Polsky (2025) present the first complete spatial atlas of all 45 mouse
+retinal ganglion cell subtypes. The motivation is direct: scRNA-seq has catalogued ~45 mouse
+RGC subtypes, but spatial mapping had reached only about 17 of them, leaving most of the
+population's retinal topography and any regional specialization unknown. The study asks where
+each genetically defined subtype lives, whether subtypes show local mosaic regularity, whether
+gene expression varies within a subtype as a function of retinal position, and how the mouse
+area retinae temporalis (ART) compares transcriptomically to the primate macula.
+
+Methodologically the paper combines four pieces: (1) en-face cryosectioning of intact
+ganglion-cell layers on 10X Genomics Xenium slides, (2) a custom 300-gene Xenium panel chosen
+by the GraSP neural-network-ensemble feature selector (225 unbiased genes plus 75 manually
+picked synaptic-protein and voltage-gated-channel genes), (3) Baysor Bayesian cell
+segmentation with Xenium nuclear priors, and (4) CuttleNet, a two-stage hierarchical deep
+neural network with a class "head" and dynamically routed subtype "tentacles" trained on
+integrated mouse scRNA-seq atlases. Five C57BL/6J retinas were imaged, IHC-stained with RBPMS
+and tomato lectin, and projected onto a normalized Cartesian retina aligned by the Opn1sw/mw
+opsin gradient. Local mosaicism was assessed with VDRI/NNRI/effective-radius statistics
+against bootstrap nulls; global clustering used Moran's I plus Kulldorff scan statistics and
+F1 overlap with ethologically relevant visual-field masks; DEGs were tested by ANOVA with
+multiple-comparison correction.
+
+The atlas reveals that about two-thirds of mouse RGC subtypes (29 of 45) tile the retina
+nearly uniformly, with the remaining third splitting into a ventral, sky-facing group and a
+dorso-temporal, ART-preferring group containing the α-RGC family and several intrinsically
+photosensitive RGC subtypes. Local mosaic regularity was confirmed for 18 of 26 well-sampled
+subtypes. Most known maps (αONS, αONT, αOFFS, W3, J-RGCs, M1/M2/M4/M5 ipRGCs) were reproduced,
+with the only material disagreement being a modest ventral-temporal peak for αOFFT (T45)
+instead of the previously reported uniform distribution. About 0.9% of gene x subtype
+combinations showed within-subtype regional DEGs, mostly along the sky-vs-ground axis; T6, T8,
+T14, T16, T17, and T36 carried the most DEGs. The mouse ART correlates weakly with the primate
+macula transcriptomically: voltage-gated sodium channel expression is positively correlated
+(driven by ventral Group-3 subtypes), while GABA and glycine receptors are anti-correlated.
+
+For this project, the paper provides three concrete deliverables. First, it pins the
+dorso-temporal location of the α-RGC family that is mechanistically closest to ON-OFF DSGCs,
+fixing the regional context in which the project's single-cell DSGC model lives. Second, the
+demonstration that voltage-gated sodium channel and GABA receptor gene expression varies
+within a subtype as a function of retinal position gives direct biological support to the
+project's core premise that systematic parametric exploration of Na/K conductance combinations
+is biologically realistic -- a single DSGC subtype is not a single biophysical operating
+point. Third, the divergence between the mouse ART and primate macula (especially for
+GABA/glycine receptors) warns against over-extrapolating any optimised mouse-DSGC model to
+primate central vision. This paper also confirms the Poleg-Polsky group's continued activity
+on mouse DSGC biology, which is relevant context for the de Rosenroll 2026 DSGC model that
+motivates this task.
+
+</details>
 
 <details>
 <summary>📖 <strong>The functional diversity of retinal ganglion cells in the
@@ -965,343 +1337,7 @@ since each DSGC morphology will see a different energy landscape under the joint
 
 </details>
 
-<details>
-<summary>📖 <strong>GABAergic Inhibition Controls Receptive Field Size, Sensitivity,
-and Contrast Preference of Direction Selective Retinal Ganglion Cells Near
-the Threshold of Vision</strong> — Roy et al., 2024</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1523_JNEUROSCI.1979-23.2023` |
-| **Authors** | Suva Roy, Xiaoyang Yao, Jay Rathinavelu, Greg D. Field |
-| **Venue** | The Journal of Neuroscience (journal) |
-| **DOI** | `10.1523/JNEUROSCI.1979-23.2023` |
-| **URL** | https://www.jneurosci.org/content/44/11/e1979232023 |
-| **Date added** | 2026-05-08 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
-| **Full summary** | [`summary.md`](../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1523_JNEUROSCI.1979-23.2023/summary.md) |
-
-Roy, Yao, Rathinavelu, and Field address the long-standing observation that
-superior-preferring ON-OFF DSGCs (s-DSGCs) detect dim stimuli substantially more reliably than
-the three other cardinal ooDSGC subtypes (anterior, inferior, posterior). The paper asks two
-questions: how large is the s-DSGC sensitivity advantage at the absolute threshold of vision,
-and which of three plausible mechanisms (RF size, Cx36 gap-junction coupling, GABAergic
-inhibition asymmetry) account for it? The motivation comes from prior work (Yao et al. 2018)
-suggesting s-DSGCs sacrifice direction-tuning precision for stimulus detection at scotopic
-levels.
-
-The authors record dark-adapted mouse retina ex vivo on a 519-electrode MEA, using brief
-full-field LED flashes (2-8 ms) and spatially mapped square flashes (60-160 um, 900% contrast)
-across backgrounds spanning six log units of light intensity. They quantify absolute
-thresholds with a 2AFC ideal-observer analysis (84% correct = SNR = 1, Naka-Rushton fit) and
-RF area by 2D-Gaussian fits to ON / OFF subfield maps. A calibrated rod-pooling model with
-mouse-specific noise parameters and 0.005 R*/rod/s thermal isomerization rate is used to
-translate RF area into predicted 2AFC performance. The mechanistic dissection uses FACx
-conditional Cx36-knockout mice to ablate s-DSGC homotypic coupling, and 15 uM gabazine to
-block GABA-A inhibition.
-
-The headline result is a **10-fold lower s-DSGC absolute threshold** that approaches within
-0.5 log unit of the most sensitive RGCs (presumed ON sustained alpha cells). RF size
-differences (~8x larger ON subfields at scotopic 0.2 R*/rod/s) explain only **~50%** of the
-gap, even under optimal nonlinear rod pooling. Cx36 ablation has **no significant effect** on
-threshold and only a modest RF reduction in s-DSGCs. GABA-A blockade compresses the s-DSGC vs
-other-ooDSGC threshold ratio from **9.4x to 3.2x**, expands all ooDSGC RFs (especially OFF
-subfields by 10-30x), and unmasks a full-amplitude scotopic OFF response. The authors conclude
-that two unidentified GABAergic amacrine cells differentially shape ooDSGC sensitivity, RF
-size, and contrast polarity at low light, and explicitly exclude starburst amacrine cells as
-the source.
-
-For this project (t0091 morphology / NSGA-II Pareto-front sweep under photopic stimulation),
-the paper supplies critical context but no parameter changes. Under photopic conditions the
-s-DSGC RF-size advantage collapses to 1.5-3x with similar coverage factors across types,
-supporting the project existing single-cell, single-operating-point Pareto framing using
-Trenholm 2013-style photopic peak rates. The GABA spatial-gradient prior on the t0086 / t0088
-scorecard is about classical-RF SAC-mediated inhibition; Roy 2024 two hypothesised
-non-starburst GABAergic amacrine cells operate at scotopic levels and are out of scope. Cx36
-gap-junction coupling can safely be excluded from the photopic single-cell model. The paper is
-therefore most useful as an interpretive boundary - it confirms that t0091 photopic-only
-NSGA-II results should not be overgeneralised to scotopic firing-rate predictions, where
-additional GABAergic and OFF-masking mechanisms would dominate.
-
-</details>
-
-<details>
-<summary>📖 <strong>Similar network activity from disparate circuit
-parameters</strong> — Prinz et al., 2004</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1038_nn1352` |
-| **Authors** | Astrid A. Prinz, Dirk Bucher, Eve Marder |
-| **Venue** | Nature Neuroscience (journal) |
-| **DOI** | `10.1038/nn1352` |
-| **URL** | https://www.nature.com/articles/nn1352 |
-| **Date added** | 2026-05-08 |
-| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1038_nn1352/summary.md) |
-
-Prinz, Bucher and Marder ask how tightly neuronal properties and synaptic strengths must be
-tuned to produce a specific network output. They focus on the crustacean pyloric rhythm
-because its connectivity, neurons, and motor pattern are unusually well characterised. The
-motivation is to test the implicit assumption underlying much of neurophysiology, that
-animal-to-animal variability is "experimental noise" rather than a structural feature of the
-nervous system. The hypothesis is that, just as similar single-neuron firing can arise from
-many channel-density combinations, similar network output can arise from many cellular and
-synaptic parameter combinations.
-
-Methodologically, they enumerate 20,250,000 three-neuron model networks built from a 16-neuron
-pool selected from a prior 1.7-million-neuron STG database, varying seven synaptic
-conductances across five or six values. Each network is simulated, auto-classified, and tested
-against 15 burst-timing features measured from 99 Homarus americanus pyloric recordings. The
-model uses standard Hodgkin-Huxley dynamics with eight membrane currents per cell and
-Abbott-Marder synapse kinetics. The full simulation ran for several months on a Beowulf
-cluster of 1.2-GHz processors and produced approximately 4 GB of classification output.
-
-The headline finding is that 2.2% (452,516) of all networks satisfy the strict 15-feature
-pyloric criterion, every cell-combination is represented in this set, and six of the seven
-synaptic conductances span the full 0-100 nS range. Only LP-to-PY is tightly constrained (>3
-nS in just 0.1% of pyloric networks), matching its weak biological strength. Networks with
-conductances differing by factors of three or more produce visually indistinguishable rhythms.
-Burst period is controlled mainly by the AB/PD pacemaker identity, while LP and PY identity is
-essentially free.
-
-For the t0097 multi-objective optimization catalogue this paper anchors the biological
-plausibility and degeneracy objective. It directly motivates: (i) treating the optimization
-output as a Pareto manifold rather than a point, (ii) using multi-feature biological
-acceptance criteria with explicit mean +/- 2 s.d. bands instead of single-objective fitting,
-(iii) reporting which conductances remain unconstrained and which are tightly bottlenecked
-across the Pareto front, and (iv) interpreting variability across the recovered solution set
-as a biologically meaningful prediction about animal-to-animal heterogeneity in
-direction-selective retinal ganglion cells, not as optimization noise. Combined with the
-Marder-Goaillard 2006 review (already in this task as nrn1949), Prinz2004 grounds the t0097
-robustness analysis in the canonical "many disparate parameter sets, one functional output"
-result.
-
-</details>
-
-<details>
-<summary>📖 <strong>Energy limitation as a selective pressure on the evolution of
-sensory systems</strong> — Niven & Laughlin, 2008</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1242_jeb.017574` |
-| **Authors** | Jeremy E. Niven, Simon B. Laughlin |
-| **Venue** | Journal of Experimental Biology (journal) |
-| **DOI** | `10.1242/jeb.017574` |
-| **URL** | https://journals.biologists.com/jeb/article/211/11/1792/19035 |
-| **Date added** | 2026-05-08 |
-| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1242_jeb.017574/summary.md) |
-
-Niven and Laughlin (2008) ask why nervous systems, and sensory systems in particular, take the
-specific morphological and biophysical forms they do, and answer that energetics is one of the
-dominant selective pressures shaping them. They focus on the visual system because its
-function is quantifiable (bits s-1 of information about a visual scene) and its energetic cost
-is now directly measurable from whole-retina oxygen consumption, single-cell biophysical
-models, and bottom-up per-component energy budgets. The review scope ranges from sub-cellular
-ion-channel kinetics to the comparative neuroanatomy of cave fish, blind mole rats, and
-laboratory-evolved *Drosophila*.
-
-Methodologically, the paper consolidates three classes of measurement into a unified
-accounting framework: respirometry on excised retinas, intracellular electrical models of fly
-R1-6 photoreceptors that infer 3Na+/2K+ ATPase pump current from membrane biophysics, and the
-component-level cortical and olfactory energy budgets of Attwell-Laughlin (2001) and Nawroth
-et al. (2007). The fact that the single-cell biophysical estimates and the whole-retina O2
-measurements agree on the dominant cost (ion movement through the membrane) validates this
-multi-scale approach.
-
-The principal findings are quantitative. Resting metabolic cost in fly photoreceptors is about
-**25%** of peak signalling cost, and across four homologous photoreceptor species both rest
-and peak cost rise faster than information rate, defining a strict bits-per-ATP frontier (Fig.
-7). Action-potential transmission and resting-potential maintenance dominate the per-AP energy
-budget in rat grey matter (more than 50%, Fig. 6A), and the choice of channel set has a
-measurable energetic signature: removing the *Shaker* K+ conductance in *Drosophila*
-simultaneously raises energy cost and lowers information rate (Fig. 8). At larger scales,
-convergent reductions of sensory structures (cave-fish eyes, mole visual cortex,
-lab-Drosophila ommatidia) match the prediction that unused capacity is selected against, while
-the elasmobranch-vs-teleost ATPase comparison warns that brain mass alone is not a reliable
-proxy for brain energy use.
-
-For this project, the paper anchors the energy axis of a joint info-vs-energy multi-objective
-optimisation. The angle-to-AP-frequency tuning error captures the information / function side;
-an ATP-budget proxy (Na+/K+ pump current integrated over a stimulus, or equivalently the
-integrated voltage-gated channel currents over a trial) captures the cost side. Because
-resting cost is non- negligible, the energy proxy must include the idle interval and not only
-the burst window. Because the cost-vs-capacity relationship is super-linear, we should expect
-Pareto fronts with sharp knees where large energy savings come from trimming over-provisioned
-somatic Na+ or K+ density. Together with Attwell and Laughlin (2001) and Sengupta et al.
-(2010), this paper forms the energy-objective citation set that justifies bits-per-ATP as a
-biologically grounded second objective for the multi-objective Na/K conductance search.
-
-</details>
-
-<details>
-<summary>📖 <strong>Persistent sodium currents in neurons: potential mechanisms and
-pharmacological blockers</strong> — Müller et al., 2024</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1007_s00424-024-02980-7` |
-| **Authors** | Peter Müller, Andreas Draguhn, Alexei V. Egorov |
-| **Venue** | Pflügers Archiv - European Journal of Physiology (journal) |
-| **DOI** | `10.1007/s00424-024-02980-7` |
-| **URL** | https://link.springer.com/article/10.1007/s00424-024-02980-7 |
-| **Date added** | 2026-05-08 |
-| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`patch-clamp`](../meta/categories/patch-clamp/) |
-| **Added by** | [`t0091_morphology_extended_nsga2_v1`](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) |
-| **Full summary** | [`summary.md`](../tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1007_s00424-024-02980-7/summary.md) |
-
-Mueller, Draguhn, and Egorov publish a systematic review of persistent sodium current (INaP)
-in CNS neurons in Pfluegers Archiv (Springer Nature, open access). The motivation is that INaP
-is a clinically important regulator of excitability - implicated in epilepsy, amyotrophic
-lateral sclerosis, neuropathic pain, hemiplegic migraine, and post-injury hyperexcitability -
-but the literature is fragmented across heterogeneous voltage-clamp protocols, inconsistent
-definitions of persistent versus slowly inactivating, and a sprawling catalogue of putative
-blocker drugs whose specificities have never been compared head-to-head.
-
-The review proceeds in two parts. The first part formalises four candidate mechanisms
-(modified Hodgkin-Huxley window current; Markov gating with closed-state inactivation or modal
-gating; subtype-specific generation by Nav1.1/1.2/1.3/1.6 plus beta1/beta4 modulation;
-supra-molecular coupled gating) and four canonical voltage-clamp protocols (brief step,
-entry-into-slow inactivation, slow steady-state inactivation, slow ramp). It explicitly maps
-which protocol isolates which kinetic component, dissolving longstanding terminological
-disagreements. The second part is a 22-drug catalogue (Table 1) tabulating IC50/EC50, holding
-potential, preparation, protocol, and effects on INaP versus INaT for each substance.
-
-The headline finding is that GS967 and riluzole are the only bona fide INaP blockers - they
-act on the truly non-inactivating component across both brief-step and slow-ramp protocols at
-clinically achievable concentrations and with limited off-target action. Phenytoin and
-lacosamide are reclassified as selective enhancers of intermediate and slow inactivation
-respectively, not INaP blockers proper. All other 18 surveyed substances are disqualified by
-off-target Ca, K, GABA, or mGluR effects, by poor blood-brain-barrier penetration, or by
-inadequate slow-inactivation data. The review concludes with a methodological recommendation:
-combine brief steps, slow-inactivation steps, and slow ramps with TTX subtraction, and require
-concordant effects of two drugs or a dynamic-clamp control before claiming an INaP role for
-any physiological phenomenon.
-
-For this project, the review most important message is a negative one: there is no
-DSGC-specific INaP density measurement in the surveyed literature, so the cortical-pyramidal
-Stuart 1999 / Astman 2021 priors used in t0086 / t0088 / t0091 remain the best cross-cell
-baseline and the morphology-extended NSGA-II distal-NaP density bounds do not need to be
-revised. The methodological caution that slow ramps underestimate INaP is a prior to keep on
-file for any future patch-clamp validation step but does not affect the present in-silico
-NEURON-based optimisation pipeline. The drug catalogue is a useful reference if the project
-ever extends into dynamic-clamp INaP-cancellation experiments, where riluzole-equivalent block
-at 10 uM is the canonical reference manipulation.
-
-</details>
-
-<details>
-<summary>📖 <strong>Variability, compensation and homeostasis in neuron and network
-function</strong> — Marder & Goaillard, 2006</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1038_nrn1949` |
-| **Authors** | Eve Marder, Jean-Marc Goaillard |
-| **Venue** | Nature Reviews Neuroscience (journal) |
-| **DOI** | `10.1038/nrn1949` |
-| **URL** | https://www.nature.com/articles/nrn1949 |
-| **Date added** | 2026-05-08 |
-| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`synaptic-integration`](../meta/categories/synaptic-integration/) |
-| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1038_nrn1949/summary.md) |
-
-This review by Marder and Goaillard codifies the now-standard observation that nervous-system
-variables --- ionic conductances, channel densities, synaptic weights --- vary substantially
-across animals of the same species and across cells of the same identified type, while the
-behavioural output of single neurons and networks remains conserved. The authors motivate the
-question by contrasting protein turnover (minutes to weeks) with neuronal lifetime (years to
-decades), arguing that homeostatic mechanisms must continuously rebuild the cell while
-preserving its function, and that this rebuilding must necessarily allow for multiple
-equivalent parameter configurations.
-
-The paper proceeds methodologically by surveying single-cell electrophysiology paired with
-mRNA quantification (Schulz et al. 2006 in pyloric LP neurons; Swensen and Bean 2005 in
-cerebellar Purkinje cells), pharmacological vs genetic perturbation studies, and ensemble
-conductance-based modelling (Goldman 2001; Golowasch 2002; Prinz, Bucher and Marder 2004). The
-synthesis carefully distinguishes timescales (acute pharmacology reveals fragility, chronic
-deletion reveals compensation) and scales (single neuron, microcircuit, vertebrate network),
-and argues that biological robustness arises through overlapping partially-substitutable
-components rather than engineered redundancy.
-
-Quantitatively, the cited evidence shows two- to fourfold inter-animal variation in many ionic
-conductances and synaptic strengths, single-cell-level correlation between channel mRNA and
-maximal conductance, and the existence of millions of distinct yet behaviourally equivalent
-network parameter sets in the lobster pyloric model. The reviews headline conclusion is that
-"variability and compensation" are general organising principles of neuronal function, and
-that ensemble approaches --- both experimental and computational --- are required to
-characterise them.
-
-For this project, this paper is the canonical citation for the *robustness / degeneracy*
-objective category in the t0097 multi-objective optimisation catalogue. It directly
-underwrites treating parameter-perturbation sensitivity (Marder-style: chronic compensation
-potential plus acute robustness) as a multi-objective dimension alongside fitness to target
-tuning curves. It also justifies the projects choice to model the direction-selective retinal
-ganglion cell as a *family* of acceptable parameter sets rather than a single canonical model,
-and motivates reporting solution-manifold properties (spread, co-variation structure) in
-addition to Pareto fronts. Together with Prinz, Bucher and Marder (2004), it forms the
-conceptual foundation for the robustness-objective recipe in the t0097 catalogue.
-
-</details>
-
-<details>
-<summary>📖 <strong>A novel multiple objective optimization framework for
-constraining conductance-based neuron models by experimental data</strong>
-— Druckmann et al., 2007</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.3389_neuro.01.1.1.001.2007` |
-| **Authors** | Shaul Druckmann, Yoav Banitt, Albert Gidon, Felix Schurmann, Henry Markram, Idan Segev |
-| **Venue** | Frontiers in Neuroscience (journal) |
-| **DOI** | `10.3389/neuro.01.1.1.001.2007` |
-| **URL** | https://www.frontiersin.org/articles/10.3389/neuro.01.1.1.001.2007/full |
-| **Date added** | 2026-05-08 |
-| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/) |
-| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.3389_neuro.01.1.1.001.2007/summary.md) |
-
-Druckmann et al. (2007) confront a methodological problem at the core of conductance-based
-neuron modelling: how to automatically fit the maximal-conductance vector of a compartmental
-model to noisy in vitro recordings, given that repeated identical current injections produce
-visibly different voltage traces in the same cell. They argue that the dominant single-trace,
-single-error-function approach is mis-specified - it ignores intrinsic variability and forces
-an arbitrary weighting of heterogeneous error terms (e.g. spike timing vs spike shape).
-
-Their solution is a multi-objective optimization framework in which several biophysically
-meaningful spike features (rate, width, AHP depth, accommodation, latency, overshoot) are each
-assigned their own error function, scored in units of the feature's experimental standard
-deviation, and optimized jointly with a custom NSGA-II genetic algorithm running in NEURON.
-The fitting target is a compartmental model with 10 somatic ion channels and 12 free
-conductance parameters. Convergence was tested on two distinct cortical-interneuron electrical
-classes - accommodating and fast-spiking - using 300 organisms and 1000 generations on either
-a 112-CPU AMD cluster or a 256-512-processor BlueGene/L.
-
-The framework converges to mean per-feature error of less than 1 SD for both classes and
-returns hundreds of "acceptable" parameter sets within 2 SD on every feature. These solution
-clouds segregate cleanly along some channels (Nat) and overlap on others (Im, SK), revealing
-which conductances actually carry class identity. The Pareto fronts between feature pairs
-further expose which objectives genuinely conflict, providing diagnostic information that
-single-objective fits would discard. As a proof of generalisation the same recipe with one
-extra feature qualitatively captures a third (stuttering) electrical class.
-
-For the present project this paper is the methodology root. Our t0097 catalogue is structured
-around multi-objective optimisation of somatic Na/K conductance combinations (and follow-on
-dendritic-conductance variants) against a target angle-to-AP-frequency tuning curve in a
-direction-selective retinal ganglion cell. Druckmann 2007 supplies (i) the SD-normalised
-feature-error formulation that we should mirror when scoring our model against patch-clamp
-ground-truth, (ii) the NSGA-II reference cost envelope (300 organisms x 1000 generations) for
-budgeting compute, and (iii) the Pareto-of-models output mode, which is more diagnostic than a
-single best-fit vector for downstream sensitivity and conductance-class analysis.
-
-</details>
-
-*78 more papers → [papers](papers/)*
+*84 more papers → [papers](papers/)*
 
 ---
 
@@ -1322,10 +1358,12 @@ No models yet.
 
 ---
 
-## [Latest Predictions (6 total)](predictions/)
+## [Latest Predictions (8 total)](predictions/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [NSGA-II seed=55 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init)](../tasks\t0102_seedscale_n4_gen20\assets\predictions\nsga2-seed55-bedb-morph-n4-gen20\description.md) | [102](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-12 |
+| [NSGA-II seed=44 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init)](../tasks\t0102_seedscale_n4_gen20\assets\predictions\nsga2-seed44-bedb-morph-n4-gen20\description.md) | [102](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-12 |
 | [Random-init Pareto front seed 33](../tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed33\description.md) | [99](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 2026-05-10 |
 | [Random-init Pareto front seed 22](../tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed22\description.md) | [99](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 2026-05-10 |
 | [Random-init Pareto front seed 11](../tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed11\description.md) | [99](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 2026-05-10 |
@@ -1354,10 +1392,11 @@ No models yet.
 
 ---
 
-## [Cost Leaders (8 tasks with spend)](costs/)
+## [Cost Leaders (9 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
+| [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | [`$12.07`](../tasks/t0102_seedscale_n4_gen20/results/costs.json) | 2026-05-12 18:44 |
 | [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`$7.71`](../tasks/t0099_random_init_pareto_robustness/results/costs.json) | 2026-05-10 23:35 |
 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`$5.83`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/costs.json) | 2026-05-06 08:31 |
 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`$3.93`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/costs.json) | 2026-05-04 16:25 |

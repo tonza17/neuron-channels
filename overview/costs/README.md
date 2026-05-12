@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $23.91 of $35.00 USD. $11.09 remains overall and $11.09 remains before the 100% stop
+Spent $35.98 of $35.00 USD. $0.00 remains overall and $0.00 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,30 +8,32 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $35.00 USD |
-| Total spent | $23.91 USD |
-| Budget left | $11.09 USD |
-| Budget left before stop threshold | $11.09 USD |
-| Spent percent | 68.30% |
+| Total spent | $35.98 USD |
+| Budget left | $0.00 USD |
+| Budget left before stop threshold | $0.00 USD |
+| Spent percent | 102.80% |
 | Warn threshold | 80% ($28.00) |
 | Stop threshold | 100% ($35.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 94 |
-| Tasks with non-zero spend | 8 |
-| Skipped tasks | 9 |
+| Tasks with cost records | 95 |
+| Tasks with non-zero spend | 9 |
+| Skipped tasks | 8 |
 
 ## Service Totals
 
 | Key | Cost (USD) |
 |-----|------------|
-| `vast_ai` | $16.84 |
+| `vast_ai` | $28.91 |
 | `vast_ai_compute` | $3.93 |
 
 ## Breakdown Totals
 
 | Key | Cost (USD) |
 |-----|------------|
+| `vast_ai_nsga2_compute` | $8.46 |
 | `vast-ai-cpu-epyc-7b13` | $7.42 |
 | `vast-ai-rtx5060ti` | $3.93 |
+| `vast_ai_idle_time` | $3.51 |
 | `vast-ai-seed33` | $3.41 |
 | `vast_ai_36149741` | $2.39 |
 | `vast-ai-seed22` | $1.96 |
@@ -41,6 +43,7 @@ threshold.
 | `vast-ai-driver-overhead` | $0.74 |
 | `vast-ai-rtx-pro-4000-idle` | $0.65 |
 | `vast-ai-idle` | $0.43 |
+| `vast_ai_setup_and_smoke_gates` | $0.11 |
 | `vast-ai-setup` | $0.04 |
 | `api` | $0.00 |
 | `local_compute` | $0.00 |
@@ -60,6 +63,7 @@ threshold.
 | [`t0086_robustness_cluster_bio_comparison`](../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | completed | $1.59 | $3.50 | no |
 | [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | $0.65 | $4.00 | no |
 | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | completed | $7.71 | $20.00 | no |
+| [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | $12.07 | $8.00 | yes |
 
 ## Skipped Tasks
 
@@ -73,4 +77,3 @@ threshold.
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
 | `t0096_literature_survey_multi_objective_neuron_optimisation` | results/costs.json is missing or invalid |
-| `t0102_seedscale_n4_gen20` | results/costs.json is missing or invalid |

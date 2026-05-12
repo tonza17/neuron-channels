@@ -1,6 +1,6 @@
-# Papers: `direction-selectivity` (46)
+# Papers: `direction-selectivity` (47)
 
-46 papers across 26 year(s).
+47 papers across 26 year(s).
 
 [Back to all papers](../README.md)
 
@@ -148,7 +148,71 @@ manually.
 
 </details>
 
-## 2025 (1)
+## 2025 (2)
+
+<details>
+<summary>📝 A Complete Spatial Map of Mouse Retinal Ganglion Cells Reveals Density
+and Gene Expression Specializations — Budoff & Poleg-Polsky, 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1101_2025.02.10.637538` |
+| **Authors** | Samuel A. Budoff, Alon Poleg-Polsky |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.1101/2025.02.10.637538` |
+| **URL** | https://www.biorxiv.org/content/10.1101/2025.02.10.637538v1 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.1101_2025.02.10.637538/summary.md) |
+
+Budoff and Poleg-Polsky (2025) present the first complete spatial atlas of all 45 mouse
+retinal ganglion cell subtypes. The motivation is direct: scRNA-seq has catalogued ~45 mouse
+RGC subtypes, but spatial mapping had reached only about 17 of them, leaving most of the
+population's retinal topography and any regional specialization unknown. The study asks where
+each genetically defined subtype lives, whether subtypes show local mosaic regularity, whether
+gene expression varies within a subtype as a function of retinal position, and how the mouse
+area retinae temporalis (ART) compares transcriptomically to the primate macula.
+
+Methodologically the paper combines four pieces: (1) en-face cryosectioning of intact
+ganglion-cell layers on 10X Genomics Xenium slides, (2) a custom 300-gene Xenium panel chosen
+by the GraSP neural-network-ensemble feature selector (225 unbiased genes plus 75 manually
+picked synaptic-protein and voltage-gated-channel genes), (3) Baysor Bayesian cell
+segmentation with Xenium nuclear priors, and (4) CuttleNet, a two-stage hierarchical deep
+neural network with a class "head" and dynamically routed subtype "tentacles" trained on
+integrated mouse scRNA-seq atlases. Five C57BL/6J retinas were imaged, IHC-stained with RBPMS
+and tomato lectin, and projected onto a normalized Cartesian retina aligned by the Opn1sw/mw
+opsin gradient. Local mosaicism was assessed with VDRI/NNRI/effective-radius statistics
+against bootstrap nulls; global clustering used Moran's I plus Kulldorff scan statistics and
+F1 overlap with ethologically relevant visual-field masks; DEGs were tested by ANOVA with
+multiple-comparison correction.
+
+The atlas reveals that about two-thirds of mouse RGC subtypes (29 of 45) tile the retina
+nearly uniformly, with the remaining third splitting into a ventral, sky-facing group and a
+dorso-temporal, ART-preferring group containing the α-RGC family and several intrinsically
+photosensitive RGC subtypes. Local mosaic regularity was confirmed for 18 of 26 well-sampled
+subtypes. Most known maps (αONS, αONT, αOFFS, W3, J-RGCs, M1/M2/M4/M5 ipRGCs) were reproduced,
+with the only material disagreement being a modest ventral-temporal peak for αOFFT (T45)
+instead of the previously reported uniform distribution. About 0.9% of gene x subtype
+combinations showed within-subtype regional DEGs, mostly along the sky-vs-ground axis; T6, T8,
+T14, T16, T17, and T36 carried the most DEGs. The mouse ART correlates weakly with the primate
+macula transcriptomically: voltage-gated sodium channel expression is positively correlated
+(driven by ventral Group-3 subtypes), while GABA and glycine receptors are anti-correlated.
+
+For this project, the paper provides three concrete deliverables. First, it pins the
+dorso-temporal location of the α-RGC family that is mechanistically closest to ON-OFF DSGCs,
+fixing the regional context in which the project's single-cell DSGC model lives. Second, the
+demonstration that voltage-gated sodium channel and GABA receptor gene expression varies
+within a subtype as a function of retinal position gives direct biological support to the
+project's core premise that systematic parametric exploration of Na/K conductance combinations
+is biologically realistic -- a single DSGC subtype is not a single biophysical operating
+point. Third, the divergence between the mouse ART and primate macula (especially for
+GABA/glycine receptors) warns against over-extrapolating any optimised mouse-DSGC model to
+primate central vision. This paper also confirms the Poleg-Polsky group's continued activity
+on mouse DSGC biology, which is relevant context for the de Rosenroll 2026 DSGC model that
+motivates this task.
+
+</details>
 
 <details>
 <summary>📖 Retinal ganglion cells encode the direction of motion outside their

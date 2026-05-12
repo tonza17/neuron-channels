@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-83 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **66 open** (14
-high, 47 medium, 5 low), **17 closed**.
+84 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **67 open** (14
+high, 48 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -485,6 +485,34 @@ into the same 2 phenotypes (high-NMDA + high-NaP vs high-NMDA + extended-GABA) o
 discover a third? (c) does Bed A allow biologically-plausible NMDA solutions where Bed B does
 not? Expected cost: ~$2.50 USD on Vast.ai EPYC 7B13 (8 gens x 96 cells x 60 s = 13 h x
 $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Calcium-clearance perturbation sweep on the 27 silenced-cell
+DSI=1.0 vectors to test silence-as-mechanism hypothesis</strong>
+(S-0102-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0102-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-12 |
+| **Source task** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+creative_analysis.md Section 7 proposes a mechanistic reading: the 27 t0102 cells with DSI >=
+0.99 / PD < 0.1 are not bugs but the GA's discovery of a lateral-inhibition silencing regime
+(slow Ca clearance, strong sAHP, weak ACh drive) consistent with Poleg-Polsky 2026 SAC gating.
+Take each of the 27 cells, fix the 68-d vector except CAD_TAUR_MS (Ca clearance tau, dim 38),
+sweep that dim from ~65 ms down to 5 ms in 10 logarithmic steps, re-evaluate DSI/PD/rob at
+N_EVAL_SEEDS=8. Question: when Ca clearance is restored, do these cells collapse to the
+high-PD low-DSI corner (silence was the only DSI mechanism), or do some land in the joint
+corner (Ca clearance is the active constraint and the rest of the vector is joint-viable)?
+Outcome: 27 x 10 grid mapping silence-to-joint escape paths. Doubles as slice-physiology
+prediction (BAPTA Ca chelation should disinhibit SAC/DSGC firing). Recommended task types:
+experiment-run, data-analysis. Cost: < $0.50 (270 evaluations, no GA).
 
 </details>
 

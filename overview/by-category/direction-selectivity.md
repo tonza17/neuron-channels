@@ -4,16 +4,16 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (46)](../papers/by-category/direction-selectivity.md) | [Answers
-(17)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(261)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+**Detail pages**: [Papers (47)](../papers/by-category/direction-selectivity.md) | [Answers
+(18)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(268)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (3)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
-(2)](../predictions/by-category/direction-selectivity.md)
+(4)](../predictions/by-category/direction-selectivity.md)
 
 ---
 
-## Papers (46)
+## Papers (47)
 
 <details>
 <summary>📝 <strong>Retinal waves shape starburst amacrine cell dendrite development
@@ -154,6 +154,71 @@ script, MOD files, and a HOC geometry that should be amenable to an automated po
 PDF could not be downloaded (Elsevier 403), so all quantitative values above that are not
 cited from the abstract should be re-verified once a human reviewer retrieves the article
 manually.
+
+</details>
+
+<details>
+<summary>📝 <strong>A Complete Spatial Map of Mouse Retinal Ganglion Cells Reveals
+Density and Gene Expression Specializations</strong> — Budoff &
+Poleg-Polsky, 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1101_2025.02.10.637538` |
+| **Authors** | Samuel A. Budoff, Alon Poleg-Polsky |
+| **Venue** | bioRxiv (preprint) |
+| **DOI** | `10.1101/2025.02.10.637538` |
+| **URL** | https://www.biorxiv.org/content/10.1101/2025.02.10.637538v1 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.1101_2025.02.10.637538/summary.md) |
+
+Budoff and Poleg-Polsky (2025) present the first complete spatial atlas of all 45 mouse
+retinal ganglion cell subtypes. The motivation is direct: scRNA-seq has catalogued ~45 mouse
+RGC subtypes, but spatial mapping had reached only about 17 of them, leaving most of the
+population's retinal topography and any regional specialization unknown. The study asks where
+each genetically defined subtype lives, whether subtypes show local mosaic regularity, whether
+gene expression varies within a subtype as a function of retinal position, and how the mouse
+area retinae temporalis (ART) compares transcriptomically to the primate macula.
+
+Methodologically the paper combines four pieces: (1) en-face cryosectioning of intact
+ganglion-cell layers on 10X Genomics Xenium slides, (2) a custom 300-gene Xenium panel chosen
+by the GraSP neural-network-ensemble feature selector (225 unbiased genes plus 75 manually
+picked synaptic-protein and voltage-gated-channel genes), (3) Baysor Bayesian cell
+segmentation with Xenium nuclear priors, and (4) CuttleNet, a two-stage hierarchical deep
+neural network with a class "head" and dynamically routed subtype "tentacles" trained on
+integrated mouse scRNA-seq atlases. Five C57BL/6J retinas were imaged, IHC-stained with RBPMS
+and tomato lectin, and projected onto a normalized Cartesian retina aligned by the Opn1sw/mw
+opsin gradient. Local mosaicism was assessed with VDRI/NNRI/effective-radius statistics
+against bootstrap nulls; global clustering used Moran's I plus Kulldorff scan statistics and
+F1 overlap with ethologically relevant visual-field masks; DEGs were tested by ANOVA with
+multiple-comparison correction.
+
+The atlas reveals that about two-thirds of mouse RGC subtypes (29 of 45) tile the retina
+nearly uniformly, with the remaining third splitting into a ventral, sky-facing group and a
+dorso-temporal, ART-preferring group containing the α-RGC family and several intrinsically
+photosensitive RGC subtypes. Local mosaic regularity was confirmed for 18 of 26 well-sampled
+subtypes. Most known maps (αONS, αONT, αOFFS, W3, J-RGCs, M1/M2/M4/M5 ipRGCs) were reproduced,
+with the only material disagreement being a modest ventral-temporal peak for αOFFT (T45)
+instead of the previously reported uniform distribution. About 0.9% of gene x subtype
+combinations showed within-subtype regional DEGs, mostly along the sky-vs-ground axis; T6, T8,
+T14, T16, T17, and T36 carried the most DEGs. The mouse ART correlates weakly with the primate
+macula transcriptomically: voltage-gated sodium channel expression is positively correlated
+(driven by ventral Group-3 subtypes), while GABA and glycine receptors are anti-correlated.
+
+For this project, the paper provides three concrete deliverables. First, it pins the
+dorso-temporal location of the α-RGC family that is mechanistically closest to ON-OFF DSGCs,
+fixing the regional context in which the project's single-cell DSGC model lives. Second, the
+demonstration that voltage-gated sodium channel and GABA receptor gene expression varies
+within a subtype as a function of retinal position gives direct biological support to the
+project's core premise that systematic parametric exploration of Na/K conductance combinations
+is biologically realistic -- a single DSGC subtype is not a single biophysical operating
+point. Third, the divergence between the mouse ART and primate macula (especially for
+GABA/glycine receptors) warns against over-extrapolating any optimised mouse-DSGC model to
+primate central vision. This paper also confirms the Poleg-Polsky group's continued activity
+on mouse DSGC biology, which is relevant context for the de Rosenroll 2026 DSGC model that
+motivates this task.
 
 </details>
 
@@ -2452,7 +2517,7 @@ simulation.
 
 </details>
 
-## Tasks (11)
+## Tasks (12)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2466,9 +2531,32 @@ simulation.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | 2026-05-08 15:55 |
+| 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | completed | 2026-05-12 01:55 |
 
-## Answers (17)
+## Answers (18)
+
+<details>
+<summary><strong>Does running 68-d NSGA-II at N_EVAL_SEEDS=4 noise replicates,
+gens=20, pop=96, 2 random-init GA seeds (44, 55), no warm-start, recover
+the strict joint-pass corner (DSI>=0.5 AND PD-rate>=30 Hz AND
+robustness>=0.7) of the Bed B + morphology compartmental DSGC
+substrate?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-12 | **Full answer**:
+[`does-n4-gens20-2seeds-recover-joint-pass-corner`](../../tasks/t0102_seedscale_n4_gen20/assets/answer/does-n4-gens20-2seeds-recover-joint-pass-corner/)
+
+No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells cleared the strict
+joint-pass corner, and zero cells cleared even the loosest 2-axis test (DSI>=0.5 AND PD>=5
+Hz), because DSI and PD-rate are strongly bimodally anti-correlated on this substrate. The
+headline max-DSI of 1.0 in both seeds turned out to be a floating-point artifact of the
+vector-sum DSI formula on silenced cells with PD=0 Hz; the real DSI ceiling under N=4 noise
+replicates is roughly 0.35. The earlier t0091 single joint-pass cell, previously framed as an
+NSGA-II discovery, is reframed here as a one-mutation polynomial-mutation descendant of an
+alt_topology warm-start anchor, so removing the warm-start removes the entire joint-pass
+signal.
+
+</details>
 
 <details>
 <summary><strong>Why do t0090's procedural cells produce zero spikes under the t0083
@@ -2850,7 +2938,155 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (230 open, 31 closed)
+## Suggestions (237 open, 31 closed)
+
+<details>
+<summary>🔧 <strong>Fix DSI vector-sum objective: gate by minimum total spike count
+to eliminate silenced-cell DSI=1.0 artifact</strong> (S-0102-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+Finding 1 in results_detailed.md: 27 t0102 cells reach DSI = 1.0 because vector-sum DSI in
+evaluator.py divides by near-zero total spike count on silenced cells, with floating-point
+dust producing a spurious 'perfect selectivity' score that pulls half the NSGA-II Pareto into
+the silence corner. Single-line fix: return 0.0 when total_spike_count across 16 directions is
+< 10. Bug affects the entire t0080-t0102 lineage; highest-leverage change for recovering
+joint-pass cells at fixed algorithm and budget. Implementation: patch evaluator.py in a new
+task that copies the t0099 substrate, add a silenced-cell unit test, re-run random-init
+NSGA-II at pop=96, gens=8, 1 GA seed, N=4. Expected: joint-pass yield > 0 from random init;
+DSI distribution loses its 1.0 spike. Recommended task types: write-library, experiment-run.
+Cost: ~$2-3 (one pop=96 x 8-gen Vast.ai run).
+
+</details>
+
+<details>
+<summary>📊 <strong>Direct re-evaluation of t0083 / t0091 anchor library at
+N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation</strong>
+(S-0102-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 4 proposes a < $0.20 follow-up that disambiguates
+'substrate-limited vs algorithm-limited' definitively. Take the 5 anchor families from t0091's
+warm-start (alt_topology, symmetric, bedb_like, t0083 anchors 1559 and 1677) and re-evaluate
+each at N_EVAL_SEEDS=4 with no NSGA-II/LHS/mutation -- just per-cell evaluation. Count how
+many clear the strict joint-pass corner. Outcome A (zero clear): joint corner is empirically
+unreachable on this substrate at N=4 regardless of algorithm; further NSGA-II is futile.
+Outcome B (>= 1 clears): NSGA-II at random init is failing to find what is empirically
+present; algorithm replacement (IBEA/CMAES) justified. Also re-evaluate t0091's joint-pass
+cell (DSI=0.511, PD=35.1 Hz, rob=0.79) at N=4 to test the noise-floor prediction. Recommended
+task types: baseline-evaluation, comparative-analysis. Cost: < $0.20 (~95 evaluations, no GA,
+~30 min on Vast.ai).
+
+</details>
+
+<details>
+<summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget (pop=96, gens=15,
+N=4, 2 GA seeds) on Bed B + morphology substrate</strong> (S-0102-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+Mohacsi 2024 (Neuroptimus benchmark, PLOS Comp Bio) reports IBEA is 'clearly the best among
+the multi-objective methods' on six neuron-fitting benchmarks including Hay 2011 L5PC,
+outperforming all three NSGA-II implementations tested. t0102 only tested NSGA-II, leaving
+algorithm choice as an unexamined factor in the 0/4800 random-init joint-pass yield. Port the
+t0099 substrate to pymoo's IBEA (or DEAP/BluePyOpt IBEA wrapper) at matched budget (pop=96,
+gens=15, N_EVAL_SEEDS=4, 2 GA seeds, $8 cap), apply the S-0102-01 DSI fix if available, and
+compare front structure to t0099+t0102. Expected: IBEA's hypervolume-density selection avoids
+placing half the front in the DSI=1/PD=0 corner that NSGA-II crowding distance keeps;
+joint-pass yield improves even if the corner remains hard. Run after or alongside S-0102-02.
+Recommended task types: experiment-run, comparative-analysis. Cost: ~$6-8 matched to t0102
+envelope (IBEA's O(N^2) overhead manageable at pop=96).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Dang 2023 theory-grounded NSGA-II at pop>=290 (mu = n log n
+floor) with N_EVAL_SEEDS=4, gens=10</strong> (S-0102-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+Dang 2023 Theorem 8 requires mu = Omega(n log n) for noisy NSGA-II to retain polynomial
+expected runtime under Bernoulli or Gaussian noise. For our 68-d substrate, the theoretical
+floor is Omega(68 * log(68)) = approximately 290; t0102 ran at pop=96, three times below this
+floor. compare_literature.md Methodology Differences identifies this as a principled lever to
+pull before concluding the substrate is structurally empty of joint-pass cells. Run a single
+random-init NSGA-II at pop=320 (slightly above the Dang floor for headroom), gens=10,
+N_EVAL_SEEDS=4, 1 GA seed -- total budget approximately 3200 evaluations, comparable to t0102.
+If pop>=290 finds joint-pass cells where pop=96 found none, the population-floor argument is
+empirically confirmed; if not, the substrate-limitation reading hardens. Recommended task
+types: experiment-run, comparative-analysis. Cost: ~$5-7 on Vast.ai (single seed at higher pop
+offsets the fewer generations).
+
+</details>
+
+<details>
+<summary>📊 <strong>Anchor-distance lineage trace: quantify t0091 joint-pass cell as
+one-mutation descendant of alt_topology anchor</strong> (S-0102-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 2 reframes t0091's joint-pass cell (DSI=0.511, PD=35.1 Hz,
+rob=0.79, source_generation=2) as a one-mutation descendant of alt_topology anchor row 84 --
+not a de novo NSGA-II discovery. The cell sits 3.55 normalised units from row 84 vs >= 11
+units to any other anchor; expected mutated dims per offspring ~1.0. Load-bearing
+methodological reframing for any paper draft. Formalise as analysis: (i) pairwise Euclidean
+distance from each t0091/t0099/t0102 Pareto cell to every t0091 warm-start anchor and every
+t0083 anchor; (ii) classify each joint-pass-adjacent cell as 'anchor-near' (< 5 units) vs
+'GA-discovered' (>= 10 units); (iii) histogram + scatter of distance vs source_generation.
+Outcome: empirical answer to 'how much of NSGA-II output is searched vs preserved-from-init'
+across t0080-t0102. Recommended task types: data-analysis, comparative-analysis. Cost: ~$0
+(offline analysis on stored JSONLs).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Calcium-clearance perturbation sweep on the 27 silenced-cell
+DSI=1.0 vectors to test silence-as-mechanism hypothesis</strong>
+(S-0102-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 7 proposes a mechanistic reading: the 27 t0102 cells with DSI >=
+0.99 / PD < 0.1 are not bugs but the GA's discovery of a lateral-inhibition silencing regime
+(slow Ca clearance, strong sAHP, weak ACh drive) consistent with Poleg-Polsky 2026 SAC gating.
+Take each of the 27 cells, fix the 68-d vector except CAD_TAUR_MS (Ca clearance tau, dim 38),
+sweep that dim from ~65 ms down to 5 ms in 10 logarithmic steps, re-evaluate DSI/PD/rob at
+N_EVAL_SEEDS=8. Question: when Ca clearance is restored, do these cells collapse to the
+high-PD low-DSI corner (silence was the only DSI mechanism), or do some land in the joint
+corner (Ca clearance is the active constraint and the rest of the vector is joint-viable)?
+Outcome: 27 x 10 grid mapping silence-to-joint escape paths. Doubles as slice-physiology
+prediction (BAPTA Ca chelation should disinhibit SAC/DSGC firing). Recommended task types:
+experiment-run, data-analysis. Cost: < $0.50 (270 evaluations, no GA).
+
+</details>
+
+<details>
+<summary>🔧 <strong>Morinaga 2024 sign-averaging objective formulation to handle
+heavy-tailed DSI noise (alpha close to 1) at fixed budget</strong>
+(S-0102-07)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+Morinaga 2024 (arXiv 2401.14014) Theorem 3 shows explicit averaging is only effective when the
+per-objective noise stability index alpha > 1. compare_literature.md argues our DSI vector-sum
+near zero-spike cells is heavy-tailed with alpha ~1, making K=4 averaging 'nearly inert'.
+Theorem 9 proposes sign-averaging as a comparison-based alternative robust under heavy tails
+at the same compute cost. Steps: (i) compute per-objective alpha on the t0093 anchor library
+at N=20 (offline); (ii) if alpha < 1 for DSI, reformulate NSGA-II selection via sign-averaging
+(count replicates favouring A over B) instead of mean ranking; (iii) run a 1-seed NSGA-II at
+matched budget with sign-averaging. Complementary to S-0102-01 (DSI fix targets the
+floating-point bug; this targets noise-handling theory). Recommended task types:
+write-library, experiment-run. Cost: ~$3-5 (one pop=96 run plus offline analysis).
+
+</details>
 
 <details>
 <summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden

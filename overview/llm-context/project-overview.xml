@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-11T23:14:27Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-12T19:00:52Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>143262</char_count>
-    <byte_count>143531</byte_count>
-    <estimated_tokens>35815</estimated_tokens>
+    <char_count>144852</char_count>
+    <byte_count>145121</byte_count>
+    <estimated_tokens>36213</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -204,10 +204,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0099_random_init_pareto_robustness</id>
         <id>t0100_fix_t0099_morph_charts</id>
         <id>t0101_brainstorm_results_21</id>
+        <id>t0102_seedscale_n4_gen20</id>
         <id>t0103_extract_baden_2016_ds_morphologies</id>
       </source_ids>
       <content>
-Completed tasks: 94
+Completed tasks: 95
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -767,6 +768,12 @@ Completed: 2026-05-11
 Short description: Brainstorm 21: Poleg-Polsky 2026 spec deep-dive vs. our NSGA-II history; commission 68-d t0102 (seeds=2, N_SEEDS=4, gens=20); record 3 new suggestions; budget 20-&gt;35 USD.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0101_brainstorm_results_21&quot; date_completed: &quot;2026-05-11&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 21 — Poleg-Polsky 2026 Deep-Dive Summary Twenty-first strategic brainstorm, triggered by a researcher request to extract numerical specs from Poleg-Polsky 2026 (`10.1038/s41467-026-70288-4`) and compare them against our NSGA-II / MOBO history. The session (a) read seven concrete answers directly from the PDF, (b) flagged several fabricated claims in our existing `summary.md`, (c) commissioned a follow-up NSGA-II task `t0102_seedscale_n4_gen20` at GA-seeds=2 / N_SEEDS=4 / gens=20 on the 68-d substrate, and (d) recorded the project-budget bump...
 
+## 68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init
+ID: t0102_seedscale_n4_gen20
+Completed: 2026-05-12
+Short description: 68-d NSGA-II on Bed B+morph: 2 random-init GA seeds (44, 55), N_SEEDS=4, gens=20, pop=96. Tests if 5x noise drop + 2.5x gens recovers joint-pass corner vs t0099 null. $8 cap.
+Result summary: Results Summary: t0102 Seed-scale N=4, Gen=20 Random-Init NSGA-II Summary Both random-init NSGA-II GA seeds (44, 55) completed at `N_EVAL_SEEDS=4` on the 68-d Bed B + morphology DSGC substrate but were terminated by the per-seed $4 cost watchdog before reaching generation 20 (seed 44: 14/20 gens, seed 55: 13/20 gens). Across all **2,592** evaluated cells, **zero** cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD-rate &gt;= 30 Hz AND robustness &gt;= 0.7) and **zero** cleared even the loosest 2-axis variant (DSI &gt;= 0.5 AND PD &gt;= 5 Hz). The 5x noise drop + 2.5x generation extension hypothesis from the brainstorm is therefore rejected; t0099&#x27;s negative result replicates at a different...
+
 ## Extract direction-selective cell data from Baden et al. 2016
 ID: t0103_extract_baden_2016_ds_morphologies
 Completed: 2026-05-12
@@ -781,10 +788,9 @@ Result summary: t0103 Results Summary Summary Extracted **1,238 per-cell records
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0102_seedscale_n4_gen20</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -805,13 +811,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## 68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init
-ID: t0102_seedscale_n4_gen20
-Status: in_progress
-Effective date: 2026-05-11
-Short description: 68-d NSGA-II on Bed B+morph: 2 random-init GA seeds (44, 55), N_SEEDS=4, gens=20, pop=96. Tests if 5x noise drop + 2.5x gens recovers joint-pass corner vs t0099 null. $8 cap.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0083_bedb_v3_extend_nsga2_gen8plus, t0090_morphology_generator_diversity_test, t0091_morphology_extended_nsga2_v1, t0092_diagnose_morphology_generator_silence, t0093_resweep_and_t0090_correction, t0099_random_init_pareto_robustness, t0101_brainstorm_results_21
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -845,9 +844,10 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_sp
         <id>objective-functions-for-single-neuron-multi-objective-optimisation</id>
         <id>t0090-procedural-cell-silence-root-cause</id>
         <id>random-init-reproducibility-and-warmstart-dependence</id>
+        <id>does-n4-gens20-2seeds-recover-joint-pass-corner</id>
       </source_ids>
       <content>
-Answers: 27
+Answers: 28
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1059,6 +1059,14 @@ Created by: t0099_random_init_pareto_robustness on 2026-05-10
 Confidence: medium
 
 **Q1 (reproducibility): Yes** — across 3 random-init seeds (Pareto sizes 19/22/14), every seed reaches the same headline verdict as t0091: zero biologically-plausible joint-pass cells, zero symmetric-anchor Pareto cells. **Q2 (warm-start dependence): Yes** — t0091 found 1 strict joint-pass cell from its 5-anchor warm-started Pareto (57 cells); none of the 3 random-init seeds (55 cells total) recover that region within 5–8 generations and $1–5 per-seed budget. The warm-start was load-bearing specifically for the high-PD-rate dimension: random-init reaches t0091&#x27;s DSI threshold (best 0.49) but only half its PD-rate (best 18.7 Hz vs t0091&#x27;s 35 Hz).
+
+## Does running 68-d NSGA-II at N_EVAL_SEEDS=4 noise replicates, gens=20, pop=96, 2 random-init GA seeds (44, 55), no warm-start, recover the strict joint-pass corner (DSI&gt;=0.5 AND PD-rate&gt;=30 Hz AND robustness&gt;=0.7) of the Bed B + morphology compartmental DSGC substrate?
+ID: does-n4-gens20-2seeds-recover-joint-pass-corner
+Created by: t0102_seedscale_n4_gen20 on 2026-05-12
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells cleared the strict joint-pass corner, and zero cells cleared even the loosest 2-axis test (DSI&gt;=0.5 AND PD&gt;=5 Hz), because DSI and PD-rate are strongly bimodally anti-correlated on this substrate. The headline max-DSI of 1.0 in both seeds turned out to be a floating-point artifact of the vector-sum DSI formula on silenced cells with PD=0 Hz; the real DSI ceiling under N=4 noise replicates is roughly 0.35. The earlier t0091 single joint-pass cell, previously framed as an NSGA-II discovery, is reframed here as a one-mutation polynomial-mutation descendant of an alt_topology warm-start anchor, so removing the warm-start...
       </content>
     </section>
   </sections>

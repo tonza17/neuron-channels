@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="papers" generated_at_utc="2026-05-11T23:14:27Z">
+<llm_context_archive type_id="papers" generated_at_utc="2026-05-12T19:00:52Z">
   <archive_summary>
     <title>All Papers</title>
     <description>Complete paper corpus with full summaries, metadata, and abstracts.</description>
     <section_count>1</section_count>
-    <char_count>1205502</char_count>
-    <byte_count>1208006</byte_count>
-    <estimated_tokens>301375</estimated_tokens>
+    <char_count>1300623</char_count>
+    <byte_count>1303230</byte_count>
+    <estimated_tokens>325155</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -17,6 +17,12 @@
       <title>All Papers (Full Detail)</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.48550_arXiv.2503.21495</id>
+        <id>10.1101_2025.02.10.637538</id>
+        <id>10.48550_arXiv.2401.14014</id>
+        <id>10.1371_journal.pcbi.1012039</id>
+        <id>10.48550_arXiv.2306.04525</id>
+        <id>10.1016_j.swevo.2016.09.002</id>
         <id>10.1038_nature16468</id>
         <id>10.1523_JNEUROSCI.1979-23.2023</id>
         <id>10.1113_JP286581</id>
@@ -107,7 +113,1379 @@
         <id>10.1113_jphysiol.1965.sp007638</id>
       </source_ids>
       <content>
-Papers: 88
+Papers: 94
+
+## Adaptive Resampling with Bootstrap for Noisy Multi-Objective Optimization Problems
+ID: 10.48550_arXiv.2503.21495
+Year: 2025
+Authors: Timo Budszuhn, Mark Joachim Krallmann, Daniel Horn
+Venue: arXiv preprint
+Venue type: preprint
+DOI: 10.48550/arXiv.2503.21495
+URL: https://arxiv.org/abs/2503.21495
+Categories: compartmental-modeling
+Added by task: t0102_seedscale_n4_gen20
+Date added: 2026-05-11
+
+#### Metadata
+
+* **File**: `files/budszuhn_2025_adaptive-bootstrap-resampling.pdf`
+* **Published**: 2025 (arXiv v2, 24 April 2025)
+* **Authors**: Timo Budszuhn 🇩🇪, Mark Joachim Krallmann 🇩🇪, Daniel Horn 🇩🇪
+* **Venue**: arXiv preprint (cs.LG)
+* **DOI**: `10.48550/arXiv.2503.21495`
+
+#### Abstract
+
+The challenge of noisy multi-objective optimization lies in the constant trade-off between exploring
+new decision points and improving the precision of known points through resampling. This decision
+should take into account both the variability of the objective functions and the current estimate of
+a point in relation to the Pareto front. Since the amount and distribution of noise are generally
+unknown, it is desirable for a decision function to be highly adaptive to the properties of the
+optimization problem. This paper presents a resampling decision function that incorporates the
+stochastic nature of the optimization problem by using bootstrapping and the probability of
+dominance. The distribution-free estimation of the probability of dominance is achieved using
+bootstrap estimates of the means. To make the procedure applicable even with very few observations,
+we transfer the distribution observed at other decision points. The efficiency of this resampling
+approach is demonstrated by applying it in the NSGA-II algorithm with a sequential resampling
+procedure under multiple noise variations.
+
+#### Overview
+
+Budszuhn and colleagues address a central efficiency problem in noisy multi-objective optimization:
+how to allocate a finite evaluation budget between exploring new candidate solutions and improving
+the precision of existing estimates through resampling. Their target algorithm is NSGA-II, the
+canonical elitist non-dominated sorting genetic algorithm, which is particularly sensitive to noise
+because an overestimated point can poison the Pareto front for many generations. Existing resampling
+strategies are either static (allocate a fixed budget per point), rank-based, variance- based, or
+RTEA-style elitist re-evaluation; none of them simultaneously account for both a point&#x27;s proximity
+to the Pareto front and the variability of its objective estimates.
+
+The authors propose Adaptive Resampling with Bootstrap (ARB), a sequential resampling decision
+function built on the probability of dominance, where the dominance distribution is estimated by
+nonparametric bootstrap of the sample means rather than by assuming Gaussianity (as in earlier work
+by Teich). To make bootstrap feasible when a point has only one or two observations, they introduce
+an error-pooling trick: a global dispersion set E of size 100 is maintained from the most recent
+re-evaluated points across the population, and bootstrap samples for a sparsely evaluated point are
+drawn partly from this global set and partly from the point&#x27;s own residuals. A point is resampled
+only when its estimated probability of dominating any current Pareto-front member falls in a window
+(alpha_l, alpha_u), so neither already-dominated junk nor already- confirmed elites waste budget.
+
+The simulation study (UPC test functions, NSGA-II popSize 40, 50,000 evaluations per run, 30
+replications, Gaussian and chi-squared noise at six standard deviations) shows that ARB is
+significantly more robust than RTEA and the other dynamic NSGA-II resampling strategies, and is
+competitive with the simple static-N strategy under chi-squared noise. The contribution is therefore
+not a single best algorithm but a flexible, distribution-free decision rule that adapts to unknown
+noise shape and magnitude.
+
+#### Architecture, Models and Methods
+
+ARB is implemented as a drop-in sequential resampling decision function for NSGA-II. The full
+procedure is:
+
+* **Initialisation**: a population of size M_i greater than 100 is sampled and evaluated once; the
+  best 100 (by NSGA-II non-dominated sort) are evaluated a second time. Each pair (y1, y2)
+  contributes scaled residuals (y - mean) * sqrt(N / (N - 1)) to a global dispersion set E of size
+  100 with zero mean. Population size during optimisation is fixed at 40.
+* **Per-generation loop** (sequential resampling): for every point xj in the current population,
+  bootstrap 100 sample-mean draws Y_tilde for xj and for each Pareto-front member xs. If xj has N_j
+  observations, each bootstrap draw is built as
+  `Y_tilde = ybar_j + (1/N) * (E_tilde + sum_{n=1..N-1} sqrt(N / (N - 1)) * (Y_tilde_n - ybar_j))`,
+  where E_tilde is drawn from E and the remaining N - 1 terms from the point&#x27;s own residuals.
+* **Probability of dominance estimate**: P_hat(xj precedes xs) = (1 / (Ni * Nj)) * sum of
+  indicator-of-componentwise-less-than over the 100 x 100 bootstrap pairs.
+* **Decision function Delta_PD(S_hat, j)**: resample xj only if alpha_l less than max over Pareto
+  front of P_hat(xj weakly dominates xs) less than alpha_u. Outside this band, do not resample.
+  Authors sweep alpha_l in {0.1, 0.2, 0.5} and alpha_u in {0.75, 0.9, 1.0}.
+* **Error-base maintenance**: the 100 most recently observed scaled residuals are kept, mean-
+  centred before every sampling step.
+* **Bootstrap parameters**: B = 100 bootstrap samples per point per generation; the global E set is
+  forced to size 100 to ensure 100 distinct bootstrap draws are available even after a single
+  observation.
+
+Competing strategies are implemented in the same framework: NSGA-II without resampling (static N =
+1), static resampling with N in {1, 5, 10, 20}, dynamic decision functions from Siegmund-Ng-Deb
+(domination-strength, rank-based, time-based), standard-error dynamic resampling with sigma_thr in
+{0.01, 0.05, 0.1}, and the Rolling Tide Evolutionary Algorithm (RTEA) with one resample per
+iteration, starting population 40, refinement fraction z = 0.1. All algorithms share the same
+mutation and crossover operators. Test problems are the UPC multi-objective benchmark functions
+[14]; noise is added as `Y_d = g_d(x) + v_d(x) * eps` with eps drawn from N(0, 1) or (1 / sqrt(2k))
+\* (chi2_k - k) for k in {1, 2}, and a constant scale v_d in {0.01, 0.1, 0.5, 1, sqrt(2), 2}. Each
+setting is run for 30 independent replications of 50,000 evaluations. Two unbiased comparison
+protocols are used: random 20-vs-10 replication splits for parameter selection and comparison (100
+random splits), and a realistic pre-study protocol that uses an initial 5,000-evaluation run to fix
+parameters, then 30 replications of the full 50,000- evaluation run for hypothesis testing. Quality
+measures are scaled dominated hypervolume HV and inverted generational distance IGD_p; IGD results
+are reported as substantively similar to HV.
+
+#### Results
+
+* Under Gaussian noise across all six standard deviations, ARB outperforms RTEA and the dynamic
+  NSGA-II family in the majority of split-comparison runs (Figure 1; Section 6.1).
+* Under chi-squared noise, the no-resample static NSGA-II (N = 1) wins most settings because
+  one-sided bounded noise cannot strongly overestimate a point; ARB still ranks second across all
+  noise types.
+* In the realistic 5,000-evaluation pre-study counts of best-performing strategy across all settings
+  (Table 1): **ARB chi2 = 1194, NSGA-II STA chi2 = 1614, NSGA-II DYN chi2 = 175, RTEA chi2 = 617**;
+  **ARB Gaussian = 549, NSGA-II STA Gaussian = 280, NSGA-II DYN Gaussian = 542, RTEA Gaussian =
+  609**; **ARB no-noise = 107, NSGA-II STA no-noise = 104, NSGA-II DYN no-noise = 17, RTEA no-noise
+  = 72**.
+* Statistical tests with parameters chosen on the 5,000-evaluation pre-study show ARB significantly
+  better than RTEA in **64.7 percent** of simulated scenarios and significantly worse in **24.7
+  percent**.
+* ARB beats the other dynamic sequential resampling strategies (domination-strength, rank-based,
+  time-based, standard-error) in **71.0 percent** of scenarios and loses in only **8.7 percent**.
+* The one-shot static-N strategy is the only competitor that wins more often than ARB overall
+  (**22.4 percent vs 20.7 percent** of scenarios), and the gap is driven entirely by the chi-squared
+  regime.
+* Dynamic NSGA-II resampling strategies as a group perform poorly across all noise types except
+  high-variance Gaussian, where they begin to win a small fraction of settings.
+
+#### Innovations
+
+##### Bootstrap-Based Probability of Dominance
+
+ARB replaces Teich&#x27;s normal-distribution assumption for the probability of dominance with a
+nonparametric bootstrap estimate of the sample-mean distribution, removing the need to specify or
+estimate a noise model. This makes the decision rule robust to skewed noise (chi-squared) and to
+unknown distribution shapes that arise in practice (e.g., chi-squared-like error from bad train-test
+splits in hyperparameter optimisation).
+
+##### Error Pooling Across the Population (Homoscedastic Transfer)
+
+To enable bootstrap with as few as N = 1 observations at a point, the authors maintain a global
+dispersion set E of the 100 most recent scaled residuals across the population and mix global draws
+with point-local draws. As N grows, point-local variability progressively dominates. This is the key
+practical innovation: it avoids the cost of a mandatory second evaluation per point while preserving
+statistical interpretability.
+
+##### Two-Sided Decision Window with alpha_l and alpha_u
+
+The decision rule does not simply threshold &quot;is this point promising?&quot;. It carves out an explicit
+no-resample band on both sides: already-dominated junk (P less than alpha_l) and already-confirmed
+elites (P greater than alpha_u) are both refused additional budget. This is a clean structural
+generalisation of rank-based and standard-error rules into a single probabilistic statement.
+
+#### Datasets
+
+This is a methodological paper with simulated benchmarks. The objective functions are the **UPC
+multi-objective test functions** [14], used as the noise-free mean function. Noise is injected as
+Gaussian N(0, 1) or scaled chi-squared (1 / sqrt(2k)) * (chi2_k - k) with k in {1, 2}, multiplied by
+a constant noise scale v_d in {0.01, 0.1, 0.5, 1, sqrt(2), 2}, plus a no-noise control. Each
+combination is run for 30 replications of 50,000 evaluations under each of: NSGA-II with no
+resampling, NSGA-II with static resampling N in {1, 5, 10, 20}, NSGA-II with dynamic resampling
+(domination-strength, rank-based, time-based, standard-error), RTEA, and ARB with alpha_l in {0.1,
+0.2, 0.5}, alpha_u in {0.75, 0.9, 1.0}, popSize 40. No real-world dataset is used. Code availability
+is not stated in the paper text.
+
+#### Main Ideas
+
+* **Static N is not always wrong** -- with bounded/skewed noise (chi-squared), the simplest static N
+  = 1 strategy wins more scenarios than any adaptive strategy in this study. For t0102&#x27;s question
+  (replace static N_SEEDS with adaptive resampling), this is a serious caveat: an adaptive scheme is
+  only clearly better than static N when the noise is approximately Gaussian.
+* **Sequential resampling beats one-shot for elitist algorithms** under noisy MOO, but only when the
+  decision rule jointly considers both Pareto-rank proximity and variance. Pure variance-only
+  (standard-error) and pure rank-only (domination-strength, rank-based) rules underperform.
+* **Probability of dominance is the right summary statistic** for combining rank and variance.
+  Bootstrap estimation of it removes the distributional assumption that previously limited this
+  approach.
+* **Error pooling is essential** for any adaptive resampler that must operate from a single
+  evaluation per point. Without a global dispersion set, no statistical decision can be made before
+  at least two evaluations, which already commits the budget the adaptive scheme is trying to save.
+* **Heteroscedasticity is an open question**: the paper only studies homoscedastic noise. DSGC
+  multi-seed loss noise across morphologies / parameter sets is plausibly heteroscedastic, so this
+  technique would need empirical validation before adoption in t0102&#x27;s follow-up.
+
+#### Summary
+
+Budszuhn, Krallmann, and Horn study the resource-allocation problem at the heart of noisy
+multi-objective optimization: every evaluation either explores a new candidate or sharpens an
+existing estimate, and the algorithm must decide which without knowing the noise distribution. Their
+target is NSGA-II, an elitist algorithm that is particularly damaged by overestimated points. Prior
+work either fixes a static number of evaluations per point, uses rank or variance heuristics, or
+assumes Gaussian noise to estimate a probability of dominance. None of these adapt to unknown noise
+shape.
+
+The authors&#x27; contribution is Adaptive Resampling with Bootstrap (ARB), a sequential decision
+function that bootstraps the sample-mean distribution at each point, estimates the probability of
+dominating any current Pareto-front member from 100 paired bootstrap draws, and triggers resampling
+only when that probability lies in a tunable window (alpha_l, alpha_u). To make the bootstrap work
+after a single observation, they maintain a population-level pool E of the 100 most recent scaled
+residuals and mix global draws with point-local draws, weighting the local component more heavily as
+N grows. The full evaluation uses UPC benchmark functions with Gaussian and chi-squared noise at six
+standard deviations, NSGA-II popSize 40, and 30 replications of 50,000 evaluations per setting.
+
+ARB is the most flexible algorithm tested. With realistic pre-study parameter selection it ranks
+second across all noise regimes and significantly beats RTEA in **64.7 percent** of scenarios and
+the other dynamic NSGA-II resamplers in **71.0 percent**. The only competitor that wins overall is
+static N = 1 (no resampling), and only because chi-squared noise is one-sided bounded -- when
+overestimation is impossible, paying for resamples is pure waste. Under Gaussian noise, RTEA&#x27;s
+strict elitism does well but is still beaten by ARB on average. The headline finding is therefore
+not &quot;ARB is universally best&quot; but &quot;ARB is the only strategy that does not collapse on at least one
+noise type, because its decision rule is distribution-free&quot;.
+
+This paper matters for t0102 because the current DSGC compartmental-modelling pipeline fixes the
+number of stochastic-seed evaluations (N_SEEDS) statically per design point -- exactly the static N
+strategy the paper compares against. ARB is the natural candidate for a follow-up suggestion
+S-0102-NEW-01 that would replace that constant with an adaptive resampler driven by the probability
+of dominance over the running Pareto front of (loss, cost) or (loss, biological plausibility).
+Before adoption we must verify that DSGC noise is closer to Gaussian than to a bounded chi-squared
+shape -- if seed-to-seed loss variation is heavily right-skewed and one-sided, the paper&#x27;s own
+results suggest static N might still be near-optimal and the engineering cost of ARB would not pay
+back. Heteroscedasticity across morphologies is also untested in the paper and must be checked
+empirically before any production switch.
+
+## A Complete Spatial Map of Mouse Retinal Ganglion Cells Reveals Density and Gene Expression Specializations
+ID: 10.1101_2025.02.10.637538
+Year: 2025
+Authors: Samuel A. Budoff, Alon Poleg-Polsky
+Venue: bioRxiv
+Venue type: preprint
+DOI: 10.1101/2025.02.10.637538
+URL: https://www.biorxiv.org/content/10.1101/2025.02.10.637538v1
+Categories: retinal-ganglion-cell, direction-selectivity
+Added by task: t0102_seedscale_n4_gen20
+Date added: 2026-05-11
+
+#### Metadata
+
+* **File**: `files/budoff_2025_rgc-spatial-map.pdf`
+* **Published**: 2025 (bioRxiv preprint, posted 2025-02-12)
+* **Authors**: Samuel A. Budoff 🇺🇸, Alon Poleg-Polsky 🇺🇸
+* **Venue**: bioRxiv
+* **DOI**: `10.1101/2025.02.10.637538`
+
+#### Abstract
+
+Retinal ganglion cells (RGCs) transmit visual information from the eye to the brain. In mice,
+several RGC subtypes show nonuniform spatial distributions, potentially mediating specific visual
+functions. However, the full extent of RGC specialization remains unknown. Here, we used en-face
+cryosectioning, spatial transcriptomics, and machine learning to map the spatial distribution of all
+RGC subtypes identified in previous single-cell studies. While two-thirds of RGC subtypes were
+evenly distributed, others showed strong biases toward ventral or dorso-temporal regions associated
+with sky vision and the area retinae temporalis (ART), the predicted homolog of the area centralis.
+Additionally, we observed unexpected spatial variation in gene expression within several subtypes
+along the dorso-ventral axis or within vs. outside the ART, independent of RGC density profiles.
+Finally, we found limited correlations between the gene profiles of the ART and the primate macula,
+suggesting divergent specialization between the mouse and primate central vision.
+
+#### Overview
+
+This study from the Poleg-Polsky lab produces the first complete spatial atlas of all 45 genetically
+defined mouse retinal ganglion cell (RGC) subtypes. Prior to this work, only about 17 of these
+subtypes had been spatially mapped, leaving most of the population&#x27;s retinal topography unknown.
+Budoff and Poleg-Polsky combine three methodological pieces -- en-face (horizontal) cryosectioning
+of the ganglion cell layer, 10X Genomics Xenium spatial transcriptomics with a custom 300-gene
+panel, and two neural-network classifiers (GraSP for gene-panel selection and CuttleNet for
+two-stage cell-class then subtype inference) -- to assign every cell in the ganglion cell layer to
+one of the 130 retinal subtypes catalogued by single-cell RNA-seq studies, then project them onto a
+normalized retina aligned by the dorsal-ventral s/m-opsin gradient.
+
+The resulting atlas covers five C57BL/6J retinas and 130,575 classified RGCs. Roughly two-thirds of
+subtypes tile the retina nearly uniformly, while the remaining one-third cluster either in the
+ventral retina (sky-facing) or the dorso-temporal retina (the candidate area retinae temporalis,
+ART, the proposed rodent homolog of the primate area centralis/macula). The authors also discover
+that gene expression itself varies within several subtypes as a function of retinal position, mostly
+along the dorso-ventral axis, independent of RGC density. A cross-species comparison of
+synaptic-receptor and voltage-gated channel gene expression between the mouse ART and the primate
+macula reveals only modest correspondence -- sodium channel expression is conservatively correlated,
+but GABA/glycine receptors are anti-correlated -- suggesting the ART and macula are behavioral but
+not transcriptomic homologs.
+
+For a project targeting direction-selective RGCs, the most operationally relevant finding is the
+spatial atlas itself: the maps of α sustained (αONS = T43, αOFFS = T42, αONT = T41), J-RGCs
+(T5), W3 (T2/T3/T4/T6/T21/T23/T30), and several intrinsically photosensitive RGC types are all
+reported with their preferred retinal regions. This grounds the regional context in which a
+single-cell DSGC model lives, and pins the regional location of the αRGC family that is
+mechanistically closest to ON-OFF DSGCs.
+
+#### Architecture, Models and Methods
+
+The pipeline integrates wet-lab tissue handling, high-plex in situ hybridization, and two custom
+machine-learning models.
+
+* **Animals**: Five adult C57BL/6J mice (3 female, 2 male). All procedures NIH-approved through the
+  University of Colorado IACUC.
+* **En-face cryosectioning**: After enucleation and cleaning, eye cups were flash-frozen with the
+  ganglion cell layer pressed flat against a coverslip in OCT, then cryosectioned at -18 °C into 20
+  µm horizontal slices, collected on 10X Genomics Xenium slides.
+* **Gene panel selection (GraSP)**: GraSP is a dimensionality-reduction algorithm using neural
+  network ensembles, each trained on 50% target / 50% distractor cells. Applied to published
+  scRNA-seq atlases, it ranked genes by importance for distinguishing all 130 retinal subtypes; the
+  top 225 genes were combined with 75 manually selected genes covering synaptic proteins and
+  voltage-gated channels, giving a custom 300-gene Xenium panel.
+* **Xenium imaging + IHC**: 10X Xenium in situ hybridization was performed per manufacturer
+  protocol; tissue was then co-stained with rabbit anti-RBPMS (Invitrogen MA5-46928) plus
+  AF549-conjugated secondary to mark all RGCs and tomato lectin (TL-AF649) for vasculature, then
+  imaged on a Keyence BZX800 microscope with structured-illumination optical sectioning.
+* **Cell segmentation (Baysor)**: A Bayesian segmentation algorithm using Xenium-derived nuclear
+  priors and gene-expression boundaries assigned puncta to individual cells; the ganglion cell layer
+  was manually annotated using Grm6 (bipolar), Prox1 (amacrine), Rbpms (RGC) gene markers and the
+  RBPMS protein stain.
+* **Cell classification (CuttleNet)**: A two-stage hierarchical deep neural network. A &quot;head&quot; module
+  assigns each cell to a class (photoreceptor, bipolar, amacrine, glia, RGC) and dynamically routes
+  RGC cells to a &quot;tentacle&quot; subnetwork that predicts the specific Tran-cluster subtype. Initial
+  training used integrated scRNA-seq datasets from Tran 2019, plus Yan and Macosko data; fine-tuning
+  used Xenium-vs-scRNAseq scaling factors per gene. Final RGC class precision was **89.5%** with
+  recall **98.5%** on 255 human-labeled RBPMS cells.
+* **Registration**: All retinas were rotated to align via the Opn1sw / Opn1mw dorsal-ventral
+  gradient and projected onto a normalized Cartesian grid with the optic nerve head at (0,0). For
+  global analysis, relief cuts were digitally filled in by radial spreading.
+* **Spatial statistics**: Local mosaicism was tested with the Voronoi Domain Regularity Index
+  (VDRI), effective radius, and Nearest Neighbor Regularity Index (NNRI) across 14 study regions,
+  with bootstrap nulls drawn from the local RGC population. Global clustering used Moran&#x27;s I (for
+  spatial randomness) plus Kulldorff&#x27;s scan statistic to locate Statistically Significant Spatial
+  Clusters (SSSCs); SSSC overlap with binocular-sky, binocular-ground, peripheral-sky and
+  peripheral-ground masks was scored via F1, then hierarchically clustered into four spatial groups.
+  DEGs were tested by ANOVA with multiple-comparison correction, restricted to genes with mean
+  expression &gt; 1 puncta/cell.
+
+The pipeline ultimately classifies **1,434,195 total cells** (300 genes/cell expression matrix) and
+**130,575 RGCs** after filtering.
+
+#### Results
+
+* Mapped all **45** genetically defined mouse RGC subtypes; previous work had only mapped about
+  **17**.
+* Final cell-type assignment performance for RGC class: **precision 89.5%, recall 98.5%** on n = 255
+  manually labeled cells.
+* Relative subtype counts correlated with the Tran scRNA-seq reference at **R² = 0.71**.
+* Subtype marker validation: **96.4%** of CuttleNet-classified T6 cells contained at least one Zic1
+  puncta (vs **96.5%** in the Tran reference); **72%** of T45 cells expressed Kcnip2 (vs **85-100%**
+  in prior work -- slight under-detection attributed to T45 rarity in training).
+* Local mosaic structure: **18 of 26** well-represented RGC subtypes had effective radii
+  significantly larger than random; NNRI was elevated for the majority; VDRI flagged only **6**
+  subtypes as significantly non-random. T7 and T10 were notable exceptions with statistically random
+  local distributions.
+* Global distribution: about **two-thirds (29/45)** of subtypes tile the retina broadly; the
+  remaining one-third split into a ventral/sky-preferring group (7 subtypes, including half of the
+  ipRGCs) and a dorso-temporal/ART-preferring group (9 subtypes, including the other ipRGCs).
+* αONS (T43), αONT (T41), and αOFFS (T42) reproduced the known dorso-temporal enrichment; W3
+  cells correspond to multiple Tran clusters (T2, T3, T4, T6, T21, T23, T30, possibly T1/T13); M1
+  ipRGCs (T33, T40) showed a bimodal ventral-plus-temporal peak; M5 ipRGCs (T22) were strongly
+  ventral. J-RGCs (T5) showed central clustering.
+* The only conflict with prior maps was αOFFT (T45), reported as uniformly distributed previously
+  but here showing a modest ventral-temporal peak consistent with a proposed role detecting
+  approaching aerial predators.
+* Within-subtype DEG analysis: out of 50 genes meeting the &gt; 1 puncta/cell expression criterion,
+  **6** had significantly different mean expression across the four spatial RGC groups (ANOVA,
+  multiple-comparison-corrected). Of all gene x subtype combinations tested, **0.9%** showed
+  statistically different expression within a subtype as a function of retinal position; the
+  sky-vs-ground division accounted for over half of these.
+* Subtypes with the most position-dependent DEGs: **T6 (7 DEGs)**, **T8, T14, T16, T17, T36 (5-6
+  DEGs each)**.
+* Cross-species comparison of mouse ART vs primate macula gene expression: only modest overall
+  correlations; **voltage-gated sodium channel** genes were significantly positively correlated,
+  while **GABA and glycine receptor** subunits were significantly anti-correlated; the Na-channel
+  correlation was driven by ventral-retina Group-3 subtypes that lie outside the ART itself.
+
+#### Innovations
+
+##### Complete Spatial Atlas of All 45 Mouse RGC Subtypes
+
+First study to spatially map every genetically defined mouse RGC subtype in a single coherent
+coordinate frame, more than doubling prior coverage (17 -&gt; 45 subtypes). The result is a publishable
+atlas that fixes the regional preferences of subtypes that were previously known only from scRNA-seq
+abundance.
+
+##### En-Face Cryosectioning for Xenium
+
+Adapting horizontal (en-face) cryosectioning to 10X Xenium slides preserves large intact pieces of
+the ganglion cell layer instead of the vertical cross-sections used by previous spatial-
+transcriptomic retina studies. This preserves the en-face spatial relationships required to detect
+dorso-temporal or ventral specialization at all, and avoids fragmenting cell mosaics.
+
+##### GraSP + CuttleNet ML Stack
+
+A two-stage hierarchical deep neural network (&quot;head&quot; + dynamically routed &quot;tentacles&quot;) trained on
+combined scRNA-seq atlases and fine-tuned with Xenium scaling factors, supported by a custom
+neural-network-ensemble feature selector (GraSP). Together they enable subtype-level inference from
+a 300-gene panel with high RGC precision/recall (89.5/98.5).
+
+##### Functional Decoupling of Density and Gene Expression
+
+Demonstrates that within-subtype gene expression varies across retinal position independently of the
+subtype&#x27;s density distribution. This challenges the simple &quot;subtype = single uniform transcriptomic
+identity&quot; assumption and supports a continuous-variation account where regional specialization is
+partly a within-subtype gene-expression phenomenon.
+
+##### Quantitative Mouse-Primate Specialization Comparison
+
+First systematic transcriptomic comparison of the ART (proposed rodent homolog of the macula)
+against the primate macula using matched synaptic-receptor and voltage-gated channel gene families.
+The finding of weak global correlation but specific positive Na-channel and negative GABA/glycine
+receptor patterns nuances the homology claim and warns against using ART as a one-to-one macular
+model.
+
+#### Datasets
+
+* **Primary dataset (this study)**: 10X Genomics Xenium en-face spatial transcriptomics on 5
+  C57BL/6J mouse retinas (3 female, 2 male), custom 300-gene panel, RBPMS + tomato lectin IHC
+  co-stain. Final processed dataset: 1,434,195 segmented cells and 130,575 classified RGCs.
+* **scRNA-seq training data**: Integrated published mouse retinal scRNA-seq atlases (Tran et al.,
+  Yan et al., Macosko et al.), used both for GraSP gene-panel selection and for CuttleNet training.
+* **Primate scRNA-seq data**: Published primate retinal scRNA-seq datasets used for the
+  mouse-vs-primate comparison of synaptic-receptor and voltage-gated channel gene expression. The
+  paper restricts the comparison to orthologous genes.
+* **Availability**: This is a bioRxiv preprint with CC-BY-NC-ND 4.0 license. Source data and code
+  availability are described in the manuscript; data are sufficient to support all reported figures.
+
+#### Main Ideas
+
+* The Poleg-Polsky lab (origin of the DSGC model used in this project) has now published a
+  high-resolution map of where every RGC subtype sits in the mouse retina -- this provides the
+  regional context for any single-cell DSGC simulation and explicitly localizes the α-RGC family
+  that is mechanistically closest to ON-OFF DSGCs to the dorso-temporal retina.
+* Within-subtype spatial variation in voltage-gated channel and synaptic-receptor gene expression
+  (sodium channel and GABA receptor families especially) is real and statistically significant. This
+  is direct biological evidence that a single DSGC subtype need not have one fixed Na/K conductance
+  setting -- supporting the project&#x27;s premise that parametric exploration of those conductances is
+  biologically meaningful.
+* The ART is not a transcriptomic copy of the primate macula. Conclusions drawn from a mouse-ART
+  DSGC model should not be extrapolated to primate central-vision DSGCs without explicit
+  acknowledgement of the divergence found here, particularly in GABA / glycine receptor expression.
+* Mosaic regularity holds for most but not all RGC subtypes (18/26 well-represented subtypes with
+  significantly larger effective radii than random; T7 and T10 are random). For the DSGC model, this
+  argues that homotypic spacing should not be assumed perfectly regular if a future task scales up
+  to a network simulation.
+* The same group&#x27;s two-stage neural-network classifier (CuttleNet) and gene-panel selector (GraSP)
+  provide reusable references if any downstream task needs to identify or stratify cells by
+  transcriptomic profile from sparse panels.
+
+#### Summary
+
+Budoff and Poleg-Polsky (2025) present the first complete spatial atlas of all 45 mouse retinal
+ganglion cell subtypes. The motivation is direct: scRNA-seq has catalogued ~45 mouse RGC subtypes,
+but spatial mapping had reached only about 17 of them, leaving most of the population&#x27;s retinal
+topography and any regional specialization unknown. The study asks where each genetically defined
+subtype lives, whether subtypes show local mosaic regularity, whether gene expression varies within
+a subtype as a function of retinal position, and how the mouse area retinae temporalis (ART)
+compares transcriptomically to the primate macula.
+
+Methodologically the paper combines four pieces: (1) en-face cryosectioning of intact ganglion-cell
+layers on 10X Genomics Xenium slides, (2) a custom 300-gene Xenium panel chosen by the GraSP
+neural-network-ensemble feature selector (225 unbiased genes plus 75 manually picked
+synaptic-protein and voltage-gated-channel genes), (3) Baysor Bayesian cell segmentation with Xenium
+nuclear priors, and (4) CuttleNet, a two-stage hierarchical deep neural network with a class &quot;head&quot;
+and dynamically routed subtype &quot;tentacles&quot; trained on integrated mouse scRNA-seq atlases. Five
+C57BL/6J retinas were imaged, IHC-stained with RBPMS and tomato lectin, and projected onto a
+normalized Cartesian retina aligned by the Opn1sw/mw opsin gradient. Local mosaicism was assessed
+with VDRI/NNRI/effective-radius statistics against bootstrap nulls; global clustering used Moran&#x27;s I
+plus Kulldorff scan statistics and F1 overlap with ethologically relevant visual-field masks; DEGs
+were tested by ANOVA with multiple-comparison correction.
+
+The atlas reveals that about two-thirds of mouse RGC subtypes (29 of 45) tile the retina nearly
+uniformly, with the remaining third splitting into a ventral, sky-facing group and a dorso-temporal,
+ART-preferring group containing the α-RGC family and several intrinsically photosensitive RGC
+subtypes. Local mosaic regularity was confirmed for 18 of 26 well-sampled subtypes. Most known maps
+(αONS, αONT, αOFFS, W3, J-RGCs, M1/M2/M4/M5 ipRGCs) were reproduced, with the only material
+disagreement being a modest ventral-temporal peak for αOFFT (T45) instead of the previously
+reported uniform distribution. About 0.9% of gene x subtype combinations showed within-subtype
+regional DEGs, mostly along the sky-vs-ground axis; T6, T8, T14, T16, T17, and T36 carried the most
+DEGs. The mouse ART correlates weakly with the primate macula transcriptomically: voltage-gated
+sodium channel expression is positively correlated (driven by ventral Group-3 subtypes), while GABA
+and glycine receptors are anti-correlated.
+
+For this project, the paper provides three concrete deliverables. First, it pins the dorso-temporal
+location of the α-RGC family that is mechanistically closest to ON-OFF DSGCs, fixing the regional
+context in which the project&#x27;s single-cell DSGC model lives. Second, the demonstration that
+voltage-gated sodium channel and GABA receptor gene expression varies within a subtype as a function
+of retinal position gives direct biological support to the project&#x27;s core premise that systematic
+parametric exploration of Na/K conductance combinations is biologically realistic -- a single DSGC
+subtype is not a single biophysical operating point. Third, the divergence between the mouse ART and
+primate macula (especially for GABA/glycine receptors) warns against over-extrapolating any
+optimised mouse-DSGC model to primate central vision. This paper also confirms the Poleg-Polsky
+group&#x27;s continued activity on mouse DSGC biology, which is relevant context for the de Rosenroll
+2026 DSGC model that motivates this task.
+
+## Theoretical Analysis of Explicit Averaging and Novel Sign Averaging in Comparison-Based Search
+ID: 10.48550_arXiv.2401.14014
+Year: 2024
+Authors: Daiki Morinaga, Youhei Akimoto
+Venue: preprint
+Venue type: preprint
+DOI: 10.48550/arXiv.2401.14014
+URL: https://arxiv.org/abs/2401.14014
+Categories: compartmental-modeling
+Added by task: t0102_seedscale_n4_gen20
+Date added: 2026-05-11
+
+#### Metadata
+
+* File: `files/morinaga_2024_sign-averaging-noisy-search.pdf`
+* Published: 2024-01-25
+* Authors: Daiki Morinaga JP, Youhei Akimoto JP
+* Venue: arXiv preprint (cs.NE), 13 pages, RIKEN AIP collaboration
+* DOI: `10.48550/arXiv.2401.14014`
+
+#### Abstract
+
+In black-box optimization, noise in the objective function is inevitable. Noise disrupts the ranking
+of candidate solutions in comparison-based optimization, possibly deteriorating the search
+performance compared with a noiseless scenario. Explicit averaging takes the sample average of noisy
+objective function values and is widely used as a simple and versatile noise-handling technique.
+Although it is suitable for various applications, it is ineffective if the mean is not finite. We
+theoretically reveal that explicit averaging has a negative effect on the estimation of ground-truth
+rankings when assuming stably distributed noise without a finite mean. Alternatively, sign averaging
+is proposed as a simple but robust noise-handling technique. We theoretically prove that the sign
+averaging estimates the order of the medians of the noisy objective function values of a pair of
+points with arbitrarily high probability as the number of samples increases. Its advantages over
+explicit averaging and its robustness are also confirmed through numerical experiments.
+
+#### Overview
+
+This paper provides a sharp theoretical characterization of when explicit averaging - the standard
+noise-handling trick in evolution strategies and comparison-based black-box optimizers - actually
+helps, and when it actively hurts. The authors prove that the answer hinges on a single parameter:
+the stability index alpha of the noise distribution. For alpha in (1, 2] the noise has a finite
+mean, the sample mean concentrates at rate K^(1 - 1/alpha), and explicit averaging is asymptotically
+effective. At the critical value alpha = 1 (Cauchy-like noise) averaging is provably ineffective:
+the order estimation probability (OEP) does not improve with more samples. For alpha in (0, 1) the
+situation is worse than no averaging at all - the OEP strictly decreases as the sample budget K
+grows, because the sample mean is itself a stable random variable whose dispersion grows with K.
+
+Having identified this failure mode, the paper introduces sign averaging as a robust alternative.
+Sign averaging compares two candidate solutions by counting how many of the K paired noisy
+evaluations rank one above the other; it estimates the sign of the median difference rather than the
+sign of the mean difference. The central theoretical result (Theorem 9) is that sign averaging OEP
+converges to 1 as K grows under very mild conditions on the noise distribution - no finite-mean
+assumption is needed, only continuity and a median-additivity property. Numerical experiments on
+benchmark functions with stable noise of varying alpha confirm both negative results for explicit
+averaging at low alpha and the universal robustness of sign averaging across the whole alpha range.
+
+For the present project, which uses NSGA-II on a stochastic compartmental simulator with K = 4 seeds
+per individual, this paper provides the theoretical taxonomy that justifies the regime we operate
+in. The fitness landscape of the DSGC tuning problem combines well-behaved EPSP/IPSP statistics with
+firing-rate metrics that can have long-tailed seed-to-seed variation; understanding where on the
+alpha spectrum each metric lives determines whether K = 4 averaging is informative or actively
+misleading.
+
+#### Architecture, Models and Methods
+
+The paper is theoretical with numerical validation. The setting is comparison-based search on a
+noisy black-box objective f(x; epsilon) = h(x) + sum_m g_m(x) * epsilon_m, where h(x) is the
+noiseless objective and the noise vector epsilon has components drawn from a common stable
+distribution with stability parameter alpha in (0, 2]. Stable distributions are chosen because they
+form the natural generalisation of the central limit theorem: they include Gaussian (alpha = 2,
+finite mean and variance), Cauchy (alpha = 1, no finite mean), and Levy-stable laws (alpha &lt; 1, no
+finite mean) under one unified parameterisation.
+
+The key analytical quantity is the Order Estimation Probability (OEP): for a fixed pair of points
+(x_1, x_2) with true objective gap Delta, the probability that K noisy evaluations correctly recover
+sign(h(x_1) - h(x_2)). The explicit averaging estimator computes the sample mean of K paired noisy
+differences and takes its sign. The sign averaging estimator instead counts the sign of each of K
+paired differences and takes the majority vote.
+
+Theorem 3 is the negative result for explicit averaging. It states that the OEP behaves as
+
+* alpha in (1, 2]: OEP converges to 1, rate driven by K^(1 - 1/alpha).
+* alpha = 1: OEP is constant in K - averaging gives no asymptotic improvement.
+* alpha in (0, 1): OEP strictly decreases in K - averaging is counterproductive.
+
+The decisive quantity is the factor K^(1 - 1/alpha) in the inequality
+Pr[-eta_Delta(x_1, x_2) * epsilon_AVE &lt; K^(1 - 1/alpha) * |f(x_1; Delta) - f(x_2; Delta)|]: when 1 -
+1/alpha &gt; 0 the right-hand side grows with K (improvement), when 1 - 1/alpha = 0 it is constant, and
+when 1 - 1/alpha &lt; 0 it shrinks with K.
+
+Theorem 9 is the positive result for sign averaging. Under (i) median additivity of f, (ii)
+continuity of f(x; epsilon), and (iii) sign(median(f(x_1) - f(x_2))) = sign(h(x_1) - h(x_2)), sign
+averaging OEP converges to 1 with K independent of alpha. The proof reduces the sign-averaging
+estimator to a Bernoulli sum and applies a Hoeffding-type concentration argument that has no moment
+requirement on epsilon - the key reason it works in regimes where explicit averaging fails.
+
+Numerical experiments validate the theory on benchmark optimisation problems with stable noise at
+several alpha values, comparing OEP curves of the two estimators as K grows.
+
+#### Results
+
+* For Gaussian noise (alpha = 2), explicit averaging OEP converges to 1 at the standard sqrt(K) rate
+  \- the textbook regime.
+* For sub-Gaussian heavy-tailed but finite-mean noise (alpha in (1, 2)), explicit averaging still
+  converges to OEP = 1, but at the slower rate K^(1 - 1/alpha); near alpha = 1+ this approaches an
+  arbitrarily slow polynomial decay.
+* For Cauchy noise (alpha = 1), explicit averaging OEP is provably constant in K - adding more seeds
+  yields zero asymptotic benefit.
+* For infinite-mean stable noise (alpha in (0, 1)), explicit averaging OEP is a strictly decreasing
+  function of K - increasing the sample budget makes ranking accuracy worse, not better.
+* Sign averaging OEP converges to 1 for every alpha in (0, 2], with rate driven by the median
+  separation rather than any moment of epsilon.
+* Numerical experiments confirm all four explicit-averaging regimes and the alpha-independent
+  convergence of sign averaging on the benchmark problems tested.
+* The paper notes (and the experiments illustrate) that the cost of sign averaging is no higher than
+  explicit averaging: both use K paired evaluations per comparison.
+
+#### Innovations
+
+##### First Theoretical Decomposition of Explicit Averaging by Noise Stability
+
+Prior work on noisy black-box optimisation treated explicit averaging as a generally useful
+heuristic and focused on Gaussian or bounded-variance noise. Morinaga and Akimoto give the first
+sharp characterisation of when it works, when it is neutral, and when it is harmful, with the
+threshold expressed in terms of a single, easy-to-test property of the noise distribution (alpha &gt;
+1, alpha = 1, alpha &lt; 1). This makes the choice of K = 4 vs K = 32 a principled rather than
+empirical decision once the noise tail is known.
+
+##### Sign Averaging as a Heavy-Tail-Robust Estimator
+
+The proposed sign-averaging estimator is mechanically simple - count majority direction of paired
+differences - but theoretically novel as a noise-handling primitive for comparison-based search. It
+is the first such estimator with provable convergence under noise distributions that lack a finite
+mean, including Cauchy and Levy-stable laws. Because it is comparison-based, it slots directly into
+existing ES/CMA-ES/NSGA-II pipelines wherever explicit averaging is currently used.
+
+##### Median-Based Ground Truth Reformulation
+
+The paper reframes the ranking target: instead of trying to estimate sign(E[f(x_1) - f(x_2)]), which
+requires the expectation to exist, sign averaging estimates sign(median[f(x_1) - f(x_2)]). For
+distributions with finite mean these targets typically coincide; for heavy-tailed noise only the
+median is well-defined. This conceptual shift is what makes the alpha-independent robustness
+possible.
+
+#### Datasets
+
+This is a theoretical paper with numerical validation experiments; no external datasets are used.
+The numerical experiments are on standard synthetic benchmark optimisation problems with
+controllable stable noise (alpha is a tunable parameter). The exact benchmark functions are
+described in Section IV of the paper.
+
+#### Main Ideas
+
+* The alpha threshold is the right diagnostic for whether seed-replicate averaging helps in noisy
+  comparison-based optimisation. For the DSGC project specifically, this gives a principled basis to
+  evaluate whether N_SEEDS = 4 lies in the regime where averaging is useful (alpha &gt; 1, &quot;noisy but
+  algorithm survives&quot;) or in a regime where extra seeds give diminishing or negative returns.
+* For metrics whose seed-to-seed variation is approximately Gaussian (EPSP/IPSP amplitudes,
+  passive-mode integrals), explicit averaging converges at sqrt(K) and K = 4 is comfortably in the
+  effective regime. For sharply non-linear metrics (firing rate at threshold, DSI on near-zero
+  baseline) the effective alpha may be lower, and small-K averaging may be far less informative than
+  it appears.
+* Sign averaging is a drop-in replacement for explicit averaging in ranking-based selection (e.g.,
+  NSGA-II non-dominated sort). When seed-to-seed variability is suspected to be heavy-tailed for any
+  objective, switching that objective seed reduction to a sign-majority rule is theoretically
+  preferable and computationally free.
+* The K^(1 - 1/alpha) convergence rate gives a quantitative cost-benefit ratio for increasing
+  N_SEEDS: doubling K only improves OEP at rate 2^(1 - 1/alpha), which is much less than sqrt(2) for
+  alpha close to 1 and zero for alpha = 1. This argues against blanket &quot;more seeds&quot; strategies and
+  in favour of metric-by-metric tail diagnostics before scaling.
+
+#### Summary
+
+Morinaga and Akimoto address a fundamental and previously under-analysed question in noisy black-box
+optimisation: when does explicit averaging - the default seed-replicate strategy in ES, CMA-ES,
+NSGA-II, and most evolutionary optimisers - actually improve solution ranking, and when does it
+fail? Prior work largely assumed Gaussian or bounded-variance noise; this paper drops that
+assumption and analyses the full family of stable-distribution noises parameterised by a single
+stability index alpha in (0, 2].
+
+The methodology centres on the Order Estimation Probability (OEP), the probability that K noisy
+paired evaluations recover the true ranking of two candidate solutions. The authors prove two
+theorems with sharp characterisations. Theorem 3 dissects explicit averaging into three regimes:
+beneficial (alpha &gt; 1, OEP converges to 1 at rate K^(1 - 1/alpha)), neutral (alpha = 1, OEP is
+constant in K), and actively harmful (alpha &lt; 1, OEP strictly decreases as K grows). Theorem 9 then
+proves that a newly introduced sign-averaging estimator - which counts majority direction over K
+paired comparisons rather than averaging magnitudes - converges to OEP = 1 for every alpha in (0, 2]
+under only mild continuity and median-additivity assumptions, requiring no finite moment of the
+noise.
+
+The headline findings are that explicit averaging is provably worse than no averaging for
+heavy-tailed (infinite-mean) noise, that sign averaging is a free, drop-in fix that works
+universally, and that the alpha index of the noise distribution is the right and complete diagnostic
+for choosing between them. Numerical experiments at a range of alpha values confirm all four
+predicted regimes of explicit averaging and the alpha-independent robustness of sign averaging.
+
+For this project, where t0102 explicitly probes seed-scale behaviour with N_SEEDS = 4 over 20
+NSGA-II generations, the paper supplies the theoretical taxonomy that the experiment will land in.
+The working hypothesis is that DSGC fitness objectives sit at alpha well above 1 (EPSP/IPSP
+integrals, passive-mode metrics) where K = 4 explicit averaging is effective at slow-polynomial
+rate, but that some firing-rate-derived objectives may sit closer to alpha = 1 where averaging is
+nearly inert. This anchors the present task scope to the &quot;noisy but algorithm survives&quot; regime
+predicted by Theorem 3 and motivates a follow-up where sign averaging replaces explicit averaging
+for heavy-tailed objectives specifically.
+
+## Evaluation and comparison of methods for neuronal parameter optimization using the Neuroptimus software framework
+ID: 10.1371_journal.pcbi.1012039
+Year: 2024
+Authors: Mate Mohacsi, Mark Patrik Torok, Sara Saray, Luca Tar, Gabor Farkas, Szabolcs Kali
+Venue: PLOS Computational Biology
+Venue type: journal
+DOI: 10.1371/journal.pcbi.1012039
+URL: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012039
+Categories: compartmental-modeling
+Added by task: t0102_seedscale_n4_gen20
+Date added: 2026-05-11
+
+#### Metadata
+
+* File: `files/mohacsi_2024_neuroptimus-benchmark.pdf`
+* Published: 2024-12-23
+* Authors: Mate Mohacsi HU, Mark Patrik Torok HU, Sara Saray HU, Luca Tar HU, Gabor Farkas HU,
+  Szabolcs Kali HU
+* Venue: PLOS Computational Biology (2024)
+* DOI: `10.1371/journal.pcbi.1012039`
+
+#### Abstract
+
+Finding optimal parameters for detailed neuronal models is a ubiquitous challenge in neuroscientific
+research. In recent years, manual model tuning has been gradually replaced by automated parameter
+search using a variety of different tools and methods. However, using most of these software tools
+and choosing the most appropriate algorithm for a given optimization task require substantial
+technical expertise, which prevents the majority of researchers from using these methods
+effectively. To address these issues, we developed a generic platform (called Neuroptimus) that
+allows users to set up neural parameter optimization tasks via a graphical interface, and to solve
+these tasks using a wide selection of state-of-the-art parameter search methods implemented by five
+different Python packages. Neuroptimus also offers several features to support more advanced usage,
+including the ability to run most algorithms in parallel, which allows it to take advantage of
+high-performance computing architectures. We used the common interface provided by Neuroptimus to
+conduct a detailed comparison of more than twenty different algorithms (and implementations) on six
+distinct benchmarks that represent typical scenarios in neuronal parameter search. We quantified the
+performance of the algorithms in terms of the best solutions found and in terms of convergence
+speed. We identified several algorithms, including covariance matrix adaptation evolution strategy
+and particle swarm optimization, that consistently, without any fine-tuning, found good solutions in
+all of our use cases. By contrast, some other algorithms including all local search methods provided
+good solutions only for the simplest use cases, and failed completely on more complex problems. We
+also demonstrate the versatility of Neuroptimus by applying it to an additional use case that
+involves tuning the parameters of a subcellular model of biochemical pathways. Finally, we created
+an online database that allows uploading, querying and analyzing the results of optimization runs
+performed by Neuroptimus, which enables all researchers to update and extend the current
+benchmarking study. The tools and analysis we provide should aid members of the neuroscience
+community to apply parameter search methods more effectively in their research.
+
+#### Overview
+
+Mohacsi et al. present Neuroptimus, an open-source Python framework that gives users a single GUI-
+and CLI-driven interface to more than twenty parameter search algorithms drawn from five Python
+packages (SciPy, Inspyred, Pygmo, BluePyOpt, and a parallelised Cmaes implementation). Neuroptimus
+is the successor of the authors earlier Optimizer tool and is targeted at single-cell biophysical
+modelling in NEURON, but the same framework can wrap any black-box model that reads parameters from
+a text file and writes outputs that can be scored. The bulk of the paper is a systematic
+benchmarking study that uses this common interface to compare more than 20 distinct algorithms (and
+three implementations each for CMAES, PSO and NSGA-II) under matched conditions on six neuronal
+optimisation problems.
+
+The benchmark is unusually well controlled: every algorithm is given exactly 10000 model
+evaluations, all population-based algorithms use population size 100 and 100 generations, and every
+algorithm is run 10 times with different random seeds on every problem. Performance is quantified
+both as final error and as area-under-the-cumulative-minimum-error curve (convergence speed). The
+use cases span the entire range of neuronal modelling complexity: single-compartment Hodgkin-Huxley
+with 3 parameters, simulated voltage-clamp synaptic fitting with 4 parameters, a morphologically
+detailed passive cell with 3 parameters, a simplified 6-compartment active model with 9 somatic
+conductances, an adaptive exponential integrate-and-fire model with 10 parameters, and a fully
+detailed CA1 pyramidal cell with 12 conductance-density and kinetic parameters. A seventh use case
+applies the framework to a 12-parameter biochemical pathway model.
+
+The headline finding is that algorithm choice matters enormously: the gap between the best- and
+worst-performing methods spans two orders of magnitude on the harder benchmarks. Two
+single-objective metaheuristics, CMAES and PSO, win essentially every test, with IBEA leading among
+multi-objective algorithms. NSGA-II - in any of its three implementations (Inspyred, Pygmo,
+BluePyOpt) - sits in the middle of the multi-objective ranking, well behind IBEA on the harder use
+cases and behind random search on the simplest use case. Local search methods (Nelder-Mead,
+L-BFGS-B, basinhopping) only work on the simplest problems and collapse on harder ones. The authors
+deploy an online database (neuroptimus.koki.hu) that hosts every run from the paper so others can
+extend the comparison.
+
+#### Architecture, Models and Methods
+
+Neuroptimus itself is a Python 3 package with a PyQt5 GUI and a configuration-file-driven CLI. It
+loads NEURON `.hoc` or Python models, exposes their parameters for optimisation, and supports
+black-box external models via text-file IO. Cost functions are built from a library of error
+components: MSE, MSE excluding spikes, derivative difference, spike count (total and within
+stimulus), ISI difference, latency to first spike, AP overshoot, AP width, AHP depth.
+Single-objective optimisations combine these via uniform-weighted average; multi-objective ones
+treat each component as a separate objective. The same weighted average is applied at the end to
+pick the single best solution among the multi-objective Pareto front.
+
+Algorithms (incomplete list, by package): Inspyred contributes random search, CES (classic evolution
+strategy), DE, PSO, NSGA-II, PAES; Pygmo contributes PSO, PSOG (generational PSO), NSPSO, DE, SADE,
+XNES, CMAES, GACO (ant colony), and basinhopping; BluePyOpt contributes IBEA and NSGA-II; the Cmaes
+package contributes a parallelised CMAES; SciPy contributes Nelder-Mead and L-BFGS-B. All algorithms
+use the package defaults (the only exception is CEO from Inspyred, described in Methods).
+
+The compute budget is fixed at 10000 model evaluations per run, partitioned as 100 generations of
+100 individuals for hierarchical algorithms. Each algorithm runs 10 times per benchmark. Use case 1
+(HH, 3 params) uses surrogate data and four error components (spike count, AP amplitude, AP width,
+MSE excluding spikes), enabling both single- and multi-objective comparison. Use case 2 (voltage
+clamp, 4 params: weight, delay, rise, decay) uses surrogate data with a single MSE component
+(single-objective only). Use case 3 (passive multi-compartmental, 3 params: Cm, Rm, Ra) fits real
+CA1 patch-clamp recordings with one MSE objective. Use case 4 (simplified 6-comp CA1, 9
+conductances) fits a detailed-model target via six error components, including spike count, latency,
+AP amplitude, AP width and AHP depth. Use case 5 (AdEx, 10 params, NEST simulator black-box) fits
+real CA3 step responses via three error components. Use case 6 (detailed CA1, 12 params for ion
+channels) fits feature distributions extracted from 66 features across 6 step-current protocols,
+treating the optimisation as feature-based statistical matching. Use case 7 (biochemical model, 12
+params, NEURON rxd) was run on the Neuroscience Gateway with only CES, PSO and CMAES due to per-run
+cost of several minutes per model evaluation and the requirement for parallel execution. The most
+expensive use case (detailed CA1) takes roughly 10 days for a serial 10000-evaluation run on the
+authors compute server, but only a few hours on a single supercomputer node when the algorithm
+supports parallel within-generation evaluation.
+
+#### Results
+
+* **Compute budget is fixed at 10000 model evaluations per run** for every algorithm, with
+  population-based methods using **pop=100 generations=100**, repeated **10 times with different
+  seeds** per algorithm per benchmark.
+* **CMAES is the overall winner**: in almost all six benchmarks it delivers the lowest final error
+  after 10000 evaluations, and on Use Case 1 (HH, 3 params) it converges to the surrogate optimum
+  after about **3500 evaluations** while every other algorithm fails to fully converge.
+* **PSO is the consistent runner-up**: all three implementations (Inspyred, Pygmo PSO, Pygmo PSOG)
+  closely track CMAES on every benchmark, and on Use Case 6 (detailed CA1, 12 params) all three PSO
+  variants match CMAES on the best final error.
+* **IBEA is the best multi-objective algorithm** and sits just behind PSO in the aggregate ranking;
+  the authors recommend IBEA as the multi-objective method of choice.
+* **NSGA-II underperforms on the simplest multi-objective benchmark (HH, 3 params)**: Inspyreds
+  NSGA-II, PAES, and Pygmos NSPSO all give worse final errors than Random Search, and Inspyreds
+  NSGA-II in particular is significantly worse than Pygmos and BluePyOpts NSGA-II implementations.
+* **All three NSGA-II implementations (Inspyred, Pygmo, BluePyOpt) give similar results on Use Case
+  4 (9 somatic conductances)** but are clearly behind CMAES, PSO and IBEA on this problem.
+* **Local search methods (Nelder-Mead, L-BFGS-B, basinhopping) fail on harder problems**: they only
+  beat Random Search on the simplest passive-cell benchmark (Use Case 3), and are worse than Random
+  Search on Use Case 4.
+* **Use Case 4 (simplified active model) shows two orders of magnitude difference** between the best
+  and worst final errors, even though all algorithms used the same 10000 evaluations.
+* **Use Case 6 (detailed CA1, 12 params)** is the largest benchmark in the suite: PSO (all three
+  variants), CMAES (both), GACO and CEO all reach similar low errors; IBEA and NSGA-II also reach
+  acceptable solutions, with **GACO providing the single best final score** on this
+  highest-dimensional use case.
+* **GACO (ant colony) performs better on harder benchmarks than on simpler ones**, suggesting it is
+  good at finding low-error regions but less effective at fine-tuning within them.
+* **XNES (Pygmo)** sometimes performs worse than Random Search, e.g. on the voltage-clamp use case;
+  **PAES (Inspyred)** is also worse than Random Search and fails (errors) on Use Case 5.
+* **Parallelisation matters for wall-clock time**: a non-parallel 10000-evaluation run of Use Case 6
+  takes about **10 days** on their server; with parallel within-generation evaluation on a
+  supercomputer node it takes only a few hours.
+* **Implementation differences matter**: Inspyreds NSGA-II is significantly worse than Pygmos and
+  BluePyOpts on Use Case 1, even though all three algorithms are nominally the same.
+
+#### Innovations
+
+##### Unified Benchmark across Five Python Packages
+
+The first head-to-head comparison of more than 20 algorithms drawn from SciPy, Inspyred, Pygmo,
+BluePyOpt and Cmaes under matched compute budgets, identical population and generation settings,
+identical cost functions and 10 repeated runs per algorithm. Previous neuron-modelling benchmarks
+compared at most 4-5 algorithms.
+
+##### Three-Implementation Cross-Check for CMAES, PSO, and NSGA-II
+
+By testing two CMAES implementations, three PSO implementations, and three NSGA-II implementations,
+the paper isolates the algorithm-vs-implementation question. The finding is that most
+implementations of the same algorithm behave similarly except Inspyreds NSGA-II, which is
+significantly weaker than Pygmos and BluePyOpts NSGA-II.
+
+##### Six Neuronal Use Cases Covering 3-12 Parameters
+
+The benchmark suite is deliberately structured to span complexity: single-compartment HH (3 params),
+voltage clamp synaptic (4 params), morphologically detailed passive (3 params), simplified active (9
+params), AdEx integrate-and-fire (10 params), and fully detailed CA1 (12 params with spatial
+gradients and feature-distribution targets). This stratification lets the authors show how algorithm
+rankings change with dimensionality and problem structure.
+
+##### Live, Updateable Online Benchmark Database
+
+The Neuroptimus web server (neuroptimus.koki.hu) accepts user uploads of optimisation runs as JSON
+metadata, so the benchmark becomes a continuously updated resource rather than a one-shot paper. All
+runs from the present paper are pre-loaded, and figures can be regenerated by users.
+
+##### Parallelisable CMAES
+
+The paper integrates the standalone `cmaes` Python package into Neuroptimus specifically because
+Pygmos CMAES implementation cannot be parallelised within a generation. This makes CMAES practically
+usable on supercomputers for expensive models, where serial CMAES would take 10+ days per run.
+
+#### Datasets
+
+* **Surrogate data from a single-compartment HH model** (3 parameters: g_Na, g_K, g_L) for Use Case
+  1\.
+* **Surrogate voltage-clamp data from a single-compartment model** with a simulated synapse (4
+  parameters: weight, delay, rise time, decay time) for Use Case 2.
+* **In vitro patch-clamp recordings from hippocampal CA1 pyramidal neurons** for Use Case 3 (passive
+  parameters Cm, Rm, Ra; one short and one long current step).
+* **Simulated voltage trace from a fully detailed CA1 pyramidal model** used as the target for the
+  simplified 6-compartment model (Use Case 4, 9 somatic conductances, 6 error functions).
+* **In vitro patch-clamp recordings from hippocampal CA3 pyramidal neurons** for Use Case 5 (AdEx
+  model fit, 4 different current-step amplitudes, 10 model parameters).
+* **In vitro feature statistics from CA1 pyramidal neurons** (66 features of 20 different types
+  across 1 hyperpolarising + 5 depolarising current steps) for Use Case 6 (fully detailed CA1 model,
+  12 parameters).
+* **Experimental EPSP-LTP time courses** from prior work by the authors for Use Case 7 (12
+  biochemical parameters; runs performed on Neuroscience Gateway).
+
+All code (`KaliLab/neuroptimus`) is on GitHub; all optimisation runs are hosted at
+neuroptimus.koki.hu under permissive terms. Documentation is at neuroptimus.readthedocs.io.
+
+#### Main Ideas
+
+* For our 68-d NSGA-II optimisation question (t0102), this paper provides the most directly relevant
+  external benchmark: it confirms that **NSGA-II at pop=100, gens=100, 10000 evaluations** is
+  mid-pack on neuronal multi-objective problems and is decisively beaten by IBEA, CMAES and PSO on
+  every problem with 9+ parameters. Our 68-d setting is well outside this papers hardest 12-d use
+  case, so any expectation that NSGA-II should work is unsupported by this evidence; the project
+  should treat the t0099-t0102 NSGA-II runs as a known-weak baseline, not as a definitive answer.
+* The compute envelope used in this paper (pop=100, gens=100, 10 repeats, 10000 evals) is a
+  reasonable default that the authors arrived at empirically; our t0102 pop=96 + gens=20 is roughly
+  1/5 of their per-run budget for a problem with ~5x higher dimensionality, so the budget question
+  is not subtle - we are several orders of magnitude under what the literature treats as standard.
+* The paper finds that **algorithm choice matters more than seed/implementation choice on hard
+  problems**: the gap between CMAES/PSO and NSGA-II at 9-12 parameters is roughly 2 orders of
+  magnitude in final error. If our project must do multi-objective optimisation in the future, IBEA
+  (BluePyOpt) is the strongest single recommendation from this benchmark.
+* The papers GACO-improves-with-difficulty finding is a useful counterweight to the CMAES-is-best
+  summary: ant-colony-style algorithms may be worth trying for our 68-d problem even if they are
+  mid-pack at 9-12 d, because they appear to scale differently.
+* Parallelisability is a practical constraint - serial CMAES takes 10 days for the hardest use case,
+  parallel CMAES a few hours. For us this argues against the standalone `cmaes` package unless we
+  explicitly support batch-of-100 model evaluation, which we do.
+
+#### Summary
+
+Mohacsi et al. address a long-standing methodological gap in computational neuroscience: parameter
+optimisation of biophysical neuron models is unavoidable, but the field has no agreed benchmark and
+no clear answer to which algorithm to use. The authors develop Neuroptimus, an open-source PyQt5/CLI
+framework that gives users uniform access to more than 20 optimisation algorithms from SciPy,
+Inspyred, Pygmo, BluePyOpt and a standalone Cmaes package. The framework is targeted at NEURON-based
+single-cell models but supports any black-box model via file IO.
+
+The bulk of the paper is a controlled benchmark: each algorithm gets exactly 10000 model
+evaluations, hierarchical algorithms use pop=100 and gens=100, and every algorithm is repeated 10
+times per problem. The benchmark suite spans single-compartment Hodgkin-Huxley with 3 parameters,
+voltage-clamp synaptic fitting with 4 parameters, morphologically detailed passive cells with 3
+parameters, simplified active models with 9 parameters, an AdEx integrate-and-fire model with 10
+parameters, and a fully detailed CA1 pyramidal cell with 12 parameters and feature-distribution
+targets. A seventh use case applies the same framework to a 12-parameter biochemical signalling
+cascade model.
+
+The headline finding is that **CMAES dominates** every benchmark, **PSO is a close runner-up** (with
+three implementations giving nearly identical results), and **IBEA is the best multi-objective
+method**. **NSGA-II in any of its three implementations sits mid-pack on multi-objective problems**,
+and is worse than random search on the simplest 3-parameter HH benchmark. **Local search methods
+(Nelder-Mead, L-BFGS-B, basinhopping) collapse on hard problems**. The performance gap between best
+and worst algorithms reaches two orders of magnitude on the simplified active model (Use Case 4).
+Implementation matters less than expected within an algorithm family, with the notable exception
+that Inspyreds NSGA-II is significantly weaker than Pygmos and BluePyOpts. The paper releases all
+benchmark results as a live database that other researchers can extend.
+
+For our t0102 NSGA-II work this paper is directly load-bearing evidence on the central question of
+whether NSGA-II at our compute budget is likely to find good solutions on a 68-parameter problem.
+The paper says no - NSGA-II is mid-pack on 9-12 parameter problems even at 10000 evaluations, and
+the authors explicitly recommend CMAES, PSO or IBEA over NSGA-II for neuronal optimisation. Our
+t0102 configuration (pop=96, gens=20, 1920 evaluations per seed) is roughly 1/5 of their per-run
+budget on problems with ~5x higher dimensionality, so any null result we get for NSGA-II is
+consistent with the published literature rather than a new finding about our problem. If the project
+decides to continue multi-objective optimisation it should switch to IBEA via BluePyOpt; if it
+instead moves to single-objective scalarisation, CMAES (parallelisable variant) is the clearest
+evidence-based default. The papers online database also provides a forward-looking opportunity to
+contribute our DSGC tuning runs as additional benchmark data.
+
+## Analysing the Robustness of NSGA-II under Noise
+ID: 10.48550_arXiv.2306.04525
+Year: 2023
+Authors: Duc-Cuong Dang, Andre Opris, Bahare Salehi, Dirk Sudholt
+Venue: Proceedings of the Genetic and Evolutionary Computation Conference (GECCO &#x27;23)
+Venue type: conference
+DOI: 10.48550/arXiv.2306.04525
+URL: https://arxiv.org/abs/2306.04525
+Categories: compartmental-modeling
+Added by task: t0102_seedscale_n4_gen20
+Date added: 2026-05-11
+
+#### Metadata
+
+* File: `files/dang_2023_nsga-ii-robustness-noise.pdf`
+* Published: 2023
+* Authors: Duc-Cuong Dang DE, Andre Opris DE, Bahare Salehi DE, Dirk Sudholt DE
+* Venue: GECCO 23 (Genetic and Evolutionary Computation Conference), Lisbon
+* DOI: `10.48550/arXiv.2306.04525` (arXiv); `10.1145/3583131.3590421` (ACM)
+
+#### Abstract
+
+Runtime analysis has produced many results on the efficiency of simple evolutionary algorithms like
+the (1+1) EA, and its analogue called GSEMO in evolutionary multiobjective optimisation (EMO).
+Recently, the first runtime analyses of the famous and highly cited EMO algorithm NSGA-II have
+emerged, demonstrating that practical algorithms with thousands of applications can be rigorously
+analysed. However, these results only show that NSGA-II has the same performance guarantees as GSEMO
+and it is unclear how and when NSGA-II can outperform GSEMO. We study this question in noisy
+optimisation and consider a noise model that adds large amounts of posterior noise to all objectives
+with some constant probability p per evaluation. We show that GSEMO fails badly on every noisy
+fitness function as it tends to remove large parts of the population indiscriminately. In contrast,
+NSGA-II is able to handle the noise efficiently on LeadingOnesTrailingZeroes when p &lt; 1/2, as the
+algorithm is able to preserve useful search points even in the presence of noise. We identify a
+phase transition at p = 1/2 where the expected time to cover the Pareto front changes from
+polynomial to exponential. To our knowledge, this is the first proof that NSGA-II can outperform
+GSEMO and the first runtime analysis of NSGA-II in noisy optimisation.
+
+#### Overview
+
+This paper presents the first theoretical runtime analysis of NSGA-II under noisy multi-objective
+optimisation. It compares NSGA-II to GSEMO (Global Simple Evolutionary Multi-Objective Optimiser),
+an idealised baseline EMO algorithm that has dominated prior theoretical work. Previously, NSGA-II
+had only been *matched* by GSEMO in worst-case bounds and never shown to strictly outperform it. The
+authors construct a concrete setting (noisy bi-objective benchmarks under a Bernoulli noise model)
+where NSGA-II is provably efficient while GSEMO provably fails.
+
+The central technical innovation is a deliberately extreme noise model: the **(delta, p)-Bernoulli
+noise model** adds a constant offset `delta = n + 1` to *all* objectives with probability `p` per
+evaluation. Because the offset is large enough that any noisy individual strictly dominates any
+noise-free individual, this represents a worst-case posterior noise scenario. GSEMO, which
+immediately removes every weakly dominated point on insertion, ends up purging useful incumbents
+whenever a noisy evaluation occurs and collapses to constant-size populations. NSGA-II, in contrast,
+maintains a population of size mu that filters via crowding distance, which preserves useful search
+points even under heavy noise.
+
+The headline result is a sharp **phase transition at p = 1/2** for NSGA-II without crossover on the
+LeadingOnesTrailingZeroes (LOTZ) benchmark. Below this critical noise probability, NSGA-II covers
+the Pareto front in polynomial expected time given a sufficiently large population (mu = Omega(n log
+n)). Above it (specifically `p &gt;= 10/19`), the expected runtime is provably exponential
+`exp(Omega(n))`. Crucially, the paper also reports Gaussian-noise experiments showing qualitatively
+similar phase-transition behaviour, suggesting the result is not an artefact of the Bernoulli model.
+
+#### Architecture, Models and Methods
+
+The paper analyses two evolutionary multi-objective optimisation algorithms in a discrete bit-string
+setting (problem size `n`):
+
+* **NSGA-II without crossover** (Algorithm 1): population size mu, binary tournament parent
+  selection, bitwise mutation rate 1/n, survival selection via non-dominated sorting plus crowding
+  distance. The theoretical analysis assumes `pc = 0` (no crossover); experiments use `pc = 0.9`.
+* **GSEMO** (Algorithm 2): unbounded archive, uniform parent selection from the current Pareto
+  front, bitwise mutation, weak-dominance removal on insertion.
+
+Two bi-objective test functions are studied:
+
+* **LOTZ** (LeadingOnesTrailingZeroes): `f(x) = (LO(x), TZ(x))`, where `LO` counts leading 1-bits
+  and `TZ` counts trailing 0-bits. Pareto front size is `n + 1`.
+* **OMM** (OneMinMax): `f(x) = (|x|_1, |x|_0)`. Pareto front size is `n + 1`.
+
+The noise models are:
+
+* **(delta, p)-Bernoulli noise**: with probability `p` per evaluation, add `delta` to all objectives
+  simultaneously. The paper sets `delta = n + 1`.
+* **Posterior Gaussian noise**: `f_tilde(x) = f(x) + delta * 1`, with `delta ~ N(0, sigma^2)` added
+  to all objectives on every evaluation. `sigma` is varied as `n * q` with
+  `q in {2^0, 2^-1, 2^-3, 2^-4}`.
+
+Theoretical analysis uses **drift analysis** of the population number of useful search points
+(noise-free individuals on the LOTZ Pareto front). The negative result for `p &gt; 10/19` is proved by
+showing the expected drift toward population collapse is `Omega(1)` and applying negative
+multiplicative drift. The positive result requires `mu = Omega(n log n)` so that with high
+probability the noise-free population is not fully overwritten in any single generation.
+
+Experimental setup: problem sizes `n in {20, 30, 40}`, `pc = 0.9`, one-point crossover,
+`mu = 9(n + 1)`, 50 runs per configuration, budget `10 * n^3` fitness evaluations.
+
+#### Results
+
+* **Phase transition at p = 1/2**: NSGA-II covers the Pareto front of noisy LOTZ in expected
+  polynomial time for any constant `p &lt; 1/2` (Theorem 8) but requires `exp(Omega(n))` expected
+  generations for any constant `p &gt;= 10/19 ~ 0.526` (Theorem 10).
+* **GSEMO universal failure**: Under any non-trivial Bernoulli noise, GSEMO requires `exp(Omega(n))`
+  time on **every** bi-objective function (Theorem 3) because its weak-dominance-on-insertion rule
+  eliminates useful incumbents indiscriminately.
+* **Empirical confirmation on Bernoulli noise**: NSGA-II achieves **100% success rate** across all
+  tested `p` values **except** `p in {0.5, 0.6}` on LOTZ, where success rate drops to **0%**.
+* **Empirical results on OMM**: GSEMO never covers more than **40%** of the Pareto front under
+  Bernoulli noise; on LOTZ it covers less than **10%**.
+* **Average evaluations to cover LOTZ Pareto front (n = 40, NSGA-II)**: ~202,822 at `p = 2^-6`,
+  rising to ~273,906 at `p = 2^-2 = 0.25`, then ~640,453 at `p = 0.4` (still 100% success), and
+  exhausting the `10 * n^3 = 640,000` budget at `p in {0.5, 0.6}` (0% success).
+* **Gaussian-noise success rates (LOTZ, n = 40)**: **100%** at `sigma = n * 2^-4`, **96%** at
+  `sigma = n * 2^-3`, **10%** at `sigma = n * 2^-2`, **0%** at `sigma &gt;= n * 2^-1`.
+* **Population size matters**: positive runtime guarantees require `mu = Omega(n log n)`; smaller
+  populations cannot preserve enough useful search points across a noisy generation.
+
+#### Innovations
+
+##### First Proven NSGA-II Advantage Over GSEMO
+
+Prior runtime analyses (Zheng et al. 2022; Bian and Qian 2022; Doerr and Qu 2022) showed only that
+NSGA-II *matches* GSEMO asymptotic guarantees. This paper provides the first separation result: on
+noisy LOTZ with `p &lt; 1/2`, NSGA-II is polynomial while GSEMO is exponential. The mechanism is the
+crowding-distance retention of dominated solutions, which protects against noise-induced incumbent
+loss.
+
+##### (delta, p)-Bernoulli Noise Model
+
+A deliberately worst-case posterior noise model in which a single random event can flip the
+dominance relation between any two individuals. Designed to expose algorithmic weaknesses under
+heavy noise while remaining analytically tractable.
+
+##### Sharp p = 1/2 Phase Transition
+
+Both upper bound (`p &lt; 1/2` polynomial) and lower bound (`p &gt;= 10/19` exponential) are proved,
+establishing a phase-transition theorem for NSGA-II runtime as a function of noise probability. This
+is the first such transition theorem for a practical EMO algorithm.
+
+##### Drift-Analysis Framework for Noisy EMO
+
+Introduces a drift-analysis approach for population-based EMO algorithms under noise, tracking the
+number of useful search points. Provides a template for analysing other EMO algorithms (or other
+noise models) in stochastic settings.
+
+#### Datasets
+
+This is a theoretical paper; no datasets were used. Experimental validation runs on synthetic
+bi-objective benchmarks LeadingOnesTrailingZeroes (LOTZ) and OneMinMax (OMM) at problem sizes
+`n in {20, 30, 40}` with 50 independent runs per configuration.
+
+#### Main Ideas
+
+* **NSGA-II is provably noise-robust below a critical noise probability**: this provides a
+  theoretical anchor for the project empirical use of NSGA-II on noisy fitness functions (DSGC
+  simulation outputs vary with stochastic synaptic input). When the per-trial Bernoulli-equivalent
+  noise probability is well below 1/2, NSGA-II remains polynomial in problem size.
+* **Larger populations buffer against noise**: the proof requires `mu = Omega(n log n)`. For
+  high-dimensional MOBO problems (68-d in t0102), small populations like `pop = 96` may be in a
+  marginal regime; if the algorithm fails to converge it is worth testing whether a larger
+  population recovers performance before concluding the problem is too noisy.
+* **Crowding distance is the protective mechanism**: NSGA-II survives because crowding distance
+  retains dominated individuals across generations. Algorithms that discard dominated individuals on
+  insertion (like GSEMO) collapse under noise. This justifies the project choice of NSGA-II over
+  simpler archive-based EMO algorithms.
+* **Gaussian noise transfers qualitatively**: although the theorems are for Bernoulli noise, the
+  Gaussian experiments show the same phase-transition phenomenon, so the result provides a
+  reasonable theoretical justification for NSGA-II behaviour under DSGC-simulation-style noise.
+* **N_SEEDS=4 is noisy-but-survivable**: t0102 runs `N_SEEDS = 4` with stochastic synaptic input,
+  which corresponds to a small but non-zero effective per-evaluation noise probability. By this
+  paper framework, this places the experiment in the polynomial-time-survivable regime, not in the
+  catastrophic `p &gt;= 1/2` regime.
+
+#### Summary
+
+Dang, Opris, Salehi, and Sudholt present the first theoretical runtime analysis of NSGA-II under
+noisy multi-objective optimisation, addressing the open question of *when* the popular NSGA-II
+algorithm outperforms the idealised GSEMO baseline. Previous theoretical work had matched the two
+algorithms only at the same asymptotic complexity, leaving NSGA-II apparent practical advantages
+unexplained. The authors close this gap by constructing a noisy benchmark setting in which NSGA-II
+is provably polynomial-time while GSEMO is provably exponential-time.
+
+The methodology combines a worst-case **(delta, p)-Bernoulli noise model** in which a fixed offset
+`delta = n + 1` is added to all objectives with probability `p` per evaluation with drift analysis
+on standard bi-objective benchmarks (LOTZ, OMM). The authors prove a sharp **phase transition at p =
+1/2**: below this threshold NSGA-II with population size `mu = Omega(n log n)` covers the Pareto
+front in polynomial expected time (Theorem 8), while above `p = 10/19 ~ 0.526` the expected runtime
+is exponential (Theorem 10). Experimental confirmation uses problem sizes n = 20, 30, 40 with 50
+runs each, and includes Gaussian-noise experiments showing qualitatively similar phase-transition
+behaviour.
+
+The headline empirical findings match the theory cleanly. NSGA-II achieves 100% success on noisy
+LOTZ for every `p &lt; 0.5` and 0% for `p in {0.5, 0.6}`. GSEMO never covers more than 40% of the
+Pareto front under any non-trivial noise. Under Gaussian noise, NSGA-II success rate drops from 100%
+at `sigma = n * 2^-4` to 0% at `sigma = n * 2^-1`. The mechanism behind NSGA-II robustness is its
+crowding-distance survival rule, which retains dominated individuals across generations and prevents
+noise-induced incumbent loss, the failure mode that destroys GSEMO.
+
+This paper matters for the neuron-channels project because t0102 (and the entire NSGA-II line of
+work) optimises a DSGC compartmental model whose objective values are inherently noisy: each
+configuration is evaluated on a small number of stochastic synaptic-input seeds (N_SEEDS = 4 in
+t0102). The phase-transition theorem provides a theoretical anchor that the chosen seed count puts
+the experiment well below the critical noise probability of 1/2, so NSGA-II should retain its
+polynomial-time guarantees. The paper also clarifies a practical design principle: NSGA-II
+crowding-distance retention is what buys noise robustness, so degenerate populations or aggressive
+archive-pruning would forfeit this protection. The requirement that `mu = Omega(n log n)` is
+suggestive: at 68-dimensional problems, a population of 96 may be on the smaller side, and if t0102
+fails to recover a joint-pass corner this paper indicates that a larger population (not more seeds)
+is a principled next lever.
+
+## Noisy evolutionary optimization algorithms – A comprehensive survey
+ID: 10.1016_j.swevo.2016.09.002
+Year: 2017
+Authors: Pratyusha Rakshit, Amit Konar, Swagatam Das
+Venue: Swarm and Evolutionary Computation
+Venue type: journal
+DOI: 10.1016/j.swevo.2016.09.002
+URL: https://www.sciencedirect.com/science/article/abs/pii/S2210650216303030
+Categories: compartmental-modeling
+Added by task: t0102_seedscale_n4_gen20
+Date added: 2026-05-11
+
+#### Metadata
+
+* File: Download failed (paywalled Elsevier publication; no open-access copy located)
+* Published: 2017 (online 2016-11-18; print issue April 2017, Volume 33)
+* Authors: Pratyusha Rakshit 🇮🇳, Amit Konar 🇮🇳, Swagatam Das 🇮🇳
+* Venue: Swarm and Evolutionary Computation (Elsevier), Vol. 33, pp. 18-45
+* DOI: `10.1016/j.swevo.2016.09.002`
+
+#### Abstract
+
+The full abstract could not be retrieved: the paper is a paywalled Elsevier publication and no
+open-access version was available via CrossRef, Semantic Scholar, OpenAlex, or Unpaywall at the time
+of asset creation. According to the publisher bibliographic record, the paper is a comprehensive
+survey of evolutionary optimization algorithms in noisy environments, covering strategies for
+handling noise in fitness evaluations across evolutionary algorithms — including explicit
+averaging (resampling), implicit averaging, statistical hypothesis-test-based selection, modified
+evolutionary operators, and noise-tolerant variants of canonical algorithms (GA, DE, PSO, ES, EDA).
+The full verbatim abstract is not reproduced here because it could not be obtained without an
+Elsevier subscription, and the project Forbidden rule against fabricating content applies.
+
+#### Overview
+
+This summary is based on the publisher bibliographic record, citation context, and publicly
+available information only; the full paper could not be downloaded. The paper is a widely cited
+survey article (~150 citations as of 2026 per OpenAlex) in *Swarm and Evolutionary Computation* that
+systematically organises the literature on evolutionary optimisation under noise. &quot;Noise&quot; here
+refers to stochasticity in the fitness/objective evaluation itself — every evaluation of the same
+candidate solution returns a different value drawn from some (often unknown) distribution around a
+true underlying fitness. This setting is central to simulation-based optimisation, including
+biophysical neuron-model parameter tuning where stochastic synapse models or seed-dependent
+simulator behaviour produce noisy fitness.
+
+The survey is organised along two main axes. First, it taxonomises the families of techniques used
+to make evolutionary algorithms (EAs) robust to noisy fitness: explicit averaging (resampling each
+candidate multiple times and averaging), implicit averaging (relying on the population to smooth
+noise through repeated similar candidates over generations), statistical selection methods
+(hypothesis tests, racing, and indifference-zone selection), and algorithmic modifications such as
+larger populations, noise-aware variation operators, and surrogate models. Second, it reviews how
+each of the canonical EA families — genetic algorithms (GA), differential evolution (DE), particle
+swarm optimization (PSO), evolution strategies (ES), and estimation-of-distribution algorithms (EDA)
+— has been adapted for noisy fitness, including theoretical convergence results and empirical
+benchmark comparisons.
+
+Because the full text was not available, this summary cannot reproduce the paper specific
+quantitative results, the exact list of algorithms reviewed, or the authors explicit recommendations
+on when each technique is preferred. The Methods, Results, and Innovations sections below note this
+limitation and report only what can be inferred from the title, journal, year, citation context, and
+the well-established public knowledge of the field that this paper is known to canonise.
+
+#### Architecture, Models and Methods
+
+Full methodology not available — paper not downloaded. The paper is a survey rather than an
+empirical study, so &quot;methodology&quot; here refers to its review framework rather than experiments on a
+specific model. Based on the title, the journal scope (*Swarm and Evolutionary Computation*), the
+authors prior work on noisy-EA (Rakshit, Konar, and Das are highly cited in this area), and the
+public citation context (203 references, ~150 citing works), the paper is structured as a literature
+review covering:
+
+* Categorisation of noise sources in fitness evaluation: additive Gaussian noise, multiplicative
+  noise, output noise (perturbation of measured fitness), input/design noise (perturbation of the
+  decision variables), and environmental noise (changes between evaluations).
+* The &quot;explicit averaging&quot; family: resampling each candidate solution `r` times and using the sample
+  mean (or sometimes median) as the fitness estimate. This includes static-`r` and adaptive-`r`
+  schemes (e.g., higher `r` for promising candidates, sequential probability ratio tests).
+* The &quot;implicit averaging&quot; family: relying on population diversity and crossover/mutation to average
+  noise across similar individuals over generations — popular in GA and DE with large populations.
+* Statistical hypothesis-testing approaches to selection: Mann-Whitney U, Welch t-test,
+  bootstrap-based ranking, indifference-zone procedures, and racing algorithms (e.g., F-Race) used
+  to decide which candidates to promote.
+* Surrogate-model-based approaches: building Gaussian-process or radial-basis-function regressors of
+  the noisy objective and selecting candidates from the surrogate.
+* Algorithm-specific adaptations: noisy variants of NSGA-II, SPEA2, MOEA/D for multi-objective
+  optimisation; CMA-ES uncertainty handling; DE with noise-aware F/CR scheduling; PSO with
+  noise-tolerant velocity updates.
+* Empirical evaluation on standardised noisy benchmarks (typically CEC test suites with injected
+  Gaussian noise) and discussion of performance versus noise level.
+
+The paper is theoretical/review in nature, so there are no model architectures, training procedures,
+hardware specs, or sample sizes in the experimental-paper sense. Specific hyperparameter
+recommendations from the paper itself cannot be quoted because the full text was not available.
+
+#### Results
+
+Results not available — paper not downloaded. The paper is a survey, so its &quot;results&quot; consist of
+synthesised conclusions about the relative strengths of noisy-EA techniques rather than fresh
+empirical metrics. The following bullets summarise what is publicly known about the paper
+contribution from its title, citation patterns, and the canonical knowledge it consolidates; none
+are direct quotes from the paper:
+
+* The paper organises the literature into the taxonomy of explicit averaging, implicit averaging,
+  statistical-test-based selection, surrogate-assisted, and noise-modified operator approaches —
+  this taxonomy is widely cited in subsequent work.
+* It is the most-cited single survey on noisy-EA: **~150 citing works** (OpenAlex, 2026), **142
+  cited-by count** (CrossRef), placing it in the **top 1%** of its publication-year cohort per
+  OpenAlex citation_normalized_percentile (**0.990**).
+* The paper consolidates **203 references** spanning canonical noisy-EA work from the 1990s (Aizawa
+  &amp; Wah dynamic GA control, Beyer ES with noise) through the mid-2010s.
+* Specific quantitative comparisons between explicit averaging, implicit averaging, and statistical
+  selection on benchmark functions: not reported in this summary (full text not available).
+* Specific recommendations about resampling budget allocation versus larger population versus
+  surrogate models: not reported in this summary (full text not available).
+* Specific results on multi-objective noisy optimisation (NSGA-II + noise handling): not reported in
+  this summary (full text not available).
+
+#### Innovations
+
+##### Unified Taxonomy of Noise-Handling Strategies
+
+The paper primary contribution, as widely understood in the field, is a single coherent taxonomy
+that organises the previously scattered literature on noisy evolutionary optimisation into named
+families (explicit averaging, implicit averaging, statistical-test-based selection,
+surrogate-assisted, noise-modified operators). Subsequent noisy-EA papers commonly cite this survey
+when situating their own method within the design space. Specific novel taxonomic distinctions
+introduced by the paper: not reported in this summary (full text not available).
+
+##### Cross-Algorithm Comparison Framework
+
+The survey covers noise-handling across GA, DE, PSO, ES, EDA, and multi-objective EAs in a single
+document, allowing direct comparison of how each algorithm family addresses the same underlying
+problem. This cross-cutting view is rare in the noisy-EA literature, which typically focuses on one
+algorithm family per paper. The specific axes of comparison used: not reported in this summary (full
+text not available).
+
+#### Datasets
+
+This is a survey paper; it does not introduce or use original datasets. It discusses the standard
+synthetic benchmark functions commonly used in the noisy-optimisation literature — typically the
+CEC noisy benchmark suites and noisy variants of classic functions (Sphere, Rastrigin, Rosenbrock,
+Ackley, Griewank) with additive Gaussian noise of varying variance — but specific benchmark
+versions and noise specifications used by cited works: not reported in this summary (full text not
+available).
+
+#### Main Ideas
+
+* The noisy-EA literature has converged on a small set of strategies — explicit averaging
+  (resampling), implicit averaging (population-size scaling), statistical selection (hypothesis
+  tests or racing), and surrogate models — and this survey is the canonical reference for that
+  taxonomy. For our project, this provides the vocabulary and framing for any future work that needs
+  to handle fitness-evaluation noise in compartmental neuron-model optimisation.
+* The trade-off between explicit averaging (cost ~`r x population_size x generations`) and implicit
+  averaging (no resampling cost but requires larger population) is a recurring theme. For
+  `t0102_seedscale_n4_gen20`, the project current seed-scale study (n=4 seeds per candidate over 20
+  generations) is a form of explicit averaging with `r=4`; this survey is the appropriate reference
+  for justifying that choice and for future tasks that test other `r` values or compare to implicit
+  averaging via larger populations.
+* Statistical-test-based selection (e.g., Mann-Whitney U, racing) is a well-studied alternative to
+  fixed-`r` resampling that can adaptively allocate evaluations to promising candidates. If future
+  tasks need to extend the seed-scale design under a fixed compute budget, this survey points to the
+  relevant techniques.
+* The survey predates recent surrogate-model and Bayesian-optimisation noisy variants (e.g., qNEHVI,
+  NSGA-II-with-GP-surrogates). Combining this survey taxonomy with the project preference (per
+  memory: NSGA-II via pymoo for high-d MOBO) gives a complete picture for noisy-MOBO follow-up
+  tasks.
+
+#### Summary
+
+Rakshit, Konar, and Das (2017) is a comprehensive survey of evolutionary optimisation under noisy
+fitness evaluation, published in *Swarm and Evolutionary Computation* (Vol. 33, pp. 18-45). The
+paper addresses the general problem that real-world fitness functions — including simulation-based
+ones — often return stochastic values, and that standard evolutionary algorithms can be misled by
+this noise into discarding good candidates or promoting bad ones. The survey scope spans the major
+EA families (GA, DE, PSO, ES, EDA, multi-objective EA) and the major noise-handling strategies
+developed across roughly two decades of literature.
+
+Because the paper is a survey, its &quot;methodology&quot; is its organising framework rather than an
+experiment. Based on the title and the well-established public knowledge of this paper contribution,
+the framework taxonomises noise-handling techniques into named families — explicit averaging
+(resampling), implicit averaging (population scaling), statistical-test-based selection (hypothesis
+tests, racing, indifference-zone procedures), surrogate-model-assisted selection, and noise-modified
+evolutionary operators — and reviews how each canonical EA family has been adapted to use them.
+The paper consolidates 203 references. Specific design decisions and analytical comparisons made by
+the authors cannot be reproduced here because the full text was not available; a future task may
+wish to re-attempt download via institutional access.
+
+The paper headline contribution, as widely understood, is the unified taxonomy itself: prior to this
+survey the noisy-EA literature was scattered across many specialised papers, and this survey is the
+most-cited single reference (top 1% of its cohort by OpenAlex; **~150 citing works**) that organises
+the design space. Specific quantitative findings, recommendations, or rankings made by the paper are
+not reported in this summary because the full text was not obtained.
+
+For the present project, this survey is the foundational reference for understanding the trade-off
+space that motivates task `t0102_seedscale_n4_gen20`. The current task uses n=4 seeds per candidate
+across 20 generations — a form of explicit averaging with `r=4` in the survey terminology. The
+survey provides the conceptual basis for justifying that choice, for designing follow-up tasks that
+compare against implicit averaging (larger populations, fewer seeds) or statistical-test-based
+selection (racing/Mann-Whitney), and for connecting biological-plausibility constraints to
+noise-handling cost budgets in subsequent MOBO follow-ups (per the project NSGA-II preference for
+high-dimensional MOBO). If a future task needs the paper specific quantitative findings or named
+algorithms, it should re-attempt download via institutional Elsevier access.
 
 ## The functional diversity of retinal ganglion cells in the mouse
 ID: 10.1038_nature16468

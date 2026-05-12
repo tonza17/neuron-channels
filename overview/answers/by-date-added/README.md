@@ -1,10 +1,47 @@
 # Answers by Date Added
 
-27 answer(s) grouped by creation date.
+28 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
+
+## 2026-05-12 (1)
+
+<details>
+<summary><strong>Does running 68-d NSGA-II at N_EVAL_SEEDS=4 noise replicates,
+gens=20, pop=96, 2 random-init GA seeds (44, 55), no warm-start, recover
+the strict joint-pass corner (DSI>=0.5 AND PD-rate>=30 Hz AND
+robustness>=0.7) of the Bed B + morphology compartmental DSGC
+substrate?</strong></summary>
+
+**Confidence**: high
+
+No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells cleared the strict
+joint-pass corner, and zero cells cleared even the loosest 2-axis test (DSI>=0.5 AND PD>=5
+Hz), because DSI and PD-rate are strongly bimodally anti-correlated on this substrate. The
+headline max-DSI of 1.0 in both seeds turned out to be a floating-point artifact of the
+vector-sum DSI formula on silenced cells with PD=0 Hz; the real DSI ceiling under N=4 noise
+replicates is roughly 0.35. The earlier t0091 single joint-pass cell, previously framed as an
+NSGA-II discovery, is reframed here as a one-mutation polynomial-mutation descendant of an
+alt_topology warm-start anchor, so removing the warm-start removes the entire joint-pass
+signal.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0102_seedscale_n4_gen20/assets/answer/does-n4-gens20-2seeds-recover-joint-pass-corner/full_answer.md) |
+| **ID** | [`does-n4-gens20-2seeds-recover-joint-pass-corner`](../../../tasks/t0102_seedscale_n4_gen20/assets/answer/does-n4-gens20-2seeds-recover-joint-pass-corner/) |
+| **Question** | Does running 68-d NSGA-II at N_EVAL_SEEDS=4 noise replicates, gens=20, pop=96, 2 random-init GA seeds (44, 55), no warm-start, recover the strict joint-pass corner (DSI>=0.5 AND PD-rate>=30 Hz AND robustness>=0.7) of the Bed B + morphology compartmental DSGC substrate? |
+| **Methods** | `code-experiment`, `papers`, `internet` |
+| **Confidence** | high |
+| **Date created** | 2026-05-12 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | `10.1371_journal.pcbi.1012039`, `10.48550_arXiv.2306.04525`, `10.48550_arXiv.2401.14014` |
+| **Task sources** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0101_brainstorm_results_21`](../../../overview/tasks/task_pages/t0101_brainstorm_results_21.md) |
+| **URL sources** | — |
+| **Created by** | [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+
+</details>
 
 ## 2026-05-10 (1)
 

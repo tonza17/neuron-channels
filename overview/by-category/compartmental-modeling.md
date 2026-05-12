@@ -4,16 +4,16 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (40)](../papers/by-category/compartmental-modeling.md) | [Answers
-(19)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(311)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+**Detail pages**: [Papers (45)](../papers/by-category/compartmental-modeling.md) | [Answers
+(20)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(319)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (14)](../libraries/by-category/compartmental-modeling.md) | [Predictions
-(2)](../predictions/by-category/compartmental-modeling.md)
+(4)](../predictions/by-category/compartmental-modeling.md)
 
 ---
 
-## Papers (40)
+## Papers (45)
 
 <details>
 <summary>📖 <strong>Machine learning discovers numerous new computational principles
@@ -106,6 +106,174 @@ script, MOD files, and a HOC geometry that should be amenable to an automated po
 PDF could not be downloaded (Elsevier 403), so all quantitative values above that are not
 cited from the abstract should be re-verified once a human reviewer retrieves the article
 manually.
+
+</details>
+
+<details>
+<summary>📝 <strong>Adaptive Resampling with Bootstrap for Noisy Multi-Objective
+Optimization Problems</strong> — Budszuhn et al., 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.48550_arXiv.2503.21495` |
+| **Authors** | Timo Budszuhn, Mark Joachim Krallmann, Daniel Horn |
+| **Venue** | arXiv preprint (preprint) |
+| **DOI** | `10.48550/arXiv.2503.21495` |
+| **URL** | https://arxiv.org/abs/2503.21495 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2503.21495/summary.md) |
+
+Budszuhn, Krallmann, and Horn study the resource-allocation problem at the heart of noisy
+multi-objective optimization: every evaluation either explores a new candidate or sharpens an
+existing estimate, and the algorithm must decide which without knowing the noise distribution.
+Their target is NSGA-II, an elitist algorithm that is particularly damaged by overestimated
+points. Prior work either fixes a static number of evaluations per point, uses rank or
+variance heuristics, or assumes Gaussian noise to estimate a probability of dominance. None of
+these adapt to unknown noise shape.
+
+The authors' contribution is Adaptive Resampling with Bootstrap (ARB), a sequential decision
+function that bootstraps the sample-mean distribution at each point, estimates the probability
+of dominating any current Pareto-front member from 100 paired bootstrap draws, and triggers
+resampling only when that probability lies in a tunable window (alpha_l, alpha_u). To make the
+bootstrap work after a single observation, they maintain a population-level pool E of the 100
+most recent scaled residuals and mix global draws with point-local draws, weighting the local
+component more heavily as N grows. The full evaluation uses UPC benchmark functions with
+Gaussian and chi-squared noise at six standard deviations, NSGA-II popSize 40, and 30
+replications of 50,000 evaluations per setting.
+
+ARB is the most flexible algorithm tested. With realistic pre-study parameter selection it
+ranks second across all noise regimes and significantly beats RTEA in **64.7 percent** of
+scenarios and the other dynamic NSGA-II resamplers in **71.0 percent**. The only competitor
+that wins overall is static N = 1 (no resampling), and only because chi-squared noise is
+one-sided bounded -- when overestimation is impossible, paying for resamples is pure waste.
+Under Gaussian noise, RTEA's strict elitism does well but is still beaten by ARB on average.
+The headline finding is therefore not "ARB is universally best" but "ARB is the only strategy
+that does not collapse on at least one noise type, because its decision rule is
+distribution-free".
+
+This paper matters for t0102 because the current DSGC compartmental-modelling pipeline fixes
+the number of stochastic-seed evaluations (N_SEEDS) statically per design point -- exactly the
+static N strategy the paper compares against. ARB is the natural candidate for a follow-up
+suggestion S-0102-NEW-01 that would replace that constant with an adaptive resampler driven by
+the probability of dominance over the running Pareto front of (loss, cost) or (loss,
+biological plausibility). Before adoption we must verify that DSGC noise is closer to Gaussian
+than to a bounded chi-squared shape -- if seed-to-seed loss variation is heavily right-skewed
+and one-sided, the paper's own results suggest static N might still be near-optimal and the
+engineering cost of ARB would not pay back. Heteroscedasticity across morphologies is also
+untested in the paper and must be checked empirically before any production switch.
+
+</details>
+
+<details>
+<summary>📖 <strong>Evaluation and comparison of methods for neuronal parameter
+optimization using the Neuroptimus software framework</strong> — Mohacsi
+et al., 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1012039` |
+| **Authors** | Mate Mohacsi, Mark Patrik Torok, Sara Saray, Luca Tar, Gabor Farkas, Szabolcs Kali |
+| **Venue** | PLOS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1012039` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012039 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.1371_journal.pcbi.1012039/summary.md) |
+
+Mohacsi et al. address a long-standing methodological gap in computational neuroscience:
+parameter optimisation of biophysical neuron models is unavoidable, but the field has no
+agreed benchmark and no clear answer to which algorithm to use. The authors develop
+Neuroptimus, an open-source PyQt5/CLI framework that gives users uniform access to more than
+20 optimisation algorithms from SciPy, Inspyred, Pygmo, BluePyOpt and a standalone Cmaes
+package. The framework is targeted at NEURON-based single-cell models but supports any
+black-box model via file IO.
+
+The bulk of the paper is a controlled benchmark: each algorithm gets exactly 10000 model
+evaluations, hierarchical algorithms use pop=100 and gens=100, and every algorithm is repeated
+10 times per problem. The benchmark suite spans single-compartment Hodgkin-Huxley with 3
+parameters, voltage-clamp synaptic fitting with 4 parameters, morphologically detailed passive
+cells with 3 parameters, simplified active models with 9 parameters, an AdEx
+integrate-and-fire model with 10 parameters, and a fully detailed CA1 pyramidal cell with 12
+parameters and feature-distribution targets. A seventh use case applies the same framework to
+a 12-parameter biochemical signalling cascade model.
+
+The headline finding is that **CMAES dominates** every benchmark, **PSO is a close runner-up**
+(with three implementations giving nearly identical results), and **IBEA is the best
+multi-objective method**. **NSGA-II in any of its three implementations sits mid-pack on
+multi-objective problems**, and is worse than random search on the simplest 3-parameter HH
+benchmark. **Local search methods (Nelder-Mead, L-BFGS-B, basinhopping) collapse on hard
+problems**. The performance gap between best and worst algorithms reaches two orders of
+magnitude on the simplified active model (Use Case 4). Implementation matters less than
+expected within an algorithm family, with the notable exception that Inspyreds NSGA-II is
+significantly weaker than Pygmos and BluePyOpts. The paper releases all benchmark results as a
+live database that other researchers can extend.
+
+For our t0102 NSGA-II work this paper is directly load-bearing evidence on the central
+question of whether NSGA-II at our compute budget is likely to find good solutions on a
+68-parameter problem. The paper says no - NSGA-II is mid-pack on 9-12 parameter problems even
+at 10000 evaluations, and the authors explicitly recommend CMAES, PSO or IBEA over NSGA-II for
+neuronal optimisation. Our t0102 configuration (pop=96, gens=20, 1920 evaluations per seed) is
+roughly 1/5 of their per-run budget on problems with ~5x higher dimensionality, so any null
+result we get for NSGA-II is consistent with the published literature rather than a new
+finding about our problem. If the project decides to continue multi-objective optimisation it
+should switch to IBEA via BluePyOpt; if it instead moves to single-objective scalarisation,
+CMAES (parallelisable variant) is the clearest evidence-based default. The papers online
+database also provides a forward-looking opportunity to contribute our DSGC tuning runs as
+additional benchmark data.
+
+</details>
+
+<details>
+<summary>📝 <strong>Theoretical Analysis of Explicit Averaging and Novel Sign
+Averaging in Comparison-Based Search</strong> — Morinaga & Akimoto, 2024</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.48550_arXiv.2401.14014` |
+| **Authors** | Daiki Morinaga, Youhei Akimoto |
+| **Venue** | preprint (preprint) |
+| **DOI** | `10.48550/arXiv.2401.14014` |
+| **URL** | https://arxiv.org/abs/2401.14014 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2401.14014/summary.md) |
+
+Morinaga and Akimoto address a fundamental and previously under-analysed question in noisy
+black-box optimisation: when does explicit averaging - the default seed-replicate strategy in
+ES, CMA-ES, NSGA-II, and most evolutionary optimisers - actually improve solution ranking, and
+when does it fail? Prior work largely assumed Gaussian or bounded-variance noise; this paper
+drops that assumption and analyses the full family of stable-distribution noises parameterised
+by a single stability index alpha in (0, 2].
+
+The methodology centres on the Order Estimation Probability (OEP), the probability that K
+noisy paired evaluations recover the true ranking of two candidate solutions. The authors
+prove two theorems with sharp characterisations. Theorem 3 dissects explicit averaging into
+three regimes: beneficial (alpha > 1, OEP converges to 1 at rate K^(1 - 1/alpha)), neutral
+(alpha = 1, OEP is constant in K), and actively harmful (alpha < 1, OEP strictly decreases as
+K grows). Theorem 9 then proves that a newly introduced sign-averaging estimator - which
+counts majority direction over K paired comparisons rather than averaging magnitudes -
+converges to OEP = 1 for every alpha in (0, 2] under only mild continuity and
+median-additivity assumptions, requiring no finite moment of the noise.
+
+The headline findings are that explicit averaging is provably worse than no averaging for
+heavy-tailed (infinite-mean) noise, that sign averaging is a free, drop-in fix that works
+universally, and that the alpha index of the noise distribution is the right and complete
+diagnostic for choosing between them. Numerical experiments at a range of alpha values confirm
+all four predicted regimes of explicit averaging and the alpha-independent robustness of sign
+averaging.
+
+For this project, where t0102 explicitly probes seed-scale behaviour with N_SEEDS = 4 over 20
+NSGA-II generations, the paper supplies the theoretical taxonomy that the experiment will land
+in. The working hypothesis is that DSGC fitness objectives sit at alpha well above 1
+(EPSP/IPSP integrals, passive-mode metrics) where K = 4 explicit averaging is effective at
+slow-polynomial rate, but that some firing-rate-derived objectives may sit closer to alpha = 1
+where averaging is nearly inert. This anchors the present task scope to the "noisy but
+algorithm survives" regime predicted by Theorem 3 and motivates a follow-up where sign
+averaging replaces explicit averaging for heavy-tailed objectives specifically.
 
 </details>
 
@@ -216,6 +384,60 @@ lifted from Fohlmeister 2010. The model demonstration that +/- 20% modulation of
 somatic leak suffices to reproduce sustained-vs-transient differences provides a tight prior
 for the most important search dimensions and justifies narrower bounds on K(Ca) and Cav,
 freeing search budget for the high-leverage parameters.
+
+</details>
+
+<details>
+<summary>🏤 <strong>Analysing the Robustness of NSGA-II under Noise</strong> — Dang
+et al., 2023</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.48550_arXiv.2306.04525` |
+| **Authors** | Duc-Cuong Dang, Andre Opris, Bahare Salehi, Dirk Sudholt |
+| **Venue** | Proceedings of the Genetic and Evolutionary Computation Conference (GECCO '23) (conference) |
+| **DOI** | `10.48550/arXiv.2306.04525` |
+| **URL** | https://arxiv.org/abs/2306.04525 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2306.04525/summary.md) |
+
+Dang, Opris, Salehi, and Sudholt present the first theoretical runtime analysis of NSGA-II
+under noisy multi-objective optimisation, addressing the open question of *when* the popular
+NSGA-II algorithm outperforms the idealised GSEMO baseline. Previous theoretical work had
+matched the two algorithms only at the same asymptotic complexity, leaving NSGA-II apparent
+practical advantages unexplained. The authors close this gap by constructing a noisy benchmark
+setting in which NSGA-II is provably polynomial-time while GSEMO is provably exponential-time.
+
+The methodology combines a worst-case **(delta, p)-Bernoulli noise model** in which a fixed
+offset `delta = n + 1` is added to all objectives with probability `p` per evaluation with
+drift analysis on standard bi-objective benchmarks (LOTZ, OMM). The authors prove a sharp
+**phase transition at p = 1/2**: below this threshold NSGA-II with population size `mu =
+Omega(n log n)` covers the Pareto front in polynomial expected time (Theorem 8), while above
+`p = 10/19 ~ 0.526` the expected runtime is exponential (Theorem 10). Experimental
+confirmation uses problem sizes n = 20, 30, 40 with 50 runs each, and includes Gaussian-noise
+experiments showing qualitatively similar phase-transition behaviour.
+
+The headline empirical findings match the theory cleanly. NSGA-II achieves 100% success on
+noisy LOTZ for every `p < 0.5` and 0% for `p in {0.5, 0.6}`. GSEMO never covers more than 40%
+of the Pareto front under any non-trivial noise. Under Gaussian noise, NSGA-II success rate
+drops from 100% at `sigma = n * 2^-4` to 0% at `sigma = n * 2^-1`. The mechanism behind
+NSGA-II robustness is its crowding-distance survival rule, which retains dominated individuals
+across generations and prevents noise-induced incumbent loss, the failure mode that destroys
+GSEMO.
+
+This paper matters for the neuron-channels project because t0102 (and the entire NSGA-II line
+of work) optimises a DSGC compartmental model whose objective values are inherently noisy:
+each configuration is evaluated on a small number of stochastic synaptic-input seeds (N_SEEDS
+= 4 in t0102). The phase-transition theorem provides a theoretical anchor that the chosen seed
+count puts the experiment well below the critical noise probability of 1/2, so NSGA-II should
+retain its polynomial-time guarantees. The paper also clarifies a practical design principle:
+NSGA-II crowding-distance retention is what buys noise robustness, so degenerate populations
+or aggressive archive-pruning would forfeit this protection. The requirement that `mu =
+Omega(n log n)` is suggestive: at 68-dimensional problems, a population of 96 may be on the
+smaller side, and if t0102 fails to recover a joint-pass corner this paper indicates that a
+larger population (not more seeds) is a principled next lever.
 
 </details>
 
@@ -869,6 +1091,61 @@ depolarisations during preferred-direction motion, these could in principle gate
 direction-selective plasticity on a behaviorally relevant timescale. Whether DSGC dendritic
 geometry (short, non-tufted, compact) supports such plateaus is an open empirical question
 that follow-up compartmental simulation can address.
+
+</details>
+
+<details>
+<summary>📖 <strong>Noisy evolutionary optimization algorithms – A comprehensive
+survey</strong> — Rakshit et al., 2017</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.swevo.2016.09.002` |
+| **Authors** | Pratyusha Rakshit, Amit Konar, Swagatam Das |
+| **Venue** | Swarm and Evolutionary Computation (journal) |
+| **DOI** | `10.1016/j.swevo.2016.09.002` |
+| **URL** | https://www.sciencedirect.com/science/article/abs/pii/S2210650216303030 |
+| **Date added** | 2026-05-11 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Added by** | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0102_seedscale_n4_gen20/assets/paper/10.1016_j.swevo.2016.09.002/summary.md) |
+
+Rakshit, Konar, and Das (2017) is a comprehensive survey of evolutionary optimisation under
+noisy fitness evaluation, published in *Swarm and Evolutionary Computation* (Vol. 33, pp.
+18-45). The paper addresses the general problem that real-world fitness functions — including
+simulation-based ones — often return stochastic values, and that standard evolutionary
+algorithms can be misled by this noise into discarding good candidates or promoting bad ones.
+The survey scope spans the major EA families (GA, DE, PSO, ES, EDA, multi-objective EA) and
+the major noise-handling strategies developed across roughly two decades of literature.
+
+Because the paper is a survey, its "methodology" is its organising framework rather than an
+experiment. Based on the title and the well-established public knowledge of this paper
+contribution, the framework taxonomises noise-handling techniques into named families —
+explicit averaging (resampling), implicit averaging (population scaling),
+statistical-test-based selection (hypothesis tests, racing, indifference-zone procedures),
+surrogate-model-assisted selection, and noise-modified evolutionary operators — and reviews
+how each canonical EA family has been adapted to use them. The paper consolidates 203
+references. Specific design decisions and analytical comparisons made by the authors cannot be
+reproduced here because the full text was not available; a future task may wish to re-attempt
+download via institutional access.
+
+The paper headline contribution, as widely understood, is the unified taxonomy itself: prior
+to this survey the noisy-EA literature was scattered across many specialised papers, and this
+survey is the most-cited single reference (top 1% of its cohort by OpenAlex; **~150 citing
+works**) that organises the design space. Specific quantitative findings, recommendations, or
+rankings made by the paper are not reported in this summary because the full text was not
+obtained.
+
+For the present project, this survey is the foundational reference for understanding the
+trade-off space that motivates task `t0102_seedscale_n4_gen20`. The current task uses n=4
+seeds per candidate across 20 generations — a form of explicit averaging with `r=4` in the
+survey terminology. The survey provides the conceptual basis for justifying that choice, for
+designing follow-up tasks that compare against implicit averaging (larger populations, fewer
+seeds) or statistical-test-based selection (racing/Mann-Whitney), and for connecting
+biological-plausibility constraints to noise-handling cost budgets in subsequent MOBO
+follow-ups (per the project NSGA-II preference for high-dimensional MOBO). If a future task
+needs the paper specific quantitative findings or named algorithms, it should re-attempt
+download via institutional Elsevier access.
 
 </details>
 
@@ -2150,7 +2427,7 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 
 </details>
 
-## Tasks (9)
+## Tasks (10)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2163,8 +2440,31 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | 2026-05-08 15:55 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
+| 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 
-## Answers (19)
+## Answers (20)
+
+<details>
+<summary><strong>Does running 68-d NSGA-II at N_EVAL_SEEDS=4 noise replicates,
+gens=20, pop=96, 2 random-init GA seeds (44, 55), no warm-start, recover
+the strict joint-pass corner (DSI>=0.5 AND PD-rate>=30 Hz AND
+robustness>=0.7) of the Bed B + morphology compartmental DSGC
+substrate?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-12 | **Full answer**:
+[`does-n4-gens20-2seeds-recover-joint-pass-corner`](../../tasks/t0102_seedscale_n4_gen20/assets/answer/does-n4-gens20-2seeds-recover-joint-pass-corner/)
+
+No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells cleared the strict
+joint-pass corner, and zero cells cleared even the loosest 2-axis test (DSI>=0.5 AND PD>=5
+Hz), because DSI and PD-rate are strongly bimodally anti-correlated on this substrate. The
+headline max-DSI of 1.0 in both seeds turned out to be a floating-point artifact of the
+vector-sum DSI formula on silenced cells with PD=0 Hz; the real DSI ceiling under N=4 noise
+replicates is roughly 0.35. The earlier t0091 single joint-pass cell, previously framed as an
+NSGA-II discovery, is reframed here as a one-mutation polynomial-mutation descendant of an
+alt_topology warm-start anchor, so removing the warm-start removes the entire joint-pass
+signal.
+
+</details>
 
 <details>
 <summary><strong>Why do t0090's procedural cells produce zero spikes under the t0083
@@ -2592,7 +2892,176 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (276 open, 35 closed)
+## Suggestions (284 open, 35 closed)
+
+<details>
+<summary>🔧 <strong>Fix DSI vector-sum objective: gate by minimum total spike count
+to eliminate silenced-cell DSI=1.0 artifact</strong> (S-0102-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+Finding 1 in results_detailed.md: 27 t0102 cells reach DSI = 1.0 because vector-sum DSI in
+evaluator.py divides by near-zero total spike count on silenced cells, with floating-point
+dust producing a spurious 'perfect selectivity' score that pulls half the NSGA-II Pareto into
+the silence corner. Single-line fix: return 0.0 when total_spike_count across 16 directions is
+< 10. Bug affects the entire t0080-t0102 lineage; highest-leverage change for recovering
+joint-pass cells at fixed algorithm and budget. Implementation: patch evaluator.py in a new
+task that copies the t0099 substrate, add a silenced-cell unit test, re-run random-init
+NSGA-II at pop=96, gens=8, 1 GA seed, N=4. Expected: joint-pass yield > 0 from random init;
+DSI distribution loses its 1.0 spike. Recommended task types: write-library, experiment-run.
+Cost: ~$2-3 (one pop=96 x 8-gen Vast.ai run).
+
+</details>
+
+<details>
+<summary>📊 <strong>Direct re-evaluation of t0083 / t0091 anchor library at
+N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation</strong>
+(S-0102-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 4 proposes a < $0.20 follow-up that disambiguates
+'substrate-limited vs algorithm-limited' definitively. Take the 5 anchor families from t0091's
+warm-start (alt_topology, symmetric, bedb_like, t0083 anchors 1559 and 1677) and re-evaluate
+each at N_EVAL_SEEDS=4 with no NSGA-II/LHS/mutation -- just per-cell evaluation. Count how
+many clear the strict joint-pass corner. Outcome A (zero clear): joint corner is empirically
+unreachable on this substrate at N=4 regardless of algorithm; further NSGA-II is futile.
+Outcome B (>= 1 clears): NSGA-II at random init is failing to find what is empirically
+present; algorithm replacement (IBEA/CMAES) justified. Also re-evaluate t0091's joint-pass
+cell (DSI=0.511, PD=35.1 Hz, rob=0.79) at N=4 to test the noise-floor prediction. Recommended
+task types: baseline-evaluation, comparative-analysis. Cost: < $0.20 (~95 evaluations, no GA,
+~30 min on Vast.ai).
+
+</details>
+
+<details>
+<summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget (pop=96, gens=15,
+N=4, 2 GA seeds) on Bed B + morphology substrate</strong> (S-0102-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+Mohacsi 2024 (Neuroptimus benchmark, PLOS Comp Bio) reports IBEA is 'clearly the best among
+the multi-objective methods' on six neuron-fitting benchmarks including Hay 2011 L5PC,
+outperforming all three NSGA-II implementations tested. t0102 only tested NSGA-II, leaving
+algorithm choice as an unexamined factor in the 0/4800 random-init joint-pass yield. Port the
+t0099 substrate to pymoo's IBEA (or DEAP/BluePyOpt IBEA wrapper) at matched budget (pop=96,
+gens=15, N_EVAL_SEEDS=4, 2 GA seeds, $8 cap), apply the S-0102-01 DSI fix if available, and
+compare front structure to t0099+t0102. Expected: IBEA's hypervolume-density selection avoids
+placing half the front in the DSI=1/PD=0 corner that NSGA-II crowding distance keeps;
+joint-pass yield improves even if the corner remains hard. Run after or alongside S-0102-02.
+Recommended task types: experiment-run, comparative-analysis. Cost: ~$6-8 matched to t0102
+envelope (IBEA's O(N^2) overhead manageable at pop=96).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Dang 2023 theory-grounded NSGA-II at pop>=290 (mu = n log n
+floor) with N_EVAL_SEEDS=4, gens=10</strong> (S-0102-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+Dang 2023 Theorem 8 requires mu = Omega(n log n) for noisy NSGA-II to retain polynomial
+expected runtime under Bernoulli or Gaussian noise. For our 68-d substrate, the theoretical
+floor is Omega(68 * log(68)) = approximately 290; t0102 ran at pop=96, three times below this
+floor. compare_literature.md Methodology Differences identifies this as a principled lever to
+pull before concluding the substrate is structurally empty of joint-pass cells. Run a single
+random-init NSGA-II at pop=320 (slightly above the Dang floor for headroom), gens=10,
+N_EVAL_SEEDS=4, 1 GA seed -- total budget approximately 3200 evaluations, comparable to t0102.
+If pop>=290 finds joint-pass cells where pop=96 found none, the population-floor argument is
+empirically confirmed; if not, the substrate-limitation reading hardens. Recommended task
+types: experiment-run, comparative-analysis. Cost: ~$5-7 on Vast.ai (single seed at higher pop
+offsets the fewer generations).
+
+</details>
+
+<details>
+<summary>📊 <strong>Anchor-distance lineage trace: quantify t0091 joint-pass cell as
+one-mutation descendant of alt_topology anchor</strong> (S-0102-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 2 reframes t0091's joint-pass cell (DSI=0.511, PD=35.1 Hz,
+rob=0.79, source_generation=2) as a one-mutation descendant of alt_topology anchor row 84 --
+not a de novo NSGA-II discovery. The cell sits 3.55 normalised units from row 84 vs >= 11
+units to any other anchor; expected mutated dims per offspring ~1.0. Load-bearing
+methodological reframing for any paper draft. Formalise as analysis: (i) pairwise Euclidean
+distance from each t0091/t0099/t0102 Pareto cell to every t0091 warm-start anchor and every
+t0083 anchor; (ii) classify each joint-pass-adjacent cell as 'anchor-near' (< 5 units) vs
+'GA-discovered' (>= 10 units); (iii) histogram + scatter of distance vs source_generation.
+Outcome: empirical answer to 'how much of NSGA-II output is searched vs preserved-from-init'
+across t0080-t0102. Recommended task types: data-analysis, comparative-analysis. Cost: ~$0
+(offline analysis on stored JSONLs).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Calcium-clearance perturbation sweep on the 27 silenced-cell
+DSI=1.0 vectors to test silence-as-mechanism hypothesis</strong>
+(S-0102-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+creative_analysis.md Section 7 proposes a mechanistic reading: the 27 t0102 cells with DSI >=
+0.99 / PD < 0.1 are not bugs but the GA's discovery of a lateral-inhibition silencing regime
+(slow Ca clearance, strong sAHP, weak ACh drive) consistent with Poleg-Polsky 2026 SAC gating.
+Take each of the 27 cells, fix the 68-d vector except CAD_TAUR_MS (Ca clearance tau, dim 38),
+sweep that dim from ~65 ms down to 5 ms in 10 logarithmic steps, re-evaluate DSI/PD/rob at
+N_EVAL_SEEDS=8. Question: when Ca clearance is restored, do these cells collapse to the
+high-PD low-DSI corner (silence was the only DSI mechanism), or do some land in the joint
+corner (Ca clearance is the active constraint and the rest of the vector is joint-viable)?
+Outcome: 27 x 10 grid mapping silence-to-joint escape paths. Doubles as slice-physiology
+prediction (BAPTA Ca chelation should disinhibit SAC/DSGC firing). Recommended task types:
+experiment-run, data-analysis. Cost: < $0.50 (270 evaluations, no GA).
+
+</details>
+
+<details>
+<summary>🔧 <strong>Morinaga 2024 sign-averaging objective formulation to handle
+heavy-tailed DSI noise (alpha close to 1) at fixed budget</strong>
+(S-0102-07)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+Morinaga 2024 (arXiv 2401.14014) Theorem 3 shows explicit averaging is only effective when the
+per-objective noise stability index alpha > 1. compare_literature.md argues our DSI vector-sum
+near zero-spike cells is heavy-tailed with alpha ~1, making K=4 averaging 'nearly inert'.
+Theorem 9 proposes sign-averaging as a comparison-based alternative robust under heavy tails
+at the same compute cost. Steps: (i) compute per-objective alpha on the t0093 anchor library
+at N=20 (offline); (ii) if alpha < 1 for DSI, reformulate NSGA-II selection via sign-averaging
+(count replicates favouring A over B) instead of mean ranking; (iii) run a 1-seed NSGA-II at
+matched budget with sign-averaging. Complementary to S-0102-01 (DSI fix targets the
+floating-point bug; this targets noise-handling theory). Recommended task types:
+write-library, experiment-run. Cost: ~$3-5 (one pop=96 run plus offline analysis).
+
+</details>
+
+<details>
+<summary>📚 <strong>Vast.ai cost-watchdog parameterisation: idle-timeout teardown and
+post-watchdog termination to prevent $3+ idle overrun</strong> (S-0102-08)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
+[t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
+
+t0102 cost overrun ($12.07 vs $8 plan cap) decomposed as $8.46 productive NSGA-II compute
+(per-seed $4 watchdog behaved as designed) plus $3.51 idle uptime: $0.11 setup, ~$1.5 from a
+dead initial subagent before recovery, ~$2 post-watchdog billing before teardown.
+results_detailed.md Limitations records this. Harden the cost-watchdog infrastructure: (i)
+idle-CPU watchdog that destroys the instance if no NEURON worker processes have run for > 15
+minutes; (ii) chain the per-seed cost watchdog directly into instance teardown rather than
+just terminating the NSGA-II loop; (iii) standardise the offer-rate hourly-price source (t0102
+billed $0.4852/hr while the watchdog read $0.4690/hr base, drift ~$0.1/hr over 24 h). Small
+library change in arf/scripts/utils plus task-level orchestration. Recommended task types:
+write-library, infrastructure-setup. Cost: ~$0 development + recovered ~$3/task in subsequent
+runs.
+
+</details>
 
 <details>
 <summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
