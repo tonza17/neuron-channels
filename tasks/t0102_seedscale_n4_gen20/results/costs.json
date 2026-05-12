@@ -1,0 +1,25 @@
+{
+  "total_cost_usd": 11.94,
+  "breakdown": {
+    "vast_ai_nsga2_compute": {
+      "cost_usd": 8.4568,
+      "description": "NSGA-II compute on Vast.ai instance 36556586. Sum of per-seed cost watchdog final readings: seed44=$4.0942 (gen 14, 14 generations completed before cost watchdog tripped at the $4 per-seed cap) + seed55=$4.3626 (gen 13, 13 generations completed before cost watchdog tripped at the $4 per-seed cap). Hourly rate $0.4852/hr (price_per_hour $0.4690 + bandwidth + storage).",
+      "seed44_cost_usd": 4.0942,
+      "seed55_cost_usd": 4.3626,
+      "watchdog_tripped": true
+    },
+    "vast_ai_setup_and_smoke_gates": {
+      "cost_usd": 0.11,
+      "description": "Instance provisioning (~14 min from start_date to setup-machines completion) plus the 5-anchor consistency smoke gate at N_EVAL_SEEDS=4. Recorded as cost_so_far_usd=$0.11 in logs/steps/008_setup-machines/machine_log.json."
+    },
+    "vast_ai_idle_time": {
+      "cost_usd": 3.3732,
+      "description": "Idle uptime not used for productive NSGA-II work. The initial implementation subagent went silent without launching the long run, the instance stayed up for ~7 hours before the recovery subagent restarted at 2026-05-11T22:26:35Z, and the instance was kept alive for the duration of both subsequent NSGA-II runs (~18 hours covered by the watchdog-tracked NSGA-II + setup costs above). Computed as total_uptime_cost - vast_ai_nsga2_compute - vast_ai_setup_and_smoke_gates = $11.94 - $8.4568 - $0.11 = $3.3732."
+    }
+  },
+  "services": {
+    "vast_ai": 11.94
+  },
+  "budget_limit": 8.0,
+  "note": "Total session cost $11.94 exceeds the $8 plan-stated hard cap. The overrun was driven by ~7 hours of idle compute when the initial implementation subagent went silent before launching the NSGA-II run, plus the additional $0.4568 over the $4 per-seed cap from the watchdog completing the in-progress generation before exiting. The cost watchdog itself behaved as designed (tripped at $4.00 for both seeds), but the per-seed expense was higher than projected because N_EVAL_SEEDS=4 took longer per cell on the EPYC 7B13 + Spain machine (price_per_hour $0.4690 + bandwidth ~$0.0162/hr surcharge) than the plan's $0.24/hr Norway target estimate. The user authorised the overrun in advance. Cost breakdown is reconstructed from instance start_date 2026-05-11T17:06:50Z, hourly billing rate $0.4852/hr, and the per-seed cost watchdog final readings."
+}

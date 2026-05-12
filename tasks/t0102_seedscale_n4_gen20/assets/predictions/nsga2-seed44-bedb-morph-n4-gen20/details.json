@@ -1,0 +1,48 @@
+{
+  "spec_version": "2",
+  "predictions_id": "nsga2-seed44-bedb-morph-n4-gen20",
+  "name": "NSGA-II seed=44 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init)",
+  "short_description": "All per-cell NSGA-II evaluations from t0102 random-init seed=44 (1344 cells across 14 generations) on the 68-d Bed B + morphology DSGC substrate at N_EVAL_SEEDS=4. Records the DSI vector-sum, preferred-direction firing rate, robustness, joint-pass flag, and the 68-d parameter vector per cell.",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "Compartmental DSGC neuron model with the t0092-patched procedural morphology generator (canonical via correction C-0093-01) and the 54-d Bed B electrophys parameter vector applied via t0080's apply_parameter_vector. Each cell is evaluated with 16 stimulus directions x 4 noise replicates; NSGA-II minimises the negated triple (DSI vector-sum, PD-rate, robustness).",
+  "dataset_ids": [],
+  "prediction_format": "jsonl",
+  "prediction_schema": "Each line is a JSON object with fields: generation (int, NSGA-II generation this cell was evaluated at; 1 = initial LHS population), vector_68d (list of 68 floats, the 54-d electrophys + 14-d morphology parameter vector), dsi_vector_sum (float in [0, 1], vector-sum direction selectivity index), pd_rate_hz (float, preferred-direction mean firing rate in Hz), robustness (float in [0, 1], inverse CV of DSI across 4 noise replicates), joint_pass (bool, true iff dsi_vector_sum >= 0.5 AND pd_rate_hz >= 30 AND robustness >= 0.7).",
+  "instance_count": 1344,
+  "metrics_at_creation": {
+    "n_generations_completed": 14,
+    "n_cells": 1344,
+    "max_dsi": 1.0,
+    "max_pd_rate_hz": 64.28571428571429,
+    "max_robustness": 0.991628794830278,
+    "n_joint_pass": 0,
+    "hypervolume_final": 7.532779084144153,
+    "final_cost_usd": 4.094182907241769
+  },
+  "files": [
+    {
+      "path": "files/predictions-seed44.jsonl",
+      "description": "Per-cell NSGA-II evaluation log for t0102 seed=44 (1344 cells).",
+      "format": "jsonl"
+    }
+  ],
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "retinal-ganglion-cell",
+    "dendritic-computation"
+  ],
+  "source_paper_ids": [],
+  "source_task_ids": [
+    "t0024_port_de_rosenroll_2026_dsgc",
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0090_morphology_generator_diversity_test",
+    "t0091_morphology_extended_nsga2_v1",
+    "t0092_diagnose_morphology_generator_silence",
+    "t0093_resweep_and_t0090_correction",
+    "t0099_random_init_pareto_robustness"
+  ],
+  "created_by_task": "t0102_seedscale_n4_gen20",
+  "date_created": "2026-05-12"
+}

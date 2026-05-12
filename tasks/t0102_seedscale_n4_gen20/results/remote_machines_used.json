@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "36556586",
+    "gpu": "RTX 4090 (idle, unused; CPU-only NEURON workload)",
+    "gpu_count": 1,
+    "ram_gb": 503,
+    "duration_hours": 24.61,
+    "cost_usd": 11.94
+  }
+]
