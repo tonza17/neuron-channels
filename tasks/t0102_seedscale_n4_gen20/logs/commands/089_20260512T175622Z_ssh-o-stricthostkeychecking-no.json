@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 36586 root@ssh4.vast.ai cat /root/t0102_workdir/neuron-channels/tasks/t0102_seedscale_n4_gen20/intervention/budget_overrun_seed44.md; echo === SEPARATOR ===; cat /root/t0102_workdir/neuron-channels/tasks/t0102_seedscale_n4_gen20/intervention/budget_overrun_seed55.md",
+  "exit_code": 0,
+  "duration_seconds": 2.94,
+  "started_at": "2026-05-12T17:56:22Z",
+  "completed_at": "2026-05-12T17:56:25Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "089_20260512T175622Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "089_20260512T175622Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 21,
+  "stderr_lines": 2,
+  "truncated": false
+}

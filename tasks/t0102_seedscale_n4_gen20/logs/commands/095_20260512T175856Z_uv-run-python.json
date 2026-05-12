@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "uv run python -m arf.scripts.verificators.verify_machines_destroyed t0102_seedscale_n4_gen20",
+  "exit_code": 0,
+  "duration_seconds": 2.07,
+  "started_at": "2026-05-12T17:58:56Z",
+  "completed_at": "2026-05-12T17:58:58Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "095_20260512T175856Z_uv-run-python.stdout.txt",
+  "stderr_file": "095_20260512T175856Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}
