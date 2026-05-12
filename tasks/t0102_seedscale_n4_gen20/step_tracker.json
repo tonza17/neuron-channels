@@ -104,10 +104,10 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json; embed plots (HV curves, anchor distribution, DSI vs PD scatter) in results/images/.",
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
-      "log_file": "logs/steps/012_results/"
+      "status": "completed",
+      "started_at": "2026-05-12T18:10:17Z",
+      "completed_at": "2026-05-12T19:55:00Z",
+      "log_file": "logs\\steps\\012_results/"
     },
     {
       "step": 13,
