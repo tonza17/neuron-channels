@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "bash -c cp tasks/t0102_seedscale_n4_gen20/code/*.py tasks/t0102_seedscale_n4_gen20/code/*.sh tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/ && ls tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/ | wc -l",
+  "exit_code": 0,
+  "duration_seconds": 1.065,
+  "started_at": "2026-05-12T22:00:03Z",
+  "completed_at": "2026-05-12T22:00:04Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "035_20260512T220003Z_bash-c-cp-tasks-t0102-seedscale-n4-gen20.stdout.txt",
+  "stderr_file": "035_20260512T220003Z_bash-c-cp-tasks-t0102-seedscale-n4-gen20.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

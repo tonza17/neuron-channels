@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "bash -c \nmkdir -p /tmp/t0104_upload &&\ntar czf /tmp/t0104_upload/t0104_code.tar.gz   tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/   tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/__init__.py   tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/   tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/__init__.py   tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/__init__.py   tasks/t0093_resweep_and_t0090_correction/data/   tasks/t0093_resweep_and_t0090_correction/__init__.py   tasks/t0024_port_de_rosenroll_2026_dsgc/code/   tasks/t0024_port_de_rosenroll_2026_dsgc/__init__.py   tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/   tasks/t0090_morphology_generator_diversity_test/code/   tasks/t0090_morphology_generator_diversity_test/__init__.py   tasks/t0092_diagnose_morphology_generator_silence/code/   tasks/t0092_diagnose_morphology_generator_silence/__init__.py   tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/data/pareto_front.json   tasks/t0091_morphology_extended_nsga2_v1/results/data/   tasks/__init__.py   arf/__init__.py   arf/scripts/   pyproject.toml   uv.lock   ruff.toml   2>/dev/null;\nls -lh /tmp/t0104_upload/\n",
+  "exit_code": 0,
+  "duration_seconds": 1.967,
+  "started_at": "2026-05-12T22:10:29Z",
+  "completed_at": "2026-05-12T22:10:31Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "044_20260512T221029Z_bash-c-mkdir-p-tmp-t0104-upload-tar-czf-.stdout.txt",
+  "stderr_file": "044_20260512T221029Z_bash-c-mkdir-p-tmp-t0104-upload-tar-czf-.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}
