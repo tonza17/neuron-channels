@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare DSI/PD scatter at N_SEEDS=4 vs Poleg-Polsky 2026 N=1 and our N_SEEDS=20 baseline; quantify variance gap.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-12T18:23:28Z",
-      "completed_at": null,
+      "completed_at": "2026-05-12T18:29:32Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
