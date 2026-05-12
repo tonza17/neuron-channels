@@ -1,0 +1,18 @@
+-rwxr-xr-x 1 root root 4466 May 12 21:54 .venv/bin/nrnivmodl
+-h unrecognized
+Traceback (most recent call last):
+  File "/root/t0104_workdir/.venv/bin/nrnivmodl", line 115, in <module>
+    subprocess.check_call([exe, *sys.argv[1:]])
+  File "/usr/local/lib/python3.12/subprocess.py", line 413, in check_call
+---
+/usr/bin/gcc
+gcc (Debian 12.2.0-14+deb12u1) 12.2.0
+---
+/usr/bin/gfortran
+GNU Fortran (Debian 12.2.0-14+deb12u1) 12.2.0
+---
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          40G  893M   40G   3% /
+---
+391M	/root/t0104_workdir/.venv
+DONE_TOOLS

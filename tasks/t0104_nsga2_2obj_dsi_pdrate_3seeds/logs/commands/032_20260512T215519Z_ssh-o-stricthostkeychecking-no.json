@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -o ConnectTimeout=30 -i C:/Users/md1avn/.ssh/id_ed25519 -p 15796 root@ssh9.vast.ai set -e; cd /root/t0104_workdir; .venv/bin/python -c 'from pymoo.algorithms.moo.nsga2 import NSGA2; from pymoo.operators.sampling.lhs import LatinHypercubeSampling; from pymoo.core.problem import ElementwiseProblem; from pymoo.operators.crossover.sbx import SBX; from pymoo.operators.mutation.pm import PM; from pymoo.termination.collection import TerminationCollection; from pymoo.termination.max_gen import MaximumGenerationTermination; from pymoo.parallelization.starmap import StarmapParallelization; print(\"All pymoo NSGA-II imports: OK\")'; echo ---; .venv/bin/python -c 'import neuron; from neuron import h; h.load_file(\"stdrun.hoc\"); print(\"NEURON hoc load: OK\"); print(\"coreneuron available:\", hasattr(h, \"CVode\"))'; echo DONE_VERIFY",
+  "exit_code": 0,
+  "duration_seconds": 4.618,
+  "started_at": "2026-05-12T21:55:19Z",
+  "completed_at": "2026-05-12T21:55:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "032_20260512T215519Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "032_20260512T215519Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 4,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -o ConnectTimeout=20 -i C:/Users/md1avn/.ssh/id_ed25519 -p 15796 root@ssh9.vast.ai nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader 2>&1 | head -5; echo ---; nvcc --version 2>&1 | head -5; echo ---; lscpu | grep -E 'Model name|^CPU\\(s\\):|Socket|Thread|Core|MHz' | head -10; echo ---; cat /proc/cpuinfo | grep -c processor; echo ---; nproc; echo ---; free -g | head -3; echo ---; df -h / | tail -1; echo ---; python3 --version",
+  "exit_code": 0,
+  "duration_seconds": 3.71,
+  "started_at": "2026-05-12T21:53:46Z",
+  "completed_at": "2026-05-12T21:53:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "027_20260512T215346Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "027_20260512T215346Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 24,
+  "stderr_lines": 2,
+  "truncated": false
+}

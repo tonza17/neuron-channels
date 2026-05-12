@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -o ConnectTimeout=30 -i C:/Users/md1avn/.ssh/id_ed25519 -p 15796 root@ssh9.vast.ai set -e; cd /root/t0104_workdir; ls -la .venv/bin/nrnivmodl; .venv/bin/nrnivmodl -h 2>&1 | head -5 || true; echo ---; which gcc; gcc --version | head -1; echo ---; which gfortran; gfortran --version | head -1; echo ---; df -h / | tail -2; echo ---; du -sh /root/t0104_workdir/.venv 2>&1 | tail -1; echo DONE_TOOLS",
+  "exit_code": 0,
+  "duration_seconds": 4.028,
+  "started_at": "2026-05-12T21:55:32Z",
+  "completed_at": "2026-05-12T21:55:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "033_20260512T215532Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "033_20260512T215532Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 18,
+  "stderr_lines": 2,
+  "truncated": false
+}

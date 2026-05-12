@@ -1,0 +1,7 @@
+ + find-libpython==0.5.1
+ + neuron==8.2.7
+ + numpy==2.4.4
+ + packaging==26.2
+ + setuptools==82.0.1
+neuron 8.2.7+
+DONE_NEURON

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -o ConnectTimeout=30 -i C:/Users/md1avn/.ssh/id_ed25519 -p 15796 root@ssh9.vast.ai set -e; curl -LsSf https://astral.sh/uv/install.sh | sh 2>&1 | tail -5; /root/.local/bin/uv --version; mkdir -p /root/t0104_workdir; cd /root/t0104_workdir && /root/.local/bin/uv venv .venv --python 3.12 2>&1 | tail -5; ls /root/t0104_workdir/.venv/bin/python; /root/t0104_workdir/.venv/bin/python --version; echo DONE_UV",
+  "exit_code": 0,
+  "duration_seconds": 5.138,
+  "started_at": "2026-05-12T21:54:28Z",
+  "completed_at": "2026-05-12T21:54:33Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "029_20260512T215428Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "029_20260512T215428Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 2,
+  "truncated": false
+}
