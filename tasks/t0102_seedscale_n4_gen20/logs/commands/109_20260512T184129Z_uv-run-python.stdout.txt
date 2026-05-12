@@ -1,0 +1,20 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0102_seedscale_n4_gen20\tasks\t0102_seedscale_n4_gen20\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260511T141503Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 005_20260511T160111Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 006_20260511T160151Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 010_20260511T161038Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 012_20260511T161307Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 039_20260511T170345Z_cp-c-users-md1avn-documents-github-neuro.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 046_20260511T170822Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 064_20260511T171404Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 066_20260511T171717Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 069_20260511T171751Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 093_20260512T175732Z_uv-run-vastai.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 094_20260512T175848Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 14 warning(s)

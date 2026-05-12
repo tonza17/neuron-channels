@@ -5,7 +5,7 @@
   "name": "68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init",
   "short_description": "68-d NSGA-II on Bed B+morph: 2 random-init GA seeds (44, 55), N_SEEDS=4, gens=20, pop=96. Tests if 5x noise drop + 2.5x gens recovers joint-pass corner vs t0099 null. $8 cap.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
@@ -18,7 +18,7 @@
     "t0101_brainstorm_results_21"
   ],
   "start_time": "2026-05-11T14:08:37Z",
-  "end_time": null,
+  "end_time": "2026-05-12T18:44:00Z",
   "expected_assets": {
     "predictions": 2,
     "answer": 1

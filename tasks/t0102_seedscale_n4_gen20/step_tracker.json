@@ -131,10 +131,10 @@
       "step": 15,
       "name": "reporting",
       "description": "Run all verificators, capture session transcripts, set task.json status=completed and end_time, prepare for PR.",
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
-      "log_file": "logs/steps/015_reporting/"
+      "status": "completed",
+      "started_at": "2026-05-12T18:39:56Z",
+      "completed_at": "2026-05-12T18:44:00Z",
+      "log_file": "logs\\steps\\015_reporting/"
     }
   ]
 }

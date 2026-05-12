@@ -1,0 +1,111 @@
+{
+  "task_id": "t0102_seedscale_n4_gen20",
+  "step": "reporting",
+  "captured_at": "2026-05-12T18:48:00Z",
+  "verificators": [
+    {
+      "name": "verify_task_file",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_task_dependencies",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_suggestions",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_task_metrics",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_task_results",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_task_folder",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 1,
+      "warning_codes": ["FD-W002"],
+      "notes": "logs/searches/ is empty (no search queries were logged) -- expected for this task."
+    },
+    {
+      "name": "verify_logs",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 14,
+      "warning_codes": ["LG-W004", "LG-W007", "LG-W008"],
+      "notes": "12 LG-W004 non-zero exit code warnings are benign (probe commands, SSH retries, intentional aggregator no-result calls); LG-W007/LG-W008 will be resolved by capture_task_sessions in this reporting step."
+    },
+    {
+      "name": "verify_predictions_asset",
+      "status": "skipped",
+      "errors": 0,
+      "warnings": 0,
+      "notes": "Verificator does not exist in arf/scripts/verificators/."
+    },
+    {
+      "name": "verify_research_papers",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_research_internet",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_research_code",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_plan",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_compare_literature",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "name": "verify_machines_destroyed",
+      "status": "passed",
+      "errors": 0,
+      "warnings": 2,
+      "warning_codes": ["RM-W001", "RM-W003"],
+      "notes": "RM-W001: Vast.ai API unreachable at verification time for instance 36556586. RM-W003: machine ran 24.8h (>12h soft cap). Teardown step recorded the destroy call; cost was tracked in costs.json."
+    },
+    {
+      "name": "verify_paper_asset",
+      "status": "skipped",
+      "errors": 0,
+      "warnings": 0,
+      "notes": "Verificator script does not exist in arf/scripts/verificators/."
+    }
+  ],
+  "summary": {
+    "total_run": 13,
+    "skipped_missing_script": 2,
+    "passed_zero_errors": 13,
+    "failed": 0
+  }
+}
