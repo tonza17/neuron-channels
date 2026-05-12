@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Produce plan/plan.md with the 11 mandatory sections, REQ-1..REQ-N including REQ on DSI-guard unit test and idle-teardown wiring, and the cost / risk / verification matrix.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-12T21:33:32Z",
-      "completed_at": null,
+      "completed_at": "2026-05-12T21:40:36Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
