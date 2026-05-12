@@ -1,0 +1,140 @@
+{
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0104_nsga2_2obj_dsi_pdrate_3seeds worktree and plan step list (15 canonical steps; research-papers and research-internet skipped because this task forks t0102 verbatim and needs no new external literature).",
+      "status": "in_progress",
+      "started_at": "2026-05-12T21:20:38Z",
+      "completed_at": null,
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify all 6 dependency tasks (t0024, t0080, t0090, t0093, t0099, t0102) are completed and their code/assets are reusable.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task folder structure including assets/predictions and assets/answer subdirs for the 3 predictions + 1 answer asset.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped. This task forks t0102 verbatim with one objective dropped and one bug-fix; no new paper-level literature review is needed beyond what t0102 already covered.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped. No new external information is required; the substrate, NSGA-II driver, and DSI-guard rationale are all internal to the project.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Audit t0102 evaluator.py and nsga2_driver.py to identify exact lines to patch for n_obj=2 and the DSI-silence guard; review t0086 anchor utilities used in analysis.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Produce plan/plan.md with the 11 mandatory sections, REQ-1..REQ-N including REQ on DSI-guard unit test and idle-teardown wiring, and the cost / risk / verification matrix.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Provision one Vast.ai EPYC 7B13 64-core Norway instance matching t0102 spec ($0.24/hr target); SCP code; verify smoke gate at N_EVAL_SEEDS=4 with DSI-guard active.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Run NSGA-II three times (seeds 44, 55, 66) at pop=96, gens=20, N_EVAL_SEEDS=4, n_obj=2 on the 68-d substrate; pull predictions back; build 3 predictions assets.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Destroy Vast.ai instance within 5 minutes of last seed completion; record final cost in costs.json and remote_machines_used.json; run verify_machines_destroyed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Out-of-the-box analysis: per-seed DSI-distribution comparison vs t0102 3-obj front; alternative interpretations of joint-pass yield; flag any unexpected anchor-near clusters.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; embed plots (HV curves, DSI vs PD scatter per seed, anchor distribution) in results/images/.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare 2-objective Pareto front against t0102 3-obj front in the (DSI, PD) plane; against t0099 N=20 baseline; quantify DSI-guard impact on the silenced-cell corner.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions; check duplicates against t0102 S-0102-* and t0101 S-0101-* backlog.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture session transcripts, set task.json status=completed and end_time, prepare PR.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    }
+  ]
+}
