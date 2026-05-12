@@ -1,0 +1,29 @@
+{
+  "spec_version": 4,
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "task_index": 104,
+  "name": "68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20",
+  "short_description": "Re-run t0102's 68-d NSGA-II with the robustness objective dropped: 3 random-init GA seeds (44/55/66), N_EVAL=4, gens=20, pop=96, DSI-silence guard applied. $15 hard cap.",
+  "long_description_file": "task_description.md",
+  "status": "not_started",
+  "dependencies": [
+    "t0024_port_de_rosenroll_2026_dsgc",
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0090_morphology_generator_diversity_test",
+    "t0093_resweep_and_t0090_correction",
+    "t0099_random_init_pareto_robustness",
+    "t0102_seedscale_n4_gen20"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "expected_assets": {
+    "predictions": 3,
+    "answer": 1
+  },
+  "task_types": [
+    "experiment-run",
+    "data-analysis",
+    "answer-question"
+  ],
+  "source_suggestion": null
+}
