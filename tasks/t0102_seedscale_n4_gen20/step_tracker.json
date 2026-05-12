@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate follow-up suggestions; check for duplicates against t0099's S-0099-* and t0101's S-0101-* backlog.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-12T18:29:41Z",
-      "completed_at": null,
+      "completed_at": "2026-05-12T18:39:48Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
