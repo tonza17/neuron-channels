@@ -68,9 +68,9 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision one Vast.ai EPYC 7B13 64-core Norway instance matching t0102 spec ($0.24/hr target); SCP code; verify smoke gate at N_EVAL_SEEDS=4 with DSI-guard active.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-12T21:46:47Z",
-      "completed_at": null,
+      "completed_at": "2026-05-12T21:57:39Z",
       "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
