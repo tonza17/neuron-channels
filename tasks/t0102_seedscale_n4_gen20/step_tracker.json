@@ -95,10 +95,10 @@
       "step": 11,
       "name": "creative-thinking",
       "description": "Out-of-the-box analysis: per-seed warm-start vs random; whether N_SEEDS=4 underestimates DSI variance for high-Pareto cells.",
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
-      "log_file": "logs/steps/011_creative-thinking/"
+      "status": "completed",
+      "started_at": "2026-05-12T18:01:52Z",
+      "completed_at": "2026-05-12T19:25:00Z",
+      "log_file": "logs\\steps\\011_creative-thinking/"
     },
     {
       "step": 12,
