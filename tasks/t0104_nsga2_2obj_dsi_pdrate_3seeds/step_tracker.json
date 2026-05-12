@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0104_nsga2_2obj_dsi_pdrate_3seeds worktree and plan step list (15 canonical steps; research-papers and research-internet skipped because this task forks t0102 verbatim and needs no new external literature).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-12T21:20:38Z",
-      "completed_at": null,
+      "completed_at": "2026-05-12T21:22:34Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
