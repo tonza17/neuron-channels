@@ -1,0 +1,2 @@
+usage: verify_task_complete.py [-h] task_id
+verify_task_complete.py: error: unrecognized arguments: --task-id
