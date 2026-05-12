@@ -1,0 +1,73 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1371_journal.pcbi.1012039",
+  "doi": "10.1371/journal.pcbi.1012039",
+  "title": "Evaluation and comparison of methods for neuronal parameter optimization using the Neuroptimus software framework",
+  "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012039",
+  "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1012039&type=printable",
+  "date_published": "2024-12-23",
+  "year": 2024,
+  "authors": [
+    {
+      "name": "Mate Mohacsi",
+      "country": "HU",
+      "institution": "HUN-REN Institute of Experimental Medicine; Pazmany Peter Catholic University",
+      "orcid": null
+    },
+    {
+      "name": "Mark Patrik Torok",
+      "country": "HU",
+      "institution": "HUN-REN Institute of Experimental Medicine; Pazmany Peter Catholic University",
+      "orcid": null
+    },
+    {
+      "name": "Sara Saray",
+      "country": "HU",
+      "institution": "HUN-REN Institute of Experimental Medicine; Pazmany Peter Catholic University",
+      "orcid": "0000-0002-4341-177X"
+    },
+    {
+      "name": "Luca Tar",
+      "country": "HU",
+      "institution": "HUN-REN Institute of Experimental Medicine; Pazmany Peter Catholic University",
+      "orcid": null
+    },
+    {
+      "name": "Gabor Farkas",
+      "country": "HU",
+      "institution": "HUN-REN Institute of Experimental Medicine; Pazmany Peter Catholic University",
+      "orcid": null
+    },
+    {
+      "name": "Szabolcs Kali",
+      "country": "HU",
+      "institution": "HUN-REN Institute of Experimental Medicine; Pazmany Peter Catholic University",
+      "orcid": "0000-0002-2740-6057"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "HUN-REN Institute of Experimental Medicine",
+      "country": "HU"
+    },
+    {
+      "name": "Pazmany Peter Catholic University",
+      "country": "HU"
+    }
+  ],
+  "journal": "PLOS Computational Biology",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling"
+  ],
+  "abstract": "Finding optimal parameters for detailed neuronal models is a ubiquitous challenge in neuroscientific research. In recent years, manual model tuning has been gradually replaced by automated parameter search using a variety of different tools and methods. However, using most of these software tools and choosing the most appropriate algorithm for a given optimization task require substantial technical expertise, which prevents the majority of researchers from using these methods effectively. To address these issues, we developed a generic platform (called Neuroptimus) that allows users to set up neural parameter optimization tasks via a graphical interface, and to solve these tasks using a wide selection of state-of-the-art parameter search methods implemented by five different Python packages. Neuroptimus also offers several features to support more advanced usage, including the ability to run most algorithms in parallel, which allows it to take advantage of high-performance computing architectures. We used the common interface provided by Neuroptimus to conduct a detailed comparison of more than twenty different algorithms (and implementations) on six distinct benchmarks that represent typical scenarios in neuronal parameter search. We quantified the performance of the algorithms in terms of the best solutions found and in terms of convergence speed. We identified several algorithms, including covariance matrix adaptation evolution strategy and particle swarm optimization, that consistently, without any fine-tuning, found good solutions in all of our use cases. By contrast, some other algorithms including all local search methods provided good solutions only for the simplest use cases, and failed completely on more complex problems. We also demonstrate the versatility of Neuroptimus by applying it to an additional use case that involves tuning the parameters of a subcellular model of biochemical pathways. Finally, we created an online database that allows uploading, querying and analyzing the results of optimization runs performed by Neuroptimus, which enables all researchers to update and extend the current benchmarking study. The tools and analysis we provide should aid members of the neuroscience community to apply parameter search methods more effectively in their research.",
+  "citation_key": "Mohacsi2024",
+  "summary_path": "summary.md",
+  "files": [
+    "files/mohacsi_2024_neuroptimus-benchmark.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0102_seedscale_n4_gen20",
+  "date_added": "2026-05-11"
+}

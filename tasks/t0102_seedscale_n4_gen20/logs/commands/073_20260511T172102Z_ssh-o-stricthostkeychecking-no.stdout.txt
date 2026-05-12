@@ -1,0 +1,4 @@
+SSH_OK
+/root/t0102_workdir/.venv/bin/python
+/root/t0102_workdir/neuron-channels/tasks/t0102_seedscale_n4_gen20/code/constants_morphology.py
+/root/t0102_workdir/neuron-channels/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/.libs/libnrnmech.so

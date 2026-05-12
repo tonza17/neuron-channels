@@ -1,0 +1,11 @@
+Python 3.12.13
+ + pymoo==0.6.1.6
+ + pyparsing==3.3.2
+ + python-dateutil==2.9.0.post0
+ + scipy==1.17.1
+ + setuptools==82.0.1
+ + six==1.17.0
+ + tqdm==4.67.3
+ + typing-extensions==4.15.0
+ + typing-inspection==0.4.2
+ + wrapt==2.1.2

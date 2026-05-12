@@ -1,0 +1,68 @@
+{
+  "smoke_gate_pass": true,
+  "tolerances": {
+    "dsi": 0.05,
+    "pd_rate_hz": 1.0
+  },
+  "expected_pd_rate_hz": 43.6,
+  "anchors": [
+    {
+      "anchor_index": 0,
+      "anchor_name": "bedb_like",
+      "dsi_vector_sum": 0.021942409325719718,
+      "pd_rate_hz": 44.642857142857146,
+      "robustness": 0.7549438752238563,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 147.9813256263733,
+      "error": null,
+      "pd_within_tolerance": true,
+      "dsi_within_tolerance": true,
+      "expected_pd_rate_hz": 43.6
+    },
+    {
+      "anchor_index": 1,
+      "anchor_name": "symmetric",
+      "dsi_vector_sum": 0.027699691481310636,
+      "pd_rate_hz": 45.0,
+      "robustness": 0.797314037595559,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 287.31776428222656,
+      "error": null
+    },
+    {
+      "anchor_index": 2,
+      "anchor_name": "pd_asymmetric",
+      "dsi_vector_sum": 0.04506913855317258,
+      "pd_rate_hz": 43.75,
+      "robustness": 0.4669836793283061,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 424.0568492412567,
+      "error": null
+    },
+    {
+      "anchor_index": 3,
+      "anchor_name": "nd_asymmetric",
+      "dsi_vector_sum": 0.03045763778200665,
+      "pd_rate_hz": 42.85714285714286,
+      "robustness": 0.8288629031853718,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 530.0083668231964,
+      "error": null
+    },
+    {
+      "anchor_index": 4,
+      "anchor_name": "alt_topology",
+      "dsi_vector_sum": 0.570265880150496,
+      "pd_rate_hz": 5.357142857142858,
+      "robustness": 0.9297633831756543,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 562.7048149108887,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+NEURON loaded
+CoreNEURON not available: 'coreneuron' object has no attribute 'CoreNeuron'
+nrnivmodl in PATH: None

@@ -1,0 +1,4 @@
+N_EVAL_SEEDS = 4
+midpoint shape: (68,)
+Single cell evaluation: dsi=0.0000, pd_rate_hz=0.7143, robustness=0.0000
+is_unstable=False, n_errors=0, elapsed=59.37s

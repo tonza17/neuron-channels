@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "vastai show instance 36556586 --raw",
+  "exit_code": 0,
+  "duration_seconds": 1.787,
+  "started_at": "2026-05-11T17:07:34Z",
+  "completed_at": "2026-05-11T17:07:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "044_20260511T170734Z_vastai-show-instance.stdout.txt",
+  "stderr_file": "044_20260511T170734Z_vastai-show-instance.stderr.txt",
+  "stdout_lines": 118,
+  "stderr_lines": 0,
+  "truncated": false
+}

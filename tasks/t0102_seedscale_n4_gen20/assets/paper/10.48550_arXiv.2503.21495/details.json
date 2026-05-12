@@ -1,0 +1,51 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.48550_arXiv.2503.21495",
+  "doi": "10.48550/arXiv.2503.21495",
+  "title": "Adaptive Resampling with Bootstrap for Noisy Multi-Objective Optimization Problems",
+  "url": "https://arxiv.org/abs/2503.21495",
+  "pdf_url": "https://arxiv.org/pdf/2503.21495",
+  "date_published": "2025-04-24",
+  "year": 2025,
+  "authors": [
+    {
+      "name": "Timo Budszuhn",
+      "country": "DE",
+      "institution": "Technische Universitat Dortmund",
+      "orcid": null
+    },
+    {
+      "name": "Mark Joachim Krallmann",
+      "country": "DE",
+      "institution": "Technische Universitat Dortmund",
+      "orcid": null
+    },
+    {
+      "name": "Daniel Horn",
+      "country": "DE",
+      "institution": "Technische Universitat Dortmund",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Technische Universitat Dortmund",
+      "country": "DE"
+    }
+  ],
+  "journal": "arXiv preprint",
+  "venue_type": "preprint",
+  "categories": [
+    "compartmental-modeling"
+  ],
+  "abstract": "The challenge of noisy multi-objective optimization lies in the constant trade-off between exploring new decision points and improving the precision of known points through resampling. This decision should take into account both the variability of the objective functions and the current estimate of a point in relation to the Pareto front. Since the amount and distribution of noise are generally unknown, it is desirable for a decision function to be highly adaptive to the properties of the optimization problem. This paper presents a resampling decision function that incorporates the stochastic nature of the optimization problem by using bootstrapping and the probability of dominance. The distribution-free estimation of the probability of dominance is achieved using bootstrap estimates of the means. To make the procedure applicable even with very few observations, we transfer the distribution observed at other decision points. The efficiency of this resampling approach is demonstrated by applying it in the NSGA-II algorithm with a sequential resampling procedure under multiple noise variations.",
+  "citation_key": "Budszuhn2025",
+  "summary_path": "summary.md",
+  "files": [
+    "files/budszuhn_2025_adaptive-bootstrap-resampling.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0102_seedscale_n4_gen20",
+  "date_added": "2026-05-11"
+}

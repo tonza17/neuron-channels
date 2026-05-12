@@ -1,0 +1,6 @@
+coreneuron module: ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_cell_permute', '_default_cell_permute', '_enable', '_file_mode', '_gpu', '_model_stats', '_num_gpus', '_prcellstate', '_valid_cell_permute', '_verbose', '_warp_balance', 'cell_permute', 'enable', 'file_mode', 'gpu', 'model_stats', 'nrncore_arg', 'num_gpus', 'prcellstate', 'verbose', 'warp_balance']
+CoreneuronProperties available
+coreneuron.enable set to True
+/root/t0102_workdir/.venv/bin/nrnivmodl
+/root/t0102_workdir/.venv/lib/python3.12/site-packages/neuron/.data/bin/nrnivmodl
+/root/.cache/uv/archive-v0/qD1WdIYpSzirUluo/neuron/.data/bin/nrnivmodl

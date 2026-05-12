@@ -1,0 +1,20 @@
+/root/t0102_workdir/neuron-channels/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources
+Mod files: "././Exp2NMDA.mod" "././HHst_noiseless.mod" "././cadecay.mod"
+
+Creating 'x86_64' directory for .o files.
+
+ -> [32mCompiling[0m mod_func.cpp
+ -> [32mNMODL[0m .././Exp2NMDA.mod
+ -> [32mNMODL[0m .././HHst_noiseless.mod
+ -> [32mNMODL[0m .././cadecay.mod
+ -> [32mCompiling[0m Exp2NMDA.c
+ -> [32mCompiling[0m cadecay.c
+ -> [32mCompiling[0m HHst_noiseless.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+bootstrap import OK
+N_EVAL_SEEDS=4, N_GEN=20, POP_SIZE=96
+LOWER_BOUNDS_68 shape=(68,)
+constants OK
+T0102_SEEDS=(44, 55), per-seed=, total=

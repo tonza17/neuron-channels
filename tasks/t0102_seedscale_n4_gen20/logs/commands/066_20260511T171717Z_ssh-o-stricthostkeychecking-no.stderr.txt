@@ -1,0 +1,6 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+  File "<string>", line 1
+    import neuron, pymoo, numpy, scipy, pandas, matplotlib, pydantic; print(\"versions:\", neuron.__version__, pymoo.__version__, numpy.__version__, scipy.__version__, pandas.__version__, matplotlib.__version__, pydantic.__version__)
+                                                                             ^
+SyntaxError: unexpected character after line continuation character

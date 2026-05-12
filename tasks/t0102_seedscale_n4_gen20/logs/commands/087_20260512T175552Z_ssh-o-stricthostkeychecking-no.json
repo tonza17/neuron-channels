@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 36586 root@ssh4.vast.ai ls -la /root/t0102_workdir/run_two_seeds.log 2>/dev/null; echo ---; find /root -type f -newer /root/t0102_workdir/run_two_seeds.log 2>/dev/null | grep -v '\\.pyc$' | grep -v __pycache__ | grep -v '/\\.cache/' | grep -v '/x86_64/' | head -100",
+  "exit_code": 0,
+  "duration_seconds": 2.82,
+  "started_at": "2026-05-12T17:55:52Z",
+  "completed_at": "2026-05-12T17:55:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "087_20260512T175552Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "087_20260512T175552Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 2,
+  "truncated": false
+}

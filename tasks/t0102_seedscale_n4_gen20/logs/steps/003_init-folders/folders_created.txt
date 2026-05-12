@@ -1,0 +1,15 @@
+tasks/t0102_seedscale_n4_gen20/__init__.py
+tasks/t0102_seedscale_n4_gen20/assets/answer/
+tasks/t0102_seedscale_n4_gen20/assets/predictions/
+tasks/t0102_seedscale_n4_gen20/code/__init__.py
+tasks/t0102_seedscale_n4_gen20/code/
+tasks/t0102_seedscale_n4_gen20/corrections/
+tasks/t0102_seedscale_n4_gen20/intervention/
+tasks/t0102_seedscale_n4_gen20/logs/commands/
+tasks/t0102_seedscale_n4_gen20/logs/searches/
+tasks/t0102_seedscale_n4_gen20/logs/sessions/
+tasks/t0102_seedscale_n4_gen20/logs/steps/
+tasks/t0102_seedscale_n4_gen20/plan/
+tasks/t0102_seedscale_n4_gen20/research/
+tasks/t0102_seedscale_n4_gen20/results/
+tasks/t0102_seedscale_n4_gen20/results/images/

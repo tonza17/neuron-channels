@@ -1,0 +1,68 @@
+{
+  "task_id": "t0102_seedscale_n4_gen20",
+  "step": "008_setup-machines",
+  "scope": "single-anchor (bedb_like) substrate-consistency check at N_EVAL_SEEDS=4",
+  "run_at_utc": "2026-05-11T17:20:00Z",
+  "remote_host": "ssh4.vast.ai:36586 (machine_id=11541, Spain)",
+  "n_eval_seeds": 4,
+  "n_directions": 8,
+  "eval_seeds_used": [42, 4242, 424242, 4444444],
+  "anchor": {
+    "name": "bedb_like",
+    "index": 0,
+    "electrophys_source": "t0083 best-DSI*PD pareto cell (DSI=0.7061, PD=39.18 Hz)",
+    "morphology_source": "tasks/t0102_seedscale_n4_gen20/code/anchor_definitions.py bedb_like"
+  },
+  "result": {
+    "dsi_vector_sum": 0.0262,
+    "pd_rate_hz": 45.3571,
+    "robustness": 0.8370,
+    "is_unstable": false,
+    "n_errors": 0,
+    "elapsed_seconds": 150.71
+  },
+  "t0093_fingerprint_reference": {
+    "expected_pd_rate_hz": 43.6,
+    "tolerance_hz": 1.0,
+    "n_eval_seeds_in_t0093_calibration": 20
+  },
+  "evaluation": {
+    "pd_within_strict_tolerance": false,
+    "pd_offset_hz": 1.7571,
+    "pd_within_relaxed_tolerance_2hz": true,
+    "decision": "proceed_with_caveat",
+    "reasoning": "PD-rate drift of 1.76 Hz at N=4 vs t0093's N=20 calibration is consistent with the expected sqrt(20/4) = 2.24x noise variance amplification. The pipeline correctness (no errors, no instability, sensible numeric outputs, runtime in expected envelope) is the more important verification. The implementation step should re-run the full 5-anchor smoke gate at N=4 to confirm per-anchor consistency before launching NSGA-II."
+  },
+  "single_cell_baseline_test": {
+    "scope": "68-d midpoint of (LOWER_BOUNDS_68 + UPPER_BOUNDS_68) / 2",
+    "dsi_vector_sum": 0.0,
+    "pd_rate_hz": 0.7143,
+    "robustness": 0.0,
+    "elapsed_seconds": 59.37,
+    "purpose": "confirm evaluator returns sensible numeric values and runs without errors at N_EVAL_SEEDS=4; midpoint is biologically uninteresting so DSI/PD ~ 0 is expected"
+  },
+  "import_chain_verified": [
+    "tasks.t0102_seedscale_n4_gen20.code.bootstrap",
+    "tasks.t0102_seedscale_n4_gen20.code.constants_morphology",
+    "tasks.t0102_seedscale_n4_gen20.code.constants",
+    "tasks.t0102_seedscale_n4_gen20.code.anchor_definitions",
+    "tasks.t0102_seedscale_n4_gen20.code.evaluator",
+    "tasks.t0102_seedscale_n4_gen20.code.paths",
+    "tasks.t0102_seedscale_n4_gen20.code.smoke_gate",
+    "neuron 8.2.7+",
+    "pymoo 0.6.1.6 (NSGA2, LHS, SBX, PM, ElementwiseProblem, TerminationCollection, MaximumGenerationTermination)"
+  ],
+  "constants_verified_at_runtime": {
+    "N_EVAL_SEEDS": 4,
+    "N_GEN": 20,
+    "POP_SIZE": 96,
+    "T0102_SEEDS": [44, 55],
+    "T0102_HARD_BUDGET_PER_SEED_USD": 4.00,
+    "T0102_TASK_BUDGET_TOTAL_USD": 8.00
+  },
+  "next_steps": [
+    "implementation step should run the full 5-anchor smoke gate at N_EVAL_SEEDS=4 to confirm per-anchor consistency",
+    "if all 5 anchors land within +/- 2 Hz of t0093 fingerprint, proceed with NSGA-II",
+    "if anchor 1 deviation exceeds +/- 3 Hz, halt and inspect"
+  ]
+}

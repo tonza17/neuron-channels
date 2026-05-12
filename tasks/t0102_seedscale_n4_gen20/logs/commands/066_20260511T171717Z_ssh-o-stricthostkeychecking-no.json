@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36586 root@ssh4.vast.ai cd /root/t0102_workdir && .venv/bin/python --version && .venv/bin/python -c 'import neuron, pymoo, numpy, scipy, pandas, matplotlib, pydantic; print(\\\"versions:\\\", neuron.__version__, pymoo.__version__, numpy.__version__, scipy.__version__, pandas.__version__, matplotlib.__version__, pydantic.__version__)' && nproc && cat /proc/cpuinfo | grep 'model name' | head -1 && free -g | grep Mem && df -h /root | tail -1 && hostname",
+  "exit_code": 1,
+  "duration_seconds": 2.986,
+  "started_at": "2026-05-11T17:17:17Z",
+  "completed_at": "2026-05-11T17:17:20Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "066_20260511T171717Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "066_20260511T171717Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 6,
+  "truncated": false
+}

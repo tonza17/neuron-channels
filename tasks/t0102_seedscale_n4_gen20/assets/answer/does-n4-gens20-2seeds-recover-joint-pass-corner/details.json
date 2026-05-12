@@ -1,0 +1,31 @@
+{
+  "spec_version": "2",
+  "answer_id": "does-n4-gens20-2seeds-recover-joint-pass-corner",
+  "question": "Does running 68-d NSGA-II at N_EVAL_SEEDS=4 noise replicates, gens=20, pop=96, 2 random-init GA seeds (44, 55), no warm-start, recover the strict joint-pass corner (DSI>=0.5 AND PD-rate>=30 Hz AND robustness>=0.7) of the Bed B + morphology compartmental DSGC substrate?",
+  "short_title": "Random-init NSGA-II joint-pass recovery test",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers",
+    "internet"
+  ],
+  "source_paper_ids": [
+    "10.1371_journal.pcbi.1012039",
+    "10.48550_arXiv.2306.04525",
+    "10.48550_arXiv.2401.14014"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0091_morphology_extended_nsga2_v1",
+    "t0099_random_init_pareto_robustness",
+    "t0101_brainstorm_results_21"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0102_seedscale_n4_gen20",
+  "date_created": "2026-05-12"
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0102_seedscale_n4_gen20",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36586 root@ssh4.vast.ai cd /root/t0102_workdir/neuron-channels && PYTHONPATH=. /root/t0102_workdir/.venv/bin/python -c \"\nfrom tasks.t0102_seedscale_n4_gen20.code import bootstrap\nprint('bootstrap import OK')\nfrom tasks.t0102_seedscale_n4_gen20.code.constants_morphology import N_EVAL_SEEDS, N_GEN, POP_SIZE, LOWER_BOUNDS_68\nprint(f'N_EVAL_SEEDS={N_EVAL_SEEDS}, N_GEN={N_GEN}, POP_SIZE={POP_SIZE}')\nprint(f'LOWER_BOUNDS_68 shape={LOWER_BOUNDS_68.shape}')\nassert N_EVAL_SEEDS == 4, f'expected 4, got {N_EVAL_SEEDS}'\nassert N_GEN == 20, f'expected 20, got {N_GEN}'\nprint('constants OK')\nfrom tasks.t0102_seedscale_n4_gen20.code.constants import T0102_SEEDS, T0102_HARD_BUDGET_PER_SEED_USD, T0102_TASK_BUDGET_TOTAL_USD\nprint(f'T0102_SEEDS={T0102_SEEDS}, per-seed=${T0102_HARD_BUDGET_PER_SEED_USD}, total=${T0102_TASK_BUDGET_TOTAL_USD}')\n\"",
+  "exit_code": 0,
+  "duration_seconds": 3.832,
+  "started_at": "2026-05-11T17:12:06Z",
+  "completed_at": "2026-05-11T17:12:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0102_seedscale_n4_gen20",
+  "stdout_file": "061_20260511T171206Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "061_20260511T171206Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 20,
+  "stderr_lines": 11,
+  "truncated": false
+}
