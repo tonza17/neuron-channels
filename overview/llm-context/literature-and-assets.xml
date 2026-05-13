@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-12T21:04:11Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-13T22:49:37Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>254939</char_count>
-    <byte_count>255298</byte_count>
-    <estimated_tokens>63734</estimated_tokens>
+    <char_count>256720</char_count>
+    <byte_count>257079</byte_count>
+    <estimated_tokens>64180</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -210,9 +210,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0101_brainstorm_results_21</id>
         <id>t0102_seedscale_n4_gen20</id>
         <id>t0103_extract_baden_2016_ds_morphologies</id>
+        <id>t0105_preliminary_figures_report</id>
       </source_ids>
       <content>
-Completed tasks: 95
+Completed tasks: 96
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -783,6 +784,12 @@ ID: t0103_extract_baden_2016_ds_morphologies
 Completed: 2026-05-12
 Short description: Download Baden 2016 (Dryad d9v38) and extract data only for direction-selective groups 2, 17, 18, 19, 22, 35, 36, 40. Output: 1 dataset + 1 paper asset.
 Result summary: t0103 Results Summary Summary Extracted **1,238 per-cell records** from Baden et al. 2016 across the eight paper-authoritative direction-selective groups `{2, 6, 12, 13, 16, 25, 26, 29}` into a 4.864 MiB Parquet dataset asset, and registered the Baden 2016 paper itself as a paper asset. Both assets pass their verificators with zero errors and zero warnings. Metrics * **1,238** per-cell records extracted across **8 DS groups**: G2:162, G6:104, G12:397, G13:129, G16:99, G25:76, G26:141, G29:130. * **40 columns per cell**: 35 scalar features (cluster, selectivity, quality, RF, soma, immuno, genetics, cell-of-origin) + 5 nested `list&lt;float32&gt;` trace columns (chirp 249 samples, moving-bar 32...
+
+## Preliminary-data figure pack and slide deck for report
+ID: t0105_preliminary_figures_report
+Completed: 2026-05-13
+Short description: Compile preliminary-data figures (HH equations PNG, conductance table, morphologies, polar synaptic DSI, somatic Vm passive/active, channel-effect-on-DSI, 5-cell optim panels) into PNGs + .pptx deck.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0105_preliminary_figures_report&quot; date_completed: &quot;2026-05-13&quot; status: &quot;complete&quot; --- Results Summary: Preliminary-Data Figure Pack and Slide Deck Summary Produced a coherent preliminary-data figure pack covering seven figure groups for the DSGC modelling project: HH equations, per-bed conductance density tables, two morphologies, polar synaptic DSI (two-point), somatic Vm three-mode overlays, channel-effect-on-DSI sweep, and the top-5 Pareto cells from the 3-objective NSGA-II run `t0102_seedscale_n4_gen20`. All 10 PNGs land in `results/images/` and the 11-slide `preliminary_figures_slides.pptx` deck embeds every PNG with caption + source-task citation. The...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -792,9 +799,10 @@ Result summary: t0103 Results Summary Summary Extracted **1,238 per-cell records
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -815,6 +823,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## 68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20
+ID: t0104_nsga2_2obj_dsi_pdrate_3seeds
+Status: in_progress
+Effective date: 2026-05-12
+Short description: Re-run t0102&#x27;s 68-d NSGA-II with the robustness objective dropped: 3 random-init GA seeds (44/55/66), N_EVAL=4, gens=20, pop=96, DSI-silence guard applied. $15 hard cap.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0093_resweep_and_t0090_correction, t0099_random_init_pareto_robustness, t0102_seedscale_n4_gen20
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

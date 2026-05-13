@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-97 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **86 open** (16 high,
-63 medium, 7 low), **11 closed**.
+98 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **87 open** (16 high,
+64 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1158,6 +1158,29 @@ unpinned). A 0.5 nS-spaced sweep over {5.0, 4.5, 4.0, 3.5, 3.0} nS at baseline d
 t0022 (5 levels x 12 angles x 10 trials = 600 trials, ~20 min local CPU) would localise the
 threshold to within 0.5 nS and reveal whether the DSI vs GABA curve is sharp or gradual.
 Important for characterising how fragile the operational window really is.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-angle synaptic-current protocol on Bed A and Bed B for a
+true polar synaptic tuning curve</strong> (S-0105-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-13 |
+| **Source task** | [`t0105_preliminary_figures_report`](../../../overview/tasks/task_pages/t0105_preliminary_figures_report.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Figure 4 of t0105 had to fall back to a two-point polar (PD at 0 deg, ND at 180 deg) because
+neither t0046 (Bed A) nor t0066 (Bed B) recorded synaptic currents at intermediate stimulus
+angles. Run an EPSC + IPSC peak-amplitude protocol at the standard 12-angle grid for both beds
+(re-using the bar-stimulus generator from t0046 / t0066), record AMPA + NMDA + GABA peak
+conductances and peak post-synaptic currents per angle, and save a CSV per bed compatible with
+the t0011 plot_polar_tuning_curve loader. Output: two new polar plots that replace t0105's
+two-point fallback in any successor figure pack. Recommended task types: experiment-run.
 
 </details>
 

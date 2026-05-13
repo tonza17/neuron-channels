@@ -1,6 +1,6 @@
 # Direction Selectivity Index
 
-**Key**: `direction_selectivity_index` | **Unit**: ratio | **Results**: 362
+**Key**: `direction_selectivity_index` | **Unit**: ratio | **Results**: 367
 
 [Back to all metrics](README.md)
 
@@ -261,110 +261,115 @@
 | 253 | [Test Voff_bipNMDA=1 (voltage-independent NMDA) on DSI vs gNMDA flatness](../../../overview/tasks/task_pages/t0048_voff_nmda1_dsi_test.md) | Voff_bipNMDA = 1, gNMDA = 3.00 nS, 4 trials per direction | **0.03747603319109665** |
 | 254 | [Diagnose why t0090 procedural cells produce no action potentials](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | Post-fix procedural BedB-equivalent | **0.03389830508474573** |
 | 255 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | Pareto cell 730 (gen 7) | **0.03359758399396001** |
-| 256 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | gNMDA = 2.00 nS | **0.032139268375461306** |
-| 257 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | AP5, flickerVAR = 0.30 | **0.03059115982737831** |
-| 258 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | Pareto cell 664 (gen 6) | **0.02865947611710327** |
-| 259 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 664 (gen 6) | **0.02865947611710327** |
-| 260 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 153 (gen 1) | **0.02597402597402596** |
-| 261 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | Cell 1238 (near_pass, Stochastic) | **0.022423882174931218** |
-| 262 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | gNMDA = 2.50 nS | **0.022115698915962014** |
-| 263 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 1 control (b2gnmda = 2.5 nS, paper value) | **0.020655514455547648** |
-| 264 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | gNMDA = 3.00 nS | **0.017876851404282388** |
-| 265 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 58 (gen 0) | **0.01479915433403804** |
-| 266 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | Pareto cell iter 476: high-rate corner | **0.0131920847491505** |
-| 267 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | Pareto cell 627 (gen 6) | **0.012898845892735914** |
-| 268 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 627 (gen 6) | **0.012898845892735914** |
-| 269 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | AMPA conductance DSI (SEClamp) | **0.012020552346102753** |
-| 270 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1636 (gen 17) | **0.011661807580174944** |
-| 271 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1509 (gen 15) | **0.00991341448111429** |
-| 272 | [Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) | nap_high | **0.008152173913043499** |
-| 273 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | Pareto cell iter 475: high-rate corner | **0.007207371590183358** |
-| 274 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | NMDA conductance DSI (SEClamp) | **0.006385640720213027** |
-| 275 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1586 (gen 16) | **0.003839009287925725** |
-| 276 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1328 (gen 13) | **0.0036565096952908085** |
-| 277 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | Pareto cell with highest PD firing rate (iter 319) | **0.002944062806673209** |
-| 278 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 8 fig8_ap5 flickerVAR=0.00 | **0.0** |
-| 279 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | AMPA only (zeroed GABA NetCons) | **0.0** |
-| 280 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | Full E+I (spatial centripetal gating) | **0.0** |
-| 281 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | AMPA only (zeroed GABA NetCons) | **0.0** |
-| 282 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 0.00 nS, E_ONLY | **0.0** |
-| 283 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 0.50 nS, E_ONLY | **0.0** |
-| 284 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 1.00 nS, FULL | **0.0** |
-| 285 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.00 nS, E_ONLY | **0.0** |
-| 286 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=0.25 nS / FULL | **0.0** |
-| 287 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=0.25 nS / AMPA_ONLY | **0.0** |
-| 288 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=0.50 nS / FULL | **0.0** |
-| 289 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=0.50 nS / AMPA_ONLY | **0.0** |
-| 290 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=1.00 nS / FULL | **0.0** |
-| 291 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=1.00 nS / AMPA_ONLY | **0.0** |
-| 292 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=1.50 nS / AMPA_ONLY | **0.0** |
-| 293 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=2.00 nS / AMPA_ONLY | **0.0** |
-| 294 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.10/FULL | **0.0** |
-| 295 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.20/FULL | **0.0** |
-| 296 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.50/FULL | **0.0** |
-| 297 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=1.00/FULL | **0.0** |
-| 298 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.50/FULL | **0.0** |
-| 299 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=1.00/FULL | **0.0** |
-| 300 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=2.00/FULL | **0.0** |
-| 301 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=2.00/FULL | **0.0** |
-| 302 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.10/EPSP_PASSIVE | **0.0** |
-| 303 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.20/EPSP_PASSIVE | **0.0** |
-| 304 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.50/EPSP_PASSIVE | **0.0** |
-| 305 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=1.00/FULL | **0.0** |
-| 306 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=1.00/EPSP_PASSIVE | **0.0** |
-| 307 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=2.00/FULL | **0.0** |
-| 308 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=2.00/EPSP_PASSIVE | **0.0** |
-| 309 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.10/EPSP_PASSIVE | **0.0** |
-| 310 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.20/EPSP_PASSIVE | **0.0** |
-| 311 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.50/FULL | **0.0** |
-| 312 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.50/EPSP_PASSIVE | **0.0** |
-| 313 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=1.00/EPSP_PASSIVE | **0.0** |
-| 314 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=2.00/EPSP_PASSIVE | **0.0** |
-| 315 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 188 (gen 1) | **0.0** |
-| 316 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Closest to joint target (DSI=0.4, PD=10.0Hz); distance=0.850 | **0.0** |
-| 317 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | Cell 767 (joint-pass, gen 7, 1-seed DSI) | **0.0** |
-| 318 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | Cell 762 (near-pass, gen 7, 1-seed DSI) | **0.0** |
-| 319 | [Procedural DSGC morphology generator + diversity test + validation bundle](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | 30 LHS-sampled very-different morphologies (Phase B); aggregate over the 6 STABLE cells | **0.0** |
-| 320 | [Procedural DSGC morphology generator + diversity test + validation bundle](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | 30 +/-5 percent perturbed very-similar morphologies (Phase C); aggregate over the 3 STABLE cells | **0.0** |
-| 321 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1642 (gen 17) | **-0.001644556517925666** |
-| 322 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1617 (gen 16) | **-0.0029863481228669065** |
-| 323 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | GABA conductance DSI (SEClamp) | **-0.006038429391377136** |
-| 324 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.10/EPSP_PASSIVE | — |
-| 325 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.10/IPSP_PASSIVE | — |
-| 326 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.20/EPSP_PASSIVE | — |
-| 327 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.20/IPSP_PASSIVE | — |
-| 328 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.50/EPSP_PASSIVE | — |
-| 329 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.50/IPSP_PASSIVE | — |
-| 330 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=1.00/EPSP_PASSIVE | — |
-| 331 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=1.00/IPSP_PASSIVE | — |
-| 332 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/FULL | — |
-| 333 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/EPSP_PASSIVE | — |
-| 334 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/IPSP_PASSIVE | — |
-| 335 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.10/EPSP_PASSIVE | — |
-| 336 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.10/IPSP_PASSIVE | — |
-| 337 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.20/EPSP_PASSIVE | — |
-| 338 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.20/IPSP_PASSIVE | — |
-| 339 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.50/EPSP_PASSIVE | — |
-| 340 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.50/IPSP_PASSIVE | — |
-| 341 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=1.00/EPSP_PASSIVE | — |
-| 342 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=1.00/IPSP_PASSIVE | — |
-| 343 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=2.00/EPSP_PASSIVE | — |
-| 344 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=2.00/IPSP_PASSIVE | — |
-| 345 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=0.10/IPSP_PASSIVE | — |
-| 346 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=0.20/IPSP_PASSIVE | — |
-| 347 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=0.50/IPSP_PASSIVE | — |
-| 348 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=1.00/IPSP_PASSIVE | — |
-| 349 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=2.00/IPSP_PASSIVE | — |
-| 350 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.10/IPSP_PASSIVE | — |
-| 351 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.20/IPSP_PASSIVE | — |
-| 352 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.50/IPSP_PASSIVE | — |
-| 353 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=1.00/IPSP_PASSIVE | — |
-| 354 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=2.00/IPSP_PASSIVE | — |
-| 355 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.10/IPSP_PASSIVE | — |
-| 356 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.20/IPSP_PASSIVE | — |
-| 357 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.50/IPSP_PASSIVE | — |
-| 358 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=1.00/IPSP_PASSIVE | — |
-| 359 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=2.00/IPSP_PASSIVE | — |
-| 360 | [Procedural DSGC morphology generator + diversity test + validation bundle](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | Phase F BedB-equivalent procedural cell + 5 t0083 Pareto cell parameter vectors (infrastructure_only; full sweep deferred) | — |
-| 361 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | Anchor symmetric | — |
-| 362 | [Diagnose why t0090 procedural cells produce no action potentials](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | Pre-fix procedural BedB-equivalent | — |
+| 256 | [Preliminary-data figure pack and slide deck for report](../../../overview/tasks/task_pages/t0105_preliminary_figures_report.md) | t0102 Pareto cell 21 (seed 44) -- DSI=0.033, PD=45.89Hz | **0.032650822491865544** |
+| 257 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | gNMDA = 2.00 nS | **0.032139268375461306** |
+| 258 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | AP5, flickerVAR = 0.30 | **0.03059115982737831** |
+| 259 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | Pareto cell 664 (gen 6) | **0.02865947611710327** |
+| 260 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 664 (gen 6) | **0.02865947611710327** |
+| 261 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 153 (gen 1) | **0.02597402597402596** |
+| 262 | [Preliminary-data figure pack and slide deck for report](../../../overview/tasks/task_pages/t0105_preliminary_figures_report.md) | t0102 Pareto cell 14 (seed 55) -- DSI=0.024, PD=29.29Hz | **0.023575364723561136** |
+| 263 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | Cell 1238 (near_pass, Stochastic) | **0.022423882174931218** |
+| 264 | [Preliminary-data figure pack and slide deck for report](../../../overview/tasks/task_pages/t0105_preliminary_figures_report.md) | t0102 Pareto cell 16 (seed 55) -- DSI=0.022, PD=37.14Hz | **0.022295894756352633** |
+| 265 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | gNMDA = 2.50 nS | **0.022115698915962014** |
+| 266 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 1 control (b2gnmda = 2.5 nS, paper value) | **0.020655514455547648** |
+| 267 | [Validate Poleg-Polsky 2016 Fig 3A-F conductances and extend noise sweep](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) | gNMDA = 3.00 nS | **0.017876851404282388** |
+| 268 | [Preliminary-data figure pack and slide deck for report](../../../overview/tasks/task_pages/t0105_preliminary_figures_report.md) | t0102 Pareto cell 19 (seed 55) -- DSI=0.016, PD=41.43Hz | **0.01622133040053583** |
+| 269 | [Preliminary-data figure pack and slide deck for report](../../../overview/tasks/task_pages/t0105_preliminary_figures_report.md) | t0102 Pareto cell 22 (seed 55) -- DSI=0.016, PD=50.18Hz | **0.015898199154530338** |
+| 270 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 58 (gen 0) | **0.01479915433403804** |
+| 271 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | Pareto cell iter 476: high-rate corner | **0.0131920847491505** |
+| 272 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | Pareto cell 627 (gen 6) | **0.012898845892735914** |
+| 273 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 627 (gen 6) | **0.012898845892735914** |
+| 274 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | AMPA conductance DSI (SEClamp) | **0.012020552346102753** |
+| 275 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1636 (gen 17) | **0.011661807580174944** |
+| 276 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1509 (gen 15) | **0.00991341448111429** |
+| 277 | [Channel tuning-width sweep on Bed A with BK/SK/Kv7 vendoring](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) | nap_high | **0.008152173913043499** |
+| 278 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | Pareto cell iter 475: high-rate corner | **0.007207371590183358** |
+| 279 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | NMDA conductance DSI (SEClamp) | **0.006385640720213027** |
+| 280 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1586 (gen 16) | **0.003839009287925725** |
+| 281 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1328 (gen 13) | **0.0036565096952908085** |
+| 282 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | Pareto cell with highest PD firing rate (iter 319) | **0.002944062806673209** |
+| 283 | [Exact reproduction of Poleg-Polsky 2016 (ModelDB 189347) with audit](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) | Fig 8 fig8_ap5 flickerVAR=0.00 | **0.0** |
+| 284 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | AMPA only (zeroed GABA NetCons) | **0.0** |
+| 285 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | Full E+I (spatial centripetal gating) | **0.0** |
+| 286 | [Minimal from-scratch DSGC with spatial PD/ND-asymmetric inhibition](../../../overview/tasks/task_pages/t0053_minimal_dsgc_spatial_gaba.md) | AMPA only (zeroed GABA NetCons) | **0.0** |
+| 287 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 0.00 nS, E_ONLY | **0.0** |
+| 288 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 0.50 nS, E_ONLY | **0.0** |
+| 289 | [Minimal DSGC with AMPA + NMDA excitation and scalar gabaMOD inhibition](../../../overview/tasks/task_pages/t0054_minimal_dsgc_ampa_nmda_scalar_gaba.md) | gNMDA = 1.00 nS, FULL | **0.0** |
+| 290 | [Add Mg-block NMDA to recover DSI in t0054 minimal architecture](../../../overview/tasks/task_pages/t0055_nmda_mg_block_dsi_recovery.md) | gNMDA = 0.00 nS, E_ONLY | **0.0** |
+| 291 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=0.25 nS / FULL | **0.0** |
+| 292 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=0.25 nS / AMPA_ONLY | **0.0** |
+| 293 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=0.50 nS / FULL | **0.0** |
+| 294 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=0.50 nS / AMPA_ONLY | **0.0** |
+| 295 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=1.00 nS / FULL | **0.0** |
+| 296 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=1.00 nS / AMPA_ONLY | **0.0** |
+| 297 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=1.50 nS / AMPA_ONLY | **0.0** |
+| 298 | [Tonic GABA + amplitude sweep on t0053 spatial DSGC](../../../overview/tasks/task_pages/t0057_tonic_gaba_sweep_t0053.md) | GABA=2.00 nS / AMPA_ONLY | **0.0** |
+| 299 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.10/FULL | **0.0** |
+| 300 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.20/FULL | **0.0** |
+| 301 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.50/FULL | **0.0** |
+| 302 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=1.00/FULL | **0.0** |
+| 303 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.50/FULL | **0.0** |
+| 304 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=1.00/FULL | **0.0** |
+| 305 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=2.00/FULL | **0.0** |
+| 306 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=2.00/FULL | **0.0** |
+| 307 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.10/EPSP_PASSIVE | **0.0** |
+| 308 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.20/EPSP_PASSIVE | **0.0** |
+| 309 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.50/EPSP_PASSIVE | **0.0** |
+| 310 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=1.00/FULL | **0.0** |
+| 311 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=1.00/EPSP_PASSIVE | **0.0** |
+| 312 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=2.00/FULL | **0.0** |
+| 313 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=2.00/EPSP_PASSIVE | **0.0** |
+| 314 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.10/EPSP_PASSIVE | **0.0** |
+| 315 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.20/EPSP_PASSIVE | **0.0** |
+| 316 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.50/FULL | **0.0** |
+| 317 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.50/EPSP_PASSIVE | **0.0** |
+| 318 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=1.00/EPSP_PASSIVE | **0.0** |
+| 319 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=2.00/EPSP_PASSIVE | **0.0** |
+| 320 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Pareto cell 188 (gen 1) | **0.0** |
+| 321 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | Closest to joint target (DSI=0.4, PD=10.0Hz); distance=0.850 | **0.0** |
+| 322 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | Cell 767 (joint-pass, gen 7, 1-seed DSI) | **0.0** |
+| 323 | [Vm-trace deep-dive of t0081 cell 767 to attribute the joint-pass DSI mechanism](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) | Cell 762 (near-pass, gen 7, 1-seed DSI) | **0.0** |
+| 324 | [Procedural DSGC morphology generator + diversity test + validation bundle](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | 30 LHS-sampled very-different morphologies (Phase B); aggregate over the 6 STABLE cells | **0.0** |
+| 325 | [Procedural DSGC morphology generator + diversity test + validation bundle](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | 30 +/-5 percent perturbed very-similar morphologies (Phase C); aggregate over the 3 STABLE cells | **0.0** |
+| 326 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1642 (gen 17) | **-0.001644556517925666** |
+| 327 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1617 (gen 16) | **-0.0029863481228669065** |
+| 328 | [Re-measure Fig 3A-E conductances under somatic SEClamp on the deposited DSGC](../../../overview/tasks/task_pages/t0049_seclamp_cond_remeasure.md) | GABA conductance DSI (SEClamp) | **-0.006038429391377136** |
+| 329 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.10/EPSP_PASSIVE | — |
+| 330 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.10/IPSP_PASSIVE | — |
+| 331 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.20/EPSP_PASSIVE | — |
+| 332 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.20/IPSP_PASSIVE | — |
+| 333 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.50/EPSP_PASSIVE | — |
+| 334 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=0.50/IPSP_PASSIVE | — |
+| 335 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=1.00/EPSP_PASSIVE | — |
+| 336 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=1.00/IPSP_PASSIVE | — |
+| 337 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/FULL | — |
+| 338 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/EPSP_PASSIVE | — |
+| 339 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/IPSP_PASSIVE | — |
+| 340 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.10/EPSP_PASSIVE | — |
+| 341 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.10/IPSP_PASSIVE | — |
+| 342 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.20/EPSP_PASSIVE | — |
+| 343 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.20/IPSP_PASSIVE | — |
+| 344 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.50/EPSP_PASSIVE | — |
+| 345 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=0.50/IPSP_PASSIVE | — |
+| 346 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=1.00/EPSP_PASSIVE | — |
+| 347 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=1.00/IPSP_PASSIVE | — |
+| 348 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=2.00/EPSP_PASSIVE | — |
+| 349 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=1.00/GABA=2.00/IPSP_PASSIVE | — |
+| 350 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=0.10/IPSP_PASSIVE | — |
+| 351 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=0.20/IPSP_PASSIVE | — |
+| 352 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=0.50/IPSP_PASSIVE | — |
+| 353 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=1.00/IPSP_PASSIVE | — |
+| 354 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=2.00/GABA=2.00/IPSP_PASSIVE | — |
+| 355 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.10/IPSP_PASSIVE | — |
+| 356 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.20/IPSP_PASSIVE | — |
+| 357 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=0.50/IPSP_PASSIVE | — |
+| 358 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=1.00/IPSP_PASSIVE | — |
+| 359 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=3.00/GABA=2.00/IPSP_PASSIVE | — |
+| 360 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.10/IPSP_PASSIVE | — |
+| 361 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.20/IPSP_PASSIVE | — |
+| 362 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=0.50/IPSP_PASSIVE | — |
+| 363 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=1.00/IPSP_PASSIVE | — |
+| 364 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../../../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=4.00/GABA=2.00/IPSP_PASSIVE | — |
+| 365 | [Procedural DSGC morphology generator + diversity test + validation bundle](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) | Phase F BedB-equivalent procedural cell + 5 t0083 Pareto cell parameter vectors (infrastructure_only; full sweep deferred) | — |
+| 366 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | Anchor symmetric | — |
+| 367 | [Diagnose why t0090 procedural cells produce no action potentials](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md) | Pre-fix procedural BedB-equivalent | — |

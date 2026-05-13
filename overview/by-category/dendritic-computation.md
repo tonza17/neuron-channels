@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
 (9)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(84)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(85)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
 (2)](../predictions/by-category/dendritic-computation.md)
@@ -2535,7 +2535,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (67 open, 17 closed)
+## Suggestions (68 open, 17 closed)
+
+<details>
+<summary>📚 <strong>Promote the t0098 morphology renderer (with t0100 vector_68d[54:]
+slice fix) into a reusable library asset</strong> (S-0105-03)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../../tasks/t0105_preliminary_figures_report/)
+
+Figure 7 in t0105 had to copy the morphology renderer code from
+tasks/t0098_visualise_pareto_morphologies/code/build_charts.py into
+tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py with the vector_68d[54:]
+morphology-slice fix from t0100 patched in manually. The t0104 follow-up panel (S-0105-01),
+and any future optimisation-result report task, will need the same renderer. Package this
+renderer as a top-level library asset (e.g., dsgc_morphology_renderer) under a host task --
+expose a clean Python API (render_morphology(vector_68d, ax) plus a multi-cell grid helper),
+include the t0100 slice fix as the default behaviour, register a details.json under
+assets/library/, and document import path tasks.<host_task>.code.dsgc_morphology_renderer.
+Downstream tasks then import instead of copying. Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Calcium-clearance perturbation sweep on the 27 silenced-cell

@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (47)](../papers/by-category/direction-selectivity.md) | [Answers
 (18)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(268)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(270)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (3)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (4)](../predictions/by-category/direction-selectivity.md)
@@ -2938,7 +2938,45 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (237 open, 31 closed)
+## Suggestions (239 open, 31 closed)
+
+<details>
+<summary>📊 <strong>Render figure 7b -- 5-cell DSI+PD 2-obj NSGA-II Pareto panel
+from t0104 once t0104 completes</strong> (S-0105-01)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../../tasks/t0105_preliminary_figures_report/)
+
+REQ-9 (REQ-DEFERRED-PANEL) of t0105 was deferred because t0104_nsga2_2obj_dsi_pdrate_3seeds
+was still in_progress. Once t0104 reaches status completed, render the figure-7 counterpart
+(top-5 Pareto cells under DSI+PD 2-objective NSGA-II) using the same selection rule as figure
+7a: filter pd_rate_hz >= 5.0 to drop silenced spurious-Pareto-anchor cells, then pick the top
+5 by joint Pareto rank, and render a 2-panel mini-figure per cell (morphology schematic +
+two-point polar tuning). Append the rendered panel as a new slide in t0105's
+preliminary_figures_slides.pptx via a follow-up task (do not mutate t0105 -- create a new task
+or a correction overlay). Reuse the renderer in
+tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py and read pareto-front JSON
+from tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/. Priority: medium-high because it
+gates presentation/report completeness. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-angle synaptic-current protocol on Bed A and Bed B for a
+true polar synaptic tuning curve</strong> (S-0105-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../../tasks/t0105_preliminary_figures_report/)
+
+Figure 4 of t0105 had to fall back to a two-point polar (PD at 0 deg, ND at 180 deg) because
+neither t0046 (Bed A) nor t0066 (Bed B) recorded synaptic currents at intermediate stimulus
+angles. Run an EPSC + IPSC peak-amplitude protocol at the standard 12-angle grid for both beds
+(re-using the bar-stimulus generator from t0046 / t0066), record AMPA + NMDA + GABA peak
+conductances and peak post-synaptic currents per angle, and save a CSV per bed compatible with
+the t0011 plot_polar_tuning_curve loader. Output: two new polar plots that replace t0105's
+two-point fallback in any successor figure pack. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Fix DSI vector-sum objective: gate by minimum total spike count

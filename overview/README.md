@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-103-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-393-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-105-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-397-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,16 +28,16 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (36K)
-| [full](llm-context/full.xml) (589K) | [roadmap](llm-context/roadmap.xml) (113K) |
-[results](llm-context/results-deep-dive.xml) (457K) |
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (37K)
+| [full](llm-context/full.xml) (597K) | [roadmap](llm-context/roadmap.xml) (117K) |
+[results](llm-context/results-deep-dive.xml) (461K) |
 [assets](llm-context/literature-and-assets.xml) (64K)
 
-*Last updated: 2026-05-12 21:04 UTC*
+*Last updated: 2026-05-13 22:49 UTC*
 
-* **Budget**: **$36** spent of $35
-* **Remaining**: **$0**
-* **Usage**: `█████████████████████` 102.8%
+* **Budget**: **$36** spent of $50
+* **Remaining**: **$14**
+* **Usage**: `██████████████░░░░░░` 72.0%
 * **GPU Machines**: **9** provisioned across 9 tasks · **$36** GPU spend
   ([details](machines/))
 * **Provisioning**: 4 failed attempts · $0.00 wasted · 31% failure rate
@@ -53,9 +53,11 @@
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0104 | [68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 2026-05-12 21:18 |
 
 ---
 
@@ -82,10 +84,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (95 total)](tasks/by-status/completed.md)
+## [Recently Completed (96 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0105 | [Preliminary-data figure pack and slide deck for report](../overview/tasks/task_pages/t0105_preliminary_figures_report.md) | [`results`](../tasks/t0105_preliminary_figures_report/results/results_detailed.md) | 2026-05-13 22:44 |
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | [`results`](../tasks/t0102_seedscale_n4_gen20/results/results_detailed.md) | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | [`results`](../tasks/t0103_extract_baden_2016_ds_morphologies/results/results_detailed.md) | 2026-05-12 01:55 |
 | 0101 | [Brainstorm results session 21](../overview/tasks/task_pages/t0101_brainstorm_results_21.md) | [`results`](../tasks/t0101_brainstorm_results_21/results/results_detailed.md) | 2026-05-11 13:50 |
@@ -95,9 +98,8 @@ No blocked tasks.
 | 0095 | [Brainstorm results session 20](../overview/tasks/task_pages/t0095_brainstorm_results_20.md) | [`results`](../tasks/t0095_brainstorm_results_20/results/results_detailed.md) | 2026-05-08 20:45 |
 | 0094 | [Brainstorm results session 19](../overview/tasks/task_pages/t0094_brainstorm_results_19.md) | [`results`](../tasks/t0094_brainstorm_results_19/results/results_detailed.md) | 2026-05-08 18:30 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../overview/tasks/task_pages/t0097_multi_obj_optim.md) | [`results`](../tasks/t0097_multi_obj_optim/results/results_detailed.md) | 2026-05-08 16:50 |
-| 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | [`results`](../tasks/t0091_morphology_extended_nsga2_v1/results/results_detailed.md) | 2026-05-08 15:55 |
 
-*85 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*86 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +124,84 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (351 open)](suggestions/)
+## [Recent Suggestions (355 open)](suggestions/)
+
+<details>
+<summary>📊 <strong>Render figure 7b -- 5-cell DSI+PD 2-obj NSGA-II Pareto panel
+from t0104 once t0104 completes</strong> (S-0105-01)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../tasks/t0105_preliminary_figures_report/)
+
+REQ-9 (REQ-DEFERRED-PANEL) of t0105 was deferred because t0104_nsga2_2obj_dsi_pdrate_3seeds
+was still in_progress. Once t0104 reaches status completed, render the figure-7 counterpart
+(top-5 Pareto cells under DSI+PD 2-objective NSGA-II) using the same selection rule as figure
+7a: filter pd_rate_hz >= 5.0 to drop silenced spurious-Pareto-anchor cells, then pick the top
+5 by joint Pareto rank, and render a 2-panel mini-figure per cell (morphology schematic +
+two-point polar tuning). Append the rendered panel as a new slide in t0105's
+preliminary_figures_slides.pptx via a follow-up task (do not mutate t0105 -- create a new task
+or a correction overlay). Reuse the renderer in
+tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py and read pareto-front JSON
+from tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/. Priority: medium-high because it
+gates presentation/report completeness. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-angle synaptic-current protocol on Bed A and Bed B for a
+true polar synaptic tuning curve</strong> (S-0105-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../tasks/t0105_preliminary_figures_report/)
+
+Figure 4 of t0105 had to fall back to a two-point polar (PD at 0 deg, ND at 180 deg) because
+neither t0046 (Bed A) nor t0066 (Bed B) recorded synaptic currents at intermediate stimulus
+angles. Run an EPSC + IPSC peak-amplitude protocol at the standard 12-angle grid for both beds
+(re-using the bar-stimulus generator from t0046 / t0066), record AMPA + NMDA + GABA peak
+conductances and peak post-synaptic currents per angle, and save a CSV per bed compatible with
+the t0011 plot_polar_tuning_curve loader. Output: two new polar plots that replace t0105's
+two-point fallback in any successor figure pack. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0098 morphology renderer (with t0100 vector_68d[54:]
+slice fix) into a reusable library asset</strong> (S-0105-03)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../tasks/t0105_preliminary_figures_report/)
+
+Figure 7 in t0105 had to copy the morphology renderer code from
+tasks/t0098_visualise_pareto_morphologies/code/build_charts.py into
+tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py with the vector_68d[54:]
+morphology-slice fix from t0100 patched in manually. The t0104 follow-up panel (S-0105-01),
+and any future optimisation-result report task, will need the same renderer. Package this
+renderer as a top-level library asset (e.g., dsgc_morphology_renderer) under a host task --
+expose a clean Python API (render_morphology(vector_68d, ax) plus a multi-cell grid helper),
+include the t0100 slice fix as the default behaviour, register a details.json under
+assets/library/, and document import path tasks.<host_task>.code.dsgc_morphology_renderer.
+Downstream tasks then import instead of copying. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a project-wide python-pptx slide-deck builder library so
+figure packs reuse a common deck assembler</strong> (S-0105-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../tasks/t0105_preliminary_figures_report/)
+
+t0105 introduced python-pptx>=1.0 and implemented
+tasks/t0105_preliminary_figures_report/code/build_slides.py as a task-local
+one-figure-per-slide deck assembler with caption + source-task citation in slide notes.
+Multiple downstream tasks (per-report figure packs, brainstorm decks, t0104 follow-up, future
+MOBO writeups) will want the same machinery. Package build_slides.py as a reusable library
+asset under a host task -- expose build_deck(slides: list[SlideSpec], output_path: Path) and a
+SlideSpec dataclass (image_path, caption, notes, layout), register a details.json under
+assets/library/, and document the import path. Downstream tasks then call the library instead
+of re-implementing python-pptx layout per task. Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Fix DSI vector-sum objective: gate by minimum total spike count
@@ -251,85 +330,7 @@ experiment-run, data-analysis. Cost: < $0.50 (270 evaluations, no GA).
 
 </details>
 
-<details>
-<summary>🔧 <strong>Morinaga 2024 sign-averaging objective formulation to handle
-heavy-tailed DSI noise (alpha close to 1) at fixed budget</strong>
-(S-0102-07)</summary>
-
-**Kind**: technique | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
-[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
-
-Morinaga 2024 (arXiv 2401.14014) Theorem 3 shows explicit averaging is only effective when the
-per-objective noise stability index alpha > 1. compare_literature.md argues our DSI vector-sum
-near zero-spike cells is heavy-tailed with alpha ~1, making K=4 averaging 'nearly inert'.
-Theorem 9 proposes sign-averaging as a comparison-based alternative robust under heavy tails
-at the same compute cost. Steps: (i) compute per-objective alpha on the t0093 anchor library
-at N=20 (offline); (ii) if alpha < 1 for DSI, reformulate NSGA-II selection via sign-averaging
-(count replicates favouring A over B) instead of mean ranking; (iii) run a 1-seed NSGA-II at
-matched budget with sign-averaging. Complementary to S-0102-01 (DSI fix targets the
-floating-point bug; this targets noise-handling theory). Recommended task types:
-write-library, experiment-run. Cost: ~$3-5 (one pop=96 run plus offline analysis).
-
-</details>
-
-<details>
-<summary>📚 <strong>Vast.ai cost-watchdog parameterisation: idle-timeout teardown and
-post-watchdog termination to prevent $3+ idle overrun</strong> (S-0102-08)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
-[t0102_seedscale_n4_gen20](../tasks/t0102_seedscale_n4_gen20/)
-
-t0102 cost overrun ($12.07 vs $8 plan cap) decomposed as $8.46 productive NSGA-II compute
-(per-seed $4 watchdog behaved as designed) plus $3.51 idle uptime: $0.11 setup, ~$1.5 from a
-dead initial subagent before recovery, ~$2 post-watchdog billing before teardown.
-results_detailed.md Limitations records this. Harden the cost-watchdog infrastructure: (i)
-idle-CPU watchdog that destroys the instance if no NEURON worker processes have run for > 15
-minutes; (ii) chain the per-seed cost watchdog directly into instance teardown rather than
-just terminating the NSGA-II loop; (iii) standardise the offer-rate hourly-price source (t0102
-billed $0.4852/hr while the watchdog read $0.4690/hr base, drift ~$0.1/hr over 24 h). Small
-library change in arf/scripts/utils plus task-level orchestration. Recommended task types:
-write-library, infrastructure-setup. Cost: ~$0 development + recovered ~$3/task in subsequent
-runs.
-
-</details>
-
-<details>
-<summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
-cluster IDs</strong> (S-0103-01)</summary>
-
-**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-Baden 2016's Dryad release contains no dendritic morphology. Bae et al. 2018 (EyeWire/E2198
-dense EM dataset) published reconstructed RGC morphologies and explicitly linked many of them
-to Baden 2016 functional cluster IDs. Download Bae 2018 morphologies for the 8
-paper-authoritative DS clusters {2, 6, 12, 13, 16, 25, 26, 29} and emit one dataset asset of
-SWC/JSON morphologies keyed by Baden cluster ID. This is the most direct way to ground t0090's
-morphology-generator parameter envelopes (field diameter, branch count, total length,
-asymmetry) in real biological DS-cell shapes. Recommended task types: download-dataset,
-download-paper.
-
-</details>
-
-<details>
-<summary>📂 <strong>Download Ran et al. 2020 ON-OFF DS-cell morphologies as a
-complementary morphology source</strong> (S-0103-02)</summary>
-
-**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-Ran et al. 2020 (Nat Commun) provides dye-fill reconstructions of mouse ON-OFF DS RGCs with
-co-recorded preferred-direction labels. The Baden 2016 Dryad release does not include
-morphologies, and Ran 2020 covers exactly the ON-OFF DS subtypes (Baden clusters G12/G13) most
-relevant to the t0024 ON-OFF DSGC modelling line. Download the published SWC files (or extract
-from supplementary materials), register them as a dataset asset, and tag each morphology with
-its preferred-direction angle and any Baden-cluster correspondence available. Useful as a
-second, independent morphology source against Bae 2018 for the t0090 envelope grounding.
-Recommended task types: download-dataset, download-paper.
-
-</details>
-
-*341 more open suggestions → [open suggestions](suggestions/)*
+*345 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 

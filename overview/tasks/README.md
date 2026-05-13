@@ -1,9 +1,10 @@
 # Project Tasks
 
-103 tasks. ⏹ **2 not_started**, ⚠️ **1 intervention_blocked**, ✅ **95 completed**, ❌ **5
-cancelled**.
+105 tasks. ⏳ **1 in_progress**, ⏹ **2 not_started**, ⚠️ **1 intervention_blocked**, ✅ **96
+completed**, ❌ **5 cancelled**.
 
-**Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [⚠️
+**Browse by view**: By status: [⏳ `in_progress`](by-status/in_progress.md), [⏹
+`not_started`](by-status/not_started.md), [⚠️
 `intervention_blocked`](by-status/intervention_blocked.md), [✅
 `completed`](by-status/completed.md), [❌ `cancelled`](by-status/cancelled.md); [By date
 added](by-date-added/README.md)
@@ -18,11 +19,18 @@ graph LR
     t0012_tuning_curve_scoring_loss_library["✅ t0012_tuning_curve_scoring_loss_library"]
     t0022_modify_dsgc_channel_testbed["✅ t0022_modify_dsgc_channel_testbed"]
     t0023_port_hanson_2019_dsgc["⚠️ t0023_port_hanson_2019_dsgc"]
+    t0024_port_de_rosenroll_2026_dsgc["✅ t0024_port_de_rosenroll_2026_dsgc"]
     t0031_fetch_paywalled_morphology_papers["⏹ t0031_fetch_paywalled_morphology_papers"]
     t0067_t0065_soma_channel_addition_sweep["✅ t0067_t0065_soma_channel_addition_sweep"]
     t0069_t0067_ais_localised_channel_sweep["✅ t0069_t0067_ais_localised_channel_sweep"]
     t0074_channel_tuning_width_bed_a["✅ t0074_channel_tuning_width_bed_a"]
     t0075_bio_realistic_ais_param_sweep["⏹ t0075_bio_realistic_ais_param_sweep"]
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2["✅ t0080_bedb_mobo_v3_dendritic_spike_nsga2"]
+    t0090_morphology_generator_diversity_test["✅ t0090_morphology_generator_diversity_test"]
+    t0093_resweep_and_t0090_correction["✅ t0093_resweep_and_t0090_correction"]
+    t0099_random_init_pareto_robustness["✅ t0099_random_init_pareto_robustness"]
+    t0102_seedscale_n4_gen20["✅ t0102_seedscale_n4_gen20"]
+    t0104_nsga2_2obj_dsi_pdrate_3seeds["⏳ t0104_nsga2_2obj_dsi_pdrate_3seeds"]
 
     t0012_tuning_curve_scoring_loss_library --> t0008_port_modeldb_189347
     t0008_port_modeldb_189347 --> t0022_modify_dsgc_channel_testbed
@@ -30,6 +38,9 @@ graph LR
     t0008_port_modeldb_189347 --> t0023_port_hanson_2019_dsgc
     t0012_tuning_curve_scoring_loss_library --> t0023_port_hanson_2019_dsgc
     t0022_modify_dsgc_channel_testbed --> t0023_port_hanson_2019_dsgc
+    t0008_port_modeldb_189347 --> t0024_port_de_rosenroll_2026_dsgc
+    t0012_tuning_curve_scoring_loss_library --> t0024_port_de_rosenroll_2026_dsgc
+    t0022_modify_dsgc_channel_testbed --> t0024_port_de_rosenroll_2026_dsgc
     t0008_port_modeldb_189347 --> t0067_t0065_soma_channel_addition_sweep
     t0008_port_modeldb_189347 --> t0069_t0067_ais_localised_channel_sweep
     t0067_t0065_soma_channel_addition_sweep --> t0069_t0067_ais_localised_channel_sweep
@@ -40,9 +51,271 @@ graph LR
     t0067_t0065_soma_channel_addition_sweep --> t0075_bio_realistic_ais_param_sweep
     t0069_t0067_ais_localised_channel_sweep --> t0075_bio_realistic_ais_param_sweep
     t0074_channel_tuning_width_bed_a --> t0075_bio_realistic_ais_param_sweep
+    t0024_port_de_rosenroll_2026_dsgc --> t0080_bedb_mobo_v3_dendritic_spike_nsga2
+    t0069_t0067_ais_localised_channel_sweep --> t0080_bedb_mobo_v3_dendritic_spike_nsga2
+    t0024_port_de_rosenroll_2026_dsgc --> t0090_morphology_generator_diversity_test
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0090_morphology_generator_diversity_test
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0093_resweep_and_t0090_correction
+    t0090_morphology_generator_diversity_test --> t0093_resweep_and_t0090_correction
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0099_random_init_pareto_robustness
+    t0090_morphology_generator_diversity_test --> t0099_random_init_pareto_robustness
+    t0093_resweep_and_t0090_correction --> t0099_random_init_pareto_robustness
+    t0024_port_de_rosenroll_2026_dsgc --> t0102_seedscale_n4_gen20
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0102_seedscale_n4_gen20
+    t0090_morphology_generator_diversity_test --> t0102_seedscale_n4_gen20
+    t0093_resweep_and_t0090_correction --> t0102_seedscale_n4_gen20
+    t0099_random_init_pareto_robustness --> t0102_seedscale_n4_gen20
+    t0024_port_de_rosenroll_2026_dsgc --> t0104_nsga2_2obj_dsi_pdrate_3seeds
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0104_nsga2_2obj_dsi_pdrate_3seeds
+    t0090_morphology_generator_diversity_test --> t0104_nsga2_2obj_dsi_pdrate_3seeds
+    t0093_resweep_and_t0090_correction --> t0104_nsga2_2obj_dsi_pdrate_3seeds
+    t0099_random_init_pareto_robustness --> t0104_nsga2_2obj_dsi_pdrate_3seeds
+    t0102_seedscale_n4_gen20 --> t0104_nsga2_2obj_dsi_pdrate_3seeds
 ```
 
 ---
+
+## ⏳ In Progress
+
+<details>
+<summary>⏳ 0104 — <strong>68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3,
+N=4, gens=20</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0104_nsga2_2obj_dsi_pdrate_3seeds` |
+| **Status** | in_progress |
+| **Effective date** | 2026-05-12 |
+| **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0090_morphology_generator_diversity_test`](../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0093_resweep_and_t0090_correction`](../../overview/tasks/task_pages/t0093_resweep_and_t0090_correction.md), [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Expected assets** | 3 predictions, 1 answer |
+| **Source suggestion** | — |
+| **Task types** | [`experiment-run`](../../meta/task_types/experiment-run/), [`data-analysis`](../../meta/task_types/data-analysis/), [`answer-question`](../../meta/task_types/answer-question/) |
+| **Start time** | 2026-05-12T21:18:59Z |
+| **Task page** | [68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20](../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **Task folder** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds/`](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/) |
+
+# t0104 — 68-d NSGA-II 2-Objective (DSI + PD-rate) at 3 Random-Init GA Seeds, N=4, gens=20
+
+## Context
+
+Direct researcher commission in brainstorm session 22 (2026-05-12), immediately after t0102
+closed. t0102 ran 68-d random-init NSGA-II at GA seeds=2, N_EVAL_SEEDS=4, gens=20 on three
+objectives (DSI vector-sum, PD-rate, robustness) and produced **zero strict joint-pass cells
+across 2,592 evaluated cells**. The session-22 researcher hypothesis: dropping the robustness
+objective frees NSGA-II's crowding-distance selection to spend its diversity budget on the DSI
+/ PD-rate trade-off alone, potentially recovering joint-pass cells without invoking
+warm-start.
+
+Project total budget was raised from $35 to $50 immediately prior to this task (commit
+`388e8557` on main) so the $15 per-task cap below does not violate the project-level ceiling.
+
+This task also closes the load-bearing **S-0102-01 DSI vector-sum artifact** by porting a
+silenced-cell guard into `evaluator.py` before the NSGA-II run. The guard returns DSI = 0.0
+when the cell's total spike count across all 16 directions is below 10, eliminating the
+floating-point artifact that put 27 t0102 cells at a spurious DSI = 1.0.
+
+## Goal
+
+Run the exact same 68-d Bed B + morphology NSGA-II substrate as t0102, with three changes:
+
+1. **Objective vector**: 3 → 2 (drop robustness; keep DSI vector-sum + PD-rate)
+2. **GA seeds**: 2 → 3 (44, 55, 66)
+3. **DSI-silence guard active**: the S-0102-01 fix lands in this task's `evaluator.py`
+
+All other knobs match t0102 exactly: `N_EVAL_SEEDS=4`, `n_gen=20`, `pop=96`, random LHS init,
+Bed B + 14-d morphology substrate.
+
+## Key Questions
+
+1. **Does dropping robustness recover joint-pass cells?** Concretely: across 3 seeds × pop=96
+   × gens=20 = 6,048 evaluated cells, find at least one with DSI ≥ 0.5 AND PD ≥ 30 Hz on the
+   cleaned DSI metric. Falsifiable: the answer is yes (≥ 1 cell) or no (0 cells).
+2. **Does the DSI-silence guard remove the DSI = 1.0 corner from the Pareto front?** Quantify
+   how many cells in this run reach the guard floor (DSI = 0.0 because total spikes < 10) and
+   confirm the Pareto front no longer contains DSI = 1.0 / PD = 0 cells.
+3. **Does the 2-objective Pareto front differ qualitatively from t0102's 3-objective front
+   when restricted to the (DSI, PD) plane?** Specifically: at any given DSI threshold, does
+   this run reach a higher PD-rate ceiling than t0102?
+
+## Approach
+
+Fork t0102's `code/` substrate verbatim. The only code-level changes:
+
+1. **`evaluator.py`**:
+   * Patch `_vector_sum_dsi` (or its wrapping `evaluate_cell` flow) so that DSI returns 0.0
+     when `sum(total_spike_count_per_direction) < 10` across the 16 directions.
+   * Reduce the F-row returned to pymoo from `[-dsi, -pd, -robustness]` to `[-dsi, -pd]`. Keep
+     the `robustness` field in the per-cell summary `dict` so it remains in the predictions
+     assets and analysis can still inspect the dropped axis, but it must not enter NSGA-II
+     selection.
+   * Update `n_obj` from 3 to 2.
+
+2. **`nsga2_driver.py`**: set `Problem(n_obj=2, ...)` in the pymoo definition.
+
+3. **Unit test**: add `code/test_evaluator_dsi_guard.py` that builds a synthetic cell with
+   all-zero direction counts and asserts the new evaluator returns DSI = 0.0 (not 1.0). Run it
+   as part of the local smoke gate before scaling out.
+
+4. **GA seeds**: launch three NSGA-II processes with `seed=44`, `seed=55`, `seed=66`
+   sequentially on one Vast.ai instance. `pop=96`, `n_gen=20`, LHS-init each. (Seeds 44 and 55
+   are reused from t0102 so the 2-obj vs 3-obj comparison is an apples-to-apples lift, with 66
+   as the genuinely fresh sample.)
+
+5. **Cost watchdog**: keep t0102's per-seed $4 watchdog. Bind the watchdog directly to
+   instance teardown so post-NSGA-II idle billing cannot accumulate (S-0102-08 partial
+   application). Total hard cap: $15 enforced at the orchestrator.
+
+## Why This Matters for the Research Questions
+
+The project's research question 1 ("Which combinations of somatic voltage-gated sodium and
+potassium conductances maximise AP frequency for a preferred-direction wave while suppressing
+firing in the null direction?") has been the central optimisation target of t0080-t0102. The
+current evidence from t0099 + t0102 is that NSGA-II on this 68-d substrate cannot reach the
+joint-pass corner from random init at any seed/generation balance tried so far. Two unexamined
+factors remain in the NSGA-II configuration: the objective count (this task) and the algorithm
+itself (deferred to S-0102-03 / S-0102-04). This task tests the cheaper of the two factors
+first. If 2-objective NSGA-II recovers joint-pass cells, the substrate is reachable and the
+issue was objective dilution; if it doesn't, the substrate-limitation reading hardens and
+algorithm replacement becomes the next move.
+
+## Cost Estimation
+
+| Item | Estimate |
+| --- | --- |
+| Vast.ai instance | $0.24/hr (RTX 4090 / EPYC 7B13 64-core, t0099 / t0102 baseline) |
+| Per-cell eval at N=4 | ~5x faster than t0099's N=20 (same as t0102) |
+| Cells per seed | 96 + 20 × 96 = 2,016 |
+| Cells total | 3 × 2,016 = 6,048 |
+| Wall-clock estimate | ~30-36 h (6,048 cells × ~18 s = ~30 h plus overhead) |
+| Productive compute | ~$8-10 (3 seeds at ~$3-3.5 each) |
+| Idle / setup overhead | ~$1-2 (with hardened teardown per S-0102-08) |
+| **Predicted spend** | **~$10-12** |
+| **Hard cost cap** | **$15** (explicit per-task override; project budget is $50) |
+
+## Step by Step
+
+Canonical step IDs from `arf/specifications/task_steps_specification.md`:
+
+1. `preflight` — confirm all six dependencies are completed; check that `tasks/t0102_*/code/`
+   is reusable; smoke-test t0102's pipeline locally on one cell with the 2-obj + DSI-guard
+   patch.
+2. `research-code` — audit t0102's `evaluator.py` and `nsga2_driver.py`, document the exact
+   lines to change in `research/research_code.md`. No paper-research step is needed.
+3. `planning` — produce `plan/plan.md` with the cost / time / risk table; agree REQ-1..REQ-N
+   including REQ on the DSI-silence guard unit test and REQ on idle-teardown wiring.
+4. `setup-machines` — provision one Vast.ai instance matching t0102's spec; record
+   `machine_log.json`.
+5. `implementation` —
+   * 5a. SCP code (with patches) to instance.
+   * 5b. Run substrate-consistency smoke gate at N_EVAL_SEEDS=4 with DSI-guard active and
+     `n_obj=2` (REQ-7-equivalent).
+   * 5c. Run NSGA-II seed=44, pop=96, gens=20, 2 objectives.
+   * 5d. Run NSGA-II seed=55, pop=96, gens=20, 2 objectives.
+   * 5e. Run NSGA-II seed=66, pop=96, gens=20, 2 objectives.
+   * 5f. Pull predictions back, build per-seed predictions assets.
+6. `destroy-machines` — Vast.ai instance teardown within 5 minutes of last seed completion;
+   record final cost in `results/costs.json` and `results/remote_machines_used.json`.
+7. `analysis` — joint-pass tally per seed, hypervolume curves, per-seed DSI/PD scatter, anchor
+   distribution histogram, side-by-side comparison vs t0102 (3-obj) and t0099 (3-obj N=20).
+   Quantify the DSI-guard impact: count cells at DSI = 0.0 floor, count cells with raw-DSI ≥
+   0.99 that the guard would have kept.
+8. `reporting` — write `results/results_summary.md`, `results/results_detailed.md` with all
+   charts embedded via `![desc](images/file.png)`, populate `metrics.json`, `costs.json`,
+   `remote_machines_used.json`, and `suggestions.json`. Write one answer asset addressing Key
+   Question 1.
+
+## Remote Machines
+
+One Vast.ai instance matching t0099 / t0102 spec:
+
+* GPU tier: not required (NEURON is CPU-bound; any attached GPU is incidental)
+* CPU: AMD EPYC 7B13 or equivalent, ~64 effective cores
+* RAM: 200+ GB
+* Location: Norway preferred for $0.24/hr offer rate
+* Hard runtime cap: 40 hours
+* Idle-uptime safeguard: tear down within 5 minutes of last seed completion (post-watchdog
+  idle was ~$2 of t0102's overrun)
+
+## Assets Needed
+
+* `tasks/t0024_port_de_rosenroll_2026_dsgc` — Bed B compartmental model
+* `tasks/t0102_seedscale_n4_gen20/code/` — driver fork base (verbatim except the 2-obj +
+  DSI-guard patches)
+* `tasks/t0093_resweep_and_t0090_correction/code/` — morphology generator (post-patch)
+* `tasks/t0086_robustness_cluster_bio_comparison/code/` — anchor / clustering utilities (used
+  in analysis step only)
+
+## Expected Assets
+
+* 3 predictions assets (one per GA seed, 2,016 cells each):
+  `nsga2-seed44-bedb-morph-n4-gen20-2obj`, `nsga2-seed55-bedb-morph-n4-gen20-2obj`,
+  `nsga2-seed66-bedb-morph-n4-gen20-2obj`
+* 1 answer asset addressing: "Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence
+  guard applied) recover joint-pass cells where t0102's 3-objective run found zero?"
+
+## Time Estimation
+
+* Local prep + smoke + provisioning: 1-2 h
+* Vast.ai NSGA-II runs (3 seeds sequential): 28-34 h
+* Analysis + reporting: 3-4 h
+* **Total wall-clock**: 32-40 h
+
+## Risks & Fallbacks
+
+* **Risk**: even without robustness in the objective vector, joint-pass yield remains zero,
+  confirming the 68-d substrate is empirically empty of joint-pass cells under random init.
+  **Fallback**: negative result is publishable as the definitive 2-objective control for the
+  substrate-limitation hypothesis; the next move becomes algorithm replacement (S-0102-03 IBEA
+  or S-0102-04 Dang pop≥290).
+
+* **Risk**: per-seed wall-clock grows super-linearly due to NEURON memory accumulation (known
+  from t0099 / t0102). **Fallback**: restart Python worker between generations as in t0102. If
+  still too slow, cut third seed at gen 15 and report partial result.
+
+* **Risk**: Vast.ai instance cost exceeds $15 cap due to instance-price drift or idle overrun.
+  **Fallback**: per-seed $4 watchdog terminates each run individually; total cap $15 enforced
+  at orchestrator level; idle teardown within 5 min hardens against the t0102 $2 idle leak.
+
+* **Risk**: morphology generator silently produces empty trees (known from t0090 / t0093).
+  **Fallback**: REQ-7-equivalent smoke gate must pass before committing to long run.
+
+* **Risk**: the DSI-silence guard introduces a regression where legitimate near-silent cells
+  with real direction selectivity (e.g., 5 PD spikes, 0 ND spikes) get masked. **Fallback**:
+  include in results_detailed.md a sensitivity sweep of the spike-count threshold (5, 10, 20,
+  50) on the t0102 predictions to confirm 10 is conservative; note any cells in the (5, 10)
+  band as a known limitation. Unit test in `code/test_evaluator_dsi_guard.py` documents the
+  exact threshold.
+
+## Verification Criteria
+
+* `verify_task_metrics t0104_nsga2_2obj_dsi_pdrate_3seeds` passes with 0 errors.
+* `verify_machines_destroyed t0104_nsga2_2obj_dsi_pdrate_3seeds` confirms Vast.ai instance is
+  destroyed.
+* `verify_research_code` and `verify_plan` pass with 0 errors.
+* All 3 predictions assets validate against the predictions specification.
+* Total cost in `results/costs.json` does not exceed $15.00.
+* Unit test `tasks/t0104_*/code/test_evaluator_dsi_guard.py` passes locally and in the smoke
+  gate.
+* At least one of the following holds (both are publishable):
+  * **Positive**: ≥ 1 strict joint-pass cell (DSI ≥ 0.5, PD ≥ 30 Hz, on the guard-cleaned DSI)
+    found in at least one of the three seeds.
+  * **Negative**: 0 strict joint-pass cells across all three seeds, confirming the t0102 null
+    extends to the 2-objective formulation.
+
+## Out of Scope
+
+* IBEA replacement (deferred suggestion S-0102-03).
+* Dang 2023 pop ≥ 290 theory-grounded NSGA-II (deferred suggestion S-0102-04).
+* Sign-averaging objective formulation per Morinaga 2024 (deferred suggestion S-0102-07).
+* Anchor-distance lineage trace across t0080-t0102 Pareto cells (deferred suggestion
+  S-0102-05) — separate analysis task.
+* Calcium-clearance perturbation sweep on the 27 silenced cells (deferred suggestion
+  S-0102-06).
+* Lowering the project-wide `N_SEEDS` default in `tasks/t0080_*/code/constants.py` (deferred
+  suggestion S-0101-02).
+* Correcting Poleg-Polsky 2026 `summary.md` fabrications (deferred suggestion S-0101-01).
+
+</details>
 
 ## ⏹ Not Started
 
@@ -425,6 +698,223 @@ follow-up tasks and must not be performed here.
 </details>
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0105 — <strong>Preliminary-data figure pack and slide deck for
+report</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0105_preliminary_figures_report` |
+| **Status** | completed |
+| **Effective date** | 2026-05-13 |
+| **Dependencies** | [`t0008_port_modeldb_189347`](../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0011_response_visualization_library`](../../overview/tasks/task_pages/t0011_response_visualization_library.md), [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0046_reproduce_poleg_polsky_2016_exact`](../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md), [`t0065_t0020_epsp_ipsp_vm_protocol`](../../overview/tasks/task_pages/t0065_t0020_epsp_ipsp_vm_protocol.md), [`t0066_t0024_epsp_ipsp_vm_protocol`](../../overview/tasks/task_pages/t0066_t0024_epsp_ipsp_vm_protocol.md), [`t0067_t0065_soma_channel_addition_sweep`](../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md), [`t0068_t0067_nav16_kv3_coexpression_rescue`](../../overview/tasks/task_pages/t0068_t0067_nav16_kv3_coexpression_rescue.md), [`t0069_t0067_ais_localised_channel_sweep`](../../overview/tasks/task_pages/t0069_t0067_ais_localised_channel_sweep.md), [`t0070_writeup_two_model_beds`](../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md), [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0098_visualise_pareto_morphologies`](../../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md), [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`data-analysis`](../../meta/task_types/data-analysis/) |
+| **Start time** | 2026-05-13T21:45:23Z |
+| **End time** | 2026-05-13T22:44:12Z |
+| **Step progress** | 9/13 |
+| **Task page** | [Preliminary-data figure pack and slide deck for report](../../overview/tasks/task_pages/t0105_preliminary_figures_report.md) |
+| **Task folder** | [`t0105_preliminary_figures_report/`](../../tasks/t0105_preliminary_figures_report/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0105_preliminary_figures_report/results/results_detailed.md) |
+
+# Preliminary-data figure pack and slide deck for report
+
+## Motivation
+
+The user is preparing a written report and a presentation deck and needs a curated set of
+preliminary-data figures pulled from existing project results. The data is already calculated
+across `t0065`-`t0102`; this task is **pure plotting and compilation** — no new NEURON
+simulations, no new optimisation runs, no new biophysics decisions.
+
+The deliverable is a coherent figure pack that walks the reader from "what the model is" (HH
+equations, current densities, morphology) through "what the model does" (DSI tuning, somatic
+Vm with and without action potentials, effect of adding channels) to "what optimisation found"
+(5-cell panels per objective set).
+
+## Scope
+
+### Figures to produce
+
+Each figure is a PNG under `results/images/` and a slide in the deck. The data source is named
+for every figure; the implementation reads from the named task, does not re-run anything, and
+does not re-derive any biophysical parameter.
+
+1. **Hodgkin-Huxley equations (PNG, not text).** The canonical HH membrane equation plus the
+   per-channel `Iᵢ = gᵢ · m^a · h^b · (V − Eᵢ)` blocks used by both bed models around
+   `t0065`-`t0075`. Render with matplotlib LaTeX (`text.usetex` or mathtext) into a single
+   PNG. Source: `tasks/t0070_writeup_two_model_beds/results/results_detailed.md` and the
+   typeset `tasks/t0071_t0070_synaptic_eqs_pdf/results/results_detailed.pdf`.
+
+2. **Current density table per current type, both bed models.** PNG-rendered table (matplotlib
+   `Table` or `pandas.plotting.table`) with columns: channel, `gbar` (S/cm²), `E_rev` (mV),
+   `V_half_act`, `τ_m`, `V_half_inact`, `τ_h`, source `code/<file>:<line>`. One bed per panel.
+   Source: same as figure 1.
+
+3. **Morphology per bed.** Cell schematic showing compartments / dendritic tree for Bed A
+   (`t0008_port_modeldb_189347`) and Bed B (`t0024_port_de_rosenroll_2026_dsgc`). Use NEURON
+   topology to draw a 2D projection. If a usable diagram already exists in `t0070`'s
+   `results/images/`, reuse it.
+
+4. **DSI as polar coordinates for synaptic currents, both beds.** Polar tuning of the synaptic
+   drive (AMPA + NMDA + GABA peak conductance or peak post-synaptic current envelope) versus
+   bar direction. Source for Bed A:
+   `tasks/t0046_reproduce_poleg_polsky_2016_exact/results/images/` `fig1_psp_vs_angle.png`
+   provides the PSP-vs-angle reproduction; convert into a polar plot variant or replot from
+   the underlying CSV. Source for Bed B: use whatever multi-direction synaptic-current data
+   exists in `t0066_t0024_epsp_ipsp_vm_protocol/results/`; if only PD/ND are present in Bed B,
+   compute a two-point polar (PD vs ND) and label it as such — do not simulate new directions.
+
+5. **Somatic Vm without and with action potentials, both beds, PD and ND.** The three-mode
+   overlay trio (EPSP_PASSIVE, IPSP_PASSIVE, FULL) is the canonical view: HH off for the EPSP
+   and IPSP passive traces, HH on for the FULL trace with action potentials. Sources:
+   * Bed A PD/ND: `tasks/t0065_t0020_epsp_ipsp_vm_protocol/results/images/`
+     `three_mode_pd_overlay.png` and `three_mode_nd_overlay.png`.
+   * Bed B PD/ND: `tasks/t0066_t0024_epsp_ipsp_vm_protocol/results/images/`
+     `three_mode_pd_overlay.png` and `three_mode_nd_overlay.png`. These existing PNGs may be
+     reused directly with a unified caption layout in the figure pack; if compositing is
+     needed (e.g., a 2×2 panel: bed × direction), recreate from the underlying CSV in the
+     source task's `results/` folder.
+
+6. **Effect of introduction of different channels on DSI.** Sources:
+   * `tasks/t0067_t0065_soma_channel_addition_sweep/results/images/dsi_vs_density.png` —
+     per-channel DSI vs `gbar` sweep at the soma.
+   * `tasks/t0068_t0067_nav16_kv3_coexpression_rescue/results/images/dsi_rescue_curve.png` —
+     Nav1.6 + Kv3 co-expression rescue.
+   * `tasks/t0069_t0067_ais_localised_channel_sweep/results/images/dsi_vs_density.png` and
+     `soma_vs_ais_comparison.png` — AIS-localised version. Compose into a single multi-panel
+     figure with consistent axes and a shared legend; reuse the underlying CSV in each source
+     task if axis scaling needs to be unified.
+
+7. **Optimisation: 5 cells per objective set — direction-selectivity tuning + morphology.**
+   * **DSI + PD + robustness (3-objective NSGA-II).** Use the **latest** completed 3-obj run,
+     which is `t0102_seedscale_n4_gen20`. Pick the top 5 Pareto cells by joint rank; for each
+     cell render a 2-panel mini-figure: polar tuning curve + morphology schematic. The 57-cell
+     morphology grid in `t0098_visualise_pareto_morphologies/results/images/`
+     `morphology_grid_57cells.png` (from `t0091`) is a useful reference for layout style.
+   * **DSI + PD (2-objective NSGA-II).** Deferred. The latest 2-obj run is `t0104` which is
+     still `in_progress`. Add a placeholder slide in the deck noting the deferral, and create
+     a follow-up suggestion in `results/suggestions.json` to render this panel once `t0104`
+     completes. Do **not** depend on `t0104` in `task.json`.
+
+### Deliverables
+
+* `results/images/<figure_name>.png` — one PNG per figure (figures 1-7 above).
+* `results/preliminary_figures_slides.pptx` — PowerPoint deck generated via `python-pptx`, one
+  figure per slide, with concise caption and source-task citation in slide notes. Beamer is
+  not used.
+* `results/results_detailed.md` — full writeup embedding every PNG with
+  `![desc](images/...png)` syntax, listing data provenance per figure and noting the deferred
+  DSI+PD panel.
+* `results/results_summary.md` — 2-3 paragraph summary suitable as a presentation abstract.
+* Standard bookkeeping: `results/metrics.json`, `results/costs.json` (zero),
+  `results/remote_machines_used.json` (empty), `results/suggestions.json` (must include a
+  follow-up to render the DSI+PD optim panel after `t0104` completes).
+
+### Out of scope
+
+* No new NEURON simulations.
+* No new optimisation runs.
+* No re-derivation of biophysical parameters; every quoted parameter must cite a
+  `code/<file>:<line>` from a dependency task (typically via `t0070`'s already-audited table).
+* No changes to any other task folder.
+
+## Approach
+
+1. **Inventory existing PNGs and CSVs** in each dependency task's `results/` folder.
+2. **Reuse PNGs verbatim** when their content already matches a figure spec (e.g., the
+   t0065/t0066 three-mode overlays for figure 5).
+3. **Replot from underlying CSV** when composition or unification is needed (e.g., joint
+   bed-A/bed-B comparison panels, top-5 Pareto cells).
+4. **Render HH equations** with matplotlib mathtext (`r"$C_m \frac{dV}{dt} = -\sum_i I_i
+   ...$"`) to PNG.
+5. **Generate the slide deck** with `python-pptx`, embedding each PNG and adding the
+   source-task citation as a slide note.
+6. Run `uv run flowmark --inplace --nobackup` on `results_detailed.md` and
+   `results_summary.md` before commit.
+
+## Expected outputs
+
+Listed under Deliverables above. No new typed assets (`expected_assets: {}`), so a `TF-W005`
+warning is expected and acceptable — this is a presentation-prep task whose outputs live
+entirely in `results/`.
+
+## Stages
+
+* `research-code` — inventory dependency tasks' `results/` (which PNGs reusable, which CSVs
+  need replotting); confirm the t0046 PSP-vs-angle CSV exists.
+* `planning` — finalise the slide order and the per-figure layout (which PNGs reused, which
+  recomposed, axis-unification rules).
+* `implementation` — render PNGs, compose panels, build `.pptx`.
+* `analysis` — verify every figure matches its spec and every source citation is correct.
+* `reporting` — write `results_detailed.md` and `results_summary.md`; add the deferred-panel
+  suggestion.
+
+## Compute and budget
+
+* Local Windows workstation. No remote machines. No paid APIs.
+* Time estimate: 2-4 hours total (mostly figure composition + slide assembly).
+* Budget: $0.
+
+## Dependencies
+
+Listed in `task.json`. Every dependency is needed because the task **reads from its results**.
+None is a "process" dependency. `t0104_nsga2_2obj_dsi_pdrate_3seeds` is **not** a dependency —
+the DSI+PD panel is deferred per user instruction.
+
+## Risks and fallbacks
+
+| # | Risk | Detection | Fallback |
+| --- | --- | --- | --- |
+| 1 | Bed B has no multi-direction synaptic-current data; polar tuning for figure 4 is undefined. | `t0066/results/` has only PD/ND traces, no per-angle CSV. | Render a two-point polar (PD vs ND) for Bed B and label clearly; do not simulate. |
+| 2 | HH equation PNG rendering with matplotlib mathtext loses Greek typesetting fidelity vs. the t0071 LaTeX PDF. | Visual inspection shows broken glyphs or fallback fonts. | Switch to `text.usetex=True` (requires LaTeX install) or vector-render via tikz and rasterise. Document the rendering choice in `results_detailed.md`. |
+| 3 | The 57-cell morphology grid in `t0098` uses an older 68-d slice; top-5 selection from `t0102` may need its own renderer. | `t0102` Pareto morphology PNGs do not exist as a 5-cell subset. | Reuse the `t0098` plotting code (`code/`) on `t0102`'s Pareto JSON to render a fresh 5-cell mini-grid. |
+| 4 | `t0104` completes during this task and the user wants the DSI+PD panel inline rather than as a follow-up. | User intervention. | Drop the deferred-panel placeholder, add `t0104` as a dependency in a correction or in a follow-up task — do not modify this task once started. |
+| 5 | `python-pptx` is not in `pyproject.toml`. | `uv sync` doesn't bring it. | Add it to `pyproject.toml` (top-level tooling file change is allowed) before implementation. |
+
+## Verification criteria
+
+* `results_summary.md` and `results_detailed.md` exist and pass `verify_task_results`.
+* Every PNG referenced in `results_detailed.md` exists under `results/images/`.
+* Each figure's caption cites at least one `code/<file>:<line>` or
+  `tasks/<dep_task_id>/results/<file>` for provenance.
+* The slide deck `results/preliminary_figures_slides.pptx` exists and opens in PowerPoint
+  (smoke-check by `python-pptx` round-trip).
+* `results/suggestions.json` contains a follow-up suggestion to render the DSI+PD optim panel
+  after `t0104` completes.
+* All standard verificators pass.
+
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0105_preliminary_figures_report"
+> date_completed: "2026-05-13"
+> status: "complete"
+> ---
+> **Results Summary: Preliminary-Data Figure Pack and Slide Deck**
+>
+> **Summary**
+>
+> Produced a coherent preliminary-data figure pack covering seven figure groups for the DSGC
+> modelling
+> project: HH equations, per-bed conductance density tables, two morphologies, polar synaptic
+> DSI
+> (two-point), somatic Vm three-mode overlays, channel-effect-on-DSI sweep, and the top-5
+> Pareto cells
+> from the 3-objective NSGA-II run `t0102_seedscale_n4_gen20`. All 10 PNGs land in
+> `results/images/`
+> and the 11-slide `preliminary_figures_slides.pptx` deck embeds every PNG with caption +
+> source-task
+> citation. The 2-objective DSI+PD Pareto panel is deferred (a placeholder slide and a
+> follow-up
+> suggestion record the gap). Cost: $0; no remote machines.
+>
+> **Metrics**
+>
+
+</details>
 
 <details>
 <summary>✅ 0103 — <strong>Extract direction-selective cell data from Baden et al.

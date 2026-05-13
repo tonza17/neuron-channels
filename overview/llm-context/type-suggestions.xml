@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-12T21:04:11Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-13T22:49:37Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>426805</char_count>
-    <byte_count>426967</byte_count>
-    <estimated_tokens>106701</estimated_tokens>
+    <char_count>431316</char_count>
+    <byte_count>431478</byte_count>
+    <estimated_tokens>107829</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -410,9 +410,13 @@
         <id>S-0103-06</id>
         <id>S-0103-07</id>
         <id>S-0103-08</id>
+        <id>S-0105-01</id>
+        <id>S-0105-02</id>
+        <id>S-0105-03</id>
+        <id>S-0105-04</id>
       </source_ids>
       <content>
-Suggestions: 393
+Suggestions: 397
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4825,6 +4829,50 @@ Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell
 Date added: 2026-05-12
 
 t0103 extracted DSI and OSI per cell for 1,238 DS cells across 8 Baden DS groups (DSI mean ~0.40-0.46, max ~0.73-0.76, OSI mean ~0.15-0.20). The NSGA-II Pareto fronts from t0091/t0099/t0102 currently lack a biological null distribution to compare DSI/OSI against -- they are evaluated only against the t0024 canonical reference. Build a small task that produces a per-Baden-group DSI/OSI empirical CDF chart, overlays the Pareto-front DSI/OSI distributions, and reports the percentile of each Pareto cell relative to its presumed Baden cluster. This is a cheap, high-value sanity check on whether the optimised cells fall inside the biological envelope. Recommended task types: data-analysis, comparative-analysis.
+
+## Render figure 7b -- 5-cell DSI+PD 2-obj NSGA-II Pareto panel from t0104 once t0104 completes
+ID: S-0105-01
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0105_preliminary_figures_report
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-05-13
+
+REQ-9 (REQ-DEFERRED-PANEL) of t0105 was deferred because t0104_nsga2_2obj_dsi_pdrate_3seeds was still in_progress. Once t0104 reaches status completed, render the figure-7 counterpart (top-5 Pareto cells under DSI+PD 2-objective NSGA-II) using the same selection rule as figure 7a: filter pd_rate_hz &gt;= 5.0 to drop silenced spurious-Pareto-anchor cells, then pick the top 5 by joint Pareto rank, and render a 2-panel mini-figure per cell (morphology schematic + two-point polar tuning). Append the rendered panel as a new slide in t0105&#x27;s preliminary_figures_slides.pptx via a follow-up task (do not mutate t0105 -- create a new task or a correction overlay). Reuse the renderer in tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py and read pareto-front JSON from tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/. Priority: medium-high because it gates presentation/report completeness. Recommended task types: data-analysis.
+
+## Multi-angle synaptic-current protocol on Bed A and Bed B for a true polar synaptic tuning curve
+ID: S-0105-02
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0105_preliminary_figures_report
+Categories: direction-selectivity, synaptic-integration, compartmental-modeling
+Date added: 2026-05-13
+
+Figure 4 of t0105 had to fall back to a two-point polar (PD at 0 deg, ND at 180 deg) because neither t0046 (Bed A) nor t0066 (Bed B) recorded synaptic currents at intermediate stimulus angles. Run an EPSC + IPSC peak-amplitude protocol at the standard 12-angle grid for both beds (re-using the bar-stimulus generator from t0046 / t0066), record AMPA + NMDA + GABA peak conductances and peak post-synaptic currents per angle, and save a CSV per bed compatible with the t0011 plot_polar_tuning_curve loader. Output: two new polar plots that replace t0105&#x27;s two-point fallback in any successor figure pack. Recommended task types: experiment-run.
+
+## Promote the t0098 morphology renderer (with t0100 vector_68d[54:] slice fix) into a reusable library asset
+ID: S-0105-03
+Status: active
+Priority: medium
+Kind: library
+Source task: t0105_preliminary_figures_report
+Categories: compartmental-modeling, dendritic-computation
+Date added: 2026-05-13
+
+Figure 7 in t0105 had to copy the morphology renderer code from tasks/t0098_visualise_pareto_morphologies/code/build_charts.py into tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py with the vector_68d[54:] morphology-slice fix from t0100 patched in manually. The t0104 follow-up panel (S-0105-01), and any future optimisation-result report task, will need the same renderer. Package this renderer as a top-level library asset (e.g., dsgc_morphology_renderer) under a host task -- expose a clean Python API (render_morphology(vector_68d, ax) plus a multi-cell grid helper), include the t0100 slice fix as the default behaviour, register a details.json under assets/library/, and document import path tasks.&lt;host_task&gt;.code.dsgc_morphology_renderer. Downstream tasks then import instead of copying. Recommended task types: write-library.
+
+## Add a project-wide python-pptx slide-deck builder library so figure packs reuse a common deck assembler
+ID: S-0105-04
+Status: active
+Priority: medium
+Kind: library
+Source task: t0105_preliminary_figures_report
+Categories: compartmental-modeling
+Date added: 2026-05-13
+
+t0105 introduced python-pptx&gt;=1.0 and implemented tasks/t0105_preliminary_figures_report/code/build_slides.py as a task-local one-figure-per-slide deck assembler with caption + source-task citation in slide notes. Multiple downstream tasks (per-report figure packs, brainstorm decks, t0104 follow-up, future MOBO writeups) will want the same machinery. Package build_slides.py as a reusable library asset under a host task -- expose build_deck(slides: list[SlideSpec], output_path: Path) and a SlideSpec dataclass (image_path, caption, notes, layout), register a details.json under assets/library/, and document the import path. Downstream tasks then call the library instead of re-implementing python-pptx layout per task. Recommended task types: write-library.
       </content>
     </section>
   </sections>

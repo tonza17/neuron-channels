@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-84 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **67 open** (14
-high, 48 medium, 5 low), **17 closed**.
+85 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **68 open** (14
+high, 49 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1262,6 +1262,32 @@ rebuilt for each follow-up task. Promote it to a library asset under
 `plot_attribution_figures(cell_id)`. Pure refactor; no new compute. Cost ~$0. Will accelerate
 follow-ups S-0084-01 / S-0084-02 / S-0084-03 / S-0084-05. Recommended task types:
 write-library, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0098 morphology renderer (with t0100 vector_68d[54:]
+slice fix) into a reusable library asset</strong> (S-0105-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-03` |
+| **Kind** | library |
+| **Date added** | 2026-05-13 |
+| **Source task** | [`t0105_preliminary_figures_report`](../../../overview/tasks/task_pages/t0105_preliminary_figures_report.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Figure 7 in t0105 had to copy the morphology renderer code from
+tasks/t0098_visualise_pareto_morphologies/code/build_charts.py into
+tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py with the vector_68d[54:]
+morphology-slice fix from t0100 patched in manually. The t0104 follow-up panel (S-0105-01),
+and any future optimisation-result report task, will need the same renderer. Package this
+renderer as a top-level library asset (e.g., dsgc_morphology_renderer) under a host task --
+expose a clean Python API (render_morphology(vector_68d, ax) plus a multi-cell grid helper),
+include the t0100 slice fix as the default behaviour, register a details.json under
+assets/library/, and document import path tasks.<host_task>.code.dsgc_morphology_renderer.
+Downstream tasks then import instead of copying. Recommended task types: write-library.
 
 </details>
 

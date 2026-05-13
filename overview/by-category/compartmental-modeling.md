@@ -6,7 +6,7 @@ Biophysical simulation of neurons split into discrete cable compartments.
 
 **Detail pages**: [Papers (45)](../papers/by-category/compartmental-modeling.md) | [Answers
 (20)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(319)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(323)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (14)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (4)](../predictions/by-category/compartmental-modeling.md)
@@ -2892,7 +2892,84 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (284 open, 35 closed)
+## Suggestions (288 open, 35 closed)
+
+<details>
+<summary>📊 <strong>Render figure 7b -- 5-cell DSI+PD 2-obj NSGA-II Pareto panel
+from t0104 once t0104 completes</strong> (S-0105-01)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../../tasks/t0105_preliminary_figures_report/)
+
+REQ-9 (REQ-DEFERRED-PANEL) of t0105 was deferred because t0104_nsga2_2obj_dsi_pdrate_3seeds
+was still in_progress. Once t0104 reaches status completed, render the figure-7 counterpart
+(top-5 Pareto cells under DSI+PD 2-objective NSGA-II) using the same selection rule as figure
+7a: filter pd_rate_hz >= 5.0 to drop silenced spurious-Pareto-anchor cells, then pick the top
+5 by joint Pareto rank, and render a 2-panel mini-figure per cell (morphology schematic +
+two-point polar tuning). Append the rendered panel as a new slide in t0105's
+preliminary_figures_slides.pptx via a follow-up task (do not mutate t0105 -- create a new task
+or a correction overlay). Reuse the renderer in
+tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py and read pareto-front JSON
+from tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/. Priority: medium-high because it
+gates presentation/report completeness. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-angle synaptic-current protocol on Bed A and Bed B for a
+true polar synaptic tuning curve</strong> (S-0105-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../../tasks/t0105_preliminary_figures_report/)
+
+Figure 4 of t0105 had to fall back to a two-point polar (PD at 0 deg, ND at 180 deg) because
+neither t0046 (Bed A) nor t0066 (Bed B) recorded synaptic currents at intermediate stimulus
+angles. Run an EPSC + IPSC peak-amplitude protocol at the standard 12-angle grid for both beds
+(re-using the bar-stimulus generator from t0046 / t0066), record AMPA + NMDA + GABA peak
+conductances and peak post-synaptic currents per angle, and save a CSV per bed compatible with
+the t0011 plot_polar_tuning_curve loader. Output: two new polar plots that replace t0105's
+two-point fallback in any successor figure pack. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Promote the t0098 morphology renderer (with t0100 vector_68d[54:]
+slice fix) into a reusable library asset</strong> (S-0105-03)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../../tasks/t0105_preliminary_figures_report/)
+
+Figure 7 in t0105 had to copy the morphology renderer code from
+tasks/t0098_visualise_pareto_morphologies/code/build_charts.py into
+tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py with the vector_68d[54:]
+morphology-slice fix from t0100 patched in manually. The t0104 follow-up panel (S-0105-01),
+and any future optimisation-result report task, will need the same renderer. Package this
+renderer as a top-level library asset (e.g., dsgc_morphology_renderer) under a host task --
+expose a clean Python API (render_morphology(vector_68d, ax) plus a multi-cell grid helper),
+include the t0100 slice fix as the default behaviour, register a details.json under
+assets/library/, and document import path tasks.<host_task>.code.dsgc_morphology_renderer.
+Downstream tasks then import instead of copying. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a project-wide python-pptx slide-deck builder library so
+figure packs reuse a common deck assembler</strong> (S-0105-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../../tasks/t0105_preliminary_figures_report/)
+
+t0105 introduced python-pptx>=1.0 and implemented
+tasks/t0105_preliminary_figures_report/code/build_slides.py as a task-local
+one-figure-per-slide deck assembler with caption + source-task citation in slide notes.
+Multiple downstream tasks (per-report figure packs, brainstorm decks, t0104 follow-up, future
+MOBO writeups) will want the same machinery. Package build_slides.py as a reusable library
+asset under a host task -- expose build_deck(slides: list[SlideSpec], output_path: Path) and a
+SlideSpec dataclass (image_path, caption, notes, layout), register a details.json under
+assets/library/, and document the import path. Downstream tasks then call the library instead
+of re-implementing python-pptx layout per task. Recommended task types: write-library.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Fix DSI vector-sum objective: gate by minimum total spike count

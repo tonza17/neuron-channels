@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (49)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(97)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(98)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2730,7 +2730,24 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (86 open, 11 closed)
+## Suggestions (87 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Multi-angle synaptic-current protocol on Bed A and Bed B for a
+true polar synaptic tuning curve</strong> (S-0105-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
+[t0105_preliminary_figures_report](../../tasks/t0105_preliminary_figures_report/)
+
+Figure 4 of t0105 had to fall back to a two-point polar (PD at 0 deg, ND at 180 deg) because
+neither t0046 (Bed A) nor t0066 (Bed B) recorded synaptic currents at intermediate stimulus
+angles. Run an EPSC + IPSC peak-amplitude protocol at the standard 12-angle grid for both beds
+(re-using the bar-stimulus generator from t0046 / t0066), record AMPA + NMDA + GABA peak
+conductances and peak post-synaptic currents per angle, and save a CSV per bed compatible with
+the t0011 plot_polar_tuning_curve loader. Output: two new polar plots that replace t0105's
+two-point fallback in any successor figure pack. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Constrained channel-only NSGA-II on fixed t0093 morphology to
