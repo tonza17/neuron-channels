@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Inventory dependency tasks' results/ folders (which PNGs reusable, which CSVs need replotting), locate t0046 PSP-vs-angle CSV, identify Pareto top-5 selection logic in t0091/t0098/t0102.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-13T21:53:33Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,

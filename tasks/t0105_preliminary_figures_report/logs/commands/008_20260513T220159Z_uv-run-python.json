@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0105_preliminary_figures_report",
+  "command": "uv run python -m arf.scripts.verificators.verify_research_code t0105_preliminary_figures_report",
+  "exit_code": 0,
+  "duration_seconds": 0.393,
+  "started_at": "2026-05-13T22:01:59Z",
+  "completed_at": "2026-05-13T22:01:59Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0105_preliminary_figures_report",
+  "stdout_file": "008_20260513T220159Z_uv-run-python.stdout.txt",
+  "stderr_file": "008_20260513T220159Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}
