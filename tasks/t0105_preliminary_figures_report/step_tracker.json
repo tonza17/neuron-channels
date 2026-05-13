@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Finalise per-figure layout, slide order, axis-unification rules, and the .pptx assembly strategy.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-13T22:04:05Z",
-      "completed_at": null,
+      "completed_at": "2026-05-13T22:13:50Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
