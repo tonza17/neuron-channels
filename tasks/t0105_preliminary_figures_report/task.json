@@ -1,0 +1,31 @@
+{
+  "spec_version": 4,
+  "task_id": "t0105_preliminary_figures_report",
+  "task_index": 105,
+  "name": "Preliminary-data figure pack and slide deck for report",
+  "short_description": "Compile preliminary-data figures (HH equations PNG, conductance table, morphologies, polar synaptic DSI, somatic Vm passive/active, channel-effect-on-DSI, 5-cell optim panels) into PNGs + .pptx deck.",
+  "long_description_file": "task_description.md",
+  "status": "in_progress",
+  "dependencies": [
+    "t0008_port_modeldb_189347",
+    "t0011_response_visualization_library",
+    "t0024_port_de_rosenroll_2026_dsgc",
+    "t0046_reproduce_poleg_polsky_2016_exact",
+    "t0065_t0020_epsp_ipsp_vm_protocol",
+    "t0066_t0024_epsp_ipsp_vm_protocol",
+    "t0067_t0065_soma_channel_addition_sweep",
+    "t0068_t0067_nav16_kv3_coexpression_rescue",
+    "t0069_t0067_ais_localised_channel_sweep",
+    "t0070_writeup_two_model_beds",
+    "t0091_morphology_extended_nsga2_v1",
+    "t0098_visualise_pareto_morphologies",
+    "t0102_seedscale_n4_gen20"
+  ],
+  "start_time": "2026-05-13T21:45:23Z",
+  "end_time": null,
+  "expected_assets": {},
+  "task_types": [
+    "data-analysis"
+  ],
+  "source_suggestion": null
+}
