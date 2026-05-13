@@ -1,0 +1,3 @@
+[t0105] ==== rendering figure 1: HH equations ====
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig01_hh_equations.png
+[t0105] ==== rendering figure 2: conductance tables ====

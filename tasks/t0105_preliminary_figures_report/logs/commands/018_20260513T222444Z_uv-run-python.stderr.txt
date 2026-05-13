@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\main.py", line 123, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\main.py", line 110, in main
+    render_channel_effect.main()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\render_channel_effect.py", line 184, in main
+    render_channel_effect()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\render_channel_effect.py", line 136, in render_channel_effect
+    soma_conds: list[SweepCondition] = _load_sweep(json_path=pth.T0067_DSI_JSON)
+                                       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\render_channel_effect.py", line 44, in _load_sweep
+    parsed: SweepFile = _SWEEP_FILE_ADAPTER.validate_json(
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        json_data=json_path.read_bytes(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: TypeAdapter.validate_json() got an unexpected keyword argument 'json_data'

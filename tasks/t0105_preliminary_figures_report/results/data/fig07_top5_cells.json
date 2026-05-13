@@ -1,0 +1,46 @@
+{
+  "spec_version": "1",
+  "source_seeds": [
+    44,
+    55
+  ],
+  "filter_pd_rate_min_hz": 5.0,
+  "selection_rule": "joint rank (ascending) on negated objectives (dsi_vector_sum, pd_rate_hz, robustness)",
+  "cells": [
+    {
+      "cell_id": 19,
+      "seed": 55,
+      "dsi_vector_sum": 0.01622133040053583,
+      "pd_rate_hz": 41.42857142857143,
+      "robustness": 0.9847382782150292
+    },
+    {
+      "cell_id": 16,
+      "seed": 55,
+      "dsi_vector_sum": 0.022295894756352633,
+      "pd_rate_hz": 37.142857142857146,
+      "robustness": 0.9655146915706952
+    },
+    {
+      "cell_id": 14,
+      "seed": 55,
+      "dsi_vector_sum": 0.023575364723561136,
+      "pd_rate_hz": 29.28571428571429,
+      "robustness": 0.9770557618814568
+    },
+    {
+      "cell_id": 21,
+      "seed": 44,
+      "dsi_vector_sum": 0.032650822491865544,
+      "pd_rate_hz": 45.892857142857146,
+      "robustness": 0.912324712121164
+    },
+    {
+      "cell_id": 22,
+      "seed": 55,
+      "dsi_vector_sum": 0.015898199154530338,
+      "pd_rate_hz": 50.17857142857143,
+      "robustness": 0.9642708361871615
+    }
+  ]
+}

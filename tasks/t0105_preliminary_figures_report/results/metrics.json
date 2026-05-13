@@ -1,0 +1,74 @@
+{
+  "variants": [
+    {
+      "variant_id": "pareto-cell-19-seed55",
+      "label": "t0102 Pareto cell 19 (seed 55) -- DSI=0.016, PD=41.43Hz",
+      "dimensions": {
+        "source_task": "t0102_seedscale_n4_gen20",
+        "pareto_seed": 55,
+        "cell_id": 19,
+        "pd_rate_hz": 41.42857142857143,
+        "robustness": 0.9847382782150292
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.01622133040053583
+      }
+    },
+    {
+      "variant_id": "pareto-cell-16-seed55",
+      "label": "t0102 Pareto cell 16 (seed 55) -- DSI=0.022, PD=37.14Hz",
+      "dimensions": {
+        "source_task": "t0102_seedscale_n4_gen20",
+        "pareto_seed": 55,
+        "cell_id": 16,
+        "pd_rate_hz": 37.142857142857146,
+        "robustness": 0.9655146915706952
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.022295894756352633
+      }
+    },
+    {
+      "variant_id": "pareto-cell-14-seed55",
+      "label": "t0102 Pareto cell 14 (seed 55) -- DSI=0.024, PD=29.29Hz",
+      "dimensions": {
+        "source_task": "t0102_seedscale_n4_gen20",
+        "pareto_seed": 55,
+        "cell_id": 14,
+        "pd_rate_hz": 29.28571428571429,
+        "robustness": 0.9770557618814568
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.023575364723561136
+      }
+    },
+    {
+      "variant_id": "pareto-cell-21-seed44",
+      "label": "t0102 Pareto cell 21 (seed 44) -- DSI=0.033, PD=45.89Hz",
+      "dimensions": {
+        "source_task": "t0102_seedscale_n4_gen20",
+        "pareto_seed": 44,
+        "cell_id": 21,
+        "pd_rate_hz": 45.892857142857146,
+        "robustness": 0.912324712121164
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.032650822491865544
+      }
+    },
+    {
+      "variant_id": "pareto-cell-22-seed55",
+      "label": "t0102 Pareto cell 22 (seed 55) -- DSI=0.016, PD=50.18Hz",
+      "dimensions": {
+        "source_task": "t0102_seedscale_n4_gen20",
+        "pareto_seed": 55,
+        "cell_id": 22,
+        "pd_rate_hz": 50.17857142857143,
+        "robustness": 0.9642708361871615
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.015898199154530338
+      }
+    }
+  ]
+}

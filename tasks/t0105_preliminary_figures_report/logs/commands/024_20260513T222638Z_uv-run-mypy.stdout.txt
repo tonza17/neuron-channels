@@ -1,0 +1,2 @@
+tasks\t0105_preliminary_figures_report\code\build_slides.py: error: Source file found twice under different module names: "t0105_preliminary_figures_report.code.build_slides" and "tasks.t0105_preliminary_figures_report.code.build_slides"
+Found 1 error in 1 file (errors prevented further checking)

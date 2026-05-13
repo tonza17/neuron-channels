@@ -5,7 +5,7 @@
   "name": "Preliminary-data figure pack and slide deck for report",
   "short_description": "Compile preliminary-data figures (HH equations PNG, conductance table, morphologies, polar synaptic DSI, somatic Vm passive/active, channel-effect-on-DSI, 5-cell optim panels) into PNGs + .pptx deck.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0008_port_modeldb_189347",
     "t0011_response_visualization_library",
@@ -22,7 +22,7 @@
     "t0102_seedscale_n4_gen20"
   ],
   "start_time": "2026-05-13T21:45:23Z",
-  "end_time": null,
+  "end_time": "2026-05-13T22:44:12Z",
   "expected_assets": {},
   "task_types": [
     "data-analysis"

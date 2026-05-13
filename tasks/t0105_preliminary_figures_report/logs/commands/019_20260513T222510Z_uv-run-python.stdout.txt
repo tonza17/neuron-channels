@@ -1,0 +1,33 @@
+[t0105] ==== rendering figure 1: HH equations ====
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig01_hh_equations.png
+[t0105] ==== rendering figure 2: conductance tables ====
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig02_conductance_table_bed_a.png
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig02_conductance_table_bed_b.png
+[t0105] ==== rendering figure 3: morphology PNGs (copy) ====
+[t0105] copied -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig03_bed_a_morphology.png
+[t0105] copied -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig03_bed_b_morphology.png
+[t0105] ==== rendering figure 4: two-point polar synaptic ====
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig04_polar_synaptic_bed_a.png
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig04_polar_synaptic_bed_b.png
+[t0105] ==== rendering figure 5: three-mode overlays ====
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig05_three_mode_overlays.png
+[t0105] ==== rendering figure 6: channel-effect-on-DSI ====
+[t0105] channel-effect DSI ranges: soma=[-0.18,0.82] rescue=[0.23,0.80] ais=[0.22,1.00]
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig06_channel_effect_on_dsi.png
+[t0105] ==== rendering figure 7: top-5 Pareto cells ====
+[t0105] loaded 60 Pareto cells across seeds 44 + 55
+[t0105] top 5 cells after pd_rate>=5.0:
+  cell=19 seed=55 dsi=0.016 pd=41.43Hz rob=0.985
+  cell=16 seed=55 dsi=0.022 pd=37.14Hz rob=0.966
+  cell=14 seed=55 dsi=0.024 pd=29.29Hz rob=0.977
+  cell=21 seed=44 dsi=0.033 pd=45.89Hz rob=0.912
+  cell=22 seed=55 dsi=0.016 pd=50.18Hz rob=0.964
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\images\fig07_top5_pareto_3obj.png
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\data\fig07_top5_cells.json
+[t0105] ==== sanity check ====
+[t0105] sanity check OK -- 10 PNGs >= 5000 bytes
+[t0105] ==== writing metrics.json ====
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\metrics.json (5 variants)
+[t0105] ==== building slide deck ====
+[t0105] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\results\preliminary_figures_slides.pptx -- 11 slides
+[t0105] ==== DONE ====
