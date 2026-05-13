@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0105_preliminary_figures_report branch from main and worktree.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-13T21:47:38Z",
-      "completed_at": null,
+      "completed_at": "2026-05-13T21:50:02Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
