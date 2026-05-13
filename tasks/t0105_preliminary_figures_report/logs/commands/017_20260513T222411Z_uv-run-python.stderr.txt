@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\main.py", line 123, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\main.py", line 102, in main
+    render_conductance_table.main()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\render_conductance_table.py", line 356, in main
+    render_conductance_tables()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\render_conductance_table.py", line 343, in render_conductance_tables
+    _render_table_png(
+    ~~~~~~~~~~~~~~~~~^
+        title=f"Conductance audit: {cst.BED_A_LABEL}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        rows=BED_A_ROWS,
+        ^^^^^^^^^^^^^^^^
+        out_png=pth.FIG02_TABLE_BED_A_PNG,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\code\render_conductance_table.py", line 324, in _render_table_png
+    cell.set_width(width=width)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: Rectangle.set_width() got an unexpected keyword argument 'width'

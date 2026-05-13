@@ -68,10 +68,10 @@
       "step": 8,
       "name": "implementation",
       "description": "Render the 7 figures as PNGs under results/images/; assemble preliminary_figures_slides.pptx via python-pptx.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-13T22:14:17Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\008_implementation/"
     },
     {
       "step": 9,

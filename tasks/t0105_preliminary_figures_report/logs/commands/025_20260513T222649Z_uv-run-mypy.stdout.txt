@@ -1,0 +1,31 @@
+tasks\t0105_preliminary_figures_report\code\build_slides.py:171: error: Unused "type: ignore" comment  [unused-ignore]
+tasks\t0105_preliminary_figures_report\code\build_slides.py:281: error: Argument 1 to "int" has incompatible type "Length | None"; expected "str | Buffer | SupportsInt | SupportsIndex | SupportsTrunc"  [arg-type]
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:31: error: Library stubs not installed for "scipy.stats"  [import-untyped]
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:31: note: Hint: "python3 -m pip install scipy-stubs"
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:47: error: Unused "type: ignore" comment  [unused-ignore]
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:53: error: Unused "type: ignore" comment  [unused-ignore]
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:53: error: Module "tasks.t0090_morphology_generator_diversity_test.code.generator" does not explicitly export attribute "ensure_t80_dll_loaded"  [attr-defined]
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:53: note: Error code "attr-defined" not covered by "type: ignore" comment
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:242: error: Name "plt.Axes" is not defined  [name-defined]
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:246: error: Argument "segments" to "LineCollection" has incompatible type "ndarray[tuple[Any, ...], dtype[Any]]"; expected "Sequence[Buffer | _SupportsArray[dtype[Any]] | _NestedSequence[_SupportsArray[dtype[Any]]] | complex | bytes | str | _NestedSequence[complex | bytes | str]]"  [arg-type]
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:254: error: Argument "segments" to "LineCollection" has incompatible type "ndarray[tuple[Any, ...], dtype[Any]]"; expected "Sequence[Buffer | _SupportsArray[dtype[Any]] | _NestedSequence[_SupportsArray[dtype[Any]]] | complex | bytes | str | _NestedSequence[complex | bytes | str]]"  [arg-type]
+tasks\t0105_preliminary_figures_report\code\render_pareto_top5.py:297: error: Name "plt.Axes" is not defined  [name-defined]
+tasks\t0105_preliminary_figures_report\code\render_channel_effect.py:43: error: Name "pth.Path" is not defined  [name-defined]
+tasks\t0105_preliminary_figures_report\code\render_channel_effect.py:52: error: Name "plt.Axes" is not defined  [name-defined]
+tasks\t0105_preliminary_figures_report\code\render_channel_effect.py:103: error: Name "plt.Axes" is not defined  [name-defined]
+tasks\t0105_preliminary_figures_report\code\render_three_mode_overlays.py:15: error: Library stubs not installed for "pandas"  [import-untyped]
+tasks\t0105_preliminary_figures_report\code\render_three_mode_overlays.py:17: error: Library stubs not installed for "pandas.api.extensions"  [import-untyped]
+tasks\t0105_preliminary_figures_report\code\render_three_mode_overlays.py:31: error: Type argument "object" of "dtype" must be a subtype of "generic[Any]"  [type-var]
+tasks\t0105_preliminary_figures_report\code\render_three_mode_overlays.py:38: error: Type argument "object" of "dtype" must be a subtype of "generic[Any]"  [type-var]
+tasks\t0105_preliminary_figures_report\code\render_three_mode_overlays.py:109: error: Name "plt.Axes" is not defined  [name-defined]
+tasks\t0105_preliminary_figures_report\code\render_polar_synaptic.py:23: error: Library stubs not installed for "pandas"  [import-untyped]
+tasks\t0105_preliminary_figures_report\code\render_polar_synaptic.py:26: error: Library stubs not installed for "pandas.api.extensions"  [import-untyped]
+tasks\t0105_preliminary_figures_report\code\render_polar_synaptic.py:26: note: Hint: "python3 -m pip install pandas-stubs"
+tasks\t0105_preliminary_figures_report\code\render_polar_synaptic.py:26: note: (or run "mypy --install-types" to install all missing stub packages)
+tasks\t0105_preliminary_figures_report\code\render_polar_synaptic.py:26: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+tasks\t0105_preliminary_figures_report\code\render_polar_synaptic.py:41: error: Type argument "object" of "dtype" must be a subtype of "generic[Any]"  [type-var]
+tasks\t0105_preliminary_figures_report\code\render_polar_synaptic.py:48: error: Type argument "object" of "dtype" must be a subtype of "generic[Any]"  [type-var]
+tasks\t0105_preliminary_figures_report\code\render_conductance_table.py:304: error: Name "pth.Path" is not defined  [name-defined]
+tasks\t0105_preliminary_figures_report\code\render_hh_equations.py:50: error: Name "plt.Axes" is not defined  [name-defined]
+tasks\t0105_preliminary_figures_report\code\main.py:36: error: Name "pth.Path" is not defined  [name-defined]
+Found 25 errors in 8 files (checked 11 source files)
