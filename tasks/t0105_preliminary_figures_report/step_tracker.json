@@ -113,9 +113,9 @@
       "step": 13,
       "name": "reporting",
       "description": "Run all verificators; capture sessions; set task.json status=completed and end_time; push branch and open PR.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-13T22:43:23Z",
-      "completed_at": null,
+      "completed_at": "2026-05-13T22:44:58Z",
       "log_file": "logs\\steps\\013_reporting/"
     }
   ]
