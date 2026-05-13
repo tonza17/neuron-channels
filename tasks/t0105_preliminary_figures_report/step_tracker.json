@@ -104,9 +104,9 @@
       "step": 12,
       "name": "suggestions",
       "description": "Write suggestions.json including the deferred DSI+PD-optim panel follow-up (after t0104 completes).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-13T22:38:14Z",
-      "completed_at": null,
+      "completed_at": "2026-05-13T22:43:07Z",
       "log_file": "logs\\steps\\012_suggestions/"
     },
     {
