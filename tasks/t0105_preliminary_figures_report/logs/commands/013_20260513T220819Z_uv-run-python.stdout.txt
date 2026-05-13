@@ -1,0 +1,10 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_preliminary_figures_report\tasks\t0105_preliminary_figures_report\plan\plan.md
+
+[33m[1mWARNINGS:[0m
+[33m  PL-W005 warning: '## Verification Criteria' has 0 bullet points (minimum: 3)[0m
+[33m  PL-W006 warning: '## Task Requirement Checklist' does not appear to contain structured `REQ-*` checklist items[0m
+[33m  PL-W007 warning: '## Step by Step' does not reference any `REQ-*` items[0m
+[33m  PL-W009 warning: Step by Step mentions orchestrator-managed files: results_summary.md, results_detailed.md, costs.json, suggestions.json, compare_literature.md. The plan should cover only implementation work — results writing, suggestions, and compare-literature are orchestrator steps managed by execute-task[0m
+
+[33m[1mPASSED[0m — 0 error(s), 4 warning(s)
