@@ -94,11 +94,11 @@
     {
       "step": 11,
       "name": "creative-thinking",
-      "description": "Out-of-the-box analysis: per-seed DSI-distribution comparison vs t0102 3-obj front; alternative interpretations of joint-pass yield; flag any unexpected anchor-near clusters.",
-      "status": "pending",
+      "description": "Skipped. Out-of-the-box analysis was integrated directly into results_detailed.md (seed 55 gen 8 HV breakthrough; seed 44 vs seed 55 exploration regime contrast; DSI=0.54 cell as substrate-non-cap proof).",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/011_creative-thinking/"
     },
     {
       "step": 12,
