@@ -1,0 +1,7 @@
+CONNECTED
+4e4f47c81d5b
+Linux 4e4f47c81d5b 6.8.0-111-generic #111~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 14 17:13:45 UTC  x86_64 GNU/Linux
+root
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"

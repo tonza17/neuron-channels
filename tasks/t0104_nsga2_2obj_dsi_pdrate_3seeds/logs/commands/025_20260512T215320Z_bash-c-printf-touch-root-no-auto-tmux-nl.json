@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "bash -c printf 'touch /root/.no_auto_tmux\\nls -la /root/.no_auto_tmux\\nexit\\n' | ssh -tt -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=20 -i /c/Users/md1avn/.ssh/id_ed25519 -p 15796 root@ssh9.vast.ai",
+  "exit_code": 0,
+  "duration_seconds": 4.115,
+  "started_at": "2026-05-12T21:53:20Z",
+  "completed_at": "2026-05-12T21:53:24Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "025_20260512T215320Z_bash-c-printf-touch-root-no-auto-tmux-nl.stdout.txt",
+  "stderr_file": "025_20260512T215320Z_bash-c-printf-touch-root-no-auto-tmux-nl.stderr.txt",
+  "stdout_lines": 64,
+  "stderr_lines": 4,
+  "truncated": false
+}

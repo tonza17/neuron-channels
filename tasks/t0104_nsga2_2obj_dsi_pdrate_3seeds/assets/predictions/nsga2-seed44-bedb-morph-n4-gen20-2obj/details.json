@@ -1,0 +1,49 @@
+{
+  "spec_version": "2",
+  "predictions_id": "nsga2-seed44-bedb-morph-n4-gen20-2obj",
+  "name": "NSGA-II seed=44 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init, 2-objective DSI+PD, DSI silence guard)",
+  "short_description": "All per-cell NSGA-II evaluations from t0104 random-init seed=44 (1152 cells across 12 generations) on the 68-d Bed B + morphology DSGC substrate at N_EVAL_SEEDS=4, n_obj=2 (DSI + PD-rate; robustness dropped from selection per REQ-2). The DSI silence guard from S-0102-01 is active: cells with total mean spikes across the 16 directions below 10 are forced to DSI = 0.0.",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "Compartmental DSGC neuron model with the t0092-patched procedural morphology generator (canonical via correction C-0093-01) and the 54-d Bed B electrophys parameter vector applied via t0080's apply_parameter_vector. Each cell is evaluated with 16 stimulus directions x 4 noise replicates; NSGA-II minimises the negated pair (DSI vector-sum, PD-rate) — robustness is computed per cell but does NOT enter NSGA-II selection in t0104 (REQ-2). The DSI silence guard (REQ-3) clamps DSI to 0.0 when the cell's total mean spikes across directions fall below 10, eliminating the t0102 silence-corner artifact.",
+  "dataset_ids": [],
+  "prediction_format": "jsonl",
+  "prediction_schema": "Each line is a JSON object with fields: generation (int, NSGA-II generation this cell was evaluated at; 1 = initial LHS population), vector_68d (list of 68 floats, the 54-d electrophys + 14-d morphology parameter vector), dsi_vector_sum (float in [0, 1], vector-sum direction selectivity index; guard-cleaned per REQ-3 so values of 0.0 may either be real or guard-floor), pd_rate_hz (float, preferred-direction mean firing rate in Hz), joint_pass (bool, true iff dsi_vector_sum >= 0.5 AND pd_rate_hz >= 30 — the t0104 2-axis strict criterion).",
+  "instance_count": 1152,
+  "metrics_at_creation": {
+    "n_generations_completed": 12,
+    "n_cells": 1152,
+    "max_dsi": 0.40725524513608247,
+    "max_pd_rate_hz": 75.0,
+    "n_joint_pass": 0,
+    "n_at_guard_floor": 25,
+    "hypervolume_final": 2.854543785086947,
+    "final_cost_usd": 4.694470022747195
+  },
+  "files": [
+    {
+      "path": "files/predictions-seed44.jsonl",
+      "description": "Per-cell NSGA-II evaluation log for t0104 seed=44 (1152 cells).",
+      "format": "jsonl"
+    }
+  ],
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "retinal-ganglion-cell",
+    "dendritic-computation"
+  ],
+  "source_paper_ids": [],
+  "source_task_ids": [
+    "t0024_port_de_rosenroll_2026_dsgc",
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0090_morphology_generator_diversity_test",
+    "t0091_morphology_extended_nsga2_v1",
+    "t0092_diagnose_morphology_generator_silence",
+    "t0093_resweep_and_t0090_correction",
+    "t0099_random_init_pareto_robustness",
+    "t0102_seedscale_n4_gen20"
+  ],
+  "created_by_task": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "date_created": "2026-05-12"
+}

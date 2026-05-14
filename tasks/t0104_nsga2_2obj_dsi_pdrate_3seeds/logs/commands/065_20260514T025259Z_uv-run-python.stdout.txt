@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0104_nsga2_2obj_dsi_pdrate_3seeds\tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\results
+
+[31m[1mERRORS:[0m
+[31m  TR-E020 error: ## Examples section contains no fenced code blocks — examples must show actual inputs and outputs in code blocks[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

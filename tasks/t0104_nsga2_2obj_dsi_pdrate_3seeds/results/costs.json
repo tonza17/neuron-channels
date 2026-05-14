@@ -1,0 +1,22 @@
+{
+  "total_cost_usd": 10.30,
+  "breakdown": {
+    "vast-ai-seed44-productive": {
+      "description": "Vast.ai instance 36645796 productive NSGA-II compute for seed 44 (12 generations completed before per-seed cost watchdog trip).",
+      "cost_usd": 4.69
+    },
+    "vast-ai-seed55-productive": {
+      "description": "Vast.ai instance 36645796 productive NSGA-II compute for seed 55 (11 generations completed; researcher-initiated early stop after seed 55 — seed 66 skipped).",
+      "cost_usd": 4.19
+    },
+    "vast-ai-setup-smoke-idle": {
+      "description": "Vast.ai instance 36645796 non-productive uptime: provisioning, remote smoke gate, between-seed pool restart, and the ~5 minute idle window before researcher-initiated teardown.",
+      "cost_usd": 1.42
+    }
+  },
+  "services": {
+    "vast_ai": 10.30
+  },
+  "budget_limit": 15.0,
+  "note": "Researcher elected early stop after seed 55 (intervention/early_stop_after_seed_55.md); seed 66 launcher was killed before auto-start. Total spend $10.30 vs the planned $10-12 envelope at the $15 hard per-task cap. Instance hourly rate $0.3481/hr at provisioning drifted slightly during the run; the 28.66h x effective rate ~ $0.3578/hr produces the recorded total."
+}

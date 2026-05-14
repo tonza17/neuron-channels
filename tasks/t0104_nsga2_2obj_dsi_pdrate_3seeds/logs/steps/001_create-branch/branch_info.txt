@@ -1,0 +1,5 @@
+branch: task/t0104_nsga2_2obj_dsi_pdrate_3seeds
+base_branch: main
+base_commit: 489bbd94
+worktree_path: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0104_nsga2_2obj_dsi_pdrate_3seeds
+created_at: 2026-05-12T21:20:38Z

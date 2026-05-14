@@ -1,0 +1,1 @@
+There are no .py[i] files in directory 'tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\code'

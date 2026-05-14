@@ -1,0 +1,140 @@
+{
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0104_nsga2_2obj_dsi_pdrate_3seeds worktree and plan step list (15 canonical steps; research-papers and research-internet skipped because this task forks t0102 verbatim and needs no new external literature).",
+      "status": "completed",
+      "started_at": "2026-05-12T21:20:38Z",
+      "completed_at": "2026-05-12T21:22:34Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify all 6 dependency tasks (t0024, t0080, t0090, t0093, t0099, t0102) are completed and their code/assets are reusable.",
+      "status": "completed",
+      "started_at": "2026-05-12T21:22:57Z",
+      "completed_at": "2026-05-12T21:23:52Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task folder structure including assets/predictions and assets/answer subdirs for the 3 predictions + 1 answer asset.",
+      "status": "completed",
+      "started_at": "2026-05-12T21:24:11Z",
+      "completed_at": "2026-05-12T21:25:05Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped. This task forks t0102 verbatim with one objective dropped and one bug-fix; no new paper-level literature review is needed beyond what t0102 already covered.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped. No new external information is required; the substrate, NSGA-II driver, and DSI-guard rationale are all internal to the project.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Audit t0102 evaluator.py and nsga2_driver.py to identify exact lines to patch for n_obj=2 and the DSI-silence guard; review t0086 anchor utilities used in analysis.",
+      "status": "completed",
+      "started_at": "2026-05-12T21:26:03Z",
+      "completed_at": "2026-05-12T21:33:12Z",
+      "log_file": "logs\\steps\\006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Produce plan/plan.md with the 11 mandatory sections, REQ-1..REQ-N including REQ on DSI-guard unit test and idle-teardown wiring, and the cost / risk / verification matrix.",
+      "status": "completed",
+      "started_at": "2026-05-12T21:33:32Z",
+      "completed_at": "2026-05-12T21:40:36Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Provision one Vast.ai EPYC 7B13 64-core Norway instance matching t0102 spec ($0.24/hr target); SCP code; verify smoke gate at N_EVAL_SEEDS=4 with DSI-guard active.",
+      "status": "completed",
+      "started_at": "2026-05-12T21:46:47Z",
+      "completed_at": "2026-05-12T21:57:39Z",
+      "log_file": "logs\\steps\\008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Run NSGA-II three times (seeds 44, 55, 66) at pop=96, gens=20, N_EVAL_SEEDS=4, n_obj=2 on the 68-d substrate; pull predictions back; build 3 predictions assets.",
+      "status": "completed",
+      "started_at": "2026-05-12T21:58:15Z",
+      "completed_at": "2026-05-14T03:00:01Z",
+      "log_file": "logs\\steps\\009_implementation/"
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Destroy Vast.ai instance within 5 minutes of last seed completion; record final cost in costs.json and remote_machines_used.json; run verify_machines_destroyed.",
+      "status": "completed",
+      "started_at": "2026-05-14T03:00:55Z",
+      "completed_at": "2026-05-14T03:02:06Z",
+      "log_file": "logs\\steps\\010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped. Out-of-the-box analysis was integrated directly into results_detailed.md (seed 55 gen 8 HV breakthrough; seed 44 vs seed 55 exploration regime contrast; DSI=0.54 cell as substrate-non-cap proof).",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; embed plots (HV curves, DSI vs PD scatter per seed, anchor distribution) in results/images/.",
+      "status": "completed",
+      "started_at": "2026-05-14T03:03:10Z",
+      "completed_at": "2026-05-14T03:03:54Z",
+      "log_file": "logs\\steps\\012_results/"
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare 2-objective Pareto front against t0102 3-obj front in the (DSI, PD) plane; against t0099 N=20 baseline; quantify DSI-guard impact on the silenced-cell corner.",
+      "status": "completed",
+      "started_at": "2026-05-14T03:04:10Z",
+      "completed_at": "2026-05-14T03:05:06Z",
+      "log_file": "logs\\steps\\013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions; check duplicates against t0102 S-0102-* and t0101 S-0101-* backlog.",
+      "status": "completed",
+      "started_at": "2026-05-14T03:05:28Z",
+      "completed_at": "2026-05-14T03:06:21Z",
+      "log_file": "logs\\steps\\014_suggestions/"
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture session transcripts, set task.json status=completed and end_time, prepare PR.",
+      "status": "completed",
+      "started_at": "2026-05-14T03:06:38Z",
+      "completed_at": "2026-05-14T03:08:58Z",
+      "log_file": "logs\\steps\\015_reporting/"
+    }
+  ]
+}

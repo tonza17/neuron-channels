@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "uv run vastai create instance 36157135 --image python:3.12-bookworm --ssh --disk 40 --raw",
+  "exit_code": 0,
+  "duration_seconds": 2.318,
+  "started_at": "2026-05-12T21:51:24Z",
+  "completed_at": "2026-05-12T21:51:26Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "019_20260512T215124Z_uv-run-vastai.stdout.txt",
+  "stderr_file": "019_20260512T215124Z_uv-run-vastai.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

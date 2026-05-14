@@ -1,0 +1,64 @@
+Linux 4e4f47c81d5b 6.8.0-111-generic #111~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 14 17:13:45 UTC  x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+no sessions
+[?1049h[22;0;0t[?1h=[H[2J[?12l[?25h[?1000l[?1002l[?1003l[?1006l[?1005l(B[m[?12l[?25h[?1006l[?1000l[?1002l[?1003l[?2004l[1;1H[1;24r[>c[>q[1;1H[?25l[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[30m[42m
+[ssh_tmux]0:bash*                                 "4e4f47c81d5b" 21:53 12-May-26(B[m[?12l[?25h[1;1H(B[m[?12l[?25h[?1006l[?1000l[?1002l[?1003l[?2004l[1;1H[1;24r[1;1H[?25l[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[30m[42m
+[ssh_tmux]0:bash*                                 "4e4f47c81d5b" 21:53 12-May-26(B[m[?12l[?25h[1;1HWelcome to your vast.ai container! This session is running in `tmux`.
+To disconnect without closing your processes, press ctrl+b, release, then d.
+To disable auto-tmux, run `touch ~/.no_auto_tmux` and reconnect. See also https://tmuxcheatsheet.com/
+[34m[1mroot[39m@[36mC.36645796[39m:[37m~$(B[m [?2004h[?25l[30m[42m[24;1H[ssh_tmux]0:bash*                           "root@C.36645796: ~" 21:53 12-May-26(B[m[?12l[?25h[5;20Htouch /root/.no_auto_tmux
+[?2004l[34m[1mroot[39m@[36mC.36645796[39m:[37m~$(B[m [?2004hls -la /root/.no_auto_tmux
+[?2004l[?25l[?12l[?25h-rw-r--r-- 1 root root 0 May 12 21:53 /root/.no_auto_tmux
+[34m[1mroot[39m@[36mC.36645796[39m:[37m~$(B[m exit
+logout
+[?25l[?12l[?25h[1;0r(B[m[?1l>[H[2J[?12l[?25h[?1000l[?1002l[?1003l[?1006l[?1005l[?7727l[?1004l[?1049l[23;0;0t[exited]

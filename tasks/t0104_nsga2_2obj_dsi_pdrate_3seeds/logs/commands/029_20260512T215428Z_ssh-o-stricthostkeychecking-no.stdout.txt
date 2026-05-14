@@ -1,0 +1,12 @@
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+uv 0.11.14 (x86_64-unknown-linux-gnu)
+Using CPython 3.12.13 interpreter at: /usr/local/bin/python3.12
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+/root/t0104_workdir/.venv/bin/python
+Python 3.12.13
+DONE_UV

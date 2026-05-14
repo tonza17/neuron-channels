@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_tasks --format json --detail full --ids t0102_seedscale_n4_gen20 t0099_random_init_pareto_robustness t0093_resweep_and_t0090_correction t0086_robustness_cluster_bio_comparison t0090_morphology_generator_diversity_test t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+  "exit_code": 1,
+  "duration_seconds": 0.942,
+  "started_at": "2026-05-12T21:27:59Z",
+  "completed_at": "2026-05-12T21:28:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "006_20260512T212759Z_uv-run-python.stdout.txt",
+  "stderr_file": "006_20260512T212759Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 13,
+  "truncated": false
+}

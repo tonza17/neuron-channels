@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "uv run vastai show instances --raw",
+  "exit_code": 0,
+  "duration_seconds": 2.095,
+  "started_at": "2026-05-12T21:51:54Z",
+  "completed_at": "2026-05-12T21:51:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "020_20260512T215154Z_uv-run-vastai.stdout.txt",
+  "stderr_file": "020_20260512T215154Z_uv-run-vastai.stderr.txt",
+  "stdout_lines": 123,
+  "stderr_lines": 0,
+  "truncated": false
+}

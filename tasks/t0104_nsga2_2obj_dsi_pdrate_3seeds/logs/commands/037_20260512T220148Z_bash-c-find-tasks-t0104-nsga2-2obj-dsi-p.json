@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "bash -c find tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/ -type f \\( -name '*.py' -o -name '*.sh' \\) -print0 | xargs -0 sed -i 's/T0102_SEEDS/T0104_SEEDS/g; s/T0102_HARD_BUDGET_PER_SEED_USD/T0104_HARD_BUDGET_PER_SEED_USD/g; s/T0102_TASK_BUDGET_TOTAL_USD/T0104_TASK_BUDGET_TOTAL_USD/g; s/T0102_HARD_BUDGET_USD/T0104_HARD_BUDGET_USD/g'",
+  "exit_code": 0,
+  "duration_seconds": 0.89,
+  "started_at": "2026-05-12T22:01:48Z",
+  "completed_at": "2026-05-12T22:01:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "037_20260512T220148Z_bash-c-find-tasks-t0104-nsga2-2obj-dsi-p.stdout.txt",
+  "stderr_file": "037_20260512T220148Z_bash-c-find-tasks-t0104-nsga2-2obj-dsi-p.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

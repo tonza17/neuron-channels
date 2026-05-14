@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -o ConnectTimeout=30 -i C:/Users/md1avn/.ssh/id_ed25519 -p 15796 root@ssh9.vast.ai set -e; apt-get update -qq 2>&1 | tail -5; DEBIAN_FRONTEND=noninteractive apt-get install -y -qq curl git build-essential gfortran libncurses5-dev libssl-dev libreadline-dev libbz2-dev libffi-dev ca-certificates rsync tmux 2>&1 | tail -5; echo DONE_APT",
+  "exit_code": 0,
+  "duration_seconds": 6.469,
+  "started_at": "2026-05-12T21:54:12Z",
+  "completed_at": "2026-05-12T21:54:19Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "028_20260512T215412Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "028_20260512T215412Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 2,
+  "truncated": false
+}

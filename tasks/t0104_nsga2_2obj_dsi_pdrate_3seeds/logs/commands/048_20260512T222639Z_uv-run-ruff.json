@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "uv run ruff check --fix tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/per_seed_analysis.py",
+  "exit_code": 1,
+  "duration_seconds": 0.22,
+  "started_at": "2026-05-12T22:26:39Z",
+  "completed_at": "2026-05-12T22:26:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "048_20260512T222639Z_uv-run-ruff.stdout.txt",
+  "stderr_file": "048_20260512T222639Z_uv-run-ruff.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 0,
+  "truncated": false
+}

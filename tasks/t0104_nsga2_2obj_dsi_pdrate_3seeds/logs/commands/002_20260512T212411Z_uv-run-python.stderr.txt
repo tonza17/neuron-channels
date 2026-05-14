@@ -1,0 +1,1 @@
+Error: --step-log-dir must be inside tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/. Got: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0104_nsga2_2obj_dsi_pdrate_3seeds\tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\logs\steps\003_init-folders

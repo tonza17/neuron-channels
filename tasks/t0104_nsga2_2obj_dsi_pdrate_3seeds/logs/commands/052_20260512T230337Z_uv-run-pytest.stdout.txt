@@ -1,0 +1,13 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0104_nsga2_2obj_dsi_pdrate_3seeds\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0104_nsga2_2obj_dsi_pdrate_3seeds
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 3 items
+
+tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/test_evaluator_dsi_guard.py::test_all_silent_returns_dsi_zero PASSED [ 33%]
+tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/test_evaluator_dsi_guard.py::test_near_silent_returns_dsi_zero PASSED [ 66%]
+tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/test_evaluator_dsi_guard.py::test_firing_positive_control_returns_nonzero PASSED [100%]
+
+============================== 3 passed in 0.47s ==============================

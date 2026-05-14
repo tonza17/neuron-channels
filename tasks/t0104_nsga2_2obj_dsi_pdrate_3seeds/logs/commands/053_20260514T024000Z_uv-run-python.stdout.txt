@@ -1,0 +1,5 @@
+[build_predictions_assets] start at 2026-05-14T02:40:00.841780+00:00
+[build_predictions_assets] seed=44 id=nsga2-seed44-bedb-morph-n4-gen20-2obj cells=1152 gens=12 max_dsi=0.4073 max_pd=75.00 joint_pass=0 floor=25 hv_final=2.8545 cost=$4.6945
+[build_predictions_assets] seed=55 id=nsga2-seed55-bedb-morph-n4-gen20-2obj cells=1056 gens=11 max_dsi=0.5417 max_pd=65.00 joint_pass=0 floor=22 hv_final=7.5935 cost=$4.1874
+[build_predictions_assets] skipping seed=66 — all_evaluations_seed66.json not present
+[build_predictions_assets] DONE. total_joint_pass=0

@@ -1,0 +1,12 @@
+F821 Undefined name `STRICT_ROBUSTNESS_THRESHOLD`
+  --> tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\code\per_seed_analysis.py:71:31
+   |
+69 |             "dsi_min": STRICT_DSI_THRESHOLD,
+70 |             "pd_rate_hz_min": STRICT_PD_RATE_HZ_THRESHOLD,
+71 |             "robustness_min": STRICT_ROBUSTNESS_THRESHOLD,
+   |                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+72 |         },
+73 |     }
+   |
+
+Found 1 error.

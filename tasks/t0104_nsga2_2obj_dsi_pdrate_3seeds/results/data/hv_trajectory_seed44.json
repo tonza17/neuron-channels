@@ -1,0 +1,88 @@
+{
+  "trajectory": [
+    {
+      "generation": 1,
+      "hypervolume": 0.3384585717194082,
+      "cumulative_cost_usd": 0.08727554371797222,
+      "elapsed_s": 902.591087,
+      "n_evaluations": 0
+    },
+    {
+      "generation": 2,
+      "hypervolume": 0.5456224396425171,
+      "cumulative_cost_usd": 0.22263574295297223,
+      "elapsed_s": 2302.466747,
+      "n_evaluations": 96
+    },
+    {
+      "generation": 3,
+      "hypervolume": 0.6423364413488525,
+      "cumulative_cost_usd": 0.39055425037597225,
+      "elapsed_s": 4039.055735,
+      "n_evaluations": 192
+    },
+    {
+      "generation": 4,
+      "hypervolume": 0.8800821407191479,
+      "cumulative_cost_usd": 0.5759893750970277,
+      "elapsed_s": 5956.799053,
+      "n_evaluations": 288
+    },
+    {
+      "generation": 5,
+      "hypervolume": 1.2095043158932905,
+      "cumulative_cost_usd": 0.8156847622383334,
+      "elapsed_s": 8435.69418,
+      "n_evaluations": 384
+    },
+    {
+      "generation": 6,
+      "hypervolume": 1.2437212358351422,
+      "cumulative_cost_usd": 1.1620333264834444,
+      "elapsed_s": 12017.581084,
+      "n_evaluations": 480
+    },
+    {
+      "generation": 7,
+      "hypervolume": 1.4825515558355595,
+      "cumulative_cost_usd": 1.5618300167033057,
+      "elapsed_s": 16152.220799,
+      "n_evaluations": 576
+    },
+    {
+      "generation": 8,
+      "hypervolume": 1.640084628422091,
+      "cumulative_cost_usd": 2.0268847823399723,
+      "elapsed_s": 20961.750119,
+      "n_evaluations": 672
+    },
+    {
+      "generation": 9,
+      "hypervolume": 1.8716171245956166,
+      "cumulative_cost_usd": 2.576026201066639,
+      "elapsed_s": 26640.891479,
+      "n_evaluations": 768
+    },
+    {
+      "generation": 10,
+      "hypervolume": 1.8732793457452992,
+      "cumulative_cost_usd": 3.1969082908264723,
+      "elapsed_s": 33061.964513,
+      "n_evaluations": 864
+    },
+    {
+      "generation": 11,
+      "hypervolume": 2.2252787140587844,
+      "cumulative_cost_usd": 3.9024858752738614,
+      "elapsed_s": 40358.946139,
+      "n_evaluations": 960
+    },
+    {
+      "generation": 12,
+      "hypervolume": 2.854543785086947,
+      "cumulative_cost_usd": 4.694470022747195,
+      "elapsed_s": 48549.531979,
+      "n_evaluations": 1056
+    }
+  ]
+}

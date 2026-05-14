@@ -1,0 +1,4 @@
+total 1.9M
+-rw-r--r-- 1 md1avn 1049089 3.6K May 12 23:12 machine_log.tar.gz
+-rw-r--r-- 1 md1avn 1049089 936K May 12 23:10 t0104_code.tar.gz
+-rw-r--r-- 1 md1avn 1049089 989K May 12 23:13 t0104_code_v2.tar.gz

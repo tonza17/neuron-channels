@@ -1,0 +1,30 @@
+{
+  "spec_version": "2",
+  "answer_id": "t0104-joint-pass-recovery-2obj",
+  "question": "Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard applied) recover joint-pass cells where t0102's 3-objective run found zero?",
+  "short_title": "2-objective NSGA-II joint-pass recovery test",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1371_journal.pcbi.1012039",
+    "10.48550_arXiv.2306.04525",
+    "10.48550_arXiv.2401.14014"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0091_morphology_extended_nsga2_v1",
+    "t0099_random_init_pareto_robustness",
+    "t0102_seedscale_n4_gen20"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "date_created": "2026-05-14"
+}

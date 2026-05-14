@@ -1,0 +1,104 @@
+{
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "step": "009_implementation",
+  "status": "in_progress",
+  "started_at": "2026-05-12T22:19:43Z",
+  "vast_instance_id": "36645796",
+  "vast_hourly_rate_usd": 0.3481,
+  "remote_workdir": "/root/t0104_workdir/neuron-channels",
+  "local_code_prep": {
+    "status": "done",
+    "files_under_t0104_code": 33,
+    "patches_applied": [
+      "evaluator.py: SILENCE_SPIKE_COUNT_THRESHOLD=10 constant (REQ-3)",
+      "evaluator.py: _summarise_trials silence guard between lines 308-325 (REQ-3)",
+      "evaluator.py: n_obj 3 -> 2 at line 455 (REQ-1)",
+      "evaluator.py: F-row dropped robustness at lines 471/477 (REQ-2)",
+      "nsga2_driver.py: HV ref point shrunk to [0, 0] (REQ-4)",
+      "nsga2_driver.py: dropped 'robustness' from _save_iteration and Pareto dump (REQ-5)",
+      "nsga2_driver.py: dropped HV_UTOPIA_ROBUSTNESS import and config entry (REQ-6)",
+      "nsga2_driver.py: try/finally around run_nsga2_for_seed with --teardown-on-watchdog (REQ-8)",
+      "constants.py: T0104_SEEDS=(44, 55, 66), TASK_BUDGET=$12.00 (REQ-9, REQ-11)",
+      "cost_watchdog.py: T0104_HARD_BUDGET_USD=$4.00 (REQ-11), text refers to t0104",
+      "test_evaluator_dsi_guard.py: 3 tests pass locally and remotely (REQ-7)"
+    ],
+    "unit_tests": "3 passed locally and 3 passed remotely",
+    "ruff_check": "All checks passed!",
+    "mypy": "skipped per project mypy.exclude pattern for tasks/*/code/"
+  },
+  "remote_setup": {
+    "status": "done",
+    "tarball_uploaded": "/root/t0104_workdir/t0104_code_v2.tar.gz",
+    "extracted_to": "/root/t0104_workdir/neuron-channels",
+    "machine_log_at": "tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/logs/steps/008_setup-machines/machine_log.json",
+    "t0080_mods_compiled": "tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/libnrnmech.so",
+    "t0024_mods_compiled": "tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/libnrnmech.so",
+    "pytest_installed_via": "uv pip install --python .venv/bin/python pytest",
+    "init_populations": [
+      "init_pop_seed44.json (96, 68)",
+      "init_pop_seed55.json (96, 68)",
+      "init_pop_seed66.json (96, 68)"
+    ],
+    "one_cell_smoke": "PASS: DSI=0.0 PD=0.71 Hz elapsed=178.3s n_err=0"
+  },
+  "nsga2_runs": {
+    "seed_44": {
+      "status": "running",
+      "tmux_session": "t0104_seed44",
+      "launched_at": "2026-05-12T22:19:43Z",
+      "restarted_at": "2026-05-12T23:00:00Z",
+      "stdout_log": "tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/logs/steps/009_implementation/seed44_stdout.log",
+      "flags": "--save-algorithm-config",
+      "design_note": "Initially launched with --teardown-on-watchdog but that would have destroyed the instance when watchdog tripped after gen ~14, preventing seeds 55/66. Restarted at 23:00 UTC without the teardown flag. Lost first 38 min of progress on gen 1 (just completed at 906s elapsed)."
+    },
+    "seed_55": {
+      "status": "pending",
+      "launcher_session": "t0104_launcher",
+      "launcher_log": "/root/t0104_workdir/launcher.log",
+      "flags": "(launched without --teardown-on-watchdog)"
+    },
+    "seed_66": {
+      "status": "pending",
+      "launcher_session": "t0104_launcher",
+      "launcher_log": "/root/t0104_workdir/launcher.log",
+      "flags": "(launched without --teardown-on-watchdog)"
+    }
+  },
+  "remote_orchestration": {
+    "launcher_script": "/root/t0104_workdir/launch_after_seed44.sh",
+    "launcher_tmux": "t0104_launcher",
+    "design": "Launcher polls every 60s for seed N pareto file or tmux end, then launches the next seed. All seeds run WITHOUT --teardown-on-watchdog so a single per-seed watchdog trip does not destroy the Vast.ai instance prematurely. Final instance teardown is handled by the destroy-machines orchestrator step.",
+    "design_evolution": [
+      "v1: --teardown-on-watchdog on all seeds. Defect: kills instance after seed 44 watchdog trip.",
+      "v2: --teardown-on-watchdog on seed 66 only. Defect: seed 44 still ran with the flag from the initial manual launch.",
+      "v3 (current): no teardown flag on any seed. The seed 44 process was killed and restarted at 23:00 UTC."
+    ]
+  },
+  "expected_timing": {
+    "per_seed_estimate_hours": "6-8",
+    "all_three_seeds_estimate_hours": "20-24",
+    "t0102_seed44_baseline_seconds_gen1": 870,
+    "t0102_seed44_baseline_seconds_gen2": 1471,
+    "t0102_seed44_terminated_at_gen": 14,
+    "t0102_seed44_total_hours": 5.6
+  },
+  "asset_folder_state": {
+    "predictions": [
+      "nsga2-seed44-bedb-morph-n4-gen20-2obj (folder + files/ subdir pre-created; details.json + description.md + JSONL pending data sync from remote)",
+      "nsga2-seed55-bedb-morph-n4-gen20-2obj (folder + files/ subdir pre-created; details.json + description.md + JSONL pending data sync from remote)",
+      "nsga2-seed66-bedb-morph-n4-gen20-2obj (folder + files/ subdir pre-created; details.json + description.md + JSONL pending data sync from remote)"
+    ],
+    "answer": [
+      "t0104-joint-pass-recovery-2obj (folder pre-created; details.json + short_answer.md + full_answer.md pending after data lands)"
+    ]
+  },
+  "next_orchestrator_steps": [
+    "Wait for seeds 44, 55, 66 to finish on Vast.ai instance 36645796 (tmux sessions t0104_seed44, t0104_seed55, t0104_seed66; launcher tmux is t0104_launcher running launch_after_seed44.sh).",
+    "Pull results back from /root/t0104_workdir/neuron-channels/tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/ via scp/sync_results_back.sh.",
+    "Run build_predictions_assets to populate the 3 predictions asset folders.",
+    "Run per_seed_analysis and cross_seed_analysis to compute metrics and charts.",
+    "Write the answer asset addressing 'Does 2-objective NSGA-II recover joint-pass cells?'",
+    "Compute results/metrics.json in multi-variant format (seed44/seed55/seed66).",
+    "Run destroy-machines step to destroy Vast.ai instance 36645796."
+  ]
+}

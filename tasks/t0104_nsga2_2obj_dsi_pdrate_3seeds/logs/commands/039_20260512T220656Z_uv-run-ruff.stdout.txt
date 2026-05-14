@@ -1,0 +1,11 @@
+E501 Line too long (101 > 100)
+  --> tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\code\build_predictions_assets.py:10:101
+   |
+ 8 | ``meta/asset_types/predictions/specification.md`` (v2).
+ 9 |
+10 | Run with ``uv run python -m tasks.t0104_nsga2_2obj_dsi_pdrate_3seeds.code.build_predictions_assets``.
+   |                                                                                                     ^
+11 | """
+   |
+
+Found 1 error.
