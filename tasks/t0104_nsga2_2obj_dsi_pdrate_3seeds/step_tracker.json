@@ -113,10 +113,10 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare 2-objective Pareto front against t0102 3-obj front in the (DSI, PD) plane; against t0099 N=20 baseline; quantify DSI-guard impact on the silenced-cell corner.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-14T03:04:10Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
       "step": 14,
