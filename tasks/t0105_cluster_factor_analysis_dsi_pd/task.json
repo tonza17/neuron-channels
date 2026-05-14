@@ -5,12 +5,12 @@
   "name": "Cluster + factor analysis of high-DSI/high-PD cells (t0102 + t0104, symmetric vs asymmetric)",
   "short_description": "Pool all cells from t0102 and t0104 with DSI > 0.2 AND PD > 3 Hz, classify by morphological asymmetry, run PCA cluster analysis on intrinsic params, and factor analysis (incl. morphology) on what explains DSI / PD diversity.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0102_seedscale_n4_gen20",
     "t0104_nsga2_2obj_dsi_pdrate_3seeds"
   ],
-  "start_time": null,
+  "start_time": "2026-05-14T12:52:11Z",
   "end_time": null,
   "expected_assets": {
     "answer": 2
