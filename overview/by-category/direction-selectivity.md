@@ -5,11 +5,11 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (47)](../papers/by-category/direction-selectivity.md) | [Answers
-(18)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(270)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(19)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(274)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (3)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
-(4)](../predictions/by-category/direction-selectivity.md)
+(6)](../predictions/by-category/direction-selectivity.md)
 
 ---
 
@@ -2534,7 +2534,27 @@ simulation.
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | completed | 2026-05-12 01:55 |
 
-## Answers (18)
+## Answers (19)
+
+<details>
+<summary><strong>Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard
+applied) recover joint-pass cells where t0102's 3-objective run found
+zero?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-14 | **Full answer**:
+[`t0104-joint-pass-recovery-2obj`](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/assets/answer/t0104-joint-pass-recovery-2obj/)
+
+No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) running the
+2-objective DSI + PD formulation with the silence guard active, zero cells cleared the strict
+joint-pass corner (DSI >= 0.5 AND PD >= 30 Hz). The DSI extreme broke past 0.5 for the first
+time in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, DSI = 0.5417 at PD = 3.57 Hz),
+confirming the substrate is not artificially capped by the silenced-cell DSI=1.0
+floating-point artifact that contaminated t0102's Pareto front. The L-shaped Pareto front
+replicates t0102's exactly — extremes reachable on each axis but the joint corner empirically
+empty — ruling out objective-vector dimensionality as the explanation for the
+substrate-limited reading.
+
+</details>
 
 <details>
 <summary><strong>Does running 68-d NSGA-II at N_EVAL_SEEDS=4 noise replicates,
@@ -2938,7 +2958,87 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (239 open, 31 closed)
+## Suggestions (243 open, 31 closed)
+
+<details>
+<summary>🧪 <strong>Inspect the seed-55 gen-11 DSI=0.54 cell's 68-d parameter vector
+— what makes it work; what would push PD up?</strong> (S-0104-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0104_nsga2_2obj_dsi_pdrate_3seeds](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/)
+
+Seed 55 generation 11 produced the first cell in the t0080-t0104 NSGA-II lineage with DSI
+cleanly above 0.5 (DSI = 0.5417 at PD = 3.57 Hz). Read this cell's 68-d parameter vector from
+assets/predictions/nsga2-seed55-bedb-morph-n4-gen20-2obj/files/predictions-seed55.jsonl
+(cell_id = 6 on the Pareto front). Compare the electrophys 54-d subvector and the 14-d
+morphology subvector against the seed-44 best cell (DSI = 0.4073) and against t0091's reported
+joint-pass anchor at DSI = 0.511 / PD = 35.1 Hz. Identify what biophysical knobs concentrate
+near the high-DSI region of parameter space; perform a one-knob-at-a-time perturbation around
+this cell to see whether a single sodium- or potassium-conductance bump can raise PD without
+collapsing DSI. Recommended task types: data-analysis, experiment-run. Cost: ~$0.50 (no
+NSGA-II, just ~120 evaluations of one-knob perturbations on a single Vast.ai instance for 1-2
+hours).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Inspect the seed-55 gen-8 DSI=0.42 / PD=15 Hz cell's 68-d
+parameter vector — the closest project-best joint trade-off</strong>
+(S-0104-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0104_nsga2_2obj_dsi_pdrate_3seeds](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/)
+
+Seed 55 generation 8 produced the project-best joint trade-off so far: DSI = 0.4192 at PD =
+15.00 Hz. This sits ~15 Hz below the strict joint-pass threshold of 30 Hz and ~0.08 DSI below
+the 0.5 threshold, but is the closest combined-axis cell observed across the full t0080-t0104
+NSGA-II lineage. Read its 68-d vector from the seed-55 predictions JSONL (cell_id = 3 on the
+Pareto front), classify its anchor neighbourhood, and run a 2-knob perturbation grid varying
+the top-2 Cohen's-d-distinguished electrophys knobs from the t0102 silence-vs-firing
+comparison. Outcome: a 2-d grid that estimates the local PD ceiling around this cell's DSI =
+0.4192 plateau. Recommended task types: experiment-run, data-analysis. Cost: ~$1.00 (100-200
+evaluations on Vast.ai, 2-3 hours).
+
+</details>
+
+<details>
+<summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget on Bed B +
+morphology substrate (renews S-0102-03)</strong> (S-0104-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0104_nsga2_2obj_dsi_pdrate_3seeds](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/)
+
+t0104's 0/2,208 random-init joint-pass null with the DSI guard active strengthens the case for
+S-0102-03 (IBEA replacement). NSGA-II crowding-distance selection produced an L-shaped front
+in both t0102 (3-obj) and t0104 (2-obj) on the same substrate, suggesting the selection
+operator itself prefers extreme-corner cells over interior trade-off cells. Mohacsi 2024
+explicitly recommends IBEA as the strongest multi-objective optimiser on neuron-fitting
+problems (six of six benchmarks beat NSGA-II). Port t0104's substrate to pymoo IBEA at matched
+budget (pop = 96, gens = 12, N_EVAL_SEEDS = 4, 2 GA seeds, DSI guard active, n_obj = 2).
+Expected outcome: IBEA's hypervolume-density selection produces an interior-weighted front;
+even if it does not surface a joint-pass cell, it should populate the diagonal region between
+the two corners more densely than NSGA-II did. Cost: ~$8-10 matched to t0104 envelope.
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Targeted morphology sweep around the high-DSI region of the
+seed-55 Pareto front</strong> (S-0104-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
+[t0104_nsga2_2obj_dsi_pdrate_3seeds](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/)
+
+Hold the seed-55 best-DSI cell's 54-d electrophys subvector fixed and sweep the 14-d
+morphology subvector across a Latin-Hypercube sample of ~200 cells, all evaluated at
+N_EVAL_SEEDS = 4 with the DSI guard active. The question: does the high-DSI cell's electrophys
+signature generalise across morphologies, or is the DSI = 0.54 reading specific to one
+parametric tree topology? If DSI stays above 0.4 across most morphologies, the electrophys
+subvector is the lever and morphology is secondary; if DSI collapses, the seed-55 cell is a
+morphology-specific lucky draw. Recommended task types: experiment-run, comparative-analysis.
+Cost: ~$2-3 (200 cells x N=4, no GA overhead, single Vast.ai instance for ~6 hours).
+
+</details>
 
 <details>
 <summary>📊 <strong>Render figure 7b -- 5-cell DSI+PD 2-obj NSGA-II Pareto panel

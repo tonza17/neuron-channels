@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-13T22:49:37Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-14T03:13:56Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>5707</char_count>
-    <byte_count>5707</byte_count>
-    <estimated_tokens>1426</estimated_tokens>
+    <char_count>5855</char_count>
+    <byte_count>5855</byte_count>
+    <estimated_tokens>1463</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,19 +18,22 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $50.00
-Total spent: $35.98
-Budget remaining: $14.02
-Spent: 72.0%
+Total spent: $46.28
+Budget remaining: $3.72
+Spent: 92.6%
 
 ### Cost Breakdown by Category
 
 * vast_ai_nsga2_compute: $8.46
 * vast-ai-cpu-epyc-7b13: $7.42
+* vast-ai-seed44-productive: $4.69
+* vast-ai-seed55-productive: $4.19
 * vast-ai-rtx5060ti: $3.93
 * vast_ai_idle_time: $3.51
 * vast-ai-seed33: $3.41
 * vast_ai_36149741: $2.39
 * vast-ai-seed22: $1.96
+* vast-ai-setup-smoke-idle: $1.42
 * vast-ai-seed11: $1.13
 * vast-ai-quadro-p4000: $1.06
 * vast_ai_36137287: $0.75
@@ -45,7 +48,7 @@ Spent: 72.0%
 
 ### Cost Breakdown by Service
 
-* vast_ai: $28.91
+* vast_ai: $39.21
 * vast_ai_compute: $3.93
 
 ### Per-Task Costs
@@ -145,6 +148,7 @@ Spent: 72.0%
 * t0101_brainstorm_results_21: $0.00
 * t0102_seedscale_n4_gen20: $12.07
 * t0103_extract_baden_2016_ds_morphologies: $0.00
+* t0104_nsga2_2obj_dsi_pdrate_3seeds: $10.30
 * t0105_preliminary_figures_report: $0.00
       </content>
     </section>

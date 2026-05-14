@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-13T22:49:37Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-14T03:13:56Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>1150372</char_count>
-    <byte_count>1155067</byte_count>
-    <estimated_tokens>287593</estimated_tokens>
+    <char_count>1152869</char_count>
+    <byte_count>1157586</byte_count>
+    <estimated_tokens>288217</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -19368,12 +19368,13 @@ with zero errors and zero warnings.
 
 ## 68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20
 ID: t0104_nsga2_2obj_dsi_pdrate_3seeds
-Status: in_progress
-Effective date: 2026-05-12
+Status: completed
+Effective date: 2026-05-14
 Short description: Re-run t0102&#x27;s 68-d NSGA-II with the robustness objective dropped: 3 random-init GA seeds (44/55/66), N_EVAL=4, gens=20, pop=96, DSI-silence guard applied. $15 hard cap.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0093_resweep_and_t0090_correction, t0099_random_init_pareto_robustness, t0102_seedscale_n4_gen20
 Task types: experiment-run, data-analysis, answer-question
 Start time: 2026-05-12T21:18:59Z
+End time: 2026-05-14T03:07:00Z
 
 #### Context
 
@@ -19585,6 +19586,53 @@ One Vast.ai instance matching t0099 / t0102 spec:
 * Lowering the project-wide `N_SEEDS` default in `tasks/t0080_*/code/constants.py` (deferred
   suggestion S-0101-02).
 * Correcting Poleg-Polsky 2026 `summary.md` fabrications (deferred suggestion S-0101-01).
+
+### Results Summary
+
+#### Summary
+
+t0104 ran 2-objective NSGA-II `(DSI, PD-rate)` on the 68-d Bed B + morphology DSGC substrate with
+the new DSI silence guard active. Two random-init GA seeds (44 and 55) completed before the
+researcher elected to stop after seed 55 (intervention file
+`intervention/early_stop_after_seed_55.md`); seed 66 was skipped. Across **2,208** evaluated cells,
+**zero** cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The **DSI extreme
+cleanly broke past 0.5 for the first time** in the t0080-t0104 NSGA-II lineage (seed 55 gen 11,
+**DSI = 0.5417** at PD = 3.57 Hz), confirming the substrate is not artificially capped by the
+silenced-cell DSI=1.0 floating-point artifact that contaminated [t0102]&#x27;s Pareto front. The L-shaped
+Pareto replicates [t0102]&#x27;s structural finding, ruling out objective-vector dimensionality as the
+operative factor.
+
+#### Metrics
+
+* **Total cells evaluated**: **2,208** (1,152 seed 44 + 1,056 seed 55)
+* **Strict joint-pass cells** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz): **0** in both seeds
+* **Best DSI in the lineage** (first non-artifact DSI &gt; 0.5): seed 55 gen 11, **DSI = 0.5417**, PD =
+  3.57 Hz
+* **Best joint trade-off so far**: seed 55 gen 8, **DSI = 0.4192 at PD = 15.00 Hz** (closest cell to
+  the joint corner across t0080-t0104)
+* **Max PD-rate**: seed 44 = **75.00 Hz**, seed 55 = **65.00 Hz** (both with DSI = 0)
+* **Cells at DSI silence-guard floor** (DSI = 0.0 because total spikes &lt; 10): **47 / 2,208 (2.1%)**;
+  zero spurious DSI = 1.0 silenced-cell artifacts (vs 27 in [t0102])
+* **Final hypervolume**: seed 44 = **2.85** (gen 12), seed 55 = **7.59** (gen 11)
+* **Total task cost**: **$10.30** (under the $15 hard cap; under the planned $10-12 envelope)
+
+#### Verification
+
+* `verify_task_file.py` — PASSED (0 errors)
+* `verify_task_dependencies.py` — PASSED
+* `verify_task_metrics.py` — PASSED
+* `verify_task_results.py` — PASSED
+* `verify_task_folder.py` — PASSED
+* `verify_logs.py` — PASSED
+* `verify_suggestions.py` — PASSED (0 errors)
+* `verify_compare_literature.py` — PASSED (0 errors)
+* `verify_machines_destroyed.py` — PASSED (Vast.ai instance 36645796 destroyed at
+  2026-05-14T02:30:00Z)
+* Predictions assets `nsga2-seed44-bedb-morph-n4-gen20-2obj` and
+  `nsga2-seed55-bedb-morph-n4-gen20-2obj` — both PASS predictions verificator
+* Answer asset `t0104-joint-pass-recovery-2obj` — PASS answer verificator
+
+[t0102]: ../../t0102_seedscale_n4_gen20/
 
 ## Preliminary-data figure pack and slide deck for report
 ID: t0105_preliminary_figures_report

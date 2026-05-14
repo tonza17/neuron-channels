@@ -9,13 +9,13 @@ Curated presets that mix content from multiple aggregator types for specific use
 | Preset | Tokens | Best For |
 |---|---:|---|
 | [`project-overview`](project-overview.xml) | 37K | General orientation, quick status questions, and lightweight strategy chats. |
-| [`full`](full.xml) | 597K | Deep project review, comprehensive planning, and long-context synthesis. |
-| [`research-history`](research-history.xml) | 802K | Literature review continuity, methodology discussion, and prior-investigation lookup. |
-| [`results-deep-dive`](results-deep-dive.xml) | 461K | Performance analysis, experiment comparison, and result interpretation. |
-| [`roadmap`](roadmap.xml) | 117K | Deciding what to do next, prioritizing experiments, and planning follow-up work. |
-| [`literature-and-assets`](literature-and-assets.xml) | 64K | Method discussion, resource selection, and related-work chats. |
-| [`qa`](qa.xml) | 137K | Answer review, follow-up questioning, and project knowledge-base chats. |
-| [`project-memory`](project-memory.xml) | 52K | Keeping a durable project memory in medium-size chat sessions. |
+| [`full`](full.xml) | 603K | Deep project review, comprehensive planning, and long-context synthesis. |
+| [`research-history`](research-history.xml) | 811K | Literature review continuity, methodology discussion, and prior-investigation lookup. |
+| [`results-deep-dive`](results-deep-dive.xml) | 468K | Performance analysis, experiment comparison, and result interpretation. |
+| [`roadmap`](roadmap.xml) | 116K | Deciding what to do next, prioritizing experiments, and planning follow-up work. |
+| [`literature-and-assets`](literature-and-assets.xml) | 65K | Method discussion, resource selection, and related-work chats. |
+| [`qa`](qa.xml) | 141K | Answer review, follow-up questioning, and project knowledge-base chats. |
+| [`project-memory`](project-memory.xml) | 53K | Keeping a durable project memory in medium-size chat sessions. |
 
 ## Per-Type Archives
 
@@ -27,9 +27,9 @@ One file per aggregator type with complete untruncated data.
 | [`papers`](type-papers.xml) | 325K | Complete paper corpus with full summaries, metadata, and abstracts. |
 | [`datasets`](type-datasets.xml) | 11K | Complete dataset inventory with full descriptions, access info, and sizes. |
 | [`libraries`](type-libraries.xml) | 65K | Complete library registry with full descriptions, module paths, and entry points. |
-| [`answers`](type-answers.xml) | 111K | Complete question and answer corpus with full answer bodies. |
-| [`suggestions`](type-suggestions.xml) | 108K | Complete suggestion list with full descriptions, priority, and status. |
-| [`predictions`](type-predictions.xml) | 15K | Complete predictions inventory with full descriptions, metrics, and model references. |
+| [`answers`](type-answers.xml) | 115K | Complete question and answer corpus with full answer bodies. |
+| [`suggestions`](type-suggestions.xml) | 110K | Complete suggestion list with full descriptions, priority, and status. |
+| [`predictions`](type-predictions.xml) | 19K | Complete predictions inventory with full descriptions, metrics, and model references. |
 | [`metrics`](type-metrics.xml) | 594 | Complete metric definitions with full descriptions, units, and associated datasets. |
 | [`categories`](type-categories.xml) | 1K | Complete category definitions with full detailed descriptions. |
 | [`task-types`](type-task-types.xml) | 22K | Complete task type definitions with descriptions and instructions. |
@@ -51,8 +51,8 @@ Compact starter context for general project chats.
 * Short label: `overview` (37K)
 * Best for: General orientation, quick status questions, and lightweight strategy chats.
 * File: [`project-overview.xml`](project-overview.xml)
-* Size: 143.5 KiB (146,902 bytes; 146,633 chars)
-* Estimated tokens: 36,658
+* Size: 145.0 KiB (148,467 bytes; 148,192 chars)
+* Estimated tokens: 37,048
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### Included Types
@@ -69,11 +69,11 @@ Compact starter context for general project chats.
 Largest preset with detailed completed-task reports and the full project knowledge base.
 
 * Preset id: `full`
-* Short label: `full` (597K)
+* Short label: `full` (603K)
 * Best for: Deep project review, comprehensive planning, and long-context synthesis.
 * File: [`full.xml`](full.xml)
-* Size: 2338.9 KiB (2,395,031 bytes; 2,386,282 chars)
-* Estimated tokens: 596,570
+* Size: 2365.9 KiB (2,422,641 bytes; 2,413,849 chars)
+* Estimated tokens: 603,462
 * Fits: 1M-class
 
 ### Included Types
@@ -95,12 +95,12 @@ Largest preset with detailed completed-task reports and the full project knowled
 Research-stage documents across completed tasks, plus core project context.
 
 * Preset id: `research-history`
-* Short label: `research` (802K)
+* Short label: `research` (811K)
 * Best for: Literature review continuity, methodology discussion, and prior-investigation
   lookup.
 * File: [`research-history.xml`](research-history.xml)
-* Size: 3140.8 KiB (3,216,227 bytes; 3,208,507 chars)
-* Estimated tokens: 802,126
+* Size: 3173.9 KiB (3,250,082 bytes; 3,242,296 chars)
+* Estimated tokens: 810,574
 * Fits: 1M-class
 
 ### Included Types
@@ -118,11 +118,11 @@ Research-stage documents across completed tasks, plus core project context.
 Completed-task result summaries plus all detailed results reports.
 
 * Preset id: `results-deep-dive`
-* Short label: `results` (461K)
+* Short label: `results` (468K)
 * Best for: Performance analysis, experiment comparison, and result interpretation.
 * File: [`results-deep-dive.xml`](results-deep-dive.xml)
-* Size: 1809.9 KiB (1,853,350 bytes; 1,845,292 chars)
-* Estimated tokens: 461,323
+* Size: 1836.2 KiB (1,880,238 bytes; 1,872,094 chars)
+* Estimated tokens: 468,023
 * Fits: 1M-class
 
 ### Included Types
@@ -140,11 +140,11 @@ Completed-task result summaries plus all detailed results reports.
 Project planning preset centered on upcoming tasks and open suggestions.
 
 * Preset id: `roadmap`
-* Short label: `roadmap` (117K)
+* Short label: `roadmap` (116K)
 * Best for: Deciding what to do next, prioritizing experiments, and planning follow-up work.
 * File: [`roadmap.xml`](roadmap.xml)
-* Size: 459.2 KiB (470,199 bytes; 469,709 chars)
-* Estimated tokens: 117,427
+* Size: 454.4 KiB (465,284 bytes; 464,837 chars)
+* Estimated tokens: 116,209
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### Included Types
@@ -162,11 +162,11 @@ Project planning preset centered on upcoming tasks and open suggestions.
 Paper summaries and reusable project assets without the heaviest task reports.
 
 * Preset id: `literature-and-assets`
-* Short label: `assets` (64K)
+* Short label: `assets` (65K)
 * Best for: Method discussion, resource selection, and related-work chats.
 * File: [`literature-and-assets.xml`](literature-and-assets.xml)
-* Size: 251.1 KiB (257,079 bytes; 256,720 chars)
-* Estimated tokens: 64,180
+* Size: 252.6 KiB (258,644 bytes; 258,279 chars)
+* Estimated tokens: 64,569
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### Included Types
@@ -187,11 +187,11 @@ Paper summaries and reusable project assets without the heaviest task reports.
 Question-centric preset with the full answer corpus and compact project state.
 
 * Preset id: `qa`
-* Short label: `qa` (137K)
+* Short label: `qa` (141K)
 * Best for: Answer review, follow-up questioning, and project knowledge-base chats.
 * File: [`qa.xml`](qa.xml)
-* Size: 536.4 KiB (549,277 bytes; 548,521 chars)
-* Estimated tokens: 137,130
+* Size: 550.4 KiB (563,619 bytes; 562,847 chars)
+* Estimated tokens: 140,711
 * Fits: 200k-class, 1M-class
 
 ### Included Types
@@ -208,11 +208,11 @@ Question-centric preset with the full answer corpus and compact project state.
 Mid-size preset intended as a reusable working memory for ongoing chats.
 
 * Preset id: `project-memory`
-* Short label: `memory` (52K)
+* Short label: `memory` (53K)
 * Best for: Keeping a durable project memory in medium-size chat sessions.
 * File: [`project-memory.xml`](project-memory.xml)
-* Size: 204.2 KiB (209,088 bytes; 208,785 chars)
-* Estimated tokens: 52,196
+* Size: 205.7 KiB (210,653 bytes; 210,344 chars)
+* Estimated tokens: 52,586
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### Included Types
@@ -237,8 +237,8 @@ Complete task data with full descriptions, results summaries, dependencies, and 
 
 * Type id: `tasks`
 * File: [`type-tasks.xml`](type-tasks.xml)
-* Size: 1128.0 KiB (1,155,067 bytes; 1,150,372 chars)
-* Estimated tokens: 287,593
+* Size: 1130.5 KiB (1,157,586 bytes; 1,152,869 chars)
+* Estimated tokens: 288,217
 * Fits: 1M-class
 
 ### All Papers
@@ -277,8 +277,8 @@ Complete question and answer corpus with full answer bodies.
 
 * Type id: `answers`
 * File: [`type-answers.xml`](type-answers.xml)
-* Size: 434.9 KiB (445,342 bytes; 444,831 chars)
-* Estimated tokens: 111,207
+* Size: 448.7 KiB (459,514 bytes; 458,989 chars)
+* Estimated tokens: 114,747
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### All Suggestions
@@ -287,8 +287,8 @@ Complete suggestion list with full descriptions, priority, and status.
 
 * Type id: `suggestions`
 * File: [`type-suggestions.xml`](type-suggestions.xml)
-* Size: 421.4 KiB (431,478 bytes; 431,316 chars)
-* Estimated tokens: 107,829
+* Size: 428.2 KiB (438,476 bytes; 438,310 chars)
+* Estimated tokens: 109,577
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### All Predictions
@@ -297,8 +297,8 @@ Complete predictions inventory with full descriptions, metrics, and model refere
 
 * Type id: `predictions`
 * File: [`type-predictions.xml`](type-predictions.xml)
-* Size: 57.2 KiB (58,575 bytes; 58,539 chars)
-* Estimated tokens: 14,634
+* Size: 73.9 KiB (75,671 bytes; 75,627 chars)
+* Estimated tokens: 18,906
 * Fits: 131k-class, 200k-class, 1M-class
 
 ### All Metrics
@@ -337,6 +337,6 @@ Complete cost breakdown with budget, per-service, and per-task details.
 
 * Type id: `costs`
 * File: [`type-costs.xml`](type-costs.xml)
-* Size: 5.6 KiB (5,707 bytes; 5,707 chars)
-* Estimated tokens: 1,426
+* Size: 5.7 KiB (5,855 bytes; 5,855 chars)
+* Estimated tokens: 1,463
 * Fits: 131k-class, 200k-class, 1M-class

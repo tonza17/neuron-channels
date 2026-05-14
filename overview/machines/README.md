@@ -1,18 +1,18 @@
-# Machine Provisioning (9 machines)
+# Machine Provisioning (10 machines)
 
-**9** machines provisioned across **9** tasks. Total cost: **$35.98**.
+**10** machines provisioned across **10** tasks. Total cost: **$46.28**.
 
-**4** failed provisioning attempts wasted **$0.00** (30.8% failure rate).
+**4** failed provisioning attempts wasted **$0.00** (28.6% failure rate).
 
 ## Summary
 
 | Field | Value |
 |-------|-------|
-| Total machines | 9 |
+| Total machines | 10 |
 | Total failed attempts | 4 |
-| Failure rate | 30.8% |
-| Avg provisioning time | 725s |
-| Total cost | $35.98 |
+| Failure rate | 28.6% |
+| Avg provisioning time | 674s |
+| Total cost | $46.28 |
 | Total wasted cost | $0.00 |
 
 ## Cost by GPU Tier
@@ -20,6 +20,7 @@
 | GPU | Total Cost (USD) |
 |-----|-----------------|
 | RTX 4090 (idle, unused; CPU-only NEURON workload) | $12.07 |
+| RTX 3060 Ti (idle, unused; CPU-only NEURON workload) | $10.30 |
 | RTX 5060 Ti (idle, unused; CPU-only NEURON workload) | $7.71 |
 | RTX 4060 Ti (idle, unused) | $5.83 |
 | RTX 5060 Ti (idle, unused) | $3.93 |
@@ -50,3 +51,4 @@
 | [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | 1 | $0.65 | 0 | RTX PRO 4000 (idle, unused; CPU-only NEURON workload) |
 | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 1 | $7.71 | 1 | RTX 5060 Ti (idle, unused; CPU-only NEURON workload) |
 | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 1 | $12.07 | 0 | RTX 4090 (idle, unused; CPU-only NEURON workload) |
+| [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 1 | $10.30 | 0 | RTX 3060 Ti (idle, unused; CPU-only NEURON workload) |

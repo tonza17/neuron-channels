@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $35.98 of $50.00 USD. $14.02 remains overall and $14.02 remains before the 100% stop
+Spent $46.28 of $50.00 USD. $3.72 remains overall and $3.72 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,22 +8,22 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $50.00 USD |
-| Total spent | $35.98 USD |
-| Budget left | $14.02 USD |
-| Budget left before stop threshold | $14.02 USD |
-| Spent percent | 71.96% |
+| Total spent | $46.28 USD |
+| Budget left | $3.72 USD |
+| Budget left before stop threshold | $3.72 USD |
+| Spent percent | 92.56% |
 | Warn threshold | 80% ($40.00) |
 | Stop threshold | 100% ($50.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 96 |
-| Tasks with non-zero spend | 9 |
-| Skipped tasks | 9 |
+| Tasks with cost records | 97 |
+| Tasks with non-zero spend | 10 |
+| Skipped tasks | 8 |
 
 ## Service Totals
 
 | Key | Cost (USD) |
 |-----|------------|
-| `vast_ai` | $28.91 |
+| `vast_ai` | $39.21 |
 | `vast_ai_compute` | $3.93 |
 
 ## Breakdown Totals
@@ -32,11 +32,14 @@ threshold.
 |-----|------------|
 | `vast_ai_nsga2_compute` | $8.46 |
 | `vast-ai-cpu-epyc-7b13` | $7.42 |
+| `vast-ai-seed44-productive` | $4.69 |
+| `vast-ai-seed55-productive` | $4.19 |
 | `vast-ai-rtx5060ti` | $3.93 |
 | `vast_ai_idle_time` | $3.51 |
 | `vast-ai-seed33` | $3.41 |
 | `vast_ai_36149741` | $2.39 |
 | `vast-ai-seed22` | $1.96 |
+| `vast-ai-setup-smoke-idle` | $1.42 |
 | `vast-ai-seed11` | $1.13 |
 | `vast-ai-quadro-p4000` | $1.06 |
 | `vast_ai_36137287` | $0.75 |
@@ -64,6 +67,7 @@ threshold.
 | [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | $0.65 | $4.00 | no |
 | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | completed | $7.71 | $20.00 | no |
 | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | $12.07 | $8.00 | yes |
+| [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | completed | $10.30 | $15.00 | no |
 
 ## Skipped Tasks
 
@@ -77,4 +81,3 @@ threshold.
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
 | `t0096_literature_survey_multi_objective_neuron_optimisation` | results/costs.json is missing or invalid |
-| `t0104_nsga2_2obj_dsi_pdrate_3seeds` | results/costs.json is missing or invalid |

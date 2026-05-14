@@ -6,10 +6,10 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
 (9)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(85)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(86)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
-(2)](../predictions/by-category/dendritic-computation.md)
+(4)](../predictions/by-category/dendritic-computation.md)
 
 ---
 
@@ -2535,7 +2535,25 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (68 open, 17 closed)
+## Suggestions (69 open, 17 closed)
+
+<details>
+<summary>🧪 <strong>Targeted morphology sweep around the high-DSI region of the
+seed-55 Pareto front</strong> (S-0104-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
+[t0104_nsga2_2obj_dsi_pdrate_3seeds](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/)
+
+Hold the seed-55 best-DSI cell's 54-d electrophys subvector fixed and sweep the 14-d
+morphology subvector across a Latin-Hypercube sample of ~200 cells, all evaluated at
+N_EVAL_SEEDS = 4 with the DSI guard active. The question: does the high-DSI cell's electrophys
+signature generalise across morphologies, or is the DSI = 0.54 reading specific to one
+parametric tree topology? If DSI stays above 0.4 across most morphologies, the electrophys
+subvector is the lever and morphology is secondary; if DSI collapses, the seed-55 cell is a
+morphology-specific lucky draw. Recommended task types: experiment-run, comparative-analysis.
+Cost: ~$2-3 (200 cells x N=4, no GA overhead, single Vast.ai instance for ~6 hours).
+
+</details>
 
 <details>
 <summary>📚 <strong>Promote the t0098 morphology renderer (with t0100 vector_68d[54:]

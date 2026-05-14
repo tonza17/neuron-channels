@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-13T22:49:37Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-14T03:13:56Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>469709</char_count>
-    <byte_count>470199</byte_count>
-    <estimated_tokens>117427</estimated_tokens>
+    <char_count>464837</char_count>
+    <byte_count>465284</byte_count>
+    <estimated_tokens>116209</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -207,10 +207,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0101_brainstorm_results_21</id>
         <id>t0102_seedscale_n4_gen20</id>
         <id>t0103_extract_baden_2016_ds_morphologies</id>
+        <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
         <id>t0105_preliminary_figures_report</id>
       </source_ids>
       <content>
-Completed tasks: 96
+Completed tasks: 97
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -782,6 +783,12 @@ Completed: 2026-05-12
 Short description: Download Baden 2016 (Dryad d9v38) and extract data only for direction-selective groups 2, 17, 18, 19, 22, 35, 36, 40. Output: 1 dataset + 1 paper asset.
 Result summary: t0103 Results Summary Summary Extracted **1,238 per-cell records** from Baden et al. 2016 across the eight paper-authoritative direction-selective groups `{2, 6, 12, 13, 16, 25, 26, 29}` into a 4.864 MiB Parquet dataset asset, and registered the Baden 2016 paper itself as a paper asset. Both assets pass their verificators with zero errors and zero warnings. Metrics * **1,238** per-cell records extracted across **8 DS groups**: G2:162, G6:104, G12:397, G13:129, G16:99, G25:76, G26:141, G29:130. * **40 columns per cell**: 35 scalar features (cluster, selectivity, quality, RF, soma, immuno, genetics, cell-of-origin) + 5 nested `list&lt;float32&gt;` trace columns (chirp 249 samples, moving-bar 32...
 
+## 68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20
+ID: t0104_nsga2_2obj_dsi_pdrate_3seeds
+Completed: 2026-05-14
+Short description: Re-run t0102&#x27;s 68-d NSGA-II with the robustness objective dropped: 3 random-init GA seeds (44/55/66), N_EVAL=4, gens=20, pop=96, DSI-silence guard applied. $15 hard cap.
+Result summary: Results Summary: t0104 — 68-d 2-Objective NSGA-II at 2 Random-Init GA Seeds (DSI Silence Guard Active) Summary t0104 ran 2-objective NSGA-II `(DSI, PD-rate)` on the 68-d Bed B + morphology DSGC substrate with the new DSI silence guard active. Two random-init GA seeds (44 and 55) completed before the researcher elected to stop after seed 55 (intervention file `intervention/early_stop_after_seed_55.md`); seed 66 was skipped. Across **2,208** evaluated cells, **zero** cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The **DSI extreme cleanly broke past 0.5 for the first time** in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, **DSI = 0.5417** at PD = 3.57 Hz), confirming the...
+
 ## Preliminary-data figure pack and slide deck for report
 ID: t0105_preliminary_figures_report
 Completed: 2026-05-13
@@ -796,10 +803,9 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0105_preliminary
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1122,224 +1128,6 @@ For each condition, compute:
 * Joint multi-axis optimisation — explicitly excluded; this is one-axis-at-a-time only.
 * Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
   channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
-
-## 68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20
-ID: t0104_nsga2_2obj_dsi_pdrate_3seeds
-Status: in_progress
-Effective date: 2026-05-12
-Short description: Re-run t0102&#x27;s 68-d NSGA-II with the robustness objective dropped: 3 random-init GA seeds (44/55/66), N_EVAL=4, gens=20, pop=96, DSI-silence guard applied. $15 hard cap.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0093_resweep_and_t0090_correction, t0099_random_init_pareto_robustness, t0102_seedscale_n4_gen20
-
-#### Context
-
-Direct researcher commission in brainstorm session 22 (2026-05-12), immediately after t0102 closed.
-t0102 ran 68-d random-init NSGA-II at GA seeds=2, N_EVAL_SEEDS=4, gens=20 on three objectives (DSI
-vector-sum, PD-rate, robustness) and produced **zero strict joint-pass cells across 2,592 evaluated
-cells**. The session-22 researcher hypothesis: dropping the robustness objective frees NSGA-II&#x27;s
-crowding-distance selection to spend its diversity budget on the DSI / PD-rate trade-off alone,
-potentially recovering joint-pass cells without invoking warm-start.
-
-Project total budget was raised from $35 to $50 immediately prior to this task (commit `388e8557` on
-main) so the $15 per-task cap below does not violate the project-level ceiling.
-
-This task also closes the load-bearing **S-0102-01 DSI vector-sum artifact** by porting a
-silenced-cell guard into `evaluator.py` before the NSGA-II run. The guard returns DSI = 0.0 when the
-cell&#x27;s total spike count across all 16 directions is below 10, eliminating the floating-point
-artifact that put 27 t0102 cells at a spurious DSI = 1.0.
-
-#### Goal
-
-Run the exact same 68-d Bed B + morphology NSGA-II substrate as t0102, with three changes:
-
-1. **Objective vector**: 3 → 2 (drop robustness; keep DSI vector-sum + PD-rate)
-2. **GA seeds**: 2 → 3 (44, 55, 66)
-3. **DSI-silence guard active**: the S-0102-01 fix lands in this task&#x27;s `evaluator.py`
-
-All other knobs match t0102 exactly: `N_EVAL_SEEDS=4`, `n_gen=20`, `pop=96`, random LHS init, Bed B
-+ 14-d morphology substrate.
-
-#### Key Questions
-
-1. **Does dropping robustness recover joint-pass cells?** Concretely: across 3 seeds × pop=96 ×
-   gens=20 = 6,048 evaluated cells, find at least one with DSI ≥ 0.5 AND PD ≥ 30 Hz on the
-   cleaned DSI metric. Falsifiable: the answer is yes (≥ 1 cell) or no (0 cells).
-2. **Does the DSI-silence guard remove the DSI = 1.0 corner from the Pareto front?** Quantify how
-   many cells in this run reach the guard floor (DSI = 0.0 because total spikes &lt; 10) and confirm
-   the Pareto front no longer contains DSI = 1.0 / PD = 0 cells.
-3. **Does the 2-objective Pareto front differ qualitatively from t0102&#x27;s 3-objective front when
-   restricted to the (DSI, PD) plane?** Specifically: at any given DSI threshold, does this run
-   reach a higher PD-rate ceiling than t0102?
-
-#### Approach
-
-Fork t0102&#x27;s `code/` substrate verbatim. The only code-level changes:
-
-1. **`evaluator.py`**:
-   * Patch `_vector_sum_dsi` (or its wrapping `evaluate_cell` flow) so that DSI returns 0.0 when
-     `sum(total_spike_count_per_direction) &lt; 10` across the 16 directions.
-   * Reduce the F-row returned to pymoo from `[-dsi, -pd, -robustness]` to `[-dsi, -pd]`. Keep the
-     `robustness` field in the per-cell summary `dict` so it remains in the predictions assets and
-     analysis can still inspect the dropped axis, but it must not enter NSGA-II selection.
-   * Update `n_obj` from 3 to 2.
-
-2. **`nsga2_driver.py`**: set `Problem(n_obj=2, ...)` in the pymoo definition.
-
-3. **Unit test**: add `code/test_evaluator_dsi_guard.py` that builds a synthetic cell with all-zero
-   direction counts and asserts the new evaluator returns DSI = 0.0 (not 1.0). Run it as part of the
-   local smoke gate before scaling out.
-
-4. **GA seeds**: launch three NSGA-II processes with `seed=44`, `seed=55`, `seed=66` sequentially on
-   one Vast.ai instance. `pop=96`, `n_gen=20`, LHS-init each. (Seeds 44 and 55 are reused from t0102
-   so the 2-obj vs 3-obj comparison is an apples-to-apples lift, with 66 as the genuinely fresh
-   sample.)
-
-5. **Cost watchdog**: keep t0102&#x27;s per-seed $4 watchdog. Bind the watchdog directly to instance
-   teardown so post-NSGA-II idle billing cannot accumulate (S-0102-08 partial application). Total
-   hard cap: $15 enforced at the orchestrator.
-
-#### Why This Matters for the Research Questions
-
-The project&#x27;s research question 1 (&quot;Which combinations of somatic voltage-gated sodium and potassium
-conductances maximise AP frequency for a preferred-direction wave while suppressing firing in the
-null direction?&quot;) has been the central optimisation target of t0080-t0102. The current evidence from
-t0099 + t0102 is that NSGA-II on this 68-d substrate cannot reach the joint-pass corner from random
-init at any seed/generation balance tried so far. Two unexamined factors remain in the NSGA-II
-configuration: the objective count (this task) and the algorithm itself (deferred to S-0102-03 /
-S-0102-04). This task tests the cheaper of the two factors first. If 2-objective NSGA-II recovers
-joint-pass cells, the substrate is reachable and the issue was objective dilution; if it doesn&#x27;t,
-the substrate-limitation reading hardens and algorithm replacement becomes the next move.
-
-#### Cost Estimation
-
-| Item | Estimate |
-| --- | --- |
-| Vast.ai instance | $0.24/hr (RTX 4090 / EPYC 7B13 64-core, t0099 / t0102 baseline) |
-| Per-cell eval at N=4 | ~5x faster than t0099&#x27;s N=20 (same as t0102) |
-| Cells per seed | 96 + 20 × 96 = 2,016 |
-| Cells total | 3 × 2,016 = 6,048 |
-| Wall-clock estimate | ~30-36 h (6,048 cells × ~18 s = ~30 h plus overhead) |
-| Productive compute | ~$8-10 (3 seeds at ~$3-3.5 each) |
-| Idle / setup overhead | ~$1-2 (with hardened teardown per S-0102-08) |
-| **Predicted spend** | **~$10-12** |
-| **Hard cost cap** | **$15** (explicit per-task override; project budget is $50) |
-
-#### Step by Step
-
-Canonical step IDs from `arf/specifications/task_steps_specification.md`:
-
-1. `preflight` — confirm all six dependencies are completed; check that `tasks/t0102_*/code/` is
-   reusable; smoke-test t0102&#x27;s pipeline locally on one cell with the 2-obj + DSI-guard patch.
-2. `research-code` — audit t0102&#x27;s `evaluator.py` and `nsga2_driver.py`, document the exact lines
-   to change in `research/research_code.md`. No paper-research step is needed.
-3. `planning` — produce `plan/plan.md` with the cost / time / risk table; agree REQ-1..REQ-N
-   including REQ on the DSI-silence guard unit test and REQ on idle-teardown wiring.
-4. `setup-machines` — provision one Vast.ai instance matching t0102&#x27;s spec; record
-   `machine_log.json`.
-5. `implementation` —
-   * 5a. SCP code (with patches) to instance.
-   * 5b. Run substrate-consistency smoke gate at N_EVAL_SEEDS=4 with DSI-guard active and `n_obj=2`
-     (REQ-7-equivalent).
-   * 5c. Run NSGA-II seed=44, pop=96, gens=20, 2 objectives.
-   * 5d. Run NSGA-II seed=55, pop=96, gens=20, 2 objectives.
-   * 5e. Run NSGA-II seed=66, pop=96, gens=20, 2 objectives.
-   * 5f. Pull predictions back, build per-seed predictions assets.
-6. `destroy-machines` — Vast.ai instance teardown within 5 minutes of last seed completion; record
-   final cost in `results/costs.json` and `results/remote_machines_used.json`.
-7. `analysis` — joint-pass tally per seed, hypervolume curves, per-seed DSI/PD scatter, anchor
-   distribution histogram, side-by-side comparison vs t0102 (3-obj) and t0099 (3-obj N=20). Quantify
-   the DSI-guard impact: count cells at DSI = 0.0 floor, count cells with raw-DSI ≥ 0.99 that the
-   guard would have kept.
-8. `reporting` — write `results/results_summary.md`, `results/results_detailed.md` with all charts
-   embedded via `![desc](images/file.png)`, populate `metrics.json`, `costs.json`,
-   `remote_machines_used.json`, and `suggestions.json`. Write one answer asset addressing Key
-   Question 1.
-
-#### Remote Machines
-
-One Vast.ai instance matching t0099 / t0102 spec:
-
-* GPU tier: not required (NEURON is CPU-bound; any attached GPU is incidental)
-* CPU: AMD EPYC 7B13 or equivalent, ~64 effective cores
-* RAM: 200+ GB
-* Location: Norway preferred for $0.24/hr offer rate
-* Hard runtime cap: 40 hours
-* Idle-uptime safeguard: tear down within 5 minutes of last seed completion (post-watchdog idle was
-  ~$2 of t0102&#x27;s overrun)
-
-#### Assets Needed
-
-* `tasks/t0024_port_de_rosenroll_2026_dsgc` — Bed B compartmental model
-* `tasks/t0102_seedscale_n4_gen20/code/` — driver fork base (verbatim except the 2-obj + DSI-guard
-  patches)
-* `tasks/t0093_resweep_and_t0090_correction/code/` — morphology generator (post-patch)
-* `tasks/t0086_robustness_cluster_bio_comparison/code/` — anchor / clustering utilities (used in
-  analysis step only)
-
-#### Expected Assets
-
-* 3 predictions assets (one per GA seed, 2,016 cells each): `nsga2-seed44-bedb-morph-n4-gen20-2obj`,
-  `nsga2-seed55-bedb-morph-n4-gen20-2obj`, `nsga2-seed66-bedb-morph-n4-gen20-2obj`
-* 1 answer asset addressing: &quot;Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard
-  applied) recover joint-pass cells where t0102&#x27;s 3-objective run found zero?&quot;
-
-#### Time Estimation
-
-* Local prep + smoke + provisioning: 1-2 h
-* Vast.ai NSGA-II runs (3 seeds sequential): 28-34 h
-* Analysis + reporting: 3-4 h
-* **Total wall-clock**: 32-40 h
-
-#### Risks &amp; Fallbacks
-
-* **Risk**: even without robustness in the objective vector, joint-pass yield remains zero,
-  confirming the 68-d substrate is empirically empty of joint-pass cells under random init.
-  **Fallback**: negative result is publishable as the definitive 2-objective control for the
-  substrate-limitation hypothesis; the next move becomes algorithm replacement (S-0102-03 IBEA or
-  S-0102-04 Dang pop≥290).
-
-* **Risk**: per-seed wall-clock grows super-linearly due to NEURON memory accumulation (known from
-  t0099 / t0102). **Fallback**: restart Python worker between generations as in t0102. If still too
-  slow, cut third seed at gen 15 and report partial result.
-
-* **Risk**: Vast.ai instance cost exceeds $15 cap due to instance-price drift or idle overrun.
-  **Fallback**: per-seed $4 watchdog terminates each run individually; total cap $15 enforced at
-  orchestrator level; idle teardown within 5 min hardens against the t0102 $2 idle leak.
-
-* **Risk**: morphology generator silently produces empty trees (known from t0090 / t0093).
-  **Fallback**: REQ-7-equivalent smoke gate must pass before committing to long run.
-
-* **Risk**: the DSI-silence guard introduces a regression where legitimate near-silent cells with
-  real direction selectivity (e.g., 5 PD spikes, 0 ND spikes) get masked. **Fallback**: include in
-  results_detailed.md a sensitivity sweep of the spike-count threshold (5, 10, 20, 50) on the t0102
-  predictions to confirm 10 is conservative; note any cells in the (5, 10) band as a known
-  limitation. Unit test in `code/test_evaluator_dsi_guard.py` documents the exact threshold.
-
-#### Verification Criteria
-
-* `verify_task_metrics t0104_nsga2_2obj_dsi_pdrate_3seeds` passes with 0 errors.
-* `verify_machines_destroyed t0104_nsga2_2obj_dsi_pdrate_3seeds` confirms Vast.ai instance is
-  destroyed.
-* `verify_research_code` and `verify_plan` pass with 0 errors.
-* All 3 predictions assets validate against the predictions specification.
-* Total cost in `results/costs.json` does not exceed $15.00.
-* Unit test `tasks/t0104_*/code/test_evaluator_dsi_guard.py` passes locally and in the smoke gate.
-* At least one of the following holds (both are publishable):
-  * **Positive**: ≥ 1 strict joint-pass cell (DSI ≥ 0.5, PD ≥ 30 Hz, on the guard-cleaned DSI)
-    found in at least one of the three seeds.
-  * **Negative**: 0 strict joint-pass cells across all three seeds, confirming the t0102 null
-    extends to the 2-objective formulation.
-
-#### Out of Scope
-
-* IBEA replacement (deferred suggestion S-0102-03).
-* Dang 2023 pop ≥ 290 theory-grounded NSGA-II (deferred suggestion S-0102-04).
-* Sign-averaging objective formulation per Morinaga 2024 (deferred suggestion S-0102-07).
-* Anchor-distance lineage trace across t0080-t0102 Pareto cells (deferred suggestion S-0102-05) —
-  separate analysis task.
-* Calcium-clearance perturbation sweep on the 27 silenced cells (deferred suggestion S-0102-06).
-* Lowering the project-wide `N_SEEDS` default in `tasks/t0080_*/code/constants.py` (deferred
-  suggestion S-0101-02).
-* Correcting Poleg-Polsky 2026 `summary.md` fabrications (deferred suggestion S-0101-01).
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1374,9 +1162,10 @@ One Vast.ai instance matching t0099 / t0102 spec:
         <id>t0090-procedural-cell-silence-root-cause</id>
         <id>random-init-reproducibility-and-warmstart-dependence</id>
         <id>does-n4-gens20-2seeds-recover-joint-pass-corner</id>
+        <id>t0104-joint-pass-recovery-2obj</id>
       </source_ids>
       <content>
-Answers: 28
+Answers: 29
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1596,6 +1385,14 @@ Confidence: high
 Categories: direction-selectivity, compartmental-modeling
 
 No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells cleared the strict joint-pass corner, and zero cells cleared even the loosest 2-axis test (DSI&gt;=0.5 AND PD&gt;=5 Hz), because DSI and PD-rate are strongly bimodally anti-correlated on this substrate. The headline max-DSI of 1.0 in both seeds turned out to be a floating-point artifact of the vector-sum DSI formula on silenced cells with PD=0 Hz; the real DSI ceiling under N=4 noise replicates is roughly 0.35. The earlier t0091 single joint-pass cell, previously framed as an NSGA-II discovery, is reframed here as a one-mutation polynomial-mutation descendant of an alt_topology warm-start anchor, so removing the warm-start...
+
+## Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard applied) recover joint-pass cells where t0102&#x27;s 3-objective run found zero?
+ID: t0104-joint-pass-recovery-2obj
+Created by: t0104_nsga2_2obj_dsi_pdrate_3seeds on 2026-05-14
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) running the 2-objective DSI + PD formulation with the silence guard active, zero cells cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The DSI extreme broke past 0.5 for the first time in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, DSI = 0.5417 at PD = 3.57 Hz), confirming the substrate is not artificially capped by the silenced-cell DSI=1.0 floating-point artifact that contaminated t0102&#x27;s Pareto front. The L-shaped Pareto front replicates t0102&#x27;s exactly — extremes reachable on each axis but the joint corner empirically empty — ruling out objective-vector dimensionality as the explanation...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -1655,6 +1452,9 @@ No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells clea
         <id>S-0103-01</id>
         <id>S-0103-02</id>
         <id>S-0103-03</id>
+        <id>S-0104-01</id>
+        <id>S-0104-02</id>
+        <id>S-0104-04</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -1891,6 +1691,8 @@ No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells clea
         <id>S-0105-02</id>
         <id>S-0105-03</id>
         <id>S-0105-04</id>
+        <id>S-0104-05</id>
+        <id>S-0104-06</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1942,9 +1744,10 @@ No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells clea
         <id>S-0098-03</id>
         <id>S-0099-05</id>
         <id>S-0103-06</id>
+        <id>S-0104-03</id>
       </source_ids>
       <content>
-Open suggestions: 340
+Open suggestions: 346
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2316,6 +2119,27 @@ Priority: high
 Kind: experiment
 Source task: t0103_extract_baden_2016_ds_morphologies
 t0090&#x27;s morphology generator currently samples field diameter, branch count, total length, and asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103 Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions (mean +/- SD per Baden DS group) and replaces t0090&#x27;s parametric ranges, then re-runs a small NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells. This is the original motivation for...
+
+## Inspect the seed-55 gen-11 DSI=0.54 cell&#x27;s 68-d parameter vector — what makes it work; what would push PD up?
+ID: S-0104-01
+Priority: high
+Kind: experiment
+Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
+Seed 55 generation 11 produced the first cell in the t0080-t0104 NSGA-II lineage with DSI cleanly above 0.5 (DSI = 0.5417 at PD = 3.57 Hz). Read this cell&#x27;s 68-d parameter vector from assets/predictions/nsga2-seed55-bedb-morph-n4-gen20-2obj/files/predictions-seed55.jsonl (cell_id = 6 on the Pareto front). Compare the electrophys 54-d subvector and the 14-d morphology subvector against the seed-44 best cell (DSI = 0.4073) and against t0091&#x27;s reported joint-pass anchor at DSI = 0.511 / PD = 35.1 Hz. Identify what biophysical knobs concentrate near the high-DSI region of parameter space; perform a one-knob-at-a-time perturbation around this cell to see whether a single sodium- or...
+
+## Inspect the seed-55 gen-8 DSI=0.42 / PD=15 Hz cell&#x27;s 68-d parameter vector — the closest project-best joint trade-off
+ID: S-0104-02
+Priority: high
+Kind: experiment
+Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
+Seed 55 generation 8 produced the project-best joint trade-off so far: DSI = 0.4192 at PD = 15.00 Hz. This sits ~15 Hz below the strict joint-pass threshold of 30 Hz and ~0.08 DSI below the 0.5 threshold, but is the closest combined-axis cell observed across the full t0080-t0104 NSGA-II lineage. Read its 68-d vector from the seed-55 predictions JSONL (cell_id = 3 on the Pareto front), classify its anchor neighbourhood, and run a 2-knob perturbation grid varying the top-2 Cohen&#x27;s-d-distinguished electrophys knobs from the t0102 silence-vs-firing comparison. Outcome: a 2-d grid that estimates the local PD ceiling around this cell&#x27;s DSI = 0.4192 plateau. Recommended task types: experiment-run...
+
+## IBEA replacement for NSGA-II at matched budget on Bed B + morphology substrate (renews S-0102-03)
+ID: S-0104-04
+Priority: high
+Kind: experiment
+Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
+t0104&#x27;s 0/2,208 random-init joint-pass null with the DSI guard active strengthens the case for S-0102-03 (IBEA replacement). NSGA-II crowding-distance selection produced an L-shaped front in both t0102 (3-obj) and t0104 (2-obj) on the same substrate, suggesting the selection operator itself prefers extreme-corner cells over interior trade-off cells. Mohacsi 2024 explicitly recommends IBEA as the strongest multi-objective optimiser on neuron-fitting problems (six of six benchmarks beat NSGA-II). Port t0104&#x27;s substrate to pymoo IBEA at matched budget (pop = 96, gens = 12, N_EVAL_SEEDS = 4, 2 GA seeds, DSI guard active, n_obj = 2). Expected outcome: IBEA&#x27;s hypervolume-density selection produces...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3969,6 +3793,20 @@ Kind: library
 Source task: t0105_preliminary_figures_report
 t0105 introduced python-pptx&gt;=1.0 and implemented tasks/t0105_preliminary_figures_report/code/build_slides.py as a task-local one-figure-per-slide deck assembler with caption + source-task citation in slide notes. Multiple downstream tasks (per-report figure packs, brainstorm decks, t0104 follow-up, future MOBO writeups) will want the same machinery. Package build_slides.py as a reusable library asset under a host task -- expose build_deck(slides: list[SlideSpec], output_path: Path) and a SlideSpec dataclass (image_path, caption, notes, layout), register a details.json under assets/library/, and document the import path. Downstream tasks then call the library instead of re-implementing...
 
+## Targeted morphology sweep around the high-DSI region of the seed-55 Pareto front
+ID: S-0104-05
+Priority: medium
+Kind: experiment
+Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
+Hold the seed-55 best-DSI cell&#x27;s 54-d electrophys subvector fixed and sweep the 14-d morphology subvector across a Latin-Hypercube sample of ~200 cells, all evaluated at N_EVAL_SEEDS = 4 with the DSI guard active. The question: does the high-DSI cell&#x27;s electrophys signature generalise across morphologies, or is the DSI = 0.54 reading specific to one parametric tree topology? If DSI stays above 0.4 across most morphologies, the electrophys subvector is the lever and morphology is secondary; if DSI collapses, the seed-55 cell is a morphology-specific lucky draw. Recommended task types: experiment-run, comparative-analysis. Cost: ~$2-3 (200 cells x N=4, no GA overhead, single Vast.ai instance...
+
+## Examine NEURON memory accumulation; recommend per-N-gen worker pool restart
+ID: S-0104-06
+Priority: medium
+Kind: technique
+Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
+Per-generation wall-clock doubled over both t0104 seeds (~15 min/gen at gen 1 to ~120 min/gen at gen 11-12) despite worker-restart-between-generations being active in the inherited nsga2_driver.py. The extra leak surface is likely inside per-cell evaluation: HOC namespace allocations, NEURON mechanism state in non-RAM-tracked C memory, or matplotlib-figure handle leaks in the morphology generator&#x27;s chart-writing branch. Action: instrument psutil.Process().memory_info().rss before and after each cell evaluation across one full generation; identify which call-site grows. Then add a full multiprocessing.Pool.terminate()/recreate() every N generations (N = 3 baseline) in nsga2_driver.py...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -4325,6 +4163,13 @@ Priority: low
 Kind: library
 Source task: t0103_extract_baden_2016_ds_morphologies
 The Baden 2016 paper asset&#x27;s PDF is a typeset reproduction of the PMC fulltext XML (PMC4724341) because Nature&#x27;s publisher PDF is paywalled and PMC&#x27;s interactive viewer is JS-protected. All scientific content is faithful, but typography and figure layout do not match the publisher version, which makes it awkward to cite figure positions or compare with print-version page references. A small follow-up task can obtain the publisher PDF via institutional access (Sheffield) and swap it in via the corrections mechanism, leaving the typeset version as a fallback. Recommended task types: download-paper, correction.
+
+## Remove the dead ANGLES_8DIR_DEG constant from constants_electrophys.py
+ID: S-0104-03
+Priority: low
+Kind: technique
+Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
+The t0080-era 8-direction angle constant ANGLES_8DIR_DEG remains in tasks/t0080_*/code/constants_electrophys.py and is still re-exported into downstream task forks despite t0091 onwards using the 16-direction ANGLES_16DIR_DEG vector exclusively. The 8-direction code path is dead; the constant pollutes the namespace and is a recurring source of confusion in code reviews. Action: write a small correction task that records a corrections/&lt;id&gt;.json file removing ANGLES_8DIR_DEG from the t0080 constants module&#x27;s effective namespace, plus a downstream task that imports the corrected constants and confirms no module under tasks/ resolves the symbol. Recommended task types: write-library. Cost: &lt;...
       </content>
     </section>
   </sections>

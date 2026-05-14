@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-13T22:49:37Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-14T03:13:56Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>208785</char_count>
-    <byte_count>209088</byte_count>
-    <estimated_tokens>52196</estimated_tokens>
+    <char_count>210344</char_count>
+    <byte_count>210653</byte_count>
+    <estimated_tokens>52586</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -211,10 +211,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0101_brainstorm_results_21</id>
         <id>t0102_seedscale_n4_gen20</id>
         <id>t0103_extract_baden_2016_ds_morphologies</id>
+        <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
         <id>t0105_preliminary_figures_report</id>
       </source_ids>
       <content>
-Completed tasks: 96
+Completed tasks: 97
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -786,6 +787,12 @@ Completed: 2026-05-12
 Short description: Download Baden 2016 (Dryad d9v38) and extract data only for direction-selective groups 2, 17, 18, 19, 22, 35, 36, 40. Output: 1 dataset + 1 paper asset.
 Result summary: t0103 Results Summary Summary Extracted **1,238 per-cell records** from Baden et al. 2016 across the eight paper-authoritative direction-selective groups `{2, 6, 12, 13, 16, 25, 26, 29}` into a 4.864 MiB Parquet dataset asset, and registered the Baden 2016 paper itself as a paper asset. Both assets pass their verificators with zero errors and zero warnings. Metrics * **1,238** per-cell records extracted across **8 DS groups**: G2:162, G6:104, G12:397, G13:129, G16:99, G25:76, G26:141, G29:130. * **40 columns per cell**: 35 scalar features (cluster, selectivity, quality, RF, soma, immuno, genetics, cell-of-origin) + 5 nested `list&lt;float32&gt;` trace columns (chirp 249 samples, moving-bar 32...
 
+## 68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20
+ID: t0104_nsga2_2obj_dsi_pdrate_3seeds
+Completed: 2026-05-14
+Short description: Re-run t0102&#x27;s 68-d NSGA-II with the robustness objective dropped: 3 random-init GA seeds (44/55/66), N_EVAL=4, gens=20, pop=96, DSI-silence guard applied. $15 hard cap.
+Result summary: Results Summary: t0104 — 68-d 2-Objective NSGA-II at 2 Random-Init GA Seeds (DSI Silence Guard Active) Summary t0104 ran 2-objective NSGA-II `(DSI, PD-rate)` on the 68-d Bed B + morphology DSGC substrate with the new DSI silence guard active. Two random-init GA seeds (44 and 55) completed before the researcher elected to stop after seed 55 (intervention file `intervention/early_stop_after_seed_55.md`); seed 66 was skipped. Across **2,208** evaluated cells, **zero** cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The **DSI extreme cleanly broke past 0.5 for the first time** in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, **DSI = 0.5417** at PD = 3.57 Hz), confirming the...
+
 ## Preliminary-data figure pack and slide deck for report
 ID: t0105_preliminary_figures_report
 Completed: 2026-05-13
@@ -800,10 +807,9 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0105_preliminary
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -824,13 +830,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## 68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20
-ID: t0104_nsga2_2obj_dsi_pdrate_3seeds
-Status: in_progress
-Effective date: 2026-05-12
-Short description: Re-run t0102&#x27;s 68-d NSGA-II with the robustness objective dropped: 3 random-init GA seeds (44/55/66), N_EVAL=4, gens=20, pop=96, DSI-silence guard applied. $15 hard cap.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0093_resweep_and_t0090_correction, t0099_random_init_pareto_robustness, t0102_seedscale_n4_gen20
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -865,9 +864,10 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_sp
         <id>t0090-procedural-cell-silence-root-cause</id>
         <id>random-init-reproducibility-and-warmstart-dependence</id>
         <id>does-n4-gens20-2seeds-recover-joint-pass-corner</id>
+        <id>t0104-joint-pass-recovery-2obj</id>
       </source_ids>
       <content>
-Answers: 28
+Answers: 29
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1087,6 +1087,14 @@ Confidence: high
 Categories: direction-selectivity, compartmental-modeling
 
 No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells cleared the strict joint-pass corner, and zero cells cleared even the loosest 2-axis test (DSI&gt;=0.5 AND PD&gt;=5 Hz), because DSI and PD-rate are strongly bimodally anti-correlated on this substrate. The headline max-DSI of 1.0 in both seeds turned out to be a floating-point artifact of the vector-sum DSI formula on silenced cells with PD=0 Hz; the real DSI ceiling under N=4 noise replicates is roughly 0.35. The earlier t0091 single joint-pass cell, previously framed as an NSGA-II discovery, is reframed here as a one-mutation polynomial-mutation descendant of an alt_topology warm-start anchor, so removing the warm-start...
+
+## Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard applied) recover joint-pass cells where t0102&#x27;s 3-objective run found zero?
+ID: t0104-joint-pass-recovery-2obj
+Created by: t0104_nsga2_2obj_dsi_pdrate_3seeds on 2026-05-14
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) running the 2-objective DSI + PD formulation with the silence guard active, zero cells cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The DSI extreme broke past 0.5 for the first time in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, DSI = 0.5417 at PD = 3.57 Hz), confirming the substrate is not artificially capped by the silenced-cell DSI=1.0 floating-point artifact that contaminated t0102&#x27;s Pareto front. The L-shaped Pareto front replicates t0102&#x27;s exactly — extremes reachable on each axis but the joint corner empirically empty — ruling out objective-vector dimensionality as the explanation...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">

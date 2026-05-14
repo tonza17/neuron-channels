@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-323 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **288 open** (55
-high, 198 medium, 35 low), **35 closed**.
+329 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **294 open** (58
+high, 200 medium, 36 low), **35 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -690,6 +690,33 @@ envelope (IBEA's O(N^2) overhead manageable at pop=96).
 </details>
 
 <details>
+<summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget on Bed B +
+morphology substrate (renews S-0102-03)</strong> (S-0104-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0104-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1012039`](../../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/assets/paper/10.1371_journal.pcbi.1012039/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0104's 0/2,208 random-init joint-pass null with the DSI guard active strengthens the case for
+S-0102-03 (IBEA replacement). NSGA-II crowding-distance selection produced an L-shaped front
+in both t0102 (3-obj) and t0104 (2-obj) on the same substrate, suggesting the selection
+operator itself prefers extreme-corner cells over interior trade-off cells. Mohacsi 2024
+explicitly recommends IBEA as the strongest multi-objective optimiser on neuron-fitting
+problems (six of six benchmarks beat NSGA-II). Port t0104's substrate to pymoo IBEA at matched
+budget (pop = 96, gens = 12, N_EVAL_SEEDS = 4, 2 GA seeds, DSI guard active, n_obj = 2).
+Expected outcome: IBEA's hypervolume-density selection produces an interior-weighted front;
+even if it does not surface a joint-pass cell, it should populate the diagonal region between
+the two corners more densely than NSGA-II did. Cost: ~$8-10 matched to t0104 envelope.
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Implement AIS compartment, NMDARs, and simulated voltage-clamp
 block in the downstream DSGC model build task</strong> (S-0017-03)</summary>
 
@@ -743,6 +770,59 @@ Ca2+ DS index 0.3-0.5) and weak on preferred-side dendrites, (5) dendritic-locat
 EPSP attenuation consistent with Hausser-Mel lambda_DC 100-300 um, (6) named fitting
 objectives for DSI under shunting-inhibition block (should drop toward 0) and EPSP/IPSP charge
 balance during null-direction motion.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Inspect the seed-55 gen-11 DSI=0.54 cell's 68-d parameter vector
+— what makes it work; what would push PD up?</strong> (S-0104-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0104-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Seed 55 generation 11 produced the first cell in the t0080-t0104 NSGA-II lineage with DSI
+cleanly above 0.5 (DSI = 0.5417 at PD = 3.57 Hz). Read this cell's 68-d parameter vector from
+assets/predictions/nsga2-seed55-bedb-morph-n4-gen20-2obj/files/predictions-seed55.jsonl
+(cell_id = 6 on the Pareto front). Compare the electrophys 54-d subvector and the 14-d
+morphology subvector against the seed-44 best cell (DSI = 0.4073) and against t0091's reported
+joint-pass anchor at DSI = 0.511 / PD = 35.1 Hz. Identify what biophysical knobs concentrate
+near the high-DSI region of parameter space; perform a one-knob-at-a-time perturbation around
+this cell to see whether a single sodium- or potassium-conductance bump can raise PD without
+collapsing DSI. Recommended task types: data-analysis, experiment-run. Cost: ~$0.50 (no
+NSGA-II, just ~120 evaluations of one-knob perturbations on a single Vast.ai instance for 1-2
+hours).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Inspect the seed-55 gen-8 DSI=0.42 / PD=15 Hz cell's 68-d
+parameter vector — the closest project-best joint trade-off</strong>
+(S-0104-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0104-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Seed 55 generation 8 produced the project-best joint trade-off so far: DSI = 0.4192 at PD =
+15.00 Hz. This sits ~15 Hz below the strict joint-pass threshold of 30 Hz and ~0.08 DSI below
+the 0.5 threshold, but is the closest combined-axis cell observed across the full t0080-t0104
+NSGA-II lineage. Read its 68-d vector from the seed-55 predictions JSONL (cell_id = 3 on the
+Pareto front), classify its anchor neighbourhood, and run a 2-knob perturbation grid varying
+the top-2 Cohen's-d-distinguished electrophys knobs from the t0102 silence-vs-firing
+comparison. Outcome: a 2-d grid that estimates the local PD ceiling around this cell's DSI =
+0.4192 plateau. Recommended task types: experiment-run, data-analysis. Cost: ~$1.00 (100-200
+evaluations on Vast.ai, 2-3 hours).
 
 </details>
 
@@ -2798,6 +2878,33 @@ gabaMOD curve via a one-time calibration run on the placement, and recommends us
 in downstream tasks (this would be applied via correction overlay or as a successor library
 asset). Goal: future scalar-gabaMOD reports do not silently confuse conductance modulation
 with voltage modulation. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Examine NEURON memory accumulation; recommend per-N-gen worker
+pool restart</strong> (S-0104-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0104-06` |
+| **Kind** | technique |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Per-generation wall-clock doubled over both t0104 seeds (~15 min/gen at gen 1 to ~120 min/gen
+at gen 11-12) despite worker-restart-between-generations being active in the inherited
+nsga2_driver.py. The extra leak surface is likely inside per-cell evaluation: HOC namespace
+allocations, NEURON mechanism state in non-RAM-tracked C memory, or matplotlib-figure handle
+leaks in the morphology generator's chart-writing branch. Action: instrument
+psutil.Process().memory_info().rss before and after each cell evaluation across one full
+generation; identify which call-site grows. Then add a full
+multiprocessing.Pool.terminate()/recreate() every N generations (N = 3 baseline) in
+nsga2_driver.py. Predict: per-gen wall-clock holds within 2x of gen 1 instead of 8x by gen 11.
+Recommended task types: write-library, experiment-run. Cost: ~$1 (instrumentation runs
+locally; one verification run on Vast.ai).
 
 </details>
 
@@ -6050,6 +6157,30 @@ patch to t0065's apply_params, then 6 conditions x 2 directions x 5 seeds = 60 t
 </details>
 
 <details>
+<summary>🧪 <strong>Targeted morphology sweep around the high-DSI region of the
+seed-55 Pareto front</strong> (S-0104-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0104-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Hold the seed-55 best-DSI cell's 54-d electrophys subvector fixed and sweep the 14-d
+morphology subvector across a Latin-Hypercube sample of ~200 cells, all evaluated at
+N_EVAL_SEEDS = 4 with the DSI guard active. The question: does the high-DSI cell's electrophys
+signature generalise across morphologies, or is the DSI = 0.54 reading specific to one
+parametric tree topology? If DSI stays above 0.4 across most morphologies, the electrophys
+subvector is the lever and morphology is secondary; if DSI collapses, the seed-55 cell is a
+morphology-specific lucky draw. Recommended task types: experiment-run, comparative-analysis.
+Cost: ~$2-3 (200 cells x N=4, no GA overhead, single Vast.ai instance for ~6 hours).
+
+</details>
+
+<details>
 <summary>📚 <strong>Tighten post-fix procedural soma to match the t0024 hand-coded
 287 um^2 reference area</strong> (S-0092-02)</summary>
 
@@ -7000,6 +7131,31 @@ within-PD-branch or within-ND-branch density gradients invisible to a single x-m
 and would provide the substrate-level data needed to design any future per-branch synaptic
 modification (cf. S-0050-01 / S-0050-02). Pure post-hoc analysis on existing
 extract_coordinates outputs. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Remove the dead ANGLES_8DIR_DEG constant from
+constants_electrophys.py</strong> (S-0104-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0104-03` |
+| **Kind** | technique |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The t0080-era 8-direction angle constant ANGLES_8DIR_DEG remains in
+tasks/t0080_*/code/constants_electrophys.py and is still re-exported into downstream task
+forks despite t0091 onwards using the 16-direction ANGLES_16DIR_DEG vector exclusively. The
+8-direction code path is dead; the constant pollutes the namespace and is a recurring source
+of confusion in code reviews. Action: write a small correction task that records a
+corrections/<id>.json file removing ANGLES_8DIR_DEG from the t0080 constants module's
+effective namespace, plus a downstream task that imports the corrected constants and confirms
+no module under tasks/ resolves the symbol. Recommended task types: write-library. Cost: <
+$0.10 (local-only, no Vast.ai).
 
 </details>
 

@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-85 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **68 open** (14
-high, 49 medium, 5 low), **17 closed**.
+86 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **69 open** (14
+high, 50 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1542,6 +1542,30 @@ arises because NEURON's surface-density gbar scales total channel current by d w
 load scales by d^2, cancelling the net effect. If density rescaling produces a non-flat DSI
 trend, the compensation confound is confirmed; if still flat, rule out this hypothesis.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Targeted morphology sweep around the high-DSI region of the
+seed-55 Pareto front</strong> (S-0104-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0104-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Hold the seed-55 best-DSI cell's 54-d electrophys subvector fixed and sweep the 14-d
+morphology subvector across a Latin-Hypercube sample of ~200 cells, all evaluated at
+N_EVAL_SEEDS = 4 with the DSI guard active. The question: does the high-DSI cell's electrophys
+signature generalise across morphologies, or is the DSI = 0.54 reading specific to one
+parametric tree topology? If DSI stays above 0.4 across most morphologies, the electrophys
+subvector is the lever and morphology is secondary; if DSI collapses, the seed-55 cell is a
+morphology-specific lucky draw. Recommended task types: experiment-run, comparative-analysis.
+Cost: ~$2-3 (200 cells x N=4, no GA overhead, single Vast.ai instance for ~6 hours).
 
 </details>
 
