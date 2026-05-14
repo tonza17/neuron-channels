@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Produce plan/plan.md with 11 mandatory sections and REQ list covering cell selection, asymmetry classification, gallery, PCA, factor analysis, answer assets.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-14T13:21:31Z",
-      "completed_at": null,
+      "completed_at": "2026-05-14T13:31:22Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
