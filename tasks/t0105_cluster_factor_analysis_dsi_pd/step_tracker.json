@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate follow-up suggestions based on cluster + factor findings.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-14T14:19:13Z",
-      "completed_at": null,
+      "completed_at": "2026-05-14T14:19:44Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
