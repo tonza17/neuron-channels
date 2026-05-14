@@ -1,0 +1,16 @@
+Strict cohort: N=30
+  PCA variance: PC1=0.3824 PC2=0.1050 PC3=0.0839
+  MW PC1: U=10.00 p=8.234e-05
+  MW PC2: U=101.00 p=0.9825
+  Factor analysis: n_factors=10 (eigvals>1: 13)
+  Top-3 vs DSI: [('F6', -0.17), ('F2', -0.158), ('F1', 0.135)]
+  Top-3 vs PD:  [('F6', 0.364), ('F9', 0.272), ('F1', -0.234)]
+  Joint factors (|r| > 0.3 both): 0
+
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\pca_results_strict.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\pca_mannwhitney_strict.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\images\pca_electrophys_panels_strict.png
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\factor_loadings_strict.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\images\factor_loadings_strict.png
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\factor_correlations_strict.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\images\factor_correlations_strict.png

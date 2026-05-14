@@ -523,6 +523,18 @@ wheels = [
 ]
 
 [[package]]
+name = "factor-analyzer"
+version = "0.5.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "scikit-learn" },
+    { name = "scipy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/28/19/089a65c4cf7ea407ab001846989b44cf83bc488a6e1fe68e950607251720/factor_analyzer-0.5.1.tar.gz", hash = "sha256:03703cd128ee9f91c9bd191a452b06e4a28296b5a24d11823ebb5d8250e8fdf6", size = 42824, upload-time = "2024-02-08T15:10:54.279Z" }
+
+[[package]]
 name = "filelock"
 version = "3.25.2"
 source = { registry = "https://pypi.org/simple" }
@@ -644,6 +656,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "botorch" },
+    { name = "factor-analyzer" },
     { name = "gpytorch" },
     { name = "matplotlib" },
     { name = "numpy" },
@@ -677,6 +690,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "botorch", specifier = ">=0.12" },
+    { name = "factor-analyzer", specifier = ">=0.5.1" },
     { name = "gpytorch", specifier = ">=1.13" },
     { name = "matplotlib", specifier = ">=3.10.8" },
     { name = "numpy", specifier = ">=2.4.4" },

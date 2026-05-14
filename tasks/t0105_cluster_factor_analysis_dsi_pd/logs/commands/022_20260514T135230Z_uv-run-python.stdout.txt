@@ -1,0 +1,12 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\assets\answer\dsi-pd-diversity-factor-decomposition
+
+[31m[1mERRORS:[0m
+[31m  AA-E013 error: ## Answer in short answer document has 7 sentences (expected: 2-5)[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)
+
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\assets\answer\symmetric-vs-asymmetric-electrophys-cluster
+
+[32m[1mPASSED[0m — no errors or warnings

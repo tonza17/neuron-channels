@@ -1,0 +1,16 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 003_20260514T131903Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 012_20260514T133908Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 015_20260514T134201Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 016_20260514T134246Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 022_20260514T135230Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 027_20260514T141338Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 19 words (minimum: 20)[0m
+[33m  LG-W003 warning: Step log step_log.md Summary has 19 words (minimum: 20)[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 10 warning(s)

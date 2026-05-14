@@ -1,0 +1,6 @@
+Bootstrap: N_cells=85 n_factors=10 n_resamples=200 seed=42
+  bootstrap completed in 149.4 s (0 resamples failed)
+
+Stable factors: ['F1', 'F2']
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\factor_bootstrap.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\images\factor_loadings_bootstrap.png

@@ -1,0 +1,3 @@
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\metrics.json
+  primary cohort N=85 median_dsi=0.1765
+  strict cohort  N=30 median_dsi=0.3514

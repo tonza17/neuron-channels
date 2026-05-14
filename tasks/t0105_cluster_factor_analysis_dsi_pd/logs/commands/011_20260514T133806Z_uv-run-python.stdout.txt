@@ -1,0 +1,13 @@
+Primary cohort: N=85
+  symmetric (asym < 0.5): 20
+  asymmetric (asym >= 0.5): 65
+  asym_score: min=0.000 max=3.336 mean=1.425 median=1.667
+
+Threshold sweep (primary cohort):
+  thr=0.3: sym=20 asym=65
+  thr=0.5: sym=20 asym=65
+  thr=1.0: sym=27 asym=58
+
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\asym_score_distribution.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\images\asym_score_histogram.png
+Annotated cells written back: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\selected_cells_primary.json
