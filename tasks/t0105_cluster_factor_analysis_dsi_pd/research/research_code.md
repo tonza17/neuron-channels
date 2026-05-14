@@ -198,19 +198,66 @@ vectors). t0086 (`cluster_analysis.py`) ran k-means + silhouette
 
 ## Task Index
 
-* [t0080] — `t0080_bedb_mobo_v3_dendritic_spike_nsga2` — 54-d electrophys-only NSGA-II,
-  excluded.
-* [t0086] — `t0086_robustness_cluster_bio_comparison` — closest cluster-analysis precedent in
-  the project (k-means + silhouette on 54-d Pareto library).
-* [t0090] — `t0090_morphology_generator_diversity_test` — provides `MorphologyParams` schema and
-  the morphology generator's reference test harness.
-* [t0091] — `t0091_morphology_extended_nsga2_v1` — warm-start 68-d NSGA-II; one of t0105's
-  pooled lineages.
-* [t0092] — `t0092_diagnose_morphology_generator_silence` — fixes the soma-area bug;
-  `generate_fixed_morphology` is t0105's morphology entry point.
-* [t0099] — `t0099_random_init_pareto_robustness` — random-init 68-d at N_EVAL=20; pooled
-  lineage.
-* [t0102] — `t0102_seedscale_n4_gen20` — random-init 68-d at N_EVAL=4 with robustness; pooled
-  lineage. Contains silenced-cell artifacts.
-* [t0104] — `t0104_nsga2_2obj_dsi_pdrate_3seeds` — random-init 68-d without robustness, with
-  silence guard; pooled lineage.
+### [t0080]
+
+* **Task ID**: `t0080_bedb_mobo_v3_dendritic_spike_nsga2`
+* **Status**: completed
+* **Relevance**: 54-d electrophys-only NSGA-II ancestor. Excluded from t0105's pool because it does
+  not co-vary morphology.
+
+### [t0083]
+
+* **Task ID**: `t0083_bedb_v3_extend_nsga2_gen8plus`
+* **Status**: completed
+* **Relevance**: 54-d-only extension of t0080. Excluded from t0105's pool for the same reason.
+
+### [t0086]
+
+* **Task ID**: `t0086_robustness_cluster_bio_comparison`
+* **Status**: completed
+* **Relevance**: Closest cluster-analysis precedent in the project (k-means + silhouette + ARI
+  bootstrap on a 54-d Pareto library, N=128 cells). Provides the methodological template.
+
+### [t0090]
+
+* **Task ID**: `t0090_morphology_generator_diversity_test`
+* **Status**: completed
+* **Relevance**: Provides the `MorphologyParams` dataclass schema and the morphology generator's
+  reference test harness. t0105 imports `MorphologyParams.from_dict` directly.
+
+### [t0091]
+
+* **Task ID**: `t0091_morphology_extended_nsga2_v1`
+* **Status**: completed
+* **Relevance**: Warm-start 68-d NSGA-II — first lineage to optimise electrophys + morphology
+  jointly. Contributes 26 unique cells at the primary filter to t0105's pool.
+
+### [t0092]
+
+* **Task ID**: `t0092_diagnose_morphology_generator_silence`
+* **Status**: completed
+* **Relevance**: Fixes the soma-area bug in t0090's generator. `generate_fixed_morphology` is
+  t0105's morphology entry point.
+
+### [t0099]
+
+* **Task ID**: `t0099_random_init_pareto_robustness`
+* **Status**: completed
+* **Relevance**: Random-init 68-d NSGA-II at N_EVAL=20, 3 GA seeds. Contributes 20 unique cells at
+  the primary filter to t0105's pool.
+
+### [t0102]
+
+* **Task ID**: `t0102_seedscale_n4_gen20`
+* **Status**: completed
+* **Relevance**: Random-init 68-d NSGA-II at N_EVAL=4 with robustness objective, 2 GA seeds.
+  Contributes 20 unique cells. **Contains pre-guard silenced-cell artifacts** (DSI ~= 1.0 / PD < 5
+  Hz) that t0105 must filter out.
+
+### [t0104]
+
+* **Task ID**: `t0104_nsga2_2obj_dsi_pdrate_3seeds`
+* **Status**: completed
+* **Relevance**: Random-init 68-d NSGA-II without robustness, with the S-0102-01 DSI silence guard.
+  Contributes 20 unique cells. The guard pattern (`DSI = 0 if total spikes < 10`) is the template
+  for retroactive de-artifacting in t0105.
