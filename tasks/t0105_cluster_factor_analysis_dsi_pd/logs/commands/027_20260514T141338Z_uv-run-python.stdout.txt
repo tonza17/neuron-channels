@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results
+
+[31m[1mERRORS:[0m
+[31m  TR-E007 error: results_detailed.md is missing mandatory section: ## Verification[0m
+[31m  TR-E020 error: ## Examples section contains no fenced code blocks — examples must show actual inputs and outputs in code blocks[0m
+
+[33m[1mWARNINGS:[0m
+[33m  TR-W014 warning: ## Examples section has 4 examples (bullets, code blocks, numbered items), minimum is 10[0m
+
+[31m[1mFAILED[0m — 2 error(s), 1 warning(s)

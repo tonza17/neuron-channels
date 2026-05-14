@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W001 warning: suggestions[3]: title is 158 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[5]: title is 156 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[6]: title is 132 characters, exceeds 120[0m
+
+[33m[1mPASSED[0m — 0 error(s), 3 warning(s)
