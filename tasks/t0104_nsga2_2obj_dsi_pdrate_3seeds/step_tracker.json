@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Run NSGA-II three times (seeds 44, 55, 66) at pop=96, gens=20, N_EVAL_SEEDS=4, n_obj=2 on the 68-d substrate; pull predictions back; build 3 predictions assets.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-12T21:58:15Z",
-      "completed_at": null,
+      "completed_at": "2026-05-14T03:00:01Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
