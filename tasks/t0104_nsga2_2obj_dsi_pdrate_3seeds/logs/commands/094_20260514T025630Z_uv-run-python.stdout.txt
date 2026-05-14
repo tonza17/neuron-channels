@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0104_nsga2_2obj_dsi_pdrate_3seeds\tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\results\remote_machines_used.json
+
+[33m[1mWARNINGS:[0m
+[33m  RM-W001 warning: Cannot verify destruction of 36645796 — API unreachable[0m
+[33m  RM-W003 warning: Machine 36645796 ran for 28.7h (>12.0h)[0m
+[33m  RM-W006 warning: Machine 36645796 ran 28.7h but no checkpoint_path is set[0m
+
+[33m[1mPASSED[0m — 0 error(s), 3 warning(s)

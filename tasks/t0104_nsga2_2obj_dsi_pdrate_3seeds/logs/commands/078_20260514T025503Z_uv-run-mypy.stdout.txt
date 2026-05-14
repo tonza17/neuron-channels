@@ -1,0 +1,2 @@
+tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\__init__.py: error: Source file found twice under different module names: "t0104_nsga2_2obj_dsi_pdrate_3seeds.code" and "tasks.t0104_nsga2_2obj_dsi_pdrate_3seeds.code"
+Found 1 error in 1 file (errors prevented further checking)

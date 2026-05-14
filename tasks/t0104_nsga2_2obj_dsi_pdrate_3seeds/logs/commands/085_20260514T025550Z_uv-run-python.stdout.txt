@@ -1,0 +1,18 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0104_nsga2_2obj_dsi_pdrate_3seeds\tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\task.json
+
+[31m[1mERRORS:[0m
+[31m  TC-E001 error: task.json status is 'in_progress', expected one of: cancelled, completed, permanently_failed[0m
+[31m  TC-E002 error: task.json end_time is null[0m
+[31m  TC-E004 error: Step 'implementation' has status 'in_progress', not finished[0m
+[31m  TC-E004 error: Step 'teardown' has status 'pending', not finished[0m
+[31m  TC-E004 error: Step 'creative-thinking' has status 'pending', not finished[0m
+[31m  TC-E004 error: Step 'results' has status 'pending', not finished[0m
+[31m  TC-E004 error: Step 'compare-literature' has status 'pending', not finished[0m
+[31m  TC-E004 error: Step 'suggestions' has status 'pending', not finished[0m
+[31m  TC-E004 error: Step 'reporting' has status 'pending', not finished[0m
+
+[33m[1mWARNINGS:[0m
+[33m  TC-W005 warning: No merged PR found for branch 'task/t0104_nsga2_2obj_dsi_pdrate_3seeds'[0m
+
+[31m[1mFAILED[0m — 9 error(s), 1 warning(s)

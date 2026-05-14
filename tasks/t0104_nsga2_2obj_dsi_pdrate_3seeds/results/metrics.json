@@ -1,0 +1,38 @@
+{
+  "variants": [
+    {
+      "variant_id": "random-init-seed44-2obj",
+      "label": "Random-init seed 44 (2-obj, N_EVAL_SEEDS=4, gens completed=12)",
+      "dimensions": {
+        "task_seed": 44,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 4,
+        "n_generations_target": 20,
+        "n_generations_completed": 12,
+        "n_cells": 1152
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.4073
+      }
+    },
+    {
+      "variant_id": "random-init-seed55-2obj",
+      "label": "Random-init seed 55 (2-obj, N_EVAL_SEEDS=4, gens completed=11)",
+      "dimensions": {
+        "task_seed": 55,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 4,
+        "n_generations_target": 20,
+        "n_generations_completed": 11,
+        "n_cells": 1056
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5417
+      }
+    }
+  ]
+}

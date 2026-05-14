@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/results_summary.md tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/results_detailed.md tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/compare_literature.md tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/assets/answer/t0104-joint-pass-recovery-2obj/short_answer.md tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/assets/answer/t0104-joint-pass-recovery-2obj/full_answer.md",
+  "exit_code": 0,
+  "duration_seconds": 0.938,
+  "started_at": "2026-05-14T02:55:16Z",
+  "completed_at": "2026-05-14T02:55:17Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "079_20260514T025516Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "079_20260514T025516Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

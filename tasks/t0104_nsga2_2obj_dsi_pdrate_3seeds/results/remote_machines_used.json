@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "36645796",
+    "gpu": "RTX 3060 Ti (idle, CPU-only NEURON workload)",
+    "gpu_count": 1,
+    "ram_gb": 125,
+    "duration_hours": 28.66,
+    "cost_usd": 10.30
+  }
+]

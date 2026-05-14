@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "uv run python -m meta.asset_types.answer.verificator --task-id t0104_nsga2_2obj_dsi_pdrate_3seeds t0104-joint-pass-recovery-2obj",
+  "exit_code": 0,
+  "duration_seconds": 0.344,
+  "started_at": "2026-05-14T02:56:46Z",
+  "completed_at": "2026-05-14T02:56:47Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "097_20260514T025646Z_uv-run-python.stdout.txt",
+  "stderr_file": "097_20260514T025646Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/assets/predictions/nsga2-seed44-bedb-morph-n4-gen20-2obj/description.md tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/assets/predictions/nsga2-seed55-bedb-morph-n4-gen20-2obj/description.md",
+  "exit_code": 0,
+  "duration_seconds": 0.512,
+  "started_at": "2026-05-14T02:55:41Z",
+  "completed_at": "2026-05-14T02:55:41Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "stdout_file": "083_20260514T025541Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "083_20260514T025541Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}
