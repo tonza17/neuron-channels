@@ -1,23 +1,39 @@
-# t0105 — Cluster + Factor Analysis of High-DSI / High-PD Cells across t0102 and t0104
+# t0105 — Cluster + Factor Analysis of High-DSI / High-PD Cells across All 68-d Optimisations
 
 ## Context
 
-Direct researcher commission at 2026-05-14 after the t0104 result landed. t0102 (3-objective NSGA-II
-with robustness) and t0104 (2-objective NSGA-II without robustness, with the DSI-silence guard)
-together produced 4,800 evaluations across 4 GA seeds. The two best cells in t0104 are strongly
-asymmetric DSGCs (soma offset toward PD, dendritic field 2× elongated, primary branches
-PD-concentrated). The follow-up question: across all cells that produced *some* direction
-selectivity AND *some* firing — not just the Pareto extremes — does the asymmetric morphology
-motif hold, and which of the 68 input parameters drive DSI and PD diversity?
+Direct researcher commission at 2026-05-14 after the t0104 result landed. Four NSGA-II lineages have
+run 68-d optimisation (54-d electrophys + 14-d morphology) on the Bed B + morphology substrate:
+
+* **t0091** — warm-start NSGA-II 3-objective (DSI + PD-rate + robustness), 187 cells.
+* **t0099** — random-init NSGA-II 3-objective at N_EVAL=20, 2,016 cells across GA seeds 11/22/33.
+* **t0102** — random-init NSGA-II 3-objective at N_EVAL=4, 2,592 cells across GA seeds 44/55.
+* **t0104** — random-init NSGA-II 2-objective (no robustness) at N_EVAL=4, with the S-0102-01 DSI
+  silence guard, 2,208 cells across GA seeds 44/55.
+
+Total: **7,003 cells**. The 54-d-only lineage (t0080 / t0081 / t0083) is excluded because it does
+not co-vary morphology with electrophys.
+
+Pre-scoping inventory (`scratch_count_68d_cells.py` on main) confirmed that with the relaxed primary
+filter `DSI > 0.1 AND PD > 2 Hz` and dedupe by 68-d vector, **86 unique cells** pass — a healthy
+sample for PCA and factor analysis. The strict filter `DSI > 0.2 AND PD > 3 Hz` yields 31 unique
+cells and serves as a sensitivity check.
+
+The two best cells in t0104 are strongly asymmetric DSGCs (soma offset toward PD, dendritic field
+2× elongated, primary branches PD-concentrated). The follow-up question: across all 86 cells that
+produced *some* direction selectivity AND *some* firing — not just the Pareto extremes — does
+the asymmetric morphology motif hold, and which of the 68 input parameters drive DSI and PD
+diversity?
 
 A scratch comparison plot (`scratch_t0102_t0104_morph_compare.png` on main) showed top-5 cells per
 optimisation but was limited to extreme cells. This task extends to the full population of
-non-trivial cells.
+non-trivial cells from all four 68-d lineages.
 
 ## Goal
 
-For all cells from t0102 + t0104 with **DSI > 0.2 AND PD-rate > 3 Hz** (the "non-trivial both-axes"
-population), answer three questions:
+For all cells from t0091 + t0099 + t0102 + t0104 with **DSI > 0.1 AND PD-rate > 2 Hz** (the
+"non-trivial both-axes" population — primary cohort, expected ~86 unique cells), answer three
+questions:
 
 1. **What does a morphology gallery of these cells look like?** Plot each cell's morphology (or a
    representative subsample if the count > 30) with its DSI and PD values annotated, separated by
@@ -52,18 +68,29 @@ population), answer three questions:
 
 ### Cell selection
 
-Pool all evaluations from
-`tasks/t0102_seedscale_n4_gen20/results/data/all_evaluations_seed{44,55}.json` and
-`tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/all_evaluations_seed{44,55}.json`.
+Pool all evaluations from the four 68-d optimisation lineages:
 
-Apply the filter: `dsi_vector_sum > 0.2 AND pd_rate_hz > 3.0`.
+* `tasks/t0091_morphology_extended_nsga2_v1/results/data/all_evaluations.json`
+* `tasks/t0099_random_init_pareto_robustness/results/data/all_evaluations_seed{11,22,33}.json`
+* `tasks/t0102_seedscale_n4_gen20/results/data/all_evaluations_seed{44,55}.json`
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/all_evaluations_seed{44,55}.json`
+
+**Primary filter**: `dsi_vector_sum > 0.1 AND pd_rate_hz > 2.0` (expected ~86 unique cells after
+dedupe).
+
+**Strict robustness-check filter**: `dsi_vector_sum > 0.2 AND pd_rate_hz > 3.0` (expected ~31 unique
+cells). All headline analyses must be repeated on this stricter cohort and any qualitative change
+between cohorts must be documented in `results_detailed.md`.
 
 Dedupe by full 68-d parameter vector (round to 6 decimals) — Pareto preservation across
-generations creates many duplicate rows.
+generations creates many duplicate rows. Across all lineages we expect ~268 raw passing rows
+reducing to ~86 unique vectors at the primary filter.
 
-Tag each row with `source_task` ∈ {t0102, t0104} and `seed` ∈ {44, 55}.
+Tag each row with `source_task` ∈ {t0091, t0099, t0102, t0104} and `seed` (if applicable).
 
-Report N_selected before and after dedupe.
+Report `N_selected` before and after dedupe for both filter thresholds. Also report the per-lineage
+cell counts in the headline `results_summary.md` so the reader can see the relative contribution of
+each optimisation regime to the analysis population.
 
 ### Asymmetry classification
 
@@ -85,8 +112,12 @@ Report the distribution of `asym_score` in the selected population and the count
 
 ### Morphology gallery
 
-For each selected cell (or a stratified subsample of ≤30 cells if N > 30, stratified by asymmetry
-class and source task):
+At ~86 cells in the primary cohort, a full gallery is too large. Use a **stratified subsample of
+≤30 cells**, stratified by asymmetry class × source task. The subsample selection is
+deterministic: within each (class, source_task) stratum, take the top cells by `DSI × PD` until the
+per-stratum quota is met. Record the (class, task) quota table in `results_detailed.md`.
+
+For each selected cell:
 
 1. Build the morphology via
    `tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix.generate_fixed_morphology`.
@@ -263,8 +294,9 @@ No predictions assets — t0105 is a pure analysis task on existing predictions.
 
 ## Task Requirement Checklist (initial — `plan/plan.md` will finalise the REQ list)
 
-* REQ-1: Pool t0102 + t0104 evaluations, apply filter `DSI > 0.2 AND PD > 3 Hz`, dedupe by 68-d
-  vector. Record N_before_filter, N_after_filter, N_after_dedupe.
+* REQ-1: Pool t0091 + t0099 + t0102 + t0104 evaluations, apply both filters (primary
+  `DSI > 0.1 AND PD > 2`; strict `DSI > 0.2 AND PD > 3`), dedupe by 68-d vector. Record N_raw,
+  N_passing, N_unique for each filter and lineage.
 * REQ-2: Compute normalised asymmetry score for each selected cell; classify symmetric/asymmetric at
   threshold 0.5; report class counts.
 * REQ-3: Build morphology gallery for selected cells (or stratified subsample of ≤30). Annotate
