@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-14T03:13:56Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-14T14:27:05Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>173</section_count>
-    <char_count>3242296</char_count>
-    <byte_count>3250082</byte_count>
-    <estimated_tokens>810574</estimated_tokens>
+    <section_count>174</section_count>
+    <char_count>3258616</char_count>
+    <byte_count>3266455</byte_count>
+    <estimated_tokens>814654</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -208,10 +208,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0102_seedscale_n4_gen20</id>
         <id>t0103_extract_baden_2016_ds_morphologies</id>
         <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
+        <id>t0105_cluster_factor_analysis_dsi_pd</id>
         <id>t0105_preliminary_figures_report</id>
       </source_ids>
       <content>
-Completed tasks: 97
+Completed tasks: 98
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -789,6 +790,12 @@ Completed: 2026-05-14
 Short description: Re-run t0102&#x27;s 68-d NSGA-II with the robustness objective dropped: 3 random-init GA seeds (44/55/66), N_EVAL=4, gens=20, pop=96, DSI-silence guard applied. $15 hard cap.
 Result summary: Results Summary: t0104 — 68-d 2-Objective NSGA-II at 2 Random-Init GA Seeds (DSI Silence Guard Active) Summary t0104 ran 2-objective NSGA-II `(DSI, PD-rate)` on the 68-d Bed B + morphology DSGC substrate with the new DSI silence guard active. Two random-init GA seeds (44 and 55) completed before the researcher elected to stop after seed 55 (intervention file `intervention/early_stop_after_seed_55.md`); seed 66 was skipped. Across **2,208** evaluated cells, **zero** cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The **DSI extreme cleanly broke past 0.5 for the first time** in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, **DSI = 0.5417** at PD = 3.57 Hz), confirming the...
 
+## Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations
+ID: t0105_cluster_factor_analysis_dsi_pd
+Completed: 2026-05-14
+Short description: Pool 68-d cells from t0091, t0099, t0102, t0104 with DSI &gt; 0.1 AND PD &gt; 2 Hz, classify by morphological asymmetry, run PCA cluster analysis on intrinsic params, and factor analysis (incl. morphology) on what explains DSI / PD diversity.
+Result summary: Results Summary: t0105 — Cluster + Factor Analysis of High-DSI/High-PD Cells Summary t0105 pools 7,003 per-cell evaluations from four 68-d NSGA-II lineages (t0091, t0099, t0102, t0104), applies a silence-artifact filter (73 cells excluded) plus the primary cohort filter `DSI &gt; 0.1 AND PD &gt; 2 Hz` with dedupe by 68-d vector to land at **N=85 unique cells**, and runs asymmetry classification, PCA on the 54-d electrophys submatrix, and varimax factor analysis on the full 68-d matrix. PC1 separates the 20 symmetric and 65 asymmetric cells at **Mann-Whitney U=31.0, p=1.48e-10**, top-loading Ca-activated K-channels (SK_TERMINAL, BK_TERMINAL, SK_SOMA, BK_MID) and persistent Na (NAP_PRIMARY) —...
+
 ## Preliminary-data figure pack and slide deck for report
 ID: t0105_preliminary_figures_report
 Completed: 2026-05-13
@@ -860,10 +867,12 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>t0090-procedural-cell-silence-root-cause</id>
         <id>random-init-reproducibility-and-warmstart-dependence</id>
         <id>does-n4-gens20-2seeds-recover-joint-pass-corner</id>
+        <id>dsi-pd-diversity-factor-decomposition</id>
+        <id>symmetric-vs-asymmetric-electrophys-cluster</id>
         <id>t0104-joint-pass-recovery-2obj</id>
       </source_ids>
       <content>
-Answers: 29
+Answers: 31
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1083,6 +1092,22 @@ Confidence: high
 Categories: direction-selectivity, compartmental-modeling
 
 No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells cleared the strict joint-pass corner, and zero cells cleared even the loosest 2-axis test (DSI&gt;=0.5 AND PD&gt;=5 Hz), because DSI and PD-rate are strongly bimodally anti-correlated on this substrate. The headline max-DSI of 1.0 in both seeds turned out to be a floating-point artifact of the vector-sum DSI formula on silenced cells with PD=0 Hz; the real DSI ceiling under N=4 noise replicates is roughly 0.35. The earlier t0091 single joint-pass cell, previously framed as an NSGA-II discovery, is reframed here as a one-mutation polynomial-mutation descendant of an alt_topology warm-start anchor, so removing the warm-start...
+
+## Which factors (combinations of the 68 input parameters) explain DSI diversity versus PD diversity, and is there a joint factor or are the two outcomes orthogonal?
+ID: dsi-pd-diversity-factor-decomposition
+Created by: t0105_cluster_factor_analysis_dsi_pd on 2026-05-14
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling
+
+The two outcomes are mostly orthogonal but partially coupled through one near-joint factor: a varimax factor analysis on the standardised 68-d matrix (N=85, 10 factors by Kaiser criterion capped at 10) finds F1 the only factor exceeding |r| = 0.25 on either outcome, with r_DSI = -0.322 (p=0.003) and r_PD = -0.265 (p=0.014). No factor crosses the joint-factor threshold |r| &gt; 0.3 on both, so the joint high-DSI / high-PD corner is not unlocked by a single low-d axis. F1&#x27;s top loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM) are bootstrap-stable across 200 resamples, but F3 through F10 are not. The substrate-limited reading from t0102 and t0104 is reinforced: DSI and PD share a weak common...
+
+## Do symmetric and asymmetric DSGC morphologies share the same electrophys parameter regime, or do they form distinct clusters in PC space?
+ID: symmetric-vs-asymmetric-electrophys-cluster
+Created by: t0105_cluster_factor_analysis_dsi_pd on 2026-05-14
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling
+
+No, they form distinct clusters. PCA on the 54-d electrophys submatrix of the 85-cell primary cohort (DSI &gt; 0.1 AND PD &gt; 2 Hz, pooled across four 68-d NSGA-II lineages) shows PC1 separating the 20 symmetric and 65 asymmetric cells at Mann-Whitney U=31.0, p=1.5e-10. PC1 captures 29.5 % of variance and loads on terminal-dendrite K-Ca conductances (SK_TERMINAL, BK_TERMINAL, BK_MID, SK_SOMA) plus primary-dendrite persistent Na (NAP_PRIMARY). The strict cohort (DSI &gt; 0.2 AND PD &gt; 3 Hz, N=30) preserves the separation (p=8.2e-5), so the result is not an artefact of the relaxed primary filter. PC2 does not separate the classes (p=0.78), so the distinction lives on a single axis dominated by...
 
 ## Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard applied) recover joint-pass cells where t0102&#x27;s 3-objective run found zero?
 ID: t0104-joint-pass-recovery-2obj
@@ -54098,6 +54123,281 @@ Cross-task import is forbidden for non-library code per the cross-task code reus
 * **Relevance**: Source of `generate_fixed_morphology` and `insert_baseline_channels` (corrected
   morphology generator). Library-level dependency reached via t0102&#x27;s `generator_wrapper.py`
   imports; no direct edits required in t0104.
+      </content>
+    </section>
+    <section id="t0105_cluster_factor_analysis_dsi_pd-research_code" source_kind="file">
+      <title>t0105_cluster_factor_analysis_dsi_pd — Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0105_cluster_factor_analysis_dsi_pd</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0105_cluster_factor_analysis_dsi_pd/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0105_cluster_factor_analysis_dsi_pd&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 7
+tasks_cited: 6
+libraries_found: 2
+libraries_relevant: 1
+date_completed: &quot;2026-05-14&quot;
+status: &quot;complete&quot;
+---
+### Research Code: Cluster + Factor Analysis Across 68-d Optimisations
+
+#### Task Objective
+
+Pool cells from t0091, t0099, t0102, t0104 (all four 68-d electrophys+morphology NSGA-II lineages)
+with `DSI &gt; 0.1 AND PD &gt; 2 Hz`, dedupe by 68-d vector, classify by morphological asymmetry, then run
+PCA on the 54-d electrophys submatrix and factor analysis on the full 68-d matrix to identify which
+factors explain DSI and PD diversity. Produces 2 answer assets, a morphology gallery, and a PCA
+scatter + factor-loading heatmap.
+
+#### Library Landscape
+
+Project libraries aggregator surfaces two relevant libraries:
+
+* `de_rosenroll_2026_dsgc` (from t0024 with corrections from later tasks) — the Bed B DSGC
+  compartmental model. **Not directly relevant** to t0105 because t0105 does no compartmental
+  simulation; the existing predictions data fully encodes the simulation output. Only the
+  morphology-parameter bound definitions are reused indirectly via t0090&#x27;s `MorphologyParams` schema
+  (no simulation calls).
+
+* No `factor_analyzer` or `scikit-learn` library is registered as a project library (these are
+  upstream pip deps configured in `pyproject.toml`). Confirmed present at runtime:
+  `scikit-learn&gt;=1.8.0` and `scipy&gt;=1.17.1`. **`factor_analyzer` is NOT installed** — adding it to
+  `pyproject.toml` is part of REQ-2 in the plan.
+
+#### Key Findings
+
+##### Evaluation file structure across all four 68-d lineages
+
+All four tasks store per-cell evaluations under `tasks/{task_id}/results/data/all_evaluations*.json`
+with the same row schema:
+
+* `generation` (int)
+* `vector_68d` (list[float], length 68 — 54 electrophys followed by 14 morphology dims)
+* `objective_F_minimised` (list[float], length 2 or 3)
+* `dsi_vector_sum` (float)
+* `pd_rate_hz` (float)
+* `robustness` (float — present in t0091, t0099, t0102; **absent in t0104** because the 2-obj run
+  dropped the field)
+
+t0091&#x27;s file is a single `all_evaluations.json` (no per-seed split). t0099 / t0102 / t0104 split by
+GA seed (`all_evaluations_seed{11,22,33,44,55}.json`). All files wrap rows in
+`{&quot;evaluations&quot;: [...]}`. Citations: [t0091], [t0099], [t0102], [t0104].
+
+Pre-scope inventory (`scratch_count_68d_cells.py`):
+* Total 68-d cells: **7,003** across all 4 lineages (187 + 2,016 + 2,592 + 2,208).
+* At primary filter `DSI &gt; 0.1 AND PD &gt; 2`: 268 passing rows → **86 unique 68-d vectors**.
+* At strict filter `DSI &gt; 0.2 AND PD &gt; 3`: 95 passing rows → 31 unique vectors.
+
+The 54-d-only lineage (`t0080`, `t0081`, `t0083`) is excluded because those runs fixed morphology
+and varied only electrophys (54-d vector). Citations: [t0080], [t0083].
+
+##### Morphology generator interface
+
+Procedurally building a NEURON dendritic tree from a 14-d morphology parameter vector uses
+`tasks/t0092_diagnose_morphology_generator_silence/code/morphology_generator_fix.py`:
+
+```python
+from tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix import (
+    generate_fixed_morphology,
+)
+from tasks.t0090_morphology_generator_diversity_test.code.morphology_params import (
+    MorphologyParams,
+)
+
+result = generate_fixed_morphology(params=MorphologyParams.from_dict(data=morph_dict))
+### result has fields: h (neuron h object), soma, all_dends, primary_dends, terminal_dends,
+### terminal_locs_xy, ...
+```
+
+The 14 morphology dim names are documented at
+`tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/constants_morphology.py:18-33` — the same schema is
+used by all four lineages. Three of the 14 dims are integers (`num_primary_branches`,
+`max_strahler_depth`, `morph_seed`) and must be rounded before constructing
+`MorphologyParams.from_dict`. Citations: [t0090], [t0092].
+
+To plot the morphology, iterate `result.soma + result.all_dends` and call NEURON&#x27;s `h.x3d(i)`,
+`h.y3d(i)`, `h.diam3d(i)` while the section is pushed on the access stack. The working prototype is
+`scratch_t0102_t0104_morph_compare.py` on main (commit `e600e3f0`); it builds 10 cells and renders a
+2×5 grid in ~30 s.
+
+##### Asymmetry-classification convention
+
+The four PD-asymmetry dims (5: soma_offset_pd_um, 6: field_elongation_pd, 7:
+branch_density_gradient_pd, 8: primary_branch_pd_concentration) drive whether the dendritic tree is
+polarised toward the preferred direction. The normalised asymmetry score formula in t0104&#x27;s
+intervention file `early_stop_after_seed_55.md` (and used in the scratch decoder) sums normalised
+magnitudes:
+
+```
+asym_score = abs(soma_offset_pd_um) / 150
+           + abs(field_elongation_pd - 1.0) / 2.0
+           + abs(branch_density_gradient_pd) / 1.0
+           + abs(primary_branch_pd_concentration) / 5.0
+```
+
+Range 0..4. Threshold ≥ 0.5 = asymmetric. Citations: [t0104].
+
+##### Silenced-cell artifact handling
+
+t0102&#x27;s pre-guard data contains 27 cells with `DSI ~= 1.0 AND PD &lt; 5 Hz` that are vector-sum
+divide-by-near-zero artifacts. t0104 fixed this with the S-0102-01 silence guard. **t0091, t0099,
+t0102 evaluations may contain the same artifact pattern.** For t0105 the conservative move is to
+exclude cells matching `DSI &gt; 0.95 AND PD &lt; 5 Hz` from t0091/t0099/t0102. Citation: [t0102].
+
+##### Existing PCA / factor analysis precedent in the project
+
+No prior task in this project has run PCA on optimisation outputs. t0090 (`morphometric_pca.py`)
+computed PCA / UMAP on six morphometric summary features for diversity testing (not on the parameter
+vectors). t0086 (`cluster_analysis.py`) ran k-means + silhouette
++ ARI on a 54-d Pareto library; that pattern is the closest precedent. The t0086 approach used
+  `sklearn.cluster.KMeans` and `sklearn.metrics.silhouette_score` — both still available in
+  sklearn 1.8.0. Citations: [t0090], [t0086].
+
+#### Reusable Code and Assets
+
+##### From t0092 — morphology generator (copy into task)
+
+* **Source**: `tasks/t0092_diagnose_morphology_generator_silence/code/morphology_generator_fix.py`
+  (~80 lines including imports). Plus its dependency
+  `tasks/t0090_morphology_generator_diversity_test/code/morphology_params.py` (~150 lines).
+* **What it does**: builds a NEURON Cell from a 14-d morphology vector and returns soma / dendrite
+  Section objects.
+* **Reuse method**: **import via library** — t0092&#x27;s generator is exported as part of the
+  `de_rosenroll_2026_dsgc` library (per t0093 / t0090 correction patches). Confirmed by import in
+  `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/generator_wrapper.py:25-30`. t0105 can import
+  directly:
+  ```python
+  from tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix import (
+      generate_fixed_morphology,
+  )
+  from tasks.t0090_morphology_generator_diversity_test.code.morphology_params import (
+      MorphologyParams,
+  )
+  ```
+* **Adaptation needed**: none — the prototype scratch script already exercises this import path
+  successfully on main.
+
+##### From the t0104 scratch script — gallery layout (copy into task)
+
+* **Source**: `scratch_t0102_t0104_morph_compare.py` on main (~210 lines).
+* **What it does**: loads evaluations, top-N by `DSI × PD`, builds morphologies, plots a grid.
+* **Reuse method**: **copy into task** as `code/build_gallery.py` and adapt for stratified
+  subsampling (by class × source_task) instead of top-N-per-optimisation. Add asym_score annotation
+  per panel.
+* **Adaptation needed**: stratified subsampling logic (≤30 cells), per-panel asym_score
+  annotation, support for all 4 lineages.
+
+##### From sklearn / scipy (pip-installed)
+
+* `sklearn.decomposition.PCA` — fit on the standardised 54-d electrophys submatrix.
+* `sklearn.decomposition.FactorAnalysis` — fit on the standardised 68-d matrix; lacks varimax
+  built-in (rotation parameter not supported in sklearn 1.8.0 for `FactorAnalysis`).
+* `scipy.stats.mannwhitneyu` — symmetric vs asymmetric PC1/PC2 separation.
+* `scipy.stats.pearsonr` — factor scores vs DSI / PD.
+
+##### Varimax via factor_analyzer (add to pyproject.toml)
+
+* **Add**: `factor_analyzer&gt;=0.5.1` to `pyproject.toml` (small pure-Python package, ~2 MB).
+* **Why**: provides `FactorAnalyzer(rotation=&quot;varimax&quot;)` out of the box; cleaner than manually
+  implementing varimax rotation. Alternative is a manual ~30-line varimax routine using
+  `numpy.linalg.svd`. Plan REQ-3 will choose between these based on whether the package can be
+  installed cleanly.
+
+#### Lessons Learned
+
+* t0086&#x27;s cluster analysis used N=128 cells on 54 dims — comparable scale to t0105 (86 cells on 68
+  dims). t0086 found that PC1-PC2 captured ~45% of variance; further PCs were noisy. Expect similar
+  at t0105.
+* t0104&#x27;s silence guard (S-0102-01) is the most important guard against artifact pollution; the
+  t0105 implementation must apply the same guard pattern when ingesting pre-guard data from
+  t0091/t0099/t0102. Citation: [t0102].
+* Cross-lineage heterogeneity (warm-start vs random-init; 2-obj vs 3-obj; N_EVAL 4 vs 20) means PCA
+  loadings may reflect lineage origin as much as DSI/PD trade-off. The PCA scatter should
+  additionally colour-code by source_task to inspect lineage clustering.
+
+#### Recommendations for This Task
+
+1. Add `factor_analyzer` to `pyproject.toml` (single-line edit) before implementing.
+2. Reuse the scratch gallery script&#x27;s morphology-build path verbatim; adapt the cell-selection logic
+   for stratified sampling.
+3. Apply silence guard (`DSI = 0` when total spike count &lt; 10 — or as fallback exclude
+   `DSI &gt; 0.95 AND PD &lt; 5`) consistently across all four lineages.
+4. Cap factor count at min(Kaiser eigenvalues &gt; 1, 80% variance, 10) and report bootstrap CIs on
+   loadings.
+5. For each chart, save at 150-180 DPI; embed in `results_detailed.md` with descriptive caption.
+
+#### Task Index
+
+##### [t0080]
+
+* **Task ID**: `t0080_bedb_mobo_v3_dendritic_spike_nsga2`
+* **Status**: completed
+* **Relevance**: 54-d electrophys-only NSGA-II ancestor. Excluded from t0105&#x27;s pool because it does
+  not co-vary morphology.
+
+##### [t0083]
+
+* **Task ID**: `t0083_bedb_v3_extend_nsga2_gen8plus`
+* **Status**: completed
+* **Relevance**: 54-d-only extension of t0080. Excluded from t0105&#x27;s pool for the same reason.
+
+##### [t0086]
+
+* **Task ID**: `t0086_robustness_cluster_bio_comparison`
+* **Status**: completed
+* **Relevance**: Closest cluster-analysis precedent in the project (k-means + silhouette + ARI
+  bootstrap on a 54-d Pareto library, N=128 cells). Provides the methodological template.
+
+##### [t0090]
+
+* **Task ID**: `t0090_morphology_generator_diversity_test`
+* **Status**: completed
+* **Relevance**: Provides the `MorphologyParams` dataclass schema and the morphology generator&#x27;s
+  reference test harness. t0105 imports `MorphologyParams.from_dict` directly.
+
+##### [t0091]
+
+* **Task ID**: `t0091_morphology_extended_nsga2_v1`
+* **Status**: completed
+* **Relevance**: Warm-start 68-d NSGA-II — first lineage to optimise electrophys + morphology
+  jointly. Contributes 26 unique cells at the primary filter to t0105&#x27;s pool.
+
+##### [t0092]
+
+* **Task ID**: `t0092_diagnose_morphology_generator_silence`
+* **Status**: completed
+* **Relevance**: Fixes the soma-area bug in t0090&#x27;s generator. `generate_fixed_morphology` is
+  t0105&#x27;s morphology entry point.
+
+##### [t0099]
+
+* **Task ID**: `t0099_random_init_pareto_robustness`
+* **Status**: completed
+* **Relevance**: Random-init 68-d NSGA-II at N_EVAL=20, 3 GA seeds. Contributes 20 unique cells at
+  the primary filter to t0105&#x27;s pool.
+
+##### [t0102]
+
+* **Task ID**: `t0102_seedscale_n4_gen20`
+* **Status**: completed
+* **Relevance**: Random-init 68-d NSGA-II at N_EVAL=4 with robustness objective, 2 GA seeds.
+  Contributes 20 unique cells. **Contains pre-guard silenced-cell artifacts** (DSI ~= 1.0 / PD &lt; 5
+  Hz) that t0105 must filter out.
+
+##### [t0104]
+
+* **Task ID**: `t0104_nsga2_2obj_dsi_pdrate_3seeds`
+* **Status**: completed
+* **Relevance**: Random-init 68-d NSGA-II without robustness, with the S-0102-01 DSI silence guard.
+  Contributes 20 unique cells. The guard pattern (`DSI = 0 if total spikes &lt; 10`) is the template
+  for retroactive de-artifacting in t0105.
       </content>
     </section>
     <section id="t0105_preliminary_figures_report-research_code" source_kind="file">

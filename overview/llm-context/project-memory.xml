@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-14T03:13:56Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-14T14:27:05Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>210344</char_count>
-    <byte_count>210653</byte_count>
-    <estimated_tokens>52586</estimated_tokens>
+    <char_count>213743</char_count>
+    <byte_count>214056</byte_count>
+    <estimated_tokens>53435</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -212,10 +212,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0102_seedscale_n4_gen20</id>
         <id>t0103_extract_baden_2016_ds_morphologies</id>
         <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
+        <id>t0105_cluster_factor_analysis_dsi_pd</id>
         <id>t0105_preliminary_figures_report</id>
       </source_ids>
       <content>
-Completed tasks: 97
+Completed tasks: 98
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -793,6 +794,12 @@ Completed: 2026-05-14
 Short description: Re-run t0102&#x27;s 68-d NSGA-II with the robustness objective dropped: 3 random-init GA seeds (44/55/66), N_EVAL=4, gens=20, pop=96, DSI-silence guard applied. $15 hard cap.
 Result summary: Results Summary: t0104 — 68-d 2-Objective NSGA-II at 2 Random-Init GA Seeds (DSI Silence Guard Active) Summary t0104 ran 2-objective NSGA-II `(DSI, PD-rate)` on the 68-d Bed B + morphology DSGC substrate with the new DSI silence guard active. Two random-init GA seeds (44 and 55) completed before the researcher elected to stop after seed 55 (intervention file `intervention/early_stop_after_seed_55.md`); seed 66 was skipped. Across **2,208** evaluated cells, **zero** cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The **DSI extreme cleanly broke past 0.5 for the first time** in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, **DSI = 0.5417** at PD = 3.57 Hz), confirming the...
 
+## Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations
+ID: t0105_cluster_factor_analysis_dsi_pd
+Completed: 2026-05-14
+Short description: Pool 68-d cells from t0091, t0099, t0102, t0104 with DSI &gt; 0.1 AND PD &gt; 2 Hz, classify by morphological asymmetry, run PCA cluster analysis on intrinsic params, and factor analysis (incl. morphology) on what explains DSI / PD diversity.
+Result summary: Results Summary: t0105 — Cluster + Factor Analysis of High-DSI/High-PD Cells Summary t0105 pools 7,003 per-cell evaluations from four 68-d NSGA-II lineages (t0091, t0099, t0102, t0104), applies a silence-artifact filter (73 cells excluded) plus the primary cohort filter `DSI &gt; 0.1 AND PD &gt; 2 Hz` with dedupe by 68-d vector to land at **N=85 unique cells**, and runs asymmetry classification, PCA on the 54-d electrophys submatrix, and varimax factor analysis on the full 68-d matrix. PC1 separates the 20 symmetric and 65 asymmetric cells at **Mann-Whitney U=31.0, p=1.48e-10**, top-loading Ca-activated K-channels (SK_TERMINAL, BK_TERMINAL, SK_SOMA, BK_MID) and persistent Na (NAP_PRIMARY) —...
+
 ## Preliminary-data figure pack and slide deck for report
 ID: t0105_preliminary_figures_report
 Completed: 2026-05-13
@@ -864,10 +871,12 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>t0090-procedural-cell-silence-root-cause</id>
         <id>random-init-reproducibility-and-warmstart-dependence</id>
         <id>does-n4-gens20-2seeds-recover-joint-pass-corner</id>
+        <id>dsi-pd-diversity-factor-decomposition</id>
+        <id>symmetric-vs-asymmetric-electrophys-cluster</id>
         <id>t0104-joint-pass-recovery-2obj</id>
       </source_ids>
       <content>
-Answers: 29
+Answers: 31
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1087,6 +1096,22 @@ Confidence: high
 Categories: direction-selectivity, compartmental-modeling
 
 No. Across 2,592 evaluations from two random-init NSGA-II seeds, zero cells cleared the strict joint-pass corner, and zero cells cleared even the loosest 2-axis test (DSI&gt;=0.5 AND PD&gt;=5 Hz), because DSI and PD-rate are strongly bimodally anti-correlated on this substrate. The headline max-DSI of 1.0 in both seeds turned out to be a floating-point artifact of the vector-sum DSI formula on silenced cells with PD=0 Hz; the real DSI ceiling under N=4 noise replicates is roughly 0.35. The earlier t0091 single joint-pass cell, previously framed as an NSGA-II discovery, is reframed here as a one-mutation polynomial-mutation descendant of an alt_topology warm-start anchor, so removing the warm-start...
+
+## Which factors (combinations of the 68 input parameters) explain DSI diversity versus PD diversity, and is there a joint factor or are the two outcomes orthogonal?
+ID: dsi-pd-diversity-factor-decomposition
+Created by: t0105_cluster_factor_analysis_dsi_pd on 2026-05-14
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling
+
+The two outcomes are mostly orthogonal but partially coupled through one near-joint factor: a varimax factor analysis on the standardised 68-d matrix (N=85, 10 factors by Kaiser criterion capped at 10) finds F1 the only factor exceeding |r| = 0.25 on either outcome, with r_DSI = -0.322 (p=0.003) and r_PD = -0.265 (p=0.014). No factor crosses the joint-factor threshold |r| &gt; 0.3 on both, so the joint high-DSI / high-PD corner is not unlocked by a single low-d axis. F1&#x27;s top loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM) are bootstrap-stable across 200 resamples, but F3 through F10 are not. The substrate-limited reading from t0102 and t0104 is reinforced: DSI and PD share a weak common...
+
+## Do symmetric and asymmetric DSGC morphologies share the same electrophys parameter regime, or do they form distinct clusters in PC space?
+ID: symmetric-vs-asymmetric-electrophys-cluster
+Created by: t0105_cluster_factor_analysis_dsi_pd on 2026-05-14
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling
+
+No, they form distinct clusters. PCA on the 54-d electrophys submatrix of the 85-cell primary cohort (DSI &gt; 0.1 AND PD &gt; 2 Hz, pooled across four 68-d NSGA-II lineages) shows PC1 separating the 20 symmetric and 65 asymmetric cells at Mann-Whitney U=31.0, p=1.5e-10. PC1 captures 29.5 % of variance and loads on terminal-dendrite K-Ca conductances (SK_TERMINAL, BK_TERMINAL, BK_MID, SK_SOMA) plus primary-dendrite persistent Na (NAP_PRIMARY). The strict cohort (DSI &gt; 0.2 AND PD &gt; 3 Hz, N=30) preserves the separation (p=8.2e-5), so the result is not an artefact of the relaxed primary filter. PC2 does not separate the classes (p=0.78), so the distinction lives on a single axis dominated by...
 
 ## Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard applied) recover joint-pass cells where t0102&#x27;s 3-objective run found zero?
 ID: t0104-joint-pass-recovery-2obj

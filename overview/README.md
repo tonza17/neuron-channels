@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-10-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-29-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-31-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-105-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-403-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-106-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-410-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (37K)
-| [full](llm-context/full.xml) (603K) | [roadmap](llm-context/roadmap.xml) (116K) |
-[results](llm-context/results-deep-dive.xml) (468K) |
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (38K)
+| [full](llm-context/full.xml) (619K) | [roadmap](llm-context/roadmap.xml) (119K) |
+[results](llm-context/results-deep-dive.xml) (480K) |
 [assets](llm-context/literature-and-assets.xml) (65K)
 
-*Last updated: 2026-05-14 03:13 UTC*
+*Last updated: 2026-05-14 14:27 UTC*
 
 * **Budget**: **$46** spent of $50
 * **Remaining**: **$4**
@@ -82,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (97 total)](tasks/by-status/completed.md)
+## [Recently Completed (98 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0105 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | [`results`](../tasks/t0105_cluster_factor_analysis_dsi_pd/results/results_detailed.md) | 2026-05-14 14:25 |
 | 0104 | [68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | [`results`](../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/results_detailed.md) | 2026-05-14 03:07 |
 | 0105 | [Preliminary-data figure pack and slide deck for report](../overview/tasks/task_pages/t0105_preliminary_figures_report.md) | [`results`](../tasks/t0105_preliminary_figures_report/results/results_detailed.md) | 2026-05-13 22:44 |
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | [`results`](../tasks/t0102_seedscale_n4_gen20/results/results_detailed.md) | 2026-05-12 18:44 |
@@ -95,9 +96,8 @@ No blocked tasks.
 | 0099 | [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`results`](../tasks/t0099_random_init_pareto_robustness/results/results_detailed.md) | 2026-05-10 23:35 |
 | 0098 | [Visualise t0091 Pareto morphologies + per-cell DSI / PD-rate charts](../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) | [`results`](../tasks/t0098_visualise_pareto_morphologies/results/results_detailed.md) | 2026-05-08 21:50 |
 | 0095 | [Brainstorm results session 20](../overview/tasks/task_pages/t0095_brainstorm_results_20.md) | [`results`](../tasks/t0095_brainstorm_results_20/results/results_detailed.md) | 2026-05-08 20:45 |
-| 0094 | [Brainstorm results session 19](../overview/tasks/task_pages/t0094_brainstorm_results_19.md) | [`results`](../tasks/t0094_brainstorm_results_19/results/results_detailed.md) | 2026-05-08 18:30 |
 
-*87 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*88 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -118,11 +118,11 @@ No blocked tasks.
 | 9 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/FULL | **17.178292988536434** |
 | 10 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | Full E+I (scalar gabaMOD) | **16.980414819835936** |
 
-*161 more results → [all results](metrics-results/)*
+*163 more results → [all results](metrics-results/)*
 
 ---
 
-## [Recent Suggestions (361 open)](suggestions/)
+## [Recent Suggestions (368 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Inspect the seed-55 gen-11 DSI=0.54 cell's 68-d parameter vector
@@ -245,87 +245,88 @@ locally; one verification run on Vast.ai).
 </details>
 
 <details>
-<summary>📊 <strong>Render figure 7b -- 5-cell DSI+PD 2-obj NSGA-II Pareto panel
-from t0104 once t0104 completes</strong> (S-0105-01)</summary>
+<summary>🧪 <strong>Re-run varimax factor analysis excluding integer morph_seed to
+test whether F1's correlates survive</strong> (S-0105-01)</summary>
 
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
-[t0105_preliminary_figures_report](../tasks/t0105_preliminary_figures_report/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../tasks/t0105_cluster_factor_analysis_dsi_pd/)
 
-REQ-9 (REQ-DEFERRED-PANEL) of t0105 was deferred because t0104_nsga2_2obj_dsi_pdrate_3seeds
-was still in_progress. Once t0104 reaches status completed, render the figure-7 counterpart
-(top-5 Pareto cells under DSI+PD 2-objective NSGA-II) using the same selection rule as figure
-7a: filter pd_rate_hz >= 5.0 to drop silenced spurious-Pareto-anchor cells, then pick the top
-5 by joint Pareto rank, and render a 2-panel mini-figure per cell (morphology schematic +
-two-point polar tuning). Append the rendered panel as a new slide in t0105's
-preliminary_figures_slides.pptx via a follow-up task (do not mutate t0105 -- create a new task
-or a correction overlay). Reuse the renderer in
-tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py and read pareto-front JSON
-from tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/. Priority: medium-high because it
-gates presentation/report completeness. Recommended task types: data-analysis.
+morph_seed (an integer dimension bounded [0, 99] driving generator randomness, not
+biologically meaningful) loads +0.68 on F1 next to NAP_PRIMARY (+0.75), SK_MID (+0.66),
+MG_CONC_MM (+0.65), and RA_OHM_CM (+0.65). F1's r_DSI = -0.322 / r_PD = -0.265 could partly be
+a 'warm-start vs random-init' indicator disguised as a mechanistic factor because t0091 fixed
+morph_seed = 31 while t0099/t0102/t0104 randomise it. Re-run the t0105 factor analysis on a
+67-d matrix excluding morph_seed and check whether F1's top loadings (NAP_PRIMARY, SK_MID,
+MG_CONC_MM, Ra) and its Pearson r vs DSI / PD survive. If they do, F1 is mechanistic; if F1
+dissolves, F1 was a lineage indicator. Recommended task type: data-analysis. Cost: $0 (pure
+local re-analysis of existing data). Effort: 1-2 hours.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Multi-angle synaptic-current protocol on Bed A and Bed B for a
-true polar synaptic tuning curve</strong> (S-0105-02)</summary>
+<summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells
+to validate the SK/BK mechanistic hypothesis</strong> (S-0105-02)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
-[t0105_preliminary_figures_report](../tasks/t0105_preliminary_figures_report/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../tasks/t0105_cluster_factor_analysis_dsi_pd/)
 
-Figure 4 of t0105 had to fall back to a two-point polar (PD at 0 deg, ND at 180 deg) because
-neither t0046 (Bed A) nor t0066 (Bed B) recorded synaptic currents at intermediate stimulus
-angles. Run an EPSC + IPSC peak-amplitude protocol at the standard 12-angle grid for both beds
-(re-using the bar-stimulus generator from t0046 / t0066), record AMPA + NMDA + GABA peak
-conductances and peak post-synaptic currents per angle, and save a CSV per bed compatible with
-the t0011 plot_polar_tuning_curve loader. Output: two new polar plots that replace t0105's
-two-point fallback in any successor figure pack. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Promote the t0098 morphology renderer (with t0100 vector_68d[54:]
-slice fix) into a reusable library asset</strong> (S-0105-03)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
-[t0105_preliminary_figures_report](../tasks/t0105_preliminary_figures_report/)
-
-Figure 7 in t0105 had to copy the morphology renderer code from
-tasks/t0098_visualise_pareto_morphologies/code/build_charts.py into
-tasks/t0105_preliminary_figures_report/code/render_pareto_top5.py with the vector_68d[54:]
-morphology-slice fix from t0100 patched in manually. The t0104 follow-up panel (S-0105-01),
-and any future optimisation-result report task, will need the same renderer. Package this
-renderer as a top-level library asset (e.g., dsgc_morphology_renderer) under a host task --
-expose a clean Python API (render_morphology(vector_68d, ax) plus a multi-cell grid helper),
-include the t0100 slice fix as the default behaviour, register a details.json under
-assets/library/, and document import path tasks.<host_task>.code.dsgc_morphology_renderer.
-Downstream tasks then import instead of copying. Recommended task types: write-library.
+PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL,
+BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric
+dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches
+PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K
+regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0,
+BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI +
+PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which
+Ca-K conductance is load-bearing for the asymmetric direction-selectivity regime. Recommended
+task types: experiment-run, data-analysis. Cost: ~$2-3 (small Vast.ai instance for 3-6 hours;
+or local if NEURON runs locally). Aligns with PolegPolsky2026's ML channel-importance finding.
 
 </details>
 
 <details>
-<summary>📚 <strong>Add a project-wide python-pptx slide-deck builder library so
-figure packs reuse a common deck assembler</strong> (S-0105-04)</summary>
+<summary>🧪 <strong>Investigate the symmetric high-DSI outlier pocket: cells with
+DSI > 0.2 AND asym_score < 0.5</strong> (S-0105-03)</summary>
 
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-13 | **Source**:
-[t0105_preliminary_figures_report](../tasks/t0105_preliminary_figures_report/)
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../tasks/t0105_cluster_factor_analysis_dsi_pd/)
 
-t0105 introduced python-pptx>=1.0 and implemented
-tasks/t0105_preliminary_figures_report/code/build_slides.py as a task-local
-one-figure-per-slide deck assembler with caption + source-task citation in slide notes.
-Multiple downstream tasks (per-report figure packs, brainstorm decks, t0104 follow-up, future
-MOBO writeups) will want the same machinery. Package build_slides.py as a reusable library
-asset under a host task -- expose build_deck(slides: list[SlideSpec], output_path: Path) and a
-SlideSpec dataclass (image_path, caption, notes, layout), register a details.json under
-assets/library/, and document the import path. Downstream tasks then call the library instead
-of re-implementing python-pptx layout per task. Recommended task types: write-library.
+All 20 symmetric cells in the t0105 primary cohort come from t0091's warm-start (asym_score =
+0 exactly), but two of them have DSI > 0.2 (cells #2 from t0091 gen 1 with DSI = 0.329 / PD =
+12.86 Hz; cell from t0091 with DSI = 0.198 / PD = 46.14 Hz). These are 'symmetric high-DSI'
+outliers that contradict the simple 'asymmetric morphology required for DSI' reading. Inspect
+their full 68-d parameter vectors, check whether their high DSI is silence-artifact-adjacent
+(PD < 5 Hz with small spike count), and if not, run a small perturbation grid around their
+parameter neighbourhood to see whether a symmetric-morphology DSI > 0.2 plateau exists. This
+would significantly alter the project's understanding of which substrate features are required
+for direction selectivity. Recommended task type: data-analysis + experiment-run. Cost:
+~$0.5-1.
 
 </details>
 
-*351 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>F1-axis-seeded NSGA-II initial population to test whether
+targeted seeding escapes the joint-corner block</strong> (S-0105-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+F1 is the only factor weakly correlated with both DSI (r = -0.322) and PD (r = -0.265). Its
+top loadings span NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM (and morph_seed - see S-0105-01
+caveat). Build a random-init NSGA-II run whose initial population samples along the F1 axis
+(positive and negative directions) and orthogonal to F1, instead of uniform sampling. If
+F1-axis seeding accelerates Pareto exploration into the joint corner, the substrate has a
+discoverable direction that random-init NSGA-II misses. If F1-axis seeding produces the same
+L-shape, the substrate-limit reading is reinforced. Recommended task type: experiment-run.
+Cost: ~$8-12 (one Vast.ai NSGA-II run at matched budget to t0104 seed 44). Complements
+S-0102-03 / S-0104-04 IBEA suggestions.
+
+</details>
+
+*358 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (64)](suggestions/)
+## [High Priority Suggestions (67)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Inspect the seed-55 gen-11 DSI=0.54 cell's 68-d parameter vector
@@ -386,6 +387,64 @@ Expected outcome: IBEA's hypervolume-density selection produces an interior-weig
 even if it does not surface a joint-pass cell, it should populate the diagonal region between
 the two corners more densely than NSGA-II did. Cost: ~$8-10 matched to t0104 envelope.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run varimax factor analysis excluding integer morph_seed to
+test whether F1's correlates survive</strong> (S-0105-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+morph_seed (an integer dimension bounded [0, 99] driving generator randomness, not
+biologically meaningful) loads +0.68 on F1 next to NAP_PRIMARY (+0.75), SK_MID (+0.66),
+MG_CONC_MM (+0.65), and RA_OHM_CM (+0.65). F1's r_DSI = -0.322 / r_PD = -0.265 could partly be
+a 'warm-start vs random-init' indicator disguised as a mechanistic factor because t0091 fixed
+morph_seed = 31 while t0099/t0102/t0104 randomise it. Re-run the t0105 factor analysis on a
+67-d matrix excluding morph_seed and check whether F1's top loadings (NAP_PRIMARY, SK_MID,
+MG_CONC_MM, Ra) and its Pearson r vs DSI / PD survive. If they do, F1 is mechanistic; if F1
+dissolves, F1 was a lineage indicator. Recommended task type: data-analysis. Cost: $0 (pure
+local re-analysis of existing data). Effort: 1-2 hours.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells
+to validate the SK/BK mechanistic hypothesis</strong> (S-0105-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL,
+BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric
+dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches
+PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K
+regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0,
+BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI +
+PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which
+Ca-K conductance is load-bearing for the asymmetric direction-selectivity regime. Recommended
+task types: experiment-run, data-analysis. Cost: ~$2-3 (small Vast.ai instance for 3-6 hours;
+or local if NEURON runs locally). Aligns with PolegPolsky2026's ML channel-importance finding.
+
+</details>
+
+<details>
+<summary>🧪 <strong>F1-axis-seeded NSGA-II initial population to test whether
+targeted seeding escapes the joint-corner block</strong> (S-0105-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+F1 is the only factor weakly correlated with both DSI (r = -0.322) and PD (r = -0.265). Its
+top loadings span NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM (and morph_seed - see S-0105-01
+caveat). Build a random-init NSGA-II run whose initial population samples along the F1 axis
+(positive and negative directions) and orthogonal to F1, instead of uniform sampling. If
+F1-axis seeding accelerates Pareto exploration into the joint corner, the substrate has a
+discoverable direction that random-init NSGA-II misses. If F1-axis seeding produces the same
+L-shape, the substrate-limit reading is reinforced. Recommended task type: experiment-run.
+Cost: ~$8-12 (one Vast.ai NSGA-II run at matched budget to t0104 seed 44). Complements
+S-0102-03 / S-0104-04 IBEA suggestions.
 
 </details>
 
@@ -473,66 +532,11 @@ offsets the fewer generations).
 
 </details>
 
-<details>
-<summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden
-cluster IDs</strong> (S-0103-01)</summary>
-
-**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-Baden 2016's Dryad release contains no dendritic morphology. Bae et al. 2018 (EyeWire/E2198
-dense EM dataset) published reconstructed RGC morphologies and explicitly linked many of them
-to Baden 2016 functional cluster IDs. Download Bae 2018 morphologies for the 8
-paper-authoritative DS clusters {2, 6, 12, 13, 16, 25, 26, 29} and emit one dataset asset of
-SWC/JSON morphologies keyed by Baden cluster ID. This is the most direct way to ground t0090's
-morphology-generator parameter envelopes (field diameter, branch count, total length,
-asymmetry) in real biological DS-cell shapes. Recommended task types: download-dataset,
-download-paper.
-
-</details>
-
-<details>
-<summary>📂 <strong>Download Ran et al. 2020 ON-OFF DS-cell morphologies as a
-complementary morphology source</strong> (S-0103-02)</summary>
-
-**Kind**: dataset | **Priority**: high | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-Ran et al. 2020 (Nat Commun) provides dye-fill reconstructions of mouse ON-OFF DS RGCs with
-co-recorded preferred-direction labels. The Baden 2016 Dryad release does not include
-morphologies, and Ran 2020 covers exactly the ON-OFF DS subtypes (Baden clusters G12/G13) most
-relevant to the t0024 ON-OFF DSGC modelling line. Download the published SWC files (or extract
-from supplementary materials), register them as a dataset asset, and tag each morphology with
-its preferred-direction angle and any Baden-cluster correspondence available. Useful as a
-second, independent morphology source against Bae 2018 for the t0090 envelope grounding.
-Recommended task types: download-dataset, download-paper.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Ground t0090 morphology-generator parameter envelopes in the
-Baden 2016 + Bae/Ran morphologies</strong> (S-0103-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
-[t0103_extract_baden_2016_ds_morphologies](../tasks/t0103_extract_baden_2016_ds_morphologies/)
-
-t0090's morphology generator currently samples field diameter, branch count, total length, and
-asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103
-Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that
-the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for
-each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions
-(mean +/- SD per Baden DS group) and replaces t0090's parametric ranges, then re-runs a small
-NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells.
-This is the original motivation for downloading Baden 2016 in the first place. Recommended
-task types: experiment-run, data-analysis.
-
-</details>
-
-*54 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*57 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (29 total)](answers/)
+## [Recent Answers (31 total)](answers/)
 
 <details>
 <summary><strong>Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard
@@ -551,6 +555,44 @@ floating-point artifact that contaminated t0102's Pareto front. The L-shaped Par
 replicates t0102's exactly — extremes reachable on each axis but the joint corner empirically
 empty — ruling out objective-vector dimensionality as the explanation for the
 substrate-limited reading.
+
+</details>
+
+<details>
+<summary><strong>Which factors (combinations of the 68 input parameters) explain DSI
+diversity versus PD diversity, and is there a joint factor or are the two
+outcomes orthogonal?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-14 | **Full answer**:
+[`dsi-pd-diversity-factor-decomposition`](../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/answer/dsi-pd-diversity-factor-decomposition/)
+
+The two outcomes are mostly orthogonal but partially coupled through one near-joint factor: a
+varimax factor analysis on the standardised 68-d matrix (N=85, 10 factors by Kaiser criterion
+capped at 10) finds F1 the only factor exceeding |r| = 0.25 on either outcome, with r_DSI =
+-0.322 (p=0.003) and r_PD = -0.265 (p=0.014). No factor crosses the joint-factor threshold |r|
+> 0.3 on both, so the joint high-DSI / high-PD corner is not unlocked by a single low-d axis.
+F1's top loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM) are bootstrap-stable across 200
+resamples, but F3 through F10 are not. The substrate-limited reading from t0102 and t0104 is
+reinforced: DSI and PD share a weak common axis but remain substantially orthogonal.
+
+</details>
+
+<details>
+<summary><strong>Do symmetric and asymmetric DSGC morphologies share the same
+electrophys parameter regime, or do they form distinct clusters in PC
+space?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-14 | **Full answer**:
+[`symmetric-vs-asymmetric-electrophys-cluster`](../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/answer/symmetric-vs-asymmetric-electrophys-cluster/)
+
+No, they form distinct clusters. PCA on the 54-d electrophys submatrix of the 85-cell primary
+cohort (DSI > 0.1 AND PD > 2 Hz, pooled across four 68-d NSGA-II lineages) shows PC1
+separating the 20 symmetric and 65 asymmetric cells at Mann-Whitney U=31.0, p=1.5e-10. PC1
+captures 29.5 % of variance and loads on terminal-dendrite K-Ca conductances (SK_TERMINAL,
+BK_TERMINAL, BK_MID, SK_SOMA) plus primary-dendrite persistent Na (NAP_PRIMARY). The strict
+cohort (DSI > 0.2 AND PD > 3 Hz, N=30) preserves the separation (p=8.2e-5), so the result is
+not an artefact of the relaxed primary filter. PC2 does not separate the classes (p=0.78), so
+the distinction lives on a single axis dominated by terminal-dendrite KCa expression.
 
 </details>
 
@@ -709,58 +751,7 @@ breakdowns.
 
 </details>
 
-<details>
-<summary><strong>When the t0086 13-cell pool of 6 Genuine + 7 Marginal cells is
-re-clustered in the t0080 54-d v3 parameter space and a t0084-style
-Vm-trace deep-dive is run at 16 directions on per-cluster representative
-cells, are the resulting clusters mechanistically distinct (different
-dominant channel mechanisms across clusters) or do they share the same
-mechanism with parameter-scale variation?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-05-06 | **Full answer**:
-[`are-cluster-motifs-mechanistically-distinct`](../tasks/t0088_recluster_marginals_and_vm_motifs/assets/answer/are-cluster-motifs-mechanistically-distinct/)
-
-No -- the clusters are not mechanistically distinct. The 13-cell re-cluster produces 4
-clusters (best_k = 4 by silhouette) and all 4 cluster representatives are NaP-dominant in
-PD-minus-ND attribution at 16 directions (frac NaP 0.874-0.997, frac Nav1.6 0.003-0.126, frac
-NMDA = 0.000). The verdict is `shared_mechanism_different_scale`: clusters differ in 54-d
-parameter scale but not in which channel drives the PD response. This extends t0084's
-NaP-dominant cell 767 finding to the wider 13-cell pool of joint-pass / near-joint-pass cells
-in the v3 substrate.
-
-Per-cluster fractional channel attribution table (PD = 0 deg, ND = 180 deg, response window
-[200, 1200] ms):
-
-| Cluster | Rep cell | NMDA frac | Nav1.6 frac | NaP frac | Dominant |
-| --- | --- | --- | --- | --- | --- |
-| 0 | 1604 | 0.000 | 0.012 | 0.988 | nap |
-| 1 | 1634 | 0.000 | 0.126 | 0.874 | nap |
-| 2 | 767 | 0.000 | 0.125 | 0.875 | nap |
-| 3 | 1639 | 0.000 | 0.003 | 0.997 | nap |
-
-</details>
-
-<details>
-<summary><strong>Which biophysical mechanism - NMDA Mg-block, distal Nav1.6, NaP, or
-a combination - is responsible for cell 767's joint-pass DSI improvement
-in the v3 Bed B substrate?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-05-05 | **Full answer**:
-[`cell-767-dendritic-spike-mechanism-attribution`](../tasks/t0084_t0081_cell_767_vm_trace_deepdive/assets/answer/cell-767-dendritic-spike-mechanism-attribution/)
-
-Cell 767's PD/ND difference in integrated dendritic current is attributed primarily to **NaP
-sustained depolarisation** (0.0% NMDA, 7.0% Nav1.6, 93.0% NaP) over the response window [200,
-1200] ms. Cells 637 and 762 show the same NaP-dominant signature (98.5% and 99.9%), suggesting
-NaP is a systematic feature of the v3 Pareto near-pass cluster rather than idiosyncratic to
-cell 767. This single-replicate deep-dive did not reproduce cell 767's original 5-seed
-joint-pass DSI of 0.494 (re-evaluated DSI = 0.000), so the attribution describes the
-underlying biophysical signature of these parameters rather than confirming a per-trial
-joint-pass mechanism; multi-replicate confirmation requires t0083 or a follow-up multi-seed
-study.
-
-</details>
-
-*19 more answers → [answers](answers/)*
+*21 more answers → [answers](answers/)*
 
 ---
 

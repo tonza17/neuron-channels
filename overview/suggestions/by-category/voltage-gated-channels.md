@@ -1,7 +1,7 @@
 # Suggestions: `voltage-gated-channels`
 
-94 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **79 open** (21
+95 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **80 open** (22
 high, 47 medium, 11 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
@@ -429,6 +429,32 @@ produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 �
 μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
 5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
 that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells
+to validate the SK/BK mechanistic hypothesis</strong> (S-0105-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL,
+BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric
+dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches
+PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K
+regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0,
+BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI +
+PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which
+Ca-K conductance is load-bearing for the asymmetric direction-selectivity regime. Recommended
+task types: experiment-run, data-analysis. Cost: ~$2-3 (small Vast.ai instance for 3-6 hours;
+or local if NEURON runs locally). Aligns with PolegPolsky2026's ML channel-importance finding.
 
 </details>
 

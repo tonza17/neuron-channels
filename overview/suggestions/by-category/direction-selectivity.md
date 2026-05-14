@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-274 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **243 open** (52
-high, 169 medium, 22 low), **31 closed**.
+280 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **249 open** (55
+high, 172 medium, 22 low), **31 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -481,6 +481,31 @@ and test whether spatially-clustered co-directional bipolar-cell input produces 
 summation during preferred-direction motion and is suppressed by asymmetric inhibition during
 null-direction motion. Compare the resulting DSI (direction selectivity index) against the
 no-NMDA baseline to quantify the NMDA-spike contribution to DS.
+
+</details>
+
+<details>
+<summary>🧪 <strong>F1-axis-seeded NSGA-II initial population to test whether
+targeted seeding escapes the joint-corner block</strong> (S-0105-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+F1 is the only factor weakly correlated with both DSI (r = -0.322) and PD (r = -0.265). Its
+top loadings span NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM (and morph_seed - see S-0105-01
+caveat). Build a random-init NSGA-II run whose initial population samples along the F1 axis
+(positive and negative directions) and orthogonal to F1, instead of uniform sampling. If
+F1-axis seeding accelerates Pareto exploration into the joint corner, the substrate has a
+discoverable direction that random-init NSGA-II misses. If F1-axis seeding produces the same
+L-shape, the substrate-limit reading is reinforced. Recommended task type: experiment-run.
+Cost: ~$8-12 (one Vast.ai NSGA-II run at matched budget to t0104 seed 44). Complements
+S-0102-03 / S-0104-04 IBEA suggestions.
 
 </details>
 
@@ -1078,6 +1103,31 @@ lineage and produces re-publishable EPSP/IPSP figures.
 </details>
 
 <details>
+<summary>🧪 <strong>Re-run varimax factor analysis excluding integer morph_seed to
+test whether F1's correlates survive</strong> (S-0105-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+morph_seed (an integer dimension bounded [0, 99] driving generator randomness, not
+biologically meaningful) loads +0.68 on F1 next to NAP_PRIMARY (+0.75), SK_MID (+0.66),
+MG_CONC_MM (+0.65), and RA_OHM_CM (+0.65). F1's r_DSI = -0.322 / r_PD = -0.265 could partly be
+a 'warm-start vs random-init' indicator disguised as a mechanistic factor because t0091 fixed
+morph_seed = 31 while t0099/t0102/t0104 randomise it. Re-run the t0105 factor analysis on a
+67-d matrix excluding morph_seed and check whether F1's top loadings (NAP_PRIMARY, SK_MID,
+MG_CONC_MM, Ra) and its Pearson r vs DSI / PD survive. If they do, F1 is mechanistic; if F1
+dissolves, F1 was a lineage indicator. Recommended task type: data-analysis. Cost: $0 (pure
+local re-analysis of existing data). Effort: 1-2 hours.
+
+</details>
+
+<details>
 <summary>📂 <strong>Record per-trial soma spike times from modeldb_189347_dsgc to
 exercise plot_angle_raster_psth on real data</strong> (S-0011-01)</summary>
 
@@ -1176,6 +1226,32 @@ x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point
 >= 5 Hz. This is the smallest single-axis test of the structural-drive hypothesis on the
 validated bar-locked substrate. Distinct from S-0052-02 (GABA-count sweep on scalar gabaMOD
 t0052, no bar-lock). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells
+to validate the SK/BK mechanistic hypothesis</strong> (S-0105-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL,
+BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric
+dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches
+PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K
+regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0,
+BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI +
+PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which
+Ca-K conductance is load-bearing for the asymmetric direction-selectivity regime. Recommended
+task types: experiment-run, data-analysis. Cost: ~$2-3 (small Vast.ai instance for 3-6 hours;
+or local if NEURON runs locally). Aligns with PolegPolsky2026's ML channel-importance finding.
 
 </details>
 
@@ -3248,6 +3324,32 @@ changes. Recommended task types: experiment-run, data-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Investigate the symmetric high-DSI outlier pocket: cells with
+DSI > 0.2 AND asym_score < 0.5</strong> (S-0105-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+All 20 symmetric cells in the t0105 primary cohort come from t0091's warm-start (asym_score =
+0 exactly), but two of them have DSI > 0.2 (cells #2 from t0091 gen 1 with DSI = 0.329 / PD =
+12.86 Hz; cell from t0091 with DSI = 0.198 / PD = 46.14 Hz). These are 'symmetric high-DSI'
+outliers that contradict the simple 'asymmetric morphology required for DSI' reading. Inspect
+their full 68-d parameter vectors, check whether their high DSI is silence-artifact-adjacent
+(PD < 5 Hz with small spike count), and if not, run a small perturbation grid around their
+parameter neighbourhood to see whether a symmetric-morphology DSI > 0.2 plateau exists. This
+would significantly alter the project's understanding of which substrate features are required
+for direction selectivity. Recommended task type: data-analysis + experiment-run. Cost:
+~$0.5-1.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Investigate the synapse-XY symmetry residual (Phase D Candidate
 C) under neutral asymmetry knobs</strong> (S-0092-04)</summary>
 
@@ -3362,6 +3464,31 @@ unpinned). A 0.5 nS-spaced sweep over {5.0, 4.5, 4.0, 3.5, 3.0} nS at baseline d
 t0022 (5 levels x 12 angles x 10 trials = 600 trials, ~20 min local CPU) would localise the
 threshold to within 0.5 nS and reveal whether the DSI vs GABA curve is sharp or gradual.
 Important for characterising how fragile the operational window really is.
+
+</details>
+
+<details>
+<summary>🔧 <strong>MAP-Elites quality-diversity search on Bed B + morphology
+substrate to find off-axis joint-corner cells</strong> (S-0105-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-07` |
+| **Kind** | technique |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0105 finds no joint DSI-PD factor — no single low-d axis carries both outcomes. NSGA-II (any
+objective vector size or noise budget) cannot ride a non-existent axis. MAP-Elites maintains a
+diversity grid over user-specified behavioural descriptors (e.g., asym_score x morphology_seed
+bins), promotes corner exploration over Pareto crowding, and may find isolated joint-corner
+cells that lie off any continuous axis. Run MAP-Elites at matched budget to t0104 seed 44
+(~$5) on the same Bed B + morphology substrate with behavioural descriptors (asym_score,
+source_lineage_marker), compare the resulting joint-corner yield. Complements S-0102-03 /
+S-0104-04 IBEA suggestions but with a stronger diversity prior. Recommended task type:
+experiment-run. Cost: ~$5-8.
 
 </details>
 
@@ -3869,6 +3996,30 @@ is too deterministic) vs produces a graded DSI in the Park2014 0.65 +/- 0.05 ban
 tracks continuous inhibition as real DSGCs do). Dependencies: t0022 library asset. Effort ~20
 hours with the existing process-pool orchestrator. Recommended task type: experiment-run,
 data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-lineage PCA decomposition: quantify how much cross-lineage
+heterogeneity contributes to PC1 separation</strong> (S-0105-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0105's pooled cohort spans four lineages with different settings (warm-start vs random-init,
+N_EVAL=4 vs 20, 2-obj vs 3-obj). PC1's separation of symmetric from asymmetric cells is
+confounded with the lineage source (all 20 symmetric cells come from t0091). Run PCA
+independently per lineage (t0099 alone, t0102 alone, t0104 alone) and compare the top-5 PC1
+loadings; if they match across lineages despite no symmetric cells, the Ca-K / NAP_PRIMARY
+signature is lineage-robust rather than a t0091-warm-start artifact. Quantify cross-lineage
+PC1-loading correlation to put a number on cross-lineage heterogeneity. Recommended task type:
+data-analysis. Cost: $0 (pure local re-analysis).
 
 </details>
 

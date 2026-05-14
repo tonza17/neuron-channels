@@ -1,12 +1,44 @@
 # Answers by Date Added
 
-29 answer(s) grouped by creation date.
+31 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-05-14 (1)
+## 2026-05-14 (3)
+
+<details>
+<summary><strong>Do symmetric and asymmetric DSGC morphologies share the same
+electrophys parameter regime, or do they form distinct clusters in PC
+space?</strong></summary>
+
+**Confidence**: medium
+
+No, they form distinct clusters. PCA on the 54-d electrophys submatrix of the 85-cell primary
+cohort (DSI > 0.1 AND PD > 2 Hz, pooled across four 68-d NSGA-II lineages) shows PC1
+separating the 20 symmetric and 65 asymmetric cells at Mann-Whitney U=31.0, p=1.5e-10. PC1
+captures 29.5 % of variance and loads on terminal-dendrite K-Ca conductances (SK_TERMINAL,
+BK_TERMINAL, BK_MID, SK_SOMA) plus primary-dendrite persistent Na (NAP_PRIMARY). The strict
+cohort (DSI > 0.2 AND PD > 3 Hz, N=30) preserves the separation (p=8.2e-5), so the result is
+not an artefact of the relaxed primary filter. PC2 does not separate the classes (p=0.78), so
+the distinction lives on a single axis dominated by terminal-dendrite KCa expression.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/answer/symmetric-vs-asymmetric-electrophys-cluster/full_answer.md) |
+| **ID** | [`symmetric-vs-asymmetric-electrophys-cluster`](../../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/answer/symmetric-vs-asymmetric-electrophys-cluster/) |
+| **Question** | Do symmetric and asymmetric DSGC morphologies share the same electrophys parameter regime, or do they form distinct clusters in PC space? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-14 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md), [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md), [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **URL sources** | — |
+| **Created by** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
+
+</details>
 
 <details>
 <summary><strong>Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard
@@ -38,6 +70,38 @@ substrate-limited reading.
 | **Task sources** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
 | **URL sources** | — |
 | **Created by** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+
+</details>
+
+<details>
+<summary><strong>Which factors (combinations of the 68 input parameters) explain DSI
+diversity versus PD diversity, and is there a joint factor or are the two
+outcomes orthogonal?</strong></summary>
+
+**Confidence**: medium
+
+The two outcomes are mostly orthogonal but partially coupled through one near-joint factor: a
+varimax factor analysis on the standardised 68-d matrix (N=85, 10 factors by Kaiser criterion
+capped at 10) finds F1 the only factor exceeding |r| = 0.25 on either outcome, with r_DSI =
+-0.322 (p=0.003) and r_PD = -0.265 (p=0.014). No factor crosses the joint-factor threshold |r|
+> 0.3 on both, so the joint high-DSI / high-PD corner is not unlocked by a single low-d axis.
+F1's top loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM) are bootstrap-stable across 200
+resamples, but F3 through F10 are not. The substrate-limited reading from t0102 and t0104 is
+reinforced: DSI and PD share a weak common axis but remain substantially orthogonal.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/answer/dsi-pd-diversity-factor-decomposition/full_answer.md) |
+| **ID** | [`dsi-pd-diversity-factor-decomposition`](../../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/answer/dsi-pd-diversity-factor-decomposition/) |
+| **Question** | Which factors (combinations of the 68 input parameters) explain DSI diversity versus PD diversity, and is there a joint factor or are the two outcomes orthogonal? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-14 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md), [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **URL sources** | — |
+| **Created by** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
 
 </details>
 

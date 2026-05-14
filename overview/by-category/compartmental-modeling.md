@@ -5,8 +5,8 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (45)](../papers/by-category/compartmental-modeling.md) | [Answers
-(21)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(329)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(23)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(336)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (14)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (6)](../predictions/by-category/compartmental-modeling.md)
@@ -2442,7 +2442,7 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 
-## Answers (21)
+## Answers (23)
 
 <details>
 <summary><strong>Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard
@@ -2461,6 +2461,44 @@ floating-point artifact that contaminated t0102's Pareto front. The L-shaped Par
 replicates t0102's exactly — extremes reachable on each axis but the joint corner empirically
 empty — ruling out objective-vector dimensionality as the explanation for the
 substrate-limited reading.
+
+</details>
+
+<details>
+<summary><strong>Which factors (combinations of the 68 input parameters) explain DSI
+diversity versus PD diversity, and is there a joint factor or are the two
+outcomes orthogonal?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-14 | **Full answer**:
+[`dsi-pd-diversity-factor-decomposition`](../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/answer/dsi-pd-diversity-factor-decomposition/)
+
+The two outcomes are mostly orthogonal but partially coupled through one near-joint factor: a
+varimax factor analysis on the standardised 68-d matrix (N=85, 10 factors by Kaiser criterion
+capped at 10) finds F1 the only factor exceeding |r| = 0.25 on either outcome, with r_DSI =
+-0.322 (p=0.003) and r_PD = -0.265 (p=0.014). No factor crosses the joint-factor threshold |r|
+> 0.3 on both, so the joint high-DSI / high-PD corner is not unlocked by a single low-d axis.
+F1's top loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM) are bootstrap-stable across 200
+resamples, but F3 through F10 are not. The substrate-limited reading from t0102 and t0104 is
+reinforced: DSI and PD share a weak common axis but remain substantially orthogonal.
+
+</details>
+
+<details>
+<summary><strong>Do symmetric and asymmetric DSGC morphologies share the same
+electrophys parameter regime, or do they form distinct clusters in PC
+space?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-14 | **Full answer**:
+[`symmetric-vs-asymmetric-electrophys-cluster`](../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/answer/symmetric-vs-asymmetric-electrophys-cluster/)
+
+No, they form distinct clusters. PCA on the 54-d electrophys submatrix of the 85-cell primary
+cohort (DSI > 0.1 AND PD > 2 Hz, pooled across four 68-d NSGA-II lineages) shows PC1
+separating the 20 symmetric and 65 asymmetric cells at Mann-Whitney U=31.0, p=1.5e-10. PC1
+captures 29.5 % of variance and loads on terminal-dendrite K-Ca conductances (SK_TERMINAL,
+BK_TERMINAL, BK_MID, SK_SOMA) plus primary-dendrite persistent Na (NAP_PRIMARY). The strict
+cohort (DSI > 0.2 AND PD > 3 Hz, N=30) preserves the separation (p=8.2e-5), so the result is
+not an artefact of the relaxed primary filter. PC2 does not separate the classes (p=0.78), so
+the distinction lives on a single axis dominated by terminal-dendrite KCa expression.
 
 </details>
 
@@ -2912,7 +2950,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (294 open, 35 closed)
+## Suggestions (301 open, 35 closed)
 
 <details>
 <summary>🧪 <strong>Inspect the seed-55 gen-11 DSI=0.54 cell's 68-d parameter vector
@@ -3031,6 +3069,139 @@ multiprocessing.Pool.terminate()/recreate() every N generations (N = 3 baseline)
 nsga2_driver.py. Predict: per-gen wall-clock holds within 2x of gen 1 instead of 8x by gen 11.
 Recommended task types: write-library, experiment-run. Cost: ~$1 (instrumentation runs
 locally; one verification run on Vast.ai).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run varimax factor analysis excluding integer morph_seed to
+test whether F1's correlates survive</strong> (S-0105-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+morph_seed (an integer dimension bounded [0, 99] driving generator randomness, not
+biologically meaningful) loads +0.68 on F1 next to NAP_PRIMARY (+0.75), SK_MID (+0.66),
+MG_CONC_MM (+0.65), and RA_OHM_CM (+0.65). F1's r_DSI = -0.322 / r_PD = -0.265 could partly be
+a 'warm-start vs random-init' indicator disguised as a mechanistic factor because t0091 fixed
+morph_seed = 31 while t0099/t0102/t0104 randomise it. Re-run the t0105 factor analysis on a
+67-d matrix excluding morph_seed and check whether F1's top loadings (NAP_PRIMARY, SK_MID,
+MG_CONC_MM, Ra) and its Pearson r vs DSI / PD survive. If they do, F1 is mechanistic; if F1
+dissolves, F1 was a lineage indicator. Recommended task type: data-analysis. Cost: $0 (pure
+local re-analysis of existing data). Effort: 1-2 hours.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells
+to validate the SK/BK mechanistic hypothesis</strong> (S-0105-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL,
+BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric
+dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches
+PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K
+regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0,
+BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI +
+PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which
+Ca-K conductance is load-bearing for the asymmetric direction-selectivity regime. Recommended
+task types: experiment-run, data-analysis. Cost: ~$2-3 (small Vast.ai instance for 3-6 hours;
+or local if NEURON runs locally). Aligns with PolegPolsky2026's ML channel-importance finding.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate the symmetric high-DSI outlier pocket: cells with
+DSI > 0.2 AND asym_score < 0.5</strong> (S-0105-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+All 20 symmetric cells in the t0105 primary cohort come from t0091's warm-start (asym_score =
+0 exactly), but two of them have DSI > 0.2 (cells #2 from t0091 gen 1 with DSI = 0.329 / PD =
+12.86 Hz; cell from t0091 with DSI = 0.198 / PD = 46.14 Hz). These are 'symmetric high-DSI'
+outliers that contradict the simple 'asymmetric morphology required for DSI' reading. Inspect
+their full 68-d parameter vectors, check whether their high DSI is silence-artifact-adjacent
+(PD < 5 Hz with small spike count), and if not, run a small perturbation grid around their
+parameter neighbourhood to see whether a symmetric-morphology DSI > 0.2 plateau exists. This
+would significantly alter the project's understanding of which substrate features are required
+for direction selectivity. Recommended task type: data-analysis + experiment-run. Cost:
+~$0.5-1.
+
+</details>
+
+<details>
+<summary>🧪 <strong>F1-axis-seeded NSGA-II initial population to test whether
+targeted seeding escapes the joint-corner block</strong> (S-0105-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+F1 is the only factor weakly correlated with both DSI (r = -0.322) and PD (r = -0.265). Its
+top loadings span NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM (and morph_seed - see S-0105-01
+caveat). Build a random-init NSGA-II run whose initial population samples along the F1 axis
+(positive and negative directions) and orthogonal to F1, instead of uniform sampling. If
+F1-axis seeding accelerates Pareto exploration into the joint corner, the substrate has a
+discoverable direction that random-init NSGA-II misses. If F1-axis seeding produces the same
+L-shape, the substrate-limit reading is reinforced. Recommended task type: experiment-run.
+Cost: ~$8-12 (one Vast.ai NSGA-II run at matched budget to t0104 seed 44). Complements
+S-0102-03 / S-0104-04 IBEA suggestions.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-lineage PCA decomposition: quantify how much cross-lineage
+heterogeneity contributes to PC1 separation</strong> (S-0105-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+t0105's pooled cohort spans four lineages with different settings (warm-start vs random-init,
+N_EVAL=4 vs 20, 2-obj vs 3-obj). PC1's separation of symmetric from asymmetric cells is
+confounded with the lineage source (all 20 symmetric cells come from t0091). Run PCA
+independently per lineage (t0099 alone, t0102 alone, t0104 alone) and compare the top-5 PC1
+loadings; if they match across lineages despite no symmetric cells, the Ca-K / NAP_PRIMARY
+signature is lineage-robust rather than a t0091-warm-start artifact. Quantify cross-lineage
+PC1-loading correlation to put a number on cross-lineage heterogeneity. Recommended task type:
+data-analysis. Cost: $0 (pure local re-analysis).
+
+</details>
+
+<details>
+<summary>🔧 <strong>Parametric-bootstrap factor analysis at N>=300 synthetic cells
+to test if F3-F10 stabilise</strong> (S-0105-06)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+Only F1 and F2 pass the t0105 bootstrap stability test (>= 90 % sign consistency in top-5
+loadings, median |loading| >= 0.4) at N=85. The 5xp = 340 conventional floor for factor
+analysis on 68 dimensions would need N >= 340 cells. Generate a parametric bootstrap from the
+t0105 cohort (fit a multivariate Gaussian or copula on the 68-d data, sample N=400 synthetic
+cells, refit varimax FA) and check whether F3-F10 stabilise at the inflated N. If they do, the
+under-power is the limiter; if they do not, the factors are genuinely unstable in the
+substrate. Recommended task type: data-analysis. Cost: $0 (pure local synthesis +
+re-analysis).
+
+</details>
+
+<details>
+<summary>🔧 <strong>MAP-Elites quality-diversity search on Bed B + morphology
+substrate to find off-axis joint-corner cells</strong> (S-0105-07)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
+[t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
+
+t0105 finds no joint DSI-PD factor — no single low-d axis carries both outcomes. NSGA-II (any
+objective vector size or noise budget) cannot ride a non-existent axis. MAP-Elites maintains a
+diversity grid over user-specified behavioural descriptors (e.g., asym_score x morphology_seed
+bins), promotes corner exploration over Pareto crowding, and may find isolated joint-corner
+cells that lie off any continuous axis. Run MAP-Elites at matched budget to t0104 seed 44
+(~$5) on the same Bed B + morphology substrate with behavioural descriptors (asym_score,
+source_lineage_marker), compare the resulting joint-corner yield. Complements S-0102-03 /
+S-0104-04 IBEA suggestions but with a stronger diversity prior. Recommended task type:
+experiment-run. Cost: ~$5-8.
 
 </details>
 

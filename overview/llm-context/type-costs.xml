@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-14T03:13:56Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-14T14:27:05Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>5855</char_count>
-    <byte_count>5855</byte_count>
-    <estimated_tokens>1463</estimated_tokens>
+    <char_count>5901</char_count>
+    <byte_count>5901</byte_count>
+    <estimated_tokens>1475</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -149,6 +149,7 @@ Spent: 92.6%
 * t0102_seedscale_n4_gen20: $12.07
 * t0103_extract_baden_2016_ds_morphologies: $0.00
 * t0104_nsga2_2obj_dsi_pdrate_3seeds: $10.30
+* t0105_cluster_factor_analysis_dsi_pd: $0.00
 * t0105_preliminary_figures_report: $0.00
       </content>
     </section>

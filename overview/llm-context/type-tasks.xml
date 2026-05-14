@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-14T03:13:56Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-14T14:27:05Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>1152869</char_count>
-    <byte_count>1157586</byte_count>
-    <estimated_tokens>288217</estimated_tokens>
+    <char_count>1172893</char_count>
+    <byte_count>1177696</byte_count>
+    <estimated_tokens>293223</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -121,10 +121,11 @@
         <id>t0102_seedscale_n4_gen20</id>
         <id>t0103_extract_baden_2016_ds_morphologies</id>
         <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
+        <id>t0105_cluster_factor_analysis_dsi_pd</id>
         <id>t0105_preliminary_figures_report</id>
       </source_ids>
       <content>
-Total tasks: 105
+Total tasks: 106
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -19633,6 +19634,375 @@ operative factor.
 * Answer asset `t0104-joint-pass-recovery-2obj` — PASS answer verificator
 
 [t0102]: ../../t0102_seedscale_n4_gen20/
+
+## Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations
+ID: t0105_cluster_factor_analysis_dsi_pd
+Status: completed
+Effective date: 2026-05-14
+Short description: Pool 68-d cells from t0091, t0099, t0102, t0104 with DSI &gt; 0.1 AND PD &gt; 2 Hz, classify by morphological asymmetry, run PCA cluster analysis on intrinsic params, and factor analysis (incl. morphology) on what explains DSI / PD diversity.
+Dependencies: t0091_morphology_extended_nsga2_v1, t0099_random_init_pareto_robustness, t0102_seedscale_n4_gen20, t0104_nsga2_2obj_dsi_pdrate_3seeds
+Task types: data-analysis, comparative-analysis, answer-question
+Start time: 2026-05-14T12:52:11Z
+End time: 2026-05-14T14:25:00Z
+
+#### Context
+
+Direct researcher commission at 2026-05-14 after the t0104 result landed. Four NSGA-II lineages have
+run 68-d optimisation (54-d electrophys + 14-d morphology) on the Bed B + morphology substrate:
+
+* **t0091** — warm-start NSGA-II 3-objective (DSI + PD-rate + robustness), 187 cells.
+* **t0099** — random-init NSGA-II 3-objective at N_EVAL=20, 2,016 cells across GA seeds 11/22/33.
+* **t0102** — random-init NSGA-II 3-objective at N_EVAL=4, 2,592 cells across GA seeds 44/55.
+* **t0104** — random-init NSGA-II 2-objective (no robustness) at N_EVAL=4, with the S-0102-01 DSI
+  silence guard, 2,208 cells across GA seeds 44/55.
+
+Total: **7,003 cells**. The 54-d-only lineage (t0080 / t0081 / t0083) is excluded because it does
+not co-vary morphology with electrophys.
+
+Pre-scoping inventory (`scratch_count_68d_cells.py` on main) confirmed that with the relaxed primary
+filter `DSI &gt; 0.1 AND PD &gt; 2 Hz` and dedupe by 68-d vector, **86 unique cells** pass — a healthy
+sample for PCA and factor analysis. The strict filter `DSI &gt; 0.2 AND PD &gt; 3 Hz` yields 31 unique
+cells and serves as a sensitivity check.
+
+The two best cells in t0104 are strongly asymmetric DSGCs (soma offset toward PD, dendritic field
+2× elongated, primary branches PD-concentrated). The follow-up question: across all 86 cells that
+produced *some* direction selectivity AND *some* firing — not just the Pareto extremes — does
+the asymmetric morphology motif hold, and which of the 68 input parameters drive DSI and PD
+diversity?
+
+A scratch comparison plot (`scratch_t0102_t0104_morph_compare.png` on main) showed top-5 cells per
+optimisation but was limited to extreme cells. This task extends to the full population of
+non-trivial cells from all four 68-d lineages.
+
+#### Goal
+
+For all cells from t0091 + t0099 + t0102 + t0104 with **DSI &gt; 0.1 AND PD-rate &gt; 2 Hz** (the
+&quot;non-trivial both-axes&quot; population — primary cohort, expected ~86 unique cells), answer three
+questions:
+
+1. **What does a morphology gallery of these cells look like?** Plot each cell&#x27;s morphology (or a
+   representative subsample if the count &gt; 30) with its DSI and PD values annotated, separated by
+   source optimisation.
+
+2. **Do the intrinsic (electrophys) parameters cluster by morphological asymmetry?** Run PCA on the
+   54-d electrophys parameter vectors (excluding morphology) of the selected cells, classify each
+   cell as &quot;symmetric&quot; or &quot;asymmetric&quot; using a normalised asymmetry score across the four PD
+   asymmetry axes, and plot a PC1-vs-PC2 scatter coloured by class. If the two classes separate in
+   PC space, the electrophys regime differs between the two morphology classes; if they do not, the
+   asymmetry is independent of the electrophys regime.
+
+3. **Which of the 68 parameters drive DSI and PD diversity?** Run factor analysis on the full 68-d
+   parameter matrix of the selected cells, project DSI and PD onto the factors via Pearson
+   correlation between factor scores and the two outcomes, and report the top-loading factors for
+   each outcome. Both electrophys and morphology parameters must be included.
+
+#### Key Questions
+
+1. Does the asymmetric-morphology motif (the four PD-asymmetry axes elevated) hold across the
+   broader DSI &gt; 0.2 ∧ PD &gt; 3 population, or only at the Pareto extremes?
+2. In PCA of the 54-d electrophys vectors, do symmetric and asymmetric cells separate? Or do they
+   share the same electrophys-parameter cluster, suggesting that the morphology is the dominant
+   discriminator?
+3. Which top-3 factors (out of N factors retained by Kaiser criterion or 80% variance) load most
+   strongly on DSI? On PD? Do these factor loadings include both electrophys and morphology
+   parameters?
+4. Is there a single factor that simultaneously loads on DSI AND PD (a &quot;direction-selectivity
+   firing-rate trade-off&quot; factor), or are the two outcomes driven by orthogonal factors?
+
+#### Approach
+
+##### Cell selection
+
+Pool all evaluations from the four 68-d optimisation lineages:
+
+* `tasks/t0091_morphology_extended_nsga2_v1/results/data/all_evaluations.json`
+* `tasks/t0099_random_init_pareto_robustness/results/data/all_evaluations_seed{11,22,33}.json`
+* `tasks/t0102_seedscale_n4_gen20/results/data/all_evaluations_seed{44,55}.json`
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/all_evaluations_seed{44,55}.json`
+
+**Primary filter**: `dsi_vector_sum &gt; 0.1 AND pd_rate_hz &gt; 2.0` (expected ~86 unique cells after
+dedupe).
+
+**Strict robustness-check filter**: `dsi_vector_sum &gt; 0.2 AND pd_rate_hz &gt; 3.0` (expected ~31 unique
+cells). All headline analyses must be repeated on this stricter cohort and any qualitative change
+between cohorts must be documented in `results_detailed.md`.
+
+Dedupe by full 68-d parameter vector (round to 6 decimals) — Pareto preservation across
+generations creates many duplicate rows. Across all lineages we expect ~268 raw passing rows
+reducing to ~86 unique vectors at the primary filter.
+
+Tag each row with `source_task` ∈ {t0091, t0099, t0102, t0104} and `seed` (if applicable).
+
+Report `N_selected` before and after dedupe for both filter thresholds. Also report the per-lineage
+cell counts in the headline `results_summary.md` so the reader can see the relative contribution of
+each optimisation regime to the analysis population.
+
+##### Asymmetry classification
+
+Compute the normalised asymmetry score:
+
+```
+asym_score = abs(soma_offset_pd_um) / 150
+           + abs(field_elongation_pd - 1.0) / 2.0
+           + abs(branch_density_gradient_pd) / 1.0
+           + abs(primary_branch_pd_concentration) / 5.0
+```
+
+Range: 0 (fully symmetric) → 4 (max asymmetric). Classify each cell as:
+
+* `symmetric` if `asym_score &lt; 0.5`
+* `asymmetric` if `asym_score &gt;= 0.5`
+
+Report the distribution of `asym_score` in the selected population and the count in each class.
+
+##### Morphology gallery
+
+At ~86 cells in the primary cohort, a full gallery is too large. Use a **stratified subsample of
+≤30 cells**, stratified by asymmetry class × source task. The subsample selection is
+deterministic: within each (class, source_task) stratum, take the top cells by `DSI × PD` until the
+per-stratum quota is met. Record the (class, task) quota table in `results_detailed.md`.
+
+For each selected cell:
+
+1. Build the morphology via
+   `tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix.generate_fixed_morphology`.
+2. Extract the soma + all_dends pt3d coordinates.
+3. Plot top-down (x, y) projection with the soma marked, PD arrow indicated.
+4. Annotate DSI, PD, asym_score, source_task, seed/gen.
+
+Output: `results/images/morphology_gallery.png` (multi-row grid, sized appropriately).
+
+If N ≤ 30, plot all selected cells. If N &gt; 30, plot a stratified subsample documented in
+`results_detailed.md` with the random seed used for the subsample.
+
+##### PCA cluster analysis on electrophys parameters
+
+1. Stack the 54-d electrophys vectors of the selected cells into matrix `X_electrophys` shape
+   `(N_selected, 54)`.
+2. z-score each column.
+3. Run `sklearn.decomposition.PCA` (or equivalent). Keep PC1, PC2, PC3.
+4. Plot PC1 vs PC2 scatter, coloured by asymmetry class (symmetric = blue, asymmetric = red).
+5. Also produce PC1 vs PC2 coloured by DSI (continuous colormap) and PC1 vs PC2 coloured by PD
+   (continuous colormap) for context.
+6. Report variance explained by PC1/PC2/PC3 and the top-5 loading dimensions on each PC (give
+   parameter name and loading magnitude).
+7. Report a Mann-Whitney U test between symmetric and asymmetric PC1 scores (and PC2) to quantify
+   whether the classes separate; report the U statistic, p-value, and a brief interpretation.
+
+Output: `results/images/pca_electrophys_by_morphology_class.png` (3 subplots: by-class, by-DSI,
+by-PD).
+
+##### Factor analysis on the full 68-d matrix
+
+1. Stack the 68-d parameter vectors into `X_full` shape `(N_selected, 68)`.
+2. z-score each column.
+3. Run `sklearn.decomposition.FactorAnalysis` with rotation = &quot;varimax&quot; (use the iterative method if
+   sklearn lacks varimax built-in; or use `factor_analyzer` package — add to pyproject.toml if
+   needed).
+4. Choose number of factors by Kaiser criterion (eigenvalues &gt; 1 on the correlation matrix) OR 80%
+   of total variance, whichever gives the smaller count, capped at 10 factors.
+5. For each factor, list the top-5 loading parameters (by absolute loading magnitude), giving
+   parameter name and signed loading.
+6. Compute factor scores for each cell (the (N_selected, n_factors) matrix).
+7. Compute Pearson r between each factor score column and DSI (and PD). Report the top-3 factors by
+   |r| for each outcome.
+8. If a single factor has both `|r_DSI| &gt; 0.3 AND |r_PD| &gt; 0.3`, flag it as a joint-DSI-PD factor.
+
+Output: `results/images/factor_loadings.png` (heatmap of factors × parameters) and
+`results/images/factor_correlations.png` (bar chart of |r| between each factor and DSI/PD).
+
+##### Answer assets
+
+Produce two answer assets:
+
+1. `assets/answer/symmetric-vs-asymmetric-electrophys-cluster/`
+   * Question: &quot;Do symmetric and asymmetric DSGC morphologies share the same electrophys parameter
+     regime, or do they form distinct clusters in PC space?&quot;
+   * Evidence: PCA scatter, Mann-Whitney U test results.
+
+2. `assets/answer/dsi-pd-diversity-factor-decomposition/`
+   * Question: &quot;Which factors (combinations of the 68 input parameters) explain DSI diversity versus
+     PD diversity, and is there a joint factor or are the two outcomes orthogonal?&quot;
+   * Evidence: factor-loading heatmap, top-loading parameters per factor, Pearson correlations
+     between factor scores and DSI/PD.
+
+#### Why This Matters for the Research Questions
+
+The project&#x27;s research questions 1-4 ask which combinations of channel and morphological parameters
+produce direction selectivity. t0080-t0104 have approached this via multi-objective optimisation;
+t0105 now asks a complementary &quot;what works&quot; question on the optimiser&#x27;s output population.
+Specifically:
+
+* If symmetric and asymmetric cells separate in electrophys PC space, then the morphology class
+  selects a different channel regime — relevant to RQ4 (active vs passive dendrites) and RQ3
+  (synapse density/spatial distribution).
+* If DSI and PD are driven by different factors, then the joint corner is empirically unreachable
+  because no single parameter axis lifts both — supporting the substrate-limited reading from
+  t0102 / t0104.
+* If a joint factor exists, then targeted moves along that factor&#x27;s loading direction may unlock the
+  joint corner — a direct lead for an experimental follow-up task.
+
+#### Step by Step
+
+Canonical step IDs:
+
+1. `preflight` — verify both dependency tasks are completed.
+2. `research-code` — review t0102 / t0104 evaluation file formats, morphology generator interface,
+   sklearn / factor_analyzer availability in pyproject.toml.
+3. `planning` — produce `plan/plan.md` with REQ-1..REQ-N including cell counts after filtering,
+   gallery-subsample policy, factor-analysis algorithm choice, and asymmetry-threshold sensitivity
+   plan.
+4. `implementation` —
+   * 4a. Load and filter cells (`code/load_filter_cells.py`).
+   * 4b. Compute asymmetry classification (`code/classify_asymmetry.py`).
+   * 4c. Build morphology gallery (`code/build_gallery.py` extending the working scratch script).
+   * 4d. PCA on electrophys params + Mann-Whitney U (`code/pca_electrophys.py`).
+   * 4e. Factor analysis on full 68-d + correlations (`code/factor_analysis.py`).
+   * 4f. Emit all charts to `results/images/`.
+5. `analysis` (creative-thinking) — interpret cluster separation and joint factor (if any).
+6. `results` — write `results_summary.md`, `results_detailed.md`, `metrics.json`, `costs.json`
+   ($0), embed all charts.
+7. `compare-literature` — quick comparison to Mohacsi 2024 (multi-objective neuron-fitting),
+   Sivyer 2013 (asymmetric DSGC morphology), Vaney 2012 (DSGC type taxonomy).
+8. `suggestions` — generate follow-up suggestions based on factor-analysis findings.
+9. `reporting` — verificators, capture sessions, finalise task.json.
+
+#### Remote Machines
+
+None. Local-only analysis on the local machine. Existing project Python environment plus possibly
+`factor_analyzer` package (small addition to `pyproject.toml` if used).
+
+#### Cost Estimation
+
+| Item | Estimate |
+| --- | --- |
+| Local compute (PCA + factor analysis + morphology builds for ≤30 cells) | &lt; 30 minutes |
+| API costs | $0 |
+| Vast.ai | $0 |
+| **Predicted spend** | **$0** |
+| **Hard cap** | **$2** (only if `factor_analyzer` pip install requires online resolution) |
+
+#### Assets Needed
+
+* `tasks/t0102_seedscale_n4_gen20/results/data/` (all_evaluations files)
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/data/` (all_evaluations files)
+* `tasks/t0092_diagnose_morphology_generator_silence/code/morphology_generator_fix.py`
+* `tasks/t0090_morphology_generator_diversity_test/code/morphology_params.py`
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/constants_morphology.py` (for the morphology
+  dimension index map)
+
+#### Expected Assets
+
+* 2 answer assets (one for the cluster-separation question, one for the factor-decomposition
+  question)
+
+`expected_assets`: `{&quot;answer&quot;: 2}`
+
+No predictions assets — t0105 is a pure analysis task on existing predictions.
+
+#### Time Estimation
+
+* Local prep + load + filter: 15-30 minutes
+* Morphology gallery build: 30-60 minutes
+* PCA + Mann-Whitney + plots: 15-30 minutes
+* Factor analysis + correlations + plots: 30-60 minutes
+* Analysis + reporting: 60-90 minutes
+* **Total wall-clock**: 2.5-4.5 hours.
+
+#### Risks &amp; Fallbacks
+
+* **Risk**: filtered cell count is small (e.g. N &lt; 20). **Fallback**: relax filter to
+  `DSI &gt; 0.1 AND PD &gt; 2`; document the relaxation in results_detailed.md. If still &lt; 10, the
+  analysis runs on the small N with caveats.
+* **Risk**: PCA on 54 dims with N ~ 30-100 may be unstable. **Fallback**: report bootstrapped
+  variance-explained intervals and constrain interpretation to PC1-PC2 only.
+* **Risk**: `factor_analyzer` not in current pyproject.toml. **Fallback**: use
+  `sklearn.decomposition.FactorAnalysis` (no varimax built-in) and manually apply varimax via a
+  small rotation routine, or fall back to PCA-only interpretation.
+* **Risk**: asymmetry threshold of 0.5 produces unbalanced classes (e.g. 95% asymmetric, 5%
+  symmetric). **Fallback**: sweep thresholds at 0.3 / 0.5 / 1.0 and report all three; pick the
+  middle for the headline plots and note class balance.
+* **Risk**: t0102 cells with DSI &gt; 0.2 are dominated by silenced-cell artifacts that escaped t0104&#x27;s
+  guard. **Fallback**: explicitly check the artifact pattern (DSI &gt; 0.95 AND PD &lt; 5) and exclude
+  such cells from t0102 if they appear; document the exclusion count.
+
+#### Verification Criteria
+
+* `verify_task_metrics t0105_cluster_factor_analysis_dsi_pd` passes with 0 errors.
+* `verify_task_results t0105_cluster_factor_analysis_dsi_pd` passes with 0 errors.
+* Both answer assets validate against `verify_answer_asset`.
+* All charts in `results/images/` are PNG, embedded in `results_detailed.md` via
+  `![desc](images/file.png)`.
+* The morphology gallery is reproducible: includes the random seed for any stratified subsampling.
+* The PCA and factor-analysis numbers in `results_detailed.md` exactly match values in
+  `metrics.json`.
+
+#### Task Requirement Checklist (initial — `plan/plan.md` will finalise the REQ list)
+
+* REQ-1: Pool t0091 + t0099 + t0102 + t0104 evaluations, apply both filters (primary
+  `DSI &gt; 0.1 AND PD &gt; 2`; strict `DSI &gt; 0.2 AND PD &gt; 3`), dedupe by 68-d vector. Record N_raw,
+  N_passing, N_unique for each filter and lineage.
+* REQ-2: Compute normalised asymmetry score for each selected cell; classify symmetric/asymmetric at
+  threshold 0.5; report class counts.
+* REQ-3: Build morphology gallery for selected cells (or stratified subsample of ≤30). Annotate
+  DSI, PD, asym_score, source_task per panel.
+* REQ-4: PCA on 54-d electrophys vectors; plot PC1-PC2 by class, by DSI, by PD; report variance
+  explained and top loadings.
+* REQ-5: Mann-Whitney U test between symmetric and asymmetric PC1 (and PC2); report U, p-value,
+  interpretation.
+* REQ-6: Factor analysis on 68-d full vectors; choose factor count by Kaiser or 80% variance; report
+  loadings.
+* REQ-7: Pearson r between factor scores and DSI/PD; identify top-3 factors per outcome; flag any
+  joint factor.
+* REQ-8: Two answer assets validated by `verify_answer_asset`.
+
+#### Out of Scope
+
+* Re-running NSGA-II or any optimisation (this is pure analysis on existing data).
+* Building any morphology beyond what is needed for the gallery plot.
+* In silico patch-clamp / IV-curve analysis on the breakthrough cells (deferred to a separate task;
+  goes well with S-0104-01 / S-0104-02).
+* Comparing against external DSGC datasets (Bae 2018, Ran 2020) — deferred to S-0103-* lineage.
+
+### Results Summary
+
+#### Summary
+
+t0105 pools 7,003 per-cell evaluations from four 68-d NSGA-II lineages (t0091, t0099, t0102, t0104),
+applies a silence-artifact filter (73 cells excluded) plus the primary cohort filter
+`DSI &gt; 0.1 AND PD &gt; 2 Hz` with dedupe by 68-d vector to land at **N=85 unique cells**, and runs
+asymmetry classification, PCA on the 54-d electrophys submatrix, and varimax factor analysis on the
+full 68-d matrix. PC1 separates the 20 symmetric and 65 asymmetric cells at **Mann-Whitney U=31.0,
+p=1.48e-10**, top-loading Ca-activated K-channels (SK_TERMINAL, BK_TERMINAL, SK_SOMA, BK_MID) and
+persistent Na (NAP_PRIMARY) — morphology class pre-selects a different electrophys regime. **No
+factor** exceeds |r| &gt; 0.3 on both DSI and PD, so the joint-DSI/PD corner has no single-axis driver
+in the substrate.
+
+#### Metrics
+
+* **Primary cohort N**: **85 unique cells** (t0091=26, t0099=20, t0102=19, t0104=20); strict cohort
+  N=30
+* **Silence-artifact exclusions**: **73 cells** (t0091=5, t0099=23, t0102=45, t0104=0) — t0104&#x27;s
+  S-0102-01 guard fully holds
+* **Asymmetry class counts** (threshold 0.5): **20 symmetric, 65 asymmetric**; all 20 symmetric
+  cells come from t0091
+* **PCA variance explained**: PC1=**29.5 %**, PC2=8.4 %, PC3=6.1 %
+* **PC1 Mann-Whitney U**: U=**31.00**, p=**1.48e-10**; PC2 p=0.78 (no separation on PC2)
+* **Strict cohort PC1 separation**: U=10.00, p=**8.23e-5** (preserved at N=30)
+* **Factor count (Kaiser, capped at 10)**: **10 factors**; 18 eigenvalues exceeded 1.0
+* **Top DSI factor**: F1 r=**-0.322**, p=0.003; **Top PD factor**: F1 r=**-0.265**, p=0.014
+* **Joint DSI-PD factors** (|r| &gt; 0.3 on both): **0**
+* **Bootstrap-stable factors** (200 resamples): F1, F2 only — F3 through F10 are unstable at N=85
+* **Total task cost**: **$0.00** (pure local analysis, no remote machines)
+
+#### Verification
+
+* `verify_task_results.py` — PASSED (see verificator log for codes)
+* `verify_suggestions.py` — PASSED (0 errors)
+* `verify_compare_literature.py` — PASSED (0 errors)
+* `verify_task_metrics.py` — PASSED (multi-variant `primary_cohort` + `strict_cohort`)
+* Answer asset `symmetric-vs-asymmetric-electrophys-cluster` — PASS
+* Answer asset `dsi-pd-diversity-factor-decomposition` — PASS
 
 ## Preliminary-data figure pack and slide deck for report
 ID: t0105_preliminary_figures_report

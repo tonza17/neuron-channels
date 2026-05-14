@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="answers" generated_at_utc="2026-05-14T03:13:56Z">
+<llm_context_archive type_id="answers" generated_at_utc="2026-05-14T14:27:05Z">
   <archive_summary>
     <title>All Answers</title>
     <description>Complete question and answer corpus with full answer bodies.</description>
     <section_count>1</section_count>
-    <char_count>458989</char_count>
-    <byte_count>459514</byte_count>
-    <estimated_tokens>114747</estimated_tokens>
+    <char_count>478259</char_count>
+    <byte_count>478804</byte_count>
+    <estimated_tokens>119564</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -45,10 +45,12 @@
         <id>t0090-procedural-cell-silence-root-cause</id>
         <id>random-init-reproducibility-and-warmstart-dependence</id>
         <id>does-n4-gens20-2seeds-recover-joint-pass-corner</id>
+        <id>dsi-pd-diversity-factor-decomposition</id>
+        <id>symmetric-vs-asymmetric-electrophys-cluster</id>
         <id>t0104-joint-pass-recovery-2obj</id>
       </source_ids>
       <content>
-Answers: 29
+Answers: 31
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -6580,6 +6582,339 @@ claim was not directly verified.
 [t0091]: ../../../t0091_morphology_extended_nsga2_v1/
 [t0099]: ../../../t0099_random_init_pareto_robustness/
 [t0101]: ../../../t0101_brainstorm_results_21/
+
+## Which factors (combinations of the 68 input parameters) explain DSI diversity versus PD diversity, and is there a joint factor or are the two outcomes orthogonal?
+ID: dsi-pd-diversity-factor-decomposition
+Short title: Factor decomposition of DSI vs PD diversity
+Confidence: medium
+Created by: t0105_cluster_factor_analysis_dsi_pd on 2026-05-14
+Categories: direction-selectivity, compartmental-modeling
+Methods: code-experiment
+Source tasks: t0091_morphology_extended_nsga2_v1, t0099_random_init_pareto_robustness, t0102_seedscale_n4_gen20, t0104_nsga2_2obj_dsi_pdrate_3seeds
+
+#### Question
+
+Which factors (combinations of the 68 input parameters) explain DSI diversity versus PD diversity,
+and is there a joint factor or are the two outcomes orthogonal?
+
+#### Short Answer
+
+The two outcomes are mostly orthogonal but partially coupled through one near-joint factor: a
+varimax factor analysis on the standardised 68-d matrix (N=85, 10 factors by Kaiser criterion capped
+at 10) finds F1 the only factor exceeding |r| = 0.25 on either outcome, with r_DSI = -0.322
+(p=0.003) and r_PD = -0.265 (p=0.014). No factor crosses the joint-factor threshold |r| &gt; 0.3 on
+both, so the joint high-DSI / high-PD corner is not unlocked by a single low-d axis. F1&#x27;s top
+loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM) are bootstrap-stable across 200 resamples, but
+F3 through F10 are not. The substrate-limited reading from t0102 and t0104 is reinforced: DSI and PD
+share a weak common axis but remain substantially orthogonal.
+
+#### Research Process
+
+The 85-cell primary cohort (DSI &gt; 0.1 AND PD &gt; 2 Hz, deduped across t0091/t0099/t0102/t0104,
+post-silence-filter) was z-scored column-wise across the full 68-d parameter vector. The factor
+count was chosen by the Kaiser criterion (eigenvalues &gt; 1 on the correlation matrix), capped at 10
+per `constants.KAISER_FACTOR_CAP`; 18 eigenvalues passed Kaiser, so the cap applied. Varimax
+rotation was applied via
+`factor_analyzer.FactorAnalyzer(rotation=&quot;varimax&quot;, n_factors=10, method=&quot;minres&quot;)`. A compatibility
+shim re-aliases `force_all_finite` (removed in scikit-learn 1.6) to `ensure_all_finite` so
+factor_analyzer 0.5.1 runs on sklearn 1.8.
+
+Per-cell factor scores were derived via `FactorAnalyzer.transform`. Pearson r and p-values between
+each factor score column and the two outcomes (`dsi_vector_sum`, `pd_rate_hz`) were computed with
+`scipy.stats.pearsonr`. The joint-factor flag is triggered when |r_DSI| &gt; 0.3 AND |r_PD| &gt; 0.3; no
+factor reached that bar in the primary cohort.
+
+Stability was tested by bootstrap (200 resamples; `numpy.random.default_rng(seed=42)`). For each
+resample we draw N=85 cells with replacement, refit the 10-factor varimax solution, align the
+resampled loadings to the headline via the greedy max-|dot| matching with sign flips
+(`code/factor_bootstrap.py:_align_loadings`), and record the aligned loading matrix. Per-cell 95 %
+CIs are percentile (2.5 % / 97.5 %). A factor is flagged `stable` when its top-5 loadings retain
+consistent signs in &gt;= 90 % of resamples AND each median absolute loading exceeds 0.4. F1 and F2
+cleared both thresholds; F3-F10 did not.
+
+The strict cohort (DSI &gt; 0.2 AND PD &gt; 3 Hz, N=30) re-ran the same pipeline with separate outputs at
+`results/data/factor_loadings_strict.json` and `results/data/factor_correlations_strict.json`. At
+that sample size F1 still emerges as a correlate but the top-3 factors per outcome reshuffle (F6
+takes the top correlation slot with PD at r = +0.36), reflecting the much smaller N / p ratio.
+
+#### Evidence from Papers
+
+This method does not use the `papers` answer method; no specific paper assets were re-read for this
+question. Selection of varimax over an oblique rotation followed standard practice documented in
+psychometric factor-analysis literature (see `research/research_code.md`).
+
+#### Evidence from Internet Sources
+
+This method does not use the `internet` answer method; no external URLs were consulted during
+synthesis. The factor_analyzer/scikit-learn compatibility shim was developed locally and is
+documented in `code/factor_analysis.py`.
+
+#### Evidence from Code or Experiments
+
+Headline factor-vs-outcome correlations (primary cohort, N=85, 10 factors):
+
+| Factor | r_DSI | p_DSI | r_PD | p_PD | Stable? |
+| --- | --- | --- | --- | --- | --- |
+| F1 | -0.322 | 0.003 | -0.265 | 0.014 | yes |
+| F2 | -0.128 | 0.243 | -0.135 | 0.219 | yes |
+| F3 | -0.167 | 0.128 | -0.161 | 0.140 | no |
+| F4 | -0.109 | 0.322 | -0.061 | 0.579 | no |
+| F5 | -0.136 | 0.215 | -0.098 | 0.370 | no |
+| F6 | -0.026 | 0.815 | -0.073 | 0.509 | no |
+| F7 | +0.107 | 0.330 | -0.107 | 0.330 | no |
+| F8 | -0.058 | 0.596 | +0.052 | 0.639 | no |
+| F9 | -0.111 | 0.312 | -0.044 | 0.687 | no |
+| F10 | -0.114 | 0.298 | -0.142 | 0.196 | no |
+
+Top-3 factors per outcome (primary):
+
+* DSI: F1 (-0.322), F3 (-0.167), F5 (-0.136)
+* PD: F1 (-0.265), F3 (-0.161), F10 (-0.142)
+
+F1 is the strongest correlate for both outcomes, but the magnitudes (|r_DSI| = 0.32, |r_PD| = 0.27)
+sit on opposite sides of the joint-factor threshold (0.3). Joint-factor count is 0.
+
+F1 top-5 loadings (headline solution; bootstrap-stable):
+
+| Param index | Param | Headline loading | Bootstrap median |
+| --- | --- | --- | --- |
+| 11 | NAP_PRIMARY_GBAR | +0.747 | (see results/data/factor_bootstrap.json) |
+| 66 | morph_seed | +0.680 |  |
+| 22 | SK_MID_GBAR | +0.662 |  |
+| 50 | MG_CONC_MM | +0.654 |  |
+| 34 | RA_OHM_CM | +0.652 |  |
+
+F2 top-5 loadings:
+
+| Param | Headline loading |
+| --- | --- |
+| SK_PRIMARY_GBAR | +0.708 |
+| NAV16_TERMINAL_GBAR | -0.626 |
+| NAV16_SOMA_GBAR | +0.583 |
+| max_strahler_depth | -0.576 |
+| IM_GBAR | -0.538 |
+
+Strict-cohort comparison (N=30):
+
+| Factor | r_DSI | r_PD |
+| --- | --- | --- |
+| F1 (strict) | +0.135 | -0.234 |
+| F6 (strict) | -0.170 | +0.364 |
+
+The strict-cohort reordering is consistent with low statistical power (N=30, 68 dims) and should be
+read as a sensitivity check rather than an independent estimate.
+
+#### Synthesis
+
+The factor decomposition produces a clear primary axis (F1) that aligns with both DSI and PD in the
+same sign direction (negative correlation; cells higher in this axis tend to be lower in both DSI
+and PD). F1 loads heavily on primary-dendrite persistent Na (NAP_PRIMARY) plus mid-dendrite SK and
+synaptic / passive parameters (MG_CONC_MM, RA_OHM_CM). The morph_seed loading is a procedural
+artefact: it is an integer-coded seed used to seed morphology generation and not a physically
+meaningful parameter, so its inclusion in F1&#x27;s top-5 should be discounted when interpreting biology.
+
+Crucially, no factor crosses |r| &gt; 0.3 on *both* outcomes. This means the 68-d substrate as
+empirically explored by NSGA-II does not contain a single linear axis that simultaneously maximises
+DSI and PD-rate. The substrate-limited reading from t0102 / t0104 — that the joint high-DSI /
+high-PD corner is hard to reach because DSI demands distal-dendrite shunting and PD demands strong
+somatic / AIS spike generation — is reinforced: the factor structure is near-orthogonal between
+the two outcomes.
+
+The bootstrap stability check tightens the interpretation: only F1 and F2 are reproducible across
+resamples. The remaining 8 factors capture residual variance whose sign and magnitude flip between
+resamples, so they should not be interpreted as biological mechanisms.
+
+Confidence is `medium` because (a) N=85 vs p=68 gives a ratio of 1.25, well below the psychometric
+rule of thumb (5-10:1); (b) the strict-cohort sensitivity at N=30 reshuffles the factor ordering,
+which would be expected with low power but also flags that the 10-factor solution is at the edge of
+stability; (c) factor_analyzer 0.5.1 lacks built-in fit statistics (BIC, RMSEA) so we cannot
+quantitatively rank rotations.
+
+#### Limitations
+
+* N=85 / 68 dimensions is below the standard 5:1 ratio for factor analysis; F3-F10 should not be
+  relied on for biological interpretation.
+* Two of the 14 morphology dims (`num_primary_branches`, `max_strahler_depth`, `morph_seed`) are
+  integer-coded. `morph_seed` in particular is purely indexical and its appearance in F1&#x27;s top
+  loadings should be discounted.
+* The strict cohort (N=30) is too small for a stable factor decomposition; its rerun is documented
+  but should be read as exploratory.
+* No mediation analysis between PCA (54-d electrophys) and FA (68-d full): we report the two
+  decompositions side by side without quantifying overlap. A targeted follow-up could fit a
+  hierarchical model where electrophys PCs are nested within asymmetry class.
+* Pearson r is sensitive to linear relationships only; a non-monotonic factor would be missed by
+  this design.
+
+#### Sources
+
+* Task: `t0091_morphology_extended_nsga2_v1`
+* Task: `t0099_random_init_pareto_robustness`
+* Task: `t0102_seedscale_n4_gen20`
+* Task: `t0104_nsga2_2obj_dsi_pdrate_3seeds`
+* Chart: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/images/factor_loadings.png`
+* Chart: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/images/factor_correlations.png`
+* Chart: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/images/factor_loadings_bootstrap.png`
+* Data: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/data/factor_loadings.json`
+* Data: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/data/factor_correlations.json`
+* Data: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/data/factor_bootstrap.json`
+
+[t0091]: ../../../../t0091_morphology_extended_nsga2_v1/
+[t0099]: ../../../../t0099_random_init_pareto_robustness/
+[t0102]: ../../../../t0102_seedscale_n4_gen20/
+[t0104]: ../../../../t0104_nsga2_2obj_dsi_pdrate_3seeds/
+
+## Do symmetric and asymmetric DSGC morphologies share the same electrophys parameter regime, or do they form distinct clusters in PC space?
+ID: symmetric-vs-asymmetric-electrophys-cluster
+Short title: Symmetric vs asymmetric DSGCs in electrophys PC space
+Confidence: medium
+Created by: t0105_cluster_factor_analysis_dsi_pd on 2026-05-14
+Categories: direction-selectivity, compartmental-modeling
+Methods: code-experiment
+Source tasks: t0091_morphology_extended_nsga2_v1, t0099_random_init_pareto_robustness, t0102_seedscale_n4_gen20, t0104_nsga2_2obj_dsi_pdrate_3seeds, t0086_robustness_cluster_bio_comparison
+
+#### Question
+
+Do symmetric and asymmetric DSGC morphologies share the same electrophys parameter regime, or do
+they form distinct clusters in PC space?
+
+#### Short Answer
+
+No, they form distinct clusters. PCA on the 54-d electrophys submatrix of the 85-cell primary cohort
+(DSI &gt; 0.1 AND PD &gt; 2 Hz, pooled across four 68-d NSGA-II lineages) shows PC1 separating the 20
+symmetric and 65 asymmetric cells at Mann-Whitney U=31.0, p=1.5e-10. PC1 captures 29.5 % of variance
+and loads on terminal-dendrite K-Ca conductances (SK_TERMINAL, BK_TERMINAL, BK_MID, SK_SOMA) plus
+primary-dendrite persistent Na (NAP_PRIMARY). The strict cohort (DSI &gt; 0.2 AND PD &gt; 3 Hz, N=30)
+preserves the separation (p=8.2e-5), so the result is not an artefact of the relaxed primary filter.
+PC2 does not separate the classes (p=0.78), so the distinction lives on a single axis dominated by
+terminal-dendrite KCa expression.
+
+#### Research Process
+
+The task pooled per-cell evaluation rows from four prior 68-d NSGA-II optimisation lineages covering
+electrophys + morphology jointly: t0091 (warm-start 3-obj), t0099 (random-init 3-obj), t0102
+(random-init 3-obj at N_EVAL=4), and t0104 (random-init 2-obj at N_EVAL=4 with the S-0102-01 silence
+guard). 7,003 raw rows were filtered with the conservative silence-artefact filter (DSI &gt; 0.95 AND
+PD &lt; 5 Hz) on t0091/t0099/t0102 (73 cells excluded; t0104 already guarded in-evaluator), then the
+primary filter (DSI &gt; 0.1 AND PD &gt; 2 Hz) and the strict filter (DSI &gt; 0.2 AND PD &gt; 3 Hz). Dedupe by
+68-d vector rounded to 6 decimals gave 85 unique primary cells and 30 strict cells, with all four
+lineages represented (primary breakdown 26 / 20 / 19 / 20 by lineage).
+
+Each cell was assigned an asymmetry score using the four PD-asymmetry morphology dims
+(`soma_offset_pd_um / 150 + |field_elongation_pd - 1| / 2 + |branch_density_gradient_pd| / 1 + |primary_branch_pd_concentration| / 5`).
+Cells with score &gt;= 0.5 were classified `asymmetric` (65 cells in the primary cohort), the rest
+`symmetric` (20 cells). A 0.3 / 0.5 / 1.0 threshold sweep was run to confirm class balance was not
+pathological; counts were 20 / 65, 20 / 65, 27 / 58.
+
+The 54-d electrophys submatrix (the first 54 entries of each cell&#x27;s 68-d vector) was z-scored
+column-wise and passed to `sklearn.decomposition.PCA(n_components=3)`. The Mann-Whitney U two-sided
+test (`scipy.stats.mannwhitneyu`) was computed on PC1 scores between the symmetric and asymmetric
+groups and again on PC2. The 4-panel scatter (`results/images/pca_electrophys_panels.png`) colours
+PC1 vs PC2 by (a) asymmetry class, (b) DSI, (c) PD rate, (d) source task. The eigenvalue scree
+(`results/images/eigenvalue_scree.png`) lists all 54 correlation-matrix eigenvalues.
+
+The strict-cohort PCA was rerun on the 30 unique strict cells using the same pipeline
+(`code/run_strict_cohort.py`). The four-panel chart at `pca_electrophys_panels_strict.png` mirrors
+the primary plot.
+
+#### Evidence from Papers
+
+This method does not use the `papers` answer method; no specific paper assets were re-read for this
+question. The methodology (PCA on standardised conductance parameter vectors, Mann-Whitney U between
+morphological subgroups) is standard practice and was vetted by the task&#x27;s `research_papers.md`
+review.
+
+#### Evidence from Internet Sources
+
+This method does not use the `internet` answer method; no external URLs were re-read for this
+question. The factor-analyzer library version compatibility note (sklearn 1.8 renamed
+`force_all_finite` to `ensure_all_finite`) was resolved with an in-task shim documented in
+`code/factor_analysis.py`.
+
+#### Evidence from Code or Experiments
+
+The complete code lives in `tasks/t0105_cluster_factor_analysis_dsi_pd/code/`. The PCA pipeline is
+in `pca_electrophys.py` (function `run_pca_pipeline`) and is re-used by the strict-cohort
+orchestrator `run_strict_cohort.py`. The output JSON files at `results/data/pca_results.json`,
+`pca_mannwhitney.json`, `pca_results_strict.json`, and `pca_mannwhitney_strict.json` carry the raw
+data behind every quoted number.
+
+Primary-cohort PCA headline results:
+
+| PC | Variance ratio | Top-5 loadings (signed) |
+| --- | --- | --- |
+| PC1 | 0.2946 | SK_TERMINAL +0.213, BK_TERMINAL +0.193, SK_SOMA +0.192, BK_MID +0.192, NAP_PRIMARY +0.186 |
+| PC2 | 0.0839 | AIS_DIAMETER +0.324, NAR +0.273, N_ACH -0.246, N_GABA -0.240, MG_CONC_MM +0.228 |
+| PC3 | 0.0609 | NAV16_DEND_DISTAL +0.368, W_ACH +0.296, KV3_SOMA -0.289, MG_CONC_MM -0.277, BK_SOMA +0.257 |
+
+Mann-Whitney U two-sided (symmetric vs asymmetric):
+
+| Cohort | N (sym / asym) | PC1: U, p | PC2: U, p |
+| --- | --- | --- | --- |
+| Primary | 20 / 65 | 31.00, 1.48e-10 | 622.00, 0.776 |
+| Strict | 7 / 23 | 10.00, 8.23e-5 | 101.00, 0.983 |
+
+The morphology gallery (`results/images/morphology_gallery.png`) shows 30 representative cells
+stratified by (class, source_task). Asymmetric cells display visibly offset somata and PD-elongated
+dendritic fields; symmetric cells are radially balanced.
+
+#### Synthesis
+
+The headline finding is unambiguous: in the 54-d electrophys submatrix, PC1 separates the two
+morphology classes at an effect size that is robust to (a) cohort filter (both p &lt; 1e-4), (b)
+source-task lineage (every lineage contributes both classes), and (c) sample size (85 -&gt; 30 cells).
+The separation lives almost entirely on PC1; PC2 is not significant.
+
+Mechanistically, the top PC1 loadings tell a consistent story. The dominant factors are
+calcium-activated potassium currents — terminal-dendrite SK and BK (SK_TERMINAL, BK_TERMINAL,
+BK_MID, SK_SOMA all positive on PC1) — plus primary-dendrite persistent sodium (NAP_PRIMARY). PC2
+(variance 8.4 %) is independent of class and instead loads on synaptic-placement parameters (N_ACH,
+N_GABA, MG_CONC_MM, NAR) and AIS geometry (AIS_DIAMETER). This suggests two orthogonal axes: a
+class-discriminating &quot;dendritic KCa + persistent Na&quot; axis (PC1) and a synaptic / AIS-tuning axis
+(PC2) that varies independently within each class.
+
+Confidence is set to `medium` rather than `high` because (a) N=85 / 54 dims is small for PCA
+(variance ratio 1.6), so PC3+ should not be over-interpreted, and (b) the 20-symmetric vs
+65-asymmetric split is unbalanced — most of NSGA-II&#x27;s productive search lay in asymmetric
+territory, and a more balanced symmetric sample (e.g., via a targeted forward sweep) could sharpen
+the comparison.
+
+#### Limitations
+
+* N=85 / 54 dimensions in PCA is below the rule-of-thumb 10:1 ratio; PC1 + PC2 interpretation is
+  sound, PC3 should be treated as exploratory.
+* 20 symmetric vs 65 asymmetric cells: the imbalance reflects the substrate&#x27;s intrinsic difficulty
+  in producing high-DSI symmetric cells in our biological-prior space, but does inflate the
+  Mann-Whitney U asymmetry.
+* The asymmetry-score threshold of 0.5 is a project convention from t0104&#x27;s intervention file
+  `early_stop_after_seed_55.md` and was not re-validated against an external biological
+  classification; the threshold sweep (0.3 / 0.5 / 1.0) showed the headline classification is not
+  knife-edge sensitive.
+* Per-cell pre-trial reliability or HWHM data are not stored in the pooled `all_evaluations*.json`
+  files; richer tuning-curve metrics would need a re-evaluation task rather than this analysis.
+* The four lineages differ in NSGA-II objective count (2-obj vs 3-obj) and per-cell evaluation noise
+  schedule (N_EVAL 4 vs 20). The source-task colouring panel (`pca_electrophys_panels.png` panel d)
+  shows the lineages overlap in PC space, indicating the result is not driven by a single lineage;
+  but small inter-lineage effects on PC2 may exist.
+
+#### Sources
+
+* Task: `t0091_morphology_extended_nsga2_v1` — warm-start 68-d NSGA-II 3-objective
+* Task: `t0099_random_init_pareto_robustness` — random-init 68-d NSGA-II 3-obj, N_EVAL=20
+* Task: `t0102_seedscale_n4_gen20` — random-init 68-d NSGA-II 3-obj, N_EVAL=4
+* Task: `t0104_nsga2_2obj_dsi_pdrate_3seeds` — random-init 68-d NSGA-II 2-obj with silence guard
+* Task: `t0086_robustness_cluster_bio_comparison` — k-means + silhouette + ARI precedent on 54-d
+  Pareto library
+* Chart: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/images/pca_electrophys_panels.png`
+* Chart: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/images/morphology_gallery.png`
+* Chart: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/images/eigenvalue_scree.png`
+* Data: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/data/pca_mannwhitney.json`
+* Data: `tasks/t0105_cluster_factor_analysis_dsi_pd/results/data/pca_results.json`
+
+[t0091]: ../../../../t0091_morphology_extended_nsga2_v1/
+[t0099]: ../../../../t0099_random_init_pareto_robustness/
+[t0102]: ../../../../t0102_seedscale_n4_gen20/
+[t0104]: ../../../../t0104_nsga2_2obj_dsi_pdrate_3seeds/
+[t0086]: ../../../../t0086_robustness_cluster_bio_comparison/
 
 ## Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard applied) recover joint-pass cells where t0102&#x27;s 3-objective run found zero?
 ID: t0104-joint-pass-recovery-2obj

@@ -1,6 +1,6 @@
 # Tuning Curve Reliability
 
-**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 243
+**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 245
 
 [Back to all metrics](README.md)
 
@@ -249,3 +249,5 @@
 | 241 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1723 (gen 17) | — |
 | 242 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Closest-to-joint cell 767 (gen 7) | — |
 | 243 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | Anchor symmetric | — |
+| 244 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | Primary cohort (DSI > 0.1 AND PD > 2.0) | — |
+| 245 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | Strict cohort (DSI > 0.2 AND PD > 3.0) | — |

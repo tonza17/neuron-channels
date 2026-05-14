@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-14T03:13:56Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-14T14:27:05Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>438310</char_count>
-    <byte_count>438476</byte_count>
-    <estimated_tokens>109577</estimated_tokens>
+    <char_count>446144</char_count>
+    <byte_count>446312</byte_count>
+    <estimated_tokens>111536</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -420,9 +420,16 @@
         <id>S-0104-04</id>
         <id>S-0104-05</id>
         <id>S-0104-06</id>
+        <id>S-0105-01</id>
+        <id>S-0105-02</id>
+        <id>S-0105-03</id>
+        <id>S-0105-04</id>
+        <id>S-0105-05</id>
+        <id>S-0105-06</id>
+        <id>S-0105-07</id>
       </source_ids>
       <content>
-Suggestions: 403
+Suggestions: 410
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4946,6 +4953,84 @@ Categories: compartmental-modeling
 Date added: 2026-05-14
 
 Per-generation wall-clock doubled over both t0104 seeds (~15 min/gen at gen 1 to ~120 min/gen at gen 11-12) despite worker-restart-between-generations being active in the inherited nsga2_driver.py. The extra leak surface is likely inside per-cell evaluation: HOC namespace allocations, NEURON mechanism state in non-RAM-tracked C memory, or matplotlib-figure handle leaks in the morphology generator&#x27;s chart-writing branch. Action: instrument psutil.Process().memory_info().rss before and after each cell evaluation across one full generation; identify which call-site grows. Then add a full multiprocessing.Pool.terminate()/recreate() every N generations (N = 3 baseline) in nsga2_driver.py. Predict: per-gen wall-clock holds within 2x of gen 1 instead of 8x by gen 11. Recommended task types: write-library, experiment-run. Cost: ~$1 (instrumentation runs locally; one verification run on Vast.ai).
+
+## Re-run varimax factor analysis excluding integer morph_seed to test whether F1&#x27;s correlates survive
+ID: S-0105-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0105_cluster_factor_analysis_dsi_pd
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-14
+
+morph_seed (an integer dimension bounded [0, 99] driving generator randomness, not biologically meaningful) loads +0.68 on F1 next to NAP_PRIMARY (+0.75), SK_MID (+0.66), MG_CONC_MM (+0.65), and RA_OHM_CM (+0.65). F1&#x27;s r_DSI = -0.322 / r_PD = -0.265 could partly be a &#x27;warm-start vs random-init&#x27; indicator disguised as a mechanistic factor because t0091 fixed morph_seed = 31 while t0099/t0102/t0104 randomise it. Re-run the t0105 factor analysis on a 67-d matrix excluding morph_seed and check whether F1&#x27;s top loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, Ra) and its Pearson r vs DSI / PD survive. If they do, F1 is mechanistic; if F1 dissolves, F1 was a lineage indicator. Recommended task type: data-analysis. Cost: $0 (pure local re-analysis of existing data). Effort: 1-2 hours.
+
+## Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells to validate the SK/BK mechanistic hypothesis
+ID: S-0105-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0105_cluster_factor_analysis_dsi_pd
+Source paper: 10.1038_s41467-026-70288-4
+Categories: voltage-gated-channels, direction-selectivity, compartmental-modeling
+Date added: 2026-05-14
+
+PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL, BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0, BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI + PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which Ca-K conductance is load-bearing for the asymmetric direction-selectivity regime. Recommended task types: experiment-run, data-analysis. Cost: ~$2-3 (small Vast.ai instance for 3-6 hours; or local if NEURON runs locally). Aligns with PolegPolsky2026&#x27;s ML channel-importance finding.
+
+## Investigate the symmetric high-DSI outlier pocket: cells with DSI &gt; 0.2 AND asym_score &lt; 0.5
+ID: S-0105-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0105_cluster_factor_analysis_dsi_pd
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-05-14
+
+All 20 symmetric cells in the t0105 primary cohort come from t0091&#x27;s warm-start (asym_score = 0 exactly), but two of them have DSI &gt; 0.2 (cells #2 from t0091 gen 1 with DSI = 0.329 / PD = 12.86 Hz; cell from t0091 with DSI = 0.198 / PD = 46.14 Hz). These are &#x27;symmetric high-DSI&#x27; outliers that contradict the simple &#x27;asymmetric morphology required for DSI&#x27; reading. Inspect their full 68-d parameter vectors, check whether their high DSI is silence-artifact-adjacent (PD &lt; 5 Hz with small spike count), and if not, run a small perturbation grid around their parameter neighbourhood to see whether a symmetric-morphology DSI &gt; 0.2 plateau exists. This would significantly alter the project&#x27;s understanding of which substrate features are required for direction selectivity. Recommended task type: data-analysis + experiment-run. Cost: ~$0.5-1.
+
+## F1-axis-seeded NSGA-II initial population to test whether targeted seeding escapes the joint-corner block
+ID: S-0105-04
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0105_cluster_factor_analysis_dsi_pd
+Categories: direction-selectivity, compartmental-modeling
+Date added: 2026-05-14
+
+F1 is the only factor weakly correlated with both DSI (r = -0.322) and PD (r = -0.265). Its top loadings span NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM (and morph_seed - see S-0105-01 caveat). Build a random-init NSGA-II run whose initial population samples along the F1 axis (positive and negative directions) and orthogonal to F1, instead of uniform sampling. If F1-axis seeding accelerates Pareto exploration into the joint corner, the substrate has a discoverable direction that random-init NSGA-II misses. If F1-axis seeding produces the same L-shape, the substrate-limit reading is reinforced. Recommended task type: experiment-run. Cost: ~$8-12 (one Vast.ai NSGA-II run at matched budget to t0104 seed 44). Complements S-0102-03 / S-0104-04 IBEA suggestions.
+
+## Per-lineage PCA decomposition: quantify how much cross-lineage heterogeneity contributes to PC1 separation
+ID: S-0105-05
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0105_cluster_factor_analysis_dsi_pd
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-14
+
+t0105&#x27;s pooled cohort spans four lineages with different settings (warm-start vs random-init, N_EVAL=4 vs 20, 2-obj vs 3-obj). PC1&#x27;s separation of symmetric from asymmetric cells is confounded with the lineage source (all 20 symmetric cells come from t0091). Run PCA independently per lineage (t0099 alone, t0102 alone, t0104 alone) and compare the top-5 PC1 loadings; if they match across lineages despite no symmetric cells, the Ca-K / NAP_PRIMARY signature is lineage-robust rather than a t0091-warm-start artifact. Quantify cross-lineage PC1-loading correlation to put a number on cross-lineage heterogeneity. Recommended task type: data-analysis. Cost: $0 (pure local re-analysis).
+
+## Parametric-bootstrap factor analysis at N&gt;=300 synthetic cells to test if F3-F10 stabilise
+ID: S-0105-06
+Status: active
+Priority: medium
+Kind: technique
+Source task: t0105_cluster_factor_analysis_dsi_pd
+Categories: compartmental-modeling
+Date added: 2026-05-14
+
+Only F1 and F2 pass the t0105 bootstrap stability test (&gt;= 90 % sign consistency in top-5 loadings, median |loading| &gt;= 0.4) at N=85. The 5xp = 340 conventional floor for factor analysis on 68 dimensions would need N &gt;= 340 cells. Generate a parametric bootstrap from the t0105 cohort (fit a multivariate Gaussian or copula on the 68-d data, sample N=400 synthetic cells, refit varimax FA) and check whether F3-F10 stabilise at the inflated N. If they do, the under-power is the limiter; if they do not, the factors are genuinely unstable in the substrate. Recommended task type: data-analysis. Cost: $0 (pure local synthesis + re-analysis).
+
+## MAP-Elites quality-diversity search on Bed B + morphology substrate to find off-axis joint-corner cells
+ID: S-0105-07
+Status: active
+Priority: medium
+Kind: technique
+Source task: t0105_cluster_factor_analysis_dsi_pd
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-14
+
+t0105 finds no joint DSI-PD factor — no single low-d axis carries both outcomes. NSGA-II (any objective vector size or noise budget) cannot ride a non-existent axis. MAP-Elites maintains a diversity grid over user-specified behavioural descriptors (e.g., asym_score x morphology_seed bins), promotes corner exploration over Pareto crowding, and may find isolated joint-corner cells that lie off any continuous axis. Run MAP-Elites at matched budget to t0104 seed 44 (~$5) on the same Bed B + morphology substrate with behavioural descriptors (asym_score, source_lineage_marker), compare the resulting joint-corner yield. Complements S-0102-03 / S-0104-04 IBEA suggestions but with a stronger diversity prior. Recommended task type: experiment-run. Cost: ~$5-8.
       </content>
     </section>
   </sections>

@@ -1,6 +1,6 @@
 # Tuning Curve Half-Width at Half-Max (degrees)
 
-**Key**: `tuning_curve_hwhm_deg` | **Unit**: none | **Results**: 238
+**Key**: `tuning_curve_hwhm_deg` | **Unit**: none | **Results**: 240
 
 [Back to all metrics](README.md)
 
@@ -244,3 +244,5 @@
 | 236 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1678 (gen 17) | — |
 | 237 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Pareto cell 1723 (gen 17) | — |
 | 238 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Closest-to-joint cell 767 (gen 7) | — |
+| 239 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | Primary cohort (DSI > 0.1 AND PD > 2.0) | — |
+| 240 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | Strict cohort (DSI > 0.2 AND PD > 3.0) | — |
