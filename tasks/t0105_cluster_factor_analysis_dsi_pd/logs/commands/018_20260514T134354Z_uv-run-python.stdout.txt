@@ -1,0 +1,24 @@
+Computed Pearson r for 10 factors against DSI and PD.
+  F1: r_DSI=-0.322 (p=0.00262)  r_PD=-0.265 (p=0.0144)
+  F2: r_DSI=-0.128 (p=0.243)  r_PD=-0.135 (p=0.219)
+  F3: r_DSI=-0.167 (p=0.128)  r_PD=-0.161 (p=0.14)
+  F4: r_DSI=-0.109 (p=0.322)  r_PD=-0.061 (p=0.579)
+  F5: r_DSI=-0.136 (p=0.215)  r_PD=-0.098 (p=0.37)
+  F6: r_DSI=-0.026 (p=0.815)  r_PD=-0.073 (p=0.509)
+  F7: r_DSI=+0.107 (p=0.33)  r_PD=-0.107 (p=0.33)
+  F8: r_DSI=-0.058 (p=0.596)  r_PD=+0.052 (p=0.639)
+  F9: r_DSI=-0.111 (p=0.312)  r_PD=-0.044 (p=0.687)
+  F10: r_DSI=-0.114 (p=0.298)  r_PD=-0.142 (p=0.196)
+
+Top-3 factors by |r| vs DSI:
+  F1: r=-0.322 p=0.00262
+  F3: r=-0.167 p=0.128
+  F5: r=-0.136 p=0.215
+Top-3 factors by |r| vs PD:
+  F1: r=-0.265 p=0.0144
+  F3: r=-0.161 p=0.14
+  F10: r=-0.142 p=0.196
+Joint factors (|r_DSI| > 0.3 AND |r_PD| > 0.3): 0
+
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\factor_correlations.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\images\factor_correlations.png

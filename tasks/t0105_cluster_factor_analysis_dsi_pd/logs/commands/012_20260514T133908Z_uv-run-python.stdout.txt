@@ -1,0 +1,7 @@
+Selected 30 cells from 85 primary cells.
+  asymmetric::t0091: 6
+  asymmetric::t0099: 6
+  asymmetric::t0102: 6
+  asymmetric::t0104: 6
+  symmetric::t0091: 6
+  building cell 1/30: t0091 seed=None DSI=0.511 PD=35.1 ...

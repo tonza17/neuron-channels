@@ -1,0 +1,29 @@
+PCA on N=85 primary cells, 54 features.
+  PC1: variance_ratio=0.2946
+  PC2: variance_ratio=0.0839
+  PC3: variance_ratio=0.0609
+  Top-5 loadings on PC1:
+     23 SK_TERMINAL_GBAR               +0.2130
+     18 BK_TERMINAL_GBAR               +0.1932
+     20 SK_SOMA_GBAR                   +0.1923
+     17 BK_MID_GBAR                    +0.1917
+     11 NAP_PRIMARY_GBAR               +0.1861
+  Top-5 loadings on PC2:
+     48 AIS_DIAMETER_UM                +0.3242
+     27 NAR_GBAR                       +0.2733
+     39 N_ACH                          -0.2462
+     40 N_GABA                         -0.2403
+     50 MG_CONC_MM                     +0.2282
+  Top-5 loadings on PC3:
+     52 NAV16_DEND_DISTAL              +0.3675
+     45 W_ACH_US                       +0.2964
+      5 KV3_SOMA_GBAR                  -0.2894
+     50 MG_CONC_MM                     -0.2766
+     15 BK_SOMA_GBAR                   +0.2568
+  Mann-Whitney U (PC1): U=31.00 p=1.476e-10
+  Mann-Whitney U (PC2): U=622.00 p=0.7757
+
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\pca_results.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\pca_mannwhitney.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\images\pca_electrophys_panels.png
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\images\eigenvalue_scree.png

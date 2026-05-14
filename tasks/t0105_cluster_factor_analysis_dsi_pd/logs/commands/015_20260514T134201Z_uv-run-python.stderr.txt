@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\code\factor_analysis.py", line 273, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\code\factor_analysis.py", line 239, in main
+    outputs, kept_indices, kept_names = run_factor_pipeline(cells=cells)
+                                        ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\code\factor_analysis.py", line 122, in run_factor_pipeline
+    fa.fit(x_std)
+    ~~~~~~^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\.venv\Lib\site-packages\factor_analyzer\factor_analyzer.py", line 630, in fit
+    X = check_array(X, force_all_finite="allow-nan", estimator=self, copy=True)
+TypeError: check_array() got an unexpected keyword argument 'force_all_finite'. Did you mean 'ensure_all_finite'?

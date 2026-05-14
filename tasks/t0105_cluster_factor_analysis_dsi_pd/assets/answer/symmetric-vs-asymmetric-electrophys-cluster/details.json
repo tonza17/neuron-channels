@@ -1,0 +1,27 @@
+{
+  "spec_version": "2",
+  "answer_id": "symmetric-vs-asymmetric-electrophys-cluster",
+  "question": "Do symmetric and asymmetric DSGC morphologies share the same electrophys parameter regime, or do they form distinct clusters in PC space?",
+  "short_title": "Symmetric vs asymmetric DSGCs in electrophys PC space",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0091_morphology_extended_nsga2_v1",
+    "t0099_random_init_pareto_robustness",
+    "t0102_seedscale_n4_gen20",
+    "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+    "t0086_robustness_cluster_bio_comparison"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0105_cluster_factor_analysis_dsi_pd",
+  "date_created": "2026-05-14"
+}

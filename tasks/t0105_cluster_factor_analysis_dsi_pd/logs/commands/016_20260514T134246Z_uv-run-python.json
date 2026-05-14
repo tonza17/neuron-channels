@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0105_cluster_factor_analysis_dsi_pd",
+  "command": "uv run python -u tasks/t0105_cluster_factor_analysis_dsi_pd/code/factor_analysis.py",
+  "exit_code": 1,
+  "duration_seconds": 3.143,
+  "started_at": "2026-05-14T13:42:46Z",
+  "completed_at": "2026-05-14T13:42:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0105_cluster_factor_analysis_dsi_pd",
+  "stdout_file": "016_20260514T134246Z_uv-run-python.stdout.txt",
+  "stderr_file": "016_20260514T134246Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 13,
+  "truncated": false
+}

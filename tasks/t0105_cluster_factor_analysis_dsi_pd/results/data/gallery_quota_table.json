@@ -1,0 +1,12 @@
+{
+  "max_cells": 30,
+  "n_selected": 30,
+  "quota_used": {
+    "symmetric::t0091": 6,
+    "asymmetric::t0091": 6,
+    "asymmetric::t0099": 6,
+    "asymmetric::t0102": 6,
+    "asymmetric::t0104": 6
+  },
+  "n_nonempty_strata": 5
+}

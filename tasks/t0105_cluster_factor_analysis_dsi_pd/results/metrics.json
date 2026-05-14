@@ -1,0 +1,34 @@
+{
+  "variants": [
+    {
+      "variant_id": "primary_cohort",
+      "label": "Primary cohort (DSI > 0.1 AND PD > 2.0)",
+      "dimensions": {
+        "filter_dsi_min": 0.1,
+        "filter_pd_hz_min": 2.0,
+        "n_cells": 85
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.17653634975006283,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    },
+    {
+      "variant_id": "strict_cohort",
+      "label": "Strict cohort (DSI > 0.2 AND PD > 3.0)",
+      "dimensions": {
+        "filter_dsi_min": 0.2,
+        "filter_pd_hz_min": 3.0,
+        "n_cells": 30
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.35141316455069005,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ]
+}

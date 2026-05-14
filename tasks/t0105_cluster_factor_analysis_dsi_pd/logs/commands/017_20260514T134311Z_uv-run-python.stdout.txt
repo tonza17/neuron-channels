@@ -1,0 +1,67 @@
+Factor analysis on N=85 primary cells, full 68-d matrix.
+  eigenvalues > 1: 18 (cap = 10) -> n_factors = 10
+  kept 68 non-constant dims (dropped 0 constants).
+  Top-5 loadings on F1:
+     11 NAP_PRIMARY_GBAR                    +0.7469
+     66 morph_seed                          +0.6800
+     22 SK_MID_GBAR                         +0.6618
+     50 MG_CONC_MM                          +0.6539
+     34 RA_OHM_CM                           +0.6520
+  Top-5 loadings on F2:
+     21 SK_PRIMARY_GBAR                     +0.7083
+      3 NAV16_TERMINAL_GBAR                 -0.6258
+      0 NAV16_SOMA_GBAR                     +0.5833
+     56 max_strahler_depth                  -0.5762
+     31 IM_GBAR                             -0.5376
+  Top-5 loadings on F3:
+     43 RHO0_GABA                           -0.7673
+     63 mean_segment_length_um              +0.7404
+      8 KV3_TERMINAL_GBAR                   +0.6156
+      4 NAV16_AIS_GBAR                      +0.5735
+     64 soma_diameter_um                    -0.5622
+  Top-5 loadings on F4:
+     26 KV4_GBAR                            +0.7108
+     57 mean_branching_angle_deg            +0.6308
+     23 SK_TERMINAL_GBAR                    +0.5752
+     36 GLEAK_S_CM2                         +0.5456
+     12 NAP_MID_GBAR                        +0.5433
+  Top-5 loadings on F5:
+      5 KV3_SOMA_GBAR                       +0.6322
+     58 rall_exponent                       -0.5803
+     28 IH_GBAR                             +0.5577
+     60 field_elongation_pd                 +0.5570
+      9 KV3_AIS_GBAR                        -0.4459
+  Top-5 loadings on F6:
+     61 branch_density_gradient_pd          -0.6493
+     67 branch_length_cv                    +0.6205
+     17 BK_MID_GBAR                         +0.4848
+      7 KV3_MID_GBAR                        -0.4410
+     40 N_GABA                              -0.3384
+  Top-5 loadings on F7:
+     27 NAR_GBAR                            +0.5659
+     12 NAP_MID_GBAR                        +0.5054
+     54 num_primary_branches                +0.4124
+     40 N_GABA                              -0.4098
+     47 AIS_LENGTH_UM                       -0.3872
+  Top-5 loadings on F8:
+     53 NAP_DEND_DISTAL                     -0.6172
+      2 NAV16_MID_GBAR                      -0.5776
+     49 GNMDA_DEND                          +0.5015
+     15 BK_SOMA_GBAR                        +0.4320
+      9 KV3_AIS_GBAR                        +0.4251
+  Top-5 loadings on F9:
+     29 CAL_GBAR                            -0.4761
+     15 BK_SOMA_GBAR                        +0.4648
+     19 BK_AIS_GBAR                         -0.4625
+     27 NAR_GBAR                            +0.3486
+     22 SK_MID_GBAR                         +0.3403
+  Top-5 loadings on F10:
+     65 ais_length_um                       +0.5489
+      0 NAV16_SOMA_GBAR                     +0.4104
+     14 NAP_AIS_GBAR                        +0.4047
+     42 LAMBDA_ACH_UM                       +0.3793
+     10 NAP_SOMA_GBAR                       +0.3494
+
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\factor_loadings.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\factor_scores.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\images\factor_loadings.png

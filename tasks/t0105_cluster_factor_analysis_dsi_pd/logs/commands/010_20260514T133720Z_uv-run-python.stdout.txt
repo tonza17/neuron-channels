@@ -1,0 +1,24 @@
+== Pooled cell counts ==
+  Total raw rows: 7003
+    t0091: raw=187 pass_silence=182 silence_excluded=5
+    t0099: raw=2016 pass_silence=1993 silence_excluded=23
+    t0102: raw=2592 pass_silence=2547 silence_excluded=45
+    t0104: raw=2208 pass_silence=2208 silence_excluded=0
+
+== Primary filter (DSI > 0.1 AND PD > 2.0) ==
+  N_passing=260 N_unique=85
+    t0091: unique=26
+    t0099: unique=20
+    t0102: unique=19
+    t0104: unique=20
+
+== Strict filter (DSI > 0.2 AND PD > 3.0) ==
+  N_passing=87 N_unique=30
+    t0091: unique=14
+    t0099: unique=5
+    t0102: unique=3
+    t0104: unique=8
+
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\selection_counts.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\selected_cells_primary.json
+Wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0105_cluster_factor_analysis_dsi_pd\tasks\t0105_cluster_factor_analysis_dsi_pd\results\data\selected_cells_strict.json

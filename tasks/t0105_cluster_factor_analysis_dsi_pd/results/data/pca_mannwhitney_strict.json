@@ -1,0 +1,12 @@
+{
+  "n_symmetric": 10,
+  "n_asymmetric": 20,
+  "pc1_u": 10.0,
+  "pc1_p": 8.234349452417148e-05,
+  "pc2_u": 101.0,
+  "pc2_p": 0.9824502949659324,
+  "interpretation": {
+    "pc1": "PC1 separation between symmetric and asymmetric cells: U=10.00, p=8.234e-05. Statistically significant at alpha=0.05.",
+    "pc2": "PC2 separation: U=101.00, p=0.9825. Not significant at alpha=0.05."
+  }
+}
