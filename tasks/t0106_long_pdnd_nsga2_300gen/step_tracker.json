@@ -41,10 +41,10 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search the internet for recent literature on long-horizon NSGA-II for biophysical neuron tuning, ratio-DSI usage in DSGC modelling, and pymoo HV convergence heuristics. Write research/research_internet.md.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-16T22:52:18Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\005_research-internet/"
     },
     {
       "step": 6,
