@@ -1,0 +1,18 @@
+plan
+research
+results
+results/images
+corrections
+intervention
+code
+logs/commands
+logs/searches
+logs/sessions
+logs/steps
+assets/predictions
+assets/answer
+
+Files: tasks/t0106_long_pdnd_nsga2_300gen/__init__.py
+Files: tasks/t0106_long_pdnd_nsga2_300gen/code/__init__.py
+
+Created 13 directories with .gitkeep files plus 2 __init__.py markers.
