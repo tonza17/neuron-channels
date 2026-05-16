@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Synthesise research outputs into plan/plan.md covering the t0104 evaluator fork, Vast.ai search criteria, hourly HV poll loop, operator stop mechanism, hard $25 cap, and per-cell cost envelope.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-16T23:12:07Z",
-      "completed_at": null,
+      "completed_at": "2026-05-16T23:21:10Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
