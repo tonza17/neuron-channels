@@ -32,10 +32,10 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review existing paper corpus for evidence on long-NSGA-II convergence behaviour, 2-direction DSI metrics, and hypervolume plateau diagnosis. Write research/research_papers.md.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-16T22:40:21Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\004_research-papers/"
     },
     {
       "step": 5,
