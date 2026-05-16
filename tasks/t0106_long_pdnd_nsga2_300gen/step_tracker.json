@@ -23,9 +23,9 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create mandatory task subfolders (assets/predictions, assets/answer, corrections, intervention, logs, plan, research, results/images, code) with .gitkeep markers.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-16T22:39:09Z",
-      "completed_at": null,
+      "completed_at": "2026-05-16T22:39:53Z",
       "log_file": "logs\\steps\\003_init-folders/"
     },
     {
