@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Audit t0104's evaluator.py / nsga2_driver.py / constants_electrophys.py / mods/ to identify exact patch sites for the 2-direction + ratio-DSI + 300-gen + hourly HV log refit. Write research/research_code.md.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-16T23:00:46Z",
-      "completed_at": null,
+      "completed_at": "2026-05-16T23:11:50Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
