@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0106_long_pdnd_nsga2_300gen worktree branch from main; write full 15-step plan to step_tracker.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-16T22:31:36Z",
-      "completed_at": null,
+      "completed_at": "2026-05-16T22:34:50Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
