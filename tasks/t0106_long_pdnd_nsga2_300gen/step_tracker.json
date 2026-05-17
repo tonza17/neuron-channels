@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Smoke-test the patched evaluator locally; SCP code and t0080 mods to the instance; launch NSGA-II seed=44 pop=96 n_gen=300 n_eval_seeds=3 2-direction with hourly HV trace and operator-stop watcher; halt on intervention/stop.md or gen=300 or $20 watchdog.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-17T00:27:19Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,
