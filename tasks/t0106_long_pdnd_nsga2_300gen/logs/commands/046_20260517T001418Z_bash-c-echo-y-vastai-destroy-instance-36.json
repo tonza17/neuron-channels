@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "bash -c echo y | vastai destroy instance 36908259 --raw",
+  "exit_code": 0,
+  "duration_seconds": 2.044,
+  "started_at": "2026-05-17T00:14:18Z",
+  "completed_at": "2026-05-17T00:14:20Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "046_20260517T001418Z_bash-c-echo-y-vastai-destroy-instance-36.stdout.txt",
+  "stderr_file": "046_20260517T001418Z_bash-c-echo-y-vastai-destroy-instance-36.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,34 @@
+PYVER 3.12.13
+neuron 8.2.7+
+pymoo 0.6.1.6
+numpy 2.4.5
+scipy 1.17.1
+pandas 3.0.3
+matplotlib 3.10.9
+pydantic 2.13.4
+tqdm 4.67.3
+dill 0.4.1
+---PYMOO_IMPORTS---
+nsga2 OK
+lhs OK
+sbx OK
+pm OK
+tc OK
+mgt OK
+ep OK
+termination OK
+hv OK
+callback OK
+starmap OK
+---NEURON_TEST---
+coreneuron available: True
+---NRNIVMODL---
+-rwxr-xr-x 1 root root 4466 May 17 00:20 .venv/bin/nrnivmodl
+---GCC---
+gcc (Debian 12.2.0-14+deb12u1) 12.2.0
+---GFORTRAN---
+GNU Fortran (Debian 12.2.0-14+deb12u1) 12.2.0
+---VENVSIZE---
+390
+---MACHINEID---
+3150493e42e14cbd8433936ec0545560

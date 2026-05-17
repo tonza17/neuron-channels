@@ -68,10 +68,10 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision one Vast.ai instance (EPYC class CPU, >= 100 GB RAM, RTX 3060 Ti / equivalent idle, reliability >= 0.99, dph <= 0.40) matching t0104's pattern; verify CPU model, RAM, Python, NEURON 8.2.7, pymoo, MOD compilation.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-17T00:08:10Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
       "step": 9,

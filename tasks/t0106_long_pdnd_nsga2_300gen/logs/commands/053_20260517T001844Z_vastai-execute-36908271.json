@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "vastai execute 36908271 ls -la /root",
+  "exit_code": 0,
+  "duration_seconds": 1.797,
+  "started_at": "2026-05-17T00:18:44Z",
+  "completed_at": "2026-05-17T00:18:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "053_20260517T001844Z_vastai-execute-36908271.stdout.txt",
+  "stderr_file": "053_20260517T001844Z_vastai-execute-36908271.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

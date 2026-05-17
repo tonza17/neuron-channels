@@ -1,0 +1,54 @@
+no sessions
+[?1049h[22;0;0t[?1h=[H[2J[?12l[?25h[?1000l[?1002l[?1003l[?1006l[?1005l(B[m[?12l[?25h[?1006l[?1000l[?1002l[?1003l[?2004l[1;1H[1;24r[>c[>q[1;1H[?25l[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[30m[42m
+[ssh_tmux]0:bash*                                 "3ce53133ba4e" 00:15 17-May-26(B[m[?12l[?25h[1;1H(B[m[?12l[?25h[?1006l[?1000l[?1002l[?1003l[?2004l[1;1H[1;24r[1;1H[?25l[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[30m[42m
+[ssh_tmux]0:bash*                                 "3ce53133ba4e" 00:15 17-May-26(B[m[?12l[?25h[1;1HWelcome to your vast.ai container! This session is running in `tmux`.
+To disconnect without closing your processes, press ctrl+b, release, then d.
+To disable auto-tmux, run `touch ~/.no_auto_tmux` and reconnect. See also https://tmuxcheatsheet.com/
+[34m[1mroot[39m@[36mC.36908271[39m:[37m~$(B[m [?2004h[?25l[30m[42m[24;1H[ssh_tmux]0:bash*                           "root@C.36908271: ~" 00:15 17-May-26(B[m[?12l[?25h[5;20H[?7727h[?25l[30m[42m[24;1H[ssh_tmux]0:bash*                           "root@C.36908271: ~" 00:16 17-May-26(B[m[?12l[?25h[5;20H[?25l[30m[42m[24;1H[ssh_tmux]0:bash*                           "root@C.36908271: ~" 00:17 17-May-26(B[m[?12l[?25h[5;20H[?25l[30m[42m[24;1H[ssh_tmux]0:bash*                           "root@C.36908271: ~" 00:18 17-May-26(B[m[?12l[?25h[5;20Htouch /root/.no_auto_tmux; echo NOAUTO_OK; exit 0
+[?2004lNOAUTO_OK
+logout
+[1;0r(B[m[?1l>[H[2J[?12l[?25h[?1000l[?1002l[?1003l[?1006l[?1005l[?7727l[?1004l[?1049l[23;0;0t[exited]

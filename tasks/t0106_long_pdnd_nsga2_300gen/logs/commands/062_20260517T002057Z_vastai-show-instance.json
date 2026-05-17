@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "vastai show instance 36908271 --raw",
+  "exit_code": 0,
+  "duration_seconds": 1.766,
+  "started_at": "2026-05-17T00:20:57Z",
+  "completed_at": "2026-05-17T00:20:59Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "062_20260517T002057Z_vastai-show-instance.stdout.txt",
+  "stderr_file": "062_20260517T002057Z_vastai-show-instance.stderr.txt",
+  "stdout_lines": 119,
+  "stderr_lines": 0,
+  "truncated": false
+}

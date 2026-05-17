@@ -1,0 +1,11 @@
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+---UVVER---
+uv 0.11.14 (x86_64-unknown-linux-gnu)
+---WORKDIR---
+Using CPython 3.12.13 interpreter at: /usr/local/bin/python3.12
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+---VENVPY---
+Python 3.12.13

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "vastai create instance 34391260 --image python:3.12-bookworm --ssh --disk 40 --raw",
+  "exit_code": 0,
+  "duration_seconds": 1.946,
+  "started_at": "2026-05-17T00:12:34Z",
+  "completed_at": "2026-05-17T00:12:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "037_20260517T001234Z_vastai-create-instance.stdout.txt",
+  "stderr_file": "037_20260517T001234Z_vastai-create-instance.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}
