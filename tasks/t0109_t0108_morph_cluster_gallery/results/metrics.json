@@ -1,0 +1,21 @@
+{
+  "variants": [
+    {
+      "variant_id": "t0109_gallery_cohort",
+      "label": "Gallery cohort (t0108 strict-cohort: DSI > 0.5 AND PD > 10 Hz) from t0106",
+      "dimensions": {
+        "filter_dsi_min": 0.5,
+        "filter_pd_hz_min": 10.0,
+        "n_cells_total": 150,
+        "n_cells_shown": 37,
+        "n_clusters": 4
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.868,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ]
+}

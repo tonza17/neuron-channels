@@ -1,0 +1,278 @@
+{
+  "n_per_cluster_requested": 10,
+  "cluster_sizes_total": {
+    "0": 21,
+    "1": 55,
+    "3": 7,
+    "2": 67
+  },
+  "picks": {
+    "0": [
+      {
+        "cluster": 0,
+        "generation": 39,
+        "dsi": 0.9433962264150944,
+        "pd_rate_hz": 122.61904761904762,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 0,
+        "generation": 38,
+        "dsi": 0.9535783365570599,
+        "pd_rate_hz": 120.23809523809526,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 0,
+        "generation": 33,
+        "dsi": 0.935483870967742,
+        "pd_rate_hz": 121.42857142857143,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 0,
+        "generation": 38,
+        "dsi": 0.935483870967742,
+        "pd_rate_hz": 121.42857142857143,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 0,
+        "generation": 36,
+        "dsi": 0.9252336448598132,
+        "pd_rate_hz": 122.61904761904762,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 0,
+        "generation": 37,
+        "dsi": 0.9174484052532832,
+        "pd_rate_hz": 121.66666666666669,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 0,
+        "generation": 37,
+        "dsi": 0.9003690036900369,
+        "pd_rate_hz": 122.61904761904762,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 0,
+        "generation": 39,
+        "dsi": 0.92,
+        "pd_rate_hz": 120.00000000000001,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 0,
+        "generation": 34,
+        "dsi": 0.9337231968810917,
+        "pd_rate_hz": 118.09523809523812,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 0,
+        "generation": 37,
+        "dsi": 0.9232245681381959,
+        "pd_rate_hz": 119.28571428571429,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      }
+    ],
+    "1": [
+      {
+        "cluster": 1,
+        "generation": 39,
+        "dsi": 0.9707317073170731,
+        "pd_rate_hz": 96.19047619047619,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 1,
+        "generation": 28,
+        "dsi": 0.946601941747573,
+        "pd_rate_hz": 95.47619047619048,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 1,
+        "generation": 38,
+        "dsi": 0.95,
+        "pd_rate_hz": 92.85714285714286,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 1,
+        "generation": 39,
+        "dsi": 0.9690721649484537,
+        "pd_rate_hz": 90.95238095238095,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 1,
+        "generation": 33,
+        "dsi": 0.9786096256684492,
+        "pd_rate_hz": 88.0952380952381,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 1,
+        "generation": 35,
+        "dsi": 0.9577836411609498,
+        "pd_rate_hz": 88.33333333333334,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 1,
+        "generation": 32,
+        "dsi": 0.9832402234636871,
+        "pd_rate_hz": 84.52380952380953,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 1,
+        "generation": 30,
+        "dsi": 0.9620596205962061,
+        "pd_rate_hz": 86.1904761904762,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 1,
+        "generation": 36,
+        "dsi": 1.0,
+        "pd_rate_hz": 81.42857142857143,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 1,
+        "generation": 39,
+        "dsi": 0.9828080229226361,
+        "pd_rate_hz": 82.38095238095238,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      }
+    ],
+    "2": [
+      {
+        "cluster": 2,
+        "generation": 36,
+        "dsi": 0.9780701754385966,
+        "pd_rate_hz": 107.3809523809524,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 2,
+        "generation": 38,
+        "dsi": 0.973741794310722,
+        "pd_rate_hz": 107.3809523809524,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 2,
+        "generation": 38,
+        "dsi": 0.8823529411764705,
+        "pd_rate_hz": 118.09523809523812,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 2,
+        "generation": 37,
+        "dsi": 0.940774487471526,
+        "pd_rate_hz": 101.42857142857143,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 2,
+        "generation": 33,
+        "dsi": 0.9653465346534652,
+        "pd_rate_hz": 94.52380952380953,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 2,
+        "generation": 37,
+        "dsi": 0.7789855072463767,
+        "pd_rate_hz": 116.90476190476191,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 2,
+        "generation": 37,
+        "dsi": 0.9597989949748744,
+        "pd_rate_hz": 92.85714285714286,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 2,
+        "generation": 38,
+        "dsi": 0.9448621553884712,
+        "pd_rate_hz": 92.3809523809524,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 2,
+        "generation": 38,
+        "dsi": 0.9356435643564356,
+        "pd_rate_hz": 93.0952380952381,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 2,
+        "generation": 39,
+        "dsi": 0.9588688946015425,
+        "pd_rate_hz": 90.71428571428572,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      }
+    ],
+    "3": [
+      {
+        "cluster": 3,
+        "generation": 33,
+        "dsi": 0.5536842105263157,
+        "pd_rate_hz": 87.85714285714286,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 3,
+        "generation": 28,
+        "dsi": 1.0,
+        "pd_rate_hz": 25.0,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 3,
+        "generation": 21,
+        "dsi": 1.0,
+        "pd_rate_hz": 20.238095238095237,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 3,
+        "generation": 27,
+        "dsi": 1.0,
+        "pd_rate_hz": 20.238095238095237,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 3,
+        "generation": 21,
+        "dsi": 0.9692307692307693,
+        "pd_rate_hz": 15.238095238095239,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 3,
+        "generation": 19,
+        "dsi": 1.0,
+        "pd_rate_hz": 14.761904761904765,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      {
+        "cluster": 3,
+        "generation": 21,
+        "dsi": 0.5284552845528455,
+        "pd_rate_hz": 22.380952380952383,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      }
+    ]
+  }
+}
