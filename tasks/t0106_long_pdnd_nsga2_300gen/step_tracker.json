@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Produce results/suggestions.json with concrete follow-ups (multi-seed confirmation, IBEA on 2-direction substrate, targeted morphology sweep around the best Pareto cell).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-18T01:45:27Z",
-      "completed_at": null,
+      "completed_at": "2026-05-18T01:52:32Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
