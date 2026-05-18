@@ -1,4 +1,6 @@
 ---
+spec_version: "3"
+task_id: "t0106_long_pdnd_nsga2_300gen"
 step_number: 7
 step_name: "planning"
 status: "completed"

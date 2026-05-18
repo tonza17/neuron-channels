@@ -131,10 +131,10 @@
       "step": 15,
       "name": "reporting",
       "description": "Run all task / asset / log / machine verificators; capture session transcripts; mark task.json status completed; close out the step pipeline.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-18T01:52:58Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\015_reporting/"
     }
   ]
 }

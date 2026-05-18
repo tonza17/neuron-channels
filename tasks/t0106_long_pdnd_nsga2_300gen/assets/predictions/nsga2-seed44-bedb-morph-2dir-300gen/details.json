@@ -1,0 +1,37 @@
+{
+  "spec_version": "2",
+  "predictions_id": "nsga2-seed44-bedb-morph-2dir-300gen",
+  "name": "NSGA-II seed 44 on 68-d Bed B + 14-d morphology, 2 directions, 300-gen target",
+  "short_description": "All 3,744 per-cell NSGA-II evaluations from t0106 single random-init GA seed 44 on the 68-d Bed B electrophys + 14-d morphology DSGC substrate, restricted to PD (0 deg) and ND (180 deg) bars with ratio DSI = (PD - ND) / (PD + ND), N_EVAL_SEEDS = 3, n_obj = 2. 40 generations completed of a 300-gen target before operator-stopped at HV plateau.",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "Compartmental DSGC neuron model combining the 54-d Bed B electrophysiology parameter vector (from t0080) applied via apply_parameter_vector with the t0092-patched 14-d procedural morphology generator (canonical via correction C-0093-01). Each cell is evaluated with 2 stimulus directions (PD = 0 deg, ND = 180 deg) x 3 noise replicates and scored on a 2-objective vector (ratio DSI, preferred-direction firing rate in Hz). NSGA-II minimises the negated pair; the DSI silence guard from S-0102-01 clamps DSI to 0.0 when total PD+ND spike count falls below 10 spikes per trial.",
+  "dataset_ids": [],
+  "prediction_format": "json",
+  "prediction_schema": "Top-level JSON object with key 'evaluations' holding a list of 3744 per-cell evaluation records. Each record has fields: generation (int, NSGA-II generation; 1 = initial LHS population, 2-40 = offspring generations), vector_68d (list of 68 floats, 54-d electrophys + 14-d morphology parameter vector), objective_F_minimised (list of 2 floats, the NSGA-II objective vector with sign-flipped maximisation conventions: [-ratio_dsi, -pd_rate_hz]), dsi_vector_sum (float in [0, 1], the ratio DSI (PD - ND) / (PD + ND), guard-cleaned per S-0102-01 so values of 0.0 may either be real or guard-floor; field name preserved for compatibility with t0102/t0104 schema), pd_rate_hz (float, preferred-direction mean firing rate in Hz across the 3 noise replicates).",
+  "instance_count": 3744,
+  "metrics_at_creation": {
+    "n_generations_completed": 40,
+    "n_cells_total": 3744,
+    "best_dsi_ratio": 1.0,
+    "best_pd_rate_hz": 122.62,
+    "n_joint_pass_unique": 123,
+    "n_joint_pass_evaluations": 637,
+    "final_hypervolume": 122.0288,
+    "final_cost_usd": 10.37
+  },
+  "files": [
+    {
+      "path": "files/all_evaluations_seed44.json",
+      "description": "Full per-cell NSGA-II evaluation log for t0106 GA seed 44 (3,744 cells across 40 completed generations).",
+      "format": "json"
+    }
+  ],
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0106_long_pdnd_nsga2_300gen",
+  "date_created": "2026-05-18"
+}

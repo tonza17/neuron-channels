@@ -1,0 +1,40 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0106_long_pdnd_nsga2_300gen\tasks\t0106_long_pdnd_nsga2_300gen\logs
+
+[31m[1mERRORS:[0m
+[31m  LG-E005 error: Step log step_log.md missing frontmatter field: 'spec_version'[0m
+[31m  LG-E005 error: Step log step_log.md missing frontmatter field: 'task_id'[0m
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260516T223916Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 003_20260516T224159Z_python-m-arf-scripts-aggregators-aggrega.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 006_20260516T224904Z_python-m-arf-scripts-verificators-verify.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 009_20260516T225253Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 012_20260516T225824Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 015_20260516T230300Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 016_20260516T230324Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 019_20260516T230819Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 050_20260517T001452Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 064_20260517T015112Z_scp-i-u-ssh-id-ed25519.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 068_20260517T015752Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 069_20260517T015806Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 070_20260517T015821Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 071_20260517T015838Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 072_20260517T015859Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 073_20260517T015920Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 104_20260518T011826Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 109_20260518T012408Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 110_20260518T012433Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 118_20260518T012709Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 120_20260518T012727Z_vastai-show-instance.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 122_20260518T013427Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 126_20260518T014617Z_python-m-arf-scripts-aggregators-aggrega.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 127_20260518T014620Z_python-m-arf-scripts-aggregators-aggrega.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 128_20260518T014629Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 130_20260518T014642Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 141_20260518T020136Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 144_20260518T020152Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[31m[1mFAILED[0m — 2 error(s), 30 warning(s)
