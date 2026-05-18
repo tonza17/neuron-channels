@@ -104,9 +104,9 @@
       "step": 12,
       "name": "suggestions",
       "description": "Empty suggestions.json per operator: no follow-up suggestions in this task.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-18T11:23:41Z",
-      "completed_at": null,
+      "completed_at": "2026-05-18T11:24:13Z",
       "log_file": "logs\\steps\\012_suggestions/"
     },
     {
