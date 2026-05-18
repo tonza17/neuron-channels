@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify dependency t0106_long_pdnd_nsga2_300gen is completed.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-18T02:36:08Z",
-      "completed_at": null,
+      "completed_at": "2026-05-18T02:36:37Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
