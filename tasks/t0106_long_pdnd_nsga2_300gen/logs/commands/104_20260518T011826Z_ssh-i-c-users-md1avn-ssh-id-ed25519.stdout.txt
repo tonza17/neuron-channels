@@ -1,0 +1,17 @@
+Mon May 18 01:18:28 UTC 2026
+-rw-r--r-- 1 root root    3800 May 18 00:50 /root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/hv_trace.jsonl
+-rw-r--r-- 1 root root 8116062 May 18 00:50 /root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/results/data/all_evaluations_seed44.json
+---
+[seed 44 gen 39] HV=122.0288  pop_size=96  cost_so_far=$9.8936  elapsed=86638s
+[nsga2_driver seed=44 gen=39] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+[nsga2_driver seed=44] wrote /root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/results/data/pareto_front_seed44.json with 7 Pareto cells
+[nsga2_driver seed=44] FINISHED in 86639s (1444.0 min); final cost=$9.8937; tripped=False
+[nsga2_driver] summary: {
+  "seed": 44,
+  "n_pareto": 7,
+  "elapsed_s": 86638.99258852005,
+  "final_cost_usd": 9.893707575008474,
+  "watchdog_tripped": false,
+  "n_generations_completed": 39
+}
+---
