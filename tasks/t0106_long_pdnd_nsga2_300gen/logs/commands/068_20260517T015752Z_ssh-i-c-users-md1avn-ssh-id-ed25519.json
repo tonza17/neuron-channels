@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 28270 -o StrictHostKeyChecking=no root@ssh6.vast.ai cd /root/t0106_workdir && source .venv/bin/activate && python -c \"\nimport json, pickle, sys\nfrom pathlib import Path\np = Path(\\\"tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/checkpoints/checkpoint_seed44_gen0011.pkl\\\")\n# Try JSON first then pickle\ntry:\n    data = json.loads(p.read_text())\n    print(\\\"FORMAT: JSON\\\")\nexcept Exception:\n    data = pickle.loads(p.read_bytes())\n    print(\\\"FORMAT: pickle\\\")\nprint(\\\"TYPE:\\\", type(data).__name__)\nif isinstance(data, dict):\n    print(\\\"KEYS:\\\", list(data.keys())[:20])\n    if \\\"evaluations\\\" in data: print(\\\"n_evals:\\\", len(data[\\\"evaluations\\\"]))\n    if \\\"population\\\" in data: print(\\\"n_pop:\\\", len(data[\\\"population\\\"]))\n    if \\\"cells\\\" in data: print(\\\"n_cells:\\\", len(data[\\\"cells\\\"]))\nelif isinstance(data, list):\n    print(\\\"len:\\\", len(data))\n    if len(data) > 0:\n        e = data[0]\n        if isinstance(e, dict):\n            print(\\\"keys[0]:\\\", list(e.keys())[:30])\n\"",
+  "exit_code": 1,
+  "duration_seconds": 3.677,
+  "started_at": "2026-05-17T01:57:52Z",
+  "completed_at": "2026-05-17T01:57:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "068_20260517T015752Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "068_20260517T015752Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 17,
+  "truncated": false
+}

@@ -1,0 +1,14 @@
+total 8112
+drwxr-xr-x 2 root root    4096 May 17 01:52 .
+drwxr-xr-x 3 root root      84 May 17 00:47 ..
+-rw-r--r-- 1 root root  131101 May 17 00:47 checkpoint_seed44_gen0001.pkl
+-rw-r--r-- 1 root root  262199 May 17 00:49 checkpoint_seed44_gen0002.pkl
+-rw-r--r-- 1 root root  393299 May 17 00:53 checkpoint_seed44_gen0003.pkl
+-rw-r--r-- 1 root root  524411 May 17 00:58 checkpoint_seed44_gen0004.pkl
+-rw-r--r-- 1 root root  655501 May 17 01:03 checkpoint_seed44_gen0005.pkl
+-rw-r--r-- 1 root root  721051 May 17 01:09 checkpoint_seed44_gen0006.pkl
+-rw-r--r-- 1 root root  852159 May 17 01:15 checkpoint_seed44_gen0007.pkl
+-rw-r--r-- 1 root root  983264 May 17 01:22 checkpoint_seed44_gen0008.pkl
+-rw-r--r-- 1 root root 1114376 May 17 01:31 checkpoint_seed44_gen0009.pkl
+-rw-r--r-- 1 root root 1245466 May 17 01:40 checkpoint_seed44_gen0010.pkl
+-rw-r--r-- 1 root root 1376552 May 17 01:52 checkpoint_seed44_gen0011.pkl

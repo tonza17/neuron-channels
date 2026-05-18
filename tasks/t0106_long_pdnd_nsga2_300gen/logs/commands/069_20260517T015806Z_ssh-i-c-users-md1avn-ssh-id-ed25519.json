@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 28270 -o StrictHostKeyChecking=no root@ssh6.vast.ai cd /root/t0106_workdir && source .venv/bin/activate && python -c \"\nimport dill, sys, numpy as np\nfrom pathlib import Path\np = Path(\\\"tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/checkpoints/checkpoint_seed44_gen0011.pkl\\\")\ndata = dill.loads(p.read_bytes())\nprint(\\\"TYPE:\\\", type(data).__name__)\nif isinstance(data, dict):\n    print(\\\"KEYS:\\\", list(data.keys())[:40])\n    for k in list(data.keys())[:40]:\n        v = data[k]\n        if isinstance(v, (list, np.ndarray)):\n            print(f\\\"  {k}: len={len(v)}\\\")\n        elif isinstance(v, dict):\n            print(f\\\"  {k}: dict keys={list(v.keys())[:10]}\\\")\n        else:\n            print(f\\\"  {k}: {type(v).__name__} = {str(v)[:80]}\\\")\n\"",
+  "exit_code": 1,
+  "duration_seconds": 3.698,
+  "started_at": "2026-05-17T01:58:06Z",
+  "completed_at": "2026-05-17T01:58:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "069_20260517T015806Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "069_20260517T015806Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 16,
+  "truncated": false
+}

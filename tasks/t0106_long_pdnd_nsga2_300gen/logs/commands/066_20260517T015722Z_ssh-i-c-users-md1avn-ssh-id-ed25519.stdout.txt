@@ -1,0 +1,6 @@
+total 16
+drwxr-xr-x 3 root root   84 May 17 00:47 .
+drwxr-xr-x 4 root root   70 May 17 00:45 ..
+drwxr-xr-x 2 root root 4096 May 17 01:52 checkpoints
+-rw-r--r-- 1 root root 1068 May 17 01:52 hv_trace.jsonl
+-rw-r--r-- 1 root root 5111 May 17 01:52 nsga2_run.log

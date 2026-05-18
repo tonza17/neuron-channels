@@ -1,0 +1,5 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+ModuleNotFoundError: No module named 'code.nsga2_driver'; 'code' is not a package

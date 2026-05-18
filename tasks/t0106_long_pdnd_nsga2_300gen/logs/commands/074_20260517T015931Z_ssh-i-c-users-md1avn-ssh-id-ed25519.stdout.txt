@@ -1,0 +1,3 @@
+/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/code/nsga2_driver.py
+---
+/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/results/data/all_evaluations_seed44.json

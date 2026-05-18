@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 28270 -o StrictHostKeyChecking=no root@ssh6.vast.ai cd /root/t0106_workdir/code && source ../.venv/bin/activate && python -c \"\nimport pickle, io, sys, numpy as np, importlib.util, types\nfrom pathlib import Path\nspec = importlib.util.spec_from_file_location(\\\"nsga2_driver\\\", \\\"nsga2_driver.py\\\")\nmod = importlib.util.module_from_spec(spec)\nsys.modules[\\\"nsga2_driver\\\"] = mod\nspec.loader.exec_module(mod)\n# Map all driver classes into __main__\nmain_mod = types.ModuleType(\\\"__main__\\\")\nfor n in dir(mod):\n    setattr(main_mod, n, getattr(mod, n))\nsys.modules[\\\"__main__\\\"] = main_mod\nclass FixUnpickler(pickle.Unpickler):\n    def find_class(self, module, name):\n        if module == \\\"__builtin__\\\": module = \\\"builtins\\\"\n        return super().find_class(module, name)\np = Path(\\\"../tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/checkpoints/checkpoint_seed44_gen0011.pkl\\\")\ndata = FixUnpickler(io.BytesIO(p.read_bytes())).load()\nprint(\\\"TYPE:\\\", type(data).__name__)\nif isinstance(data, dict):\n    print(\\\"KEYS:\\\", list(data.keys()))\n    for k, v in list(data.items())[:20]:\n        if isinstance(v, (list, np.ndarray)):\n            print(f\\\"  {k}: len={len(v)}\\\")\n        else:\n            print(f\\\"  {k}: {type(v).__name__} = {str(v)[:140]}\\\")\n\"",
+  "exit_code": 1,
+  "duration_seconds": 2.571,
+  "started_at": "2026-05-17T01:59:20Z",
+  "completed_at": "2026-05-17T01:59:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "073_20260517T015920Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "073_20260517T015920Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 3,
+  "truncated": false
+}
