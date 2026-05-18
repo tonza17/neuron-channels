@@ -1,0 +1,21 @@
+{
+  "variants": [
+    {
+      "variant_id": "t0110_relaxed_cohort",
+      "label": "Relaxed cohort (DSI > 0.2 AND PD > 3 Hz) from t0106",
+      "dimensions": {
+        "filter_dsi_min": 0.2,
+        "filter_pd_hz_min": 3.0,
+        "n_cells": 247,
+        "source_task": "t0106_long_pdnd_nsga2_300gen",
+        "source_seed": 44
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.669,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ]
+}
