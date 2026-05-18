@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -i C:/Users/md1avn/.ssh/id_ed25519 -p 28270 root@ssh6.vast.ai set -e; cd /root/t0106_workdir; PY=.venv/bin/python; $PY -c \"\nimport sys, neuron, pymoo, numpy, scipy, pandas, matplotlib, pydantic, tqdm, dill\nprint(\\\"PYVER\\\", sys.version.split()[0])\nprint(\\\"neuron\\\", neuron.__version__)\nprint(\\\"pymoo\\\", pymoo.__version__)\nprint(\\\"numpy\\\", numpy.__version__)\nprint(\\\"scipy\\\", scipy.__version__)\nprint(\\\"pandas\\\", pandas.__version__)\nprint(\\\"matplotlib\\\", matplotlib.__version__)\nprint(\\\"pydantic\\\", pydantic.__version__)\nprint(\\\"tqdm\\\", tqdm.__version__)\nprint(\\\"dill\\\", dill.__version__)\n\"\necho ---PYMOO_IMPORTS---\n$PY -c \"from pymoo.algorithms.moo.nsga2 import NSGA2; print(\\\"nsga2 OK\\\")\"\n$PY -c \"from pymoo.operators.sampling.lhs import LatinHypercubeSampling; print(\\\"lhs OK\\\")\"\n$PY -c \"from pymoo.operators.crossover.sbx import SBX; print(\\\"sbx OK\\\")\"\n$PY -c \"from pymoo.operators.mutation.pm import PM; print(\\\"pm OK\\\")\"\n$PY -c \"from pymoo.termination.collection import TerminationCollection; print(\\\"tc OK\\\")\"\n$PY -c \"from pymoo.termination.max_gen import MaximumGenerationTermination; print(\\\"mgt OK\\\")\"\n$PY -c \"from pymoo.core.problem import ElementwiseProblem; print(\\\"ep OK\\\")\"\n$PY -c \"from pymoo.core.termination import Termination; print(\\\"termination OK\\\")\"\n$PY -c \"from pymoo.indicators.hv import HV; print(\\\"hv OK\\\")\"\n$PY -c \"from pymoo.core.callback import Callback; print(\\\"callback OK\\\")\"\n$PY -c \"from pymoo.parallelization.starmap import StarmapParallelization; print(\\\"starmap OK\\\")\"\necho ---NEURON_TEST---\n$PY -c \"from neuron import h, coreneuron; print(\\\"coreneuron available:\\\", hasattr(coreneuron, \\\"enable\\\"))\"\necho ---NRNIVMODL---\nls -la .venv/bin/nrnivmodl 2>&1 | tail -1\necho ---GCC---\ngcc --version | head -1\necho ---GFORTRAN---\ngfortran --version | head -1\necho ---VENVSIZE---\ndu -sm .venv | cut -f1\necho ---MACHINEID---\ncat /etc/machine-id 2>/dev/null || echo none\n",
+  "exit_code": 0,
+  "duration_seconds": 6.733,
+  "started_at": "2026-05-17T00:20:37Z",
+  "completed_at": "2026-05-17T00:20:43Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "061_20260517T002037Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "061_20260517T002037Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 34,
+  "stderr_lines": 6,
+  "truncated": false
+}

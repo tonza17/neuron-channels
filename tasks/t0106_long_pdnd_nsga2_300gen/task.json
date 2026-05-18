@@ -5,7 +5,7 @@
   "name": "Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate)",
   "short_description": "Open-ended 68-d NSGA-II using only PD and ND bars, 1 random GA seed, pop=96, n_eval_seeds=3, n_gen=300 (extendable). Hourly HV poll, operator-controlled stop, $25 hard cap.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
@@ -14,7 +14,7 @@
     "t0104_nsga2_2obj_dsi_pdrate_3seeds"
   ],
   "start_time": "2026-05-16T22:29:36Z",
-  "end_time": null,
+  "end_time": "2026-05-18T02:00:33Z",
   "expected_assets": {
     "predictions": 1,
     "answer": 1

@@ -1,0 +1,5 @@
+ls: cannot access '/root/t0106_workdir/results/data/': No such file or directory
+---LOGS---
+ls: cannot access '/root/t0106_workdir/logs/': No such file or directory
+---SNAP---
+ls: cannot access '/root/t0106_workdir/logs/snapshots/': No such file or directory

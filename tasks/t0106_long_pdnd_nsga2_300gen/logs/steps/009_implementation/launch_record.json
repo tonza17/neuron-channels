@@ -1,0 +1,88 @@
+{
+  "launched_at": "2026-05-17T00:46:01Z",
+  "tmux_session_name": "t0106-nsga2",
+  "remote_host": "ssh6.vast.ai",
+  "remote_port": 28270,
+  "vast_instance_id": "36908271",
+  "remote_workdir": "/root/t0106_workdir",
+  "remote_code_dir": "/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/code",
+  "remote_hv_trace_path": "/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/hv_trace.jsonl",
+  "remote_stop_signal_path": "/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/intervention/stop.md",
+  "remote_checkpoint_dir": "/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/checkpoints",
+  "remote_run_log_path": "/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/nsga2_run.log",
+  "remote_machine_log_path": "/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/008_setup-machines/machine_log.json",
+  "remote_init_pop_path": "/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/results/data/init_pop_seed44.json",
+  "launch_command": "tmux new-session -d -s t0106-nsga2 'cd /root/t0106_workdir && source .venv/bin/activate && export PYTHONPATH=/root/t0106_workdir && python -u -m tasks.t0106_long_pdnd_nsga2_300gen.code.nsga2_driver --seed 44 --pop 96 --n-gen 300 --n-eval-seeds 3 --n-directions 2 --obj-mode ratio_dsi_pdrate 2>&1 | tee /root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/nsga2_run.log'",
+  "rsync_pull_command_for_hv_trace": "scp -i ~/.ssh/id_ed25519 -P 28270 root@ssh6.vast.ai:/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/hv_trace.jsonl tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/hv_trace.jsonl",
+  "rsync_pull_command_for_all_artifacts": "ssh -i ~/.ssh/id_ed25519 -p 28270 root@ssh6.vast.ai 'tar -cf - tasks/t0106_long_pdnd_nsga2_300gen/logs tasks/t0106_long_pdnd_nsga2_300gen/results' | tar -xf -",
+  "ssh_check_run_status_command": "ssh -i ~/.ssh/id_ed25519 -p 28270 root@ssh6.vast.ai 'tmux list-sessions | grep t0106-nsga2; tail -5 /root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/nsga2_run.log'",
+  "ssh_drop_stop_signal_command": "ssh -i ~/.ssh/id_ed25519 -p 28270 root@ssh6.vast.ai 'echo \"# operator stop\" > /root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/intervention/stop.md'",
+  "first_log_excerpt": [
+    "Warning: no DISPLAY environment variable.",
+    "--No graphics will be displayed.",
+    "/root/t0106_workdir/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources",
+    "Mod files: \"././Exp2NMDA.mod\" \"././HHst_noiseless.mod\" \"././cadecay.mod\"",
+    "Creating 'x86_64' directory for .o files.",
+    "Compiling mod_func.cpp",
+    "NMODL .././Exp2NMDA.mod",
+    "NMODL .././HHst_noiseless.mod",
+    "NMODL .././cadecay.mod",
+    "Translating Exp2NMDA.mod into x86_64/Exp2NMDA.c",
+    "Translating HHst_noiseless.mod into x86_64/HHst_noiseless.c",
+    "Translating cadecay.mod into x86_64/cadecay.c",
+    "Compiling Exp2NMDA.c",
+    "Compiling cadecay.c",
+    "Notice: This mechanism cannot be used with CVODE",
+    "Compiling HHst_noiseless.c",
+    "LINKING shared library ./libnrnmech.so",
+    "LINKING executable ./special",
+    "Successfully created x86_64/special",
+    "[cost_watchdog] resolved hourly rate: $0.4111/hr from machine_log.json (REQ-X)",
+    "[nsga2_driver seed=44] using 60 parallel workers",
+    "[nsga2_driver seed=44] starting: pop=96 max_gen=300 hard_cap=$25.00 rate=$0.4111/hr pool_restart_every=25",
+    "==========================================================",
+    "n_gen  |  n_eval  | n_nds  |      eps      |   indicator",
+    "==========================================================",
+    "     1 |       96 |      3 |             - |             -",
+    "[seed 44 gen 1] HV=0.2015  pop_size=96  cost_so_far=$0.0109  elapsed=95s",
+    "[nsga2_driver seed=44 gen=1] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written"
+  ],
+  "first_hv_trace_line": {
+    "gen": 1,
+    "wall_clock_s": 95.44,
+    "hv": 0.20152989707236973,
+    "n_cells_evaluated": 96
+  },
+  "smoke_gate_results": [
+    {
+      "check": "check1_bedb_anchor_evaluator",
+      "passed": true,
+      "message": "DSI=0.0585, PD=45.24 Hz, n_errors=0, elapsed=159.2s; one-cell evaluator at n_directions=2 eval_seeds=[42,4242,424242]; all sanity bounds met (DSI in [0,1], PD in [0,200])"
+    },
+    {
+      "check": "check2_silence_guard_threshold_sweep",
+      "passed": true,
+      "message": "pytest test_silence_guard_threshold_sweep PASSED; all 3 thresholds {5,10,20} zero-out DSI on degenerate input"
+    },
+    {
+      "check": "check3_pytest_dsi_guard_suite",
+      "passed": true,
+      "message": "pytest tasks/t0106_long_pdnd_nsga2_300gen/code/test_evaluator_dsi_guard.py: 5/5 PASSED (all_silent, near_silent, firing_positive_control, ratio_dsi_synthetic_pd5_nd1, threshold_sweep)"
+    },
+    {
+      "check": "check4_ratio_dsi_cross_check",
+      "passed": true,
+      "message": "PD=5, ND=1 -> expected 0.666667, got 0.666667, diff=0.00e+00 (exact; well within 1e-6 tolerance)"
+    },
+    {
+      "check": "check5_individual_inspection",
+      "passed": true,
+      "message": "bedb_like anchor single-cell inspection: DSI=0.0585 (low because anchor is not strongly antipodal-tuned), PD_rate=45.24 Hz within t0093 +/-2 Hz envelope of 43.6 Hz fingerprint; n_errors=0, is_unstable=False"
+    }
+  ],
+  "smoke_gate_overall_passed": true,
+  "known_warnings": [
+    "dill checkpoint of pymoo Algorithm fails because the algorithm holds a reference to the multiprocessing.Pool's elementwise_runner. This is benign: the JSONL hv_trace.jsonl + all_evaluations_seed44.json + checkpoint_seed44.json (population snapshot JSON) provide full resume capability. The dill warning is logged but does NOT block the run.",
+    "n_directions=2 yields lower nominal DSI on the bedb_like anchor (0.058) than the 16-direction vector-sum DSI because the antipodal-only sample is more sensitive to ND-direction firing. This is expected and matches the mathematical reduction documented in research_code.md."
+  ]
+}

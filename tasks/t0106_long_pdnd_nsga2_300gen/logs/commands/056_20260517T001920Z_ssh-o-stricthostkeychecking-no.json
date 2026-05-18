@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -o ConnectTimeout=20 -i C:/Users/md1avn/.ssh/id_ed25519 -p 28270 root@ssh6.vast.ai set -e; lscpu | head -25; echo ---FREE---; free -g; echo ---DF---; df -h /; echo ---KERNEL---; uname -a; echo ---HOSTNAME---; hostname; echo ---IP---; curl -s ifconfig.me",
+  "exit_code": 0,
+  "duration_seconds": 2.088,
+  "started_at": "2026-05-17T00:19:20Z",
+  "completed_at": "2026-05-17T00:19:22Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "056_20260517T001920Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "056_20260517T001920Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 38,
+  "stderr_lines": 2,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "scp -i C:/Users/md1avn/.ssh/id_ed25519 -P 28270 -o StrictHostKeyChecking=no root@ssh6.vast.ai:/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/hv_trace.jsonl tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/hv_trace.jsonl",
+  "exit_code": 0,
+  "duration_seconds": 3.833,
+  "started_at": "2026-05-17T22:16:05Z",
+  "completed_at": "2026-05-17T22:16:08Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "095_20260517T221605Z_scp-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "095_20260517T221605Z_scp-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}

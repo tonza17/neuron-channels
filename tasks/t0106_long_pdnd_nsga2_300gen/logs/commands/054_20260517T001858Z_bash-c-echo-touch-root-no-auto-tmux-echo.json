@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "bash -c echo 'touch /root/.no_auto_tmux; echo NOAUTO_OK; exit 0' | ssh -tt -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=20 -i /c/Users/md1avn/.ssh/id_ed25519 -p 28270 root@ssh6.vast.ai",
+  "exit_code": 0,
+  "duration_seconds": 2.448,
+  "started_at": "2026-05-17T00:18:58Z",
+  "completed_at": "2026-05-17T00:19:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "054_20260517T001858Z_bash-c-echo-touch-root-no-auto-tmux-echo.stdout.txt",
+  "stderr_file": "054_20260517T001858Z_bash-c-echo-touch-root-no-auto-tmux-echo.stderr.txt",
+  "stdout_lines": 58,
+  "stderr_lines": 4,
+  "truncated": false
+}

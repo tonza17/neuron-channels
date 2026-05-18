@@ -1,0 +1,6 @@
+hasbooted
+onstart.sh
+ports.log
+t0106_workdir
+---T0106---
+tasks

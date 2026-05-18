@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "vastai search offers cpu_cores_effective>=32 cpu_ram>=100 disk_space>=40 reliability>=0.995 dph<=0.42 rentable=true verified=true rented=false --order dph --limit 50 --raw",
+  "exit_code": 0,
+  "duration_seconds": 1.962,
+  "started_at": "2026-05-17T00:11:37Z",
+  "completed_at": "2026-05-17T00:11:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "035_20260517T001137Z_vastai-search-offers.stdout.txt",
+  "stderr_file": "035_20260517T001137Z_vastai-search-offers.stderr.txt",
+  "stdout_lines": 565,
+  "stderr_lines": 0,
+  "truncated": false
+}

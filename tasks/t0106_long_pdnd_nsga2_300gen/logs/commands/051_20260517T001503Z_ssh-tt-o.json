@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "ssh -tt -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -o ConnectTimeout=20 -i C:/Users/md1avn/.ssh/id_ed25519 -p 28270 root@ssh6.vast.ai touch /root/.no_auto_tmux && echo NOAUTO_DONE && exit",
+  "exit_code": 0,
+  "duration_seconds": 237.373,
+  "started_at": "2026-05-17T00:15:03Z",
+  "completed_at": "2026-05-17T00:19:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "051_20260517T001503Z_ssh-tt-o.stdout.txt",
+  "stderr_file": "051_20260517T001503Z_ssh-tt-o.stderr.txt",
+  "stdout_lines": 54,
+  "stderr_lines": 3,
+  "truncated": false
+}

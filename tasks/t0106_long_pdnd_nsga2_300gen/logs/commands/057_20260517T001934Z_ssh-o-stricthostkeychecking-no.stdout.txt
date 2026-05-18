@@ -1,0 +1,7 @@
+NVIDIA GeForce RTX 5060 Ti, 16311 MiB, 595.58.03
+NVIDIA GeForce RTX 5060 Ti, 16311 MiB, 595.58.03
+---NVCC---
+bash: line 1: nvcc: command not found
+---PYTHON---
+Python 3.12.13
+3.12.13 (main, May  8 2026, 22:42:12) [GCC 12.2.0]

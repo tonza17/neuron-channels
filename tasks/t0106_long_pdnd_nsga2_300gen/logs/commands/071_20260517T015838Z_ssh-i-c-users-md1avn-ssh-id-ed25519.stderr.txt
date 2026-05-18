@@ -1,0 +1,8 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Traceback (most recent call last):
+  File "<string>", line 10, in <module>
+  File "<string>", line 8, in find_class
+AttributeError: Can't get attribute '__main__' on <module 'builtins' (built-in)>

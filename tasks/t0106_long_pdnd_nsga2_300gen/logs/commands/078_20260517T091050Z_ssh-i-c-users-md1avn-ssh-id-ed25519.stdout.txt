@@ -1,0 +1,9 @@
+t0106-nsga2: 1 windows (created Sun May 17 00:46:01 2026)
+[seed 44 gen 19] HV=81.1512  pop_size=96  cost_so_far=$2.2894  elapsed=20048s
+[nsga2_driver seed=44 gen=19] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+    20 |     1920 |      5 |  0.0197183099 |         ideal
+[seed 44 gen 20] HV=81.2167  pop_size=96  cost_so_far=$2.7267  elapsed=23878s
+[nsga2_driver seed=44 gen=20] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+    21 |     2016 |      6 |  0.0692771084 |         nadir
+[seed 44 gen 21] HV=81.7787  pop_size=96  cost_so_far=$3.2086  elapsed=28097s
+[nsga2_driver seed=44 gen=21] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written

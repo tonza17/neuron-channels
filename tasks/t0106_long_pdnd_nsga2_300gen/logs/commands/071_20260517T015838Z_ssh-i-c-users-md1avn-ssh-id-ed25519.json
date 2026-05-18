@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 28270 -o StrictHostKeyChecking=no root@ssh6.vast.ai cd /root/t0106_workdir && source .venv/bin/activate && python -c \"\nimport pickle, io, sys, numpy as np, builtins\nfrom pathlib import Path\nclass FixUnpickler(pickle.Unpickler):\n    def find_class(self, module, name):\n        if module == \\\"__builtin__\\\":\n            module = \\\"builtins\\\"\n        return super().find_class(module, name)\np = Path(\\\"tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/checkpoints/checkpoint_seed44_gen0011.pkl\\\")\ndata = FixUnpickler(io.BytesIO(p.read_bytes())).load()\nprint(\\\"TYPE:\\\", type(data).__name__)\nif isinstance(data, dict):\n    print(\\\"KEYS:\\\", list(data.keys()))\n    for k, v in data.items():\n        if isinstance(v, (list, np.ndarray)):\n            print(f\\\"  {k}: len={len(v)}\\\")\n            if len(v) > 0 and isinstance(v[0], dict):\n                print(f\\\"    elem keys: {list(v[0].keys())[:30]}\\\")\n        elif isinstance(v, dict):\n            print(f\\\"  {k}: dict keys={list(v.keys())[:10]}\\\")\n        else:\n            print(f\\\"  {k}: {type(v).__name__} = {str(v)[:120]}\\\")\n\"",
+  "exit_code": 1,
+  "duration_seconds": 3.469,
+  "started_at": "2026-05-17T01:58:38Z",
+  "completed_at": "2026-05-17T01:58:41Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "071_20260517T015838Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "071_20260517T015838Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 8,
+  "truncated": false
+}

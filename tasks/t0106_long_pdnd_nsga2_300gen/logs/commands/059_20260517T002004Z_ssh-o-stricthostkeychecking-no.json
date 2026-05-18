@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -i C:/Users/md1avn/.ssh/id_ed25519 -p 28270 root@ssh6.vast.ai set -e; curl -LsSf https://astral.sh/uv/install.sh | sh 2>&1 | tail -3; echo ---UVVER---; /root/.local/bin/uv --version; echo ---WORKDIR---; mkdir -p /root/t0106_workdir && cd /root/t0106_workdir && /root/.local/bin/uv venv --python 3.12 .venv 2>&1 | tail -5; echo ---VENVPY---; .venv/bin/python --version",
+  "exit_code": 0,
+  "duration_seconds": 3.546,
+  "started_at": "2026-05-17T00:20:04Z",
+  "completed_at": "2026-05-17T00:20:07Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "059_20260517T002004Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "059_20260517T002004Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 11,
+  "stderr_lines": 2,
+  "truncated": false
+}

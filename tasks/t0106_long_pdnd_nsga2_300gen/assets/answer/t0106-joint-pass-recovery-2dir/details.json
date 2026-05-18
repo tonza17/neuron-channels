@@ -1,0 +1,26 @@
+{
+  "spec_version": "2",
+  "answer_id": "t0106-joint-pass-recovery-2dir",
+  "question": "Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d morphology substrate recover strict joint-pass cells (DSI >= 0.5 AND PD >= 30 Hz) from random init, and where does hypervolume actually plateau on this landscape?",
+  "short_title": "2-direction NSGA-II recovers joint-pass cells",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0099_random_init_pareto_robustness",
+    "t0102_seedscale_n4_gen20",
+    "t0104_nsga2_2obj_dsi_pdrate_3seeds"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0106_long_pdnd_nsga2_300gen",
+  "date_created": "2026-05-18"
+}

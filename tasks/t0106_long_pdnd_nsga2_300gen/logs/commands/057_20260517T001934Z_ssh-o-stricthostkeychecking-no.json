@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -i C:/Users/md1avn/.ssh/id_ed25519 -p 28270 root@ssh6.vast.ai nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader 2>&1 | head -3; echo ---NVCC---; which nvcc; nvcc --version 2>&1 | head -3 || true; echo ---PYTHON---; python3 --version; python3 -c \"import sys; print(sys.version)\"",
+  "exit_code": 0,
+  "duration_seconds": 2.036,
+  "started_at": "2026-05-17T00:19:34Z",
+  "completed_at": "2026-05-17T00:19:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "057_20260517T001934Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "057_20260517T001934Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 7,
+  "stderr_lines": 2,
+  "truncated": false
+}
