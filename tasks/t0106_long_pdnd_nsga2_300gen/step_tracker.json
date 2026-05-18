@@ -86,9 +86,9 @@
       "step": 10,
       "name": "teardown",
       "description": "Download per-generation HV trace, predictions cells, and final pickle to the worktree; destroy Vast.ai instance within 5 minutes of last completed generation; update machine_log.json, remote_machines_used.json, costs.json.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-18T01:23:16Z",
-      "completed_at": null,
+      "completed_at": "2026-05-18T01:29:26Z",
       "log_file": "logs\\steps\\010_teardown/"
     },
     {
