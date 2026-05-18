@@ -5,12 +5,12 @@
   "name": "8-direction polar re-evaluation of 10 random top-50 t0106 cells",
   "short_description": "Re-evaluate 10 randomly selected cells from t0106 top-50 (joint-corner-ranked) at 8 directions (every 45 deg) and plot polar tuning curves. Light follow-up to S-0106-03 with reduced scope.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0106_long_pdnd_nsga2_300gen"
   ],
   "start_time": "2026-05-18T02:31:48Z",
-  "end_time": null,
+  "end_time": "2026-05-18T11:25:00Z",
   "expected_assets": {
     "predictions": 1
   },

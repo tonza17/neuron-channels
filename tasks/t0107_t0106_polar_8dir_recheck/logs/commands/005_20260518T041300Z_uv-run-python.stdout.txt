@@ -1,0 +1,6 @@
+Evaluating 10 cells at 8 directions
+  eval_seeds: [111, 222, 333]
+  expected angles (deg): [0, 45, 90, 135, 180, 225, 270, 315]
+  cell 1/10  rank= 4  DSI(t0106)=0.935  PD(t0106)=121.4 Hz
+    -> vsum-DSI=0.578  PD@0=123.10 Hz  ND@180=4.05 Hz  ratio-DSI=0.936  (990.9 s)
+  cell 2/10  rank= 5  DSI(t0106)=0.917  PD(t0106)=121.7 Hz

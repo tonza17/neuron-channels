@@ -1,0 +1,10 @@
+connected
+Linux 43d52a5f2d50 5.15.0-153-generic #163-Ubuntu SMP Thu Aug 7 16:37:18 UTC 2025 x86_64 GNU/Linux
+64
+               total        used        free      shared  buff/cache   available
+Mem:             125           4          10           0         111         120
+overlay          40G  416K   40G   1% /
+Model name:                              AMD EPYC 7532 32-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      32
+Socket(s):                               1

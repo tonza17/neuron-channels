@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0107_t0106_polar_8dir_recheck",
+  "command": "uv run python -m arf.scripts.verificators.verify_task_dependencies t0107_t0106_polar_8dir_recheck",
+  "exit_code": 0,
+  "duration_seconds": 0.383,
+  "started_at": "2026-05-18T02:35:00Z",
+  "completed_at": "2026-05-18T02:35:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck",
+  "stdout_file": "001_20260518T023500Z_uv-run-python.stdout.txt",
+  "stderr_file": "001_20260518T023500Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

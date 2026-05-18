@@ -1,0 +1,14 @@
+plan
+research
+results
+results/images
+corrections
+intervention
+code
+logs/commands
+logs/searches
+logs/sessions
+logs/steps
+assets/predictions
+
+Created 12 directories with .gitkeep files plus tasks/t0107_t0106_polar_8dir_recheck/__init__.py and code/__init__.py.

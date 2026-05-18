@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "37000763",
+    "gpu": "none",
+    "gpu_count": 0,
+    "ram_gb": 62.8,
+    "duration_hours": 0.4119,
+    "cost_usd": 0.1517
+  }
+]

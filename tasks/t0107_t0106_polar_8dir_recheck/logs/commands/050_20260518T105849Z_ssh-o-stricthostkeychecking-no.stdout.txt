@@ -1,0 +1,12 @@
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Parallel eval: 10 cells x 8 directions x 3 seeds; max_workers=10
+  [ 1/10] rank=45  vsum-DSI=0.611  PD@0= 29.05 Hz  ratio-DSI=0.891  (cell=30.4s, wall=30.5s)
+  [ 2/10] rank=33  vsum-DSI=0.806  PD@0= 30.71 Hz  ratio-DSI=0.925  (cell=31.3s, wall=31.3s)
+  [ 3/10] rank=29  vsum-DSI=0.274  PD@0= 92.86 Hz  ratio-DSI=0.945  (cell=36.9s, wall=36.9s)
+  [ 4/10] rank=20  vsum-DSI=0.563  PD@0= 95.95 Hz  ratio-DSI=0.980  (cell=52.0s, wall=52.0s)
+  [ 5/10] rank=40  vsum-DSI=0.784  PD@0= 88.10 Hz  ratio-DSI=0.953  (cell=58.7s, wall=58.7s)
+  [ 6/10] rank=34  vsum-DSI=0.385  PD@0= 36.67 Hz  ratio-DSI=0.674  (cell=78.8s, wall=78.8s)
+  [ 7/10] rank=10  vsum-DSI=0.516  PD@0=116.43 Hz  ratio-DSI=0.956  (cell=91.7s, wall=91.7s)
+---
+running

@@ -1,0 +1,2 @@
+WARNING: only 1 cells available (expected 10); rendering partial grid
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0107_t0106_polar_8dir_recheck\tasks\t0107_t0106_polar_8dir_recheck\results\images\polar_tuning_curves_top10.png

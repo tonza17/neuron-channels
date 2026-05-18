@@ -1,0 +1,29 @@
+Reading t0106 evaluations from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0107_t0106_polar_8dir_recheck\tasks\t0106_long_pdnd_nsga2_300gen\results\data\all_evaluations_seed44.json.gz
+  Loaded 3744 raw evaluations
+  After dedup by (round(DSI, 4), round(PD, 2)): 792
+  Top 50 by joint-corner score (DSI/0.5 * PD/30, ties by dsi+pd/100)
+  Top 10 of the top-50 by score:
+    rank= 1  gen= 39  DSI=0.9434  PD=122.62 Hz  score=1.0000
+    rank= 2  gen= 38  DSI=0.9536  PD=120.24 Hz  score=1.0000
+    rank= 3  gen= 36  DSI=0.9252  PD=122.62 Hz  score=1.0000
+    rank= 4  gen= 33  DSI=0.9355  PD=121.43 Hz  score=1.0000
+    rank= 5  gen= 37  DSI=0.9174  PD=121.67 Hz  score=1.0000
+    rank= 6  gen= 37  DSI=0.9004  PD=122.62 Hz  score=1.0000
+    rank= 7  gen= 39  DSI=0.9200  PD=120.00 Hz  score=1.0000
+    rank= 8  gen= 37  DSI=0.9232  PD=119.29 Hz  score=1.0000
+    rank= 9  gen= 34  DSI=0.9337  PD=118.10 Hz  score=1.0000
+    rank=10  gen= 38  DSI=0.9476  PD=115.00 Hz  score=1.0000
+
+  Sampled 10 cells with numpy.random.default_rng(42):
+    rank= 4  gen= 33  DSI=0.9355  PD=121.43 Hz
+    rank= 5  gen= 37  DSI=0.9174  PD=121.67 Hz
+    rank=10  gen= 38  DSI=0.9476  PD=115.00 Hz
+    rank=20  gen= 39  DSI=0.9707  PD= 96.19 Hz
+    rank=29  gen= 38  DSI=0.9449  PD= 92.38 Hz
+    rank=33  gen= 33  DSI=0.9786  PD= 88.10 Hz
+    rank=34  gen= 37  DSI=0.8431  PD=100.71 Hz
+    rank=40  gen= 32  DSI=0.9620  PD= 85.95 Hz
+    rank=45  gen= 38  DSI=0.9415  PD= 86.90 Hz
+    rank=50  gen= 36  DSI=0.9504  PD= 84.29 Hz
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0107_t0106_polar_8dir_recheck\tasks\t0107_t0106_polar_8dir_recheck\code\selected_cells.json

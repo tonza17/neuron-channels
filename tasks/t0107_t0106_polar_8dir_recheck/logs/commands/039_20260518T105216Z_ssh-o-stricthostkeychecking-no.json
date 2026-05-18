@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0107_t0106_polar_8dir_recheck",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 10762 root@ssh8.vast.ai cd /root/t0107_workdir && /root/.local/bin/uv pip install --python .venv/bin/python neuron==8.2.7 numpy scipy pandas matplotlib pydantic tqdm dill 2>&1 | tail -5",
+  "exit_code": 0,
+  "duration_seconds": 19.365,
+  "started_at": "2026-05-18T10:52:16Z",
+  "completed_at": "2026-05-18T10:52:35Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck",
+  "stdout_file": "039_20260518T105216Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "039_20260518T105216Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 2,
+  "truncated": false
+}

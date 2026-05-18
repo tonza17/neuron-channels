@@ -1,0 +1,7 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/t0107_workdir/tasks/t0107_t0106_polar_8dir_recheck/code/evaluator.py", line 27, in <module>
+    from pymoo.core.problem import ElementwiseProblem
+ModuleNotFoundError: No module named 'pymoo'

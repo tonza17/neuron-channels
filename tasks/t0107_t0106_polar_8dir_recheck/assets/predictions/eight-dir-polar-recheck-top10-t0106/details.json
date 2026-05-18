@@ -1,0 +1,43 @@
+{
+  "spec_version": "2",
+  "predictions_id": "eight-dir-polar-recheck-top10-t0106",
+  "name": "8-direction polar re-evaluation of 10 sampled t0106 top-50 cells",
+  "short_description": "Per-cell per-direction firing rates from an 8-direction (45 deg steps) NEURON re-evaluation of 10 cells randomly sampled (numpy seed 42) from the t0106 top-50 joint-corner-ranked Pareto candidates. Reports the 8-direction vector-sum DSI alongside the original t0106 2-direction ratio DSI for falsifiability.",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "Compartmental DSGC neuron model combining the 54-d Bed B electrophysiology parameter vector (from t0080) applied via apply_parameter_vector with the t0092-patched 14-d procedural morphology generator (canonical via correction C-0093-01). Each cell is re-evaluated with 8 stimulus directions (0, 45, 90, 135, 180, 225, 270, 315 deg) x 3 noise replicates (eval_seeds = 111, 222, 333). The S-0102-01 silence guard at 10 spikes per trial total carries over from t0106; vector-sum DSI is bounded in [0, 1].",
+  "dataset_ids": [],
+  "prediction_format": "json",
+  "prediction_schema": "Top-level JSON object with key 'evaluations' holding a list of 10 per-cell records. Each record has fields: t0106_rank (int, original rank in the t0106 joint-corner-ranked top-50), t0106_generation (int, NSGA-II generation that produced the cell in t0106), t0106_dsi (float in [0,1], original 2-direction ratio DSI from t0106), t0106_pd_hz (float, original preferred-direction firing rate in Hz from t0106), vector_68d (list of 68 floats, the 54-d electrophys + 14-d morphology parameter vector), angles_deg (list of 8 floats, ordered ascending 0..315), per_direction_rates_hz (list of 8 floats, mean firing rate per direction averaged across the 3 noise replicates), t0107_dsi_8dir_vsum (float in [0,1], vector-sum DSI computed over the 8 directions), t0107_pd_at_0deg (float, firing rate at 0 deg in Hz), t0107_nd_at_180deg (float, firing rate at 180 deg in Hz), t0107_dsi_2dir_ratio_sanity (float in [-1,1], 2-direction ratio DSI computed from the 8-direction PD/ND rates as a sanity check against t0106), t0107_eval_seeds (list of 3 ints, the noise replicate seeds), t0107_n_directions (int, always 8), t0107_eval_elapsed_s (float, single-cell wall-clock in seconds), t0107_n_errors (int, NEURON trial errors during the 24 simulations), t0107_n_trials (int, total trials run, always 24 = 8 dirs x 3 seeds).",
+  "instance_count": 10,
+  "metrics_at_creation": {
+    "n_cells_evaluated": 10,
+    "n_directions": 8,
+    "n_eval_seeds": 3,
+    "n_failures": 0,
+    "spearman_rho_t0106_dsi_vs_t0107_vsum_dsi": 0.7576,
+    "spearman_p_value": 0.0111,
+    "mean_t0107_dsi_8dir_vsum": 0.5194,
+    "min_t0107_dsi_8dir_vsum": 0.2218,
+    "max_t0107_dsi_8dir_vsum": 0.8060,
+    "mean_t0107_dsi_2dir_ratio_sanity": 0.8672,
+    "mean_pd_at_0deg_hz": 84.17,
+    "mean_pd_across_8_dirs_hz": 43.25,
+    "wall_clock_total_s": 547.2,
+    "remote_vastai_cost_usd": 0.1517
+  },
+  "files": [
+    {
+      "path": "files/per_cell_polar_eval.json",
+      "description": "Per-cell per-direction firing rates (10 cells x 8 directions) plus recomputed 8-direction vector-sum DSI and 2-direction ratio sanity DSI, with the original t0106 DSI/PD-rate metadata per cell.",
+      "format": "json"
+    }
+  ],
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0107_t0106_polar_8dir_recheck",
+  "date_created": "2026-05-18"
+}

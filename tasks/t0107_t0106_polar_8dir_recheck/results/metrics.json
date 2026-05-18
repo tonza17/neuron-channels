@@ -1,0 +1,20 @@
+{
+  "variants": [
+    {
+      "variant_id": "eight-dir-vsum-recheck-top10-t0106",
+      "label": "8-direction vector-sum DSI re-evaluation of 10 random t0106 top-50 cells (N_EVAL_SEEDS=3)",
+      "dimensions": {
+        "task_seed": 42,
+        "init_method": "random_choice_from_t0106_top50",
+        "n_cells": 10,
+        "n_directions": 8,
+        "dsi_metric": "vector_sum",
+        "n_eval_seeds": 3,
+        "source_task": "t0106_long_pdnd_nsga2_300gen"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.519
+      }
+    }
+  ]
+}
