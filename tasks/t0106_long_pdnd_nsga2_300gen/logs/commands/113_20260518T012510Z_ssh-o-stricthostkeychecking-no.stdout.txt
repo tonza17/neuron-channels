@@ -1,0 +1,68 @@
+=== results/data ===
+total 16044
+drwxr-xr-x 2 root root    4096 May 18 00:50 .
+drwxr-xr-x 4 root root      44 May 17 00:45 ..
+-rw-r--r-- 1 root root 8116062 May 18 00:50 all_evaluations_seed44.json
+-rw-r--r-- 1 root root     117 May 17 00:46 evaluation_seeds.json
+-rw-r--r-- 1 root root    7272 May 18 00:50 hv_trajectory_seed44.json
+-rw-r--r-- 1 root root  172657 May 17 00:45 init_pop_seed44.json
+-rw-r--r-- 1 root root 8085222 May 18 00:50 nsga2_checkpoint_seed44.json
+-rw-r--r-- 1 root root   29153 May 18 00:50 pareto_front_seed44.json
+=== logs/steps ===
+total 0
+drwxr-xr-x 4 root root 70 May 17 00:45 .
+drwxr-xr-x 3 root root 19 May 17 00:45 ..
+drwxr-xr-x 2 root root 38 May 17 00:45 008_setup-machines
+drwxr-xr-x 3 root root 84 May 17 00:47 009_implementation
+=== 009_implementation ===
+/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/:
+total 24
+drwxr-xr-x 3 root root    84 May 17 00:47 .
+drwxr-xr-x 4 root root    70 May 17 00:45 ..
+drwxr-xr-x 2 root root  4096 May 18 00:50 checkpoints
+-rw-r--r-- 1 root root  3800 May 18 00:50 hv_trace.jsonl
+-rw-r--r-- 1 root root 14729 May 18 00:50 nsga2_run.log
+
+/root/t0106_workdir/tasks/t0106_long_pdnd_nsga2_300gen/logs/steps/009_implementation/checkpoints:
+total 96736
+drwxr-xr-x 2 root root    4096 May 18 00:50 .
+drwxr-xr-x 3 root root      84 May 17 00:47 ..
+-rw-r--r-- 1 root root  131101 May 17 00:47 checkpoint_seed44_gen0001.pkl
+-rw-r--r-- 1 root root  262199 May 17 00:49 checkpoint_seed44_gen0002.pkl
+-rw-r--r-- 1 root root  393299 May 17 00:53 checkpoint_seed44_gen0003.pkl
+-rw-r--r-- 1 root root  524411 May 17 00:58 checkpoint_seed44_gen0004.pkl
+-rw-r--r-- 1 root root  655501 May 17 01:03 checkpoint_seed44_gen0005.pkl
+-rw-r--r-- 1 root root  721051 May 17 01:09 checkpoint_seed44_gen0006.pkl
+-rw-r--r-- 1 root root  852159 May 17 01:15 checkpoint_seed44_gen0007.pkl
+-rw-r--r-- 1 root root  983264 May 17 01:22 checkpoint_seed44_gen0008.pkl
+-rw-r--r-- 1 root root 1114376 May 17 01:31 checkpoint_seed44_gen0009.pkl
+-rw-r--r-- 1 root root 1245466 May 17 01:40 checkpoint_seed44_gen0010.pkl
+-rw-r--r-- 1 root root 1376552 May 17 01:52 checkpoint_seed44_gen0011.pkl
+-rw-r--r-- 1 root root 1507665 May 17 02:06 checkpoint_seed44_gen0012.pkl
+-rw-r--r-- 1 root root 1638767 May 17 02:24 checkpoint_seed44_gen0013.pkl
+-rw-r--r-- 1 root root 1769871 May 17 02:47 checkpoint_seed44_gen0014.pkl
+-rw-r--r-- 1 root root 1900959 May 17 03:16 checkpoint_seed44_gen0015.pkl
+-rw-r--r-- 1 root root 2032077 May 17 03:52 checkpoint_seed44_gen0016.pkl
+-rw-r--r-- 1 root root 2163177 May 17 04:35 checkpoint_seed44_gen0017.pkl
+-rw-r--r-- 1 root root 2294294 May 17 05:24 checkpoint_seed44_gen0018.pkl
+-rw-r--r-- 1 root root 2425396 May 17 06:20 checkpoint_seed44_gen0019.pkl
+-rw-r--r-- 1 root root 2556492 May 17 07:24 checkpoint_seed44_gen0020.pkl
+-rw-r--r-- 1 root root 2687604 May 17 08:34 checkpoint_seed44_gen0021.pkl
+-rw-r--r-- 1 root root 2819211 May 17 09:51 checkpoint_seed44_gen0022.pkl
+-rw-r--r-- 1 root root 2884237 May 17 11:16 checkpoint_seed44_gen0023.pkl
+-rw-r--r-- 1 root root 3015355 May 17 12:47 checkpoint_seed44_gen0024.pkl
+-rw-r--r-- 1 root root 3146450 May 17 14:37 checkpoint_seed44_gen0025.pkl
+-rw-r--r-- 1 root root 3277521 May 17 14:40 checkpoint_seed44_gen0026.pkl
+-rw-r--r-- 1 root root 3408635 May 17 14:46 checkpoint_seed44_gen0027.pkl
+-rw-r--r-- 1 root root 3539722 May 17 14:53 checkpoint_seed44_gen0028.pkl
+-rw-r--r-- 1 root root 3670833 May 17 15:05 checkpoint_seed44_gen0029.pkl
+-rw-r--r-- 1 root root 3801920 May 17 15:21 checkpoint_seed44_gen0030.pkl
+-rw-r--r-- 1 root root 3933046 May 17 15:42 checkpoint_seed44_gen0031.pkl
+-rw-r--r-- 1 root root 4064132 May 17 16:13 checkpoint_seed44_gen0032.pkl
+-rw-r--r-- 1 root root 4195275 May 17 16:54 checkpoint_seed44_gen0033.pkl
+-rw-r--r-- 1 root root 4326378 May 17 17:46 checkpoint_seed44_gen0034.pkl
+-rw-r--r-- 1 root root 4457449 May 17 18:49 checkpoint_seed44_gen0035.pkl
+-rw-r--r-- 1 root root 4588600 May 17 20:05 checkpoint_seed44_gen0036.pkl
+-rw-r--r-- 1 root root 4719680 May 17 21:28 checkpoint_seed44_gen0037.pkl
+-rw-r--r-- 1 root root 4850738 May 17 23:03 checkpoint_seed44_gen0038.pkl
+-rw-r--r-- 1 root root 4981895 May 18 00:50 checkpoint_seed44_gen0039.pkl
