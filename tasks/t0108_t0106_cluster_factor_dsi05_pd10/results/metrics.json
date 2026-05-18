@@ -1,0 +1,21 @@
+{
+  "variants": [
+    {
+      "variant_id": "t0108_strict_cohort",
+      "label": "Strict cohort (DSI > 0.5 AND PD > 10 Hz) from t0106",
+      "dimensions": {
+        "filter_dsi_min": 0.5,
+        "filter_pd_hz_min": 10.0,
+        "n_cells": 150,
+        "source_task": "t0106_long_pdnd_nsga2_300gen",
+        "source_seed": 44
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.8681049953839317,
+        "tuning_curve_hwhm_deg": null,
+        "tuning_curve_reliability": null,
+        "tuning_curve_rmse": null
+      }
+    }
+  ]
+}
