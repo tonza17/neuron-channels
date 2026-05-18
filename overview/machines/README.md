@@ -1,27 +1,27 @@
-# Machine Provisioning (10 machines)
+# Machine Provisioning (11 machines)
 
-**10** machines provisioned across **10** tasks. Total cost: **$46.28**.
+**11** machines provisioned across **11** tasks. Total cost: **$56.65**.
 
-**4** failed provisioning attempts wasted **$0.00** (28.6% failure rate).
+**6** failed provisioning attempts wasted **$0.01** (35.3% failure rate).
 
 ## Summary
 
 | Field | Value |
 |-------|-------|
-| Total machines | 10 |
-| Total failed attempts | 4 |
-| Failure rate | 28.6% |
+| Total machines | 11 |
+| Total failed attempts | 6 |
+| Failure rate | 35.3% |
 | Avg provisioning time | 674s |
-| Total cost | $46.28 |
-| Total wasted cost | $0.00 |
+| Total cost | $56.65 |
+| Total wasted cost | $0.01 |
 
 ## Cost by GPU Tier
 
 | GPU | Total Cost (USD) |
 |-----|-----------------|
+| RTX 5060 Ti (idle, unused; CPU-only NEURON workload) | $18.08 |
 | RTX 4090 (idle, unused; CPU-only NEURON workload) | $12.07 |
 | RTX 3060 Ti (idle, unused; CPU-only NEURON workload) | $10.30 |
-| RTX 5060 Ti (idle, unused; CPU-only NEURON workload) | $7.71 |
 | RTX 4060 Ti (idle, unused) | $5.83 |
 | RTX 5060 Ti (idle, unused) | $3.93 |
 | RTX PRO 4000 (idle, unused) | $3.14 |
@@ -37,6 +37,8 @@
 | Duplicate creation - the first vastai create call returned exit 0 with empty stdout under the run_with_logs subprocess pipe (no JSON visible to the caller), so a second create call was made which also returned empty stdout. Both create calls actually succeeded server-side, producing two instances on the same offer 31639237. Instance 36137287 came up running on ssh2.vast.ai:17286 (kept); instance 36137292 came up stopped on ssh7.vast.ai:17292 and was destroyed via 'vastai destroy instance 36137292 -y'. Same root cause as t0078's create-duplicate issue; the bug is in run_with_logs swallowing vastai's stdout when invoked under PowerShell or Bash on Windows. | 1 |
 | Vast.ai SSH proxy persistently failed to bind listen port 10284 (errno from logs: 'Error: remote port forwarding failed for listen port 10284'). Reboot did not resolve. Instance destroyed; provisioning retried on offer 34391256. | 1 |
 | Duplicate creation: the orchestration accidentally issued two `vastai create instance 31574004 ...` calls back-to-back; both succeeded and Vast.ai returned two instance IDs (36372909 in actual_status=running and 36372913 in actual_status=loading). The second instance was destroyed via `vastai destroy instance 36372913 -y` within ~1 minute of creation, before it ever reached running state. This was an orchestration-level mistake, not a real provisioning failure of the offer or machine. | 1 |
+| Duplicate-create artefact: the first 'vastai create instance 34391260' call returned exit 0 with empty stdout (no contract JSON), which masked the success; a retry created a second instance at the same offer. The 36908259 instance was destroyed before any environment setup ran. No code or data was placed on it. | 1 |
+| Duplicate-create artefact: second retry of 'vastai create instance 34391260' after the silent first success. Destroyed before any environment setup ran. No code or data was placed on it. | 1 |
 
 ## Tasks
 
@@ -52,3 +54,4 @@
 | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 1 | $7.71 | 1 | RTX 5060 Ti (idle, unused; CPU-only NEURON workload) |
 | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 1 | $12.07 | 0 | RTX 4090 (idle, unused; CPU-only NEURON workload) |
 | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 1 | $10.30 | 0 | RTX 3060 Ti (idle, unused; CPU-only NEURON workload) |
+| [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | 1 | $10.37 | 2 | RTX 5060 Ti (idle, unused; CPU-only NEURON workload) |

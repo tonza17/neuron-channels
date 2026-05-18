@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-14T14:27:05Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-18T02:15:36Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>5901</char_count>
-    <byte_count>5901</byte_count>
-    <estimated_tokens>1475</estimated_tokens>
+    <char_count>5969</char_count>
+    <byte_count>5969</byte_count>
+    <estimated_tokens>1492</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -17,13 +17,14 @@
       <title>Project Costs (Full Detail)</title>
       <source_name>aggregate_costs_full</source_name>
       <content>
-Total budget: $50.00
-Total spent: $46.28
-Budget remaining: $3.72
-Spent: 92.6%
+Total budget: $75.00
+Total spent: $56.65
+Budget remaining: $18.35
+Spent: 75.5%
 
 ### Cost Breakdown by Category
 
+* vast-ai-epyc-7b13: $10.37
 * vast_ai_nsga2_compute: $8.46
 * vast-ai-cpu-epyc-7b13: $7.42
 * vast-ai-seed44-productive: $4.69
@@ -151,6 +152,7 @@ Spent: 92.6%
 * t0104_nsga2_2obj_dsi_pdrate_3seeds: $10.30
 * t0105_cluster_factor_analysis_dsi_pd: $0.00
 * t0105_preliminary_figures_report: $0.00
+* t0106_long_pdnd_nsga2_300gen: $10.37
       </content>
     </section>
   </sections>

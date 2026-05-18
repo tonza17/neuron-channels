@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-14T14:27:05Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-18T02:15:36Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>474752</char_count>
-    <byte_count>475205</byte_count>
-    <estimated_tokens>118688</estimated_tokens>
+    <char_count>483478</char_count>
+    <byte_count>483941</byte_count>
+    <estimated_tokens>120869</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -210,9 +210,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
         <id>t0105_cluster_factor_analysis_dsi_pd</id>
         <id>t0105_preliminary_figures_report</id>
+        <id>t0106_long_pdnd_nsga2_300gen</id>
       </source_ids>
       <content>
-Completed tasks: 98
+Completed tasks: 99
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -801,6 +802,12 @@ ID: t0105_preliminary_figures_report
 Completed: 2026-05-13
 Short description: Compile preliminary-data figures (HH equations PNG, conductance table, morphologies, polar synaptic DSI, somatic Vm passive/active, channel-effect-on-DSI, 5-cell optim panels) into PNGs + .pptx deck.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0105_preliminary_figures_report&quot; date_completed: &quot;2026-05-13&quot; status: &quot;complete&quot; --- Results Summary: Preliminary-Data Figure Pack and Slide Deck Summary Produced a coherent preliminary-data figure pack covering seven figure groups for the DSGC modelling project: HH equations, per-bed conductance density tables, two morphologies, polar synaptic DSI (two-point), somatic Vm three-mode overlays, channel-effect-on-DSI sweep, and the top-5 Pareto cells from the 3-objective NSGA-II run `t0102_seedscale_n4_gen20`. All 10 PNGs land in `results/images/` and the 11-slide `preliminary_figures_slides.pptx` deck embeds every PNG with caption + source-task citation. The...
+
+## Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate)
+ID: t0106_long_pdnd_nsga2_300gen
+Completed: 2026-05-18
+Short description: Open-ended 68-d NSGA-II using only PD and ND bars, 1 random GA seed, pop=96, n_eval_seeds=3, n_gen=300 (extendable). Hourly HV poll, operator-controlled stop, $25 hard cap.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot; date_completed: &quot;2026-05-18&quot; --- t0106 — Long 2-Direction NSGA-II: Results Summary Summary Long-horizon NSGA-II on the 68-d Bed B + 14-d morphology substrate, restricted to PD and ND directions only with ratio DSI = (PD - ND) / (PD + ND) as the selectivity objective, completed 40 generations on one random-init GA seed before an operator stop at HV plateau. The run found **123 unique joint-pass cells** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) — the **first ever in the t0080 -&gt; t0106 lineage**, decisively answering H1. Best ratio DSI = 1.0000 at PD = 81 Hz; best PD = 122.6 Hz at DSI = 0.92. Metrics * **direction_selectivity_index** = **1.0000**...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1172,9 +1179,10 @@ For each condition, compute:
         <id>dsi-pd-diversity-factor-decomposition</id>
         <id>symmetric-vs-asymmetric-electrophys-cluster</id>
         <id>t0104-joint-pass-recovery-2obj</id>
+        <id>t0106-joint-pass-recovery-2dir</id>
       </source_ids>
       <content>
-Answers: 31
+Answers: 32
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1418,6 +1426,14 @@ Confidence: high
 Categories: direction-selectivity, compartmental-modeling
 
 No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) running the 2-objective DSI + PD formulation with the silence guard active, zero cells cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The DSI extreme broke past 0.5 for the first time in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, DSI = 0.5417 at PD = 3.57 Hz), confirming the substrate is not artificially capped by the silenced-cell DSI=1.0 floating-point artifact that contaminated t0102&#x27;s Pareto front. The L-shaped Pareto front replicates t0102&#x27;s exactly — extremes reachable on each axis but the joint corner empirically empty — ruling out objective-vector dimensionality as the explanation...
+
+## Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d morphology substrate recover strict joint-pass cells (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) from random init, and where does hypervolume actually plateau on this landscape?
+ID: t0106-joint-pass-recovery-2dir
+Created by: t0106_long_pdnd_nsga2_300gen on 2026-05-18
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+Yes. Across 3,744 evaluations from a single random-init GA seed running 40 generations of 2-direction NSGA-II with ratio DSI, **123 unique cells cleared the strict joint-pass corner** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) — the first joint-pass cells anywhere in the t0080 - t0104 NSGA-II lineage, every prior task of which returned zero. Hypervolume climbed 604x from 0.2015 at gen 1 to 122.0288 at gen 40 and was effectively flat (under 1% per 60 min) from gen 36 onward, marking the empirical convergence point on the 2-direction substrate. The reformulation from 16-direction vector-sum DSI to 2-direction ratio DSI — not the longer generation budget — drove the breakthrough.
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -1483,6 +1499,8 @@ No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) runn
         <id>S-0105-01</id>
         <id>S-0105-02</id>
         <id>S-0105-04</id>
+        <id>S-0106-01</id>
+        <id>S-0106-02</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -1725,6 +1743,10 @@ No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) runn
         <id>S-0105-05</id>
         <id>S-0105-06</id>
         <id>S-0105-07</id>
+        <id>S-0106-03</id>
+        <id>S-0106-04</id>
+        <id>S-0106-06</id>
+        <id>S-0106-07</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -1777,9 +1799,10 @@ No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) runn
         <id>S-0099-05</id>
         <id>S-0103-06</id>
         <id>S-0104-03</id>
+        <id>S-0106-05</id>
       </source_ids>
       <content>
-Open suggestions: 353
+Open suggestions: 360
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2193,6 +2216,20 @@ Priority: high
 Kind: experiment
 Source task: t0105_cluster_factor_analysis_dsi_pd
 F1 is the only factor weakly correlated with both DSI (r = -0.322) and PD (r = -0.265). Its top loadings span NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM (and morph_seed - see S-0105-01 caveat). Build a random-init NSGA-II run whose initial population samples along the F1 axis (positive and negative directions) and orthogonal to F1, instead of uniform sampling. If F1-axis seeding accelerates Pareto exploration into the joint corner, the substrate has a discoverable direction that random-init NSGA-II misses. If F1-axis seeding produces the same L-shape, the substrate-limit reading is reinforced. Recommended task type: experiment-run. Cost: ~$8-12 (one Vast.ai NSGA-II run at matched budget to...
+
+## Multi-seed confirmation of t0106 2-direction NSGA-II at GA seeds 55 and 66
+ID: S-0106-01
+Priority: high
+Kind: experiment
+Source task: t0106_long_pdnd_nsga2_300gen
+t0106&#x27;s 3.3% joint-pass yield (123 joint-pass cells / 3,744 evals) was produced from a single random GA seed. No published NSGA-II benchmark (Hay2011, Druckmann2007, Mohacsi2024) accepts a single-seed acceptance-rate point estimate. Re-run the exact t0106 configuration (2 antipodal directions, ratio DSI, N_EVAL_SEEDS = 3, pop = 96, n_gen = 40, operator-stop, silence guard) at GA seeds 55 and 66. Decision rule: if both seeds discover joint-pass cells (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) within 40 gens, the 2-direction substrate is genuinely populated and the t0080-t0104 null was an objective-surface artefact, not a per-seed lucky draw. If either seed returns zero, weaken the headline. Recommended...
+
+## N_EVAL_SEEDS = 20 robustness re-evaluation of top 10 t0106 cells (esp. the 3 DSI = 1.0 cells)
+ID: S-0106-02
+Priority: high
+Kind: evaluation
+Source task: t0106_long_pdnd_nsga2_300gen
+Three t0106 top-50 cells (ranks 16, 19, 27) achieve ratio DSI = 1.0 with deterministic zero ND firing. Total-spike silence guard (&gt;= 10 spikes across PD + ND) is exceeded (47-154 spikes/trial) so they are not silence-guard artefacts, but Trenholm2013 reports peak ND ~ 27 +/- 12 Hz in real mouse Hb9 DSGCs and Oesch2005 reports OFF DSI = 0.74 +/- 0.13. ND = 0 across only 3 noise replicates may be an AR(2)-seed + deterministic-GABA loophole that fails at higher replication. Re-evaluate the top 10 cells (3 DSI = 1.0 + 7 next-best incl. DSI = 0.98 at PD = 84.5 Hz and PD-frontier DSI = 0.92 at PD = 122.6 Hz) at N_EVAL_SEEDS = 20. Decision: if DSI = 1.0 collapses to &lt;= 0.9, mark as...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -3888,6 +3925,34 @@ Kind: technique
 Source task: t0105_cluster_factor_analysis_dsi_pd
 t0105 finds no joint DSI-PD factor — no single low-d axis carries both outcomes. NSGA-II (any objective vector size or noise budget) cannot ride a non-existent axis. MAP-Elites maintains a diversity grid over user-specified behavioural descriptors (e.g., asym_score x morphology_seed bins), promotes corner exploration over Pareto crowding, and may find isolated joint-corner cells that lie off any continuous axis. Run MAP-Elites at matched budget to t0104 seed 44 (~$5) on the same Bed B + morphology substrate with behavioural descriptors (asym_score, source_lineage_marker), compare the resulting joint-corner yield. Complements S-0102-03 / S-0104-04 IBEA suggestions but with a stronger...
 
+## 16-direction vector-sum DSI re-evaluation of top 50 t0106 cells to bridge t0106 &lt;-&gt; t0104 metric
+ID: S-0106-03
+Priority: medium
+Kind: evaluation
+Source task: t0106_long_pdnd_nsga2_300gen
+t0106 used 2-direction ratio DSI (PD = 0 deg, ND = 180 deg) and found 123 joint-pass cells; t0099 / t0102 / t0104 used 16-direction vector-sum DSI on the same 68-d substrate and found zero. Headline interpretation: the 2-direction reformulation surfaced cells the 16-direction metric hid. To confirm this is a metric artefact and not a t0106-specific lucky cluster, re-evaluate the top 50 t0106 cells under the full 16-direction protocol (every 22.5 deg). Decision: if 16-direction DSI correlates strongly with 2-direction DSI (Spearman r &gt; 0.7), the reformulation surfaced genuine high-DSI cells; if correlation collapses, the 2-direction metric is producing false positives that disappear at higher...
+
+## Widen soma_offset_pd_um morphology bound from [-150, +150] to [-200, +200] um and re-run 2-direction NSGA-II
+ID: S-0106-04
+Priority: medium
+Kind: experiment
+Source task: t0106_long_pdnd_nsga2_300gen
+35 of t0106&#x27;s top 50 cells cluster at soma_offset_pd_um in [-132, -107] um. The morphology generator&#x27;s lower bound is -150 um. NSGA-II is pushing toward the bound, suggesting the true optimum may sit beyond it. Re-run the 2-direction NSGA-II configuration (pop = 96, N_EVAL_SEEDS = 3, n_gen = 40, single GA seed) with soma_offset_pd_um widened to [-200, +200] um, all other bounds fixed. If the current bounds were extracted from real DSGC reconstructions in t0091, document the biological plausibility of the wider bound before launching. Decision: if median soma_offset for top 50 falls below -150 um, the prior bound was capping the optimum and a downstream task should reground the bound in...
+
+## IBEA vs SMS-EMOA comparison on the 2-direction substrate (renews S-0104-04 on working substrate)
+ID: S-0106-06
+Priority: medium
+Kind: experiment
+Source task: t0106_long_pdnd_nsga2_300gen
+S-0102-03 and S-0104-04 proposed IBEA on the 16-direction substrate where NSGA-II returned zero joint-pass cells; that comparison conflated algorithm choice with metric choice. t0106 now provides a working substrate (2-direction ratio DSI, 123 joint-pass cells from NSGA-II) on which to isolate the algorithm dimension. Run pymoo IBEA and SMS-EMOA at matched budget to t0106 (pop = 96, n_gen = 40, N_EVAL_SEEDS = 3, single GA seed) on the same 68-d substrate with the 2-direction ratio DSI + PD-rate objectives. Decision: if IBEA / SMS-EMOA produce more diverse interior fronts than NSGA-II&#x27;s L-shape (hypervolume + spacing), Mohacsi 2024&#x27;s IBEA recommendation generalises. If NSGA-II remains...
+
+## Dense morphology sweep around the t0106 winning archetype (soma_offset ~ -130 um, elong ~ 1.2)
+ID: S-0106-07
+Priority: medium
+Kind: experiment
+Source task: t0106_long_pdnd_nsga2_300gen
+The classical Tukker-Taylor ND-soma archetype dominates t0106&#x27;s top 50 (35/50 cells with soma_offset in [-132, -107] um and elong in [1.18, 1.25]). The second viable archetype is the PD-soma configuration (4/50, gen 19 cell #23 at DSI = 0.96 / PD = 83 Hz) consistent with Poleg-Polsky 2026&#x27;s GABAergic synaptic-asymmetry mechanism. Hold the top t0106 cell&#x27;s 54-d electrophys subvector fixed and densely sweep the 14-d morphology subvector in a tight box (soma_offset_pd_um in [-150, -100] um, elongation in [1.10, 1.35], 13 other dims in a 0.8-1.2 x current-value box) at N_EVAL_SEEDS = 4. Expected outcome: a high-density map of joint-pass cell counts vs morphology coordinates that distinguishes...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -4251,6 +4316,13 @@ Priority: low
 Kind: technique
 Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
 The t0080-era 8-direction angle constant ANGLES_8DIR_DEG remains in tasks/t0080_*/code/constants_electrophys.py and is still re-exported into downstream task forks despite t0091 onwards using the 16-direction ANGLES_16DIR_DEG vector exclusively. The 8-direction code path is dead; the constant pollutes the namespace and is a recurring source of confusion in code reviews. Action: write a small correction task that records a corrections/&lt;id&gt;.json file removing ANGLES_8DIR_DEG from the t0080 constants module&#x27;s effective namespace, plus a downstream task that imports the corrected constants and confirms no module under tasks/ resolves the symbol. Recommended task types: write-library. Cost: &lt;...
+
+## Extract PerGenerationPoolRestart into a shared library asset for future NEURON-pymoo NSGA-II tasks
+ID: S-0106-05
+Priority: low
+Kind: library
+Source task: t0106_long_pdnd_nsga2_300gen
+t0106&#x27;s nsga2_driver.py adds a PerGenerationPoolRestart class that calls multiprocessing.Pool.terminate() + recreate() at the start of every generation; this dropped gen 26&#x27;s wall-clock from 110 min to 3 min by clearing NEURON HOC namespace leaks and C-side mechanism state that the per-cell evaluator could not free. This is reusable infrastructure for every future long-horizon NEURON-pymoo NSGA-II task and complements S-0104-06 (instrumentation of the leak) by providing the concrete mitigation. Package the class as a library asset under tasks/&lt;libtask&gt;/assets/library/per_generation_pool_restart/ with details.json, a description.md, and the importable module. Downstream tasks (multi-seed...
       </content>
     </section>
   </sections>

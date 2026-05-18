@@ -1,6 +1,6 @@
-# Answers: `compartmental-modeling` (23)
+# Answers: `compartmental-modeling` (24)
 
-23 answer(s).
+24 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -178,6 +178,40 @@ substrate-limited reading.
 | **Task sources** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
 | **URL sources** | — |
 | **Created by** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+
+</details>
+
+<details>
+<summary><strong>Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d
+morphology substrate recover strict joint-pass cells (DSI >= 0.5 AND PD >=
+30 Hz) from random init, and where does hypervolume actually plateau on
+this landscape?</strong></summary>
+
+**Confidence**: high
+
+Yes. Across 3,744 evaluations from a single random-init GA seed running 40 generations of
+2-direction NSGA-II with ratio DSI, **123 unique cells cleared the strict joint-pass corner**
+(DSI
+>= 0.5 AND PD >= 30 Hz) — the first joint-pass cells anywhere in the t0080 - t0104 NSGA-II
+lineage, every prior task of which returned zero. Hypervolume climbed 604x from 0.2015 at gen
+1 to 122.0288 at gen 40 and was effectively flat (under 1% per 60 min) from gen 36 onward,
+marking the empirical convergence point on the 2-direction substrate. The reformulation from
+16-direction vector-sum DSI to 2-direction ratio DSI — not the longer generation budget —
+drove the breakthrough.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0106_long_pdnd_nsga2_300gen/assets/answer/t0106-joint-pass-recovery-2dir/full_answer.md) |
+| **ID** | [`t0106-joint-pass-recovery-2dir`](../../../tasks/t0106_long_pdnd_nsga2_300gen/assets/answer/t0106-joint-pass-recovery-2dir/) |
+| **Question** | Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d morphology substrate recover strict joint-pass cells (DSI >= 0.5 AND PD >= 30 Hz) from random init, and where does hypervolume actually plateau on this landscape? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-05-18 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md), [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+| **URL sources** | — |
+| **Created by** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
 
 </details>
 

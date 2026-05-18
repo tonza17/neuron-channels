@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-14T14:27:05Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-18T02:15:36Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>151591</char_count>
-    <byte_count>151870</byte_count>
-    <estimated_tokens>37897</estimated_tokens>
+    <char_count>153852</char_count>
+    <byte_count>154141</byte_count>
+    <estimated_tokens>38463</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -209,9 +209,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
         <id>t0105_cluster_factor_analysis_dsi_pd</id>
         <id>t0105_preliminary_figures_report</id>
+        <id>t0106_long_pdnd_nsga2_300gen</id>
       </source_ids>
       <content>
-Completed tasks: 98
+Completed tasks: 99
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -800,6 +801,12 @@ ID: t0105_preliminary_figures_report
 Completed: 2026-05-13
 Short description: Compile preliminary-data figures (HH equations PNG, conductance table, morphologies, polar synaptic DSI, somatic Vm passive/active, channel-effect-on-DSI, 5-cell optim panels) into PNGs + .pptx deck.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0105_preliminary_figures_report&quot; date_completed: &quot;2026-05-13&quot; status: &quot;complete&quot; --- Results Summary: Preliminary-Data Figure Pack and Slide Deck Summary Produced a coherent preliminary-data figure pack covering seven figure groups for the DSGC modelling project: HH equations, per-bed conductance density tables, two morphologies, polar synaptic DSI (two-point), somatic Vm three-mode overlays, channel-effect-on-DSI sweep, and the top-5 Pareto cells from the 3-objective NSGA-II run `t0102_seedscale_n4_gen20`. All 10 PNGs land in `results/images/` and the 11-slide `preliminary_figures_slides.pptx` deck embeds every PNG with caption + source-task citation. The...
+
+## Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate)
+ID: t0106_long_pdnd_nsga2_300gen
+Completed: 2026-05-18
+Short description: Open-ended 68-d NSGA-II using only PD and ND bars, 1 random GA seed, pop=96, n_eval_seeds=3, n_gen=300 (extendable). Hourly HV poll, operator-controlled stop, $25 hard cap.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot; date_completed: &quot;2026-05-18&quot; --- t0106 — Long 2-Direction NSGA-II: Results Summary Summary Long-horizon NSGA-II on the 68-d Bed B + 14-d morphology substrate, restricted to PD and ND directions only with ratio DSI = (PD - ND) / (PD + ND) as the selectivity objective, completed 40 generations on one random-init GA seed before an operator stop at HV plateau. The run found **123 unique joint-pass cells** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) — the **first ever in the t0080 -&gt; t0106 lineage**, decisively answering H1. Best ratio DSI = 1.0000 at PD = 81 Hz; best PD = 122.6 Hz at DSI = 0.92. Metrics * **direction_selectivity_index** = **1.0000**...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -869,9 +876,10 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>dsi-pd-diversity-factor-decomposition</id>
         <id>symmetric-vs-asymmetric-electrophys-cluster</id>
         <id>t0104-joint-pass-recovery-2obj</id>
+        <id>t0106-joint-pass-recovery-2dir</id>
       </source_ids>
       <content>
-Answers: 31
+Answers: 32
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1115,6 +1123,14 @@ Confidence: high
 Categories: direction-selectivity, compartmental-modeling
 
 No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) running the 2-objective DSI + PD formulation with the silence guard active, zero cells cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The DSI extreme broke past 0.5 for the first time in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, DSI = 0.5417 at PD = 3.57 Hz), confirming the substrate is not artificially capped by the silenced-cell DSI=1.0 floating-point artifact that contaminated t0102&#x27;s Pareto front. The L-shaped Pareto front replicates t0102&#x27;s exactly — extremes reachable on each axis but the joint corner empirically empty — ruling out objective-vector dimensionality as the explanation...
+
+## Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d morphology substrate recover strict joint-pass cells (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) from random init, and where does hypervolume actually plateau on this landscape?
+ID: t0106-joint-pass-recovery-2dir
+Created by: t0106_long_pdnd_nsga2_300gen on 2026-05-18
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+Yes. Across 3,744 evaluations from a single random-init GA seed running 40 generations of 2-direction NSGA-II with ratio DSI, **123 unique cells cleared the strict joint-pass corner** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) — the first joint-pass cells anywhere in the t0080 - t0104 NSGA-II lineage, every prior task of which returned zero. Hypervolume climbed 604x from 0.2015 at gen 1 to 122.0288 at gen 40 and was effectively flat (under 1% per 60 min) from gen 36 onward, marking the empirical convergence point on the 2-direction substrate. The reformulation from 16-direction vector-sum DSI to 2-direction ratio DSI — not the longer generation budget — drove the breakthrough.
       </content>
     </section>
   </sections>

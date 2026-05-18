@@ -1,22 +1,22 @@
 # Project Costs
 
-Spent $46.28 of $50.00 USD. $3.72 remains overall and $3.72 remains before the 100% stop
+Spent $56.65 of $75.00 USD. $18.35 remains overall and $18.35 remains before the 100% stop
 threshold.
 
 ## Budget Summary
 
 | Field | Value |
 |-------|-------|
-| Total budget | $50.00 USD |
-| Total spent | $46.28 USD |
-| Budget left | $3.72 USD |
-| Budget left before stop threshold | $3.72 USD |
-| Spent percent | 92.56% |
-| Warn threshold | 80% ($40.00) |
-| Stop threshold | 100% ($50.00) |
+| Total budget | $75.00 USD |
+| Total spent | $56.65 USD |
+| Budget left | $18.35 USD |
+| Budget left before stop threshold | $18.35 USD |
+| Spent percent | 75.53% |
+| Warn threshold | 80% ($60.00) |
+| Stop threshold | 100% ($75.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 98 |
-| Tasks with non-zero spend | 10 |
+| Tasks with cost records | 99 |
+| Tasks with non-zero spend | 11 |
 | Skipped tasks | 8 |
 
 ## Service Totals
@@ -30,6 +30,7 @@ threshold.
 
 | Key | Cost (USD) |
 |-----|------------|
+| `vast-ai-epyc-7b13` | $10.37 |
 | `vast_ai_nsga2_compute` | $8.46 |
 | `vast-ai-cpu-epyc-7b13` | $7.42 |
 | `vast-ai-seed44-productive` | $4.69 |
@@ -68,6 +69,7 @@ threshold.
 | [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | completed | $7.71 | $20.00 | no |
 | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | $12.07 | $8.00 | yes |
 | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | completed | $10.30 | $15.00 | no |
+| [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | completed | $10.37 | $8.00 | yes |
 
 ## Skipped Tasks
 

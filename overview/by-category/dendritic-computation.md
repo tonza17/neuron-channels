@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
 (9)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(86)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(88)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
 (4)](../predictions/by-category/dendritic-computation.md)
@@ -2535,7 +2535,48 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (69 open, 17 closed)
+## Suggestions (71 open, 17 closed)
+
+<details>
+<summary>🧪 <strong>Widen soma_offset_pd_um morphology bound from [-150, +150] to
+[-200, +200] um and re-run 2-direction NSGA-II</strong> (S-0106-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-18 | **Source**:
+[t0106_long_pdnd_nsga2_300gen](../../tasks/t0106_long_pdnd_nsga2_300gen/)
+
+35 of t0106's top 50 cells cluster at soma_offset_pd_um in [-132, -107] um. The morphology
+generator's lower bound is -150 um. NSGA-II is pushing toward the bound, suggesting the true
+optimum may sit beyond it. Re-run the 2-direction NSGA-II configuration (pop = 96,
+N_EVAL_SEEDS = 3, n_gen = 40, single GA seed) with soma_offset_pd_um widened to [-200, +200]
+um, all other bounds fixed. If the current bounds were extracted from real DSGC
+reconstructions in t0091, document the biological plausibility of the wider bound before
+launching. Decision: if median soma_offset for top 50 falls below -150 um, the prior bound was
+capping the optimum and a downstream task should reground the bound in measured DSGC anatomy.
+If the population remains within the prior bound, the cluster at [-132, -107] um is the true
+substrate optimum. Recommended task types: experiment-run, comparative-analysis. Cost: ~$10.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Dense morphology sweep around the t0106 winning archetype
+(soma_offset ~ -130 um, elong ~ 1.2)</strong> (S-0106-07)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-18 | **Source**:
+[t0106_long_pdnd_nsga2_300gen](../../tasks/t0106_long_pdnd_nsga2_300gen/)
+
+The classical Tukker-Taylor ND-soma archetype dominates t0106's top 50 (35/50 cells with
+soma_offset in [-132, -107] um and elong in [1.18, 1.25]). The second viable archetype is the
+PD-soma configuration (4/50, gen 19 cell #23 at DSI = 0.96 / PD = 83 Hz) consistent with
+Poleg-Polsky 2026's GABAergic synaptic-asymmetry mechanism. Hold the top t0106 cell's 54-d
+electrophys subvector fixed and densely sweep the 14-d morphology subvector in a tight box
+(soma_offset_pd_um in [-150, -100] um, elongation in [1.10, 1.35], 13 other dims in a 0.8-1.2
+x current-value box) at N_EVAL_SEEDS = 4. Expected outcome: a high-density map of joint-pass
+cell counts vs morphology coordinates that distinguishes (a) a wide basin centred on the
+dominant archetype from (b) a narrow lucky-draw peak. Recommended task types: experiment-run,
+data-analysis. Cost: ~$3 (200-300 cells x N = 4, no GA overhead; single Vast.ai instance, ~6-8
+hours).
+
+</details>
 
 <details>
 <summary>🧪 <strong>Targeted morphology sweep around the high-DSI region of the

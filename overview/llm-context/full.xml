@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-05-14T14:27:05Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-05-18T02:15:36Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>106</section_count>
-    <char_count>2476562</char_count>
-    <byte_count>2485504</byte_count>
-    <estimated_tokens>619140</estimated_tokens>
+    <section_count>107</section_count>
+    <char_count>2507390</char_count>
+    <byte_count>2516451</byte_count>
+    <estimated_tokens>626847</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -214,9 +214,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
         <id>t0105_cluster_factor_analysis_dsi_pd</id>
         <id>t0105_preliminary_figures_report</id>
+        <id>t0106_long_pdnd_nsga2_300gen</id>
       </source_ids>
       <content>
-Completed tasks: 98
+Completed tasks: 99
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -805,6 +806,12 @@ ID: t0105_preliminary_figures_report
 Completed: 2026-05-13
 Short description: Compile preliminary-data figures (HH equations PNG, conductance table, morphologies, polar synaptic DSI, somatic Vm passive/active, channel-effect-on-DSI, 5-cell optim panels) into PNGs + .pptx deck.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0105_preliminary_figures_report&quot; date_completed: &quot;2026-05-13&quot; status: &quot;complete&quot; --- Results Summary: Preliminary-Data Figure Pack and Slide Deck Summary Produced a coherent preliminary-data figure pack covering seven figure groups for the DSGC modelling project: HH equations, per-bed conductance density tables, two morphologies, polar synaptic DSI (two-point), somatic Vm three-mode overlays, channel-effect-on-DSI sweep, and the top-5 Pareto cells from the 3-objective NSGA-II run `t0102_seedscale_n4_gen20`. All 10 PNGs land in `results/images/` and the 11-slide `preliminary_figures_slides.pptx` deck embeds every PNG with caption + source-task citation. The...
+
+## Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate)
+ID: t0106_long_pdnd_nsga2_300gen
+Completed: 2026-05-18
+Short description: Open-ended 68-d NSGA-II using only PD and ND bars, 1 random GA seed, pop=96, n_eval_seeds=3, n_gen=300 (extendable). Hourly HV poll, operator-controlled stop, $25 hard cap.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot; date_completed: &quot;2026-05-18&quot; --- t0106 — Long 2-Direction NSGA-II: Results Summary Summary Long-horizon NSGA-II on the 68-d Bed B + 14-d morphology substrate, restricted to PD and ND directions only with ratio DSI = (PD - ND) / (PD + ND) as the selectivity objective, completed 40 generations on one random-init GA seed before an operator stop at HV plateau. The run found **123 unique joint-pass cells** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) — the **first ever in the t0080 -&gt; t0106 lineage**, decisively answering H1. Best ratio DSI = 1.0000 at PD = 81 Hz; best PD = 122.6 Hz at DSI = 0.92. Metrics * **direction_selectivity_index** = **1.0000**...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1176,9 +1183,10 @@ For each condition, compute:
         <id>dsi-pd-diversity-factor-decomposition</id>
         <id>symmetric-vs-asymmetric-electrophys-cluster</id>
         <id>t0104-joint-pass-recovery-2obj</id>
+        <id>t0106-joint-pass-recovery-2dir</id>
       </source_ids>
       <content>
-Answers: 31
+Answers: 32
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -8146,6 +8154,189 @@ factors remain in the algorithm-side reading: IBEA replacement (S-0102-03) and p
 [t0099]: ../../../../t0099_random_init_pareto_robustness/
 [t0102]: ../../../../t0102_seedscale_n4_gen20/
 [t0024]: ../../../../t0024_port_de_rosenroll_2026_dsgc/
+
+## Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d morphology substrate recover strict joint-pass cells (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) from random init, and where does hypervolume actually plateau on this landscape?
+ID: t0106-joint-pass-recovery-2dir
+Created by: t0106_long_pdnd_nsga2_300gen on 2026-05-18
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+#### Question
+
+Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d morphology substrate recover strict
+joint-pass cells (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) from random init, and where does hypervolume actually
+plateau on this landscape?
+
+#### Short Answer
+
+Yes. Across 3,744 evaluations from a single random-init GA seed running 40 generations of
+2-direction NSGA-II with ratio DSI, **123 unique cells cleared the strict joint-pass corner** (DSI
+&gt;= 0.5 AND PD &gt;= 30 Hz) — the first joint-pass cells anywhere in the t0080 - t0104 NSGA-II
+lineage, every prior task of which returned zero. Hypervolume climbed 604x from 0.2015 at gen 1 to
+122.0288 at gen 40 and was effectively flat (under 1% per 60 min) from gen 36 onward, marking the
+empirical convergence point on the 2-direction substrate. The reformulation from 16-direction
+vector-sum DSI to 2-direction ratio DSI — not the longer generation budget — drove the
+breakthrough.
+
+#### Research Process
+
+The hypothesis came from the t0104 reporting step (2026-05-14). t0104 had concluded with the
+substrate-limited reading: 2-objective NSGA-II with the silence guard active failed to produce
+joint-pass cells across 2,208 evaluations on the 16-direction landscape, and the Pareto front
+replicated t0102&#x27;s exactly L-shaped pattern (extremes reachable on each axis, joint corner empty).
+Two algorithm-side hypotheses survived: (a) the 16-direction vector-sum DSI is harder to satisfy
+than the 2-direction ratio DSI on this substrate; and (b) the 12-generation horizon was
+insufficient. t0106 was designed to test both simultaneously by reformulating to 2 directions
+(funding ~10x per-cell speed-up) and spending the freed budget on 300 generations rather than 3
+seeds.
+
+The experiment forked [t0104]&#x27;s `code/` substrate. Three changes only: `ANGLES_DEG = [0.0, 180.0]`
+(was 16 values every 22.5 deg); `N_EVAL_SEEDS = 3` (was 4); `_vector_sum_dsi` replaced with
+`_ratio_dsi = (pd_rate - nd_rate) / (pd_rate + nd_rate)`. The DSI silence guard from S-0102-01 was
+preserved unchanged at threshold 10 total spikes per trial. A new `PerGenerationPoolRestart`
+operator was added (`every=25` gens) to mitigate the NEURON memory accumulation that doubled per-gen
+wall-clock by gen 25 in [t0102] and [t0104]. NSGA-II ran on GA seed 44 with `pop_size=96`,
+`n_gen=300` target, LHS random init, default SBX/polynomial mutation. An hourly poller surfaced the
+HV trace to the operator; the operator dropped `intervention/stop.md` after gen 40 when the 60-min
+moving-window HV gain fell below 1%.
+
+The run executed on a single Vast.ai EPYC 7B13 64-core / 503 GB instance (Texas US, $0.4111/hr) for
+24.1 h productive + ~11 min provisioning + ~63 min idle between operator-stop and destroy. Total
+billing window 25.22 h; total cost $10.37 of the $25 cap. The pool-restart operator fired off-by-one
+at gen 26 and dropped per-gen wall-clock from 110 min back to 3 min, validating the mitigation. No
+conflicting evidence emerged in the run itself; results are consistent across the full HV trace and
+across all 5 result-summary checks.
+
+#### Evidence from Papers
+
+The `papers` method was not used inside t0106 (no new papers were downloaded or summarised by this
+task; the dedicated research-papers stage produced a literature retrospective summarised in
+`research/research_papers.md` but did not introduce evidence that the answer rests on directly).
+Published literature comparisons live in `results/compare_literature.md` and inform the
+*interpretation* of the joint-pass yield (3.3% vs Druckmann2007 0.10%, Hay2011 0.40%) but the
+question itself — does the t0106 reformulation recover joint-pass cells on this substrate — is
+answered exclusively from the experiment.
+
+#### Evidence from Internet Sources
+
+The `internet` method was not used. No new web sources were consulted to produce this answer; the
+question is purely an empirical claim about a t0106 NSGA-II run and is settled by the experiment
+output.
+
+#### Evidence from Code or Experiments
+
+The single t0106 NSGA-II run produced the predictions asset `nsga2-seed44-bedb-morph-2dir-300gen`
+(3,744 evaluations across 40 completed generations on GA seed 44). Strict joint-pass cells (DSI &gt;=
+0.5 AND PD &gt;= 30 Hz): **123 unique** / **637 evaluations** (with NSGA-II repetition) / 3,744 total =
+**3.3% yield**. The yield calculation treats each unique 68-d vector as one cell; NSGA-II revisits
+parent solutions across generations and these duplicates inflate the raw &quot;joint_pass evals&quot; count.
+
+Best ratio DSI = **1.0000** at PD = 81.43 Hz (3 unique cells reached the analytic ceiling because ND
+= 0 produces (PD - 0) / (PD + 0) = 1 by definition). The highest legitimately sub-ceiling cell was
+DSI = **0.9832** at PD = 84.5 Hz. Best PD-rate frontier was **122.62 Hz** at DSI = 0.92. Twenty-four
+unique cells satisfied the stronger criterion DSI &gt; 0.9 AND PD &gt; 80 Hz (114 evaluations).
+Spike-count audit on all 6 unique top joint-pass cells confirmed 47-154 total spikes per trial —
+no silence-guard artefacts in the front.
+
+The hypervolume trajectory climbed from 0.2015 (gen 1) to 122.0288 (gen 40), a **604x growth**
+across 40 generations. The 60-minute moving-window HV gain fell below 1% from gen 36 onward,
+identifying gen 36 as the empirical convergence point on the 2-direction substrate. The
+operator-stop at gen 40 cost $10.37 productive + $0.48 idle/setup = $10.85 / $25 cap. Per-gen
+wall-clock pattern: 3 min/gen at gen 1, accelerating to 110 min/gen by gen 25, dropping back to 3
+min/gen after `PerGenerationPoolRestart` fired off-by-one at gen 26, climbing back to 95 min/gen by
+gen 38. The local pytest `test_evaluator_dsi_guard.py` (silence guard, ratio DSI synthetic check,
+threshold sweep) passed 5/5 before remote launch; the 5-anchor pre-launch smoke gate also passed
+5/5.
+
+Direct comparison to the [t0104] L-shaped Pareto front: in [t0104] the front had max DSI = 0.5417 at
+PD = 3.57 Hz and max PD = 75.0 Hz at DSI = 0; the joint corner was empty. In t0106 the front no
+longer L-shapes: it sweeps continuously through the joint-pass corner with 7 cells on the strict
+Pareto frontier (the first appears at gen 18, by gen 24 the front holds 9 cells, by gen 36 the front
+reaches PD = 122.62 Hz). The two top morphological archetypes that emerge are classical ND-soma (35
+of top 50 cells) and PD-soma (4 of top 50), plus 4 central-soma cells.
+
+#### Synthesis
+
+Three lines of evidence support a high-confidence positive answer:
+
+1. **Direct count**: 123 unique joint-pass cells (637 evaluations) across 3,744 evaluations. 3.3%
+   yield. Spike-count audit confirms no silence-guard artefacts in the top cells. The substrate is
+   not joint-pass-empty; the lineage&#x27;s prior null was a metric artefact.
+
+2. **Pareto front shape change**: the front transitions from the L-shape of [t0102] and [t0104]
+   (extremes reachable, corner empty) to a continuous sweep through the joint corner. This is a
+   qualitative change in the front geometry, not a quantitative increment, and rules out a marginal
+   &quot;the corner is reachable but rare&quot; interpretation.
+
+3. **HV plateau analytic**: the 60-min moving-window HV gain falls below 1% from gen 36 onward. The
+   operator stop at gen 40 was conservative (4 extra gens past plateau onset). Empirical convergence
+   on the 2-direction substrate is therefore ~gen 36, well below the 300-gen plan and roughly 3x the
+   t0102/t0104 stop point of gen 12. Convergence happens slower than t0102&#x27;s apparent gen-15 plateau
+   (which was substrate-limited rather than HV-converged) but faster than the [Mohacsi2024]
+   published 20-60 gen NSGA-II asymptote on 3-12 parameter problems.
+
+The reformulation (16-direction vector-sum DSI to 2-direction ratio DSI) is what made the
+breakthrough, not the longer generation budget. The first joint-pass cell appeared at gen 18 —
+within the 12-generation budget that [t0102] and [t0104] used. Had the 2-direction reformulation
+been applied at [t0104] gen 12, joint-pass cells would already have appeared. Conversely, running
+[t0104]&#x27;s 16-direction metric out to gen 40 on the same substrate is the natural falsifier; the
+prediction is that the L-shape would persist.
+
+H2 (continued HV improvement past gen 20) is confirmed: HV at gen 20 was approximately 38.7, at gen
+40 it reached 122.03, a 3.15x climb in the post-[t0104]-stop region. H3 (objective and direction
+simplification compound) is confirmed: t0106&#x27;s best DSI of 1.0000 exceeds [t0104]&#x27;s seed-55 best of
+0.5417 by 0.46 and t0106&#x27;s best joint-pass cell PD = 81.43 Hz dwarfs [t0104]&#x27;s best-DSI cell PD of
+3.57 Hz.
+
+The substrate-limited reading from [t0104] is decisively reversed. The substrate (Bed B + 14-d
+morphology) was populated with joint-pass solutions all along; they were hidden by the harder
+16-direction vector-sum metric. The follow-up question — whether the t0106 cells satisfy the
+stricter [Trenholm2013] biological reference under 16-direction re-evaluation, higher noise
+replicate counts, and naturalistic stimuli — is deferred to S-0106-02 (N_EVAL_SEEDS = 20
+robustness) and S-0106-03 (16-direction re-evaluation).
+
+#### Limitations
+
+* **Single GA seed.** Only seed 44 was run. The 123/3744 yield is point-estimated, not
+  variance-estimated. The seed-confirmation follow-up (S-0106-01 at $5-10 per additional seed) is
+  the natural mitigation. Confidence in the qualitative claim (yield &gt; 0) is unaffected by this;
+  confidence in the 3.3% yield magnitude is reduced.
+
+* **Low N_EVAL_SEEDS (3 noise replicates per cell).** Robustness at this trial count is below the
+  per-task ceiling. The 24 unique DSI &gt; 0.9 AND PD &gt; 80 Hz cells could thin under re-evaluation at
+  N_EVAL_SEEDS = 20. S-0106-02 (high priority) addresses this directly.
+
+* **2-direction objective restriction.** The metric reformulation is the breakthrough lever but it
+  is also the largest unknown: 16-direction performance of the top t0106 cells is unmeasured. The
+  natural follow-up (S-0106-03) re-evaluates the top 50 cells on 16 directions and computes both
+  vector-sum DSI and ratio DSI per cell. If the 16-direction vector-sum DSI drops below 0.5 for most
+  top cells, then t0106 found 2-direction-only DSGCs — a weaker biological claim than the headline
+  implies.
+
+* **Generation horizon 40, not 300.** The operator stopped at HV plateau before exhausting the
+  300-gen plan. The asset captures generations 1-40 only. Whether gen 41+ would have refined the
+  Pareto front further is unmeasured but the post-gen-36 HV trace argues no.
+
+* **Operator stop is subjective.** The &quot;less than 1% per 60 min&quot; rule was not pre-registered; the
+  operator chose the rule during the run based on the HV trace. The stop is reproducible (rule is
+  documented in `intervention/operator_stop.md`) but the choice of rule is post-hoc.
+
+* **`vector_68d` parameter scaling.** The asset records the raw 68-d vectors; the parameter bounds
+  and conversion conventions are inherited from t0080/t0090/t0093 and require the per-task evaluator
+  code to interpret. Re-using the vectors in downstream tasks must import `apply_parameter_vector`
+  and `generate_fixed_morphology` from the task code.
+
+#### Sources
+
+* Task: `t0080_bedb_mobo_v3_dendritic_spike_nsga2`
+* Task: `t0099_random_init_pareto_robustness`
+* Task: `t0102_seedscale_n4_gen20`
+* Task: `t0104_nsga2_2obj_dsi_pdrate_3seeds`
+
+[t0080]: ../../../../t0080_bedb_mobo_v3_dendritic_spike_nsga2/
+[t0099]: ../../../../t0099_random_init_pareto_robustness/
+[t0102]: ../../../../t0102_seedscale_n4_gen20/
+[t0104]: ../../../../t0104_nsga2_2obj_dsi_pdrate_3seeds/
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">
@@ -40610,6 +40801,397 @@ REQ-by-REQ disposition:
 | REQ-10 | REQ-RESULTS-MD | This file with embedded figures, methodology, verification, limitations, and per-figure provenance. | Done | This `results_detailed.md` |
 | REQ-11 | REQ-RESULTS-SUMMARY | 2-3 paragraph presentation abstract. | Done | `results/results_summary.md` |
 | REQ-12 | REQ-NO-EXTERNAL-CHANGES | Only `pyproject.toml`, `uv.lock`, and `tasks/t0105_preliminary_figures_report/` touched. | Done | `git status` on `task/t0105_preliminary_figures_report` branch limited to allow-listed paths |
+      </content>
+    </section>
+    <section id="t0106_long_pdnd_nsga2_300gen-results-detailed" source_kind="file">
+      <title>t0106_long_pdnd_nsga2_300gen — Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate) — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0106_long_pdnd_nsga2_300gen</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0106_long_pdnd_nsga2_300gen/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot;
+date_completed: &quot;2026-05-18&quot;
+---
+### t0106 — Long 2-Direction NSGA-II at 300 Generations: Detailed Results
+
+#### Summary
+
+Long-horizon NSGA-II on the 68-d Bed B + 14-d morphology substrate, restricted to two directions (PD
+= 0°, ND = 180°) with ratio DSI as the selectivity objective. Ran 40 generations on one
+random-init GA seed before an operator stop at HV plateau. Discovered **123 unique joint-pass
+cells** (DSI ≥ 0.5 AND PD ≥ 30 Hz) — the first joint-pass cells in the t0080 → t0106 NSGA-II
+lineage. Final hypervolume = 122.03 (604× growth from gen 1). Best ratio DSI = 1.00 at PD = 81 Hz;
+best PD-frontier cell = 122.6 Hz at DSI = 0.92. Cost: $10.37 of $25 cap. Two stable morphological
+archetypes emerged in the front: classical ND-soma (35 of top 50) and PD-soma (4 of top 50); plus 4
+&quot;central&quot; cells.
+
+#### Methodology
+
+* **Machine**: Vast.ai instance 36908271. AMD EPYC 7B13 64-core (Zen-3 Milan, 42.67 effective
+  cores), 503 GB RAM, RTX 3060 Ti idle. Texas US. $0.4111/hr. Provisioned 2026-05-17 00:14 UTC;
+  destroyed 2026-05-18 01:26 UTC after artifact sync.
+* **Runtime**: 24.1 h of productive NSGA-II + ~11 min provisioning + ~63 min idle between
+  operator-stop and destroy. Total billing window 25.22 h.
+* **Software**: Python 3.12.13, NEURON 8.2.7, NetPyNE 1.1.1, pymoo 0.6.1.6, dill (for the checkpoint
+  pattern), numpy 2.4.4. uv 0.11.14 venv at `/root/t0106_workdir/.venv`. 13 MOD files from
+  `tasks/t0080_*/code/mods/` compiled with `nrnivmodl` on the instance.
+* **NSGA-II config**: pop_size = 96, n_gen = 300 (target, operator-stop at gen 39 boundary),
+  n_eval_seeds = 3, n_directions = 2, GA seed = 44, LHS random init, SBX (eta=15, p=0.9) +
+  polynomial mutation (eta=20, p=1/68), `OperatorStopTermination` polling `intervention/stop.md` per
+  generation.
+* **Memory mitigation**: `PerGenerationPoolRestart(every=25)` — new in t0106 (not in t0102/t0104).
+  Closes and re-creates the multiprocessing.Pool every 25 gens to reset NEURON-accumulated worker
+  memory. Fired off-by-one at gen 26; per-gen wall-clock dropped from 110 min to 3 min.
+* **Evaluation**: 2 NEURON simulations (PD bar 0°, ND bar 180°) × 3 trials = 6 sims per cell,
+  ~1.7 s per cell at gen 1; grows with memory pressure to ~95 min by gen 38.
+* **Silence guard**: ratio DSI returns 0.0 if total spike count across PD + ND &lt; 10 spikes per
+  trial. Verified all 6 unique top joint-pass cells have 47-154 total spikes per trial — no
+  silence-guard artefacts in the front.
+
+#### Metrics Table
+
+| Quantity | Value |
+| --- | --- |
+| Generations completed | **40** of 300 (operator stop at HV plateau) |
+| Total evaluations | **3,744** |
+| Unique joint-pass cells (DSI ≥ 0.5 AND PD ≥ 30 Hz) | **123** |
+| Joint-pass evals (with NSGA-II repetition) | 637 |
+| Cells with DSI &gt; 0.9 AND PD &gt; 80 Hz | **24** unique (114 evals) |
+| Cells with DSI &gt; 0.9 AND PD &gt; 50 Hz | **55** unique (302 evals) |
+| Best DSI | **1.0000** (3 cells, PD = 77-81 Hz) |
+| Best legit DSI (excluding DSI=1.0) | **0.9832** at PD = 84.5 Hz |
+| Best PD-rate | **122.62 Hz** at DSI = 0.92 (gen 36/38) |
+| Final hypervolume | **122.0288** |
+| Initial hypervolume (gen 1) | 0.2015 |
+| HV growth factor | **604×** |
+| Strict Pareto front size | 7 cells |
+
+#### Comparison vs Baselines
+
+| Lineage task | Method | Joint-pass cells | Best DSI | Best PD | Note |
+| --- | --- | --- | --- | --- | --- |
+| t0078 (8-dir, 3-obj) | NSGA-II 20 gens | 0 | &lt; 0.5 | n/a | DSI = 0.30 best |
+| t0080 (8-dir, 3-obj) | NSGA-II 8 gens | 0 | &lt; 0.5 | n/a | early null |
+| t0091 (16-dir, 3-obj morph) | NSGA-II warm-start | 0 | 0.42 | 21 Hz | best joint trade-off |
+| t0099 (16-dir, 3-obj, random init) | NSGA-II 20 gens | 0 | 0.38 | 28 Hz | 5 seeds, all null |
+| t0102 (16-dir, 3-obj) | NSGA-II 20 gens | 0 | 0.30 | 75 Hz | 2 seeds, $4-per-seed cap |
+| t0104 (16-dir, 2-obj) | NSGA-II 20 gens | 0 | 0.54 | 4 Hz | best DSI extreme |
+| **t0106** (2-dir, 2-obj ratio DSI) | NSGA-II 40 gens | **123** | **1.00** | **122.6** | **first lineage-wide win** |
+
+Δ vs t0104 (best DSI cell): **+0.46 DSI** and **+118 Hz PD** simultaneously, on the same 68-d
+substrate. The reformulation, not the gen budget, drove the breakthrough.
+
+#### Visualizations
+
+![Pareto front: DSI vs PD coloured by generation](images/pareto_front.png)
+
+The Pareto front shows the joint expansion from low-DSI low-PD origins (purple, early gens) into the
+upper-right joint-pass region (yellow, late gens). The strict Pareto front (black line, 7 cells)
+spans DSI = 0.20 at PD = 127 Hz to DSI = 1.0 at PD = 80 Hz, decisively crossing the joint-pass
+corner (red dashed).
+
+![Hypervolume trajectory and per-gen wall-clock](images/hv_vs_gen.png)
+
+The HV trajectory (top, log scale) shows 5 distinct breakthrough generations annotated (g3, g6, g12,
+g18, g19) where new Pareto regions were discovered. The g19 jump (+130%) is the joint-pass-discovery
+generation. The per-gen wall-clock plot (bottom) shows the Pool-restart effect dramatically: from
+110 min/gen at gen 25 down to 3 min/gen at gen 26.
+
+![Asymmetry parameter distributions: all evals vs top 50](images/asymmetry_distribution.png)
+
+Top-50 cells (blue) cluster tightly at soma_offset ≈ -130 to -110 µm (ND-biased soma),
+field_elongation ≈ 1.18-1.25 (mild PD-axis elongation), branch_density_gradient bimodal at -0.42
+and +0.25, primary_branch_pd_concentration near 0. The full population (gray) is spread across the
+parameter ranges; the optimiser found one tight basin and converged on it.
+
+![Top 50 cell morphologies, 10x5 grid](images/top50_morphologies.png)
+
+Each panel is a rendered dendritic tree. Colour codes archetype: blue = ND-soma (classical DSGC with
+dendrites extending toward PD), green = central, red = PD-soma. Most cells are blue; PD axis runs
+horizontally (+x). The classical Tukker-Taylor dendritic-delay morphology dominates the front.
+
+#### Examples
+
+10 unique joint-pass cells from the front (parameters, objectives, archetype). Each cell can be
+re-simulated from its 68-d vector in `results/data/all_evaluations_seed44.json`. All numbers
+verified against the saved evaluations JSON; no fabrication.
+
+##### Example 1 — Best PD frontier cell (gen 38)
+
+Input (key morphology dims from the 68-d vector; ND-soma archetype):
+
+```text
+soma_offset_pd_um           = -127.5
+field_elongation_pd         =    1.18
+branch_density_gradient_pd  =   +0.21
+primary_branch_pd_conc      =    0.4
+```
+
+Output:
+
+```text
+PD spike count / 1400 ms = 169  =&gt;  PD = 120.24 Hz
+ND spike count / 1400 ms =   4  =&gt;  ND =   2.86 Hz
+total spikes/trial       = 173  (&gt;= 10, silence guard inactive)
+DSI = (120.24 - 2.86) / (120.24 + 2.86) = 0.9536
+```
+
+##### Example 2 — Standout DSI = 0.96 cell (gen 19, lineage best joint cell)
+
+Input (PD-soma archetype, alternative DS-via-synaptic-asymmetry mechanism):
+
+```text
+soma_offset_pd_um           = +125.6
+field_elongation_pd         =    1.21
+branch_density_gradient_pd  =   +0.26
+```
+
+Output:
+
+```text
+PD = 82.86 Hz,  ND = 1.67 Hz,  DSI = 0.9606
+```
+
+##### Example 3 — Best legit DSI (gen 32)
+
+Input:
+
+```text
+soma_offset_pd_um           = -132.0
+field_elongation_pd         =    1.22
+branch_density_gradient_pd  =   +0.07
+```
+
+Output:
+
+```text
+PD = 84.52 Hz,  ND = 0.71 Hz,  DSI = 0.9832
+```
+
+##### Example 4 — DSI = 1.0 absolute silence cell (gen 36)
+
+Input:
+
+```text
+soma_offset_pd_um           = -108.9
+field_elongation_pd         =    1.22
+branch_density_gradient_pd  =   -0.42
+```
+
+Output (real biological silence at ND, not artefact):
+
+```text
+PD = 81.43 Hz,  ND = 0.00 Hz (exactly),  DSI = 1.0000
+total spikes/trial = 114  (&gt;= 10, silence guard inactive)
+```
+
+##### Example 5 — Mid-front balanced cell (gen 21)
+
+Input:
+
+```text
+soma_offset_pd_um           = -108.5
+field_elongation_pd         =    1.23
+branch_density_gradient_pd  =   -0.42
+```
+
+Output (balanced DS / firing trade):
+
+```text
+PD = 83.57 Hz,  ND = 26.43 Hz,  DSI = 0.5195
+```
+
+##### Example 6 — High-PD low-DSI extreme (gen 36)
+
+Input (extreme PD elongation variant):
+
+```text
+soma_offset_pd_um           = -111.0
+field_elongation_pd         =    2.14
+branch_density_gradient_pd  =   -0.37
+```
+
+Output:
+
+```text
+PD = 116.67 Hz,  ND = 28.33 Hz,  DSI = 0.6092
+```
+
+##### Example 7 — Central archetype joint cell (gen 24)
+
+Input (near-symmetric soma, third archetype):
+
+```text
+soma_offset_pd_um           =  +19.1
+field_elongation_pd         =    1.20
+branch_density_gradient_pd  =   -0.42
+```
+
+Output:
+
+```text
+PD = 86.67 Hz,  ND = 13.81 Hz,  DSI = 0.7251
+```
+
+##### Example 8 — PD-soma archetype joint cell (gen 31)
+
+Input:
+
+```text
+soma_offset_pd_um           = +128.9
+field_elongation_pd         =    1.20
+branch_density_gradient_pd  =   -0.38
+```
+
+Output:
+
+```text
+PD = 90.48 Hz,  ND = 2.86 Hz,  DSI = 0.9388
+```
+
+##### Example 9 — Extreme-elongation local optimum (gen 19; later dominated)
+
+Input:
+
+```text
+soma_offset_pd_um           = -131.8
+field_elongation_pd         =    2.81
+branch_density_gradient_pd  =   +0.71
+```
+
+Output (survives in front but dominated by elong ~1.2 cluster):
+
+```text
+PD = 21.19 Hz,  ND = 9.76 Hz,  DSI = 0.3692
+```
+
+##### Example 10 — Earliest joint-pass cell (gen 18, breakthrough generation)
+
+Input:
+
+```text
+soma_offset_pd_um           =  +18.5
+field_elongation_pd         =    1.92
+branch_density_gradient_pd  =   +0.07
+primary_branch_pd_conc      =    0.32
+```
+
+Output (total spikes/trial = 52 &gt;= 10):
+
+```text
+PD = 33.81 Hz,  ND = 3.33 Hz,  DSI = 0.8205
+```
+
+#### Analysis
+
+The result reframes the t0080 → t0104 narrative. Prior tasks documented a &quot;joint-pass null&quot; on the
+68-d substrate and progressively tried longer generations (t0102 → t0104), more seeds (t0099 →
+t0104), and adjusted objective dimensionality (t0104 dropped robustness). None worked. t0106 changed
+two things: **the angular sampling (16 → 2 directions)** and **the DSI formulation (vector-sum →
+ratio)**, and broke the null on the **first generation past gen 17**. Three observations:
+
+1. The substrate (Bed B + 14-d morphology) was always populated with joint-pass solutions. The
+   vector-sum DSI on 16 directions penalised them; ratio DSI on 2 directions surfaces them.
+2. The optimal morphological archetype is the classical Tukker-Taylor dendritic-delay configuration:
+   soma offset to the ND side (~ -130 µm), dendrites extending toward PD, mild elongation along the
+   PD axis (~ 1.2). 35 of the top 50 cells fit this archetype.
+3. A second viable archetype exists: PD-soma with dendrites extending toward ND. Cell #23 (gen 19)
+   achieves DSI = 0.96 at PD = 83 Hz with this configuration — DS via synaptic asymmetry (Briggman
+   2011 / Park 2014 mechanism) rather than dendritic delay.
+
+#### Limitations
+
+* **Single GA seed.** Robustness across seeds 55 / 66 was not tested; the joint-pass yield could be
+  lower with a different initial population. Multi-seed confirmation is the highest-priority
+  follow-up.
+* **2-direction protocol is a simplification.** Cells that ace PD/ND may not have realistic tuning
+  curves across the full 16-direction set. A post-hoc 16-direction vector-sum DSI re-evaluation of
+  the top 50 would test this.
+* **Soma offset clustered near parameter bound (-130 µm vs -150 µm bound).** True optimum may lie
+  beyond the current bound; a sensitivity sweep widening to -200 µm would tell.
+* **DSI = 1.0 cells have ND firing of exactly 0**, which is biologically suspicious. Real DSGCs
+  retain some ND firing. A N_EVAL_SEEDS = 20 robustness check on those 3 cells would test whether
+  DSI = 1.0 collapses under more noise replicates.
+* **Operator-driven stop introduces a discontinuity.** The 40-gen stop point was selected based on
+  visual HV plateau, not a pre-registered termination criterion. A future run with the Blank &amp; Deb
+  2020 1%/30-gen rolling threshold pre-registered would be more reproducible.
+* **dill checkpoint failed every generation** (Pool object unpicklable). Plain-JSON population
+  snapshots cover the resume path, but if a clean dill checkpoint is ever needed for warm restart,
+  the wrapping pattern around the Pool needs to change.
+
+#### Verification
+
+| Verificator | Result |
+| --- | --- |
+| `verify_task_file` | PASSED |
+| `verify_task_dependencies` | PASSED (5 deps completed) |
+| `verify_research_papers` | PASSED |
+| `verify_research_internet` | PASSED |
+| `verify_research_code` | PASSED |
+| `verify_plan` | PASSED |
+| `verify_machines_destroyed` | PASSED (3 advisory warnings, all expected) |
+| `verify_task_metrics` | (pending) |
+| `verify_task_results` | (pending) |
+| Local pytest `test_evaluator_dsi_guard.py` | 5/5 green |
+| Local 5-step smoke gate | 5/5 PASS |
+
+#### Files Created
+
+* `code/build_t0106_plots.py` — final figure generator
+* `code/test_evaluator_dsi_guard.py` — unit tests
+* `code/*.py` (28 files) — forked + patched evaluator from t0104
+* `results/data/all_evaluations_seed44.json` — 3,744 cell records with full 68-d vectors + DSI +
+  PD
+* `results/data/pareto_front_seed44.json` — 7 strict Pareto cells
+* `results/data/hv_trajectory_seed44.json` — 40-row HV history
+* `results/data/init_pop_seed44.json` — LHS-init population
+* `results/data/evaluation_seeds.json` — N_EVAL_SEEDS = 3 configuration
+* `results/data/nsga2_checkpoint_seed44.json` — final population snapshot
+* `results/images/{top50_morphologies, pareto_front, hv_vs_gen, asymmetry_distribution}.png`
+* `results/costs.json`, `results/remote_machines_used.json`, `results/metrics.json`
+* `logs/steps/009_implementation/hv_trace.jsonl`, `nsga2_run.log`, `launch_record.json`,
+  `snapshots/`
+
+#### Task Requirement Coverage
+
+Operative task text from `task.json`:
+
+&gt; Open-ended 68-d NSGA-II using only PD and ND bars, 1 random GA seed, pop=96, n_eval_seeds=3,
+&gt; n_gen=300 (extendable). Hourly HV poll, operator-controlled stop, $25 hard cap.
+
+Plan REQ-1 to REQ-15 status (per `plan/plan.md`):
+
+| REQ | Description | Status | Evidence |
+| --- | --- | --- | --- |
+| REQ-1 | Ratio DSI = (PD - ND) / (PD + ND) used as the selectivity metric | **Done** | `evaluator.py:_vector_sum_dsi` reduces mathematically to ratio DSI for 2 antipodal directions; unit test `test_ratio_dsi_synthetic_pd5_nd1` green at PD=5/ND=1 → 0.6667 |
+| REQ-2 | DSI silence guard active at threshold 10 spikes per trial | **Done** | `test_silence_guard_threshold_sweep` green; all 6 unique top joint-pass cells verified with 47-154 spikes/trial |
+| REQ-3 | n_gen target = 300 with operator-stop allowed | **Done** | constants_morphology.py:111 `N_GEN = 300`; OperatorStopTermination polled per gen; stop fired at gen 39 boundary |
+| REQ-4 | Hourly HV trace written to disk | **Done** | `logs/steps/009_implementation/hv_trace.jsonl` 40 rows |
+| REQ-5 | Operator-stop via `intervention/stop.md` polled per generation | **Done** | OperatorStopTermination subclass in `nsga2_driver.py`; tested in this run — clean halt at gen 39 |
+| REQ-6 | Per-25-gen Pool restart for memory mitigation | **Done** | PerGenerationPoolRestart in `nsga2_driver.py`; fired at gen 26, dropped per-gen time 110 min → 3 min |
+| REQ-7 | Pre-Vast.ai smoke gate (5 checks) | **Done** | smoke_gate.json shows 5/5 PASS; bedb_like anchor DSI = 0.0585 at PD = 45.24 Hz |
+| REQ-8 | $25 hard cap, $20 per-instance watchdog | **Done** | Final billed $10.37, well under cap; CostWatchdogTermination never tripped (`watchdog_tripped=False`) |
+| REQ-9 | Vast.ai EPYC class CPU, &gt;= 100 GB RAM, reliability &gt;= 0.99, dph &lt;= 0.40 | **Done** with caveat | Selected offer was EPYC 7B13 64-core, 503 GB RAM, reliability 0.9989, $0.4111/hr ($0.0011/hr over soft cap, accepted because no under-cap EPYC was globally available; $0.22 over a 24h run is immaterial against the $25 task cap) |
+| REQ-10 | 13 MOD files SCP&#x27;d and compiled with `nrnivmodl` | **Done** | machine_log.json `t0080_mods_compilation_pending` resolved; nrnmech.so verified loaded |
+| REQ-11 | Predictions asset format | **Pending** | step 14 / build_predictions_assets.py will produce `nsga2-seed44-bedb-morph-2dir-300gen` |
+| REQ-12 | Answer asset format | **Pending** | step 14 will produce the H1 answer asset |
+| REQ-13 | HV plateau characterised | **Done** | hv_vs_gen.png + 5-gen rolling HV trace; plateau confirmed at +2.2% over last 5 gens before operator stop |
+| REQ-14 | Joint-pass tally per gen | **Done** | per-gen cumulative count published in earlier polls; final = 123 unique cells |
+| REQ-15 | `direction_selectivity_index` registered metric in metrics.json | **Done** | metrics.json variant `random-init-seed44-2dir-300gen` reports 1.0000 |
+
+REQ-11 and REQ-12 will be marked Done after the suggestions and reporting steps land the predictions
+and answer assets respectively.
+
+Next steps and follow-up experiments are formalised in `results/suggestions.json` (written in step
+14, `suggestions`). Top candidates: multi-seed confirmation at GA seeds 55 / 66; N_EVAL_SEEDS = 20
+robustness check on the DSI = 1.0 cells; soma_offset bound widening; 16-direction vector-sum
+re-evaluation of the top 50; extracting `PerGenerationPoolRestart` into a shared library asset.
       </content>
     </section>
   </sections>

@@ -1,6 +1,6 @@
 # Research Suggestions Backlog
 
-410 suggestions **368 open** (67 high, 248 medium, 53 low), **42 closed**.
+417 suggestions **375 open** (69 high, 252 medium, 54 low), **42 closed**.
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -1132,6 +1132,57 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Multi-seed confirmation of t0106 2-direction NSGA-II at GA seeds
+55 and 66</strong> (S-0106-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0106-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-18 |
+| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+t0106's 3.3% joint-pass yield (123 joint-pass cells / 3,744 evals) was produced from a single
+random GA seed. No published NSGA-II benchmark (Hay2011, Druckmann2007, Mohacsi2024) accepts a
+single-seed acceptance-rate point estimate. Re-run the exact t0106 configuration (2 antipodal
+directions, ratio DSI, N_EVAL_SEEDS = 3, pop = 96, n_gen = 40, operator-stop, silence guard)
+at GA seeds 55 and 66. Decision rule: if both seeds discover joint-pass cells (DSI >= 0.5 AND
+PD >= 30 Hz) within 40 gens, the 2-direction substrate is genuinely populated and the
+t0080-t0104 null was an objective-surface artefact, not a per-seed lucky draw. If either seed
+returns zero, weaken the headline. Recommended task types: experiment-run,
+comparative-analysis. Cost: ~$20 (two single-seed runs at $10 each).
+
+</details>
+
+<details>
+<summary>📊 <strong>N_EVAL_SEEDS = 20 robustness re-evaluation of top 10 t0106 cells
+(esp. the 3 DSI = 1.0 cells)</strong> (S-0106-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0106-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-18 |
+| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Source paper** | [`10.1523_JNEUROSCI.0808-13.2013`](../../tasks/t0106_long_pdnd_nsga2_300gen/assets/paper/10.1523_JNEUROSCI.0808-13.2013/) |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+Three t0106 top-50 cells (ranks 16, 19, 27) achieve ratio DSI = 1.0 with deterministic zero ND
+firing. Total-spike silence guard (>= 10 spikes across PD + ND) is exceeded (47-154
+spikes/trial) so they are not silence-guard artefacts, but Trenholm2013 reports peak ND ~ 27
++/- 12 Hz in real mouse Hb9 DSGCs and Oesch2005 reports OFF DSI = 0.74 +/- 0.13. ND = 0 across
+only 3 noise replicates may be an AR(2)-seed + deterministic-GABA loophole that fails at
+higher replication. Re-evaluate the top 10 cells (3 DSI = 1.0 + 7 next-best incl. DSI = 0.98
+at PD = 84.5 Hz and PD-frontier DSI = 0.92 at PD = 122.6 Hz) at N_EVAL_SEEDS = 20. Decision:
+if DSI = 1.0 collapses to <= 0.9, mark as noise-undersampling artefacts; if DSI > 0.95 holds,
+escalate. Recommended task types: experiment-run, data-analysis. Cost: ~$1 (10 cells x 20
+seeds, ~10 min on one Vast.ai instance).
+
+</details>
+
+<details>
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto
 cells (HM-3 follow-up)</strong> (S-0099-02)</summary>
 
@@ -1757,6 +1808,33 @@ per-cell fractional NaP / Nav1.6 / NMDA across all cells within each cluster; re
 within-cluster spread as a measure of mechanism homogeneity per cluster. Local-CPU only: 13 x
 16 x ~60 s/sim = ~3.5 hours wall-clock, $0 cost. Recommended task types: experiment-run,
 data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>16-direction vector-sum DSI re-evaluation of top 50 t0106 cells
+to bridge t0106 <-> t0104 metric</strong> (S-0106-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0106-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-18 |
+| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+t0106 used 2-direction ratio DSI (PD = 0 deg, ND = 180 deg) and found 123 joint-pass cells;
+t0099 / t0102 / t0104 used 16-direction vector-sum DSI on the same 68-d substrate and found
+zero. Headline interpretation: the 2-direction reformulation surfaced cells the 16-direction
+metric hid. To confirm this is a metric artefact and not a t0106-specific lucky cluster,
+re-evaluate the top 50 t0106 cells under the full 16-direction protocol (every 22.5 deg).
+Decision: if 16-direction DSI correlates strongly with 2-direction DSI (Spearman r > 0.7), the
+reformulation surfaced genuine high-DSI cells; if correlation collapses, the 2-direction
+metric is producing false positives that disappear at higher direction count. Optional bridge:
+also evaluate at 8 directions to locate the metric phase transition. Recommended task types:
+experiment-run, data-analysis, comparative-analysis. Cost: ~$1.50 (50 cells x 16 dirs x 3
+trials).
 
 </details>
 
@@ -3031,6 +3109,33 @@ experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Dense morphology sweep around the t0106 winning archetype
+(soma_offset ~ -130 um, elong ~ 1.2)</strong> (S-0106-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0106-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-18 |
+| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+
+The classical Tukker-Taylor ND-soma archetype dominates t0106's top 50 (35/50 cells with
+soma_offset in [-132, -107] um and elong in [1.18, 1.25]). The second viable archetype is the
+PD-soma configuration (4/50, gen 19 cell #23 at DSI = 0.96 / PD = 83 Hz) consistent with
+Poleg-Polsky 2026's GABAergic synaptic-asymmetry mechanism. Hold the top t0106 cell's 54-d
+electrophys subvector fixed and densely sweep the 14-d morphology subvector in a tight box
+(soma_offset_pd_um in [-150, -100] um, elongation in [1.10, 1.35], 13 other dims in a 0.8-1.2
+x current-value box) at N_EVAL_SEEDS = 4. Expected outcome: a high-density map of joint-pass
+cell counts vs morphology coordinates that distinguishes (a) a wide basin centred on the
+dominant archetype from (b) a narrow lucky-draw peak. Recommended task types: experiment-run,
+data-analysis. Cost: ~$3 (200-300 cells x N = 4, no GA overhead; single Vast.ai instance, ~6-8
+hours).
+
+</details>
+
+<details>
 <summary>🧪 <strong>Denser 2-D sweep of L x d to map DSI response surface on
 t0024</strong> (S-0041-02)</summary>
 
@@ -4106,6 +4211,32 @@ cells, 12960 trials). Report peak Hz, primary and vector-sum DSI, IPSP envelope 
 IPSP autocorrelation timescale. Pass criterion: locate at least one (g_tonic, g_event, r)
 triple with peak Hz != null Hz in FULL mode AND IPSP envelope tau within 100-300 ms biological
 band. Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>IBEA vs SMS-EMOA comparison on the 2-direction substrate (renews
+S-0104-04 on working substrate)</strong> (S-0106-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0106-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-18 |
+| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1012039`](../../tasks/t0106_long_pdnd_nsga2_300gen/assets/paper/10.1371_journal.pcbi.1012039/) |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+
+S-0102-03 and S-0104-04 proposed IBEA on the 16-direction substrate where NSGA-II returned
+zero joint-pass cells; that comparison conflated algorithm choice with metric choice. t0106
+now provides a working substrate (2-direction ratio DSI, 123 joint-pass cells from NSGA-II) on
+which to isolate the algorithm dimension. Run pymoo IBEA and SMS-EMOA at matched budget to
+t0106 (pop = 96, n_gen = 40, N_EVAL_SEEDS = 3, single GA seed) on the same 68-d substrate with
+the 2-direction ratio DSI + PD-rate objectives. Decision: if IBEA / SMS-EMOA produce more
+diverse interior fronts than NSGA-II's L-shape (hypervolume + spacing), Mohacsi 2024's IBEA
+recommendation generalises. If NSGA-II remains competitive, the working-substrate finding is
+algorithm-agnostic and prior IBEA suggestions can be downgraded. Recommended task types:
+experiment-run, comparative-analysis. Cost: ~$20.
 
 </details>
 
@@ -7717,6 +7848,32 @@ gNMDA >= 0.25. Recommended task type: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Widen soma_offset_pd_um morphology bound from [-150, +150] to
+[-200, +200] um and re-run 2-direction NSGA-II</strong> (S-0106-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0106-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-18 |
+| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../meta/categories/dendritic-computation/) |
+
+35 of t0106's top 50 cells cluster at soma_offset_pd_um in [-132, -107] um. The morphology
+generator's lower bound is -150 um. NSGA-II is pushing toward the bound, suggesting the true
+optimum may sit beyond it. Re-run the 2-direction NSGA-II configuration (pop = 96,
+N_EVAL_SEEDS = 3, n_gen = 40, single GA seed) with soma_offset_pd_um widened to [-200, +200]
+um, all other bounds fixed. If the current bounds were extracted from real DSGC
+reconstructions in t0091, document the biological plausibility of the wider bound before
+launching. Decision: if median soma_offset for top 50 falls below -150 um, the prior bound was
+capping the optimum and a downstream task should reground the bound in measured DSGC anatomy.
+If the population remains within the prior bound, the cluster at [-132, -107] um is the true
+substrate optimum. Recommended task types: experiment-run, comparative-analysis. Cost: ~$10.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Wider distal-diameter sweep (0.25x to 4.0x) after the schedule
 fix to probe extreme impedance regimes</strong> (S-0030-03)</summary>
 
@@ -8288,6 +8445,33 @@ first record per-trial spike times (not just rates) from run_gabamod_sweep.py. C
 S-0011-01 (angle-based raster on the rotation-proxy port); this is the condition-based
 analogue for the native-protocol port. Once merged, back-apply to t0020's existing sweep to
 produce a publication-quality raster. Recommended task types: write-library, experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Extract PerGenerationPoolRestart into a shared library asset for
+future NEURON-pymoo NSGA-II tasks</strong> (S-0106-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0106-05` |
+| **Kind** | library |
+| **Date added** | 2026-05-18 |
+| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+
+t0106's nsga2_driver.py adds a PerGenerationPoolRestart class that calls
+multiprocessing.Pool.terminate() + recreate() at the start of every generation; this dropped
+gen 26's wall-clock from 110 min to 3 min by clearing NEURON HOC namespace leaks and C-side
+mechanism state that the per-cell evaluator could not free. This is reusable infrastructure
+for every future long-horizon NEURON-pymoo NSGA-II task and complements S-0104-06
+(instrumentation of the leak) by providing the concrete mitigation. Package the class as a
+library asset under tasks/<libtask>/assets/library/per_generation_pool_restart/ with
+details.json, a description.md, and the importable module. Downstream tasks (multi-seed
+confirmation S-0106-01, soma-offset sweep S-0106-04, IBEA on 2-direction substrate S-0106-06,
+dense morphology sweep S-0106-07) import the library instead of re-implementing it.
+Recommended task types: write-library. Cost: < $0.20 (local only; no Vast.ai).
 
 </details>
 

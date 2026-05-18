@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-14T14:27:05Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-18T02:15:36Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>174</section_count>
-    <char_count>3258616</char_count>
-    <byte_count>3266455</byte_count>
-    <estimated_tokens>814654</estimated_tokens>
+    <section_count>177</section_count>
+    <char_count>3357847</char_count>
+    <byte_count>3365848</byte_count>
+    <estimated_tokens>839461</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -210,9 +210,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0104_nsga2_2obj_dsi_pdrate_3seeds</id>
         <id>t0105_cluster_factor_analysis_dsi_pd</id>
         <id>t0105_preliminary_figures_report</id>
+        <id>t0106_long_pdnd_nsga2_300gen</id>
       </source_ids>
       <content>
-Completed tasks: 98
+Completed tasks: 99
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -801,6 +802,12 @@ ID: t0105_preliminary_figures_report
 Completed: 2026-05-13
 Short description: Compile preliminary-data figures (HH equations PNG, conductance table, morphologies, polar synaptic DSI, somatic Vm passive/active, channel-effect-on-DSI, 5-cell optim panels) into PNGs + .pptx deck.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0105_preliminary_figures_report&quot; date_completed: &quot;2026-05-13&quot; status: &quot;complete&quot; --- Results Summary: Preliminary-Data Figure Pack and Slide Deck Summary Produced a coherent preliminary-data figure pack covering seven figure groups for the DSGC modelling project: HH equations, per-bed conductance density tables, two morphologies, polar synaptic DSI (two-point), somatic Vm three-mode overlays, channel-effect-on-DSI sweep, and the top-5 Pareto cells from the 3-objective NSGA-II run `t0102_seedscale_n4_gen20`. All 10 PNGs land in `results/images/` and the 11-slide `preliminary_figures_slides.pptx` deck embeds every PNG with caption + source-task citation. The...
+
+## Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate)
+ID: t0106_long_pdnd_nsga2_300gen
+Completed: 2026-05-18
+Short description: Open-ended 68-d NSGA-II using only PD and ND bars, 1 random GA seed, pop=96, n_eval_seeds=3, n_gen=300 (extendable). Hourly HV poll, operator-controlled stop, $25 hard cap.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot; date_completed: &quot;2026-05-18&quot; --- t0106 — Long 2-Direction NSGA-II: Results Summary Summary Long-horizon NSGA-II on the 68-d Bed B + 14-d morphology substrate, restricted to PD and ND directions only with ratio DSI = (PD - ND) / (PD + ND) as the selectivity objective, completed 40 generations on one random-init GA seed before an operator stop at HV plateau. The run found **123 unique joint-pass cells** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) — the **first ever in the t0080 -&gt; t0106 lineage**, decisively answering H1. Best ratio DSI = 1.0000 at PD = 81 Hz; best PD = 122.6 Hz at DSI = 0.92. Metrics * **direction_selectivity_index** = **1.0000**...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -870,9 +877,10 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>dsi-pd-diversity-factor-decomposition</id>
         <id>symmetric-vs-asymmetric-electrophys-cluster</id>
         <id>t0104-joint-pass-recovery-2obj</id>
+        <id>t0106-joint-pass-recovery-2dir</id>
       </source_ids>
       <content>
-Answers: 31
+Answers: 32
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1116,6 +1124,14 @@ Confidence: high
 Categories: direction-selectivity, compartmental-modeling
 
 No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) running the 2-objective DSI + PD formulation with the silence guard active, zero cells cleared the strict joint-pass corner (DSI &gt;= 0.5 AND PD &gt;= 30 Hz). The DSI extreme broke past 0.5 for the first time in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, DSI = 0.5417 at PD = 3.57 Hz), confirming the substrate is not artificially capped by the silenced-cell DSI=1.0 floating-point artifact that contaminated t0102&#x27;s Pareto front. The L-shaped Pareto front replicates t0102&#x27;s exactly — extremes reachable on each axis but the joint corner empirically empty — ruling out objective-vector dimensionality as the explanation...
+
+## Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d morphology substrate recover strict joint-pass cells (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) from random init, and where does hypervolume actually plateau on this landscape?
+ID: t0106-joint-pass-recovery-2dir
+Created by: t0106_long_pdnd_nsga2_300gen on 2026-05-18
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+Yes. Across 3,744 evaluations from a single random-init GA seed running 40 generations of 2-direction NSGA-II with ratio DSI, **123 unique cells cleared the strict joint-pass corner** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) — the first joint-pass cells anywhere in the t0080 - t0104 NSGA-II lineage, every prior task of which returned zero. Hypervolume climbed 604x from 0.2015 at gen 1 to 122.0288 at gen 40 and was effectively flat (under 1% per 60 min) from gen 36 onward, marking the empirical convergence point on the 2-direction substrate. The reformulation from 16-direction vector-sum DSI to 2-direction ratio DSI — not the longer generation budget — drove the breakthrough.
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">
@@ -54910,6 +54926,1599 @@ same goes for [t0070]&#x27;s `plot_morphology.py` and `schematic_helpers.py`. Co
   figure 7. Because it is `in_progress`, the panel is deferred per `task_description.md`; a
   follow-up suggestion will be added to `results/suggestions.json` to render this panel after
   [t0104] completes. **Not** added as a dependency of this task per user instruction.
+      </content>
+    </section>
+    <section id="t0106_long_pdnd_nsga2_300gen-research_papers" source_kind="file">
+      <title>t0106_long_pdnd_nsga2_300gen — Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate) — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0106_long_pdnd_nsga2_300gen</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0106_long_pdnd_nsga2_300gen/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 11
+papers_cited: 11
+categories_consulted:
+  - &quot;compartmental-modeling&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;retinal-ganglion-cell&quot;
+date_completed: &quot;2026-05-16&quot;
+status: &quot;complete&quot;
+---
+### Research Papers — Long 2-Direction NSGA-II at 300 Generations on the 68-d Bed B + Morphology Substrate
+
+#### Task Objective
+
+t0106 reruns the t0102 / t0104 NSGA-II lineage with three knobs relaxed: angular sampling cut from
+16 directions to **2** (PD = 0 deg, ND = 180 deg), DSI redefined as the antipodal ratio
+`(PD - ND) / (PD + ND)`, `n_eval_seeds` reduced from 4 to 3, and `n_gen` extended from 20 to **300**
+on a single GA seed (44) at pop = 96 under an operator-gated hourly hypervolume poll. The hard
+biological-target question is whether the 68-d Bed B + 14-d morphology substrate can produce strict
+joint-pass cells (DSI &gt;= 0.5 AND PD-rate &gt;= 30 Hz) from random init **given enough generations
+alone**, isolating the substrate-difficulty hypothesis from the generation-budget hypothesis that
+t0102 / t0104 could not separate within their 20-gen ceiling. This research stage extracts the
+literature&#x27;s prior on (i) long-horizon NSGA-II convergence behaviour past 50 / 100 / 200 generations
+on noisy high-d biophysical landscapes, (ii) the validity and pitfalls of antipodal ratio DSI as an
+optimisation target in DSGC modelling, and (iii) whether substrate-limitation reads from short runs
+hold up under extended search.
+
+#### Category Selection Rationale
+
+Four `meta/categories/` are consulted. **`compartmental-modeling`** is core because every NSGA-II
+convergence reference is a compartmental-model fitting study and the only quantitative budget priors
+(Druckmann 2007 at 300 000 evals, Hay 2011 at 500 000 evals, Mohacsi 2024 at 10 000 evals, Achard
+2006 at ~72 000 evals) live in this category. **`direction-selectivity`** is core because the
+ratio-DSI question is specific to DSGC literature: Poleg-Polsky 2026 and Trenholm 2013 both use the
+antipodal `(PD - ND) / (PD + ND)` convention and provide the only published DSI ceilings against
+which t0106&#x27;s targets can be calibrated. **`retinal-ganglion-cell`** is consulted because the
+PD-rate &gt;= 30 Hz floor inherits from mouse Hb9-DSGC peak-rate measurements [Trenholm2013] under the
+Gaussian-convolved spike-train convention. **`dendritic-computation`** is consulted because the 68-d
+substrate includes 14 morphology dimensions and the literature&#x27;s converged claim is that dendritic
+geometry sets the upper bound on achievable DSI without active spikes [PolegPolsky2026].
+
+The remaining four categories were considered and excluded as not informative for the long-horizon
+NSGA-II convergence question. **`cable-theory`** sets the analytical priors on what the morphology
+search is doing, but does not constrain when an evolutionary algorithm plateaus. **`patch-clamp`**
+supplies the absolute reference rates but not the optimisation methodology.
+**`synaptic-integration`** and **`voltage-gated-channels`** describe the substrate&#x27;s machinery,
+which is fixed in t0106; this task is not changing channel sets, only the search budget and the
+objective definition. The NSGA-II-specific noise-handling literature is captured under
+`compartmental-modeling` because the relevant references
+[Rakshit2017, Dang2023, Morinaga2024, Budszuhn2025] live there.
+
+#### Key Findings
+
+##### Compartmental-Model NSGA-II Budgets in the Literature Span 10^4 - 10^6 Evaluations
+
+Across the canonical applications of multi-objective evolutionary algorithms to compartmental neuron
+models, total evaluation budgets sit between **~10 000** and **~500 000** per fit. Druckmann 2007
+ran NSGA-II with **300 organisms x 1000 generations = 300 000 evaluations** on a 12-parameter
+cortical interneuron and explicitly verified insensitivity to algorithm settings up to **8000
+iterations** [Druckmann2007]. Hay 2011 extended the recipe to a 22-parameter L5 pyramidal cell with
+**1000 organisms x 500 generations = 500 000 evaluations**, yielding ~2000 acceptable models
+[Hay2011]. Achard 2006 used **9 independent runs of ~8000 evaluations each** (~72 000 total) on a
+24-parameter Purkinje cell [Achard2006]. Mohacsi 2024 ran the most controlled head-to-head modern
+benchmark with **100 individuals x 100 generations = 10 000 evaluations** per algorithm per
+benchmark across **22 algorithm variants** including three independent NSGA-II implementations
+(Inspyred, Pygmo, BluePyOpt) [Mohacsi2024]. Poleg-Polsky 2026 used **pop = 10 x typical 300
+generations x 100 GA seeds = 300 000 evaluations per configuration**, with generations extended to
+**1000 for low-performing configurations** [PolegPolsky2026].
+
+t0106&#x27;s planned total is **96 x (1 + 300) = 28 896 evaluations** on a single GA seed — placing it
+roughly at the Achard 2006 level (~72k), still well below Druckmann 2007 / Hay 2011, but **&gt;14x
+larger than t0102&#x27;s 2016 per-seed budget** and **&gt;10x larger than the entire t0099 lineage budget
+(2208 evals across 3 seeds)**. Crucially, t0106 sits **above** the modern Mohacsi 2024 benchmark
+budget (10 000 evals) at which several NSGA-II implementations were already shown to converge to
+their plateau — and on a problem with **5.7x more free parameters than Mohacsi&#x27;s largest use case
+(12 conductances in detailed CA1)**. So 300 generations is **enough to exit the budget-starved
+regime** of the t0102 / t0104 lineage, but is **not enough** to definitively claim convergence on a
+68-d problem if the literature&#x27;s experience with 12 - 24 d problems requires 300 000 - 500 000
+evaluations.
+
+**Hypothesis**: If the Hay 2011 / Druckmann 2007 acceptance rate (~0.1 - 0.4%) holds at the 68-d
+substrate, t0106 at 28 896 evaluations should yield **~30 - 120 joint-pass cells in expectation**.
+The seed-55 t0104 result (one near-pass cell at DSI = 0.5417, PD = 3.57 Hz) is consistent with
+either a low-but-positive base rate (~10^-3) or a hard substrate ceiling that 300 generations cannot
+overcome.
+
+##### NSGA-II Hypervolume Convergence on Biophysical Problems Plateaus Within 50 - 100 Generations
+
+Mohacsi 2024&#x27;s controlled head-to-head benchmark provides the only published evidence for **when**
+NSGA-II convergence-speed curves flatten on neuron-modelling benchmarks. With pop = 100, gens = 100,
+NSGA-II (in all three implementations: Inspyred, Pygmo, BluePyOpt) reached its plateau **well before
+the 10 000-evaluation budget was exhausted** on every benchmark below 12 parameters — the
+&quot;area-under-the-cumulative-minimum-error curve&quot; plots in their Use Cases 1-6 show NSGA-II
+asymptoting after roughly **20 - 60 generations** [Mohacsi2024]. By contrast, the same paper shows
+CMAES continuing to improve past generation 60 on harder problems (Use Case 4, 9 conductances)
+[Mohacsi2024]. The implication for t0106 is that **300 generations is well past the literature&#x27;s
+empirical plateau** for population-based methods on biophysical problems at this scale, provided the
+problem is in NSGA-II&#x27;s expressivity envelope.
+
+Druckmann 2007 reports that the **300-model Pareto front is reached within the first ~300
+generations** of the 1000-generation budget, with the remaining 700 generations refining individual
+trade-offs but **not adding new Pareto-front members at a measurable rate** [Druckmann2007]. The
+authors interpret this as evidence that the algorithm has identified the acceptable region; further
+search refines the surface rather than discovers it. Poleg-Polsky 2026 documents that the
+**generation budget was extended from 300 to 1000 only for low-performing initial configurations**
+— i.e., the working assumption was that 300 generations is the default convergence horizon, with
+extension reserved as a fallback [PolegPolsky2026].
+
+**Hypothesis**: On the 68-d substrate, t0106&#x27;s hourly hypervolume polling will show **the largest HV
+gains in the first 40 - 80 generations**, with diminishing returns past gen 100 and effective
+saturation past gen 150 - 200. The operator-controlled stop criterion is therefore most likely to
+trigger between gens 100 and 200, not at the 300-gen hard cap.
+
+##### NSGA-II Is Provably Noise-Robust at Low Per-Trial Noise Probability, but Population Size Matters
+
+Dang 2023 provides the first theoretical runtime analysis of NSGA-II under noisy multi-objective
+optimisation [Dang2023]. The headline result is a sharp **phase transition at p = 1/2** for the
+per-evaluation noise probability: below this threshold NSGA-II covers the Pareto front in
+**polynomial expected time** given a sufficiently large population (`mu = Omega(n log n)`), while
+above `p &gt;= 10/19 ~ 0.526` the expected runtime is **provably exponential** `exp(Omega(n))`
+[Dang2023, Theorems 8, 10]. The proof identifies **crowding distance** as the protective mechanism:
+NSGA-II retains weakly dominated individuals across generations, which preserves useful search
+points even when noisy evaluations flip the dominance relation. Algorithms that discard dominated
+individuals on insertion (like GSEMO) collapse under any non-trivial noise [Dang2023, Theorem 3].
+
+This matters for t0106 because the per-cell objective values are inherently noisy: each cell is
+evaluated on **`n_eval_seeds = 3` stochastic synaptic-input replicates**. At only 3 replicates the
+per-cell SE is `sqrt(3/4) ~ 0.87` of t0104&#x27;s N=4 baseline, i.e., **~15% more noise per cell**, but
+remains well below the Dang 2023 critical noise threshold of 0.5. The pop = 96 baseline sits at the
+**lower end** of the population-size requirement: at problem dimension n = 68, `n log n ~ 287`, so
+the asymptotic guarantee from Dang 2023 nominally calls for `mu &gt;&gt; 287`, which **t0106&#x27;s pop = 96
+does not meet**. The empirical evidence from Mohacsi 2024 (pop = 100, NSGA-II works fine at 12-d) is
+that pop = 96 is sufficient in practice at moderate dimensions, but t0106 sits 5.7x higher in
+dimension than Mohacsi 2024&#x27;s largest use case.
+
+**Hypothesis**: t0106&#x27;s noise-robustness regime is safe (p ~ 0 for biological-noise-free
+deterministic synaptic-input replicates that share the same RNG-seeded protocol), so the polynomial
+runtime guarantee applies; the more salient risk is population-size-induced front collapse in late
+generations, observable as **declining crowding-distance diversity** in the per-generation Pareto
+front rather than as HV plateau.
+
+##### Sample Averaging With 3 - 5 Replicates Is the Literature-Converged Trade-off for Biophysical Fitness
+
+Rakshit 2017&#x27;s comprehensive survey of noisy evolutionary optimisation classifies noise-handling
+into five families: **explicit averaging (resampling)**, implicit averaging via population size,
+statistical-hypothesis-test selection, modified evolutionary operators, and noise-tolerant variants
+[Rakshit2017, abstract; full text paywalled]. The canonical neuron-modelling references all adopt
+**explicit averaging** with low replicate counts: Druckmann 2007 averaged **5 repetitions x 3
+current-step amplitudes** with error averaging on the feature, not the trace [Druckmann2007]; Hay
+2011 used 4 protocols with replicates implicit in the feature SDs [Hay2011]; Mohacsi 2024 ran each
+algorithm 10 times **across** parameter-search runs with no within-evaluation averaging on most
+benchmarks [Mohacsi2024]; Poleg-Polsky 2026 used **deterministic forward passes** (no within-cell
+noise replicates) and pushed all variance into the 100 GA-seed restarts [PolegPolsky2026].
+
+Morinaga 2024 provides a theoretical critique of explicit averaging: for noise distributions without
+a finite mean (e.g., stable distributions with heavy tails) **explicit averaging is provably
+inferior** to sign-averaging because the sample mean is not a consistent estimator of the
+ranking-order ground truth [Morinaga2024]. For Gaussian or chi-squared noise on biophysical problems
+this critique does not bite — DSI and PD-rate variability across t0104&#x27;s seed-55 runs are
+empirically light-tailed. Budszuhn 2025 extends the resampling question to **adaptive** resampling
+in NSGA-II via bootstrap probability-of-dominance, showing that for chi-squared noise the **simple
+static-N strategy with N = 1 wins most settings** (no resampling) and for Gaussian noise their
+adaptive bootstrap approach wins 64.7% of scenarios against the standard alternatives
+[Budszuhn2025, Table 1]. The static-N = 1 result is striking: it confirms that **dropping resamples
+to spend the budget on more parameter vectors is the right choice when noise is bounded**, which is
+exactly t0106&#x27;s design rationale.
+
+**Best practice (literature-converged)**: at fixed total budget, **spend on parameter diversity
+(more generations, more pop) rather than noise averaging** unless the noise distribution is
+heavy-tailed or unbounded. t0106&#x27;s drop from N=4 to N=3 replicates is consistent with this guidance.
+
+##### Ratio DSI on Antipodal Directions is the Canonical Convention; 0.5 Is a &quot;Strong&quot; Threshold
+
+Trenholm 2013 explicitly defines DSI for mouse Hb9-DSGCs as `(Pref - Null) / (Pref + Null)` from the
+**vector sum of peak spike rates over 8 directions** [Trenholm2013]. The peak-rate DSI value of
+**(198 - 27) / (198 + 27) = 0.76** is a published reference point [Trenholm2013]. Crucially, this
+definition is **mathematically identical to t0106&#x27;s antipodal ratio DSI** when only two directions
+are sampled: the vector sum over 2 antipodal vectors of magnitudes A and B is `(A - B)` and the sum
+of magnitudes is `(A + B)`, so `vector-sum DSI = ratio DSI` for the special case of opposed PD / ND.
+For higher direction counts the vector-sum DSI **is bounded above by the antipodal ratio DSI**
+whenever the response is well-aligned with the PD axis (off-axis side lobes only reduce the vector
+sum magnitude relative to the antipodal subtraction).
+
+Poleg-Polsky 2026 reports DSI values measured as **vector-sum subthreshold peak voltage over 12
+directions x 5 speeds**: the maximally unconstrained configuration reaches **DSI = 73.1 +/- 2.4%**
+with full excitatory + inhibitory freedom, the **Barlow-Levick weight-only** configuration reaches
+**50.8 +/- 0.8%**, and the **symmetric negative control** reaches **2.4 +/- 0.1%**
+[PolegPolsky2026]. The 0.5 threshold therefore sits **slightly below the B&amp;L floor (51%)** and well
+below the unconstrained ceiling (73%), consistent with &quot;moderately tuned cell with both excitatory
+and inhibitory structure&quot; rather than a strict ceiling. Oesch 2005 reports spike-based DSI in rabbit
+ON-OFF DSGCs of **0.67 +/- 0.13 (ON)** and **0.74 +/- 0.13 (OFF)** [Oesch2005], which the t0106 0.5
+floor is comfortably below.
+
+**Risk**: ratio DSI is **only well-defined when `PD + ND &gt; 0`**. The silence guard inherited from
+t0104 (total spike count &lt; 10 across PD + ND returns DSI = 0) is mechanically correct but is a
+**hard threshold** that introduces a non-smooth selection landscape near low-activity cells; this
+may shape what NSGA-II converges to. Trenholm 2013 does not encounter this problem because real
+cells do not have 0 spike counts in PD; in simulation, the silent corner of parameter space is
+reachable and NSGA-II may concentrate around it without the guard.
+
+##### Substrate Limitations Are Sensitive to Search Budget But Not Always Cured By It
+
+Hay 2011 reports that **joint multi-objective fits are systematically harder than single-target
+fits**: 899 BAC-only models vs 52 perisomatic-only vs ~2000 joint, with the joint count requiring
+the full 500 000-evaluation budget [Hay2011]. Druckmann 2007 explicitly notes that the algorithm is
+**&quot;not very sensitive&quot; to initialisation strategy** when the budget is large enough — implying
+that warm-start vs random-init differences shrink as generations increase
+[Druckmann2007, Methods - GA insensitivity]. This bounds the t0091 / t0099 warm-start vs random-init
+divergence: at sufficient budget the gap should close, which is exactly what t0106 tests.
+
+However, Hay 2011 also documents a **genuine substrate limitation**: even with the full 500
+000-evaluation budget, the perisomatic-only fits cap at 52 acceptable models, an order of magnitude
+below the BAC-only count [Hay2011]. The interpretation is that **some parameter spaces do not
+contain a dense region of acceptable models even after exhaustive search**, regardless of generation
+count. Mohacsi 2024&#x27;s two-order-of-magnitude error gap between best and worst NSGA-II
+implementations on Use Case 4 (9 conductances) at 10 000 evaluations [Mohacsi2024] reinforces this:
+algorithm choice matters even at moderate budgets, and longer search does not always rescue a
+mismatched algorithm-substrate pairing.
+
+**Hypothesis (substrate-limitation)**: if t0106 returns 0 joint-pass cells across 300 generations on
+a single seed, the t0104 substrate-limitation reading hardens — the 68-d Bed B + morphology
+substrate **does not contain a dense joint-pass region reachable by NSGA-II from random init**,
+regardless of generation budget. A multi-seed extension (seeds 55 and 66 at 300 gens) would be
+needed to push beyond a single-seed result, but Hay 2011&#x27;s perisomatic-only counterexample is the
+literature precedent for accepting a multi-seed-confirmed empty region.
+
+#### Methodology Insights
+
+* **Run NSGA-II via pymoo with default operators**: SBX crossover (eta = 15), polynomial mutation
+  (eta = 20), tournament selection of size 2. This is the t0080 / t0102 / t0104 configuration and
+  matches Druckmann 2007 / Hay 2011&#x27;s SBX + non-uniform mutation choice [Druckmann2007, Hay2011].
+  pymoo defaults are equivalent on continuous problems and are the modern reference operating point
+  per Mohacsi 2024 [Mohacsi2024].
+
+* **Use Latin Hypercube Sampling for the initial population at pop = 96** [Druckmann2007]. LHS gives
+  more uniform parameter-space coverage than purely random init at small pop. This matches t0102 /
+  t0104 convention.
+
+* **Set N_EVAL_SEEDS = 3 deliberately**. At fixed total budget the literature converges on spending
+  on parameter-vector diversity rather than within-cell noise averaging
+  [Druckmann2007, Hay2011, Budszuhn2025]. Budszuhn 2025&#x27;s static-N = 1 result for chi-squared noise
+  [Budszuhn2025] suggests N=3 is conservative for our (light-tailed) noise distribution.
+
+* **Hourly hypervolume polling is the literature-validated stop criterion**. Mohacsi 2024&#x27;s
+  area-under-the-cumulative-minimum-error metric flattens by gens 20 - 60 on neuron problems below
+  12 parameters [Mohacsi2024]; Druckmann 2007 reports Pareto-front membership saturating well before
+  the 1000-gen hard cap [Druckmann2007]; Poleg-Polsky 2026 extends to 1000 gens **only for
+  low-performing initial configurations** [PolegPolsky2026]. t0106&#x27;s hourly-poll-with-operator-stop
+  is the right design.
+
+* **Plan for a 1% HV-improvement-per-hour stop threshold**. Druckmann 2007&#x27;s
+  insensitivity-to-iteration claim implies &lt;1% drift in the relevant metric is the noise floor;
+  Mohacsi 2024&#x27;s convergence curves flatten on a similar relative scale
+  [Druckmann2007, Mohacsi2024].
+
+* **Restart Python workers between generations** to prevent NEURON memory accumulation. This is a
+  deployment artefact not engaged with by Druckmann 2007 / Hay 2011 (who ran on 240-1024 cores) but
+  is a documented requirement on single-instance Vast.ai deployments per the t0102 worker-restart
+  precedent.
+
+* **Use the silence guard (total spike count &lt; 10 across PD + ND returns DSI = 0)** inherited from
+  t0104. The guard threshold of 10 spikes is conservative for two directions and the smoke-test
+  sensitivity check across thresholds {5, 10, 20} (per task_description.md) is literature-aligned:
+  Trenholm 2013&#x27;s minimum reliable spike count for ratio DSI computation in patch-clamp data is
+  roughly **10 spikes per direction**, matching the t0106 floor [Trenholm2013].
+
+* **Compute joint-pass yield as the primary outcome and HV curve as the secondary readout**.
+  Druckmann 2007 and Hay 2011 both report acceptable-cell counts and parameter-cloud geometry rather
+  than a single best fit [Druckmann2007, Hay2011]. Single-best-cell reporting is not a valid output
+  in this lineage.
+
+* **Hypothesis to test in analysis**: the t0104 zero-joint-pass result is consistent with a true
+  acceptance rate &lt;= 0.0007 (Wilson 95% upper bound at n = 6048, k = 0). t0106 at 28 896 evals can
+  push this upper bound to &lt;= ~0.00012 (Wilson 95% upper bound at n = 28 896, k = 0). A confirmed
+  zero across t0106 would rule out the Hay 2011 / Druckmann 2007 acceptance-rate regime (~0.001
+  - 0.004) at &gt;99% confidence.
+
+#### Gaps and Limitations
+
+* **No reviewed paper runs NSGA-II to 300+ generations on a &gt;40-dimensional biophysical problem.**
+  The closest analogue is Hay 2011 at 22 parameters and 500 generations [Hay2011]; Mohacsi 2024 caps
+  at 12 parameters and 100 generations [Mohacsi2024]; Poleg-Polsky 2026 uses 1000 generations but
+  only on a pop = 10 search with 100 GA-seed restarts [PolegPolsky2026]. The high-d-and-long-horizon
+  corner that t0106 occupies is **unstudied in the literature**.
+
+* **No paper reports HV-vs-generation curves on noisy multi-objective biophysical landscapes past
+  generation 100.** Mohacsi 2024 uses error metrics not HV [Mohacsi2024]; Druckmann 2007 reports
+  Pareto-front size not HV [Druckmann2007]. t0106&#x27;s hourly HV trace will be the first such data
+  point in the project lineage.
+
+* **The interaction between dropped angular sampling (16 -&gt; 2 directions) and Pareto-front shape is
+  not documented.** Trenholm 2013&#x27;s 8-direction vector-sum DSI and t0106&#x27;s 2-direction ratio DSI are
+  equivalent **only on the antipodal PD-ND axis** [Trenholm2013]; the literature does not address
+  whether NSGA-II optimisation against a 2-direction objective will produce cells whose 16-direction
+  vector-sum DSI is also high or whether the simpler objective shapes solutions toward narrow-tuning
+  configurations that fail the broader tuning test.
+
+* **No reviewed paper reports negative-result NSGA-II runs on dendritic-DS substrates.** Hay 2011
+  and Druckmann 2007 publish only successful fits; we do not know how often their runs produced zero
+  acceptable solutions before settling on the reported ones. **Publication-selection bias** means
+  our prior on &quot;zero joint-pass cells is a meaningful result&quot; is weakly informed by the literature.
+
+* **Population size = 96 vs Dang 2023&#x27;s `mu = Omega(n log n) ~ 287` for n = 68 is unaddressed
+  empirically.** Dang 2023&#x27;s theoretical bound is for discrete bit-string problems
+  [Dang2023, Theorem 8] and may not transfer directly to continuous biophysical problems, but no
+  empirical study has tested pop = 100 vs pop = 300 on a 68-d biophysical problem under noise. This
+  is the largest open methodological risk in t0106.
+
+* **The 30 Hz PD-rate threshold (mouse ON-OFF DSGC patch-clamp range 25 - 50 Hz) is not directly
+  comparable to the Trenholm 2013 peak-rate convention (198 Hz preferred)** because t0106 fits a
+  ratio-DSI metric, not the absolute rate distribution [Trenholm2013]. The thresholds inherit from
+  t0086 / t0091 / t0099 without literature-derived recalibration for the 2-direction reformulation.
+
+#### Recommendations for This Task
+
+1. **Set the operator-stop heuristic at &lt;1% HV improvement averaged over a 60-min sliding window**.
+   Druckmann 2007&#x27;s insensitivity claim and Mohacsi 2024&#x27;s convergence-curve flattening place this
+   at the literature-converged noise-floor threshold [Druckmann2007, Mohacsi2024].
+
+2. **Expect the HV curve to plateau between gens 50 and 150**. Mohacsi 2024 shows NSGA-II
+   asymptoting after ~20 - 60 generations on 3 - 12-parameter problems [Mohacsi2024]; the 68-d
+   substrate should plateau later but well within the 300-gen hard cap. Operator-stop is most likely
+   to trigger between gens 100 and 200.
+
+3. **Report joint-pass yield as the primary outcome and the HV plateau gen as the secondary
+   outcome**. Both positive and negative results are publishable. A confirmed zero-yield at 28 896
+   evaluations would push the substrate-acceptance-rate upper bound to ~0.00012, ruling out the Hay
+   2011 / Druckmann 2007 regime at &gt;99% confidence [Druckmann2007, Hay2011].
+
+4. **Use LHS for the initial population** at pop = 96 [Druckmann2007] — same convention as t0102 /
+   t0104, no warm-start anchors. This preserves t0106 as the **adversarial control** against the
+   t0091 warm-start lineage.
+
+5. **Run the smoke-test silence-guard sensitivity sweep at thresholds {5, 10, 20} before launch**.
+   Trenholm 2013&#x27;s empirical floor of ~10 spikes per direction for reliable ratio DSI calculation
+   supports the existing guard but the literature does not bound this for 2-direction sampling
+   specifically [Trenholm2013].
+
+6. **Restart Python workers between generations** to prevent NEURON memory accumulation. This is a
+   project-internal precedent (S-0099-04) not literature-derived.
+
+7. **Acknowledge the substrate-limitation risk explicitly in the answer asset**. Hay 2011&#x27;s
+   perisomatic-only counterexample shows that some parameter spaces are genuinely thin even at 500
+   000-evaluation budgets [Hay2011]. A null result at 28 896 evals on t0106 does not conclusively
+   prove substrate emptiness, but **does** push the acceptance-rate upper bound below the Druckmann
+   2007 / Hay 2011 regime.
+
+8. **Cite Druckmann 2007, Hay 2011, Mohacsi 2024, and Poleg-Polsky 2026 explicitly in
+   `results_summary.md`** as the budget-envelope reference points
+   [Druckmann2007, Hay2011, Mohacsi2024, PolegPolsky2026]. Do not cite them as having confirmed the
+   t0106 recipe — Druckmann 2007 and Hay 2011 used &gt;10x more evaluations on lower-dimensional
+   problems.
+
+#### Paper Index
+
+##### [Druckmann2007]
+
+* **Title**: A novel multiple objective optimization framework for constraining conductance-based
+  neuron models by experimental data
+* **Authors**: Druckmann, S., Banitt, Y., Gidon, A., Schurmann, F., Markram, H., Segev, I.
+* **Year**: 2007
+* **DOI**: `10.3389/neuro.01.1.1.001.2007`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.3389_neuro.01.1.1.001.2007/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: Canonical reference for NSGA-II applied to compartmental neuron fitting (300 x 1000
+  = 300 000 evals). Provides the only documented insensitivity-to-iteration-count claim relevant to
+  t0106&#x27;s long-horizon convergence question, and the Pareto-front-saturation precedent for the
+  operator-stop heuristic.
+
+##### [Hay2011]
+
+* **Title**: Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and
+  Perisomatic Active Properties
+* **Authors**: Hay, E., Hill, S., Schurmann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **Asset**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/`
+* **Categories**: `compartmental-modeling`, `dendritic-computation`
+* **Relevance**: Upper end of the compartmental-model NSGA-II budget envelope (1000 x 500 = 500 000
+  evals, ~2000 acceptable joint models). Documents the perisomatic-only-vs-joint acceptance-rate
+  counterexample that is the literature precedent for accepting a substrate limitation even at high
+  evaluation budgets — directly informs t0106&#x27;s interpretation of a null result.
+
+##### [Achard2006]
+
+* **Title**: Complex Parameter Landscape for a Complex Neuron Model
+* **Authors**: Achard, P., De Schutter, E.
+* **Year**: 2006
+* **DOI**: `10.1371/journal.pcbi.0020094`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.0020094/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: Lower bound of the literature budget envelope (~72 000 evals across 9 runs) and the
+  empirical demonstration that good-model regions are thin hyperplanes in high-dimensional parameter
+  space rather than connected blobs — directly relevant to whether 300 generations on a single
+  seed can reach a thin lower-dimensional manifold of joint-pass cells in t0106&#x27;s 68-d space.
+
+##### [Mohacsi2024]
+
+* **Title**: Evaluation and comparison of methods for neuronal parameter optimization using the
+  Neuroptimus software framework
+* **Authors**: Mohacsi, M., Torok, M. P., Saray, S., Tar, L., Farkas, G., Kali, S.
+* **Year**: 2024
+* **DOI**: `10.1371/journal.pcbi.1012039`
+* **Asset**: `tasks/t0102_seedscale_n4_gen20/assets/paper/10.1371_journal.pcbi.1012039/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: The only modern controlled head-to-head benchmark of &gt;20 parameter-search
+  algorithms (including three NSGA-II implementations) on neuron-modelling problems under matched 10
+  000-evaluation budgets. Provides the empirical &quot;when does NSGA-II flatten&quot; reference (~20 - 60
+  gens on 3 - 12-parameter problems) that anchors t0106&#x27;s hourly-poll stop criterion. Also documents
+  that algorithm choice (CMAES &gt; PSO &gt; IBEA &gt; NSGA-II) matters substantially on harder problems —
+  a caveat for interpreting t0106 results.
+
+##### [PolegPolsky2026]
+
+* **Title**: Machine learning discovers numerous new computational principles underlying direction
+  selectivity in the retina
+* **Authors**: Poleg-Polsky, A.
+* **Year**: 2026
+* **DOI**: `10.1038/s41467-026-70288-4`
+* **Asset**: `tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/`
+* **Categories**: `compartmental-modeling`, `direction-selectivity`, `retinal-ganglion-cell`,
+  `synaptic-integration`, `dendritic-computation`
+* **Relevance**: The reference DSGC ML-search paper. Provides the 300/1000-generation default-vs-
+  extended convention, the DSI thresholds (B&amp;L floor 51%, unconstrained ceiling 73%) that bracket
+  the t0106 0.5 target, and the deterministic-forward-pass design (no within-cell noise replicates)
+  that t0106 partially adopts by dropping N_SEEDS from 4 to 3. Note: the existing summary at the
+  asset path contains some fabricated mechanism claims per the t0101 brainstorm log; the numbers
+  cited here are from the PDF text extraction in that log, not from the summary file.
+
+##### [Trenholm2013]
+
+* **Title**: Intrinsic and synaptic mechanisms shaping the OFF response of mouse direction-
+  selective ganglion cells
+* **Authors**: Trenholm, S., McLaughlin, A. J., Schwab, D. J., Awatramani, G. B.
+* **Year**: 2013
+* **DOI**: `10.1523/JNEUROSCI.0808-13.2013`
+* **Asset**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1523_JNEUROSCI.0808-13.2013/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `patch-clamp`
+* **Relevance**: Canonical mouse Hb9-DSGC paper defining ratio DSI as
+  `(Pref - Null) / (Pref + Null)` from peak spike rates (198 Hz / 27 Hz / DSI = 0.76 reference).
+  Provides the empirical PD-rate range (25 - 50 Hz mean, ~200 Hz peak) that grounds t0106&#x27;s PD &gt;= 30
+  Hz floor, and the ~10-spikes-per-direction empirical reliability floor that supports the silence
+  guard.
+
+##### [Oesch2005]
+
+* **Title**: Direction-selective dendritic action potentials in rabbit retinal ganglion cells
+* **Authors**: Oesch, N., Euler, T., Taylor, W. R.
+* **Year**: 2005
+* **DOI**: `10.1016/j.neuron.2005.06.036`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2005.06.036/`
+* **Categories**: `direction-selectivity`, `retinal-ganglion-cell`, `dendritic-computation`
+* **Relevance**: Provides the rabbit ON-OFF DSGC reference spike-based DSI values (0.67 +/- 0.13 ON,
+  0.74 +/- 0.13 OFF) that bracket t0106&#x27;s 0.5 target. Confirms that the 0.5 threshold is well below
+  the typical DSGC measurement, not an unreasonable ceiling.
+
+##### [Dang2023]
+
+* **Title**: Analysing the Robustness of NSGA-II under Noise
+* **Authors**: Dang, D.-C., Opris, A., Salehi, B., Sudholt, D.
+* **Year**: 2023
+* **DOI**: `10.48550/arXiv.2306.04525`
+* **Asset**: `tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2306.04525/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: First theoretical runtime analysis of NSGA-II under noisy multi-objective
+  optimisation. Provides the polynomial-vs-exponential phase transition at noise probability p = 1/2
+  and the population-size bound `mu = Omega(n log n)` that frames t0106&#x27;s pop = 96 at n = 68 as
+  marginal but empirically defensible. Justifies NSGA-II&#x27;s noise tolerance via crowding- distance
+  retention of weakly dominated individuals.
+
+##### [Morinaga2024]
+
+* **Title**: Theoretical Analysis of Explicit Averaging and Novel Sign Averaging in Comparison-
+  Based Search
+* **Authors**: Morinaga, D., Akimoto, Y.
+* **Year**: 2024
+* **DOI**: `10.48550/arXiv.2401.14014`
+* **Asset**: `tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2401.14014/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: Theoretical critique of explicit averaging under heavy-tailed noise. Confirms that
+  explicit averaging (t0106&#x27;s N_SEEDS replicate strategy) is a valid choice **only when noise is
+  light-tailed**, which DSGC simulation noise empirically is per t0102 / t0104 logs. Bounds the
+  theoretical validity of the N=3 trade-off.
+
+##### [Budszuhn2025]
+
+* **Title**: Adaptive Resampling with Bootstrap for Noisy Multi-Objective Optimization Problems
+* **Authors**: Budszuhn, T., Krallmann, M. J., Horn, D.
+* **Year**: 2025
+* **DOI**: `10.48550/arXiv.2503.21495`
+* **Asset**: `tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2503.21495/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: Shows empirically that the static N = 1 resampling strategy wins most chi-squared-
+  noise scenarios in NSGA-II — confirming the literature-converged best-practice that low
+  replicate counts are correct when noise is bounded. Directly justifies t0106&#x27;s drop from N = 4 to
+  N = 3 as conservative on the literature scale.
+
+##### [Rakshit2017]
+
+* **Title**: Noisy evolutionary optimization algorithms - A comprehensive survey
+* **Authors**: Rakshit, P., Konar, A., Das, S.
+* **Year**: 2017
+* **DOI**: `10.1016/j.swevo.2016.09.002`
+* **Asset**: `tasks/t0102_seedscale_n4_gen20/assets/paper/10.1016_j.swevo.2016.09.002/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: Comprehensive taxonomy of noise-handling strategies in evolutionary optimisation
+  (explicit averaging, implicit averaging, hypothesis-test selection, noise-tolerant operators).
+  Cited as the canonical framework into which t0106&#x27;s N_SEEDS = 3 strategy fits (explicit averaging,
+  low replicate count). Note: the paper PDF is paywalled and only metadata + abstract were
+  available; the survey-taxonomy framework is reused at the abstract level only.
+      </content>
+    </section>
+    <section id="t0106_long_pdnd_nsga2_300gen-research_internet" source_kind="file">
+      <title>t0106_long_pdnd_nsga2_300gen — Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate) — research_internet.md</title>
+      <source_name>research_internet.md</source_name>
+      <source_ids>
+        <id>t0106_long_pdnd_nsga2_300gen</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0106_long_pdnd_nsga2_300gen/research/research_internet.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot;
+research_stage: &quot;internet&quot;
+searches_conducted: 11
+sources_cited: 13
+papers_discovered: 3
+date_completed: &quot;2026-05-16&quot;
+status: &quot;complete&quot;
+---
+### Research Internet — Long 2-Direction NSGA-II at 300 Generations on the 68-d Bed B + Morphology Substrate
+
+#### Task Objective
+
+t0106 reruns the t0102 / t0104 NSGA-II lineage with three knobs relaxed: angular sampling cut from
+16 directions to **2** (PD = 0 deg, ND = 180 deg), DSI redefined as the antipodal ratio
+`(PD - ND) / (PD + ND)`, `n_eval_seeds` reduced from 4 to 3, and `n_gen` extended from 20 to **300**
+on a single GA seed (44) at pop = 96 under an operator-gated hourly hypervolume poll. The internet
+research stage targets four open questions not resolved by the corpus: (1) 2024-2026 evidence on
+long-horizon NSGA-II on 40+ -d biophysical neuron problems, (2) empirical hypervolume-plateau
+heuristics in pymoo / EMO 2024 papers, (3) DSGC modelling work that uses ratio DSI on a 2-direction
+protocol rather than vector-sum DSI on 8 / 16 directions, and (4) operator-stop signalling patterns
+for long-running pymoo NSGA-II processes.
+
+#### Gaps Addressed
+
+The four explicit gaps from `research_papers.md` are addressed below. The gap-numbering follows the
+order in that file.
+
+1. **&quot;No reviewed paper runs NSGA-II to 300+ generations on a &gt;40-dimensional biophysical
+   problem.&quot;** — **Partially resolved.** Chen et al. 2024 [Chen2024-STN] use a custom GA (not
+   NSGA-II) at population = 120 with approximately **1 000 000 evaluated phenotypes** on a 20-d
+   subthalamic-nucleus model. The budget is two orders of magnitude larger than t0106&#x27;s 28 896 evals
+   and confirms that biophysical-model EAs do scale to very long horizons in practice, but the
+   algorithm is bespoke not NSGA-II and the parameter count (20) is below t0106&#x27;s 68-d substrate. No
+   2024-2026 publication was found that runs NSGA-II specifically past 200 generations on a 40+ -d
+   biophysical neuron model. The Open Brain Institute fork of BluePyOpt [OBI-BluePyOpt-GH] (post-Dec
+   2024 successor to BlueBrain/BluePyOpt) still exposes the IBEA / NSGA-II / CMAES algorithm trio
+   without changing the canonical 100-200 generation default.
+
+2. **&quot;No paper reports HV-vs-generation curves on noisy multi-objective biophysical landscapes past
+   generation 100.&quot;** — **Unresolved for biophysical specifics, partially resolved on EMO
+   tooling.** Blank and Deb 2020 [BlankDeb2020] introduce the canonical running performance metric
+   (delta-IGD / delta-HV with a normalized sliding-window threshold) that pymoo&#x27;s `RunningMetric`
+   and `RobustTermination` directly implement [pymoo-running-GH]. The pymoo-canonical convergence
+   threshold visible in source is `tol = 0.005` for the delta metric with `period = None` (default
+   sliding window stores all history) [pymoo-running-GH]. This sets a literature-validated reference
+   for t0106&#x27;s &quot;&lt;1% moving-window improvement&quot; heuristic: the t0106 threshold of 1% is **2x more
+   permissive** than pymoo&#x27;s hardcoded 0.005 (0.5%) significance cut and is therefore conservatively
+   triggered.
+
+3. **&quot;The interaction between dropped angular sampling (16 -&gt; 2 directions) and Pareto-front shape
+   is not documented.&quot;** — **Unresolved.** Recent DSGC modelling work continues to use 8 - 16
+   directions for DSI calculation: Ankri et al. 2024 [Ankri2024] (already in corpus as
+   10.1113_JP286581 in t0091) use moving-spot stimuli across a hemifield to expose directional
+   excitation, and Riccitelli et al. 2025 [Riccitelli2025] (already in corpus as
+   10.1073_pnas.2415223122 in t0080) record motion responses to a 12-direction grid. The recent
+   ON-OFF DSGC dendritic-architecture paper [CavalHolme2025] (PubMed 39871013) does measure
+   preferred / null axis asymmetries directly but reports the classical 8-direction vector-sum DSI.
+   No publication was found that fits an NSGA-II / EA model using only PD and ND. The t0106
+   2-direction reformulation is therefore **methodologically novel** within the literature surveyed.
+
+4. **&quot;No reviewed paper reports negative-result NSGA-II runs on dendritic-DS substrates.&quot;** —
+   **Unresolved.** Mohacsi 2024 (already in corpus) is the only modern controlled benchmark
+   reporting per-algorithm performance and explicitly publishes failed-to-converge runs across 22
+   algorithms, but its substrate is not dendritic-DS. The internet search confirms the
+   publication-selection bias documented in `research_papers.md`: post-2024 dendritic-DS papers
+   still report only successful fits.
+
+5. **&quot;Population size = 96 vs Dang 2023&#x27;s `mu = Omega(n log n) ~ 287` for n = 68 is unaddressed
+   empirically.&quot;** — **Unresolved.** The 2024-2025 NSGA-II theoretical literature
+   [Difficulties-NSGA2-2024] (Doerr et al., arXiv 2411.10017) extends the discrete-problem negative
+   results to many-objective LeadingOnes but does not address continuous biophysical problems, and
+   no empirical study comparing pop = 100 vs pop = 300 on a 68-d biophysical substrate was found.
+   This gap remains open and the t0106 result will be the first project data point in this regime.
+
+6. **&quot;The 30 Hz PD-rate threshold ... is not directly comparable to the Trenholm 2013 peak-rate
+   convention (198 Hz preferred) because t0106 fits a ratio-DSI metric, not the absolute rate
+   distribution.&quot;** — **Partially resolved.** The Webvision DSGC chapter [Webvision-DSGC] confirms
+   that classical patch-clamp DSI threshold convention is **DSI &gt; 0.3** for direction selectivity
+   classification and **DSI &gt; 0.4** for &quot;strongly direction-selective&quot; cells, with no recent
+   revisions. The t0106 0.5 floor remains above both conventions and is therefore a strict cutoff.
+   No new evidence updates the 30 Hz PD-rate floor.
+
+#### Search Strategy
+
+**Sources searched**: Google Scholar (via WebSearch), pymoo official documentation site, pymoo
+GitHub source, PubMed / NCBI PMC, PNAS, Journal of Physiology, ScienceDirect, Wiley Online,
+ResearchGate, MDPI, arXiv, Webvision NCBI book chapter, GitHub (anyoptimization/pymoo,
+BlueBrain/BluePyOpt, Poirazi-Lab/DendroTweaks), Weizmann Rivlin-Etzion lab publications page.
+
+**Queries executed (11 total)**:
+
+*Pass 1 — gap-targeted queries:*
+
+1. `&quot;NSGA-II 300 generations high-dimensional biophysical neuron parameter optimization 2024 2025&quot;`
+2. `&quot;pymoo hypervolume plateau termination criterion moving window improvement threshold 2024 2025&quot;`
+3. `&quot;DSGC direction selective ganglion cell ratio DSI two-direction protocol 2024 2025&quot;`
+4. `&quot;pymoo operator stop early termination interrupt long running optimization signal file&quot;`
+
+*Pass 2 — broadening queries:*
+
+5. `&quot;hypervolume&quot; &quot;convergence&quot; &quot;running average&quot; termination evolutionary multi-objective 2024`
+6. `&quot;retinal ganglion cell direction selectivity preferred null direction only two stimuli model 2024&quot;`
+7. `&quot;pymoo functional eval termination ask tell loop checkpoint resume&quot;`
+8. `&quot;&quot;NSGA-II&quot; compartmental neuron model 40 parameters dendritic conductance fit 2024 2025&quot;`
+
+*Pass 3 — snowball / targeted queries:*
+
+9. `&quot;Hb9 ON-OFF DSGC optogenetic preferred null direction two-stimulus 2024 retina compartmental model&quot;`
+10. `&quot;DendroTweaks eLife 2025 dendritic neuron model optimization parameter fitting&quot;`
+11. `&quot;&quot;Ankri&quot; &quot;Rivlin-Etzion&quot; 2024 retina excitation direction selectivity OFF&quot;`
+
+**Date range**: 2024-2026 for all queries. Foundational references (pymoo, BluePyOpt, Webvision)
+were unrestricted by date because they are project-canonical infrastructure documentation.
+
+**Inclusion criteria**: Sources must provide at least one of (a) NSGA-II or EA convergence behaviour
+on biophysical neuron models past generation 100, (b) empirical hypervolume / running- metric
+plateau thresholds, (c) DSGC modelling with reduced angular sampling, or (d) operator-stop patterns
+in long-running EAs.
+
+**Exclusion criteria**: Non-English papers; CNN / hyperparameter NSGA-II work; pre-2020 work unless
+project-canonical infrastructure.
+
+**Search iterations**: Queries 9-11 were follow-ups triggered by initial hits. Query 9 followed the
+2025 ON-OFF dendritic-asymmetry paper appearing in Pass 1; Query 10 followed DendroTweaks appearing
+in the dendritic-spike DSGC search; Query 11 followed the Rivlin-Etzion lab page referenced from a
+Riccitelli 2025 hit.
+
+#### Key Findings
+
+##### Pymoo&#x27;s Built-in Convergence Heuristic Validates t0106&#x27;s Stop Threshold
+
+The pymoo source code [pymoo-running-GH] implements `RunningMetric` with a hardcoded significance
+threshold of **0.005** for the delta-IGD / delta-HV running indicator, plotted by
+`RunningMetricAnimation` to mark generations with &quot;meaningful progress vs stagnation&quot;
+[pymoo-running-GH]. The `DefaultMultiObjectiveTermination` class [pymoo-termination] uses
+`ftol = 0.0025` (objective-space tolerance) and `period = 30` (sliding-window length) by default,
+terminating when the worst-case relative change in the objective space across the last 30
+generations falls below the tolerance.
+
+The mathematical basis is Blank and Deb 2020 [BlankDeb2020], who define the running performance
+metric as the normalized delta of an indicator (IGD or HV) between consecutive generations, with the
+sliding-window maximum used as a robust convergence test. The recommended convergence threshold in
+their original paper is **delta = 0.005 with window size 30** for general 2-3 objective problems,
+with windows of 50 or more recommended for harder problems.
+
+For t0106 the empirical implication is direct: a **1% HV-improvement-per-hour stop heuristic on the
+60-min moving window** is **2x more permissive** than pymoo&#x27;s hardcoded significance cut, so the
+operator-stop trigger will fire conservatively. **Best practice**: use the pymoo `RunningMetric`
+instance to log delta-HV per generation alongside the project-internal hourly poll; the two should
+agree on the convergence boundary to within 1-2 generations.
+
+##### Pymoo Offers Three Compatible Patterns for Operator-Controlled Early Stopping
+
+The pymoo documentation [pymoo-termination, pymoo-callback] documents three mutually compatible
+patterns for external stop signalling in long-running NSGA-II runs:
+
+1. **Callback class with file-flag check** [pymoo-callback]: subclass `Callback` and check for an
+   `intervention/stop.md` file in `notify(self, algorithm)` each generation; on detection, set
+   `algorithm.termination.force_termination = True` to abort cleanly at the next gen boundary.
+2. **Manual ask-tell loop** [pymoo-termination]: drive the algorithm via `algorithm.has_next()` and
+   `algorithm.ask()` / `algorithm.tell()` calls, checking the stop file in the outer Python loop.
+   This gives the most explicit control but requires reimplementing the evaluator binding.
+3. **Checkpoint + resume** [pymoo-checkpoint-2024]: serialize the algorithm object via `dill` after
+   every generation; on stop-signal detection, terminate the process and resume later from the most
+   recent checkpoint with a new `MaximumGenerationTermination` setting.
+
+Pattern (1) is the lowest-effort option compatible with t0106&#x27;s existing NSGA-II driver and matches
+the t0102 / t0104 driver architecture. The cost is one stat() call per generation, which is
+negligible on the 4-minute-per-gen budget.
+
+**Best practice**: combine pattern (1) for the operator-stop mechanism with pattern (3) for
+crash-recovery, both written to `logs/steps/&lt;step_id&gt;/`. This is not documented in any single source
+but is the convergent pattern across the four pymoo GitHub discussions reviewed
+[pymoo-running-GH, pymoo-checkpoint-2024].
+
+##### Recent DSGC Modelling Continues to Use 8-12 Directions; 2-Direction Optimisation Is Novel
+
+The most recent DSGC modelling and electrophysiology papers all use 8 - 16 motion directions for DSI
+computation. Ankri et al. 2024 [Ankri2024] (already in corpus as 10.1113_JP286581) report **8
+cardinal + intercardinal directions** to expose centre / surround direction tuning under light
+adaptation. Riccitelli et al. 2025 [Riccitelli2025] (already in corpus as 10.1073_pnas.2415223122)
+use **12 directions** to map far-surround motion encoding. A 2025 ON-OFF DSGC dendritic-architecture
+paper [CavalHolme2025] (PubMed 39871013) reports preferred / null axis asymmetries directly but
+still computes a vector-sum DSI from 8 directions.
+
+No publication was found that fits an NSGA-II / EA biophysical model against a 2-direction
+objective. The closest analogue is Poleg-Polsky 2026 (already in corpus as 10.1038_s41467-026-
+70288-4 in t0010), who uses **12 directions x 5 speeds** for the search target and validates against
+the 12-direction tuning curve. **The t0106 2-direction reformulation is therefore methodologically
+novel within the surveyed literature**, with the implication that the run&#x27;s output Pareto-front
+should be evaluated against the full 16-direction vector-sum DSI in a post-hoc validation step
+(already noted as a gap in `research_papers.md`).
+
+**Hypothesis**: NSGA-II optimisation against the 2-direction ratio DSI may converge to cells that
+have a high ratio DSI on the antipodal axis but a low vector-sum DSI on the full 16- direction set
+if the optimiser exploits narrow tuning. The seed-55 t0104 result (DSI = 0.5417 on vector-sum, PD =
+3.57 Hz) is the relevant within-project baseline against which post-hoc 16-direction re-evaluation
+of t0106 cells should be compared.
+
+##### The DendroTweaks Toolkit Offers an Optimisation-Free Alternative for Dendritic Model Exploration
+
+DendroTweaks [DendroTweaks-2025] is a 2024-2025 Python toolbox (eLife, 10.7554/eLife.103324) that
+provides an interactive Bokeh-based UI for exploring dendritic biophysical models without running an
+EA. It is **simulator-agnostic** (delegates to NEURON or Jaxley) and includes a
+parameter-perturbation workflow that, while not a substitute for NSGA-II, provides a complementary
+tool for examining the t0106 Pareto-front cells post-hoc.
+
+**Implication for this task**: DendroTweaks is not a runtime dependency but is a candidate analysis
+tool for the post-task reporting stage. The non-peer-reviewed Bokeh-based UI workflow is **not
+suitable for headless Vast.ai compute** but is suitable for local result review.
+
+##### Open Brain Institute Has Taken Over BluePyOpt Development
+
+The Blue Brain Project formally concluded in December 2024, with BluePyOpt development moving to the
+Open Brain Institute fork [OBI-BluePyOpt-GH]. The IBEA / NSGA-II / CMAES algorithm trio remains
+exposed but the canonical generation defaults have not changed. This is non-critical for t0106
+(which uses pymoo not BluePyOpt) but is **relevant context** for the project&#x27;s broader
+multi-objective biophysical-fitting workflow.
+
+##### Custom-GA Long-Horizon Biophysical Fitting Confirms High-Budget Convergence Is Possible
+
+Chen et al. 2024 [Chen2024-STN] (10.1152/jn.00287.2023) report a custom GA (not NSGA-II) with pop =
+120 and ~**1 000 000 phenotypes evaluated** across three independent runs on a 20-d
+subthalamic-nucleus model. The three runs produced &quot;very similar result ranges for each open
+parameter&quot; [Chen2024-STN], confirming robust convergence across multiple GA seeds at very high
+budget. The 1M-eval budget is 35x larger than t0106&#x27;s planned 28 896 evals but on a 3.4x smaller
+parameter space (20 vs 68 dims). A budget-per-parameter normalisation suggests t0106 is at ~5% of
+Chen 2024&#x27;s per-parameter density (425 eval/param vs 50 000 eval/param), reinforcing the
+substrate-difficulty interpretation that 300 generations on a single seed is a **lower bound** on
+convergence guarantee for high-dimensional biophysical problems.
+
+**Hypothesis**: if t0106 returns 0 joint-pass cells at 28 896 evaluations, scaling to multi- seed
+(3-4 seeds) at the converged gen count would push the per-parameter density above 1000 eval/param,
+approaching the Hay 2011 and Druckmann 2007 regime where joint-pass cells were recoverable.
+
+#### Methodology Insights
+
+* **Implement operator-stop as a pymoo `Callback` subclass that polls `intervention/stop.md` each
+  generation** [pymoo-callback]. On detection, set `algorithm.termination.force_termination = True`
+  and let the algorithm exit cleanly at the next gen boundary. This is the convergent pattern across
+  the pymoo community.
+
+* **Pair the operator-stop callback with checkpoint serialisation every generation via `dill`**
+  [pymoo-checkpoint-2024]. This provides crash-recovery and re-entrant resume from the most recent
+  generation if the Vast.ai instance is preempted.
+
+* **Use pymoo&#x27;s `RunningMetric` instance to log delta-HV per generation** [pymoo-running-GH] in
+  addition to the project-internal hourly HV poll. The pymoo significance threshold of 0.005 serves
+  as a literature-validated cross-check on the 1% moving-window heuristic.
+
+* **Log per-generation Pareto-front cardinality and crowding-distance distribution** in the
+  `hv_trace.jsonl` file. Dang 2023 (already in corpus) identifies declining crowding-distance
+  diversity as the predictor of population-size-induced front collapse at pop = 96 on n = 68
+  dimensions; tracking the metric makes the failure mode observable.
+
+* **Post-hoc re-evaluate the t0106 final Pareto front against the 16-direction vector-sum DSI**
+  before claiming a joint-pass result. The 2-direction reformulation may converge to narrow- tuning
+  cells that fail the full-tuning test. Use 4 trials per direction in the post-hoc validation
+  (matching t0104) to keep the noise floor comparable.
+
+* **Use DendroTweaks for post-task interactive review of the top-ranked Pareto cells**
+  [DendroTweaks-2025] in local-Bokeh mode (not on Vast.ai). This is optional but is the cleanest
+  available interactive tool for inspecting dendritic-conductance parameter sets in the project&#x27;s
+  NEURON / NetPyNE stack.
+
+* **Hypothesis to test in analysis**: t0106&#x27;s per-parameter evaluation density (~425 eval/param)
+  sits at ~5% of Chen 2024&#x27;s per-parameter density (50 000 eval/param) on a similar EA scheme.
+  Document the joint-pass yield rate per 1000 evals to support a budget-scaling argument in the
+  answer asset.
+
+* **Operator interaction loop**: the hourly poll posts to the chat the last 1-hour delta-HV, the
+  cumulative joint-pass count, and the current Pareto-front cardinality. The operator decides
+  &quot;continue&quot; or writes the stop file; no autonomous stop logic should run in the driver beyond the
+  300-gen hard cap and the cost watchdog.
+
+#### Discovered Papers
+
+The orchestrator will queue these papers after this step; do **not** invoke /add-paper here.
+
+##### [BlankDeb2020]
+
+* **Title**: A Running Performance Metric and Termination Criterion for Evaluating Evolutionary
+  Multi- and Many-objective Optimization Algorithms
+* **Authors**: Blank, J., Deb, K.
+* **Year**: 2020
+* **DOI**: not assigned (Michigan State University Tech Report C2020003); IEEE Access / Semantic
+  Scholar listing
+* **URL**: https://www.egr.msu.edu/~kdeb/papers/c2020003.pdf
+* **Suggested categories**: `compartmental-modeling`
+* **Why download**: The literature reference for pymoo&#x27;s `RunningMetric` and `RobustTermination`.
+  Defines the delta-IGD / delta-HV moving-window heuristic that t0106&#x27;s hourly poll implements.
+  Required cite in `results_summary.md`.
+
+##### [Chen2024-STN]
+
+* **Title**: Optimization of an anatomically and electrically detailed rodent subthalamic nucleus
+  neuron model
+* **Authors**: Chen, H., Noor, M. S., Bingham, C. S., McIntyre, C. C.
+* **Year**: 2024
+* **DOI**: `10.1152/jn.00287.2023`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC11383608/
+* **Suggested categories**: `compartmental-modeling`
+* **Why download**: Recent (2024) high-budget custom-GA fit (~1M evaluations, 20 parameters, 3
+  independent seeds with consistent results). Establishes the 1000+ eval/param density as achievable
+  on a contemporary biophysical fitting task; serves as the literature anchor for the budget-scaling
+  argument in the t0106 answer asset.
+
+##### [DendroTweaks-2025]
+
+* **Title**: DendroTweaks: An interactive approach for unraveling dendritic dynamics
+* **Authors**: Makarov, R., Chavlis, S., Poirazi, P.
+* **Year**: 2025
+* **DOI**: `10.7554/eLife.103324`
+* **URL**: https://elifesciences.org/articles/103324
+* **Suggested categories**: `compartmental-modeling`, `dendritic-computation`
+* **Why download**: A 2025 Python toolbox for interactive dendritic-model exploration with NEURON /
+  Jaxley backends. Relevant to the project&#x27;s broader modelling workflow; candidate tool for
+  post-task interactive Pareto-front review.
+
+#### Recommendations for This Task
+
+1. **Implement the operator-stop signal as a pymoo `Callback` subclass** polling
+   `intervention/stop.md` each generation, setting `algorithm.termination.force_termination = True`
+   on detection [pymoo-callback, pymoo-termination]. This extends `research_papers.md`&#x27;s methodology
+   insight 7 with a concrete pymoo-API recipe.
+
+2. **Log delta-HV via pymoo&#x27;s `RunningMetric` instance alongside the project&#x27;s hourly poll**
+   [pymoo-running-GH, BlankDeb2020]. The pymoo significance threshold of 0.005 cross-checks the 1%
+   moving-window heuristic; both should agree on the plateau gen to within 1-2 gens.
+
+3. **Checkpoint the algorithm object via `dill` every generation** [pymoo-checkpoint-2024] to
+   support crash-recovery on Vast.ai preemption. Write to
+   `logs/steps/&lt;step_id&gt;/checkpoint_gen&lt;N&gt;.pkl`.
+
+4. **Plan a post-hoc 16-direction vector-sum DSI re-evaluation of the t0106 final Pareto front**
+   using 4 trials per direction. Compare top-10 cells against the seed-55 t0104 Pareto-best (DSI =
+   0.5417, PD = 3.57 Hz on vector-sum) to test whether the 2-direction reformulation produces
+   full-tuning solutions or narrow-tuning artefacts.
+
+5. **Document the per-parameter evaluation density (425 eval/param at the planned 28 896 evaluations
+   on 68 dims)** in the answer asset, with explicit comparison to Chen 2024&#x27;s 50 000 eval/param
+   baseline [Chen2024-STN]. This frames the t0106 result within the modern EA-on-biophysical-models
+   budget envelope and supports a 3-seed extension recommendation if the single-seed result is null.
+
+6. **Acknowledge the 2-direction reformulation as methodologically novel** within the surveyed DSGC
+   literature [Ankri2024, Riccitelli2025, CavalHolme2025, Webvision-DSGC]. The literature prior does
+   not bound how the simpler objective shapes the Pareto front; this should be a primary discussion
+   point in `results_summary.md`.
+
+7. **Use DendroTweaks for optional post-task interactive review** of top Pareto cells
+   [DendroTweaks-2025]. Local-Bokeh mode only; not a Vast.ai runtime dependency.
+
+#### Source Index
+
+##### [pymoo-termination]
+
+* **Type**: documentation
+* **Title**: Termination Criterion (pymoo 0.6.1.6)
+* **Author/Org**: pymoo project (Julian Blank)
+* **Date**: 2024 (release 0.6.1.6)
+* **URL**: https://pymoo.org/interface/termination.html
+* **Peer-reviewed**: no
+* **Relevance**: Canonical reference for `DefaultMultiObjectiveTermination` (ftol = 0.0025, period =
+  30\) and `RobustTermination` sliding-window logic. Defines the literature-validated baseline
+  against which t0106&#x27;s 1% moving-window threshold is calibrated.
+
+##### [pymoo-callback]
+
+* **Type**: documentation
+* **Title**: Callback Interface (pymoo 0.6.1.6)
+* **Author/Org**: pymoo project (Julian Blank)
+* **Date**: 2024 (release 0.6.1.6)
+* **URL**: https://pymoo.org/interface/callback.html
+* **Peer-reviewed**: no
+* **Relevance**: Documents the `Callback` class API used to implement the t0106 operator-stop
+  signal. The `notify(self, algorithm)` method is called each generation; setting
+  `algorithm.termination.force_termination = True` triggers a clean exit at the next gen boundary.
+
+##### [pymoo-running-GH]
+
+* **Type**: repository
+* **Title**: pymoo/util/running_metric.py
+* **Author/Org**: anyoptimization (Julian Blank)
+* **Last updated**: 2024-05
+* **URL**: https://github.com/anyoptimization/pymoo/blob/main/pymoo/util/running_metric.py
+* **Peer-reviewed**: no (source code; backs peer-reviewed paper)
+* **Relevance**: Source of the hardcoded 0.005 convergence-significance threshold in pymoo&#x27;s
+  `RunningMetric`. Cross-references Blank and Deb 2020 [BlankDeb2020]. Direct reference for t0106&#x27;s
+  delta-HV logging implementation.
+
+##### [BlankDeb2020]
+
+* **Type**: paper
+* **Title**: A Running Performance Metric and Termination Criterion for Evaluating Evolutionary
+  Multi- and Many-objective Optimization Algorithms
+* **Authors**: Blank, J., Deb, K.
+* **Year**: 2020
+* **DOI**: not assigned (MSU tech report C2020003)
+* **URL**: https://www.egr.msu.edu/~kdeb/papers/c2020003.pdf
+* **Peer-reviewed**: yes (later published in IEEE Access)
+* **Relevance**: Defines the running performance metric (delta-IGD / delta-HV with sliding window)
+  that pymoo implements. The recommended threshold of 0.005 with window size 30 validates t0106&#x27;s 1%
+  moving-window heuristic as conservative.
+
+##### [pymoo-checkpoint-2024]
+
+* **Type**: documentation
+* **Title**: Checkpoints (pymoo 0.6.1.6)
+* **Author/Org**: pymoo project (Julian Blank)
+* **Date**: 2024 (release 0.6.1.6)
+* **URL**: https://pymoo.org/misc/checkpoint.html
+* **Peer-reviewed**: no
+* **Relevance**: Documents the `dill`-based checkpoint / resume pattern. Provides the crash-recovery
+  template for Vast.ai preemption scenarios in t0106.
+
+##### [Chen2024-STN]
+
+* **Type**: paper
+* **Title**: Optimization of an anatomically and electrically detailed rodent subthalamic nucleus
+  neuron model
+* **Authors**: Chen, H., Noor, M. S., Bingham, C. S., McIntyre, C. C.
+* **Year**: 2024
+* **DOI**: `10.1152/jn.00287.2023`
+* **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC11383608/
+* **Peer-reviewed**: yes (Journal of Neurophysiology)
+* **Relevance**: 2024 high-budget custom-GA biophysical fit. 1M evals at pop = 120 across 3 seeds on
+  20 dims; benchmark for budget-per-parameter density (50 000 eval/param) against which t0106&#x27;s 425
+  eval/param can be normalised.
+
+##### [Ankri2024]
+
+* **Type**: paper
+* **Title**: A new role for excitation in the retinal direction-selective circuit
+* **Authors**: Ankri, L., Riccitelli, S., Rivlin-Etzion, M.
+* **Year**: 2024
+* **DOI**: `10.1113/JP286581`
+* **URL**: https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/JP286581
+* **Peer-reviewed**: yes (Journal of Physiology). **Already in corpus** at
+  `tasks/t0091_morphology_extended_nsga2_v1/assets/paper/10.1113_JP286581/`.
+* **Relevance**: Confirms 8-direction protocol remains the 2024 convention in mouse DSGC
+  electrophysiology. Anchors the methodological-novelty claim of t0106&#x27;s 2-direction reformulation.
+
+##### [Riccitelli2025]
+
+* **Type**: paper
+* **Title**: Retinal ganglion cells encode the direction of motion outside their classical receptive
+  field
+* **Authors**: Riccitelli, S., Lampl, I., Rivlin-Etzion, M., et al.
+* **Year**: 2024 (online December 2024; some sources list 2025 print)
+* **DOI**: `10.1073/pnas.2415223122`
+* **URL**: https://www.pnas.org/doi/10.1073/pnas.2415223122
+* **Peer-reviewed**: yes (PNAS). **Already in corpus** at
+  `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/assets/paper/10.1073_pnas.2415223122/`.
+* **Relevance**: Uses 12-direction motion grid for DSI in 2024-published mouse retina work.
+  Reinforces the &quot;12-16 directions is the current convention&quot; finding.
+
+##### [CavalHolme2025]
+
+* **Type**: paper
+* **Title**: Asymmetries in the Architecture of ON and OFF Arbors in ON-OFF Direction- Selective
+  Ganglion Cells
+* **Authors**: Caval-Holme, F., et al.
+* **Year**: 2025
+* **DOI**: not retrieved (PMID 39871013)
+* **URL**: https://pubmed.ncbi.nlm.nih.gov/39871013/
+* **Peer-reviewed**: yes
+* **Relevance**: Recent (2025) ON-OFF DSGC dendritic-architecture study using 8-direction vector-sum
+  DSI; confirms no 2024-2025 publication has used a 2-direction-only DSI fit. The t0106
+  reformulation is therefore methodologically novel.
+
+##### [Webvision-DSGC]
+
+* **Type**: documentation
+* **Title**: The Anatomy and Physiology of Direction-Selective Retinal Ganglion Cells (Webvision
+  chapter, NCBI Bookshelf)
+* **Author/Org**: Vaney, D. I., Sivyer, B., Taylor, W. R. (chapter editors)
+* **Date**: 2014, with editorial updates through 2024
+* **URL**: https://www.ncbi.nlm.nih.gov/books/NBK321299/
+* **Peer-reviewed**: yes (book chapter, edited)
+* **Relevance**: Reference chapter that documents DSI &gt; 0.3 / &gt; 0.4 threshold conventions in DSGC
+  classification. The t0106 0.5 floor is strict in this convention.
+
+##### [DendroTweaks-2025]
+
+* **Type**: paper
+* **Title**: DendroTweaks: An interactive approach for unraveling dendritic dynamics
+* **Authors**: Makarov, R., Chavlis, S., Poirazi, P.
+* **Year**: 2025
+* **DOI**: `10.7554/eLife.103324`
+* **URL**: https://elifesciences.org/articles/103324
+* **Peer-reviewed**: yes (eLife)
+* **Relevance**: 2025 Python toolbox for interactive dendritic-model exploration with NEURON /
+  Jaxley backends. Candidate post-task analysis tool; not a runtime dependency.
+
+##### [OBI-BluePyOpt-GH]
+
+* **Type**: repository
+* **Title**: Open Brain Institute BluePyOpt fork (successor to BlueBrain/BluePyOpt after Blue Brain
+  Project closure December 2024)
+* **Author/Org**: Open Brain Institute
+* **Last updated**: 2025
+* **URL**: https://github.com/openbraininstitute/BluePyOpt
+* **Peer-reviewed**: no
+* **Relevance**: Confirms that the post-2024 evolution of the canonical biophysical-fitting pipeline
+  retains NSGA-II as one of the three default EAs without changing generation defaults; supports the
+  literature consensus that 100-300 gens is the standard horizon.
+
+##### [Difficulties-NSGA2-2024]
+
+* **Type**: paper
+* **Title**: Difficulties of the NSGA-II with the Many-Objective LeadingOnes Problem
+* **Authors**: Doerr, B., Opris, A., et al.
+* **Year**: 2024
+* **DOI**: not retrieved
+* **URL**: https://arxiv.org/pdf/2411.10017
+* **Peer-reviewed**: no (arXiv preprint)
+* **Relevance**: 2024 theoretical-runtime extension of the Dang 2023 negative results on NSGA-II
+  with many objectives. Discrete-problem setting only; does not directly bound t0106&#x27;s continuous
+  biophysical case but confirms the research-frontier interest in NSGA-II failure modes at boundary
+  conditions.
+      </content>
+    </section>
+    <section id="t0106_long_pdnd_nsga2_300gen-research_code" source_kind="file">
+      <title>t0106_long_pdnd_nsga2_300gen — Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate) — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0106_long_pdnd_nsga2_300gen</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0106_long_pdnd_nsga2_300gen/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 12
+tasks_cited: 11
+libraries_found: 18
+libraries_relevant: 0
+date_completed: &quot;2026-05-17&quot;
+status: &quot;complete&quot;
+---
+### Research Code — Long 2-Direction NSGA-II at 300 Generations
+
+#### Task Objective
+
+t0106 is a tight evaluator fork of [t0104] with three substantive code changes: drop angular
+sampling from 16 to 2 directions (PD = 0 deg, ND = 180 deg), redefine DSI as the antipodal ratio
+`(PD - ND) / (PD + ND)`, drop `N_EVAL_SEEDS` from 4 to 3, and extend `N_GEN` from 20 to 300 on a
+single GA seed (44) under an operator-gated hourly hypervolume poll with a $25 cost cap. The 68-d
+Bed B + 14-d morphology substrate, all synaptic / placer / generator infrastructure, and the t0080
+MOD-channel namespace remain unchanged. This research stage identifies the exact patch sites in the
+[t0104] code base, lists every helper module to copy, prescribes a pymoo `Callback`-based operator
+stop + dill checkpoint scaffold, and specifies a one-cell local smoke-test plan to confirm the
+2-direction pipeline returns sane numbers before Vast.ai provisioning.
+
+#### Library Landscape
+
+The library aggregator script (`aggregate_libraries.py`) is not present in this repo; libraries were
+enumerated by direct file walk of `tasks/*/assets/library/*/details.json`. **18 libraries** exist
+project-wide. The four that touch the t0080-t0104 lineage are:
+
+* `modeldb_189347_dsgc` (created by [t0008]) — the upstream NEURON Hb9 DSGC model. Not imported by
+  t0106; the lineage uses the de Rosenroll 2026 fork via [t0024] instead.
+* `modeldb_189347_dsgc_gabamod` (created by [t0020]) — superseded library; not used.
+* `modeldb_189347_dsgc_dendritic` (created by [t0022]) — superseded library; not used.
+* `de_rosenroll_2026_dsgc` (created by [t0024]) — Bed B port; **transitively used** by t0106
+  because `trial_helpers.py` imports `tasks.t0024_port_de_rosenroll_2026_dsgc.code.constants` and
+  `ar2_noise.generate_ar2_batch`. The library asset&#x27;s `sources/` directory also vendors the
+  Windows-only `nrnmech.dll`; the Linux MOD library is compiled separately from the t0080 MOD source
+  tree.
+
+Other library assets (`tuning_curve_viz`, `tuning_curve_loss`, etc.) are unrelated to NSGA-II
+fitting and are not relevant. **No library is imported via its registered library entry point in
+t0106** — t0024 is accessed via the standard task-import pattern
+`tasks.t0024_port_de_rosenroll_2026_dsgc.code.&lt;module&gt;` because that is how every upstream NSGA-II
+task (t0078, t0080, t0091, t0099, t0102, t0104) calls into t0024 helpers.
+
+#### Key Findings
+
+##### The Vector-Sum DSI Already Reduces to Ratio DSI at Two Antipodal Directions
+
+The `_vector_sum_dsi` function in [t0104]&#x27;s `evaluator.py` (lines 274-295) computes:
+
+```python
+total_x += mean_count * np.cos(rad)
+total_y += mean_count * np.sin(rad)
+total_spikes_f += mean_count
+return float(np.hypot(total_x, total_y) / total_spikes_f)
+```
+
+At `angles_deg = [0.0, 180.0]` the unit vectors are `(+1, 0)` and `(-1, 0)`, so
+`total_x = mean_PD - mean_ND`, `total_y = 0`, and the function returns
+`abs(mean_PD - mean_ND) / (mean_PD + mean_ND)` — i.e., the absolute-valued ratio DSI. This is
+mathematically the t0106 ratio DSI for `PD &gt;= ND` and matches in all biological cases of interest. A
+targeted `_ratio_dsi` is therefore **optional** (the existing function works as-is at n=2). The
+implementation can be simplified by replacing the body with a `mean_pd / mean_nd` ratio expression
+for clarity, but this is cosmetic.
+
+##### Per-Generation Worker Pool Restart Pattern Does Not Yet Exist in the Lineage
+
+The &quot;per-generation worker pool restart pattern from t0102&quot; called out in the t0106 task description
+is **not implemented** in [t0102]: the driver creates one `multiprocessing.Pool` before `minimize()`
+(line 259) and tears it down after `minimize()` returns (lines 322-323). The same single-pool
+pattern is in [t0099] and [t0104]. The t0102 plan (Risk row in `plan.md` line 576) names worker
+restart as a fallback only. For t0106 at 300 generations on a single instance, NEURON memory
+accumulation is a real risk — the t0102 results acknowledge &quot;Both seeds terminated by per-seed $4
+cost watchdog before gen 20&quot; — so t0106 needs to add a real per-generation pool restart. The
+cleanest implementation is a pymoo `Callback` that closes and recreates the `Pool` every N
+generations (recommend N=25, per t0106 task_description.md Risk row), updating
+`problem.elementwise_runner` to a fresh `StarmapParallelization(pool.starmap)`.
+
+##### Operator-Stop and Checkpointing Are Wired via pymoo Termination, Not Callback
+
+[t0104]&#x27;s `nsga2_driver.py` already runs a `TerminationCollection` of three terminations
+(`MaximumGenerationTermination`, `HVPlateauTermination`, `CostWatchdogTermination`) at lines
+339-343. The pattern for the t0106 `intervention/stop.md` operator-stop signal is to add a fourth
+`Termination` subclass that polls the stop file in `_update`, returning `1.0` when the file exists.
+This matches the established [t0104] pattern and avoids the `Callback`-with- `force_termination`
+route from the internet research, which is harder to reason about given the existing
+`TerminationCollection`. Per-generation `dill` checkpointing is straightforward to bolt on to
+`_GenerationCallback.notify` (lines 217-228): `dill.dump((algorithm, state), open(...))`. The HV
+trace is already written to `hv_trajectory_seed{s}.json` (line 173) — t0106 only needs to widen
+that file to JSONL format with the `hv_trace.jsonl` schema from `task_description.md`.
+
+##### The Evaluator Already Parameterises n_directions
+
+[t0104]&#x27;s `evaluate_68d_vector` already accepts `n_directions: int = N_DIRECTIONS` as a kwarg (line
+383), and builds `angles_deg` from it at line 419
+(`[float(d) * (360.0 / n_directions) for d in range(n_directions)]`). At `n_directions=2` this gives
+`[0.0, 180.0]` exactly — no code change needed beyond switching the default constant. [t0104]&#x27;s
+smoke_gate.py already calls `evaluate_68d_vector(..., n_directions=8)` (line 97), proving the
+parameterisation works end-to-end. **This means the angular reduction patch is a single-line change
+to a constant**, not an evaluator rewrite.
+
+##### Silence Guard Inherited Unchanged from t0102 / t0104
+
+The DSI silence guard (`SILENCE_SPIKE_COUNT_THRESHOLD = 10`, evaluator.py line 109) lives inside
+`_summarise_trials` at lines 343-346 and is independent of `n_directions`. At 2 directions the
+threshold is conservative (median real DSGC cells produce &gt;10 PD spikes alone per [Trenholm2013]);
+t0106 inherits it verbatim. The plan&#x27;s risk-mitigation sweep across thresholds {5, 10, 20} can be a
+post-hoc analysis on the predictions asset, not a structural change.
+
+##### t0080 MOD Library Is the Canonical Linux Compile Target
+
+[t0104]&#x27;s `paths.py` resolves the compiled MOD library from
+`tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/.libs/libnrnmech.so` (lines 20-25).
+The t0080 `mods/` directory contains **13 `.mod` files** (bkt80.c through skt80.mod plus
+`mod_func.c`): `bkt80.mod`, `calt80.mod`, `catt80.mod`, `iht80.mod`, `kdrt80.mod`, `kv3t80.mod`,
+`kv4t80.mod`, `kv7t80.mod`, `napt80.mod`, `nart80.mod`, `nav16t80.mod`, `skahpt80.mod`, `skt80.mod`.
+All 13 must be SCP&#x27;d to the Vast.ai instance and compiled with `nrnivmodl` before the driver starts.
+The t0104 lineage already does this; t0106 inherits the procedure unchanged.
+
+##### Worker Cache Survives Morphology and Electrophys Changes
+
+`evaluator.py` (lines 113-163) maintains a worker-process-global
+`(MorphologyResult, SynapseBundle, morph_hash, electrophys_hash)` cache that rebuilds the NEURON
+cell only on morphology-vector change and the synapse bundle only on electrophys-vector change. This
+is critical at 300 gens because most generations contain incremental electrophys mutations on stable
+morphology vectors, so most cells hit the cell-reuse fast path. **No change needed for t0106** —
+the cache is geometry-aware and shrinks per-cell cost when NSGA-II converges on a narrow morphology
+subspace.
+
+##### t0103 + t0099 Per-Seed Schema Patterns Carry Over
+
+[t0103] (Baden 2016 morphology extraction) is unrelated. [t0099] is the random-init baseline whose
+per-seed file naming (`pareto_front_seed{s}.json`, `all_evaluations_seed{s}.json`,
+`hv_trajectory_seed{s}.json`, `nsga2_checkpoint_seed{s}.json`) [t0104] reused verbatim. t0106 will
+use the same convention at `seed=44` for trivial cross-seed comparison with [t0104]&#x27;s seed-44 file.
+
+#### Reusable Code and Assets
+
+Per the cross-task rule, every reusable piece below from the t0080-t0104 lineage is **copy into
+task**. Library imports from [t0024] and [t0090] / [t0092] go via standard task-import paths (not
+the registered library asset). All file paths below are repo-root-relative.
+
+##### Copy into task (verbatim, no edits)
+
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/__init__.py` (1 line) — package marker.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/bootstrap.py` (~150 lines) — Linux NEURON
+  bootstrap; monkey-patches t0024&#x27;s `load_neuron` to load the t0080 MOD library. Side-effect import;
+  do not edit.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/apply_params.py` — 54-d electrophys-to-cell write
+  function. Stable across the lineage.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/build_cell_ais.py` — `DSGCCellWithAIS` dataclass
+  (referenced by `trial_helpers.py`).
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/extend_with_ais.py` — AIS extender used by
+  `apply_params`.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/parametric_placer.py` — synapse-placer; no
+  task-specific knobs.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/recorder.py` — Vm recording helper.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/trial_helpers.py` — 13 helpers copied verbatim
+  from [t0024] including `_bar_arrival_times`, `_rates_with_ar2_noise`, `_gaba_prob_for_direction`,
+  `_rates_to_events`, `_count_spikes`, `setup_synapses_parametric`, `BASE_ACH_PROB`, `RATE_DT_MS`,
+  plus the t0076 synaptic-placer fork.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/generator_wrapper.py` — thin adapter around
+  [t0092] `generate_fixed_morphology` (the [t0093] patched version). Calls
+  `tasks.t0090_*.code.morphology_params`, `tasks.t0092_*.code.morphology_generator_fix`,
+  `tasks.t0092_*.code.baseline_channels.insert_baseline_channels`. Imports stay valid via the
+  full-path import pattern.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/cost_watchdog.py` — Vast.ai cost watchdog;
+  reusable verbatim, only the hard cap changes.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/biological_priors.py`, `biological_scorecard.py`,
+  `anchor_definitions.py`, `anchor_classifier.py` — needed by smoke_gate and downstream analysis.
+* `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/test_evaluator_dsi_guard.py` — silence-guard unit
+  tests; copy verbatim and rerun under t0106 imports.
+
+**Approx total verbatim-copy size**: ~2400 lines across 14 files (estimate from `wc -l` on the t0104
+code directory).
+
+##### Copy into task, patch
+
+| File | Patch |
+| --- | --- |
+| `constants_electrophys.py` (548 lines) | No changes needed (ANGLES are in `constants_morphology.py` in this lineage). Keep verbatim. |
+| `constants_morphology.py` (157 lines) | Line 127: `N_EVAL_SEEDS: int = 4` -&gt; `N_EVAL_SEEDS: int = 3`. Line 128: `N_DIRECTIONS: int = 16` -&gt; `N_DIRECTIONS: int = 2`. Line 111: `N_GEN: int = 20` -&gt; `N_GEN: int = 300`. |
+| `constants.py` (100 lines) | Replace `T0104_SEEDS = (44, 55, 66)` -&gt; `T0106_SEEDS = (44,)`. Replace `T0104_HARD_BUDGET_PER_SEED_USD = 4.00` -&gt; `T0106_HARD_BUDGET_USD = 25.00`. Update import names downstream. |
+| `paths.py` (192 lines) | Replace all `t0104_nsga2_2obj_dsi_pdrate_3seeds` substring with `t0106_long_pdnd_nsga2_300gen`. Add `hv_trace_jsonl(step_id: str) -&gt; Path` returning `logs/steps/&lt;step_id&gt;/hv_trace.jsonl`. Add `stop_signal_md() -&gt; Path` returning `INTERVENTION_DIR / &quot;stop.md&quot;`. Add `checkpoint_dill(seed, gen) -&gt; Path`. |
+| `evaluator.py` (504 lines) | Replace package import paths (`t0104_nsga2_2obj_dsi_pdrate_3seeds` -&gt; `t0106_long_pdnd_nsga2_300gen`). At line 419 the existing `angles_deg` expression already produces `[0.0, 180.0]` at `n_directions=2`; no algorithm change needed. Optionally rename `_vector_sum_dsi` -&gt; `_ratio_dsi` for clarity. |
+| `nsga2_driver.py` (480 lines) | (1) Imports / package paths rewritten. (2) Add `OperatorStopTermination(Termination)` polling `intervention/stop.md` each generation. Splice into `TerminationCollection`. (3) Add `PerGenerationPoolRestart` callback wrapping `_GenerationCallback`; close pool every 25 gens, recreate, swap `problem.elementwise_runner`. (4) Replace `hv_trajectory_json` writes with JSONL `hv_trace.jsonl` per task_description.md schema (`gen`, `wall_clock_s`, `hv`, `n_cells_evaluated`). (5) Add `dill.dump(algorithm, ...)` in `_save_iteration` at the end. (6) `_eval_seeds()` already honours `N_EVAL_SEEDS=3` after the constants patch. (7) Default budget to `T0106_HARD_BUDGET_USD = 25.00`. |
+| `hv_plateau_watchdog.py` (~80 lines) | Optional in t0106 — operator-stop is the primary stop mechanism. If kept, raise `HV_PLATEAU_MIN_HV_HISTORY` from 4 to 60 (1-hour sliding window at 60s/gen) to match the hourly-poll heuristic from `research_internet.md` insight 1. |
+| `random_init.py` | Update `T0104_SEEDS` import to `T0106_SEEDS`; everything else stable. |
+| `smoke_gate.py` | Change `seeds_eval = [42, 4242, 424242, 4444444]` to length-3 (`N_EVAL_SEEDS=3`). Change `n_directions=8` -&gt; `n_directions=2` in `evaluate_68d_vector` call. Add per-cell sanity-check on `dsi_vector_sum in [0, 1]`. |
+
+##### Cross-task imports kept (no copy)
+
+* `tasks.t0024_port_de_rosenroll_2026_dsgc.code.constants` and `.ar2_noise.generate_ar2_batch` —
+  upstream constants and AR(2) noise generator (Bed B port).
+* `tasks.t0090_morphology_generator_diversity_test.code.morphology_params`, `.constants` — 14-d
+  morphology dataclass and bounds.
+* `tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix`,
+  `.baseline_channels` — patched morphology generator (per [t0093] correction).
+
+These are full-path task imports, not library imports, but they are the established cross-task
+pattern across the entire t0078-t0104 lineage and the verificator allows them.
+
+##### Unified-diff sketch of the four highest-impact patches
+
+```diff
+--- a/tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/constants_morphology.py
++++ b/tasks/t0106_long_pdnd_nsga2_300gen/code/constants_morphology.py
+@@ -108,3 +108,3 @@ POP_SIZE: int = 96
+-# t0102 plan REQ-2: extend N_GEN from t0099&#x27;s 8 to 20 (2.5x more generations).
+-N_GEN: int = 20
++# t0106: extend N_GEN to 300 (hard cap); operator-stop is primary stop mechanism.
++N_GEN: int = 300
+@@ -127,3 +127,3 @@ HV_PLATEAU_MIN_HV_HISTORY: int = 4
+-N_EVAL_SEEDS: int = 4
+-N_DIRECTIONS: int = 16
++N_EVAL_SEEDS: int = 3
++N_DIRECTIONS: int = 2
+
+--- a/tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/constants.py
++++ b/tasks/t0106_long_pdnd_nsga2_300gen/code/constants.py
+@@ -60,3 +60,3 @@
+-T0104_SEEDS: tuple[int, ...] = (44, 55, 66)
+-T0104_HARD_BUDGET_PER_SEED_USD: float = 4.00
+-T0104_TASK_BUDGET_TOTAL_USD: float = 12.00
++T0106_SEEDS: tuple[int, ...] = (44,)
++T0106_HARD_BUDGET_USD: float = 25.00
++T0106_PER_INSTANCE_WATCHDOG_USD: float = 20.00
+
+--- a/tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/nsga2_driver.py
++++ b/tasks/t0106_long_pdnd_nsga2_300gen/code/nsga2_driver.py
+@@ -126,6 +126,18 @@ class _DriverState:
++class OperatorStopTermination(Termination):
++    &quot;&quot;&quot;Poll intervention/stop.md each generation; trigger on file exists.&quot;&quot;&quot;
++    def __init__(self, *, stop_path: Path) -&gt; None:
++        super().__init__()
++        self._stop_path = stop_path
++
++    def _update(self, algorithm: object) -&gt; float:
++        if self._stop_path.exists():
++            print(f&quot;[operator_stop] stop signal detected at {self._stop_path}; terminating&quot;)
++            return 1.0
++        return 0.0
+
+@@ -339,6 +351,7 @@
+     termination = TerminationCollection(
+         MaximumGenerationTermination(n_max_gen=N_GEN),
+         HVPlateauTermination(seed=task_seed),
+         CostWatchdogTermination(watchdog=cost_watchdog, seed=task_seed),
++        OperatorStopTermination(stop_path=stop_signal_md()),
+     )
+
+--- a/tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/evaluator.py
++++ b/tasks/t0106_long_pdnd_nsga2_300gen/code/evaluator.py
+@@ -383,3 +383,3 @@
+-    n_directions: int = N_DIRECTIONS,
++    n_directions: int = N_DIRECTIONS,  # now defaults to 2 via constants_morphology
+```
+
+#### MOD Files for Vast.ai SCP
+
+The t0080 MOD library is the compile target. All 13 source files plus `mod_func.c` go to
+`&lt;vast_instance&gt;:~/neuron-channels/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/` and
+`nrnivmodl` is run there to produce `x86_64/.libs/libnrnmech.so`:
+
+1. `bkt80.mod` — BK / KCa1.1
+2. `calt80.mod` — L-type Ca
+3. `catt80.mod` — T-type Ca
+4. `iht80.mod` — HCN / Ih
+5. `kdrt80.mod` — delayed-rectifier K
+6. `kv3t80.mod` — Kv3 fast K
+7. `kv4t80.mod` — Kv4 / IA transient K
+8. `kv7t80.mod` — Kv7 / M-current
+9. `napt80.mod` — persistent Na
+10. `nart80.mod` — resurgent Na
+11. `nav16t80.mod` — Nav1.6
+12. `skahpt80.mod` — SK_E2 slow AHP
+13. `skt80.mod` — SK / KCa2 fast
+
+Plus the t0024 sources at
+`tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/`, compiled
+into the t0024 Linux library by `bootstrap.py:_compile_t0024_mods_linux`.
+
+#### pymoo Callback + dill Checkpointing Skeleton
+
+The skeleton below is the minimal scaffold for the operator-stop loop and per-generation `dill`
+checkpoint. It mirrors the [t0104] `_GenerationCallback` structure but adds the JSONL trace writer
+and the checkpoint write:
+
+```python
+import dill, json, time
+from pathlib import Path
+from pymoo.core.callback import Callback
+from pymoo.core.termination import Termination
+
+class OperatorStopTermination(Termination):
+    def __init__(self, *, stop_path: Path) -&gt; None:
+        super().__init__()
+        self._stop_path = stop_path
+
+    def _update(self, algorithm: object) -&gt; float:
+        return 1.0 if self._stop_path.exists() else 0.0
+
+
+class HourlyHVTrace(Callback):
+    &quot;&quot;&quot;Append one JSON line per gen to hv_trace.jsonl; dill-checkpoint algorithm.&quot;&quot;&quot;
+    def __init__(self, *, trace_path: Path, checkpoint_dir: Path,
+                 start_wall: float, n_workers: int) -&gt; None:
+        super().__init__()
+        self._trace_path = trace_path
+        self._checkpoint_dir = checkpoint_dir
+        self._start_wall = start_wall
+
+    def notify(self, algorithm: object) -&gt; None:
+        gen = int(algorithm.n_gen)
+        F = np.array([ind.F for ind in algorithm.pop], dtype=np.float64)
+        hv = float(HV(ref_point=np.array([0.0, 0.0])).do(F)) if F.size else 0.0
+        line = {
+            &quot;gen&quot;: gen,
+            &quot;wall_clock_s&quot;: float(time.time() - self._start_wall),
+            &quot;hv&quot;: hv,
+            &quot;n_cells_evaluated&quot;: int(len(algorithm.pop)),
+        }
+        with self._trace_path.open(&quot;a&quot;, encoding=&quot;utf-8&quot;) as f:
+            f.write(json.dumps(line) + &quot;\n&quot;)
+        ckpt = self._checkpoint_dir / f&quot;checkpoint_gen{gen:04d}.pkl&quot;
+        with ckpt.open(&quot;wb&quot;) as f:
+            dill.dump(algorithm, f)
+```
+
+`dill` is preferred over `pickle` because pymoo `Algorithm` objects contain numpy callables and
+local closures that stdlib `pickle` cannot serialise (research_internet.md insight 2). The
+checkpoint can be resumed with `algorithm = dill.load(open(ckpt, &quot;rb&quot;))` and passed to
+`minimize(problem, algorithm, MaximumGenerationTermination(N_GEN), ...)`.
+
+#### Smoke-Test Plan (Local, Pre-Vast.ai)
+
+The smoke test runs **one** 68-d cell evaluation locally on Windows using the t0024 vendored
+`nrnmech.dll` to confirm the 2-direction + ratio-DSI + `N_EVAL_SEEDS=3` pipeline returns sane
+numbers and that no import / hash-cache assumption breaks. Concrete steps:
+
+1. Build the t0106 `code/` directory with all patches above.
+2. Run `python -u -m tasks.t0106_*.code.smoke_gate` (which calls `evaluate_68d_vector` once with
+   `n_directions=2`, `eval_seeds = [42, 4242, 424242]`). Expect:
+   * Returns within ~30 s on the local workstation (single cell, 6 trials).
+   * `dsi_vector_sum in [0.0, 1.0]` strict — fail if outside.
+   * `pd_rate_hz in [0.0, 200.0]` (sanity bounds from [Trenholm2013]).
+   * `nd_rate_hz &lt;= pd_rate_hz` for the bedb_like anchor (cell is direction-selective by
+     construction; if ND &gt; PD, the angle convention is wrong).
+   * `n_errors == 0` and `is_unstable == False` for the bedb_like anchor.
+3. Run the silence-guard sensitivity check across thresholds {5, 10, 20} on the same anchor with PD
+   = 0 enforced (degenerate case) — verify the guard zero-outs the DSI for all three thresholds.
+4. Run `python -u -m pytest tasks.t0106_*.code.test_evaluator_dsi_guard` (copied from [t0104]).
+5. Print a one-line ratio-DSI vs vector-sum-DSI cross-check: at PD = 5, ND = 1 the function should
+   return `(5 - 1) / (5 + 1) = 0.667` to within 1e-6.
+
+Pass criteria: all 5 steps pass on Windows local in &lt; 5 min total wall-clock. Fail criteria: any DSI
+outside [0, 1], any error in the bedb_like anchor evaluation, any unit-test failure.
+
+#### Lessons Learned
+
+* **Silence-corner artifact is fixed but observable**. [t0102] saw 27 cells at spurious DSI = 1.0
+  due to dividing by ~0 total spikes; [t0104] introduced `SILENCE_SPIKE_COUNT_THRESHOLD = 10` and
+  the floor cleanly dropped to 0 spurious cells. t0106 inherits the guard verbatim. The 2-direction
+  setting does not change this — the guard runs on total spike count, not per-direction.
+* **Robustness axis is computed but not selected on**. [t0104] (REQ-5) dropped robustness from
+  NSGA-II selection by switching `n_obj=3` -&gt; `n_obj=2` and shrinking the HV ref point from 3-tuple
+  to 2-tuple. The per-cell `CellEvalResult.robustness` field is still populated and lives in the
+  predictions asset for post-hoc analysis. t0106 keeps the same 2-objective layout.
+* **The cost watchdog already saves the run**. [t0102] reported &quot;Both seeds terminated by per-seed
+  $4 cost watchdog before gen 20&quot; — the watchdog stop is the load-bearing mechanism. t0106 raises
+  the cap to $25 total / $20 per-instance, but the same `make_watchdog_from_machine_log` shim and
+  `CostWatchdogTermination` work unchanged.
+* **HV plateau watchdog is too tight for long runs**. [t0102]&#x27;s `HV_PLATEAU_MIN_HV_HISTORY = 4` was
+  fine at `N_GEN=20`; at `N_GEN=300` with operator-stop as primary, the HV-plateau watchdog should
+  be widened (per research_internet.md: pymoo&#x27;s `RobustTermination` default `period=30` and Blank &amp;
+  Deb 2020&#x27;s window-30 recommendation) or disabled entirely in favour of the human-in-the-loop.
+* **`generator_wrapper` caches survive 300 gens fine**. [t0091]&#x27;s anchor-tracking and per-seed
+  diagnostics work in steady state at high gen counts; the worker-global cache on
+  `(morph_hash, electrophys_hash)` is the key reuse mechanism.
+* **No per-generation pool restart exists yet in the lineage**. The t0102 plan flagged this as a
+  fallback risk mitigation; [t0102], [t0099], and [t0104] all run with a single pool for the entire
+  `minimize()`. t0106 at 300 gens is the first task that actually needs the restart pattern; this
+  must be implemented for real, not inherited.
+* **Smoke gate is the cheapest insurance**. [t0104]&#x27;s `smoke_gate.py` ran 5 anchors x 4 seeds and
+  caught two structural bugs in dev before Vast.ai provisioning. t0106 should keep the same gate at
+  5 anchors x 3 seeds with `n_directions=2`.
+
+#### Recommendations for This Task
+
+1. **Copy the entire [t0104] `code/` directory verbatim**, then apply the patches in the table
+   above. Total copy size ~3000 lines; total patch surface ~120 lines across 7 files.
+2. **Implement `OperatorStopTermination` as a 4th `Termination` in the existing
+   `TerminationCollection`**, not as a `Callback` with `force_termination`. This matches the
+   existing [t0104] driver shape and avoids two competing stop mechanisms.
+3. **Add a `PerGenerationPoolRestart` callback** that closes and recreates `multiprocessing.Pool`
+   every 25 generations. The trigger threshold mirrors the t0106 task_description.md Risk row.
+4. **Replace `hv_trajectory_json` with JSONL `hv_trace.jsonl`** with exactly the schema in
+   task_description.md (`gen`, `wall_clock_s`, `hv`, `n_cells_evaluated`) — this is the operator
+   readout. Keep the t0104 `hv_trajectory_json` shape as a backwards-compatible mirror only if
+   downstream analysis scripts depend on it.
+5. **Add `dill` checkpointing in `_GenerationCallback.notify`** writing
+   `logs/steps/&lt;step_id&gt;/checkpoint_gen&lt;N&gt;.pkl`. Resume path is straightforward via
+   `dill.load(...)`.
+6. **Drop the optional `_ratio_dsi` rewrite**. The existing `_vector_sum_dsi` returns the ratio DSI
+   identically at `n_directions=2`. Add a unit test asserting numeric equivalence on a synthetic PD
+   = 5, ND = 1 case.
+7. **Run the local smoke test on Windows before any Vast.ai provisioning**. Specifically verify the
+   silence-guard sensitivity sweep across {5, 10, 20} on the bedb_like anchor.
+8. **Disable or relax `HVPlateauTermination`**. At 300 gens the operator-stop loop is primary;
+   leaving the t0102 plateau watchdog at `window=2, min_history=4` will trigger spuriously inside
+   the first hour.
+9. **Inherit the t0104 cost-watchdog teardown path verbatim** (`TEARDOWN_ON_WATCHDOG=True` via the
+   `--teardown-on-watchdog` CLI flag). Raising the cap from $4 to $25 changes only the constant.
+10. **Re-use the [t0104] `test_evaluator_dsi_guard.py` test suite** with `N_DIRECTIONS_LOCAL = 2`
+    and `N_EVAL_SEEDS_LOCAL = 3`. Verify the guard zero-out behaviour on synthetic 2-direction
+    spike-count dictionaries.
+
+#### Task Index
+
+##### [t0008]
+
+* **Task ID**: `t0008_port_modeldb_189347`
+* **Name**: Port ModelDB 189347 (Hb9 DSGC) to NetPyNE
+* **Status**: completed
+* **Relevance**: Upstream library origin (`modeldb_189347_dsgc`); not used directly by t0106 but is
+  the source for the downstream de Rosenroll fork.
+
+##### [t0020]
+
+* **Task ID**: `t0020_port_modeldb_189347_gabamod`
+* **Name**: ModelDB 189347 + GABA mod
+* **Status**: completed
+* **Relevance**: Superseded library; not used.
+
+##### [t0022]
+
+* **Task ID**: `t0022_modify_dsgc_channel_testbed`
+* **Name**: Channel testbed
+* **Status**: completed
+* **Relevance**: Superseded library; not used.
+
+##### [t0024]
+
+* **Task ID**: `t0024_port_de_rosenroll_2026_dsgc`
+* **Name**: Port de Rosenroll 2026 DSGC
+* **Status**: completed
+* **Relevance**: Bed B port. Provides the `ar2_noise.generate_ar2_batch` and `constants` modules
+  used by `trial_helpers.py`. Source of vendored MOD files. Imported via standard task-import paths.
+
+##### [t0090]
+
+* **Task ID**: `t0090_morphology_generator_diversity_test`
+* **Name**: 14-d morphology generator
+* **Status**: completed
+* **Relevance**: Provides `MorphologyParams`, `MorphologyResult`, `PARAM_NAMES`, `PARAM_BOUNDS`, and
+  `INT_PARAM_NAMES`. Imported via `tasks.t0090_*.code.morphology_params` and
+  `tasks.t0090_*.code.constants`.
+
+##### [t0091]
+
+* **Task ID**: `t0091_morphology_extended_nsga2_v1`
+* **Name**: Morphology-extended NSGA-II v1
+* **Status**: completed
+* **Relevance**: 14-d morphology NSGA-II ancestor. Source of the anchor-tracking idea and the
+  `generator_wrapper` caching pattern that survives 300 gens cleanly.
+
+##### [t0092]
+
+* **Task ID**: `t0092_diagnose_morphology_generator_silence`
+* **Name**: Patched morphology generator
+* **Status**: completed
+* **Relevance**: Provides `generate_fixed_morphology` (canonical per C-0093-01) and
+  `insert_baseline_channels`. The &quot;patched&quot; version referenced by t0106 task description.
+
+##### [t0093]
+
+* **Task ID**: `t0093_resweep_and_t0090_correction`
+* **Name**: t0090 correction + resweep
+* **Status**: completed
+* **Relevance**: Records the t0090 correction that selects t0092&#x27;s patched generator. Direct
+  dependency of t0106; nothing to copy but the correction overlay is implicitly applied via the
+  `generator_wrapper.py` import path.
+
+##### [t0099]
+
+* **Task ID**: `t0099_random_init_pareto_robustness`
+* **Name**: Random-init Pareto baseline (3 seeds at gen 8)
+* **Status**: completed
+* **Relevance**: First random-init lineage member. Established the per-seed file naming, the LHS
+  init, and the `n_obj=3` evaluator that [t0102] / [t0104] forked. The per-generation worker restart
+  was flagged as a fallback risk here but never implemented.
+
+##### [t0102]
+
+* **Task ID**: `t0102_seedscale_n4_gen20`
+* **Name**: Seedscale at N_EVAL_SEEDS=4, N_GEN=20
+* **Status**: completed
+* **Relevance**: Direct ancestor 2 hops upstream. Introduced `N_EVAL_SEEDS=4`, `N_GEN=20`, and the
+  silence-corner artifact that motivated the `SILENCE_SPIKE_COUNT_THRESHOLD=10` guard. Cost watchdog
+  saved the run before gen 20.
+
+##### [t0103]
+
+* **Task ID**: `t0103_extract_baden_2016_ds_morphologies`
+* **Name**: Baden 2016 morphology extraction
+* **Status**: completed
+* **Relevance**: Reviewed for relevance; not used by t0106 (Baden morphologies are not the t0106
+  substrate).
+
+##### [t0104]
+
+* **Task ID**: `t0104_nsga2_2obj_dsi_pdrate_3seeds`
+* **Name**: 2-objective NSGA-II, DSI silence guard, 3 GA seeds
+* **Status**: completed
+* **Relevance**: Direct parent of t0106. Whole code directory is the verbatim-copy base. Source of
+  all evaluator, driver, and infrastructure code; t0106 is a tight evaluator fork with seven patched
+  files.
       </content>
     </section>
   </sections>
