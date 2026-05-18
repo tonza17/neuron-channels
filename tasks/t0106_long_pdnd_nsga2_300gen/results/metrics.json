@@ -1,0 +1,23 @@
+{
+  "variants": [
+    {
+      "variant_id": "random-init-seed44-2dir-300gen",
+      "label": "2-direction NSGA-II seed 44 (ratio DSI, N_EVAL_SEEDS=3, gens completed=40)",
+      "dimensions": {
+        "task_seed": 44,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 3,
+        "n_generations_target": 300,
+        "n_generations_completed": 40,
+        "n_cells": 3744
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    }
+  ]
+}
