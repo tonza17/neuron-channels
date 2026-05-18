@@ -1,0 +1,17 @@
+Exp2NMDA.mod
+HHst_noiseless.mod
+LICENSE
+RGCmodelGD.hoc
+UPSTREAM_NOTES.md
+cadecay.mod
+Translating cadecay.mod into /root/t0107_workdir/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/cadecay.c
+ -> [32mCompiling[0m Exp2NMDA.c
+Thread Safe
+Notice: This mechanism cannot be used with CVODE
+ -> [32mCompiling[0m cadecay.c
+Thread Safe
+ -> [32mCompiling[0m HHst_noiseless.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+libnrnmech.so

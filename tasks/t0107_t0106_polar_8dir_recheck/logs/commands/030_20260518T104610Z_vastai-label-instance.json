@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0107_t0106_polar_8dir_recheck",
+  "command": "vastai label instance 37000763 neuron-channels/t0107_t0106_polar_8dir_recheck",
+  "exit_code": 0,
+  "duration_seconds": 3.339,
+  "started_at": "2026-05-18T10:46:10Z",
+  "completed_at": "2026-05-18T10:46:13Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck",
+  "stdout_file": "030_20260518T104610Z_vastai-label-instance.stdout.txt",
+  "stderr_file": "030_20260518T104610Z_vastai-label-instance.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

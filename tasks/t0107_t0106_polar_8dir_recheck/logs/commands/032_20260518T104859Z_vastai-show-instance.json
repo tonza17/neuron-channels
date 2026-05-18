@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0107_t0106_polar_8dir_recheck",
+  "command": "vastai show instance 37000763 --raw",
+  "exit_code": 0,
+  "duration_seconds": 2.416,
+  "started_at": "2026-05-18T10:48:59Z",
+  "completed_at": "2026-05-18T10:49:02Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck",
+  "stdout_file": "032_20260518T104859Z_vastai-show-instance.stdout.txt",
+  "stderr_file": "032_20260518T104859Z_vastai-show-instance.stderr.txt",
+  "stdout_lines": 119,
+  "stderr_lines": 0,
+  "truncated": false
+}

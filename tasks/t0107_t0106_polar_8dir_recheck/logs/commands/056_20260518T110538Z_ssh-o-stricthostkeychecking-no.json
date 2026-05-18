@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0107_t0106_polar_8dir_recheck",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 10762 root@ssh8.vast.ai ps auxf | head -40; echo '---'; tmux capture-pane -t eval -p -S -50 2>/dev/null | tail -10",
+  "exit_code": 0,
+  "duration_seconds": 4.428,
+  "started_at": "2026-05-18T11:05:38Z",
+  "completed_at": "2026-05-18T11:05:43Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck",
+  "stdout_file": "056_20260518T110538Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "056_20260518T110538Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 33,
+  "stderr_lines": 2,
+  "truncated": false
+}

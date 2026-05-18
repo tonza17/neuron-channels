@@ -1,0 +1,26 @@
+-rw-r--r-- 1 root root 252773 May 18 10:54 payload.tar.gz
+tasks/t0107_t0106_polar_8dir_recheck/code/
+tasks/t0107_t0106_polar_8dir_recheck/code/.gitkeep
+tasks/t0107_t0106_polar_8dir_recheck/code/anchor_classifier.py
+tasks/t0107_t0106_polar_8dir_recheck/code/anchor_definitions.py
+tasks/t0107_t0106_polar_8dir_recheck/code/apply_params.py
+tasks/t0107_t0106_polar_8dir_recheck/code/biological_priors.py
+tasks/t0107_t0106_polar_8dir_recheck/code/biological_scorecard.py
+tasks/t0107_t0106_polar_8dir_recheck/code/bootstrap.py
+tasks/t0107_t0106_polar_8dir_recheck/code/build_cell_ais.py
+tasks/t0107_t0106_polar_8dir_recheck/code/build_predictions_asset.py
+t0024_port_de_rosenroll_2026_dsgc
+t0080_bedb_mobo_v3_dendritic_spike_nsga2
+t0090_morphology_generator_diversity_test
+t0092_diagnose_morphology_generator_silence
+t0107_t0106_polar_8dir_recheck
+__init__.py
+anchor_classifier.py
+anchor_definitions.py
+apply_params.py
+biological_priors.py
+biological_scorecard.py
+bootstrap.py
+build_cell_ais.py
+build_predictions_asset.py
+constants.py

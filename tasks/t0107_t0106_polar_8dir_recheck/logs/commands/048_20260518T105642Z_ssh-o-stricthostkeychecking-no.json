@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0107_t0106_polar_8dir_recheck",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 10762 root@ssh8.vast.ai cd /root/t0107_workdir && tmux new-session -d -s eval 'cd /root/t0107_workdir && .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel > eval_polar_parallel.log 2>&1; echo \"EXIT=$?\" >> eval_polar_parallel.log' && sleep 2 && tmux has-session -t eval && echo 'tmux session started'",
+  "exit_code": 0,
+  "duration_seconds": 9.532,
+  "started_at": "2026-05-18T10:56:42Z",
+  "completed_at": "2026-05-18T10:56:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck",
+  "stdout_file": "048_20260518T105642Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "048_20260518T105642Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 2,
+  "truncated": false
+}

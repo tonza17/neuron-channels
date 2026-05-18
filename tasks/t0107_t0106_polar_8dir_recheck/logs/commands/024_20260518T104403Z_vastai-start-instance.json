@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0107_t0106_polar_8dir_recheck",
+  "command": "vastai start instance 37000045",
+  "exit_code": 0,
+  "duration_seconds": 2.505,
+  "started_at": "2026-05-18T10:44:03Z",
+  "completed_at": "2026-05-18T10:44:05Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck",
+  "stdout_file": "024_20260518T104403Z_vastai-start-instance.stdout.txt",
+  "stderr_file": "024_20260518T104403Z_vastai-start-instance.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0107_t0106_polar_8dir_recheck",
+  "command": "vastai create instance 33356672 --image python:3.12-bookworm --ssh --disk 40 --raw",
+  "exit_code": 0,
+  "duration_seconds": 3.667,
+  "started_at": "2026-05-18T10:45:35Z",
+  "completed_at": "2026-05-18T10:45:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck",
+  "stdout_file": "028_20260518T104535Z_vastai-create-instance.stdout.txt",
+  "stderr_file": "028_20260518T104535Z_vastai-create-instance.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,6 @@
+Evaluating 10 cells at 8 directions
+  eval_seeds: [111, 222, 333]
+  expected angles (deg): [0, 45, 90, 135, 180, 225, 270, 315]
+  Resuming from checkpoint: 1 cells already done
+  cell 1/10  rank= 4  SKIP (checkpoint)
+  cell 2/10  rank= 5  DSI(t0106)=0.917  PD(t0106)=121.7 Hz

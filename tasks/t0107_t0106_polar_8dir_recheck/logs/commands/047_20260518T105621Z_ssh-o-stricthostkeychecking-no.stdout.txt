@@ -1,0 +1,11 @@
+/root/t0107_workdir/tasks/t0107_t0106_polar_8dir_recheck/code/selected_cells.json
+{
+  "source_path": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck\\tasks\\t0106_long_pdnd_nsga2_300gen\\results\\data\\all_evaluations_seed44.json.gz",
+  "top_n": 50,
+  "sample_n": 10,
+  "random_seed": 42,
+  "dsi_corner_scale": 0.5,
+  "pd_corner_scale_hz": 30.0,
+  "cells": [
+    {
+      "t0106_rank": 4,

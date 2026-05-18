@@ -1,0 +1,47 @@
+Thread Safe
+ -> [32mCompiling[0m catt80.c
+ -> [32mCompiling[0m iht80.c
+ -> [32mCompiling[0m kdrt80.c
+ -> [32mCompiling[0m kv3t80.c
+ -> [32mCompiling[0m kv4t80.c
+ -> [32mCompiling[0m kv7t80.c
+ -> [32mCompiling[0m napt80.c
+ -> [32mCompiling[0m nart80.c
+ -> [32mCompiling[0m nav16t80.c
+ -> [32mCompiling[0m skahpt80.c
+ -> [32mCompiling[0m skt80.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+bkt80.c
+bkt80.o
+calt80.c
+calt80.o
+catt80.c
+catt80.o
+iht80.c
+iht80.o
+kdrt80.c
+kdrt80.o
+kv3t80.c
+kv3t80.o
+kv4t80.c
+kv4t80.o
+kv7t80.c
+kv7t80.o
+libnrnmech.so
+makemod2c_inc
+mod_func.cpp
+mod_func.o
+napt80.c
+napt80.o
+nart80.c
+nart80.o
+nav16t80.c
+nav16t80.o
+skahpt80.c
+skahpt80.o
+skt80.c
+skt80.o
+special
+special.nrn

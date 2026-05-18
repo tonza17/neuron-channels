@@ -1,0 +1,23 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   2584   944 ?        Ss   10:48   0:00 /bin/sh -c while [ ! -e /.launch ]; do sleep 1; done; bash /.launch
+root          57  0.0  0.0   4352  3168 ?        S    10:48   0:00 bash /.launch
+root         225  0.0  0.0  11736  8532 ?        S    10:48   0:00  \_ ssh -i /etc/forward_key -R *:10762:localhost:22 -R *:10763:localhost:8080 -N -o TCPKeepAlive=yes -o ServerAliveInterval=10 -o ServerAliveCountMax=2 ubuntu@ssh8.vast.ai -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o ConnectTimeout=10 -o RequestTTY=no -o ExitOnForwardFailure=yes
+root         219  0.0  0.0  15452  4788 ?        Ss   10:48   0:00 sshd: /usr/sbin/sshd -E /proc/1/fd/1 [listener] 0 of 10-100 startups
+root        1418  0.5  0.0  17560 11216 ?        Ss   11:05   0:00  \_ sshd: root@notty
+root        1424  0.0  0.0   4352  3016 ?        Ss   11:05   0:00      \_ bash -c ps auxf | head -40; echo '---'; tmux capture-pane -t eval -p -S -50 2>/dev/null | tail -10
+root        1426  0.0  0.0   8540  4292 ?        R    11:05   0:00          \_ ps auxf
+root        1427  0.0  0.0   2920   892 ?        S    11:05   0:00          \_ head -40
+root        1267  0.0  0.0   5768  3788 ?        Ss   10:56   0:00 tmux new-session -d -s eval cd /root/t0107_workdir && .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel > eval_polar_parallel.log 2>&1; echo "EXIT=$?" >> eval_polar_parallel.log
+root        1268  0.0  0.0   4352  3028 pts/0    Ss+  10:56   0:00  \_ bash -c cd /root/t0107_workdir && .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel > eval_polar_parallel.log 2>&1; echo "EXIT=$?" >> eval_polar_parallel.log
+root        1270  0.8  0.0 2346176 40020 pts/0   Sl+  10:56   0:04      \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1335 26.9  0.0 2234816 50976 pts/0   S+   10:56   2:23          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1336 99.9  0.0 2254412 70804 pts/0   R+   10:56   8:52          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1337 17.2  0.0 2230772 47324 pts/0   S+   10:56   1:31          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1338  9.7  0.0 2234588 51148 pts/0   S+   10:56   0:51          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1339  6.9  0.0 2230536 47068 pts/0   S+   10:56   0:36          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1340  5.8  0.0 2241404 57904 pts/0   S+   10:56   0:31          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1341 14.7  0.0 2230744 47384 pts/0   S+   10:56   1:18          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1342 11.0  0.0 2230652 47240 pts/0   S+   10:56   0:58          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1343  5.7  0.0 2230504 47012 pts/0   S+   10:56   0:30          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+root        1344 25.8  0.0 2234756 51432 pts/0   S+   10:56   2:17          \_ .venv/bin/python -u -m tasks.t0107_t0106_polar_8dir_recheck.code.eval_polar_parallel
+---

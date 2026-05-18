@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0107_t0106_polar_8dir_recheck",
+  "command": "scp -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -P 10762 root@ssh8.vast.ai:/root/t0107_workdir/eval_polar_parallel.log tasks/t0107_t0106_polar_8dir_recheck/logs/steps/008_implementation/eval_polar_parallel.log",
+  "exit_code": 0,
+  "duration_seconds": 9.655,
+  "started_at": "2026-05-18T11:09:37Z",
+  "completed_at": "2026-05-18T11:09:47Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0107_t0106_polar_8dir_recheck",
+  "stdout_file": "060_20260518T110937Z_scp-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "060_20260518T110937Z_scp-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}
