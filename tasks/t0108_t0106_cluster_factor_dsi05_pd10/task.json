@@ -5,12 +5,12 @@
   "name": "Cluster + factor analysis of t0106 cells at DSI>0.5 AND PD>10",
   "short_description": "PCA + K-means on electrophys (54-d) and on morphology (14-d) plus varimax factor analysis on the full 68-d vector for 150 t0106 cells passing DSI > 0.5 AND PD > 10 Hz.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0106_long_pdnd_nsga2_300gen"
   ],
   "start_time": "2026-05-18T13:00:00Z",
-  "end_time": null,
+  "end_time": "2026-05-18T16:00:00Z",
   "expected_assets": {
     "answer": 3
   },
