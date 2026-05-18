@@ -4,11 +4,119 @@
     {
       "step": 1,
       "name": "create-branch",
-      "description": "Create task/t0107_t0106_polar_8dir_recheck branch from main.",
+      "description": "Create task/t0107_t0106_polar_8dir_recheck worktree branch from main.",
       "status": "completed",
       "started_at": "2026-05-18T02:33:57Z",
       "completed_at": "2026-05-18T02:34:37Z",
-      "log_file": "logs\\steps\\001_create-branch/"
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify dependency t0106_long_pdnd_nsga2_300gen is completed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task subfolders.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped per operator: no literature search.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped per operator: no literature search.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Light review of t0106 evaluator hooks for the 8-direction patch.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Light plan; mostly task_description.md.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "implementation",
+      "description": "Sample 10 cells from t0106 top-50 (numpy seed 42), evaluate at 8 directions x 3 trials locally, build predictions asset, render polar tuning curves.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 9,
+      "name": "creative-thinking",
+      "description": "Skipped: light analytical task; observations folded into results_detailed.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/009_creative-thinking/"
+    },
+    {
+      "step": 10,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json (0), remote_machines_used.json ([]).",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 11,
+      "name": "compare-literature",
+      "description": "Skipped per operator: no literature comparison.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_compare-literature/"
+    },
+    {
+      "step": 12,
+      "name": "suggestions",
+      "description": "Empty suggestions.json per operator: no follow-up suggestions in this task.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task.json completed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
     }
   ]
 }
