@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare t0106 best DSI / PD-rate / joint-pass tally against the t0080-t0104 lineage and against published DSGC tuning curves (de Rosenroll 2026, Poleg-Polsky & Diamond 2016). Write results/compare_literature.md.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-18T01:37:15Z",
-      "completed_at": null,
+      "completed_at": "2026-05-18T01:45:01Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
