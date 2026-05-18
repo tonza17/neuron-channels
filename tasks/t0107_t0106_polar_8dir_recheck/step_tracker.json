@@ -68,9 +68,9 @@
       "step": 8,
       "name": "implementation",
       "description": "Sample 10 cells from t0106 top-50 (numpy seed 42), evaluate at 8 directions x 3 trials locally, build predictions asset, render polar tuning curves.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-18T02:42:07Z",
-      "completed_at": null,
+      "completed_at": "2026-05-18T11:20:01Z",
       "log_file": "logs\\steps\\008_implementation/"
     },
     {
