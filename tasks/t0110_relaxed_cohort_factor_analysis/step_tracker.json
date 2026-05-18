@@ -1,0 +1,122 @@
+{
+  "task_id": "t0110_relaxed_cohort_factor_analysis",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0110_relaxed_cohort_factor_analysis worktree from main.",
+      "status": "completed",
+      "started_at": "2026-05-18T18:30:00Z",
+      "completed_at": "2026-05-18T18:31:00Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0108 is completed and on main.",
+      "status": "completed",
+      "started_at": "2026-05-18T18:31:00Z",
+      "completed_at": "2026-05-18T18:31:30Z",
+      "log_file": "logs/steps/002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task subfolders.",
+      "status": "completed",
+      "started_at": "2026-05-18T18:31:30Z",
+      "completed_at": "2026-05-18T18:32:00Z",
+      "log_file": "logs/steps/003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: hypothesis test on existing data.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: hypothesis test on existing data.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Reuse t0108 factor_analysis varimax routine via import.",
+      "status": "completed",
+      "started_at": "2026-05-18T18:32:00Z",
+      "completed_at": "2026-05-18T18:33:00Z",
+      "log_file": "logs/steps/006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Light plan in plan/plan.md.",
+      "status": "completed",
+      "started_at": "2026-05-18T18:33:00Z",
+      "completed_at": "2026-05-18T18:34:00Z",
+      "log_file": "logs/steps/007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "implementation",
+      "description": "Implement factor_analysis_relaxed.py; filter+dedupe 247 cells; run FA; render comparison + heatmap.",
+      "status": "completed",
+      "started_at": "2026-05-18T18:34:00Z",
+      "completed_at": "2026-05-18T19:00:00Z",
+      "log_file": "logs/steps/008_implementation/"
+    },
+    {
+      "step": 9,
+      "name": "creative-thinking",
+      "description": "Skipped: hypothesis is concrete and pre-specified.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/009_creative-thinking/"
+    },
+    {
+      "step": 10,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, suggestions.json, remote_machines_used.json, 1 answer asset.",
+      "status": "completed",
+      "started_at": "2026-05-18T19:00:00Z",
+      "completed_at": "2026-05-18T19:20:00Z",
+      "log_file": "logs/steps/010_results/"
+    },
+    {
+      "step": 11,
+      "name": "compare-literature",
+      "description": "Skipped: comparison is against t0108, not literature.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_compare-literature/"
+    },
+    {
+      "step": 12,
+      "name": "suggestions",
+      "description": "Empty suggestions.json; follow-ups inline in results_detailed.md.",
+      "status": "completed",
+      "started_at": "2026-05-18T19:20:00Z",
+      "completed_at": "2026-05-18T19:21:00Z",
+      "log_file": "logs/steps/012_suggestions/"
+    },
+    {
+      "step": 13,
+      "name": "reporting",
+      "description": "Verificators, finalise, commit, push, PR, merge.",
+      "status": "completed",
+      "started_at": "2026-05-18T19:21:00Z",
+      "completed_at": "2026-05-18T19:30:00Z",
+      "log_file": "logs/steps/013_reporting/"
+    }
+  ]
+}
