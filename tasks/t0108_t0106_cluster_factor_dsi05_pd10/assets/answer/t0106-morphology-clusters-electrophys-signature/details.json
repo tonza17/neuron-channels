@@ -1,0 +1,23 @@
+{
+  "spec_version": "2",
+  "answer_id": "t0106-morphology-clusters-electrophys-signature",
+  "question": "When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by their 14-d morphology parameters, do the clusters carry a distinguishable electrophys signature?",
+  "short_title": "Morphology clusters carry a strong electrophys signature",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0106_long_pdnd_nsga2_300gen"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0108_t0106_cluster_factor_dsi05_pd10",
+  "date_created": "2026-05-18"
+}
