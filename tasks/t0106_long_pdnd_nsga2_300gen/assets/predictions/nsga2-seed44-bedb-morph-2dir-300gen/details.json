@@ -7,7 +7,7 @@
   "model_id": null,
   "model_description": "Compartmental DSGC neuron model combining the 54-d Bed B electrophysiology parameter vector (from t0080) applied via apply_parameter_vector with the t0092-patched 14-d procedural morphology generator (canonical via correction C-0093-01). Each cell is evaluated with 2 stimulus directions (PD = 0 deg, ND = 180 deg) x 3 noise replicates and scored on a 2-objective vector (ratio DSI, preferred-direction firing rate in Hz). NSGA-II minimises the negated pair; the DSI silence guard from S-0102-01 clamps DSI to 0.0 when total PD+ND spike count falls below 10 spikes per trial.",
   "dataset_ids": [],
-  "prediction_format": "json",
+  "prediction_format": "json.gz",
   "prediction_schema": "Top-level JSON object with key 'evaluations' holding a list of 3744 per-cell evaluation records. Each record has fields: generation (int, NSGA-II generation; 1 = initial LHS population, 2-40 = offspring generations), vector_68d (list of 68 floats, 54-d electrophys + 14-d morphology parameter vector), objective_F_minimised (list of 2 floats, the NSGA-II objective vector with sign-flipped maximisation conventions: [-ratio_dsi, -pd_rate_hz]), dsi_vector_sum (float in [0, 1], the ratio DSI (PD - ND) / (PD + ND), guard-cleaned per S-0102-01 so values of 0.0 may either be real or guard-floor; field name preserved for compatibility with t0102/t0104 schema), pd_rate_hz (float, preferred-direction mean firing rate in Hz across the 3 noise replicates).",
   "instance_count": 3744,
   "metrics_at_creation": {
@@ -22,9 +22,9 @@
   },
   "files": [
     {
-      "path": "files/all_evaluations_seed44.json",
-      "description": "Full per-cell NSGA-II evaluation log for t0106 GA seed 44 (3,744 cells across 40 completed generations).",
-      "format": "json"
+      "path": "files/all_evaluations_seed44.json.gz",
+      "description": "Full per-cell NSGA-II evaluation log for t0106 GA seed 44 (3,744 cells across 40 completed generations). gzip-compressed JSON to satisfy the 5 MB pre-commit limit; decompress with `gunzip` or `gzip -d` before json.load.",
+      "format": "json.gz"
     }
   ],
   "categories": [
