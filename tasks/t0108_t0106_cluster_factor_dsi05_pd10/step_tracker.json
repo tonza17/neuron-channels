@@ -1,0 +1,122 @@
+{
+  "task_id": "t0108_t0106_cluster_factor_dsi05_pd10",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0108_t0106_cluster_factor_dsi05_pd10 worktree branch from main.",
+      "status": "completed",
+      "started_at": "2026-05-18T13:00:00Z",
+      "completed_at": "2026-05-18T13:01:00Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify dependency t0106_long_pdnd_nsga2_300gen is completed.",
+      "status": "completed",
+      "started_at": "2026-05-18T13:01:00Z",
+      "completed_at": "2026-05-18T13:01:30Z",
+      "log_file": "logs/steps/002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task subfolders.",
+      "status": "completed",
+      "started_at": "2026-05-18T13:01:30Z",
+      "completed_at": "2026-05-18T13:02:00Z",
+      "log_file": "logs/steps/003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped per operator: no literature search; reuse t0105 context.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped per operator.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Reuse t0105 constants and pipeline structure; verify t0106 evaluations file format.",
+      "status": "completed",
+      "started_at": "2026-05-18T13:02:00Z",
+      "completed_at": "2026-05-18T13:05:00Z",
+      "log_file": "logs/steps/006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Plan + REQ checklist in plan/plan.md.",
+      "status": "completed",
+      "started_at": "2026-05-18T13:05:00Z",
+      "completed_at": "2026-05-18T13:10:00Z",
+      "log_file": "logs/steps/007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "implementation",
+      "description": "Load + filter cells (150 unique), PCA+KMeans on electrophys with morph overlays, PCA+KMeans on morph with electrophys overlays, varimax factor analysis on full 68-d with DSI/PD correlations, render all charts.",
+      "status": "completed",
+      "started_at": "2026-05-18T13:10:00Z",
+      "completed_at": "2026-05-18T15:00:00Z",
+      "log_file": "logs/steps/008_implementation/"
+    },
+    {
+      "step": 9,
+      "name": "creative-thinking",
+      "description": "Skipped: light analytical task; observations folded into results_detailed.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/009_creative-thinking/"
+    },
+    {
+      "step": 10,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json ($0), suggestions.json (empty), remote_machines_used.json ([]), build 3 answer assets.",
+      "status": "completed",
+      "started_at": "2026-05-18T15:00:00Z",
+      "completed_at": "2026-05-18T15:45:00Z",
+      "log_file": "logs/steps/010_results/"
+    },
+    {
+      "step": 11,
+      "name": "compare-literature",
+      "description": "Skipped per operator: no literature comparison.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_compare-literature/"
+    },
+    {
+      "step": 12,
+      "name": "suggestions",
+      "description": "Empty suggestions.json per operator: follow-up suggestions captured inline in results_detailed.md.",
+      "status": "completed",
+      "started_at": "2026-05-18T15:45:00Z",
+      "completed_at": "2026-05-18T15:50:00Z",
+      "log_file": "logs/steps/012_suggestions/"
+    },
+    {
+      "step": 13,
+      "name": "reporting",
+      "description": "Run all verificators, finalise task.json, mark task completed.",
+      "status": "in_progress",
+      "started_at": "2026-05-18T15:50:00Z",
+      "completed_at": null,
+      "log_file": "logs/steps/013_reporting/"
+    }
+  ]
+}
