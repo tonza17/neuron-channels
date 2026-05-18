@@ -64,33 +64,6 @@ seeds, ~10 min on one Vast.ai instance).
 ## Medium Priority
 
 <details>
-<summary>📊 <strong>16-direction vector-sum DSI re-evaluation of top 50 t0106 cells
-to bridge t0106 <-> t0104 metric</strong> (S-0106-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0106-03` |
-| **Kind** | evaluation |
-| **Date added** | 2026-05-18 |
-| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-t0106 used 2-direction ratio DSI (PD = 0 deg, ND = 180 deg) and found 123 joint-pass cells;
-t0099 / t0102 / t0104 used 16-direction vector-sum DSI on the same 68-d substrate and found
-zero. Headline interpretation: the 2-direction reformulation surfaced cells the 16-direction
-metric hid. To confirm this is a metric artefact and not a t0106-specific lucky cluster,
-re-evaluate the top 50 t0106 cells under the full 16-direction protocol (every 22.5 deg).
-Decision: if 16-direction DSI correlates strongly with 2-direction DSI (Spearman r > 0.7), the
-reformulation surfaced genuine high-DSI cells; if correlation collapses, the 2-direction
-metric is producing false positives that disappear at higher direction count. Optional bridge:
-also evaluate at 8 directions to locate the metric phase transition. Recommended task types:
-experiment-run, data-analysis, comparative-analysis. Cost: ~$1.50 (50 cells x 16 dirs x 3
-trials).
-
-</details>
-
-<details>
 <summary>🧪 <strong>Dense morphology sweep around the t0106 winning archetype
 (soma_offset ~ -130 um, elong ~ 1.2)</strong> (S-0106-07)</summary>
 
@@ -195,6 +168,37 @@ details.json, a description.md, and the importable module. Downstream tasks (mul
 confirmation S-0106-01, soma-offset sweep S-0106-04, IBEA on 2-direction substrate S-0106-06,
 dense morphology sweep S-0106-07) import the library instead of re-implementing it.
 Recommended task types: write-library. Cost: < $0.20 (local only; no Vast.ai).
+
+</details>
+
+## Closed
+
+<details>
+<summary>✅ <s>16-direction vector-sum DSI re-evaluation of top 50 t0106 cells to
+bridge t0106 <-> t0104 metric</s> — covered by <a
+href="../../../tasks/t0107_t0106_polar_8dir_recheck/"><code>t0107_t0106_polar_8dir_recheck</code></a>
+(S-0106-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0106-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-18 |
+| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0106 used 2-direction ratio DSI (PD = 0 deg, ND = 180 deg) and found 123 joint-pass cells;
+t0099 / t0102 / t0104 used 16-direction vector-sum DSI on the same 68-d substrate and found
+zero. Headline interpretation: the 2-direction reformulation surfaced cells the 16-direction
+metric hid. To confirm this is a metric artefact and not a t0106-specific lucky cluster,
+re-evaluate the top 50 t0106 cells under the full 16-direction protocol (every 22.5 deg).
+Decision: if 16-direction DSI correlates strongly with 2-direction DSI (Spearman r > 0.7), the
+reformulation surfaced genuine high-DSI cells; if correlation collapses, the 2-direction
+metric is producing false positives that disappear at higher direction count. Optional bridge:
+also evaluate at 8 directions to locate the metric phase transition. Recommended task types:
+experiment-run, data-analysis, comparative-analysis. Cost: ~$1.50 (50 cells x 16 dirs x 3
+trials).
 
 </details>
 

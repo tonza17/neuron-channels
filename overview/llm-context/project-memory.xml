@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-18T02:15:36Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-18T11:32:29Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>216004</char_count>
-    <byte_count>216327</byte_count>
-    <estimated_tokens>54001</estimated_tokens>
+    <char_count>217122</char_count>
+    <byte_count>217449</byte_count>
+    <estimated_tokens>54280</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -215,9 +215,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0105_cluster_factor_analysis_dsi_pd</id>
         <id>t0105_preliminary_figures_report</id>
         <id>t0106_long_pdnd_nsga2_300gen</id>
+        <id>t0107_t0106_polar_8dir_recheck</id>
       </source_ids>
       <content>
-Completed tasks: 99
+Completed tasks: 100
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -812,6 +813,12 @@ ID: t0106_long_pdnd_nsga2_300gen
 Completed: 2026-05-18
 Short description: Open-ended 68-d NSGA-II using only PD and ND bars, 1 random GA seed, pop=96, n_eval_seeds=3, n_gen=300 (extendable). Hourly HV poll, operator-controlled stop, $25 hard cap.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot; date_completed: &quot;2026-05-18&quot; --- t0106 — Long 2-Direction NSGA-II: Results Summary Summary Long-horizon NSGA-II on the 68-d Bed B + 14-d morphology substrate, restricted to PD and ND directions only with ratio DSI = (PD - ND) / (PD + ND) as the selectivity objective, completed 40 generations on one random-init GA seed before an operator stop at HV plateau. The run found **123 unique joint-pass cells** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) — the **first ever in the t0080 -&gt; t0106 lineage**, decisively answering H1. Best ratio DSI = 1.0000 at PD = 81 Hz; best PD = 122.6 Hz at DSI = 0.92. Metrics * **direction_selectivity_index** = **1.0000**...
+
+## 8-direction polar re-evaluation of 10 random top-50 t0106 cells
+ID: t0107_t0106_polar_8dir_recheck
+Completed: 2026-05-18
+Short description: Re-evaluate 10 randomly selected cells from t0106 top-50 (joint-corner-ranked) at 8 directions (every 45 deg) and plot polar tuning curves. Light follow-up to S-0106-03 with reduced scope.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0107_t0106_polar_8dir_recheck&quot; date_completed: &quot;2026-05-18&quot; --- t0107 — 8-Direction Polar Re-Evaluation: Results Summary Summary Re-evaluated 10 randomly selected cells from the t0106 top-50 at an 8-direction protocol (45° steps) with N_EVAL_SEEDS = 3. **Rank order is preserved** between metrics (Spearman ρ = 0.758, p = 0.011), but the **absolute DSI values diverge sharply**: t0106 mean 2-direction ratio DSI = **0.939** vs t0107 mean 8-direction vector-sum DSI = **0.519**, a mean absolute drop of **0.42**. The 2-direction reformulation used in t0106 systematically overstates selectivity vs the conventional 16- / 8-direction literature. Metrics *...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">

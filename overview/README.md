@@ -4,14 +4,14 @@
   <a href="papers/"><img src="https://img.shields.io/badge/Papers-94-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-4-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
-  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-11-9370DB" alt="Predictions"></a>
+  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-12-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
   <a href="answers/"><img src="https://img.shields.io/badge/Answers-32-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-107-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-108-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-417-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -28,16 +28,16 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (38K)
-| [full](llm-context/full.xml) (627K) | [roadmap](llm-context/roadmap.xml) (121K) |
-[results](llm-context/results-deep-dive.xml) (485K) |
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (39K)
+| [full](llm-context/full.xml) (631K) | [roadmap](llm-context/roadmap.xml) (121K) |
+[results](llm-context/results-deep-dive.xml) (489K) |
 [assets](llm-context/literature-and-assets.xml) (66K)
 
-*Last updated: 2026-05-18 02:15 UTC*
+*Last updated: 2026-05-18 11:32 UTC*
 
 * **Budget**: **$57** spent of $75
 * **Remaining**: **$18**
-* **Usage**: `███████████████░░░░░` 75.5%
+* **Usage**: `███████████████░░░░░` 75.7%
 * **GPU Machines**: **11** provisioned across 11 tasks · **$57** GPU spend
   ([details](machines/))
 * **Provisioning**: 6 failed attempts · $0.01 wasted · 35% failure rate
@@ -82,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (99 total)](tasks/by-status/completed.md)
+## [Recently Completed (100 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0107 | [8-direction polar re-evaluation of 10 random top-50 t0106 cells](../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | [`results`](../tasks/t0107_t0106_polar_8dir_recheck/results/results_detailed.md) | 2026-05-18 11:25 |
 | 0106 | [Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate)](../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | [`results`](../tasks/t0106_long_pdnd_nsga2_300gen/results/results_detailed.md) | 2026-05-18 02:00 |
 | 0105 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | [`results`](../tasks/t0105_cluster_factor_analysis_dsi_pd/results/results_detailed.md) | 2026-05-14 14:25 |
 | 0104 | [68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | [`results`](../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/results_detailed.md) | 2026-05-14 03:07 |
@@ -95,9 +96,8 @@ No blocked tasks.
 | 0101 | [Brainstorm results session 21](../overview/tasks/task_pages/t0101_brainstorm_results_21.md) | [`results`](../tasks/t0101_brainstorm_results_21/results/results_detailed.md) | 2026-05-11 13:50 |
 | 0100 | [Re-render t0099 morphology charts with correct 68-d slice](../overview/tasks/task_pages/t0100_fix_t0099_morph_charts.md) | [`results`](../tasks/t0100_fix_t0099_morph_charts/results/results_detailed.md) | 2026-05-11 01:27 |
 | 0099 | [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`results`](../tasks/t0099_random_init_pareto_robustness/results/results_detailed.md) | 2026-05-10 23:35 |
-| 0098 | [Visualise t0091 Pareto morphologies + per-cell DSI / PD-rate charts](../overview/tasks/task_pages/t0098_visualise_pareto_morphologies.md) | [`results`](../tasks/t0098_visualise_pareto_morphologies/results/results_detailed.md) | 2026-05-08 21:50 |
 
-*89 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*90 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +122,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (375 open)](suggestions/)
+## [Recent Suggestions (374 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Multi-seed confirmation of t0106 2-direction NSGA-II at GA seeds
@@ -160,27 +160,6 @@ at PD = 84.5 Hz and PD-frontier DSI = 0.92 at PD = 122.6 Hz) at N_EVAL_SEEDS = 2
 if DSI = 1.0 collapses to <= 0.9, mark as noise-undersampling artefacts; if DSI > 0.95 holds,
 escalate. Recommended task types: experiment-run, data-analysis. Cost: ~$1 (10 cells x 20
 seeds, ~10 min on one Vast.ai instance).
-
-</details>
-
-<details>
-<summary>📊 <strong>16-direction vector-sum DSI re-evaluation of top 50 t0106 cells
-to bridge t0106 <-> t0104 metric</strong> (S-0106-03)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-18 | **Source**:
-[t0106_long_pdnd_nsga2_300gen](../tasks/t0106_long_pdnd_nsga2_300gen/)
-
-t0106 used 2-direction ratio DSI (PD = 0 deg, ND = 180 deg) and found 123 joint-pass cells;
-t0099 / t0102 / t0104 used 16-direction vector-sum DSI on the same 68-d substrate and found
-zero. Headline interpretation: the 2-direction reformulation surfaced cells the 16-direction
-metric hid. To confirm this is a metric artefact and not a t0106-specific lucky cluster,
-re-evaluate the top 50 t0106 cells under the full 16-direction protocol (every 22.5 deg).
-Decision: if 16-direction DSI correlates strongly with 2-direction DSI (Spearman r > 0.7), the
-reformulation surfaced genuine high-DSI cells; if correlation collapses, the 2-direction
-metric is producing false positives that disappear at higher direction count. Optional bridge:
-also evaluate at 8 directions to locate the metric phase transition. Recommended task types:
-experiment-run, data-analysis, comparative-analysis. Cost: ~$1.50 (50 cells x 16 dirs x 3
-trials).
 
 </details>
 
@@ -326,7 +305,28 @@ $0.10 (local-only, no Vast.ai).
 
 </details>
 
-*365 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget on Bed B +
+morphology substrate (renews S-0102-03)</strong> (S-0104-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+[t0104_nsga2_2obj_dsi_pdrate_3seeds](../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/)
+
+t0104's 0/2,208 random-init joint-pass null with the DSI guard active strengthens the case for
+S-0102-03 (IBEA replacement). NSGA-II crowding-distance selection produced an L-shaped front
+in both t0102 (3-obj) and t0104 (2-obj) on the same substrate, suggesting the selection
+operator itself prefers extreme-corner cells over interior trade-off cells. Mohacsi 2024
+explicitly recommends IBEA as the strongest multi-objective optimiser on neuron-fitting
+problems (six of six benchmarks beat NSGA-II). Port t0104's substrate to pymoo IBEA at matched
+budget (pop = 96, gens = 12, N_EVAL_SEEDS = 4, 2 GA seeds, DSI guard active, n_obj = 2).
+Expected outcome: IBEA's hypervolume-density selection produces an interior-weighted front;
+even if it does not surface a joint-pass cell, it should populate the diagonal region between
+the two corners more densely than NSGA-II did. Cost: ~$8-10 matched to t0104 envelope.
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+*364 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
@@ -1356,11 +1356,12 @@ No models yet.
 
 ---
 
-## [Latest Predictions (11 total)](predictions/)
+## [Latest Predictions (12 total)](predictions/)
 
 | Name | Source | Created |
 |------|--------|---------|
 | [NSGA-II seed 44 on 68-d Bed B + 14-d morphology, 2 directions, 300-gen target](../tasks\t0106_long_pdnd_nsga2_300gen\assets\predictions\nsga2-seed44-bedb-morph-2dir-300gen\description.md) | [106](../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | 2026-05-18 |
+| [8-direction polar re-evaluation of 10 sampled t0106 top-50 cells](../tasks\t0107_t0106_polar_8dir_recheck\assets\predictions\eight-dir-polar-recheck-top10-t0106\description.md) | [107](../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | 2026-05-18 |
 | [NSGA-II seed=55 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init, 2-objective DSI+PD, DSI silence guard)](../tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\assets\predictions\nsga2-seed55-bedb-morph-n4-gen20-2obj\description.md) | [104](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 2026-05-12 |
 | [NSGA-II seed=55 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init)](../tasks\t0102_seedscale_n4_gen20\assets\predictions\nsga2-seed55-bedb-morph-n4-gen20\description.md) | [102](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-12 |
 | [NSGA-II seed=44 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init, 2-objective DSI+PD, DSI silence guard)](../tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\assets\predictions\nsga2-seed44-bedb-morph-n4-gen20-2obj\description.md) | [104](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 2026-05-12 |
@@ -1369,9 +1370,8 @@ No models yet.
 | [Random-init Pareto front seed 22](../tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed22\description.md) | [99](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 2026-05-10 |
 | [Random-init Pareto front seed 11](../tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed11\description.md) | [99](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 2026-05-10 |
 | [Pareto front 68-d morphology-extended Bed-B v3](../tasks\t0091_morphology_extended_nsga2_v1\assets\predictions\pareto-front-68d-morphology-extended-bedb-v3\description.md) | [91](../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | 2026-05-08 |
-| [V_rest sweep on t0024 DSGC channel testbed (stochastic AR(2) release)](../tasks\t0026_vrest_sweep_tuning_curves_dsgc\assets\predictions\t0026-vrest-sweep-t0024\description.md) | [26](../overview/tasks/task_pages/t0026_vrest_sweep_tuning_curves_dsgc.md) | 2026-04-21 |
 
-*1 more prediction → [predictions](predictions/)*
+*2 more predictions → [predictions](predictions/)*
 
 ---
 
@@ -1394,7 +1394,7 @@ No models yet.
 
 ---
 
-## [Cost Leaders (11 tasks with spend)](costs/)
+## [Cost Leaders (12 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
@@ -1409,4 +1409,4 @@ No models yet.
 | [Multi-objective BO of channels + synapse placement on Bed B (max DSI + max firing rate)](../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) | [`$1.06`](../tasks/t0076_bedb_dsi_firing_rate_mobo/results/costs.json) | 2026-05-03 04:18 |
 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | [`$0.75`](../tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/results/costs.json) | 2026-05-04 22:45 |
 
-*1 more tasks with spend → [tasks with spend](costs/)*
+*2 more tasks with spend → [tasks with spend](costs/)*

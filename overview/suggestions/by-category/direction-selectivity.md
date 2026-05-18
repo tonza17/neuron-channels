@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
 286 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **255 open** (57
-high, 176 medium, 22 low), **31 closed**.
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **254 open** (57
+high, 175 medium, 22 low), **32 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1502,33 +1502,6 @@ per-cell fractional NaP / Nav1.6 / NMDA across all cells within each cluster; re
 within-cluster spread as a measure of mechanism homogeneity per cluster. Local-CPU only: 13 x
 16 x ~60 s/sim = ~3.5 hours wall-clock, $0 cost. Recommended task types: experiment-run,
 data-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>16-direction vector-sum DSI re-evaluation of top 50 t0106 cells
-to bridge t0106 <-> t0104 metric</strong> (S-0106-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0106-03` |
-| **Kind** | evaluation |
-| **Date added** | 2026-05-18 |
-| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
-
-t0106 used 2-direction ratio DSI (PD = 0 deg, ND = 180 deg) and found 123 joint-pass cells;
-t0099 / t0102 / t0104 used 16-direction vector-sum DSI on the same 68-d substrate and found
-zero. Headline interpretation: the 2-direction reformulation surfaced cells the 16-direction
-metric hid. To confirm this is a metric artefact and not a t0106-specific lucky cluster,
-re-evaluate the top 50 t0106 cells under the full 16-direction protocol (every 22.5 deg).
-Decision: if 16-direction DSI correlates strongly with 2-direction DSI (Spearman r > 0.7), the
-reformulation surfaced genuine high-DSI cells; if correlation collapses, the 2-direction
-metric is producing false positives that disappear at higher direction count. Optional bridge:
-also evaluate at 8 directions to locate the metric phase transition. Recommended task types:
-experiment-run, data-analysis, comparative-analysis. Cost: ~$1.50 (50 cells x 16 dirs x 3
-trials).
 
 </details>
 
@@ -6371,6 +6344,35 @@ sweeps but uniquely fills a corpus-wide blindspot identified in creative_thinkin
 </details>
 
 ## Closed
+
+<details>
+<summary>✅ <s>16-direction vector-sum DSI re-evaluation of top 50 t0106 cells to
+bridge t0106 <-> t0104 metric</s> — covered by <a
+href="../../../tasks/t0107_t0106_polar_8dir_recheck/"><code>t0107_t0106_polar_8dir_recheck</code></a>
+(S-0106-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0106-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-18 |
+| **Source task** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0106 used 2-direction ratio DSI (PD = 0 deg, ND = 180 deg) and found 123 joint-pass cells;
+t0099 / t0102 / t0104 used 16-direction vector-sum DSI on the same 68-d substrate and found
+zero. Headline interpretation: the 2-direction reformulation surfaced cells the 16-direction
+metric hid. To confirm this is a metric artefact and not a t0106-specific lucky cluster,
+re-evaluate the top 50 t0106 cells under the full 16-direction protocol (every 22.5 deg).
+Decision: if 16-direction DSI correlates strongly with 2-direction DSI (Spearman r > 0.7), the
+reformulation surfaced genuine high-DSI cells; if correlation collapses, the 2-direction
+metric is producing false positives that disappear at higher direction count. Optional bridge:
+also evaluate at 8 directions to locate the metric phase transition. Recommended task types:
+experiment-run, data-analysis, comparative-analysis. Cost: ~$1.50 (50 cells x 16 dirs x 3
+trials).
+
+</details>
 
 <details>
 <summary>✅ <s>Add dendritic-spike machinery to AIS-augmented Bed B and re-optimise

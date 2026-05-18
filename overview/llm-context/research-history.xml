@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-18T02:15:36Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-18T11:32:29Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>177</section_count>
-    <char_count>3357847</char_count>
-    <byte_count>3365848</byte_count>
-    <estimated_tokens>839461</estimated_tokens>
+    <section_count>178</section_count>
+    <char_count>3364674</char_count>
+    <byte_count>3372699</byte_count>
+    <estimated_tokens>841168</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -211,9 +211,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0105_cluster_factor_analysis_dsi_pd</id>
         <id>t0105_preliminary_figures_report</id>
         <id>t0106_long_pdnd_nsga2_300gen</id>
+        <id>t0107_t0106_polar_8dir_recheck</id>
       </source_ids>
       <content>
-Completed tasks: 99
+Completed tasks: 100
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -808,6 +809,12 @@ ID: t0106_long_pdnd_nsga2_300gen
 Completed: 2026-05-18
 Short description: Open-ended 68-d NSGA-II using only PD and ND bars, 1 random GA seed, pop=96, n_eval_seeds=3, n_gen=300 (extendable). Hourly HV poll, operator-controlled stop, $25 hard cap.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0106_long_pdnd_nsga2_300gen&quot; date_completed: &quot;2026-05-18&quot; --- t0106 — Long 2-Direction NSGA-II: Results Summary Summary Long-horizon NSGA-II on the 68-d Bed B + 14-d morphology substrate, restricted to PD and ND directions only with ratio DSI = (PD - ND) / (PD + ND) as the selectivity objective, completed 40 generations on one random-init GA seed before an operator stop at HV plateau. The run found **123 unique joint-pass cells** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) — the **first ever in the t0080 -&gt; t0106 lineage**, decisively answering H1. Best ratio DSI = 1.0000 at PD = 81 Hz; best PD = 122.6 Hz at DSI = 0.92. Metrics * **direction_selectivity_index** = **1.0000**...
+
+## 8-direction polar re-evaluation of 10 random top-50 t0106 cells
+ID: t0107_t0106_polar_8dir_recheck
+Completed: 2026-05-18
+Short description: Re-evaluate 10 randomly selected cells from t0106 top-50 (joint-corner-ranked) at 8 directions (every 45 deg) and plot polar tuning curves. Light follow-up to S-0106-03 with reduced scope.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0107_t0106_polar_8dir_recheck&quot; date_completed: &quot;2026-05-18&quot; --- t0107 — 8-Direction Polar Re-Evaluation: Results Summary Summary Re-evaluated 10 randomly selected cells from the t0106 top-50 at an 8-direction protocol (45° steps) with N_EVAL_SEEDS = 3. **Rank order is preserved** between metrics (Spearman ρ = 0.758, p = 0.011), but the **absolute DSI values diverge sharply**: t0106 mean 2-direction ratio DSI = **0.939** vs t0107 mean 8-direction vector-sum DSI = **0.519**, a mean absolute drop of **0.42**. The 2-direction reformulation used in t0106 systematically overstates selectivity vs the conventional 16- / 8-direction literature. Metrics *...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -56519,6 +56526,113 @@ outside [0, 1], any error in the bedb_like anchor evaluation, any unit-test fail
 * **Relevance**: Direct parent of t0106. Whole code directory is the verbatim-copy base. Source of
   all evaluator, driver, and infrastructure code; t0106 is a tight evaluator fork with seven patched
   files.
+      </content>
+    </section>
+    <section id="t0107_t0106_polar_8dir_recheck-research_code" source_kind="file">
+      <title>t0107_t0106_polar_8dir_recheck — 8-direction polar re-evaluation of 10 random top-50 t0106 cells — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0107_t0106_polar_8dir_recheck</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0107_t0106_polar_8dir_recheck/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0107_t0106_polar_8dir_recheck&quot;
+date_created: &quot;2026-05-18&quot;
+---
+### Research Code: Reuse t0106 Evaluator at 8-Direction Protocol
+
+#### Task Objective
+
+Identify the minimum code path to re-evaluate a single cell&#x27;s 68-d parameter vector at an arbitrary
+direction set, reusing the existing t0106 evaluator without re-implementing the NEURON / pymoo
+machinery. Produce the per-direction firing rates needed for polar tuning-curve plots on 10 cells
+from the t0106 top 50.
+
+#### Library Landscape
+
+The only directly relevant in-project library is the t0106 evaluator stack. No external library
+matches the t0106 evaluator&#x27;s interface (NEURON 8.2.7 + custom Bed B / morphology generator + DSI
+silence guard). Re-implementing from scratch would be far more work than reusing t0106&#x27;s code.
+
+Within the project: t0099 / t0102 / t0104 evaluators are earlier sibling versions of the same
+evaluator; t0091&#x27;s evaluator predates the 14-d morphology fix. The t0106 version is the canonical
+one because it incorporates S-0102-01 (silence guard), C-0093-01 (morphology generator patch), and
+the 2-direction ratio-DSI mode.
+
+#### Key Findings
+
+* `evaluate_68d_vector(vector_68d, n_directions, eval_seeds)` already accepts `n_directions = 8` via
+  `ANGLES_8DIR_DEG`. No algorithm patch needed for the direction count itself.
+* The public return value of `evaluate_68d_vector` exposes aggregate DSI and PD-rate but does NOT
+  expose per-direction firing rates. For polar plots we need per-direction rates, so a small patch
+  adds `per_direction_rates_hz` (length-`n_directions` array) to the return dataclass.
+* The t0106 mod compilation (`code/mods/`) is reusable: the same NEURON shared library can run both
+  2-direction and 8-direction protocols since the angle is a per-trial parameter, not a compiled
+  constant.
+* Cell selection from `tasks/t0106_*/results/data/all_evaluations_seed44.json.gz`: 3,744
+  evaluations, dedup by (DSI, PD), joint-corner-rank, top 50. Sample 10 deterministically with numpy
+  seed 42.
+* Local execution is feasible: 10 cells x 8 dirs x 3 trials = 240 NEURON sims at ~0.3 s each = ~75 s
+  wall clock. No Vast.ai needed.
+
+#### Reusable Code and Assets
+
+| Source file (t0106) | Action | Destination (t0107) |
+| --- | --- | --- |
+| `code/evaluator.py` | copy + small patch to expose `per_direction_rates_hz` | `code/evaluator.py` |
+| `code/constants_electrophys.py` | copy verbatim | `code/constants_electrophys.py` |
+| `code/constants_morphology.py` | copy verbatim | `code/constants_morphology.py` |
+| `code/constants.py` | copy verbatim | `code/constants.py` |
+| `code/paths.py` | copy + rename task slug t0106 -&gt; t0107 | `code/paths.py` |
+| `code/generator_wrapper.py` | copy verbatim | `code/generator_wrapper.py` |
+| `code/recorder.py` | copy verbatim | `code/recorder.py` |
+| `code/trial_helpers.py` | copy verbatim | `code/trial_helpers.py` |
+| `code/build_cell_ais.py` | copy verbatim | `code/build_cell_ais.py` |
+| `code/apply_params.py` | copy verbatim | `code/apply_params.py` |
+| `code/extend_with_ais.py` | copy verbatim | `code/extend_with_ais.py` |
+| `code/parametric_placer.py` | copy verbatim | `code/parametric_placer.py` |
+| `code/mods/` | copy verbatim (the .o / .so / nrnmech.dll already compiled) | `code/mods/` |
+
+New files unique to t0107:
+
+* `code/sample_top10.py` — load t0106 evaluations, dedup, joint-corner-rank, sample 10 with numpy
+  seed 42, write `selected_cells.json`.
+* `code/eval_polar.py` — for each selected cell, call
+  `evaluate_68d_vector(vec, n_directions=8, eval_seeds=[...])`, collect per-direction rates, write
+  `per_cell_polar.json`.
+* `code/plot_polar.py` — render the 10-cell polar grid into
+  `results/images/polar_tuning_curves_top10.png`.
+
+#### Lessons Learned
+
+The 2-direction reformulation in t0106 was lucky in that the evaluator&#x27;s
+`evaluate_68d_vector(n_directions=N)` was already direction-count-parameterised even when t0099 /
+t0102 / t0104 only ever invoked it with N = 16. The 2-direction case was always a one-argument
+change away from working. That same flexibility now makes t0107 cheap to build: zero algorithm work,
+just data plumbing.
+
+#### Recommendations for This Task
+
+1. Copy 13 files verbatim from t0106; patch only `evaluator.py` to surface per-direction rates.
+2. Write the 3 new scripts described above. Keep them simple and stateless.
+3. Run locally; no Vast.ai. Use the t0106 nrnmech.dll cached at
+   `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/build/` (per the t0106 smoke gate
+   precedent).
+4. Save the per-direction firing-rate matrix as part of the predictions asset so any downstream task
+   can re-plot or re-analyse without re-running NEURON.
+
+#### Task Index
+
+* `t0106_long_pdnd_nsga2_300gen` — source of the top-50 cells and the canonical evaluator
+* `t0102_seedscale_n4_gen20` — sibling evaluator with the same silence-guard inheritance pattern
+* `t0093_resweep_and_t0090_correction` — morphology generator patch (transitively inherited via
+  t0106)
+* `t0024_port_de_rosenroll_2026_dsgc` — Bed B substrate
+* `t0080_bedb_mobo_v3_dendritic_spike_nsga2` — MOD library (reused .so / .dll)
       </content>
     </section>
   </sections>

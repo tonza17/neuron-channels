@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $56.65 of $75.00 USD. $18.35 remains overall and $18.35 remains before the 100% stop
+Spent $56.80 of $75.00 USD. $18.20 remains overall and $18.20 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,15 +8,15 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $75.00 USD |
-| Total spent | $56.65 USD |
-| Budget left | $18.35 USD |
-| Budget left before stop threshold | $18.35 USD |
-| Spent percent | 75.53% |
+| Total spent | $56.80 USD |
+| Budget left | $18.20 USD |
+| Budget left before stop threshold | $18.20 USD |
+| Spent percent | 75.73% |
 | Warn threshold | 80% ($60.00) |
 | Stop threshold | 100% ($75.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 99 |
-| Tasks with non-zero spend | 11 |
+| Tasks with cost records | 100 |
+| Tasks with non-zero spend | 12 |
 | Skipped tasks | 8 |
 
 ## Service Totals
@@ -47,6 +47,7 @@ threshold.
 | `vast-ai-driver-overhead` | $0.74 |
 | `vast-ai-rtx-pro-4000-idle` | $0.65 |
 | `vast-ai-idle` | $0.43 |
+| `vast-ai-epyc7532` | $0.15 |
 | `vast_ai_setup_and_smoke_gates` | $0.11 |
 | `vast-ai-setup` | $0.04 |
 | `api` | $0.00 |
@@ -70,6 +71,7 @@ threshold.
 | [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | $12.07 | $8.00 | yes |
 | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | completed | $10.30 | $15.00 | no |
 | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | completed | $10.37 | $8.00 | yes |
+| [`t0107_t0106_polar_8dir_recheck`](../../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | completed | $0.15 | $8.00 | no |
 
 ## Skipped Tasks
 

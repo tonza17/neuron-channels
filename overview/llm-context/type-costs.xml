@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-18T02:15:36Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-18T11:32:29Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>5969</char_count>
-    <byte_count>5969</byte_count>
-    <estimated_tokens>1492</estimated_tokens>
+    <char_count>6035</char_count>
+    <byte_count>6035</byte_count>
+    <estimated_tokens>1508</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,9 +18,9 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $75.00
-Total spent: $56.65
-Budget remaining: $18.35
-Spent: 75.5%
+Total spent: $56.80
+Budget remaining: $18.20
+Spent: 75.7%
 
 ### Cost Breakdown by Category
 
@@ -41,6 +41,7 @@ Spent: 75.5%
 * vast-ai-driver-overhead: $0.74
 * vast-ai-rtx-pro-4000-idle: $0.65
 * vast-ai-idle: $0.43
+* vast-ai-epyc7532: $0.15
 * vast_ai_setup_and_smoke_gates: $0.11
 * vast-ai-setup: $0.04
 * api: $0.00
@@ -153,6 +154,7 @@ Spent: 75.5%
 * t0105_cluster_factor_analysis_dsi_pd: $0.00
 * t0105_preliminary_figures_report: $0.00
 * t0106_long_pdnd_nsga2_300gen: $10.37
+* t0107_t0106_polar_8dir_recheck: $0.15
       </content>
     </section>
   </sections>

@@ -9,7 +9,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 (286)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (3)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
-(7)](../predictions/by-category/direction-selectivity.md)
+(8)](../predictions/by-category/direction-selectivity.md)
 
 ---
 
@@ -3017,7 +3017,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (255 open, 31 closed)
+## Suggestions (254 open, 32 closed)
 
 <details>
 <summary>🧪 <strong>Multi-seed confirmation of t0106 2-direction NSGA-II at GA seeds
@@ -3055,27 +3055,6 @@ at PD = 84.5 Hz and PD-frontier DSI = 0.92 at PD = 122.6 Hz) at N_EVAL_SEEDS = 2
 if DSI = 1.0 collapses to <= 0.9, mark as noise-undersampling artefacts; if DSI > 0.95 holds,
 escalate. Recommended task types: experiment-run, data-analysis. Cost: ~$1 (10 cells x 20
 seeds, ~10 min on one Vast.ai instance).
-
-</details>
-
-<details>
-<summary>📊 <strong>16-direction vector-sum DSI re-evaluation of top 50 t0106 cells
-to bridge t0106 <-> t0104 metric</strong> (S-0106-03)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-18 | **Source**:
-[t0106_long_pdnd_nsga2_300gen](../../tasks/t0106_long_pdnd_nsga2_300gen/)
-
-t0106 used 2-direction ratio DSI (PD = 0 deg, ND = 180 deg) and found 123 joint-pass cells;
-t0099 / t0102 / t0104 used 16-direction vector-sum DSI on the same 68-d substrate and found
-zero. Headline interpretation: the 2-direction reformulation surfaced cells the 16-direction
-metric hid. To confirm this is a metric artefact and not a t0106-specific lucky cluster,
-re-evaluate the top 50 t0106 cells under the full 16-direction protocol (every 22.5 deg).
-Decision: if 16-direction DSI correlates strongly with 2-direction DSI (Spearman r > 0.7), the
-reformulation surfaced genuine high-DSI cells; if correlation collapses, the 2-direction
-metric is producing false positives that disappear at higher direction count. Optional bridge:
-also evaluate at 8 directions to locate the metric phase transition. Recommended task types:
-experiment-run, data-analysis, comparative-analysis. Cost: ~$1.50 (50 cells x 16 dirs x 3
-trials).
 
 </details>
 
