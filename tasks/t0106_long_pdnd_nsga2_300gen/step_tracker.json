@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; generate HV-vs-gen, Pareto-front, joint-pass-tally, best-DSI lineage, anchor-distance histogram charts.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-18T01:31:23Z",
-      "completed_at": null,
+      "completed_at": "2026-05-18T01:36:47Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
