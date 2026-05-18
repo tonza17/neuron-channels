@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0106_long_pdnd_nsga2_300gen",
+  "command": "python -m arf.scripts.aggregators.aggregate_task_types --format json",
+  "exit_code": 1,
+  "duration_seconds": 0.127,
+  "started_at": "2026-05-18T01:46:20Z",
+  "completed_at": "2026-05-18T01:46:20Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0106_long_pdnd_nsga2_300gen",
+  "stdout_file": "127_20260518T014620Z_python-m-arf-scripts-aggregators-aggrega.stdout.txt",
+  "stderr_file": "127_20260518T014620Z_python-m-arf-scripts-aggregators-aggrega.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 12,
+  "truncated": false
+}
