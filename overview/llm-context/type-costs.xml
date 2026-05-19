@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-18T11:32:29Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-19T13:45:13Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>6035</char_count>
-    <byte_count>6035</byte_count>
-    <estimated_tokens>1508</estimated_tokens>
+    <char_count>6208</char_count>
+    <byte_count>6208</byte_count>
+    <estimated_tokens>1552</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -155,6 +155,10 @@ Spent: 75.7%
 * t0105_preliminary_figures_report: $0.00
 * t0106_long_pdnd_nsga2_300gen: $10.37
 * t0107_t0106_polar_8dir_recheck: $0.15
+* t0108_t0106_cluster_factor_dsi05_pd10: $0.00
+* t0109_t0108_morph_cluster_gallery: $0.00
+* t0110_relaxed_cohort_factor_analysis: $0.00
+* t0111_brainstorm_results_22: $0.00
       </content>
     </section>
   </sections>

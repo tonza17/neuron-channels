@@ -1,6 +1,6 @@
 # Tuning Curve Reliability
 
-**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 245
+**Key**: `tuning_curve_reliability` | **Unit**: ratio | **Results**: 248
 
 [Back to all metrics](README.md)
 
@@ -251,3 +251,6 @@
 | 243 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | Anchor symmetric | — |
 | 244 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | Primary cohort (DSI > 0.1 AND PD > 2.0) | — |
 | 245 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | Strict cohort (DSI > 0.2 AND PD > 3.0) | — |
+| 246 | [Cluster + factor analysis of t0106 cells at DSI>0.5 AND PD>10](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) | Strict cohort (DSI > 0.5 AND PD > 10 Hz) from t0106 | — |
+| 247 | [Morphology gallery (10 per cluster) for the four t0108 morphology clusters](../../../overview/tasks/task_pages/t0109_t0108_morph_cluster_gallery.md) | Gallery cohort (t0108 strict-cohort: DSI > 0.5 AND PD > 10 Hz) from t0106 | — |
+| 248 | [Factor analysis at relaxed cohort (DSI > 0.2 AND PD > 3) to test all-negative PD claim](../../../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) | Relaxed cohort (DSI > 0.2 AND PD > 3 Hz) from t0106 | — |

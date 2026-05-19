@@ -6,12 +6,12 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-12-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-32-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-36-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-108-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-113-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-417-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (39K)
-| [full](llm-context/full.xml) (631K) | [roadmap](llm-context/roadmap.xml) (121K) |
-[results](llm-context/results-deep-dive.xml) (489K) |
-[assets](llm-context/literature-and-assets.xml) (66K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (41K)
+| [full](llm-context/full.xml) (652K) | [roadmap](llm-context/roadmap.xml) (126K) |
+[results](llm-context/results-deep-dive.xml) (501K) |
+[assets](llm-context/literature-and-assets.xml) (69K)
 
-*Last updated: 2026-05-18 11:32 UTC*
+*Last updated: 2026-05-19 13:45 UTC*
 
 * **Budget**: **$57** spent of $75
 * **Remaining**: **$18**
@@ -59,10 +59,11 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
+| 0112 | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | [`description`](../tasks/t0112_t0106_seed77_replicate/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
 
@@ -82,22 +83,22 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (100 total)](tasks/by-status/completed.md)
+## [Recently Completed (104 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0111 | [Brainstorm results session 22](../overview/tasks/task_pages/t0111_brainstorm_results_22.md) | [`results`](../tasks/t0111_brainstorm_results_22/results/results_detailed.md) | 2026-05-19 00:00 |
+| 0110 | [Factor analysis at relaxed cohort (DSI > 0.2 AND PD > 3) to test all-negative PD claim](../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) | [`results`](../tasks/t0110_relaxed_cohort_factor_analysis/results/results_detailed.md) | 2026-05-18 19:30 |
+| 0109 | [Morphology gallery (10 per cluster) for the four t0108 morphology clusters](../overview/tasks/task_pages/t0109_t0108_morph_cluster_gallery.md) | [`results`](../tasks/t0109_t0108_morph_cluster_gallery/results/results_detailed.md) | 2026-05-18 17:55 |
+| 0108 | [Cluster + factor analysis of t0106 cells at DSI>0.5 AND PD>10](../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) | [`results`](../tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/results_detailed.md) | 2026-05-18 16:00 |
 | 0107 | [8-direction polar re-evaluation of 10 random top-50 t0106 cells](../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | [`results`](../tasks/t0107_t0106_polar_8dir_recheck/results/results_detailed.md) | 2026-05-18 11:25 |
 | 0106 | [Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate)](../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | [`results`](../tasks/t0106_long_pdnd_nsga2_300gen/results/results_detailed.md) | 2026-05-18 02:00 |
 | 0105 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | [`results`](../tasks/t0105_cluster_factor_analysis_dsi_pd/results/results_detailed.md) | 2026-05-14 14:25 |
 | 0104 | [68-d 2-objective (DSI + PD-rate) NSGA-II at GA seeds=3, N=4, gens=20](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | [`results`](../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/results/results_detailed.md) | 2026-05-14 03:07 |
 | 0105 | [Preliminary-data figure pack and slide deck for report](../overview/tasks/task_pages/t0105_preliminary_figures_report.md) | [`results`](../tasks/t0105_preliminary_figures_report/results/results_detailed.md) | 2026-05-13 22:44 |
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | [`results`](../tasks/t0102_seedscale_n4_gen20/results/results_detailed.md) | 2026-05-12 18:44 |
-| 0103 | [Extract direction-selective cell data from Baden et al. 2016](../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | [`results`](../tasks/t0103_extract_baden_2016_ds_morphologies/results/results_detailed.md) | 2026-05-12 01:55 |
-| 0101 | [Brainstorm results session 21](../overview/tasks/task_pages/t0101_brainstorm_results_21.md) | [`results`](../tasks/t0101_brainstorm_results_21/results/results_detailed.md) | 2026-05-11 13:50 |
-| 0100 | [Re-render t0099 morphology charts with correct 68-d slice](../overview/tasks/task_pages/t0100_fix_t0099_morph_charts.md) | [`results`](../tasks/t0100_fix_t0099_morph_charts/results/results_detailed.md) | 2026-05-11 01:27 |
-| 0099 | [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`results`](../tasks/t0099_random_init_pareto_robustness/results/results_detailed.md) | 2026-05-10 23:35 |
 
-*90 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*94 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -118,7 +119,7 @@ No blocked tasks.
 | 9 | [Bar-arrival-locked tonic GABA + AMPA escape sweep on t0057 substrate](../overview/tasks/task_pages/t0059_bar_locked_gaba_ampa_sweep_t0057.md) | gAMPA=0.50/GABA=2.00/FULL | **17.178292988536434** |
 | 10 | [Minimal from-scratch DSGC with scalar gabaMOD inhibition](../overview/tasks/task_pages/t0052_minimal_dsgc_scalar_gaba.md) | Full E+I (scalar gabaMOD) | **16.980414819835936** |
 
-*163 more results → [all results](metrics-results/)*
+*166 more results → [all results](metrics-results/)*
 
 ---
 
@@ -537,7 +538,7 @@ task types: baseline-evaluation, comparative-analysis. Cost: < $0.20 (~95 evalua
 
 ---
 
-## [Recent Answers (32 total)](answers/)
+## [Recent Answers (36 total)](answers/)
 
 <details>
 <summary><strong>Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d
@@ -557,6 +558,80 @@ lineage, every prior task of which returned zero. Hypervolume climbed 604x from 
 marking the empirical convergence point on the 2-direction substrate. The reformulation from
 16-direction vector-sum DSI to 2-direction ratio DSI — not the longer generation budget —
 drove the breakthrough.
+
+</details>
+
+<details>
+<summary><strong>Which factors (combinations of the 68 input parameters) explain DSI
+and PD diversity in the strict cohort (DSI > 0.5 AND PD > 10), and is there
+a joint factor?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-18 | **Full answer**:
+[`t0106-dsi-pd-factor-decomposition-strict-cohort`](../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-dsi-pd-factor-decomposition-strict-cohort/)
+
+Varimax factor analysis on the z-scored 68-d matrix of the 150-cell strict cohort retains 10
+factors and identifies F10 as the single joint DSI-PD factor (|r_DSI|=0.31, |r_PD|=0.45).
+PD-rate diversity is otherwise dominated by F1 (r=−0.545; SK_TERMINAL, SK_MID, CAT, NAV16_AIS,
+NAP_MID loadings); DSI diversity is split between F5 (r=−0.325) and F10 (r=+0.313). F10's
+positive direction raises DSI but suppresses PD, making it a trade-off axis along CAD_DEPTH,
+CAL, W_ACH, branch_prob_per_um, and mean_segment_length. No single factor jointly increases
+both objectives in this cohort.
+
+</details>
+
+<details>
+<summary><strong>When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by
+their 54-d electrophys parameters, do the clusters carry a distinguishable
+morphological signature?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-18 | **Full answer**:
+[`t0106-electrophys-clusters-morphology-signature`](../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-electrophys-clusters-morphology-signature/)
+
+Only weakly. K-means on the z-scored 54-d electrophys submatrix of the 150-cell strict cohort
+produces an unbalanced k=2 split (10 vs 140; silhouette 0.496) that essentially separates a
+small low-firing high-DSI outlier group from the bulk. Across 14 morphology parameters, only 3
+differ between the clusters at Bonferroni p < 0.05: mean_branching_angle_deg,
+branch_length_cv, ais_length_um. Higher-k partitions degrade silhouette to ~0.13, so no
+further morphology-relevant structure exists. The electrophys regime that produces high DSI
+and high PD is therefore largely morphology-agnostic within this cohort.
+
+</details>
+
+<details>
+<summary><strong>When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by
+their 14-d morphology parameters, do the clusters carry a distinguishable
+electrophys signature?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-18 | **Full answer**:
+[`t0106-morphology-clusters-electrophys-signature`](../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-morphology-clusters-electrophys-signature/)
+
+Yes, strongly. K-means on the z-scored 14-d morphology submatrix of the 150-cell strict cohort
+gives a balanced k=4 split (silhouette 0.233, sizes 21/55/67/7), and 30 of 54 electrophys
+parameters separate the clusters at Bonferroni p < 0.05. The strongest discriminators are
+NAV16_AIS_GBAR, NAV16_MID_GBAR, CAL_GBAR, CAT_GBAR, IH_GBAR, and AIS_DIAMETER_UM (all p_bonf <
+1e-6). Cluster 3 (n=7, low PD ~29 Hz) carries a distinctive high-K low-axonal-Na regime with
+very different NAV16_AIS, CAT, SK_TERMINAL, and KV3_PRIMARY values from clusters 0–2. Each
+morphology type therefore imposes a distinct channel regime in this cohort.
+
+</details>
+
+<details>
+<summary><strong>Does t0108's all-negative PD-rate factor-correlation column persist
+if we re-run the same varimax factor analysis on a less-truncated cohort,
+or is it a cohort-selection artifact?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-18 | **Full answer**:
+[`t0106-pd-correlation-sign-flip-relaxed-cohort`](../tasks/t0110_relaxed_cohort_factor_analysis/assets/answer/t0106-pd-correlation-sign-flip-relaxed-cohort/)
+
+It is a truncated-cohort artifact. Re-running the same varimax FA pipeline on 247 t0106 cells
+at the relaxed threshold DSI > 0.2 AND PD > 3 Hz (vs t0108's 150 cells at DSI > 0.5 AND PD >
+10) produces **2 of 10 factors with positive r(PD)** (F2 +0.136 at p=0.033, F4 +0.048 n.s.).
+DSI sign distribution flips from t0108's 4 / 6 (positive / negative) to 6 / 4. F1, the
+dominant axis in both cohorts, is also reinterpreted: in t0108 it appeared as a PD-only
+dropper (r_DSI = +0.06) because the DSI ceiling masked the DSI effect, but in t0110 it is
+revealed as the **joint failure axis** (r_DSI = −0.37, r_PD = −0.75). F2's loadings (high
+persistent-Na, low Mg-block, low primary-BK) identify "more persistent sodium → more firing"
+as a real PD-positive direction that the strict cohort completely hid.
 
 </details>
 
@@ -661,102 +736,7 @@ reaches t0091's DSI threshold (best 0.49) but only half its PD-rate (best 18.7 H
 
 </details>
 
-<details>
-<summary><strong>Did enabling the 14-d procedural morphology variation as an
-optimisation axis open biologically-plausible joint-pass regions of
-parameter space that the fixed-Bed-B substrate of t0080-t0088 could not
-reach?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-05-08 | **Full answer**:
-[`morphology-extension-biological-plausibility`](../tasks/t0091_morphology_extended_nsga2_v1/assets/answer/morphology-extension-biological-plausibility/)
-
-No. None of the 57 Pareto cells reach the joint plausible region across all 13 priors (9
-electrophys + 4 morphology). Worst-case aggregation flags every cell as exotic or stretched,
-driven primarily by NMDA / NaP / GABA prior deviations carried over from the v3 electrophys
-substrate. PD-asymmetric anchor 3 captured 12 cells vs ND-asymmetric anchor 4 with 9
-(one-sided permutation p=0.331).
-
-</details>
-
-<details>
-<summary><strong>Why do t0090's procedural cells produce zero spikes under the t0083
-best-cell channel set, and what is the fix?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-08 | **Full answer**:
-[`t0090-procedural-cell-silence-root-cause`](../tasks/t0092_diagnose_morphology_generator_silence/assets/answer/t0090-procedural-cell-silence-root-cause/)
-
-The t0090 generator emits the soma's two pt3d points at coincident `(x, y, 0)` coordinates, so
-NEURON computes the cumulative pt3d length as zero, overrides the prior `sec.L =
-soma_diameter_um` assignment, and the soma's surface area collapses to ~9.4e-14 µm² —
-essentially a point. Synaptic input then drives the somatic Vm to NaN within a few simulation
-steps, so every procedural cell in t0090's 60-cell sweep returns `non_finite_voltage` (51
-cells) or zero spikes (the 9 STABLE cells that happened to clear the no-stim stability check).
-The fix is the `procedural_dsgc_morphology_generator_fix` library: a thin wrapper that
-re-emits the soma's pt3d points along the z-axis so the cylinder length equals
-`soma_diameter_um` and the surface area matches the t0024 hand-coded reference (~220 µm²).
-After applying the fix the BedB-equivalent procedural cell fires 61 spikes in the PD direction
-(43.6 Hz, peak Vm ~11 mV).
-
-</details>
-
-<details>
-<summary><strong>Which objective functions have been used in published
-multi-objective optimisation of single-neuron compartmental models, and
-what is each one's formula, units, and NEURON-side computational recipe
-on a t0091-style 8-direction trial output?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-08 | **Full answer**:
-[`objective-functions-for-single-neuron-multi-objective-optimisation`](../tasks/t0097_multi_obj_optim/assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation/)
-
-The published multi-objective single-neuron optimisation literature converges on four
-canonical biological objective categories that fit directly on top of the project's existing
-pymoo NSGA-II loop: stimulus-spike-train mutual information via the direct method with 1/T
-extrapolation, ATP-per-spike via per-compartment integration of Na+ inward current divided by
-three (the Na+/K+ ATPase stoichiometry), cytoplasm volume as the sum of pi*r^2*L over
-compartments (novel as an explicit MOO target on a single neuron), and Marder-style robustness
-as the standard deviation of DSI under +/-10% perturbation of all channel densities. Each
-catalogued objective is implemented as one pymoo evaluator callable on the project's existing
-8-direction 1400-ms trial output and is reported with a uniform 8-field record (name, LaTeX
-formula, units, NEURON-side quantities, recipe, biological-plausibility note,
-direction-of-optimisation, supporting paper citations). The methodology synthesis adopts
-per-feature SD-normalisation, the 2-3 SD acceptance threshold and ensemble-as-experiment
-reporting pattern, and the optimiser-selection rule NSGA-II for high-d 2-3-objective problems,
-NSGA-III for high-d many-objective problems, and qLogNEHVI for low-d constrained problems with
-population fewer than 20 evaluations. Two additional well-defined objectives surfaced by the
-survey are also catalogued with the full 8-field record: coincidence-detection accuracy (the
-closest published function-vs-energy MOO analogue to the project's planned DSI-vs-energy work)
-and bits-per-ATP efficiency (the canonical empirical Pareto curve in the field). This answer
-is grounded in 21 newly catalogued papers plus 9 corpus papers and the BluePyOpt / eFEL /
-pymoo / AllenSDK documentation.
-
-</details>
-
-<details>
-<summary><strong>Do the validation triplet results (G.1 AIS-to-soma Nav ratio audit,
-G.2 NMDA units calibration, G.3 NaP knockout) confirm or refute the
-biological-plausibility flags raised in t0086 and t0088?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-05-07 | **Full answer**:
-[`validation-triplet-implications-for-biological-plausibility`](../tasks/t0090_morphology_generator_diversity_test/assets/answer/validation-triplet-implications-for-biological-plausibility/)
-
-Conditional. The G.1 AIS-to-soma Nav-ratio audit shows the cluster-1 ratio is a real
-biological signal, not a centroid artifact: zero of four cluster-1 cells are pinned to the
-soma Nav lower bound and three of four cells individually exceed a ratio of 50, so the
-+33-sigma deviation from the Werginz 2024 prior reflects an actual model preference rather
-than an inflated denominator. G.2 produces a NetCon-weight to per-spine conductance
-calibration that lets us re-score the cluster-NMDA-exotic verdict in calibrated units, but the
-conversion does not by itself reduce the deviation enough to rule out a units mismatch. G.3
-quantifies the causal contribution of distal NaP to the direction-selectivity index of the
-four cluster representatives by comparing knockout DSI against the original t0083 DSI,
-providing a per-cell verdict (NaP-dominant, NaP-partial, or NaP-minor). Taken together, the
-triplet confirms two of the t0086 / t0088 flags as real biological signals (cluster-1
-AIS-to-soma ratio, NaP attribution where the knockout collapses DSI) and leaves the
-NMDA-exotic flag in the conditional category pending an independent measurement of per-spine
-open conductance in the t0024 voltage-clamp regime.
-
-</details>
-
-*22 more answers → [answers](answers/)*
+*26 more answers → [answers](answers/)*
 
 ---
 

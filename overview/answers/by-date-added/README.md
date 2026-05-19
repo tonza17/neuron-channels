@@ -1,12 +1,12 @@
 # Answers by Date Added
 
-32 answer(s) grouped by creation date.
+36 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-05-18 (1)
+## 2026-05-18 (5)
 
 <details>
 <summary><strong>Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d
@@ -39,6 +39,132 @@ drove the breakthrough.
 | **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md), [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
 | **URL sources** | — |
 | **Created by** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+
+</details>
+
+<details>
+<summary><strong>Does t0108's all-negative PD-rate factor-correlation column persist
+if we re-run the same varimax factor analysis on a less-truncated cohort,
+or is it a cohort-selection artifact?</strong></summary>
+
+**Confidence**: high
+
+It is a truncated-cohort artifact. Re-running the same varimax FA pipeline on 247 t0106 cells
+at the relaxed threshold DSI > 0.2 AND PD > 3 Hz (vs t0108's 150 cells at DSI > 0.5 AND PD >
+10) produces **2 of 10 factors with positive r(PD)** (F2 +0.136 at p=0.033, F4 +0.048 n.s.).
+DSI sign distribution flips from t0108's 4 / 6 (positive / negative) to 6 / 4. F1, the
+dominant axis in both cohorts, is also reinterpreted: in t0108 it appeared as a PD-only
+dropper (r_DSI = +0.06) because the DSI ceiling masked the DSI effect, but in t0110 it is
+revealed as the **joint failure axis** (r_DSI = −0.37, r_PD = −0.75). F2's loadings (high
+persistent-Na, low Mg-block, low primary-BK) identify "more persistent sodium → more firing"
+as a real PD-positive direction that the strict cohort completely hid.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0110_relaxed_cohort_factor_analysis/assets/answer/t0106-pd-correlation-sign-flip-relaxed-cohort/full_answer.md) |
+| **ID** | [`t0106-pd-correlation-sign-flip-relaxed-cohort`](../../../tasks/t0110_relaxed_cohort_factor_analysis/assets/answer/t0106-pd-correlation-sign-flip-relaxed-cohort/) |
+| **Question** | Does t0108's all-negative PD-rate factor-correlation column persist if we re-run the same varimax factor analysis on a less-truncated cohort, or is it a cohort-selection artifact? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-05-18 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) |
+| **URL sources** | — |
+| **Created by** | [`t0110_relaxed_cohort_factor_analysis`](../../../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) |
+
+</details>
+
+<details>
+<summary><strong>When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by
+their 14-d morphology parameters, do the clusters carry a distinguishable
+electrophys signature?</strong></summary>
+
+**Confidence**: high
+
+Yes, strongly. K-means on the z-scored 14-d morphology submatrix of the 150-cell strict cohort
+gives a balanced k=4 split (silhouette 0.233, sizes 21/55/67/7), and 30 of 54 electrophys
+parameters separate the clusters at Bonferroni p < 0.05. The strongest discriminators are
+NAV16_AIS_GBAR, NAV16_MID_GBAR, CAL_GBAR, CAT_GBAR, IH_GBAR, and AIS_DIAMETER_UM (all p_bonf <
+1e-6). Cluster 3 (n=7, low PD ~29 Hz) carries a distinctive high-K low-axonal-Na regime with
+very different NAV16_AIS, CAT, SK_TERMINAL, and KV3_PRIMARY values from clusters 0–2. Each
+morphology type therefore imposes a distinct channel regime in this cohort.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-morphology-clusters-electrophys-signature/full_answer.md) |
+| **ID** | [`t0106-morphology-clusters-electrophys-signature`](../../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-morphology-clusters-electrophys-signature/) |
+| **Question** | When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by their 14-d morphology parameters, do the clusters carry a distinguishable electrophys signature? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-05-18 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **URL sources** | — |
+| **Created by** | [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) |
+
+</details>
+
+<details>
+<summary><strong>When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by
+their 54-d electrophys parameters, do the clusters carry a distinguishable
+morphological signature?</strong></summary>
+
+**Confidence**: medium
+
+Only weakly. K-means on the z-scored 54-d electrophys submatrix of the 150-cell strict cohort
+produces an unbalanced k=2 split (10 vs 140; silhouette 0.496) that essentially separates a
+small low-firing high-DSI outlier group from the bulk. Across 14 morphology parameters, only 3
+differ between the clusters at Bonferroni p < 0.05: mean_branching_angle_deg,
+branch_length_cv, ais_length_um. Higher-k partitions degrade silhouette to ~0.13, so no
+further morphology-relevant structure exists. The electrophys regime that produces high DSI
+and high PD is therefore largely morphology-agnostic within this cohort.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-electrophys-clusters-morphology-signature/full_answer.md) |
+| **ID** | [`t0106-electrophys-clusters-morphology-signature`](../../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-electrophys-clusters-morphology-signature/) |
+| **Question** | When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by their 54-d electrophys parameters, do the clusters carry a distinguishable morphological signature? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-18 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **URL sources** | — |
+| **Created by** | [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) |
+
+</details>
+
+<details>
+<summary><strong>Which factors (combinations of the 68 input parameters) explain DSI
+and PD diversity in the strict cohort (DSI > 0.5 AND PD > 10), and is there
+a joint factor?</strong></summary>
+
+**Confidence**: medium
+
+Varimax factor analysis on the z-scored 68-d matrix of the 150-cell strict cohort retains 10
+factors and identifies F10 as the single joint DSI-PD factor (|r_DSI|=0.31, |r_PD|=0.45).
+PD-rate diversity is otherwise dominated by F1 (r=−0.545; SK_TERMINAL, SK_MID, CAT, NAV16_AIS,
+NAP_MID loadings); DSI diversity is split between F5 (r=−0.325) and F10 (r=+0.313). F10's
+positive direction raises DSI but suppresses PD, making it a trade-off axis along CAD_DEPTH,
+CAL, W_ACH, branch_prob_per_um, and mean_segment_length. No single factor jointly increases
+both objectives in this cohort.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-dsi-pd-factor-decomposition-strict-cohort/full_answer.md) |
+| **ID** | [`t0106-dsi-pd-factor-decomposition-strict-cohort`](../../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-dsi-pd-factor-decomposition-strict-cohort/) |
+| **Question** | Which factors (combinations of the 68 input parameters) explain DSI and PD diversity in the strict cohort (DSI > 0.5 AND PD > 10), and is there a joint factor? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-18 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **URL sources** | — |
+| **Created by** | [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) |
 
 </details>
 

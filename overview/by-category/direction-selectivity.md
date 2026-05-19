@@ -5,7 +5,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (47)](../papers/by-category/direction-selectivity.md) | [Answers
-(22)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(26)](../answers/by-category/direction-selectivity.md) | [Suggestions
 (286)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (3)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
@@ -2534,7 +2534,7 @@ simulation.
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | completed | 2026-05-12 01:55 |
 
-## Answers (22)
+## Answers (26)
 
 <details>
 <summary><strong>Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d
@@ -2554,6 +2554,80 @@ lineage, every prior task of which returned zero. Hypervolume climbed 604x from 
 marking the empirical convergence point on the 2-direction substrate. The reformulation from
 16-direction vector-sum DSI to 2-direction ratio DSI — not the longer generation budget —
 drove the breakthrough.
+
+</details>
+
+<details>
+<summary><strong>Which factors (combinations of the 68 input parameters) explain DSI
+and PD diversity in the strict cohort (DSI > 0.5 AND PD > 10), and is there
+a joint factor?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-18 | **Full answer**:
+[`t0106-dsi-pd-factor-decomposition-strict-cohort`](../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-dsi-pd-factor-decomposition-strict-cohort/)
+
+Varimax factor analysis on the z-scored 68-d matrix of the 150-cell strict cohort retains 10
+factors and identifies F10 as the single joint DSI-PD factor (|r_DSI|=0.31, |r_PD|=0.45).
+PD-rate diversity is otherwise dominated by F1 (r=−0.545; SK_TERMINAL, SK_MID, CAT, NAV16_AIS,
+NAP_MID loadings); DSI diversity is split between F5 (r=−0.325) and F10 (r=+0.313). F10's
+positive direction raises DSI but suppresses PD, making it a trade-off axis along CAD_DEPTH,
+CAL, W_ACH, branch_prob_per_um, and mean_segment_length. No single factor jointly increases
+both objectives in this cohort.
+
+</details>
+
+<details>
+<summary><strong>When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by
+their 54-d electrophys parameters, do the clusters carry a distinguishable
+morphological signature?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-18 | **Full answer**:
+[`t0106-electrophys-clusters-morphology-signature`](../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-electrophys-clusters-morphology-signature/)
+
+Only weakly. K-means on the z-scored 54-d electrophys submatrix of the 150-cell strict cohort
+produces an unbalanced k=2 split (10 vs 140; silhouette 0.496) that essentially separates a
+small low-firing high-DSI outlier group from the bulk. Across 14 morphology parameters, only 3
+differ between the clusters at Bonferroni p < 0.05: mean_branching_angle_deg,
+branch_length_cv, ais_length_um. Higher-k partitions degrade silhouette to ~0.13, so no
+further morphology-relevant structure exists. The electrophys regime that produces high DSI
+and high PD is therefore largely morphology-agnostic within this cohort.
+
+</details>
+
+<details>
+<summary><strong>When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by
+their 14-d morphology parameters, do the clusters carry a distinguishable
+electrophys signature?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-18 | **Full answer**:
+[`t0106-morphology-clusters-electrophys-signature`](../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-morphology-clusters-electrophys-signature/)
+
+Yes, strongly. K-means on the z-scored 14-d morphology submatrix of the 150-cell strict cohort
+gives a balanced k=4 split (silhouette 0.233, sizes 21/55/67/7), and 30 of 54 electrophys
+parameters separate the clusters at Bonferroni p < 0.05. The strongest discriminators are
+NAV16_AIS_GBAR, NAV16_MID_GBAR, CAL_GBAR, CAT_GBAR, IH_GBAR, and AIS_DIAMETER_UM (all p_bonf <
+1e-6). Cluster 3 (n=7, low PD ~29 Hz) carries a distinctive high-K low-axonal-Na regime with
+very different NAV16_AIS, CAT, SK_TERMINAL, and KV3_PRIMARY values from clusters 0–2. Each
+morphology type therefore imposes a distinct channel regime in this cohort.
+
+</details>
+
+<details>
+<summary><strong>Does t0108's all-negative PD-rate factor-correlation column persist
+if we re-run the same varimax factor analysis on a less-truncated cohort,
+or is it a cohort-selection artifact?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-18 | **Full answer**:
+[`t0106-pd-correlation-sign-flip-relaxed-cohort`](../../tasks/t0110_relaxed_cohort_factor_analysis/assets/answer/t0106-pd-correlation-sign-flip-relaxed-cohort/)
+
+It is a truncated-cohort artifact. Re-running the same varimax FA pipeline on 247 t0106 cells
+at the relaxed threshold DSI > 0.2 AND PD > 3 Hz (vs t0108's 150 cells at DSI > 0.5 AND PD >
+10) produces **2 of 10 factors with positive r(PD)** (F2 +0.136 at p=0.033, F4 +0.048 n.s.).
+DSI sign distribution flips from t0108's 4 / 6 (positive / negative) to 6 / 4. F1, the
+dominant axis in both cohorts, is also reinterpreted: in t0108 it appeared as a PD-only
+dropper (r_DSI = +0.06) because the DSI ceiling masked the DSI effect, but in t0110 it is
+revealed as the **joint failure axis** (r_DSI = −0.37, r_PD = −0.75). F2's loadings (high
+persistent-Na, low Mg-block, low primary-BK) identify "more persistent sodium → more firing"
+as a real PD-positive direction that the strict cohort completely hid.
 
 </details>
 
