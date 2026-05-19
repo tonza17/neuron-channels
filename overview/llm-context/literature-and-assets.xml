@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-19T13:45:13Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-19T21:54:48Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>274238</char_count>
-    <byte_count>274646</byte_count>
-    <estimated_tokens>68559</estimated_tokens>
+    <char_count>274900</char_count>
+    <byte_count>275312</byte_count>
+    <estimated_tokens>68725</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -219,9 +219,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0109_t0108_morph_cluster_gallery</id>
         <id>t0110_relaxed_cohort_factor_analysis</id>
         <id>t0111_brainstorm_results_22</id>
+        <id>t0112_t0106_seed77_replicate</id>
       </source_ids>
       <content>
-Completed tasks: 104
+Completed tasks: 105
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -846,6 +847,12 @@ ID: t0111_brainstorm_results_22
 Completed: 2026-05-19
 Short description: Twenty-second brainstorm: commission a single minimum-change replicate of t0106 at seed 77 with 10-gen pool restart cadence.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0111_brainstorm_results_22&quot; date_completed: &quot;2026-05-19&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 22 — Seed-77 Replicate of t0106 Summary Twenty-second strategic brainstorm. The researcher opened with a specific direction (replicate t0106 at a fresh seed, with a tighter NEURON pool-restart cadence), which the session converged on as a single minimum-change task: `t0112_t0106_seed77_replicate`. No corrections, reprioritisations, or task cancellations were applied. Session Overview * **Date**: 2026-05-19 * **Trigger**: researcher&#x27;s read of the t0106 -&gt; t0110 wave, with t0106 producing the first joint-pass cells in the entire t0080 -&gt; t0104...
+
+## Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II
+ID: t0112_t0106_seed77_replicate
+Completed: 2026-05-19
+Short description: Re-run t0106 with GA seed 77 and pool-restart-every=10 to test whether the joint-pass breakthrough is seed-specific or substrate-general.
+Result summary: t0112 — Seed-77 Minimum-Change Replicate of t0106: Results Summary Summary Seed 77 reaches the same Pareto-front corner as t0106 seed 44 (best DSI 0.9535 vs 0.9606, best PD 114.76 Hz vs 122.62 Hz) and the substrate is therefore not seed-specific, but produces only **7 unique joint-pass cells** vs t0106&#x27;s 123 unique — partial replication, not full replication. The HV-plateau detector triggered at gen 21 (well below the 60-gen ceiling), the tighter pool-restart cadence (every 10 gens) kept per-generation wall-clock at ~620s on average vs t0106&#x27;s ~2,167s, and total instance spend was $1.99 of the $25 cap. Metrics * **Best ratio DSI**: **0.9535** at PD = 60.00 Hz (gen 20/21). * **Best PD-rate...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -855,10 +862,9 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0111_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0112_t0106_seed77_replicate</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -879,13 +885,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II
-ID: t0112_t0106_seed77_replicate
-Status: not_started
-Effective date: unknown
-Short description: Re-run t0106 with GA seed 77 and pool-restart-every=10 to test whether the joint-pass breakthrough is seed-specific or substrate-general.
-Dependencies: t0106_long_pdnd_nsga2_300gen
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

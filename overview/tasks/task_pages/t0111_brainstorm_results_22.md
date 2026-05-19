@@ -95,7 +95,6 @@ In either case, the result feeds the next brainstorm session's strategic directi
 
 --- spec_version: "1" task_id: "t0111_brainstorm_results_22" date_completed: "2026-05-19"
 status: "complete" ---
-
 # Results Summary: Brainstorm Session 22 — Seed-77 Replicate of t0106
 
 ## Summary
@@ -187,7 +186,6 @@ reprioritisations, or task cancellations were applied.
 
 --- spec_version: "1" task_id: "t0111_brainstorm_results_22" date_completed: "2026-05-19"
 status: "complete" ---
-
 # Results Detailed: Brainstorm Session 22
 
 ## Summary

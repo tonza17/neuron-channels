@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-19T13:45:13Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-19T21:54:48Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>454770</char_count>
-    <byte_count>454938</byte_count>
-    <estimated_tokens>113692</estimated_tokens>
+    <char_count>464621</char_count>
+    <byte_count>464789</byte_count>
+    <estimated_tokens>116155</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -434,9 +434,17 @@
         <id>S-0106-05</id>
         <id>S-0106-06</id>
         <id>S-0106-07</id>
+        <id>S-0112-01</id>
+        <id>S-0112-02</id>
+        <id>S-0112-03</id>
+        <id>S-0112-04</id>
+        <id>S-0112-05</id>
+        <id>S-0112-06</id>
+        <id>S-0112-07</id>
+        <id>S-0112-08</id>
       </source_ids>
       <content>
-Suggestions: 417
+Suggestions: 425
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -5117,6 +5125,94 @@ Categories: compartmental-modeling, direction-selectivity, dendritic-computation
 Date added: 2026-05-18
 
 The classical Tukker-Taylor ND-soma archetype dominates t0106&#x27;s top 50 (35/50 cells with soma_offset in [-132, -107] um and elong in [1.18, 1.25]). The second viable archetype is the PD-soma configuration (4/50, gen 19 cell #23 at DSI = 0.96 / PD = 83 Hz) consistent with Poleg-Polsky 2026&#x27;s GABAergic synaptic-asymmetry mechanism. Hold the top t0106 cell&#x27;s 54-d electrophys subvector fixed and densely sweep the 14-d morphology subvector in a tight box (soma_offset_pd_um in [-150, -100] um, elongation in [1.10, 1.35], 13 other dims in a 0.8-1.2 x current-value box) at N_EVAL_SEEDS = 4. Expected outcome: a high-density map of joint-pass cell counts vs morphology coordinates that distinguishes (a) a wide basin centred on the dominant archetype from (b) a narrow lucky-draw peak. Recommended task types: experiment-run, data-analysis. Cost: ~$3 (200-300 cells x N = 4, no GA overhead; single Vast.ai instance, ~6-8 hours).
+
+## Multi-seed substrate-rate confirmation at restart cadence 10: N&gt;=3 new GA seeds on the t0106 substrate
+ID: S-0112-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0112_t0106_seed77_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-19
+
+t0106 (seed 44) yielded 123 unique joint-pass cells (3.3% rate); t0112 (seed 77) yielded only 7 (0.35%) on the same substrate. With two seeds spanning a factor of ~17 in joint-pass density, the substrate-level acceptance rate is currently a 2-point sample and unreportable. Run N&gt;=3 additional GA seeds (suggested 33, 88, 99) on the identical t0106 substrate using t0112&#x27;s tighter pool_restart_every=10 and N_GEN=60 with HV-plateau auto-stop. Combined with t0106 (44) and t0112 (77), this yields a 5-seed sample suitable for reporting a substrate-level mean +/- s.e. acceptance rate against Hay2011&#x27;s 0.40% and Druckmann2007&#x27;s 0.10%. Distinct from S-0106-01 (which uses t0106&#x27;s exact cadence=25 at only 2 new seeds and is not actionable for a cadence-10 rate). Recommended task types: experiment-run, comparative-analysis. Cost: ~$6 (3 seeds x ~$2 each at t0112 wall-clock).
+
+## Isolate the pool-restart-cadence effect: paired re-runs at fixed seed comparing cadence 10 vs 25
+ID: S-0112-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0112_t0106_seed77_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-19
+
+t0112&#x27;s 3.5x per-generation wall-clock speedup (620s/gen vs t0106&#x27;s 2,167s/gen) is confounded with the seed-44 -&gt; seed-77 change. Run two paired comparisons at matched seed but different pool_restart_every: (a) seed 44 with cadence=10 vs t0106&#x27;s existing seed-44/cadence-25 baseline; (b) seed 77 with cadence=25 vs t0112&#x27;s existing seed-77/cadence-10 baseline. Decision rule: if the cadence-10 variant matches its cadence-25 baseline on Pareto front geometry (best DSI, best PD, joint-pass count within seed noise) AND retains the 3-4x speedup, then cadence=10 should become the project default for all downstream NSGA-II tasks. If the cadence change shifts joint-pass yield, the speedup is algorithmically meaningful and the trade-off must be characterised before adoption. Recommended task types: experiment-run, comparative-analysis. Cost: ~$8 (one new cadence-10 seed-44 run at ~$2 plus one new cadence-25 seed-77 run at ~$5-6).
+
+## HV-plateau auto-stop sensitivity: re-run t0112 seed 77 with auto-stop disabled to gen 60 ceiling
+ID: S-0112-03
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0112_t0106_seed77_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-19
+
+t0112&#x27;s HV-plateau detector fired at gen 21 (well below the 60-gen ceiling), and t0106 produced most of its joint-pass cells in gens 21-39 - after t0112&#x27;s auto-stop. The 7-cell joint-pass count may be censored by an over-aggressive plateau detector when the local mode is &#x27;deep but narrow&#x27;. Re-run t0112 seed 77 with HV-plateau termination disabled (operator-stop or N_GEN=60 only); keep all other constants identical. Decision: if post-plateau gens (22-60) add &gt;=10 more unique joint-pass cells, the detector censors the long tail and should be reparameterised (longer window, tighter threshold, or removed) for all long-horizon runs. If post-plateau yield is &lt;=3 cells, the early auto-stop is benign. Recommended task types: experiment-run, comparative-analysis. Cost: ~$5.
+
+## Normalised parameter-space distance metric (z-scored per dimension) for cross-seed Pareto overlap
+ID: S-0112-04
+Status: active
+Priority: medium
+Kind: library
+Source task: t0112_t0106_seed77_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-19
+
+t0112&#x27;s pareto_front_overlap.csv reports raw 68-d L2 distances of 3.5e7 - 1.9e8 between t0112 Pareto cells and their nearest t0106 neighbours. These values are dominated by conductance-scale parameters spanning 6 orders of magnitude (S/cm^2), so the metric does not support &#x27;same vs different solutions&#x27; claims. Build a small analysis library (or extend tasks/t0106 plotting code) that computes (a) per-dimension z-scored L2 over the union of t0106 + t0112 evaluated cells, and (b) Spearman rank-correlation distance. Apply to the t0106 and t0112 strict Pareto fronts and the broader joint-pass cohorts. Output: a normalised overlap CSV per task and a project-level scatter of z-score NN distance vs DSI rank that reveals whether the two seeds find the same parameter-space basin or independent basins. Reusable downstream by S-0112-01 multi-seed analysis and S-0112-08 cross-seed clustering. Recommended task types: data-analysis, write-library. Cost: &lt;$0.20 (local only).
+
+## 16-direction polar re-evaluation of t0112&#x27;s 7 unique joint-pass cells (mirrors t0107 on t0106)
+ID: S-0112-05
+Status: active
+Priority: high
+Kind: evaluation
+Source task: t0112_t0106_seed77_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-19
+
+t0107 re-evaluated 10 t0106 top cells at 8 directions and found that the 2-direction ratio DSI overstates selectivity by ~0.42 absolute (mean 8-dir DSI 0.519 vs 2-dir 0.939). t0112&#x27;s 7 unique joint-pass cells inherit this caveat unmodified and must be polar re-evaluated before any cross-seed claim can be reported. Apply the same 8-direction (or extended 16-direction) drifting-bar protocol used by t0107 to all 7 t0112 joint-pass cells, with N_EVAL_SEEDS matched to t0107. Decision: if the 8-direction DSI rank-correlates with the 2-direction ratio DSI (Spearman r &gt; 0.7 across the t0106 + t0112 pool of 133 joint-pass cells), the 2-direction metric is a usable proxy for substrate exploration; otherwise the 2-direction joint-pass cohort must be treated as candidate-only until polar-confirmed. Distinct from S-0106-03 (covers 50 t0106 cells, not the 7 t0112 cells). Recommended task types: experiment-run, comparative-analysis. Cost: &lt;$1 (7 cells x 8 dirs x 3 trials on one Vast.ai instance).
+
+## N_EVAL_SEEDS&gt;=20 robustness retest of the 7 t0112 joint-pass cells (mirrors S-0106-02 on t0112 cells)
+ID: S-0112-06
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0112_t0106_seed77_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-19
+
+t0112&#x27;s 7 joint-pass cells were each evaluated at N_EVAL_SEEDS=3 inside the NSGA-II loop. The best cell at DSI=0.9535 and the highest-PD cell at 114.76 Hz are 3-seed point estimates and may be noise-undersampling artefacts in the same way S-0106-02 hypothesised for t0106&#x27;s 3 DSI=1.0 cells. Re-evaluate all 7 t0112 joint-pass cells at N_EVAL_SEEDS=20 using the same evaluator and silence guard. Decision: if any cell&#x27;s DSI collapses by &gt;=0.1 absolute or PD-rate by &gt;=15 Hz at N_EVAL_SEEDS=20, mark as noise-sensitive and exclude from the project&#x27;s reportable joint-pass cohort; if DSI and PD hold to within +/- 0.05 and +/- 5 Hz, the cells are robust and join the substrate&#x27;s reportable best cohort with t0106&#x27;s 10. Distinct from S-0106-02 which is scoped to t0106 cells only. Recommended task types: experiment-run, data-analysis. Cost: &lt;$0.50 (7 cells x 20 seeds, ~10 min on one Vast.ai instance).
+
+## Adopt t0112 pool_restart_every=10 as the default for all downstream NEURON-pymoo NSGA-II tasks
+ID: S-0112-07
+Status: active
+Priority: medium
+Kind: library
+Source task: t0112_t0106_seed77_replicate
+Categories: compartmental-modeling
+Date added: 2026-05-19
+
+t0112 demonstrated a 3.5x per-generation wall-clock speedup (620s/gen vs t0106&#x27;s 2,167s/gen) at no algorithmic cost to frontier geometry: best DSI 0.9535 vs t0106&#x27;s 0.9606 (within noise) and best PD 114.76 Hz vs 122.62 Hz (94%). The change is one line (_POOL_RESTART_EVERY: int = 10) in nsga2_driver.py. Promote it from a t0112-only override to the project default once S-0112-02 isolates the cadence effect from seed variance. Concretely: update the canonical NSGA-II driver template (or the PerGenerationPoolRestart library asset proposed by S-0106-05) to default to cadence=10 with cadence=25 retained as an opt-in legacy mode. Document the speedup in the driver docstring and reference S-0112-02 as the validation evidence. Recommended task types: write-library, infrastructure-setup. Cost: &lt;$0.10 (local code change + docs; gated on S-0112-02 passing).
+
+## Cross-seed parameter-vector clustering of joint-pass cells: shared archetypes vs divergent basins
+ID: S-0112-08
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0112_t0106_seed77_replicate
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation
+Date added: 2026-05-19
+
+t0106 (seed 44) produced 123 joint-pass cells; t0112 (seed 77) produced 7. Whether the two seeds find the same archetype, overlapping basins, or independent basins is unknown because the raw L2 metric is uninterpretable (see S-0112-04). Combine joint-pass cohorts from t0106, t0112, and any new S-0112-01 multi-seed runs, normalise per-dimension via S-0112-04, and run K-means / hierarchical clustering on the 68-d vectors with seed-of-origin as covariate. Decision: if cells cluster by seed-of-origin (NMI(cluster, seed) &gt; 0.5), each GA seed finds a private basin; if cells cluster by morphology archetype (ND-soma / central / PD-soma per t0108) with seed mixed within clusters, the substrate supports an archetype-conserved basin and t0108/t0110 findings extend across seeds. Recommended task types: data-analysis, comparative-analysis. Cost: &lt;$0.50.
       </content>
     </section>
   </sections>

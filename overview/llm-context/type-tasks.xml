@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-19T13:45:13Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-19T21:54:48Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>1235679</char_count>
-    <byte_count>1240832</byte_count>
-    <estimated_tokens>308919</estimated_tokens>
+    <char_count>1238810</char_count>
+    <byte_count>1243986</byte_count>
+    <estimated_tokens>309702</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -21133,14 +21133,14 @@ best a single-realisation point estimate.
 A single new task `t0112_t0106_seed77_replicate` is commissioned: a minimum-change t0106 replicate
 that varies only the GA seed (44 -&gt; 77) and the multiprocessing pool restart cadence
 (`_POOL_RESTART_EVERY` 25 -&gt; 10 generations, motivated by NEURON&#x27;s known memory creep). All other
-parameters are held identical to t0106: pop=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2, ratio DSI
-objective, random LHS init, HV-plateau operator-stop criterion. Gen ceiling raised to 60 (from
-t0106&#x27;s 300) so a slower plateau is not artificially cut while keeping the budget bounded.
+parameters are held identical to t0106: pop=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2, ratio DSI objective,
+random LHS init, HV-plateau operator-stop criterion. Gen ceiling raised to 60 (from t0106&#x27;s 300) so
+a slower plateau is not artificially cut while keeping the budget bounded.
 
-No suggestion rejections, reprioritisations, or task cancellations were applied in this session.
-The 325 uncovered suggestions remain at their current priorities pending the t0112 outcome, which
-will either promote the suggestion backlog (if the replicate confirms substrate population) or
-trigger a different next-wave plan (if it does not).
+No suggestion rejections, reprioritisations, or task cancellations were applied in this session. The
+325 uncovered suggestions remain at their current priorities pending the t0112 outcome, which will
+either promote the suggestion backlog (if the replicate confirms substrate population) or trigger a
+different next-wave plan (if it does not).
 
 #### Expected Outcomes
 
@@ -21171,24 +21171,23 @@ task_id: &quot;t0111_brainstorm_results_22&quot;
 date_completed: &quot;2026-05-19&quot;
 status: &quot;complete&quot;
 ---
-
 ### Results Summary: Brainstorm Session 22 — Seed-77 Replicate of t0106
 
 #### Summary
 
-Twenty-second strategic brainstorm. The researcher opened with a specific direction (replicate
-t0106 at a fresh seed, with a tighter NEURON pool-restart cadence), which the session converged
-on as a single minimum-change task: `t0112_t0106_seed77_replicate`. No corrections,
-reprioritisations, or task cancellations were applied.
+Twenty-second strategic brainstorm. The researcher opened with a specific direction (replicate t0106
+at a fresh seed, with a tighter NEURON pool-restart cadence), which the session converged on as a
+single minimum-change task: `t0112_t0106_seed77_replicate`. No corrections, reprioritisations, or
+task cancellations were applied.
 
 #### Session Overview
 
 * **Date**: 2026-05-19
 * **Trigger**: researcher&#x27;s read of the t0106 -&gt; t0110 wave, with t0106 producing the first
-  joint-pass cells in the entire t0080 -&gt; t0104 lineage (123 unique cells, DSI &gt;= 0.5 AND
-  PD &gt;= 30 Hz) on a single GA seed and t0107 showing that the absolute DSI numbers fall sharply
-  under conventional 8-direction protocol (mean DSI = 0.519 vs t0106&#x27;s 0.939) while rank order
-  was preserved.
+  joint-pass cells in the entire t0080 -&gt; t0104 lineage (123 unique cells, DSI &gt;= 0.5 AND PD &gt;= 30
+  Hz) on a single GA seed and t0107 showing that the absolute DSI numbers fall sharply under
+  conventional 8-direction protocol (mean DSI = 0.519 vs t0106&#x27;s 0.939) while rank order was
+  preserved.
 * **Inputs read**: `aggregate_tasks`, `aggregate_suggestions --uncovered`, `aggregate_costs`,
   results summaries for t0106 - t0110 and `t0105_preliminary_figures_report`, t0106
   `compare_literature.md`, recent answer assets, and `tasks/t0106_long_pdnd_nsga2_300gen/code/`
@@ -21197,23 +21196,23 @@ reprioritisations, or task cancellations were applied.
 
 #### Decisions
 
-1. **Commission `t0112_t0106_seed77_replicate`**. Substrate identical to t0106 (68-d Bed B +
-   14-d morphology, pop=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2, ratio DSI, random LHS init,
-   HV-plateau operator-stop). Only changes from t0106:
+1. **Commission `t0112_t0106_seed77_replicate`**. Substrate identical to t0106 (68-d Bed B + 14-d
+   morphology, pop=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2, ratio DSI, random LHS init, HV-plateau
+   operator-stop). Only changes from t0106:
    * GA seed: 77 (vs t0106&#x27;s 44; chosen as unused across the project&#x27;s NSGA-II history).
    * `_POOL_RESTART_EVERY`: 10 generations (vs t0106&#x27;s 25), motivated by NEURON memory creep
      reported in the t0106 logs.
-   * Gen ceiling: 60 (vs t0106&#x27;s 300, which never bound) so a slower plateau is not
-     artificially cut while keeping the budget bounded.
+   * Gen ceiling: 60 (vs t0106&#x27;s 300, which never bound) so a slower plateau is not artificially cut
+     while keeping the budget bounded.
    * Cost cap: $25 (same per-task cap); expected actual ~$10-11 mirroring t0106.
    * Source suggestion: none. Generates a follow-up suggestion from its own
      `results/suggestions.json`.
 
 2. **No suggestion rejections, reprioritisations, or task cancellations**. The 325 uncovered
-   suggestions (31 high, 241 medium, 53 low) remain at their current priorities pending the
-   t0112 outcome. A proposal to reprioritise four high-priority items (S-0106-01, S-0102-03,
-   S-0102-04, S-0104-04) to medium was put to the researcher and declined; cleanup is deferred
-   to the next brainstorm.
+   suggestions (31 high, 241 medium, 53 low) remain at their current priorities pending the t0112
+   outcome. A proposal to reprioritise four high-priority items (S-0106-01, S-0102-03, S-0102-04,
+   S-0104-04) to medium was put to the researcher and declined; cleanup is deferred to the next
+   brainstorm.
 
 #### Metrics
 
@@ -21234,8 +21233,8 @@ reprioritisations, or task cancellations were applied.
 * `verify_corrections t0111_brainstorm_results_22` — PASSED (0 errors; no corrections this
   session).
 * `verify_suggestions t0111_brainstorm_results_22` — PASSED (0 errors; empty suggestions list).
-* `verify_logs t0111_brainstorm_results_22` — PASSED (0 errors; `TS-W001` and `LG-W005`
-  expected and accepted for the brainstorm flow).
+* `verify_logs t0111_brainstorm_results_22` — PASSED (0 errors; `TS-W001` and `LG-W005` expected
+  and accepted for the brainstorm flow).
 * `verify_pr_premerge t0111_brainstorm_results_22 --pr-number &lt;N&gt;` — PASSED before merge.
 
 #### Next Steps
@@ -21252,11 +21251,13 @@ reprioritisations, or task cancellations were applied.
 
 ## Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II
 ID: t0112_t0106_seed77_replicate
-Status: not_started
-Effective date: unknown
+Status: completed
+Effective date: 2026-05-19
 Short description: Re-run t0106 with GA seed 77 and pool-restart-every=10 to test whether the joint-pass breakthrough is seed-specific or substrate-general.
 Dependencies: t0106_long_pdnd_nsga2_300gen
 Task types: experiment-run
+Start time: 2026-05-19T14:05:58Z
+End time: 2026-05-19T21:50:00Z
 
 #### Motivation
 
@@ -21399,6 +21400,58 @@ not a hedge:
 * **Source suggestion**: none. This task generates new follow-up suggestions in its own
   `results/suggestions.json` based on the outcome.
 * **Brainstorm source**: `t0111_brainstorm_results_22`.
+
+### Results Summary
+
+#### Summary
+
+Seed 77 reaches the same Pareto-front corner as t0106 seed 44 (best DSI 0.9535 vs 0.9606, best PD
+114.76 Hz vs 122.62 Hz) and the substrate is therefore not seed-specific, but produces only **7
+unique joint-pass cells** vs t0106&#x27;s 123 unique — partial replication, not full replication. The
+HV-plateau detector triggered at gen 21 (well below the 60-gen ceiling), the tighter pool-restart
+cadence (every 10 gens) kept per-generation wall-clock at ~620s on average vs t0106&#x27;s ~2,167s, and
+total instance spend was $1.99 of the $25 cap.
+
+#### Metrics
+
+* **Best ratio DSI**: **0.9535** at PD = 60.00 Hz (gen 20/21).
+* **Best PD-rate frontier**: **114.76 Hz** at DSI = 0.0021 (gen 21).
+* **Unique joint-pass cells** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz): **7** (25 total evaluations across
+  generations).
+* **Strict Pareto cells**: **3** (vs t0106&#x27;s 7), declared in
+  `results/data/pareto_front_seed77.json`.
+* **Final hypervolume (2-D)**: **107.4602** (start 0.1156 → 928x growth).
+* **NSGA-II compute cost**: **$1.96** productive + $0.03 idle = **$1.99 total** of $25 cap.
+
+#### Answers to the Task&#x27;s 5 Key Questions
+
+1. **≥ 40 unique joint-pass cells?** **NO** — only 7 unique. Falls in the &quot;partial replication&quot;
+   bucket (10–40 cells = multi-seed required). The substrate is reachable from seed 77 but the
+   density of reachable joint-pass cells is itself stochastic across GA seeds.
+2. **Best ratio DSI ≥ 0.95?** **YES** — 0.9535 (the t0106 baseline was 0.9606 at the same stage of
+   evolution).
+3. **Best PD-rate frontier ≥ 100 Hz?** **YES** — 114.76 Hz (94% of t0106&#x27;s 122.62 Hz; both runs
+   reach the same upper region).
+4. **Pareto fronts overlap in parameter space?** Pending interpretation. Raw 68-d L2 distances
+   between t0112 Pareto cells and their nearest t0106 Pareto neighbour range 3.5e7 → 1.9e8 (see
+   `results/data/pareto_front_overlap.csv`); these are dominated by the conductance-scale parameters
+   that span 6 orders of magnitude. A normalised distance metric (z-scored per-dimension) is needed
+   for substantive overlap claims; the raw values are reported here for transparency but not
+   interpreted as &quot;different solutions&quot;.
+5. **Did the tighter pool-restart cadence (every 10) change wall-clock?** **YES, decisively.** t0112
+   completed 21 generations in 4 h 40 m (~620 s/gen average); t0106 completed 40 generations in 24.1
+   h (~2,167 s/gen average). The tighter restart cadence is ~3.5× faster per generation, a
+   substantial improvement at no algorithmic cost.
+
+#### Verification
+
+* `verify_predictions_asset` (meta path): PASSED, 2 non-blocking warnings (PR-W014 no linked model
+  asset, PR-W015 no linked dataset asset — same as t0106).
+* `verify_predictions_description` (meta path): PASSED.
+* `verify_predictions_details` (meta path): PASSED.
+* `verify_machines_destroyed`: PASSED, 2 expected warnings (RM-W001 API unreachable because instance
+  destroyed; RM-W006 no checkpoint_path).
+* All other ARF verificators are run in the reporting step.
       </content>
     </section>
   </sections>

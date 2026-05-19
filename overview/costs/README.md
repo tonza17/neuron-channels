@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $56.80 of $75.00 USD. $18.20 remains overall and $18.20 remains before the 100% stop
+Spent $58.79 of $75.00 USD. $16.21 remains overall and $16.21 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,16 +8,16 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $75.00 USD |
-| Total spent | $56.80 USD |
-| Budget left | $18.20 USD |
-| Budget left before stop threshold | $18.20 USD |
-| Spent percent | 75.73% |
+| Total spent | $58.79 USD |
+| Budget left | $16.21 USD |
+| Budget left before stop threshold | $16.21 USD |
+| Spent percent | 78.39% |
 | Warn threshold | 80% ($60.00) |
 | Stop threshold | 100% ($75.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 104 |
-| Tasks with non-zero spend | 12 |
-| Skipped tasks | 9 |
+| Tasks with cost records | 105 |
+| Tasks with non-zero spend | 13 |
+| Skipped tasks | 8 |
 
 ## Service Totals
 
@@ -30,7 +30,7 @@ threshold.
 
 | Key | Cost (USD) |
 |-----|------------|
-| `vast-ai-epyc-7b13` | $10.37 |
+| `vast-ai-epyc-7b13` | $12.36 |
 | `vast_ai_nsga2_compute` | $8.46 |
 | `vast-ai-cpu-epyc-7b13` | $7.42 |
 | `vast-ai-seed44-productive` | $4.69 |
@@ -72,6 +72,7 @@ threshold.
 | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | completed | $10.30 | $15.00 | no |
 | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | completed | $10.37 | $8.00 | yes |
 | [`t0107_t0106_polar_8dir_recheck`](../../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | completed | $0.15 | $8.00 | no |
+| [`t0112_t0106_seed77_replicate`](../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | completed | $1.99 | $8.00 | no |
 
 ## Skipped Tasks
 
@@ -85,4 +86,3 @@ threshold.
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
 | `t0096_literature_survey_multi_objective_neuron_optimisation` | results/costs.json is missing or invalid |
-| `t0112_t0106_seed77_replicate` | results/costs.json is missing or invalid |

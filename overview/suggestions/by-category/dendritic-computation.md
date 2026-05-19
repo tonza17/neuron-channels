@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-88 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **71 open** (14
-high, 52 medium, 5 low), **17 closed**.
+89 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **72 open** (14
+high, 53 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -563,6 +563,32 @@ modelDB 189347 lineage with bio-realistic AIS). Port the 5 v3 dendritic-spike di
 dendrites, warm-start from the closest-to-joint Bed A cells (e.g., t0074 / t0075 outputs), run
 NSGA-II at pop=96 / gen=8 = 768 cells. Cost ~$3 (mirroring t0081). Recommended task types:
 build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Cross-seed parameter-vector clustering of joint-pass cells:
+shared archetypes vs divergent basins</strong> (S-0112-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0112-08` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-19 |
+| **Source task** | [`t0112_t0106_seed77_replicate`](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0106 (seed 44) produced 123 joint-pass cells; t0112 (seed 77) produced 7. Whether the two
+seeds find the same archetype, overlapping basins, or independent basins is unknown because
+the raw L2 metric is uninterpretable (see S-0112-04). Combine joint-pass cohorts from t0106,
+t0112, and any new S-0112-01 multi-seed runs, normalise per-dimension via S-0112-04, and run
+K-means / hierarchical clustering on the 68-d vectors with seed-of-origin as covariate.
+Decision: if cells cluster by seed-of-origin (NMI(cluster, seed) > 0.5), each GA seed finds a
+private basin; if cells cluster by morphology archetype (ND-soma / central / PD-soma per
+t0108) with seed mixed within clusters, the substrate supports an archetype-conserved basin
+and t0108/t0110 findings extend across seeds. Recommended task types: data-analysis,
+comparative-analysis. Cost: <$0.50.
 
 </details>
 

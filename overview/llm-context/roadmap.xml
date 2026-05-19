@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-19T13:45:13Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-19T21:54:48Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>502030</char_count>
-    <byte_count>502540</byte_count>
-    <estimated_tokens>125507</estimated_tokens>
+    <char_count>501925</char_count>
+    <byte_count>502421</byte_count>
+    <estimated_tokens>125481</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -216,9 +216,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0109_t0108_morph_cluster_gallery</id>
         <id>t0110_relaxed_cohort_factor_analysis</id>
         <id>t0111_brainstorm_results_22</id>
+        <id>t0112_t0106_seed77_replicate</id>
       </source_ids>
       <content>
-Completed tasks: 104
+Completed tasks: 105
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -843,6 +844,12 @@ ID: t0111_brainstorm_results_22
 Completed: 2026-05-19
 Short description: Twenty-second brainstorm: commission a single minimum-change replicate of t0106 at seed 77 with 10-gen pool restart cadence.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0111_brainstorm_results_22&quot; date_completed: &quot;2026-05-19&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 22 — Seed-77 Replicate of t0106 Summary Twenty-second strategic brainstorm. The researcher opened with a specific direction (replicate t0106 at a fresh seed, with a tighter NEURON pool-restart cadence), which the session converged on as a single minimum-change task: `t0112_t0106_seed77_replicate`. No corrections, reprioritisations, or task cancellations were applied. Session Overview * **Date**: 2026-05-19 * **Trigger**: researcher&#x27;s read of the t0106 -&gt; t0110 wave, with t0106 producing the first joint-pass cells in the entire t0080 -&gt; t0104...
+
+## Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II
+ID: t0112_t0106_seed77_replicate
+Completed: 2026-05-19
+Short description: Re-run t0106 with GA seed 77 and pool-restart-every=10 to test whether the joint-pass breakthrough is seed-specific or substrate-general.
+Result summary: t0112 — Seed-77 Minimum-Change Replicate of t0106: Results Summary Summary Seed 77 reaches the same Pareto-front corner as t0106 seed 44 (best DSI 0.9535 vs 0.9606, best PD 114.76 Hz vs 122.62 Hz) and the substrate is therefore not seed-specific, but produces only **7 unique joint-pass cells** vs t0106&#x27;s 123 unique — partial replication, not full replication. The HV-plateau detector triggered at gen 21 (well below the 60-gen ceiling), the tighter pool-restart cadence (every 10 gens) kept per-generation wall-clock at ~620s on average vs t0106&#x27;s ~2,167s, and total instance spend was $1.99 of the $25 cap. Metrics * **Best ratio DSI**: **0.9535** at PD = 60.00 Hz (gen 20/21). * **Best PD-rate...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -852,10 +859,9 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0111_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0112_t0106_seed77_replicate</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1178,155 +1184,6 @@ For each condition, compute:
 * Joint multi-axis optimisation — explicitly excluded; this is one-axis-at-a-time only.
 * Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
   channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
-
-## Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II
-ID: t0112_t0106_seed77_replicate
-Status: not_started
-Effective date: unknown
-Short description: Re-run t0106 with GA seed 77 and pool-restart-every=10 to test whether the joint-pass breakthrough is seed-specific or substrate-general.
-Dependencies: t0106_long_pdnd_nsga2_300gen
-
-#### Motivation
-
-`t0106_long_pdnd_nsga2_300gen` produced the first joint-pass cells (DSI &gt;= 0.5 AND PD-rate &gt;= 30 Hz)
-in the entire `t0080` -&gt; `t0104` NSGA-II lineage: **123 unique cells across 3,744 evaluations** from
-a single random-init GA seed (44) running 40 generations on the 68-d Bed B + 14-d morphology
-substrate. The breakthrough was driven by reformulating the selectivity objective from 16-direction
-vector-sum DSI to 2-direction ratio DSI = (PD - ND) / (PD + ND), not by additional compute.
-
-Two open caveats motivate this task:
-
-1. **Seed-specificity**: t0106 ran a single GA seed. Without at least one replicate, the 3.3%
-   joint-pass acceptance rate is a single-realisation point estimate, not a substrate property. It
-   cannot be reported as such in any future writeup.
-
-2. **NEURON memory creep**: t0106&#x27;s `_POOL_RESTART_EVERY = 25` (in `nsga2_driver.py:97`) was chosen
-   before the long-horizon behaviour of the worker pool was characterised. Wall-clock telemetry from
-   t0106 shows growing per-evaluation memory footprint between restarts, consistent with NEURON&#x27;s
-   known leak under repeated cell instantiation. A tighter restart cadence (every 10 generations)
-   reduces this footprint at negligible wall-clock cost (~2 extra minutes over a 40-gen run).
-
-This task addresses both with a single minimum-change replicate.
-
-#### Scope
-
-* **In scope**: identical substrate to t0106 (Bed B 54-d electrophys + 14-d morphology = 68 free
-  parameters), identical objectives (2-direction ratio DSI + PD-rate at 0 deg), identical NSGA-II
-  hyperparameters (pop=96, SBX/PM operators, HV-plateau operator-stop criterion), identical
-  evaluation protocol (N_EVAL_SEEDS = 3, ratio DSI, silence guard active).
-* **In scope, changed**: GA seed (44 -&gt; 77), pool-restart cadence (25 -&gt; 10 gens), gen ceiling (300
-  -&gt; 60 to keep budget bounded while still allowing slower plateaus to be discovered).
-* **Out of scope**: any change to the substrate definition, the objective formulation, the
-  evaluation protocol, the silence guard, or the NSGA-II driver beyond the seed and pool-restart
-  constants. Out-of-scope changes would compromise the like-for-like comparison.
-
-#### Approach
-
-1. **Fork t0106 code into `tasks/t0112_t0106_seed77_replicate/code/`**: copy `nsga2_driver.py`,
-   `constants.py`, `random_init.py`, and any helper modules. Update package imports.
-2. **Change exactly two constants**:
-   * `constants.py`: rename `T0106_SEEDS = (44,)` -&gt; `T0112_SEEDS = (77,)`; bump
-     `T0112_HARD_BUDGET_USD` if needed (default to $25 per-task cap).
-   * `nsga2_driver.py:97`: `_POOL_RESTART_EVERY = 10` (was 25).
-3. **Raise gen ceiling**: `N_GEN = 60` in `constants_morphology` import override, with HV-plateau
-   stop preserved verbatim. The HV-plateau constants (`HV_PLATEAU_WINDOW`,
-   `HV_PLATEAU_MIN_HV_HISTORY`, `HV_PLATEAU_REL_THRESHOLD`) are unchanged so the stopping criterion
-   is identical to t0106.
-4. **Smoke gate locally** (5 checks identical to t0106): single-eval driver run, ratio DSI synthetic
-   sanity, silence-guard unit tests, pool-restart sanity, watchdog wiring.
-5. **Provision remote** Vast.ai single instance (same provisioning class as t0106).
-6. **Launch** with cost cap $25 per-task default and per-instance watchdog $20. Operator-stop on HV
-   plateau (same window/threshold as t0106) or at gen 60 ceiling, whichever comes first.
-7. **Collect** evaluator-side per-cell DSI / PD-rate / generation table as a predictions asset
-   following the t0106 predictions asset format.
-8. **Compare** to t0106:
-   * Joint-pass cell count (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) absolute number and as % of total evals.
-   * Best ratio DSI and best PD-rate frontier vs t0106&#x27;s 1.0000 / 122.6 Hz.
-   * HV trajectory shape and plateau generation.
-   * Pareto front overlap between seed-44 and seed-77 cells (parameter-space distance).
-
-#### Expected Assets
-
-* **1 predictions asset** under `assets/predictions/t0112-bedb-morph-nsga2-seed77/` containing the
-  per-cell DSI / PD-rate / generation table for all evaluated cells (mirroring t0106&#x27;s predictions
-  asset schema).
-
-#### Compute and Budget
-
-* **GPU type**: not applicable (NEURON CPU compartmental simulations). Remote provisioning is for
-  CPU cores, not GPU.
-* **Remote**: Vast.ai single instance, same provisioning class as t0106 (high-core-count CPU node).
-* **Cost cap**: $25 per-task default. **Per-instance watchdog**: $20 (via
-  `make_watchdog_from_machine_log`).
-* **Expected actual cost**: ~$10-11 (mirroring t0106&#x27;s $10.37 spend at the same pop/gen/eval
-  budget).
-* **Project envelope check**: $18.20 remaining of $75 prior to this task. Expected post-task
-  reserve: ~$7-8.
-
-#### Outputs
-
-##### Charts
-
-All charts saved to `results/images/` and embedded in `results_detailed.md`:
-
-1. `pareto_front_seed44_vs_seed77.png` — overlay of t0106 (seed 44) and t0112 (seed 77) strict
-   Pareto fronts on DSI vs PD-rate axes; coloured by source task; answers &quot;do the two seeds discover
-   comparable Pareto frontiers?&quot;
-2. `hv_vs_gen_seed44_vs_seed77.png` — log-scale HV trajectory for both seeds on the same axes,
-   with pool-restart events annotated; answers &quot;does the tighter restart cadence change the HV
-   trajectory shape?&quot;
-3. `joint_pass_yield_per_gen.png` — joint-pass cell count discovered per generation for both
-   seeds; answers &quot;when does each seed first hit the joint-pass corner, and what is the rate
-   thereafter?&quot;
-4. `top50_morphologies_seed77.png` — 10x5 grid of best 50 cells, coloured by archetype (same
-   format as t0106&#x27;s `top50_morphologies.png`); answers &quot;are the best-yield morphologies the same
-   archetypes as t0106?&quot;
-5. `asymmetry_distribution_seed44_vs_seed77.png` — 4-panel histogram (soma offset, elongation,
-   branch density gradient, primary branch PD concentration) for top-50 cells from both seeds;
-   answers &quot;is the morphology distribution of high-yield cells seed-independent?&quot;
-
-##### Tables
-
-* `results/data/joint_pass_summary.csv` — per-seed: total evals, joint-pass count, joint-pass %,
-  best DSI, best PD-rate, plateau generation.
-* `results/data/pareto_front_overlap.csv` — parameter-space nearest-neighbour distance between
-  each t0112 Pareto cell and its closest t0106 Pareto cell; informs whether the two seeds find &quot;the
-  same&quot; or &quot;different&quot; frontier solutions.
-
-##### Registered metrics
-
-Run all registered metrics that apply to this task. Check
-`uv run python -u -m arf.scripts.aggregators.aggregate_metrics --format json`. At minimum:
-
-* `direction_selectivity_index` — best ratio DSI across all cells (variant: `best_legit` for the
-  highest non-DSI=1.0 cell, plus the DSI=1.0 cell counts).
-* `pd_rate_hz` — best PD-rate frontier (variant: `at_best_dsi`, `at_pareto_corner`).
-
-#### Key Questions
-
-Each question must be answered in `results_summary.md` with a definite yes/no/quantitative answer,
-not a hedge:
-
-1. Does seed 77 produce &gt;= 40 unique joint-pass cells (DSI &gt;= 0.5 AND PD &gt;= 30 Hz)?
-   * If yes: t0106 is replicated; substrate is genuinely populated.
-   * If no but &gt;= 10 unique cells: partial replication; multi-seed required.
-   * If 0: t0106 was seed-specific; pivot strategy required.
-2. Does seed 77&#x27;s best ratio DSI reach or exceed 0.95?
-3. Does seed 77&#x27;s best PD-rate frontier reach or exceed 100 Hz?
-4. Do the two seeds&#x27; Pareto fronts overlap in parameter space (median nearest-neighbour distance
-   below the cross-seed noise floor)?
-5. Did the tighter pool-restart cadence (every 10 gens) materially change the HV trajectory or
-   wall-clock per generation vs t0106?
-
-#### Cross-References
-
-* **Parent task**: `t0106_long_pdnd_nsga2_300gen` (substrate, driver, constants, baseline).
-* **Caveat task**: `t0107_t0106_polar_8dir_recheck` (8-dir polar re-evaluation showing the
-  conventional-protocol DSI is much lower; not in scope for this task but motivates a downstream
-  re-evaluation across both t0106 + t0112 cells once t0112 completes).
-* **Source suggestion**: none. This task generates new follow-up suggestions in its own
-  `results/suggestions.json` based on the outcome.
-* **Brainstorm source**: `t0111_brainstorm_results_22`.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1722,6 +1579,10 @@ It is a truncated-cohort artifact. Re-running the same varimax FA pipeline on 24
         <id>S-0105-04</id>
         <id>S-0106-01</id>
         <id>S-0106-02</id>
+        <id>S-0112-01</id>
+        <id>S-0112-02</id>
+        <id>S-0112-03</id>
+        <id>S-0112-05</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -1968,6 +1829,10 @@ It is a truncated-cohort artifact. Re-running the same varimax FA pipeline on 24
         <id>S-0106-04</id>
         <id>S-0106-06</id>
         <id>S-0106-07</id>
+        <id>S-0112-04</id>
+        <id>S-0112-06</id>
+        <id>S-0112-07</id>
+        <id>S-0112-08</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -2023,7 +1888,7 @@ It is a truncated-cohort artifact. Re-running the same varimax FA pipeline on 24
         <id>S-0106-05</id>
       </source_ids>
       <content>
-Open suggestions: 360
+Open suggestions: 368
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2451,6 +2316,34 @@ Priority: high
 Kind: evaluation
 Source task: t0106_long_pdnd_nsga2_300gen
 Three t0106 top-50 cells (ranks 16, 19, 27) achieve ratio DSI = 1.0 with deterministic zero ND firing. Total-spike silence guard (&gt;= 10 spikes across PD + ND) is exceeded (47-154 spikes/trial) so they are not silence-guard artefacts, but Trenholm2013 reports peak ND ~ 27 +/- 12 Hz in real mouse Hb9 DSGCs and Oesch2005 reports OFF DSI = 0.74 +/- 0.13. ND = 0 across only 3 noise replicates may be an AR(2)-seed + deterministic-GABA loophole that fails at higher replication. Re-evaluate the top 10 cells (3 DSI = 1.0 + 7 next-best incl. DSI = 0.98 at PD = 84.5 Hz and PD-frontier DSI = 0.92 at PD = 122.6 Hz) at N_EVAL_SEEDS = 20. Decision: if DSI = 1.0 collapses to &lt;= 0.9, mark as...
+
+## Multi-seed substrate-rate confirmation at restart cadence 10: N&gt;=3 new GA seeds on the t0106 substrate
+ID: S-0112-01
+Priority: high
+Kind: experiment
+Source task: t0112_t0106_seed77_replicate
+t0106 (seed 44) yielded 123 unique joint-pass cells (3.3% rate); t0112 (seed 77) yielded only 7 (0.35%) on the same substrate. With two seeds spanning a factor of ~17 in joint-pass density, the substrate-level acceptance rate is currently a 2-point sample and unreportable. Run N&gt;=3 additional GA seeds (suggested 33, 88, 99) on the identical t0106 substrate using t0112&#x27;s tighter pool_restart_every=10 and N_GEN=60 with HV-plateau auto-stop. Combined with t0106 (44) and t0112 (77), this yields a 5-seed sample suitable for reporting a substrate-level mean +/- s.e. acceptance rate against Hay2011&#x27;s 0.40% and Druckmann2007&#x27;s 0.10%. Distinct from S-0106-01 (which uses t0106&#x27;s exact cadence=25 at...
+
+## Isolate the pool-restart-cadence effect: paired re-runs at fixed seed comparing cadence 10 vs 25
+ID: S-0112-02
+Priority: high
+Kind: experiment
+Source task: t0112_t0106_seed77_replicate
+t0112&#x27;s 3.5x per-generation wall-clock speedup (620s/gen vs t0106&#x27;s 2,167s/gen) is confounded with the seed-44 -&gt; seed-77 change. Run two paired comparisons at matched seed but different pool_restart_every: (a) seed 44 with cadence=10 vs t0106&#x27;s existing seed-44/cadence-25 baseline; (b) seed 77 with cadence=25 vs t0112&#x27;s existing seed-77/cadence-10 baseline. Decision rule: if the cadence-10 variant matches its cadence-25 baseline on Pareto front geometry (best DSI, best PD, joint-pass count within seed noise) AND retains the 3-4x speedup, then cadence=10 should become the project default for all downstream NSGA-II tasks. If the cadence change shifts joint-pass yield, the speedup is...
+
+## HV-plateau auto-stop sensitivity: re-run t0112 seed 77 with auto-stop disabled to gen 60 ceiling
+ID: S-0112-03
+Priority: high
+Kind: experiment
+Source task: t0112_t0106_seed77_replicate
+t0112&#x27;s HV-plateau detector fired at gen 21 (well below the 60-gen ceiling), and t0106 produced most of its joint-pass cells in gens 21-39 - after t0112&#x27;s auto-stop. The 7-cell joint-pass count may be censored by an over-aggressive plateau detector when the local mode is &#x27;deep but narrow&#x27;. Re-run t0112 seed 77 with HV-plateau termination disabled (operator-stop or N_GEN=60 only); keep all other constants identical. Decision: if post-plateau gens (22-60) add &gt;=10 more unique joint-pass cells, the detector censors the long tail and should be reparameterised (longer window, tighter threshold, or removed) for all long-horizon runs. If post-plateau yield is &lt;=3 cells, the early auto-stop is...
+
+## 16-direction polar re-evaluation of t0112&#x27;s 7 unique joint-pass cells (mirrors t0107 on t0106)
+ID: S-0112-05
+Priority: high
+Kind: evaluation
+Source task: t0112_t0106_seed77_replicate
+t0107 re-evaluated 10 t0106 top cells at 8 directions and found that the 2-direction ratio DSI overstates selectivity by ~0.42 absolute (mean 8-dir DSI 0.519 vs 2-dir 0.939). t0112&#x27;s 7 unique joint-pass cells inherit this caveat unmodified and must be polar re-evaluated before any cross-seed claim can be reported. Apply the same 8-direction (or extended 16-direction) drifting-bar protocol used by t0107 to all 7 t0112 joint-pass cells, with N_EVAL_SEEDS matched to t0107. Decision: if the 8-direction DSI rank-correlates with the 2-direction ratio DSI (Spearman r &gt; 0.7 across the t0106 + t0112 pool of 133 joint-pass cells), the 2-direction metric is a usable proxy for substrate exploration...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4173,6 +4066,34 @@ Priority: medium
 Kind: experiment
 Source task: t0106_long_pdnd_nsga2_300gen
 The classical Tukker-Taylor ND-soma archetype dominates t0106&#x27;s top 50 (35/50 cells with soma_offset in [-132, -107] um and elong in [1.18, 1.25]). The second viable archetype is the PD-soma configuration (4/50, gen 19 cell #23 at DSI = 0.96 / PD = 83 Hz) consistent with Poleg-Polsky 2026&#x27;s GABAergic synaptic-asymmetry mechanism. Hold the top t0106 cell&#x27;s 54-d electrophys subvector fixed and densely sweep the 14-d morphology subvector in a tight box (soma_offset_pd_um in [-150, -100] um, elongation in [1.10, 1.35], 13 other dims in a 0.8-1.2 x current-value box) at N_EVAL_SEEDS = 4. Expected outcome: a high-density map of joint-pass cell counts vs morphology coordinates that distinguishes...
+
+## Normalised parameter-space distance metric (z-scored per dimension) for cross-seed Pareto overlap
+ID: S-0112-04
+Priority: medium
+Kind: library
+Source task: t0112_t0106_seed77_replicate
+t0112&#x27;s pareto_front_overlap.csv reports raw 68-d L2 distances of 3.5e7 - 1.9e8 between t0112 Pareto cells and their nearest t0106 neighbours. These values are dominated by conductance-scale parameters spanning 6 orders of magnitude (S/cm^2), so the metric does not support &#x27;same vs different solutions&#x27; claims. Build a small analysis library (or extend tasks/t0106 plotting code) that computes (a) per-dimension z-scored L2 over the union of t0106 + t0112 evaluated cells, and (b) Spearman rank-correlation distance. Apply to the t0106 and t0112 strict Pareto fronts and the broader joint-pass cohorts. Output: a normalised overlap CSV per task and a project-level scatter of z-score NN distance vs...
+
+## N_EVAL_SEEDS&gt;=20 robustness retest of the 7 t0112 joint-pass cells (mirrors S-0106-02 on t0112 cells)
+ID: S-0112-06
+Priority: medium
+Kind: evaluation
+Source task: t0112_t0106_seed77_replicate
+t0112&#x27;s 7 joint-pass cells were each evaluated at N_EVAL_SEEDS=3 inside the NSGA-II loop. The best cell at DSI=0.9535 and the highest-PD cell at 114.76 Hz are 3-seed point estimates and may be noise-undersampling artefacts in the same way S-0106-02 hypothesised for t0106&#x27;s 3 DSI=1.0 cells. Re-evaluate all 7 t0112 joint-pass cells at N_EVAL_SEEDS=20 using the same evaluator and silence guard. Decision: if any cell&#x27;s DSI collapses by &gt;=0.1 absolute or PD-rate by &gt;=15 Hz at N_EVAL_SEEDS=20, mark as noise-sensitive and exclude from the project&#x27;s reportable joint-pass cohort; if DSI and PD hold to within +/- 0.05 and +/- 5 Hz, the cells are robust and join the substrate&#x27;s reportable best cohort...
+
+## Adopt t0112 pool_restart_every=10 as the default for all downstream NEURON-pymoo NSGA-II tasks
+ID: S-0112-07
+Priority: medium
+Kind: library
+Source task: t0112_t0106_seed77_replicate
+t0112 demonstrated a 3.5x per-generation wall-clock speedup (620s/gen vs t0106&#x27;s 2,167s/gen) at no algorithmic cost to frontier geometry: best DSI 0.9535 vs t0106&#x27;s 0.9606 (within noise) and best PD 114.76 Hz vs 122.62 Hz (94%). The change is one line (_POOL_RESTART_EVERY: int = 10) in nsga2_driver.py. Promote it from a t0112-only override to the project default once S-0112-02 isolates the cadence effect from seed variance. Concretely: update the canonical NSGA-II driver template (or the PerGenerationPoolRestart library asset proposed by S-0106-05) to default to cadence=10 with cadence=25 retained as an opt-in legacy mode. Document the speedup in the driver docstring and reference S-0112-02...
+
+## Cross-seed parameter-vector clustering of joint-pass cells: shared archetypes vs divergent basins
+ID: S-0112-08
+Priority: medium
+Kind: experiment
+Source task: t0112_t0106_seed77_replicate
+t0106 (seed 44) produced 123 joint-pass cells; t0112 (seed 77) produced 7. Whether the two seeds find the same archetype, overlapping basins, or independent basins is unknown because the raw L2 metric is uninterpretable (see S-0112-04). Combine joint-pass cohorts from t0106, t0112, and any new S-0112-01 multi-seed runs, normalise per-dimension via S-0112-04, and run K-means / hierarchical clustering on the 68-d vectors with seed-of-origin as covariate. Decision: if cells cluster by seed-of-origin (NMI(cluster, seed) &gt; 0.5), each GA seed finds a private basin; if cells cluster by morphology archetype (ND-soma / central / PD-soma per t0108) with seed mixed within clusters, the substrate...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05

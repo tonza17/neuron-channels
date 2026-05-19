@@ -9,7 +9,7 @@ Output neurons of the retina whose axons form the optic nerve.
 (84)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (3)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
-(8)](../predictions/by-category/retinal-ganglion-cell.md)
+(9)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
 
