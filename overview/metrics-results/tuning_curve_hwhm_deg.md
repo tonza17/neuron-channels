@@ -1,6 +1,6 @@
 # Tuning Curve Half-Width at Half-Max (degrees)
 
-**Key**: `tuning_curve_hwhm_deg` | **Unit**: none | **Results**: 240
+**Key**: `tuning_curve_hwhm_deg` | **Unit**: none | **Results**: 243
 
 [Back to all metrics](README.md)
 
@@ -246,3 +246,6 @@
 | 238 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | Closest-to-joint cell 767 (gen 7) | — |
 | 239 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | Primary cohort (DSI > 0.1 AND PD > 2.0) | — |
 | 240 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | Strict cohort (DSI > 0.2 AND PD > 3.0) | — |
+| 241 | [Cluster + factor analysis of t0106 cells at DSI>0.5 AND PD>10](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) | Strict cohort (DSI > 0.5 AND PD > 10 Hz) from t0106 | — |
+| 242 | [Morphology gallery (10 per cluster) for the four t0108 morphology clusters](../../../overview/tasks/task_pages/t0109_t0108_morph_cluster_gallery.md) | Gallery cohort (t0108 strict-cohort: DSI > 0.5 AND PD > 10 Hz) from t0106 | — |
+| 243 | [Factor analysis at relaxed cohort (DSI > 0.2 AND PD > 3) to test all-negative PD claim](../../../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) | Relaxed cohort (DSI > 0.2 AND PD > 3 Hz) from t0106 | — |

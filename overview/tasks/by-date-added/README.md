@@ -1,14 +1,492 @@
 # Tasks by Date Added
 
-108 tasks grouped by effective task date.
+113 tasks grouped by effective task date.
 
 [Back to all tasks](../README.md)
 
 ---
 
-## 2026-05-18 (2)
+## 2026-05-19 (1)
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0111 — <strong>Brainstorm results session 22</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0111_brainstorm_results_22` |
+| **Status** | completed |
+| **Effective date** | 2026-05-19 |
+| **Dependencies** | [`t0001_brainstorm_results_1`](../../../overview/tasks/task_pages/t0001_brainstorm_results_1.md), [`t0006_brainstorm_results_2`](../../../overview/tasks/task_pages/t0006_brainstorm_results_2.md), [`t0014_brainstorm_results_3`](../../../overview/tasks/task_pages/t0014_brainstorm_results_3.md), [`t0021_brainstorm_results_4`](../../../overview/tasks/task_pages/t0021_brainstorm_results_4.md), [`t0025_brainstorm_results_5`](../../../overview/tasks/task_pages/t0025_brainstorm_results_5.md), [`t0028_brainstorm_results_6`](../../../overview/tasks/task_pages/t0028_brainstorm_results_6.md), [`t0094_brainstorm_results_19`](../../../overview/tasks/task_pages/t0094_brainstorm_results_19.md), [`t0095_brainstorm_results_20`](../../../overview/tasks/task_pages/t0095_brainstorm_results_20.md), [`t0101_brainstorm_results_21`](../../../overview/tasks/task_pages/t0101_brainstorm_results_21.md), [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0107_t0106_polar_8dir_recheck`](../../../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md), [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md), [`t0109_t0108_morph_cluster_gallery`](../../../overview/tasks/task_pages/t0109_t0108_morph_cluster_gallery.md), [`t0110_relaxed_cohort_factor_analysis`](../../../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`brainstorming`](../../../meta/task_types/brainstorming/) |
+| **Start time** | 2026-05-19T00:00:00Z |
+| **End time** | 2026-05-19T00:00:00Z |
+| **Step progress** | 4/4 |
+| **Task page** | [Brainstorm results session 22](../../../overview/tasks/task_pages/t0111_brainstorm_results_22.md) |
+| **Task folder** | [`t0111_brainstorm_results_22/`](../../../tasks/t0111_brainstorm_results_22/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0111_brainstorm_results_22/results/results_detailed.md) |
+
+# Brainstorm Session 22: Seed-77 Replicate of t0106 Joint-Pass Breakthrough
+
+## Context
+
+t0106 achieved the first joint-pass cells (DSI >= 0.5 AND PD-rate >= 30 Hz) in the entire
+t0080 -> t0104 NSGA-II lineage: 123 unique cells across 3,744 evaluations from a single
+random-init GA seed (44) over 40 generations on the 68-d Bed B + 14-d morphology substrate.
+The breakthrough was driven by switching from 16-direction vector-sum DSI to 2-direction ratio
+DSI rather than by additional compute. t0107 immediately followed with an 8-direction polar
+re-evaluation of 10 random top-50 cells, showing that the absolute DSI numbers fall sharply
+under the conventional 8-direction protocol (mean t0106 ratio DSI = 0.939 vs t0107 8-dir
+vector-sum DSI = 0.519) while rank order is preserved (Spearman rho = 0.758).
+
+The open question this brainstorm addresses: is the t0106 result a seed-specific lucky run, or
+is the joint-pass corner genuinely populated on this substrate? Without seed-replication, the
+headline "123 unique joint-pass cells" cannot be claimed in any writeup as a substrate
+property; it is at best a single-realisation point estimate.
+
+## Decisions
+
+A single new task `t0112_t0106_seed77_replicate` is commissioned: a minimum-change t0106
+replicate that varies only the GA seed (44 -> 77) and the multiprocessing pool restart cadence
+(`_POOL_RESTART_EVERY` 25 -> 10 generations, motivated by NEURON's known memory creep). All
+other parameters are held identical to t0106: pop=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2, ratio
+DSI objective, random LHS init, HV-plateau operator-stop criterion. Gen ceiling raised to 60
+(from t0106's 300) so a slower plateau is not artificially cut while keeping the budget
+bounded.
+
+No suggestion rejections, reprioritisations, or task cancellations were applied in this
+session. The 325 uncovered suggestions remain at their current priorities pending the t0112
+outcome, which will either promote the suggestion backlog (if the replicate confirms substrate
+population) or trigger a different next-wave plan (if it does not).
+
+## Expected Outcomes
+
+Two qualitatively distinct outcomes are possible from t0112:
+
+1. **Replicate succeeds** (>= 40 unique joint-pass cells at the strict DSI >= 0.5 AND PD >= 30
+   Hz threshold): t0106 is confirmed as a substrate-population effect, not a seed-specific
+   artefact. This promotes downstream analysis tasks (8-dir polar re-evaluation of all
+   joint-pass cells, cluster + factor analysis extension, mechanism dissection) to high
+   priority.
+
+2. **Replicate fails** (substantially fewer joint-pass cells, or zero): the joint-pass
+   acceptance rate has wide seed-variance; multi-seed replication and / or alternative
+   optimiser (IBEA, Dang2023 mu = n log n NSGA-II) must precede any literature claim.
+
+In either case, the result feeds the next brainstorm session's strategic direction.
+
+## Budget
+
+* This brainstorm task: $0 (planning only)
+* Commissioned task t0112: $25 cost cap; expected actual ~$10-11 mirroring t0106
+* Project envelope: $18.20 remaining of $75 prior to this session; ~$7-8 reserve after t0112
+  spend
+
+**Results summary:**
+
+> ---
+> spec_version: "1"
+> task_id: "t0111_brainstorm_results_22"
+> date_completed: "2026-05-19"
+> status: "complete"
+> ---
+>
+> **Results Summary: Brainstorm Session 22 — Seed-77 Replicate of t0106**
+>
+> **Summary**
+>
+> Twenty-second strategic brainstorm. The researcher opened with a specific direction
+> (replicate
+> t0106 at a fresh seed, with a tighter NEURON pool-restart cadence), which the session
+> converged
+> on as a single minimum-change task: `t0112_t0106_seed77_replicate`. No corrections,
+> reprioritisations, or task cancellations were applied.
+>
+> **Session Overview**
+>
+> * **Date**: 2026-05-19
+> * **Trigger**: researcher's read of the t0106 -> t0110 wave, with t0106 producing the first
+
+</details>
+
+## 2026-05-18 (5)
+
+## ✅ Completed
+
+<details>
+<summary>✅ 0110 — <strong>Factor analysis at relaxed cohort (DSI > 0.2 AND PD >
+3) to test all-negative PD claim</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0110_relaxed_cohort_factor_analysis` |
+| **Status** | completed |
+| **Effective date** | 2026-05-18 |
+| **Dependencies** | [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) |
+| **Expected assets** | 1 answer |
+| **Source suggestion** | — |
+| **Task types** | [`data-analysis`](../../../meta/task_types/data-analysis/), [`comparative-analysis`](../../../meta/task_types/comparative-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Start time** | 2026-05-18T18:30:00Z |
+| **End time** | 2026-05-18T19:30:00Z |
+| **Step progress** | 9/13 |
+| **Task page** | [Factor analysis at relaxed cohort (DSI > 0.2 AND PD > 3) to test all-negative PD claim](../../../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) |
+| **Task folder** | [`t0110_relaxed_cohort_factor_analysis/`](../../../tasks/t0110_relaxed_cohort_factor_analysis/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0110_relaxed_cohort_factor_analysis/results/results_detailed.md) |
+
+# t0110 — Factor Analysis at Relaxed Cohort (DSI > 0.2 AND PD > 3)
+
+## Context
+
+t0108 found that **all 10 varimax factor-score correlations with PD-rate were negative** in
+the strict cohort (DSI > 0.5 AND PD > 10, N=150). Our working hypothesis is that this is a
+truncated-cohort artifact: the strict filter places cells near the top corner of the DSI/PD
+objective space, leaving no "go further up" direction for factors to align with.
+
+The hypothesis is testable: at a less-truncated cohort, some PD correlations should flip
+positive — particularly factors that align with "more axonal Na → more firing" should now show
+up.
+
+t0106 cohort sizes at candidate thresholds (raw → unique after 6-decimal dedupe):
+
+* `DSI > 0.5 AND PD > 10` — 784 → 150 (t0108).
+* `DSI > 0.3 AND PD > 5` — 986 → 195.
+* `DSI > 0.2 AND PD > 3` — 1209 → **247** (this task).
+* `DSI > 0.1 AND PD > 2` — 1525 → 312 (t0105's primary threshold).
+
+DSI > 0.2 AND PD > 3 gives 247 unique cells — 65 % more than t0108 and a substantially better
+sample/feature ratio for FA on 68 parameters.
+
+## Goal
+
+Re-run the same varimax FA pipeline as t0108 on 247 cells from t0106 at DSI > 0.2 AND PD > 3,
+and compare directly to t0108's strict cohort. Answer one question: **does the all-negative PD
+column persist under a less-truncated cohort?**
+
+## Approach
+
+* Load t0106 evaluations from
+  `tasks/t0106_long_pdnd_nsga2_300gen/results/data/all_evaluations_seed44.json.gz`.
+* Apply DSI > 0.2 AND PD > 3; dedupe by 68-d vector at 6 decimals.
+* Same varimax FA pipeline as t0108: sklearn FactorAnalysis (rotation=None) + manual Kaiser
+  varimax rotation; factor count by Kaiser eigenvalues > 1 capped at 10.
+* Pearson r between each factor score and DSI / PD-rate.
+* Render a side-by-side comparison chart: t0108 strict (left) vs t0110 relaxed (right) — same
+  10-factor x-axis layout, same y-axis scale.
+
+## Out of Scope
+
+* New cluster analyses (already answered by t0108).
+* New morphology gallery.
+* New cohorts beyond DSI > 0.2 AND PD > 3.
+* Re-running NSGA-II or new evaluations.
+
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0110_relaxed_cohort_factor_analysis"
+> date_completed: "2026-05-18"
+> ---
+>
+> **t0110 — Relaxed-Cohort Factor Analysis: Results Summary**
+>
+> **Summary**
+>
+> Re-ran the t0108 varimax factor analysis on t0106 cells at a less-truncated cohort
+> (DSI > 0.2 AND PD > 3 Hz, **N=247** vs t0108's 150). The truncated-cohort hypothesis is
+> confirmed: at the relaxed threshold **2 of 10 factors now have positive r(PD)** (F2 +0.14,
+> F4 +0.05), whereas t0108 had 0 / 10. DSI sign distribution also flips: 6 positive vs 4
+> negative
+> in t0110 (vs 4/6 in t0108). The dominant axis F1 (NAP_MID, CAT, SK_MID, CAD_TAUR, RA_OHM_CM)
+> is now revealed as a **joint suppressor** of both objectives (r_DSI = −0.37, r_PD = −0.75),
+> not just a PD-dropper as t0108 suggested.
+>
+> **Metrics**
+>
+
+</details>
+
+<details>
+<summary>✅ 0109 — <strong>Morphology gallery (10 per cluster) for the four t0108
+morphology clusters</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0109_t0108_morph_cluster_gallery` |
+| **Status** | completed |
+| **Effective date** | 2026-05-18 |
+| **Dependencies** | [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) |
+| **Expected assets** | — |
+| **Source suggestion** | — |
+| **Task types** | [`data-analysis`](../../../meta/task_types/data-analysis/) |
+| **Start time** | 2026-05-18T17:00:00Z |
+| **End time** | 2026-05-18T17:55:00Z |
+| **Step progress** | 9/13 |
+| **Task page** | [Morphology gallery (10 per cluster) for the four t0108 morphology clusters](../../../overview/tasks/task_pages/t0109_t0108_morph_cluster_gallery.md) |
+| **Task folder** | [`t0109_t0108_morph_cluster_gallery/`](../../../tasks/t0109_t0108_morph_cluster_gallery/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0109_t0108_morph_cluster_gallery/results/results_detailed.md) |
+
+# t0109 — Morphology Gallery for the Four t0108 Morphology Clusters
+
+## Context
+
+t0108 identified 4 K-means clusters on the 14-d morphology submatrix of the 150 strict-cohort
+t0106 cells (DSI > 0.5 AND PD > 10). Sizes: 21 / 55 / 67 / 7. Cluster 3 (n=7) is the high-K
+low-axonal-Na outlier morphology. The numerical Kruskal-Wallis results identify *which*
+electrophys parameters separate the morphology clusters, but they do not show what the actual
+dendritic shapes look like.
+
+## Goal
+
+Render up to **10 example morphologies per cluster** (all 7 for cluster 3), with DSI / PD /
+source seed/gen annotated per panel, arranged as one row per cluster.
+
+## Approach
+
+* Load `tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/data/filtered_cells.json` and
+  `tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/data/morphology_clusters.json`.
+* Re-attach the cluster label to each cell using the order in `morphology_clusters.json`
+  `cluster_labels`.
+* Within each cluster, rank cells by descending `DSI × PD-rate` and take the top 10
+  (deterministic selection). Cluster 3 has only 7 cells; take all of them.
+* Build each morphology via
+  `tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix.generate_fixed_morphology`,
+  exactly as t0105's build_gallery did.
+* Plot top-down (x, y) projection per cell, soma marked, PD-arrow indicated. Annotate `DSI`,
+  `PD-rate`, `generation`, `cluster id`.
+* Layout: 4 rows × 10 cols. Row label gives cluster id and cluster size from t0108.
+* Output: `results/images/morphology_gallery_by_cluster.png`.
+
+## Out of Scope
+
+* New optimisation / re-evaluation.
+* Re-clustering or re-doing t0108's analysis.
+* 3D rendering or any per-cell electrophysiology plotting.
+
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0109_t0108_morph_cluster_gallery"
+> date_completed: "2026-05-18"
+> ---
+>
+> **t0109 — Morphology Gallery for the 4 t0108 Clusters: Results Summary**
+>
+> **Summary**
+>
+> Rendered up to 10 example morphologies per t0108 morphology K-means cluster. Cluster 3 has
+> only 7
+> cells in t0108 (total cells per cluster: 21 / 55 / 67 / 7), so its row is 7 panels wide. Top
+> cells per cluster were picked deterministically by descending `DSI x PD_rate` and rebuilt
+> via
+> the t0090/t0092 morphology generator. The 4-row × 10-column gallery is at
+> `results/images/morphology_gallery_by_cluster.png`.
+>
+> **Metrics**
+>
+> * Cluster sizes (from t0108 morphology K-means, k=4): **21 / 55 / 67 / 7**.
+> * Examples shown per cluster: **10 / 10 / 10 / 7** (max 10 cap).
+
+</details>
+
+<details>
+<summary>✅ 0108 — <strong>Cluster + factor analysis of t0106 cells at DSI>0.5 AND
+PD>10</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0108_t0106_cluster_factor_dsi05_pd10` |
+| **Status** | completed |
+| **Effective date** | 2026-05-18 |
+| **Dependencies** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Expected assets** | 3 answer |
+| **Source suggestion** | — |
+| **Task types** | [`data-analysis`](../../../meta/task_types/data-analysis/), [`comparative-analysis`](../../../meta/task_types/comparative-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Start time** | 2026-05-18T13:00:00Z |
+| **End time** | 2026-05-18T16:00:00Z |
+| **Step progress** | 9/13 |
+| **Task page** | [Cluster + factor analysis of t0106 cells at DSI>0.5 AND PD>10](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) |
+| **Task folder** | [`t0108_t0106_cluster_factor_dsi05_pd10/`](../../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/results_detailed.md) |
+
+# t0108 — Cluster + Factor Analysis of t0106 Cells at DSI>0.5 AND PD>10
+
+## Context
+
+Direct researcher commission at 2026-05-18 after the t0106 / t0107 results landed.
+`t0106_long_pdnd_nsga2_300gen` is the most recent 68-d NSGA-II lineage (54-d electrophys +
+14-d morphology) on the Bed B + morphology substrate. It evaluated **3,744 cells** across 300+
+generations from a single GA seed (44).
+
+This task re-asks the questions from `t0105_cluster_factor_analysis_dsi_pd` on a single,
+high-quality cohort and at a much stricter filter:
+
+* **t0105 primary**: `DSI > 0.1 AND PD > 2 Hz` across 4 lineages (~86 unique cells).
+* **t0108 (this task)**: `DSI > 0.5 AND PD > 10 Hz` on t0106 alone (**150 unique cells**
+  confirmed by pre-scoping count).
+
+The stricter filter focuses the analysis on cells that already exhibit strong direction
+selectivity *and* substantial firing — the cohort of empirically successful DSGCs from the
+optimiser. Restricting to the single t0106 lineage removes cross-lineage seed and-generation
+confounds that t0105 carried.
+
+This task also extends the t0105 design in two important ways:
+
+1. **Bidirectional cluster analysis**: instead of pre-classifying cells by an asymmetry rule
+   and running PCA only on electrophys, this task runs *two* unsupervised pipelines:
+   * PCA + K-means on the 54-d electrophys submatrix, with the 14-d morphology parameter
+     distributions overlaid per cluster (electrophys clusters → which morphology shapes?).
+   * PCA + K-means on the 14-d morphology submatrix, with the 54-d electrophys parameter
+     distributions overlaid per cluster (morphology clusters → which channel regimes?).
+2. **Factor analysis on the joint 68-d vector** with varimax rotation, exactly as t0105 did,
+   but on the new cohort.
+
+## Goal
+
+For the **150 unique cells** from `t0106_long_pdnd_nsga2_300gen` with `DSI > 0.5 AND PD > 10
+Hz` (deduped by 68-d vector), answer three questions:
+
+1. **Do electrophys clusters carry a morphological signature?** Run PCA + K-means on the 54-d
+   electrophys vectors, then for each cluster summarise the morphology parameter distributions
+   (mean, median, IQR, boxplots). Report which morphology parameters separate the clusters.
+
+2. **Do morphology clusters carry an electrophys signature?** Run PCA + K-means on the 14-d
+   morphology vectors, then for each cluster summarise the electrophys parameter
+   distributions. Report which electrophys parameters separate the clusters.
+
+3. **Which combinations of the 68 input parameters drive DSI and PD diversity in this strict
+   cohort?** Run factor analysis (varimax) on the full 68-d matrix, project DSI and PD onto
+   factors via Pearson r, and identify joint-DSI/PD factors (if any).
+
+## Key Questions
+
+1. Are the K-means clusters on the electrophys submatrix separable on morphology — i.e. do
+   channel regimes carry a morphology signature?
+2. Are the K-means clusters on the morphology submatrix separable on electrophys — i.e. do
+   morphology shapes carry a channel regime signature?
+3. Which top-3 varimax factors load most strongly on DSI? On PD-rate? Is there a single joint
+   factor with `|r_DSI| > 0.3 AND |r_PD| > 0.3`?
+4. Compared to t0105's looser-cohort findings, do the dominant axes change when restricted to
+   genuinely high-performing cells (DSI > 0.5 AND PD > 10)?
+
+## Approach
+
+### Cell selection
+
+Pool all evaluations from the single t0106 lineage:
+
+* `tasks/t0106_long_pdnd_nsga2_300gen/results/data/all_evaluations_seed44.json.gz`
+
+**Filter**: `dsi_vector_sum > 0.5 AND pd_rate_hz > 10.0`.
+
+**Dedupe**: by full 68-d parameter vector rounded to 6 decimals. Pareto carry-over across
+generations creates many duplicate rows. Pre-scoping count: **784 raw passing rows → 150
+unique**.
+
+Record `N_raw`, `N_passing`, `N_unique` in `metrics.json` and `results_summary.md`.
+
+### PCA + K-means on electrophys (54-d) with morphology overlays
+
+1. Stack the 54-d electrophys submatrix `X_e` shape `(150, 54)`.
+2. z-score each column.
+3. PCA: keep PC1, PC2, PC3. Report variance explained and top-5 loading dimensions per PC.
+4. K-means with `k ∈ {2, 3, 4}` on the full z-scored 54-d matrix (not on the PCA projection —
+   using the full feature space gives a more honest clustering). Pick the headline `k` using
+   the elbow on inertia and silhouette score; report all three.
+5. Plot:
+   * PC1-PC2 scatter coloured by cluster label.
+   * For each morphology parameter, a boxplot grouped by cluster (one row of 14 panels).
+6. For each morphology parameter, run a Kruskal-Wallis test across clusters; report H
+   statistic and p-value. Bonferroni-correct across 14 tests; flag parameters that remain
+   significant after correction.
+
+### PCA + K-means on morphology (14-d) with electrophys overlays
+
+1. Stack the 14-d morphology submatrix `X_m` shape `(150, 14)`.
+2. z-score each column.
+3. PCA: keep PC1, PC2, PC3. Report variance explained and top-5 loading dimensions per PC.
+4. K-means with `k ∈ {2, 3, 4}` on the full z-scored 14-d matrix. Pick headline `k` from
+   silhouette + elbow.
+5. Plot:
+   * PC1-PC2 scatter coloured by cluster label.
+   * For each electrophys parameter, a strip plot or violin grouped by cluster. With 54 panels
+     this becomes large; render as a compact grid sized for legibility.
+6. For each electrophys parameter, run Kruskal-Wallis across clusters; report H and p with
+   Bonferroni correction across 54 tests; flag survivors.
+
+### Factor analysis on the full 68-d matrix
+
+1. Stack the 68-d full vectors into `X_full` shape `(150, 68)`.
+2. z-score each column.
+3. Run `sklearn.decomposition.FactorAnalysis` followed by varimax rotation (use
+   `factor_analyzer` package if installed, else manual varimax routine).
+4. Choose factor count by Kaiser criterion (eigenvalues > 1 on the correlation matrix) OR 80%
+   of total variance, whichever gives fewer factors, capped at 10.
+5. For each factor, list the top-5 loading parameters with signed loadings.
+6. Compute factor scores per cell. Compute Pearson r between each factor and `dsi_vector_sum`
+   and between each factor and `pd_rate_hz`.
+7. Flag any factor with `|r_DSI| > 0.3 AND |r_PD| > 0.3` as a joint factor.
+
+Outputs:
+* `results/images/factor_loadings_heatmap.png`
+* `results/images/factor_correlations_dsi_pd.png`
+
+### Answer assets
+
+1. `assets/answer/t0106-electrophys-clusters-morphology-signature/`
+   * Q: "When t0106 cells with DSI > 0.5 AND PD > 10 are clustered by their 54-d electrophys
+     parameters, do the clusters carry a distinguishable morphological signature?"
+2. `assets/answer/t0106-morphology-clusters-electrophys-signature/`
+   * Q: "When the same cells are clustered by their 14-d morphology parameters, do the
+     clusters carry a distinguishable electrophys signature?"
+3. `assets/answer/t0106-dsi-pd-factor-decomposition-strict-cohort/`
+   * Q: "Which factors (combinations of the 68 input parameters) explain DSI and PD diversity
+     in the strict cohort (DSI > 0.5 AND PD > 10), and is there a joint factor?"
+
+## Out of Scope
+
+* Re-running NSGA-II or any optimisation.
+* Pooling across lineages other than t0106.
+* Morphology gallery (separately covered in t0105_preliminary_figures_report and earlier).
+* In-silico patch / IV-curve analysis on cluster representatives.
+* Comparison to external datasets (Bae 2018, Ran 2020).
+
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0108_t0106_cluster_factor_dsi05_pd10"
+> date_completed: "2026-05-18"
+> ---
+>
+> **t0108 — Cluster + Factor Analysis (Strict DSI>0.5, PD>10): Results Summary**
+>
+> **Summary**
+>
+> For the 150 unique t0106 cells passing `DSI > 0.5 AND PD-rate > 10 Hz` (3,744 raw → 784
+> passing →
+> 150 unique after 6-decimal dedupe on the 68-d vector): K-means on the **54-d electrophys**
+> submatrix
+> produces a k=2 split (silhouette 0.496) dominated by a 10-vs-140 small-outlier vs
+> bulk-cohort
+> partition; only 3 of 14 morphology parameters separate the clusters at Bonferroni p < 0.05.
+> K-means
+> on the **14-d morphology** submatrix produces a richer k=4 split (silhouette 0.233, sizes
+> 21/55/67/7); 30 of 54 electrophys parameters separate the morphology clusters at Bonferroni
+> p <
+> 0.05. Varimax factor analysis on the full 68-d vector retains 10 factors (Kaiser cap) and
+> identifies
+> a **single joint DSI–PD trade-off factor F10** (|r_DSI|=0.31, |r_PD|=0.45). Morphology is
+> the
+> dominant categorical axis; the electrophys regime adapts continuously within each morphology
+> type.
+>
+
+</details>
 
 <details>
 <summary>✅ 0107 — <strong>8-direction polar re-evaluation of 10 random top-50 t0106
@@ -19277,5 +19755,176 @@ morphology shortlist.
 >
 > 1. **Create t0002: literature survey of DSGC compartmental models** — one broad survey
 >    covering
+
+</details>
+
+## unknown (1)
+
+## ⏹ Not Started
+
+<details>
+<summary>⏹ 0112 — <strong>Seed-77 minimum-change replicate of t0106 long 2-direction
+NSGA-II</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0112_t0106_seed77_replicate` |
+| **Status** | not_started |
+| **Effective date** | — |
+| **Dependencies** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) |
+| **Expected assets** | 1 predictions |
+| **Source suggestion** | — |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Task page** | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) |
+| **Task folder** | [`t0112_t0106_seed77_replicate/`](../../../tasks/t0112_t0106_seed77_replicate/) |
+
+# t0112: Seed-77 Minimum-Change Replicate of t0106 Long 2-Direction NSGA-II
+
+## Motivation
+
+`t0106_long_pdnd_nsga2_300gen` produced the first joint-pass cells (DSI >= 0.5 AND PD-rate >=
+30 Hz) in the entire `t0080` -> `t0104` NSGA-II lineage: **123 unique cells across 3,744
+evaluations** from a single random-init GA seed (44) running 40 generations on the 68-d Bed B
++ 14-d morphology substrate. The breakthrough was driven by reformulating the selectivity
+objective from 16-direction vector-sum DSI to 2-direction ratio DSI = (PD - ND) / (PD + ND),
+not by additional compute.
+
+Two open caveats motivate this task:
+
+1. **Seed-specificity**: t0106 ran a single GA seed. Without at least one replicate, the 3.3%
+   joint-pass acceptance rate is a single-realisation point estimate, not a substrate
+   property. It cannot be reported as such in any future writeup.
+
+2. **NEURON memory creep**: t0106's `_POOL_RESTART_EVERY = 25` (in `nsga2_driver.py:97`) was
+   chosen before the long-horizon behaviour of the worker pool was characterised. Wall-clock
+   telemetry from t0106 shows growing per-evaluation memory footprint between restarts,
+   consistent with NEURON's known leak under repeated cell instantiation. A tighter restart
+   cadence (every 10 generations) reduces this footprint at negligible wall-clock cost (~2
+   extra minutes over a 40-gen run).
+
+This task addresses both with a single minimum-change replicate.
+
+## Scope
+
+* **In scope**: identical substrate to t0106 (Bed B 54-d electrophys + 14-d morphology = 68
+  free parameters), identical objectives (2-direction ratio DSI + PD-rate at 0 deg), identical
+  NSGA-II hyperparameters (pop=96, SBX/PM operators, HV-plateau operator-stop criterion),
+  identical evaluation protocol (N_EVAL_SEEDS = 3, ratio DSI, silence guard active).
+* **In scope, changed**: GA seed (44 -> 77), pool-restart cadence (25 -> 10 gens), gen ceiling
+  (300 -> 60 to keep budget bounded while still allowing slower plateaus to be discovered).
+* **Out of scope**: any change to the substrate definition, the objective formulation, the
+  evaluation protocol, the silence guard, or the NSGA-II driver beyond the seed and
+  pool-restart constants. Out-of-scope changes would compromise the like-for-like comparison.
+
+## Approach
+
+1. **Fork t0106 code into `tasks/t0112_t0106_seed77_replicate/code/`**: copy
+   `nsga2_driver.py`, `constants.py`, `random_init.py`, and any helper modules. Update package
+   imports.
+2. **Change exactly two constants**:
+   * `constants.py`: rename `T0106_SEEDS = (44,)` -> `T0112_SEEDS = (77,)`; bump
+     `T0112_HARD_BUDGET_USD` if needed (default to $25 per-task cap).
+   * `nsga2_driver.py:97`: `_POOL_RESTART_EVERY = 10` (was 25).
+3. **Raise gen ceiling**: `N_GEN = 60` in `constants_morphology` import override, with
+   HV-plateau stop preserved verbatim. The HV-plateau constants (`HV_PLATEAU_WINDOW`,
+   `HV_PLATEAU_MIN_HV_HISTORY`, `HV_PLATEAU_REL_THRESHOLD`) are unchanged so the stopping
+   criterion is identical to t0106.
+4. **Smoke gate locally** (5 checks identical to t0106): single-eval driver run, ratio DSI
+   synthetic sanity, silence-guard unit tests, pool-restart sanity, watchdog wiring.
+5. **Provision remote** Vast.ai single instance (same provisioning class as t0106).
+6. **Launch** with cost cap $25 per-task default and per-instance watchdog $20. Operator-stop
+   on HV plateau (same window/threshold as t0106) or at gen 60 ceiling, whichever comes first.
+7. **Collect** evaluator-side per-cell DSI / PD-rate / generation table as a predictions asset
+   following the t0106 predictions asset format.
+8. **Compare** to t0106:
+   * Joint-pass cell count (DSI >= 0.5 AND PD >= 30 Hz) absolute number and as % of total
+     evals.
+   * Best ratio DSI and best PD-rate frontier vs t0106's 1.0000 / 122.6 Hz.
+   * HV trajectory shape and plateau generation.
+   * Pareto front overlap between seed-44 and seed-77 cells (parameter-space distance).
+
+## Expected Assets
+
+* **1 predictions asset** under `assets/predictions/t0112-bedb-morph-nsga2-seed77/` containing
+  the per-cell DSI / PD-rate / generation table for all evaluated cells (mirroring t0106's
+  predictions asset schema).
+
+## Compute and Budget
+
+* **GPU type**: not applicable (NEURON CPU compartmental simulations). Remote provisioning is
+  for CPU cores, not GPU.
+* **Remote**: Vast.ai single instance, same provisioning class as t0106 (high-core-count CPU
+  node).
+* **Cost cap**: $25 per-task default. **Per-instance watchdog**: $20 (via
+  `make_watchdog_from_machine_log`).
+* **Expected actual cost**: ~$10-11 (mirroring t0106's $10.37 spend at the same pop/gen/eval
+  budget).
+* **Project envelope check**: $18.20 remaining of $75 prior to this task. Expected post-task
+  reserve: ~$7-8.
+
+## Outputs
+
+### Charts
+
+All charts saved to `results/images/` and embedded in `results_detailed.md`:
+
+1. `pareto_front_seed44_vs_seed77.png` — overlay of t0106 (seed 44) and t0112 (seed 77) strict
+   Pareto fronts on DSI vs PD-rate axes; coloured by source task; answers "do the two seeds
+   discover comparable Pareto frontiers?"
+2. `hv_vs_gen_seed44_vs_seed77.png` — log-scale HV trajectory for both seeds on the same axes,
+   with pool-restart events annotated; answers "does the tighter restart cadence change the HV
+   trajectory shape?"
+3. `joint_pass_yield_per_gen.png` — joint-pass cell count discovered per generation for both
+   seeds; answers "when does each seed first hit the joint-pass corner, and what is the rate
+   thereafter?"
+4. `top50_morphologies_seed77.png` — 10x5 grid of best 50 cells, coloured by archetype (same
+   format as t0106's `top50_morphologies.png`); answers "are the best-yield morphologies the
+   same archetypes as t0106?"
+5. `asymmetry_distribution_seed44_vs_seed77.png` — 4-panel histogram (soma offset, elongation,
+   branch density gradient, primary branch PD concentration) for top-50 cells from both seeds;
+   answers "is the morphology distribution of high-yield cells seed-independent?"
+
+### Tables
+
+* `results/data/joint_pass_summary.csv` — per-seed: total evals, joint-pass count, joint-pass
+  %, best DSI, best PD-rate, plateau generation.
+* `results/data/pareto_front_overlap.csv` — parameter-space nearest-neighbour distance between
+  each t0112 Pareto cell and its closest t0106 Pareto cell; informs whether the two seeds find
+  "the same" or "different" frontier solutions.
+
+### Registered metrics
+
+Run all registered metrics that apply to this task. Check `uv run python -u -m
+arf.scripts.aggregators.aggregate_metrics --format json`. At minimum:
+
+* `direction_selectivity_index` — best ratio DSI across all cells (variant: `best_legit` for
+  the highest non-DSI=1.0 cell, plus the DSI=1.0 cell counts).
+* `pd_rate_hz` — best PD-rate frontier (variant: `at_best_dsi`, `at_pareto_corner`).
+
+## Key Questions
+
+Each question must be answered in `results_summary.md` with a definite yes/no/quantitative
+answer, not a hedge:
+
+1. Does seed 77 produce >= 40 unique joint-pass cells (DSI >= 0.5 AND PD >= 30 Hz)?
+   * If yes: t0106 is replicated; substrate is genuinely populated.
+   * If no but >= 10 unique cells: partial replication; multi-seed required.
+   * If 0: t0106 was seed-specific; pivot strategy required.
+2. Does seed 77's best ratio DSI reach or exceed 0.95?
+3. Does seed 77's best PD-rate frontier reach or exceed 100 Hz?
+4. Do the two seeds' Pareto fronts overlap in parameter space (median nearest-neighbour
+   distance below the cross-seed noise floor)?
+5. Did the tighter pool-restart cadence (every 10 gens) materially change the HV trajectory or
+   wall-clock per generation vs t0106?
+
+## Cross-References
+
+* **Parent task**: `t0106_long_pdnd_nsga2_300gen` (substrate, driver, constants, baseline).
+* **Caveat task**: `t0107_t0106_polar_8dir_recheck` (8-dir polar re-evaluation showing the
+  conventional-protocol DSI is much lower; not in scope for this task but motivates a
+  downstream re-evaluation across both t0106 + t0112 cells once t0112 completes).
+* **Source suggestion**: none. This task generates new follow-up suggestions in its own
+  `results/suggestions.json` based on the outcome.
+* **Brainstorm source**: `t0111_brainstorm_results_22`.
 
 </details>

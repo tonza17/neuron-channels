@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-05-18T11:32:29Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-05-19T13:45:13Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>597114</char_count>
-    <byte_count>597938</byte_count>
-    <estimated_tokens>149278</estimated_tokens>
+    <char_count>630001</char_count>
+    <byte_count>631120</byte_count>
+    <estimated_tokens>157500</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -211,9 +211,13 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0105_preliminary_figures_report</id>
         <id>t0106_long_pdnd_nsga2_300gen</id>
         <id>t0107_t0106_polar_8dir_recheck</id>
+        <id>t0108_t0106_cluster_factor_dsi05_pd10</id>
+        <id>t0109_t0108_morph_cluster_gallery</id>
+        <id>t0110_relaxed_cohort_factor_analysis</id>
+        <id>t0111_brainstorm_results_22</id>
       </source_ids>
       <content>
-Completed tasks: 100
+Completed tasks: 104
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -814,6 +818,30 @@ ID: t0107_t0106_polar_8dir_recheck
 Completed: 2026-05-18
 Short description: Re-evaluate 10 randomly selected cells from t0106 top-50 (joint-corner-ranked) at 8 directions (every 45 deg) and plot polar tuning curves. Light follow-up to S-0106-03 with reduced scope.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0107_t0106_polar_8dir_recheck&quot; date_completed: &quot;2026-05-18&quot; --- t0107 — 8-Direction Polar Re-Evaluation: Results Summary Summary Re-evaluated 10 randomly selected cells from the t0106 top-50 at an 8-direction protocol (45° steps) with N_EVAL_SEEDS = 3. **Rank order is preserved** between metrics (Spearman ρ = 0.758, p = 0.011), but the **absolute DSI values diverge sharply**: t0106 mean 2-direction ratio DSI = **0.939** vs t0107 mean 8-direction vector-sum DSI = **0.519**, a mean absolute drop of **0.42**. The 2-direction reformulation used in t0106 systematically overstates selectivity vs the conventional 16- / 8-direction literature. Metrics *...
+
+## Cluster + factor analysis of t0106 cells at DSI&gt;0.5 AND PD&gt;10
+ID: t0108_t0106_cluster_factor_dsi05_pd10
+Completed: 2026-05-18
+Short description: PCA + K-means on electrophys (54-d) and on morphology (14-d) plus varimax factor analysis on the full 68-d vector for 150 t0106 cells passing DSI &gt; 0.5 AND PD &gt; 10 Hz.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0108_t0106_cluster_factor_dsi05_pd10&quot; date_completed: &quot;2026-05-18&quot; --- t0108 — Cluster + Factor Analysis (Strict DSI&gt;0.5, PD&gt;10): Results Summary Summary For the 150 unique t0106 cells passing `DSI &gt; 0.5 AND PD-rate &gt; 10 Hz` (3,744 raw → 784 passing → 150 unique after 6-decimal dedupe on the 68-d vector): K-means on the **54-d electrophys** submatrix produces a k=2 split (silhouette 0.496) dominated by a 10-vs-140 small-outlier vs bulk-cohort partition; only 3 of 14 morphology parameters separate the clusters at Bonferroni p &lt; 0.05. K-means on the **14-d morphology** submatrix produces a richer k=4 split (silhouette 0.233, sizes 21/55/67/7); 30 of 54...
+
+## Morphology gallery (10 per cluster) for the four t0108 morphology clusters
+ID: t0109_t0108_morph_cluster_gallery
+Completed: 2026-05-18
+Short description: Render up to 10 example morphologies for each of the 4 morphology K-means clusters identified in t0108, sampled by top DSI*PD within cluster.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0109_t0108_morph_cluster_gallery&quot; date_completed: &quot;2026-05-18&quot; --- t0109 — Morphology Gallery for the 4 t0108 Clusters: Results Summary Summary Rendered up to 10 example morphologies per t0108 morphology K-means cluster. Cluster 3 has only 7 cells in t0108 (total cells per cluster: 21 / 55 / 67 / 7), so its row is 7 panels wide. Top cells per cluster were picked deterministically by descending `DSI x PD_rate` and rebuilt via the t0090/t0092 morphology generator. The 4-row × 10-column gallery is at `results/images/morphology_gallery_by_cluster.png`. Metrics * Cluster sizes (from t0108 morphology K-means, k=4): **21 / 55 / 67 / 7**. * Examples shown per...
+
+## Factor analysis at relaxed cohort (DSI &gt; 0.2 AND PD &gt; 3) to test all-negative PD claim
+ID: t0110_relaxed_cohort_factor_analysis
+Completed: 2026-05-18
+Short description: Re-run t0108 varimax factor analysis on t0106 cells with relaxed thresholds DSI &gt; 0.2 AND PD &gt; 3 (247 cells); compare DSI/PD factor correlations vs t0108 strict cohort to test the truncated-cohort hypothesis.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0110_relaxed_cohort_factor_analysis&quot; date_completed: &quot;2026-05-18&quot; --- t0110 — Relaxed-Cohort Factor Analysis: Results Summary Summary Re-ran the t0108 varimax factor analysis on t0106 cells at a less-truncated cohort (DSI &gt; 0.2 AND PD &gt; 3 Hz, **N=247** vs t0108&#x27;s 150). The truncated-cohort hypothesis is confirmed: at the relaxed threshold **2 of 10 factors now have positive r(PD)** (F2 +0.14, F4 +0.05), whereas t0108 had 0 / 10. DSI sign distribution also flips: 6 positive vs 4 negative in t0110 (vs 4/6 in t0108). The dominant axis F1 (NAP_MID, CAT, SK_MID, CAD_TAUR, RA_OHM_CM) is now revealed as a **joint suppressor** of both objectives (r_DSI = −0.37, r_PD...
+
+## Brainstorm results session 22
+ID: t0111_brainstorm_results_22
+Completed: 2026-05-19
+Short description: Twenty-second brainstorm: commission a single minimum-change replicate of t0106 at seed 77 with 10-gen pool restart cadence.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0111_brainstorm_results_22&quot; date_completed: &quot;2026-05-19&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 22 — Seed-77 Replicate of t0106 Summary Twenty-second strategic brainstorm. The researcher opened with a specific direction (replicate t0106 at a fresh seed, with a tighter NEURON pool-restart cadence), which the session converged on as a single minimum-change task: `t0112_t0106_seed77_replicate`. No corrections, reprioritisations, or task cancellations were applied. Session Overview * **Date**: 2026-05-19 * **Trigger**: researcher&#x27;s read of the t0106 -&gt; t0110 wave, with t0106 producing the first joint-pass cells in the entire t0080 -&gt; t0104...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -823,9 +851,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0107_t0106_polar
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0112_t0106_seed77_replicate</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -846,6 +875,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II
+ID: t0112_t0106_seed77_replicate
+Status: not_started
+Effective date: unknown
+Short description: Re-run t0106 with GA seed 77 and pool-restart-every=10 to test whether the joint-pass breakthrough is seed-specific or substrate-general.
+Dependencies: t0106_long_pdnd_nsga2_300gen
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -883,10 +919,14 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>dsi-pd-diversity-factor-decomposition</id>
         <id>symmetric-vs-asymmetric-electrophys-cluster</id>
         <id>t0104-joint-pass-recovery-2obj</id>
+        <id>t0106-dsi-pd-factor-decomposition-strict-cohort</id>
+        <id>t0106-electrophys-clusters-morphology-signature</id>
         <id>t0106-joint-pass-recovery-2dir</id>
+        <id>t0106-morphology-clusters-electrophys-signature</id>
+        <id>t0106-pd-correlation-sign-flip-relaxed-cohort</id>
       </source_ids>
       <content>
-Answers: 32
+Answers: 36
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -7855,6 +7895,259 @@ factors remain in the algorithm-side reading: IBEA replacement (S-0102-03) and p
 [t0102]: ../../../../t0102_seedscale_n4_gen20/
 [t0024]: ../../../../t0024_port_de_rosenroll_2026_dsgc/
 
+## Which factors (combinations of the 68 input parameters) explain DSI and PD diversity in the strict cohort (DSI &gt; 0.5 AND PD &gt; 10), and is there a joint factor?
+ID: t0106-dsi-pd-factor-decomposition-strict-cohort
+Created by: t0108_t0106_cluster_factor_dsi05_pd10 on 2026-05-18
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling
+
+#### Question
+
+Which factors (combinations of the 68 input parameters) explain DSI and PD diversity in the strict
+cohort (DSI &gt; 0.5 AND PD &gt; 10), and is there a joint factor?
+
+#### Short Answer
+
+Varimax factor analysis on the z-scored 68-d matrix of the 150-cell strict cohort retains 10
+factors and identifies F10 as the single joint DSI-PD factor (|r_DSI|=0.31, |r_PD|=0.45). PD-rate
+diversity is otherwise dominated by F1 (r=−0.545; SK_TERMINAL, SK_MID, CAT, NAV16_AIS, NAP_MID
+loadings); DSI diversity is split between F5 (r=−0.325) and F10 (r=+0.313). F10&#x27;s positive
+direction raises DSI but suppresses PD, making it a trade-off axis along CAD_DEPTH, CAL, W_ACH,
+branch_prob_per_um, and mean_segment_length. No single factor jointly increases both objectives in
+this cohort.
+
+#### Research Process
+
+The varimax FA was run on the same 150-cell strict cohort used in the two cluster answers.
+Pipeline:
+
+* z-score all 68 columns of the strict cohort vector. No columns are dropped (all 68 have non-zero
+  variance).
+* Factor extraction with `sklearn.decomposition.FactorAnalysis(n_components=k, rotation=None,
+  random_state=42)` fit on the z-scored matrix.
+* Apply Kaiser varimax rotation to `fa.components_.T` via a manual iterative SVD routine
+  (`gamma=1`, `tol=1e-6`, `max_iter=500`) in `code/factor_analysis.py`.
+* Factor count: 18 eigenvalues &gt; 1 on the 68×68 correlation matrix; cap at 10 per plan.
+  `n_factors = 10`.
+* Factor scores via the regression method: `scores = Z * Λ * (Λᵀ Λ)⁻¹`.
+* For each factor, compute Pearson r between its scores and `dsi_vector_sum`; same for
+  `pd_rate_hz`. Flag joint factors with `|r_DSI| &gt; 0.3 AND |r_PD| &gt; 0.3`.
+
+This replaces the original factor_analyzer-package implementation used in t0105 because the
+package is incompatible with scikit-learn 1.8.0. The same varimax loadings are produced by both.
+
+#### Evidence from Papers
+
+No paper-based evidence was used. This question is answered purely by re-analysis of project
+optimisation output.
+
+#### Evidence from Internet Sources
+
+No external internet sources were used.
+
+#### Evidence from Code or Experiments
+
+Full results in
+`tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/data/factor_analysis.json`.
+
+Top-5 loadings per factor:
+
+| Factor | Top loadings |
+| --- | --- |
+| F1 | SK_TERMINAL +0.94, SK_MID +0.88, CAT +0.87, NAV16_AIS −0.84, NAP_MID +0.80 |
+| F2 | BK_PRIMARY −0.89, BK_MID +0.86, W_GABA −0.74, AIS_DIAMETER +0.69, NAV16_SOMA −0.56 |
+| F3 | CAD_TAUR +0.94, field_elongation_pd +0.42, SKAHP_GBAR_SOMA_AIS +0.39, BK_MID +0.38, NAV16_AIS −0.26 |
+| F4 | KV3_TERMINAL +0.87, RA_OHM_CM +0.64, CAT +0.28, branch_density_gradient_pd +0.26, N_GABA −0.22 |
+| F5 | NAV16_MID +0.77, KV3_AIS +0.72, mean_branching_angle −0.70, SK_AIS −0.69, LAMBDA_ACH +0.56 |
+| F6 | NAP_SOMA −0.76, VOFF_NMDA −0.62, ais_length_um −0.59, RHO0_ACH −0.55, IM_GBAR −0.51 |
+| F7 | branch_length_cv +0.70, branch_density_gradient_pd +0.64, rall_exponent −0.64, morph_seed −0.54, primary_branch_pd_concentration +0.53 |
+| F8 | NAP_MID +0.51, CAT +0.32, AIS_DIAMETER +0.32, BK_TERMINAL −0.31, RHO0_GABA −0.27 |
+| F9 | num_primary_branches +0.57, NAP_PRIMARY −0.53, MG_CONC_MM +0.49, N_ACH −0.46, NAV16_TERMINAL +0.42 |
+| F10 | CAD_DEPTH −0.73, branch_prob_per_um −0.67, W_ACH −0.58, CAL +0.57, mean_segment_length −0.56 |
+
+Factor-outcome correlations:
+
+| Factor | r (DSI) | p (DSI) | r (PD) | p (PD) |
+| --- | --- | --- | --- | --- |
+| F1 | +0.062 | 0.45 | −0.545 | 5.4e-13 |
+| F2 | +0.075 | 0.36 | −0.262 | 1.2e-3 |
+| F3 | −0.136 | 0.097 | −0.204 | 0.012 |
+| F4 | −0.081 | 0.33 | −0.042 | 0.61 |
+| F5 | −0.325 | 5.1e-5 | −0.140 | 0.088 |
+| F6 | −0.278 | 5.8e-4 | −0.129 | 0.12 |
+| F7 | +0.147 | 0.074 | −0.096 | 0.24 |
+| F8 | −0.067 | 0.41 | −0.008 | 0.92 |
+| F9 | −0.021 | 0.80 | −0.031 | 0.71 |
+| F10 | +0.313 | 9.6e-5 | −0.446 | 1.0e-8 |
+
+Top 3 factors per outcome:
+
+* DSI: F5 (r=−0.325), F10 (r=+0.313), F6 (r=−0.278).
+* PD: F1 (r=−0.545), F10 (r=−0.446), F2 (r=−0.262).
+
+#### Synthesis
+
+F1 is the PD-rate driver. It loads on SK_TERMINAL (+0.94), SK_MID (+0.88), CAT (+0.87), NAV16_AIS
+(−0.84), NAP_MID (+0.80) — a &quot;K-Ca / persistent-Na / low-axonal-Na&quot; combination. Cells scoring
+high on F1 have low PD-rate; F1 alone explains ~30 % of PD-rate variance.
+
+F5 and F10 drive DSI in opposite directions:
+
+* F5 (NAV16_MID, KV3_AIS, mean_branching_angle, SK_AIS, LAMBDA_ACH) is associated with lower DSI.
+* F10 (CAD_DEPTH ↓, branch_prob_per_um ↓, W_ACH ↓, CAL ↑, mean_segment_length ↓) is associated
+  with higher DSI.
+
+F10 is the cohort&#x27;s joint DSI-PD axis: positive direction raises DSI (r=+0.31) but reduces
+PD-rate (r=−0.45). The biological interpretation is that stronger somatic Ca-L conductance
+combined with a thinner Ca buffer enhances Ca²⁺ transients during PD stimulation, which improves
+directional tuning but also activates Ca-dependent K conductances (SK, BK) that suppress firing —
+hence the PD-rate cost.
+
+A practical implication: targeted moves along F10&#x27;s loading direction are a candidate for
+&quot;sliding along the Pareto front&quot; between DSI and PD. Setting CAL ↑, CAD_DEPTH ↓,
+branch_prob_per_um ↓, W_ACH ↓, mean_segment_length ↓ together — while compensating with stronger
+NAV16_AIS to offset the PD penalty (NAV16_AIS is a key F1 loading with opposite-sign effect on
+PD) — is a concrete recipe for a follow-up experimental task.
+
+#### Limitations
+
+* N=150 with 68 features is borderline for FA stability; bootstrapped loading recovery (which
+  t0105 ran with 100 resamples) was not run in this task.
+* Varimax forces orthogonality. Real biological axes may be correlated; oblique rotations
+  (promax, geomin) could yield more interpretable but correlated factors.
+* The cap of 10 factors leaves 8 Kaiser-eligible factors (eigenvalues 11–18 of the correlation
+  matrix) unmodelled. The captured variance is partial.
+* Factor scores computed by the regression method are biased estimators of the true latent
+  scores; correlation magnitudes are conservative.
+* `morph_seed` appears in F7&#x27;s loadings (−0.54) and biases F7 towards a &quot;generator-RNG nuisance&quot;
+  factor rather than a biological axis.
+
+#### Sources
+
+* Task: `t0106_long_pdnd_nsga2_300gen` — source cells.
+* Task: `t0108_t0106_cluster_factor_dsi05_pd10` — analysis task.
+* Result data:
+  `tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/data/factor_analysis.json`.
+* Visualisations:
+  `results/images/factor_loadings_heatmap.png`,
+  `results/images/factor_correlations_dsi_pd.png`.
+
+## When t0106 cells with DSI &gt; 0.5 AND PD &gt; 10 Hz are clustered by their 54-d electrophys parameters, do the clusters carry a distinguishable morphological signature?
+ID: t0106-electrophys-clusters-morphology-signature
+Created by: t0108_t0106_cluster_factor_dsi05_pd10 on 2026-05-18
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling
+
+#### Question
+
+When t0106 cells with DSI &gt; 0.5 AND PD &gt; 10 Hz are clustered by their 54-d electrophys parameters,
+do the clusters carry a distinguishable morphological signature?
+
+#### Short Answer
+
+Only weakly. K-means on the z-scored 54-d electrophys submatrix of the 150-cell strict cohort
+produces an unbalanced k=2 split (10 vs 140; silhouette 0.496) that essentially separates a small
+low-firing high-DSI outlier group from the bulk. Only 3 of 14 morphology parameters survive
+Bonferroni correction at p &lt; 0.05: mean_branching_angle_deg, branch_length_cv, ais_length_um.
+Higher-k partitions degrade silhouette to ~0.13, so no further morphology-relevant structure
+exists. The electrophys regime that produces high DSI and high PD is therefore largely
+morphology-agnostic within this cohort.
+
+#### Research Process
+
+The answer was produced by re-clustering an existing optimised cell population (t0106) under a
+stricter filter than the prior t0105 analysis used. The pipeline was:
+
+* Read 3,744 raw evaluations from
+  `tasks/t0106_long_pdnd_nsga2_300gen/results/data/all_evaluations_seed44.json.gz`.
+* Apply `DSI &gt; 0.5 AND PD-rate &gt; 10 Hz`; 784 raw rows passed.
+* Dedupe by the 68-d parameter vector at 6-decimal precision; 150 unique cells remained.
+* Split the 68-d vector into 54 electrophys + 14 morphology dimensions following the canonical
+  layout from `tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/code/constants_morphology.py`.
+* z-score each electrophys column; run `sklearn.cluster.KMeans` for `k ∈ {2, 3, 4}` with
+  `random_state=42`, `n_init=10`; pick the headline k by maximum silhouette.
+* For each of 14 morphology parameters, run a Kruskal-Wallis H test across clusters and
+  Bonferroni-correct over 14 simultaneous tests.
+
+No conflicting evidence was encountered because this is the first analysis at this filter; the
+result is contrasted with the looser-filter t0105 analysis in the Synthesis section.
+
+#### Evidence from Papers
+
+No paper-based evidence was used. This question is answered purely by re-analysis of project
+optimisation output.
+
+#### Evidence from Internet Sources
+
+No external internet sources were used.
+
+#### Evidence from Code or Experiments
+
+The full quantitative evidence is in
+`tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/data/electrophys_clusters.json`. Headline
+numbers:
+
+| k | inertia | silhouette |
+| --- | --- | --- |
+| 2 | 6617.86 | 0.496 |
+| 3 | 6076.78 | 0.129 |
+| 4 | 5557.24 | 0.126 |
+
+Cluster sizes at headline k=2: cluster 0 = 10 cells (DSI mean 0.920, PD-rate 18.74 Hz),
+cluster 1 = 140 cells (DSI mean 0.864, PD-rate 84.01 Hz).
+
+Morphology Kruskal-Wallis across the two clusters (Bonferroni-corrected over 14 tests):
+
+| parameter | H | p_bonferroni | cluster 0 mean | cluster 1 mean |
+| --- | --- | --- | --- | --- |
+| mean_branching_angle_deg | 11.63 | 0.009 | 52.57° | 37.55° |
+| branch_length_cv | 10.31 | 0.019 | 0.194 | 0.301 |
+| ais_length_um | 9.03 | 0.037 | 35.56 µm | 27.10 µm |
+| max_strahler_depth | 6.42 | 0.16 | 3.91 | 5.23 |
+| field_elongation_pd | 4.11 | 0.60 | 1.73 | 1.23 |
+| (rest of 14) | &lt; 4 | ≥ 0.59 | — | — |
+
+PCA on the same 54-d submatrix explains modest variance: PC1 = 19.9 %, PC2 = 9.1 %, PC3 = 7.1 %.
+Top PC1 loadings: SK_MID (+0.29), CAT (+0.27), SK_SOMA (+0.25), SK_TERMINAL (+0.25), RA_OHM_CM
+(+0.23) — a &quot;terminal/somatic K-Ca-Ca&quot; axis. Top PC2 loadings: KV3_AIS (+0.33), CAL (+0.30),
+NAV16_MID (+0.29), NAP_PRIMARY (−0.24), W_ACH (−0.23) — an &quot;axonal-Kv3 / Ca-L vs persistent-Na&quot;
+contrast.
+
+#### Synthesis
+
+The k=2 split that K-means finds is essentially a &quot;fast-firing main cohort (140 cells)&quot; vs
+&quot;slow-firing outlier subgroup (10 cells)&quot; boundary, with PD-rate ~84 Hz vs ~19 Hz separating them.
+The morphology parameters that survive Bonferroni correction reflect this split rather than a
+biological morphology classification — the slower-firing cluster is more variable in branch
+geometry and has a slightly longer AIS. The contrast with the inverse analysis on the same cohort
+(see `t0106-morphology-clusters-electrophys-signature`, which finds 30 of 54 electrophys
+parameters Bonferroni-significant across morphology clusters) supports the conclusion that
+**morphology is the dominant categorical axis** within the high-DSI/high-PD population. The
+electrophys regime adapts continuously across morphology types rather than partitioning into
+discrete electrophys &quot;types&quot;.
+
+#### Limitations
+
+* 150 samples × 54 features is borderline for K-means in high dimensions; alternative clusterers
+  (Gaussian mixture, hierarchical, DBSCAN) might yield different splits.
+* The strict filter removes weak-DSI / low-firing cells that t0105 retained; this answer holds
+  only within the &quot;already empirically successful DSGCs&quot; population.
+* PC1 explains only 19.9 % of variance, so PCA-projected scatter visualisations may understate
+  separation that exists in the full 54-d space.
+* Bonferroni correction over 14 tests is conservative; a Benjamini-Hochberg FDR analysis might
+  identify additional morphology parameters with weaker effects.
+
+#### Sources
+
+* Task: `t0106_long_pdnd_nsga2_300gen` — source cells.
+* Task: `t0108_t0106_cluster_factor_dsi05_pd10` — analysis task.
+* Result data:
+  `tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/data/electrophys_clusters.json`.
+* Visualisations:
+  `results/images/pca_electrophys_by_cluster.png`,
+  `results/images/pca_electrophys_by_dsi_pd.png`,
+  `results/images/morph_overlay_by_electrophys_cluster.png`.
+
 ## Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d morphology substrate recover strict joint-pass cells (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) from random init, and where does hypervolume actually plateau on this landscape?
 ID: t0106-joint-pass-recovery-2dir
 Created by: t0106_long_pdnd_nsga2_300gen on 2026-05-18
@@ -8037,6 +8330,302 @@ robustness) and S-0106-03 (16-direction re-evaluation).
 [t0099]: ../../../../t0099_random_init_pareto_robustness/
 [t0102]: ../../../../t0102_seedscale_n4_gen20/
 [t0104]: ../../../../t0104_nsga2_2obj_dsi_pdrate_3seeds/
+
+## When t0106 cells with DSI &gt; 0.5 AND PD &gt; 10 Hz are clustered by their 14-d morphology parameters, do the clusters carry a distinguishable electrophys signature?
+ID: t0106-morphology-clusters-electrophys-signature
+Created by: t0108_t0106_cluster_factor_dsi05_pd10 on 2026-05-18
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+#### Question
+
+When t0106 cells with DSI &gt; 0.5 AND PD &gt; 10 Hz are clustered by their 14-d morphology parameters,
+do the clusters carry a distinguishable electrophys signature?
+
+#### Short Answer
+
+Yes, strongly. K-means on the z-scored 14-d morphology submatrix of the 150-cell strict cohort
+gives a balanced k=4 split (silhouette 0.233, sizes 21/55/67/7), and 30 of 54 electrophys
+parameters separate the clusters at Bonferroni p &lt; 0.05. The strongest discriminators are
+NAV16_AIS_GBAR, NAV16_MID_GBAR, CAL_GBAR, CAT_GBAR, IH_GBAR, and AIS_DIAMETER_UM (all
+p_bonf &lt; 1e-6). Cluster 3 (n=7, low PD ~29 Hz) carries a distinctive high-K low-axonal-Na regime.
+Each morphology type therefore imposes a distinct channel regime in this cohort.
+
+#### Research Process
+
+Same source data, filter, and dedup as the inverse-direction answer
+(`t0106-electrophys-clusters-morphology-signature`). The pipeline this question uses:
+
+* Read 3,744 t0106 evaluations; apply `DSI &gt; 0.5 AND PD &gt; 10 Hz`; 784 passing; dedupe to 150 unique
+  68-d vectors.
+* Split into 54 electrophys + 14 morphology.
+* z-score the 14-d morphology submatrix.
+* K-means for `k ∈ {2, 3, 4}` on the z-scored 14-d matrix with `random_state=42`, `n_init=10`. Pick
+  the headline k by maximum silhouette.
+* For each of 54 electrophys parameters, Kruskal-Wallis H test across clusters,
+  Bonferroni-corrected over 54 simultaneous tests.
+
+The answer is decisive (high confidence) because the effect size is large (30/54 parameters
+significant after a conservative correction, top effects at p &lt; 1e-7) and reproduces across
+silhouette-equivalent k values.
+
+#### Evidence from Papers
+
+No paper-based evidence was used. This question is answered purely by re-analysis of project
+optimisation output.
+
+#### Evidence from Internet Sources
+
+No external internet sources were used.
+
+#### Evidence from Code or Experiments
+
+Full results in
+`tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/data/morphology_clusters.json`.
+
+K-means sweep on 14-d morphology:
+
+| k | inertia | silhouette |
+| --- | --- | --- |
+| 2 | 1751.65 | 0.176 |
+| 3 | 1535.35 | 0.208 |
+| 4 | 1313.34 | 0.233 |
+
+Headline k=4. Cluster composition:
+
+| cluster | n | DSI mean | PD-rate mean (Hz) |
+| --- | --- | --- | --- |
+| 0 | 21 | 0.879 | 102.85 |
+| 1 | 55 | 0.900 | 71.43 |
+| 2 | 67 | 0.839 | 84.40 |
+| 3 | 7 | 0.864 | 29.39 |
+
+Top-15 Bonferroni-significant electrophys parameters (out of 30):
+
+| parameter | H | p_bonferroni | mean per cluster (0, 1, 2, 3) |
+| --- | --- | --- | --- |
+| NAV16_AIS_GBAR | 58.67 | 6.1e-11 | 3.10, 3.05, 3.15, 0.78 |
+| NAV16_MID_GBAR | 45.53 | 3.9e-08 | 0.42, 0.62, 0.60, 0.44 |
+| CAL_GBAR | 44.17 | 7.5e-08 | 0.14, 0.40, 0.29, 0.24 |
+| CAT_GBAR | 43.16 | 1.2e-07 | 0.031, 0.038, 0.030, 0.21 |
+| IH_GBAR | 42.67 | 1.6e-07 | 0.29, 0.29, 0.29, 0.21 |
+| AIS_DIAMETER_UM | 40.65 | 4.2e-07 | 0.62, 0.62, 0.62, 0.60 |
+| SK_TERMINAL_GBAR | 37.60 | 1.9e-06 | 0.15, 0.21, 0.20, 0.73 |
+| N_ACH | 36.31 | 3.5e-06 | 197, 221, 197, 265 |
+| NAP_MID_GBAR | 35.95 | 4.1e-06 | 0.070, 0.085, 0.080, 0.155 |
+| BK_AIS_GBAR | 35.90 | 4.3e-06 | 0.65, 0.81, 0.72, 0.91 |
+| CM_UF_CM2 | 35.20 | 6.0e-06 | 0.87, 0.96, 0.85, 0.84 |
+| KV3_PRIMARY_GBAR | 31.83 | 3.1e-05 | 0.61, 0.32, 0.35, 0.85 |
+| NAP_TERMINAL_GBAR | 30.44 | 6.0e-05 | 0.42, 0.44, 0.37, 0.10 |
+| SK_PRIMARY_GBAR | 28.99 | 1.2e-04 | 0.99, 0.97, 0.96, 0.83 |
+| KV3_AIS_GBAR | 28.48 | 1.6e-04 | 0.28, 0.69, 0.60, 0.71 |
+
+PCA on the 14-d morphology submatrix explains more variance per PC than the electrophys PCA:
+PC1 = 20.9 %, PC2 = 15.8 %, PC3 = 13.8 %.
+
+#### Synthesis
+
+Each morphology cluster carries a distinct channel signature:
+
+* **Cluster 0** (n=21, high PD ~103 Hz): low CAL=0.14, moderate KV3_PRIMARY=0.61, low NAP_MID. A
+  high-firing morphology mode.
+* **Cluster 1** (n=55, high DSI 0.90, PD ~71 Hz): high CAL=0.40, moderate-low KV3, balanced NAP.
+  The &quot;best DSI&quot; morphology cluster.
+* **Cluster 2** (n=67, average PD ~84 Hz): intermediate on most axes — the &quot;modal&quot; morphology.
+* **Cluster 3** (n=7, low PD ~29 Hz): low NAV16_AIS (0.78), high CAT (0.21), high SK_TERMINAL
+  (0.73), high KV3_PRIMARY (0.85), high N_ACH (265), low NAP_TERMINAL. A distinctive &quot;high-K
+  low-axonal-Na&quot; cluster with high cholinergic input but low firing rate.
+
+NAV16_AIS_GBAR is the single strongest discriminator (H = 58.7, p_bonf = 6×10⁻¹¹), separating
+cluster 3 (low axonal Na) from clusters 0–2 (high axonal Na). This matches the low PD-rate of
+cluster 3 — PD scales with AIS Na conductance, consistent with the t0024-era result.
+
+The contrast with the inverse analysis (`t0106-electrophys-clusters-morphology-signature`, which
+finds only 3 / 14 morphology parameters separating electrophys clusters) is striking and the two
+analyses are in agreement: **morphology defines categorical groups; electrophys modulates
+continuously within them**.
+
+#### Limitations
+
+* Cluster 3 has only n=7; the channel-regime characterisation is robust against KW non-parametric
+  testing but the cluster boundary may be sensitive to outliers.
+* Bonferroni correction over 54 tests is conservative; a Benjamini-Hochberg FDR analysis would
+  identify additional electrophys parameters with weaker but real effects.
+* `morph_seed` appears in PC1/PC2 loadings — it is the generator&#x27;s RNG seed and not a biological
+  parameter; its loading reflects the fact that the morphology-generator&#x27;s discrete random choices
+  co-vary with cluster identity.
+* The cluster boundary depends on the choice of k; k=3 and k=2 also reach silhouette ≥ 0.18 with
+  meaningful but coarser splits.
+
+#### Sources
+
+* Task: `t0106_long_pdnd_nsga2_300gen` — source cells.
+* Task: `t0108_t0106_cluster_factor_dsi05_pd10` — analysis task.
+* Result data:
+  `tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/data/morphology_clusters.json`.
+* Visualisations:
+  `results/images/pca_morphology_by_cluster.png`,
+  `results/images/pca_morphology_by_dsi_pd.png`,
+  `results/images/electrophys_overlay_by_morphology_cluster.png`.
+
+## Does t0108&#x27;s all-negative PD-rate factor-correlation column persist if we re-run the same varimax factor analysis on a less-truncated cohort, or is it a cohort-selection artifact?
+ID: t0106-pd-correlation-sign-flip-relaxed-cohort
+Created by: t0110_relaxed_cohort_factor_analysis on 2026-05-18
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+#### Question
+
+Does t0108&#x27;s all-negative PD-rate factor-correlation column persist if we re-run the same
+varimax factor analysis on a less-truncated cohort, or is it a cohort-selection artifact?
+
+#### Short Answer
+
+It is a truncated-cohort artifact. Re-running the same varimax FA pipeline on 247 t0106 cells
+at DSI &gt; 0.2 AND PD &gt; 3 Hz produces 2 of 10 factors with positive r(PD) (F2 +0.136 at p=0.033,
+F4 +0.048 n.s.). DSI sign distribution flips from 4 / 6 to 6 / 4. F1 — the dominant axis in
+both cohorts — is reinterpreted: t0108 reported it as a PD-only dropper because the DSI
+ceiling masked the DSI effect, but at the relaxed threshold it is the joint failure axis
+(r_DSI = −0.37, r_PD = −0.75). F2 identifies &quot;more persistent sodium → more firing&quot; as a real
+PD-positive direction the strict cohort hid.
+
+#### Research Process
+
+The hypothesis: t0108&#x27;s all-negative PD column (0 of 10 PD correlations above zero) is an
+effect of selecting cells in the top corner of the DSI/PD space (DSI &gt; 0.5 AND PD &gt; 10).
+Within that already-good cohort, every structured residual variation tends to push cells away
+from the ceiling, so factors mostly align with &quot;decreasing&quot; directions.
+
+The test: re-run the same FA pipeline on a less-truncated cohort. If the hypothesis holds,
+some PD correlations should flip positive. If the hypothesis fails (all PD correlations remain
+negative even at the looser threshold), the pattern reflects a real structural property of the
+optimisation space rather than cohort selection.
+
+Cohort design: t0106 cells passing DSI &gt; 0.2 AND PD &gt; 3 — chosen because (a) it is the
+threshold the operator suggested, (b) it gives 247 unique cells (65 % more than t0108), and
+(c) it is a known threshold from t0105&#x27;s design space, allowing cross-task interpretation.
+
+Pipeline: identical to t0108 — sklearn FactorAnalysis with no built-in rotation, plus the
+manual Kaiser varimax routine in t0108&#x27;s `code/factor_analysis.py` (imported by absolute
+path). Factor count by Kaiser eigenvalues &gt; 1 capped at 10. Factor scores via the regression
+method `Z * Λ * (Λᵀ Λ)⁻¹`. Pearson correlations via `scipy.stats.pearsonr`.
+
+#### Evidence from Papers
+
+No paper-based evidence was used. This question is answered by direct re-analysis of t0106
+optimisation output under a different cohort filter.
+
+#### Evidence from Internet Sources
+
+No external internet sources were used.
+
+#### Evidence from Code or Experiments
+
+Source data: `tasks/t0106_long_pdnd_nsga2_300gen/results/data/all_evaluations_seed44.json.gz`.
+
+Cohort construction:
+
+| Filter | N raw | N passing | N unique |
+| --- | --- | --- | --- |
+| DSI &gt; 0.5 AND PD &gt; 10 (t0108) | 3,744 | 784 | 150 |
+| DSI &gt; 0.2 AND PD &gt; 3 (this task) | 3,744 | 1,209 | **247** |
+
+t0110 factor-correlation table (10 factors):
+
+| Factor | r(DSI) | p(DSI) | r(PD) | p(PD) |
+| --- | --- | --- | --- | --- |
+| F1 | −0.370 | 2.1e-09 | **−0.754** | 1.5e-46 |
+| F2 | +0.042 | 0.51 | **+0.136** | 0.033 |
+| F3 | +0.006 | 0.93 | −0.148 | 0.020 |
+| F4 | +0.018 | 0.78 | **+0.048** | 0.45 |
+| F5 | +0.292 | 2.9e-06 | −0.101 | 0.11 |
+| F6 | −0.117 | 0.067 | −0.184 | 3.8e-03 |
+| F7 | −0.173 | 6.4e-03 | −0.009 | 0.89 |
+| F8 | +0.168 | 8.2e-03 | −0.088 | 0.17 |
+| F9 | +0.036 | 0.57 | −0.110 | 0.086 |
+| F10 | −0.122 | 0.055 | −0.235 | 1.9e-04 |
+
+Sign counts:
+* **DSI**: 6 positive, 4 negative (t0108: 4 positive, 6 negative).
+* **PD**: **2 positive** (F2 +0.136 significant at p=0.033, F4 +0.048 not significant),
+  **8 negative** (t0108: 0 positive, 10 negative).
+
+Joint factors (|r_DSI| &gt; 0.3 AND |r_PD| &gt; 0.3): **F1** in t0110 — the joint failure axis,
+r_DSI = −0.37, r_PD = −0.75. Both signs negative, in contrast to t0108&#x27;s F10 which had
+opposite signs (r_DSI = +0.31, r_PD = −0.45, the trade-off axis).
+
+Top-5 loadings for the two newly PD-positive factors:
+
+* **F2** (r_PD = +0.136, p = 0.033): BK_PRIMARY −0.74, MG_CONC −0.73, NAP_PRIMARY +0.69,
+  NAP_SOMA +0.63, AIS_DIAMETER +0.61.
+* **F4** (r_PD = +0.048, p = 0.45): NAV16_MID −0.76, mean_branching_angle +0.69, KV3_AIS −0.65,
+  soma_diameter +0.59, KV3_PRIMARY +0.48.
+
+F1&#x27;s top loadings (the dominant axis in both cohorts) in t0110: NAP_MID +0.94, CAT +0.89,
+SK_MID +0.86, CAD_TAUR +0.85, RA_OHM_CM +0.78. Same loading family as t0108&#x27;s F1
+(SK_TERMINAL +0.94, SK_MID +0.88, CAT +0.87, NAV16_AIS −0.84, NAP_MID +0.80) — the &quot;K-Ca /
+persistent-Na / low-axonal-Na / high RA / high Ca buffer&quot; combination. What changes between
+cohorts is the sign on r(DSI), not the loading structure.
+
+The comparison chart `results/images/factor_correlations_comparison.png` shows both panels
+side-by-side at the same y-axis scale: in the left panel (t0108 strict) all 10 orange bars
+fall below zero; in the right panel (t0110 relaxed) the F2 and F4 orange bars sit above zero.
+
+#### Synthesis
+
+The truncated-cohort hypothesis is confirmed. Three substantive findings:
+
+1. **The all-negative PD column is a cohort selection artifact.** Within a population already
+   filtered to the top of the PD distribution, no factor can align with &quot;go higher in PD&quot;
+   because there is no headroom. Relaxing the filter restores at least one significant
+   PD-positive direction (F2 at p=0.033).
+
+2. **F1 is the joint failure axis, not a PD-only dropper.** t0108 reported F1 (high
+   SK_TERMINAL / SK_MID / CAT / NAP_MID, low NAV16_AIS) as a PD-only dropper because
+   r_DSI(F1) ≈ 0 in the strict cohort. The same loading structure in t0110 gives
+   r_DSI = −0.37 and r_PD = −0.75: moving along F1 collapses both objectives. The DSI ceiling
+   in the strict cohort hid the DSI cost.
+
+3. **F2 identifies &quot;persistent-Na excitability → more firing&quot; as a real positive PD axis.**
+   The loadings — high NAP_PRIMARY / NAP_SOMA / AIS_DIAMETER, low MG_CONC / low BK_PRIMARY —
+   describe a coherent biological direction: more persistent sodium, reduced NMDA Mg-block,
+   reduced primary-dendrite BK braking. F2&#x27;s appearance only at the relaxed threshold suggests
+   this is the path the optimiser used to push cells from low-PD into the strict-cohort regime
+   in the first place; once cells are already in the high-PD corner, F2 saturates and reads as
+   neutral.
+
+The t0108 trade-off axis F10 (DSI +0.31 / PD −0.45) has no direct analogue in t0110 at the
+|r| &gt; 0.3 cut. The closest neighbour is t0110 F5 (DSI +0.29 / PD −0.10) with similar but not
+identical loadings. This is consistent with t0108&#x27;s F10 being a *corner-specific* trade-off
+direction that emerges only in the truncated population.
+
+The practical lesson for the project: any factor analysis on optimiser output must declare
+its filter explicitly, because factor sign patterns reflect cohort selection as much as
+parameter structure. t0108&#x27;s headline interpretation of F1 as &quot;the PD-dropping axis&quot; should
+be amended to &quot;the joint failure axis&quot;; t0108&#x27;s F10 trade-off direction stands but is
+cohort-specific.
+
+#### Limitations
+
+* N=247 with 68 features is comfortable but bootstrap stability of loadings was not run.
+* Varimax enforces orthogonality; oblique rotations may yield more interpretable factors.
+* The Kaiser cap leaves 6 Kaiser-eligible factors (eigenvalues 11-16) unmodelled.
+* Factor identities across cohorts are rotation-dependent; &quot;F1 in t0108 matches F1 in t0110&quot;
+  is judged by loading overlap, not factor index.
+* The cohort still excludes silenced cells; a full-population FA (DSI &gt; 0.0 AND PD &gt; 0.0, 930
+  unique cells) would test the limit case and is recommended as a follow-up.
+* F4&#x27;s PD-positive correlation (+0.048) is not significant (p = 0.45); only F2 (+0.136 at
+  p = 0.033) is a confident sign-flip.
+
+#### Sources
+
+* Task: `t0106_long_pdnd_nsga2_300gen` — source cells.
+* Task: `t0108_t0106_cluster_factor_dsi05_pd10` — strict-cohort comparison baseline.
+* Task: `t0110_relaxed_cohort_factor_analysis` — this task.
+* Result data: `tasks/t0110_relaxed_cohort_factor_analysis/results/data/
+  factor_analysis_relaxed.json`.
+* Visualisations: `results/images/factor_correlations_comparison.png` (side-by-side bar chart
+  vs t0108), `results/images/factor_loadings_heatmap_relaxed.png`.
       </content>
     </section>
   </sections>
