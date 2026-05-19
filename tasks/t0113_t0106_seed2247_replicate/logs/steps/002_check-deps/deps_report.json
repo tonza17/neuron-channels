@@ -1,0 +1,11 @@
+{
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "checked_at": "2026-05-19T23:41:13Z",
+  "result": "passed",
+  "dependencies": [
+    {"task_id": "t0106_long_pdnd_nsga2_300gen", "status": "completed", "satisfied": true},
+    {"task_id": "t0112_t0106_seed77_replicate", "status": "completed", "satisfied": true}
+  ],
+  "errors": 0,
+  "warnings": 0
+}
