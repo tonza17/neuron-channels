@@ -1,0 +1,863 @@
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:106
++ ... cate\code\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Con ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+= : The term '=' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:230
++ ... -channels-worktrees\t0112_t0106_seed77_replicate.FullName;  =  -repla ...
++                                                                 ~
+    + CategoryInfo          : ObjectNotFound: (=:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+-ne : The term '-ne' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:311
++ ... _pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set ...
++                                                               ~~~
+    + CategoryInfo          : ObjectNotFound: (-ne:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException

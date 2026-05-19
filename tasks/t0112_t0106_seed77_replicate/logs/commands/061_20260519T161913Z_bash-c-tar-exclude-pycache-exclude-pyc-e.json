@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "bash -c tar --exclude=__pycache__ --exclude='*.pyc' --exclude='build' -cf - tasks/t0024_port_de_rosenroll_2026_dsgc/code tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/Exp2NMDA.mod tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/HHst_noiseless.mod tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/cadecay.mod tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/RGCmodelGD.hoc tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code tasks/t0090_morphology_generator_diversity_test/code tasks/t0092_diagnose_morphology_generator_silence/code | ssh -o StrictHostKeyChecking=no -i /c/Users/md1avn/.ssh/id_ed25519 -p 36156 root@ssh6.vast.ai 'cd /root/t0112_workdir && tar -xf - && echo UPLOAD2_OK'",
+  "exit_code": 0,
+  "duration_seconds": 3.303,
+  "started_at": "2026-05-19T16:19:13Z",
+  "completed_at": "2026-05-19T16:19:16Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "061_20260519T161913Z_bash-c-tar-exclude-pycache-exclude-pyc-e.stdout.txt",
+  "stderr_file": "061_20260519T161913Z_bash-c-tar-exclude-pycache-exclude-pyc-e.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 2,
+  "truncated": false
+}

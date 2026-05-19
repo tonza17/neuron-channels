@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36156 root@ssh6.vast.ai python -c \"import neuron; print(neuron.__version__)\"; python -c \"import pymoo; print(pymoo.__version__)\"; python -c \"import dill; print(dill.__version__)\"; python -c \"import numpy; print(numpy.__version__)\"; python -c \"import pandas; print(pandas.__version__)\"; which nrnivmodl",
+  "exit_code": 0,
+  "duration_seconds": 3.249,
+  "started_at": "2026-05-19T15:39:09Z",
+  "completed_at": "2026-05-19T15:39:12Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "035_20260519T153909Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "035_20260519T153909Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 4,
+  "truncated": false
+}

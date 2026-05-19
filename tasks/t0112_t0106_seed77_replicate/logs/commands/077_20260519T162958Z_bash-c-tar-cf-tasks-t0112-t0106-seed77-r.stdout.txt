@@ -1,0 +1,5 @@
+total 12
+drwxr-xr-x 2 root    root      38 May 19 16:30 .
+drwxr-xr-x 3 root    root      40 May 19 16:30 ..
+-rw-r--r-- 1 1144306 1049089 8810 May 19 15:41 machine_log.json
+MACHINE_LOG_OK

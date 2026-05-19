@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "bash -c echo y | vastai destroy instance 37076157",
+  "exit_code": 0,
+  "duration_seconds": 2.332,
+  "started_at": "2026-05-19T21:25:19Z",
+  "completed_at": "2026-05-19T21:25:22Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "095_20260519T212519Z_bash-c-echo-y-vastai-destroy-instance-37.stdout.txt",
+  "stderr_file": "095_20260519T212519Z_bash-c-echo-y-vastai-destroy-instance-37.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

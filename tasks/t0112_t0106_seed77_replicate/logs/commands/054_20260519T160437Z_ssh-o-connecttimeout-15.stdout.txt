@@ -1,0 +1,19 @@
+total 8
+drwxr-xr-x 3 root root   26 May 19 15:39 .
+drwx------ 1 root root 4096 May 19 15:39 ..
+drwxr-xr-x 3 root root 4096 May 19 15:40 mods
+---
+total 572
+drwxr-xr-x 3 root root   4096 May 19 15:40 .
+drwxr-xr-x 3 root root   4096 May 19 15:40 ..
+drwxr-xr-x 2 root root     35 May 19 15:40 .libs
+-rw-r--r-- 1 root root  15793 May 19 15:40 bkt80.c
+-rw-r--r-- 1 root root  15096 May 19 15:40 bkt80.o
+-rw-r--r-- 1 root root  14985 May 19 15:40 calt80.c
+-rw-r--r-- 1 root root  13304 May 19 15:40 calt80.o
+-rw-r--r-- 1 root root  14626 May 19 15:40 catt80.c
+-rw-r--r-- 1 root root  12952 May 19 15:40 catt80.o
+---python---
+Python 3.12.13
+---neuron---
+8.2.7+

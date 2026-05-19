@@ -1,0 +1,93 @@
+{
+  "task_count": 4,
+  "tasks": [
+    {
+      "task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+      "task_index": 80,
+      "name": "Bed B v3 MOBO with dendritic-spike machinery and NSGA-II",
+      "short_description": "Add dendritic-spike machinery to AIS-augmented Bed B; switch from BoTorch qLogNEHVI to NSGA-II via pymoo; enforce hard biological bounds; test joint DSI/PD pass.",
+      "status": "completed",
+      "task_types": [
+        "build-model",
+        "experiment-run",
+        "answer-question"
+      ],
+      "dependencies": [
+        "t0024_port_de_rosenroll_2026_dsgc",
+        "t0069_t0067_ais_localised_channel_sweep",
+        "t0076_bedb_dsi_firing_rate_mobo",
+        "t0078_bedb_mobo_v2_ais_tiered_ahp"
+      ],
+      "source_suggestion": "S-0078-01",
+      "effective_date": "2026-05-04"
+    },
+    {
+      "task_id": "t0093_resweep_and_t0090_correction",
+      "task_index": 93,
+      "name": "Patched-generator full 60-morph re-sweep + t0090 correction overlay",
+      "short_description": "Re-run t0090's 60-morph Phase D verification under the t0092 patched generator; issue correction overlay marking t0090's procedural_dsgc_morphology_generator as superseded by t0092's procedural_dsgc_morphology_generator_fix.",
+      "status": "completed",
+      "task_types": [
+        "experiment-run",
+        "data-analysis",
+        "correction"
+      ],
+      "dependencies": [
+        "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+        "t0083_bedb_v3_extend_nsga2_gen8plus",
+        "t0090_morphology_generator_diversity_test",
+        "t0092_diagnose_morphology_generator_silence"
+      ],
+      "source_suggestion": "S-0092-01",
+      "effective_date": "2026-05-08"
+    },
+    {
+      "task_id": "t0099_random_init_pareto_robustness",
+      "task_index": 99,
+      "name": "Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto",
+      "short_description": "Run 3 random-init NSGA-II seeds (no warm-start) at $1 each; compare anchor distribution + bio-plausibility vs t0091.",
+      "status": "completed",
+      "task_types": [
+        "experiment-run",
+        "data-analysis",
+        "answer-question"
+      ],
+      "dependencies": [
+        "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+        "t0083_bedb_v3_extend_nsga2_gen8plus",
+        "t0086_robustness_cluster_bio_comparison",
+        "t0090_morphology_generator_diversity_test",
+        "t0091_morphology_extended_nsga2_v1",
+        "t0092_diagnose_morphology_generator_silence",
+        "t0093_resweep_and_t0090_correction"
+      ],
+      "source_suggestion": null,
+      "effective_date": "2026-05-10"
+    },
+    {
+      "task_id": "t0102_seedscale_n4_gen20",
+      "task_index": 102,
+      "name": "68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init",
+      "short_description": "68-d NSGA-II on Bed B+morph: 2 random-init GA seeds (44, 55), N_SEEDS=4, gens=20, pop=96. Tests if 5x noise drop + 2.5x gens recovers joint-pass corner vs t0099 null. $8 cap.",
+      "status": "completed",
+      "task_types": [
+        "experiment-run",
+        "data-analysis",
+        "answer-question"
+      ],
+      "dependencies": [
+        "t0024_port_de_rosenroll_2026_dsgc",
+        "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+        "t0083_bedb_v3_extend_nsga2_gen8plus",
+        "t0090_morphology_generator_diversity_test",
+        "t0091_morphology_extended_nsga2_v1",
+        "t0092_diagnose_morphology_generator_silence",
+        "t0093_resweep_and_t0090_correction",
+        "t0099_random_init_pareto_robustness",
+        "t0101_brainstorm_results_21"
+      ],
+      "source_suggestion": null,
+      "effective_date": "2026-05-12"
+    }
+  ]
+}

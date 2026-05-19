@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36156 root@ssh6.vast.ai ls -la /root/t0112_workdir/mods/x86_64/libnrnmech.so; echo \"---test load---\"; cd /root/t0112_workdir/mods && python -c \"\nfrom neuron import h, load_mechanisms\nimport os\nok = load_mechanisms(\\\"x86_64\\\")\nprint(\\\"load_mechanisms returned:\\\", ok)\nprint(\\\"has bkt80:\\\", hasattr(h, \\\"bkt80\\\"))\nprint(\\\"has nav16t80:\\\", hasattr(h, \\\"nav16t80\\\"))\nprint(\\\"has skahpt80:\\\", hasattr(h, \\\"skahpt80\\\"))\nprint(\\\"has skt80:\\\", hasattr(h, \\\"skt80\\\"))\nprint(\\\"NEURON version:\\\", h.nrnversion())\n\"",
+  "exit_code": 0,
+  "duration_seconds": 2.262,
+  "started_at": "2026-05-19T15:40:46Z",
+  "completed_at": "2026-05-19T15:40:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "041_20260519T154046Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "041_20260519T154046Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 4,
+  "truncated": false
+}

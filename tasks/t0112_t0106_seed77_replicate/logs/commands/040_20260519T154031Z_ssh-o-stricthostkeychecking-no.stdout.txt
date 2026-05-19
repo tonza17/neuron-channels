@@ -1,0 +1,36 @@
+-rwxr-xr-x 1 root root 118704 May 19 15:40 /root/t0112_workdir/mods/x86_64/.libs/libnrnmech.so
+---direct---
+-rwxr-xr-x 1 root root 118704 May 19 15:40 /root/t0112_workdir/mods/x86_64/libnrnmech.so
+---all x86_64---
+bkt80.c
+bkt80.o
+calt80.c
+calt80.o
+catt80.c
+catt80.o
+iht80.c
+iht80.o
+kdrt80.c
+kdrt80.o
+kv3t80.c
+kv3t80.o
+kv4t80.c
+kv4t80.o
+kv7t80.c
+kv7t80.o
+libnrnmech.so
+makemod2c_inc
+mod_func.cpp
+mod_func.o
+napt80.c
+napt80.o
+nart80.c
+nart80.o
+nav16t80.c
+nav16t80.o
+skahpt80.c
+skahpt80.o
+skt80.c
+skt80.o
+special
+special.nrn

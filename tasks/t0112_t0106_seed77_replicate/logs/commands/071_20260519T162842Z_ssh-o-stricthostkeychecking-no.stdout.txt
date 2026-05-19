@@ -1,0 +1,4 @@
+-rwxr-xr-x 1 1144306 1049089 1885 May 19 15:48 /root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/code/run_seed77.sh
+#!/usr/bin/env bash
+# t0112 orchestration script for the Vast.ai instance.
+#

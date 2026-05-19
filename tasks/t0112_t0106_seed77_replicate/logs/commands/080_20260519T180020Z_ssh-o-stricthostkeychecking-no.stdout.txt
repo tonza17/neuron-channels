@@ -1,0 +1,25 @@
+algorithm_config.json
+all_evaluations_seed77.json
+evaluation_seeds.json
+hv_trajectory_seed77.json
+init_pop_seed77.json
+nsga2_checkpoint_seed77.json
+---
+found: /root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/results/data/all_evaluations_seed77.json
+total cells: 864
+keys of first: ['generation', 'vector_68d', 'objective_F_minimised', 'dsi_vector_sum', 'pd_rate_hz']
+joint pass (DSI>=0.5 and PD>=30): 0
+
+Top 5 by DSI:
+  gen=9  DSI=0.8750  PD=0.71Hz
+  gen=5  DSI=0.3120  PD=19.52Hz
+  gen=6  DSI=0.3120  PD=19.52Hz
+  gen=7  DSI=0.3120  PD=19.52Hz
+  gen=8  DSI=0.3120  PD=19.52Hz
+
+Top 5 by PD-rate:
+  gen=7  DSI=0.0000  PD=65.00Hz
+  gen=8  DSI=0.0000  PD=65.00Hz
+  gen=9  DSI=0.0000  PD=65.00Hz
+  gen=3  DSI=0.0000  PD=58.57Hz
+  gen=4  DSI=0.0000  PD=58.57Hz

@@ -1,0 +1,9 @@
+-rwxr-xr-x 1 root root 118704 May 19 15:40 /root/t0112_workdir/mods/x86_64/libnrnmech.so
+---test load---
+NEURON mechanisms not found in x86_64.
+load_mechanisms returned: False
+has bkt80: True
+has nav16t80: True
+has skahpt80: True
+has skt80: True
+NEURON version: NEURON -- VERSION 8.2.7+ HEAD (34cf696c4+) 2025-05-21

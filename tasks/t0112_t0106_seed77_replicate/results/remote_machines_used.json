@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "37076157",
+    "gpu": "RTX 3090 (idle, unused; CPU-only NEURON workload on AMD EPYC 7B13)",
+    "gpu_count": 1,
+    "ram_gb": 503,
+    "duration_hours": 5.818,
+    "cost_usd": 1.9934
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "vastai show instance 37076157 --raw",
+  "exit_code": 0,
+  "duration_seconds": 3.517,
+  "started_at": "2026-05-19T21:18:18Z",
+  "completed_at": "2026-05-19T21:18:22Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "086_20260519T211818Z_vastai-show-instance.stdout.txt",
+  "stderr_file": "086_20260519T211818Z_vastai-show-instance.stderr.txt",
+  "stdout_lines": 119,
+  "stderr_lines": 0,
+  "truncated": false
+}

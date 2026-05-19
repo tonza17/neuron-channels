@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "uv run python -c \nimport difflib, pathlib\n\nsrc_root = pathlib.Path('C:/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0106_long_pdnd_nsga2_300gen/code')\ndst_root = pathlib.Path('tasks/t0112_t0106_seed77_replicate/code')\n\nsrc_files = {p.relative_to(src_root).as_posix() for p in src_root.rglob('*') if p.is_file()}\ndst_files = {p.relative_to(dst_root).as_posix() for p in dst_root.rglob('*') if p.is_file()}\n\nprint('=== files in src not in dst ===')\nprint(sorted(src_files - dst_files))\nprint('=== files in dst not in src ===')\nprint(sorted(dst_files - src_files))\n\n# Filter diffs: ignore lines that mention only the t0106->t0112 rename and t0106->t0112 / T0106_ -> T0112_ in patched files\ndef norm(line):\n    return line.replace('t0106_long_pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate')\n\ninteresting = []\nfor rel in sorted(src_files & dst_files):\n    a = (src_root / rel).read_text(encoding='utf-8').splitlines()\n    b = (dst_root / rel).read_text(encoding='utf-8').splitlines()\n    a_norm = [norm(l) for l in a]\n    if a_norm == b:\n        continue\n    # Show only the actual deltas (after path-rewrite normalisation)\n    diff = list(difflib.unified_diff(a_norm, b, fromfile=f'a/{rel}', tofile=f'b/{rel}', n=1))\n    interesting.append((rel, diff))\n\nprint('=== files with non-trivial diffs (after path-rewrite normalisation) ===')\nfor rel, diff in interesting:\n    print(f'-- {rel} --')\n    for line in diff[:60]:\n        print(line)\n    print()\n",
+  "exit_code": 0,
+  "duration_seconds": 0.378,
+  "started_at": "2026-05-19T15:49:02Z",
+  "completed_at": "2026-05-19T15:49:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "047_20260519T154902Z_uv-run-python.stdout.txt",
+  "stderr_file": "047_20260519T154902Z_uv-run-python.stderr.txt",
+  "stdout_lines": 172,
+  "stderr_lines": 0,
+  "truncated": false
+}

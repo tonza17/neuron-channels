@@ -1,0 +1,6 @@
+/root/t0112_workdir/mods/x86_64/libnrnmech.so
+'/root/t0112_workdir/mods/x86_64/libnrnmech.so' -> '/root/t0112_workdir/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/libnrnmech.so'
+total 120
+drwxr-xr-x 2 root    root        35 May 19 16:19 .
+drwxr-xr-x 3 1144306 1049089   4096 May 19 14:07 ..
+-rwxr-xr-x 1 root    root    118704 May 19 16:19 libnrnmech.so

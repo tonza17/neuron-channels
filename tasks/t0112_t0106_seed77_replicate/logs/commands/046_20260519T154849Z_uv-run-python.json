@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "uv run python -c \nimport pathlib\ncodedir = pathlib.Path('tasks/t0112_t0106_seed77_replicate/code')\nfor path, needle in [\n    ('constants.py', 'T0112_SEEDS: tuple[int, ...] = (77,)'),\n    ('nsga2_driver.py', '_POOL_RESTART_EVERY: int = 10'),\n    ('constants_morphology.py', 'N_GEN: int = 60'),\n]:\n    text = (codedir / path).read_text(encoding='utf-8')\n    found = needle in text\n    print(f'{path}: needle present? {found}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.306,
+  "started_at": "2026-05-19T15:48:49Z",
+  "completed_at": "2026-05-19T15:48:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "046_20260519T154849Z_uv-run-python.stdout.txt",
+  "stderr_file": "046_20260519T154849Z_uv-run-python.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}

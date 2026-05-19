@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "uv run python -c import tasks.t0112_t0106_seed77_replicate.code.constants as c; import tasks.t0112_t0106_seed77_replicate.code.constants_morphology as cm; import tasks.t0112_t0106_seed77_replicate.code.nsga2_driver as d; import tasks.t0112_t0106_seed77_replicate.code.evaluator as e; import tasks.t0112_t0106_seed77_replicate.code.random_init as ri; import tasks.t0112_t0106_seed77_replicate.code.cost_watchdog as cw; print('imports ok'); print('T0112_SEEDS=', c.T0112_SEEDS); print('N_GEN=', cm.N_GEN); print('POOL_RESTART_EVERY=', d._POOL_RESTART_EVERY); print('T0112_HARD_BUDGET_USD=', c.T0112_HARD_BUDGET_USD)",
+  "exit_code": 0,
+  "duration_seconds": 5.517,
+  "started_at": "2026-05-19T15:49:16Z",
+  "completed_at": "2026-05-19T15:49:21Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "048_20260519T154916Z_uv-run-python.stdout.txt",
+  "stderr_file": "048_20260519T154916Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

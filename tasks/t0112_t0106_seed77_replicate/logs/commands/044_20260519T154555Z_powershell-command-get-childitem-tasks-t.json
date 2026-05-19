@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "powershell -Command Get-ChildItem 'tasks\\t0112_t0106_seed77_replicate\\code\\' -Recurse -Include *.py,*.sh | ForEach-Object {  = Get-Content -Raw -Path C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate.FullName;  =  -replace 't0106_long_pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate'; if ( -ne ) { Set-Content -Path C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate.FullName -Value  -NoNewline; Write-Host \"rewrote: \" } }",
+  "exit_code": 0,
+  "duration_seconds": 6.124,
+  "started_at": "2026-05-19T15:45:55Z",
+  "completed_at": "2026-05-19T15:46:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "044_20260519T154555Z_powershell-command-get-childitem-tasks-t.stdout.txt",
+  "stderr_file": "044_20260519T154555Z_powershell-command-get-childitem-tasks-t.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 864,
+  "truncated": false
+}

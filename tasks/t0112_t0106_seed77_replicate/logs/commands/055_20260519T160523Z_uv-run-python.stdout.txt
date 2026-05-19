@@ -1,0 +1,2 @@
+T0083_PARETO_FRONT_JSON = C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0112_t0106_seed77_replicate\tasks\t0083_bedb_v3_extend_nsga2_gen8plus\results\data\pareto_front.json exists: True
+T0093_POST_FIX_VERIFICATION_SUMMARY_JSON = C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0112_t0106_seed77_replicate\tasks\t0093_resweep_and_t0090_correction\data\post_fix_verification_summary.json exists: True

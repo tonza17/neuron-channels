@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36156 root@ssh6.vast.ai cd /root/t0112_workdir && rm -f output.log && tmux new-session -d -s nsga 'cd /root/t0112_workdir && export PYTHONPATH=/root/t0112_workdir && bash tasks/t0112_t0106_seed77_replicate/code/run_seed77.sh > /root/t0112_workdir/output.log 2>&1; echo DONE >> /root/t0112_workdir/output.log' && sleep 2 && tmux ls && echo --- && head -5 /root/t0112_workdir/output.log 2>&1 || echo 'log not yet flushed'",
+  "exit_code": 0,
+  "duration_seconds": 4.476,
+  "started_at": "2026-05-19T16:28:28Z",
+  "completed_at": "2026-05-19T16:28:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "070_20260519T162828Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "070_20260519T162828Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 3,
+  "truncated": false
+}

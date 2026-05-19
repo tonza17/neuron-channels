@@ -1,0 +1,20 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0112_t0106_seed77_replicate\tasks\t0112_t0106_seed77_replicate\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0010] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0074] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0091] has no matching Task Index entry[0m
+[31m  RC-E007 error: Task Index entry [t0024] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0078] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0080] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0090] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0092] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0099] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0102] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0104] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0106] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0107] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0093] is missing the Task ID field[0m
+
+[31m[1mFAILED[0m — 14 error(s), 0 warning(s)

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "powershell -Command (Get-ChildItem 'tasks\\t0112_t0106_seed77_replicate\\code\\*.py').Count; (Get-ChildItem 'C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels\\tasks\\t0106_long_pdnd_nsga2_300gen\\code\\*.py').Count",
+  "exit_code": 0,
+  "duration_seconds": 0.351,
+  "started_at": "2026-05-19T15:45:46Z",
+  "completed_at": "2026-05-19T15:45:47Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "043_20260519T154546Z_powershell-command-get-childitem-tasks-t.stdout.txt",
+  "stderr_file": "043_20260519T154546Z_powershell-command-get-childitem-tasks-t.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,2 @@
+/usr/bin/tmux
+no server running on /tmp/tmux-0/default

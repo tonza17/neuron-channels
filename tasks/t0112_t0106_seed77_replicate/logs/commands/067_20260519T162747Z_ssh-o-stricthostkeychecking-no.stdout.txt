@@ -1,0 +1,1 @@
+/root/t0112_workdir/logs/steps/009_implementation/smoke_gate_report.json

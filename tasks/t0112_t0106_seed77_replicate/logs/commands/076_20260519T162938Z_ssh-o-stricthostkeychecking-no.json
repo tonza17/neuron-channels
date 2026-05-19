@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36156 root@ssh6.vast.ai bash /root/t0112_workdir/run_in_tmux.sh 2>&1 | head -40",
+  "exit_code": 0,
+  "duration_seconds": 3.561,
+  "started_at": "2026-05-19T16:29:38Z",
+  "completed_at": "2026-05-19T16:29:42Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "076_20260519T162938Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "076_20260519T162938Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 36,
+  "stderr_lines": 2,
+  "truncated": false
+}

@@ -1,0 +1,109 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0112-01",
+      "title": "Multi-seed substrate-rate confirmation at restart cadence 10: N>=3 new GA seeds on the t0106 substrate",
+      "description": "t0106 (seed 44) yielded 123 unique joint-pass cells (3.3% rate); t0112 (seed 77) yielded only 7 (0.35%) on the same substrate. With two seeds spanning a factor of ~17 in joint-pass density, the substrate-level acceptance rate is currently a 2-point sample and unreportable. Run N>=3 additional GA seeds (suggested 33, 88, 99) on the identical t0106 substrate using t0112's tighter pool_restart_every=10 and N_GEN=60 with HV-plateau auto-stop. Combined with t0106 (44) and t0112 (77), this yields a 5-seed sample suitable for reporting a substrate-level mean +/- s.e. acceptance rate against Hay2011's 0.40% and Druckmann2007's 0.10%. Distinct from S-0106-01 (which uses t0106's exact cadence=25 at only 2 new seeds and is not actionable for a cadence-10 rate). Recommended task types: experiment-run, comparative-analysis. Cost: ~$6 (3 seeds x ~$2 each at t0112 wall-clock).",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0112_t0106_seed77_replicate",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0112-02",
+      "title": "Isolate the pool-restart-cadence effect: paired re-runs at fixed seed comparing cadence 10 vs 25",
+      "description": "t0112's 3.5x per-generation wall-clock speedup (620s/gen vs t0106's 2,167s/gen) is confounded with the seed-44 -> seed-77 change. Run two paired comparisons at matched seed but different pool_restart_every: (a) seed 44 with cadence=10 vs t0106's existing seed-44/cadence-25 baseline; (b) seed 77 with cadence=25 vs t0112's existing seed-77/cadence-10 baseline. Decision rule: if the cadence-10 variant matches its cadence-25 baseline on Pareto front geometry (best DSI, best PD, joint-pass count within seed noise) AND retains the 3-4x speedup, then cadence=10 should become the project default for all downstream NSGA-II tasks. If the cadence change shifts joint-pass yield, the speedup is algorithmically meaningful and the trade-off must be characterised before adoption. Recommended task types: experiment-run, comparative-analysis. Cost: ~$8 (one new cadence-10 seed-44 run at ~$2 plus one new cadence-25 seed-77 run at ~$5-6).",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0112_t0106_seed77_replicate",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0112-03",
+      "title": "HV-plateau auto-stop sensitivity: re-run t0112 seed 77 with auto-stop disabled to gen 60 ceiling",
+      "description": "t0112's HV-plateau detector fired at gen 21 (well below the 60-gen ceiling), and t0106 produced most of its joint-pass cells in gens 21-39 - after t0112's auto-stop. The 7-cell joint-pass count may be censored by an over-aggressive plateau detector when the local mode is 'deep but narrow'. Re-run t0112 seed 77 with HV-plateau termination disabled (operator-stop or N_GEN=60 only); keep all other constants identical. Decision: if post-plateau gens (22-60) add >=10 more unique joint-pass cells, the detector censors the long tail and should be reparameterised (longer window, tighter threshold, or removed) for all long-horizon runs. If post-plateau yield is <=3 cells, the early auto-stop is benign. Recommended task types: experiment-run, comparative-analysis. Cost: ~$5.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0112_t0106_seed77_replicate",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0112-04",
+      "title": "Normalised parameter-space distance metric (z-scored per dimension) for cross-seed Pareto overlap",
+      "description": "t0112's pareto_front_overlap.csv reports raw 68-d L2 distances of 3.5e7 - 1.9e8 between t0112 Pareto cells and their nearest t0106 neighbours. These values are dominated by conductance-scale parameters spanning 6 orders of magnitude (S/cm^2), so the metric does not support 'same vs different solutions' claims. Build a small analysis library (or extend tasks/t0106 plotting code) that computes (a) per-dimension z-scored L2 over the union of t0106 + t0112 evaluated cells, and (b) Spearman rank-correlation distance. Apply to the t0106 and t0112 strict Pareto fronts and the broader joint-pass cohorts. Output: a normalised overlap CSV per task and a project-level scatter of z-score NN distance vs DSI rank that reveals whether the two seeds find the same parameter-space basin or independent basins. Reusable downstream by S-0112-01 multi-seed analysis and S-0112-08 cross-seed clustering. Recommended task types: data-analysis, write-library. Cost: <$0.20 (local only).",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0112_t0106_seed77_replicate",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0112-05",
+      "title": "16-direction polar re-evaluation of t0112's 7 unique joint-pass cells (mirrors t0107 on t0106)",
+      "description": "t0107 re-evaluated 10 t0106 top cells at 8 directions and found that the 2-direction ratio DSI overstates selectivity by ~0.42 absolute (mean 8-dir DSI 0.519 vs 2-dir 0.939). t0112's 7 unique joint-pass cells inherit this caveat unmodified and must be polar re-evaluated before any cross-seed claim can be reported. Apply the same 8-direction (or extended 16-direction) drifting-bar protocol used by t0107 to all 7 t0112 joint-pass cells, with N_EVAL_SEEDS matched to t0107. Decision: if the 8-direction DSI rank-correlates with the 2-direction ratio DSI (Spearman r > 0.7 across the t0106 + t0112 pool of 133 joint-pass cells), the 2-direction metric is a usable proxy for substrate exploration; otherwise the 2-direction joint-pass cohort must be treated as candidate-only until polar-confirmed. Distinct from S-0106-03 (covers 50 t0106 cells, not the 7 t0112 cells). Recommended task types: experiment-run, comparative-analysis. Cost: <$1 (7 cells x 8 dirs x 3 trials on one Vast.ai instance).",
+      "kind": "evaluation",
+      "priority": "high",
+      "source_task": "t0112_t0106_seed77_replicate",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0112-06",
+      "title": "N_EVAL_SEEDS>=20 robustness retest of the 7 t0112 joint-pass cells (mirrors S-0106-02 on t0112 cells)",
+      "description": "t0112's 7 joint-pass cells were each evaluated at N_EVAL_SEEDS=3 inside the NSGA-II loop. The best cell at DSI=0.9535 and the highest-PD cell at 114.76 Hz are 3-seed point estimates and may be noise-undersampling artefacts in the same way S-0106-02 hypothesised for t0106's 3 DSI=1.0 cells. Re-evaluate all 7 t0112 joint-pass cells at N_EVAL_SEEDS=20 using the same evaluator and silence guard. Decision: if any cell's DSI collapses by >=0.1 absolute or PD-rate by >=15 Hz at N_EVAL_SEEDS=20, mark as noise-sensitive and exclude from the project's reportable joint-pass cohort; if DSI and PD hold to within +/- 0.05 and +/- 5 Hz, the cells are robust and join the substrate's reportable best cohort with t0106's 10. Distinct from S-0106-02 which is scoped to t0106 cells only. Recommended task types: experiment-run, data-analysis. Cost: <$0.50 (7 cells x 20 seeds, ~10 min on one Vast.ai instance).",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0112_t0106_seed77_replicate",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity"
+      ]
+    },
+    {
+      "id": "S-0112-07",
+      "title": "Adopt t0112 pool_restart_every=10 as the default for all downstream NEURON-pymoo NSGA-II tasks",
+      "description": "t0112 demonstrated a 3.5x per-generation wall-clock speedup (620s/gen vs t0106's 2,167s/gen) at no algorithmic cost to frontier geometry: best DSI 0.9535 vs t0106's 0.9606 (within noise) and best PD 114.76 Hz vs 122.62 Hz (94%). The change is one line (_POOL_RESTART_EVERY: int = 10) in nsga2_driver.py. Promote it from a t0112-only override to the project default once S-0112-02 isolates the cadence effect from seed variance. Concretely: update the canonical NSGA-II driver template (or the PerGenerationPoolRestart library asset proposed by S-0106-05) to default to cadence=10 with cadence=25 retained as an opt-in legacy mode. Document the speedup in the driver docstring and reference S-0112-02 as the validation evidence. Recommended task types: write-library, infrastructure-setup. Cost: <$0.10 (local code change + docs; gated on S-0112-02 passing).",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0112_t0106_seed77_replicate",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0112-08",
+      "title": "Cross-seed parameter-vector clustering of joint-pass cells: shared archetypes vs divergent basins",
+      "description": "t0106 (seed 44) produced 123 joint-pass cells; t0112 (seed 77) produced 7. Whether the two seeds find the same archetype, overlapping basins, or independent basins is unknown because the raw L2 metric is uninterpretable (see S-0112-04). Combine joint-pass cohorts from t0106, t0112, and any new S-0112-01 multi-seed runs, normalise per-dimension via S-0112-04, and run K-means / hierarchical clustering on the 68-d vectors with seed-of-origin as covariate. Decision: if cells cluster by seed-of-origin (NMI(cluster, seed) > 0.5), each GA seed finds a private basin; if cells cluster by morphology archetype (ND-soma / central / PD-soma per t0108) with seed mixed within clusters, the substrate supports an archetype-conserved basin and t0108/t0110 findings extend across seeds. Recommended task types: data-analysis, comparative-analysis. Cost: <$0.50.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0112_t0106_seed77_replicate",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "dendritic-computation"
+      ]
+    }
+  ]
+}

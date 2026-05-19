@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "uv run python -c \nimport pathlib\nroot = pathlib.Path('tasks/t0112_t0106_seed77_replicate/code')\nchanged = []\nfor f in list(root.rglob('*.py')) + list(root.rglob('*.sh')):\n    content = f.read_text(encoding='utf-8')\n    new = content.replace('t0106_long_pdnd_nsga2_300gen', 't0112_t0106_seed77_replicate')\n    if new != content:\n        f.write_text(new, encoding='utf-8', newline='')\n        changed.append(f.name)\nprint(f'rewrote {len(changed)} files')\nfor n in changed:\n    print(' ', n)\n",
+  "exit_code": 0,
+  "duration_seconds": 0.313,
+  "started_at": "2026-05-19T15:46:10Z",
+  "completed_at": "2026-05-19T15:46:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "045_20260519T154610Z_uv-run-python.stdout.txt",
+  "stderr_file": "045_20260519T154610Z_uv-run-python.stderr.txt",
+  "stdout_lines": 30,
+  "stderr_lines": 0,
+  "truncated": false
+}

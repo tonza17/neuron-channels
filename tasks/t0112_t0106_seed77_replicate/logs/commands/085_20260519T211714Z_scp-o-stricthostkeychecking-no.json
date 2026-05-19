@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "scp -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -P 36156 root@ssh6.vast.ai:/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/logs/steps/009_implementation/hv_trace.jsonl tasks/t0112_t0106_seed77_replicate/logs/steps/009_implementation/hv_trace.jsonl",
+  "exit_code": 0,
+  "duration_seconds": 3.453,
+  "started_at": "2026-05-19T21:17:14Z",
+  "completed_at": "2026-05-19T21:17:18Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "085_20260519T211714Z_scp-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "085_20260519T211714Z_scp-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}

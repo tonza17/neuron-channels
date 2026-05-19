@@ -5,12 +5,12 @@
   "name": "Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II",
   "short_description": "Re-run t0106 with GA seed 77 and pool-restart-every=10 to test whether the joint-pass breakthrough is seed-specific or substrate-general.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0106_long_pdnd_nsga2_300gen"
   ],
   "start_time": "2026-05-19T14:05:58Z",
-  "end_time": null,
+  "end_time": "2026-05-19T21:50:00Z",
   "expected_assets": {
     "predictions": 1
   },

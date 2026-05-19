@@ -1,0 +1,48 @@
+TMUX_RUNNING
+---tail---
+--No graphics will be displayed.
+[run_seed77] bootstrap imported successfully
+============================================================
+[run_seed77] Seed 77 starting at 2026-05-19T16:30:14Z
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.3345/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=77] using 60 parallel workers
+[nsga2_driver seed=77] starting: pop=96 max_gen=60 hard_cap=$25.00 rate=$0.3345/hr pool_restart_every=10
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       96 |      2 |             - |             -
+[seed 77 gen 1] HV=0.1156  pop_size=96  cost_so_far=$0.0109  elapsed=117s
+[nsga2_driver seed=77 gen=1] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     2 |      192 |      5 |  0.3156866241 |             f
+[seed 77 gen 2] HV=0.2446  pop_size=96  cost_so_far=$0.0302  elapsed=325s
+[nsga2_driver seed=77 gen=2] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     3 |      288 |      5 |  0.6095238095 |         ideal
+[seed 77 gen 3] HV=0.9275  pop_size=96  cost_so_far=$0.0589  elapsed=633s
+[nsga2_driver seed=77 gen=3] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     4 |      384 |      6 |  0.5609756098 |         ideal
+[seed 77 gen 4] HV=1.7895  pop_size=96  cost_so_far=$0.0869  elapsed=935s
+[nsga2_driver seed=77 gen=4] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     5 |      480 |      4 |  0.4658119658 |         ideal
+[seed 77 gen 5] HV=6.3617  pop_size=96  cost_so_far=$0.1358  elapsed=1461s
+[nsga2_driver seed=77 gen=5] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     6 |      576 |      4 |  0.0798171972 |             f
+[seed 77 gen 6] HV=6.7875  pop_size=96  cost_so_far=$0.1874  elapsed=2017s
+[nsga2_driver seed=77 gen=6] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     7 |      672 |      7 |  0.1413612565 |         ideal
+[seed 77 gen 7] HV=7.3621  pop_size=96  cost_so_far=$0.2453  elapsed=2640s
+[nsga2_driver seed=77 gen=7] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     8 |      768 |      8 |  0.0193580059 |             f
+[seed 77 gen 8] HV=7.4346  pop_size=96  cost_so_far=$0.3385  elapsed=3643s
+[nsga2_driver seed=77 gen=8] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     9 |      864 |     11 |  0.6434285714 |         ideal
+[seed 77 gen 9] HV=7.9896  pop_size=96  cost_so_far=$0.4396  elapsed=4731s
+[nsga2_driver seed=77 gen=9] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---hv trace---
+{"gen": 5, "wall_clock_s": 1461.4061946868896, "hv": 6.361747009077689, "n_cells_evaluated": 96}
+{"gen": 6, "wall_clock_s": 2017.3904919624329, "hv": 6.787541147240397, "n_cells_evaluated": 96}
+{"gen": 7, "wall_clock_s": 2640.6788630485535, "hv": 7.362110884241057, "n_cells_evaluated": 96}
+{"gen": 8, "wall_clock_s": 3643.3203749656677, "hv": 7.434595302283247, "n_cells_evaluated": 96}
+{"gen": 9, "wall_clock_s": 4730.894622802734, "hv": 7.9896443867051135, "n_cells_evaluated": 96}

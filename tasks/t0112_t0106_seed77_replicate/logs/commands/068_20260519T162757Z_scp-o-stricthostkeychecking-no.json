@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "scp -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -P 36156 root@ssh6.vast.ai:/root/t0112_workdir/logs/steps/009_implementation/smoke_gate_report.json tasks/t0112_t0106_seed77_replicate/logs/steps/009_implementation/smoke_gate_report_remote.json",
+  "exit_code": 0,
+  "duration_seconds": 3.307,
+  "started_at": "2026-05-19T16:27:57Z",
+  "completed_at": "2026-05-19T16:28:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "068_20260519T162757Z_scp-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "068_20260519T162757Z_scp-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}

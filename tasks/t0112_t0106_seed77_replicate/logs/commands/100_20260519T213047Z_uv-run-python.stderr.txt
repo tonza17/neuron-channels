@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0112_t0106_seed77_replicate\tasks\t0112_t0106_seed77_replicate\code\build_t0112_results.py", line 257, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0112_t0106_seed77_replicate\tasks\t0112_t0106_seed77_replicate\code\build_t0112_results.py", line 252, in main
+    csv_pareto_overlap(t0112, t0106)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0112_t0106_seed77_replicate\tasks\t0112_t0106_seed77_replicate\code\build_t0112_results.py", line 214, in csv_pareto_overlap
+    "t0112_generation": pf112[i]["generation"],
+                        ~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'generation'

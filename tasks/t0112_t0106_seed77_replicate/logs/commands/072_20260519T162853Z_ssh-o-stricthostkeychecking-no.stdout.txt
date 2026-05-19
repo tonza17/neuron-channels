@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+cd /root/t0112_workdir
+export PYTHONPATH=/root/t0112_workdir
+bash tasks/t0112_t0106_seed77_replicate/code/run_seed77.sh

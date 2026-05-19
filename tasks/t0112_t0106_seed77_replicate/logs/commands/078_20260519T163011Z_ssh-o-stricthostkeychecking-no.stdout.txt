@@ -1,0 +1,17 @@
+nsga: 1 windows (created Tue May 19 16:30:13 2026)
+---
+[run_seed77] repo root: /root/t0112_workdir
+[run_seed77] Phase A: building random init population for seed 77
+[random_init] seed=77 wrote /root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/results/data/init_pop_seed77.json shape=(96, 68)
+[run_seed77] Compiling t0080 MOD library if not already present
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[run_seed77] bootstrap imported successfully
+============================================================
+[run_seed77] Seed 77 starting at 2026-05-19T16:30:14Z
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.3345/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=77] using 60 parallel workers
+[nsga2_driver seed=77] starting: pop=96 max_gen=60 hard_cap=$25.00 rate=$0.3345/hr pool_restart_every=10

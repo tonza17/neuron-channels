@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0112_t0106_seed77_replicate/results/compare_literature.md",
+  "exit_code": 0,
+  "duration_seconds": 0.577,
+  "started_at": "2026-05-19T21:39:39Z",
+  "completed_at": "2026-05-19T21:39:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "104_20260519T213939Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "104_20260519T213939Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

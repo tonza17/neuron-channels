@@ -1,0 +1,171 @@
+=== files in src not in dst ===
+['run_three_seeds.sh']
+=== files in dst not in src ===
+['run_seed77.sh']
+=== files with non-trivial diffs (after path-rewrite normalisation) ===
+-- constants.py --
+--- a/constants.py
+
++++ b/constants.py
+
+@@ -1,11 +1,11 @@
+
+-"""t0106 task-local constants — wraps the 68-d hyperparameter set from
+-``constants_morphology`` and replaces the t0104 3-seed schedule with a single
+-GA seed plus the new $25 total cost cap.
++"""t0112 task-local constants — wraps the 68-d hyperparameter set from
++``constants_morphology`` and replaces the t0106 single-seed schedule with a
++new GA seed plus the new $25 total cost cap.
+
+-Per t0106 plan REQ-3/REQ-8:
++Per t0112 plan REQ-2/REQ-8:
+
+-* ``T0106_SEEDS = (44,)`` — single RNG seed (44 inherited from t0104 for
+-  trivial cross-task comparison).
+-* ``T0106_HARD_BUDGET_USD`` — $25.00 total task cost cap.
+-* ``T0106_PER_INSTANCE_WATCHDOG_USD`` — $20.00 per-instance watchdog cap
++* ``T0112_SEEDS = (77,)`` — single RNG seed (77; replicate of t0106 seed 44
++  to test substrate vs seed-specific joint-pass yield).
++* ``T0112_HARD_BUDGET_USD`` — $25.00 total task cost cap.
++* ``T0112_PER_INSTANCE_WATCHDOG_USD`` — $20.00 per-instance watchdog cap
+   (consumed by ``CostWatchdogTermination`` via ``make_watchdog_from_machine_log``).
+@@ -20,4 +20,5 @@
+
+ ``constants_morphology``, including the overridden ``N_EVAL_SEEDS = 3``,
+-``N_DIRECTIONS = 2``, and ``N_GEN = 300``. No anchor warm-start; the NSGA-II
+-driver uses pure LHS initialisation via ``random_init.py``.
++``N_DIRECTIONS = 2``, and ``N_GEN = 60`` (t0112 ceiling; HV-plateau primary).
++No anchor warm-start; the NSGA-II driver uses pure LHS initialisation via
++``random_init.py``.
+ """
+@@ -56,17 +57,20 @@
+
+
+-# t0106-specific run schedule.
+-T0106_SEEDS: tuple[int, ...] = (44,)
+-T0106_HARD_BUDGET_USD: float = 25.00
+-T0106_PER_INSTANCE_WATCHDOG_USD: float = 20.00
++# t0112-specific run schedule.
++T0112_SEEDS: tuple[int, ...] = (77,)
++T0112_HARD_BUDGET_USD: float = 25.00
++T0112_PER_INSTANCE_WATCHDOG_USD: float = 20.00
+
+ # Backwards-compatible aliases for code paths that still reference the t0104
+-# names (e.g., ``nsga2_driver`` defaults). The single-seed cost cap is the
+-# total task cap because there is only one seed.
+-T0104_SEEDS: tuple[int, ...] = T0106_SEEDS
+-T0104_HARD_BUDGET_PER_SEED_USD: float = T0106_HARD_BUDGET_USD
+-T0104_TASK_BUDGET_TOTAL_USD: float = T0106_HARD_BUDGET_USD
++# / t0106 names (e.g., ``nsga2_driver`` defaults). The single-seed cost cap
++# is the total task cap because there is only one seed.
++T0104_SEEDS: tuple[int, ...] = T0112_SEEDS
++T0104_HARD_BUDGET_PER_SEED_USD: float = T0112_HARD_BUDGET_USD
++T0104_TASK_BUDGET_TOTAL_USD: float = T0112_HARD_BUDGET_USD
++T0106_SEEDS: tuple[int, ...] = T0112_SEEDS
++T0106_HARD_BUDGET_USD: float = T0112_HARD_BUDGET_USD
++T0106_PER_INSTANCE_WATCHDOG_USD: float = T0112_PER_INSTANCE_WATCHDOG_USD
+
+-assert len(T0106_SEEDS) == 1, f"expected 1 seed, got {len(T0106_SEEDS)}"
+-assert T0106_HARD_BUDGET_USD > 0
+-assert T0106_PER_INSTANCE_WATCHDOG_USD <= T0106_HARD_BUDGET_USD
++assert len(T0112_SEEDS) == 1, f"expected 1 seed, got {len(T0112_SEEDS)}"
+
+-- constants_morphology.py --
+--- a/constants_morphology.py
+
++++ b/constants_morphology.py
+
+@@ -109,4 +109,4 @@
+
+ POP_SIZE: int = 96
+-# t0106 plan REQ-3: extend N_GEN to 300 (hard cap); operator-stop is primary.
+-N_GEN: int = 300
++# t0112 plan REQ-4: lower N_GEN to 60 (hard ceiling); HV-plateau primary.
++N_GEN: int = 60
+ SBX_ETA: int = 15
+
+-- nsga2_driver.py --
+--- a/nsga2_driver.py
+
++++ b/nsga2_driver.py
+
+@@ -1,22 +1,21 @@
+
+-"""t0106 per-seed NSGA-II driver — long-run 2-direction 68-d random-init NSGA-II.
+-
+-Adapted from t0104's `nsga2_driver`. t0106 differences:
+-
+-* Single GA seed (44) at pop = 96, n_gen = 300 (hard cap, extendable via
+-  --n-gen-override). 2 directions (PD = 0, ND = 180), N_EVAL_SEEDS = 3.
++"""t0112 per-seed NSGA-II driver — minimum-change replicate of t0106 on
++GA seed 77 with tightened pool-restart cadence.
++
++Adapted verbatim from t0106's `nsga2_driver` except for three constants:
++
++* Single GA seed (77) at pop = 96, n_gen = 60 (hard ceiling; HV-plateau
++  stop primary). 2 directions (PD = 0, ND = 180), N_EVAL_SEEDS = 3.
+ * `OperatorStopTermination` polls ``intervention/stop.md`` each generation
+-  and triggers a clean halt at the next generation boundary (REQ-5).
++  and triggers a clean halt at the next generation boundary.
+ * `_GenerationCallback` writes one JSONL line per gen to ``hv_trace.jsonl``
+-  with fields ``gen``, ``wall_clock_s``, ``hv``, ``n_cells_evaluated``
+-  (REQ-4), and dill-dumps the pymoo Algorithm to
++  with fields ``gen``, ``wall_clock_s``, ``hv``, ``n_cells_evaluated``,
++  and dill-dumps the pymoo Algorithm to
+   ``checkpoint_seed<s>_gen<NNNN>.pkl``.
+-* `PerGenerationPoolRestart` closes the multiprocessing.Pool every 25
+-  generations and recreates it, swapping ``problem.elementwise_runner`` to
+-  the fresh ``StarmapParallelization`` (REQ-6). This pattern is NEW in
+-  the lineage (not present in t0102 / t0104) and is load-bearing for
+-  300-gen NEURON memory mitigation.
+-* `HVPlateauTermination` is kept but with `MIN_HV_HISTORY = 60` (1-hour
+-  sliding window at ~60 s/gen) so it does not spuriously trigger on long
+-  runs.
+-* `CostWatchdogTermination` reads ``T0106_HARD_BUDGET_USD = 25.00`` as
++* `PerGenerationPoolRestart` closes the multiprocessing.Pool every 10
++  generations (was 25 in t0106) and recreates it, swapping
++  ``problem.elementwise_runner`` to the fresh ``StarmapParallelization``.
++  Tightened cadence further mitigates NEURON memory creep.
++* `HVPlateauTermination` is kept verbatim from t0106 with
++  `MIN_HV_HISTORY = 60` so HV-plateau stop is the primary termination.
++* `CostWatchdogTermination` reads ``T0112_HARD_BUDGET_USD = 25.00`` as
+   the per-instance cap.
+@@ -66,3 +65,3 @@
+
+     SBX_PROB,
+-    T0106_HARD_BUDGET_USD,
++    T0112_HARD_BUDGET_USD,
+ )
+@@ -95,4 +94,5 @@
+
+
+-# REQ-6: pool restart cadence (load-bearing for NEURON memory mitigation at 300 gens).
+-_POOL_RESTART_EVERY: int = 25
++# REQ-3 (t0112): pool restart cadence tightened from 25 (t0106) to 10
++# to further mitigate NEURON memory creep at the 60-gen ceiling.
++_POOL_RESTART_EVERY: int = 10
+
+@@ -439,3 +439,3 @@
+
+         "hv_utopia": [HV_UTOPIA_DSI, HV_UTOPIA_PD_RATE_HZ],
+-        "hard_budget_usd": T0106_HARD_BUDGET_USD,
++        "hard_budget_usd": T0112_HARD_BUDGET_USD,
+         "sampling_method": "pymoo.operators.sampling.lhs.LatinHypercubeSampling",
+
+-- random_init.py --
+--- a/random_init.py
+
++++ b/random_init.py
+
+@@ -20,3 +20,3 @@
+
+     POP_SIZE,
+-    T0106_SEEDS,
++    T0112_SEEDS,
+     UPPER_BOUNDS_68,
+@@ -95,3 +95,3 @@
+
+ def main() -> None:
+-    for seed in T0106_SEEDS:
++    for seed in T0112_SEEDS:
+         write_init_population(seed=seed)

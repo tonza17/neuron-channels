@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36156 root@ssh6.vast.ai ls /root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/results/data/ 2>/dev/null; echo '---'; python3 -c \"\nimport json, gzip, os\ncandidates = [\n    '/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/results/data/all_evaluations_seed77.json',\n    '/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/results/data/all_evaluations_seed77.json.gz',\n]\npath = next((p for p in candidates if os.path.exists(p)), None)\nprint('found:', path)\nif path:\n    if path.endswith('.gz'):\n        data = json.load(gzip.open(path))\n    else:\n        data = json.load(open(path))\n    cells = data if isinstance(data, list) else data.get('evaluations') or data.get('cells') or data\n    print('total cells:', len(cells))\n    print('keys of first:', list(cells[0].keys()) if cells else 'empty')\n    # joint pass\n    jp = [c for c in cells if (c.get('dsi_vector_sum') or 0) >= 0.5 and (c.get('pd_rate_hz') or 0) >= 30]\n    print('joint pass (DSI>=0.5 and PD>=30):', len(jp))\n    by_dsi = sorted(cells, key=lambda c: c.get('dsi_vector_sum') or -1, reverse=True)[:5]\n    print('\\nTop 5 by DSI:')\n    for c in by_dsi:\n        print(f\\\"  gen={c.get('generation')}  DSI={c.get('dsi_vector_sum'):.4f}  PD={c.get('pd_rate_hz'):.2f}Hz\\\")\n    by_pd = sorted(cells, key=lambda c: c.get('pd_rate_hz') or -1, reverse=True)[:5]\n    print('\\nTop 5 by PD-rate:')\n    for c in by_pd:\n        print(f\\\"  gen={c.get('generation')}  DSI={c.get('dsi_vector_sum'):.4f}  PD={c.get('pd_rate_hz'):.2f}Hz\\\")\n\"",
+  "exit_code": 0,
+  "duration_seconds": 2.505,
+  "started_at": "2026-05-19T18:00:20Z",
+  "completed_at": "2026-05-19T18:00:22Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "080_20260519T180020Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "080_20260519T180020Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 25,
+  "stderr_lines": 2,
+  "truncated": false
+}

@@ -1,0 +1,23 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0112_t0106_seed77_replicate\tasks\t0112_t0106_seed77_replicate\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260519T141733Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 002_20260519T142016Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 004_20260519T142332Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 007_20260519T142715Z_uv-run-flowmark.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 008_20260519T142722Z_uv-run-flowmark.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 010_20260519T142756Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 028_20260519T153657Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 029_20260519T153724Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 073_20260519T162902Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 075_20260519T162926Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 088_20260519T212010Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 096_20260519T212528Z_vastai-show-instance.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 097_20260519T212615Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 100_20260519T213047Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 106_20260519T214220Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 17 warning(s)
