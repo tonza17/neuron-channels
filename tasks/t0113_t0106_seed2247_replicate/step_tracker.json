@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0106_long_pdnd_nsga2_300gen and t0112_t0106_seed77_replicate are completed (substrate + fork base).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-19T23:41:13Z",
-      "completed_at": null,
+      "completed_at": "2026-05-19T23:41:54Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
