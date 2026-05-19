@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Write plan.md covering fork strategy, the two minimal constant changes, smoke-gate checks, Vast.ai provisioning, cost cap, and HV-plateau stop criterion.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-19T14:32:42Z",
-      "completed_at": null,
+      "completed_at": "2026-05-19T14:41:47Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
