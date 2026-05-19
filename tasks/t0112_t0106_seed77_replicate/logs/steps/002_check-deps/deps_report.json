@@ -1,0 +1,20 @@
+{
+  "task_id": "t0112_t0106_seed77_replicate",
+  "checked_at": "2026-05-19T14:16:00Z",
+  "result": "passed",
+  "dependencies": [
+    {"task_id": "t0106_long_pdnd_nsga2_300gen", "status": "completed", "satisfied": true}
+  ],
+  "errors": 0,
+  "warnings": 0,
+  "budget_summary": {
+    "total_budget_usd": 75.0,
+    "spent_usd": 56.8003,
+    "budget_left_usd": 18.1997,
+    "spent_percent": 75.73,
+    "stop_threshold_reached": false,
+    "warn_threshold_reached": false,
+    "task_budget_cap_usd": 25.0,
+    "task_expected_cost_usd": 10.5
+  }
+}
