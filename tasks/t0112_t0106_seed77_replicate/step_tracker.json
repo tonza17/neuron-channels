@@ -68,10 +68,10 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision a single Vast.ai CPU instance matching t0106's provisioning class.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-19T15:31:43Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
       "step": 9,

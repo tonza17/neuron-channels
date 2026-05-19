@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "vastai label instance 37076157 neuron-channels/t0112_t0106_seed77_replicate",
+  "exit_code": 0,
+  "duration_seconds": 1.721,
+  "started_at": "2026-05-19T15:36:20Z",
+  "completed_at": "2026-05-19T15:36:22Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "026_20260519T153620Z_vastai-label-instance.stdout.txt",
+  "stderr_file": "026_20260519T153620Z_vastai-label-instance.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

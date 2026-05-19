@@ -1,0 +1,18 @@
+total 56
+drwxr-xr-x 2 root root 4096 May 19 15:39 .
+drwxr-xr-x 3 root root   26 May 19 15:39 ..
+-rw-r--r-- 1 root root 2077 May 19 15:39 bkt80.mod
+-rw-r--r-- 1 root root 1818 May 19 15:39 calt80.mod
+-rw-r--r-- 1 root root 1471 May 19 15:39 catt80.mod
+-rw-r--r-- 1 root root 1603 May 19 15:39 iht80.mod
+-rw-r--r-- 1 root root 1628 May 19 15:39 kdrt80.mod
+-rw-r--r-- 1 root root 1024 May 19 15:39 kv3t80.mod
+-rw-r--r-- 1 root root 1208 May 19 15:39 kv4t80.mod
+-rw-r--r-- 1 root root 1552 May 19 15:39 kv7t80.mod
+-rw-r--r-- 1 root root  995 May 19 15:39 napt80.mod
+-rw-r--r-- 1 root root 1470 May 19 15:39 nart80.mod
+-rw-r--r-- 1 root root 1380 May 19 15:39 nav16t80.mod
+-rw-r--r-- 1 root root 2129 May 19 15:39 skahpt80.mod
+-rw-r--r-- 1 root root 1691 May 19 15:39 skt80.mod
+--- count ---
+13
