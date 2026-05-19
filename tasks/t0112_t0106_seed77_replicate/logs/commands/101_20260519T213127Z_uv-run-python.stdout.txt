@@ -1,0 +1,12 @@
+Loading t0112 evaluations...
+  2016 cells
+Loading t0106 evaluations...
+  3744 cells
+Chart 1: pareto front overlay
+Chart 2: HV vs gen
+Chart 3: joint-pass yield per gen
+Chart 4: top-50 morphologies placeholder
+Chart 5: asymmetry distribution
+CSV 1: joint_pass_summary
+CSV 2: pareto_front_overlap
+Done.

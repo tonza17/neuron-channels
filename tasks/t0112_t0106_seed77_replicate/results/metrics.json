@@ -1,0 +1,24 @@
+{
+  "variants": [
+    {
+      "variant_id": "random-init-seed77-2dir-60gen-restart10",
+      "label": "2-direction NSGA-II seed 77 with pool-restart-every=10 (ratio DSI, N_EVAL_SEEDS=3, gens completed=21)",
+      "dimensions": {
+        "task_seed": 77,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 21,
+        "n_cells": 2016,
+        "pool_restart_every": 10
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.9535
+      }
+    }
+  ]
+}

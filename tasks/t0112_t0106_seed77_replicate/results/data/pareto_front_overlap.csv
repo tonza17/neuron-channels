@@ -1,0 +1,4 @@
+t0112_pareto_idx,t0112_dsi,t0112_pd_rate_hz,t0112_generation,nn_t0106_pareto_idx,nn_t0106_dsi,nn_t0106_pd_rate_hz,nn_t0106_generation,param_space_l2_distance
+0,0.9506,112.86,-1,2,1.0,81.43,-1,34654811.0002
+1,0.9535,60.0,-1,1,0.9786,88.1,-1,192534139.1115
+2,0.0021,114.76,-1,2,1.0,81.43,-1,34654811.0002
