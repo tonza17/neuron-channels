@@ -1,0 +1,37 @@
+{
+  "metric_count": 4,
+  "metrics": [
+    {
+      "metric_key": "direction_selectivity_index",
+      "name": "Direction Selectivity Index",
+      "unit": "ratio",
+      "value_type": "float",
+      "is_key": false,
+      "emoji": null
+    },
+    {
+      "metric_key": "tuning_curve_hwhm_deg",
+      "name": "Tuning Curve Half-Width at Half-Max (degrees)",
+      "unit": "none",
+      "value_type": "float",
+      "is_key": false,
+      "emoji": null
+    },
+    {
+      "metric_key": "tuning_curve_reliability",
+      "name": "Tuning Curve Reliability",
+      "unit": "ratio",
+      "value_type": "float",
+      "is_key": false,
+      "emoji": null
+    },
+    {
+      "metric_key": "tuning_curve_rmse",
+      "name": "Tuning Curve RMSE (Hz)",
+      "unit": "none",
+      "value_type": "float",
+      "is_key": true,
+      "emoji": null
+    }
+  ]
+}

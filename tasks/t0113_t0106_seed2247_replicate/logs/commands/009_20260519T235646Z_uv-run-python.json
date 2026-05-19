@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -m arf.scripts.verificators.verify_research_code t0113_t0106_seed2247_replicate",
+  "exit_code": 0,
+  "duration_seconds": 0.597,
+  "started_at": "2026-05-19T23:56:46Z",
+  "completed_at": "2026-05-19T23:56:47Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "009_20260519T235646Z_uv-run-python.stdout.txt",
+  "stderr_file": "009_20260519T235646Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

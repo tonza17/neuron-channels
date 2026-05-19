@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_tasks --format json --detail full --ids t0106_long_pdnd_nsga2_300gen t0112_t0106_seed77_replicate",
+  "exit_code": 1,
+  "duration_seconds": 1.053,
+  "started_at": "2026-05-19T23:50:20Z",
+  "completed_at": "2026-05-19T23:50:21Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "005_20260519T235020Z_uv-run-python.stdout.txt",
+  "stderr_file": "005_20260519T235020Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 13,
+  "truncated": false
+}
