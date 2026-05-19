@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36156 root@ssh6.vast.ai set -e; mkdir -p /root/t0112_workdir/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64 && ls /root/t0112_workdir/mods/x86_64/libnrnmech.so && cp -v /root/t0112_workdir/mods/x86_64/libnrnmech.so /root/t0112_workdir/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/libnrnmech.so && ls -la /root/t0112_workdir/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/",
+  "exit_code": 0,
+  "duration_seconds": 2.12,
+  "started_at": "2026-05-19T16:19:38Z",
+  "completed_at": "2026-05-19T16:19:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "063_20260519T161938Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "063_20260519T161938Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 2,
+  "truncated": false
+}

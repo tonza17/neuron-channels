@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "ssh -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 36156 root@ssh6.vast.ai ls -la /root/t0112_workdir/; echo ---; ls -la /root/t0112_workdir/mods/x86_64/ 2>&1 | head; echo ---python---; python3 -V; echo ---neuron---; python3 -c 'import neuron; print(neuron.__version__)'",
+  "exit_code": 0,
+  "duration_seconds": 2.296,
+  "started_at": "2026-05-19T16:04:37Z",
+  "completed_at": "2026-05-19T16:04:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "054_20260519T160437Z_ssh-o-connecttimeout-15.stdout.txt",
+  "stderr_file": "054_20260519T160437Z_ssh-o-connecttimeout-15.stderr.txt",
+  "stdout_lines": 19,
+  "stderr_lines": 4,
+  "truncated": false
+}

@@ -1,0 +1,36 @@
+[run_seed77] repo root: /root/t0112_workdir
+[run_seed77] Phase A: building random init population for seed 77
+[random_init] seed=77 wrote /root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/results/data/init_pop_seed77.json shape=(96, 68)
+[run_seed77] Compiling t0080 MOD library if not already present
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[run_seed77] bootstrap imported successfully
+============================================================
+[run_seed77] Seed 77 starting at 2026-05-19T16:29:41Z
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/code/nsga2_driver.py", line 734, in <module>
+    main()
+  File "/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/code/nsga2_driver.py", line 726, in main
+    summary = run_nsga2_for_seed(
+              ^^^^^^^^^^^^^^^^^^^
+  File "/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/code/nsga2_driver.py", line 487, in run_nsga2_for_seed
+    cost_watchdog = make_watchdog_from_machine_log(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/code/cost_watchdog.py", line 109, in make_watchdog_from_machine_log
+    rate = load_hourly_rate_from_machine_log(path=machine_log_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/code/cost_watchdog.py", line 36, in load_hourly_rate_from_machine_log
+    raw = path.read_text(encoding="utf-8")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/logs/steps/008_setup-machines/machine_log.json'

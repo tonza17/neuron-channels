@@ -1,0 +1,6 @@
+machine_log exists: True
+[cost_watchdog] resolved hourly rate: $0.3345/hr from machine_log.json (REQ-X)
+type: CostWatchdog
+hard_budget_usd: 25.0
+hourly_rate_usd: 0.3345
+CHECK-5 watchdog wiring: PASS

@@ -1,0 +1,68 @@
+{
+  "smoke_gate_pass": true,
+  "tolerances": {
+    "dsi": 0.05,
+    "pd_rate_hz": 1.0
+  },
+  "expected_pd_rate_hz": 43.6,
+  "anchors": [
+    {
+      "anchor_index": 0,
+      "anchor_name": "bedb_like",
+      "dsi_vector_sum": 0.0584958217270195,
+      "pd_rate_hz": 45.23809523809524,
+      "robustness": 0.6471974397263002,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 28.03592848777771,
+      "error": null,
+      "pd_within_tolerance": true,
+      "dsi_within_tolerance": true,
+      "expected_pd_rate_hz": 43.6
+    },
+    {
+      "anchor_index": 1,
+      "anchor_name": "symmetric",
+      "dsi_vector_sum": 0.04395604395604397,
+      "pd_rate_hz": 45.23809523809524,
+      "robustness": 0.7496990277332596,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 61.763237714767456,
+      "error": null
+    },
+    {
+      "anchor_index": 2,
+      "anchor_name": "pd_asymmetric",
+      "dsi_vector_sum": 0.23745819397993312,
+      "pd_rate_hz": 44.04761904761905,
+      "robustness": 0.4416374871506567,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 82.50344944000244,
+      "error": null
+    },
+    {
+      "anchor_index": 3,
+      "anchor_name": "nd_asymmetric",
+      "dsi_vector_sum": 0.08761329305135948,
+      "pd_rate_hz": 42.85714285714286,
+      "robustness": 0.9253310914438746,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 135.43594431877136,
+      "error": null
+    },
+    {
+      "anchor_index": 4,
+      "anchor_name": "alt_topology",
+      "dsi_vector_sum": 0.0,
+      "pd_rate_hz": 4.523809523809524,
+      "robustness": 0.8497788951776651,
+      "is_unstable": false,
+      "n_errors": 0,
+      "elapsed_s": 138.4818468093872,
+      "error": null
+    }
+  ]
+}

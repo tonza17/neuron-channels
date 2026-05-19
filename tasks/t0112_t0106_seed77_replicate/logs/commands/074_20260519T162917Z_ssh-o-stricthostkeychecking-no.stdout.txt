@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+bash /root/t0112_workdir/run_in_tmux.sh > /root/t0112_workdir/output.log 2>&1
+echo DONE >> /root/t0112_workdir/output.log

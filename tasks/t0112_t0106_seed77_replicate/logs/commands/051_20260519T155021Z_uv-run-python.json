@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "uv run python -c \nfrom datetime import datetime, UTC\nfrom pathlib import Path\nfrom tasks.t0112_t0106_seed77_replicate.code.cost_watchdog import make_watchdog_from_machine_log\nfrom tasks.t0112_t0106_seed77_replicate.code.constants import T0112_HARD_BUDGET_USD\n\nml = Path('tasks/t0112_t0106_seed77_replicate/logs/steps/008_setup-machines/machine_log.json')\nprint('machine_log exists:', ml.exists())\nw = make_watchdog_from_machine_log(machine_log_path=ml, instance_started_at=datetime.now(UTC), hard_budget_usd=T0112_HARD_BUDGET_USD)\nprint('type:', type(w).__name__)\nprint('hard_budget_usd:', w.hard_budget_usd)\nprint('hourly_rate_usd:', w.hourly_rate_usd)\nprint('CHECK-5 watchdog wiring:', 'PASS' if (type(w).__name__ == 'CostWatchdog' and w.hard_budget_usd == 25.00) else 'FAIL')\n",
+  "exit_code": 0,
+  "duration_seconds": 2.092,
+  "started_at": "2026-05-19T15:50:21Z",
+  "completed_at": "2026-05-19T15:50:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "051_20260519T155021Z_uv-run-python.stdout.txt",
+  "stderr_file": "051_20260519T155021Z_uv-run-python.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 0,
+  "truncated": false
+}

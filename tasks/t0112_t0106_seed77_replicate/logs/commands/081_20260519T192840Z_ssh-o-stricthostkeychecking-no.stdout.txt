@@ -1,0 +1,50 @@
+TMUX_RUNNING
+---log tail---
+[seed 77 gen 11] HV=9.0362  pop_size=96  cost_so_far=$0.5820  elapsed=6263s
+[nsga2_driver seed=77 gen=11] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+    12 |     1152 |     14 |  0.0258882852 |             f
+[seed 77 gen 12] HV=11.9097  pop_size=96  cost_so_far=$0.6024  elapsed=6483s
+[nsga2_driver seed=77 gen=12] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+    13 |     1248 |     14 |  0.0738255034 |         ideal
+[seed 77 gen 13] HV=13.6558  pop_size=96  cost_so_far=$0.6402  elapsed=6890s
+[nsga2_driver seed=77 gen=13] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+    14 |     1344 |     10 |  0.0165016502 |         ideal
+[seed 77 gen 14] HV=33.1613  pop_size=96  cost_so_far=$0.6841  elapsed=7362s
+[nsga2_driver seed=77 gen=14] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+    15 |     1440 |     13 |  0.1061946903 |         ideal
+[seed 77 gen 15] HV=33.2319  pop_size=96  cost_so_far=$0.7525  elapsed=8098s
+[nsga2_driver seed=77 gen=15] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+    16 |     1536 |     14 |  0.1102362205 |         ideal
+[seed 77 gen 16] HV=34.4357  pop_size=96  cost_so_far=$0.8590  elapsed=9245s
+[nsga2_driver seed=77 gen=16] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+    17 |     1632 |      1 |  2.142857E+01 |         ideal
+[seed 77 gen 17] HV=107.2840  pop_size=96  cost_so_far=$0.9804  elapsed=10551s
+[nsga2_driver seed=77 gen=17] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---hv trace last 5---
+{"gen": 13, "wall_clock_s": 6890.064125776291, "hv": 13.655771922202785, "n_cells_evaluated": 96}
+{"gen": 14, "wall_clock_s": 7362.287204742432, "hv": 33.161254610845766, "n_cells_evaluated": 96}
+{"gen": 15, "wall_clock_s": 8098.484556913376, "hv": 33.23186606008986, "n_cells_evaluated": 96}
+{"gen": 16, "wall_clock_s": 9244.929570198059, "hv": 34.435721069749285, "n_cells_evaluated": 96}
+{"gen": 17, "wall_clock_s": 10551.188693523407, "hv": 107.28395061728395, "n_cells_evaluated": 96}
+---best cells---
+current_gen: 17 total_cells: 1632
+joint_pass_count: 5
+joint_pass_unique: 2
+Top 5 by DSI:
+  gen=17  DSI=0.9506  PD=112.86Hz
+  gen=15  DSI=0.9268  PD=0.71Hz
+  gen=16  DSI=0.9268  PD=0.71Hz
+  gen=17  DSI=0.9268  PD=0.71Hz
+  gen=16  DSI=0.9070  PD=29.29Hz
+Top 5 by PD-rate:
+  gen=17  DSI=0.9506  PD=112.86Hz
+  gen=17  DSI=0.0000  PD=105.00Hz
+  gen=16  DSI=0.0000  PD=91.43Hz
+  gen=17  DSI=0.0000  PD=91.43Hz
+  gen=16  DSI=0.0013  PD=88.81Hz
+Top 5 JOINT-PASS by DSI:
+  gen=17  DSI=0.9506  PD=112.86Hz
+  gen=14  DSI=0.8690  PD=37.38Hz
+  gen=15  DSI=0.8690  PD=37.38Hz
+  gen=16  DSI=0.8690  PD=37.38Hz
+  gen=17  DSI=0.8690  PD=37.38Hz

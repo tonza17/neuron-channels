@@ -1,0 +1,45 @@
+TMUX_DONE
+---log tail---
+  "n_generations_completed": 21
+}
+[run_seed77] Seed 77 completed at 2026-05-19T21:09:57Z
+[run_seed77] Listing outputs:
+total 8720
+drwxr-xr-x 2 root root    4096 May 19 21:09 .
+drwxr-xr-x 4 root root      44 May 19 16:20 ..
+-rw-r--r-- 1 root root     500 May 19 16:30 algorithm_config.json
+-rw-r--r-- 1 root root 4366458 May 19 21:09 all_evaluations_seed77.json
+-rw-r--r-- 1 root root     117 May 19 16:30 evaluation_seeds.json
+-rw-r--r-- 1 root root    3923 May 19 21:09 hv_trajectory_seed77.json
+-rw-r--r-- 1 root root  172629 May 19 16:30 init_pop_seed77.json
+-rw-r--r-- 1 root root 4349634 May 19 21:09 nsga2_checkpoint_seed77.json
+-rw-r--r-- 1 root root   12521 May 19 21:09 pareto_front_seed77.json
+DONE
+---hv trace last 5---
+{"gen": 17, "wall_clock_s": 10551.188693523407, "hv": 107.28395061728395, "n_cells_evaluated": 96}
+{"gen": 18, "wall_clock_s": 12362.589853286743, "hv": 107.37576443198401, "n_cells_evaluated": 96}
+{"gen": 19, "wall_clock_s": 14380.159711122513, "hv": 107.37576443198401, "n_cells_evaluated": 96}
+{"gen": 20, "wall_clock_s": 16649.95150232315, "hv": 107.45621590582832, "n_cells_evaluated": 96}
+{"gen": 21, "wall_clock_s": 16782.065537691116, "hv": 107.46017590978832, "n_cells_evaluated": 96}
+---best cells---
+current_gen: 21 total_cells: 2016
+joint_pass_count: 25
+joint_pass_unique: 7
+Top 5 by DSI:
+  gen=20  DSI=0.9535  PD=60.00Hz
+  gen=21  DSI=0.9535  PD=60.00Hz
+  gen=18  DSI=0.9522  PD=58.33Hz
+  gen=19  DSI=0.9522  PD=58.33Hz
+  gen=20  DSI=0.9522  PD=58.33Hz
+Top 5 by PD-rate:
+  gen=21  DSI=0.0021  PD=114.76Hz
+  gen=17  DSI=0.9506  PD=112.86Hz
+  gen=18  DSI=0.9506  PD=112.86Hz
+  gen=18  DSI=0.0000  PD=112.86Hz
+  gen=19  DSI=0.9506  PD=112.86Hz
+Top 5 JOINT-PASS by DSI:
+  gen=20  DSI=0.9535  PD=60.00Hz
+  gen=21  DSI=0.9535  PD=60.00Hz
+  gen=18  DSI=0.9522  PD=58.33Hz
+  gen=19  DSI=0.9522  PD=58.33Hz
+  gen=20  DSI=0.9522  PD=58.33Hz

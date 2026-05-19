@@ -1,0 +1,8 @@
+call site: make_watchdog_from_machine_log(
+        machine_log_path=MACHINE_LOG_JSON,
+        instance_started_at=instance_started_at,
+        hard_budget_usd=T0112_HARD_BUDGET_USD,
+    )
+
+T0112_HARD_BUDGET_USD = 25.0
+drv._POOL_RESTART_EVERY = 10

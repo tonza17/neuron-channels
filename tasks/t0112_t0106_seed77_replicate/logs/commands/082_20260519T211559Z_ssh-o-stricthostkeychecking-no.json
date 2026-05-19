@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0112_t0106_seed77_replicate",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 36156 root@ssh6.vast.ai tmux has-session -t nsga 2>/dev/null && echo TMUX_RUNNING || echo TMUX_DONE; echo '---log tail---'; tail -15 /root/t0112_workdir/output.log; echo '---hv trace last 5---'; tail -5 /root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/logs/steps/009_implementation/hv_trace.jsonl 2>/dev/null; echo '---best cells---'; python3 -c \"\nimport json, os\npath = '/root/t0112_workdir/tasks/t0112_t0106_seed77_replicate/results/data/all_evaluations_seed77.json'\nif not os.path.exists(path):\n    print('no file yet'); raise SystemExit\ndata = json.load(open(path))\ncells = data if isinstance(data, list) else data.get('evaluations') or data.get('cells') or data\ngen_max = max(c.get('generation', 0) for c in cells)\nprint('current_gen:', gen_max, 'total_cells:', len(cells))\njp = [c for c in cells if (c.get('dsi_vector_sum') or 0) >= 0.5 and (c.get('pd_rate_hz') or 0) >= 30]\nprint('joint_pass_count:', len(jp))\nunique_jp_params = set()\nfor c in jp:\n    unique_jp_params.add(tuple(c.get('vector_68d', [])))\nprint('joint_pass_unique:', len(unique_jp_params))\nby_dsi = sorted(cells, key=lambda c: c.get('dsi_vector_sum') or -1, reverse=True)[:5]\nprint('Top 5 by DSI:')\nfor c in by_dsi:\n    print(f\\\"  gen={c.get('generation')}  DSI={c.get('dsi_vector_sum'):.4f}  PD={c.get('pd_rate_hz'):.2f}Hz\\\")\nby_pd = sorted(cells, key=lambda c: c.get('pd_rate_hz') or -1, reverse=True)[:5]\nprint('Top 5 by PD-rate:')\nfor c in by_pd:\n    print(f\\\"  gen={c.get('generation')}  DSI={c.get('dsi_vector_sum'):.4f}  PD={c.get('pd_rate_hz'):.2f}Hz\\\")\nif jp:\n    by_jp_dsi = sorted(jp, key=lambda c: c.get('dsi_vector_sum'), reverse=True)[:5]\n    print('Top 5 JOINT-PASS by DSI:')\n    for c in by_jp_dsi:\n        print(f\\\"  gen={c.get('generation')}  DSI={c.get('dsi_vector_sum'):.4f}  PD={c.get('pd_rate_hz'):.2f}Hz\\\")\n\"",
+  "exit_code": 0,
+  "duration_seconds": 2.394,
+  "started_at": "2026-05-19T21:15:59Z",
+  "completed_at": "2026-05-19T21:16:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0112_t0106_seed77_replicate",
+  "stdout_file": "082_20260519T211559Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "082_20260519T211559Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 45,
+  "stderr_lines": 2,
+  "truncated": false
+}

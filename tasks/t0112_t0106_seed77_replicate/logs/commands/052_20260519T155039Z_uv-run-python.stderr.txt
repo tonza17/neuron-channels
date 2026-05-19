@@ -1,0 +1,44 @@
+NEURON: NEURONMainMenu : a template cannot be redefined
+ in stdrun.hoc near line 5
+ begintemplate NEURONMainMenu // avoid some namespace pollution
+                            ^
+        xopen("stdrun.hoc")
+      execute1("{xopen("st...")
+    load_file(1, "C:/Users/m...")
+NEURON: The user defined name already exists: Exp2NMDA
+ in stdrun.hoc near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+NEURON: NEURONMainMenu : a template cannot be redefined
+ in stdrun.hoc near line 5
+ begintemplate NEURONMainMenu // avoid some namespace pollution
+                            ^
+        xopen("stdrun.hoc")
+      execute1("{xopen("st...")
+    load_file(1, "C:/Users/m...")
+NEURON: The user defined name already exists: Exp2NMDA
+ in stdrun.hoc near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+NEURON: NEURONMainMenu : a template cannot be redefined
+ in stdrun.hoc near line 5
+ begintemplate NEURONMainMenu // avoid some namespace pollution
+                            ^
+        xopen("stdrun.hoc")
+      execute1("{xopen("st...")
+    load_file(1, "C:/Users/m...")
+NEURON: The user defined name already exists: Exp2NMDA
+ in stdrun.hoc near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
+NEURON: NEURONMainMenu : a template cannot be redefined
+ in stdrun.hoc near line 5
+ begintemplate NEURONMainMenu // avoid some namespace pollution
+                            ^
+        xopen("stdrun.hoc")
+      execute1("{xopen("st...")
+    load_file(1, "C:/Users/m...")
+NEURON: The user defined name already exists: Exp2NMDA
+ in stdrun.hoc near line 0
+ ^
+        nrn_load_dll("C:/Users/m...")
