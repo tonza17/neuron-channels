@@ -25,17 +25,17 @@ N_SEEDS=4, gens=20). Since then nine tasks completed and one major story landed:
    gen 11; 0 joint-pass cells.
 4. **t0105 (cluster + factor)** + **t0105 (prelim figures)** — K-means + varimax FA across prior
    optimisations; 11-slide deck for the supervisor report.
-5. **t0106 — BREAKTHROUGH.** Long 2-direction NSGA-II, 1 seed × 40 gens × pop 96 = 3,744 evals.
+5. **t0106 — BREAKTHROUGH.** Long 2-direction NSGA-II, 1 seed x 40 gens x pop 96 = 3,744 evals.
    **123 unique joint-pass cells (DSI >= 0.5 AND PD >= 30 Hz) — first ever in t0080 -> t0104
    lineage.** Best ratio DSI = 1.0000 at PD = 81 Hz; best PD = 122.6 Hz at DSI = 0.92. Cost
    $10.37. The reformulation (16-dir vsum -> 2-dir ratio), not the budget, made the difference.
 6. **t0107 — CAVEAT.** 8-direction polar re-eval of 10 random top-50 cells: same cells average
    DSI = 0.519 under 8-dir vector-sum (vs t0106's 0.939). Mean drop = 0.42. Rank order preserved
-   (Spearman ρ = 0.758). t0106's DSI ≈ 1.0 is largely a metric artefact; cells remain in the
+   (Spearman rho = 0.758). t0106's DSI ~= 1.0 is largely a metric artefact; cells remain in the
    biological direction-selective range.
 7. **t0108** — Cluster + FA on 150 strict-cohort cells. Morphology K-means k=4 dominates;
    electrophys K-means is an outlier split. F10 = single joint DSI-PD trade-off factor.
-8. **t0109** — 4×10 morphology gallery; cluster 1 is visually distinct (tighter, PD-asymmetric).
+8. **t0109** — 4x10 morphology gallery; cluster 1 is visually distinct (tighter, PD-asymmetric).
 9. **t0110** — Relaxed-cohort FA (N=247) shows t0108's all-negative PD column was a
    truncated-cohort artifact; F1 is a joint failure axis (r_DSI = -0.37, r_PD = -0.75).
 
