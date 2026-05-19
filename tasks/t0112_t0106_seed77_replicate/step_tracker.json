@@ -14,9 +14,9 @@
       "step": 2,
       "name": "check-deps",
       "description": "Verify t0106_long_pdnd_nsga2_300gen is completed (the substrate this task forks from).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-19T14:15:59Z",
-      "completed_at": null,
+      "completed_at": "2026-05-19T14:17:12Z",
       "log_file": "logs\\steps\\002_check-deps/"
     },
     {
