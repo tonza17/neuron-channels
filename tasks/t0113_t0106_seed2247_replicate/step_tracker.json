@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0112 code (the fork base) and identify exactly what must be copied vs imported. Confirm the t0106 -> t0112 patch set is the right starting point.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-19T23:49:06Z",
-      "completed_at": null,
+      "completed_at": "2026-05-19T23:58:24Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
