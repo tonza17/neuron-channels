@@ -3,9 +3,9 @@ spec_version: "3"
 task_id: "t0114_seed7755_no_autostop"
 step_number: 9
 step_name: "implementation"
-status: "in_progress"
+status: "completed"
 started_at: "2026-05-20T09:40:30Z"
-completed_at: null
+completed_at: "2026-05-20T13:25:00Z"
 ---
 # Step 9: implementation
 
@@ -117,11 +117,11 @@ operator stop or natural termination (operator_stop / budget_cap / gen_ceiling /
 | 2 | 2 | 113.7 | 0.6776 | $0.0167 | 3 | plateau at gen 2 |
 | 3 | 3 | 153.8 | 2.5165 | $0.0284 | 6 | +271% HV jump; run healthy and climbing |
 
-   Per-cell baseline check (REQ-12 partial): gen 1 produced a well-formed JSON line with all 4
-   required fields (`gen`, `wall_clock_s`, `hv`, `n_cells_evaluated`); HV = 0.6776 well above the
-   trivial 0.0 baseline; in the t0106 / t0112 / t0113 substrate range (t0106 started at 0.2015,
-   t0112 at 0.1156, t0113 at ~0.24 — t0114 seed 7755 happened to land a bit higher). The 3
-   non-dominated cells at gen 1 are the LHS-init seeds with the best DSI / PD-rate pairs.
+Per-cell baseline check (REQ-12 partial): gen 1 produced a well-formed JSON line with all 4 required
+fields (`gen`, `wall_clock_s`, `hv`, `n_cells_evaluated`); HV = 0.6776 well above the trivial 0.0
+baseline; in the t0106 / t0112 / t0113 substrate range (t0106 started at 0.2015, t0112 at 0.1156,
+t0113 at ~0.24 — t0114 seed 7755 happened to land a bit higher). The 3 non-dominated cells at gen
+1 are the LHS-init seeds with the best DSI / PD-rate pairs.
 
 7. **Operator hold acknowledged.** Per the 2026-05-20 user directive ("don't stop optimisation until
    I say so") and the plan REQ-12, this step intentionally hands control back to the
@@ -186,21 +186,73 @@ operator stop or natural termination (operator_stop / budget_cap / gen_ceiling /
    `# noqa: F401` because the class is no longer used by the driver itself but must remain
    importable for the offline detector replay (REQ-13) and the smoke gate's check 6 (REQ-8).
 
-## Handoff
+## Operator Stop and Final Run State
 
-* **Vast.ai instance**: 37134508 alive at `ssh3.vast.ai:14508`, EPYC 7713P 64-core, $0.2756/hr.
-* **tmux session**: `nsga2` running on the remote with the NSGA-II driver. Reconnect via
-  `ssh -i ~/.ssh/id_ed25519 -p 14508 root@ssh3.vast.ai 'tmux attach -t nsga2'`.
-* **Latest gen**: 3 of 300 (1% of ceiling).
-* **Latest HV**: 2.5165 (climbing; +271% from gen 1 to gen 3).
-* **Cumulative cost**: $0.0284 (0.11% of $25 hard cap; ~$5-6 projected at full 300-gen completion).
-* **Live monitoring**: continues remotely. The orchestrator will resume the implementation subagent
-  (or roll directly into the next step) when the operator says "stop". When that happens, the
-  subagent will:
-  1. Write `intervention/stop.md` on the remote
-     (`/root/t0114_workdir/repo/tasks/t0114_seed7755_no_autostop/intervention/stop.md`) and wait for
-     the next gen boundary.
-  2. Detect the `operator_stop` trigger in the driver log; record `stop_trigger: operator_stop` in
-     `results/data/termination_reason.json`.
-  3. Proceed to SCP all artefacts back to the worktree per plan step 10.
-  4. Hand to the teardown step (step 10 in `step_tracker.json`).
+The operator issued the stop signal at 2026-05-20T13:00Z by dropping
+`/root/t0114_workdir/repo/tasks/t0114_seed7755_no_autostop/intervention/stop.md` on the remote and
+Ctrl-C'ing the tmux pane. The Python NSGA-II driver process exited cleanly between gen 62 and gen
+63; the tmux + bash wrappers stayed alive (idle) until teardown.
+
+**Final state captured at operator stop:**
+
+* **Final generation**: 62 of 300 ceiling (20.7 % of N_GEN).
+* **Final HV**: 111.535 (vs gen 1 baseline 0.678; **164.3× growth**).
+* **Total evaluations**: 5 952 (96 × 62 gens).
+* **Total wall-clock**: 12 278.7 s (3 h 24 min).
+* **Cumulative cost**: $0.9399 of $25 hard cap (3.76 %).
+* **stop_trigger**: `operator_stop`.
+
+**HV trajectory milestones:**
+
+* Gen 1 HV = 0.6776 (LHS-init).
+* Gen 6 HV = 20.7149 (+3 058 % from gen 1; first archive expansion).
+* Gen 14 HV = 70.6752 (where t0113 ratio_DSI seed 2247 plateau detector fired with WINDOW=2,
+  REL_THRESHOLD=0.01 — i.e., this seed would have been killed there too if auto-stop had been on).
+* Gen 30 HV = 98.1850 (+39 % above the "would-have-stopped" point).
+* Gen 47 HV = 107.2311 — the gen-47 evaluation cluster discovered legit cells at DSI≈0.987 /
+  PD≈106-108 Hz that **dominate the best legit cells from t0106 / t0112 / t0113**.
+* Gen 62 HV = 111.5353 — final stop, still climbing (Δ between gen 60→62 = +0.26 absolute HV /
+  +0.23 % rolling), no plateau.
+
+**Pool-restart cycle confirmed working as designed.** Every gen-N×10 boundary fired the restart;
+the gen immediately after dropped per-gen wall-clock from 300-600 s to 37-86 s. This is the dominant
+wall-clock optimisation in the run; without it the late-cycle gens were taking ~10 minutes apiece.
+
+**Best legit cells discovered (top 5 by DSI, excluding DSI=1.0 silence-guard artefacts; from the
+12.5 MB `all_evaluations_seed7755.json`):**
+
+| first_gen | DSI | PD-rate (Hz) |
+| --- | --- | --- |
+| 47 | 0.9915 | 55.48 |
+| 47 | 0.9913 | 54.29 |
+| 47 | 0.9912 | 53.81 |
+| 45 | 0.9910 | 52.38 |
+| 43 | 0.9909 | 51.90 |
+
+**Best legit cells by combined DSI × PD score (the headline result):**
+
+| first_gen | DSI | PD-rate (Hz) | DSI × PD |
+| --- | --- | --- | --- |
+| 47 | 0.9868 | 107.86 | 106.4 |
+| 47 | 0.9868 | 107.62 | 106.2 |
+| 47 | 0.9867 | 106.67 | 105.3 |
+
+**Joint-pass (DSI ≥ 0.5 AND PD ≥ 30 Hz, DSI < 0.9999) cell count in the unique-cell-deduplicated
+archive: 194** (of 828 unique cells seen across 5 952 evaluations = 4.30 % acceptance rate at the
+unique-cell level; t0106 baseline 3.29 %).
+
+**Data SCP'd back from Vast.ai instance 37134508 to the worktree at operator stop:**
+
+* `tasks/t0114_seed7755_no_autostop/results/data/all_evaluations_seed7755.json` (12.5 MB, 5 952
+  evaluations).
+* `tasks/t0114_seed7755_no_autostop/results/data/hv_trajectory_seed7755.json` (11.5 KB, 62 entries).
+* `tasks/t0114_seed7755_no_autostop/results/data/algorithm_config.json` (pymoo config dump).
+* `tasks/t0114_seed7755_no_autostop/results/data/init_pop_seed7755.json` (LHS-init matrix).
+* `tasks/t0114_seed7755_no_autostop/results/data/nsga2_checkpoint_seed7755.json` (12.5 MB, last-gen
+  JSON checkpoint).
+* `tasks/t0114_seed7755_no_autostop/results/data/evaluation_seeds.json`.
+* `tasks/t0114_seed7755_no_autostop/logs/steps/009_implementation/hv_trace.jsonl` (final 62-gen
+  trace).
+
+The Vast.ai instance 37134508 is destroyed at the end of this step (step 10 teardown ratifies the
+destruction).

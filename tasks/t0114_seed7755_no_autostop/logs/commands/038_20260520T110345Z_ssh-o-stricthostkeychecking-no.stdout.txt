@@ -1,0 +1,23 @@
+nsga2: 1 windows (created Wed May 20 10:01:54 2026)
+---LOG TAIL---
+    13 |     1248 |      3 |  0.6036866359 |         nadir
+[seed 7755 gen 13] HV=67.8499  pop_size=96  cost_so_far=$0.2600  elapsed=3396s
+[nsga2_driver seed=7755 gen=13] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+    14 |     1344 |      4 |  0.0194903047 |             f
+[seed 7755 gen 14] HV=70.6752  pop_size=96  cost_so_far=$0.2742  elapsed=3581s
+[nsga2_driver seed=7755 gen=14] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---HV TRACE---
+{"gen": 1, "wall_clock_s": 104.01604580879211, "hv": 0.6776069317281332, "n_cells_evaluated": 96}
+{"gen": 2, "wall_clock_s": 217.66874170303345, "hv": 0.6776069317281332, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 371.4928984642029, "hv": 2.5164871115795004, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 577.6080384254456, "hv": 3.529895157009819, "n_cells_evaluated": 96}
+{"gen": 5, "wall_clock_s": 805.9775855541229, "hv": 4.31809617917329, "n_cells_evaluated": 96}
+{"gen": 6, "wall_clock_s": 1140.8727812767029, "hv": 20.71492331957448, "n_cells_evaluated": 96}
+{"gen": 7, "wall_clock_s": 1457.7614033222198, "hv": 29.949447261564764, "n_cells_evaluated": 96}
+{"gen": 8, "wall_clock_s": 1836.1114630699158, "hv": 44.38761294878586, "n_cells_evaluated": 96}
+{"gen": 9, "wall_clock_s": 2381.075704097748, "hv": 44.38761294878586, "n_cells_evaluated": 96}
+{"gen": 10, "wall_clock_s": 2988.889167070389, "hv": 58.46616017823501, "n_cells_evaluated": 96}
+{"gen": 11, "wall_clock_s": 3075.3115043640137, "hv": 67.13285217856188, "n_cells_evaluated": 96}
+{"gen": 12, "wall_clock_s": 3220.2187266349792, "hv": 67.13285217856188, "n_cells_evaluated": 96}
+{"gen": 13, "wall_clock_s": 3396.257542848587, "hv": 67.84987461972226, "n_cells_evaluated": 96}
+{"gen": 14, "wall_clock_s": 3581.6024844646454, "hv": 70.67516597657507, "n_cells_evaluated": 96}

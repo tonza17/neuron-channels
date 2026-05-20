@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0114_seed7755_no_autostop",
+  "command": "bash -c echo y | vastai destroy instance 37134508",
+  "exit_code": 0,
+  "duration_seconds": 2.684,
+  "started_at": "2026-05-20T13:34:07Z",
+  "completed_at": "2026-05-20T13:34:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0114_seed7755_no_autostop",
+  "stdout_file": "048_20260520T133407Z_bash-c-echo-y-vastai-destroy-instance-37.stdout.txt",
+  "stderr_file": "048_20260520T133407Z_bash-c-echo-y-vastai-destroy-instance-37.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

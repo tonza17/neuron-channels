@@ -1,0 +1,438 @@
+{
+  "trajectory": [
+    {
+      "generation": 1,
+      "hypervolume": 0.6776069317281332,
+      "cumulative_cost_usd": 0.007959896501555555,
+      "elapsed_s": 103.975426,
+      "n_evaluations": 0
+    },
+    {
+      "generation": 2,
+      "hypervolume": 0.6776069317281332,
+      "cumulative_cost_usd": 0.01665777064466667,
+      "elapsed_s": 217.590618,
+      "n_evaluations": 96
+    },
+    {
+      "generation": 3,
+      "hypervolume": 2.5164871115795004,
+      "cumulative_cost_usd": 0.028431968619888892,
+      "elapsed_s": 371.390011,
+      "n_evaluations": 192
+    },
+    {
+      "generation": 4,
+      "hypervolume": 3.529895157009819,
+      "cumulative_cost_usd": 0.04421009809377779,
+      "elapsed_s": 577.490396,
+      "n_evaluations": 288
+    },
+    {
+      "generation": 5,
+      "hypervolume": 4.31809617917329,
+      "cumulative_cost_usd": 0.06169618101688889,
+      "elapsed_s": 805.900768,
+      "n_evaluations": 384
+    },
+    {
+      "generation": 6,
+      "hypervolume": 20.71492331957448,
+      "cumulative_cost_usd": 0.08732866960277778,
+      "elapsed_s": 1140.722825,
+      "n_evaluations": 480
+    },
+    {
+      "generation": 7,
+      "hypervolume": 29.949447261564764,
+      "cumulative_cost_usd": 0.11158717965200002,
+      "elapsed_s": 1457.597412,
+      "n_evaluations": 576
+    },
+    {
+      "generation": 8,
+      "hypervolume": 44.38761294878586,
+      "cumulative_cost_usd": 0.14055070067133335,
+      "elapsed_s": 1835.930778,
+      "n_evaluations": 672
+    },
+    {
+      "generation": 9,
+      "hypervolume": 44.38761294878586,
+      "cumulative_cost_usd": 0.18226972799244445,
+      "elapsed_s": 2380.881788,
+      "n_evaluations": 768
+    },
+    {
+      "generation": 10,
+      "hypervolume": 58.46616017823501,
+      "cumulative_cost_usd": 0.2287998654702222,
+      "elapsed_s": 2988.677488,
+      "n_evaluations": 864
+    },
+    {
+      "generation": 11,
+      "hypervolume": 67.13285217856188,
+      "cumulative_cost_usd": 0.23541906420211114,
+      "elapsed_s": 3075.140171,
+      "n_evaluations": 960
+    },
+    {
+      "generation": 12,
+      "hypervolume": 67.13285217856188,
+      "cumulative_cost_usd": 0.2465070726848889,
+      "elapsed_s": 3219.976276,
+      "n_evaluations": 1056
+    },
+    {
+      "generation": 13,
+      "hypervolume": 67.84987461972226,
+      "cumulative_cost_usd": 0.25998251837855557,
+      "elapsed_s": 3395.998063,
+      "n_evaluations": 1152
+    },
+    {
+      "generation": 14,
+      "hypervolume": 70.67516597657507,
+      "cumulative_cost_usd": 0.274171027091,
+      "elapsed_s": 3581.334171,
+      "n_evaluations": 1248
+    },
+    {
+      "generation": 15,
+      "hypervolume": 75.55978787247496,
+      "cumulative_cost_usd": 0.28929833030366664,
+      "elapsed_s": 3778.933197,
+      "n_evaluations": 1344
+    },
+    {
+      "generation": 16,
+      "hypervolume": 75.55978787247496,
+      "cumulative_cost_usd": 0.30590435329711113,
+      "elapsed_s": 3995.847866,
+      "n_evaluations": 1440
+    },
+    {
+      "generation": 17,
+      "hypervolume": 84.9257916383224,
+      "cumulative_cost_usd": 0.3248454790518889,
+      "elapsed_s": 4243.264603,
+      "n_evaluations": 1536
+    },
+    {
+      "generation": 18,
+      "hypervolume": 84.9257916383224,
+      "cumulative_cost_usd": 0.350125762168,
+      "elapsed_s": 4573.486008,
+      "n_evaluations": 1632
+    },
+    {
+      "generation": 19,
+      "hypervolume": 91.18043897107498,
+      "cumulative_cost_usd": 0.377182045981,
+      "elapsed_s": 4926.906261,
+      "n_evaluations": 1728
+    },
+    {
+      "generation": 20,
+      "hypervolume": 91.26908982685033,
+      "cumulative_cost_usd": 0.40756683566444446,
+      "elapsed_s": 5323.80482,
+      "n_evaluations": 1824
+    },
+    {
+      "generation": 21,
+      "hypervolume": 94.20398009950249,
+      "cumulative_cost_usd": 0.41206860051500005,
+      "elapsed_s": 5382.608715,
+      "n_evaluations": 1920
+    },
+    {
+      "generation": 22,
+      "hypervolume": 94.23867143556369,
+      "cumulative_cost_usd": 0.419247918505,
+      "elapsed_s": 5476.387905,
+      "n_evaluations": 2016
+    },
+    {
+      "generation": 23,
+      "hypervolume": 95.9094439628318,
+      "cumulative_cost_usd": 0.42960221877300003,
+      "elapsed_s": 5611.640013,
+      "n_evaluations": 2112
+    },
+    {
+      "generation": 24,
+      "hypervolume": 95.9094439628318,
+      "cumulative_cost_usd": 0.4434820412461112,
+      "elapsed_s": 5792.943935,
+      "n_evaluations": 2208
+    },
+    {
+      "generation": 25,
+      "hypervolume": 95.92758455240096,
+      "cumulative_cost_usd": 0.4601790695796667,
+      "elapsed_s": 6011.047353,
+      "n_evaluations": 2304
+    },
+    {
+      "generation": 26,
+      "hypervolume": 95.93163527619497,
+      "cumulative_cost_usd": 0.4818871961381111,
+      "elapsed_s": 6294.607787,
+      "n_evaluations": 2400
+    },
+    {
+      "generation": 27,
+      "hypervolume": 96.05688440193333,
+      "cumulative_cost_usd": 0.506432313192,
+      "elapsed_s": 6615.226152,
+      "n_evaluations": 2496
+    },
+    {
+      "generation": 28,
+      "hypervolume": 97.66903235653236,
+      "cumulative_cost_usd": 0.5346862008048889,
+      "elapsed_s": 6984.289996,
+      "n_evaluations": 2592
+    },
+    {
+      "generation": 29,
+      "hypervolume": 98.13905326883545,
+      "cumulative_cost_usd": 0.5686587980637778,
+      "elapsed_s": 7428.053966,
+      "n_evaluations": 2688
+    },
+    {
+      "generation": 30,
+      "hypervolume": 98.18502520625478,
+      "cumulative_cost_usd": 0.6094839598856667,
+      "elapsed_s": 7961.328939,
+      "n_evaluations": 2784
+    },
+    {
+      "generation": 31,
+      "hypervolume": 100.64131101347195,
+      "cumulative_cost_usd": 0.6131108107178889,
+      "elapsed_s": 8008.704349,
+      "n_evaluations": 2880
+    },
+    {
+      "generation": 32,
+      "hypervolume": 102.21264945830019,
+      "cumulative_cost_usd": 0.6201933163992223,
+      "elapsed_s": 8101.218937,
+      "n_evaluations": 2976
+    },
+    {
+      "generation": 33,
+      "hypervolume": 102.24153581395814,
+      "cumulative_cost_usd": 0.6294482169560001,
+      "elapsed_s": 8222.110236,
+      "n_evaluations": 3072
+    },
+    {
+      "generation": 34,
+      "hypervolume": 102.31737763435747,
+      "cumulative_cost_usd": 0.6415010479092222,
+      "elapsed_s": 8379.549247,
+      "n_evaluations": 3168
+    },
+    {
+      "generation": 35,
+      "hypervolume": 102.90010120622179,
+      "cumulative_cost_usd": 0.656928849514889,
+      "elapsed_s": 8581.073506,
+      "n_evaluations": 3264
+    },
+    {
+      "generation": 36,
+      "hypervolume": 102.90010120622179,
+      "cumulative_cost_usd": 0.6755519014053334,
+      "elapsed_s": 8824.335432,
+      "n_evaluations": 3360
+    },
+    {
+      "generation": 37,
+      "hypervolume": 102.91122715192718,
+      "cumulative_cost_usd": 0.696046613834,
+      "elapsed_s": 9092.045754,
+      "n_evaluations": 3456
+    },
+    {
+      "generation": 38,
+      "hypervolume": 103.02587596859863,
+      "cumulative_cost_usd": 0.7175587150694446,
+      "elapsed_s": 9373.045625,
+      "n_evaluations": 3552
+    },
+    {
+      "generation": 39,
+      "hypervolume": 103.14664995362234,
+      "cumulative_cost_usd": 0.7426238609212223,
+      "elapsed_s": 9700.456819,
+      "n_evaluations": 3648
+    },
+    {
+      "generation": 40,
+      "hypervolume": 103.97371243832721,
+      "cumulative_cost_usd": 0.7683711921802222,
+      "elapsed_s": 10036.778998,
+      "n_evaluations": 3744
+    },
+    {
+      "generation": 41,
+      "hypervolume": 105.26998299319729,
+      "cumulative_cost_usd": 0.7711757111008889,
+      "elapsed_s": 10073.412772,
+      "n_evaluations": 3840
+    },
+    {
+      "generation": 42,
+      "hypervolume": 105.29549319727892,
+      "cumulative_cost_usd": 0.7744252687484444,
+      "elapsed_s": 10115.859824,
+      "n_evaluations": 3936
+    },
+    {
+      "generation": 43,
+      "hypervolume": 105.29549319727892,
+      "cumulative_cost_usd": 0.7787379929752223,
+      "elapsed_s": 10172.194393,
+      "n_evaluations": 4032
+    },
+    {
+      "generation": 44,
+      "hypervolume": 105.29549319727892,
+      "cumulative_cost_usd": 0.78442076752,
+      "elapsed_s": 10246.42512,
+      "n_evaluations": 4128
+    },
+    {
+      "generation": 45,
+      "hypervolume": 105.56276026835883,
+      "cumulative_cost_usd": 0.7909247840548889,
+      "elapsed_s": 10331.383246,
+      "n_evaluations": 4224
+    },
+    {
+      "generation": 46,
+      "hypervolume": 107.18671679197996,
+      "cumulative_cost_usd": 0.7992214990485556,
+      "elapsed_s": 10439.758333,
+      "n_evaluations": 4320
+    },
+    {
+      "generation": 47,
+      "hypervolume": 107.23111190851714,
+      "cumulative_cost_usd": 0.8092903924733333,
+      "elapsed_s": 10571.28234,
+      "n_evaluations": 4416
+    },
+    {
+      "generation": 48,
+      "hypervolume": 107.24990890099832,
+      "cumulative_cost_usd": 0.8204322765455556,
+      "elapsed_s": 10716.82219,
+      "n_evaluations": 4512
+    },
+    {
+      "generation": 49,
+      "hypervolume": 107.39103468525157,
+      "cumulative_cost_usd": 0.8326800383070001,
+      "elapsed_s": 10876.807467,
+      "n_evaluations": 4608
+    },
+    {
+      "generation": 50,
+      "hypervolume": 107.72371007500135,
+      "cumulative_cost_usd": 0.846390562838889,
+      "elapsed_s": 11055.89995,
+      "n_evaluations": 4704
+    },
+    {
+      "generation": 51,
+      "hypervolume": 107.94850842367659,
+      "cumulative_cost_usd": 0.8484191898260001,
+      "elapsed_s": 11082.398706,
+      "n_evaluations": 4800
+    },
+    {
+      "generation": 52,
+      "hypervolume": 107.94850842367659,
+      "cumulative_cost_usd": 0.8514384672906667,
+      "elapsed_s": 11121.837744,
+      "n_evaluations": 4896
+    },
+    {
+      "generation": 53,
+      "hypervolume": 108.5391133634564,
+      "cumulative_cost_usd": 0.856133048485,
+      "elapsed_s": 11183.160285,
+      "n_evaluations": 4992
+    },
+    {
+      "generation": 54,
+      "hypervolume": 108.65276232693532,
+      "cumulative_cost_usd": 0.8623779411534446,
+      "elapsed_s": 11264.733629,
+      "n_evaluations": 5088
+    },
+    {
+      "generation": 55,
+      "hypervolume": 109.17026129416922,
+      "cumulative_cost_usd": 0.870323777078889,
+      "elapsed_s": 11368.52539,
+      "n_evaluations": 5184
+    },
+    {
+      "generation": 56,
+      "hypervolume": 109.97285370814616,
+      "cumulative_cost_usd": 0.8799328465257777,
+      "elapsed_s": 11494.042988,
+      "n_evaluations": 5280
+    },
+    {
+      "generation": 57,
+      "hypervolume": 110.19075155328764,
+      "cumulative_cost_usd": 0.8908673853877778,
+      "elapsed_s": 11636.87441,
+      "n_evaluations": 5376
+    },
+    {
+      "generation": 58,
+      "hypervolume": 110.19381059274926,
+      "cumulative_cost_usd": 0.903381007139,
+      "elapsed_s": 11800.332459,
+      "n_evaluations": 5472
+    },
+    {
+      "generation": 59,
+      "hypervolume": 110.47818411737447,
+      "cumulative_cost_usd": 0.9177160752615556,
+      "elapsed_s": 11987.582986,
+      "n_evaluations": 5568
+    },
+    {
+      "generation": 60,
+      "hypervolume": 111.2800292418127,
+      "cumulative_cost_usd": 0.9335479697786667,
+      "elapsed_s": 12194.385672,
+      "n_evaluations": 5664
+    },
+    {
+      "generation": 61,
+      "hypervolume": 111.52242835448672,
+      "cumulative_cost_usd": 0.9359874012262221,
+      "elapsed_s": 12226.250524,
+      "n_evaluations": 5760
+    },
+    {
+      "generation": 62,
+      "hypervolume": 111.53532625470856,
+      "cumulative_cost_usd": 0.9399292007718889,
+      "elapsed_s": 12277.739923,
+      "n_evaluations": 5856
+    }
+  ]
+}

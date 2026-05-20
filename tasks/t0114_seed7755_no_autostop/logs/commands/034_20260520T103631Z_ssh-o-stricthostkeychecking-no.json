@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0114_seed7755_no_autostop",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 14508 root@ssh3.vast.ai python3 << \"PYEOF\"\nimport json\ndata = json.load(open(\"/root/t0114_workdir/repo/tasks/t0114_seed7755_no_autostop/results/data/all_evaluations_seed7755.json\"))\nevals = data[\"evaluations\"]\nprint(f\"Total evaluations: {len(evals)}\")\n# evaluations rows: {\"generation\",\"vector_68d\",\"objective_F_minimised\",\"dsi_vector_sum\",\"pd_rate_hz\"}\n# best DSI overall\nsorted_dsi = sorted(evals, key=lambda r: -r[\"dsi_vector_sum\"])\nprint(f\"\\nTOP 5 by DSI (any):\")\nfor r in sorted_dsi[:5]:\n    print(f\"  gen={r[\\\"generation\\\"]:>3}  DSI={r[\\\"dsi_vector_sum\\\"]:.4f}  PD={r[\\\"pd_rate_hz\\\"]:.2f} Hz\")\n\n# best LEGIT DSI (exclude silence-guard DSI=1.0)\nlegit = [r for r in evals if r[\"dsi_vector_sum\"] < 0.9999]\nsorted_legit = sorted(legit, key=lambda r: -r[\"dsi_vector_sum\"])\nprint(f\"\\nTOP 5 LEGIT DSI (DSI < 0.9999):\")\nfor r in sorted_legit[:5]:\n    print(f\"  gen={r[\\\"generation\\\"]:>3}  DSI={r[\\\"dsi_vector_sum\\\"]:.4f}  PD={r[\\\"pd_rate_hz\\\"]:.2f} Hz\")\n\n# best PD-rate\nsorted_pdr = sorted(evals, key=lambda r: -r[\"pd_rate_hz\"])\nprint(f\"\\nTOP 5 by PD-rate:\")\nfor r in sorted_pdr[:5]:\n    print(f\"  gen={r[\\\"generation\\\"]:>3}  DSI={r[\\\"dsi_vector_sum\\\"]:.4f}  PD={r[\\\"pd_rate_hz\\\"]:.2f} Hz\")\n\n# joint-pass (DSI >= 0.5 AND PD >= 30)\njoint = [r for r in evals if r[\"dsi_vector_sum\"] >= 0.5 and r[\"pd_rate_hz\"] >= 30.0]\nprint(f\"\\nJoint-pass (DSI>=0.5 AND PD>=30): {len(joint)} of {len(evals)} ({100*len(joint)/len(evals):.2f}%)\")\nlegit_joint = [r for r in joint if r[\"dsi_vector_sum\"] < 0.9999]\nprint(f\"Legit joint-pass (excluding DSI=1.0): {len(legit_joint)}\")\nif legit_joint:\n    print(\"TOP 5 legit joint-pass by DSI:\")\n    for r in sorted(legit_joint, key=lambda r: -r[\"dsi_vector_sum\"])[:5]:\n        print(f\"  gen={r[\\\"generation\\\"]:>3}  DSI={r[\\\"dsi_vector_sum\\\"]:.4f}  PD={r[\\\"pd_rate_hz\\\"]:.2f} Hz\")\n\n# DSI=1.0 count\nsilence = [r for r in evals if r[\"dsi_vector_sum\"] >= 0.9999]\nprint(f\"\\nSilence-guard DSI=1.0 cells: {len(silence)}\")\nPYEOF\n",
+  "exit_code": 1,
+  "duration_seconds": 4.722,
+  "started_at": "2026-05-20T10:36:31Z",
+  "completed_at": "2026-05-20T10:36:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0114_seed7755_no_autostop",
+  "stdout_file": "034_20260520T103631Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "034_20260520T103631Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 6,
+  "truncated": false
+}

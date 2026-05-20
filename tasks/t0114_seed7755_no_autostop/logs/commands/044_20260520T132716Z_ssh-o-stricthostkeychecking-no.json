@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0114_seed7755_no_autostop",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 14508 root@ssh3.vast.ai sleep 5; tmux capture-pane -t nsga2:0 -p | tail -8 2>&1; echo \"---PROC CHECK---\"; ps aux | grep -E \"nsga2_driver|run_seed\" | grep -v grep 2>&1 | head -3; echo \"---FINAL HV TRACE TAIL---\"; tail -8 /root/t0114_workdir/repo/tasks/t0114_seed7755_no_autostop/logs/steps/009_implementation/hv_trace.jsonl 2>&1",
+  "exit_code": 0,
+  "duration_seconds": 8.846,
+  "started_at": "2026-05-20T13:27:16Z",
+  "completed_at": "2026-05-20T13:27:25Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0114_seed7755_no_autostop",
+  "stdout_file": "044_20260520T132716Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "044_20260520T132716Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 21,
+  "stderr_lines": 2,
+  "truncated": false
+}
