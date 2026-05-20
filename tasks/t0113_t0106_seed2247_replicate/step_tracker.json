@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare seed-2247 DSI/PD frontier and joint-pass yield against t0106 (seed 44), t0112 (seed 77), and published DSGC ratio DSI / PD references.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-20T02:34:32Z",
-      "completed_at": null,
+      "completed_at": "2026-05-20T02:40:21Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
