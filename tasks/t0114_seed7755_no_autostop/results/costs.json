@@ -1,0 +1,8 @@
+{
+  "total_cost_usd": 1.1282,
+  "breakdown": {
+    "vast_ai_seed7755_compute": 1.1282
+  },
+  "currency": "USD",
+  "note": "Total Vast.ai instance 37134508 cost across setup-machines + implementation + teardown. Productive NSGA-II compute (gen 1-62, 12278.7 s) was $0.9399 per the driver's final cost_so_far report; the remaining ~$0.13 covers setup (env install + MOD compile + smoke gate) and the brief idle window between operator stop and instance destruction. Within the per-task $25 hard cap (15.4 % utilisation)."
+}
