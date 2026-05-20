@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 27202 root@ssh7.vast.ai echo '=== nrnivmodl ==='; which nrnivmodl; echo '=== python imports ==='; python3 -c 'import neuron; print(\"neuron:\", neuron.__version__)'; python3 -c 'import pymoo; print(\"pymoo:\", pymoo.__version__)'; python3 -c 'import dill; print(\"dill:\", dill.__version__)'; python3 -c 'import numpy; print(\"numpy:\", numpy.__version__)'; python3 -c 'import scipy; print(\"scipy:\", scipy.__version__)'; python3 -c 'import pandas; print(\"pandas:\", pandas.__version__)'; python3 -c 'import matplotlib; print(\"matplotlib:\", matplotlib.__version__)'; python3 -c 'import pydantic; print(\"pydantic:\", pydantic.__version__)'; python3 -c 'import tqdm; print(\"tqdm:\", tqdm.__version__)'; echo '=== neuron version full ==='; python3 -c 'from neuron import h; print(h.nrnversion())'",
+  "exit_code": 0,
+  "duration_seconds": 3.995,
+  "started_at": "2026-05-20T00:31:17Z",
+  "completed_at": "2026-05-20T00:31:21Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "066_20260520T003117Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "066_20260520T003117Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 14,
+  "stderr_lines": 6,
+  "truncated": false
+}

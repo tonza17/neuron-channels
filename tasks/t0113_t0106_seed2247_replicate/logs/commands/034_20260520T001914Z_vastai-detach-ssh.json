@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "vastai detach ssh 37106453 801863",
+  "exit_code": 0,
+  "duration_seconds": 1.805,
+  "started_at": "2026-05-20T00:19:14Z",
+  "completed_at": "2026-05-20T00:19:16Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "034_20260520T001914Z_vastai-detach-ssh.stdout.txt",
+  "stderr_file": "034_20260520T001914Z_vastai-detach-ssh.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

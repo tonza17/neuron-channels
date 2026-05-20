@@ -1,0 +1,20 @@
+=== uptime ===
+ 00:34:49 up 25 days,  9:36,  0 user,  load average: 29.46, 28.49, 24.92
+=== disk ===
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          40G  556M   40G   2% /
+=== mem ===
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi        30Gi       309Gi       136Mi       168Gi       472Gi
+Swap:             0B          0B          0B
+=== cpu cores avail ===
+256
+=== nrnivmodl ===
+-rwxr-xr-x 1 root root 118704 May 20 00:32 /root/t0113_workdir/mods/x86_64/libnrnmech.so
+=== neuron smoke ===
+bkt80 loaded: True
+nav16t80 loaded: True
+=== tmux ===
+/usr/bin/tmux
+tmux 3.3a
+=== final ===

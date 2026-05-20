@@ -1,0 +1,1 @@
+{'success': True, 'msg': 'SSH key removed from instance.'}

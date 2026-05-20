@@ -1,0 +1,9 @@
+NEURON mechanisms not found in x86_64.
+load_mechanisms(x86_64): False
+  bkt80: True
+  nav16t80: True
+  skahpt80: True
+  skt80: True
+  calt80: True
+  kdrt80: True
+  napt80: True

@@ -1,0 +1,4 @@
+Warning: Permanently added '[ssh4.vast.ai]:26452' (ED25519) to the list of known hosts.
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+root@ssh4.vast.ai: Permission denied (publickey).

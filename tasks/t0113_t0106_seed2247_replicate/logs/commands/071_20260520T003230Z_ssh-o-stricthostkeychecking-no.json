@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 27202 root@ssh7.vast.ai cd /root/t0113_workdir/mods && python3 -c '\nfrom neuron import h, load_mechanisms\nprint(\"load_mechanisms(x86_64):\", load_mechanisms(\"x86_64\"))\n# Check several mechanisms expected from t0080\nfor name in [\"bkt80\", \"nav16t80\", \"skahpt80\", \"skt80\", \"calt80\", \"kdrt80\", \"napt80\"]:\n    print(f\"  {name}:\", hasattr(h, name))\n'",
+  "exit_code": 0,
+  "duration_seconds": 2.48,
+  "started_at": "2026-05-20T00:32:30Z",
+  "completed_at": "2026-05-20T00:32:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "071_20260520T003230Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "071_20260520T003230Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 4,
+  "truncated": false
+}
