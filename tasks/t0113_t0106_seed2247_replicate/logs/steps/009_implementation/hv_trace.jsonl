@@ -1,0 +1,14 @@
+{"gen": 1, "wall_clock_s": 103.6458375453949, "hv": 0.24603174603174863, "n_cells_evaluated": 96}
+{"gen": 2, "wall_clock_s": 229.3994300365448, "hv": 0.37908496732026375, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 373.1694540977478, "hv": 0.9980495022867918, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 525.8124463558197, "hv": 3.539915966386554, "n_cells_evaluated": 96}
+{"gen": 5, "wall_clock_s": 684.1902141571045, "hv": 3.5399159663865545, "n_cells_evaluated": 96}
+{"gen": 6, "wall_clock_s": 848.1671969890594, "hv": 3.576460816884893, "n_cells_evaluated": 96}
+{"gen": 7, "wall_clock_s": 1085.8901960849762, "hv": 6.395855906949176, "n_cells_evaluated": 96}
+{"gen": 8, "wall_clock_s": 1306.4005236625671, "hv": 6.562679364513234, "n_cells_evaluated": 96}
+{"gen": 9, "wall_clock_s": 1549.8996822834015, "hv": 6.587755754869915, "n_cells_evaluated": 96}
+{"gen": 10, "wall_clock_s": 1801.7371451854706, "hv": 35.9793823889398, "n_cells_evaluated": 96}
+{"gen": 11, "wall_clock_s": 1864.6246101856232, "hv": 35.9793823889398, "n_cells_evaluated": 96}
+{"gen": 12, "wall_clock_s": 1958.7611088752747, "hv": 36.065609720390114, "n_cells_evaluated": 96}
+{"gen": 13, "wall_clock_s": 2055.8526673316956, "hv": 36.09755686228362, "n_cells_evaluated": 96}
+{"gen": 14, "wall_clock_s": 2236.3500368595123, "hv": 45.6221023373101, "n_cells_evaluated": 96}

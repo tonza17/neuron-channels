@@ -1,0 +1,46 @@
+Reading: /root/t0113_workdir/repo/tasks/t0113_t0106_seed2247_replicate/results/data/all_evaluations_seed2247.json
+n_cells_total = 1344
+
+--- TOP 10 by DSI (incl silence-guard artefacts at DSI=1.0) ---
+gen= 10  DSI=1.0000  PD_rate=  35.00 Hz
+gen= 11  DSI=1.0000  PD_rate=  35.00 Hz
+gen= 12  DSI=1.0000  PD_rate=  35.00 Hz
+gen= 13  DSI=1.0000  PD_rate=  35.00 Hz
+gen= 14  DSI=1.0000  PD_rate=  45.24 Hz
+gen= 14  DSI=1.0000  PD_rate=  35.00 Hz
+gen=  7  DSI=0.3651  PD_rate=  10.24 Hz
+gen=  8  DSI=0.3651  PD_rate=  10.24 Hz
+gen=  9  DSI=0.3651  PD_rate=  10.24 Hz
+gen= 10  DSI=0.3651  PD_rate=  10.24 Hz
+
+--- TOP 10 legit cells (DSI < 1.0): n_legit = 1338 ---
+gen=  7  DSI=0.3651  PD_rate=  10.24 Hz
+gen=  8  DSI=0.3651  PD_rate=  10.24 Hz
+gen=  9  DSI=0.3651  PD_rate=  10.24 Hz
+gen= 10  DSI=0.3651  PD_rate=  10.24 Hz
+gen= 11  DSI=0.3651  PD_rate=  10.24 Hz
+gen= 12  DSI=0.3651  PD_rate=  10.24 Hz
+gen= 13  DSI=0.3651  PD_rate=  10.24 Hz
+gen= 14  DSI=0.3651  PD_rate=  10.24 Hz
+gen=  7  DSI=0.3548  PD_rate=   5.00 Hz
+gen=  8  DSI=0.3548  PD_rate=   5.00 Hz
+
+--- TOP 10 by PD_rate ---
+gen= 10  DSI=0.0017  PD_rate=  71.67 Hz
+gen= 11  DSI=0.0017  PD_rate=  71.67 Hz
+gen= 12  DSI=0.0017  PD_rate=  71.67 Hz
+gen= 13  DSI=0.0017  PD_rate=  71.67 Hz
+gen= 14  DSI=0.0017  PD_rate=  71.67 Hz
+gen= 13  DSI=0.0017  PD_rate=  70.00 Hz
+gen= 14  DSI=0.0017  PD_rate=  70.00 Hz
+gen= 14  DSI=0.0000  PD_rate=  66.43 Hz
+gen= 13  DSI=0.0056  PD_rate=  64.29 Hz
+gen= 14  DSI=0.0056  PD_rate=  64.29 Hz
+
+--- JOINT PASS (DSI>=0.5 AND PD>=30 Hz) unique cells: 2 ---
+gen= 10  DSI=1.0000  PD_rate=  35.00 Hz
+gen= 14  DSI=1.0000  PD_rate=  45.24 Hz
+
+DSI==1.0 (silence-guard artefacts) count: 6
+DSI>=0.5 count: 6
+PD>=30  count: 634
