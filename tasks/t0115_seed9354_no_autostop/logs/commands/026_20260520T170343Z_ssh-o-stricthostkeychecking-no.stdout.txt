@@ -1,0 +1,12 @@
+NVIDIA RTX A5000, 24564 MiB, 580.82.07
+---
+Python 3.12.13
+pip 25.0.1 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)
+---
+overlay          40G  6.0M   40G   1% /
+---
+128
+               total        used        free      shared  buff/cache   available
+Mem:           251Gi       118Gi        84Gi        15Gi        66Gi       132Gi
+model name	: AMD EPYC 7713P 64-Core Processor
+12.14

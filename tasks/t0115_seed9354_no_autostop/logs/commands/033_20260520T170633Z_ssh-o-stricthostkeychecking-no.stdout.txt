@@ -1,0 +1,57 @@
+Thread Safe
+Translating skt80.mod into /root/t0115_workdir/mods/x86_64/skt80.c
+Thread Safe
+ -> [32mCompiling[0m bkt80.c
+Thread Safe
+ -> [32mCompiling[0m calt80.c
+ -> [32mCompiling[0m catt80.c
+ -> [32mCompiling[0m iht80.c
+ -> [32mCompiling[0m kdrt80.c
+ -> [32mCompiling[0m kv3t80.c
+ -> [32mCompiling[0m kv4t80.c
+ -> [32mCompiling[0m kv7t80.c
+ -> [32mCompiling[0m napt80.c
+ -> [32mCompiling[0m nart80.c
+ -> [32mCompiling[0m nav16t80.c
+ -> [32mCompiling[0m skahpt80.c
+ -> [32mCompiling[0m skt80.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+---
+total 572
+drwxr-xr-x 3 root root   4096 May 20 17:06 .
+drwxr-xr-x 3 root root   4096 May 20 17:06 ..
+drwxr-xr-x 2 root root     35 May 20 17:06 .libs
+-rw-r--r-- 1 root root  15793 May 20 17:06 bkt80.c
+-rw-r--r-- 1 root root  15096 May 20 17:06 bkt80.o
+-rw-r--r-- 1 root root  14985 May 20 17:06 calt80.c
+-rw-r--r-- 1 root root  13304 May 20 17:06 calt80.o
+-rw-r--r-- 1 root root  14626 May 20 17:06 catt80.c
+-rw-r--r-- 1 root root  12952 May 20 17:06 catt80.o
+-rw-r--r-- 1 root root  14354 May 20 17:06 iht80.c
+-rw-r--r-- 1 root root  12248 May 20 17:06 iht80.o
+-rw-r--r-- 1 root root  14745 May 20 17:06 kdrt80.c
+-rw-r--r-- 1 root root  12912 May 20 17:06 kdrt80.o
+-rw-r--r-- 1 root root  13324 May 20 17:06 kv3t80.c
+-rw-r--r-- 1 root root  12128 May 20 17:06 kv3t80.o
+-rw-r--r-- 1 root root  14354 May 20 17:06 kv4t80.c
+-rw-r--r-- 1 root root  12728 May 20 17:06 kv4t80.o
+-rw-r--r-- 1 root root  14151 May 20 17:06 kv7t80.c
+-rw-r--r-- 1 root root  13344 May 20 17:06 kv7t80.o
+-rwxr-xr-x 1 root root 118704 May 20 17:06 libnrnmech.so
+-rw-r--r-- 1 root root   3814 May 20 17:06 makemod2c_inc
+-rw-r--r-- 1 root root   1473 May 20 17:06 mod_func.cpp
+-rw-r--r-- 1 root root   4192 May 20 17:06 mod_func.o
+-rw-r--r-- 1 root root  13281 May 20 17:06 napt80.c
+-rw-r--r-- 1 root root  12064 May 20 17:06 napt80.o
+-rw-r--r-- 1 root root  15459 May 20 17:06 nart80.c
+-rw-r--r-- 1 root root  14064 May 20 17:06 nart80.o
+-rw-r--r-- 1 root root  14650 May 20 17:06 nav16t80.c
+-rw-r--r-- 1 root root  13000 May 20 17:06 nav16t80.o
+-rw-r--r-- 1 root root  15712 May 20 17:06 skahpt80.c
+-rw-r--r-- 1 root root  14480 May 20 17:06 skahpt80.o
+-rw-r--r-- 1 root root  14836 May 20 17:06 skt80.c
+-rw-r--r-- 1 root root  13728 May 20 17:06 skt80.o
+-rwxr-xr-x 1 root root   4455 May 20 17:06 special
+-rwxr-xr-x 1 root root  16696 May 20 17:06 special.nrn

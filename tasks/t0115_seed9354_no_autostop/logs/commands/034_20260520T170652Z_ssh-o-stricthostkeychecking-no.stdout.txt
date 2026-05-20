@@ -1,0 +1,7 @@
+hasattr(h, bkt80) = True
+hasattr(h, nav16t80) = True
+hasattr(h, skahpt80) = True
+hasattr(h, skt80) = True
+hasattr(h, calt80) = True
+hasattr(h, kdrt80) = True
+hasattr(h, napt80) = True

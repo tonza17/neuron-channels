@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "vastai create instance 25209337 --image python:3.12-bookworm --disk 40 --ssh --label neuron-channels/t0115_seed9354_no_autostop --onstart-cmd mkdir -p /root/.ssh && chmod 700 /root/.ssh && echo \"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKX8HNJVobKPStUhgjTLgutEc8tzrLTuaRR5dpVMBHdo md1avn-t0115\" >> /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys && touch /root/.no_auto_tmux && echo onstart_done > /root/onstart.marker --raw",
+  "exit_code": 0,
+  "duration_seconds": 2.092,
+  "started_at": "2026-05-20T16:52:52Z",
+  "completed_at": "2026-05-20T16:52:54Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "008_20260520T165252Z_vastai-create-instance.stdout.txt",
+  "stderr_file": "008_20260520T165252Z_vastai-create-instance.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 11678 root@ssh7.vast.ai cd /root/t0115_workdir/mods && python3 -c 'from neuron import h; print(\"hasattr(h, bkt80) =\", hasattr(h, \"bkt80\")); print(\"hasattr(h, nav16t80) =\", hasattr(h, \"nav16t80\")); print(\"hasattr(h, skahpt80) =\", hasattr(h, \"skahpt80\")); print(\"hasattr(h, skt80) =\", hasattr(h, \"skt80\")); print(\"hasattr(h, calt80) =\", hasattr(h, \"calt80\")); print(\"hasattr(h, kdrt80) =\", hasattr(h, \"kdrt80\")); print(\"hasattr(h, napt80) =\", hasattr(h, \"napt80\"))'",
+  "exit_code": 0,
+  "duration_seconds": 4.732,
+  "started_at": "2026-05-20T17:06:52Z",
+  "completed_at": "2026-05-20T17:06:57Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "034_20260520T170652Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "034_20260520T170652Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 7,
+  "stderr_lines": 4,
+  "truncated": false
+}
