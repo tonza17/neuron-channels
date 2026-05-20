@@ -5,13 +5,13 @@
   "name": "Seed-2247 random-seed replicate of t0106 long 2-direction NSGA-II",
   "short_description": "Re-run the t0106 NSGA-II substrate with a randomly drawn GA seed (2247), pool-restart-every=10, and HV-plateau auto-stop to add a third independent seed point for the substrate-rate confirmation.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0106_long_pdnd_nsga2_300gen",
     "t0112_t0106_seed77_replicate"
   ],
   "start_time": "2026-05-19T23:35:08Z",
-  "end_time": null,
+  "end_time": "2026-05-20T02:50:00Z",
   "expected_assets": {
     "predictions": 1
   },
