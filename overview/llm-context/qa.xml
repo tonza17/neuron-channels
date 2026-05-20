@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-05-20T02:55:14Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-05-20T16:25:38Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>631782</char_count>
-    <byte_count>632905</byte_count>
-    <estimated_tokens>157945</estimated_tokens>
+    <char_count>633310</char_count>
+    <byte_count>634437</byte_count>
+    <estimated_tokens>158327</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -217,9 +217,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0111_brainstorm_results_22</id>
         <id>t0112_t0106_seed77_replicate</id>
         <id>t0113_t0106_seed2247_replicate</id>
+        <id>t0114_seed7755_no_autostop</id>
       </source_ids>
       <content>
-Completed tasks: 106
+Completed tasks: 107
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -856,6 +857,12 @@ ID: t0113_t0106_seed2247_replicate
 Completed: 2026-05-20
 Short description: Re-run the t0106 NSGA-II substrate with a randomly drawn GA seed (2247), pool-restart-every=10, and HV-plateau auto-stop to add a third independent seed point for the substrate-rate confirmation.
 Result summary: t0113 - Seed-2247 Random-Seed Replicate of t0106: Results Summary Summary Seed 2247 reaches **0 LEGIT joint-pass cells** (DSI &gt;= 0.5 AND PD &gt;= 30 Hz with the silence-guard excluded) on the same 68-d Bed B + 14-d morphology substrate, while the 2 cells the asset records as joint-pass-unique are both DSI = 1.0 silence-guard saturations (1-spike PD / 0-spike ND), not biological selectivity. The HV-plateau detector fired at gen 14 (8% of `N_GEN = 60`, well below both t0106 gen 40 and t0112 gen 21), the per-generation wall-clock averaged **160 s/gen** on a 64-core EPYC 7B13 (3.9x faster than t0112&#x27;s 620 s/gen baseline because the instance had 2x more cores), and total task spend was **$0.4773**...
+
+## Seed-7755 NSGA-II replicate of t0106 with auto-stop disabled
+ID: t0114_seed7755_no_autostop
+Completed: 2026-05-20
+Short description: Re-run t0106 NSGA-II substrate with random seed 7755, _POOL_RESTART_EVERY=10, HV-plateau auto-stop DISABLED; runs to gen ceiling / budget cap. Implements S-0113-03 live.
+Result summary: t0114 - Seed-7755 NSGA-II Replicate of t0106 with HV-Plateau Auto-Stop Disabled: Results Summary Summary Seed 7755 with the HV-plateau auto-stop DISABLED reached **484 unique LEGIT joint-pass cells** (DSI ≥ 0.5 AND PD-rate ≥ 30 Hz AND DSI &lt; 0.9999) across **5,952 evaluations / 62 NSGA-II generations** on the same 68-d Bed B + 14-d morphology substrate as t0106/t0112/t0113. The run terminated by **operator stop** (not by any auto-stop rule) after the HV trajectory visibly plateaued near HV = 111.54, vindicating S-0113-03&#x27;s hypothesis that the t0113 14-gen plateau was a premature trigger; the same protocol on seed 7755 ran for 4.4x more generations and reached **70x more LEGIT joint-pass cells...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -865,9 +872,10 @@ Result summary: t0113 - Seed-2247 Random-Seed Replicate of t0106: Results Summar
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0115_seed9354_no_autostop</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -888,6 +896,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled
+ID: t0115_seed9354_no_autostop
+Status: not_started
+Effective date: 2026-05-20
+Short description: Re-run t0106 NSGA-II substrate with random seed 9354, _POOL_RESTART_EVERY=10, HV-plateau auto-stop DISABLED; final 5th seed for S-0112-01 batch. Implements S-0113-03 live.
+Dependencies: t0106_long_pdnd_nsga2_300gen, t0114_seed7755_no_autostop
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

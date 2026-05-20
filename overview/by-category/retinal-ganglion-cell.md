@@ -6,10 +6,10 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (44)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(84)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(85)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (3)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
-(10)](../predictions/by-category/retinal-ganglion-cell.md)
+(11)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -2608,7 +2608,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (75 open, 9 closed)
+## Suggestions (76 open, 9 closed)
+
+<details>
+<summary>📊 <strong>8-direction polar re-evaluation of t0114's 6 strict Pareto cells
+(mirrors S-0112-05 / S-0113-04)</strong> (S-0114-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-20 | **Source**:
+[t0114_seed7755_no_autostop](../../tasks/t0114_seed7755_no_autostop/)
+
+t0114's 6 strict Pareto cells span the DSI/PD-rate frontier corner: best LEGIT DSI=0.9926 at
+PD=63.81 Hz (cell_id 1), best PD=112.86 Hz at DSI=0.0271 (cell_id 5), and DSI=0.9873 /
+PD=111.67 Hz (cell_id 2) — the first 4-seed run to produce DSI~0.99 AND PD>100 Hz
+simultaneously. t0107 found 2-direction ratio DSI overstates 8-direction vector-sum DSI by
+~0.42 absolute on t0106 high-DSI cells; applied here yields ~0.57 (vs Trenholm2013's 0.76 /
+Oesch2005's 0.74 baselines). Concrete action: re-evaluate all 6 strict Pareto cells (plus 2
+silence-guard ceiling cells for completeness) at 8 directions every 45 deg using t0107's
+protocol with matched N_EVAL_SEEDS. Decision: confirm whether the 4-seed best legit cell is
+biologically plausible under 8-direction vector-sum DSI. Distinct from S-0112-05 / S-0113-04 /
+S-0106-03. Recommended task types: experiment-run, comparative-analysis. Cost: <$0.50.
+
+</details>
 
 <details>
 <summary>📂 <strong>Download Bae et al. 2018 dense EM reconstructions for Baden

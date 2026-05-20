@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-20T02:55:14Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-20T16:25:38Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>474241</char_count>
-    <byte_count>474409</byte_count>
-    <estimated_tokens>118560</estimated_tokens>
+    <char_count>484043</char_count>
+    <byte_count>484227</byte_count>
+    <estimated_tokens>121010</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -450,9 +450,17 @@
         <id>S-0113-06</id>
         <id>S-0113-07</id>
         <id>S-0113-08</id>
+        <id>S-0114-01</id>
+        <id>S-0114-02</id>
+        <id>S-0114-03</id>
+        <id>S-0114-04</id>
+        <id>S-0114-05</id>
+        <id>S-0114-06</id>
+        <id>S-0114-07</id>
+        <id>S-0114-08</id>
       </source_ids>
       <content>
-Suggestions: 433
+Suggestions: 441
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -5310,6 +5318,96 @@ Categories: compartmental-modeling, direction-selectivity
 Date added: 2026-05-20
 
 t0106 had 1 silence-guard DSI=1.0 cell, t0112 had 0, t0113 has 2. If silence-guard cells cluster in a specific 68-d region (e.g., low somatic Nav + high Kv4 + central soma), they represent a reproducible &#x27;pathological basin&#x27; the NSGA-II driver should avoid. If scattered randomly, they are seed-specific artefacts and no driver change is needed. Pool the 3 silence-guard cells from t0106 and t0113 plus a control set of 50 high-PD-low-DSI cells from each task; run hierarchical clustering on z-scored 68-d vectors (using S-0112-04&#x27;s metric if available). Decision: if silence-guard cells cluster together with NMI &gt; 0.7 vs random samples, add a &#x27;silence-pathology penalty&#x27; to the NSGA-II objective; otherwise no driver change. DISTINCT from S-0112-08 (clusters JOINT-PASS cells across seeds, not silence-guard cells). Recommended task types: data-analysis, comparative-analysis. Cost: &lt;$0.20.
+
+## Adopt (WINDOW=3, REL_THRESHOLD=0.015) as new project-default HV-plateau detector constants
+ID: S-0114-01
+Status: active
+Priority: high
+Kind: technique
+Source task: t0114_seed7755_no_autostop
+Source paper: 10.1371_journal.pcbi.1012039
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+t0114&#x27;s offline detector replay (4 windows x 6 thresholds x 4 HV trajectories = 96 cells) selects (W*, T*) = (3, 0.015) as the smallest deviation from current (W=2, T=0.01) that (a) fires on t0106 at gen 39 within [20, 60], (b) does NOT fire prematurely on t0113&#x27;s recorded 14 gens (eliminates the gen-13 false positive), and (c) fires on t0114 at gen 26, inside Mohacsi2024&#x27;s 20-60 gen convergence band. Concrete action: update the HV-plateau detector constants in the NSGA-II driver / skill template from (WINDOW=2, REL_THRESHOLD=0.01) to (WINDOW=3, REL_THRESHOLD=0.015); cite the 4-trajectory replay as design justification. Formal realisation of the recommendation prepared but not adopted in S-0113-03. Recommended task types: infrastructure-setup, data-analysis. Cost: &lt;$0.10.
+
+## Execute t0115 seed-9354 NSGA-II run as the 5th seed completing the S-0112-01 substrate-rate batch
+ID: S-0114-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0114_seed7755_no_autostop
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+S-0112-01 requires a 5-seed sample at cadence-10 with auto-stop disabled to upgrade the substrate-rate estimate from 4-seed (44/77/2247/7755) to 5-seed. t0114 advanced this from 3 to 4 seeds (mean 2.93%, SE 1.86%, 95% CI -0.71% to +6.56% still brackets Hay 2011&#x27;s 0.40% and Druckmann 2007&#x27;s 0.10%). The 5th seed is needed to tighten the SE below the 0.40% Hay envelope; without it, the substrate-rate point estimate (currently 7.3x above the Hay 2011 envelope) cannot be claimed at p&lt;0.05 significance. Concrete action: execute the already-scaffolded t0115_seed9354_no_autostop task (seed 9354, auto-stop disabled, cadence-10, gen ceiling 300, $25 cap), pool the 5-seed results, write the canonical substrate-rate report. The task scaffold already exists on main with source_suggestion=S-0112-01; this suggestion is the formal record that the 5th seed is being executed via t0115. Recommended task types: experiment-run. Cost: ~$1-3 (one Vast.ai EPYC run, matching t0114&#x27;s $1.13 spend).
+
+## 8-direction polar re-evaluation of t0114&#x27;s 6 strict Pareto cells (mirrors S-0112-05 / S-0113-04)
+ID: S-0114-03
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0114_seed7755_no_autostop
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell
+Date added: 2026-05-20
+
+t0114&#x27;s 6 strict Pareto cells span the DSI/PD-rate frontier corner: best LEGIT DSI=0.9926 at PD=63.81 Hz (cell_id 1), best PD=112.86 Hz at DSI=0.0271 (cell_id 5), and DSI=0.9873 / PD=111.67 Hz (cell_id 2) — the first 4-seed run to produce DSI~0.99 AND PD&gt;100 Hz simultaneously. t0107 found 2-direction ratio DSI overstates 8-direction vector-sum DSI by ~0.42 absolute on t0106 high-DSI cells; applied here yields ~0.57 (vs Trenholm2013&#x27;s 0.76 / Oesch2005&#x27;s 0.74 baselines). Concrete action: re-evaluate all 6 strict Pareto cells (plus 2 silence-guard ceiling cells for completeness) at 8 directions every 45 deg using t0107&#x27;s protocol with matched N_EVAL_SEEDS. Decision: confirm whether the 4-seed best legit cell is biologically plausible under 8-direction vector-sum DSI. Distinct from S-0112-05 / S-0113-04 / S-0106-03. Recommended task types: experiment-run, comparative-analysis. Cost: &lt;$0.50.
+
+## Pool-restart cadence sweep _POOL_RESTART_EVERY in {5, 15, 20} for wall-clock vs exploration tradeoff
+ID: S-0114-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0114_seed7755_no_autostop
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+t0114 confirmed _POOL_RESTART_EVERY=10 delivers stable wall-clock (198 s/gen on 128-thread EPYC, 484 LEGIT joint-pass cells in 62 gens) on the 68-d substrate. Cadence-10 was inherited from t0112 / t0113 without an isolated sensitivity study. Concrete action: replicate t0114&#x27;s exact protocol (seed 7755, auto-stop disabled, 60-gen ceiling) at _POOL_RESTART_EVERY in {5, 15, 20} — three runs at the same seed isolates the cadence effect. Report per-cadence: (a) wall-clock per gen, (b) LEGIT joint-pass yield at gen 60, (c) HV trajectory shape, (d) total spend. Hypothesis: cadence 5 increases worker-init overhead but may reduce silence-guard accumulation; cadence 20 speeds wall-clock but risks worker-memory drift. Decision: adopt the cadence that maximises (LEGIT cells per dollar). Recommended task types: experiment-run, comparative-analysis. Cost: ~$3-5.
+
+## Characterise t0114&#x27;s high-DSI high-PD Pareto cluster: morphologies, basin shape, ancestry
+ID: S-0114-05
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0114_seed7755_no_autostop
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+t0114&#x27;s strict Pareto front and top-50 LEGIT joint-pass set show a notable cluster (gen 47-61) with DSI in [0.987, 0.993] and PD in [59, 112] Hz — bracketed by Pareto cell_id 1 (DSI=0.9926, PD=63.81 Hz) and cell_id 2 (DSI=0.9873, PD=111.67 Hz). The cluster looks like a Pareto-front &#x27;fissure&#x27;: simultaneously high-DSI AND high-PD configurations absent from t0106 (best legit DSI at PD=49 Hz, not 100+). Concrete action: extract cluster cells (LEGIT joint-pass with DSI &gt; 0.95 AND PD &gt; 60 Hz, ~30-50 expected), compute (a) z-scored 68-d nearest-neighbour distances within the cluster, (b) NSGA-II ancestry / lineage from generation provenance, (c) per-parameter median +/- IQR to find tightly-constrained vs free dimensions. Decision: if 5+ parameters are tightly constrained, name the cluster as a &#x27;high-PD high-DSI basin&#x27; for seeded re-exploration. Distinct from S-0112-08 and S-0113-08. Recommended task types: data-analysis, comparative-analysis. Cost: &lt;$0.30.
+
+## Build nsga2-stop CLI helper or SIGTERM handler to replace awkward intervention/stop.md UX
+ID: S-0114-06
+Status: active
+Priority: low
+Kind: library
+Source task: t0114_seed7755_no_autostop
+Categories: compartmental-modeling
+Date added: 2026-05-20
+
+t0114&#x27;s run was terminated by operator stop via the intervention/stop.md sentinel file: the operator must SSH into the Vast.ai instance, create a magic file in the task folder, and the next polling cycle picks it up. This works but is awkward over high-latency SSH and requires remembering the exact filename. Concrete action: build a small CLI nsga2-stop that writes the sentinel file in one command (e.g., `nsga2-stop --task t0114_seed7755_no_autostop`), and / or wire a SIGTERM handler into nsga2_driver.py that triggers the same graceful-shutdown path (current SIGTERM behaviour is abrupt kill, losing in-progress generation). Reduces operator-stop latency from ~30 s to ~2 s. Reusable across all NSGA-II tasks. Recommended task types: write-library, infrastructure-setup. Cost: &lt;$0.10.
+
+## Resolve recurring dill-checkpoint pool-pickling failure: fix or formally retire dill resume channel
+ID: S-0114-07
+Status: active
+Priority: high
+Kind: library
+Source task: t0114_seed7755_no_autostop
+Categories: compartmental-modeling
+Date added: 2026-05-20
+
+t0114&#x27;s per-generation dill checkpoint failed on all 62 gens with the same NotImplementedError (&#x27;pool objects cannot be passed between processes or pickled&#x27;) documented in S-0113-02. JSON-side resume works end-to-end so no runs were lost, but every gen logs a multi-line dill traceback polluting the step log. Root cause: pymoo&#x27;s StarmapParallelization wrapper holds a live multiprocessing.Pool that dill cannot serialise. Choose one: (a) __getstate__/__setstate__ on the wrapper to strip and re-attach problem.elementwise_runner, (b) swap dill for cloudpickle, or (c) deprecate the dill channel entirely and document JSON as the sole resume mechanism — removes log noise at zero risk. RECOMMENDED: (c) — JSON has been the only working resume channel across t0106/t0112/t0113/t0114; dill has produced zero successful resumes. Distinct from S-0113-02: t0114 confirms recurrence. Recommended task types: write-library, infrastructure-setup. Cost: &lt;$0.10.
+
+## Online validation of (W=3, T=0.015): re-run t0106 / t0113 / t0114 seeds with new detector live
+ID: S-0114-08
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0114_seed7755_no_autostop
+Source paper: 10.1371_journal.pcbi.1012039
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+The S-0114-01 (W*, T*) = (3, 0.015) recommendation is computed offline from 4 HV trajectories. It has NOT been validated by running NSGA-II online with the new constants. Concrete action: re-run two seeds end-to-end with the new detector active: (a) seed 44 (t0106) — should fire at gen 39 and stop, matching offline prediction; (b) seed 2247 (t0113) — should NOT fire within gen 14 (eliminating premature stop) and run to a longer plateau. Optional third: seed 7755 (t0114) — should fire at gen 26 instead of operator-stop at gen 62. Decision: if all match offline replay, formally close S-0114-01 and declare (W=3, T=0.015) the default. If any diverge, treat replay as biased and reopen (W*, T*) search with new live HV traces. Bonus: the live runs contribute additional seeds to the substrate-rate sample. Recommended task types: experiment-run, comparative-analysis. Cost: ~$3-6.
       </content>
     </section>
   </sections>

@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-84 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **75 open** (14
-high, 51 medium, 10 low), **9 closed**.
+85 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **76 open** (14
+high, 52 medium, 10 low), **9 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -369,6 +369,32 @@ Distinct from S-0054-02 (voltage-independent NMDA + scalar GABA) and S-0055-03 (
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>📊 <strong>8-direction polar re-evaluation of t0114's 6 strict Pareto cells
+(mirrors S-0112-05 / S-0113-04)</strong> (S-0114-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0114-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-20 |
+| **Source task** | [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0114's 6 strict Pareto cells span the DSI/PD-rate frontier corner: best LEGIT DSI=0.9926 at
+PD=63.81 Hz (cell_id 1), best PD=112.86 Hz at DSI=0.0271 (cell_id 5), and DSI=0.9873 /
+PD=111.67 Hz (cell_id 2) — the first 4-seed run to produce DSI~0.99 AND PD>100 Hz
+simultaneously. t0107 found 2-direction ratio DSI overstates 8-direction vector-sum DSI by
+~0.42 absolute on t0106 high-DSI cells; applied here yields ~0.57 (vs Trenholm2013's 0.76 /
+Oesch2005's 0.74 baselines). Concrete action: re-evaluate all 6 strict Pareto cells (plus 2
+silence-guard ceiling cells for completeness) at 8 directions every 45 deg using t0107's
+protocol with matched N_EVAL_SEEDS. Decision: confirm whether the 4-seed best legit cell is
+biologically plausible under 8-direction vector-sum DSI. Distinct from S-0112-05 / S-0113-04 /
+S-0106-03. Recommended task types: experiment-run, comparative-analysis. Cost: <$0.50.
+
+</details>
 
 <details>
 <summary>📚 <strong>Add a Starburst Amacrine Cell feedforward layer to drive
