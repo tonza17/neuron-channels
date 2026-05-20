@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Verbatim fork of t0114's research_code.md with seed substitution; no new code surveying needed.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-20T16:43:20Z",
-      "completed_at": null,
+      "completed_at": "2026-05-20T16:45:09Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
