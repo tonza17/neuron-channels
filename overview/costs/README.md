@@ -1,22 +1,22 @@
 # Project Costs
 
-Spent $58.79 of $75.00 USD. $16.21 remains overall and $16.21 remains before the 100% stop
+Spent $59.27 of $100.00 USD. $40.73 remains overall and $40.73 remains before the 100% stop
 threshold.
 
 ## Budget Summary
 
 | Field | Value |
 |-------|-------|
-| Total budget | $75.00 USD |
-| Total spent | $58.79 USD |
-| Budget left | $16.21 USD |
-| Budget left before stop threshold | $16.21 USD |
-| Spent percent | 78.39% |
-| Warn threshold | 80% ($60.00) |
-| Stop threshold | 100% ($75.00) |
+| Total budget | $100.00 USD |
+| Total spent | $59.27 USD |
+| Budget left | $40.73 USD |
+| Budget left before stop threshold | $40.73 USD |
+| Spent percent | 59.27% |
+| Warn threshold | 80% ($80.00) |
+| Stop threshold | 100% ($100.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 105 |
-| Tasks with non-zero spend | 13 |
+| Tasks with cost records | 106 |
+| Tasks with non-zero spend | 14 |
 | Skipped tasks | 8 |
 
 ## Service Totals
@@ -25,6 +25,7 @@ threshold.
 |-----|------------|
 | `vast_ai` | $39.21 |
 | `vast_ai_compute` | $3.93 |
+| `vast-ai` | $0.48 |
 
 ## Breakdown Totals
 
@@ -47,8 +48,11 @@ threshold.
 | `vast-ai-driver-overhead` | $0.74 |
 | `vast-ai-rtx-pro-4000-idle` | $0.65 |
 | `vast-ai-idle` | $0.43 |
+| `vast-ai-epyc-7b13-setup-idle` | $0.29 |
 | `vast-ai-epyc7532` | $0.15 |
+| `vast-ai-epyc-7b13-productive` | $0.15 |
 | `vast_ai_setup_and_smoke_gates` | $0.11 |
+| `vast-ai-failed-ssh-attempt` | $0.04 |
 | `vast-ai-setup` | $0.04 |
 | `api` | $0.00 |
 | `local_compute` | $0.00 |
@@ -73,6 +77,7 @@ threshold.
 | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | completed | $10.37 | $8.00 | yes |
 | [`t0107_t0106_polar_8dir_recheck`](../../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | completed | $0.15 | $8.00 | no |
 | [`t0112_t0106_seed77_replicate`](../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | completed | $1.99 | $8.00 | no |
+| [`t0113_t0106_seed2247_replicate`](../../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md) | completed | $0.48 | $25.00 | no |
 
 ## Skipped Tasks
 

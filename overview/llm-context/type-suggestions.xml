@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-19T21:54:48Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-20T02:55:14Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>464621</char_count>
-    <byte_count>464789</byte_count>
-    <estimated_tokens>116155</estimated_tokens>
+    <char_count>474241</char_count>
+    <byte_count>474409</byte_count>
+    <estimated_tokens>118560</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -442,9 +442,17 @@
         <id>S-0112-06</id>
         <id>S-0112-07</id>
         <id>S-0112-08</id>
+        <id>S-0113-01</id>
+        <id>S-0113-02</id>
+        <id>S-0113-03</id>
+        <id>S-0113-04</id>
+        <id>S-0113-05</id>
+        <id>S-0113-06</id>
+        <id>S-0113-07</id>
+        <id>S-0113-08</id>
       </source_ids>
       <content>
-Suggestions: 425
+Suggestions: 433
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -5213,6 +5221,95 @@ Categories: compartmental-modeling, direction-selectivity, dendritic-computation
 Date added: 2026-05-19
 
 t0106 (seed 44) produced 123 joint-pass cells; t0112 (seed 77) produced 7. Whether the two seeds find the same archetype, overlapping basins, or independent basins is unknown because the raw L2 metric is uninterpretable (see S-0112-04). Combine joint-pass cohorts from t0106, t0112, and any new S-0112-01 multi-seed runs, normalise per-dimension via S-0112-04, and run K-means / hierarchical clustering on the 68-d vectors with seed-of-origin as covariate. Decision: if cells cluster by seed-of-origin (NMI(cluster, seed) &gt; 0.5), each GA seed finds a private basin; if cells cluster by morphology archetype (ND-soma / central / PD-soma per t0108) with seed mixed within clusters, the substrate supports an archetype-conserved basin and t0108/t0110 findings extend across seeds. Recommended task types: data-analysis, comparative-analysis. Cost: &lt;$0.50.
+
+## Complete S-0112-01: two further random-draw GA seeds at cadence-10 to lift substrate-rate from 3-seed to 5-seed
+ID: S-0113-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0113_t0106_seed2247_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+S-0112-01 requires &gt;=3 additional GA seeds at cadence-10 to upgrade the substrate-rate estimate from a 2-point sample to a 5-point sample. t0113 contributed one (random seed 2247) yielding 0 LEGIT joint-pass cells; the 3-seed sample (44/77/2247) now spans 0.15%-3.29% with mean 1.26% +/- 1.01% SE, and the 95% CI (-0.73%, 3.25%) brackets BOTH Hay2011 (0.40%) and Druckmann2007 (0.10%) baselines and cannot reject either. Draw two further random seeds via secrets.randbelow(10000) (avoid the round-ish-low-number bias of seeds 44, 77 and the curated set 33/88/99) and run each as a minimum-change replicate of t0113 (same cadence-10, N_GEN=60, HV-plateau detector, evaluator). Each new seed = one task = one folder = one PR; pool the 5-seed sample for the final substrate-rate report. Recommended task types: experiment-run. Cost: ~$5 (2 seeds x ~$2-3 each).
+
+## Fix dill checkpoint pool-pickling failure in nsga2_driver.py: every gen across t0113 failed to dill-pickle
+ID: S-0113-02
+Status: active
+Priority: high
+Kind: library
+Source task: t0113_t0106_seed2247_replicate
+Categories: compartmental-modeling
+Date added: 2026-05-20
+
+t0113&#x27;s per-generation dill checkpoint failed on all 14 gens with `NotImplementedError: pool objects cannot be passed between processes or pickled`. Root cause: pymoo&#x27;s `StarmapParallelization` wrapper holds a live `multiprocessing.Pool` reference inside the Algorithm object that dill cannot serialise. JSON-side resume worked, so runs were not lost, but the dill resume channel is broken across t0106/t0112/t0113. Fix options: (a) strip `problem.elementwise_runner` via `__getstate__/__setstate__` and re-attach on restore, (b) replace dill with cloudpickle, or (c) deprecate the dill checkpoint and make JSON checkpoint the sole resume mechanism (cleanest). Local-only, reusable across all downstream NSGA-II tasks. Recommended task types: write-library, infrastructure-setup. Cost: &lt;$0.10.
+
+## Widen HV-plateau detector window from 2 to 4-5 gens to prevent premature trigger by single-cell HV jumps
+ID: S-0113-03
+Status: active
+Priority: high
+Kind: technique
+Source task: t0113_t0106_seed2247_replicate
+Source paper: 10.1371_journal.pcbi.1012039
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+t0113&#x27;s HV-plateau detector fired at gen 14 (earliest of the 3-seed sample; t0112=21, t0106=40) and BELOW Mohacsi2024&#x27;s published 20-60 gen NSGA-II convergence range. The soft gen 11-12 transition (HV 35.98 -&gt; 36.07 = +0.24%) satisfied the 1%-over-2-gens condition BEFORE the gen 13-14 jump (+26% from a single silence-guard cell joining the archive). Current constants (WINDOW=2, REL_THRESHOLD=0.01) are too aggressive when a single cell can inflate HV &gt;20% in one step. Widen WINDOW to 4-5 gens (matches Mohacsi2024 lower bound) and/or tighten REL_THRESHOLD to 0.005. Validate by replaying the detector offline on the existing t0106/t0112/t0113 HV traces. DISTINCT from S-0112-03 (single-seed re-run with auto-stop disabled); this is a parameter-sweep + literature-grounded reparameterisation that becomes the new project default. Recommended task types: data-analysis, infrastructure-setup. Cost: &lt;$0.20.
+
+## 8-direction polar re-evaluation of t0113&#x27;s 2 silence-guard DSI=1.0 cells (mirrors S-0112-05 for t0113)
+ID: S-0113-04
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0113_t0106_seed2247_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+t0113&#x27;s 2 asset-declared joint-pass cells are both silence-guard DSI=1.0 saturations (1 PD spike / 0 ND spikes at PD=35.0 Hz and PD=45.24 Hz; the latter is also a strict Pareto cell). t0107 established that 2-direction ratio DSI overstates 8-direction vector-sum DSI by ~0.42 absolute on t0106 high-DSI cells, but that offset was measured on legit cells not silence-guard saturations. Re-evaluate both t0113 cells at 8 directions (every 45 deg) using t0107&#x27;s protocol with N_EVAL_SEEDS matched. Decision: if the cells fire &gt;=1 spike in &gt;=2 non-PD directions, they are not silence-only and the silence-guard threshold needs revisiting; otherwise they are confirmed artefacts and should be excluded from the substrate-rate denominator. Distinct from S-0112-05 (t0112 cells) and S-0106-03 (t0106 cells). Recommended task types: experiment-run, comparative-analysis. Cost: &lt;$0.50.
+
+## Per-cell HV-contribution analysis to identify silence-guard cells inflating HV beyond their biological value
+ID: S-0113-05
+Status: active
+Priority: medium
+Kind: library
+Source task: t0113_t0106_seed2247_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+t0113&#x27;s gen 13-&gt;14 HV jump of +26% (35.98 -&gt; 45.62) was driven by a single silence-guard DSI=1.0 cell joining the archive. The HV-plateau detector tolerated this jump as saturation onset, but the cell contributes ~zero biological selectivity (8-direction DSI ~0). Build an analysis script that, per generation across t0106/t0112/t0113, decomposes the HV increment into per-archive-member contributions and flags silence-guard cells (DSI=1.0 OR &lt;=1 PD spike) separately. Output: per-task `hv_contribution_by_cell.csv` and cross-task `silence_guard_hv_share.png`. Decision: if silence-guard cells contribute &gt;=20% of final HV in any seed, replace 2-D HV with a &#x27;legit-only HV&#x27; that excludes silence-guard saturations for the substrate-rate paper. Reusable across S-0112-01 / S-0113-01 multi-seed batch. Recommended task types: data-analysis, write-library. Cost: &lt;$0.20.
+
+## Tighten silence-guard threshold from SILENCE_SPIKE_COUNT_THRESHOLD=10 to &gt;=3 PD spikes minimum
+ID: S-0113-06
+Status: active
+Priority: medium
+Kind: technique
+Source task: t0113_t0106_seed2247_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+t0113&#x27;s 2 joint-pass cells are both silence-guard DSI=1.0 saturations with exactly 1 PD spike and 0 ND spikes. The current guard (`SILENCE_SPIKE_COUNT_THRESHOLD = 10`) accepts these single-spike configurations as legitimate, inflating both joint-pass count and the HV archive. t0106 had 1 such cell (in 123); t0112 had 0; t0113 has 2 of 2 - silence-guard contamination dominates at sparse seeds. Modify `evaluator.py` to require &gt;=3 PD spikes (or a minimum non-zero ND-spike floor) before computing ratio DSI; cells below the floor return DSI=NaN and are excluded from the archive. Reanalyse the existing t0106/t0112/t0113 predictions assets offline. Decision: if corrected t0113 joint-pass count is 0 but t0106/t0112 counts drop by &lt;=5%, adopt as project default. Recommended task types: data-analysis, infrastructure-setup. Cost: &lt;$0.20.
+
+## Latin-hypercube quasi-random GA-seed sampling for substrate-rate confirmation (replaces ad-hoc seed picks)
+ID: S-0113-07
+Status: active
+Priority: low
+Kind: library
+Source task: t0113_t0106_seed2247_replicate
+Categories: compartmental-modeling
+Date added: 2026-05-20
+
+The current 3-seed sample (44, 77, 2247) uses three independent draws (curated, semi-random, fully random) which does not guarantee good coverage of the seed-space [0, 9999]. For the final 5-seed substrate-rate report, draw the GA seeds via a 1-d Latin hypercube over [0, 9999] (or a Sobol&#x27; sequence) to ensure stratified coverage. This is methodologically defensible against reviewer pushback that the seed sample is too small to characterise substrate variance. The two further seeds for S-0113-01 / S-0112-01 should be drawn from the LH/Sobol&#x27; sequence conditional on the 3 already-used (44, 77, 2247) being part of the sequence. Output: a small `gaseed_sampler.py` library asset plus a one-line update to the seed-selection comment in `task_description.md` templates. Recommended task types: write-library, infrastructure-setup. Cost: &lt;$0.10 (local only).
+
+## Cross-seed 68-d signature of silence-guard cells: same parameter basin or seed-specific artefacts?
+ID: S-0113-08
+Status: active
+Priority: low
+Kind: experiment
+Source task: t0113_t0106_seed2247_replicate
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-20
+
+t0106 had 1 silence-guard DSI=1.0 cell, t0112 had 0, t0113 has 2. If silence-guard cells cluster in a specific 68-d region (e.g., low somatic Nav + high Kv4 + central soma), they represent a reproducible &#x27;pathological basin&#x27; the NSGA-II driver should avoid. If scattered randomly, they are seed-specific artefacts and no driver change is needed. Pool the 3 silence-guard cells from t0106 and t0113 plus a control set of 50 high-PD-low-DSI cells from each task; run hierarchical clustering on z-scored 68-d vectors (using S-0112-04&#x27;s metric if available). Decision: if silence-guard cells cluster together with NMI &gt; 0.7 vs random samples, add a &#x27;silence-pathology penalty&#x27; to the NSGA-II objective; otherwise no driver change. DISTINCT from S-0112-08 (clusters JOINT-PASS cells across seeds, not silence-guard cells). Recommended task types: data-analysis, comparative-analysis. Cost: &lt;$0.20.
       </content>
     </section>
   </sections>
