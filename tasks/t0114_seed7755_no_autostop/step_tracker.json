@@ -68,9 +68,9 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision Vast.ai EPYC-class instance matching t0113's 64-core 7B13 profile via /setup-remote-machine.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-20T09:21:30Z",
-      "completed_at": null,
+      "completed_at": "2026-05-20T09:40:12Z",
       "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
