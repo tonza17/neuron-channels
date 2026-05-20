@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Survey t0113 fork base (nsga2_driver.py, hv_plateau_watchdog.py, constants*.py) and prior HV traces from t0106/t0112/t0113.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-20T08:56:37Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,
