@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "bash -c set -e; cd tasks/t0113_t0106_seed2247_replicate/code; for f in *.py *.sh; do sed -i 's/t0112_t0106_seed77_replicate/t0113_t0106_seed2247_replicate/g' \"$f\"; done; echo 'Final check for t0112 refs:'; grep -l 't0112_t0106_seed77_replicate' *.py *.sh 2>/dev/null || echo 'None'; echo 'Upstream imports preserved:'; grep -c 'tasks.t0024_\\|tasks.t0080_\\|tasks.t0090_\\|tasks.t0092_' *.py | grep -v ':0' | head",
+  "exit_code": 0,
+  "duration_seconds": 3.296,
+  "started_at": "2026-05-20T00:40:07Z",
+  "completed_at": "2026-05-20T00:40:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "077_20260520T004007Z_bash-c-set-e-cd-tasks-t0113-t0106-seed22.stdout.txt",
+  "stderr_file": "077_20260520T004007Z_bash-c-set-e-cd-tasks-t0113-t0106-seed22.stderr.txt",
+  "stdout_lines": 13,
+  "stderr_lines": 0,
+  "truncated": false
+}

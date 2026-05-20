@@ -1,0 +1,9 @@
+extracted_ok
+5.9M	tasks/t0024_port_de_rosenroll_2026_dsgc
+14M	tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2
+2.9M	tasks/t0090_morphology_generator_diversity_test
+4.8M	tasks/t0092_diagnose_morphology_generator_silence
+2.5M	tasks/t0093_resweep_and_t0090_correction
+1.8M	tasks/t0113_t0106_seed2247_replicate
+4.9M	arf
+12K	project

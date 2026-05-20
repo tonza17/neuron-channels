@@ -1,0 +1,10 @@
+ begintemplate NEURONMainMenu // avoid some namespace pollution
+                            ^
+        xopen("stdrun.hoc")
+      execute1("{xopen("st...")
+    load_file(1, "/usr/local...")
+NEURON: The user defined name already exists: Exp2NMDA
+ in stdrun.hoc near line 0
+ ^
+        nrn_load_dll("/root/t011...")
+[smoke_gate] wrote tasks/t0113_t0106_seed2247_replicate/logs/steps/009_implementation/smoke_gate_report_remote.json: pass=False anchor1.pd=None (expected ~43.6)

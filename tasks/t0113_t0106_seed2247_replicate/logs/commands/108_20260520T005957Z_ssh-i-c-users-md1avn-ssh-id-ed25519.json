@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 27202 root@ssh7.vast.ai tmux kill-session -t nsga2 2>/dev/null; tmux new-session -d -s nsga2 'cd /root/t0113_workdir/repo && export PYTHONPATH=/root/t0113_workdir/repo && export NEURON_MODULE_OPTIONS=\"-nogui\" && python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config 2>&1 | tee /root/t0113_workdir/repo/tasks/t0113_t0106_seed2247_replicate/logs/steps/009_implementation/driver.log'; sleep 2; tmux list-sessions",
+  "exit_code": 0,
+  "duration_seconds": 5.989,
+  "started_at": "2026-05-20T00:59:57Z",
+  "completed_at": "2026-05-20T01:00:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "108_20260520T005957Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "108_20260520T005957Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 2,
+  "truncated": false
+}

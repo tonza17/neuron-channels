@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 27202 root@ssh7.vast.ai cd /root/t0113_workdir/repo && export PYTHONPATH=/root/t0113_workdir/repo && export NEURON_MODULE_OPTIONS='-nogui' && python -c 'import tasks.t0113_t0106_seed2247_replicate.code.constants as c; import tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver as drv; print(\"T0113_SEEDS=\", c.T0113_SEEDS, \"T0113_HARD_BUDGET_USD=\", c.T0113_HARD_BUDGET_USD, \"_POOL_RESTART_EVERY=\", drv._POOL_RESTART_EVERY); from tasks.t0113_t0106_seed2247_replicate.code.constants_morphology import N_GEN; print(\"N_GEN=\", N_GEN)'",
+  "exit_code": 0,
+  "duration_seconds": 3.668,
+  "started_at": "2026-05-20T00:49:35Z",
+  "completed_at": "2026-05-20T00:49:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "096_20260520T004935Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "096_20260520T004935Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 17,
+  "stderr_lines": 9,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -c \n# Smoke gate sub-checks 2-5 (the 4 fast property checks)\nfrom datetime import datetime, timezone\n\n# Check 4: pool restart cadence\nimport tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver as drv\nassert drv._POOL_RESTART_EVERY == 10, drv._POOL_RESTART_EVERY\nprint('[check 4] pool-restart cadence: _POOL_RESTART_EVERY=', drv._POOL_RESTART_EVERY)\n\n# Check 5: watchdog wiring\nfrom tasks.t0113_t0106_seed2247_replicate.code.cost_watchdog import make_watchdog_from_machine_log\nfrom tasks.t0113_t0106_seed2247_replicate.code.constants import T0113_HARD_BUDGET_USD, T0113_PER_INSTANCE_WATCHDOG_USD\nml = 'tasks/t0113_t0106_seed2247_replicate/logs/steps/008_setup-machines/machine_log.json'\nwd = make_watchdog_from_machine_log(machine_log_path=ml, instance_started_at=datetime.now(timezone.utc), hard_budget_usd=T0113_HARD_BUDGET_USD)\nassert abs(wd.hard_budget_usd - 25.00) < 1e-9, wd.hard_budget_usd\nprint('[check 5] watchdog: hard_budget_usd=', wd.hard_budget_usd)\nprint('[check 5] T0113_HARD_BUDGET_USD=', T0113_HARD_BUDGET_USD, 'T0113_PER_INSTANCE_WATCHDOG_USD=', T0113_PER_INSTANCE_WATCHDOG_USD)\n\n# Check 2: ratio DSI synthetic sanity for 2 directions (PD=0deg, ND=180deg)\n# At 2 directions, vector-sum DSI = |PD-ND|/(PD+ND) (ratio form)\nfrom tasks.t0113_t0106_seed2247_replicate.code.evaluator import _vector_sum_dsi\ndsi = _vector_sum_dsi(spike_counts_per_dir={0.0: [5], 180.0: [1]})\nassert abs(dsi - 4.0/6.0) < 1e-6, dsi\nprint('[check 2] ratio DSI synthetic: PD=5, ND=1 ->', dsi, '(expected 0.6667)')\n\n# Check 3: silence guard\nfrom tasks.t0113_t0106_seed2247_replicate.code.evaluator import SILENCE_SPIKE_COUNT_THRESHOLD\nassert SILENCE_SPIKE_COUNT_THRESHOLD == 10, SILENCE_SPIKE_COUNT_THRESHOLD\nprint('[check 3] silence guard threshold:', SILENCE_SPIKE_COUNT_THRESHOLD)\n\nprint('[checks 2,3,4,5] PASS')\n",
+  "exit_code": 1,
+  "duration_seconds": 1.346,
+  "started_at": "2026-05-20T00:45:22Z",
+  "completed_at": "2026-05-20T00:45:24Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "083_20260520T004522Z_uv-run-python.stdout.txt",
+  "stderr_file": "083_20260520T004522Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 9,
+  "truncated": false
+}

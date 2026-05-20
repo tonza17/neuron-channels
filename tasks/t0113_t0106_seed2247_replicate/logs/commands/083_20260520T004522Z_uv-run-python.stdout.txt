@@ -1,0 +1,1 @@
+[check 4] pool-restart cadence: _POOL_RESTART_EVERY= 10

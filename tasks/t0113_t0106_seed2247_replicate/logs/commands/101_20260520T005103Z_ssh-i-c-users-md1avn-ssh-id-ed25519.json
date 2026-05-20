@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 27202 root@ssh7.vast.ai cat /root/t0113_workdir/repo/tasks/t0113_t0106_seed2247_replicate/logs/steps/009_implementation/smoke_gate_report_remote.json 2>&1 | head -60",
+  "exit_code": 0,
+  "duration_seconds": 2.235,
+  "started_at": "2026-05-20T00:51:03Z",
+  "completed_at": "2026-05-20T00:51:05Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "101_20260520T005103Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "101_20260520T005103Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 60,
+  "stderr_lines": 2,
+  "truncated": false
+}

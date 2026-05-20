@@ -1,0 +1,3 @@
+[cost_watchdog] resolved hourly rate: $0.2361/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=2247] using 60 parallel workers
+[nsga2_driver seed=2247] starting: pop=96 max_gen=60 hard_cap=$25.00 rate=$0.2361/hr pool_restart_every=10

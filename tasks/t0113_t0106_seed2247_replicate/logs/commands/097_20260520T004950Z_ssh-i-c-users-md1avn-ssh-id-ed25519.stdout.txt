@@ -1,0 +1,11 @@
+Exp2NMDA.c
+Exp2NMDA.o
+HHst_noiseless.c
+HHst_noiseless.o
+cadecay.c
+cadecay.o
+libnrnmech.so
+makemod2c_inc
+mod_func.cpp
+mod_func.o
+-rwxr-xr-x 1 root root 64888 May 20 00:49 /root/t0113_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/libnrnmech.so

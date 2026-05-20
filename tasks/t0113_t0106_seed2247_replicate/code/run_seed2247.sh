@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# t0113 orchestration script for the Vast.ai instance.
+#
+# Runs the single NSGA-II seed (2247) with the $25 task / $20 per-instance cost
+# watchdog. Results land in tasks/t0113_t0106_seed2247_replicate/results/data/.
+#
+# REQ-8: --teardown-on-watchdog is passed so the driver's finally block
+# destroys the Vast.ai instance if the watchdog trips.
+#
+# Usage (on remote, inside tmux):
+#   cd /root/t0113_workdir
+#   bash tasks/t0113_t0106_seed2247_replicate/code/run_seed2247.sh
+
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "$0")/../../.." && pwd)"
+cd "${REPO_ROOT}"
+echo "[run_seed2247] repo root: ${REPO_ROOT}"
+
+# Use system python (or venv if present) per setup-machines decisions.
+PY="${VENV_PYTHON:-python}"
+if [[ -x "/root/t0113_workdir/.venv/bin/python" ]]; then
+    PY="/root/t0113_workdir/.venv/bin/python"
+fi
+
+export PYTHONPATH="${REPO_ROOT}:${PYTHONPATH:-}"
+
+# Phase A: build random init population (idempotent).
+echo "[run_seed2247] Phase A: building random init population for seed 2247"
+"${PY}" -u -m tasks.t0113_t0106_seed2247_replicate.code.random_init
+
+# Compile t0080 MOD library if needed (handled inside bootstrap on first call).
+echo "[run_seed2247] Compiling t0080 MOD library if not already present"
+"${PY}" -u -c "
+from tasks.t0113_t0106_seed2247_replicate.code import bootstrap  # noqa: F401
+print('[run_seed2247] bootstrap imported successfully')
+"
+
+SEED=2247
+echo "============================================================"
+echo "[run_seed2247] Seed ${SEED} starting at $(date -u +%FT%TZ)"
+echo "============================================================"
+"${PY}" -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver \
+    --seed "${SEED}" --save-algorithm-config --teardown-on-watchdog
+echo "[run_seed2247] Seed ${SEED} completed at $(date -u +%FT%TZ)"
+
+echo "[run_seed2247] Listing outputs:"
+ls -la tasks/t0113_t0106_seed2247_replicate/results/data/ || true

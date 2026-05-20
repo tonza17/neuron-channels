@@ -1,0 +1,11 @@
+extracted_ok
+-rw-r--r-- 1 1144306 1049089 35307 May 19 23:37 tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/data/pareto_front.json
+
+tasks/t0091_morphology_extended_nsga2_v1/results/data/:
+total 1384
+drwxr-xr-x 2 1144306 1049089   4096 May 19 23:37 .
+drwxr-xr-x 3 root    root        26 May 20 00:50 ..
+-rw-r--r-- 1 1144306 1049089 400836 May 19 23:37 all_evaluations.json
+-rw-r--r-- 1 1144306 1049089   4508 May 19 23:37 anchor_definitions.json
+-rw-r--r-- 1 1144306 1049089 240790 May 19 23:37 anchor_tracking.json
+-rw-r--r-- 1 1144306 1049089   5788 May 19 23:37 biological_priors_68d.json

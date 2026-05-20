@@ -1,0 +1,45 @@
+{
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "step": "implementation_local_smoke_gate",
+  "description": "Local 5-check smoke gate per plan REQ-6. Checks 2-5 pass on Windows; check 1 (single-eval driver run with anchor-1 ~43.6 Hz target) is deferred to the remote Vast.ai instance because no Windows nrnmech.dll exists for t0080 MODs locally. This matches the t0112 precedent (smoke_gate_report.json local + smoke_gate_report_remote.json on the remote).",
+  "checks": [
+    {
+      "id": 1,
+      "name": "single-eval driver run (anchor-1 bedb_like ~43.6 Hz)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "Executed on Vast.ai instance 37107202. anchor-1 bedb_like pd_rate_hz=44.523809523809526 (within +/-2 Hz of 43.6 Hz target), dsi_vector_sum=0.019, n_errors=0, elapsed_s=28.6. Report: logs/steps/009_implementation/smoke_gate_report_remote.json. All five anchors evaluated cleanly with the recompiled t0080 MOD library at /root/t0113_workdir/repo/tasks/t0080_*/code/mods/x86_64/libnrnmech.so."
+    },
+    {
+      "id": 2,
+      "name": "ratio DSI synthetic sanity (PD=5, ND=1 -> 0.6667 +/- 1e-6)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "_vector_sum_dsi(spike_counts_per_dir={0.0: [5], 180.0: [1]}) = 0.6666666666666666; abs error vs 4/6 < 1e-6."
+    },
+    {
+      "id": 3,
+      "name": "silence guard active (SILENCE_SPIKE_COUNT_THRESHOLD == 10)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "evaluator.SILENCE_SPIKE_COUNT_THRESHOLD == 10; verbatim from t0112."
+    },
+    {
+      "id": 4,
+      "name": "pool-restart sanity (_POOL_RESTART_EVERY == 10)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "nsga2_driver._POOL_RESTART_EVERY == 10; verbatim from t0112 per plan REQ-4."
+    },
+    {
+      "id": 5,
+      "name": "watchdog wiring (hard_budget_usd == 25.00)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "make_watchdog_from_machine_log(...) returns CostWatchdog with hard_budget_usd=25.0, hourly_rate=0.2361 from machine_log.json."
+    }
+  ],
+  "fast_checks_passed": true,
+  "all_checks_passed": true,
+  "notes": "All 5 checks green. Fast checks (2-5) ran on Windows; check 1 (single-eval anchor-1 ~43.6 Hz) ran on Vast.ai instance 37107202 after re-compiling t0080 MODs in-task-folder. anchor-1 pd_rate_hz=44.52 Hz (within +/-2 Hz tolerance per plan). Provisioning proceeds: (a) algorithm-critical diff vs t0112 is exactly the seed + budget rename + package-path rewrite (verified via diff -r --strip-trailing-cr); (b) constants T0113_SEEDS=(2247,), T0113_HARD_BUDGET_USD=25.00, _POOL_RESTART_EVERY=10, N_GEN=60 are correctly wired; (c) remote MOD library compiles and produces biologically plausible single-cell metrics."
+}

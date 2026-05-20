@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "bash -c set -e; src=tasks/t0112_t0106_seed77_replicate/code; dst=tasks/t0113_t0106_seed2247_replicate/code; for f in $src/*.py $src/*.sh; do bn=$(basename \"$f\"); if [ \"$bn\" = '__init__.py' ]; then continue; fi; cp \"$f\" \"$dst/$bn\"; done; ls $dst/ | wc -l",
+  "exit_code": 0,
+  "duration_seconds": 8.146,
+  "started_at": "2026-05-20T00:39:29Z",
+  "completed_at": "2026-05-20T00:39:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "075_20260520T003929Z_bash-c-set-e-src-tasks-t0112-t0106-seed7.stdout.txt",
+  "stderr_file": "075_20260520T003929Z_bash-c-set-e-src-tasks-t0112-t0106-seed7.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,60 @@
+{
+  "smoke_gate_pass": false,
+  "tolerances": {
+    "dsi": 0.05,
+    "pd_rate_hz": 1.0
+  },
+  "expected_pd_rate_hz": 43.6,
+  "anchors": [
+    {
+      "anchor_index": 0,
+      "anchor_name": "bedb_like",
+      "dsi_vector_sum": null,
+      "pd_rate_hz": null,
+      "robustness": null,
+      "is_unstable": true,
+      "n_errors": 1,
+      "elapsed_s": 0.0,
+      "error": "Compiled t0080 MOD library not found. Run nrnivmodl on the mods/ folder. Tried: /root/t0113_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/.libs/libnrnmech.so, /root/t0113_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/libnrnmech.so.",
+      "pd_within_tolerance": false,
+      "dsi_within_tolerance": false,
+      "expected_pd_rate_hz": 43.6
+    },
+    {
+      "anchor_index": 1,
+      "anchor_name": "symmetric",
+      "dsi_vector_sum": -1.0,
+      "pd_rate_hz": 0.0,
+      "robustness": 0.0,
+      "is_unstable": true,
+      "n_errors": 1,
+      "elapsed_s": 0.004068851470947266,
+      "error": null
+    },
+    {
+      "anchor_index": 2,
+      "anchor_name": "pd_asymmetric",
+      "dsi_vector_sum": -1.0,
+      "pd_rate_hz": 0.0,
+      "robustness": 0.0,
+      "is_unstable": true,
+      "n_errors": 1,
+      "elapsed_s": 0.005063772201538086,
+      "error": null
+    },
+    {
+      "anchor_index": 3,
+      "anchor_name": "nd_asymmetric",
+      "dsi_vector_sum": -1.0,
+      "pd_rate_hz": 0.0,
+      "robustness": 0.0,
+      "is_unstable": true,
+      "n_errors": 1,
+      "elapsed_s": 0.0035834312438964844,
+      "error": null
+    },
+    {
+      "anchor_index": 4,
+      "anchor_name": "alt_topology",
+      "dsi_vector_sum": -1.0,
+      "pd_rate_hz": 0.0,

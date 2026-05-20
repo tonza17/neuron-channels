@@ -1,0 +1,17 @@
+/root/t0113_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources
+Mod files: "././Exp2NMDA.mod" "././HHst_noiseless.mod" "././cadecay.mod"
+
+Creating 'x86_64' directory for .o files.
+
+ -> [32mCompiling[0m mod_func.cpp
+ -> [32mNMODL[0m .././Exp2NMDA.mod
+ -> [32mNMODL[0m .././HHst_noiseless.mod
+ -> [32mNMODL[0m .././cadecay.mod
+ -> [32mCompiling[0m Exp2NMDA.c
+ -> [32mCompiling[0m cadecay.c
+ -> [32mCompiling[0m HHst_noiseless.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+T0113_SEEDS= (2247,) T0113_HARD_BUDGET_USD= 25.0 _POOL_RESTART_EVERY= 10
+N_GEN= 60

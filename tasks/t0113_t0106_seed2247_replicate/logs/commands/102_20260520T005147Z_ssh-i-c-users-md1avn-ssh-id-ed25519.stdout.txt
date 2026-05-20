@@ -1,0 +1,2 @@
+/root/t0113_workdir/mods/x86_64/libnrnmech.so
+ls: cannot access '/root/t0113_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/': No such file or directory
