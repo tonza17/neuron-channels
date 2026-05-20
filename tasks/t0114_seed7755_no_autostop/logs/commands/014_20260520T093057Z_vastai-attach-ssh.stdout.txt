@@ -1,0 +1,1 @@
+{'success': True, 'msg': 'SSH key added to instance.', 'key': '{"id": 856172, "user_id": null, "default": null, "public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKX8HNJVobKPStUhgjTLgutEc8tzrLTuaRR5dpVMBHdo md1avn-t0114", "private_key": null, "created_at": 1779269458.6220293, "deleted_at": null}'}
