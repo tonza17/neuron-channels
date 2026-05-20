@@ -68,9 +68,9 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision a single Vast.ai CPU instance matching t0106/t0112 provisioning class (EPYC, >=100GB RAM, dph<=0.40).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-20T00:09:52Z",
-      "completed_at": null,
+      "completed_at": "2026-05-20T00:37:24Z",
       "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
