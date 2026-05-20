@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Write results/suggestions.json with follow-ups (5th seed for S-0112-01 batch completion, polar 8-dir recheck of t0114 joint-pass cells, etc.).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-20T16:09:31Z",
-      "completed_at": null,
+      "completed_at": "2026-05-20T16:16:43Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
