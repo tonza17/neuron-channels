@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "bash -c \nexport PYTHONIOENCODING=utf-8\nexport PYTHONUTF8=1\nSSH_KEY=\"/c/Users/md1avn/.ssh/id_ed25519\"\nSSH_HOST=\"ssh7.vast.ai\"\nSSH_PORT=11678\nREMOTE=\"root@${SSH_HOST}\"\n\nssh -i \"${SSH_KEY}\" -p \"${SSH_PORT}\" -o StrictHostKeyChecking=no \"${REMOTE}\" \"\ncd /root/t0115_workdir/repo\nPYTHONPATH=/root/t0115_workdir/repo python3 -c \\\"\nfrom pathlib import Path\nfrom unittest.mock import MagicMock\nimport tasks.t0115_seed9354_no_autostop.code.constants as c\nimport tasks.t0115_seed9354_no_autostop.code.constants_morphology as cm\nfrom tasks.t0115_seed9354_no_autostop.code.nsga2_driver import _build_termination, _POOL_RESTART_EVERY\nfrom tasks.t0115_seed9354_no_autostop.code.hv_plateau_watchdog import HVPlateauTermination, should_stop\n\nprint(\\\\\\\"REMOTE IMPORTS OK\\\\\\\")\nassert c.T0115_SEEDS == (9354,), c.T0115_SEEDS\nassert c.T0115_HARD_BUDGET_USD == 25.00, c.T0115_HARD_BUDGET_USD\nassert c.T0115_PER_INSTANCE_WATCHDOG_USD == 20.00, c.T0115_PER_INSTANCE_WATCHDOG_USD\nassert cm.N_GEN == 300, cm.N_GEN\nassert cm.POP_SIZE == 96, cm.POP_SIZE\nassert cm.N_EVAL_SEEDS == 3, cm.N_EVAL_SEEDS\nassert _POOL_RESTART_EVERY == 10, _POOL_RESTART_EVERY\nprint(f\\\\\\\"  T0115_SEEDS = {c.T0115_SEEDS}\\\\\\\")\nprint(f\\\\\\\"  T0115_HARD_BUDGET_USD = {c.T0115_HARD_BUDGET_USD}\\\\\\\")\nprint(f\\\\\\\"  T0115_PER_INSTANCE_WATCHDOG_USD = {c.T0115_PER_INSTANCE_WATCHDOG_USD}\\\\\\\")\nprint(f\\\\\\\"  N_GEN = {cm.N_GEN}\\\\\\\")\nprint(f\\\\\\\"  POP_SIZE = {cm.POP_SIZE}\\\\\\\")\nprint(f\\\\\\\"  N_EVAL_SEEDS = {cm.N_EVAL_SEEDS}\\\\\\\")\nprint(f\\\\\\\"  _POOL_RESTART_EVERY = {_POOL_RESTART_EVERY}\\\\\\\")\n\n# Build termination + verify no HVPlateauTermination\ncoll = _build_termination(n_max_gen=300, cost_watchdog=MagicMock(), seed=9354, stop_path=Path(\\\\\\\"intervention/stop.md\\\\\\\"))\nkinds = [type(t).__name__ for t in coll.terminations]\nprint(f\\\\\\\"  termination = {kinds}\\\\\\\")\nhas_hv = any(isinstance(t, HVPlateauTermination) for t in coll.terminations)\nprint(f\\\\\\\"  HVPlateauTermination in list: {has_hv}\\\\\\\")\nassert not has_hv, \\\\\\\"FAIL: HVPlateauTermination is in list!\\\\\\\"\nprint(\\\\\\\"ALL CHECKS PASSED\\\\\\\")\n\\\"\n\"\n",
+  "exit_code": 0,
+  "duration_seconds": 5.588,
+  "started_at": "2026-05-20T17:27:08Z",
+  "completed_at": "2026-05-20T17:27:14Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "048_20260520T172708Z_bash-c-export-pythonioencoding-utf-8-exp.stdout.txt",
+  "stderr_file": "048_20260520T172708Z_bash-c-export-pythonioencoding-utf-8-exp.stderr.txt",
+  "stdout_lines": 11,
+  "stderr_lines": 4,
+  "truncated": false
+}

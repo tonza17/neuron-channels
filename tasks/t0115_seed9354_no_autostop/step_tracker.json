@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Fork t0114 code verbatim with single constant patch (T0114_SEEDS=(7755,) -> T0115_SEEDS=(9354,)), smoke-gate, launch NSGA-II on Vast.ai. Wait for operator stop.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-20T17:11:52Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,

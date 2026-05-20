@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "bash -c \nexport PYTHONIOENCODING=utf-8\nexport PYTHONUTF8=1\nSSH_KEY=\"/c/Users/md1avn/.ssh/id_ed25519\"\nSSH_HOST=\"ssh7.vast.ai\"\nSSH_PORT=11678\nREMOTE=\"root@${SSH_HOST}\"\n\nssh -i \"${SSH_KEY}\" -p \"${SSH_PORT}\" -o StrictHostKeyChecking=no \"${REMOTE}\" \"\necho --- final tmux status ---\ntmux list-sessions\necho --- latest 4 hv_trace.jsonl lines ---\ntail -4 /root/t0115_workdir/repo/tasks/t0115_seed9354_no_autostop/logs/steps/009_implementation/hv_trace.jsonl\necho --- latest 3 tmux pane lines ---\ntmux capture-pane -t nsga2 -p -S -10\n\"\n",
+  "exit_code": 0,
+  "duration_seconds": 5.068,
+  "started_at": "2026-05-20T17:48:43Z",
+  "completed_at": "2026-05-20T17:48:48Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "058_20260520T174843Z_bash-c-export-pythonioencoding-utf-8-exp.stdout.txt",
+  "stderr_file": "058_20260520T174843Z_bash-c-export-pythonioencoding-utf-8-exp.stderr.txt",
+  "stdout_lines": 42,
+  "stderr_lines": 2,
+  "truncated": false
+}

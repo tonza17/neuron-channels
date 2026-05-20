@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "bash -c \nexport PYTHONIOENCODING=utf-8\nexport PYTHONUTF8=1\nSSH_KEY=\"/c/Users/md1avn/.ssh/id_ed25519\"\nSSH_HOST=\"ssh7.vast.ai\"\nSSH_PORT=11678\nREMOTE=\"root@${SSH_HOST}\"\n\necho \"[ssh] checking what t0024 sources need uploading ...\"\nls tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/*.mod 2>/dev/null | head -5\necho \"[scp] uploading t0024 mod sources ...\"\nmkdir -p /tmp/t0024_sources\ncp tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/*.mod /tmp/t0024_sources/ 2>/dev/null || echo \"no .mod files found\"\nls /tmp/t0024_sources/ 2>&1 | head -20\n",
+  "exit_code": 0,
+  "duration_seconds": 1.024,
+  "started_at": "2026-05-20T17:20:28Z",
+  "completed_at": "2026-05-20T17:20:29Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "039_20260520T172028Z_bash-c-export-pythonioencoding-utf-8-exp.stdout.txt",
+  "stderr_file": "039_20260520T172028Z_bash-c-export-pythonioencoding-utf-8-exp.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 0,
+  "truncated": false
+}

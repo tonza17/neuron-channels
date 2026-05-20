@@ -1,0 +1,49 @@
+--- tmux sessions ---
+nsga2: 1 windows (created Wed May 20 17:29:52 2026)
+--- pane content last 50 lines ---
+export PYTHONPATH=/root/t0115_workdir/repo
+Welcome to your vast.ai container! This session is running in `tmux`.
+To disconnect without closing your processes, press ctrl+b, release, then d.
+To disable auto-tmux, run `touch ~/.no_auto_tmux` and reconnect. See also https:
+//tmuxcheatsheet.com/
+cd /root/t0115_workdir/repo
+root@C.37161678:~/t0115_workdir/repo$ export PYTHONPATH=/root/t0115_workdir/repo
+root@C.37161678:~/t0115_workdir/repo$ cd /root/t0115_workdir/repo
+root@C.37161678:~/t0115_workdir/repo$ bash tasks/t0115_seed9354_no_autostop/code
+/run_seed9354.sh 2>&1 | tee /root/t0115_workdir/run_seed9354.log
+[run_seed9354] repo root: /root/t0115_workdir/repo
+[run_seed9354] Phase A: building random init population for seed 9354
+[random_init] seed=9354 wrote /root/t0115_workdir/repo/tasks/t0115_seed9354_no_a
+utostop/results/data/init_pop_seed9354.json shape=(96, 68)
+[run_seed9354] Compiling t0080 MOD library if not already present
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[run_seed9354] bootstrap imported successfully
+============================================================
+[run_seed9354] Seed 9354 starting at 2026-05-20T17:29:53Z
+[run_seed9354] N_GEN ceiling = 300; HV-plateau auto-stop DISABLED
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.2756/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=9354] using 60 parallel workers
+[nsga2_driver seed=9354] starting: pop=96 max_gen=300 hard_cap=$25.00 rate=$0.27
+56/hr pool_restart_every=10
+
+--- run log first 30 lines ---
+[run_seed9354] repo root: /root/t0115_workdir/repo
+[run_seed9354] Phase A: building random init population for seed 9354
+[random_init] seed=9354 wrote /root/t0115_workdir/repo/tasks/t0115_seed9354_no_autostop/results/data/init_pop_seed9354.json shape=(96, 68)
+[run_seed9354] Compiling t0080 MOD library if not already present
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[run_seed9354] bootstrap imported successfully
+============================================================
+[run_seed9354] Seed 9354 starting at 2026-05-20T17:29:53Z
+[run_seed9354] N_GEN ceiling = 300; HV-plateau auto-stop DISABLED
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.2756/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=9354] using 60 parallel workers
+[nsga2_driver seed=9354] starting: pop=96 max_gen=300 hard_cap=$25.00 rate=$0.2756/hr pool_restart_every=10

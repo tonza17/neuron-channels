@@ -1,0 +1,11 @@
+--- tasks/ list ---
+t0024_port_de_rosenroll_2026_dsgc
+t0080_bedb_mobo_v3_dendritic_spike_nsga2
+t0090_morphology_generator_diversity_test
+t0106_long_pdnd_nsga2_300gen
+t0112_t0106_seed77_replicate
+t0113_t0106_seed2247_replicate
+t0114_seed7755_no_autostop
+t0115_seed9354_no_autostop
+--- tasks/__init__.py exists ---
+ls: cannot access '/root/t0115_workdir/repo/tasks/__init__.py': No such file or directory

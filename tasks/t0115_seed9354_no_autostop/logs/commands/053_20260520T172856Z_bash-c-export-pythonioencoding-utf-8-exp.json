@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "bash -c \nexport PYTHONIOENCODING=utf-8\nexport PYTHONUTF8=1\nSSH_KEY=\"/c/Users/md1avn/.ssh/id_ed25519\"\nSSH_HOST=\"ssh7.vast.ai\"\nSSH_PORT=11678\nREMOTE=\"root@${SSH_HOST}\"\n\ncat > /tmp/relaunch.sh <<\"REMOTE_EOF\"\nset -e\n\n# Kill any existing nsga2 session\ntmux kill-session -t nsga2 2>/dev/null || true\n\n# Launch fresh nsga2 session\ncd /root/t0115_workdir/repo\ntmux new-session -d -s nsga2 -c /root/t0115_workdir/repo\ntmux send-keys -t nsga2 \"export PYTHONPATH=/root/t0115_workdir/repo\" Enter\ntmux send-keys -t nsga2 \"cd /root/t0115_workdir/repo\" Enter\ntmux send-keys -t nsga2 \"bash tasks/t0115_seed9354_no_autostop/code/run_seed9354.sh 2>&1 | tee /root/t0115_workdir/run_seed9354.log\" Enter\n\nsleep 8\necho --- tmux sessions ---\ntmux list-sessions\necho --- pane content (last 50 lines) ---\ntmux capture-pane -t nsga2 -p -S -50\necho --- run log first 30 lines ---\nhead -30 /root/t0115_workdir/run_seed9354.log 2>&1 || echo \"log not yet created\"\nREMOTE_EOF\n\nscp -i \"${SSH_KEY}\" -P \"${SSH_PORT}\" -o StrictHostKeyChecking=no /tmp/relaunch.sh \"${REMOTE}:/tmp/relaunch.sh\"\nssh -i \"${SSH_KEY}\" -p \"${SSH_PORT}\" -o StrictHostKeyChecking=no \"${REMOTE}\" \"bash /tmp/relaunch.sh\"\n",
+  "exit_code": 2,
+  "duration_seconds": 20.128,
+  "started_at": "2026-05-20T17:28:56Z",
+  "completed_at": "2026-05-20T17:29:16Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "053_20260520T172856Z_bash-c-export-pythonioencoding-utf-8-exp.stdout.txt",
+  "stderr_file": "053_20260520T172856Z_bash-c-export-pythonioencoding-utf-8-exp.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 5,
+  "truncated": false
+}

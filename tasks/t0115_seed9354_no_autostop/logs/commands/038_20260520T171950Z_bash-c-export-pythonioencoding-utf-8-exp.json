@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "bash -c \nexport PYTHONIOENCODING=utf-8\nexport PYTHONUTF8=1\nSSH_KEY=\"/c/Users/md1avn/.ssh/id_ed25519\"\nSSH_HOST=\"ssh7.vast.ai\"\nSSH_PORT=11678\nREMOTE=\"root@${SSH_HOST}\"\n\necho \"[scp] uploading tarball to ${REMOTE}:/tmp/t0115.tar.gz ...\"\nscp -i \"${SSH_KEY}\" -P \"${SSH_PORT}\" -o StrictHostKeyChecking=no /tmp/t0115.tar.gz \"${REMOTE}:/tmp/t0115.tar.gz\"\n\necho \"[ssh] extracting into /root/t0115_workdir/repo/ ...\"\nssh -i \"${SSH_KEY}\" -p \"${SSH_PORT}\" -o StrictHostKeyChecking=no \"${REMOTE}\" \"\nmkdir -p /root/t0115_workdir/repo\ncd /root/t0115_workdir/repo\ntar -xzf /tmp/t0115.tar.gz\nls -la tasks/t0115_seed9354_no_autostop/\necho --- code/ ---\nls tasks/t0115_seed9354_no_autostop/code/ | head -50\n\"\n",
+  "exit_code": 0,
+  "duration_seconds": 12.563,
+  "started_at": "2026-05-20T17:19:50Z",
+  "completed_at": "2026-05-20T17:20:02Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "038_20260520T171950Z_bash-c-export-pythonioencoding-utf-8-exp.stdout.txt",
+  "stderr_file": "038_20260520T171950Z_bash-c-export-pythonioencoding-utf-8-exp.stderr.txt",
+  "stdout_lines": 58,
+  "stderr_lines": 4,
+  "truncated": false
+}

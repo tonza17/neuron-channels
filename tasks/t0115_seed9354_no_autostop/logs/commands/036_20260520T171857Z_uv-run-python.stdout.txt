@@ -1,0 +1,7 @@
+[smoke_gate] wrote tasks\t0115_seed9354_no_autostop\logs\steps\009_implementation\smoke_gate.json: fast_checks_passed=True all_checks_passed=True
+  check 1: deferred_to_remote  -- single-eval driver run (anchor-1 bedb_like ~43.6 Hz)
+  check 2: ok  -- ratio DSI synthetic sanity (PD=5, ND=1 -> 0.6667 +/- 1e-6)
+  check 3: ok  -- silence guard active (SILENCE_SPIKE_COUNT_THRESHOLD == 10)
+  check 4: ok  -- pool-restart sanity (_POOL_RESTART_EVERY == 10)
+  check 5: ok  -- watchdog wiring (T0114_HARD_BUDGET_USD == 25.00)
+  check 6: ok  -- NEW: no HVPlateauTermination in live TerminationCollection (S-0113-03)

@@ -1,0 +1,11 @@
+REMOTE IMPORTS OK
+  T0115_SEEDS = (9354,)
+  T0115_HARD_BUDGET_USD = 25.0
+  T0115_PER_INSTANCE_WATCHDOG_USD = 20.0
+  N_GEN = 300
+  POP_SIZE = 96
+  N_EVAL_SEEDS = 3
+  _POOL_RESTART_EVERY = 10
+  termination = ['MaximumGenerationTermination', 'CostWatchdogTermination', 'OperatorStopTermination']
+  HVPlateauTermination in list: False
+ALL CHECKS PASSED

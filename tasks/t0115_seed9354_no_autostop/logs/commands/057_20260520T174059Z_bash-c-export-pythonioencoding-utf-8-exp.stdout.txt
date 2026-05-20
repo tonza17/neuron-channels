@@ -1,0 +1,51 @@
+[monitor] waiting 300s...
+--- tmux session alive? ---
+nsga2: 1 windows (created Wed May 20 17:29:52 2026)
+
+--- last 15 lines of tmux pane ---
+============================================================
+[run_seed9354] Seed 9354 starting at 2026-05-20T17:29:53Z
+[run_seed9354] N_GEN ceiling = 300; HV-plateau auto-stop DISABLED
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.2756/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=9354] using 60 parallel workers
+[nsga2_driver seed=9354] starting: pop=96 max_gen=300 hard_cap=$25.00 rate=$0.27
+56/hr pool_restart_every=10
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       96 |      2 |             - |             -
+[seed 9354 gen 1] HV=0.8037  pop_size=96  cost_so_far=$0.0090  elapsed=117s
+[nsga2_driver seed=9354 gen=1] WARNING: dill checkpoint failed (NotImplementedEr
+ror: pool objects cannot be passed between processes or pickled); trace + evalua
+tions still written
+     2 |      192 |      3 |  0.2058823529 |         ideal
+[seed 9354 gen 2] HV=0.8037  pop_size=96  cost_so_far=$0.0184  elapsed=240s
+[nsga2_driver seed=9354 gen=2] WARNING: dill checkpoint failed (NotImplementedEr
+ror: pool objects cannot be passed between processes or pickled); trace + evalua
+tions still written
+     3 |      288 |      5 |  0.5737704918 |         ideal
+[seed 9354 gen 3] HV=1.2638  pop_size=96  cost_so_far=$0.0316  elapsed=413s
+[nsga2_driver seed=9354 gen=3] WARNING: dill checkpoint failed (NotImplementedEr
+ror: pool objects cannot be passed between processes or pickled); trace + evalua
+tions still written
+     4 |      384 |      6 |  0.0137046719 |             f
+[seed 9354 gen 4] HV=1.3723  pop_size=96  cost_so_far=$0.0468  elapsed=611s
+[nsga2_driver seed=9354 gen=4] WARNING: dill checkpoint failed (NotImplementedEr
+ror: pool objects cannot be passed between processes or pickled); trace + evalua
+tions still written
+     5 |      480 |      6 |  0.1209007174 |             f
+[seed 9354 gen 5] HV=1.8798  pop_size=96  cost_so_far=$0.0662  elapsed=865s
+[nsga2_driver seed=9354 gen=5] WARNING: dill checkpoint failed (NotImplementedEr
+ror: pool objects cannot be passed between processes or pickled); trace + evalua
+tions still written
+
+
+--- hv_trace.jsonl ---
+{"gen": 1, "wall_clock_s": 117.22960019111633, "hv": 0.8036640678267566, "n_cells_evaluated": 96}
+{"gen": 2, "wall_clock_s": 239.80137658119202, "hv": 0.8036640678267568, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 412.8777596950531, "hv": 1.2637527513356164, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 610.9477849006653, "hv": 1.372251847176485, "n_cells_evaluated": 96}
+{"gen": 5, "wall_clock_s": 865.0271141529083, "hv": 1.8798053129195929, "n_cells_evaluated": 96}

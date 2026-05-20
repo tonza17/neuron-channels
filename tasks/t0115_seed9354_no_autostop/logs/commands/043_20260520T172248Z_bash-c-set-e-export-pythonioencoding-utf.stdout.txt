@@ -1,0 +1,9 @@
+[scp] uploading 33 MB tarball ...
+[ssh] extracting in /root/t0115_workdir/repo ...
+--- repo top level ---
+arf
+pyproject.toml
+tasks
+uv.lock
+--- tasks/ count ---
+8

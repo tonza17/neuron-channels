@@ -1,0 +1,8 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+
+real	0m21.605s
+user	0m0.202s
+sys	0m0.186s
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!

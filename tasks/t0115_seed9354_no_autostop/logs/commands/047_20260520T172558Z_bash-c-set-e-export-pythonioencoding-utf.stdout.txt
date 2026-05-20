@@ -1,0 +1,30 @@
+--- copying t0080 mod library to the t0080 task code/mods/x86_64 ---
+total 120
+drwxr-xr-x 2 root    root        35 May 20 17:26 .
+drwxr-xr-x 3 1144306 1049089   4096 May 20 17:26 ..
+-rwxr-xr-x 1 root    root    118704 May 20 17:26 libnrnmech.so
+--- t0024 sources ---
+Exp2NMDA.mod
+HHst_noiseless.mod
+LICENSE
+RGCmodelGD.hoc
+UPSTREAM_NOTES.md
+cadecay.mod
+nrnmech.dll
+--- compile t0024 mods ---
+/root/t0115_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources
+Mod files: "././Exp2NMDA.mod" "././HHst_noiseless.mod" "././cadecay.mod"
+
+Creating 'x86_64' directory for .o files.
+
+ -> [32mCompiling[0m mod_func.cpp
+ -> [32mNMODL[0m .././Exp2NMDA.mod
+ -> [32mNMODL[0m .././HHst_noiseless.mod
+ -> [32mNMODL[0m .././cadecay.mod
+ -> [32mCompiling[0m Exp2NMDA.c
+ -> [32mCompiling[0m cadecay.c
+ -> [32mCompiling[0m HHst_noiseless.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+t0024 mod compiled: /root/t0115_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/.libs/libnrnmech.so True

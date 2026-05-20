@@ -1,0 +1,19 @@
+/usr/bin/tmux
+tmux 3.3a
+--- tmux sessions ---
+nsga2: 1 windows (created Wed May 20 17:28:16 2026)
+--- pane content first 30 lines ---
+export PYTHONPATH=/root/t0115_workdir/repo
+Welcome to your vast.ai container! This session is running in `tmux`.
+To disconnect without closing your processes, press ctrl+b, release, then d.
+To disable auto-tmux, run `touch ~/.no_auto_tmux` and reconnect. See also https:
+//tmuxcheatsheet.com/
+cd /root/t0115_workdir/repo
+root@C.37161678:~/t0115_workdir/repo$ export PYTHONPATH=/root/t0115_workdir/repo
+root@C.37161678:~/t0115_workdir/repo$ cd /root/t0115_workdir/repo
+root@C.37161678:~/t0115_workdir/repo$ bash tasks/t0115_seed9354_no_autostop/code
+/run_seed9354.sh 2>&1 | tee /root/t0115_workdir/run_seed9354.log
+tasks/t0115_seed9354_no_autostop/code/run_seed9354.sh: line 18: $'\r': command n
+ot found
+: invalid option nameno_autostop/code/run_seed9354.sh: line 19: set: pipefail
+root@C.37161678:~/t0115_workdir/repo$
