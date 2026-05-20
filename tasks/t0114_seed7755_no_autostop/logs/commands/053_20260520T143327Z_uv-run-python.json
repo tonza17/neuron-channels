@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0114_seed7755_no_autostop",
+  "command": "uv run python -m meta.asset_types.predictions.verificator --task-id t0114_seed7755_no_autostop",
+  "exit_code": 0,
+  "duration_seconds": 0.366,
+  "started_at": "2026-05-20T14:33:27Z",
+  "completed_at": "2026-05-20T14:33:27Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0114_seed7755_no_autostop",
+  "stdout_file": "053_20260520T143327Z_uv-run-python.stdout.txt",
+  "stderr_file": "053_20260520T143327Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}
