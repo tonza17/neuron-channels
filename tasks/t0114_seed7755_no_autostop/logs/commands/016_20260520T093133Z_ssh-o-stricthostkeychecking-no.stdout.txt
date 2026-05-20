@@ -1,0 +1,18 @@
+=== gpu ===
+NVIDIA RTX A5000, 24564 MiB, 580.82.07
+=== disk ===
+overlay          40G  528K   40G   1% /
+=== mem ===
+               total        used        free      shared  buff/cache   available
+Mem:           251Gi       114Gi       117Gi        15Gi        37Gi       136Gi
+=== cpu ===
+CPU(s):                               128
+Model name:                           AMD EPYC 7713P 64-Core Processor
+CPU(s) scaling MHz:                   76%
+CPU max MHz:                          2000.0000
+CPU min MHz:                          1500.0000
+=== python ===
+Python 3.12.13
+/usr/local/bin/python3
+=== nvcc ===
+bash: line 1: nvcc: command not found

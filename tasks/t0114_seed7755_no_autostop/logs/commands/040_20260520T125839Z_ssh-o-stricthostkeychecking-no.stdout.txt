@@ -1,0 +1,16 @@
+    47 |     4512 |      3 |  0.0360360360 |         ideal
+[seed 7755 gen 47] HV=107.2311  pop_size=96  cost_so_far=$0.8093  elapsed=10571s
+[nsga2_driver seed=7755 gen=47] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---
+{"gen": 36, "wall_clock_s": 8824.9400100708, "hv": 102.90010120622179, "n_cells_evaluated": 96}
+{"gen": 37, "wall_clock_s": 9092.665967226028, "hv": 102.91122715192718, "n_cells_evaluated": 96}
+{"gen": 38, "wall_clock_s": 9373.677771568298, "hv": 103.02587596859863, "n_cells_evaluated": 96}
+{"gen": 39, "wall_clock_s": 9701.108386993408, "hv": 103.14664995362234, "n_cells_evaluated": 96}
+{"gen": 40, "wall_clock_s": 10037.459899187088, "hv": 103.97371243832721, "n_cells_evaluated": 96}
+{"gen": 41, "wall_clock_s": 10074.12885594368, "hv": 105.26998299319729, "n_cells_evaluated": 96}
+{"gen": 42, "wall_clock_s": 10116.558245182037, "hv": 105.29549319727892, "n_cells_evaluated": 96}
+{"gen": 43, "wall_clock_s": 10172.911662101746, "hv": 105.29549319727892, "n_cells_evaluated": 96}
+{"gen": 44, "wall_clock_s": 10247.153005123138, "hv": 105.29549319727892, "n_cells_evaluated": 96}
+{"gen": 45, "wall_clock_s": 10332.126286745071, "hv": 105.56276026835883, "n_cells_evaluated": 96}
+{"gen": 46, "wall_clock_s": 10440.517957687378, "hv": 107.18671679197996, "n_cells_evaluated": 96}
+{"gen": 47, "wall_clock_s": 10572.058190822601, "hv": 107.23111190851714, "n_cells_evaluated": 96}

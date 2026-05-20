@@ -1,0 +1,4 @@
+118704
+/usr/local/bin/nrnivmodl
+Python 3.12.13
+neuron 8.2.7+

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0114_seed7755_no_autostop",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 14508 root@ssh3.vast.ai cd /root/t0114_workdir/repo && python -c \"\nimport dill, json\nfrom pathlib import Path\n# load latest checkpoint\nckpts = sorted(Path(\\\"tasks/t0114_seed7755_no_autostop/logs/steps/009_implementation/checkpoints/\\\").glob(\\\"checkpoint_seed7755_gen*.pkl\\\"))\nprint(\\\"checkpoints:\\\", [c.name for c in ckpts])\nlast = ckpts[-1]\nprint(\\\"loading:\\\", last.name)\nwith open(last, \\\"rb\\\") as f:\n    algo = dill.load(f)\nprint(\\\"algo type:\\\", type(algo).__name__)\nprint(\\\"pop size:\\\", len(algo.pop) if hasattr(algo,\\\"pop\\\") else \\\"n/a\\\")\nprint(\\\"n_gen:\\\", algo.n_gen if hasattr(algo,\\\"n_gen\\\") else \\\"n/a\\\")\nprint(\\\"archive (opt) size:\\\", len(algo.opt) if hasattr(algo,\\\"opt\\\") and algo.opt is not None else \\\"n/a\\\")\nimport numpy as np\nF = algo.opt.get(\\\"F\\\") if hasattr(algo,\\\"opt\\\") and algo.opt is not None else None\nif F is not None:\n    print(\\\"archive F shape:\\\", F.shape)\n    # F is minimised: F0 = -DSI, F1 = -PD_rate (typical convention)\n    dsi = -F[:,0]\n    pdr = -F[:,1]\n    idx_best_dsi = int(np.argmax(dsi))\n    idx_best_pdr = int(np.argmax(pdr))\n    print(f\\\"BEST DSI in archive: DSI={dsi[idx_best_dsi]:.4f}  PD={pdr[idx_best_dsi]:.2f} Hz\\\")\n    print(f\\\"BEST PD-rate:        DSI={dsi[idx_best_pdr]:.4f}  PD={pdr[idx_best_pdr]:.2f} Hz\\\")\n    # joint-pass: DSI >= 0.5 AND PD >= 30\n    joint = (dsi >= 0.5) & (pdr >= 30)\n    print(f\\\"joint-pass cells in archive (DSI>=0.5 & PD>=30): {int(joint.sum())} of {len(dsi)}\\\")\n    # top 5 by DSI excluding DSI==1.0 silence-guard\n    legit = dsi < 0.999\n    legit_dsi_sorted = sorted(zip(dsi[legit], pdr[legit]), reverse=True)[:5]\n    print(\\\"top 5 LEGIT (DSI < 0.999) sorted by DSI:\\\")\n    for d, p in legit_dsi_sorted:\n        print(f\\\"  DSI={d:.4f}  PD={p:.2f} Hz\\\")\n\" 2>&1",
+  "exit_code": 1,
+  "duration_seconds": 5.546,
+  "started_at": "2026-05-20T10:35:08Z",
+  "completed_at": "2026-05-20T10:35:14Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0114_seed7755_no_autostop",
+  "stdout_file": "032_20260520T103508Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "032_20260520T103508Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 13,
+  "stderr_lines": 2,
+  "truncated": false
+}

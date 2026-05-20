@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0114_seed7755_no_autostop",
+  "command": "scp -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -P 14508 root@ssh3.vast.ai:/root/t0114_workdir/repo/tasks/t0114_seed7755_no_autostop/logs/steps/009_implementation/hv_trace.jsonl tasks/t0114_seed7755_no_autostop/logs/steps/009_implementation/hv_trace.jsonl",
+  "exit_code": 0,
+  "duration_seconds": 7.103,
+  "started_at": "2026-05-20T13:33:29Z",
+  "completed_at": "2026-05-20T13:33:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0114_seed7755_no_autostop",
+  "stdout_file": "046_20260520T133329Z_scp-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "046_20260520T133329Z_scp-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}

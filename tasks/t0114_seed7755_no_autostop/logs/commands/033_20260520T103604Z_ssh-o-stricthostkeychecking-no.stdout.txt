@@ -1,0 +1,11 @@
+/root/t0114_workdir/repo/tasks/t0114_seed7755_no_autostop/results/data/all_evaluations_seed7755.json
+---
+total 3432
+drwxr-xr-x 2 1144306 1049089    4096 May 20 10:03 .
+drwxr-xr-x 4 1144306 1049089      64 May 20 09:52 ..
+-rw-r--r-- 1 root    root        503 May 20 10:01 algorithm_config.json
+-rw-r--r-- 1 root    root    1660786 May 20 10:32 all_evaluations_seed7755.json
+-rw-r--r-- 1 root    root        117 May 20 10:01 evaluation_seeds.json
+-rw-r--r-- 1 root    root       1501 May 20 10:32 hv_trajectory_seed7755.json
+-rw-r--r-- 1 root    root     172646 May 20 10:01 init_pop_seed7755.json
+-rw-r--r-- 1 root    root    1656544 May 20 10:32 nsga2_checkpoint_seed7755.json

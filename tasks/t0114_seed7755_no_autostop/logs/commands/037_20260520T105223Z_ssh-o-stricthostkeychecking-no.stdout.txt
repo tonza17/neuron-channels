@@ -1,0 +1,17 @@
+nsga2: 1 windows (created Wed May 20 10:01:54 2026)
+---
+[seed 7755 gen 10] HV=58.4662  pop_size=96  cost_so_far=$0.2288  elapsed=2989s
+[nsga2_driver seed=7755 gen=10] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+[pool_restart gen=10] closing/recreating multiprocessing.Pool (60 workers) â€” REQ-6 memory mitigation
+[pool_restart gen=10] new Pool + runner installed; resuming NSGA-II at gen 11
+---HV TRACE---
+{"gen": 1, "wall_clock_s": 104.01604580879211, "hv": 0.6776069317281332, "n_cells_evaluated": 96}
+{"gen": 2, "wall_clock_s": 217.66874170303345, "hv": 0.6776069317281332, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 371.4928984642029, "hv": 2.5164871115795004, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 577.6080384254456, "hv": 3.529895157009819, "n_cells_evaluated": 96}
+{"gen": 5, "wall_clock_s": 805.9775855541229, "hv": 4.31809617917329, "n_cells_evaluated": 96}
+{"gen": 6, "wall_clock_s": 1140.8727812767029, "hv": 20.71492331957448, "n_cells_evaluated": 96}
+{"gen": 7, "wall_clock_s": 1457.7614033222198, "hv": 29.949447261564764, "n_cells_evaluated": 96}
+{"gen": 8, "wall_clock_s": 1836.1114630699158, "hv": 44.38761294878586, "n_cells_evaluated": 96}
+{"gen": 9, "wall_clock_s": 2381.075704097748, "hv": 44.38761294878586, "n_cells_evaluated": 96}
+{"gen": 10, "wall_clock_s": 2988.889167070389, "hv": 58.46616017823501, "n_cells_evaluated": 96}

@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0114_seed7755_no_autostop\tasks\t0114_seed7755_no_autostop\results
+
+[31m[1mERRORS:[0m
+[31m  TR-E014 error: machines[0]: missing required field 'machine_id'[0m
+[31m  TR-E014 error: machines[0]: missing required field 'gpu'[0m
+[31m  TR-E014 error: machines[0]: missing required field 'gpu_count'[0m
+[31m  TR-E014 error: machines[0]: missing required field 'duration_hours'[0m
+[31m  TR-E014 error: machines[0]: missing required field 'cost_usd'[0m
+
+[31m[1mFAILED[0m — 5 error(s), 0 warning(s)

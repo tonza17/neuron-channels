@@ -5,13 +5,13 @@
   "name": "Seed-7755 NSGA-II replicate of t0106 with auto-stop disabled",
   "short_description": "Re-run t0106 NSGA-II substrate with random seed 7755, _POOL_RESTART_EVERY=10, HV-plateau auto-stop DISABLED; runs to gen ceiling / budget cap. Implements S-0113-03 live.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0106_long_pdnd_nsga2_300gen",
     "t0113_t0106_seed2247_replicate"
   ],
   "start_time": "2026-05-20T08:42:58Z",
-  "end_time": null,
+  "end_time": "2026-05-20T16:20:00Z",
   "expected_assets": {
     "predictions": 1
   },

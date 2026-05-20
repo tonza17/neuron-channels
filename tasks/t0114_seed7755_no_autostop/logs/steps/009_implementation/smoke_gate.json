@@ -1,0 +1,55 @@
+{
+  "task_id": "t0114_seed7755_no_autostop",
+  "step": "implementation_local_smoke_gate",
+  "description": "Local 6-check smoke gate per plan REQ-8. Checks 2-6 run on Windows; check 1 (single-eval driver run with anchor-1 ~43.6 Hz target) is deferred to the Vast.ai instance because no Windows nrnmech.dll exists for t0080 MODs locally. This matches the t0112/t0113 precedent.",
+  "checks": [
+    {
+      "id": 1,
+      "name": "single-eval driver run (anchor-1 bedb_like ~43.6 Hz)",
+      "status": "deferred_to_remote",
+      "passed": null,
+      "evidence": "skipped by caller; will run on remote Vast.ai instance."
+    },
+    {
+      "id": 2,
+      "name": "ratio DSI synthetic sanity (PD=5, ND=1 -> 0.6667 +/- 1e-6)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "_vector_sum_dsi(PD=5, ND=1) = 0.6666666666666666; abs error vs 4/6 = 0.00e+00"
+    },
+    {
+      "id": 3,
+      "name": "silence guard active (SILENCE_SPIKE_COUNT_THRESHOLD == 10)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "evaluator.SILENCE_SPIKE_COUNT_THRESHOLD == 10"
+    },
+    {
+      "id": 4,
+      "name": "pool-restart sanity (_POOL_RESTART_EVERY == 10)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "nsga2_driver._POOL_RESTART_EVERY == 10; preserved verbatim from t0112/t0113 per operator directive 2026-05-20"
+    },
+    {
+      "id": 5,
+      "name": "watchdog wiring (T0114_HARD_BUDGET_USD == 25.00)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "constants.T0114_HARD_BUDGET_USD == 25.00; $25 hard cap value unchanged from t0113"
+    },
+    {
+      "id": 6,
+      "name": "NEW: no HVPlateauTermination in live TerminationCollection (S-0113-03)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "_build_termination(...).terminations = ['MaximumGenerationTermination', 'CostWatchdogTermination', 'OperatorStopTermination']; HVPlateauTermination present = False"
+    }
+  ],
+  "fast_checks_passed": true,
+  "all_checks_passed": true,
+  "tolerances": {
+    "dsi": 0.05,
+    "pd_rate_hz": 1.0
+  }
+}

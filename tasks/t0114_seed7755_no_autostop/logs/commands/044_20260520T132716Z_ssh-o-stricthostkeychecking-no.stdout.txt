@@ -1,0 +1,21 @@
+rror: pool objects cannot be passed between processes or pickled); trace + evalu
+ations still written
+    62 |     5952 |      6 |  0.0093457944 |         ideal
+[seed 7755 gen 62] HV=111.5353  pop_size=96  cost_so_far=$0.9399  elapsed=12278s
+[nsga2_driver seed=7755 gen=62] WARNING: dill checkpoint failed (NotImplementedE
+rror: pool objects cannot be passed between processes or pickled); trace + evalu
+ations still written
+^C
+---PROC CHECK---
+root        1572  0.0  0.0   5864  2064 ?        Ss   10:01   0:00 tmux new-session -d -s nsga2 cd /root/t0114_workdir/repo && export PYTHONPATH=/root/t0114_workdir/repo && export PYTHONUNBUFFERED=1 && bash tasks/t0114_seed7755_no_autostop/code/run_seed7755.sh 2>&1 | tee /root/t0114_workdir/run_seed7755.log
+root        1573  0.0  0.0   4352  2060 pts/0    Ss+  10:01   0:00 bash -c cd /root/t0114_workdir/repo && export PYTHONPATH=/root/t0114_workdir/repo && export PYTHONUNBUFFERED=1 && bash tasks/t0114_seed7755_no_autostop/code/run_seed7755.sh 2>&1 | tee /root/t0114_workdir/run_seed7755.log
+root        1576  0.0  0.0   4352  2072 pts/0    S+   10:01   0:00 bash tasks/t0114_seed7755_no_autostop/code/run_seed7755.sh
+---FINAL HV TRACE TAIL---
+{"gen": 55, "wall_clock_s": 11369.422154664993, "hv": 109.17026129416922, "n_cells_evaluated": 96}
+{"gen": 56, "wall_clock_s": 11494.922451257706, "hv": 109.97285370814616, "n_cells_evaluated": 96}
+{"gen": 57, "wall_clock_s": 11637.755566835403, "hv": 110.19075155328764, "n_cells_evaluated": 96}
+{"gen": 58, "wall_clock_s": 11801.27680182457, "hv": 110.19381059274926, "n_cells_evaluated": 96}
+{"gen": 59, "wall_clock_s": 11988.55854511261, "hv": 110.47818411737447, "n_cells_evaluated": 96}
+{"gen": 60, "wall_clock_s": 12195.362453222275, "hv": 111.2800292418127, "n_cells_evaluated": 96}
+{"gen": 61, "wall_clock_s": 12227.263401508331, "hv": 111.52242835448672, "n_cells_evaluated": 96}
+{"gen": 62, "wall_clock_s": 12278.746802568436, "hv": 111.53532625470856, "n_cells_evaluated": 96}

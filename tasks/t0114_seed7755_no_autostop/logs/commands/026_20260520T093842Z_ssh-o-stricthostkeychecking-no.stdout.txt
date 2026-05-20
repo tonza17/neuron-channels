@@ -1,0 +1,14 @@
+=== final verification ===
+onstart_done
+
+-rwxr-xr-x 1 root root 118704 May 20 09:34 /root/t0114_workdir/mods/x86_64/libnrnmech.so
+
+all imports OK
+neuron 8.2.7+
+pymoo 0.6.1.6
+numpy 2.4.6
+
+128
+
+               total        used        free      shared  buff/cache   available
+Mem:           251Gi       114Gi       117Gi        15Gi        38Gi       136Gi
