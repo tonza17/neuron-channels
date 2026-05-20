@@ -1,0 +1,33 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "37107202",
+    "instance_id": "37107202",
+    "gpu": "RTX 4060 Ti (idle, unused; CPU-only NEURON workload on AMD EPYC 7B13)",
+    "gpu_count": 1,
+    "cpu_name": "AMD EPYC 7B13 64-Core Processor",
+    "cpu_cores": 256,
+    "ram_gb": 125,
+    "dph_total": 0.2458,
+    "created_at": "2026-05-20T00:25:53Z",
+    "destroyed_at": "2026-05-20T02:11:25Z",
+    "duration_hours": 1.7589,
+    "total_duration_hours": 1.7589,
+    "cost_usd": 0.4323,
+    "total_cost_usd": 0.4323,
+    "failed_attempts": [
+      {
+        "instance_id": "37106446",
+        "failure_phase": "creation",
+        "failure_reason": "Vast.ai create-instance API responded with empty stdout/exit 0 for the first call but created a duplicate instance shortly afterwards (37106446); both 37106446 and 37106453 were created from the same offer ID. 37106446 was destroyed via the API (returned 404 'Instance not found' on destroy probe -- it was already removed Vast.ai-side, likely a transient phantom from the create-instance race).",
+        "wasted_cost_usd": 0.0
+      },
+      {
+        "instance_id": "37106453",
+        "failure_phase": "ssh",
+        "failure_reason": "SSH authentication rejected the registered key (id 801863 with comment 'shefuniad\\md1avn@TEN00BE4360B45A') due to literal backslash in the key comment corrupting Vast.ai SSH proxy parsing. Resolved by registering a new SSH key entry (id 855344) with clean ASCII comment 'md1avn-t0113' and attaching it to the next instance.",
+        "wasted_cost_usd": 0.045
+      }
+    ]
+  }
+]

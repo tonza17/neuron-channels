@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -c \n# Smoke gate sub-checks 2-5 (the 4 fast property checks)\nimport json\n\n# Check 4: pool restart cadence\nimport tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver as drv\nassert drv._POOL_RESTART_EVERY == 10, drv._POOL_RESTART_EVERY\nprint('[check 4] pool-restart cadence: _POOL_RESTART_EVERY=', drv._POOL_RESTART_EVERY)\n\n# Check 5: watchdog wiring\nfrom tasks.t0113_t0106_seed2247_replicate.code.cost_watchdog import make_watchdog_from_machine_log\nfrom tasks.t0113_t0106_seed2247_replicate.code.constants import T0113_HARD_BUDGET_USD, T0113_PER_INSTANCE_WATCHDOG_USD\nml = 'tasks/t0113_t0106_seed2247_replicate/logs/steps/008_setup-machines/machine_log.json'\nwd = make_watchdog_from_machine_log(machine_log_path=ml, hard_budget_usd=T0113_HARD_BUDGET_USD)\nassert abs(wd.hard_budget_usd - 25.00) < 1e-9, wd.hard_budget_usd\nprint('[check 5] watchdog: hard_budget_usd=', wd.hard_budget_usd)\nprint('[check 5] T0113_HARD_BUDGET_USD=', T0113_HARD_BUDGET_USD, 'T0113_PER_INSTANCE_WATCHDOG_USD=', T0113_PER_INSTANCE_WATCHDOG_USD)\n\n# Check 2: ratio DSI synthetic sanity\nfrom tasks.t0113_t0106_seed2247_replicate.code.evaluator import compute_dsi_ratio_2dir\ndsi = compute_dsi_ratio_2dir(pd_spikes=5.0, nd_spikes=1.0)\nassert abs(dsi - 0.6666666666666666) < 1e-6, dsi\nprint('[check 2] ratio DSI synthetic: PD=5, ND=1 ->', dsi, '(expected 0.6667)')\nprint('[checks 2,4,5] PASS')\n",
+  "exit_code": 1,
+  "duration_seconds": 1.295,
+  "started_at": "2026-05-20T00:44:39Z",
+  "completed_at": "2026-05-20T00:44:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "082_20260520T004439Z_uv-run-python.stdout.txt",
+  "stderr_file": "082_20260520T004439Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 4,
+  "truncated": false
+}

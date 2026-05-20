@@ -1,0 +1,4 @@
+keys: ['evaluations']
+n_cells: 1344
+fields: ['generation', 'vector_68d', 'objective_F_minimised', 'dsi_vector_sum', 'pd_rate_hz']
+sample: {'generation': 1, 'vector_68d': '<68-list>', 'objective_F_minimised': [-0.033333333333333395, -7.380952380952382], 'dsi_vector_sum': 0.033333333333333395, 'pd_rate_hz': 7.380952380952382}

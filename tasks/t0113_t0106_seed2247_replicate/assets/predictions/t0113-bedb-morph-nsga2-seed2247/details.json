@@ -1,0 +1,37 @@
+{
+  "spec_version": "2",
+  "predictions_id": "t0113-bedb-morph-nsga2-seed2247",
+  "name": "NSGA-II seed 2247 on 68-d Bed B + 14-d morphology, 2 directions, 60-gen replicate of t0106/t0112",
+  "short_description": "All 1,344 per-cell NSGA-II evaluations from t0113 single random-init GA seed 2247 on the 68-d Bed B electrophys + 14-d morphology DSGC substrate. Minimum-change replicate of t0112 (seed 77 -> 2247, value drawn via secrets.randbelow(10000) to avoid round-ish-low-number selection bias of seeds 44 and 77). HV-plateau stopped at gen 14 of a 60-gen ceiling.",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "Compartmental DSGC neuron model combining the 54-d Bed B electrophysiology parameter vector (from t0080) applied via apply_parameter_vector with the t0092-patched 14-d procedural morphology generator (canonical via correction C-0093-01). Each cell is evaluated with 2 stimulus directions (PD = 0 deg, ND = 180 deg) x 3 noise replicates and scored on a 2-objective vector (ratio DSI, preferred-direction firing rate in Hz). NSGA-II minimises the negated pair; the DSI silence guard from S-0102-01 clamps DSI to 0.0 when total PD+ND spike count falls below 10 spikes per trial. Identical to t0112 except GA seed 77 -> 2247 (drawn via secrets.randbelow(10000) to avoid round-ish-low-number selection bias of seeds 44 and 77). Pool restart cadence 10 (same as t0112). N_GEN=60 with HV-plateau auto-stop. 68-d Bed B + 14-d morphology substrate, ratio DSI metric, silence guard active, N_EVAL_SEEDS=3.",
+  "dataset_ids": [],
+  "prediction_format": "json.gz",
+  "prediction_schema": "Top-level JSON object with key 'evaluations' holding a list of 1344 per-cell evaluation records. Each record has fields: generation (int, NSGA-II generation; 1 = initial LHS population, 2-14 = offspring generations), vector_68d (list of 68 floats, 54-d electrophys + 14-d morphology parameter vector), objective_F_minimised (list of 2 floats, the NSGA-II objective vector with sign-flipped maximisation conventions: [-ratio_dsi, -pd_rate_hz]), dsi_vector_sum (float in [0, 1], the ratio DSI (PD - ND) / (PD + ND), guard-cleaned per S-0102-01 so values of 0.0 may either be real or guard-floor; field name preserved for compatibility with t0102/t0104/t0106/t0112 schema), pd_rate_hz (float, preferred-direction mean firing rate in Hz across the 3 noise replicates).",
+  "instance_count": 1344,
+  "metrics_at_creation": {
+    "n_generations_completed": 14,
+    "n_cells_total": 1344,
+    "best_dsi_ratio": 1.0,
+    "best_pd_rate_hz": 71.6667,
+    "n_joint_pass_unique": 2,
+    "n_joint_pass_evaluations": 6,
+    "final_hypervolume": 45.6221,
+    "final_cost_usd": 0.1467
+  },
+  "files": [
+    {
+      "path": "files/all_evaluations_seed2247.json.gz",
+      "description": "Full per-cell NSGA-II evaluation log for t0113 GA seed 2247 (1,344 cells across 14 completed generations before HV-plateau stop). gzip-compressed JSON to satisfy the 5 MB pre-commit limit; decompress with `gunzip` or `gzip -d` before json.load.",
+      "format": "json.gz"
+    }
+  ],
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0113_t0106_seed2247_replicate",
+  "date_created": "2026-05-20"
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -c import tasks.t0113_t0106_seed2247_replicate.code.paths; import tasks.t0113_t0106_seed2247_replicate.code.cost_watchdog; import tasks.t0113_t0106_seed2247_replicate.code.hv_plateau_watchdog; import tasks.t0113_t0106_seed2247_replicate.code.random_init; print('aux modules ok')",
+  "exit_code": 0,
+  "duration_seconds": 0.506,
+  "started_at": "2026-05-20T00:43:11Z",
+  "completed_at": "2026-05-20T00:43:12Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "080_20260520T004311Z_uv-run-python.stdout.txt",
+  "stderr_file": "080_20260520T004311Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

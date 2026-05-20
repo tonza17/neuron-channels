@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run ruff check tasks/t0113_t0106_seed2247_replicate/code/build_t0113_results.py",
+  "exit_code": 0,
+  "duration_seconds": 0.196,
+  "started_at": "2026-05-20T02:31:38Z",
+  "completed_at": "2026-05-20T02:31:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "154_20260520T023138Z_uv-run-ruff.stdout.txt",
+  "stderr_file": "154_20260520T023138Z_uv-run-ruff.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

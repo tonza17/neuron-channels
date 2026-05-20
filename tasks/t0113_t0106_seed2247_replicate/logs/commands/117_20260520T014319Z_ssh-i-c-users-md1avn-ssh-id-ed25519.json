@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 27202 root@ssh7.vast.ai ls -la /root/t0113_workdir/repo/tasks/t0113_t0106_seed2247_replicate/results/data/ 2>/dev/null || echo NO_RESULTS_DATA_DIR; find /root/t0113_workdir/repo/tasks/t0113_t0106_seed2247_replicate -maxdepth 5 -name 'all_evaluations*' -o -name 'pareto_front*' -o -name 'hv_trajectory*' 2>/dev/null",
+  "exit_code": 0,
+  "duration_seconds": 2.372,
+  "started_at": "2026-05-20T01:43:19Z",
+  "completed_at": "2026-05-20T01:43:21Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "117_20260520T014319Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "117_20260520T014319Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 13,
+  "stderr_lines": 2,
+  "truncated": false
+}

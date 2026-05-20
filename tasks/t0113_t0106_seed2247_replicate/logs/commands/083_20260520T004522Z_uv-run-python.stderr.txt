@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<string>", line 14, in <module>
+    wd = make_watchdog_from_machine_log(machine_log_path=ml, instance_started_at=datetime.now(timezone.utc), hard_budget_usd=T0113_HARD_BUDGET_USD)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\code\cost_watchdog.py", line 109, in make_watchdog_from_machine_log
+    rate = load_hourly_rate_from_machine_log(path=machine_log_path)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\code\cost_watchdog.py", line 36, in load_hourly_rate_from_machine_log
+    raw = path.read_text(encoding="utf-8")
+          ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'read_text'

@@ -1,0 +1,1 @@
+[random_init] seed=2247 wrote /root/t0113_workdir/repo/tasks/t0113_t0106_seed2247_replicate/results/data/init_pop_seed2247.json shape=(96, 68)

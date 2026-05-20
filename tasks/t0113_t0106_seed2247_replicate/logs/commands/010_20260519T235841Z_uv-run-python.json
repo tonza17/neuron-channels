@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_costs --format json --detail full",
+  "exit_code": 0,
+  "duration_seconds": 2.422,
+  "started_at": "2026-05-19T23:58:41Z",
+  "completed_at": "2026-05-19T23:58:43Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "010_20260519T235841Z_uv-run-python.stdout.txt",
+  "stderr_file": "010_20260519T235841Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1519,
+  "stderr_lines": 0,
+  "truncated": false
+}

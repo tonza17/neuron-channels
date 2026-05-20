@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "vastai create ssh-key ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKX8HNJVobKPStUhgjTLgutEc8tzrLTuaRR5dpVMBHdo md1avn-t0113",
+  "exit_code": 0,
+  "duration_seconds": 1.942,
+  "started_at": "2026-05-20T00:28:56Z",
+  "completed_at": "2026-05-20T00:28:58Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "058_20260520T002856Z_vastai-create-ssh-key.stdout.txt",
+  "stderr_file": "058_20260520T002856Z_vastai-create-ssh-key.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}

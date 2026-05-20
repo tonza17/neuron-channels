@@ -1,0 +1,19 @@
+Total elapsed_s at gen 14 = 2236.11s (37.27 min)
+Wall-clock per gen avg = 159.72 s/gen
+Per-gen wall-clock times (s):
+  gen 1: 103.63s
+  gen 2: 125.73s
+  gen 3: 143.76s
+  gen 4: 152.62s
+  gen 5: 158.37s
+  gen 6: 163.93s
+  gen 7: 237.73s
+  gen 8: 220.49s
+  gen 9: 243.49s
+  gen 10: 251.82s
+  gen 11: 62.85s
+  gen 12: 94.11s
+  gen 13: 97.08s
+  gen 14: 180.49s
+Mean: 159.72s
+Mean excluding gen 1 (init): 164.04s

@@ -1,0 +1,7 @@
+[check 4] pool-restart cadence: 10
+[cost_watchdog] resolved hourly rate: $0.2361/hr from machine_log.json (REQ-X)
+[check 5] watchdog hard_budget_usd: 25.0 hourly_rate: 0.2361
+[check 2] ratio DSI synthetic PD=5,ND=1: 0.666667
+[check 3] silence guard threshold: 10
+[constants] N_GEN: 60 POP_SIZE: 96
+[checks 2-5] PASS

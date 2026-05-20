@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "bash -c cd tasks/t0113_t0106_seed2247_replicate/code; git mv run_seed77.sh run_seed2247.sh 2>/dev/null || mv run_seed77.sh run_seed2247.sh; sed -i 's/run_seed77/run_seed2247/g; s/SEED=77/SEED=2247/g; s/seed 77/seed 2247/g' run_seed2247.sh; cat run_seed2247.sh",
+  "exit_code": 0,
+  "duration_seconds": 1.118,
+  "started_at": "2026-05-20T00:42:28Z",
+  "completed_at": "2026-05-20T00:42:29Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "078_20260520T004228Z_bash-c-cd-tasks-t0113-t0106-seed2247-rep.stdout.txt",
+  "stderr_file": "078_20260520T004228Z_bash-c-cd-tasks-t0113-t0106-seed2247-rep.stderr.txt",
+  "stdout_lines": 48,
+  "stderr_lines": 0,
+  "truncated": false
+}

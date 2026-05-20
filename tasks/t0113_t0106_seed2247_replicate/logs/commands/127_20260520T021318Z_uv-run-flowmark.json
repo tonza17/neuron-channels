@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0113_t0106_seed2247_replicate/logs/steps/010_teardown/step_log.md",
+  "exit_code": 0,
+  "duration_seconds": 0.559,
+  "started_at": "2026-05-20T02:13:18Z",
+  "completed_at": "2026-05-20T02:13:19Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "127_20260520T021318Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "127_20260520T021318Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

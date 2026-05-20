@@ -1,0 +1,7 @@
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:155: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:156: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:161: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:166: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:198: error: Returning Any from function declared to return "bool"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:623: error: Returning Any from function declared to return "ndarray[tuple[Any, ...], dtype[Any]]"  [no-any-return]
+Found 6 errors in 1 file (checked 1 source file)

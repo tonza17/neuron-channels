@@ -1,0 +1,68 @@
+--- verify_task_file ---
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\task.json
+
+[32m[1mPASSED[0m — no errors or warnings
+
+--- verify_task_dependencies ---
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\task.json
+
+[32m[1mPASSED[0m — no errors or warnings
+
+--- verify_suggestions ---
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\suggestions.json
+
+[32m[1mPASSED[0m — no errors or warnings
+
+--- verify_task_metrics ---
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\metrics.json
+
+[32m[1mPASSED[0m — no errors or warnings
+
+--- verify_task_results ---
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results
+
+[32m[1mPASSED[0m — no errors or warnings
+
+--- verify_task_folder ---
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate
+
+[33m[1mWARNINGS:[0m
+[33m  FD-W002 warning: logs/searches/ is empty (no search queries were logged)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)
+
+--- verify_logs ---
+[33m  LG-W004 warning: Command log 144_20260520T022924Z_uv-run-ruff.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 147_20260520T023006Z_uv-run-mypy.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 149_20260520T023037Z_uv-run-mypy.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 37 warning(s)
+
+--- verify_research_code ---
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\research\research_code.md
+
+[32m[1mPASSED[0m — no errors or warnings
+
+--- verify_compare_literature ---
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\compare_literature.md
+
+[32m[1mPASSED[0m — no errors or warnings
+
+--- verify_machines_destroyed ---
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\remote_machines_used.json
+
+[33m[1mWARNINGS:[0m
+[33m  RM-W001 warning: Cannot verify destruction of 37107202 — API unreachable[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)

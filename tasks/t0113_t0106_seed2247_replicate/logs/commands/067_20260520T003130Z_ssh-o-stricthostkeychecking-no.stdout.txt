@@ -1,0 +1,5 @@
+total 4
+drwxr-xr-x 4 root root   42 May 20 00:31 .
+drwx------ 1 root root 4096 May 20 00:31 ..
+drwxr-xr-x 2 root root    6 May 20 00:31 mods
+drwxr-xr-x 2 root root    6 May 20 00:31 repo

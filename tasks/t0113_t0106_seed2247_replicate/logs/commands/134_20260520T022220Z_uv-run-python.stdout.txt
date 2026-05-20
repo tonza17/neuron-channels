@@ -1,0 +1,11 @@
+Wrote 10 example cells
+silence_guard_joint_pass_1 gen= 10 DSI= 1.0 PD= 35.0
+silence_guard_joint_pass_2 gen= 14 DSI= 1.0 PD= 45.2381
+top_legit_dsi_1 gen= 7 DSI= 0.3651 PD= 10.2381
+top_legit_dsi_2 gen= 7 DSI= 0.3548 PD= 5.0
+top_legit_dsi_3 gen= 12 DSI= 0.3548 PD= 5.0
+top_pd_rate_1 gen= 10 DSI= 0.0017 PD= 71.6667
+top_pd_rate_2 gen= 13 DSI= 0.0017 PD= 70.0
+top_pd_rate_3 gen= 14 DSI= 0.0 PD= 66.4286
+pareto_cell_id_2 gen= -1 DSI= 0.0017 PD= 71.6667
+pareto_cell_id_7 gen= -1 DSI= 1.0 PD= 45.2381

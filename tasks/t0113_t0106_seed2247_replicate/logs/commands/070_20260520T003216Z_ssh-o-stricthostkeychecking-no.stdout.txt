@@ -1,0 +1,33 @@
+ -> [32mNMODL[0m ../nart80.mod
+Thread Safe
+Thread Safe
+ -> [32mNMODL[0m ../nav16t80.mod
+ -> [32mNMODL[0m ../skahpt80.mod
+Translating nart80.mod into /root/t0113_workdir/mods/x86_64/nart80.c
+Thread Safe
+Translating nav16t80.mod into /root/t0113_workdir/mods/x86_64/nav16t80.c
+ -> [32mNMODL[0m ../skt80.mod
+Translating skahpt80.mod into /root/t0113_workdir/mods/x86_64/skahpt80.c
+Thread Safe
+Thread Safe
+ -> [32mCompiling[0m bkt80.c
+ -> [32mCompiling[0m calt80.c
+Translating skt80.mod into /root/t0113_workdir/mods/x86_64/skt80.c
+Thread Safe
+ -> [32mCompiling[0m catt80.c
+ -> [32mCompiling[0m iht80.c
+ -> [32mCompiling[0m kdrt80.c
+ -> [32mCompiling[0m kv3t80.c
+ -> [32mCompiling[0m kv4t80.c
+ -> [32mCompiling[0m kv7t80.c
+ -> [32mCompiling[0m napt80.c
+ -> [32mCompiling[0m nart80.c
+ -> [32mCompiling[0m nav16t80.c
+ -> [32mCompiling[0m skahpt80.c
+ -> [32mCompiling[0m skt80.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+--- library ---
+-rwxr-xr-x 1 root root 118704 May 20 00:32 x86_64/.libs/libnrnmech.so
+-rwxr-xr-x 1 root root 118704 May 20 00:32 x86_64/libnrnmech.so

@@ -1,0 +1,22 @@
+{
+  "total_cost_usd": 0.4773,
+  "breakdown": {
+    "vast-ai-epyc-7b13-productive": {
+      "cost_usd": 0.1467,
+      "description": "Productive NSGA-II driver run on Vast.ai instance 37107202 (EPYC 7B13 Quebec, $0.2458/hr billed). 14 generations completed before HV-plateau auto-stop. Cost reported by driver at run end."
+    },
+    "vast-ai-epyc-7b13-setup-idle": {
+      "cost_usd": 0.2856,
+      "description": "Non-productive billed time on instance 37107202: provisioning, mod compile, SCP upload, smoke gate execution, post-run idle before teardown. Computed as total billed (1.7589 h x $0.2458/hr = $0.4323) minus the $0.1467 productive run cost reported by the driver."
+    },
+    "vast-ai-failed-ssh-attempt": {
+      "cost_usd": 0.045,
+      "description": "Wasted spend on instance 37106453 (11 minutes) destroyed after SSH authentication failures caused by a literal backslash in the Vast.ai SSH key comment field. Resolved by registering a new key (id 855344) with a clean ASCII comment."
+    }
+  },
+  "services": {
+    "vast-ai": 0.4773
+  },
+  "budget_limit": 25.0,
+  "note": "Final task spend $0.4773 is well under the $25 task cap and $20 per-instance watchdog. The productive driver cost ($0.1467) is consistent with t0106/t0112 ratios (cost per HV-plateau gen). The 7B13 64-effective-core selection delivered ~2x faster per-generation wall-clock than t0112's 32-core EPYC 7B13 instance at lower hourly rate."
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 27202 root@ssh7.vast.ai python3 -c '\nimport json, glob, os\nbase = \"/root/t0113_workdir/repo/tasks/t0113_t0106_seed2247_replicate/logs/steps/009_implementation\"\n# try all_evaluations\nev_path = os.path.join(base, \"all_evaluations_seed2247.json\")\nif not os.path.exists(ev_path):\n    cands = glob.glob(os.path.join(base, \"all_evaluations*.json\"))\n    if cands: ev_path = cands[0]\nwith open(ev_path) as f:\n    data = json.load(f)\nevals = data[\"evaluations\"]\nprint(f\"n_cells_total = {len(evals)}\")\n# best DSI overall (including DSI==1.0 silence-guard artefacts)\nby_dsi = sorted(evals, key=lambda c: -c[\"dsi_vector_sum\"])\nprint(\"\\n--- TOP 10 by DSI (incl silence-guard artefacts) ---\")\nfor c in by_dsi[:10]:\n    print(f\"gen={c[\\\"generation\\\"]:3d}  DSI={c[\\\"dsi_vector_sum\\\"]:.4f}  PD_rate={c[\\\"pd_rate_hz\\\"]:7.2f} Hz\")\n# best non-DSI=1 (legit)\nlegit = [c for c in evals if c[\"dsi_vector_sum\"] < 1.0 - 1e-9]\nby_dsi_legit = sorted(legit, key=lambda c: -c[\"dsi_vector_sum\"])\nprint(f\"\\n--- TOP 10 by DSI legit (DSI<1.0): n_legit = {len(legit)} ---\")\nfor c in by_dsi_legit[:10]:\n    print(f\"gen={c[\\\"generation\\\"]:3d}  DSI={c[\\\"dsi_vector_sum\\\"]:.4f}  PD_rate={c[\\\"pd_rate_hz\\\"]:7.2f} Hz\")\n# best PD-rate\nby_pd = sorted(evals, key=lambda c: -c[\"pd_rate_hz\"])\nprint(\"\\n--- TOP 10 by PD_rate ---\")\nfor c in by_pd[:10]:\n    print(f\"gen={c[\\\"generation\\\"]:3d}  DSI={c[\\\"dsi_vector_sum\\\"]:.4f}  PD_rate={c[\\\"pd_rate_hz\\\"]:7.2f} Hz\")\n# joint pass (unique by full vector)\nseen = set()\njoint = []\nfor c in evals:\n    if c[\"dsi_vector_sum\"] >= 0.5 and c[\"pd_rate_hz\"] >= 30.0:\n        key = tuple(round(v, 6) for v in c[\"vector_68d\"])\n        if key not in seen:\n            seen.add(key)\n            joint.append(c)\nprint(f\"\\n--- JOINT PASS (DSI>=0.5 AND PD>=30 Hz) unique cells: {len(joint)} ---\")\nfor c in joint[:15]:\n    print(f\"gen={c[\\\"generation\\\"]:3d}  DSI={c[\\\"dsi_vector_sum\\\"]:.4f}  PD_rate={c[\\\"pd_rate_hz\\\"]:7.2f} Hz\")\n# counts at DSI==1.0\ndsi_one_count = sum(1 for c in evals if abs(c[\"dsi_vector_sum\"] - 1.0) < 1e-9)\nprint(f\"\\nDSI==1.0 (silence-guard artefacts) count: {dsi_one_count}\")\nprint(f\"DSI>=0.5 count: {sum(1 for c in evals if c[\\\"dsi_vector_sum\\\"] >= 0.5)}\")\nprint(f\"PD>=30 count:  {sum(1 for c in evals if c[\\\"pd_rate_hz\\\"] >= 30.0)}\")\n'",
+  "exit_code": 1,
+  "duration_seconds": 2.375,
+  "started_at": "2026-05-20T01:42:09Z",
+  "completed_at": "2026-05-20T01:42:11Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "114_20260520T014209Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "114_20260520T014209Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 6,
+  "truncated": false
+}

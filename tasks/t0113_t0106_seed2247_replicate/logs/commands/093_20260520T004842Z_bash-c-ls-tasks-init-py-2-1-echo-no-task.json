@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "bash -c ls tasks/__init__.py 2>&1 || echo 'no tasks/__init__.py'; ls -la pyproject.toml uv.lock 2>&1 | head",
+  "exit_code": 0,
+  "duration_seconds": 0.534,
+  "started_at": "2026-05-20T00:48:42Z",
+  "completed_at": "2026-05-20T00:48:43Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "093_20260520T004842Z_bash-c-ls-tasks-init-py-2-1-echo-no-task.stdout.txt",
+  "stderr_file": "093_20260520T004842Z_bash-c-ls-tasks-init-py-2-1-echo-no-task.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 0,
+  "truncated": false
+}

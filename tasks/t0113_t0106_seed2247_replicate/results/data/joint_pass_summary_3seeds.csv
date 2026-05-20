@@ -1,0 +1,4 @@
+seed_label,task_seed,n_total_evals,n_joint_pass_unique,n_joint_pass_evaluations,joint_pass_pct,best_dsi_overall,best_legit_dsi,best_pd_rate_hz,n_generations_completed,plateau_gen,final_hypervolume
+t0106_seed44,44,3744,123,637,3.2853,1.0,0.9939,122.62,40,40,122.0288
+t0112_seed77,77,2016,7,25,0.3472,0.9535,0.9535,114.76,21,21,107.4602
+t0113_seed2247,2247,1344,2,6,0.1488,1.0,0.3651,71.6667,14,14,45.6221

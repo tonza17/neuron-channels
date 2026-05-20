@@ -1,0 +1,3 @@
+Adding provided SSH public key to account...
+ssh-key created {'success': True, 'key': {'id': 855344, 'user_id': 522336, 'default': None, 'public_key': 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKX8HNJVobKPStUhgjTLgutEc8tzrLTuaRR5dpVMBHdo md1avn-t0113', 'private_key': None, 'created_at': 1779236938.353824, 'deleted_at': None}}
+Note: You may need to add the new public key to any pre-existing instances

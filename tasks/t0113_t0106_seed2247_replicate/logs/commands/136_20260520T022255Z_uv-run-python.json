@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -u -c \nimport math\n# Per-seed acceptance rate (joint-pass unique / total evals)\nrates = [(123/3744), (7/2016), (2/1344)]\nmean = sum(rates) / len(rates)\n# Sample std (n-1)\nvar = sum((r - mean)**2 for r in rates) / (len(rates) - 1)\nsd = math.sqrt(var)\nse = sd / math.sqrt(len(rates))\nprint(f'rates (as %): {[r*100 for r in rates]}')\nprint(f'mean (%): {mean*100:.4f}')\nprint(f'SD  (%): {sd*100:.4f}')\nprint(f'SE  (%): {se*100:.4f}')\nprint(f'95% CI: ({(mean - 1.96*se)*100:.4f}, {(mean + 1.96*se)*100:.4f}) %')\nprint(f'Hay 2011 baseline 0.40%, Druckmann 2007 baseline 0.10%')\nprint(f'Mean is between/within Hay-Druckmann envelope? Hay=0.40% Druckmann=0.10% Mean={mean*100:.4f}%')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.24,
+  "started_at": "2026-05-20T02:22:55Z",
+  "completed_at": "2026-05-20T02:22:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "136_20260520T022255Z_uv-run-python.stdout.txt",
+  "stderr_file": "136_20260520T022255Z_uv-run-python.stderr.txt",
+  "stdout_lines": 7,
+  "stderr_lines": 0,
+  "truncated": false
+}

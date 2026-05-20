@@ -1,0 +1,102 @@
+{
+  "trajectory": [
+    {
+      "generation": 1,
+      "hypervolume": 0.24603174603174863,
+      "cumulative_cost_usd": 0.006796214576666667,
+      "elapsed_s": 103.62716,
+      "n_evaluations": 0
+    },
+    {
+      "generation": 2,
+      "hypervolume": 0.37908496732026375,
+      "cumulative_cost_usd": 0.015042278788416666,
+      "elapsed_s": 229.361303,
+      "n_evaluations": 96
+    },
+    {
+      "generation": 3,
+      "hypervolume": 0.9980495022867918,
+      "cumulative_cost_usd": 0.02447026255141667,
+      "elapsed_s": 373.117091,
+      "n_evaluations": 192
+    },
+    {
+      "generation": 4,
+      "hypervolume": 3.539915966386554,
+      "cumulative_cost_usd": 0.03447969542458333,
+      "elapsed_s": 525.738685,
+      "n_evaluations": 288
+    },
+    {
+      "generation": 5,
+      "hypervolume": 3.5399159663865545,
+      "cumulative_cost_usd": 0.04486599315083333,
+      "elapsed_s": 684.10663,
+      "n_evaluations": 384
+    },
+    {
+      "generation": 6,
+      "hypervolume": 3.576460816884893,
+      "cumulative_cost_usd": 0.05561721379216667,
+      "elapsed_s": 848.038838,
+      "n_evaluations": 480
+    },
+    {
+      "generation": 7,
+      "hypervolume": 6.395855906949176,
+      "cumulative_cost_usd": 0.07120827214025,
+      "elapsed_s": 1085.767809,
+      "n_evaluations": 576
+    },
+    {
+      "generation": 8,
+      "hypervolume": 6.562679364513234,
+      "cumulative_cost_usd": 0.08566888158966666,
+      "elapsed_s": 1306.259948,
+      "n_evaluations": 672
+    },
+    {
+      "generation": 9,
+      "hypervolume": 6.587755754869915,
+      "cumulative_cost_usd": 0.10163777653908332,
+      "elapsed_s": 1549.750087,
+      "n_evaluations": 768
+    },
+    {
+      "generation": 10,
+      "hypervolume": 35.9793823889398,
+      "cumulative_cost_usd": 0.11815284063475001,
+      "elapsed_s": 1801.568091,
+      "n_evaluations": 864
+    },
+    {
+      "generation": 11,
+      "hypervolume": 35.9793823889398,
+      "cumulative_cost_usd": 0.1222750579005,
+      "elapsed_s": 1864.422738,
+      "n_evaluations": 960
+    },
+    {
+      "generation": 12,
+      "hypervolume": 36.065609720390114,
+      "cumulative_cost_usd": 0.1284473855725,
+      "elapsed_s": 1958.53701,
+      "n_evaluations": 1056
+    },
+    {
+      "generation": 13,
+      "hypervolume": 36.09755686228362,
+      "cumulative_cost_usd": 0.13481398130883332,
+      "elapsed_s": 2055.613438,
+      "n_evaluations": 1152
+    },
+    {
+      "generation": 14,
+      "hypervolume": 45.6221023373101,
+      "cumulative_cost_usd": 0.14665134543775,
+      "elapsed_s": 2236.106919,
+      "n_evaluations": 1248
+    }
+  ]
+}

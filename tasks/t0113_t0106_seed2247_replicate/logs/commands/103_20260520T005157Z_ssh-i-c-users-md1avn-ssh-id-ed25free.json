@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25free -o StrictHostKeyChecking=no -p 27202 root@ssh7.vast.ai cd /root/t0113_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods && nrnivmodl 2>&1 | tail -15 && ls -la x86_64/libnrnmech.so",
+  "exit_code": 255,
+  "duration_seconds": 4.934,
+  "started_at": "2026-05-20T00:51:57Z",
+  "completed_at": "2026-05-20T00:52:02Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "103_20260520T005157Z_ssh-i-c-users-md1avn-ssh-id-ed25free.stdout.txt",
+  "stderr_file": "103_20260520T005157Z_ssh-i-c-users-md1avn-ssh-id-ed25free.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 4,
+  "truncated": false
+}

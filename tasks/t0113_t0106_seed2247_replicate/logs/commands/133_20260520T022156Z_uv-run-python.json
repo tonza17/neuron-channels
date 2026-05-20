@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -u -c \nimport gzip, json\nwith gzip.open('tasks/t0113_t0106_seed2247_replicate/assets/predictions/t0113-bedb-morph-nsga2-seed2247/files/all_evaluations_seed2247.json.gz', 'rt', encoding='utf-8') as f:\n    data = json.load(f)\ncells = data['evaluations']\n\n# Cell 1 & 2: silence-guard joint-pass cells (DSI = 1.0, PD >= 30)\nguard_cells = [c for c in cells if c['dsi_vector_sum'] >= 1.0 and c['pd_rate_hz'] >= 30]\n# Deduplicate by vector_68d\nseen = set()\nunique_guard = []\nfor c in guard_cells:\n    k = tuple(c['vector_68d'])\n    if k not in seen:\n        seen.add(k)\n        unique_guard.append(c)\nprint('=== UNIQUE SILENCE-GUARD JOINT-PASS CELLS ===')\nfor c in unique_guard:\n    print(f'gen={c[\"generation\"]} DSI={c[\"dsi_vector_sum\"]:.6f} PD={c[\"pd_rate_hz\"]:.4f}')\n\n# Cell 3-5: top 3 LEGIT DSI (unique)\nlegit = [c for c in cells if c['dsi_vector_sum'] < 1.0]\nlegit_sorted = sorted(legit, key=lambda c: c['dsi_vector_sum'], reverse=True)\nseen2 = set()\ntop_legit = []\nfor c in legit_sorted:\n    k = tuple(c['vector_68d'])\n    if k not in seen2:\n        seen2.add(k)\n        top_legit.append(c)\n    if len(top_legit) >= 3:\n        break\nprint('=== TOP 3 LEGIT DSI UNIQUE CELLS ===')\nfor c in top_legit:\n    print(f'gen={c[\"generation\"]} DSI={c[\"dsi_vector_sum\"]:.6f} PD={c[\"pd_rate_hz\"]:.4f}')\n\n# Cell 6-8: top 3 PD (unique)\ntop_pd = sorted(cells, key=lambda c: c['pd_rate_hz'], reverse=True)\nseen3 = set()\ntop_pd_unique = []\nfor c in top_pd:\n    k = tuple(c['vector_68d'])\n    if k not in seen3:\n        seen3.add(k)\n        top_pd_unique.append(c)\n    if len(top_pd_unique) >= 3:\n        break\nprint('=== TOP 3 PD UNIQUE CELLS ===')\nfor c in top_pd_unique:\n    print(f'gen={c[\"generation\"]} DSI={c[\"dsi_vector_sum\"]:.6f} PD={c[\"pd_rate_hz\"]:.4f}')\n\n# Cells 9-10: top 2 Pareto cells (already in pareto_front_seed2247.json — take cell_id 2 (best PD) and cell_id 7 (silence-guard) — these are the 2 most informative)\nprint('=== Already in Pareto json ===')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.327,
+  "started_at": "2026-05-20T02:21:56Z",
+  "completed_at": "2026-05-20T02:21:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "133_20260520T022156Z_uv-run-python.stdout.txt",
+  "stderr_file": "133_20260520T022156Z_uv-run-python.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 0,
+  "truncated": false
+}

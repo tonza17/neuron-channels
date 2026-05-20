@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "bash -c tar --exclude='__pycache__' --exclude='*.pyc' --exclude='.venv' --exclude='node_modules' --exclude='.git' --exclude='*.json.gz' --exclude='.mypy_cache' --exclude='.pytest_cache' --exclude='.ruff_cache' -czf - pyproject.toml uv.lock arf/ project/ tasks/t0024_port_de_rosenroll_2026_dsgc tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2 tasks/t0090_morphology_generator_diversity_test tasks/t0092_diagnose_morphology_generator_silence tasks/t0093_resweep_and_t0090_correction tasks/t0113_t0106_seed2247_replicate | ssh -i /c/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 27202 root@ssh7.vast.ai 'cd /root/t0113_workdir/repo && tar -xzf - && echo extracted_ok && du -sh tasks/* arf project 2>/dev/null | head -15'",
+  "exit_code": 0,
+  "duration_seconds": 13.148,
+  "started_at": "2026-05-20T00:49:11Z",
+  "completed_at": "2026-05-20T00:49:24Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "095_20260520T004911Z_bash-c-tar-exclude-pycache-exclude-pyc-e.stdout.txt",
+  "stderr_file": "095_20260520T004911Z_bash-c-tar-exclude-pycache-exclude-pyc-e.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 2,
+  "truncated": false
+}

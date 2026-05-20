@@ -1,0 +1,91 @@
+[cost_watchdog] resolved hourly rate: $0.2361/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=2247] using 60 parallel workers
+[nsga2_driver seed=2247] starting: pop=96 max_gen=60 hard_cap=$25.00 rate=$0.2361/hr pool_restart_every=10
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       96 |      2 |             - |             -
+[seed 2247 gen 1] HV=0.2460  pop_size=96  cost_so_far=$0.0068  elapsed=104s
+[nsga2_driver seed=2247 gen=1] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     2 |      192 |      3 |  0.2062626257 |             f
+[seed 2247 gen 2] HV=0.3791  pop_size=96  cost_so_far=$0.0150  elapsed=229s
+[nsga2_driver seed=2247 gen=2] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     3 |      288 |      4 |  0.7333333333 |         ideal
+[seed 2247 gen 3] HV=0.9980  pop_size=96  cost_so_far=$0.0245  elapsed=373s
+[nsga2_driver seed=2247 gen=3] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     4 |      384 |      3 |  0.0647058824 |         ideal
+[seed 2247 gen 4] HV=3.5399  pop_size=96  cost_so_far=$0.0345  elapsed=526s
+[nsga2_driver seed=2247 gen=4] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     5 |      480 |      3 |  0.1282051282 |         ideal
+[seed 2247 gen 5] HV=3.5399  pop_size=96  cost_so_far=$0.0449  elapsed=684s
+[nsga2_driver seed=2247 gen=5] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---hv_trace---
+{"gen": 1, "wall_clock_s": 103.6458375453949, "hv": 0.24603174603174863, "n_cells_evaluated": 96}
+{"gen": 2, "wall_clock_s": 229.3994300365448, "hv": 0.37908496732026375, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 373.1694540977478, "hv": 0.9980495022867918, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 525.8124463558197, "hv": 3.539915966386554, "n_cells_evaluated": 96}
+{"gen": 5, "wall_clock_s": 684.1902141571045, "hv": 3.5399159663865545, "n_cells_evaluated": 96}
+---process---
+root        2236  0.0  0.0   5772  3844 ?        Ss   01:00   0:00 tmux new-session -d -s nsga2 cd /root/t0113_workdir/repo && export PYTHONPATH=/root/t0113_workdir/repo && export NEURON_MODULE_OPTIONS="-nogui" && python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config 2>&1 | tee /root/t0113_workdir/repo/tasks/t0113_t0106_seed2247_replicate/logs/steps/009_implementation/driver.log
+root        2237  0.0  0.0   4352  3092 pts/0    Ss+  01:00   0:00 bash -c cd /root/t0113_workdir/repo && export PYTHONPATH=/root/t0113_workdir/repo && export NEURON_MODULE_OPTIONS="-nogui" && python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config 2>&1 | tee /root/t0113_workdir/repo/tasks/t0113_t0106_seed2247_replicate/logs/steps/009_implementation/driver.log
+root        2239  2.3  0.0 4590592 82264 pts/0   Sl+  01:00   0:16 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2368 48.0  0.0 4424384 91740 pts/0   R+   01:00   5:49 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2369 51.0  0.0 4426372 93664 pts/0   R+   01:00   6:11 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2370 51.6  0.0 4426600 93968 pts/0   R+   01:00   6:15 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2371 47.1  0.0 4414180 81532 pts/0   R+   01:00   5:43 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2372 94.6  0.0 4430688 98096 pts/0   R+   01:00  11:28 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2373 50.1  0.0 4421464 89044 pts/0   R+   01:00   6:04 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2374 41.9  0.0 4416620 83972 pts/0   R+   01:00   5:05 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2375 43.2  0.0 4429820 97216 pts/0   R+   01:00   5:14 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2376 49.7  0.0 4426068 93424 pts/0   R+   01:00   6:01 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2377 50.2  0.0 4424948 92440 pts/0   R+   01:00   6:05 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2378 55.0  0.0 4416464 83796 pts/0   R+   01:00   6:40 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2379 42.1  0.0 4410128 77624 pts/0   R+   01:00   5:06 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2380 48.2  0.0 4411600 78984 pts/0   R+   01:00   5:50 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2381 38.4  0.0 4428036 95420 pts/0   R+   01:00   4:39 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2382 50.7  0.0 4422248 89760 pts/0   R+   01:00   6:09 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2383 49.4  0.0 4414624 82232 pts/0   R+   01:00   6:00 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2384 50.5  0.0 4417492 84948 pts/0   R+   01:00   6:07 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2385 46.1  0.0 4425496 92904 pts/0   R+   01:00   5:36 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2386 48.4  0.0 4424092 91464 pts/0   R+   01:00   5:52 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2387 42.3  0.0 4424456 91872 pts/0   R+   01:00   5:08 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2388 43.4  0.0 4423740 91184 pts/0   R+   01:00   5:16 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2389 45.9  0.0 4421704 89096 pts/0   R+   01:00   5:34 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2390 50.7  0.0 4409860 77252 pts/0   R+   01:00   6:09 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2391 51.7  0.0 4430676 98084 pts/0   R+   01:00   6:16 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2392 50.4  0.0 4407488 74856 pts/0   R+   01:00   6:07 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2393 44.1  0.0 4420704 88104 pts/0   R+   01:00   5:21 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2394 39.1  0.0 4432712 100052 pts/0  R+   01:00   4:44 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2395 40.6  0.0 4417684 85076 pts/0   R+   01:00   4:56 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2396 39.5  0.0 4418920 86320 pts/0   R+   01:00   4:47 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2397 39.3  0.0 4414680 82208 pts/0   R+   01:00   4:46 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2398 60.8  0.0 4420176 87760 pts/0   R+   01:00   7:22 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2399 44.4  0.0 4423648 90996 pts/0   R+   01:00   5:23 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2400 46.5  0.0 4406816 74324 pts/0   R+   01:00   5:38 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2401 86.6  0.0 4433052 100576 pts/0  R+   01:00  10:30 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2402 48.4  0.0 4418460 85900 pts/0   R+   01:00   5:52 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2403 51.0  0.0 4417668 85040 pts/0   R+   01:00   6:11 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2404 41.1  0.0 4414688 82180 pts/0   R+   01:00   4:59 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2405 50.9  0.0 4426472 93784 pts/0   R+   01:00   6:10 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2406 41.6  0.0 4422328 89868 pts/0   R+   01:00   5:02 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2407 43.0  0.0 4414736 82012 pts/0   R+   01:00   5:13 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2408 51.4  0.0 4427764 95172 pts/0   R+   01:00   6:14 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2409 49.7  0.0 4420972 88352 pts/0   R+   01:00   6:02 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2410 56.0  0.0 4419744 87148 pts/0   R+   01:00   6:47 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2411 45.5  0.0 4437652 105064 pts/0  R+   01:00   5:31 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2412 39.5  0.0 4426304 93680 pts/0   R+   01:00   4:48 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2413 46.0  0.0 4416808 84348 pts/0   R+   01:00   5:35 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2414 54.8  0.0 4433412 100844 pts/0  R+   01:00   6:39 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2415 52.2  0.0 4414076 81568 pts/0   R+   01:00   6:20 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2416 51.4  0.0 4414280 81704 pts/0   R+   01:00   6:14 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2417 42.6  0.0 4421028 88556 pts/0   R+   01:00   5:10 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2418 44.3  0.0 4428784 96264 pts/0   R+   01:00   5:22 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2419 45.3  0.0 4415180 82524 pts/0   R+   01:00   5:29 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2420 47.5  0.0 4418872 86252 pts/0   R+   01:00   5:46 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2421 49.3  0.0 4431236 98636 pts/0   R+   01:00   5:58 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2422 53.3  0.0 4429564 97064 pts/0   R+   01:00   6:28 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2423 53.3  0.0 4423556 91212 pts/0   R+   01:00   6:27 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2424 50.1  0.0 4418904 86292 pts/0   R+   01:00   6:05 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2425 42.3  0.0 4428440 95856 pts/0   R+   01:00   5:08 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2426 49.3  0.0 4443068 110528 pts/0  R+   01:00   5:59 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config
+root        2427 45.1  0.0 4416976 84376 pts/0   R+   01:00   5:28 python -u -m tasks.t0113_t0106_seed2247_replicate.code.nsga2_driver --seed 2247 --save-algorithm-config

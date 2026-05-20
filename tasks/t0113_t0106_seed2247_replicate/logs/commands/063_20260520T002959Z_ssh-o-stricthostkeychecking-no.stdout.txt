@@ -1,0 +1,23 @@
+NVIDIA GeForce RTX 4060 Ti, 16380 MiB, 580.82.09
+NVIDIA GeForce RTX 4060 Ti, 16380 MiB, 580.82.09
+---
+bash: line 1: nvcc: command not found
+no nvcc
+---
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          40G  528K   40G   1% /
+---
+256
+---
+MemTotal:       528115340 kB
+MemFree:        325433900 kB
+MemAvailable:   495617176 kB
+---
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+---
+Python 3.12.13
+/usr/local/bin/python3

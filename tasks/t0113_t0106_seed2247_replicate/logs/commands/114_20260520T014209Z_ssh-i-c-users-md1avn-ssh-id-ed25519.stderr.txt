@@ -1,0 +1,6 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+  File "<string>", line 17
+    print(f"gen={c[\"generation\"]:3d}  DSI={c[\"dsi_vector_sum\"]:.4f}  PD_rate={c[\"pd_rate_hz\"]:7.2f} Hz")
+                    ^
+SyntaxError: unexpected character after line continuation character

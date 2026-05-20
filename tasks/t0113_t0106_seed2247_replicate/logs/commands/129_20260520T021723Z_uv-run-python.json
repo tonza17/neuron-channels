@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -u -c \nimport gzip, json\nwith gzip.open('tasks/t0113_t0106_seed2247_replicate/assets/predictions/t0113-bedb-morph-nsga2-seed2247/files/all_evaluations_seed2247.json.gz', 'rt', encoding='utf-8') as f:\n    data = json.load(f)\nprint('keys:', list(data.keys()) if isinstance(data, dict) else 'list')\nn = len(data['evaluations']) if isinstance(data, dict) else len(data)\nprint('n_cells:', n)\ne0 = (data['evaluations'] if isinstance(data, dict) else data)[0]\nprint('fields:', list(e0.keys()))\nprint('sample:', {k: (v if not isinstance(v, list) or len(v) < 5 else f'<{len(v)}-list>') for k,v in e0.items()})\n",
+  "exit_code": 0,
+  "duration_seconds": 0.307,
+  "started_at": "2026-05-20T02:17:23Z",
+  "completed_at": "2026-05-20T02:17:23Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "129_20260520T021723Z_uv-run-python.stdout.txt",
+  "stderr_file": "129_20260520T021723Z_uv-run-python.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,11 @@
+[cost_watchdog] resolved hourly rate: $0.2361/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=2247] using 60 parallel workers
+[nsga2_driver seed=2247] starting: pop=96 max_gen=60 hard_cap=$25.00 rate=$0.2361/hr pool_restart_every=10
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       96 |      2 |             - |             -
+[seed 2247 gen 1] HV=0.2460  pop_size=96  cost_so_far=$0.0068  elapsed=104s
+[nsga2_driver seed=2247 gen=1] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---hv_trace---
+{"gen": 1, "wall_clock_s": 103.6458375453949, "hv": 0.24603174603174863, "n_cells_evaluated": 96}
