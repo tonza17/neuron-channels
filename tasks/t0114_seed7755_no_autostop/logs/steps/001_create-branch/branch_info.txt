@@ -1,0 +1,5 @@
+branch: task/t0114_seed7755_no_autostop
+base_branch: main
+base_commit: 66a15be722ee4b4f1dd4ece2aa6438bb3a399f23
+worktree_path: C:/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0114_seed7755_no_autostop
+created_at: 2026-05-20T08:46:54Z
