@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare 4-seed substrate-rate estimate and HV trajectory shape against Hay 2011, Druckmann 2007, Mohacsi 2024 baselines.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-20T14:51:36Z",
-      "completed_at": null,
+      "completed_at": "2026-05-20T16:09:10Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
