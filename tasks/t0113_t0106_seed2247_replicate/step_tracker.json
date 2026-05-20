@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Fork t0112 code, apply the single seed-constant change (77 -> 2247), local smoke gate, remote NSGA-II run with HV-plateau stop, collect per-cell predictions asset.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-20T00:37:47Z",
-      "completed_at": null,
+      "completed_at": "2026-05-20T02:09:23Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
