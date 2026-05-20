@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W003 warning: suggestions[1]: description is 1064 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[2]: description is 1116 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[3]: description is 1115 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[4]: description is 1041 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[5]: description is 1163 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[7]: title is 125 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[7]: description is 1014 characters, exceeds 1000[0m
+
+[33m[1mPASSED[0m — 0 error(s), 7 warning(s)
