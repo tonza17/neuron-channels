@@ -68,9 +68,9 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision fresh Vast.ai EPYC-class instance for seed 9354.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-20T16:46:50Z",
-      "completed_at": null,
+      "completed_at": "2026-05-20T17:11:33Z",
       "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
