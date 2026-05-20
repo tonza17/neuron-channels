@@ -1,0 +1,7 @@
+rates (as %): [3.2852564102564106, 0.3472222222222222, 0.1488095238095238]
+mean (%): 1.2604
+SD  (%): 1.7564
+SE  (%): 1.0140
+95% CI: (-0.7271, 3.2479) %
+Hay 2011 baseline 0.40%, Druckmann 2007 baseline 0.10%
+Mean is between/within Hay-Druckmann envelope? Hay=0.40% Druckmann=0.10% Mean=1.2604%

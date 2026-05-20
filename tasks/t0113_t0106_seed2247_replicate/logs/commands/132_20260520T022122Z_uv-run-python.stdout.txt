@@ -1,0 +1,25 @@
+[build_t0113_results] Loading 3-seed datasets...
+  t0106_seed44: 3744 cells, 7 Pareto cells, 39 HV-trajectory points
+  t0112_seed77: 2016 cells, 3 Pareto cells, 21 HV-trajectory points
+  t0113_seed2247: 1344 cells, 8 Pareto cells, 14 HV-trajectory points
+[build_t0113_results] Computing per-seed summaries...
+  t0106_seed44: jp_unique=136, jp_pct=3.632%, best_legit_dsi=0.9939, best_pd=125.95 Hz
+  t0112_seed77: jp_unique=7, jp_pct=0.347%, best_legit_dsi=0.9535, best_pd=114.76 Hz
+  t0113_seed2247: jp_unique=2, jp_pct=0.149%, best_legit_dsi=0.3651, best_pd=71.67 Hz
+[build_t0113_results] Chart 1: pareto_front_3seeds.png
+  -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\images\pareto_front_3seeds.png
+[build_t0113_results] Chart 2: hv_vs_gen_3seeds.png
+  -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\images\hv_vs_gen_3seeds.png
+[build_t0113_results] Chart 3: joint_pass_yield_per_gen_3seeds.png
+  -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\images\joint_pass_yield_per_gen_3seeds.png
+[build_t0113_results] Chart 4: top50_morphologies_seed2247.png
+  -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\images\top50_morphologies_seed2247.png
+[build_t0113_results] Chart 5: asymmetry_distribution_3seeds.png
+  -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\images\asymmetry_distribution_3seeds.png
+[build_t0113_results] CSV 1: joint_pass_summary_3seeds.csv
+  -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\data\joint_pass_summary_3seeds.csv
+[build_t0113_results] CSV 2: pareto_front_overlap_3seeds.csv
+  -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\data\pareto_front_overlap_3seeds.csv
+[build_t0113_results] metrics.json (registered metrics)
+  -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0113_t0106_seed2247_replicate\tasks\t0113_t0106_seed2247_replicate\results\metrics.json
+[build_t0113_results] Done.

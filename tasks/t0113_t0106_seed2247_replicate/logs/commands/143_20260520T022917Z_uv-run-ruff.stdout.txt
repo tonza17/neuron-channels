@@ -1,0 +1,36 @@
+E501 Line too long (130 > 100)
+ --> tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:4:101
+  |
+3 | Reads:
+4 | * `tasks/t0113_t0106_seed2247_replicate/assets/predictions/t0113-bedb-morph-nsga2-seed2247/files/all_evaluations_seed2247.json.gz`
+  |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5 | * `tasks/t0113_t0106_seed2247_replicate/results/data/pareto_front_seed2247.json`
+6 | * `tasks/t0113_t0106_seed2247_replicate/results/data/hv_trajectory_seed2247.json`
+  |
+
+F841 Local variable `nn_106_raw_idx` is assigned to but never used
+   --> tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:641:13
+    |
+639 |             d_z_106 = np.array([np.nan])
+640 |             nn_106_idx = -1
+641 |             nn_106_raw_idx = -1
+    |             ^^^^^^^^^^^^^^
+642 |
+643 |         # Raw and z-scored distances to t0112 Pareto cells.
+    |
+help: Remove assignment to unused variable `nn_106_raw_idx`
+
+F841 Local variable `nn_112_raw_idx` is assigned to but never used
+   --> tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:653:13
+    |
+651 |             d_z_112 = np.array([np.nan])
+652 |             nn_112_idx = -1
+653 |             nn_112_raw_idx = -1
+    |             ^^^^^^^^^^^^^^
+654 |
+655 |         rows.append(
+    |
+help: Remove assignment to unused variable `nn_112_raw_idx`
+
+Found 3 errors.
+No fixes available (2 hidden fixes can be enabled with the `--unsafe-fixes` option).

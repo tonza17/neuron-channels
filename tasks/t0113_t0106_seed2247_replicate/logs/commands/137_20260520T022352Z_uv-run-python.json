@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -u -c \nimport json\nwith open('tasks/t0113_t0106_seed2247_replicate/results/data/example_cells.json', encoding='utf-8') as f:\n    cells = json.load(f)\nfor c in cells:\n    vec_compact = '[' + ', '.join(f'{x:.6g}' for x in c['vector_68d']) + ']'\n    print(f'### TAG: {c[\"tag\"]}')\n    print(f'generation: {c[\"generation\"]}')\n    print(f'DSI: {c[\"dsi_vector_sum\"]}')\n    print(f'PD: {c[\"pd_rate_hz\"]}')\n    print(f'obj_F: {c[\"objective_F_minimised\"]}')\n    print(f'vec68: {vec_compact}')\n    print()\n",
+  "exit_code": 0,
+  "duration_seconds": 0.245,
+  "started_at": "2026-05-20T02:23:52Z",
+  "completed_at": "2026-05-20T02:23:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "137_20260520T022352Z_uv-run-python.stdout.txt",
+  "stderr_file": "137_20260520T022352Z_uv-run-python.stderr.txt",
+  "stdout_lines": 70,
+  "stderr_lines": 0,
+  "truncated": false
+}

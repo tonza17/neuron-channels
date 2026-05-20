@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -u -c \nimport json\nwith open('tasks/t0113_t0106_seed2247_replicate/results/data/hv_trajectory_seed2247.json', encoding='utf-8') as f:\n    hv = json.load(f)['trajectory']\n# Total elapsed_s at gen 14\ntotal_s = hv[-1]['elapsed_s']\nn_gen = hv[-1]['generation']\nprint(f'Total elapsed_s at gen {n_gen} = {total_s:.2f}s ({total_s/60:.2f} min)')\nprint(f'Wall-clock per gen avg = {total_s / n_gen:.2f} s/gen')\n# Per-gen wall-clock from differences\nprev = 0.0\ngen_times = []\nfor h in hv:\n    diff = h['elapsed_s'] - prev\n    gen_times.append(diff)\n    prev = h['elapsed_s']\nprint('Per-gen wall-clock times (s):')\nfor h, t in zip(hv, gen_times):\n    print(f'  gen {h[\"generation\"]}: {t:.2f}s')\nprint(f'Mean: {sum(gen_times)/len(gen_times):.2f}s')\nprint(f'Mean excluding gen 1 (init): {sum(gen_times[1:])/(len(gen_times)-1):.2f}s')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.278,
+  "started_at": "2026-05-20T02:22:41Z",
+  "completed_at": "2026-05-20T02:22:41Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "135_20260520T022241Z_uv-run-python.stdout.txt",
+  "stderr_file": "135_20260520T022241Z_uv-run-python.stderr.txt",
+  "stdout_lines": 19,
+  "stderr_lines": 0,
+  "truncated": false
+}

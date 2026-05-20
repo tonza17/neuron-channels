@@ -1,0 +1,30 @@
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:155: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:156: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:161: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:166: error: Returning Any from function declared to return "list[dict[str, Any]]"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:198: error: Returning Any from function declared to return "bool"  [no-any-return]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:559: error: No overload variant of "int" matches argument type "object"  [call-overload]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:559: note: Possible overload variants:
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:559: note:     def int(str | Buffer | SupportsInt | SupportsIndex | SupportsTrunc = ..., /) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:559: note:     def int(str | bytes | bytearray, /, base: SupportsIndex) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:560: error: No overload variant of "int" matches argument type "object"  [call-overload]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:560: note: Possible overload variants:
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:560: note:     def int(str | Buffer | SupportsInt | SupportsIndex | SupportsTrunc = ..., /) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:560: note:     def int(str | bytes | bytearray, /, base: SupportsIndex) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:569: error: No overload variant of "int" matches argument type "object"  [call-overload]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:569: note: Possible overload variants:
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:569: note:     def int(str | Buffer | SupportsInt | SupportsIndex | SupportsTrunc = ..., /) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:569: note:     def int(str | bytes | bytearray, /, base: SupportsIndex) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:576: error: Argument 1 to "float" has incompatible type "object"; expected "str | Buffer | SupportsFloat | SupportsIndex"  [arg-type]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:578: error: Argument 1 to "float" has incompatible type "object"; expected "str | Buffer | SupportsFloat | SupportsIndex"  [arg-type]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:579: error: No overload variant of "int" matches argument type "object"  [call-overload]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:579: note: Possible overload variants:
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:579: note:     def int(str | Buffer | SupportsInt | SupportsIndex | SupportsTrunc = ..., /) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:579: note:     def int(str | bytes | bytearray, /, base: SupportsIndex) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:580: error: No overload variant of "int" matches argument type "object"  [call-overload]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:580: note: Possible overload variants:
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:580: note:     def int(str | Buffer | SupportsInt | SupportsIndex | SupportsTrunc = ..., /) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:580: note:     def int(str | bytes | bytearray, /, base: SupportsIndex) -> int
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:581: error: Argument 1 to "float" has incompatible type "object"; expected "str | Buffer | SupportsFloat | SupportsIndex"  [arg-type]
+tasks\t0113_t0106_seed2247_replicate\code\build_t0113_results.py:623: error: Returning Any from function declared to return "ndarray[tuple[Any, ...], dtype[Any]]"  [no-any-return]
+Found 14 errors in 1 file (checked 1 source file)

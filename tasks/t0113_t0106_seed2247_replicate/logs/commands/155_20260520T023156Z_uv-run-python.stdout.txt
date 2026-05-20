@@ -1,0 +1,5 @@
+metrics.json variants: ['random-init-seed2247-2dir-60gen-restart10-best-legit', 'random-init-seed2247-2dir-60gen-restart10-overall-max', 'random-init-seed2247-2dir-60gen-restart10-dsi-eq-one']
+Each metrics block:
+  random-init-seed2247-2dir-60gen-restart10-best-legit: {'direction_selectivity_index': 0.3651}
+  random-init-seed2247-2dir-60gen-restart10-overall-max: {'direction_selectivity_index': 1.0}
+  random-init-seed2247-2dir-60gen-restart10-dsi-eq-one: {'direction_selectivity_index': 1.0}

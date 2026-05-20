@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0113_t0106_seed2247_replicate",
+  "command": "uv run python -u -c \nimport gzip, json\nwith gzip.open('tasks/t0113_t0106_seed2247_replicate/assets/predictions/t0113-bedb-morph-nsga2-seed2247/files/all_evaluations_seed2247.json.gz', 'rt', encoding='utf-8') as f:\n    data = json.load(f)\ncells = data['evaluations']\n# Joint pass\njp = [c for c in cells if c['dsi_vector_sum'] >= 0.5 and c['pd_rate_hz'] >= 30]\nprint('n_joint_pass_evals:', len(jp))\nprint('Unique-by-vector_68d joint_pass:', len({tuple(c['vector_68d']) for c in jp}))\nprint('All joint-pass DSI values:', [c['dsi_vector_sum'] for c in jp])\nprint('All joint-pass PD values:', [c['pd_rate_hz'] for c in jp])\n# DSI==1\nones = [c for c in cells if c['dsi_vector_sum'] >= 1.0]\nprint('n cells with DSI>=1.0:', len(ones))\nprint('Their PD-rates:', sorted({c['pd_rate_hz'] for c in ones})[:10])\n# Top legit\nlegit = sorted([(c['dsi_vector_sum'], c['pd_rate_hz'], c['generation']) for c in cells if c['dsi_vector_sum'] < 1.0], key=lambda x: x[0], reverse=True)[:5]\nprint('Top 5 legit DSI:', legit)\n# Best PD\ntop_pd = sorted([(c['dsi_vector_sum'], c['pd_rate_hz'], c['generation']) for c in cells], key=lambda x: x[1], reverse=True)[:5]\nprint('Top 5 PD:', top_pd)\n",
+  "exit_code": 0,
+  "duration_seconds": 0.344,
+  "started_at": "2026-05-20T02:20:28Z",
+  "completed_at": "2026-05-20T02:20:28Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0113_t0106_seed2247_replicate",
+  "stdout_file": "131_20260520T022028Z_uv-run-python.stdout.txt",
+  "stderr_file": "131_20260520T022028Z_uv-run-python.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 0,
+  "truncated": false
+}

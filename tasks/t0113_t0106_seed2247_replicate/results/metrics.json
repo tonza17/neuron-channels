@@ -1,0 +1,68 @@
+{
+  "variants": [
+    {
+      "variant_id": "random-init-seed2247-2dir-60gen-restart10-best-legit",
+      "label": "2-direction NSGA-II seed 2247: best legit DSI (highest non-silence-guard cell)",
+      "dimensions": {
+        "task_seed": 2247,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 14,
+        "n_cells": 1344,
+        "pool_restart_every": 10,
+        "dsi_subvariant": "best_legit"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.3651
+      }
+    },
+    {
+      "variant_id": "random-init-seed2247-2dir-60gen-restart10-overall-max",
+      "label": "2-direction NSGA-II seed 2247: overall max DSI (silence-guard saturated)",
+      "dimensions": {
+        "task_seed": 2247,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 14,
+        "n_cells": 1344,
+        "pool_restart_every": 10,
+        "dsi_subvariant": "overall_max"
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    },
+    {
+      "variant_id": "random-init-seed2247-2dir-60gen-restart10-dsi-eq-one",
+      "label": "2-direction NSGA-II seed 2247: silence-guard ceiling cell count (cells at DSI = 1.0)",
+      "dimensions": {
+        "task_seed": 2247,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 14,
+        "n_cells": 1344,
+        "pool_restart_every": 10,
+        "dsi_subvariant": "dsi_eq_one_count",
+        "n_dsi_eq_one": 6
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    }
+  ]
+}
