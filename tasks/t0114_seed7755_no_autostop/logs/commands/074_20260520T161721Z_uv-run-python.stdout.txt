@@ -1,0 +1,17 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0114_seed7755_no_autostop\tasks\t0114_seed7755_no_autostop\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 001_20260520T085326Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 030_20260520T103403Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 032_20260520T103508Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 034_20260520T103631Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 049_20260520T141232Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 051_20260520T143132Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 052_20260520T143306Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 055_20260520T144239Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W006 warning: Step 11 is 'skipped' but log_file is null in step_tracker.json[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 11 warning(s)
