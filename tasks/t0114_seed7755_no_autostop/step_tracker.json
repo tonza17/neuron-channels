@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write 4-seed comparison results_summary.md, results_detailed.md, metrics.json, 5 charts, 3 CSVs. Implement S-0113-03 offline detector replay over all 4 seeds.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-20T14:14:28Z",
-      "completed_at": null,
+      "completed_at": "2026-05-20T14:51:14Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
