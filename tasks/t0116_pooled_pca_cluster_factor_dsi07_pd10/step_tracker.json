@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0116_pooled_pca_cluster_factor_dsi07_pd10 worktree branch from main.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-21T12:09:52Z",
-      "completed_at": null,
+      "completed_at": "2026-05-21T12:13:27Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
@@ -67,7 +67,7 @@
     {
       "step": 8,
       "name": "implementation",
-      "description": "Pool DSI>0.7 ∧ PD>10 cells from 4 NSGA-II runs, run PCA + gen-0 overlay + electrophys/morphology KMeans + per-cluster morph grids + varimax factor analysis, produce 3 answer assets.",
+      "description": "Pool DSI>0.7 \u2227 PD>10 cells from 4 NSGA-II runs, run PCA + gen-0 overlay + electrophys/morphology KMeans + per-cluster morph grids + varimax factor analysis, produce 3 answer assets.",
       "status": "pending",
       "started_at": null,
       "completed_at": null,
