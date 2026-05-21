@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0115_seed9354_no_autostop\tasks\t0115_seed9354_no_autostop\results\compare_literature.md
+
+[31m[1mERRORS:[0m
+[31m  CL-E003 error: compare_literature.md is missing mandatory section: ## Methodology Differences[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)
