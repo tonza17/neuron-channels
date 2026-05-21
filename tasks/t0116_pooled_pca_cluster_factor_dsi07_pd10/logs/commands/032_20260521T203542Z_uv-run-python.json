@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0116_pooled_pca_cluster_factor_dsi07_pd10",
+  "command": "uv run python -m arf.scripts.verificators.verify_task_results t0116_pooled_pca_cluster_factor_dsi07_pd10",
+  "exit_code": 0,
+  "duration_seconds": 0.324,
+  "started_at": "2026-05-21T20:35:42Z",
+  "completed_at": "2026-05-21T20:35:42Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0116_pooled_pca_cluster_factor_dsi07_pd10",
+  "stdout_file": "032_20260521T203542Z_uv-run-python.stdout.txt",
+  "stderr_file": "032_20260521T203542Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

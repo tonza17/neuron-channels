@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\results
+
+[32m[1mPASSED[0m — no errors or warnings
