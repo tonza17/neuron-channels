@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Re-use t0108 pipeline + scratch_t0112_top15_morphologies.py rendering; verify per-source evaluations schema across t0106 / t0112 / t0114 / t0115.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-21T12:18:18Z",
-      "completed_at": null,
+      "completed_at": "2026-05-21T12:36:17Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
