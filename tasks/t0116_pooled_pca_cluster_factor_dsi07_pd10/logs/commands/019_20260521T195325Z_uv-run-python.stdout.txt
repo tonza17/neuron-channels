@@ -1,0 +1,20 @@
+FA matrix shape=(869, 68)
+
+Kaiser eigenvalues > 1: 11 (cap = 10)
+n_factors retained: 10
+kept dims after constant-column drop: 68 / 68
+Total variance explained: 0.6526
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\results\images\factor_loadings_heatmap.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\results\data\factor_loadings.csv
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\results\data\factor_correlations.csv
+factor_id  var_explained_pct     r_dsi        p_dsi      r_pd          p_pd  joint_factor_flag
+       F1          30.064811 -0.588867 3.122602e-82 -0.209715  4.297771e-10              False
+       F2          14.021955 -0.085516 1.167234e-02 -0.366567  4.997475e-29              False
+       F3           9.358596 -0.171605 3.595201e-07  0.745759 4.305455e-155              False
+       F4           1.826047  0.088520 9.032146e-03 -0.230108  6.608248e-12              False
+       F5           2.942150  0.056900 9.368173e-02  0.230036  6.710501e-12              False
+       F6           1.347608 -0.221845 3.769234e-11  0.032633  3.366333e-01              False
+       F7           1.355763  0.087252 1.007377e-02 -0.008959  7.919983e-01              False
+       F8           1.865846  0.014123 6.775828e-01 -0.037687  2.671012e-01              False
+       F9           1.097686 -0.025509 4.526461e-01  0.070459  3.783611e-02              False
+      F10           1.377396 -0.059290 8.067057e-02 -0.095009  5.061789e-03              False

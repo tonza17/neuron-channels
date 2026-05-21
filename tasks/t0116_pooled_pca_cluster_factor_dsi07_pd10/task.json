@@ -5,7 +5,7 @@
   "name": "Pooled PCA + cluster + factor analysis of DSI>0.7 / PD>10 cells across 4 seeds",
   "short_description": "Pool DSI>0.7 ∧ PD>10 Hz cells from t0106 (s44), t0112 (s77), t0114 (s7755), t0115 (s9354); PCA + KMeans on electrophys (54-d) and morphology (14-d) subspaces + factor analysis on the full 68-d vector.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0106_long_pdnd_nsga2_300gen",
     "t0112_t0106_seed77_replicate",
@@ -14,7 +14,7 @@
     "t0108_t0106_cluster_factor_dsi05_pd10"
   ],
   "start_time": "2026-05-21T12:05:26Z",
-  "end_time": null,
+  "end_time": "2026-05-21T20:35:12Z",
   "expected_assets": {
     "answer": 3
   },

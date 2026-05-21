@@ -1,0 +1,7 @@
+electrophys_k=3: NMI=0.9288, chi2=1670.91, p=0.000e+00, dof=6, low_expected=3/12
+morphology_k=3: NMI=0.8888, chi2=1643.13, p=0.000e+00, dof=6, low_expected=3/12
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\results\data\cluster_seed_purity.csv
+      partition  k      nmi        chi2  p_value  dof  n_expected_below_5  n_total_cells
+electrophys_k=3  3 0.928761 1670.907284      0.0    6                   3             12
+ morphology_k=3  3 0.888765 1643.125721      0.0    6                   3             12

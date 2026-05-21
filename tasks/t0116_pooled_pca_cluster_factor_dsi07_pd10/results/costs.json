@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "note": "CPU-only data-analysis task; no paid APIs, no remote compute. Local Python (uv-managed) on Windows 11."
+}

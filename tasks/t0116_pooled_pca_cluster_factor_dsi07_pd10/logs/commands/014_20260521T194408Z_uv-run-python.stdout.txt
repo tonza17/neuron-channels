@@ -1,0 +1,17 @@
+Loaded 869 survivors, 384 gen-0 rows, standardiser mean.shape=(68,)
+
+Variance explained per PCA:
+  combined PCA: PC1=0.3102 PC2=0.1503 (cumulative=0.4606)
+  ephys PCA: PC1=0.3224 PC2=0.1547
+  morph PCA: PC1=0.3056 PC2=0.1852
+  ephys 3d: PCs cumulative=0.5758
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\results\images\pca_combined.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\data\pca_models.pkl
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\results\images\pca_with_gen0_overlay.png
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\results\data\gen0_displacement.csv
+ seed  mean_disp_pc12  mean_disp_68d  p95_disp_pc12  p95_disp_68d  n_survivors  n_gen0
+   44       15.026087      61.252161      16.234027     61.489130          121      96
+   77        8.501466      59.726180      10.038236     61.651159           10      96
+ 7755       13.304771      60.575894      14.794819     61.142417          675      96
+ 9354        2.369641      60.072698       3.652414     60.838996           63      96
