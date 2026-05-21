@@ -5,8 +5,8 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (47)](../papers/by-category/direction-selectivity.md) | [Answers
-(26)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(310)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(29)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(315)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (3)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (12)](../predictions/by-category/direction-selectivity.md)
@@ -2534,7 +2534,63 @@ simulation.
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | completed | 2026-05-12 01:55 |
 
-## Answers (26)
+## Answers (29)
+
+<details>
+<summary><strong>Does the joint-pass cohort (DSI > 0.7 AND PD > 10 Hz) form a single
+connected manifold in 68-d across four NSGA-II seeds (44, 77, 7755, 9354),
+or do the seeds occupy seed-specific sub-basins?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-21 | **Full answer**:
+[`pooled-survivors-basin-connectivity-dsi07-pd10`](../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-basin-connectivity-dsi07-pd10/)
+
+The four-seed pool occupies seed-specific sub-basins, not one connected manifold. KMeans (k=3)
+on the standardised 54-d electrophys subspace produces an almost-perfect seed partition
+(NMI=0.929, chi-square p<1e-300): cluster 0 = 63/67 seed 9354, cluster 1 = 673/678 seed 7755,
+cluster 2 = 121/124 seed 44 (seed 77 contributes 10 scattered cells across all clusters). The
+14-d morphology partition is similarly seed-aligned (NMI=0.889). In the combined 68-d PCA
+scatter the four seed colours occupy visibly disjoint regions of the PC1-PC2 plane, so the
+cross-seed overlap implied by a single connected basin is not observed at the DSI > 0.7 cut.
+
+</details>
+
+<details>
+<summary><strong>How far did NSGA-II travel from its gen-0 random initialisation in
+each seed (44, 77, 7755, 9354), measured in the 68-d standardised parameter
+space and in PC1+PC2 space of the combined 68-d PCA?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-21 | **Full answer**:
+[`pooled-survivors-displacement-from-init-dsi07-pd10`](../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-displacement-from-init-dsi07-pd10/)
+
+The four seeds travel comparably in the full 68-d standardised space (mean displacement
+59.7-61.3 standardised units, p95 60.8-61.7) but diverge sharply in the combined PC1+PC2
+plane: seed 44 traveled 15.0 PCA units, seed 7755 traveled 13.3, seed 77 traveled 8.5, and
+seed 9354 traveled only 2.4. The 68-d uniformity is consistent with each seed's gen-0
+distribution covering similar shells of the LHS-sampled parameter space, while the PC1+PC2
+divergence reflects the seed-specific direction of NSGA-II descent — the leading components
+are exactly the cross-seed axis along which the basins separate. All four seeds traveled
+substantially further than their own gen-0 within-seed spread, confirming optimisation moved
+the survivors out of the random-init region.
+
+</details>
+
+<details>
+<summary><strong>Which factors (after varimax rotation on the full 68-d pool) load
+most strongly on dsi_vector_sum and pd_rate_hz, and are they
+morphology-dominated, electrophys-dominated, or mixed?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-21 | **Full answer**:
+[`pooled-survivors-latent-drivers-dsi07-pd10`](../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-latent-drivers-dsi07-pd10/)
+
+F1 is the dominant DSI driver (r=-0.589, p ~ 1e-82) and is mixed — its top loadings include
+both electrophys channels (SK_AIS, SKAHP, NAP) and a morphology parameter
+(primary_branch_pd_concentration). F3 is the dominant PD-rate driver (r=+0.746, p ~ 1e-155)
+and is purely electrophys (NAR, IH, NAV16_SOMA, BK channels, RA). No single factor crosses
+|r|>0.3 on both DSI and PD simultaneously, so the strict-cohort pool does not contain a joint
+DSI-PD axis — the answer to "are the drivers shared?" is no in this strict cohort, but t0110's
+relaxed-cohort analysis shows this is a known truncated-cohort artefact.
+
+</details>
 
 <details>
 <summary><strong>Does long-running 2-direction NSGA-II on the 68-d Bed B + 14-d
@@ -3091,7 +3147,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (276 open, 34 closed)
+## Suggestions (281 open, 34 closed)
 
 <details>
 <summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector
@@ -3182,6 +3238,108 @@ parameter space; identify any cluster signatures that distinguish 'rich-yield' f
 'sparse-yield' seeds; report whether the rich-yield Pareto fronts share a common parameter
 sub-volume vs each occupying a distinct sub-volume. Recommended task types: data-analysis.
 Cost: <$0.10.
+
+</details>
+
+<details>
+<summary>🧪 <strong>5-seed pooled re-analysis adding t0113 (seed 2247) via correction
+to the t0116 pipeline</strong> (S-0116-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-21 | **Source**:
+[t0116_pooled_pca_cluster_factor_dsi07_pd10](../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
+
+t0116's 4-seed pool (44/77/7755/9354) was a deliberate first cut; seed 2247 (t0113) was
+excluded because its joint-pass cells are silence-guard DSI=1.0 saturations (per
+S-0113-04/S-0113-06). Re-run the t0116 pipeline end-to-end with t0113 added as the fifth
+source (5-seed pool, same strict filter DSI>0.7 AND PD>10, silence-guard tightened to >=3 PD
+spikes per S-0113-06), regenerate every chart and CSV, and write a corrections/ overlay that
+points consumers at the 5-seed artefacts. Decision rule: if seed-aligned cluster pattern
+survives (NMI > 0.7 on both partitions), the basin-isolation finding is robust; if NMI drops
+below 0.5, the 4-seed result was an artefact of seed choice. Recommended task types:
+data-analysis, correction. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Relaxed-cohort (DSI > 0.5) pooled re-analysis to test
+truncated-cohort artefact on joint-factor decoupling</strong> (S-0116-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-21 | **Source**:
+[t0116_pooled_pca_cluster_factor_dsi07_pd10](../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
+
+t0116's strict DSI>0.7 cohort produced no joint factor (|r|>0.3 on both DSI and PD). t0110
+documented that strict-cohort filters truncate joint variance (restriction-of-range); t0108's
+strict cohort identified F10 as a joint factor, t0110's relaxed cohort found a different sign
+pattern. Re-run the t0116 pipeline (4 or 5 seeds, depending on S-0116-01) with the cohort
+filter relaxed from DSI>0.7 to DSI>0.5 (matching t0108/t0110); regenerate the factor heatmap
+and per-factor DSI/PD correlations. Decision: if a joint factor emerges at the relaxed
+threshold, t0116's 'no joint factor' is a truncated-cohort artefact and the latent-drivers
+answer must be re-interpreted conditional on cohort definition; if no joint factor emerges
+even at DSI>0.5, the multi-seed pool truly lacks a shared trade-off axis. Recommended task
+types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Connected-component topological basin test (vs KMeans+NMI) on
+the t0116 pooled pool</strong> (S-0116-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-21 | **Source**:
+[t0116_pooled_pca_cluster_factor_dsi07_pd10](../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
+
+t0116's basin-connectivity answer rests on KMeans (k=3) silhouette + NMI(cluster,
+seed)=0.929/0.889. KMeans forces a partition even on a connected manifold and NMI inflates
+with small per-seed counts (seed 77 n=10). A topology-aware test asks the stronger question:
+is there any continuous path between seeds' cells in 68-d, or are they genuinely disconnected?
+Build a k-NN graph on the standardised 869x68 matrix (k in {5, 10, 20}), extract connected
+components via scipy.sparse.csgraph.connected_components, and report (a) component count vs
+k_nn, (b) per-component seed composition, (c) persistence of seed-isolation across k_nn
+values. Decision: if at k_nn=10 the pool has one giant component containing all 4 seeds,
+seed-aligned KMeans clusters are clusters-of-a-connected-manifold (weakens basin-isolation);
+if 4+ components each dominated by one seed, basin-isolation is corroborated. Distinct from
+S-0112-08 and S-0115-07. Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-seed factor analysis on each sub-basin: do basins share
+latent drivers or have private ones?</strong> (S-0116-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
+[t0116_pooled_pca_cluster_factor_dsi07_pd10](../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
+
+t0116's pooled FA (n=869) found F1 mixed DSI driver (SK_AIS + primary_branch_pd_concentration
+co-vary) and F3 pure-electrophys PD driver. The basin-connectivity answer shows the pool
+fragments by seed; F1's mixed loadings could reflect (a) a single mixed axis within every
+basin or (b) two separate axes (one ephys, one morph) that co-vary because seed-of-origin
+confounds them. The latent-drivers answer's Limitations section flags this as a candidate
+correction task. Run independent varimax FAs on each per-seed slice with sufficient n: seed
+7755 (n=675), seed 44 (n=121), seed 9354 (n=63); skip seed 77 (n=10). For each per-seed FA,
+report top-1 DSI factor and top-1 PD factor. Decision: if all three rich seeds produce a mixed
+ephys+morph DSI factor with the SK_AIS + morph co-loading, pooled F1 is intrinsic; if some
+produce pure-ephys and others pure-morph, pooled F1 is a cross-basin confound. Distinct from
+S-0113-08 and S-0114-05. Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>📊 <strong>Bootstrap loading-stability and oblique-rotation sensitivity for
+the t0116 10-factor varimax solution</strong> (S-0116-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
+[t0116_pooled_pca_cluster_factor_dsi07_pd10](../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
+
+The latent-drivers answer's Limitations lists three FA-stability concerns: (a) n=869 with 68
+features is borderline for FA-loading stability, (b) varimax forces orthogonal factors so F1
+and F3 cannot share loadings, (c) the Kaiser cap at 10 left one eigenvalue>1 unmodelled
+(11-10=1). t0105 ran bootstrap loading recovery; t0116 did not. Concrete action: (i) draw
+B=200 bootstrap resamples of the 869-cell pool with replacement, refit FA(n=10) + varimax on
+each, align factors to t0116 by max-cosine-similarity, and report median +/- IQR loadings per
+factor x feature in a stability heatmap; (ii) rerun with oblique promax rotation (kappa=4) and
+report new top-7 loadings and joint-factor flags; (iii) refit with n_components=11. Decision:
+if F1/F3 top loadings change rank under bootstrap or promax (e.g., morphology drops out of
+F1), the t0116 mixed/pure classification should be downgraded; if structure persists, it is
+robust. Recommended task types: data-analysis. Cost: <$0.20.
 
 </details>
 

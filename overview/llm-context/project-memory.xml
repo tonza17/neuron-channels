@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-21T02:57:55Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-21T20:42:04Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>230242</char_count>
-    <byte_count>230602</byte_count>
-    <estimated_tokens>57560</estimated_tokens>
+    <char_count>234799</char_count>
+    <byte_count>235169</byte_count>
+    <estimated_tokens>58699</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -224,9 +224,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0113_t0106_seed2247_replicate</id>
         <id>t0114_seed7755_no_autostop</id>
         <id>t0115_seed9354_no_autostop</id>
+        <id>t0116_pooled_pca_cluster_factor_dsi07_pd10</id>
       </source_ids>
       <content>
-Completed tasks: 108
+Completed tasks: 109
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -875,6 +876,12 @@ ID: t0115_seed9354_no_autostop
 Completed: 2026-05-21
 Short description: Re-run t0106 NSGA-II substrate with random seed 9354, _POOL_RESTART_EVERY=10, HV-plateau auto-stop DISABLED; final 5th seed for S-0112-01 batch. Implements S-0113-03 live.
 Result summary: t0115 - Seed-9354 NSGA-II Replicate of t0106 with HV-Plateau Auto-Stop Disabled: Results Summary Summary Seed 9354 with the HV-plateau auto-stop DISABLED reached **63 unique LEGIT joint-pass cells** (DSI &gt;= 0.5 AND PD-rate &gt;= 30 Hz AND DSI &lt; 0.9999) across **5,280 evaluations / 55 NSGA-II generations** on the same 68-d Bed B + 14-d morphology substrate as t0106 / t0112 / t0113 / t0114. The run terminated by **operator stop** after the HV trajectory visibly plateaued near HV = 50.56. Adding seed 9354 as the **fifth and final data point of the S-0112-01 substrate-rate confirmation batch** gives a 5-seed mean LEGIT joint-pass acceptance rate of **2.58% +/- SE 1.50%** (sample SD 3.35%), still...
+
+## Pooled PCA + cluster + factor analysis of DSI&gt;0.7 / PD&gt;10 cells across 4 seeds
+ID: t0116_pooled_pca_cluster_factor_dsi07_pd10
+Completed: 2026-05-21
+Short description: Pool DSI&gt;0.7 ∧ PD&gt;10 Hz cells from t0106 (s44), t0112 (s77), t0114 (s7755), t0115 (s9354); PCA + KMeans on electrophys (54-d) and morphology (14-d) subspaces + factor analysis on the full 68-d vector.
+Result summary: Results Summary: Pooled PCA + Cluster + Factor Analysis of DSI &gt; 0.7 / PD &gt; 10 Cells (4 Seeds) Summary Pooled **869** unique joint-pass survivor cells (`dsi_vector_sum &gt; 0.7 ∧ pd_rate_hz &gt; 10.0`) from four NSGA-II runs (t0106 seed 44, t0112 seed 77, t0114 seed 7755, t0115 seed 9354), ran a unified PCA + KMeans + varimax factor analysis on the standardised 68-d feature pool, and produced three answer assets covering basin connectivity, displacement from random init, and latent drivers of joint-pass quality. Headline finding: the four-seed cohort fragments into **seed-specific sub-basins** (electrophys KMeans NMI = **0.929**; morphology KMeans NMI = **0.889**), not a single connected manifold...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -949,9 +956,12 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>t0106-joint-pass-recovery-2dir</id>
         <id>t0106-morphology-clusters-electrophys-signature</id>
         <id>t0106-pd-correlation-sign-flip-relaxed-cohort</id>
+        <id>pooled-survivors-basin-connectivity-dsi07-pd10</id>
+        <id>pooled-survivors-displacement-from-init-dsi07-pd10</id>
+        <id>pooled-survivors-latent-drivers-dsi07-pd10</id>
       </source_ids>
       <content>
-Answers: 36
+Answers: 39
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1235,6 +1245,30 @@ Confidence: high
 Categories: direction-selectivity, compartmental-modeling
 
 It is a truncated-cohort artifact. Re-running the same varimax FA pipeline on 247 t0106 cells at the relaxed threshold DSI &gt; 0.2 AND PD &gt; 3 Hz (vs t0108&#x27;s 150 cells at DSI &gt; 0.5 AND PD &gt; 10) produces **2 of 10 factors with positive r(PD)** (F2 +0.136 at p=0.033, F4 +0.048 n.s.). DSI sign distribution flips from t0108&#x27;s 4 / 6 (positive / negative) to 6 / 4. F1, the dominant axis in both cohorts, is also reinterpreted: in t0108 it appeared as a PD-only dropper (r_DSI = +0.06) because the DSI ceiling masked the DSI effect, but in t0110 it is revealed as the **joint failure axis** (r_DSI = −0.37, r_PD = −0.75). F2&#x27;s loadings (high persistent-Na, low Mg-block, low primary-BK) identify &quot;more...
+
+## Does the joint-pass cohort (DSI &gt; 0.7 AND PD &gt; 10 Hz) form a single connected manifold in 68-d across four NSGA-II seeds (44, 77, 7755, 9354), or do the seeds occupy seed-specific sub-basins?
+ID: pooled-survivors-basin-connectivity-dsi07-pd10
+Created by: t0116_pooled_pca_cluster_factor_dsi07_pd10 on 2026-05-21
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+The four-seed pool occupies seed-specific sub-basins, not one connected manifold. KMeans (k=3) on the standardised 54-d electrophys subspace produces an almost-perfect seed partition (NMI=0.929, chi-square p&lt;1e-300): cluster 0 = 63/67 seed 9354, cluster 1 = 673/678 seed 7755, cluster 2 = 121/124 seed 44 (seed 77 contributes 10 scattered cells across all clusters). The 14-d morphology partition is similarly seed-aligned (NMI=0.889). In the combined 68-d PCA scatter the four seed colours occupy visibly disjoint regions of the PC1-PC2 plane, so the cross-seed overlap implied by a single connected basin is not observed at the DSI &gt; 0.7 cut.
+
+## How far did NSGA-II travel from its gen-0 random initialisation in each seed (44, 77, 7755, 9354), measured in the 68-d standardised parameter space and in PC1+PC2 space of the combined 68-d PCA?
+ID: pooled-survivors-displacement-from-init-dsi07-pd10
+Created by: t0116_pooled_pca_cluster_factor_dsi07_pd10 on 2026-05-21
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+The four seeds travel comparably in the full 68-d standardised space (mean displacement 59.7-61.3 standardised units, p95 60.8-61.7) but diverge sharply in the combined PC1+PC2 plane: seed 44 traveled 15.0 PCA units, seed 7755 traveled 13.3, seed 77 traveled 8.5, and seed 9354 traveled only 2.4. The 68-d uniformity is consistent with each seed&#x27;s gen-0 distribution covering similar shells of the LHS-sampled parameter space, while the PC1+PC2 divergence reflects the seed-specific direction of NSGA-II descent — the leading components are exactly the cross-seed axis along which the basins separate. All four seeds traveled substantially further than their own gen-0 within-seed spread, confirming...
+
+## Which factors (after varimax rotation on the full 68-d pool) load most strongly on dsi_vector_sum and pd_rate_hz, and are they morphology-dominated, electrophys-dominated, or mixed?
+ID: pooled-survivors-latent-drivers-dsi07-pd10
+Created by: t0116_pooled_pca_cluster_factor_dsi07_pd10 on 2026-05-21
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling, voltage-gated-channels
+
+F1 is the dominant DSI driver (r=-0.589, p ~ 1e-82) and is mixed — its top loadings include both electrophys channels (SK_AIS, SKAHP, NAP) and a morphology parameter (primary_branch_pd_concentration). F3 is the dominant PD-rate driver (r=+0.746, p ~ 1e-155) and is purely electrophys (NAR, IH, NAV16_SOMA, BK channels, RA). No single factor crosses |r|&gt;0.3 on both DSI and PD simultaneously, so the strict-cohort pool does not contain a joint DSI-PD axis — the answer to &quot;are the drivers shared?&quot; is no in this strict cohort, but t0110&#x27;s relaxed-cohort analysis shows this is a known truncated-cohort artefact.
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">

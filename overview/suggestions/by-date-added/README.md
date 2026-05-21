@@ -1,14 +1,39 @@
 # Suggestions by Date Added
 
-448 suggestion(s) grouped by derived added date.
+454 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## 2026-05-21 (7)
+## 2026-05-21 (13)
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>5-seed pooled re-analysis adding t0113 (seed 2247) via correction
+to the t0116 pipeline</strong> (S-0116-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0116-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0116's 4-seed pool (44/77/7755/9354) was a deliberate first cut; seed 2247 (t0113) was
+excluded because its joint-pass cells are silence-guard DSI=1.0 saturations (per
+S-0113-04/S-0113-06). Re-run the t0116 pipeline end-to-end with t0113 added as the fifth
+source (5-seed pool, same strict filter DSI>0.7 AND PD>10, silence-guard tightened to >=3 PD
+spikes per S-0113-06), regenerate every chart and CSV, and write a corrections/ overlay that
+points consumers at the 5-seed artefacts. Decision rule: if seed-aligned cluster pattern
+survives (NMI > 0.7 on both partitions), the basin-isolation finding is robust; if NMI drops
+below 0.5, the 4-seed result was an artefact of seed choice. Recommended task types:
+data-analysis, correction. Cost: <$0.20.
+
+</details>
 
 <details>
 <summary>📊 <strong>5-seed substrate-rate batch (S-0112-01) is now complete; write
@@ -35,6 +60,33 @@ Recommended task types: data-analysis, answer-question. Cost: <$0.20.
 </details>
 
 <details>
+<summary>🧪 <strong>Connected-component topological basin test (vs KMeans+NMI) on
+the t0116 pooled pool</strong> (S-0116-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0116-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0116's basin-connectivity answer rests on KMeans (k=3) silhouette + NMI(cluster,
+seed)=0.929/0.889. KMeans forces a partition even on a connected manifold and NMI inflates
+with small per-seed counts (seed 77 n=10). A topology-aware test asks the stronger question:
+is there any continuous path between seeds' cells in 68-d, or are they genuinely disconnected?
+Build a k-NN graph on the standardised 869x68 matrix (k in {5, 10, 20}), extract connected
+components via scipy.sparse.csgraph.connected_components, and report (a) component count vs
+k_nn, (b) per-component seed composition, (c) persistence of seed-isolation across k_nn
+values. Decision: if at k_nn=10 the pool has one giant component containing all 4 seeds,
+seed-aligned KMeans clusters are clusters-of-a-connected-manifold (weakens basin-isolation);
+if 4+ components each dominated by one seed, basin-isolation is corroborated. Distinct from
+S-0112-08 and S-0115-07. Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
 <summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector
 defaults across the project</strong> (S-0115-01)</summary>
 
@@ -54,6 +106,59 @@ and would NOT fire prematurely on t0113's gen-14 trace. Concrete action: globall
 HV-plateau detector constants in the NSGA-II driver template and the t0024 cell-build
 pipeline; document the new defaults in arf/skills/setup-remote-machine and
 arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: <$0.05.
+
+</details>
+
+<details>
+<summary>📚 <strong>Implement missing arf/scripts/verificators/verify_answer_asset.py
+per meta/asset_types/answer/specification.md</strong> (S-0116-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0116-06` |
+| **Kind** | library |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+| **Source paper** | — |
+| **Categories** | — |
+
+t0116 produced three answer assets but discovered the project has no verify_answer_asset.py
+(cf. verify_research_papers.py, verify_suggestions.py, verify_plan.py which exist). t0116
+worked around this with tasks/t0116_*/code/verify_answers_local.py which re-implements the
+spec rules locally — every future task producing answer assets will face the same gap. Build
+the canonical verificator at arf/scripts/verificators/verify_answer_asset.py implementing
+every error code from meta/asset_types/answer/specification.md (mandatory YAML frontmatter,
+mandatory sections in canonical short and full answers, answer-id consistency between
+details.json and frontmatter, source_paper/source_task resolve). Wire it into
+verify_task_complete.py so malformed assets block PR merge. This is ARF framework
+infrastructure (per CLAUDE.md rule 0 it is NOT a tasks/tXXXX_* task) recorded here as the
+motivating finding. Recommended task types: infrastructure-setup. Cost: <$0.10.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Relaxed-cohort (DSI > 0.5) pooled re-analysis to test
+truncated-cohort artefact on joint-factor decoupling</strong> (S-0116-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0116-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0116's strict DSI>0.7 cohort produced no joint factor (|r|>0.3 on both DSI and PD). t0110
+documented that strict-cohort filters truncate joint variance (restriction-of-range); t0108's
+strict cohort identified F10 as a joint factor, t0110's relaxed cohort found a different sign
+pattern. Re-run the t0116 pipeline (4 or 5 seeds, depending on S-0116-01) with the cohort
+filter relaxed from DSI>0.7 to DSI>0.5 (matching t0108/t0110); regenerate the factor heatmap
+and per-factor DSI/PD correlations. Decision: if a joint factor emerges at the relaxed
+threshold, t0116's 'no joint factor' is a truncated-cohort artefact and the latent-drivers
+answer must be re-interpreted conditional on cohort definition; if no joint factor emerges
+even at DSI>0.5, the multi-seed pool truly lacks a shared trade-off axis. Recommended task
+types: data-analysis, comparative-analysis. Cost: <$0.20.
 
 </details>
 
@@ -108,6 +213,33 @@ task types: correction. Cost: <$0.05.
 </details>
 
 <details>
+<summary>📊 <strong>Bootstrap loading-stability and oblique-rotation sensitivity for
+the t0116 10-factor varimax solution</strong> (S-0116-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0116-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The latent-drivers answer's Limitations lists three FA-stability concerns: (a) n=869 with 68
+features is borderline for FA-loading stability, (b) varimax forces orthogonal factors so F1
+and F3 cannot share loadings, (c) the Kaiser cap at 10 left one eigenvalue>1 unmodelled
+(11-10=1). t0105 ran bootstrap loading recovery; t0116 did not. Concrete action: (i) draw
+B=200 bootstrap resamples of the 869-cell pool with replacement, refit FA(n=10) + varimax on
+each, align factors to t0116 by max-cosine-similarity, and report median +/- IQR loadings per
+factor x feature in a stability heatmap; (ii) rerun with oblique promax rotation (kappa=4) and
+report new top-7 loadings and joint-factor flags; (iii) refit with n_components=11. Decision:
+if F1/F3 top loadings change rank under bootstrap or promax (e.g., morphology drops out of
+F1), the t0116 mixed/pure classification should be downgraded; if structure persists, it is
+robust. Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Investigate the seed-44 / seed-7755 / seed-9354 'rich-yield'
 parameter signature</strong> (S-0115-07)</summary>
 
@@ -155,6 +287,33 @@ parameter space, (b) the distribution of init-cell DSI and PD values, and (c) th
 operators' (SBX/PM) effective step size in the first 10 gens. Outcome: identify the
 basin-attractor signature that distinguishes rich-yield seeds (44, 7755) from slow-yield seeds
 (9354) and dead-end seeds (2247). Recommended task types: data-analysis. Cost: <$0.10.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-seed factor analysis on each sub-basin: do basins share
+latent drivers or have private ones?</strong> (S-0116-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0116-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0116's pooled FA (n=869) found F1 mixed DSI driver (SK_AIS + primary_branch_pd_concentration
+co-vary) and F3 pure-electrophys PD driver. The basin-connectivity answer shows the pool
+fragments by seed; F1's mixed loadings could reflect (a) a single mixed axis within every
+basin or (b) two separate axes (one ephys, one morph) that co-vary because seed-of-origin
+confounds them. The latent-drivers answer's Limitations section flags this as a candidate
+correction task. Run independent varimax FAs on each per-seed slice with sufficient n: seed
+7755 (n=675), seed 44 (n=121), seed 9354 (n=63); skip seed 77 (n=10). For each per-seed FA,
+report top-1 DSI factor and top-1 PD factor. Decision: if all three rich seeds produce a mixed
+ephys+morph DSI factor with the SK_AIS + morph co-loading, pooled F1 is intrinsic; if some
+produce pure-ephys and others pure-morph, pooled F1 is a cross-basin confound. Distinct from
+S-0113-08 and S-0114-05. Recommended task types: data-analysis. Cost: <$0.20.
 
 </details>
 

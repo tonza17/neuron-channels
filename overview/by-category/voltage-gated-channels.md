@@ -5,7 +5,7 @@ Ion channels whose opening probability depends on membrane voltage.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (30)](../papers/by-category/voltage-gated-channels.md) | [Answers
-(9)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
+(10)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
 (95)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
@@ -1570,7 +1570,25 @@ dendritic transients.
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | 2026-05-08 15:55 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 
-## Answers (9)
+## Answers (10)
+
+<details>
+<summary><strong>Which factors (after varimax rotation on the full 68-d pool) load
+most strongly on dsi_vector_sum and pd_rate_hz, and are they
+morphology-dominated, electrophys-dominated, or mixed?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-21 | **Full answer**:
+[`pooled-survivors-latent-drivers-dsi07-pd10`](../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-latent-drivers-dsi07-pd10/)
+
+F1 is the dominant DSI driver (r=-0.589, p ~ 1e-82) and is mixed — its top loadings include
+both electrophys channels (SK_AIS, SKAHP, NAP) and a morphology parameter
+(primary_branch_pd_concentration). F3 is the dominant PD-rate driver (r=+0.746, p ~ 1e-155)
+and is purely electrophys (NAR, IH, NAV16_SOMA, BK channels, RA). No single factor crosses
+|r|>0.3 on both DSI and PD simultaneously, so the strict-cohort pool does not contain a joint
+DSI-PD axis — the answer to "are the drivers shared?" is no in this strict cohort, but t0110's
+relaxed-cohort analysis shows this is a known truncated-cohort artefact.
+
+</details>
 
 <details>
 <summary><strong>Which objective functions have been used in published

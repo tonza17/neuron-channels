@@ -1,10 +1,107 @@
 # Answers by Date Added
 
-36 answer(s) grouped by creation date.
+39 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
+
+## 2026-05-21 (3)
+
+<details>
+<summary><strong>Does the joint-pass cohort (DSI > 0.7 AND PD > 10 Hz) form a single
+connected manifold in 68-d across four NSGA-II seeds (44, 77, 7755, 9354),
+or do the seeds occupy seed-specific sub-basins?</strong></summary>
+
+**Confidence**: high
+
+The four-seed pool occupies seed-specific sub-basins, not one connected manifold. KMeans (k=3)
+on the standardised 54-d electrophys subspace produces an almost-perfect seed partition
+(NMI=0.929, chi-square p<1e-300): cluster 0 = 63/67 seed 9354, cluster 1 = 673/678 seed 7755,
+cluster 2 = 121/124 seed 44 (seed 77 contributes 10 scattered cells across all clusters). The
+14-d morphology partition is similarly seed-aligned (NMI=0.889). In the combined 68-d PCA
+scatter the four seed colours occupy visibly disjoint regions of the PC1-PC2 plane, so the
+cross-seed overlap implied by a single connected basin is not observed at the DSI > 0.7 cut.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-basin-connectivity-dsi07-pd10/full_answer.md) |
+| **ID** | [`pooled-survivors-basin-connectivity-dsi07-pd10`](../../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-basin-connectivity-dsi07-pd10/) |
+| **Question** | Does the joint-pass cohort (DSI > 0.7 AND PD > 10 Hz) form a single connected manifold in 68-d across four NSGA-II seeds (44, 77, 7755, 9354), or do the seeds occupy seed-specific sub-basins? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-05-21 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) |
+| **URL sources** | — |
+| **Created by** | [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+
+</details>
+
+<details>
+<summary><strong>How far did NSGA-II travel from its gen-0 random initialisation in
+each seed (44, 77, 7755, 9354), measured in the 68-d standardised parameter
+space and in PC1+PC2 space of the combined 68-d PCA?</strong></summary>
+
+**Confidence**: high
+
+The four seeds travel comparably in the full 68-d standardised space (mean displacement
+59.7-61.3 standardised units, p95 60.8-61.7) but diverge sharply in the combined PC1+PC2
+plane: seed 44 traveled 15.0 PCA units, seed 7755 traveled 13.3, seed 77 traveled 8.5, and
+seed 9354 traveled only 2.4. The 68-d uniformity is consistent with each seed's gen-0
+distribution covering similar shells of the LHS-sampled parameter space, while the PC1+PC2
+divergence reflects the seed-specific direction of NSGA-II descent — the leading components
+are exactly the cross-seed axis along which the basins separate. All four seeds traveled
+substantially further than their own gen-0 within-seed spread, confirming optimisation moved
+the survivors out of the random-init region.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-displacement-from-init-dsi07-pd10/full_answer.md) |
+| **ID** | [`pooled-survivors-displacement-from-init-dsi07-pd10`](../../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-displacement-from-init-dsi07-pd10/) |
+| **Question** | How far did NSGA-II travel from its gen-0 random initialisation in each seed (44, 77, 7755, 9354), measured in the 68-d standardised parameter space and in PC1+PC2 space of the combined 68-d PCA? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-05-21 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
+| **URL sources** | — |
+| **Created by** | [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+
+</details>
+
+<details>
+<summary><strong>Which factors (after varimax rotation on the full 68-d pool) load
+most strongly on dsi_vector_sum and pd_rate_hz, and are they
+morphology-dominated, electrophys-dominated, or mixed?</strong></summary>
+
+**Confidence**: medium
+
+F1 is the dominant DSI driver (r=-0.589, p ~ 1e-82) and is mixed — its top loadings include
+both electrophys channels (SK_AIS, SKAHP, NAP) and a morphology parameter
+(primary_branch_pd_concentration). F3 is the dominant PD-rate driver (r=+0.746, p ~ 1e-155)
+and is purely electrophys (NAR, IH, NAV16_SOMA, BK channels, RA). No single factor crosses
+|r|>0.3 on both DSI and PD simultaneously, so the strict-cohort pool does not contain a joint
+DSI-PD axis — the answer to "are the drivers shared?" is no in this strict cohort, but t0110's
+relaxed-cohort analysis shows this is a known truncated-cohort artefact.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-latent-drivers-dsi07-pd10/full_answer.md) |
+| **ID** | [`pooled-survivors-latent-drivers-dsi07-pd10`](../../../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-latent-drivers-dsi07-pd10/) |
+| **Question** | Which factors (after varimax rotation on the full 68-d pool) load most strongly on dsi_vector_sum and pd_rate_hz, and are they morphology-dominated, electrophys-dominated, or mixed? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-21 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md), [`t0110_relaxed_cohort_factor_analysis`](../../../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) |
+| **URL sources** | — |
+| **Created by** | [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+
+</details>
 
 ## 2026-05-18 (5)
 

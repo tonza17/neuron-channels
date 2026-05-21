@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-21T02:57:55Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-21T20:42:04Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>6556</char_count>
-    <byte_count>6556</byte_count>
-    <estimated_tokens>1639</estimated_tokens>
+    <char_count>6608</char_count>
+    <byte_count>6608</byte_count>
+    <estimated_tokens>1652</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -169,6 +169,7 @@ Spent: 62.9%
 * t0113_t0106_seed2247_replicate: $0.48
 * t0114_seed7755_no_autostop: $1.13
 * t0115_seed9354_no_autostop: $2.50
+* t0116_pooled_pca_cluster_factor_dsi07_pd10: $0.00
       </content>
     </section>
   </sections>
