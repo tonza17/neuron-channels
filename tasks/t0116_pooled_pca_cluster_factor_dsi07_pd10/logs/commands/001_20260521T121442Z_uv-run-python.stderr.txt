@@ -1,0 +1,1 @@
+Error: --step-log-dir must be inside tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/. Got: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\logs\steps\003_init-folders
