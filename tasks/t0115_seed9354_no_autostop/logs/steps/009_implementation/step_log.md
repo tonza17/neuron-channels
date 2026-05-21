@@ -3,10 +3,40 @@ spec_version: "3"
 task_id: "t0115_seed9354_no_autostop"
 step_number: 9
 step_name: "implementation"
-status: "in_progress"
+status: "completed"
 started_at: "2026-05-20T17:19:00Z"
-completed_at: null
+completed_at: "2026-05-21T03:15:00Z"
 ---
+## Operator Stop and Final State (appended at wrap-up)
+
+Operator issued stop at 2026-05-21T01:50Z by dropping `intervention/stop.md` on the remote and
+Ctrl-C'ing the tmux pane; followed by SIGTERM / SIGKILL on the driver PID. The driver had just
+completed gen 55 with HV=50.5646, cost_so_far=$2.3859.
+
+**Final t0115 state at operator stop:**
+
+* **Final generation**: 55 of 300 (18.3 % of N_GEN).
+* **Final HV**: **50.5646** (vs gen 1 baseline 0.8037; 62.9× growth).
+* **Total evaluations**: 5 280 (96 × 55 gens).
+* **Total wall-clock**: 31 166 s (~8 h 39 min).
+* **Cumulative productive cost**: $2.3859.
+* **stop_trigger**: `operator_stop`.
+
+**Regime classification:** t0115 / seed 9354 landed in the **medium- density bucket** between t0112
+(sparse) and t0106 / t0114 (rich). The seed had a late corner-find (joint-pass cells first emerged
+at gen 25, not gen 8 like t0114) and a slow-then-bursty HV trajectory (plateau gen 33-34, +34 %
+burst gen 34-45, plateau again gen 45-55).
+
+**Data SCP'd back at operator stop** (all under `tasks/t0115_seed9354_no_autostop/results/data/`):
+
+* `all_evaluations_seed9354.json` (11.4 MB, 5 280 evaluations).
+* `hv_trajectory_seed9354.json` (10.3 KB, 55 entries).
+* `algorithm_config.json`, `evaluation_seeds.json`, `init_pop_seed9354.json`,
+  `nsga2_checkpoint_seed9354.json` (last-gen JSON checkpoint).
+* `logs/steps/009_implementation/hv_trace.jsonl` (final 55-gen trace).
+
+The Vast.ai instance 37161678 is destroyed at the end of this step (step 10 teardown ratifies the
+destruction).
 # Step 9: implementation
 
 ## Summary

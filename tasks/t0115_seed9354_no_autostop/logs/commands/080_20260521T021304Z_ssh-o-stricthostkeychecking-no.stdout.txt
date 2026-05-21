@@ -1,0 +1,4 @@
+---FINAL HV TAIL---
+{"gen": 53, "wall_clock_s": 30494.728271961212, "hv": 50.42034060220557, "n_cells_evaluated": 96}
+{"gen": 54, "wall_clock_s": 30827.91070151329, "hv": 50.45898946866901, "n_cells_evaluated": 96}
+{"gen": 55, "wall_clock_s": 31166.341638326645, "hv": 50.56458949762532, "n_cells_evaluated": 96}
