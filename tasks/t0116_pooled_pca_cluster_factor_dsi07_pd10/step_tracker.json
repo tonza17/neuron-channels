@@ -77,10 +77,10 @@
       "step": 9,
       "name": "creative-thinking",
       "description": "Skipped: light data-analysis task; alternative interpretations folded directly into results_detailed.md (matches t0108 precedent).",
-      "status": "pending",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/009_creative-thinking/"
     },
     {
       "step": 10,
@@ -95,10 +95,10 @@
       "step": 11,
       "name": "compare-literature",
       "description": "Skipped: pooled unsupervised PCA + varimax factor structure on NSGA-II survivors has no quantitative published baseline of equivalent multi-seed factor decomposition to compare against.",
-      "status": "pending",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/011_compare-literature/"
     },
     {
       "step": 12,
