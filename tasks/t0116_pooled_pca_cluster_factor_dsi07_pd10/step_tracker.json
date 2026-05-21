@@ -32,19 +32,19 @@
       "step": 4,
       "name": "research-papers",
       "description": "Skipped: pure internal analysis on existing NSGA-II survivors; literature context already reviewed in t0105 / t0108 dependency chain.",
-      "status": "pending",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/004_research-papers/"
     },
     {
       "step": 5,
       "name": "research-internet",
       "description": "Skipped: internal multi-seed comparison; no fresh external information required.",
-      "status": "pending",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/005_research-internet/"
     },
     {
       "step": 6,
