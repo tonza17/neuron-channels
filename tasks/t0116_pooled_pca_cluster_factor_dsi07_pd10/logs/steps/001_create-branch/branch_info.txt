@@ -1,0 +1,5 @@
+branch: task/t0116_pooled_pca_cluster_factor_dsi07_pd10
+base_branch: main
+base_commit: 9dddb84f230bab915eeaedd839be04ec62c61892
+worktree_path: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10
+created_at: 2026-05-21T12:09:52Z
