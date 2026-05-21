@@ -1,19 +1,22 @@
-"""Generate t0114 result charts, CSV tables, predictions asset, and metrics.json.
+"""Generate t0115 result charts, CSV tables, predictions asset, and metrics.json.
 
 Produces:
-* `assets/predictions/t0114-bedb-morph-nsga2-seed7755/` (details.json,
+* `assets/predictions/t0115-bedb-morph-nsga2-seed9354/` (details.json,
   description.md, files/predictions.jsonl.gz).
-* `results/data/joint_pass_summary_4seeds.csv`.
-* `results/data/pareto_front_overlap_4seeds.csv`.
-* `results/data/detector_replay.csv`.
-* `results/data/pareto_front_seed7755.json` (strict Pareto front).
-* `results/data/example_cells_seed7755.json` (10 example cells).
-* `results/images/hv_vs_gen_4seeds.png`.
-* `results/images/pareto_front_4seeds.png`.
-* `results/images/joint_pass_yield_per_gen_4seeds.png`.
-* `results/images/detector_replay_heatmap.png`.
-* `results/images/top50_morphologies_seed7755.png`.
+* `results/data/joint_pass_summary_5seeds.csv`.
+* `results/data/pareto_front_overlap_5seeds.csv`.
+* `results/data/substrate_rate_5seed.csv`.
+* `results/data/pareto_front_seed9354.json` (strict Pareto front).
+* `results/data/example_cells_seed9354.json` (10 example cells).
+* `results/images/hv_vs_gen_5seeds.png`.
+* `results/images/pareto_front_5seeds.png`.
+* `results/images/joint_pass_yield_per_gen_5seeds.png`.
+* `results/images/substrate_rate_5seed_with_literature.png`.
 * `results/metrics.json` (explicit multi-variant).
+
+Note: `results/images/top50_morphologies_seed9354.png` (full dendrite tree
+grid) is built by `build_top50_morphologies.py` — see operator feedback in
+step log.
 """
 
 from __future__ import annotations
@@ -23,6 +26,7 @@ import gzip
 import json
 from dataclasses import dataclass
 from datetime import UTC, datetime
+from math import sqrt
 from pathlib import Path
 from typing import Any
 
@@ -33,17 +37,18 @@ import numpy as np
 # Paths
 # ---------------------------------------------------------------------------
 
-TASK_ID: str = "t0114_seed7755_no_autostop"
+TASK_ID: str = "t0115_seed9354_no_autostop"
 TASK_DIR: Path = Path(__file__).resolve().parent.parent
 TASKS_ROOT: Path = TASK_DIR.parent
 
 T0106_DIR: Path = TASKS_ROOT / "t0106_long_pdnd_nsga2_300gen"
 T0112_DIR: Path = TASKS_ROOT / "t0112_t0106_seed77_replicate"
 T0113_DIR: Path = TASKS_ROOT / "t0113_t0106_seed2247_replicate"
+T0114_DIR: Path = TASKS_ROOT / "t0114_seed7755_no_autostop"
 
-# t0114 data files (already on disk).
-T0114_EVALS: Path = TASK_DIR / "results" / "data" / "all_evaluations_seed7755.json"
-T0114_HV: Path = TASK_DIR / "results" / "data" / "hv_trajectory_seed7755.json"
+# t0115 data files (already on disk).
+T0115_EVALS: Path = TASK_DIR / "results" / "data" / "all_evaluations_seed9354.json"
+T0115_HV: Path = TASK_DIR / "results" / "data" / "hv_trajectory_seed9354.json"
 
 # Prior-seed evaluations (predictions assets).
 T0106_EVALS: Path = (
@@ -72,12 +77,16 @@ T0113_EVALS: Path = (
 T0113_HV: Path = T0113_DIR / "results" / "data" / "hv_trajectory_seed2247.json"
 T0113_PARETO: Path = T0113_DIR / "results" / "data" / "pareto_front_seed2247.json"
 
+T0114_EVALS: Path = T0114_DIR / "results" / "data" / "all_evaluations_seed7755.json"
+T0114_HV: Path = T0114_DIR / "results" / "data" / "hv_trajectory_seed7755.json"
+T0114_PARETO: Path = T0114_DIR / "results" / "data" / "pareto_front_seed7755.json"
+
 # Outputs.
 RESULTS_DIR: Path = TASK_DIR / "results"
 IMAGES_DIR: Path = RESULTS_DIR / "images"
 DATA_DIR: Path = RESULTS_DIR / "data"
 METRICS_JSON: Path = RESULTS_DIR / "metrics.json"
-PREDICTIONS_ID: str = "t0114-bedb-morph-nsga2-seed7755"
+PREDICTIONS_ID: str = "t0115-bedb-morph-nsga2-seed9354"
 PREDICTIONS_DIR: Path = TASK_DIR / "assets" / "predictions" / PREDICTIONS_ID
 PREDICTIONS_FILES_DIR: Path = PREDICTIONS_DIR / "files"
 PREDICTIONS_OUTPUT_JSONL_GZ: Path = PREDICTIONS_FILES_DIR / "predictions.jsonl.gz"
@@ -91,7 +100,11 @@ PD_RATE_THRESHOLD_HZ: float = 30.0
 LEGIT_DSI_CEILING: float = 0.9999
 SILENCE_GUARD_DSI: float = 1.0
 TOP_K_MORPHOLOGY: int = 50
-PROJECT_DATE: str = "2026-05-20"
+PROJECT_DATE: str = "2026-05-21"
+
+# Literature baselines for substrate-rate comparison.
+HAY_2011_RATE_PCT: float = 0.40
+DRUCKMANN_2007_RATE_PCT: float = 0.10
 
 # Seed metadata (canonical asset-declared headline numbers).
 ASSET_DECLARED: dict[str, dict[str, float | int | str]] = {
@@ -99,10 +112,6 @@ ASSET_DECLARED: dict[str, dict[str, float | int | str]] = {
         "task_seed": 44,
         "n_generations_completed": 39,
         "n_cells_total": 3744,
-        "best_dsi_ratio": 1.0,
-        "best_pd_rate_hz": 122.62,
-        "n_joint_pass_unique": 123,
-        "n_joint_pass_evaluations": 637,
         "final_hypervolume": 122.0288,
         "stop_trigger": "hv_plateau",
     },
@@ -110,10 +119,6 @@ ASSET_DECLARED: dict[str, dict[str, float | int | str]] = {
         "task_seed": 77,
         "n_generations_completed": 21,
         "n_cells_total": 2016,
-        "best_dsi_ratio": 0.9535,
-        "best_pd_rate_hz": 114.76,
-        "n_joint_pass_unique": 7,
-        "n_joint_pass_evaluations": 25,
         "final_hypervolume": 107.4602,
         "stop_trigger": "hv_plateau",
     },
@@ -121,10 +126,6 @@ ASSET_DECLARED: dict[str, dict[str, float | int | str]] = {
         "task_seed": 2247,
         "n_generations_completed": 14,
         "n_cells_total": 1344,
-        "best_dsi_ratio": 1.0,
-        "best_pd_rate_hz": 71.6667,
-        "n_joint_pass_unique": 2,
-        "n_joint_pass_evaluations": 6,
         "final_hypervolume": 45.6221,
         "stop_trigger": "hv_plateau",
     },
@@ -132,11 +133,14 @@ ASSET_DECLARED: dict[str, dict[str, float | int | str]] = {
         "task_seed": 7755,
         "n_generations_completed": 62,
         "n_cells_total": 5952,
-        "best_dsi_ratio": 1.0,
-        "best_pd_rate_hz": 122.86,
-        "n_joint_pass_unique": 194,
-        "n_joint_pass_evaluations": 0,  # filled below
         "final_hypervolume": 111.5353,
+        "stop_trigger": "operator_stop",
+    },
+    "t0115_seed9354": {
+        "task_seed": 9354,
+        "n_generations_completed": 55,
+        "n_cells_total": 5280,
+        "final_hypervolume": 50.5646,
         "stop_trigger": "operator_stop",
     },
 }
@@ -146,43 +150,35 @@ SEED_COLORS: dict[str, str] = {
     "t0112_seed77": "C3",
     "t0113_seed2247": "C2",
     "t0114_seed7755": "C1",
+    "t0115_seed9354": "C4",
 }
 SEED_MARKERS: dict[str, str] = {
     "t0106_seed44": "o",
     "t0112_seed77": "D",
     "t0113_seed2247": "s",
     "t0114_seed7755": "^",
+    "t0115_seed9354": "v",
 }
 SEED_LABELS: dict[str, str] = {
     "t0106_seed44": "t0106 seed 44",
     "t0112_seed77": "t0112 seed 77",
     "t0113_seed2247": "t0113 seed 2247",
     "t0114_seed7755": "t0114 seed 7755",
+    "t0115_seed9354": "t0115 seed 9354",
 }
 POOL_RESTART_CADENCE: dict[str, int] = {
     "t0106_seed44": 25,
     "t0112_seed77": 10,
     "t0113_seed2247": 10,
     "t0114_seed7755": 10,
+    "t0115_seed9354": 10,
 }
-
-# Detector replay grid. Per the orchestrator's task description the grid is
-# 4 windows x 2 thresholds = 8 cells x 4 seeds = 32 rows. Windows include the
-# current default (2) and the next three integers. Thresholds bracket the
-# current default (0.01): the strict default and a tighter half-threshold.
-DETECTOR_WINDOWS: tuple[int, ...] = (2, 3, 4, 5)
-DETECTOR_THRESHOLDS: tuple[float, ...] = (0.01, 0.005)
-DETECTOR_MIN_HISTORY: int = 4
-# Wider grid used internally by the (W*, T*) selection logic to verify that
-# the "sweet spot" configuration the heatmap suggests is the actual optimum.
-SELECTION_WINDOWS: tuple[int, ...] = (2, 3, 4, 5)
-SELECTION_THRESHOLDS: tuple[float, ...] = (
-    0.005,
-    0.0075,
-    0.01,
-    0.015,
-    0.02,
-    0.025,
+ALL_SEED_KEYS: tuple[str, ...] = (
+    "t0106_seed44",
+    "t0112_seed77",
+    "t0113_seed2247",
+    "t0114_seed7755",
+    "t0115_seed9354",
 )
 
 
@@ -285,13 +281,14 @@ def _summarize_seed(*, key: str, ds: SeedDataset) -> PerSeedSummary:
                 legit_jp_unique_keys.add(k)
     n_dsi_eq_one = sum(1 for c in cells if float(c["dsi_vector_sum"]) >= SILENCE_GUARD_DSI)
     n_total = len(cells)
+    legit_pct = 100.0 * len(legit_jp_unique_keys) / n_total if n_total > 0 else 0.0
     return PerSeedSummary(
         key=key,
         task_seed=int(a["task_seed"]),
         n_total_evals=n_total,
         n_joint_pass_unique=len(jp_unique_keys),
         n_joint_pass_legit_unique=len(legit_jp_unique_keys),
-        joint_pass_pct=(100.0 * len(jp_unique_keys) / n_total if n_total > 0 else 0.0),
+        joint_pass_pct=legit_pct,
         best_legit_dsi=best_legit,
         overall_max_dsi=max(float(c["dsi_vector_sum"]) for c in cells),
         n_dsi_eq_one=n_dsi_eq_one,
@@ -337,7 +334,6 @@ def _compute_pareto_front(
     for i in range(n):
         if is_dominated[i]:
             continue
-        # j dominates i if obj_j <= obj_i elementwise AND strictly < on at least one axis.
         diff = objs - objs[i]
         le = np.all(diff <= 0, axis=1)
         lt = np.any(diff < 0, axis=1)
@@ -345,7 +341,6 @@ def _compute_pareto_front(
         dominators[i] = False
         if np.any(dominators):
             is_dominated[i] = True
-    # Deduplicate exact-objective ties.
     seen_obj: set[tuple[float, float]] = set()
     pareto_cells: list[dict[str, Any]] = []
     cell_id = 0
@@ -370,7 +365,6 @@ def _compute_pareto_front(
             }
         )
         cell_id += 1
-    # Sort by PD-rate ascending then DSI descending for stable cell_ids.
     pareto_cells.sort(key=lambda c: (c["pd_rate_hz"], -c["dsi_vector_sum"]))
     for i, c in enumerate(pareto_cells):
         c["cell_id"] = i
@@ -382,22 +376,29 @@ def _compute_pareto_front(
 # ---------------------------------------------------------------------------
 
 
-def load_all_four_seeds() -> dict[str, SeedDataset]:
-    print("[load] t0114 seed 7755")
-    t0114_evals = _load_evaluations(path=T0114_EVALS)
-    t0114_hv = _load_hv(path=T0114_HV)
-    t0114_pareto = _compute_pareto_front(evaluations=t0114_evals)
+def load_all_five_seeds() -> dict[str, SeedDataset]:
+    print("[load] t0115 seed 9354")
+    t0115_evals = _load_evaluations(path=T0115_EVALS)
+    t0115_hv = _load_hv(path=T0115_HV)
+    t0115_pareto = _compute_pareto_front(evaluations=t0115_evals)
 
-    # Persist t0114 strict Pareto front (used elsewhere).
     pareto_payload = {
-        "seed": 7755,
-        "n_total": len(t0114_pareto),
-        "cells": t0114_pareto,
+        "seed": 9354,
+        "n_total": len(t0115_pareto),
+        "cells": t0115_pareto,
     }
-    (DATA_DIR / "pareto_front_seed7755.json").write_text(
+    (DATA_DIR / "pareto_front_seed9354.json").write_text(
         json.dumps(pareto_payload, indent=2),
         encoding="utf-8",
     )
+
+    print("[load] t0114 seed 7755")
+    t0114_evals = _load_evaluations(path=T0114_EVALS)
+    t0114_hv = _load_hv(path=T0114_HV)
+    if T0114_PARETO.exists():
+        t0114_pareto = _load_pareto_cells(path=T0114_PARETO)
+    else:
+        t0114_pareto = _compute_pareto_front(evaluations=t0114_evals)
 
     print("[load] t0113 seed 2247")
     t0113 = SeedDataset(
@@ -430,189 +431,20 @@ def load_all_four_seeds() -> dict[str, SeedDataset]:
         hv_trajectory=t0114_hv,
         pareto_cells=t0114_pareto,
     )
+    t0115 = SeedDataset(
+        key="t0115_seed9354",
+        label=SEED_LABELS["t0115_seed9354"],
+        evaluations=t0115_evals,
+        hv_trajectory=t0115_hv,
+        pareto_cells=t0115_pareto,
+    )
     return {
         "t0106_seed44": t0106,
         "t0112_seed77": t0112,
         "t0113_seed2247": t0113,
         "t0114_seed7755": t0114,
+        "t0115_seed9354": t0115,
     }
-
-
-# ---------------------------------------------------------------------------
-# Detector replay (S-0113-03)
-# ---------------------------------------------------------------------------
-
-
-def _detector_fire_gen(
-    *,
-    hv_history: list[float],
-    window: int,
-    threshold: float,
-) -> int | None:
-    """Walk gen-by-gen and return the gen at which the rule first fires."""
-    n = len(hv_history)
-    for end in range(1, n + 1):
-        history = hv_history[:end]
-        m = len(history)
-        if m < DETECTOR_MIN_HISTORY:
-            continue
-        deltas: list[float] = []
-        feasible = True
-        for offset in range(window):
-            g = m - 1 - offset
-            if g - window < 0:
-                feasible = False
-                break
-            prev = history[g - window]
-            if prev <= 0.0:
-                feasible = False
-                break
-            deltas.append((history[g] - prev) / prev)
-        if not feasible:
-            continue
-        mean_delta = sum(deltas) / len(deltas)
-        if mean_delta < threshold:
-            # 'end' is the number of entries; corresponding gen is end (1-indexed).
-            return end
-    return None
-
-
-def detector_replay(
-    *,
-    datasets: dict[str, SeedDataset],
-) -> tuple[Path, dict[tuple[int, float], dict[str, int | None]]]:
-    out_path = DATA_DIR / "detector_replay.csv"
-    grid: dict[tuple[int, float], dict[str, int | None]] = {}
-    rows: list[dict[str, object]] = []
-    for window in DETECTOR_WINDOWS:
-        for threshold in DETECTOR_THRESHOLDS:
-            grid[(window, threshold)] = {}
-            for key in (
-                "t0106_seed44",
-                "t0112_seed77",
-                "t0113_seed2247",
-                "t0114_seed7755",
-            ):
-                ds = datasets[key]
-                hv_history = [float(h["hypervolume"]) for h in ds.hv_trajectory]
-                fire_gen = _detector_fire_gen(
-                    hv_history=hv_history,
-                    window=window,
-                    threshold=threshold,
-                )
-                hv_at_fire: float | None
-                if fire_gen is not None and 1 <= fire_gen <= len(hv_history):
-                    hv_at_fire = float(hv_history[fire_gen - 1])
-                else:
-                    hv_at_fire = None
-                hv_at_run_end = float(hv_history[-1]) if len(hv_history) > 0 else 0.0
-                grid[(window, threshold)][key] = fire_gen
-                rows.append(
-                    {
-                        "seed": ASSET_DECLARED[key]["task_seed"],
-                        "seed_key": key,
-                        "WINDOW": window,
-                        "REL_THRESHOLD": threshold,
-                        "gen_at_fire": fire_gen if fire_gen is not None else "",
-                        "hv_at_fire": (round(hv_at_fire, 4) if hv_at_fire is not None else ""),
-                        "hv_at_run_end": round(hv_at_run_end, 4),
-                    }
-                )
-    with out_path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
-    return out_path, grid
-
-
-def _build_selection_grid(
-    *,
-    datasets: dict[str, SeedDataset],
-) -> dict[tuple[int, float], dict[str, int | None]]:
-    """Build the wider (W x T) grid used only for (W*, T*) selection. This is
-    NOT written to CSV — only the 4 x 2 grid in DETECTOR_WINDOWS x
-    DETECTOR_THRESHOLDS is. The wider grid lets us discover settings that
-    correctly defer the t0113 premature trigger while still firing on t0106."""
-    grid: dict[tuple[int, float], dict[str, int | None]] = {}
-    for window in SELECTION_WINDOWS:
-        for threshold in SELECTION_THRESHOLDS:
-            grid[(window, threshold)] = {}
-            for key in (
-                "t0106_seed44",
-                "t0112_seed77",
-                "t0113_seed2247",
-                "t0114_seed7755",
-            ):
-                hv_history = [float(h["hypervolume"]) for h in datasets[key].hv_trajectory]
-                fire_gen = _detector_fire_gen(
-                    hv_history=hv_history,
-                    window=window,
-                    threshold=threshold,
-                )
-                grid[(window, threshold)][key] = fire_gen
-    return grid
-
-
-def select_best_detector(
-    *,
-    grid: dict[tuple[int, float], dict[str, int | None]],
-) -> tuple[int, float, dict[str, int | None]]:
-    """Pick (W*, T*) satisfying S-0113-03 criteria:
-    1. Fires >= gen 20 on EVERY seed FOR WHICH THE TRAJECTORY IS LONG ENOUGH.
-       (t0106 has 39 gens, t0112 has 21 gens, t0114 has 62 gens — all >= 20;
-       t0113 only has 14 gens because the current rule fired at gen 14, so
-       we cannot test "fires >= 20" on t0113 because the trajectory was
-       truncated by the very rule we are re-parameterising. For t0113 the
-       acceptable behaviour is "DOES NOT fire by gen 14" — i.e. fire_gen is
-       either None or > 14 within the recorded 14 gens.)
-    2. Fires <= gen 60 on t0106 seed 44 (the longest baseline trajectory).
-    3. Smallest deviation from current defaults (W=2, T=0.01).
-
-    The deviation metric is window_dev + threshold_dev where
-    window_dev = abs(W - 2) and threshold_dev = abs(T - 0.01) * 100 (so
-    both axes are comparable order-of-magnitude).
-    """
-    candidates: list[tuple[int, float, float]] = []
-    for (w, t), fire_map in grid.items():
-        # t0106 must fire between [20, 60].
-        t0106_fire = fire_map.get("t0106_seed44")
-        if t0106_fire is None or not (20 <= t0106_fire <= 60):
-            continue
-        # t0112 (21-gen trajectory): if it fires, must fire at gen >= 20.
-        t0112_fire = fire_map.get("t0112_seed77")
-        if t0112_fire is not None and t0112_fire < 20:
-            continue
-        # t0114 (62-gen trajectory): if it fires, must fire at gen >= 20.
-        t0114_fire = fire_map.get("t0114_seed7755")
-        if t0114_fire is not None and t0114_fire < 20:
-            continue
-        # t0113: must NOT fire within the recorded 14 gens (i.e. fire_gen is
-        # None or > 14). This is the critical "no premature stop on t0113"
-        # criterion at the heart of S-0113-03.
-        t0113_fire = fire_map.get("t0113_seed2247")
-        if t0113_fire is not None and t0113_fire <= 14:
-            continue
-        dev = abs(w - 2) + abs(t - 0.01) * 100.0
-        candidates.append((w, t, dev))
-    if len(candidates) == 0:
-        # Fallback: pick the (W, T) that fires latest on t0113 (= least
-        # premature) AND fires on t0106 within [20, 60].
-        best: tuple[int, float] | None = None
-        best_t0113_gen = -1
-        for (w, t), fire_map in grid.items():
-            t0106_fire = fire_map.get("t0106_seed44")
-            if t0106_fire is None or not (20 <= t0106_fire <= 60):
-                continue
-            t0113_fire = fire_map.get("t0113_seed2247")
-            score = t0113_fire if t0113_fire is not None else 9999
-            if score > best_t0113_gen:
-                best_t0113_gen = score
-                best = (w, t)
-        assert best is not None, "at least one detector configuration fires reasonably on t0106"
-        return best[0], best[1], grid[best]
-    candidates.sort(key=lambda c: c[2])
-    w, t, _ = candidates[0]
-    return w, t, grid[(w, t)]
 
 
 # ---------------------------------------------------------------------------
@@ -620,11 +452,11 @@ def select_best_detector(
 # ---------------------------------------------------------------------------
 
 
-def csv_joint_pass_summary_4seeds(
+def csv_joint_pass_summary_5seeds(
     *,
     summaries: dict[str, PerSeedSummary],
 ) -> Path:
-    out_path = DATA_DIR / "joint_pass_summary_4seeds.csv"
+    out_path = DATA_DIR / "joint_pass_summary_5seeds.csv"
     fieldnames = [
         "seed_label",
         "task_seed",
@@ -643,12 +475,7 @@ def csv_joint_pass_summary_4seeds(
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
-        for key in (
-            "t0106_seed44",
-            "t0112_seed77",
-            "t0113_seed2247",
-            "t0114_seed7755",
-        ):
+        for key in ALL_SEED_KEYS:
             s = summaries[key]
             writer.writerow(
                 {
@@ -670,35 +497,33 @@ def csv_joint_pass_summary_4seeds(
     return out_path
 
 
-def csv_pareto_front_overlap_4seeds(
+def csv_pareto_front_overlap_5seeds(
     *,
     datasets: dict[str, SeedDataset],
 ) -> Path:
-    out_path = DATA_DIR / "pareto_front_overlap_4seeds.csv"
+    """For each t0115 strict Pareto cell, compute nearest-neighbour z-scored L2
+    distance to the closest cell from each of t0106 / t0112 / t0113 / t0114."""
+    out_path = DATA_DIR / "pareto_front_overlap_5seeds.csv"
 
-    pf_114 = datasets["t0114_seed7755"].pareto_cells
+    pf_115 = datasets["t0115_seed9354"].pareto_cells
     pf_106 = datasets["t0106_seed44"].pareto_cells
     pf_112 = datasets["t0112_seed77"].pareto_cells
     pf_113 = datasets["t0113_seed2247"].pareto_cells
+    pf_114 = datasets["t0114_seed7755"].pareto_cells
 
     def _v(cells: list[dict[str, Any]]) -> np.ndarray:
         if len(cells) == 0:
             return np.zeros((0, 68), dtype=np.float64)
         return np.asarray([c["vector_68d"] for c in cells], dtype=np.float64)
 
-    v_114 = _v(pf_114)
+    v_115 = _v(pf_115)
     v_106 = _v(pf_106)
     v_112 = _v(pf_112)
     v_113 = _v(pf_113)
+    v_114 = _v(pf_114)
 
-    # Build standardisation reference from ALL evaluations across all 4 seeds.
     all_vecs: list[list[float]] = []
-    for key in (
-        "t0106_seed44",
-        "t0112_seed77",
-        "t0113_seed2247",
-        "t0114_seed7755",
-    ):
+    for key in ALL_SEED_KEYS:
         all_vecs.extend([c["vector_68d"] for c in datasets[key].evaluations])
     all_arr = np.asarray(all_vecs, dtype=np.float64)
     mu = all_arr.mean(axis=0)
@@ -709,15 +534,16 @@ def csv_pareto_front_overlap_4seeds(
         result: np.ndarray = (v - mu) / sigma_safe
         return result
 
-    z_114 = _z(v_114)
+    z_115 = _z(v_115)
     z_106 = _z(v_106)
     z_112 = _z(v_112)
     z_113 = _z(v_113)
+    z_114 = _z(v_114)
 
     rows: list[dict[str, object]] = []
-    for i in range(v_114.shape[0]):
-        cell = pf_114[i]
-        query_z = z_114[i]
+    for i in range(v_115.shape[0]):
+        cell = pf_115[i]
+        query_z = z_115[i]
 
         def _nn_dist(z_target: np.ndarray, query: np.ndarray = query_z) -> tuple[int, float]:
             if z_target.shape[0] == 0:
@@ -729,8 +555,8 @@ def csv_pareto_front_overlap_4seeds(
         i_106, d_106 = _nn_dist(z_106)
         i_112, d_112 = _nn_dist(z_112)
         i_113, d_113 = _nn_dist(z_113)
+        i_114, d_114 = _nn_dist(z_114)
 
-        # Closer-to selection (tie broken by lexicographic order).
         seed_dists: list[tuple[str, float]] = []
         if not np.isnan(d_106):
             seed_dists.append(("t0106", d_106))
@@ -738,24 +564,129 @@ def csv_pareto_front_overlap_4seeds(
             seed_dists.append(("t0112", d_112))
         if not np.isnan(d_113):
             seed_dists.append(("t0113", d_113))
+        if not np.isnan(d_114):
+            seed_dists.append(("t0114", d_114))
         seed_dists.sort(key=lambda x: x[1])
         closer_to = seed_dists[0][0] if seed_dists else ""
 
         rows.append(
             {
-                "t0114_pareto_idx": i,
-                "t0114_dsi": round(float(cell["dsi_vector_sum"]), 4),
-                "t0114_pd_rate_hz": round(float(cell["pd_rate_hz"]), 4),
-                "t0114_generation": int(cell["generation"]),
+                "t0115_pareto_idx": i,
+                "t0115_dsi": round(float(cell["dsi_vector_sum"]), 4),
+                "t0115_pd_rate_hz": round(float(cell["pd_rate_hz"]), 4),
+                "t0115_generation": int(cell["generation"]),
                 "nn_t0106_idx": i_106,
                 "nn_t0106_zscored_l2_distance": (round(d_106, 4) if not np.isnan(d_106) else ""),
                 "nn_t0112_idx": i_112,
                 "nn_t0112_zscored_l2_distance": (round(d_112, 4) if not np.isnan(d_112) else ""),
                 "nn_t0113_idx": i_113,
                 "nn_t0113_zscored_l2_distance": (round(d_113, 4) if not np.isnan(d_113) else ""),
+                "nn_t0114_idx": i_114,
+                "nn_t0114_zscored_l2_distance": (round(d_114, 4) if not np.isnan(d_114) else ""),
                 "closer_to": closer_to,
             }
         )
+    with out_path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(rows)
+    return out_path
+
+
+@dataclass(frozen=True, slots=True)
+class SubstrateStats:
+    rates_pct: dict[str, float]
+    mean_pct: float
+    sd_pct: float
+    se_pct: float
+
+
+def _compute_substrate_stats(
+    *,
+    summaries: dict[str, PerSeedSummary],
+) -> SubstrateStats:
+    rates: dict[str, float] = {}
+    for key in ALL_SEED_KEYS:
+        s = summaries[key]
+        rate = 100.0 * s.n_joint_pass_legit_unique / s.n_total_evals
+        rates[key] = rate
+    n = len(rates)
+    mean = sum(rates.values()) / n
+    sd = sqrt(sum((r - mean) ** 2 for r in rates.values()) / (n - 1))
+    se = sd / sqrt(n)
+    return SubstrateStats(rates_pct=rates, mean_pct=mean, sd_pct=sd, se_pct=se)
+
+
+def csv_substrate_rate_5seed(
+    *,
+    summaries: dict[str, PerSeedSummary],
+    stats: SubstrateStats,
+) -> Path:
+    out_path = DATA_DIR / "substrate_rate_5seed.csv"
+    rows: list[dict[str, object]] = []
+    for key in ALL_SEED_KEYS:
+        s = summaries[key]
+        rate = stats.rates_pct[key]
+        rows.append(
+            {
+                "seed_label": key,
+                "task_seed": s.task_seed,
+                "n_total_evals": s.n_total_evals,
+                "n_legit_joint_pass_unique": s.n_joint_pass_legit_unique,
+                "acceptance_rate_pct": round(rate, 4),
+                "convention": "unique_legit_jp_cells_per_total_evals",
+            }
+        )
+    rows.append(
+        {
+            "seed_label": "5seed_mean",
+            "task_seed": "",
+            "n_total_evals": "",
+            "n_legit_joint_pass_unique": "",
+            "acceptance_rate_pct": round(stats.mean_pct, 4),
+            "convention": "unique_legit_jp_cells_per_total_evals",
+        }
+    )
+    rows.append(
+        {
+            "seed_label": "5seed_sample_sd",
+            "task_seed": "",
+            "n_total_evals": "",
+            "n_legit_joint_pass_unique": "",
+            "acceptance_rate_pct": round(stats.sd_pct, 4),
+            "convention": "unique_legit_jp_cells_per_total_evals",
+        }
+    )
+    rows.append(
+        {
+            "seed_label": "5seed_sample_se",
+            "task_seed": "",
+            "n_total_evals": "",
+            "n_legit_joint_pass_unique": "",
+            "acceptance_rate_pct": round(stats.se_pct, 4),
+            "convention": "unique_legit_jp_cells_per_total_evals",
+        }
+    )
+    rows.append(
+        {
+            "seed_label": "hay_2011_envelope_upper",
+            "task_seed": "",
+            "n_total_evals": "",
+            "n_legit_joint_pass_unique": "",
+            "acceptance_rate_pct": HAY_2011_RATE_PCT,
+            "convention": "literature_baseline",
+        }
+    )
+    rows.append(
+        {
+            "seed_label": "druckmann_2007_baseline",
+            "task_seed": "",
+            "n_total_evals": "",
+            "n_legit_joint_pass_unique": "",
+            "acceptance_rate_pct": DRUCKMANN_2007_RATE_PCT,
+            "convention": "literature_baseline",
+        }
+    )
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         writer.writeheader()
@@ -768,14 +699,9 @@ def csv_pareto_front_overlap_4seeds(
 # ---------------------------------------------------------------------------
 
 
-def chart_hv_vs_gen_4seeds(*, datasets: dict[str, SeedDataset]) -> Path:
-    fig, ax = plt.subplots(figsize=(9, 5.5))
-    for key in (
-        "t0106_seed44",
-        "t0112_seed77",
-        "t0113_seed2247",
-        "t0114_seed7755",
-    ):
+def chart_hv_vs_gen_5seeds(*, datasets: dict[str, SeedDataset]) -> Path:
+    fig, ax = plt.subplots(figsize=(10, 6))
+    for key in ALL_SEED_KEYS:
         ds = datasets[key]
         gens = [int(h["generation"]) for h in ds.hv_trajectory]
         hvs = [float(h["hypervolume"]) for h in ds.hv_trajectory]
@@ -783,9 +709,7 @@ def chart_hv_vs_gen_4seeds(*, datasets: dict[str, SeedDataset]) -> Path:
         ax.plot(
             gens,
             hvs,
-            label=(
-                f"{ds.label} (restart every {cadence}, {len(gens)} gens, final HV={hvs[-1]:.2f})"
-            ),
+            label=(f"{ds.label} (restart {cadence}, {len(gens)} gens, final HV={hvs[-1]:.2f})"),
             color=SEED_COLORS[key],
             marker=SEED_MARKERS[key],
             ms=3.0,
@@ -799,32 +723,27 @@ def chart_hv_vs_gen_4seeds(*, datasets: dict[str, SeedDataset]) -> Path:
                 color=SEED_COLORS[key],
                 ls=":",
                 lw=0.4,
-                alpha=0.35,
+                alpha=0.30,
             )
     ax.set_yscale("log")
     ax.set_xlabel("generation")
     ax.set_ylabel("hypervolume (log scale)")
     ax.set_title(
-        "HV trajectory: seeds 44, 77, 2247, 7755 with pool-restart events annotated",
+        "HV trajectory: seeds 44, 77, 2247, 7755, 9354 with pool-restart events annotated",
     )
     ax.legend(loc="lower right", fontsize=8)
     ax.grid(True, ls=":", lw=0.5, alpha=0.5)
     fig.tight_layout()
-    out_path = IMAGES_DIR / "hv_vs_gen_4seeds.png"
+    out_path = IMAGES_DIR / "hv_vs_gen_5seeds.png"
     fig.savefig(out_path, dpi=120)
     plt.close(fig)
     return out_path
 
 
-def chart_pareto_front_4seeds(*, datasets: dict[str, SeedDataset]) -> Path:
-    fig, ax = plt.subplots(figsize=(9, 6))
+def chart_pareto_front_5seeds(*, datasets: dict[str, SeedDataset]) -> Path:
+    fig, ax = plt.subplots(figsize=(10, 6))
     max_pd = 0.0
-    for key in (
-        "t0106_seed44",
-        "t0112_seed77",
-        "t0113_seed2247",
-        "t0114_seed7755",
-    ):
+    for key in ALL_SEED_KEYS:
         ds = datasets[key]
         x = [float(c["dsi_vector_sum"]) for c in ds.pareto_cells]
         y = [float(c["pd_rate_hz"]) for c in ds.pareto_cells]
@@ -861,26 +780,21 @@ def chart_pareto_front_4seeds(*, datasets: dict[str, SeedDataset]) -> Path:
     ax.set_ylabel("PD-rate (Hz)")
     ax.set_xlim(0, 1.05)
     ax.set_ylim(0, (max_pd if max_pd > 0 else 130.0) * 1.10)
-    ax.set_title("Strict Pareto fronts: t0106, t0112, t0113, t0114 (seed 7755)")
+    ax.set_title("Strict Pareto fronts: t0106, t0112, t0113, t0114, t0115 (seed 9354)")
     ax.legend(loc="upper left", fontsize=8)
     fig.tight_layout()
-    out_path = IMAGES_DIR / "pareto_front_4seeds.png"
+    out_path = IMAGES_DIR / "pareto_front_5seeds.png"
     fig.savefig(out_path, dpi=120)
     plt.close(fig)
     return out_path
 
 
-def chart_joint_pass_yield_4seeds(
+def chart_joint_pass_yield_5seeds(
     *,
     datasets: dict[str, SeedDataset],
 ) -> Path:
-    fig, ax = plt.subplots(figsize=(9, 5.5))
-    for key in (
-        "t0106_seed44",
-        "t0112_seed77",
-        "t0113_seed2247",
-        "t0114_seed7755",
-    ):
+    fig, ax = plt.subplots(figsize=(10, 6))
+    for key in ALL_SEED_KEYS:
         ds = datasets[key]
         per_gen = cumulative_joint_pass_per_gen(cells=ds.evaluations)
         gens = list(per_gen.keys())
@@ -898,167 +812,81 @@ def chart_joint_pass_yield_4seeds(
     ax.set_xlabel("generation")
     ax.set_ylabel("cumulative unique joint-pass cells")
     ax.set_title(
-        "Joint-pass cell discovery per generation (DSI >= 0.5, PD >= 30 Hz)",
+        "Joint-pass cell discovery per generation (DSI >= 0.5, PD >= 30 Hz; 5 seeds)",
     )
     ax.legend(loc="upper left", fontsize=9)
     ax.grid(True, ls=":", lw=0.5, alpha=0.5)
     fig.tight_layout()
-    out_path = IMAGES_DIR / "joint_pass_yield_per_gen_4seeds.png"
+    out_path = IMAGES_DIR / "joint_pass_yield_per_gen_5seeds.png"
     fig.savefig(out_path, dpi=120)
     plt.close(fig)
     return out_path
 
 
-def chart_detector_replay_heatmap(
+def chart_substrate_rate_5seed_with_literature(
     *,
-    grid: dict[tuple[int, float], dict[str, int | None]],
+    summaries: dict[str, PerSeedSummary],
+    stats: SubstrateStats,
 ) -> Path:
-    fig, axes = plt.subplots(2, 2, figsize=(11, 8))
-    axes_flat = axes.flatten()
-    seed_keys = (
-        "t0106_seed44",
-        "t0112_seed77",
-        "t0113_seed2247",
-        "t0114_seed7755",
+    fig, ax = plt.subplots(figsize=(9, 6))
+    seed_labels: list[str] = []
+    rate_values: list[float] = []
+    bar_colors: list[str] = []
+    for key in ALL_SEED_KEYS:
+        seed_labels.append(SEED_LABELS[key])
+        rate_values.append(stats.rates_pct[key])
+        bar_colors.append(SEED_COLORS[key])
+    seed_labels.append("5-seed mean")
+    rate_values.append(stats.mean_pct)
+    bar_colors.append("black")
+
+    xs = np.arange(len(seed_labels))
+    bars = ax.bar(xs, rate_values, color=bar_colors, alpha=0.75, edgecolor="black")
+    ax.errorbar(
+        x=xs[-1],
+        y=stats.mean_pct,
+        yerr=stats.se_pct,
+        fmt="none",
+        ecolor="black",
+        capsize=6,
+        lw=1.8,
+        label=f"5-seed SE = {stats.se_pct:.2f}%",
     )
-    windows = sorted({w for (w, _t) in grid})
-    thresholds = sorted({t for (_w, t) in grid})
-    for ax, key in zip(axes_flat, seed_keys, strict=True):
-        z = np.zeros((len(windows), len(thresholds)), dtype=np.float64)
-        for i, w in enumerate(windows):
-            for j, t in enumerate(thresholds):
-                fire_gen = grid[(w, t)][key]
-                z[i, j] = float(fire_gen) if fire_gen is not None else np.nan
-        im = ax.imshow(
-            z,
-            aspect="auto",
-            cmap="viridis",
-            origin="lower",
-        )
-        ax.set_xticks(range(len(thresholds)))
-        ax.set_xticklabels([f"{t:g}" for t in thresholds])
-        ax.set_yticks(range(len(windows)))
-        ax.set_yticklabels([str(w) for w in windows])
-        ax.set_xlabel("REL_THRESHOLD")
-        ax.set_ylabel("WINDOW")
-        ax.set_title(
-            f"{SEED_LABELS[key]} (run length = "
-            f"{ASSET_DECLARED[key]['n_generations_completed']} gens)"
-        )
-        for i in range(len(windows)):
-            for j in range(len(thresholds)):
-                val = z[i, j]
-                txt = f"{int(val)}" if not np.isnan(val) else "n/f"
-                color = "white" if not np.isnan(val) and val < 35 else "black"
-                ax.text(
-                    j,
-                    i,
-                    txt,
-                    ha="center",
-                    va="center",
-                    fontsize=10,
-                    color=color,
-                )
-        fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04, label="gen at fire")
-    fig.suptitle(
-        "HV-plateau detector replay: gen at which the rule first fires "
-        "(window x threshold) per seed",
-        fontsize=11,
+    ax.axhline(
+        HAY_2011_RATE_PCT,
+        color="crimson",
+        ls="--",
+        lw=1.6,
+        label=f"Hay 2011 envelope upper = {HAY_2011_RATE_PCT:.2f}%",
     )
-    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.96))
-    out_path = IMAGES_DIR / "detector_replay_heatmap.png"
+    ax.axhline(
+        DRUCKMANN_2007_RATE_PCT,
+        color="darkblue",
+        ls=":",
+        lw=1.6,
+        label=f"Druckmann 2007 baseline = {DRUCKMANN_2007_RATE_PCT:.2f}%",
+    )
+    for b in bars:
+        h = b.get_height()
+        ax.text(
+            b.get_x() + b.get_width() / 2,
+            h + max(rate_values) * 0.01,
+            f"{h:.2f}%",
+            ha="center",
+            va="bottom",
+            fontsize=9,
+        )
+    ax.set_xticks(xs)
+    ax.set_xticklabels(seed_labels, rotation=20, ha="right")
+    ax.set_ylabel("LEGIT joint-pass acceptance rate (%)")
+    ax.set_title(
+        "5-seed substrate-rate estimate vs literature baselines (Hay 2011, Druckmann 2007)",
+    )
+    ax.legend(loc="upper left", fontsize=8)
+    ax.grid(True, ls=":", lw=0.5, alpha=0.5, axis="y")
+    fig.tight_layout()
+    out_path = IMAGES_DIR / "substrate_rate_5seed_with_literature.png"
     fig.savefig(out_path, dpi=120)
-    plt.close(fig)
-    return out_path
-
-
-def chart_top50_morphologies_seed7755(*, ds_t0114: SeedDataset) -> Path:
-    """10x5 grid following t0113's top50 layout (scatter dot per cell coded by
-    silence-guard / legit-joint-pass / other), ranked by joint-pass first then
-    legit DSI then PD-rate. With t0114's 5,952 evaluations and 194 legit joint-
-    pass cells, we have many more than 50 candidates."""
-    cells = list(ds_t0114.evaluations)
-    seen_keys: set[tuple[float, ...]] = set()
-    unique_cells: list[dict[str, Any]] = []
-    for c in cells:
-        k = tuple(c["vector_68d"])
-        if k not in seen_keys:
-            seen_keys.add(k)
-            unique_cells.append(c)
-
-    def _rank(c: dict[str, Any]) -> tuple[int, int, float, float]:
-        # Tier 1: legit joint-pass (best).
-        # Tier 2: silence-guard joint-pass.
-        # Tier 3: legit non-joint-pass (sorted by DSI).
-        # Tier 4: silence-guard non-joint-pass.
-        is_jp = _is_joint_pass(c)
-        is_legit = _is_legit(c)
-        if is_jp and is_legit:
-            tier = 3
-        elif is_jp and not is_legit:
-            tier = 2
-        elif is_legit:
-            tier = 1
-        else:
-            tier = 0
-        # Within tier sort by legit DSI then PD-rate.
-        dsi = float(c["dsi_vector_sum"])
-        legit_dsi = dsi if is_legit else 0.0
-        return (tier, 1, legit_dsi, float(c["pd_rate_hz"]))
-
-    sorted_cells = sorted(unique_cells, key=_rank, reverse=True)
-    top = sorted_cells[:TOP_K_MORPHOLOGY]
-
-    fig, axes = plt.subplots(5, 10, figsize=(20, 10))
-    axes_flat = axes.flatten()
-    n_shown = len(top)
-    for i, ax in enumerate(axes_flat):
-        ax.set_xticks([])
-        ax.set_yticks([])
-        if i >= n_shown:
-            ax.text(
-                0.5,
-                0.5,
-                "n/a",
-                ha="center",
-                va="center",
-                fontsize=10,
-                color="lightgrey",
-                transform=ax.transAxes,
-            )
-            ax.set_axis_off()
-            continue
-        c = top[i]
-        morph = c["vector_68d"][54:68]
-        soma_offset_y = morph[0]
-        elongation = morph[1]
-        is_jp = _is_joint_pass(c)
-        is_silence = float(c["dsi_vector_sum"]) >= LEGIT_DSI_CEILING
-        if is_jp and not is_silence:
-            color = "green"
-        elif is_silence:
-            color = "red"
-        elif is_jp and is_silence:
-            color = "orange"
-        else:
-            color = SEED_COLORS["t0114_seed7755"]
-        ax.scatter([elongation], [soma_offset_y], c=color, s=70)
-        ax.set_title(
-            f"#{i + 1} g{int(c['generation'])}\n"
-            f"DSI={c['dsi_vector_sum']:.3f}\n"
-            f"PD={c['pd_rate_hz']:.1f} Hz",
-            fontsize=7,
-        )
-    fig.suptitle(
-        f"t0114 seed 7755: top-50 cells (ranked by joint-pass tier then legit "
-        f"DSI). Green = legit joint-pass, red = silence-guard DSI>={LEGIT_DSI_CEILING}, "
-        f"orange = joint-pass at DSI=1.0. Total unique cells: {len(unique_cells)} "
-        f"of {len(ds_t0114.evaluations)} evaluations.",
-        fontsize=10,
-    )
-    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.96))
-    out_path = IMAGES_DIR / "top50_morphologies_seed7755.png"
-    fig.savefig(out_path, dpi=110)
     plt.close(fig)
     return out_path
 
@@ -1076,7 +904,6 @@ def build_predictions_asset(
     PREDICTIONS_DIR.mkdir(parents=True, exist_ok=True)
     PREDICTIONS_FILES_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Write gzipped JSONL of per-cell records.
     with gzip.open(PREDICTIONS_OUTPUT_JSONL_GZ, "wt", encoding="utf-8") as gz:
         for c in evaluations:
             dsi = float(c["dsi_vector_sum"])
@@ -1093,56 +920,60 @@ def build_predictions_asset(
             gz.write(json.dumps(rec))
             gz.write("\n")
 
-    # details.json
     details = {
         "spec_version": "2",
         "predictions_id": PREDICTIONS_ID,
         "name": (
-            "NSGA-II seed 7755 on 68-d Bed B + 14-d morphology, 2 directions, "
-            "62-gen run with HV-plateau auto-stop DISABLED (S-0113-03 live impl)"
+            "NSGA-II seed 9354 on 68-d Bed B + 14-d morphology, 2 directions, "
+            "55-gen run with HV-plateau auto-stop DISABLED "
+            "(5th seed of S-0112-01 batch)"
         ),
         "short_description": (
-            f"All {seed_summary.n_total_evals} per-cell NSGA-II evaluations from t0114 "
-            "single random-init GA seed 7755 on the 68-d Bed B electrophys + 14-d "
-            "morphology DSGC substrate. Re-runs t0106/t0112/t0113 with HV-plateau "
-            "auto-stop DISABLED to test S-0113-03 (whether the t0113 14-gen plateau "
-            "stop was a premature trigger). Run terminated by operator stop at gen "
-            "62 after the HV trajectory plateaued at HV approximately 111.5."
+            f"All {seed_summary.n_total_evals} per-cell NSGA-II evaluations "
+            "from t0115 single random-init GA seed 9354 on the 68-d Bed B "
+            "electrophys + 14-d morphology DSGC substrate. Final 5th seed of "
+            "the S-0112-01 substrate-rate confirmation batch; re-runs "
+            "t0106/t0112/t0113/t0114 with HV-plateau auto-stop DISABLED. Run "
+            "terminated by operator stop at gen 55 after the HV trajectory "
+            f"plateaued near HV approximately {seed_summary.final_hypervolume:.2f}."
         ),
         "description_path": "description.md",
         "model_id": None,
         "model_description": (
-            "Compartmental DSGC neuron model combining the 54-d Bed B electrophysiology "
-            "parameter vector (from t0080) applied via apply_parameter_vector with the "
-            "t0092-patched 14-d procedural morphology generator (canonical via "
-            "correction C-0093-01). Each cell is evaluated with 2 stimulus directions "
-            "(PD = 0 deg, ND = 180 deg) x 3 noise replicates and scored on a "
-            "2-objective vector (ratio DSI, preferred-direction firing rate in Hz). "
-            "NSGA-II minimises the negated pair; the DSI silence guard from S-0102-01 "
-            "clamps DSI to 0.0 when total PD+ND spike count falls below 10 spikes per "
-            "trial. Identical to t0113 except GA seed 2247 -> 7755 (drawn via "
-            "secrets.randbelow(10000)) and HV-plateau auto-stop DISABLED so the run "
-            "executes to the 300-gen ceiling, cost cap, or operator stop. Pool restart "
-            "cadence 10. 68-d Bed B + 14-d morphology substrate, ratio DSI metric, "
-            "silence guard active, N_EVAL_SEEDS=3."
+            "Compartmental DSGC neuron model combining the 54-d Bed B "
+            "electrophysiology parameter vector (from t0080) applied via "
+            "apply_parameter_vector with the t0092-patched 14-d procedural "
+            "morphology generator (canonical via correction C-0093-01). Each "
+            "cell is evaluated with 2 stimulus directions (PD = 0 deg, ND = "
+            "180 deg) x 3 noise replicates and scored on a 2-objective vector "
+            "(ratio DSI, preferred-direction firing rate in Hz). NSGA-II "
+            "minimises the negated pair; the DSI silence guard from S-0102-01 "
+            "clamps DSI to 0.0 when total PD+ND spike count falls below 10 "
+            "spikes per trial. Identical to t0114 except GA seed 7755 -> 9354 "
+            "(drawn via secrets.randbelow(10000)) and the same HV-plateau "
+            "auto-stop DISABLED control. Pool restart cadence 10. 68-d Bed B + "
+            "14-d morphology substrate, ratio DSI metric, silence guard "
+            "active, N_EVAL_SEEDS=3."
         ),
         "dataset_ids": [],
         "prediction_format": "jsonl.gz",
         "prediction_schema": (
-            f"Gzipped JSONL with one line per evaluated cell ({seed_summary.n_total_evals} "
-            "lines). Each line is a JSON object with fields: generation (int, NSGA-II "
-            "generation; 1 = initial LHS population, 2-62 = offspring generations), "
-            "vector_68d (list of 68 floats, 54-d electrophys + 14-d morphology parameter "
-            "vector), objective_F_minimised (list of 2 floats, the NSGA-II objective "
-            "vector with sign-flipped maximisation conventions: [-ratio_dsi, "
-            "-pd_rate_hz]), dsi_vector_sum (float in [0, 1], the ratio DSI (PD - ND) / "
-            "(PD + ND); guard-cleaned per S-0102-01 so values of 0.0 may either be real "
-            "or guard-floor and values of 1.0 may be silence-guard ceilings), pd_rate_hz "
-            "(float, preferred-direction mean firing rate in Hz across the 3 noise "
-            "replicates), joint_pass (bool, true iff dsi_vector_sum >= 0.5 AND "
-            "pd_rate_hz >= 30 — the 2-axis strict criterion), legit (bool, true iff "
-            "dsi_vector_sum < 0.9999 — false flags the silence-guard / single-spike "
-            "DSI=1.0 ceiling artefact)."
+            f"Gzipped JSONL with one line per evaluated cell "
+            f"({seed_summary.n_total_evals} lines). Each line is a JSON object "
+            "with fields: generation (int, NSGA-II generation; 1 = initial "
+            "LHS population, 2-55 = offspring generations), vector_68d (list "
+            "of 68 floats, 54-d electrophys + 14-d morphology parameter "
+            "vector), objective_F_minimised (list of 2 floats, the NSGA-II "
+            "objective vector with sign-flipped maximisation conventions: "
+            "[-ratio_dsi, -pd_rate_hz]), dsi_vector_sum (float in [0, 1], the "
+            "ratio DSI (PD - ND) / (PD + ND); guard-cleaned per S-0102-01 so "
+            "values of 0.0 may either be real or guard-floor and values of "
+            "1.0 may be silence-guard ceilings), pd_rate_hz (float, "
+            "preferred-direction mean firing rate in Hz across the 3 noise "
+            "replicates), joint_pass (bool, true iff dsi_vector_sum >= 0.5 "
+            "AND pd_rate_hz >= 30 — the 2-axis strict criterion), legit "
+            "(bool, true iff dsi_vector_sum < 0.9999 — false flags the "
+            "silence-guard / single-spike DSI=1.0 ceiling artefact)."
         ),
         "instance_count": seed_summary.n_total_evals,
         "metrics_at_creation": {
@@ -1152,7 +983,7 @@ def build_predictions_asset(
             "best_legit_dsi": round(seed_summary.best_legit_dsi, 4),
             "best_pd_rate_hz": round(seed_summary.best_pd_rate_hz, 4),
             "n_joint_pass_unique": seed_summary.n_joint_pass_unique,
-            "n_joint_pass_legit_unique": seed_summary.n_joint_pass_legit_unique,
+            "n_joint_pass_legit_unique": (seed_summary.n_joint_pass_legit_unique),
             "final_hypervolume": round(seed_summary.final_hypervolume, 4),
             "stop_trigger": seed_summary.stop_trigger,
         },
@@ -1160,11 +991,12 @@ def build_predictions_asset(
             {
                 "path": f"files/{PREDICTIONS_OUTPUT_JSONL_GZ.name}",
                 "description": (
-                    f"Per-cell NSGA-II evaluation log for t0114 GA seed 7755 "
+                    f"Per-cell NSGA-II evaluation log for t0115 GA seed 9354 "
                     f"({seed_summary.n_total_evals} cells across "
-                    f"{seed_summary.n_generations_completed} completed generations; "
-                    "operator stop). gzip-compressed JSONL; decompress with "
-                    "`gunzip` or `gzip -d` before line-wise JSON parse."
+                    f"{seed_summary.n_generations_completed} completed "
+                    "generations; operator stop). gzip-compressed JSONL; "
+                    "decompress with `gunzip` or `gzip -d` before line-wise "
+                    "JSON parse."
                 ),
                 "format": "jsonl.gz",
             }
@@ -1183,7 +1015,6 @@ def build_predictions_asset(
         encoding="utf-8",
     )
 
-    # description.md
     description = _build_description_md(seed_summary=seed_summary)
     desc_path = PREDICTIONS_DIR / "description.md"
     desc_path.write_text(description, encoding="utf-8")
@@ -1193,98 +1024,104 @@ def build_predictions_asset(
 
 def _build_description_md(*, seed_summary: PerSeedSummary) -> str:
     name = (
-        "NSGA-II seed 7755 on 68-d Bed B + 14-d morphology, 2 directions, "
-        "62-gen run with HV-plateau auto-stop DISABLED (S-0113-03 live impl)"
+        "NSGA-II seed 9354 on 68-d Bed B + 14-d morphology, 2 directions, "
+        "55-gen run with HV-plateau auto-stop DISABLED "
+        "(5th seed of S-0112-01 batch)"
     )
     metadata = (
         "## Metadata\n\n"
         f"* **Name**: {name}\n"
-        "* **Model**: Compartmental DSGC model (t0092-patched procedural morphology "
-        "+ 54-d Bed B electrophys vector via t0080 apply_parameter_vector)\n"
+        "* **Model**: Compartmental DSGC model (t0092-patched procedural "
+        "morphology + 54-d Bed B electrophys vector via t0080 "
+        "apply_parameter_vector)\n"
         "* **Datasets**: none (simulator outputs)\n"
         "* **Format**: jsonl.gz\n"
-        f"* **Instances**: {seed_summary.n_total_evals:,} per-cell evaluations across "
-        f"{seed_summary.n_generations_completed} NSGA-II generations\n"
+        f"* **Instances**: {seed_summary.n_total_evals:,} per-cell evaluations "
+        f"across {seed_summary.n_generations_completed} NSGA-II generations\n"
         f"* **Created by**: {TASK_ID}\n"
     )
     overview = (
         "## Overview\n\n"
-        "These predictions capture every cell evaluated by the t0114 single-seed NSGA-II "
-        f"run with GA seed=7755 ({seed_summary.n_total_evals:,} cells across "
-        f"{seed_summary.n_generations_completed} generations). The run is the live "
-        "implementation of S-0113-03: it re-runs the t0106 / t0112 / t0113 substrate "
-        "with the HV-plateau auto-stop DISABLED to test whether the t0113 14-gen "
-        "premature plateau was real saturation or a detector false-positive. The "
-        "headline finding is that the HV trajectory continued climbing significantly "
-        "past gen 14 (the t0113 stop point) before plateauing in earnest near gen 50, "
-        "and the run reached a final hypervolume of "
-        f"{seed_summary.final_hypervolume:.4f} — within a few percent of t0106's "
-        "122.03 and well above t0113's 45.62.\n\n"
-        f"The {seed_summary.n_joint_pass_legit_unique} unique LEGIT joint-pass cells "
-        f"(DSI >= 0.5 AND PD >= 30 Hz AND DSI < 0.9999) collected by this seed put it "
-        "into the same yield bucket as t0106 (123 LEGIT) rather than t0112's sparse 7 "
-        "or t0113's 0. The asset is the primary evidence channel for the t0114 results "
-        "summary, the S-0113-03 detector re-parameterisation table in "
-        "`results_detailed.md`, and the 4-seed cross-comparison CSVs in "
-        "`results/data/`.\n"
+        "These predictions capture every cell evaluated by the t0115 "
+        f"single-seed NSGA-II run with GA seed=9354 "
+        f"({seed_summary.n_total_evals:,} cells across "
+        f"{seed_summary.n_generations_completed} generations). The run is the "
+        "5th and final seed in the S-0112-01 substrate-rate confirmation "
+        "batch: t0106 (seed 44), t0112 (seed 77), t0113 (seed 2247), t0114 "
+        "(seed 7755), and t0115 (seed 9354). Like t0114 it disables the "
+        "HV-plateau auto-stop and terminates by operator decision; the run "
+        "reached gen 55 before being stopped after the HV trajectory visibly "
+        f"plateaued near HV = {seed_summary.final_hypervolume:.2f}.\n\n"
+        f"The {seed_summary.n_joint_pass_legit_unique} unique LEGIT "
+        "joint-pass cells (DSI >= 0.5 AND PD >= 30 Hz AND DSI < 0.9999) "
+        "collected by this seed contribute the fifth data point to the "
+        "substrate-rate estimate. The asset is the primary evidence channel "
+        "for the t0115 results summary, the 5-seed cross-comparison CSVs in "
+        "`results/data/`, and the literature comparison against Hay 2011 "
+        "(0.40%) and Druckmann 2007 (0.10%).\n"
     )
     model_section = (
         "## Model\n\n"
-        "Compartmental DSGC neuron model with the t0092-patched procedural morphology "
-        "generator (`generate_fixed_morphology`, canonical via correction C-0093-01) and "
-        "the 54-d Bed B electrophys parameter vector applied via t0080's "
-        "`apply_parameter_vector`. Per-cell evaluation runs 2 stimulus directions "
-        "(PD = 0 deg, ND = 180 deg) x 3 noise replicates with objectives = "
-        "(ratio DSI, preferred-direction firing rate in Hz), both maximised. Pymoo "
-        "NSGA-II minimises the negated pair. Crossover SBX eta=15 with prob=0.9; "
-        "polynomial mutation eta=20 with prob=1/68; duplicate elimination enabled. "
-        "Population size 96, n_gen_max=300 (HV-plateau auto-stop DISABLED, so the run "
-        "terminates only by cost cap or operator stop), LHS-initialised initial "
-        "population with explicit `np.random.SeedSequence` seeding for "
-        "reproducibility. Pool restart cadence 10 (same as t0112 / t0113). The DSI "
-        "silence guard from S-0102-01 is active: cells whose total PD+ND spike count "
-        "across the 2 directions falls below 10 have DSI clamped to 0.0 before being "
-        "returned to NSGA-II.\n"
+        "Compartmental DSGC neuron model with the t0092-patched procedural "
+        "morphology generator (`generate_fixed_morphology`, canonical via "
+        "correction C-0093-01) and the 54-d Bed B electrophys parameter "
+        "vector applied via t0080's `apply_parameter_vector`. Per-cell "
+        "evaluation runs 2 stimulus directions (PD = 0 deg, ND = 180 deg) x "
+        "3 noise replicates with objectives = (ratio DSI, preferred-direction "
+        "firing rate in Hz), both maximised. Pymoo NSGA-II minimises the "
+        "negated pair. Crossover SBX eta=15 with prob=0.9; polynomial "
+        "mutation eta=20 with prob=1/68; duplicate elimination enabled. "
+        "Population size 96, n_gen_max=300 (HV-plateau auto-stop DISABLED, "
+        "so the run terminates only by cost cap or operator stop), "
+        "LHS-initialised initial population with explicit "
+        "`np.random.SeedSequence` seeding for reproducibility. Pool restart "
+        "cadence 10 (same as t0112 / t0113 / t0114). The DSI silence guard "
+        "from S-0102-01 is active: cells whose total PD+ND spike count "
+        "across the 2 directions falls below 10 have DSI clamped to 0.0 "
+        "before being returned to NSGA-II.\n"
     )
     data_section = (
         "## Data\n\n"
-        "No external dataset is consumed. Input vectors are 68-d points sampled by "
-        "NSGA-II starting from a 96-row Latin Hypercube Sample drawn with pymoo's "
-        "`LatinHypercubeSampling` and explicitly seeded with task_seed=7755. Bounds "
-        "for the 68 parameters are inherited unchanged from the t0106/t0112/t0113 "
-        "substrate (54-d Bed B electrophys bounds from t0080 + 14-d morphology bounds "
-        "from t0090). Noise replicates inside each evaluation use the 3 "
+        "No external dataset is consumed. Input vectors are 68-d points "
+        "sampled by NSGA-II starting from a 96-row Latin Hypercube Sample "
+        "drawn with pymoo's `LatinHypercubeSampling` and explicitly seeded "
+        "with task_seed=9354. Bounds for the 68 parameters are inherited "
+        "unchanged from the t0106/t0112/t0113/t0114 substrate (54-d Bed B "
+        "electrophys bounds from t0080 + 14-d morphology bounds from "
+        "t0090). Noise replicates inside each evaluation use the 3 "
         "deterministically spawned RNG seeds drawn from "
         "`np.random.SeedSequence(42).spawn(4)`.\n"
     )
     prediction_format_section = (
         "## Prediction Format\n\n"
         f"Gzipped JSONL with one line per evaluated cell "
-        f"({seed_summary.n_total_evals:,} lines total). Each line is a JSON object "
-        "with fields:\n\n"
+        f"({seed_summary.n_total_evals:,} lines total). Each line is a JSON "
+        "object with fields:\n\n"
         "* `generation`: int, the NSGA-II generation at which this cell was "
-        "evaluated (1 = initial LHS population, 2-62 = offspring generations)\n"
-        "* `vector_68d`: list of 68 floats, the 54-d electrophys + 14-d morphology "
-        "parameter vector\n"
-        "* `objective_F_minimised`: list of 2 floats, the NSGA-II objective vector "
-        "with sign-flipped maximisation conventions: [-ratio_dsi, -pd_rate_hz]\n"
-        "* `dsi_vector_sum`: float in [0, 1], ratio DSI = (PD - ND) / (PD + ND), "
-        "guard-cleaned per S-0102-01\n"
-        "* `pd_rate_hz`: float, preferred-direction mean firing rate (Hz) across the "
-        "3 noise replicates\n"
+        "evaluated (1 = initial LHS population, 2-55 = offspring "
+        "generations)\n"
+        "* `vector_68d`: list of 68 floats, the 54-d electrophys + 14-d "
+        "morphology parameter vector\n"
+        "* `objective_F_minimised`: list of 2 floats, the NSGA-II objective "
+        "vector with sign-flipped maximisation conventions: [-ratio_dsi, "
+        "-pd_rate_hz]\n"
+        "* `dsi_vector_sum`: float in [0, 1], ratio DSI = "
+        "(PD - ND) / (PD + ND), guard-cleaned per S-0102-01\n"
+        "* `pd_rate_hz`: float, preferred-direction mean firing rate (Hz) "
+        "across the 3 noise replicates\n"
         "* `joint_pass`: bool, true iff `dsi_vector_sum >= 0.5` AND "
         "`pd_rate_hz >= 30` (the 2-axis strict criterion)\n"
-        "* `legit`: bool, true iff `dsi_vector_sum < 0.9999` — false flags the "
-        "silence-guard / single-spike DSI=1.0 ceiling artefact\n\n"
+        "* `legit`: bool, true iff `dsi_vector_sum < 0.9999` — false flags "
+        "the silence-guard / single-spike DSI=1.0 ceiling artefact\n\n"
         "Example line (formatted for readability):\n\n"
         "```\n"
         "{\n"
-        '  "generation": 47,\n'
+        '  "generation": 54,\n'
         '  "vector_68d": [0.4576, 0.0550, ..., 0.2229],\n'
-        '  "objective_F_minimised": [-0.9868, -107.86],\n'
-        '  "dsi_vector_sum": 0.9868,\n'
-        '  "pd_rate_hz": 107.86,\n'
-        '  "joint_pass": true,\n'
+        '  "objective_F_minimised": [-0.9833, -28.33],\n'
+        '  "dsi_vector_sum": 0.9833,\n'
+        '  "pd_rate_hz": 28.33,\n'
+        '  "joint_pass": false,\n'
         '  "legit": true\n'
         "}\n"
         "```\n"
@@ -1295,8 +1132,9 @@ def _build_description_md(*, seed_summary: PerSeedSummary) -> str:
         "| Metric | Value |\n"
         "|--------|-------|\n"
         f"| Cells evaluated | **{seed_summary.n_total_evals:,}** |\n"
-        f"| Generations completed | **{seed_summary.n_generations_completed}** "
-        "of 300 ceiling (operator stop) |\n"
+        f"| Generations completed | "
+        f"**{seed_summary.n_generations_completed}** of 300 ceiling "
+        "(operator stop) |\n"
         f"| Best DSI overall | **{seed_summary.overall_max_dsi:.4f}** "
         "(silence-guard ceiling) |\n"
         f"| Best legit DSI (non-silence-guard) | "
@@ -1308,54 +1146,61 @@ def _build_description_md(*, seed_summary: PerSeedSummary) -> str:
         f"**{seed_summary.n_joint_pass_legit_unique}** |\n"
         f"| Cells at DSI = 1.0 ceiling (silence-guard) | "
         f"**{seed_summary.n_dsi_eq_one}** |\n"
-        f"| Final hypervolume (2-D) | **{seed_summary.final_hypervolume:.4f}** |\n"
+        f"| Final hypervolume (2-D) | "
+        f"**{seed_summary.final_hypervolume:.4f}** |\n"
         f"| Stop trigger | **{seed_summary.stop_trigger}** |\n\n"
-        f"The 2-axis strict joint-pass criterion (DSI >= 0.5 AND PD-rate >= 30 Hz) is "
-        f"met by **{seed_summary.n_joint_pass_unique}** unique cells across the "
-        f"{seed_summary.n_total_evals:,} evaluations. Filtering out silence-guard "
-        f"ceiling cells leaves **{seed_summary.n_joint_pass_legit_unique}** LEGIT "
-        "joint-pass cells.\n"
+        "The 2-axis strict joint-pass criterion (DSI >= 0.5 AND PD-rate >= "
+        f"30 Hz) is met by **{seed_summary.n_joint_pass_unique}** unique "
+        f"cells across the {seed_summary.n_total_evals:,} evaluations. "
+        "Filtering out silence-guard ceiling cells leaves "
+        f"**{seed_summary.n_joint_pass_legit_unique}** LEGIT joint-pass "
+        "cells.\n"
     )
     main_ideas_section = (
         "## Main Ideas\n\n"
-        f"* The run terminated at generation {seed_summary.n_generations_completed} "
-        f"via operator stop after the HV trajectory visibly plateaued near 111.5; "
-        "the HV-plateau auto-stop was DISABLED for this run.\n"
+        f"* The run terminated at generation "
+        f"{seed_summary.n_generations_completed} via operator stop after the "
+        f"HV trajectory visibly plateaued near "
+        f"{seed_summary.final_hypervolume:.2f}; the HV-plateau auto-stop was "
+        "DISABLED for this run.\n"
         f"* {seed_summary.n_joint_pass_legit_unique} of the "
-        f"{seed_summary.n_total_evals:,} evaluated cells cleared the strict 2-axis "
-        "LEGIT joint-pass corner — placing seed 7755 in the same yield bucket as "
-        "t0106 seed 44 (123 LEGIT) rather than t0112 / t0113.\n"
-        f"* The best legit cell reaches DSI = {seed_summary.best_legit_dsi:.4f} at "
-        f"PD = ~107.86 Hz (gen 47); the best PD-rate cell reaches "
-        f"PD = {seed_summary.best_pd_rate_hz:.2f} Hz. Per-cell `vector_68d` is "
-        "sufficient to re-evaluate any cell without re-running the optimiser.\n"
-        "* The data confirms S-0113-03's hypothesis that the t0113 14-gen HV-plateau "
-        "stop was a premature trigger: gen 14 HV was only ~36-46 on t0113, while "
-        f"this same protocol on seed 7755 reaches HV={seed_summary.final_hypervolume:.2f} "
-        "by gen 62.\n"
+        f"{seed_summary.n_total_evals:,} evaluated cells cleared the strict "
+        "2-axis LEGIT joint-pass corner — adding seed 9354 as the fifth "
+        "data point for the S-0112-01 substrate-rate estimate.\n"
+        f"* The best legit cell reaches DSI = {seed_summary.best_legit_dsi:.4f} "
+        f"and the best PD-rate cell reaches PD = "
+        f"{seed_summary.best_pd_rate_hz:.2f} Hz. Per-cell `vector_68d` is "
+        "sufficient to re-evaluate any cell without re-running the "
+        "optimiser.\n"
+        "* Seed 9354 lands in an intermediate yield bucket between the "
+        "high-yield t0106 / t0114 seeds and the sparse t0112 / t0113 seeds, "
+        "providing useful variance to characterise the substrate-rate "
+        "distribution.\n"
     )
     summary_section = (
         "## Summary\n\n"
-        f"This asset captures all {seed_summary.n_total_evals:,} NSGA-II evaluations "
-        f"from the t0114 random-init 2-objective run with GA seed=7755, covering "
-        f"generations 1 through {seed_summary.n_generations_completed}. Each cell is "
-        "a 68-d point in the Bed B electrophys + procedural morphology parameter "
-        "space, evaluated with 2 stimulus directions and 3 noise replicates against "
-        "the 2-dimensional objective (ratio DSI, preferred-direction firing rate). "
-        "The DSI silence guard from S-0102-01 is active throughout; the HV-plateau "
-        "auto-stop is DISABLED.\n\n"
-        f"The headline finding is **{seed_summary.n_joint_pass_legit_unique} unique "
-        "LEGIT joint-pass cells** — a result that places seed 7755 in the same "
-        "high-yield bucket as t0106 seed 44 (123 LEGIT). Best individual axes were "
-        f"DSI={seed_summary.best_legit_dsi:.4f} (legit; gen ~47) and "
+        f"This asset captures all {seed_summary.n_total_evals:,} NSGA-II "
+        f"evaluations from the t0115 random-init 2-objective run with GA "
+        f"seed=9354, covering generations 1 through "
+        f"{seed_summary.n_generations_completed}. Each cell is a 68-d point "
+        "in the Bed B electrophys + procedural morphology parameter space, "
+        "evaluated with 2 stimulus directions and 3 noise replicates against "
+        "the 2-dimensional objective (ratio DSI, preferred-direction firing "
+        "rate). The DSI silence guard from S-0102-01 is active throughout; "
+        "the HV-plateau auto-stop is DISABLED.\n\n"
+        f"The headline finding is **{seed_summary.n_joint_pass_legit_unique} "
+        "unique LEGIT joint-pass cells** — the fifth and final data point "
+        "for the S-0112-01 substrate-rate confirmation batch. Best individual "
+        f"axes were DSI={seed_summary.best_legit_dsi:.4f} (legit) and "
         f"PD={seed_summary.best_pd_rate_hz:.2f} Hz; final hypervolume "
-        f"{seed_summary.final_hypervolume:.4f} is roughly 91% of t0106's 122.03.\n\n"
-        "Combined with the matched three-other-seed assets (t0106 / t0112 / t0113), "
-        "this contributes the fourth data point to the substrate-rate confirmation "
-        "batch (S-0112-01) and provides the primary evidence channel for S-0113-03's "
-        "detector re-parameterisation analysis. Cost watchdog and operator stop "
-        "jointly govern run length; the productive NSGA-II compute cost was "
-        "$0.94 of the $25 cap.\n"
+        f"{seed_summary.final_hypervolume:.4f}.\n\n"
+        "Combined with the matched four-other-seed assets (t0106 / t0112 / "
+        "t0113 / t0114), this contributes the fifth data point to the "
+        "substrate-rate confirmation batch and provides the primary evidence "
+        "channel for the 5-seed mean +/- SE bar chart vs Hay 2011 (0.40%) "
+        "and Druckmann 2007 (0.10%) literature baselines. Cost watchdog and "
+        "operator stop jointly govern run length; the productive NSGA-II "
+        "compute cost was $2.39 of the $25 cap.\n"
     )
     return (
         "---\n"
@@ -1399,7 +1244,7 @@ def build_metrics_json(*, summary: PerSeedSummary) -> Path:
     }
     variants: list[dict[str, object]] = [
         {
-            "variant_id": f"random-init-seed{summary.task_seed}-2dir-noauto-best-legit",
+            "variant_id": (f"random-init-seed{summary.task_seed}-2dir-noauto-best-legit"),
             "label": (
                 f"2-direction NSGA-II seed {summary.task_seed}: best legit DSI "
                 "(highest non-silence-guard cell)"
@@ -1410,10 +1255,10 @@ def build_metrics_json(*, summary: PerSeedSummary) -> Path:
             },
         },
         {
-            "variant_id": f"random-init-seed{summary.task_seed}-2dir-noauto-overall-max",
+            "variant_id": (f"random-init-seed{summary.task_seed}-2dir-noauto-overall-max"),
             "label": (
-                f"2-direction NSGA-II seed {summary.task_seed}: overall max DSI "
-                "(silence-guard saturated)"
+                f"2-direction NSGA-II seed {summary.task_seed}: overall max "
+                "DSI (silence-guard saturated)"
             ),
             "dimensions": {**common_dims, "dsi_subvariant": "overall_max"},
             "metrics": {
@@ -1421,10 +1266,10 @@ def build_metrics_json(*, summary: PerSeedSummary) -> Path:
             },
         },
         {
-            "variant_id": f"random-init-seed{summary.task_seed}-2dir-noauto-dsi-eq-one",
+            "variant_id": (f"random-init-seed{summary.task_seed}-2dir-noauto-dsi-eq-one"),
             "label": (
-                f"2-direction NSGA-II seed {summary.task_seed}: silence-guard ceiling "
-                "cell count (cells at DSI = 1.0)"
+                f"2-direction NSGA-II seed {summary.task_seed}: silence-guard "
+                "ceiling cell count (cells at DSI = 1.0)"
             ),
             "dimensions": {
                 **common_dims,
@@ -1451,14 +1296,14 @@ def build_metrics_json(*, summary: PerSeedSummary) -> Path:
 
 def build_example_cells(
     *,
-    ds_t0114: SeedDataset,
+    ds_t0115: SeedDataset,
 ) -> tuple[Path, list[dict[str, Any]]]:
-    """Pick 10 representative cells from the t0114 evaluation log:
+    """Pick 10 representative cells from the t0115 evaluation log:
     * 3 top legit joint-pass cells (best legit DSI then best PD)
     * 2 best PD-rate cells
     * 2 silence-guard cells (DSI = 1.0)
     * 3 strict Pareto cells with highest DSI then highest PD"""
-    cells = list(ds_t0114.evaluations)
+    cells = list(ds_t0115.evaluations)
     legit_jp = sorted(
         [c for c in cells if _is_legit_joint_pass(c)],
         key=lambda c: (-float(c["dsi_vector_sum"]), -float(c["pd_rate_hz"])),
@@ -1468,7 +1313,7 @@ def build_example_cells(
         key=lambda c: -float(c["pd_rate_hz"]),
     )
     silence_cells = [c for c in cells if float(c["dsi_vector_sum"]) >= LEGIT_DSI_CEILING]
-    pareto = list(ds_t0114.pareto_cells)
+    pareto = list(ds_t0115.pareto_cells)
     examples: list[dict[str, Any]] = []
     used_keys: set[tuple[float, ...]] = set()
 
@@ -1488,7 +1333,6 @@ def build_example_cells(
             }
         )
 
-    # 3 top legit JP cells (skip duplicates against each other).
     legit_added = 0
     for c in legit_jp:
         if legit_added >= 3:
@@ -1497,7 +1341,6 @@ def build_example_cells(
             continue
         _add(c, f"legit_jp_top_{legit_added + 1}")
         legit_added += 1
-    # 2 best PD-rate cells.
     pd_added = 0
     for c in pd_sorted:
         if pd_added >= 2:
@@ -1506,7 +1349,6 @@ def build_example_cells(
             continue
         _add(c, f"best_pd_{pd_added + 1}")
         pd_added += 1
-    # 2 silence-guard cells (sorted by PD desc so they're meaningfully distinct).
     silence_sorted = sorted(
         silence_cells,
         key=lambda c: -float(c["pd_rate_hz"]),
@@ -1519,7 +1361,6 @@ def build_example_cells(
             continue
         _add(c, f"silence_guard_{silence_added + 1}")
         silence_added += 1
-    # 3 Pareto cells (sort by DSI desc).
     pareto_sorted = sorted(
         pareto,
         key=lambda c: (-float(c["dsi_vector_sum"]), -float(c["pd_rate_hz"])),
@@ -1532,8 +1373,6 @@ def build_example_cells(
             continue
         _add(c, f"pareto_cell_id_{c['cell_id']}")
         pareto_added += 1
-    # Top up to 10 from any remaining sources: best PD, best legit-DSI, then
-    # additional Pareto cells.
     fill_sources: list[list[dict[str, Any]]] = [pd_sorted, legit_jp, pareto_sorted]
     for src in fill_sources:
         for c in src:
@@ -1551,9 +1390,8 @@ def build_example_cells(
             _add(c, f"{tag_kind}_{len(examples) + 1}")
         if len(examples) >= 10:
             break
-    # Truncate to 10.
     examples = examples[:10]
-    out_path = DATA_DIR / "example_cells_seed7755.json"
+    out_path = DATA_DIR / "example_cells_seed9354.json"
     out_path.write_text(
         json.dumps({"examples": examples}, indent=2),
         encoding="utf-8",
@@ -1574,8 +1412,8 @@ def main() -> None:
 
     print(f"[build_results] start at {datetime.now(UTC).isoformat()}")
 
-    print("[build_results] Loading 4-seed datasets...")
-    datasets = load_all_four_seeds()
+    print("[build_results] Loading 5-seed datasets...")
+    datasets = load_all_five_seeds()
 
     print("[build_results] Computing per-seed summaries...")
     summaries = {k: _summarize_seed(key=k, ds=ds) for k, ds in datasets.items()}
@@ -1583,89 +1421,91 @@ def main() -> None:
         print(
             f"  {k}: jp_unique={s.n_joint_pass_unique}, "
             f"legit_jp_unique={s.n_joint_pass_legit_unique}, "
-            f"jp_pct={s.joint_pass_pct:.3f}%, "
+            f"legit_pct={s.joint_pass_pct:.3f}%, "
             f"best_legit_dsi={s.best_legit_dsi:.4f}, "
             f"best_pd={s.best_pd_rate_hz:.2f} Hz"
         )
 
-    # Update ASSET_DECLARED n_joint_pass_evaluations from the summary for t0114.
-    s0114 = summaries["t0114_seed7755"]
+    s0115 = summaries["t0115_seed9354"]
     print(
-        f"[build_results] t0114 summary: legit_jp_unique="
-        f"{s0114.n_joint_pass_legit_unique}, best_legit_dsi="
-        f"{s0114.best_legit_dsi:.4f}, best_pd={s0114.best_pd_rate_hz:.2f}"
+        f"[build_results] t0115 summary: legit_jp_unique="
+        f"{s0115.n_joint_pass_legit_unique}, best_legit_dsi="
+        f"{s0115.best_legit_dsi:.4f}, best_pd={s0115.best_pd_rate_hz:.2f}"
     )
 
     print("[build_results] Building predictions asset...")
     pred_jsonl, pred_details, pred_desc = build_predictions_asset(
-        seed_summary=s0114,
-        evaluations=datasets["t0114_seed7755"].evaluations,
+        seed_summary=s0115,
+        evaluations=datasets["t0115_seed9354"].evaluations,
     )
     print(f"  -> {pred_jsonl} ({pred_jsonl.stat().st_size / 1024:.1f} KB)")
     print(f"  -> {pred_details}")
     print(f"  -> {pred_desc}")
 
     print("[build_results] Building example cells JSON...")
-    ex_path, examples = build_example_cells(ds_t0114=datasets["t0114_seed7755"])
+    ex_path, examples = build_example_cells(ds_t0115=datasets["t0115_seed9354"])
     print(f"  -> {ex_path} ({len(examples)} examples)")
 
-    print("[build_results] Chart 1: hv_vs_gen_4seeds.png")
-    p1 = chart_hv_vs_gen_4seeds(datasets=datasets)
+    print("[build_results] Chart 1: hv_vs_gen_5seeds.png")
+    p1 = chart_hv_vs_gen_5seeds(datasets=datasets)
     print(f"  -> {p1}")
 
-    print("[build_results] Chart 2: pareto_front_4seeds.png")
-    p2 = chart_pareto_front_4seeds(datasets=datasets)
+    print("[build_results] Chart 2: pareto_front_5seeds.png")
+    p2 = chart_pareto_front_5seeds(datasets=datasets)
     print(f"  -> {p2}")
 
-    print("[build_results] Chart 3: joint_pass_yield_per_gen_4seeds.png")
-    p3 = chart_joint_pass_yield_4seeds(datasets=datasets)
+    print("[build_results] Chart 3: joint_pass_yield_per_gen_5seeds.png")
+    p3 = chart_joint_pass_yield_5seeds(datasets=datasets)
     print(f"  -> {p3}")
 
-    print("[build_results] Detector replay (S-0113-03)...")
-    detector_csv, detector_grid = detector_replay(datasets=datasets)
-    print(f"  -> {detector_csv}")
-    selection_grid = _build_selection_grid(datasets=datasets)
-    w_star, t_star, fire_map = select_best_detector(grid=selection_grid)
-    print(f"  Recommended (W*, T*) = ({w_star}, {t_star}) — fire gens: {fire_map}")
+    print("[build_results] Substrate-rate stats")
+    stats = _compute_substrate_stats(summaries=summaries)
+    print(f"  rates: {stats.rates_pct}")
+    print(f"  mean = {stats.mean_pct:.4f}%, sd = {stats.sd_pct:.4f}%, se = {stats.se_pct:.4f}%")
 
-    print("[build_results] Chart 4: detector_replay_heatmap.png")
-    p4 = chart_detector_replay_heatmap(grid=detector_grid)
+    print("[build_results] Chart 4: substrate_rate_5seed_with_literature.png")
+    p4 = chart_substrate_rate_5seed_with_literature(summaries=summaries, stats=stats)
     print(f"  -> {p4}")
 
-    print("[build_results] Chart 5: top50_morphologies_seed7755.png")
-    p5 = chart_top50_morphologies_seed7755(ds_t0114=datasets["t0114_seed7755"])
-    print(f"  -> {p5}")
-
-    print("[build_results] CSV: joint_pass_summary_4seeds.csv")
-    c1 = csv_joint_pass_summary_4seeds(summaries=summaries)
+    print("[build_results] CSV: joint_pass_summary_5seeds.csv")
+    c1 = csv_joint_pass_summary_5seeds(summaries=summaries)
     print(f"  -> {c1}")
 
-    print("[build_results] CSV: pareto_front_overlap_4seeds.csv")
-    c2 = csv_pareto_front_overlap_4seeds(datasets=datasets)
+    print("[build_results] CSV: pareto_front_overlap_5seeds.csv")
+    c2 = csv_pareto_front_overlap_5seeds(datasets=datasets)
     print(f"  -> {c2}")
 
+    print("[build_results] CSV: substrate_rate_5seed.csv")
+    c3 = csv_substrate_rate_5seed(summaries=summaries, stats=stats)
+    print(f"  -> {c3}")
+
     print("[build_results] metrics.json")
-    m = build_metrics_json(summary=s0114)
+    m = build_metrics_json(summary=s0115)
     print(f"  -> {m}")
 
-    # Print headline numbers for results_summary.md.
     print()
     print("[build_results] HEADLINE NUMBERS for results_summary.md:")
-    print(f"  task_seed = {s0114.task_seed}")
-    print(f"  n_total_evals = {s0114.n_total_evals}")
-    print(f"  n_generations_completed = {s0114.n_generations_completed}")
-    print(f"  n_joint_pass_unique = {s0114.n_joint_pass_unique}")
-    print(f"  n_joint_pass_legit_unique = {s0114.n_joint_pass_legit_unique}")
-    print(f"  best_legit_dsi = {s0114.best_legit_dsi:.4f}")
-    print(f"  overall_max_dsi = {s0114.overall_max_dsi:.4f}")
-    print(f"  n_dsi_eq_one = {s0114.n_dsi_eq_one}")
-    print(f"  best_pd_rate_hz = {s0114.best_pd_rate_hz:.4f}")
-    print(f"  final_hypervolume = {s0114.final_hypervolume:.4f}")
-    print(f"  stop_trigger = {s0114.stop_trigger}")
-    print(f"  recommended_W_star = {w_star}")
-    print(f"  recommended_T_star = {t_star}")
-    print(f"  detector_fire_map = {fire_map}")
-    print(f"  n_pareto = {len(datasets['t0114_seed7755'].pareto_cells)}")
+    print(f"  task_seed = {s0115.task_seed}")
+    print(f"  n_total_evals = {s0115.n_total_evals}")
+    print(f"  n_generations_completed = {s0115.n_generations_completed}")
+    print(f"  n_joint_pass_unique = {s0115.n_joint_pass_unique}")
+    print(f"  n_joint_pass_legit_unique = {s0115.n_joint_pass_legit_unique}")
+    print(f"  best_legit_dsi = {s0115.best_legit_dsi:.4f}")
+    print(f"  overall_max_dsi = {s0115.overall_max_dsi:.4f}")
+    print(f"  n_dsi_eq_one = {s0115.n_dsi_eq_one}")
+    print(f"  best_pd_rate_hz = {s0115.best_pd_rate_hz:.4f}")
+    print(f"  final_hypervolume = {s0115.final_hypervolume:.4f}")
+    print(f"  stop_trigger = {s0115.stop_trigger}")
+    print(f"  n_pareto = {len(datasets['t0115_seed9354'].pareto_cells)}")
+    print()
+    print("[build_results] 5-SEED SUBSTRATE STATS:")
+    for k, r in stats.rates_pct.items():
+        print(f"  {k}: {r:.4f}%")
+    print(f"  mean: {stats.mean_pct:.4f}%")
+    print(f"  sd:   {stats.sd_pct:.4f}%")
+    print(f"  se:   {stats.se_pct:.4f}%")
+    print(f"  Hay 2011 baseline: {HAY_2011_RATE_PCT}%")
+    print(f"  Druckmann 2007 baseline: {DRUCKMANN_2007_RATE_PCT}%")
 
     print(f"[build_results] DONE at {datetime.now(UTC).isoformat()}")
 

@@ -1,0 +1,74 @@
+{
+  "variants": [
+    {
+      "variant_id": "random-init-seed9354-2dir-noauto-best-legit",
+      "label": "2-direction NSGA-II seed 9354: best legit DSI (highest non-silence-guard cell)",
+      "dimensions": {
+        "task_seed": 9354,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 3,
+        "n_generations_target": 300,
+        "n_generations_completed": 55,
+        "n_cells": 5280,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "stop_trigger": "operator_stop",
+        "dsi_subvariant": "best_legit"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.9833
+      }
+    },
+    {
+      "variant_id": "random-init-seed9354-2dir-noauto-overall-max",
+      "label": "2-direction NSGA-II seed 9354: overall max DSI (silence-guard saturated)",
+      "dimensions": {
+        "task_seed": 9354,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 3,
+        "n_generations_target": 300,
+        "n_generations_completed": 55,
+        "n_cells": 5280,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "stop_trigger": "operator_stop",
+        "dsi_subvariant": "overall_max"
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    },
+    {
+      "variant_id": "random-init-seed9354-2dir-noauto-dsi-eq-one",
+      "label": "2-direction NSGA-II seed 9354: silence-guard ceiling cell count (cells at DSI = 1.0)",
+      "dimensions": {
+        "task_seed": 9354,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "n_eval_seeds": 3,
+        "n_generations_target": 300,
+        "n_generations_completed": 55,
+        "n_cells": 5280,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "stop_trigger": "operator_stop",
+        "dsi_subvariant": "dsi_eq_one_count",
+        "n_dsi_eq_one": 64
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    }
+  ]
+}

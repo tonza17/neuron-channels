@@ -1,16 +1,20 @@
 [
   {
-    "instance_id": "37161678",
     "provider": "vast.ai",
+    "machine_id": "37161678",
+    "instance_id": "37161678",
+    "gpu": "RTX A5000 (idle, unused; CPU-only NEURON workload on AMD EPYC 7713P)",
+    "gpu_count": 1,
     "cpu_name": "AMD EPYC 7713P 64-Core Processor",
     "cpu_cores": 128,
     "ram_gb": 125,
-    "gpu_name": "RTX A5000 (idle; CPU-only NEURON workload, GPU not used)",
     "dph_total": 0.2756,
     "created_at": "2026-05-20T17:00:44Z",
     "destroyed_at": "2026-05-21T02:05:00Z",
+    "duration_hours": 9.071,
     "total_duration_hours": 9.071,
+    "cost_usd": 2.5,
     "total_cost_usd": 2.5,
-    "purpose": "NSGA-II seed 9354 NSGA-II run with HV-plateau auto-stop disabled (5th seed of S-0112-01 batch)"
+    "purpose": "NSGA-II seed 9354 run with HV-plateau auto-stop disabled (5th seed of S-0112-01 batch)"
   }
 ]

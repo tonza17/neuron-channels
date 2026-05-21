@@ -1,0 +1,6 @@
+seed_label,task_seed,n_total_evals,n_joint_pass_unique,n_joint_pass_legit_unique,joint_pass_pct,best_dsi_overall,best_legit_dsi,best_pd_rate_hz,n_generations_completed,plateau_gen,final_hypervolume,stop_trigger
+t0106_seed44,44,3744,136,121,3.2318,1.0,0.9939,125.9524,39,39,122.0288,hv_plateau
+t0112_seed77,77,2016,7,7,0.3472,0.9535,0.9535,114.7619,21,21,107.4602,hv_plateau
+t0113_seed2247,2247,1344,2,0,0.0,1.0,0.3651,71.6667,14,14,45.6221,hv_plateau
+t0114_seed7755,7755,5952,771,484,8.1317,1.0,0.9926,112.8571,62,62,111.5353,operator_stop
+t0115_seed9354,9354,5280,63,63,1.1932,1.0,0.9833,89.2857,55,55,50.5646,operator_stop
