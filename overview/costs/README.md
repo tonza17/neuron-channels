@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $60.40 of $100.00 USD. $39.60 remains overall and $39.60 remains before the 100% stop
+Spent $62.90 of $100.00 USD. $37.10 remains overall and $37.10 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,16 +8,16 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $100.00 USD |
-| Total spent | $60.40 USD |
-| Budget left | $39.60 USD |
-| Budget left before stop threshold | $39.60 USD |
-| Spent percent | 60.40% |
+| Total spent | $62.90 USD |
+| Budget left | $37.10 USD |
+| Budget left before stop threshold | $37.10 USD |
+| Spent percent | 62.90% |
 | Warn threshold | 80% ($80.00) |
 | Stop threshold | 100% ($100.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 107 |
-| Tasks with non-zero spend | 15 |
-| Skipped tasks | 9 |
+| Tasks with cost records | 108 |
+| Tasks with non-zero spend | 16 |
+| Skipped tasks | 8 |
 
 ## Service Totals
 
@@ -39,6 +39,7 @@ threshold.
 | `vast-ai-rtx5060ti` | $3.93 |
 | `vast_ai_idle_time` | $3.51 |
 | `vast-ai-seed33` | $3.41 |
+| `vast_ai_seed9354_compute` | $2.50 |
 | `vast_ai_36149741` | $2.39 |
 | `vast-ai-seed22` | $1.96 |
 | `vast-ai-setup-smoke-idle` | $1.42 |
@@ -80,6 +81,7 @@ threshold.
 | [`t0112_t0106_seed77_replicate`](../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | completed | $1.99 | $8.00 | no |
 | [`t0113_t0106_seed2247_replicate`](../../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md) | completed | $0.48 | $25.00 | no |
 | [`t0114_seed7755_no_autostop`](../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | completed | $1.13 | $8.00 | no |
+| [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | completed | $2.50 | $8.00 | no |
 
 ## Skipped Tasks
 
@@ -93,4 +95,3 @@ threshold.
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
 | `t0096_literature_survey_multi_objective_neuron_optimisation` | results/costs.json is missing or invalid |
-| `t0115_seed9354_no_autostop` | results/costs.json is missing or invalid |

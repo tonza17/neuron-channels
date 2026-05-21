@@ -6,10 +6,10 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (44)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(85)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(86)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (3)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
-(11)](../predictions/by-category/retinal-ganglion-cell.md)
+(12)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -2608,7 +2608,25 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (76 open, 9 closed)
+## Suggestions (77 open, 9 closed)
+
+<details>
+<summary>📊 <strong>8-direction polar re-evaluation of t0115's strict Pareto cells
+(mirrors S-0114-03 / S-0112-05)</strong> (S-0115-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../../tasks/t0115_seed9354_no_autostop/)
+
+t0115's 23 strict Pareto cells span the DSI/PD-rate frontier: best LEGIT DSI=0.9833 at
+PD=28.33 Hz, best PD=89.29 Hz at DSI~0, and DSI=0.7899 / PD=50.71 Hz (best combined). t0107
+found 2-direction ratio DSI overstates 8-direction vector-sum DSI by ~0.42 absolute on t0106
+high-DSI cells; applied here yields ~0.56 (vs Trenholm2013's 0.76 / Oesch2005's 0.74
+baselines). Concrete action: re-evaluate all 23 t0115 strict Pareto cells at 8 directions
+every 45 deg using t0107's protocol. Distinct from S-0114-03 (t0114 Pareto cells), S-0112-05
+(t0112 cells), and S-0106-03 (t0106 cells); together these would cover the full 4-rich-seed
+cohort. Recommended task types: experiment-run, comparative-analysis. Cost: <$1.00.
+
+</details>
 
 <details>
 <summary>📊 <strong>8-direction polar re-evaluation of t0114's 6 strict Pareto cells

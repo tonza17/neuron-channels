@@ -1,19 +1,19 @@
-# Machine Provisioning (14 machines)
+# Machine Provisioning (15 machines)
 
-**14** machines provisioned across **14** tasks. Total cost: **$60.20**.
+**15** machines provisioned across **15** tasks. Total cost: **$62.70**.
 
-**8** failed provisioning attempts wasted **$0.06** (36.4% failure rate).
+**9** failed provisioning attempts wasted **$0.07** (37.5% failure rate).
 
 ## Summary
 
 | Field | Value |
 |-------|-------|
-| Total machines | 14 |
-| Total failed attempts | 8 |
-| Failure rate | 36.4% |
-| Avg provisioning time | 646s |
-| Total cost | $60.20 |
-| Total wasted cost | $0.06 |
+| Total machines | 15 |
+| Total failed attempts | 9 |
+| Failure rate | 37.5% |
+| Avg provisioning time | 659s |
+| Total cost | $62.70 |
+| Total wasted cost | $0.07 |
 
 ## Cost by GPU Tier
 
@@ -24,10 +24,10 @@
 | RTX 3060 Ti (idle, unused; CPU-only NEURON workload) | $10.30 |
 | RTX 4060 Ti (idle, unused) | $5.83 |
 | RTX 5060 Ti (idle, unused) | $3.93 |
+| RTX A5000 (idle, unused; CPU-only NEURON workload) | $3.63 |
 | RTX PRO 4000 (idle, unused) | $3.14 |
 | RTX 3090 (idle, unused; CPU-only NEURON workload) | $1.99 |
 | (idle, unused; CPU-only NEURON workload) | $1.59 |
-| RTX A5000 (idle, unused; CPU-only NEURON workload) | $1.13 |
 | Quadro P4000 | $1.06 |
 | RTX PRO 4000 (idle, unused; CPU-only NEURON workload) | $0.65 |
 | RTX 4060 Ti (idle, unused; CPU-only NEURON workload) | $0.43 |
@@ -44,6 +44,7 @@
 | Duplicate-create artefact: second retry of 'vastai create instance 34391260' after the silent first success. Destroyed before any environment setup ran. No code or data was placed on it. | 1 |
 | Vast.ai create-instance API responded with empty stdout/exit 0 for the first call but created a duplicate instance shortly afterwards (37106446); both 37106446 and 37106453 were created from the same offer ID. 37106446 was destroyed via the API (returned 404 'Instance not found' on destroy probe -- it was already removed Vast.ai-side, likely a transient phantom from the create-instance race). | 1 |
 | SSH authentication rejected the registered key (id 801863 with comment 'shefuniad\md1avn@TEN00BE4360B45A'). After 5 retries on ssh4.vast.ai:26452 (proxy) and one attempt on 76.64.86.119:47399 (direct), all 6 returned 'Permission denied (publickey)' despite the key being attached to the instance per Vast.ai API. Root cause: the literal backslash in the key comment field appears to corrupt key parsing in the Vast.ai SSH proxy (the key was stored with double-escaped backslash 'shefuniad\\md1avn'). Resolution: registered a new SSH key entry (id 855344) using the same key material but a clean ASCII comment 'md1avn-t0113', attached to the next instance, and SSH connected successfully on the first attempt. | 1 |
+| Vast.ai host repeatedly returned 'Required resources are currently unavailable, state change queued' for 386 s after instance creation. The intended_status remained 'stopped' and actual_status 'loading'; explicit 'vastai start instance' calls were also queued without effect. Likely root cause: a host-level resource constraint on machine_id 17169 host_id 93197 (host has 128 effective cores allocated to a single bundle and may be in a transient reallocation window). The 7B13 is the plan-preferred Zen-3 Milan SKU and was the cheapest at $0.1485/hr -- worth retrying in a future task if the host comes back online. | 1 |
 
 ## Tasks
 
@@ -63,3 +64,4 @@
 | [`t0112_t0106_seed77_replicate`](../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | 1 | $1.99 | 0 | RTX 3090 (idle, unused; CPU-only NEURON workload) |
 | [`t0113_t0106_seed2247_replicate`](../../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md) | 1 | $0.43 | 2 | RTX 4060 Ti (idle, unused; CPU-only NEURON workload) |
 | [`t0114_seed7755_no_autostop`](../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | 1 | $1.13 | 0 | RTX A5000 (idle, unused; CPU-only NEURON workload) |
+| [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | 1 | $2.50 | 1 | RTX A5000 (idle, unused; CPU-only NEURON workload) |

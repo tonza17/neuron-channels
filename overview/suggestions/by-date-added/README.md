@@ -1,10 +1,187 @@
 # Suggestions by Date Added
 
-441 suggestion(s) grouped by derived added date.
+448 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
+
+## 2026-05-21 (7)
+
+## High Priority
+
+<details>
+<summary>📊 <strong>5-seed substrate-rate batch (S-0112-01) is now complete; write
+canonical report</strong> (S-0115-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0115-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0115 closes the S-0112-01 batch with 5 seeds (44, 77, 2247, 7755, 9354) on the identical 68-d
+Bed B + 14-d morphology substrate. Final 5-seed mean LEGIT-joint-pass acceptance rate is 2.58%
++/- SE 1.50% (SD 3.35%, 95% CI -0.36% to +5.52%). Point estimate is 6.45x above Hay 2011
+(0.40%) and 25.8x above Druckmann 2007 (0.10%), but the 95% CI brackets both literature
+references. Three of five seeds (44, 7755, 9354) independently exceed Hay. Concrete action:
+write a canonical substrate-rate report consolidating all five tasks' results into a single
+comparable document with consistent metric conventions, embeddable in the project overview.
+Recommended task types: data-analysis, answer-question. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector
+defaults across the project</strong> (S-0115-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0115-01` |
+| **Kind** | technique |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1012039`](../../../tasks/t0115_seed9354_no_autostop/assets/paper/10.1371_journal.pcbi.1012039/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0115's 55-gen unstopped HV trajectory adds a fifth datapoint to the offline detector-replay
+sweep proposed in S-0113-03 and refined in S-0114-01. The recommended (W*, T*) = (3, 0.015)
+pair would fire on t0115 around gen 30-45, inside Mohacsi2024's 20-60 gen convergence band,
+and would NOT fire prematurely on t0113's gen-14 trace. Concrete action: globally rewrite the
+HV-plateau detector constants in the NSGA-II driver template and the t0024 cell-build
+pipeline; document the new defaults in arf/skills/setup-remote-machine and
+arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: <$0.05.
+
+</details>
+
+## Medium Priority
+
+<details>
+<summary>📊 <strong>8-direction polar re-evaluation of t0115's strict Pareto cells
+(mirrors S-0114-03 / S-0112-05)</strong> (S-0115-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0115-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
+| **Source paper** | [`10.1167_jov.13.7.2`](../../../tasks/t0115_seed9354_no_autostop/assets/paper/10.1167_jov.13.7.2/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0115's 23 strict Pareto cells span the DSI/PD-rate frontier: best LEGIT DSI=0.9833 at
+PD=28.33 Hz, best PD=89.29 Hz at DSI~0, and DSI=0.7899 / PD=50.71 Hz (best combined). t0107
+found 2-direction ratio DSI overstates 8-direction vector-sum DSI by ~0.42 absolute on t0106
+high-DSI cells; applied here yields ~0.56 (vs Trenholm2013's 0.76 / Oesch2005's 0.74
+baselines). Concrete action: re-evaluate all 23 t0115 strict Pareto cells at 8 directions
+every 45 deg using t0107's protocol. Distinct from S-0114-03 (t0114 Pareto cells), S-0112-05
+(t0112 cells), and S-0106-03 (t0106 cells); together these would cover the full 4-rich-seed
+cohort. Recommended task types: experiment-run, comparative-analysis. Cost: <$1.00.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Backport: regenerate t0114's top50_morphologies_seed7755.png with
+full dendrite trees (correction task)</strong> (S-0115-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0115-05` |
+| **Kind** | technique |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0114's top50_morphologies_seed7755.png drew only the soma points, not the full dendrite tree,
+making the chart visually useless for characterising the morphology distribution of high-yield
+cells. t0115 used the corrected build_top50_morphologies.py helper that walks every section in
+the NEURON cell object via generate_fixed_morphology -> result.section_endpoints_xy ->
+matplotlib LineCollection. Concrete action: create a small correction task that regenerates
+the t0114 chart using the t0115 helper, files a corrections/ overlay updating the t0114 chart
+path, and verifies via Read tool that subplots show branching trees, not dots. Recommended
+task types: correction. Cost: <$0.05.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate the seed-44 / seed-7755 / seed-9354 'rich-yield'
+parameter signature</strong> (S-0115-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0115-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Three of the five S-0112-01 batch seeds (44, 7755, 9354) all exceeded the Hay 2011 0.40%
+acceptance envelope, while seeds 77 and 2247 sat at or below it. The 484 vs 7 vs 63 LEGIT
+joint-pass cell count spread is much larger than the t0106/t0112/t0113 protocol diff implies,
+suggesting seed-specific search-basin attractors. Concrete action: compute the pairwise
+normalised L2 distance between every t0106 / t0114 / t0115 strict Pareto cell in 68-d
+parameter space; identify any cluster signatures that distinguish 'rich-yield' from
+'sparse-yield' seeds; report whether the rich-yield Pareto fronts share a common parameter
+sub-volume vs each occupying a distinct sub-volume. Recommended task types: data-analysis.
+Cost: <$0.10.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate why seed 9354 took 25 gens to find the joint-pass
+corner (vs t0114's 8 gens)</strong> (S-0115-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0115-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0115's late corner-find (joint-pass cells emerging at gen 25) vs t0114's early corner-find
+(gen 8) is the most striking seed-to-seed protocol difference at fixed substrate + algorithm.
+The 17-gen lag corresponds to ~3 full pool-restart cycles, suggesting the random-init basin or
+LHS sampling distribution for seed 9354 was systematically further from the joint-pass region.
+Concrete action: compare t0115's gen-1 LHS-init population against t0114's by computing (a)
+nearest-distance from each init cell to the eventual joint-pass corner in normalised 68-d
+parameter space, (b) the distribution of init-cell DSI and PD values, and (c) the genetic
+operators' (SBX/PM) effective step size in the first 10 gens. Outcome: identify the
+basin-attractor signature that distinguishes rich-yield seeds (44, 7755) from slow-yield seeds
+(9354) and dead-end seeds (2247). Recommended task types: data-analysis. Cost: <$0.10.
+
+</details>
+
+## Low Priority
+
+<details>
+<summary>📚 <strong>Project memory: re-pulling all_evaluations.json over SCP is slow;
+build a streaming /tail variant</strong> (S-0115-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0115-06` |
+| **Kind** | library |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Across t0114 + t0115 the operator triggered ~12 SCP re-pulls of the all_evaluations_seed*.json
+file (mean ~5 MB each). Each pull took 15-30 s SSH overhead, in total ~5 minutes of wasted
+wall-clock just for fetches. A streaming variant (write a small remote helper that emits only
+the new evaluations since the last fetch, indexed by generation; client maintains a local
+accumulator) would reduce per-pull cost to <2 s. Concrete action: add `tail_evaluations.py` to
+the t0114/t0115 family code; expose via a remote SSH alias `nsga2-tail`. Recommended task
+types: write-library. Cost: <$0.05.
+
+</details>
 
 ## 2026-05-20 (16)
 

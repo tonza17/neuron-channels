@@ -6,25 +6,29 @@
 
 ---
 
-## 2026-05-20 (3)
+## 2026-05-21 (1)
 
-## ⏹ Not Started
+## ✅ Completed
 
 <details>
-<summary>⏹ 0115 — <strong>Seed-9354 NSGA-II replicate of t0106 with auto-stop
+<summary>✅ 0115 — <strong>Seed-9354 NSGA-II replicate of t0106 with auto-stop
 disabled</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0115_seed9354_no_autostop` |
-| **Status** | not_started |
-| **Effective date** | 2026-05-20 |
+| **Status** | completed |
+| **Effective date** | 2026-05-21 |
 | **Dependencies** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) |
 | **Expected assets** | 1 predictions |
 | **Source suggestion** | `S-0112-01` |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/) |
+| **Start time** | 2026-05-20T16:35:21Z |
+| **End time** | 2026-05-21T02:55:00Z |
+| **Step progress** | 12/15 |
 | **Task page** | [Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
 | **Task folder** | [`t0115_seed9354_no_autostop/`](../../../tasks/t0115_seed9354_no_autostop/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0115_seed9354_no_autostop/results/results_detailed.md) |
 
 # t0115: Seed-9354 NSGA-II Replicate of t0106 Substrate with HV-Plateau Auto-Stop Disabled
 
@@ -204,7 +208,43 @@ answer:
   showing 2-direction ratio DSI overstates selectivity by ~0.42 absolute). Polar re-evaluation
   of any t0115 joint-pass cells is out of scope for this task.
 
+**Results summary:**
+
+> **t0115 - Seed-9354 NSGA-II Replicate of t0106 with HV-Plateau Auto-Stop Disabled: Results
+> Summary**
+>
+> **Summary**
+>
+> Seed 9354 with the HV-plateau auto-stop DISABLED reached **63 unique LEGIT joint-pass
+> cells** (DSI
+> >= 0.5 AND PD-rate >= 30 Hz AND DSI < 0.9999) across **5,280 evaluations / 55 NSGA-II
+> generations**
+> on the same 68-d Bed B + 14-d morphology substrate as t0106 / t0112 / t0113 / t0114. The run
+> terminated by **operator stop** after the HV trajectory visibly plateaued near HV = 50.56.
+> Adding
+> seed 9354 as the **fifth and final data point of the S-0112-01 substrate-rate confirmation
+> batch**
+> gives a 5-seed mean LEGIT joint-pass acceptance rate of **2.58% +/- SE 1.50%** (sample SD
+> 3.35%),
+> still **6.5x above the Hay 2011 envelope upper bound (0.40%)** and **25.8x above Druckmann
+> 2007
+> (0.10%)**.
+>
+> **Metrics**
+>
+> * **Unique joint-pass cells** (DSI >= 0.5 AND PD >= 30 Hz): **63** (all of which are also
+>   LEGIT).
+> * **Unique LEGIT joint-pass cells** (additionally DSI < 0.9999): **63** — places seed 9354
+>   in an
+> intermediate yield bucket between t0106 seed 44 (121 LEGIT) and t0112 seed 77 (7 LEGIT).
+> * **Best LEGIT DSI** (highest non-silence-guard cell): **0.9833** at PD = 28.33 Hz (gen 54;
+>   strict
+> Pareto `cell_id = 1`). Within 1.1 percentage points of t0106 seed 44's 0.9939 and 0.9 points
+> of
+
 </details>
+
+## 2026-05-20 (2)
 
 ## ✅ Completed
 

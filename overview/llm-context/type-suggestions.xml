@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-20T16:25:38Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-21T02:57:55Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>484043</char_count>
-    <byte_count>484227</byte_count>
-    <estimated_tokens>121010</estimated_tokens>
+    <char_count>491344</char_count>
+    <byte_count>491528</byte_count>
+    <estimated_tokens>122836</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -458,9 +458,16 @@
         <id>S-0114-06</id>
         <id>S-0114-07</id>
         <id>S-0114-08</id>
+        <id>S-0115-01</id>
+        <id>S-0115-02</id>
+        <id>S-0115-03</id>
+        <id>S-0115-04</id>
+        <id>S-0115-05</id>
+        <id>S-0115-06</id>
+        <id>S-0115-07</id>
       </source_ids>
       <content>
-Suggestions: 441
+Suggestions: 448
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -5408,6 +5415,85 @@ Categories: compartmental-modeling, direction-selectivity
 Date added: 2026-05-20
 
 The S-0114-01 (W*, T*) = (3, 0.015) recommendation is computed offline from 4 HV trajectories. It has NOT been validated by running NSGA-II online with the new constants. Concrete action: re-run two seeds end-to-end with the new detector active: (a) seed 44 (t0106) — should fire at gen 39 and stop, matching offline prediction; (b) seed 2247 (t0113) — should NOT fire within gen 14 (eliminating premature stop) and run to a longer plateau. Optional third: seed 7755 (t0114) — should fire at gen 26 instead of operator-stop at gen 62. Decision: if all match offline replay, formally close S-0114-01 and declare (W=3, T=0.015) the default. If any diverge, treat replay as biased and reopen (W*, T*) search with new live HV traces. Bonus: the live runs contribute additional seeds to the substrate-rate sample. Recommended task types: experiment-run, comparative-analysis. Cost: ~$3-6.
+
+## Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector defaults across the project
+ID: S-0115-01
+Status: active
+Priority: high
+Kind: technique
+Source task: t0115_seed9354_no_autostop
+Source paper: 10.1371_journal.pcbi.1012039
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-21
+
+t0115&#x27;s 55-gen unstopped HV trajectory adds a fifth datapoint to the offline detector-replay sweep proposed in S-0113-03 and refined in S-0114-01. The recommended (W*, T*) = (3, 0.015) pair would fire on t0115 around gen 30-45, inside Mohacsi2024&#x27;s 20-60 gen convergence band, and would NOT fire prematurely on t0113&#x27;s gen-14 trace. Concrete action: globally rewrite the HV-plateau detector constants in the NSGA-II driver template and the t0024 cell-build pipeline; document the new defaults in arf/skills/setup-remote-machine and arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: &lt;$0.05.
+
+## 5-seed substrate-rate batch (S-0112-01) is now complete; write canonical report
+ID: S-0115-02
+Status: active
+Priority: high
+Kind: evaluation
+Source task: t0115_seed9354_no_autostop
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-21
+
+t0115 closes the S-0112-01 batch with 5 seeds (44, 77, 2247, 7755, 9354) on the identical 68-d Bed B + 14-d morphology substrate. Final 5-seed mean LEGIT-joint-pass acceptance rate is 2.58% +/- SE 1.50% (SD 3.35%, 95% CI -0.36% to +5.52%). Point estimate is 6.45x above Hay 2011 (0.40%) and 25.8x above Druckmann 2007 (0.10%), but the 95% CI brackets both literature references. Three of five seeds (44, 7755, 9354) independently exceed Hay. Concrete action: write a canonical substrate-rate report consolidating all five tasks&#x27; results into a single comparable document with consistent metric conventions, embeddable in the project overview. Recommended task types: data-analysis, answer-question. Cost: &lt;$0.20.
+
+## 8-direction polar re-evaluation of t0115&#x27;s strict Pareto cells (mirrors S-0114-03 / S-0112-05)
+ID: S-0115-03
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0115_seed9354_no_autostop
+Source paper: 10.1167_jov.13.7.2
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell
+Date added: 2026-05-21
+
+t0115&#x27;s 23 strict Pareto cells span the DSI/PD-rate frontier: best LEGIT DSI=0.9833 at PD=28.33 Hz, best PD=89.29 Hz at DSI~0, and DSI=0.7899 / PD=50.71 Hz (best combined). t0107 found 2-direction ratio DSI overstates 8-direction vector-sum DSI by ~0.42 absolute on t0106 high-DSI cells; applied here yields ~0.56 (vs Trenholm2013&#x27;s 0.76 / Oesch2005&#x27;s 0.74 baselines). Concrete action: re-evaluate all 23 t0115 strict Pareto cells at 8 directions every 45 deg using t0107&#x27;s protocol. Distinct from S-0114-03 (t0114 Pareto cells), S-0112-05 (t0112 cells), and S-0106-03 (t0106 cells); together these would cover the full 4-rich-seed cohort. Recommended task types: experiment-run, comparative-analysis. Cost: &lt;$1.00.
+
+## Investigate why seed 9354 took 25 gens to find the joint-pass corner (vs t0114&#x27;s 8 gens)
+ID: S-0115-04
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0115_seed9354_no_autostop
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-21
+
+t0115&#x27;s late corner-find (joint-pass cells emerging at gen 25) vs t0114&#x27;s early corner-find (gen 8) is the most striking seed-to-seed protocol difference at fixed substrate + algorithm. The 17-gen lag corresponds to ~3 full pool-restart cycles, suggesting the random-init basin or LHS sampling distribution for seed 9354 was systematically further from the joint-pass region. Concrete action: compare t0115&#x27;s gen-1 LHS-init population against t0114&#x27;s by computing (a) nearest-distance from each init cell to the eventual joint-pass corner in normalised 68-d parameter space, (b) the distribution of init-cell DSI and PD values, and (c) the genetic operators&#x27; (SBX/PM) effective step size in the first 10 gens. Outcome: identify the basin-attractor signature that distinguishes rich-yield seeds (44, 7755) from slow-yield seeds (9354) and dead-end seeds (2247). Recommended task types: data-analysis. Cost: &lt;$0.10.
+
+## Backport: regenerate t0114&#x27;s top50_morphologies_seed7755.png with full dendrite trees (correction task)
+ID: S-0115-05
+Status: active
+Priority: medium
+Kind: technique
+Source task: t0115_seed9354_no_autostop
+Categories: compartmental-modeling
+Date added: 2026-05-21
+
+t0114&#x27;s top50_morphologies_seed7755.png drew only the soma points, not the full dendrite tree, making the chart visually useless for characterising the morphology distribution of high-yield cells. t0115 used the corrected build_top50_morphologies.py helper that walks every section in the NEURON cell object via generate_fixed_morphology -&gt; result.section_endpoints_xy -&gt; matplotlib LineCollection. Concrete action: create a small correction task that regenerates the t0114 chart using the t0115 helper, files a corrections/ overlay updating the t0114 chart path, and verifies via Read tool that subplots show branching trees, not dots. Recommended task types: correction. Cost: &lt;$0.05.
+
+## Project memory: re-pulling all_evaluations.json over SCP is slow; build a streaming /tail variant
+ID: S-0115-06
+Status: active
+Priority: low
+Kind: library
+Source task: t0115_seed9354_no_autostop
+Categories: compartmental-modeling
+Date added: 2026-05-21
+
+Across t0114 + t0115 the operator triggered ~12 SCP re-pulls of the all_evaluations_seed*.json file (mean ~5 MB each). Each pull took 15-30 s SSH overhead, in total ~5 minutes of wasted wall-clock just for fetches. A streaming variant (write a small remote helper that emits only the new evaluations since the last fetch, indexed by generation; client maintains a local accumulator) would reduce per-pull cost to &lt;2 s. Concrete action: add `tail_evaluations.py` to the t0114/t0115 family code; expose via a remote SSH alias `nsga2-tail`. Recommended task types: write-library. Cost: &lt;$0.05.
+
+## Investigate the seed-44 / seed-7755 / seed-9354 &#x27;rich-yield&#x27; parameter signature
+ID: S-0115-07
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0115_seed9354_no_autostop
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-05-21
+
+Three of the five S-0112-01 batch seeds (44, 7755, 9354) all exceeded the Hay 2011 0.40% acceptance envelope, while seeds 77 and 2247 sat at or below it. The 484 vs 7 vs 63 LEGIT joint-pass cell count spread is much larger than the t0106/t0112/t0113 protocol diff implies, suggesting seed-specific search-basin attractors. Concrete action: compute the pairwise normalised L2 distance between every t0106 / t0114 / t0115 strict Pareto cell in 68-d parameter space; identify any cluster signatures that distinguish &#x27;rich-yield&#x27; from &#x27;sparse-yield&#x27; seeds; report whether the rich-yield Pareto fronts share a common parameter sub-volume vs each occupying a distinct sub-volume. Recommended task types: data-analysis. Cost: &lt;$0.10.
       </content>
     </section>
   </sections>

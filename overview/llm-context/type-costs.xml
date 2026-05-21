@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-20T16:25:38Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-21T02:57:55Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>6486</char_count>
-    <byte_count>6486</byte_count>
-    <estimated_tokens>1621</estimated_tokens>
+    <char_count>6556</char_count>
+    <byte_count>6556</byte_count>
+    <estimated_tokens>1639</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,9 +18,9 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $100.00
-Total spent: $60.40
-Budget remaining: $39.60
-Spent: 60.4%
+Total spent: $62.90
+Budget remaining: $37.10
+Spent: 62.9%
 
 ### Cost Breakdown by Category
 
@@ -32,6 +32,7 @@ Spent: 60.4%
 * vast-ai-rtx5060ti: $3.93
 * vast_ai_idle_time: $3.51
 * vast-ai-seed33: $3.41
+* vast_ai_seed9354_compute: $2.50
 * vast_ai_36149741: $2.39
 * vast-ai-seed22: $1.96
 * vast-ai-setup-smoke-idle: $1.42
@@ -167,6 +168,7 @@ Spent: 60.4%
 * t0112_t0106_seed77_replicate: $1.99
 * t0113_t0106_seed2247_replicate: $0.48
 * t0114_seed7755_no_autostop: $1.13
+* t0115_seed9354_no_autostop: $2.50
       </content>
     </section>
   </sections>

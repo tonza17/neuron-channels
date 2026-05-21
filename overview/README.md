@@ -4,7 +4,7 @@
   <a href="papers/"><img src="https://img.shields.io/badge/Papers-94-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-4-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
-  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-15-9370DB" alt="Predictions"></a>
+  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-16-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
   <a href="answers/"><img src="https://img.shields.io/badge/Answers-36-CD853F" alt="Answers"></a>
 </p>
@@ -12,7 +12,7 @@
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-116-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-441-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-448-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,18 +29,18 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (42K)
-| [full](llm-context/full.xml) (677K) | [roadmap](llm-context/roadmap.xml) (132K) |
-[results](llm-context/results-deep-dive.xml) (527K) |
-[assets](llm-context/literature-and-assets.xml) (69K)
+| [full](llm-context/full.xml) (685K) | [roadmap](llm-context/roadmap.xml) (132K) |
+[results](llm-context/results-deep-dive.xml) (537K) |
+[assets](llm-context/literature-and-assets.xml) (70K)
 
-*Last updated: 2026-05-20 16:25 UTC*
+*Last updated: 2026-05-21 02:57 UTC*
 
-* **Budget**: **$60** spent of $100
-* **Remaining**: **$40**
-* **Usage**: `████████████░░░░░░░░` 60.4%
-* **GPU Machines**: **14** provisioned across 14 tasks · **$60** GPU spend
+* **Budget**: **$63** spent of $100
+* **Remaining**: **$37**
+* **Usage**: `█████████████░░░░░░░` 62.9%
+* **GPU Machines**: **15** provisioned across 15 tasks · **$63** GPU spend
   ([details](machines/))
-* **Provisioning**: 8 failed attempts · $0.06 wasted · 36% failure rate
+* **Provisioning**: 9 failed attempts · $0.07 wasted · 38% failure rate
 
 ---
 
@@ -59,13 +59,12 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
-| 0115 | [Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | [`description`](../tasks/t0115_seed9354_no_autostop/task_description.md) | 2026-05-20 |
 
 ---
 
@@ -83,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (107 total)](tasks/by-status/completed.md)
+## [Recently Completed (108 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0115 | [Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | [`results`](../tasks/t0115_seed9354_no_autostop/results/results_detailed.md) | 2026-05-21 02:55 |
 | 0114 | [Seed-7755 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | [`results`](../tasks/t0114_seed7755_no_autostop/results/results_detailed.md) | 2026-05-20 16:20 |
 | 0113 | [Seed-2247 random-seed replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md) | [`results`](../tasks/t0113_t0106_seed2247_replicate/results/results_detailed.md) | 2026-05-20 02:50 |
 | 0112 | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | [`results`](../tasks/t0112_t0106_seed77_replicate/results/results_detailed.md) | 2026-05-19 21:50 |
@@ -96,9 +96,8 @@ No blocked tasks.
 | 0108 | [Cluster + factor analysis of t0106 cells at DSI>0.5 AND PD>10](../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) | [`results`](../tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/results_detailed.md) | 2026-05-18 16:00 |
 | 0107 | [8-direction polar re-evaluation of 10 random top-50 t0106 cells](../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | [`results`](../tasks/t0107_t0106_polar_8dir_recheck/results/results_detailed.md) | 2026-05-18 11:25 |
 | 0106 | [Long 2-direction NSGA-II at 300 gens, 1 seed, 3 trials (ratio DSI + PD-rate)](../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | [`results`](../tasks/t0106_long_pdnd_nsga2_300gen/results/results_detailed.md) | 2026-05-18 02:00 |
-| 0105 | [Cluster + factor analysis of high-DSI/high-PD cells across all 68-d optimisations](../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) | [`results`](../tasks/t0105_cluster_factor_analysis_dsi_pd/results/results_detailed.md) | 2026-05-14 14:25 |
 
-*97 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*98 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -123,7 +122,134 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (396 open)](suggestions/)
+## [Recent Suggestions (403 open)](suggestions/)
+
+<details>
+<summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector
+defaults across the project</strong> (S-0115-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+
+t0115's 55-gen unstopped HV trajectory adds a fifth datapoint to the offline detector-replay
+sweep proposed in S-0113-03 and refined in S-0114-01. The recommended (W*, T*) = (3, 0.015)
+pair would fire on t0115 around gen 30-45, inside Mohacsi2024's 20-60 gen convergence band,
+and would NOT fire prematurely on t0113's gen-14 trace. Concrete action: globally rewrite the
+HV-plateau detector constants in the NSGA-II driver template and the t0024 cell-build
+pipeline; document the new defaults in arf/skills/setup-remote-machine and
+arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: <$0.05.
+
+</details>
+
+<details>
+<summary>📊 <strong>5-seed substrate-rate batch (S-0112-01) is now complete; write
+canonical report</strong> (S-0115-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+
+t0115 closes the S-0112-01 batch with 5 seeds (44, 77, 2247, 7755, 9354) on the identical 68-d
+Bed B + 14-d morphology substrate. Final 5-seed mean LEGIT-joint-pass acceptance rate is 2.58%
++/- SE 1.50% (SD 3.35%, 95% CI -0.36% to +5.52%). Point estimate is 6.45x above Hay 2011
+(0.40%) and 25.8x above Druckmann 2007 (0.10%), but the 95% CI brackets both literature
+references. Three of five seeds (44, 7755, 9354) independently exceed Hay. Concrete action:
+write a canonical substrate-rate report consolidating all five tasks' results into a single
+comparable document with consistent metric conventions, embeddable in the project overview.
+Recommended task types: data-analysis, answer-question. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>📊 <strong>8-direction polar re-evaluation of t0115's strict Pareto cells
+(mirrors S-0114-03 / S-0112-05)</strong> (S-0115-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+
+t0115's 23 strict Pareto cells span the DSI/PD-rate frontier: best LEGIT DSI=0.9833 at
+PD=28.33 Hz, best PD=89.29 Hz at DSI~0, and DSI=0.7899 / PD=50.71 Hz (best combined). t0107
+found 2-direction ratio DSI overstates 8-direction vector-sum DSI by ~0.42 absolute on t0106
+high-DSI cells; applied here yields ~0.56 (vs Trenholm2013's 0.76 / Oesch2005's 0.74
+baselines). Concrete action: re-evaluate all 23 t0115 strict Pareto cells at 8 directions
+every 45 deg using t0107's protocol. Distinct from S-0114-03 (t0114 Pareto cells), S-0112-05
+(t0112 cells), and S-0106-03 (t0106 cells); together these would cover the full 4-rich-seed
+cohort. Recommended task types: experiment-run, comparative-analysis. Cost: <$1.00.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate why seed 9354 took 25 gens to find the joint-pass
+corner (vs t0114's 8 gens)</strong> (S-0115-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+
+t0115's late corner-find (joint-pass cells emerging at gen 25) vs t0114's early corner-find
+(gen 8) is the most striking seed-to-seed protocol difference at fixed substrate + algorithm.
+The 17-gen lag corresponds to ~3 full pool-restart cycles, suggesting the random-init basin or
+LHS sampling distribution for seed 9354 was systematically further from the joint-pass region.
+Concrete action: compare t0115's gen-1 LHS-init population against t0114's by computing (a)
+nearest-distance from each init cell to the eventual joint-pass corner in normalised 68-d
+parameter space, (b) the distribution of init-cell DSI and PD values, and (c) the genetic
+operators' (SBX/PM) effective step size in the first 10 gens. Outcome: identify the
+basin-attractor signature that distinguishes rich-yield seeds (44, 7755) from slow-yield seeds
+(9354) and dead-end seeds (2247). Recommended task types: data-analysis. Cost: <$0.10.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Backport: regenerate t0114's top50_morphologies_seed7755.png with
+full dendrite trees (correction task)</strong> (S-0115-05)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+
+t0114's top50_morphologies_seed7755.png drew only the soma points, not the full dendrite tree,
+making the chart visually useless for characterising the morphology distribution of high-yield
+cells. t0115 used the corrected build_top50_morphologies.py helper that walks every section in
+the NEURON cell object via generate_fixed_morphology -> result.section_endpoints_xy ->
+matplotlib LineCollection. Concrete action: create a small correction task that regenerates
+the t0114 chart using the t0115 helper, files a corrections/ overlay updating the t0114 chart
+path, and verifies via Read tool that subplots show branching trees, not dots. Recommended
+task types: correction. Cost: <$0.05.
+
+</details>
+
+<details>
+<summary>📚 <strong>Project memory: re-pulling all_evaluations.json over SCP is slow;
+build a streaming /tail variant</strong> (S-0115-06)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+
+Across t0114 + t0115 the operator triggered ~12 SCP re-pulls of the all_evaluations_seed*.json
+file (mean ~5 MB each). Each pull took 15-30 s SSH overhead, in total ~5 minutes of wasted
+wall-clock just for fetches. A streaming variant (write a small remote helper that emits only
+the new evaluations since the last fetch, indexed by generation; client maintains a local
+accumulator) would reduce per-pull cost to <2 s. Concrete action: add `tail_evaluations.py` to
+the t0114/t0115 family code; expose via a remote SSH alias `nsga2-tail`. Recommended task
+types: write-library. Cost: <$0.05.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Investigate the seed-44 / seed-7755 / seed-9354 'rich-yield'
+parameter signature</strong> (S-0115-07)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+
+Three of the five S-0112-01 batch seeds (44, 7755, 9354) all exceeded the Hay 2011 0.40%
+acceptance envelope, while seeds 77 and 2247 sat at or below it. The 484 vs 7 vs 63 LEGIT
+joint-pass cell count spread is much larger than the t0106/t0112/t0113 protocol diff implies,
+suggesting seed-specific search-basin attractors. Concrete action: compute the pairwise
+normalised L2 distance between every t0106 / t0114 / t0115 strict Pareto cell in 68-d
+parameter space; identify any cluster signatures that distinguish 'rich-yield' from
+'sparse-yield' seeds; report whether the rich-yield Pareto fronts share a common parameter
+sub-volume vs each occupying a distinct sub-volume. Recommended task types: data-analysis.
+Cost: <$0.10.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Complete S-0112-01: two further random-draw GA seeds at
@@ -185,152 +311,46 @@ task types: experiment-run, comparative-analysis. Cost: <$0.50.
 
 </details>
 
-<details>
-<summary>📚 <strong>Per-cell HV-contribution analysis to identify silence-guard cells
-inflating HV beyond their biological value</strong> (S-0113-05)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-20 | **Source**:
-[t0113_t0106_seed2247_replicate](../tasks/t0113_t0106_seed2247_replicate/)
-
-t0113's gen 13->14 HV jump of +26% (35.98 -> 45.62) was driven by a single silence-guard
-DSI=1.0 cell joining the archive. The HV-plateau detector tolerated this jump as saturation
-onset, but the cell contributes ~zero biological selectivity (8-direction DSI ~0). Build an
-analysis script that, per generation across t0106/t0112/t0113, decomposes the HV increment
-into per-archive-member contributions and flags silence-guard cells (DSI=1.0 OR <=1 PD spike)
-separately. Output: per-task `hv_contribution_by_cell.csv` and cross-task
-`silence_guard_hv_share.png`. Decision: if silence-guard cells contribute >=20% of final HV in
-any seed, replace 2-D HV with a 'legit-only HV' that excludes silence-guard saturations for
-the substrate-rate paper. Reusable across S-0112-01 / S-0113-01 multi-seed batch. Recommended
-task types: data-analysis, write-library. Cost: <$0.20.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Tighten silence-guard threshold from
-SILENCE_SPIKE_COUNT_THRESHOLD=10 to >=3 PD spikes minimum</strong>
-(S-0113-06)</summary>
-
-**Kind**: technique | **Priority**: medium | **Date**: 2026-05-20 | **Source**:
-[t0113_t0106_seed2247_replicate](../tasks/t0113_t0106_seed2247_replicate/)
-
-t0113's 2 joint-pass cells are both silence-guard DSI=1.0 saturations with exactly 1 PD spike
-and 0 ND spikes. The current guard (`SILENCE_SPIKE_COUNT_THRESHOLD = 10`) accepts these
-single-spike configurations as legitimate, inflating both joint-pass count and the HV archive.
-t0106 had 1 such cell (in 123); t0112 had 0; t0113 has 2 of 2 - silence-guard contamination
-dominates at sparse seeds. Modify `evaluator.py` to require >=3 PD spikes (or a minimum
-non-zero ND-spike floor) before computing ratio DSI; cells below the floor return DSI=NaN and
-are excluded from the archive. Reanalyse the existing t0106/t0112/t0113 predictions assets
-offline. Decision: if corrected t0113 joint-pass count is 0 but t0106/t0112 counts drop by
-<=5%, adopt as project default. Recommended task types: data-analysis, infrastructure-setup.
-Cost: <$0.20.
-
-</details>
-
-<details>
-<summary>📚 <strong>Latin-hypercube quasi-random GA-seed sampling for substrate-rate
-confirmation (replaces ad-hoc seed picks)</strong> (S-0113-07)</summary>
-
-**Kind**: library | **Priority**: low | **Date**: 2026-05-20 | **Source**:
-[t0113_t0106_seed2247_replicate](../tasks/t0113_t0106_seed2247_replicate/)
-
-The current 3-seed sample (44, 77, 2247) uses three independent draws (curated, semi-random,
-fully random) which does not guarantee good coverage of the seed-space [0, 9999]. For the
-final 5-seed substrate-rate report, draw the GA seeds via a 1-d Latin hypercube over [0, 9999]
-(or a Sobol' sequence) to ensure stratified coverage. This is methodologically defensible
-against reviewer pushback that the seed sample is too small to characterise substrate
-variance. The two further seeds for S-0113-01 / S-0112-01 should be drawn from the LH/Sobol'
-sequence conditional on the 3 already-used (44, 77, 2247) being part of the sequence. Output:
-a small `gaseed_sampler.py` library asset plus a one-line update to the seed-selection comment
-in `task_description.md` templates. Recommended task types: write-library,
-infrastructure-setup. Cost: <$0.10 (local only).
-
-</details>
-
-<details>
-<summary>🧪 <strong>Cross-seed 68-d signature of silence-guard cells: same parameter
-basin or seed-specific artefacts?</strong> (S-0113-08)</summary>
-
-**Kind**: experiment | **Priority**: low | **Date**: 2026-05-20 | **Source**:
-[t0113_t0106_seed2247_replicate](../tasks/t0113_t0106_seed2247_replicate/)
-
-t0106 had 1 silence-guard DSI=1.0 cell, t0112 had 0, t0113 has 2. If silence-guard cells
-cluster in a specific 68-d region (e.g., low somatic Nav + high Kv4 + central soma), they
-represent a reproducible 'pathological basin' the NSGA-II driver should avoid. If scattered
-randomly, they are seed-specific artefacts and no driver change is needed. Pool the 3
-silence-guard cells from t0106 and t0113 plus a control set of 50 high-PD-low-DSI cells from
-each task; run hierarchical clustering on z-scored 68-d vectors (using S-0112-04's metric if
-available). Decision: if silence-guard cells cluster together with NMI > 0.7 vs random
-samples, add a 'silence-pathology penalty' to the NSGA-II objective; otherwise no driver
-change. DISTINCT from S-0112-08 (clusters JOINT-PASS cells across seeds, not silence-guard
-cells). Recommended task types: data-analysis, comparative-analysis. Cost: <$0.20.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Adopt (WINDOW=3, REL_THRESHOLD=0.015) as new project-default
-HV-plateau detector constants</strong> (S-0114-01)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-20 | **Source**:
-[t0114_seed7755_no_autostop](../tasks/t0114_seed7755_no_autostop/)
-
-t0114's offline detector replay (4 windows x 6 thresholds x 4 HV trajectories = 96 cells)
-selects (W*, T*) = (3, 0.015) as the smallest deviation from current (W=2, T=0.01) that (a)
-fires on t0106 at gen 39 within [20, 60], (b) does NOT fire prematurely on t0113's recorded 14
-gens (eliminates the gen-13 false positive), and (c) fires on t0114 at gen 26, inside
-Mohacsi2024's 20-60 gen convergence band. Concrete action: update the HV-plateau detector
-constants in the NSGA-II driver / skill template from (WINDOW=2, REL_THRESHOLD=0.01) to
-(WINDOW=3, REL_THRESHOLD=0.015); cite the 4-trajectory replay as design justification. Formal
-realisation of the recommendation prepared but not adopted in S-0113-03. Recommended task
-types: infrastructure-setup, data-analysis. Cost: <$0.10.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Execute t0115 seed-9354 NSGA-II run as the 5th seed completing
-the S-0112-01 substrate-rate batch</strong> (S-0114-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-20 | **Source**:
-[t0114_seed7755_no_autostop](../tasks/t0114_seed7755_no_autostop/)
-
-S-0112-01 requires a 5-seed sample at cadence-10 with auto-stop disabled to upgrade the
-substrate-rate estimate from 4-seed (44/77/2247/7755) to 5-seed. t0114 advanced this from 3 to
-4 seeds (mean 2.93%, SE 1.86%, 95% CI -0.71% to +6.56% still brackets Hay 2011's 0.40% and
-Druckmann 2007's 0.10%). The 5th seed is needed to tighten the SE below the 0.40% Hay
-envelope; without it, the substrate-rate point estimate (currently 7.3x above the Hay 2011
-envelope) cannot be claimed at p<0.05 significance. Concrete action: execute the
-already-scaffolded t0115_seed9354_no_autostop task (seed 9354, auto-stop disabled, cadence-10,
-gen ceiling 300, $25 cap), pool the 5-seed results, write the canonical substrate-rate report.
-The task scaffold already exists on main with source_suggestion=S-0112-01; this suggestion is
-the formal record that the 5th seed is being executed via t0115. Recommended task types:
-experiment-run. Cost: ~$1-3 (one Vast.ai EPYC run, matching t0114's $1.13 spend).
-
-</details>
-
-<details>
-<summary>📊 <strong>8-direction polar re-evaluation of t0114's 6 strict Pareto cells
-(mirrors S-0112-05 / S-0113-04)</strong> (S-0114-03)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-20 | **Source**:
-[t0114_seed7755_no_autostop](../tasks/t0114_seed7755_no_autostop/)
-
-t0114's 6 strict Pareto cells span the DSI/PD-rate frontier corner: best LEGIT DSI=0.9926 at
-PD=63.81 Hz (cell_id 1), best PD=112.86 Hz at DSI=0.0271 (cell_id 5), and DSI=0.9873 /
-PD=111.67 Hz (cell_id 2) — the first 4-seed run to produce DSI~0.99 AND PD>100 Hz
-simultaneously. t0107 found 2-direction ratio DSI overstates 8-direction vector-sum DSI by
-~0.42 absolute on t0106 high-DSI cells; applied here yields ~0.57 (vs Trenholm2013's 0.76 /
-Oesch2005's 0.74 baselines). Concrete action: re-evaluate all 6 strict Pareto cells (plus 2
-silence-guard ceiling cells for completeness) at 8 directions every 45 deg using t0107's
-protocol with matched N_EVAL_SEEDS. Decision: confirm whether the 4-seed best legit cell is
-biologically plausible under 8-direction vector-sum DSI. Distinct from S-0112-05 / S-0113-04 /
-S-0106-03. Recommended task types: experiment-run, comparative-analysis. Cost: <$0.50.
-
-</details>
-
-*386 more open suggestions → [open suggestions](suggestions/)*
+*393 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (77)](suggestions/)
+## [High Priority Suggestions (79)](suggestions/)
+
+<details>
+<summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector
+defaults across the project</strong> (S-0115-01)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+
+t0115's 55-gen unstopped HV trajectory adds a fifth datapoint to the offline detector-replay
+sweep proposed in S-0113-03 and refined in S-0114-01. The recommended (W*, T*) = (3, 0.015)
+pair would fire on t0115 around gen 30-45, inside Mohacsi2024's 20-60 gen convergence band,
+and would NOT fire prematurely on t0113's gen-14 trace. Concrete action: globally rewrite the
+HV-plateau detector constants in the NSGA-II driver template and the t0024 cell-build
+pipeline; document the new defaults in arf/skills/setup-remote-machine and
+arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: <$0.05.
+
+</details>
+
+<details>
+<summary>📊 <strong>5-seed substrate-rate batch (S-0112-01) is now complete; write
+canonical report</strong> (S-0115-02)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-21 | **Source**:
+[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+
+t0115 closes the S-0112-01 batch with 5 seeds (44, 77, 2247, 7755, 9354) on the identical 68-d
+Bed B + 14-d morphology substrate. Final 5-seed mean LEGIT-joint-pass acceptance rate is 2.58%
++/- SE 1.50% (SD 3.35%, 95% CI -0.36% to +5.52%). Point estimate is 6.45x above Hay 2011
+(0.40%) and 25.8x above Druckmann 2007 (0.10%), but the 95% CI brackets both literature
+references. Three of five seeds (44, 7755, 9354) independently exceed Hay. Concrete action:
+write a canonical substrate-rate report consolidating all five tasks' results into a single
+comparable document with consistent metric conventions, embeddable in the project overview.
+Recommended task types: data-analysis, answer-question. Cost: <$0.20.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Complete S-0112-01: two further random-draw GA seeds at
@@ -494,46 +514,7 @@ comparative-analysis. Cost: <$1 (7 cells x 8 dirs x 3 trials on one Vast.ai inst
 
 </details>
 
-<details>
-<summary>🧪 <strong>Multi-seed confirmation of t0106 2-direction NSGA-II at GA seeds
-55 and 66</strong> (S-0106-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-18 | **Source**:
-[t0106_long_pdnd_nsga2_300gen](../tasks/t0106_long_pdnd_nsga2_300gen/)
-
-t0106's 3.3% joint-pass yield (123 joint-pass cells / 3,744 evals) was produced from a single
-random GA seed. No published NSGA-II benchmark (Hay2011, Druckmann2007, Mohacsi2024) accepts a
-single-seed acceptance-rate point estimate. Re-run the exact t0106 configuration (2 antipodal
-directions, ratio DSI, N_EVAL_SEEDS = 3, pop = 96, n_gen = 40, operator-stop, silence guard)
-at GA seeds 55 and 66. Decision rule: if both seeds discover joint-pass cells (DSI >= 0.5 AND
-PD >= 30 Hz) within 40 gens, the 2-direction substrate is genuinely populated and the
-t0080-t0104 null was an objective-surface artefact, not a per-seed lucky draw. If either seed
-returns zero, weaken the headline. Recommended task types: experiment-run,
-comparative-analysis. Cost: ~$20 (two single-seed runs at $10 each).
-
-</details>
-
-<details>
-<summary>📊 <strong>N_EVAL_SEEDS = 20 robustness re-evaluation of top 10 t0106 cells
-(esp. the 3 DSI = 1.0 cells)</strong> (S-0106-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-18 | **Source**:
-[t0106_long_pdnd_nsga2_300gen](../tasks/t0106_long_pdnd_nsga2_300gen/)
-
-Three t0106 top-50 cells (ranks 16, 19, 27) achieve ratio DSI = 1.0 with deterministic zero ND
-firing. Total-spike silence guard (>= 10 spikes across PD + ND) is exceeded (47-154
-spikes/trial) so they are not silence-guard artefacts, but Trenholm2013 reports peak ND ~ 27
-+/- 12 Hz in real mouse Hb9 DSGCs and Oesch2005 reports OFF DSI = 0.74 +/- 0.13. ND = 0 across
-only 3 noise replicates may be an AR(2)-seed + deterministic-GABA loophole that fails at
-higher replication. Re-evaluate the top 10 cells (3 DSI = 1.0 + 7 next-best incl. DSI = 0.98
-at PD = 84.5 Hz and PD-frontier DSI = 0.92 at PD = 122.6 Hz) at N_EVAL_SEEDS = 20. Decision:
-if DSI = 1.0 collapses to <= 0.9, mark as noise-undersampling artefacts; if DSI > 0.95 holds,
-escalate. Recommended task types: experiment-run, data-analysis. Cost: ~$1 (10 cells x 20
-seeds, ~10 min on one Vast.ai instance).
-
-</details>
-
-*67 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*69 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
@@ -1335,10 +1316,11 @@ No models yet.
 
 ---
 
-## [Latest Predictions (15 total)](predictions/)
+## [Latest Predictions (16 total)](predictions/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [NSGA-II seed 9354 on 68-d Bed B + 14-d morphology, 2 directions, 55-gen run with HV-plateau auto-stop DISABLED (5th seed of S-0112-01 batch)](../tasks\t0115_seed9354_no_autostop\assets\predictions\t0115-bedb-morph-nsga2-seed9354\description.md) | [115](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | 2026-05-21 |
 | [NSGA-II seed 7755 on 68-d Bed B + 14-d morphology, 2 directions, 62-gen run with HV-plateau auto-stop DISABLED (S-0113-03 live impl)](../tasks\t0114_seed7755_no_autostop\assets\predictions\t0114-bedb-morph-nsga2-seed7755\description.md) | [114](../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | 2026-05-20 |
 | [NSGA-II seed 2247 on 68-d Bed B + 14-d morphology, 2 directions, 60-gen replicate of t0106/t0112](../tasks\t0113_t0106_seed2247_replicate\assets\predictions\t0113-bedb-morph-nsga2-seed2247\description.md) | [113](../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md) | 2026-05-20 |
 | [NSGA-II seed 77 on 68-d Bed B + 14-d morphology, 2 directions, seed-77 replicate of t0106](../tasks\t0112_t0106_seed77_replicate\assets\predictions\t0112-bedb-morph-nsga2-seed77\description.md) | [112](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | 2026-05-19 |
@@ -1348,9 +1330,8 @@ No models yet.
 | [NSGA-II seed=55 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init)](../tasks\t0102_seedscale_n4_gen20\assets\predictions\nsga2-seed55-bedb-morph-n4-gen20\description.md) | [102](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-12 |
 | [NSGA-II seed=44 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init, 2-objective DSI+PD, DSI silence guard)](../tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\assets\predictions\nsga2-seed44-bedb-morph-n4-gen20-2obj\description.md) | [104](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 2026-05-12 |
 | [NSGA-II seed=44 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init)](../tasks\t0102_seedscale_n4_gen20\assets\predictions\nsga2-seed44-bedb-morph-n4-gen20\description.md) | [102](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-12 |
-| [Random-init Pareto front seed 33](../tasks\t0099_random_init_pareto_robustness\assets\predictions\random-init-pareto-seed33\description.md) | [99](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | 2026-05-10 |
 
-*5 more predictions → [predictions](predictions/)*
+*6 more predictions → [predictions](predictions/)*
 
 ---
 
@@ -1373,7 +1354,7 @@ No models yet.
 
 ---
 
-## [Cost Leaders (15 tasks with spend)](costs/)
+## [Cost Leaders (16 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
@@ -1383,9 +1364,9 @@ No models yet.
 | [Random-init NSGA-II reproducibility test: 3 seeds vs t0091 Pareto](../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) | [`$7.71`](../tasks/t0099_random_init_pareto_robustness/results/costs.json) | 2026-05-10 23:35 |
 | [Extend t0081 NSGA-II from gen-7 with adaptive HV-plateau stop](../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md) | [`$5.83`](../tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/costs.json) | 2026-05-06 08:31 |
 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | [`$3.93`](../tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/results/costs.json) | 2026-05-04 16:25 |
+| [Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | [`$2.50`](../tasks/t0115_seed9354_no_autostop/results/costs.json) | 2026-05-21 02:55 |
 | [Bed B v3 NSGA-II at full scope with combined t0078+t0080 warm-start](../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) | [`$2.39`](../tasks/t0081_bedb_v3_warmstart_nsga2/results/costs.json) | 2026-05-05 09:55 |
 | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | [`$1.99`](../tasks/t0112_t0106_seed77_replicate/results/costs.json) | 2026-05-19 21:50 |
 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`$1.59`](../tasks/t0086_robustness_cluster_bio_comparison/results/costs.json) | 2026-05-06 18:24 |
-| [Seed-7755 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | [`$1.13`](../tasks/t0114_seed7755_no_autostop/results/costs.json) | 2026-05-20 16:20 |
 
-*5 more tasks with spend → [tasks with spend](costs/)*
+*6 more tasks with spend → [tasks with spend](costs/)*

@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-85 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **76 open** (14
-high, 52 medium, 10 low), **9 closed**.
+86 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **77 open** (14
+high, 53 medium, 10 low), **9 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -393,6 +393,30 @@ silence-guard ceiling cells for completeness) at 8 directions every 45 deg using
 protocol with matched N_EVAL_SEEDS. Decision: confirm whether the 4-seed best legit cell is
 biologically plausible under 8-direction vector-sum DSI. Distinct from S-0112-05 / S-0113-04 /
 S-0106-03. Recommended task types: experiment-run, comparative-analysis. Cost: <$0.50.
+
+</details>
+
+<details>
+<summary>📊 <strong>8-direction polar re-evaluation of t0115's strict Pareto cells
+(mirrors S-0114-03 / S-0112-05)</strong> (S-0115-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0115-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-21 |
+| **Source task** | [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) |
+| **Source paper** | [`10.1167_jov.13.7.2`](../../../tasks/t0115_seed9354_no_autostop/assets/paper/10.1167_jov.13.7.2/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0115's 23 strict Pareto cells span the DSI/PD-rate frontier: best LEGIT DSI=0.9833 at
+PD=28.33 Hz, best PD=89.29 Hz at DSI~0, and DSI=0.7899 / PD=50.71 Hz (best combined). t0107
+found 2-direction ratio DSI overstates 8-direction vector-sum DSI by ~0.42 absolute on t0106
+high-DSI cells; applied here yields ~0.56 (vs Trenholm2013's 0.76 / Oesch2005's 0.74
+baselines). Concrete action: re-evaluate all 23 t0115 strict Pareto cells at 8 directions
+every 45 deg using t0107's protocol. Distinct from S-0114-03 (t0114 Pareto cells), S-0112-05
+(t0112 cells), and S-0106-03 (t0106 cells); together these would cover the full 4-rich-seed
+cohort. Recommended task types: experiment-run, comparative-analysis. Cost: <$1.00.
 
 </details>
 
