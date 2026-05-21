@@ -1,0 +1,15 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0115_seed9354_no_autostop\tasks\t0115_seed9354_no_autostop\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 042_20260520T172203Z_bash-c-set-e-cd-c-users-md1avn-documents.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 044_20260520T172327Z_bash-c-export-pythonioencoding-utf-8-exp.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 049_20260520T172728Z_bash-c-export-pythonioencoding-utf-8-exp.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 050_20260520T172748Z_bash-c-export-pythonioencoding-utf-8-exp.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 053_20260520T172856Z_bash-c-export-pythonioencoding-utf-8-exp.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 086_20260521T024754Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W006 warning: Step 11 is 'skipped' but log_file is null in step_tracker.json[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 9 warning(s)
