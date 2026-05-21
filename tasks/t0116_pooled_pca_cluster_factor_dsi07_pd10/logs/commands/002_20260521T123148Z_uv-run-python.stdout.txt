@@ -1,0 +1,31 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0116_pooled_pca_cluster_factor_dsi07_pd10\tasks\t0116_pooled_pca_cluster_factor_dsi07_pd10\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0008] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0011] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0012] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0020] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0022] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0024] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0046] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0052] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0053] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0054] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0055] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0057] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0059] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0074] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0078] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0080] has no matching Task Index entry[0m
+[31m  RC-E007 error: Task Index entry [t0090] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0092] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0106] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0108] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0109] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0110] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0112] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0114] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0115] is missing the Task ID field[0m
+
+[31m[1mFAILED[0m â€” 25 error(s), 0 warning(s)
