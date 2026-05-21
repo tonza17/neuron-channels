@@ -1,0 +1,12 @@
+Checking 3 answer asset slugs:
+  - pooled-survivors-basin-connectivity-dsi07-pd10
+  - pooled-survivors-displacement-from-init-dsi07-pd10
+  - pooled-survivors-latent-drivers-dsi07-pd10
+
+pooled-survivors-basin-connectivity-dsi07-pd10: OK
+
+pooled-survivors-displacement-from-init-dsi07-pd10: OK
+
+pooled-survivors-latent-drivers-dsi07-pd10: OK
+
+All answer assets pass local verification.

@@ -1,0 +1,29 @@
+{
+  "spec_version": "2",
+  "answer_id": "pooled-survivors-latent-drivers-dsi07-pd10",
+  "question": "Which factors (after varimax rotation on the full 68-d pool) load most strongly on dsi_vector_sum and pd_rate_hz, and are they morphology-dominated, electrophys-dominated, or mixed?",
+  "short_title": "F1 drives DSI (r=-0.59, mixed ephys+morph), F3 drives PD rate (r=+0.75, purely electrophys); no joint factor passes |r|>0.3 on both",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "voltage-gated-channels"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0106_long_pdnd_nsga2_300gen",
+    "t0112_t0106_seed77_replicate",
+    "t0114_seed7755_no_autostop",
+    "t0115_seed9354_no_autostop",
+    "t0108_t0106_cluster_factor_dsi05_pd10",
+    "t0110_relaxed_cohort_factor_analysis"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0116_pooled_pca_cluster_factor_dsi07_pd10",
+  "date_created": "2026-05-21"
+}

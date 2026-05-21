@@ -1,0 +1,6 @@
+source_task,seed,n_raw,n_passing_filter,n_unique
+t0106_long_pdnd_nsga2_300gen,44,3744,658,121
+t0112_t0106_seed77_replicate,77,2016,33,10
+t0114_seed7755_no_autostop,7755,5952,2566,675
+t0115_seed9354_no_autostop,9354,5280,467,63
+TOTAL,-1,16992,3724,869
