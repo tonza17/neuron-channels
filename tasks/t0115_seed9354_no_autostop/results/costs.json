@@ -1,0 +1,8 @@
+{
+  "total_cost_usd": 2.5,
+  "breakdown": {
+    "vast_ai_seed9354_compute": 2.5
+  },
+  "currency": "USD",
+  "note": "Total Vast.ai instance 37161678 cost. Productive compute (gen 1-55, 31166s) was $2.3859 per the driver. Remainder covers setup (incl. failed EPYC 7B13 attempt), idle window before operator stop, and instance destruction. Within the $25 per-task hard cap (10.0% utilisation)."
+}

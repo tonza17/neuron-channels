@@ -46,9 +46,9 @@
     "cuda_version": "13.0 (via nvidia-smi driver 580.82.07; cuda_max_good=13.0). No nvcc installed in python:3.12-bookworm image -- this is a CPU-only NEURON workload; the GPU is idle and not used by the NSGA-II driver. gpu_verified value follows t0113/t0114's reporting pattern (driver-side CUDA capability, not nvcc); the spec field requires a string and there is no Blackwell incompatibility concern here.",
     "created_at": "2026-05-20T17:00:44Z",
     "ready_at": "2026-05-20T17:03:14Z",
-    "destroyed_at": null,
-    "total_duration_hours": null,
-    "total_cost_usd": null,
+    "destroyed_at": "2026-05-21T02:05:00Z",
+    "total_duration_hours": 9.071,
+    "total_cost_usd": 2.5,
     "search_started_at": "2026-05-20T16:49:21Z",
     "total_provisioning_seconds": 833.0,
     "failed_attempts": [
