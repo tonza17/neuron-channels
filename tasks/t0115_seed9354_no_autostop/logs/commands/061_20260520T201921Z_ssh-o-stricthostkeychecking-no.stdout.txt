@@ -1,0 +1,26 @@
+nsga2: 1 windows (created Wed May 20 17:29:52 2026)
+---LOG TAIL---
+    21 |     2016 |      9 |  0.1520737327 |         ideal
+[seed 9354 gen 21] HV=27.1744  pop_size=96  cost_so_far=$0.7784  elapsed=10168s
+[nsga2_driver seed=9354 gen=21] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---HV TRACE---
+{"gen": 2, "wall_clock_s": 239.80137658119202, "hv": 0.8036640678267568, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 412.8777596950531, "hv": 1.2637527513356164, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 610.9477849006653, "hv": 1.372251847176485, "n_cells_evaluated": 96}
+{"gen": 5, "wall_clock_s": 865.0271141529083, "hv": 1.8798053129195929, "n_cells_evaluated": 96}
+{"gen": 6, "wall_clock_s": 1220.7436685562134, "hv": 4.406513890790771, "n_cells_evaluated": 96}
+{"gen": 7, "wall_clock_s": 1628.8957352638245, "hv": 5.99132606567173, "n_cells_evaluated": 96}
+{"gen": 8, "wall_clock_s": 2091.3274137973785, "hv": 7.282486529291622, "n_cells_evaluated": 96}
+{"gen": 9, "wall_clock_s": 2735.8965685367584, "hv": 7.470470302651815, "n_cells_evaluated": 96}
+{"gen": 10, "wall_clock_s": 3447.66326212883, "hv": 9.247800032496311, "n_cells_evaluated": 96}
+{"gen": 11, "wall_clock_s": 3573.9319167137146, "hv": 9.268156574981333, "n_cells_evaluated": 96}
+{"gen": 12, "wall_clock_s": 3758.6318786144257, "hv": 9.500350235673915, "n_cells_evaluated": 96}
+{"gen": 13, "wall_clock_s": 4076.095144033432, "hv": 10.1396159077323, "n_cells_evaluated": 96}
+{"gen": 14, "wall_clock_s": 4428.306093931198, "hv": 10.167890312256205, "n_cells_evaluated": 96}
+{"gen": 15, "wall_clock_s": 4956.165062189102, "hv": 10.391649105508963, "n_cells_evaluated": 96}
+{"gen": 16, "wall_clock_s": 5622.122569799423, "hv": 12.06583247988084, "n_cells_evaluated": 96}
+{"gen": 17, "wall_clock_s": 6416.244010925293, "hv": 19.176842588629537, "n_cells_evaluated": 96}
+{"gen": 18, "wall_clock_s": 7429.050696849823, "hv": 25.473667518126284, "n_cells_evaluated": 96}
+{"gen": 19, "wall_clock_s": 8617.237206220627, "hv": 25.490297252849835, "n_cells_evaluated": 96}
+{"gen": 20, "wall_clock_s": 10004.496155500412, "hv": 25.490297252849835, "n_cells_evaluated": 96}
+{"gen": 21, "wall_clock_s": 10168.20598769188, "hv": 27.1743830919728, "n_cells_evaluated": 96}

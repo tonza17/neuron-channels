@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "bash -c \nexport PYTHONIOENCODING=utf-8\nexport PYTHONUTF8=1\nSSH_KEY=\"/c/Users/md1avn/.ssh/id_ed25519\"\nSSH_HOST=\"ssh7.vast.ai\"\nSSH_PORT=11678\nREMOTE=\"root@${SSH_HOST}\"\n\n# Convert CRLF -> LF for both shell scripts on remote\nssh -i \"${SSH_KEY}\" -p \"${SSH_PORT}\" -o StrictHostKeyChecking=no \"${REMOTE}\" \"\ncd /root/t0115_workdir/repo/tasks/t0115_seed9354_no_autostop/code\nsed -i \\\"s/\\r\\$//\\\" run_seed9354.sh sync_results_back.sh\necho --- run_seed9354.sh first 20 lines ---\nhead -20 run_seed9354.sh\necho --- check no CR characters left ---\nod -c run_seed9354.sh | head -3\n\"\n",
+  "exit_code": 0,
+  "duration_seconds": 4.781,
+  "started_at": "2026-05-20T17:28:35Z",
+  "completed_at": "2026-05-20T17:28:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "052_20260520T172835Z_bash-c-export-pythonioencoding-utf-8-exp.stdout.txt",
+  "stderr_file": "052_20260520T172835Z_bash-c-export-pythonioencoding-utf-8-exp.stderr.txt",
+  "stdout_lines": 25,
+  "stderr_lines": 2,
+  "truncated": false
+}

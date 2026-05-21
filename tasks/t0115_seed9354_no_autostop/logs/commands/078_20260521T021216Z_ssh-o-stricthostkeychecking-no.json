@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 11678 root@ssh7.vast.ai mkdir -p /root/t0115_workdir/repo/tasks/t0115_seed9354_no_autostop/intervention && cat > /root/t0115_workdir/repo/tasks/t0115_seed9354_no_autostop/intervention/stop.md << \"EOF\"\n# Operator stop signal\n\nIssued at 2026-05-21T XX:XX Z by md1avn.\n\nstop_trigger: operator_stop\nEOF\necho \"stop file dropped\"; sleep 2; tmux send-keys -t nsga2:0 C-c; sleep 5; tmux capture-pane -t nsga2:0 -p | tail -8",
+  "exit_code": 0,
+  "duration_seconds": 10.605,
+  "started_at": "2026-05-21T02:12:16Z",
+  "completed_at": "2026-05-21T02:12:26Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "078_20260521T021216Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "078_20260521T021216Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 2,
+  "truncated": false
+}

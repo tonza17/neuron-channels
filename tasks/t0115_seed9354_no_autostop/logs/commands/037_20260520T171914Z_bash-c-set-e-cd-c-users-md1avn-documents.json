@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "bash -c \nset -e\ncd /c/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0115_seed9354_no_autostop\ntar -czf /tmp/t0115.tar.gz \\\n  --exclude=__pycache__ --exclude=*.pyc --exclude=*.pkl \\\n  --exclude=build --exclude=x86_64 --exclude=.mypy_cache --exclude=.pytest_cache \\\n  tasks/t0115_seed9354_no_autostop/\nls -la /tmp/t0115.tar.gz\n",
+  "exit_code": 0,
+  "duration_seconds": 21.442,
+  "started_at": "2026-05-20T17:19:14Z",
+  "completed_at": "2026-05-20T17:19:35Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "037_20260520T171914Z_bash-c-set-e-cd-c-users-md1avn-documents.stdout.txt",
+  "stderr_file": "037_20260520T171914Z_bash-c-set-e-cd-c-users-md1avn-documents.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

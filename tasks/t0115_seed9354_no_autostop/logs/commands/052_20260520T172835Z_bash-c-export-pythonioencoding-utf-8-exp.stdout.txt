@@ -1,0 +1,25 @@
+--- run_seed9354.sh first 20 lines ---
+#!/usr/bin/env bash
+# t0115 orchestration script for the Vast.ai instance.
+#
+# Runs the single NSGA-II seed (9354) with the $25 task / $20 per-instance cost
+# watchdog. Results land in tasks/t0115_seed9354_no_autostop/results/data/.
+#
+# t0115-specific: HV-plateau auto-stop is DISABLED in nsga2_driver.py per
+# S-0113-03 + the 2026-05-20 user directive. Termination triggers are
+# operator stop (intervention/stop.md), cost watchdog ($25 cap),
+# per-instance watchdog ($20), and the N_GEN=300 ceiling.
+#
+# REQ-4: --teardown-on-watchdog is passed so the driver's finally block
+# destroys the Vast.ai instance if the watchdog trips.
+#
+# Usage (on remote, inside tmux):
+#   cd /root/t0115_workdir
+#   bash tasks/t0115_seed9354_no_autostop/code/run_seed9354.sh
+
+set -euo pipefail
+
+--- check no CR characters left ---
+0000000   #   !   /   u   s   r   /   b   i   n   /   e   n   v       b
+0000020   a   s   h  \n   #       t   0   1   1   5       o   r   c   h
+0000040   e   s   t   r   a   t   i   o   n       s   c   r   i   p   t

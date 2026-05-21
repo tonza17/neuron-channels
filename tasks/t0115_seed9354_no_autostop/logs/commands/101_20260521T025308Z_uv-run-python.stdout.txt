@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0115_seed9354_no_autostop\tasks\t0115_seed9354_no_autostop\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0115_seed9354_no_autostop\tasks\t0115_seed9354_no_autostop\logs\sessions\capture_report.json.

@@ -1,0 +1,9 @@
+stop file dropped
+rror: pool objects cannot be passed between processes or pickled); trace + evalu
+ations still written
+    55 |     5280 |     23 |  0.0102739726 |         ideal
+[seed 9354 gen 55] HV=50.5646  pop_size=96  cost_so_far=$2.3859  elapsed=31165s
+[nsga2_driver seed=9354 gen=55] WARNING: dill checkpoint failed (NotImplementedE
+rror: pool objects cannot be passed between processes or pickled); trace + evalu
+ations still written
+^C

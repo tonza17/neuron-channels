@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "uv run python -m arf.scripts.verificators.verify_compare_literature t0115_seed9354_no_autostop",
+  "exit_code": 0,
+  "duration_seconds": 0.36,
+  "started_at": "2026-05-21T02:52:52Z",
+  "completed_at": "2026-05-21T02:52:53Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "098_20260521T025252Z_uv-run-python.stdout.txt",
+  "stderr_file": "098_20260521T025252Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,8 @@
+[ssh] checking what t0024 sources need uploading ...
+tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/cadecay.mod
+tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/Exp2NMDA.mod
+tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/HHst_noiseless.mod
+[scp] uploading t0024 mod sources ...
+cadecay.mod
+Exp2NMDA.mod
+HHst_noiseless.mod

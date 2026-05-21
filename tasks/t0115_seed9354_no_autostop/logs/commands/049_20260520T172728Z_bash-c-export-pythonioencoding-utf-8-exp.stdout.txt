@@ -1,0 +1,2 @@
+--- starting tmux session nsga2 ---
+--- tmux session status ---

@@ -1,0 +1,7 @@
+root        1780  0.0  0.0   4352  2052 pts/1    S+   May20   0:00 bash tasks/t0115_seed9354_no_autostop/code/run_seed9354.sh
+root        1976  0.2  0.0 4629680 114504 pts/1  Sl+  May20   1:13 python -u -m tasks.t0115_seed9354_no_autostop.code.nsga2_driver --seed 9354 --n-gen 300 --save-algorithm-config --teardown-on-watchdog
+root        2768 80.8  0.0 4671644 132544 pts/1  R+   01:50  18:18 python -u -m tasks.t0115_seed9354_no_autostop.code.nsga2_driver --seed 9354 --n-gen 300 --save-algorithm-config --teardown-on-watchdog
+---FINAL HV TAIL---
+{"gen": 53, "wall_clock_s": 30494.728271961212, "hv": 50.42034060220557, "n_cells_evaluated": 96}
+{"gen": 54, "wall_clock_s": 30827.91070151329, "hv": 50.45898946866901, "n_cells_evaluated": 96}
+{"gen": 55, "wall_clock_s": 31166.341638326645, "hv": 50.56458949762532, "n_cells_evaluated": 96}

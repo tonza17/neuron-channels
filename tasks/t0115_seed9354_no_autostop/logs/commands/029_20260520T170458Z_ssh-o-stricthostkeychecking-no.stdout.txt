@@ -1,0 +1,9 @@
+neuron 8.2.7+
+pymoo 0.6.1.6
+numpy 2.4.6
+pandas 3.0.3
+scipy 1.17.1
+matplotlib 3.10.9
+pydantic 2.13.4
+tqdm 4.67.3
+dill 0.4.1

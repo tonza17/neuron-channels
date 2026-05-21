@@ -1,0 +1,11 @@
+{
+  "task_id": "t0115_seed9354_no_autostop",
+  "checked_at": "2026-05-20T16:40:15Z",
+  "result": "passed",
+  "dependencies": [
+    {"task_id": "t0106_long_pdnd_nsga2_300gen", "status": "completed", "satisfied": true},
+    {"task_id": "t0114_seed7755_no_autostop", "status": "completed", "satisfied": true}
+  ],
+  "errors": 0,
+  "warnings": 0
+}

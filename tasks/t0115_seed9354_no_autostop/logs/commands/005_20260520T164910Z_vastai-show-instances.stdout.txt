@@ -1,0 +1,5 @@
+[40m[97m  #  ID  Machine  Status  Num  Model  Util. %  vCPUs  RAM  Storage  SSH Addr[0m
+
+[40m[97m  #  SSH Port  $/hr  Image  Net up  Net down  R  Label  age(hours)[0m
+
+[40m[97m  #  uptime(mins)[0m

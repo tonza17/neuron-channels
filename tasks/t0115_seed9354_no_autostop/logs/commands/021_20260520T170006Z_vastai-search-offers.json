@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "vastai search offers cpu_ram>=100 disk_space>=40 reliability>=0.99 dph<=0.40 cpu_cores_effective>=32 rentable=true verified=true rented=false compute_cap<1200 cuda_max_good>=12.6 --order dph --limit 30 --raw",
+  "exit_code": 0,
+  "duration_seconds": 4.111,
+  "started_at": "2026-05-20T17:00:06Z",
+  "completed_at": "2026-05-20T17:00:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "021_20260520T170006Z_vastai-search-offers.stdout.txt",
+  "stderr_file": "021_20260520T170006Z_vastai-search-offers.stderr.txt",
+  "stdout_lines": 1356,
+  "stderr_lines": 0,
+  "truncated": false
+}

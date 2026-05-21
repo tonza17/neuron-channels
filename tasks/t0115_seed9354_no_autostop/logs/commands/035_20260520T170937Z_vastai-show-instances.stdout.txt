@@ -1,0 +1,8 @@
+[40m[97m  #  ID        Machine  Status   Num  Model      Util. %  vCPUs    RAM  Storage[0m
+[48;5;240m[97m  1  37161678  31089    running   1x  RTX_A5000  0.0      64.0   257.8  40     [0m
+
+[40m[97m  #  SSH Addr      SSH Port  $/hr    Image                 Net up  Net down[0m
+[48;5;240m[97m  1  ssh7.vast.ai  11678     0.2756  python:3.12-bookworm  1278.1  1477.4  [0m
+
+[40m[97m  #  R     Label                                       age(hours)  uptime(mins)[0m
+[48;5;240m[97m  1  99.9  neuron-channels/t0115_seed9354_no_autostop  0.15        -           [0m

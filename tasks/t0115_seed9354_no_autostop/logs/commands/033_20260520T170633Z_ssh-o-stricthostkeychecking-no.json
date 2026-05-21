@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 11678 root@ssh7.vast.ai cd /root/t0115_workdir/mods && nrnivmodl 2>&1 | tail -20 && echo '---' && ls -la x86_64/",
+  "exit_code": 0,
+  "duration_seconds": 5.815,
+  "started_at": "2026-05-20T17:06:33Z",
+  "completed_at": "2026-05-20T17:06:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "033_20260520T170633Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "033_20260520T170633Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 57,
+  "stderr_lines": 2,
+  "truncated": false
+}

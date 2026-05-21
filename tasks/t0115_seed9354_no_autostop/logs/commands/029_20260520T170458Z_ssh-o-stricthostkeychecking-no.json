@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0115_seed9354_no_autostop",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 11678 root@ssh7.vast.ai python3 -c 'import neuron, pymoo, numpy, pandas, scipy, matplotlib, pydantic, tqdm, dill; print(\"neuron\", neuron.__version__); print(\"pymoo\", pymoo.__version__); print(\"numpy\", numpy.__version__); print(\"pandas\", pandas.__version__); print(\"scipy\", scipy.__version__); print(\"matplotlib\", matplotlib.__version__); print(\"pydantic\", pydantic.VERSION); print(\"tqdm\", tqdm.__version__); print(\"dill\", dill.__version__)'",
+  "exit_code": 0,
+  "duration_seconds": 5.052,
+  "started_at": "2026-05-20T17:04:58Z",
+  "completed_at": "2026-05-20T17:05:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0115_seed9354_no_autostop",
+  "stdout_file": "029_20260520T170458Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "029_20260520T170458Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 4,
+  "truncated": false
+}

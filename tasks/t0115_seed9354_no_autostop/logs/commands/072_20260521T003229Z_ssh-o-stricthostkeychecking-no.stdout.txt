@@ -1,0 +1,14 @@
+ations still written
+    40 |     3840 |     16 |  0.0066952976 |             f
+[seed 9354 gen 40] HV=43.9294  pop_size=96  cost_so_far=$1.9400  elapsed=25342s
+[nsga2_driver seed=9354 gen=40] WARNING: dill checkpoint failed (NotImplementedE
+rror: pool objects cannot be passed between processes or pickled); trace + evalu
+ations still written
+[pool_restart gen=40] closing/recreating multiprocessing.Pool (60 workers) â€” REQ
+-6 memory mitigation
+[pool_restart gen=40] new Pool + runner installed; resuming NSGA-II at gen 41
+
+---
+root        1780    1771  0 May20 pts/1    00:00:00 bash tasks/t0115_seed9354_no_autostop/code/run_seed9354.sh
+root        1781    1771  0 May20 pts/1    00:00:00 tee /root/t0115_workdir/run_seed9354.log
+root        1976    1780  0 May20 pts/1    00:00:49 python -u -m tasks.t0115_seed9354_no_autostop.code.nsga2_driver --seed 9354 --n-gen 300 --save-algorithm-config --teardown-on-watchdog

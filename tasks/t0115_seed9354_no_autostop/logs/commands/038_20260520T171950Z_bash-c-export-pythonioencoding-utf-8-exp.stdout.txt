@@ -1,0 +1,58 @@
+[scp] uploading tarball to root@ssh7.vast.ai:/tmp/t0115.tar.gz ...
+[ssh] extracting into /root/t0115_workdir/repo/ ...
+total 32
+drwxr-xr-x 11 1144306 1049089  4096 May 20 17:18 .
+drwxr-xr-x  3 root    root       48 May 20 17:20 ..
+-rw-r--r--  1 1144306 1049089     0 May 20 16:41 __init__.py
+drwxr-xr-x  3 1144306 1049089    33 May 20 16:41 assets
+drwxr-xr-x  2 1144306 1049089  4096 May 20 17:18 code
+drwxr-xr-x  2 1144306 1049089    30 May 20 16:41 corrections
+drwxr-xr-x  2 1144306 1049089    10 May 20 17:18 data
+drwxr-xr-x  2 1144306 1049089    30 May 20 16:41 intervention
+drwxr-xr-x  6 1144306 1049089    87 May 20 16:41 logs
+drwxr-xr-x  2 1144306 1049089    49 May 20 16:45 plan
+drwxr-xr-x  2 1144306 1049089    58 May 20 16:43 research
+drwxr-xr-x  4 1144306 1049089    64 May 20 17:18 results
+-rw-r--r--  1 1144306 1049089  4618 May 20 17:11 step_tracker.json
+-rw-r--r--  1 1144306 1049089   742 May 20 16:36 task.json
+-rw-r--r--  1 1144306 1049089 10578 May 20 16:36 task_description.md
+--- code/ ---
+__init__.py
+anchor_classifier.py
+anchor_definitions.py
+apply_params.py
+biological_priors.py
+biological_scorecard.py
+bootstrap.py
+build_analysis_charts.py
+build_assets.py
+build_cell_ais.py
+build_morphology_charts.py
+build_predictions_assets.py
+build_results.py
+build_t0106_plots.py
+build_t0112_results.py
+build_t0113_results.py
+constants.py
+constants_electrophys.py
+constants_morphology.py
+cost_watchdog.py
+cross_seed_analysis.py
+evaluator.py
+extend_with_ais.py
+generator_wrapper.py
+hv_plateau_watchdog.py
+make_charts.py
+metrics_builder.py
+nsga2_driver.py
+parametric_placer.py
+paths.py
+per_seed_analysis.py
+random_init.py
+recorder.py
+run_local_analysis.py
+run_seed9354.sh
+smoke_gate.py
+sync_results_back.sh
+test_evaluator_dsi_guard.py
+trial_helpers.py

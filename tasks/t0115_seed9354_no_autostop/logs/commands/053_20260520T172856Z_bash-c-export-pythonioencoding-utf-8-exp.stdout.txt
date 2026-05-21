@@ -1,0 +1,2 @@
+--- tmux sessions ---
+nsga2: 1 windows (created Wed May 20 17:29:08 2026)
