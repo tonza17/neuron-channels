@@ -68,9 +68,9 @@
       "step": 8,
       "name": "implementation",
       "description": "Pool DSI>0.7 \u2227 PD>10 cells from 4 NSGA-II runs, run PCA + gen-0 overlay + electrophys/morphology KMeans + per-cluster morph grids + varimax factor analysis, produce 3 answer assets.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-21T19:26:53Z",
-      "completed_at": null,
+      "completed_at": "2026-05-21T20:09:54Z",
       "log_file": "logs\\steps\\008_implementation/"
     },
     {
