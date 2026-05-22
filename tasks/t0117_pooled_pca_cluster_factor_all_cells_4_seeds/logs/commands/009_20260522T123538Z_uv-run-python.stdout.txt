@@ -1,0 +1,5 @@
+Fitting union-pool standardiser on matrix shape=(4431, 68)
+mean.shape=(68,), std.shape=(68,)
+min(std)=3.180190e-04
+max(std)=4.539617e+08
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\data\pooled_standardiser.npz

@@ -1,0 +1,34 @@
+Running KMeans on 14-d morphology submatrix, shape=(4431, 14)
+
+KMeans sweep (k in (3, 4, 5, 6, 7)):
+  k=3: silhouette=0.1436, inertia=49918.34
+  k=4: silhouette=0.1500, inertia=47078.81
+  k=5: silhouette=0.1531, inertia=45293.16
+  k=6: silhouette=0.0990, inertia=43625.46
+  k=7: silhouette=0.1059, inertia=42240.80
+Headline k=5, silhouette=0.1531
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\images\morphology_silhouette.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\data\morphology_clusters.csv (n_rows=4431)
+
+Cluster sizes:
+cluster_id
+0     819
+1     739
+2    1490
+3     732
+4     651
+
+Seed x cluster crosstab:
+cluster_id    0    1     2    3    4
+seed
+44          154   99   109  150  553
+77          110  317    43  151   33
+7755        112  211  1298   40   25
+9354        443  112    40  391   40
+
+Writing per-cluster representative tables...
+  cluster 0 (size=819) -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\data\morphology_cluster_0_representatives.csv
+  cluster 1 (size=739) -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\data\morphology_cluster_1_representatives.csv
+  cluster 2 (size=1490) -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\data\morphology_cluster_2_representatives.csv
+  cluster 3 (size=732) -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\data\morphology_cluster_3_representatives.csv
+  cluster 4 (size=651) -> C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\data\morphology_cluster_4_representatives.csv

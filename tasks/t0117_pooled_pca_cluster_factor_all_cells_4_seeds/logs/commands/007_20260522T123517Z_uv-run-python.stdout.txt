@@ -1,0 +1,14 @@
+Pooling ALL records (no DSI/PD filter) from 4 sources...
+  t0106_long_pdnd_nsga2_300gen (seed 44): n_raw=3744, n_unique=1065
+  [validation gate] first 3 loaded rows from t0106_long_pdnd_nsga2_300gen:
+    gen=1 idx=0 DSI=0.0000 PD=23.57 v[0:3]=[0.8319, 0.2787, 0.346]
+    gen=1 idx=1 DSI=0.0244 PD=4.76 v[0:3]=[0.4243, 0.9149, 0.2324]
+    gen=1 idx=2 DSI=0.0069 PD=17.14 v[0:3]=[0.9251, 0.0486, 0.7967]
+  t0112_t0106_seed77_replicate (seed 77): n_raw=2016, n_unique=654
+  t0114_seed7755_no_autostop (seed 7755): n_raw=5952, n_unique=1686
+  t0115_seed9354_no_autostop (seed 9354): n_raw=5280, n_unique=1026
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\data\pooled_all_cells.parquet (n_rows=4431)
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\data\per_seed_pool_counts.csv
+
+Total pooled records: 4431 (sum n_unique = 4431)

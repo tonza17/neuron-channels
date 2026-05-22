@@ -1,0 +1,27 @@
+{
+  "spec_version": "2",
+  "answer_id": "pooled-all-cells-displacement-from-init-full-pool",
+  "question": "How far did NSGA-II travel from gen-0 (generation == 1) in each seed when the full quality range is admitted (no DSI / PD filter), and is the per-seed displacement pattern observed at the strict cohort (seed 44 furthest, seed 9354 closest) preserved at the unfiltered pool?",
+  "short_title": "Per-seed displacement collapses sharply at the unfiltered pool; relative ordering partially preserved",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0106_long_pdnd_nsga2_300gen",
+    "t0112_t0106_seed77_replicate",
+    "t0114_seed7755_no_autostop",
+    "t0115_seed9354_no_autostop",
+    "t0116_pooled_pca_cluster_factor_dsi07_pd10"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0117_pooled_pca_cluster_factor_all_cells_4_seeds",
+  "date_created": "2026-05-22"
+}

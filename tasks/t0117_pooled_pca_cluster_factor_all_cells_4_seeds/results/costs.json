@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "note": "CPU-only data-analysis task; no paid APIs, no remote compute. Local Python (uv-managed) on Windows 11. Same compute envelope as t0116 with slightly longer wall-clock (~36 min) due to silhouette O(n^2) on the ~5x larger pool."
+}
