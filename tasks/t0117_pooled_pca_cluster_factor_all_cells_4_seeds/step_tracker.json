@@ -86,10 +86,10 @@
       "step": 10,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md with explicit t0116 head-to-head subsection, metrics.json ({}), costs.json ($0), remote_machines_used.json ([]); embed all charts.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-22T12:52:43Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\010_results/"
     },
     {
       "step": 11,
