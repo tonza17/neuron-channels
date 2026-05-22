@@ -5,8 +5,8 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (47)](../papers/by-category/direction-selectivity.md) | [Answers
-(29)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(315)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(32)](../answers/by-category/direction-selectivity.md) | [Suggestions
+(321)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (3)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (12)](../predictions/by-category/direction-selectivity.md)
@@ -2534,7 +2534,66 @@ simulation.
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | completed | 2026-05-12 01:55 |
 
-## Answers (29)
+## Answers (32)
+
+<details>
+<summary><strong>Does the unfiltered pool (every NSGA-II evaluation, no DSI/PD
+cohort filter) form a single connected manifold across seeds 44, 77, 7755,
+and 9354, or does the seed-specific basin pattern observed at the strict
+cohort (t0116) persist when low-DSI / low-PD cells are also
+admitted?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-22 | **Full answer**:
+[`pooled-all-cells-basin-connectivity-without-filter`](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-basin-connectivity-without-filter/)
+
+The seed-specific basin pattern partially dissolves once the cohort filter is removed: the
+pool reconnects across seeds but does not form a single connected manifold. Electrophys KMeans
+NMI vs seed drops from 0.929 (t0116, strict cohort) to 0.562 (t0117, no filter, n=4431 cells,
+k=4), and morphology NMI drops from 0.889 to 0.313 — the morphology subspace shows much
+stronger reconnection than the electrophys subspace. Even at the unfiltered pool both
+partitions remain significantly seed-aligned (chi-square p<<0.001), so seed effects are
+detectable but no longer dominant.
+
+</details>
+
+<details>
+<summary><strong>How far did NSGA-II travel from gen-0 (generation == 1) in each
+seed when the full quality range is admitted (no DSI / PD filter), and is
+the per-seed displacement pattern observed at the strict cohort (seed 44
+furthest, seed 9354 closest) preserved at the unfiltered pool?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-22 | **Full answer**:
+[`pooled-all-cells-displacement-from-init-full-pool`](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-displacement-from-init-full-pool/)
+
+Per-seed displacement drops by roughly 5-10x at the unfiltered pool: mean 68-d displacement
+collapses from ~60 (all seeds, t0116) to ~9 (all seeds, t0117), and mean PC1+PC2 displacement
+from 15.0 / 8.5 / 13.3 / 2.4 (seeds 44 / 77 / 7755 / 9354 at t0116) to 4.9 / 1.5 / 5.7 / 1.6
+(t0117). The relative ordering is partially preserved — seeds 44 and 7755 remain the two
+furthest from random init at t0117 (4.9 and 5.7 in PC12, top of the table), and seed 9354
+remains close to its random init (1.6) — but seed 77 drops from second-furthest to nearly tied
+with seed 9354 because the strict cohort retained only the Pareto-front tip of seed 77 (n=10),
+while the unfiltered pool admits all 654 of its cells, dominated by lower-quality individuals
+near gen-1.
+
+</details>
+
+<details>
+<summary><strong>Does at least one varimax factor recover a joint DSI-PD axis
+(|r_DSI| > 0.3 AND |r_PD| > 0.3) when the cohort filter is removed and the
+full DSI / PD quality range is in the pool, confirming the truncated-cohort
+artefact first observed at t0110 and t0116?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-22 | **Full answer**:
+[`pooled-all-cells-truncated-cohort-artefact-test`](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-truncated-cohort-artefact-test/)
+
+Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_DSI = +0.421,
+r_PD = +0.352, both p < 1e-100, n = 4431), satisfying |r| > 0.3 on both axes. At the strict
+cohort (t0116) zero of ten factors satisfied this criterion. The reappearance of a joint
+factor once the filter is lifted confirms the truncated-cohort-artefact hypothesis: the strict
+cohort genuinely erases the shared latent that couples DSI and PD; the decoupling is not an
+intrinsic substrate property.
+
+</details>
 
 <details>
 <summary><strong>Does the joint-pass cohort (DSI > 0.7 AND PD > 10 Hz) form a single
@@ -3147,7 +3206,123 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (281 open, 34 closed)
+## Suggestions (287 open, 34 closed)
+
+<details>
+<summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
+joint DSI-PD factor disappears</strong> (S-0117-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 confirmed the truncated-cohort artefact: F1 is a joint DSI-PD factor (r_DSI=+0.421,
+r_PD=+0.352) at the unfiltered pool, while t0116 (DSI>0.7 AND PD>10) had zero joint factors.
+S-0116-02 covers a single point at DSI>0.5; this suggestion is a parametric sweep. Re-run the
+t0117 pipeline at four DSI thresholds {0.3, 0.5, 0.7, 0.9} on the same pooled all-cells
+parquet, fit varimax FA at each, and plot (a) joint-factor count vs threshold and (b) F1's
+r_DSI/r_PD vs threshold. Decision: monotonic crossover between 0.5 and 0.7 means smooth
+range-restriction; a sharp cliff means a specific cell class dominates the joint variance.
+Recommended task types: data-analysis, comparative-analysis. Cost: <$0.30.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-seed factor analysis on the unfiltered pool: do the 4 seeds
+share F1, or are loadings seed-dependent?</strong> (S-0117-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117's pooled F1 is the central joint DSI-PD driver (r_DSI=+0.421, r_PD=+0.352, 12.6%
+variance). Basin-connectivity (ephys NMI=0.562, morph NMI=0.313) shows seeds still partly
+cluster; F1 could be (a) a shared substrate property or (b) a cross-basin confound where
+DSI/PD co-vary with seed identity. Refit FA(n=10) + varimax independently on each seed's
+unfiltered slice (s44 n=1065, s77 n=654, s7755 n=1686, s9354 n=1026 - all well powered,
+n>10*features=680), align factors to t0117 F1 by max-cosine, report per-seed top-10 loadings +
+r_DSI/r_PD. Distinct from S-0116-04 (strict cohort where only s7755 had enough cells).
+Decision: if all four per-seed analogues hit |r|>0.3 on both axes with the same top loadings,
+F1 is a true substrate property; if loadings diverge, F1 is partly a between-seed confound.
+Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>📊 <strong>Bootstrap loading stability and oblique-rotation sensitivity for
+the unfiltered-pool F1 joint factor</strong> (S-0117-03)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117's headline finding is a single factor (F1, 12.6% variance, r_DSI=+0.421, r_PD=+0.352)
+and the truncated-cohort verdict rides on it. Total variance dropped from 65.3% (t0116) to
+34.9% (t0117), so F1 may be less stable. Draw B=200 bootstrap resamples of the 4431-cell pool,
+refit FA(n=10)+varimax, align factors to t0117 by max-cosine, report median +/- IQR of F1's
+r_DSI, r_PD, variance, and top-7 loadings. Also rerun with oblique promax (kappa=4) and
+n_components=11. Distinct from S-0116-05 (strict cohort where no joint factor existed); this
+validates the unfiltered-pool joint factor. Decision: if F1's r_DSI/r_PD 95% CIs straddle 0.3,
+the verdict needs softening; if both stay clear of 0.3, the verdict is robust. Recommended
+task types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Frontier-cell analysis: characterise cells the strict t0116
+filter excluded but which carry the joint factor</strong> (S-0117-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 admits 4431 cells; t0116 admits 869. The 3562 excluded cells split into 'frontier' (just
+below one threshold: DSI in (0.5, 0.7] OR PD in (5, 10]) and 'bulk' (deep-below). The frontier
+cells are most informative for why the joint factor only appears when they are admitted.
+Steps: (1) extract frontier cells from pooled_all_cells.parquet, (2) project them onto t0117
+F1 scores, (3) compare F1-score distributions of frontier vs bulk vs t0116-included via KS +
+means, (4) refit varimax FA on frontier-only cells (n approx 1500-2000) and check whether F1
+reappears alone. Decision: if frontier-only FA also yields joint F1 with r_DSI/r_PD > 0.3, the
+joint factor lives in the frontier band; if not, the joint factor requires the full mixed
+pool. Recommended task types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>5-seed unfiltered-pool re-analysis (adding t0113 seed 2247) to
+test joint-factor robustness</strong> (S-0117-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 used the same 4 seeds as t0116 (44/77/7755/9354) and deliberately excluded t0113 (seed
+2247) to isolate the cohort-filter effect. With the joint factor now confirmed, the next
+question is whether F1 survives the addition of a fifth independent seed. Re-run t0117's
+pipeline end-to-end with t0113 as the fifth source (no DSI/PD filter, dedup at 6-decimal
+vector convention, union-pool standardiser), regenerate the loadings heatmap and
+factor_correlations.csv. Distinct from S-0116-01 (5-seed on the strict cohort, addresses basin
+isolation); this 5-seed run addresses joint-factor robustness. Decision: if F1 still passes
+|r|>0.3 on both axes with the same top loadings, the truncated-cohort verdict is seed-robust;
+if F1 collapses or shuffles, the joint factor is partly 4-seed-specific. Recommended task
+types: data-analysis, comparative-analysis. Cost: <$0.25.
+
+</details>
+
+<details>
+<summary>📊 <strong>Interpret F1's biological meaning: top-loading features of the
+joint DSI-PD factor in the unfiltered pool</strong> (S-0117-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 confirms F1 is a joint DSI-PD axis but stops short of biological interpretation - it
+reports F1's r_DSI/r_PD but not its top loadings on the 68-d feature vector (54-d electrophys
++ 14-d morphology). The latent-drivers question is only partially answered. Read
+results/data/factor_loadings.csv, rank F1's loadings by absolute value, and identify the top-7
+ephys parameters and top-3 morphology parameters loading on F1. Cross-reference t0116's pooled
+F1 top loadings (SK_AIS + primary_branch_pd_concentration) and to t0108/t0110 strict/relaxed
+comparison. Write a focused answer asset 'pooled-all-cells-f1-biological-interpretation' with
+the loading table plus a 4-sentence biological interpretation: which channels and morphology
+parameters jointly drive both DSI and PD when the full quality range is admitted? Recommended
+task types: data-analysis, answer-question. Cost: <$0.10.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector

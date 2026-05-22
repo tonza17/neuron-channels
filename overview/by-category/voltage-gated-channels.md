@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (30)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (10)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(95)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(96)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -1815,7 +1815,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (80 open, 15 closed)
+## Suggestions (81 open, 15 closed)
+
+<details>
+<summary>📊 <strong>Interpret F1's biological meaning: top-loading features of the
+joint DSI-PD factor in the unfiltered pool</strong> (S-0117-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 confirms F1 is a joint DSI-PD axis but stops short of biological interpretation - it
+reports F1's r_DSI/r_PD but not its top loadings on the 68-d feature vector (54-d electrophys
++ 14-d morphology). The latent-drivers question is only partially answered. Read
+results/data/factor_loadings.csv, rank F1's loadings by absolute value, and identify the top-7
+ephys parameters and top-3 morphology parameters loading on F1. Cross-reference t0116's pooled
+F1 top loadings (SK_AIS + primary_branch_pd_concentration) and to t0108/t0110 strict/relaxed
+comparison. Write a focused answer asset 'pooled-all-cells-f1-biological-interpretation' with
+the loading table plus a 4-sentence biological interpretation: which channels and morphology
+parameters jointly drive both DSI and PD when the full quality range is admitted? Recommended
+task types: data-analysis, answer-question. Cost: <$0.10.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells

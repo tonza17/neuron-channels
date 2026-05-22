@@ -1,6 +1,6 @@
-# Answers (39)
+# Answers (42)
 
-39 answer(s).
+42 answer(s).
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -252,6 +252,37 @@ substrate-limited reading.
 | **Task sources** | [`t0091_morphology_extended_nsga2_v1`](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0099_random_init_pareto_robustness`](../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md), [`t0102_seedscale_n4_gen20`](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
 | **URL sources** | — |
 | **Created by** | [`t0104_nsga2_2obj_dsi_pdrate_3seeds`](../../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) |
+
+</details>
+
+<details>
+<summary><strong>Does at least one varimax factor recover a joint DSI-PD axis
+(|r_DSI| > 0.3 AND |r_PD| > 0.3) when the cohort filter is removed and the
+full DSI / PD quality range is in the pool, confirming the truncated-cohort
+artefact first observed at t0110 and t0116?</strong></summary>
+
+**Confidence**: high
+
+Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_DSI = +0.421,
+r_PD = +0.352, both p < 1e-100, n = 4431), satisfying |r| > 0.3 on both axes. At the strict
+cohort (t0116) zero of ten factors satisfied this criterion. The reappearance of a joint
+factor once the filter is lifted confirms the truncated-cohort-artefact hypothesis: the strict
+cohort genuinely erases the shared latent that couples DSI and PD; the decoupling is not an
+intrinsic substrate property.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-truncated-cohort-artefact-test/full_answer.md) |
+| **ID** | [`pooled-all-cells-truncated-cohort-artefact-test`](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-truncated-cohort-artefact-test/) |
+| **Question** | Does at least one varimax factor recover a joint DSI-PD axis (|r_DSI| > 0.3 AND |r_PD| > 0.3) when the cohort filter is removed and the full DSI / PD quality range is in the pool, confirming the truncated-cohort artefact first observed at t0110 and t0116? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-05-22 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0114_seed7755_no_autostop`](../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0108_t0106_cluster_factor_dsi05_pd10`](../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md), [`t0110_relaxed_cohort_factor_analysis`](../../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md), [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+| **URL sources** | — |
+| **Created by** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
 
 </details>
 
@@ -582,6 +613,39 @@ tasks.
 </details>
 
 <details>
+<summary><strong>Does the unfiltered pool (every NSGA-II evaluation, no DSI/PD
+cohort filter) form a single connected manifold across seeds 44, 77, 7755,
+and 9354, or does the seed-specific basin pattern observed at the strict
+cohort (t0116) persist when low-DSI / low-PD cells are also
+admitted?</strong></summary>
+
+**Confidence**: high
+
+The seed-specific basin pattern partially dissolves once the cohort filter is removed: the
+pool reconnects across seeds but does not form a single connected manifold. Electrophys KMeans
+NMI vs seed drops from 0.929 (t0116, strict cohort) to 0.562 (t0117, no filter, n=4431 cells,
+k=4), and morphology NMI drops from 0.889 to 0.313 — the morphology subspace shows much
+stronger reconnection than the electrophys subspace. Even at the unfiltered pool both
+partitions remain significantly seed-aligned (chi-square p<<0.001), so seed effects are
+detectable but no longer dominant.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-basin-connectivity-without-filter/full_answer.md) |
+| **ID** | [`pooled-all-cells-basin-connectivity-without-filter`](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-basin-connectivity-without-filter/) |
+| **Question** | Does the unfiltered pool (every NSGA-II evaluation, no DSI/PD cohort filter) form a single connected manifold across seeds 44, 77, 7755, and 9354, or does the seed-specific basin pattern observed at the strict cohort (t0116) persist when low-DSI / low-PD cells are also admitted? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-05-22 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0114_seed7755_no_autostop`](../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0108_t0106_cluster_factor_dsi05_pd10`](../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md), [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+| **URL sources** | — |
+| **Created by** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+
+</details>
+
+<details>
 <summary><strong>How does the existing peer-reviewed literature on compartmental
 models of direction-selective retinal ganglion cells structure the five
 project research questions (Na/K conductances, morphology sensitivity,
@@ -616,6 +680,40 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 | **Task sources** | — |
 | **URL sources** | — |
 | **Created by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+
+</details>
+
+<details>
+<summary><strong>How far did NSGA-II travel from gen-0 (generation == 1) in each
+seed when the full quality range is admitted (no DSI / PD filter), and is
+the per-seed displacement pattern observed at the strict cohort (seed 44
+furthest, seed 9354 closest) preserved at the unfiltered pool?</strong></summary>
+
+**Confidence**: high
+
+Per-seed displacement drops by roughly 5-10x at the unfiltered pool: mean 68-d displacement
+collapses from ~60 (all seeds, t0116) to ~9 (all seeds, t0117), and mean PC1+PC2 displacement
+from 15.0 / 8.5 / 13.3 / 2.4 (seeds 44 / 77 / 7755 / 9354 at t0116) to 4.9 / 1.5 / 5.7 / 1.6
+(t0117). The relative ordering is partially preserved — seeds 44 and 7755 remain the two
+furthest from random init at t0117 (4.9 and 5.7 in PC12, top of the table), and seed 9354
+remains close to its random init (1.6) — but seed 77 drops from second-furthest to nearly tied
+with seed 9354 because the strict cohort retained only the Pareto-front tip of seed 77 (n=10),
+while the unfiltered pool admits all 654 of its cells, dominated by lower-quality individuals
+near gen-1.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-displacement-from-init-full-pool/full_answer.md) |
+| **ID** | [`pooled-all-cells-displacement-from-init-full-pool`](../../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-displacement-from-init-full-pool/) |
+| **Question** | How far did NSGA-II travel from gen-0 (generation == 1) in each seed when the full quality range is admitted (no DSI / PD filter), and is the per-seed displacement pattern observed at the strict cohort (seed 44 furthest, seed 9354 closest) preserved at the unfiltered pool? |
+| **Methods** | `code-experiment` |
+| **Confidence** | high |
+| **Date created** | 2026-05-22 |
+| **Categories** | [`direction-selectivity`](../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0114_seed7755_no_autostop`](../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) |
+| **URL sources** | — |
+| **Created by** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
 
 </details>
 

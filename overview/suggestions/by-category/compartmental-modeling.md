@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-379 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **341 open** (76
-high, 224 medium, 41 low), **38 closed**.
+385 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **347 open** (79
+high, 227 medium, 41 low), **38 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -381,6 +381,55 @@ refuting the hypothesis that DSI maximisation drives the optimiser to fragile pa
 extremes. Recipe: K=50-200 +/-10% perturbations per Pareto point; minimise SD of DSI. Budget:
 36-72 h Vast.ai EPYC at $0.30/h, total $11-22 (multiplies t0091's per-individual cost by
 K=50-200) — request explicit $25 budget cap or reduce population/generations.
+
+</details>
+
+<details>
+<summary>📊 <strong>Bootstrap loading stability and oblique-rotation sensitivity for
+the unfiltered-pool F1 joint factor</strong> (S-0117-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0117-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0117's headline finding is a single factor (F1, 12.6% variance, r_DSI=+0.421, r_PD=+0.352)
+and the truncated-cohort verdict rides on it. Total variance dropped from 65.3% (t0116) to
+34.9% (t0117), so F1 may be less stable. Draw B=200 bootstrap resamples of the 4431-cell pool,
+refit FA(n=10)+varimax, align factors to t0117 by max-cosine, report median +/- IQR of F1's
+r_DSI, r_PD, variance, and top-7 loadings. Also rerun with oblique promax (kappa=4) and
+n_components=11. Distinct from S-0116-05 (strict cohort where no joint factor existed); this
+validates the unfiltered-pool joint factor. Decision: if F1's r_DSI/r_PD 95% CIs straddle 0.3,
+the verdict needs softening; if both stay clear of 0.3, the verdict is robust. Recommended
+task types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
+joint DSI-PD factor disappears</strong> (S-0117-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0117-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0117 confirmed the truncated-cohort artefact: F1 is a joint DSI-PD factor (r_DSI=+0.421,
+r_PD=+0.352) at the unfiltered pool, while t0116 (DSI>0.7 AND PD>10) had zero joint factors.
+S-0116-02 covers a single point at DSI>0.5; this suggestion is a parametric sweep. Re-run the
+t0117 pipeline at four DSI thresholds {0.3, 0.5, 0.7, 0.9} on the same pooled all-cells
+parquet, fit varimax FA at each, and plot (a) joint-factor count vs threshold and (b) F1's
+r_DSI/r_PD vs threshold. Decision: monotonic crossover between 0.5 and 0.7 means smooth
+range-restriction; a sharp cliff means a specific cell class dominates the joint variance.
+Recommended task types: data-analysis, comparative-analysis. Cost: <$0.30.
 
 </details>
 
@@ -1438,6 +1487,32 @@ Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Per-seed factor analysis on the unfiltered pool: do the 4 seeds
+share F1, or are loadings seed-dependent?</strong> (S-0117-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0117-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0117's pooled F1 is the central joint DSI-PD driver (r_DSI=+0.421, r_PD=+0.352, 12.6%
+variance). Basin-connectivity (ephys NMI=0.562, morph NMI=0.313) shows seeds still partly
+cluster; F1 could be (a) a shared substrate property or (b) a cross-basin confound where
+DSI/PD co-vary with seed identity. Refit FA(n=10) + varimax independently on each seed's
+unfiltered slice (s44 n=1065, s77 n=654, s7755 n=1686, s9354 n=1026 - all well powered,
+n>10*features=680), align factors to t0117 F1 by max-cosine, report per-seed top-10 loadings +
+r_DSI/r_PD. Distinct from S-0116-04 (strict cohort where only s7755 had enough cells).
+Decision: if all four per-seed analogues hit |r|>0.3 on both axes with the same top loadings,
+F1 is a true substrate property; if loadings diverge, F1 is partly a between-seed confound.
+Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
 <summary>📊 <strong>Plot polar tuning curves to distinguish SK_high narrowing from
 flat-top clipping</strong> (S-0074-01)</summary>
 
@@ -2044,6 +2119,32 @@ sequential BO, (c) compare the DSI converged-to-within-1% sample count against t
 extrapolations, and (d) report whether either method actually converges on DSGC landscapes or
 hits plateaus that the corpus did not flag. Outcome calibrates the strategy row of the cost
 model before the 25-dim run. Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>5-seed unfiltered-pool re-analysis (adding t0113 seed 2247) to
+test joint-factor robustness</strong> (S-0117-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0117-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0117 used the same 4 seeds as t0116 (44/77/7755/9354) and deliberately excluded t0113 (seed
+2247) to isolate the cohort-filter effect. With the joint factor now confirmed, the next
+question is whether F1 survives the addition of a fifth independent seed. Re-run t0117's
+pipeline end-to-end with t0113 as the fifth source (no DSI/PD filter, dedup at 6-decimal
+vector convention, union-pool standardiser), regenerate the loadings heatmap and
+factor_correlations.csv. Distinct from S-0116-01 (5-seed on the strict cohort, addresses basin
+isolation); this 5-seed run addresses joint-factor robustness. Decision: if F1 still passes
+|r|>0.3 on both axes with the same top loadings, the truncated-cohort verdict is seed-robust;
+if F1 collapses or shuffles, the joint factor is partly 4-seed-specific. Recommended task
+types: data-analysis, comparative-analysis. Cost: <$0.25.
 
 </details>
 
@@ -3951,6 +4052,31 @@ than legacy DSI as the metric.
 </details>
 
 <details>
+<summary>🧪 <strong>Frontier-cell analysis: characterise cells the strict t0116
+filter excluded but which carry the joint factor</strong> (S-0117-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0117-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0117 admits 4431 cells; t0116 admits 869. The 3562 excluded cells split into 'frontier' (just
+below one threshold: DSI in (0.5, 0.7] OR PD in (5, 10]) and 'bulk' (deep-below). The frontier
+cells are most informative for why the joint factor only appears when they are admitted.
+Steps: (1) extract frontier cells from pooled_all_cells.parquet, (2) project them onto t0117
+F1 scores, (3) compare F1-score distributions of frontier vs bulk vs t0116-included via KS +
+means, (4) refit varimax FA on frontier-only cells (n approx 1500-2000) and check whether F1
+reappears alone. Decision: if frontier-only FA also yields joint F1 with r_DSI/r_PD > 0.3, the
+joint factor lives in the frontier band; if not, the joint factor requires the full mixed
+pool. Recommended task types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
 <summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
 DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
 
@@ -4388,6 +4514,32 @@ soma-row radii in dsgc-baseline-morphology-calibrated. Fixes the on-soma current
 distribution for downstream spike-initiation simulations without changing the mean soma radius
 or any dendritic row. Creative_thinking.md section F4. Recommended task types:
 feature-engineering, correction.
+
+</details>
+
+<details>
+<summary>📊 <strong>Interpret F1's biological meaning: top-loading features of the
+joint DSI-PD factor in the unfiltered pool</strong> (S-0117-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0117-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0117 confirms F1 is a joint DSI-PD axis but stops short of biological interpretation - it
+reports F1's r_DSI/r_PD but not its top loadings on the 68-d feature vector (54-d electrophys
++ 14-d morphology). The latent-drivers question is only partially answered. Read
+results/data/factor_loadings.csv, rank F1's loadings by absolute value, and identify the top-7
+ephys parameters and top-3 morphology parameters loading on F1. Cross-reference t0116's pooled
+F1 top loadings (SK_AIS + primary_branch_pd_concentration) and to t0108/t0110 strict/relaxed
+comparison. Write a focused answer asset 'pooled-all-cells-f1-biological-interpretation' with
+the loading table plus a 4-sentence biological interpretation: which channels and morphology
+parameters jointly drive both DSI and PD when the full quality range is admitted? Recommended
+task types: data-analysis, answer-question. Cost: <$0.10.
 
 </details>
 

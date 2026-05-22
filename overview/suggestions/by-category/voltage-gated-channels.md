@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-95 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **80 open** (22
-high, 47 medium, 11 low), **15 closed**.
+96 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **81 open** (22
+high, 48 medium, 11 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1053,6 +1053,32 @@ Nav1.6+Kv3, and THIN_AXON with Nav1.6+Kdr at literature-consensus densities, (c)
 t0022 12-angle sweep and checks DSI and peak rate do not regress, and (d) registers a new
 sibling library asset. Recommended task types: infrastructure-setup, build-model,
 write-library.
+
+</details>
+
+<details>
+<summary>📊 <strong>Interpret F1's biological meaning: top-loading features of the
+joint DSI-PD factor in the unfiltered pool</strong> (S-0117-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0117-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0117 confirms F1 is a joint DSI-PD axis but stops short of biological interpretation - it
+reports F1's r_DSI/r_PD but not its top loadings on the 68-d feature vector (54-d electrophys
++ 14-d morphology). The latent-drivers question is only partially answered. Read
+results/data/factor_loadings.csv, rank F1's loadings by absolute value, and identify the top-7
+ephys parameters and top-3 morphology parameters loading on F1. Cross-reference t0116's pooled
+F1 top loadings (SK_AIS + primary_branch_pd_concentration) and to t0108/t0110 strict/relaxed
+comparison. Write a focused answer asset 'pooled-all-cells-f1-biological-interpretation' with
+the loading table plus a 4-sentence biological interpretation: which channels and morphology
+parameters jointly drive both DSI and PD when the full quality range is admitted? Recommended
+task types: data-analysis, answer-question. Cost: <$0.10.
 
 </details>
 

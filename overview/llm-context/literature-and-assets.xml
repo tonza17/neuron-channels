@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-21T20:42:04Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-22T13:21:58Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>282734</char_count>
-    <byte_count>283160</byte_count>
-    <estimated_tokens>70683</estimated_tokens>
+    <char_count>287290</char_count>
+    <byte_count>287726</byte_count>
+    <estimated_tokens>71822</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -224,9 +224,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0114_seed7755_no_autostop</id>
         <id>t0115_seed9354_no_autostop</id>
         <id>t0116_pooled_pca_cluster_factor_dsi07_pd10</id>
+        <id>t0117_pooled_pca_cluster_factor_all_cells_4_seeds</id>
       </source_ids>
       <content>
-Completed tasks: 109
+Completed tasks: 110
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -881,6 +882,12 @@ ID: t0116_pooled_pca_cluster_factor_dsi07_pd10
 Completed: 2026-05-21
 Short description: Pool DSI&gt;0.7 ∧ PD&gt;10 Hz cells from t0106 (s44), t0112 (s77), t0114 (s7755), t0115 (s9354); PCA + KMeans on electrophys (54-d) and morphology (14-d) subspaces + factor analysis on the full 68-d vector.
 Result summary: Results Summary: Pooled PCA + Cluster + Factor Analysis of DSI &gt; 0.7 / PD &gt; 10 Cells (4 Seeds) Summary Pooled **869** unique joint-pass survivor cells (`dsi_vector_sum &gt; 0.7 ∧ pd_rate_hz &gt; 10.0`) from four NSGA-II runs (t0106 seed 44, t0112 seed 77, t0114 seed 7755, t0115 seed 9354), ran a unified PCA + KMeans + varimax factor analysis on the standardised 68-d feature pool, and produced three answer assets covering basin connectivity, displacement from random init, and latent drivers of joint-pass quality. Headline finding: the four-seed cohort fragments into **seed-specific sub-basins** (electrophys KMeans NMI = **0.929**; morphology KMeans NMI = **0.889**), not a single connected manifold...
+
+## Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds
+ID: t0117_pooled_pca_cluster_factor_all_cells_4_seeds
+Completed: 2026-05-22
+Short description: Repeat t0116 PCA + KMeans + varimax FA across seeds 44/77/7755/9354 with NO DSI/PD filter; tests whether t0116&#x27;s seed-specific basin pattern is a strict-cohort artefact.
+Result summary: Results Summary: Pooled PCA + Cluster + Factor Analysis of ALL Cells (4 seeds, no filter) Summary Pooled **4 431** unique cells (1 065 + 654 + 1 686 + 1 026 across seeds 44 / 77 / 7755 / 9354) from the same four NSGA-II runs as t0116, but with NO DSI / PD cohort filter. Ran the identical PCA + KMeans + varimax FA pipeline and produced three answer assets plus an explicit head-to-head `results/data/t0116_comparison.csv`. **Headline finding: the truncated-cohort artefact is confirmed** — F1 in the unfiltered pool is a joint DSI-PD factor (r_DSI = **+0.421**, r_PD = **+0.352**, both &gt; 0.30), whereas no factor crossed |r| &gt; 0.30 on both axes in t0116. The seed-specific basin pattern also weakens...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -958,9 +965,12 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>pooled-survivors-basin-connectivity-dsi07-pd10</id>
         <id>pooled-survivors-displacement-from-init-dsi07-pd10</id>
         <id>pooled-survivors-latent-drivers-dsi07-pd10</id>
+        <id>pooled-all-cells-basin-connectivity-without-filter</id>
+        <id>pooled-all-cells-displacement-from-init-full-pool</id>
+        <id>pooled-all-cells-truncated-cohort-artefact-test</id>
       </source_ids>
       <content>
-Answers: 39
+Answers: 42
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1268,6 +1278,30 @@ Confidence: medium
 Categories: direction-selectivity, compartmental-modeling, voltage-gated-channels
 
 F1 is the dominant DSI driver (r=-0.589, p ~ 1e-82) and is mixed — its top loadings include both electrophys channels (SK_AIS, SKAHP, NAP) and a morphology parameter (primary_branch_pd_concentration). F3 is the dominant PD-rate driver (r=+0.746, p ~ 1e-155) and is purely electrophys (NAR, IH, NAV16_SOMA, BK channels, RA). No single factor crosses |r|&gt;0.3 on both DSI and PD simultaneously, so the strict-cohort pool does not contain a joint DSI-PD axis — the answer to &quot;are the drivers shared?&quot; is no in this strict cohort, but t0110&#x27;s relaxed-cohort analysis shows this is a known truncated-cohort artefact.
+
+## Does the unfiltered pool (every NSGA-II evaluation, no DSI/PD cohort filter) form a single connected manifold across seeds 44, 77, 7755, and 9354, or does the seed-specific basin pattern observed at the strict cohort (t0116) persist when low-DSI / low-PD cells are also admitted?
+ID: pooled-all-cells-basin-connectivity-without-filter
+Created by: t0117_pooled_pca_cluster_factor_all_cells_4_seeds on 2026-05-22
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+The seed-specific basin pattern partially dissolves once the cohort filter is removed: the pool reconnects across seeds but does not form a single connected manifold. Electrophys KMeans NMI vs seed drops from 0.929 (t0116, strict cohort) to 0.562 (t0117, no filter, n=4431 cells, k=4), and morphology NMI drops from 0.889 to 0.313 — the morphology subspace shows much stronger reconnection than the electrophys subspace. Even at the unfiltered pool both partitions remain significantly seed-aligned (chi-square p&lt;&lt;0.001), so seed effects are detectable but no longer dominant.
+
+## How far did NSGA-II travel from gen-0 (generation == 1) in each seed when the full quality range is admitted (no DSI / PD filter), and is the per-seed displacement pattern observed at the strict cohort (seed 44 furthest, seed 9354 closest) preserved at the unfiltered pool?
+ID: pooled-all-cells-displacement-from-init-full-pool
+Created by: t0117_pooled_pca_cluster_factor_all_cells_4_seeds on 2026-05-22
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+Per-seed displacement drops by roughly 5-10x at the unfiltered pool: mean 68-d displacement collapses from ~60 (all seeds, t0116) to ~9 (all seeds, t0117), and mean PC1+PC2 displacement from 15.0 / 8.5 / 13.3 / 2.4 (seeds 44 / 77 / 7755 / 9354 at t0116) to 4.9 / 1.5 / 5.7 / 1.6 (t0117). The relative ordering is partially preserved — seeds 44 and 7755 remain the two furthest from random init at t0117 (4.9 and 5.7 in PC12, top of the table), and seed 9354 remains close to its random init (1.6) — but seed 77 drops from second-furthest to nearly tied with seed 9354 because the strict cohort retained only the Pareto-front tip of seed 77 (n=10), while the unfiltered pool admits all 654 of its...
+
+## Does at least one varimax factor recover a joint DSI-PD axis (|r_DSI| &gt; 0.3 AND |r_PD| &gt; 0.3) when the cohort filter is removed and the full DSI / PD quality range is in the pool, confirming the truncated-cohort artefact first observed at t0110 and t0116?
+ID: pooled-all-cells-truncated-cohort-artefact-test
+Created by: t0117_pooled_pca_cluster_factor_all_cells_4_seeds on 2026-05-22
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_DSI = +0.421, r_PD = +0.352, both p &lt; 1e-100, n = 4431), satisfying |r| &gt; 0.3 on both axes. At the strict cohort (t0116) zero of ten factors satisfied this criterion. The reappearance of a joint factor once the filter is lifted confirms the truncated-cohort-artefact hypothesis: the strict cohort genuinely erases the shared latent that couples DSI and PD; the decoupling is not an intrinsic substrate property.
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">

@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-16-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-39-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-42-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-117-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-454-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-118-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-460-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (43K)
-| [full](llm-context/full.xml) (698K) | [roadmap](llm-context/roadmap.xml) (134K) |
-[results](llm-context/results-deep-dive.xml) (543K) |
-[assets](llm-context/literature-and-assets.xml) (71K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (44K)
+| [full](llm-context/full.xml) (713K) | [roadmap](llm-context/roadmap.xml) (137K) |
+[results](llm-context/results-deep-dive.xml) (550K) |
+[assets](llm-context/literature-and-assets.xml) (72K)
 
-*Last updated: 2026-05-21 20:42 UTC*
+*Last updated: 2026-05-22 13:22 UTC*
 
 * **Budget**: **$63** spent of $100
 * **Remaining**: **$37**
@@ -82,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (109 total)](tasks/by-status/completed.md)
+## [Recently Completed (110 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0117 | [Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds](../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) | [`results`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/results_detailed.md) | 2026-05-22 13:16 |
 | 0116 | [Pooled PCA + cluster + factor analysis of DSI>0.7 / PD>10 cells across 4 seeds](../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) | [`results`](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/results/results_detailed.md) | 2026-05-21 20:35 |
 | 0115 | [Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | [`results`](../tasks/t0115_seed9354_no_autostop/results/results_detailed.md) | 2026-05-21 02:55 |
 | 0114 | [Seed-7755 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | [`results`](../tasks/t0114_seed7755_no_autostop/results/results_detailed.md) | 2026-05-20 16:20 |
@@ -95,9 +96,8 @@ No blocked tasks.
 | 0110 | [Factor analysis at relaxed cohort (DSI > 0.2 AND PD > 3) to test all-negative PD claim](../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) | [`results`](../tasks/t0110_relaxed_cohort_factor_analysis/results/results_detailed.md) | 2026-05-18 19:30 |
 | 0109 | [Morphology gallery (10 per cluster) for the four t0108 morphology clusters](../overview/tasks/task_pages/t0109_t0108_morph_cluster_gallery.md) | [`results`](../tasks/t0109_t0108_morph_cluster_gallery/results/results_detailed.md) | 2026-05-18 17:55 |
 | 0108 | [Cluster + factor analysis of t0106 cells at DSI>0.5 AND PD>10](../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) | [`results`](../tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/results_detailed.md) | 2026-05-18 16:00 |
-| 0107 | [8-direction polar re-evaluation of 10 random top-50 t0106 cells](../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | [`results`](../tasks/t0107_t0106_polar_8dir_recheck/results/results_detailed.md) | 2026-05-18 11:25 |
 
-*99 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*100 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +122,123 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (409 open)](suggestions/)
+## [Recent Suggestions (415 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
+joint DSI-PD factor disappears</strong> (S-0117-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 confirmed the truncated-cohort artefact: F1 is a joint DSI-PD factor (r_DSI=+0.421,
+r_PD=+0.352) at the unfiltered pool, while t0116 (DSI>0.7 AND PD>10) had zero joint factors.
+S-0116-02 covers a single point at DSI>0.5; this suggestion is a parametric sweep. Re-run the
+t0117 pipeline at four DSI thresholds {0.3, 0.5, 0.7, 0.9} on the same pooled all-cells
+parquet, fit varimax FA at each, and plot (a) joint-factor count vs threshold and (b) F1's
+r_DSI/r_PD vs threshold. Decision: monotonic crossover between 0.5 and 0.7 means smooth
+range-restriction; a sharp cliff means a specific cell class dominates the joint variance.
+Recommended task types: data-analysis, comparative-analysis. Cost: <$0.30.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-seed factor analysis on the unfiltered pool: do the 4 seeds
+share F1, or are loadings seed-dependent?</strong> (S-0117-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117's pooled F1 is the central joint DSI-PD driver (r_DSI=+0.421, r_PD=+0.352, 12.6%
+variance). Basin-connectivity (ephys NMI=0.562, morph NMI=0.313) shows seeds still partly
+cluster; F1 could be (a) a shared substrate property or (b) a cross-basin confound where
+DSI/PD co-vary with seed identity. Refit FA(n=10) + varimax independently on each seed's
+unfiltered slice (s44 n=1065, s77 n=654, s7755 n=1686, s9354 n=1026 - all well powered,
+n>10*features=680), align factors to t0117 F1 by max-cosine, report per-seed top-10 loadings +
+r_DSI/r_PD. Distinct from S-0116-04 (strict cohort where only s7755 had enough cells).
+Decision: if all four per-seed analogues hit |r|>0.3 on both axes with the same top loadings,
+F1 is a true substrate property; if loadings diverge, F1 is partly a between-seed confound.
+Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>📊 <strong>Bootstrap loading stability and oblique-rotation sensitivity for
+the unfiltered-pool F1 joint factor</strong> (S-0117-03)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117's headline finding is a single factor (F1, 12.6% variance, r_DSI=+0.421, r_PD=+0.352)
+and the truncated-cohort verdict rides on it. Total variance dropped from 65.3% (t0116) to
+34.9% (t0117), so F1 may be less stable. Draw B=200 bootstrap resamples of the 4431-cell pool,
+refit FA(n=10)+varimax, align factors to t0117 by max-cosine, report median +/- IQR of F1's
+r_DSI, r_PD, variance, and top-7 loadings. Also rerun with oblique promax (kappa=4) and
+n_components=11. Distinct from S-0116-05 (strict cohort where no joint factor existed); this
+validates the unfiltered-pool joint factor. Decision: if F1's r_DSI/r_PD 95% CIs straddle 0.3,
+the verdict needs softening; if both stay clear of 0.3, the verdict is robust. Recommended
+task types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Frontier-cell analysis: characterise cells the strict t0116
+filter excluded but which carry the joint factor</strong> (S-0117-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 admits 4431 cells; t0116 admits 869. The 3562 excluded cells split into 'frontier' (just
+below one threshold: DSI in (0.5, 0.7] OR PD in (5, 10]) and 'bulk' (deep-below). The frontier
+cells are most informative for why the joint factor only appears when they are admitted.
+Steps: (1) extract frontier cells from pooled_all_cells.parquet, (2) project them onto t0117
+F1 scores, (3) compare F1-score distributions of frontier vs bulk vs t0116-included via KS +
+means, (4) refit varimax FA on frontier-only cells (n approx 1500-2000) and check whether F1
+reappears alone. Decision: if frontier-only FA also yields joint F1 with r_DSI/r_PD > 0.3, the
+joint factor lives in the frontier band; if not, the joint factor requires the full mixed
+pool. Recommended task types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>5-seed unfiltered-pool re-analysis (adding t0113 seed 2247) to
+test joint-factor robustness</strong> (S-0117-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 used the same 4 seeds as t0116 (44/77/7755/9354) and deliberately excluded t0113 (seed
+2247) to isolate the cohort-filter effect. With the joint factor now confirmed, the next
+question is whether F1 survives the addition of a fifth independent seed. Re-run t0117's
+pipeline end-to-end with t0113 as the fifth source (no DSI/PD filter, dedup at 6-decimal
+vector convention, union-pool standardiser), regenerate the loadings heatmap and
+factor_correlations.csv. Distinct from S-0116-01 (5-seed on the strict cohort, addresses basin
+isolation); this 5-seed run addresses joint-factor robustness. Decision: if F1 still passes
+|r|>0.3 on both axes with the same top loadings, the truncated-cohort verdict is seed-robust;
+if F1 collapses or shuffles, the joint factor is partly 4-seed-specific. Recommended task
+types: data-analysis, comparative-analysis. Cost: <$0.25.
+
+</details>
+
+<details>
+<summary>📊 <strong>Interpret F1's biological meaning: top-loading features of the
+joint DSI-PD factor in the unfiltered pool</strong> (S-0117-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 confirms F1 is a joint DSI-PD axis but stops short of biological interpretation - it
+reports F1's r_DSI/r_PD but not its top loadings on the 68-d feature vector (54-d electrophys
++ 14-d morphology). The latent-drivers question is only partially answered. Read
+results/data/factor_loadings.csv, rank F1's loadings by absolute value, and identify the top-7
+ephys parameters and top-3 morphology parameters loading on F1. Cross-reference t0116's pooled
+F1 top loadings (SK_AIS + primary_branch_pd_concentration) and to t0108/t0110 strict/relaxed
+comparison. Write a focused answer asset 'pooled-all-cells-f1-biological-interpretation' with
+the loading table plus a 4-sentence biological interpretation: which channels and morphology
+parameters jointly drive both DSI and PD when the full quality range is admitted? Recommended
+task types: data-analysis, answer-question. Cost: <$0.10.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector
@@ -197,125 +313,68 @@ basin-attractor signature that distinguishes rich-yield seeds (44, 7755) from sl
 
 </details>
 
-<details>
-<summary>🔧 <strong>Backport: regenerate t0114's top50_morphologies_seed7755.png with
-full dendrite trees (correction task)</strong> (S-0115-05)</summary>
-
-**Kind**: technique | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
-
-t0114's top50_morphologies_seed7755.png drew only the soma points, not the full dendrite tree,
-making the chart visually useless for characterising the morphology distribution of high-yield
-cells. t0115 used the corrected build_top50_morphologies.py helper that walks every section in
-the NEURON cell object via generate_fixed_morphology -> result.section_endpoints_xy ->
-matplotlib LineCollection. Concrete action: create a small correction task that regenerates
-the t0114 chart using the t0115 helper, files a corrections/ overlay updating the t0114 chart
-path, and verifies via Read tool that subplots show branching trees, not dots. Recommended
-task types: correction. Cost: <$0.05.
-
-</details>
-
-<details>
-<summary>📚 <strong>Project memory: re-pulling all_evaluations.json over SCP is slow;
-build a streaming /tail variant</strong> (S-0115-06)</summary>
-
-**Kind**: library | **Priority**: low | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
-
-Across t0114 + t0115 the operator triggered ~12 SCP re-pulls of the all_evaluations_seed*.json
-file (mean ~5 MB each). Each pull took 15-30 s SSH overhead, in total ~5 minutes of wasted
-wall-clock just for fetches. A streaming variant (write a small remote helper that emits only
-the new evaluations since the last fetch, indexed by generation; client maintains a local
-accumulator) would reduce per-pull cost to <2 s. Concrete action: add `tail_evaluations.py` to
-the t0114/t0115 family code; expose via a remote SSH alias `nsga2-tail`. Recommended task
-types: write-library. Cost: <$0.05.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Investigate the seed-44 / seed-7755 / seed-9354 'rich-yield'
-parameter signature</strong> (S-0115-07)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
-
-Three of the five S-0112-01 batch seeds (44, 7755, 9354) all exceeded the Hay 2011 0.40%
-acceptance envelope, while seeds 77 and 2247 sat at or below it. The 484 vs 7 vs 63 LEGIT
-joint-pass cell count spread is much larger than the t0106/t0112/t0113 protocol diff implies,
-suggesting seed-specific search-basin attractors. Concrete action: compute the pairwise
-normalised L2 distance between every t0106 / t0114 / t0115 strict Pareto cell in 68-d
-parameter space; identify any cluster signatures that distinguish 'rich-yield' from
-'sparse-yield' seeds; report whether the rich-yield Pareto fronts share a common parameter
-sub-volume vs each occupying a distinct sub-volume. Recommended task types: data-analysis.
-Cost: <$0.10.
-
-</details>
-
-<details>
-<summary>🧪 <strong>5-seed pooled re-analysis adding t0113 (seed 2247) via correction
-to the t0116 pipeline</strong> (S-0116-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0116_pooled_pca_cluster_factor_dsi07_pd10](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
-
-t0116's 4-seed pool (44/77/7755/9354) was a deliberate first cut; seed 2247 (t0113) was
-excluded because its joint-pass cells are silence-guard DSI=1.0 saturations (per
-S-0113-04/S-0113-06). Re-run the t0116 pipeline end-to-end with t0113 added as the fifth
-source (5-seed pool, same strict filter DSI>0.7 AND PD>10, silence-guard tightened to >=3 PD
-spikes per S-0113-06), regenerate every chart and CSV, and write a corrections/ overlay that
-points consumers at the 5-seed artefacts. Decision rule: if seed-aligned cluster pattern
-survives (NMI > 0.7 on both partitions), the basin-isolation finding is robust; if NMI drops
-below 0.5, the 4-seed result was an artefact of seed choice. Recommended task types:
-data-analysis, correction. Cost: <$0.20.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Relaxed-cohort (DSI > 0.5) pooled re-analysis to test
-truncated-cohort artefact on joint-factor decoupling</strong> (S-0116-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0116_pooled_pca_cluster_factor_dsi07_pd10](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
-
-t0116's strict DSI>0.7 cohort produced no joint factor (|r|>0.3 on both DSI and PD). t0110
-documented that strict-cohort filters truncate joint variance (restriction-of-range); t0108's
-strict cohort identified F10 as a joint factor, t0110's relaxed cohort found a different sign
-pattern. Re-run the t0116 pipeline (4 or 5 seeds, depending on S-0116-01) with the cohort
-filter relaxed from DSI>0.7 to DSI>0.5 (matching t0108/t0110); regenerate the factor heatmap
-and per-factor DSI/PD correlations. Decision: if a joint factor emerges at the relaxed
-threshold, t0116's 'no joint factor' is a truncated-cohort artefact and the latent-drivers
-answer must be re-interpreted conditional on cohort definition; if no joint factor emerges
-even at DSI>0.5, the multi-seed pool truly lacks a shared trade-off axis. Recommended task
-types: data-analysis, comparative-analysis. Cost: <$0.20.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Connected-component topological basin test (vs KMeans+NMI) on
-the t0116 pooled pool</strong> (S-0116-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0116_pooled_pca_cluster_factor_dsi07_pd10](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
-
-t0116's basin-connectivity answer rests on KMeans (k=3) silhouette + NMI(cluster,
-seed)=0.929/0.889. KMeans forces a partition even on a connected manifold and NMI inflates
-with small per-seed counts (seed 77 n=10). A topology-aware test asks the stronger question:
-is there any continuous path between seeds' cells in 68-d, or are they genuinely disconnected?
-Build a k-NN graph on the standardised 869x68 matrix (k in {5, 10, 20}), extract connected
-components via scipy.sparse.csgraph.connected_components, and report (a) component count vs
-k_nn, (b) per-component seed composition, (c) persistence of seed-isolation across k_nn
-values. Decision: if at k_nn=10 the pool has one giant component containing all 4 seeds,
-seed-aligned KMeans clusters are clusters-of-a-connected-manifold (weakens basin-isolation);
-if 4+ components each dominated by one seed, basin-isolation is corroborated. Distinct from
-S-0112-08 and S-0115-07. Recommended task types: data-analysis. Cost: <$0.20.
-
-</details>
-
-*399 more open suggestions → [open suggestions](suggestions/)*
+*405 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (83)](suggestions/)
+## [High Priority Suggestions (86)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
+joint DSI-PD factor disappears</strong> (S-0117-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117 confirmed the truncated-cohort artefact: F1 is a joint DSI-PD factor (r_DSI=+0.421,
+r_PD=+0.352) at the unfiltered pool, while t0116 (DSI>0.7 AND PD>10) had zero joint factors.
+S-0116-02 covers a single point at DSI>0.5; this suggestion is a parametric sweep. Re-run the
+t0117 pipeline at four DSI thresholds {0.3, 0.5, 0.7, 0.9} on the same pooled all-cells
+parquet, fit varimax FA at each, and plot (a) joint-factor count vs threshold and (b) F1's
+r_DSI/r_PD vs threshold. Decision: monotonic crossover between 0.5 and 0.7 means smooth
+range-restriction; a sharp cliff means a specific cell class dominates the joint variance.
+Recommended task types: data-analysis, comparative-analysis. Cost: <$0.30.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-seed factor analysis on the unfiltered pool: do the 4 seeds
+share F1, or are loadings seed-dependent?</strong> (S-0117-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117's pooled F1 is the central joint DSI-PD driver (r_DSI=+0.421, r_PD=+0.352, 12.6%
+variance). Basin-connectivity (ephys NMI=0.562, morph NMI=0.313) shows seeds still partly
+cluster; F1 could be (a) a shared substrate property or (b) a cross-basin confound where
+DSI/PD co-vary with seed identity. Refit FA(n=10) + varimax independently on each seed's
+unfiltered slice (s44 n=1065, s77 n=654, s7755 n=1686, s9354 n=1026 - all well powered,
+n>10*features=680), align factors to t0117 F1 by max-cosine, report per-seed top-10 loadings +
+r_DSI/r_PD. Distinct from S-0116-04 (strict cohort where only s7755 had enough cells).
+Decision: if all four per-seed analogues hit |r|>0.3 on both axes with the same top loadings,
+F1 is a true substrate property; if loadings diverge, F1 is partly a between-seed confound.
+Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>📊 <strong>Bootstrap loading stability and oblique-rotation sensitivity for
+the unfiltered-pool F1 joint factor</strong> (S-0117-03)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+
+t0117's headline finding is a single factor (F1, 12.6% variance, r_DSI=+0.421, r_PD=+0.352)
+and the truncated-cohort verdict rides on it. Total variance dropped from 65.3% (t0116) to
+34.9% (t0117), so F1 may be less stable. Draw B=200 bootstrap resamples of the 4431-cell pool,
+refit FA(n=10)+varimax, align factors to t0117 by max-cosine, report median +/- IQR of F1's
+r_DSI, r_PD, variance, and top-7 loadings. Also rerun with oblique promax (kappa=4) and
+n_components=11. Distinct from S-0116-05 (strict cohort where no joint factor existed); this
+validates the unfiltered-pool joint factor. Decision: if F1's r_DSI/r_PD 95% CIs straddle 0.3,
+the verdict needs softening; if both stay clear of 0.3, the verdict is robust. Recommended
+task types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector
@@ -454,70 +513,70 @@ Cost: ~$5 (2 seeds x ~$2-3 each).
 
 </details>
 
-<details>
-<summary>📚 <strong>Fix dill checkpoint pool-pickling failure in nsga2_driver.py:
-every gen across t0113 failed to dill-pickle</strong> (S-0113-02)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-05-20 | **Source**:
-[t0113_t0106_seed2247_replicate](../tasks/t0113_t0106_seed2247_replicate/)
-
-t0113's per-generation dill checkpoint failed on all 14 gens with `NotImplementedError: pool
-objects cannot be passed between processes or pickled`. Root cause: pymoo's
-`StarmapParallelization` wrapper holds a live `multiprocessing.Pool` reference inside the
-Algorithm object that dill cannot serialise. JSON-side resume worked, so runs were not lost,
-but the dill resume channel is broken across t0106/t0112/t0113. Fix options: (a) strip
-`problem.elementwise_runner` via `__getstate__/__setstate__` and re-attach on restore, (b)
-replace dill with cloudpickle, or (c) deprecate the dill checkpoint and make JSON checkpoint
-the sole resume mechanism (cleanest). Local-only, reusable across all downstream NSGA-II
-tasks. Recommended task types: write-library, infrastructure-setup. Cost: <$0.10.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Adopt (WINDOW=3, REL_THRESHOLD=0.015) as new project-default
-HV-plateau detector constants</strong> (S-0114-01)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-20 | **Source**:
-[t0114_seed7755_no_autostop](../tasks/t0114_seed7755_no_autostop/)
-
-t0114's offline detector replay (4 windows x 6 thresholds x 4 HV trajectories = 96 cells)
-selects (W*, T*) = (3, 0.015) as the smallest deviation from current (W=2, T=0.01) that (a)
-fires on t0106 at gen 39 within [20, 60], (b) does NOT fire prematurely on t0113's recorded 14
-gens (eliminates the gen-13 false positive), and (c) fires on t0114 at gen 26, inside
-Mohacsi2024's 20-60 gen convergence band. Concrete action: update the HV-plateau detector
-constants in the NSGA-II driver / skill template from (WINDOW=2, REL_THRESHOLD=0.01) to
-(WINDOW=3, REL_THRESHOLD=0.015); cite the 4-trajectory replay as design justification. Formal
-realisation of the recommendation prepared but not adopted in S-0113-03. Recommended task
-types: infrastructure-setup, data-analysis. Cost: <$0.10.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Execute t0115 seed-9354 NSGA-II run as the 5th seed completing
-the S-0112-01 substrate-rate batch</strong> (S-0114-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-20 | **Source**:
-[t0114_seed7755_no_autostop](../tasks/t0114_seed7755_no_autostop/)
-
-S-0112-01 requires a 5-seed sample at cadence-10 with auto-stop disabled to upgrade the
-substrate-rate estimate from 4-seed (44/77/2247/7755) to 5-seed. t0114 advanced this from 3 to
-4 seeds (mean 2.93%, SE 1.86%, 95% CI -0.71% to +6.56% still brackets Hay 2011's 0.40% and
-Druckmann 2007's 0.10%). The 5th seed is needed to tighten the SE below the 0.40% Hay
-envelope; without it, the substrate-rate point estimate (currently 7.3x above the Hay 2011
-envelope) cannot be claimed at p<0.05 significance. Concrete action: execute the
-already-scaffolded t0115_seed9354_no_autostop task (seed 9354, auto-stop disabled, cadence-10,
-gen ceiling 300, $25 cap), pool the 5-seed results, write the canonical substrate-rate report.
-The task scaffold already exists on main with source_suggestion=S-0112-01; this suggestion is
-the formal record that the 5th seed is being executed via t0115. Recommended task types:
-experiment-run. Cost: ~$1-3 (one Vast.ai EPYC run, matching t0114's $1.13 spend).
-
-</details>
-
-*73 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*76 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (39 total)](answers/)
+## [Recent Answers (42 total)](answers/)
+
+<details>
+<summary><strong>Does the unfiltered pool (every NSGA-II evaluation, no DSI/PD
+cohort filter) form a single connected manifold across seeds 44, 77, 7755,
+and 9354, or does the seed-specific basin pattern observed at the strict
+cohort (t0116) persist when low-DSI / low-PD cells are also
+admitted?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-22 | **Full answer**:
+[`pooled-all-cells-basin-connectivity-without-filter`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-basin-connectivity-without-filter/)
+
+The seed-specific basin pattern partially dissolves once the cohort filter is removed: the
+pool reconnects across seeds but does not form a single connected manifold. Electrophys KMeans
+NMI vs seed drops from 0.929 (t0116, strict cohort) to 0.562 (t0117, no filter, n=4431 cells,
+k=4), and morphology NMI drops from 0.889 to 0.313 — the morphology subspace shows much
+stronger reconnection than the electrophys subspace. Even at the unfiltered pool both
+partitions remain significantly seed-aligned (chi-square p<<0.001), so seed effects are
+detectable but no longer dominant.
+
+</details>
+
+<details>
+<summary><strong>How far did NSGA-II travel from gen-0 (generation == 1) in each
+seed when the full quality range is admitted (no DSI / PD filter), and is
+the per-seed displacement pattern observed at the strict cohort (seed 44
+furthest, seed 9354 closest) preserved at the unfiltered pool?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-22 | **Full answer**:
+[`pooled-all-cells-displacement-from-init-full-pool`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-displacement-from-init-full-pool/)
+
+Per-seed displacement drops by roughly 5-10x at the unfiltered pool: mean 68-d displacement
+collapses from ~60 (all seeds, t0116) to ~9 (all seeds, t0117), and mean PC1+PC2 displacement
+from 15.0 / 8.5 / 13.3 / 2.4 (seeds 44 / 77 / 7755 / 9354 at t0116) to 4.9 / 1.5 / 5.7 / 1.6
+(t0117). The relative ordering is partially preserved — seeds 44 and 7755 remain the two
+furthest from random init at t0117 (4.9 and 5.7 in PC12, top of the table), and seed 9354
+remains close to its random init (1.6) — but seed 77 drops from second-furthest to nearly tied
+with seed 9354 because the strict cohort retained only the Pareto-front tip of seed 77 (n=10),
+while the unfiltered pool admits all 654 of its cells, dominated by lower-quality individuals
+near gen-1.
+
+</details>
+
+<details>
+<summary><strong>Does at least one varimax factor recover a joint DSI-PD axis
+(|r_DSI| > 0.3 AND |r_PD| > 0.3) when the cohort filter is removed and the
+full DSI / PD quality range is in the pool, confirming the truncated-cohort
+artefact first observed at t0110 and t0116?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-22 | **Full answer**:
+[`pooled-all-cells-truncated-cohort-artefact-test`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-truncated-cohort-artefact-test/)
+
+Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_DSI = +0.421,
+r_PD = +0.352, both p < 1e-100, n = 4431), satisfying |r| > 0.3 on both axes. At the strict
+cohort (t0116) zero of ten factors satisfied this criterion. The reappearance of a joint
+factor once the filter is lifted confirms the truncated-cohort-artefact hypothesis: the strict
+cohort genuinely erases the shared latent that couples DSI and PD; the decoupling is not an
+intrinsic substrate property.
+
+</details>
 
 <details>
 <summary><strong>Does the joint-pass cohort (DSI > 0.7 AND PD > 10 Hz) form a single
@@ -650,66 +709,7 @@ morphology type therefore imposes a distinct channel regime in this cohort.
 
 </details>
 
-<details>
-<summary><strong>Does t0108's all-negative PD-rate factor-correlation column persist
-if we re-run the same varimax factor analysis on a less-truncated cohort,
-or is it a cohort-selection artifact?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-18 | **Full answer**:
-[`t0106-pd-correlation-sign-flip-relaxed-cohort`](../tasks/t0110_relaxed_cohort_factor_analysis/assets/answer/t0106-pd-correlation-sign-flip-relaxed-cohort/)
-
-It is a truncated-cohort artifact. Re-running the same varimax FA pipeline on 247 t0106 cells
-at the relaxed threshold DSI > 0.2 AND PD > 3 Hz (vs t0108's 150 cells at DSI > 0.5 AND PD >
-10) produces **2 of 10 factors with positive r(PD)** (F2 +0.136 at p=0.033, F4 +0.048 n.s.).
-DSI sign distribution flips from t0108's 4 / 6 (positive / negative) to 6 / 4. F1, the
-dominant axis in both cohorts, is also reinterpreted: in t0108 it appeared as a PD-only
-dropper (r_DSI = +0.06) because the DSI ceiling masked the DSI effect, but in t0110 it is
-revealed as the **joint failure axis** (r_DSI = −0.37, r_PD = −0.75). F2's loadings (high
-persistent-Na, low Mg-block, low primary-BK) identify "more persistent sodium → more firing"
-as a real PD-positive direction that the strict cohort completely hid.
-
-</details>
-
-<details>
-<summary><strong>Does 2-objective NSGA-II (DSI + PD-rate, with the DSI-silence guard
-applied) recover joint-pass cells where t0102's 3-objective run found
-zero?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-14 | **Full answer**:
-[`t0104-joint-pass-recovery-2obj`](../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/assets/answer/t0104-joint-pass-recovery-2obj/)
-
-No. Across 2,208 evaluations from two random-init NSGA-II seeds (44 and 55) running the
-2-objective DSI + PD formulation with the silence guard active, zero cells cleared the strict
-joint-pass corner (DSI >= 0.5 AND PD >= 30 Hz). The DSI extreme broke past 0.5 for the first
-time in the t0080-t0104 NSGA-II lineage (seed 55 gen 11, DSI = 0.5417 at PD = 3.57 Hz),
-confirming the substrate is not artificially capped by the silenced-cell DSI=1.0
-floating-point artifact that contaminated t0102's Pareto front. The L-shaped Pareto front
-replicates t0102's exactly — extremes reachable on each axis but the joint corner empirically
-empty — ruling out objective-vector dimensionality as the explanation for the
-substrate-limited reading.
-
-</details>
-
-<details>
-<summary><strong>Which factors (combinations of the 68 input parameters) explain DSI
-diversity versus PD diversity, and is there a joint factor or are the two
-outcomes orthogonal?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-05-14 | **Full answer**:
-[`dsi-pd-diversity-factor-decomposition`](../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/answer/dsi-pd-diversity-factor-decomposition/)
-
-The two outcomes are mostly orthogonal but partially coupled through one near-joint factor: a
-varimax factor analysis on the standardised 68-d matrix (N=85, 10 factors by Kaiser criterion
-capped at 10) finds F1 the only factor exceeding |r| = 0.25 on either outcome, with r_DSI =
--0.322 (p=0.003) and r_PD = -0.265 (p=0.014). No factor crosses the joint-factor threshold |r|
-> 0.3 on both, so the joint high-DSI / high-PD corner is not unlocked by a single low-d axis.
-F1's top loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM) are bootstrap-stable across 200
-resamples, but F3 through F10 are not. The substrate-limited reading from t0102 and t0104 is
-reinforced: DSI and PD share a weak common axis but remain substantially orthogonal.
-
-</details>
-
-*29 more answers → [answers](answers/)*
+*32 more answers → [answers](answers/)*
 
 ---
 

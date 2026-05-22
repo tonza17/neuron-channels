@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="qa" generated_at_utc="2026-05-21T20:42:04Z">
+<llm_context_archive preset_id="qa" generated_at_utc="2026-05-22T13:21:58Z">
   <archive_summary>
     <title>Questions and Answers</title>
     <description>Question-centric preset with the full answer corpus and compact project state.</description>
     <use_case>Answer review, follow-up questioning, and project knowledge-base chats.</use_case>
     <section_count>4</section_count>
-    <char_count>665467</char_count>
-    <byte_count>666673</byte_count>
-    <estimated_tokens>166366</estimated_tokens>
+    <char_count>701474</char_count>
+    <byte_count>702863</byte_count>
+    <estimated_tokens>175368</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -220,9 +220,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0114_seed7755_no_autostop</id>
         <id>t0115_seed9354_no_autostop</id>
         <id>t0116_pooled_pca_cluster_factor_dsi07_pd10</id>
+        <id>t0117_pooled_pca_cluster_factor_all_cells_4_seeds</id>
       </source_ids>
       <content>
-Completed tasks: 109
+Completed tasks: 110
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -877,6 +878,12 @@ ID: t0116_pooled_pca_cluster_factor_dsi07_pd10
 Completed: 2026-05-21
 Short description: Pool DSI&gt;0.7 ∧ PD&gt;10 Hz cells from t0106 (s44), t0112 (s77), t0114 (s7755), t0115 (s9354); PCA + KMeans on electrophys (54-d) and morphology (14-d) subspaces + factor analysis on the full 68-d vector.
 Result summary: Results Summary: Pooled PCA + Cluster + Factor Analysis of DSI &gt; 0.7 / PD &gt; 10 Cells (4 Seeds) Summary Pooled **869** unique joint-pass survivor cells (`dsi_vector_sum &gt; 0.7 ∧ pd_rate_hz &gt; 10.0`) from four NSGA-II runs (t0106 seed 44, t0112 seed 77, t0114 seed 7755, t0115 seed 9354), ran a unified PCA + KMeans + varimax factor analysis on the standardised 68-d feature pool, and produced three answer assets covering basin connectivity, displacement from random init, and latent drivers of joint-pass quality. Headline finding: the four-seed cohort fragments into **seed-specific sub-basins** (electrophys KMeans NMI = **0.929**; morphology KMeans NMI = **0.889**), not a single connected manifold...
+
+## Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds
+ID: t0117_pooled_pca_cluster_factor_all_cells_4_seeds
+Completed: 2026-05-22
+Short description: Repeat t0116 PCA + KMeans + varimax FA across seeds 44/77/7755/9354 with NO DSI/PD filter; tests whether t0116&#x27;s seed-specific basin pattern is a strict-cohort artefact.
+Result summary: Results Summary: Pooled PCA + Cluster + Factor Analysis of ALL Cells (4 seeds, no filter) Summary Pooled **4 431** unique cells (1 065 + 654 + 1 686 + 1 026 across seeds 44 / 77 / 7755 / 9354) from the same four NSGA-II runs as t0116, but with NO DSI / PD cohort filter. Ran the identical PCA + KMeans + varimax FA pipeline and produced three answer assets plus an explicit head-to-head `results/data/t0116_comparison.csv`. **Headline finding: the truncated-cohort artefact is confirmed** — F1 in the unfiltered pool is a joint DSI-PD factor (r_DSI = **+0.421**, r_PD = **+0.352**, both &gt; 0.30), whereas no factor crossed |r| &gt; 0.30 on both axes in t0116. The seed-specific basin pattern also weakens...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -954,9 +961,12 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>pooled-survivors-basin-connectivity-dsi07-pd10</id>
         <id>pooled-survivors-displacement-from-init-dsi07-pd10</id>
         <id>pooled-survivors-latent-drivers-dsi07-pd10</id>
+        <id>pooled-all-cells-basin-connectivity-without-filter</id>
+        <id>pooled-all-cells-displacement-from-init-full-pool</id>
+        <id>pooled-all-cells-truncated-cohort-artefact-test</id>
       </source_ids>
       <content>
-Answers: 39
+Answers: 42
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -9162,6 +9172,590 @@ hypothesis to test.
 [t0108]: ../../../../t0108_t0106_cluster_factor_dsi05_pd10/
 [t0110]: ../../../../t0110_relaxed_cohort_factor_analysis/
 [t0116]: ../../../
+
+## Does the unfiltered pool (every NSGA-II evaluation, no DSI/PD cohort filter) form a single connected manifold across seeds 44, 77, 7755, and 9354, or does the seed-specific basin pattern observed at the strict cohort (t0116) persist when low-DSI / low-PD cells are also admitted?
+ID: pooled-all-cells-basin-connectivity-without-filter
+Created by: t0117_pooled_pca_cluster_factor_all_cells_4_seeds on 2026-05-22
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+#### Question
+
+Does the unfiltered pool (every NSGA-II evaluation, no DSI/PD cohort filter) form a single
+connected manifold across seeds 44, 77, 7755, and 9354, or does the seed-specific basin pattern
+observed at the strict cohort (t0116) persist when low-DSI / low-PD cells are also admitted?
+
+#### Short Answer
+
+The seed-specific basin pattern partially dissolves once the cohort filter is removed: the pool
+reconnects across seeds but does not form a single connected manifold. Electrophys KMeans NMI vs
+seed drops from 0.929 (t0116, strict cohort) to 0.562 (t0117, no filter, n=4431 cells, k=4), and
+morphology NMI drops from 0.889 to 0.313 — the morphology subspace shows much stronger
+reconnection than the electrophys subspace. Even at the unfiltered pool both partitions remain
+significantly seed-aligned (chi-square p&lt;&lt;0.001), so seed effects are detectable but no longer
+dominant.
+
+#### Research Process
+
+The pipeline mirrors t0116 verbatim with one change: the `dsi_vector_sum &gt; 0.7 AND pd_rate_hz &gt;
+10.0` cohort filter is removed from `code/load_pooled_cells.py`. Every other module
+(`code/cluster_helpers.py`, `code/factor_analysis.py`, `code/cluster_electrophys.py`,
+`code/cluster_morphology.py`, `code/pooled_pca_with_overlay.py`, `code/morphology_rendering.py`,
+`code/cluster_seed_purity.py`) is copied into `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/`
+verbatim with namespace updates only — per the cross-task import rule.
+
+1. Load every evaluation record from the four NSGA-II predictions assets (t0106 seed 44, t0112
+   seed 77, t0114 seed 7755, t0115 seed 9354) with NO DSI / PD filter
+   (`code/load_pooled_cells.py`).
+2. Dedup by the 68-d vector rounded to 6 decimals (project convention from t0108 / t0116).
+3. Fit a single union-pool z-score standardiser on the 4431-cell pool
+   (`code/fit_standardiser.py`).
+4. Fit three PCAs on the standardised pool (combined 68-d, electrophys-only 54-d,
+   morphology-only 14-d), render `results/images/pca_combined.png`
+   (`code/pooled_pca_with_overlay.py`).
+5. Run KMeans on both 54-d and 14-d submatrices with `k ∈ {3, 4, 5, 6, 7}`, pick the headline k
+   by maximum mean silhouette (`code/cluster_electrophys.py`, `code/cluster_morphology.py`).
+6. Compute normalised mutual information (NMI) between cluster id and seed for both partitions,
+   plus chi-square contingency test on the cluster × seed crosstab
+   (`code/cluster_seed_purity.py`).
+7. Produce the head-to-head comparison table by reading t0116&#x27;s published numbers directly
+   (`results/data/t0116_comparison.csv` via `code/methodology_and_comparison.py`).
+
+Two-tier evidence: (a) visual inspection of the PCA scatter (qualitative) and (b) NMI +
+chi-square (quantitative). NMI is robust to sparse cells in the contingency table; chi-square&#x27;s
+asymptotic relies on expected counts ≥ 5, which holds in every cell of t0117&#x27;s larger pool (0/16
+electrophys cells below 5, 0/20 morphology cells below 5 — see
+`results/data/cluster_seed_purity.csv`).
+
+#### Evidence from Papers
+
+No paper-based evidence was used. The basin-connectivity question is internal to this project&#x27;s
+NSGA-II survivor pool and has no published benchmark.
+
+#### Evidence from Internet Sources
+
+No external internet sources were used.
+
+#### Evidence from Code or Experiments
+
+Pool composition (`results/data/per_seed_pool_counts.csv`):
+
+| Source | Seed | n_raw | n_unique |
+| --- | --- | --- | --- |
+| t0106 | 44 | 3744 | 1065 |
+| t0112 | 77 | 2016 | 654 |
+| t0114 | 7755 | 5952 | 1686 |
+| t0115 | 9354 | 5280 | 1026 |
+| TOTAL | - | 16992 | 4431 |
+
+PCA variance explained on the unfiltered pool (`results/images/pca_combined.png`) is sharply
+lower than at the strict cohort:
+
+| Subspace | t0116 PC1 (%) | t0116 PC2 (%) | t0117 PC1 (%) | t0117 PC2 (%) |
+| --- | --- | --- | --- | --- |
+| Combined 68-d | 31.0 | 15.0 | 14.7 | 8.3 |
+| Electrophys 54-d | 32.2 | 15.5 | 15.9 | 8.5 |
+| Morphology 14-d | 30.6 | 18.5 | 16.0 | 13.3 |
+
+The unfiltered pool has roughly half the PC1+PC2 variance fraction of the strict cohort because
+admitting the low-quality cells (most NSGA-II offspring at any given generation) re-introduces
+the full random-init dispersion that the strict cohort had eliminated.
+
+KMeans silhouette sweep on the 54-d electrophys subspace
+(`results/images/electrophys_silhouette.png`, `results/data/electrophys_clusters.csv`):
+
+| k | t0117 silhouette | t0116 silhouette |
+| --- | --- | --- |
+| 3 | 0.145 | 0.472 |
+| 4 (t0117 headline) | 0.158 | 0.294 |
+| 5 | 0.105 | 0.303 |
+| 6 | 0.112 | 0.277 |
+| 7 | 0.115 | 0.231 |
+
+At t0117 the chosen k is 4 with silhouette 0.158 — three to four times lower than t0116&#x27;s k=3,
+silhouette=0.472. The electrophys × seed crosstab at t0117 k=4
+(`results/data/electrophys_clusters.csv`):
+
+| seed | cluster 0 | cluster 1 | cluster 2 | cluster 3 |
+| --- | --- | --- | --- | --- |
+| 44 | 445 | 584 | 0 | 36 |
+| 77 | 633 | 0 | 0 | 21 |
+| 7755 | 313 | 0 | 1340 | 33 |
+| 9354 | 273 | 1 | 0 | 752 |
+
+Cluster 0 mixes all four seeds (445/633/313/273) — this is the basin-reconnection signal absent
+in t0116. Cluster 2 still captures 1340 of 1686 seed-7755 cells, and cluster 3 still captures
+752 of 1026 seed-9354 cells, so seed isolation is partial rather than complete.
+
+KMeans silhouette sweep on the 14-d morphology subspace
+(`results/images/morphology_silhouette.png`, `results/data/morphology_clusters.csv`):
+
+| k | t0117 silhouette | t0116 silhouette |
+| --- | --- | --- |
+| 3 | 0.144 | 0.529 |
+| 4 | 0.150 | 0.301 |
+| 5 (t0117 headline) | 0.153 | 0.313 |
+| 6 | 0.099 | 0.326 |
+| 7 | 0.106 | 0.344 |
+
+t0117 morphology k=5 mixes seeds heavily — every cluster contains contributions from all four
+seeds in non-trivial proportions, in contrast to t0116&#x27;s near-bijective seed-to-cluster mapping.
+
+Cluster-vs-seed purity head-to-head (`results/data/cluster_seed_purity.csv`,
+`results/data/t0116_comparison.csv`):
+
+| Partition | t0116 NMI | t0117 NMI | Δ |
+| --- | --- | --- | --- |
+| Electrophys (k chosen) | 0.929 (k=3) | 0.562 (k=4) | −0.367 |
+| Morphology (k chosen) | 0.889 (k=3) | 0.313 (k=5) | −0.576 |
+
+Both chi-square contingency tests at t0117 still reject the null of seed-cluster independence
+(p &lt; 1e−300 in both partitions), but with much lower NMI than t0116. The morphology NMI drop
+(0.889 → 0.313) is larger than the electrophys NMI drop (0.929 → 0.562), implying that the
+seed-specific morphology basins observed in t0116 were primarily a strict-cohort artefact — at
+the unfiltered pool the morphology subspace is dominated by the random init distribution which
+is common across seeds, not by per-seed Pareto-front structure.
+
+The per-cluster morphology grids (`results/images/electrophys_cluster_0_morphs.png` through
+`electrophys_cluster_3_morphs.png`) confirm the cross-seed mixing in cluster 0: representatives
+are drawn from all four seeds, in contrast to t0116 where each cluster&#x27;s top-15 came from a
+single seed.
+
+#### Synthesis
+
+The unfiltered pool partially reconnects the cross-seed manifold but does not erase the
+seed-specific signal entirely. The NMI numbers tell the full story: in the strict cohort
+(t0116), cluster boundaries match seed boundaries to within ~5 of 869 cells (NMI=0.929 / 0.889);
+in the unfiltered pool (t0117), 4431 cells distribute across 4 (electrophys) or 5 (morphology)
+clusters with NMI=0.562 / 0.313. The morphology subspace reconnects much more strongly than the
+electrophys subspace, which is consistent with the t0116 basin-isolation reading: the basin
+identity was always encoded primarily in discrete morphological structure (primary branch
+count, Strahler depth, branching angle), and admitting the gen-1 random-init population
+re-injects the shared morphology distribution that all four seeds drew from at t=0.
+
+This is essentially a confirmation of t0116&#x27;s basin-isolation hypothesis with an important
+refinement: the high NMI at the strict cohort was driven by the cohort filter itself, which
+selectively keeps the late-generation Pareto-front tips and discards the early-generation cells
+that occupy the shared random-init region. Once the filter is lifted, the late-generation
+basins remain detectable as a residual signal (NMI &gt; 0.3 in both partitions, p &lt; 1e−300), but
+they no longer dominate the cluster structure.
+
+For downstream tasks, the practical implication is symmetric to t0116&#x27;s: if the analysis is
+about NSGA-II&#x27;s high-quality Pareto-front structure, per-seed reporting is mandatory (the
+strict cohort&#x27;s NMI=0.929 makes seed a near-perfect proxy for cluster); if the analysis is
+about substrate-level parameter regularities (factor structure, joint DSI-PD relationships, see
+Q2), the unfiltered pool is the correct comparator because it preserves the random-init
+distribution that the strict cohort genuinely erases.
+
+#### Limitations
+
+* **Dedup ratio differs from t0116**. The unfiltered pool&#x27;s dedup ratio is 4431/16992 = 26%,
+  compared to t0116&#x27;s filter-then-dedup ratio of 869/3724 = 23%. Most of the t0117 unique cells
+  are from intermediate NSGA-II generations (not Pareto-front tips), which differ in vector
+  composition from the strict-cohort cells. The reported NMI drops therefore conflate two
+  effects: (a) genuine basin reconnection, and (b) the population-distribution shift away from
+  Pareto-front tips. Disentangling these would require a graded-DSI analysis (e.g., relaxed
+  thresholds like the suggested S-0116-02 DSI &gt; 0.5 follow-up).
+* **k differs across analyses**. t0116 picked k=3 in both partitions; t0117 picks k=4
+  (electrophys) and k=5 (morphology). Comparing NMI at different k values is well-defined (NMI
+  is normalised), but the cluster identities are no longer one-to-one comparable.
+* **Only four seeds**. t0113 (seed 2247) remains excluded for the same reason as t0116 — its
+  earlier autostop / pool-restart configuration would conflate the cohort-filter question with
+  a seed-coverage question. Including t0113 might further reduce NMI or add a new sub-basin.
+* **KMeans assumes spherical clusters**. The same assumption applies at t0117 as at t0116; the
+  much lower silhouette (0.158 / 0.153 vs t0116&#x27;s 0.472 / 0.529) indicates that the unfiltered
+  pool&#x27;s cluster structure is genuinely weaker, not that KMeans is mismatched to the geometry.
+
+#### Sources
+
+* Task: `t0106_long_pdnd_nsga2_300gen` — seed 44 NSGA-II run.
+* Task: `t0112_t0106_seed77_replicate` — seed 77 replicate.
+* Task: `t0114_seed7755_no_autostop` — seed 7755 replicate.
+* Task: `t0115_seed9354_no_autostop` — seed 9354 replicate.
+* Task: `t0108_t0106_cluster_factor_dsi05_pd10` — single-seed methodology precedent.
+* Task: `t0116_pooled_pca_cluster_factor_dsi07_pd10` — strict-cohort head-to-head reference.
+* Result data:
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/per_seed_pool_counts.csv`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/electrophys_clusters.csv`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/morphology_clusters.csv`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/cluster_seed_purity.csv`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/t0116_comparison.csv`.
+* Visualisations:
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/images/pca_combined.png`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/images/electrophys_silhouette.png`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/images/morphology_silhouette.png`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/images/electrophys_cluster_0_morphs.png`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/images/electrophys_cluster_1_morphs.png`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/images/electrophys_cluster_2_morphs.png`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/images/electrophys_cluster_3_morphs.png`.
+
+[t0106]: ../../../../t0106_long_pdnd_nsga2_300gen/
+[t0112]: ../../../../t0112_t0106_seed77_replicate/
+[t0114]: ../../../../t0114_seed7755_no_autostop/
+[t0115]: ../../../../t0115_seed9354_no_autostop/
+[t0108]: ../../../../t0108_t0106_cluster_factor_dsi05_pd10/
+[t0116]: ../../../../t0116_pooled_pca_cluster_factor_dsi07_pd10/
+
+## How far did NSGA-II travel from gen-0 (generation == 1) in each seed when the full quality range is admitted (no DSI / PD filter), and is the per-seed displacement pattern observed at the strict cohort (seed 44 furthest, seed 9354 closest) preserved at the unfiltered pool?
+ID: pooled-all-cells-displacement-from-init-full-pool
+Created by: t0117_pooled_pca_cluster_factor_all_cells_4_seeds on 2026-05-22
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+#### Question
+
+How far did NSGA-II travel from gen-0 (generation == 1) in each seed when the full quality range
+is admitted (no DSI / PD filter), and is the per-seed displacement pattern observed at the
+strict cohort (seed 44 furthest, seed 9354 closest) preserved at the unfiltered pool?
+
+#### Short Answer
+
+Per-seed displacement drops by roughly 5-10x at the unfiltered pool: mean 68-d displacement
+collapses from ~60 (all seeds, t0116) to ~9 (all seeds, t0117), and mean PC1+PC2 displacement
+from 15.0 / 8.5 / 13.3 / 2.4 (seeds 44 / 77 / 7755 / 9354 at t0116) to 4.9 / 1.5 / 5.7 / 1.6
+(t0117). The relative ordering is partially preserved — seeds 44 and 7755 remain the two
+furthest from random init at t0117 (4.9 and 5.7 in PC12, top of the table), and seed 9354
+remains close to its random init (1.6) — but seed 77 drops from second-furthest to nearly tied
+with seed 9354 because the strict cohort retained only the Pareto-front tip of seed 77 (n=10),
+while the unfiltered pool admits all 654 of its cells, dominated by lower-quality individuals
+near gen-1.
+
+#### Research Process
+
+The displacement-from-init computation reuses t0116&#x27;s exact procedure with one upstream change
+(no cohort filter applied during pool load):
+
+1. Load the unfiltered pool (n=4431; `code/load_pooled_cells.py`).
+2. Load the gen-0 random init from each seed (`code/load_pooled_gen0.py`); exactly 96 cells per
+   seed, totalling 384 cells.
+3. Fit a single union-pool 68-d z-score standardiser on the 4431-cell pool
+   (`code/fit_standardiser.py`).
+4. Fit the combined 68-d PCA on the standardised pool (`code/pooled_pca_with_overlay.py`).
+5. Project both the pool and the gen-0 cells onto the same combined 68-d PC1+PC2 plane.
+6. For each seed, compute the per-cell Euclidean displacement from the seed&#x27;s gen-0 centroid
+   in (a) PC1+PC2 space and (b) the full 68-d z-scored space. Report mean and 95th percentile
+   of these per-cell displacements.
+7. Persist as `results/data/gen0_displacement.csv`.
+8. Compare directly against t0116&#x27;s `results/data/gen0_displacement.csv` via
+   `code/methodology_and_comparison.py` -&gt; `results/data/t0116_comparison.csv`.
+
+#### Evidence from Papers
+
+No paper-based evidence was used.
+
+#### Evidence from Internet Sources
+
+No external internet sources were used.
+
+#### Evidence from Code or Experiments
+
+Per-seed displacement table at t0117 (`results/data/gen0_displacement.csv`):
+
+| seed | mean_disp_pc12 | mean_disp_68d | p95_disp_pc12 | p95_disp_68d | n_cohort | n_gen0 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 44 | 4.867 | 9.336 | 8.710 | 9.940 | 1065 | 96 |
+| 77 | 1.487 | 9.142 | 2.958 | 9.988 | 654 | 96 |
+| 7755 | 5.743 | 8.832 | 8.110 | 9.377 | 1686 | 96 |
+| 9354 | 1.590 | 8.882 | 2.764 | 9.523 | 1026 | 96 |
+
+Head-to-head comparison (`results/data/t0116_comparison.csv`):
+
+| Quantity | t0116 | t0117 | Δ |
+| --- | --- | --- | --- |
+| mean_disp_pc12[seed 44] | 15.026 | 4.867 | −10.159 |
+| mean_disp_68d[seed 44] | 61.252 | 9.336 | −51.916 |
+| mean_disp_pc12[seed 77] | 8.501 | 1.487 | −7.015 |
+| mean_disp_68d[seed 77] | 59.726 | 9.142 | −50.584 |
+| mean_disp_pc12[seed 7755] | 13.305 | 5.743 | −7.562 |
+| mean_disp_68d[seed 7755] | 60.576 | 8.832 | −51.744 |
+| mean_disp_pc12[seed 9354] | 2.370 | 1.590 | −0.779 |
+| mean_disp_68d[seed 9354] | 60.073 | 8.882 | −51.191 |
+
+Two patterns are visible:
+
+* **Absolute scale collapses uniformly**. The 68-d displacement drops from ~60 (very tight
+  range: 59.7 / 60.1 / 60.6 / 61.3) at t0116 down to ~9 (also tight: 8.8 / 8.9 / 9.1 / 9.3) at
+  t0117. The 68-d displacement is computed in z-scored space, and the z-score uses a different
+  standardiser at each task (t0116&#x27;s standardiser was fitted on the 869-cell cohort; t0117&#x27;s
+  was fitted on the 4431-cell pool). The drop therefore reflects two things: (a) the PCA&#x27;s
+  variance basis is different (t0117 captures less variance because the pool is much more
+  heterogeneous), and (b) the unfiltered pool&#x27;s mean cell is much closer to gen-0 than the
+  strict cohort&#x27;s mean cell, because most unfiltered cells are early-generation individuals
+  that NSGA-II has not yet moved far from random init.
+* **Relative ordering partially preserved**. At t0116: seed 44 furthest in PC12 (15.0), then
+  7755 (13.3), then 77 (8.5), then 9354 (2.4). At t0117: 7755 furthest in PC12 (5.7), then 44
+  (4.9), then 9354 (1.6), then 77 (1.5). Seeds 44 and 7755 swap order (because t0117&#x27;s pool
+  composition gives 7755 more cells: 1686 vs t0117&#x27;s 1065 for 44), but they remain the two
+  furthest. Seed 9354 remains close to gen-0 in both. Seed 77 drops from clearly third
+  (8.5 &gt;&gt; 2.4) to clearly fourth-but-tied (1.5 ≈ 1.6) — this is the largest qualitative change
+  in ordering.
+
+The PCA-with-gen0-overlay chart (`results/images/pca_with_gen0_overlay.png`) confirms visually
+that t0117&#x27;s gen-0 (grey x) cluster sits inside the dense centre of the unfiltered pool (o),
+while at t0116 (not shown here; see `tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/results/images/pca_with_gen0_overlay.png`)
+the gen-0 cluster sat well outside the survivor scatter. This is the geometric expression of
+the displacement-collapse finding: the strict-cohort cells sit on the periphery of the random-
+init distribution (large displacement); the unfiltered cells are dominated by cells near gen-1
+that have NOT been moved far (small displacement).
+
+#### Synthesis
+
+The displacement-from-init result delivers two findings, one expected and one revisionist:
+
+The expected finding is that absolute displacement collapses when the cohort filter is lifted:
+the unfiltered pool includes every NSGA-II offspring at every generation, including the gen-1
+random init itself and every offspring within a few mutation steps of it. The mean 68-d
+displacement therefore drops from ~60 to ~9 because the unfiltered pool&#x27;s centroid is no longer
+the Pareto-front tip but the population centroid, which sits much closer to gen-0 by
+construction. This is not a substrate-level finding but a population-composition finding.
+
+The revisionist finding is more interesting. At t0116, the per-seed displacement ordering (seed
+44 furthest, seed 9354 closest) was implicitly interpreted as &quot;NSGA-II travelled further from
+random init in seed 44 than in seed 9354&quot;. The t0117 unfiltered displacement ordering shows the
+swap between 44 and 7755 in PC12 and (more importantly) the near-tie between 77 and 9354. Both
+suggest the t0116 ordering reflected the strict cohort&#x27;s per-seed sample composition (seed
+9354&#x27;s 63 cells were drawn from a region near gen-0 by chance; seed 44&#x27;s 121 cells were drawn
+from further), not a robust substrate-level &quot;GA travels different distances per seed&quot; claim.
+Once the full pool is in play, the ordering depends much more on per-seed population size
+(7755&#x27;s 1686 cells vs 9354&#x27;s 1026 cells) than on per-seed exploration distance.
+
+For downstream tasks, the practical implication is: per-seed displacement is a sample-
+composition artefact, not a substrate property. If the relevant question is &quot;how far did
+NSGA-II move from random init in each seed?&quot;, the correct measurement is the **per-generation
+front advancement** (e.g., distance from gen-1 centroid to gen-300 centroid in PCA space, with
+no DSI / PD filter), not the mean displacement of a quality-filtered cohort. This is documented
+as a candidate follow-up suggestion.
+
+#### Limitations
+
+* **PCA basis differs between t0116 and t0117**. The 68-d displacement number is computed in
+  z-scored space using each task&#x27;s own standardiser, so the t0116 value (~60) and t0117 value
+  (~9) are NOT directly comparable as displacements in the same metric. The relative ordering
+  within each task is well-defined; the cross-task absolute-scale comparison is only meaningful
+  qualitatively (both shrink relative to gen-0 spread; t0117 shrinks more because pool is more
+  random-init-like). To make absolute comparison rigorous, both tasks would need to share a
+  single standardiser fitted on (e.g.) the gen-0 cells alone — this is documented as a possible
+  follow-up.
+* **Gen-0 is only 96 cells per seed**. The gen-0 centroid is estimated from 96 random-init
+  cells per seed, which has non-trivial sampling noise. The fact that t0117 reports ~9 for
+  every seed (very tight range 8.83-9.34) is partially the lower bound set by gen-0&#x27;s own
+  internal spread — at this scale further per-seed differentiation is hard to resolve.
+* **PC1+PC2 captures only 22.9% of variance**. At t0117 the combined-PCA PC1+PC2 explains 22.9%
+  of variance (vs t0116&#x27;s 46.1%), so the PC12 displacement is a less informative summary than
+  it was at t0116. The 68-d displacement is the more complete measure but, per above, requires
+  a shared standardiser for cross-task comparison.
+* **Per-seed n is uneven**. n_cohort varies from 654 (seed 77) to 1686 (seed 7755), so the
+  ordering between 44 and 7755 reflects a 1065-vs-1686 sample-size difference as much as any
+  substrate-level &quot;exploration distance&quot; difference.
+
+#### Sources
+
+* Task: `t0106_long_pdnd_nsga2_300gen` — seed 44 NSGA-II run.
+* Task: `t0112_t0106_seed77_replicate` — seed 77 replicate.
+* Task: `t0114_seed7755_no_autostop` — seed 7755 replicate.
+* Task: `t0115_seed9354_no_autostop` — seed 9354 replicate.
+* Task: `t0116_pooled_pca_cluster_factor_dsi07_pd10` — strict-cohort head-to-head reference.
+* Result data:
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/gen0_displacement.csv`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/t0116_comparison.csv`.
+* Visualisation:
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/images/pca_with_gen0_overlay.png`.
+
+[t0106]: ../../../../t0106_long_pdnd_nsga2_300gen/
+[t0112]: ../../../../t0112_t0106_seed77_replicate/
+[t0114]: ../../../../t0114_seed7755_no_autostop/
+[t0115]: ../../../../t0115_seed9354_no_autostop/
+[t0116]: ../../../../t0116_pooled_pca_cluster_factor_dsi07_pd10/
+
+## Does at least one varimax factor recover a joint DSI-PD axis (|r_DSI| &gt; 0.3 AND |r_PD| &gt; 0.3) when the cohort filter is removed and the full DSI / PD quality range is in the pool, confirming the truncated-cohort artefact first observed at t0110 and t0116?
+ID: pooled-all-cells-truncated-cohort-artefact-test
+Created by: t0117_pooled_pca_cluster_factor_all_cells_4_seeds on 2026-05-22
+Confidence: high
+Categories: direction-selectivity, compartmental-modeling
+
+#### Question
+
+Does at least one varimax factor recover a joint DSI-PD axis (|r_DSI| &gt; 0.3 AND |r_PD| &gt; 0.3)
+when the cohort filter is removed and the full DSI / PD quality range is in the pool, confirming
+the truncated-cohort artefact first observed at t0110 and t0116?
+
+#### Short Answer
+
+Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_DSI = +0.421, r_PD
+= +0.352, both p &lt; 1e-100, n = 4431), satisfying |r| &gt; 0.3 on both axes. At the strict cohort
+(t0116) zero of ten factors satisfied this criterion. The reappearance of a joint factor once
+the filter is lifted confirms the truncated-cohort-artefact hypothesis: the strict cohort
+genuinely erases the shared latent that couples DSI and PD; the decoupling is not an intrinsic
+substrate property.
+
+#### Research Process
+
+The factor-analysis pipeline mirrors t0116 / t0108 exactly with only the cohort filter removed
+upstream in `code/load_pooled_cells.py`:
+
+1. Load every record (no DSI / PD filter) from the four seeds.
+2. Dedup by the 68-d vector rounded to 6 decimals; persist `data/pooled_all_cells.parquet`
+   (n=4431 unique cells).
+3. Fit a single union-pool z-score standardiser; persist mean / std arrays.
+4. Compute correlation-matrix eigenvalues on the standardised matrix; count Kaiser eigenvalues
+   &gt; 1 (`code/factor_analysis.py` `run_factor_analysis`).
+5. Cap factor count at `KAISER_FACTOR_CAP = 10` (inherited from t0108).
+6. Refit `sklearn.decomposition.FactorAnalysis(n_components=n_factors)` with the chosen count.
+7. Apply varimax rotation (iterative SVD, gamma=1, tol=1e-6, max_iter=500) — same helper as
+   t0108 / t0110 / t0116.
+8. Compute rotated factor scores via the regression approximation `Z @ Λ @ pinv(ΛᵀΛ)`.
+9. Render the loadings heatmap to `results/images/factor_loadings_heatmap.png` and emit
+   per-factor variance + Pearson r vs DSI / PD to `results/data/factor_correlations.csv`.
+10. Flag every factor satisfying `|r_DSI| &gt; 0.30 AND |r_PD| &gt; 0.30` (the joint-DSI-PD criterion;
+    `JOINT_FACTOR_R_THRESHOLD = 0.30` in `code/constants.py`).
+
+#### Evidence from Papers
+
+No paper-based evidence was used. The truncated-cohort artefact question is internal to this
+project&#x27;s NSGA-II survivor cohort and has no published benchmark — its origin is in t0108
+(strict DSI &gt; 0.5 cohort, all-negative PD correlations) and was first identified as a candidate
+strict-cohort artefact by t0110.
+
+#### Evidence from Internet Sources
+
+No external internet sources were used.
+
+#### Evidence from Code or Experiments
+
+Factor count and total variance explained (`results/data/factor_correlations.csv`):
+
+| Quantity | t0116 (strict) | t0117 (no filter) |
+| --- | --- | --- |
+| Raw Kaiser eigenvalues &gt; 1 | 10 (capped at 10) | 15 (capped at 10) |
+| Factors retained | 10 | 10 |
+| Total variance explained | 65.3% | 34.9% |
+| Joint-factor count (|r| &gt; 0.3 on both) | 0 | 1 (F1) |
+
+The unfiltered pool has nearly double the number of raw Kaiser-eligible factors (15 vs 10) but
+the same number is retained because of the project&#x27;s KAISER_FACTOR_CAP = 10 inherited from
+t0108. Total variance explained is dramatically lower (34.9% vs 65.3%) because admitting the
+sub-threshold cells re-introduces the random-init dispersion — the strict cohort had already
+been pre-selected for a narrow region of parameter space, so its 10 factors covered a much
+higher proportion of its (smaller) variance.
+
+Per-factor table at t0117 (`results/data/factor_correlations.csv`):
+
+| Factor | var_explained_pct | r_dsi | r_pd | joint_factor_flag |
+| --- | --- | --- | --- | --- |
+| F1 | 12.61 | +0.421 | +0.352 | **True** |
+| F2 | 3.69 | +0.032 | +0.314 | False |
+| F3 | 3.48 | −0.004 | −0.172 | False |
+| F4 | 2.59 | +0.262 | −0.238 | False |
+| F5 | 4.25 | −0.262 | −0.554 | False |
+| F6 | 1.53 | −0.031 | −0.099 | False |
+| F7 | 1.96 | −0.019 | −0.080 | False |
+| F8 | 1.43 | +0.145 | −0.005 | False |
+| F9 | 1.08 | +0.077 | +0.040 | False |
+| F10 | 2.28 | +0.277 | +0.244 | False |
+
+F1 is the unambiguous joint factor: both r_DSI = +0.421 and r_PD = +0.352 exceed the |r| &gt; 0.30
+threshold by a comfortable margin, both with p-values astronomically below 0.05 (1.18e-189 and
+3.59e-129 respectively at n=4431). F1 alone explains 12.6% of the total 34.9% variance — by far
+the dominant factor.
+
+Direct head-to-head per-factor table at t0116 (`tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/results/data/factor_correlations.csv`):
+
+| Factor | t0116 var_pct | t0116 r_dsi | t0116 r_pd | t0116 joint? |
+| --- | --- | --- | --- | --- |
+| F1 | 30.06 | −0.589 | −0.210 | False (r_pd too small) |
+| F2 | 14.02 | −0.086 | −0.367 | False (r_dsi too small) |
+| F3 | 9.36 | −0.172 | +0.746 | False (r_dsi too small) |
+| F4 | 1.83 | +0.089 | −0.230 | False (both too small) |
+| F5 | 2.94 | +0.057 | +0.230 | False (both too small) |
+| F6 | 1.35 | −0.222 | +0.033 | False (r_pd too small) |
+| F7 | 1.36 | +0.087 | −0.009 | False (both too small) |
+| F8 | 1.87 | +0.014 | −0.038 | False (both too small) |
+| F9 | 1.10 | −0.026 | +0.070 | False (both too small) |
+| F10 | 1.38 | −0.059 | −0.095 | False (both too small) |
+
+At t0116 the highest |r_DSI| is 0.589 (F1) but with r_PD = −0.210 — below threshold. The highest
+|r_PD| is 0.746 (F3) but with r_DSI = −0.172 — below threshold. The strict cohort has DSI and PD
+each correlated with separate factors but no single factor coupling them, confirming the t0110
+artefact signature. Once the filter is lifted, the cells with low DSI and low PD re-enter the
+pool and a single shared latent re-emerges (t0117 F1).
+
+The loadings heatmap (`results/images/factor_loadings_heatmap.png`) shows F1&#x27;s loadings
+distributed across multiple electrophys + morphology parameters with no single dominant feature
+— consistent with a shared &quot;quality&quot; axis that the GA pushed against rather than a single
+mechanistic driver.
+
+#### Synthesis
+
+The unfiltered pool delivers a definitive answer to the t0110-originating question: the
+DSI-vs-PD decoupling observed at every strict cohort (t0108 DSI &gt; 0.5: all-negative PD
+correlations; t0116 DSI &gt; 0.7 AND PD &gt; 10 Hz: zero joint factors) is a truncated-cohort artefact
+in the strict sense. The substrate&#x27;s underlying parameter space genuinely has a shared
+DSI-PD latent (t0117 F1: r_DSI=+0.421, r_PD=+0.352), and the strict cohort filter erases this
+latent by retaining only cells from a narrow region of joint-quality space where DSI and PD have
+already been simultaneously optimised to high values. Once both have ceilings (the GA has hit
+the top of both objective dimensions), additional variation along the F1 direction stops moving
+either DSI or PD — so the correlation flattens to below 0.3 at the strict cohort.
+
+This conclusively confirms t0110&#x27;s finding (relaxed DSI &gt; 0.2 cohort: 2 of 10 factors had
+positive r(PD)) and extends it: at the fully unfiltered pool, the joint factor emerges as the
+dominant factor (12.6% variance explained, by far the largest of any factor in either t0116 or
+t0117). The substrate-level interpretation should NOT be &quot;DSI and PD are decoupled in this
+parameter space&quot; — that is a strict-cohort framing artefact. The substrate-level interpretation
+is &quot;there exists a shared quality axis F1 along which both DSI and PD increase together; high-DSI
+high-PD cells are at the top end of this axis; the cohort filter retains only the top of this
+axis and so masks the underlying correlation.&quot;
+
+For downstream tasks, the practical implication is: when reporting parameter-DSI / parameter-PD
+correlations, always either (a) use the unfiltered pool (or a relaxed DSI &gt; 0.2 cohort) or
+(b) explicitly note that strict-cohort correlations cannot be interpreted as substrate-level
+relationships. t0116&#x27;s all-negative joint-factor result remains valid as a description of the
+strict-cohort cells, but its substrate-level interpretation should be retracted in favour of
+this t0117 result.
+
+#### Limitations
+
+* **Gen-1 / early-generation cells dominate the pool**. The unfiltered pool admits the gen-0
+  random-init (n=384) and every subsequent generation including the very early ones where
+  NSGA-II has not yet found any high-quality cell. The F1 joint factor may therefore reflect
+  not only the substrate-level DSI-PD coupling but also the trajectory NSGA-II takes from a
+  random init to its Pareto front. A possible refinement is a generation-stratified analysis
+  (limit to generations ≥ 50 vs all generations); this is documented as a follow-up.
+* **t0117 F1 is not the same as any t0116 factor**. Cross-pool factor identity is not preserved
+  by varimax rotation — there is no formal correspondence between t0117 F1 and any specific
+  t0116 factor. The valid comparison is at the partition level (joint-factor count: 1 vs 0),
+  not at the per-factor level.
+* **The joint factor accounts for 12.6% of variance, not the majority**. The substrate-level
+  DSI-PD coupling is real but modest; most parameter variation does not project onto F1.
+  Mechanistic interpretation of F1&#x27;s loadings (which channels / morphology parameters drive
+  joint DSI-PD?) is left to a downstream task — t0117 only confirms its existence.
+* **n=4431 is large enough that very small effect sizes become statistically significant**.
+  Both r_DSI=+0.421 and r_PD=+0.352 are well above the |r| &gt; 0.30 threshold and would remain so
+  at much smaller sample sizes, so this is not a &quot;p-hacking by sample size&quot; finding. But the
+  reader should weight the effect magnitude (|r| ≈ 0.4), not the p-value, when judging
+  biological significance.
+
+#### Sources
+
+* Task: `t0106_long_pdnd_nsga2_300gen` — seed 44 NSGA-II run.
+* Task: `t0112_t0106_seed77_replicate` — seed 77 replicate.
+* Task: `t0114_seed7755_no_autostop` — seed 7755 replicate.
+* Task: `t0115_seed9354_no_autostop` — seed 9354 replicate.
+* Task: `t0108_t0106_cluster_factor_dsi05_pd10` — original strict-cohort observation of
+  all-negative PD correlations.
+* Task: `t0110_relaxed_cohort_factor_analysis` — first relaxed-cohort follow-up that flagged
+  the artefact at DSI &gt; 0.2.
+* Task: `t0116_pooled_pca_cluster_factor_dsi07_pd10` — strict DSI &gt; 0.7 AND PD &gt; 10 head-to-head
+  reference (joint-factor count = 0).
+* Result data:
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/factor_correlations.csv`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/factor_loadings.csv`,
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/data/t0116_comparison.csv`.
+* Visualisation:
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/images/factor_loadings_heatmap.png`.
+
+[t0108]: ../../../../t0108_t0106_cluster_factor_dsi05_pd10/
+[t0110]: ../../../../t0110_relaxed_cohort_factor_analysis/
+[t0116]: ../../../../t0116_pooled_pca_cluster_factor_dsi07_pd10/
       </content>
     </section>
   </sections>
