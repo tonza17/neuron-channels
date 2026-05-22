@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-118-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-460-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-119-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-466-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (44K)
-| [full](llm-context/full.xml) (713K) | [roadmap](llm-context/roadmap.xml) (137K) |
-[results](llm-context/results-deep-dive.xml) (550K) |
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (45K)
+| [full](llm-context/full.xml) (720K) | [roadmap](llm-context/roadmap.xml) (138K) |
+[results](llm-context/results-deep-dive.xml) (557K) |
 [assets](llm-context/literature-and-assets.xml) (72K)
 
-*Last updated: 2026-05-22 13:22 UTC*
+*Last updated: 2026-05-22 18:36 UTC*
 
 * **Budget**: **$63** spent of $100
 * **Remaining**: **$37**
@@ -82,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (110 total)](tasks/by-status/completed.md)
+## [Recently Completed (111 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0118 | [Re-simulate 10 cells per t0117 ephys cluster; plot g_E, g_I, Vm in PD and ND](../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) | [`results`](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/results/results_detailed.md) | 2026-05-22 18:31 |
 | 0117 | [Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds](../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) | [`results`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/results_detailed.md) | 2026-05-22 13:16 |
 | 0116 | [Pooled PCA + cluster + factor analysis of DSI>0.7 / PD>10 cells across 4 seeds](../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) | [`results`](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/results/results_detailed.md) | 2026-05-21 20:35 |
 | 0115 | [Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | [`results`](../tasks/t0115_seed9354_no_autostop/results/results_detailed.md) | 2026-05-21 02:55 |
@@ -95,9 +96,8 @@ No blocked tasks.
 | 0111 | [Brainstorm results session 22](../overview/tasks/task_pages/t0111_brainstorm_results_22.md) | [`results`](../tasks/t0111_brainstorm_results_22/results/results_detailed.md) | 2026-05-19 00:00 |
 | 0110 | [Factor analysis at relaxed cohort (DSI > 0.2 AND PD > 3) to test all-negative PD claim](../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) | [`results`](../tasks/t0110_relaxed_cohort_factor_analysis/results/results_detailed.md) | 2026-05-18 19:30 |
 | 0109 | [Morphology gallery (10 per cluster) for the four t0108 morphology clusters](../overview/tasks/task_pages/t0109_t0108_morph_cluster_gallery.md) | [`results`](../tasks/t0109_t0108_morph_cluster_gallery/results/results_detailed.md) | 2026-05-18 17:55 |
-| 0108 | [Cluster + factor analysis of t0106 cells at DSI>0.5 AND PD>10](../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) | [`results`](../tasks/t0108_t0106_cluster_factor_dsi05_pd10/results/results_detailed.md) | 2026-05-18 16:00 |
 
-*100 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*101 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +122,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (415 open)](suggestions/)
+## [Recent Suggestions (421 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
@@ -241,83 +241,86 @@ task types: data-analysis, answer-question. Cost: <$0.10.
 </details>
 
 <details>
-<summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector
-defaults across the project</strong> (S-0115-01)</summary>
+<summary>🧪 <strong>Re-simulate t0118 stratified sample on t0116 strict cohort (DSI >
+0.7 AND PD > 10) for a good-DSGC trace gallery</strong> (S-0118-01)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
 
-t0115's 55-gen unstopped HV trajectory adds a fifth datapoint to the offline detector-replay
-sweep proposed in S-0113-03 and refined in S-0114-01. The recommended (W*, T*) = (3, 0.015)
-pair would fire on t0115 around gen 30-45, inside Mohacsi2024's 20-60 gen convergence band,
-and would NOT fire prematurely on t0113's gen-14 trace. Concrete action: globally rewrite the
-HV-plateau detector constants in the NSGA-II driver template and the t0024 cell-build
-pipeline; document the new defaults in arf/skills/setup-remote-machine and
-arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: <$0.05.
-
-</details>
-
-<details>
-<summary>📊 <strong>5-seed substrate-rate batch (S-0112-01) is now complete; write
-canonical report</strong> (S-0115-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
-
-t0115 closes the S-0112-01 batch with 5 seeds (44, 77, 2247, 7755, 9354) on the identical 68-d
-Bed B + 14-d morphology substrate. Final 5-seed mean LEGIT-joint-pass acceptance rate is 2.58%
-+/- SE 1.50% (SD 3.35%, 95% CI -0.36% to +5.52%). Point estimate is 6.45x above Hay 2011
-(0.40%) and 25.8x above Druckmann 2007 (0.10%), but the 95% CI brackets both literature
-references. Three of five seeds (44, 7755, 9354) independently exceed Hay. Concrete action:
-write a canonical substrate-rate report consolidating all five tasks' results into a single
-comparable document with consistent metric conventions, embeddable in the project overview.
-Recommended task types: data-analysis, answer-question. Cost: <$0.20.
+t0118 found the unfiltered pool is heavily DSI ~ 0; only cluster 2 (s7755) supplied DSI >= 0.2
+cells, so the per-cluster trace grids do not show good DSGC behaviour for clusters 0/1/3.
+Apply the identical 10-per-cluster stratified-by-DSI-x-PD sampler and 3-mode trio protocol to
+t0116's strict 869-cell cohort, then re-cluster those cells with t0116's k=3 partition.
+Outcome: 30 cells (10 per t0116 cluster) whose traces actually show the canonical DSGC
+asymmetry mechanism across multiple clusters, not just one. Distinct from t0118 (unfiltered
+pool) and from S-0116-* (which stay in FA/clustering space without re-simulating). Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
 
 </details>
 
 <details>
-<summary>📊 <strong>8-direction polar re-evaluation of t0115's strict Pareto cells
-(mirrors S-0114-03 / S-0112-05)</strong> (S-0115-03)</summary>
+<summary>🧪 <strong>g_I sensitivity sweep on cluster-2 DSGC-competent cells: how does
+DSI vary with inhibition strength?</strong> (S-0118-02)</summary>
 
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
 
-t0115's 23 strict Pareto cells span the DSI/PD-rate frontier: best LEGIT DSI=0.9833 at
-PD=28.33 Hz, best PD=89.29 Hz at DSI~0, and DSI=0.7899 / PD=50.71 Hz (best combined). t0107
-found 2-direction ratio DSI overstates 8-direction vector-sum DSI by ~0.42 absolute on t0106
-high-DSI cells; applied here yields ~0.56 (vs Trenholm2013's 0.76 / Oesch2005's 0.74
-baselines). Concrete action: re-evaluate all 23 t0115 strict Pareto cells at 8 directions
-every 45 deg using t0107's protocol. Distinct from S-0114-03 (t0114 Pareto cells), S-0112-05
-(t0112 cells), and S-0106-03 (t0106 cells); together these would cover the full 4-rich-seed
-cohort. Recommended task types: experiment-run, comparative-analysis. Cost: <$1.00.
+t0118 found g_I / g_E ratio at peak g_E is the most variable cell-level metric (6 orders of
+magnitude, 0.03 to 440), and cluster 2 (s7755) is the only cluster where re-simulated traces
+show the DSGC asymmetry mechanism. Take the 5 highest-DSI cluster-2 cells, hold every other
+parameter fixed, and sweep global GABA NetCon weight (w_gaba_us) in 7 log steps from 0.1x to
+10x (plus symmetric w_ach control). For each (cell, w_gaba_factor) re-run the FULL mode in
+PD+ND, extract DSI, peak g_I, g_I/g_E ratio. Plot DSI vs w_gaba per cell. Decision: if DSI
+peaks at the same w_gaba factor across cells, the cohort shares a canonical E-I balance; if
+optimum varies, the optimiser found cell-specific compensation. ~140 NEURON runs. Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
 
 </details>
 
 <details>
-<summary>🧪 <strong>Investigate why seed 9354 took 25 gens to find the joint-pass
-corner (vs t0114's 8 gens)</strong> (S-0115-04)</summary>
+<summary>📊 <strong>Diagnose evaluator-disagreement bug for cell 77_15_1356: t0117
+DSI = 0.93, t0118 canonical protocol = 0 spikes</strong> (S-0118-03)</summary>
 
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
 
-t0115's late corner-find (joint-pass cells emerging at gen 25) vs t0114's early corner-find
-(gen 8) is the most striking seed-to-seed protocol difference at fixed substrate + algorithm.
-The 17-gen lag corresponds to ~3 full pool-restart cycles, suggesting the random-init basin or
-LHS sampling distribution for seed 9354 was systematically further from the joint-pass region.
-Concrete action: compare t0115's gen-1 LHS-init population against t0114's by computing (a)
-nearest-distance from each init cell to the eventual joint-pass corner in normalised 68-d
-parameter space, (b) the distribution of init-cell DSI and PD values, and (c) the genetic
-operators' (SBX/PM) effective step size in the first 10 gens. Outcome: identify the
-basin-attractor signature that distinguishes rich-yield seeds (44, 7755) from slow-yield seeds
-(9354) and dead-end seeds (2247). Recommended task types: data-analysis. Cost: <$0.10.
+t0118 found cell 77_15_1356 (cluster 0, seed 77) was assigned DSI = 0.93 by t0117's NSGA-II
+evaluator but produces 0 spikes in either direction under the canonical 1400 ms / -10 mV
+threshold protocol (FULL V_m peaks at -51 mV); g_I/g_E ratio = 3.87 (extreme inhibition
+dominance). The t0117 DSI score appears to be a finite-sample-noise artefact, unconfirmed.
+Investigate: (a) re-run t0117's evaluator on this cell, log per-trial PD and ND spike counts;
+(b) re-run with 10 eval-seed pairs and check stability; (c) trace the DSI formula for
+PD=1/ND=0 edge cases; (d) report whether other pool cells share this 'high-DSI-but-silent'
+pattern. Decision: if >= 1% of pool exhibits this disagreement, t0117/t0116 DSI columns need a
+corrections overlay. Recommended task types: data-analysis, correction. Cost: <$0.10.
 
 </details>
 
-*405 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Factor-axis trace gallery: sample cells along t0117 F1/F3/F5
+loading axes and re-simulate the 3-mode trio</strong> (S-0118-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
+
+t0118 establishes a clean re-simulation pipeline (3-mode trio, g_E / g_I / V_m, PD+ND, 1400
+ms). t0117's salient factors are F1 (joint DSI-PD, 12.6% var), F3 (pure-ephys PD), F5
+(depolarisation-block axis hypothesised in t0118 analysis). Link from factor space to
+biophysics is currently inferential. Concrete action: project all 4431 t0117 cells onto F1,
+F3, F5 individually; bin cells into 7 quantiles along each factor score, sample 3 cells per
+bin (21 cells x 3 factors = 63 cells), re-simulate the t0118 protocol. For each factor produce
+a 7-row x 3-column grid showing how g_E/g_I/V_m signatures change along the factor axis.
+Decision: monotonic variation = biophysically meaningful factor; unrelated = statistical
+artefact. Distinct from S-0117-06 (interprets F1 loadings statically). Recommended task types:
+experiment-run, data-analysis. Cost: <$0.30.
+
+</details>
+
+*411 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (86)](suggestions/)
+## [High Priority Suggestions (89)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
@@ -373,6 +376,62 @@ n_components=11. Distinct from S-0116-05 (strict cohort where no joint factor ex
 validates the unfiltered-pool joint factor. Decision: if F1's r_DSI/r_PD 95% CIs straddle 0.3,
 the verdict needs softening; if both stay clear of 0.3, the verdict is robust. Recommended
 task types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-simulate t0118 stratified sample on t0116 strict cohort (DSI >
+0.7 AND PD > 10) for a good-DSGC trace gallery</strong> (S-0118-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
+
+t0118 found the unfiltered pool is heavily DSI ~ 0; only cluster 2 (s7755) supplied DSI >= 0.2
+cells, so the per-cluster trace grids do not show good DSGC behaviour for clusters 0/1/3.
+Apply the identical 10-per-cluster stratified-by-DSI-x-PD sampler and 3-mode trio protocol to
+t0116's strict 869-cell cohort, then re-cluster those cells with t0116's k=3 partition.
+Outcome: 30 cells (10 per t0116 cluster) whose traces actually show the canonical DSGC
+asymmetry mechanism across multiple clusters, not just one. Distinct from t0118 (unfiltered
+pool) and from S-0116-* (which stay in FA/clustering space without re-simulating). Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>g_I sensitivity sweep on cluster-2 DSGC-competent cells: how does
+DSI vary with inhibition strength?</strong> (S-0118-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
+
+t0118 found g_I / g_E ratio at peak g_E is the most variable cell-level metric (6 orders of
+magnitude, 0.03 to 440), and cluster 2 (s7755) is the only cluster where re-simulated traces
+show the DSGC asymmetry mechanism. Take the 5 highest-DSI cluster-2 cells, hold every other
+parameter fixed, and sweep global GABA NetCon weight (w_gaba_us) in 7 log steps from 0.1x to
+10x (plus symmetric w_ach control). For each (cell, w_gaba_factor) re-run the FULL mode in
+PD+ND, extract DSI, peak g_I, g_I/g_E ratio. Plot DSI vs w_gaba per cell. Decision: if DSI
+peaks at the same w_gaba factor across cells, the cohort shares a canonical E-I balance; if
+optimum varies, the optimiser found cell-specific compensation. ~140 NEURON runs. Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>📊 <strong>Diagnose evaluator-disagreement bug for cell 77_15_1356: t0117
+DSI = 0.93, t0118 canonical protocol = 0 spikes</strong> (S-0118-03)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
+
+t0118 found cell 77_15_1356 (cluster 0, seed 77) was assigned DSI = 0.93 by t0117's NSGA-II
+evaluator but produces 0 spikes in either direction under the canonical 1400 ms / -10 mV
+threshold protocol (FULL V_m peaks at -51 mV); g_I/g_E ratio = 3.87 (extreme inhibition
+dominance). The t0117 DSI score appears to be a finite-sample-noise artefact, unconfirmed.
+Investigate: (a) re-run t0117's evaluator on this cell, log per-trial PD and ND spike counts;
+(b) re-run with 10 eval-seed pairs and check stability; (c) trace the DSI formula for
+PD=1/ND=0 edge cases; (d) report whether other pool cells share this 'high-DSI-but-silent'
+pattern. Decision: if >= 1% of pool exhibits this disagreement, t0117/t0116 DSI columns need a
+corrections overlay. Recommended task types: data-analysis, correction. Cost: <$0.10.
 
 </details>
 
@@ -450,70 +509,7 @@ types: data-analysis, comparative-analysis. Cost: <$0.20.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Connected-component topological basin test (vs KMeans+NMI) on
-the t0116 pooled pool</strong> (S-0116-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0116_pooled_pca_cluster_factor_dsi07_pd10](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
-
-t0116's basin-connectivity answer rests on KMeans (k=3) silhouette + NMI(cluster,
-seed)=0.929/0.889. KMeans forces a partition even on a connected manifold and NMI inflates
-with small per-seed counts (seed 77 n=10). A topology-aware test asks the stronger question:
-is there any continuous path between seeds' cells in 68-d, or are they genuinely disconnected?
-Build a k-NN graph on the standardised 869x68 matrix (k in {5, 10, 20}), extract connected
-components via scipy.sparse.csgraph.connected_components, and report (a) component count vs
-k_nn, (b) per-component seed composition, (c) persistence of seed-isolation across k_nn
-values. Decision: if at k_nn=10 the pool has one giant component containing all 4 seeds,
-seed-aligned KMeans clusters are clusters-of-a-connected-manifold (weakens basin-isolation);
-if 4+ components each dominated by one seed, basin-isolation is corroborated. Distinct from
-S-0112-08 and S-0115-07. Recommended task types: data-analysis. Cost: <$0.20.
-
-</details>
-
-<details>
-<summary>📚 <strong>Implement missing arf/scripts/verificators/verify_answer_asset.py
-per meta/asset_types/answer/specification.md</strong> (S-0116-06)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0116_pooled_pca_cluster_factor_dsi07_pd10](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
-
-t0116 produced three answer assets but discovered the project has no verify_answer_asset.py
-(cf. verify_research_papers.py, verify_suggestions.py, verify_plan.py which exist). t0116
-worked around this with tasks/t0116_*/code/verify_answers_local.py which re-implements the
-spec rules locally — every future task producing answer assets will face the same gap. Build
-the canonical verificator at arf/scripts/verificators/verify_answer_asset.py implementing
-every error code from meta/asset_types/answer/specification.md (mandatory YAML frontmatter,
-mandatory sections in canonical short and full answers, answer-id consistency between
-details.json and frontmatter, source_paper/source_task resolve). Wire it into
-verify_task_complete.py so malformed assets block PR merge. This is ARF framework
-infrastructure (per CLAUDE.md rule 0 it is NOT a tasks/tXXXX_* task) recorded here as the
-motivating finding. Recommended task types: infrastructure-setup. Cost: <$0.10.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Complete S-0112-01: two further random-draw GA seeds at
-cadence-10 to lift substrate-rate from 3-seed to 5-seed</strong>
-(S-0113-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-20 | **Source**:
-[t0113_t0106_seed2247_replicate](../tasks/t0113_t0106_seed2247_replicate/)
-
-S-0112-01 requires >=3 additional GA seeds at cadence-10 to upgrade the substrate-rate
-estimate from a 2-point sample to a 5-point sample. t0113 contributed one (random seed 2247)
-yielding 0 LEGIT joint-pass cells; the 3-seed sample (44/77/2247) now spans 0.15%-3.29% with
-mean 1.26% +/- 1.01% SE, and the 95% CI (-0.73%, 3.25%) brackets BOTH Hay2011 (0.40%) and
-Druckmann2007 (0.10%) baselines and cannot reject either. Draw two further random seeds via
-secrets.randbelow(10000) (avoid the round-ish-low-number bias of seeds 44, 77 and the curated
-set 33/88/99) and run each as a minimum-change replicate of t0113 (same cadence-10, N_GEN=60,
-HV-plateau detector, evaluator). Each new seed = one task = one folder = one PR; pool the
-5-seed sample for the final substrate-rate report. Recommended task types: experiment-run.
-Cost: ~$5 (2 seeds x ~$2-3 each).
-
-</details>
-
-*76 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*79 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

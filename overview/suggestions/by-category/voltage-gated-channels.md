@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-96 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **81 open** (22
-high, 48 medium, 11 low), **15 closed**.
+97 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **82 open** (22
+high, 49 medium, 11 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -957,6 +957,32 @@ AIS microdomains (panNav vs subtype-specific antibodies, STED/STORM), (c) develo
 channel trajectory studies in RGC AIS, (d) M-current/Kv7/KCNQ channels at RGC AIS, (e) Kv3
 fast-delayed-rectifier measurements in RGC. This closes the gap between canonical
 voltage-gated-channel theory and DSGC-specific parameters.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Factor-axis trace gallery: sample cells along t0117 F1/F3/F5
+loading axes and re-simulate the 3-mode trio</strong> (S-0118-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0118 establishes a clean re-simulation pipeline (3-mode trio, g_E / g_I / V_m, PD+ND, 1400
+ms). t0117's salient factors are F1 (joint DSI-PD, 12.6% var), F3 (pure-ephys PD), F5
+(depolarisation-block axis hypothesised in t0118 analysis). Link from factor space to
+biophysics is currently inferential. Concrete action: project all 4431 t0117 cells onto F1,
+F3, F5 individually; bin cells into 7 quantiles along each factor score, sample 3 cells per
+bin (21 cells x 3 factors = 63 cells), re-simulate the t0118 protocol. For each factor produce
+a 7-row x 3-column grid showing how g_E/g_I/V_m signatures change along the factor axis.
+Decision: monotonic variation = biophysically meaningful factor; unrelated = statistical
+artefact. Distinct from S-0117-06 (interprets F1 loadings statically). Recommended task types:
+experiment-run, data-analysis. Cost: <$0.30.
 
 </details>
 

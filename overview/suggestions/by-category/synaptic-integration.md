@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-98 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **87 open** (16 high,
-64 medium, 7 low), **11 closed**.
+101 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **90 open** (17 high,
+66 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -112,6 +112,31 @@ shunting inhibition, or HH miscalibration. The same six-trial protocol from task
 can be ported to the from-scratch cell builder with minimal changes. Expected output: six
 traces showing whether the from-scratch IPSP is hyperpolarising (would localise the
 binary-regime cause) or flat-at-reversal (would invalidate the shunting hypothesis).
+
+</details>
+
+<details>
+<summary>🧪 <strong>g_I sensitivity sweep on cluster-2 DSGC-competent cells: how does
+DSI vary with inhibition strength?</strong> (S-0118-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+t0118 found g_I / g_E ratio at peak g_E is the most variable cell-level metric (6 orders of
+magnitude, 0.03 to 440), and cluster 2 (s7755) is the only cluster where re-simulated traces
+show the DSGC asymmetry mechanism. Take the 5 highest-DSI cluster-2 cells, hold every other
+parameter fixed, and sweep global GABA NetCon weight (w_gaba_us) in 7 log steps from 0.1x to
+10x (plus symmetric w_ach control). For each (cell, w_gaba_factor) re-run the FULL mode in
+PD+ND, extract DSI, peak g_I, g_I/g_E ratio. Plot DSI vs w_gaba per cell. Decision: if DSI
+peaks at the same w_gaba factor across cells, the cohort shares a canonical E-I balance; if
+optimum varies, the optimiser found cell-specific compensation. ~140 NEURON runs. Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
 
 </details>
 
@@ -867,6 +892,32 @@ side - this wraps the schedule-parameter side. Recommended task types: write-lib
 </details>
 
 <details>
+<summary>📊 <strong>g_I/g_E balance classifier: can a single E-I ratio scalar predict
+t0117 cluster identity?</strong> (S-0118-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+t0118 identifies g_I / g_E ratio at peak g_E as the dominant cross-cell axis (6 orders of
+magnitude, 0.03 to 440). The cluster-by-cluster interpretation proposes a categorical mapping:
+cluster 1 < 0.5 (excitation-dominated), 0/2 in 0.5-5 (balanced), 3 > 10
+(inhibition-dominated). Currently qualitative. Build a quantitative classifier: fit a
+single-feature logistic regression and KNN predicting cluster_id from g_I/g_E ratio
+(per_cell_metrics.csv); report accuracy + per-cluster precision/recall. Stretch: train a
+linear regressor from t0118's 40-cell 68-d -> g_I/g_E pairs, predict ratio for the full t0117
+4431-cell pool, map back to cluster IDs, report agreement vs t0117's KMeans labels. Decision:
+if a single g_I/g_E feature explains > 70% of cluster identity, the t0117 cluster structure
+reduces to one biophysical scalar. Recommended task types: data-analysis. Cost: <$0.10.
+
+</details>
+
+<details>
 <summary>🧪 <strong>GABA conductance scan at Voff_bipNMDA=1 to close the residual
 DSI gap to paper's 0.30 line</strong> (S-0048-01)</summary>
 
@@ -1282,6 +1333,32 @@ exceeds 1 Hz. That value is the testbed's sensitivity edge. Prerequisite for S-0
 S-0029-02: rerunning the length sweep at 6 nS instead of 12 nS gives the
 mechanism-discrimination experiment a fighting chance without needing to inject noise. ~30 min
 CPU. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-cluster ND-leading g_I latency analysis: is the SAC-like
+inhibitory-veto signature present across clusters?</strong> (S-0118-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+t0118's per-cluster panels show ND g_I peaks earlier than PD g_I in cluster 1 (all-s44, DSI ~
+0) traces - the classic Vaney/Taylor inhibitory-veto signature - even though firing asymmetry
+is absent. This suggests the inhibitory-timing mechanism is partially present in cells the
+NSGA-II selected as low-DSI. Action: extract per-cell PD and ND g_I onset latency from t0118's
+per_cell_metrics.csv, plot (latency_ND - latency_PD) per cluster, test (a) is the ND-leads-PD
+pattern significant per cluster, (b) does the magnitude correlate with DSI within cluster, (c)
+is there a critical latency threshold above which firing asymmetry emerges? Re-simulate top-5
+latency-difference cells per cluster at RECORD_DT = 0.1 ms to confirm timing isn't aliased.
+Distinct from S-0118-02 (sweeps inhibition strength, not timing). Recommended task types:
+data-analysis, experiment-run. Cost: <$0.10.
 
 </details>
 

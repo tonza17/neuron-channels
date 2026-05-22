@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (49)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(98)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(101)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2730,7 +2730,66 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (87 open, 11 closed)
+## Suggestions (90 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>g_I sensitivity sweep on cluster-2 DSGC-competent cells: how does
+DSI vary with inhibition strength?</strong> (S-0118-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
+
+t0118 found g_I / g_E ratio at peak g_E is the most variable cell-level metric (6 orders of
+magnitude, 0.03 to 440), and cluster 2 (s7755) is the only cluster where re-simulated traces
+show the DSGC asymmetry mechanism. Take the 5 highest-DSI cluster-2 cells, hold every other
+parameter fixed, and sweep global GABA NetCon weight (w_gaba_us) in 7 log steps from 0.1x to
+10x (plus symmetric w_ach control). For each (cell, w_gaba_factor) re-run the FULL mode in
+PD+ND, extract DSI, peak g_I, g_I/g_E ratio. Plot DSI vs w_gaba per cell. Decision: if DSI
+peaks at the same w_gaba factor across cells, the cohort shares a canonical E-I balance; if
+optimum varies, the optimiser found cell-specific compensation. ~140 NEURON runs. Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-cluster ND-leading g_I latency analysis: is the SAC-like
+inhibitory-veto signature present across clusters?</strong> (S-0118-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
+
+t0118's per-cluster panels show ND g_I peaks earlier than PD g_I in cluster 1 (all-s44, DSI ~
+0) traces - the classic Vaney/Taylor inhibitory-veto signature - even though firing asymmetry
+is absent. This suggests the inhibitory-timing mechanism is partially present in cells the
+NSGA-II selected as low-DSI. Action: extract per-cell PD and ND g_I onset latency from t0118's
+per_cell_metrics.csv, plot (latency_ND - latency_PD) per cluster, test (a) is the ND-leads-PD
+pattern significant per cluster, (b) does the magnitude correlate with DSI within cluster, (c)
+is there a critical latency threshold above which firing asymmetry emerges? Re-simulate top-5
+latency-difference cells per cluster at RECORD_DT = 0.1 ms to confirm timing isn't aliased.
+Distinct from S-0118-02 (sweeps inhibition strength, not timing). Recommended task types:
+data-analysis, experiment-run. Cost: <$0.10.
+
+</details>
+
+<details>
+<summary>📊 <strong>g_I/g_E balance classifier: can a single E-I ratio scalar predict
+t0117 cluster identity?</strong> (S-0118-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
+
+t0118 identifies g_I / g_E ratio at peak g_E as the dominant cross-cell axis (6 orders of
+magnitude, 0.03 to 440). The cluster-by-cluster interpretation proposes a categorical mapping:
+cluster 1 < 0.5 (excitation-dominated), 0/2 in 0.5-5 (balanced), 3 > 10
+(inhibition-dominated). Currently qualitative. Build a quantitative classifier: fit a
+single-feature logistic regression and KNN predicting cluster_id from g_I/g_E ratio
+(per_cell_metrics.csv); report accuracy + per-cluster precision/recall. Stretch: train a
+linear regressor from t0118's 40-cell 68-d -> g_I/g_E pairs, predict ratio for the full t0117
+4431-cell pool, map back to cluster IDs, report agreement vs t0117's KMeans labels. Decision:
+if a single g_I/g_E feature explains > 70% of cluster identity, the t0117 cluster structure
+reduces to one biophysical scalar. Recommended task types: data-analysis. Cost: <$0.10.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Multi-angle synaptic-current protocol on Bed A and Bed B for a

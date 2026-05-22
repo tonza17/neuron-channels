@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (30)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (10)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(96)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(97)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -1815,7 +1815,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (81 open, 15 closed)
+## Suggestions (82 open, 15 closed)
 
 <details>
 <summary>📊 <strong>Interpret F1's biological meaning: top-loading features of the
@@ -1834,6 +1834,26 @@ comparison. Write a focused answer asset 'pooled-all-cells-f1-biological-interpr
 the loading table plus a 4-sentence biological interpretation: which channels and morphology
 parameters jointly drive both DSI and PD when the full quality range is admitted? Recommended
 task types: data-analysis, answer-question. Cost: <$0.10.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Factor-axis trace gallery: sample cells along t0117 F1/F3/F5
+loading axes and re-simulate the 3-mode trio</strong> (S-0118-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
+
+t0118 establishes a clean re-simulation pipeline (3-mode trio, g_E / g_I / V_m, PD+ND, 1400
+ms). t0117's salient factors are F1 (joint DSI-PD, 12.6% var), F3 (pure-ephys PD), F5
+(depolarisation-block axis hypothesised in t0118 analysis). Link from factor space to
+biophysics is currently inferential. Concrete action: project all 4431 t0117 cells onto F1,
+F3, F5 individually; bin cells into 7 quantiles along each factor score, sample 3 cells per
+bin (21 cells x 3 factors = 63 cells), re-simulate the t0118 protocol. For each factor produce
+a 7-row x 3-column grid showing how g_E/g_I/V_m signatures change along the factor axis.
+Decision: monotonic variation = biophysically meaningful factor; unrelated = statistical
+artefact. Distinct from S-0117-06 (interprets F1 loadings statically). Recommended task types:
+experiment-run, data-analysis. Cost: <$0.30.
 
 </details>
 

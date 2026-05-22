@@ -1,7 +1,7 @@
 # Suggestions: `dendritic-computation`
 
-89 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **72 open** (14
+90 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **73 open** (15
 high, 53 medium, 5 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
@@ -280,6 +280,30 @@ differs structurally from cell 767's (cf. [0.006, 0.001, 0.999, 0.995, 0.876, 0.
 Vm recording at soma + 4 dendritic locations + AIS, then run conductance-knockout ablations
 (zero out g_NaP_dend / g_NMDA / g_Nav_dend_distal) to identify the dominant DSI driver.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-simulate t0118 stratified sample on t0116 strict cohort (DSI >
+0.7 AND PD > 10) for a good-DSGC trace gallery</strong> (S-0118-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0118 found the unfiltered pool is heavily DSI ~ 0; only cluster 2 (s7755) supplied DSI >= 0.2
+cells, so the per-cluster trace grids do not show good DSGC behaviour for clusters 0/1/3.
+Apply the identical 10-per-cluster stratified-by-DSI-x-PD sampler and 3-mode trio protocol to
+t0116's strict 869-cell cohort, then re-cluster those cells with t0116's k=3 partition.
+Outcome: 30 cells (10 per t0116 cluster) whose traces actually show the canonical DSGC
+asymmetry mechanism across multiple clusters, not just one. Distinct from t0118 (unfiltered
+pool) and from S-0116-* (which stay in FA/clustering space without re-simulating). Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
 
 </details>
 

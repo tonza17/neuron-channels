@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
 (9)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(89)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(90)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
 (4)](../predictions/by-category/dendritic-computation.md)
@@ -2535,7 +2535,25 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (72 open, 17 closed)
+## Suggestions (73 open, 17 closed)
+
+<details>
+<summary>🧪 <strong>Re-simulate t0118 stratified sample on t0116 strict cohort (DSI >
+0.7 AND PD > 10) for a good-DSGC trace gallery</strong> (S-0118-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
+[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
+
+t0118 found the unfiltered pool is heavily DSI ~ 0; only cluster 2 (s7755) supplied DSI >= 0.2
+cells, so the per-cluster trace grids do not show good DSGC behaviour for clusters 0/1/3.
+Apply the identical 10-per-cluster stratified-by-DSI-x-PD sampler and 3-mode trio protocol to
+t0116's strict 869-cell cohort, then re-cluster those cells with t0116's k=3 partition.
+Outcome: 30 cells (10 per t0116 cluster) whose traces actually show the canonical DSGC
+asymmetry mechanism across multiple clusters, not just one. Distinct from t0118 (unfiltered
+pool) and from S-0116-* (which stay in FA/clustering space without re-simulating). Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Cross-seed parameter-vector clustering of joint-pass cells:

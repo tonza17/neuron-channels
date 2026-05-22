@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-321 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **287 open** (71
-high, 193 medium, 23 low), **34 closed**.
+326 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **292 open** (74
+high, 195 medium, 23 low), **34 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -565,6 +565,31 @@ offsets the fewer generations).
 </details>
 
 <details>
+<summary>📊 <strong>Diagnose evaluator-disagreement bug for cell 77_15_1356: t0117
+DSI = 0.93, t0118 canonical protocol = 0 spikes</strong> (S-0118-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0118 found cell 77_15_1356 (cluster 0, seed 77) was assigned DSI = 0.93 by t0117's NSGA-II
+evaluator but produces 0 spikes in either direction under the canonical 1400 ms / -10 mV
+threshold protocol (FULL V_m peaks at -51 mV); g_I/g_E ratio = 3.87 (extreme inhibition
+dominance). The t0117 DSI score appears to be a finite-sample-noise artefact, unconfirmed.
+Investigate: (a) re-run t0117's evaluator on this cell, log per-trial PD and ND spike counts;
+(b) re-run with 10 eval-seed pairs and check stability; (c) trace the DSI formula for
+PD=1/ND=0 edge cases; (d) report whether other pool cells share this 'high-DSI-but-silent'
+pattern. Decision: if >= 1% of pool exhibits this disagreement, t0117/t0116 DSI columns need a
+corrections overlay. Recommended task types: data-analysis, correction. Cost: <$0.10.
+
+</details>
+
+<details>
 <summary>📊 <strong>Direct re-evaluation of t0083 / t0091 anchor library at
 N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation</strong>
 (S-0102-02)</summary>
@@ -808,6 +833,31 @@ task that copies the t0099 substrate, add a silenced-cell unit test, re-run rand
 NSGA-II at pop=96, gens=8, 1 GA seed, N=4. Expected: joint-pass yield > 0 from random init;
 DSI distribution loses its 1.0 spike. Recommended task types: write-library, experiment-run.
 Cost: ~$2-3 (one pop=96 x 8-gen Vast.ai run).
+
+</details>
+
+<details>
+<summary>🧪 <strong>g_I sensitivity sweep on cluster-2 DSGC-competent cells: how does
+DSI vary with inhibition strength?</strong> (S-0118-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+t0118 found g_I / g_E ratio at peak g_E is the most variable cell-level metric (6 orders of
+magnitude, 0.03 to 440), and cluster 2 (s7755) is the only cluster where re-simulated traces
+show the DSGC asymmetry mechanism. Take the 5 highest-DSI cluster-2 cells, hold every other
+parameter fixed, and sweep global GABA NetCon weight (w_gaba_us) in 7 log steps from 0.1x to
+10x (plus symmetric w_ach control). For each (cell, w_gaba_factor) re-run the FULL mode in
+PD+ND, extract DSI, peak g_I, g_I/g_E ratio. Plot DSI vs w_gaba per cell. Decision: if DSI
+peaks at the same w_gaba factor across cells, the cohort shares a canonical E-I balance; if
+optimum varies, the optimiser found cell-specific compensation. ~140 NEURON runs. Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
 
 </details>
 
@@ -1507,6 +1557,30 @@ morph_seed = 31 while t0099/t0102/t0104 randomise it. Re-run the t0105 factor an
 MG_CONC_MM, Ra) and its Pearson r vs DSI / PD survive. If they do, F1 is mechanistic; if F1
 dissolves, F1 was a lineage indicator. Recommended task type: data-analysis. Cost: $0 (pure
 local re-analysis of existing data). Effort: 1-2 hours.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-simulate t0118 stratified sample on t0116 strict cohort (DSI >
+0.7 AND PD > 10) for a good-DSGC trace gallery</strong> (S-0118-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0118 found the unfiltered pool is heavily DSI ~ 0; only cluster 2 (s7755) supplied DSI >= 0.2
+cells, so the per-cluster trace grids do not show good DSGC behaviour for clusters 0/1/3.
+Apply the identical 10-per-cluster stratified-by-DSI-x-PD sampler and 3-mode trio protocol to
+t0116's strict 869-cell cohort, then re-cluster those cells with t0116's k=3 partition.
+Outcome: 30 cells (10 per t0116 cluster) whose traces actually show the canonical DSGC
+asymmetry mechanism across multiple clusters, not just one. Distinct from t0118 (unfiltered
+pool) and from S-0116-* (which stay in FA/clustering space without re-simulating). Recommended
+task types: experiment-run, data-analysis. Cost: <$0.20.
 
 </details>
 
@@ -3433,6 +3507,32 @@ side - this wraps the schedule-parameter side. Recommended task types: write-lib
 </details>
 
 <details>
+<summary>🧪 <strong>Factor-axis trace gallery: sample cells along t0117 F1/F3/F5
+loading axes and re-simulate the 3-mode trio</strong> (S-0118-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0118 establishes a clean re-simulation pipeline (3-mode trio, g_E / g_I / V_m, PD+ND, 1400
+ms). t0117's salient factors are F1 (joint DSI-PD, 12.6% var), F3 (pure-ephys PD), F5
+(depolarisation-block axis hypothesised in t0118 analysis). Link from factor space to
+biophysics is currently inferential. Concrete action: project all 4431 t0117 cells onto F1,
+F3, F5 individually; bin cells into 7 quantiles along each factor score, sample 3 cells per
+bin (21 cells x 3 factors = 63 cells), re-simulate the t0118 protocol. For each factor produce
+a 7-row x 3-column grid showing how g_E/g_I/V_m signatures change along the factor axis.
+Decision: monotonic variation = biophysically meaningful factor; unrelated = statistical
+artefact. Distinct from S-0117-06 (interprets F1 loadings statically). Recommended task types:
+experiment-run, data-analysis. Cost: <$0.30.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
 to locate the DSI-maximising conductance ridge</strong> (S-0002-01)</summary>
 
@@ -4794,6 +4894,32 @@ separately. Output: per-task `hv_contribution_by_cell.csv` and cross-task
 any seed, replace 2-D HV with a 'legit-only HV' that excludes silence-guard saturations for
 the substrate-rate paper. Reusable across S-0112-01 / S-0113-01 multi-seed batch. Recommended
 task types: data-analysis, write-library. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Per-cluster ND-leading g_I latency analysis: is the SAC-like
+inhibitory-veto signature present across clusters?</strong> (S-0118-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0118-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-22 |
+| **Source task** | [`t0118_resimulate_t0117_cluster_samples_ge_gi_vm`](../../../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+t0118's per-cluster panels show ND g_I peaks earlier than PD g_I in cluster 1 (all-s44, DSI ~
+0) traces - the classic Vaney/Taylor inhibitory-veto signature - even though firing asymmetry
+is absent. This suggests the inhibitory-timing mechanism is partially present in cells the
+NSGA-II selected as low-DSI. Action: extract per-cell PD and ND g_I onset latency from t0118's
+per_cell_metrics.csv, plot (latency_ND - latency_PD) per cluster, test (a) is the ND-leads-PD
+pattern significant per cluster, (b) does the magnitude correlate with DSI within cluster, (c)
+is there a critical latency threshold above which firing asymmetry emerges? Re-simulate top-5
+latency-difference cells per cluster at RECORD_DT = 0.1 ms to confirm timing isn't aliased.
+Distinct from S-0118-02 (sweeps inhibition strength, not timing). Recommended task types:
+data-analysis, experiment-run. Cost: <$0.10.
 
 </details>
 

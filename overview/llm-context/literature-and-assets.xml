@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-22T13:21:58Z">
+<llm_context_archive preset_id="literature-and-assets" generated_at_utc="2026-05-22T18:36:32Z">
   <archive_summary>
     <title>Literature and Assets</title>
     <description>Paper summaries and reusable project assets without the heaviest task reports.</description>
     <use_case>Method discussion, resource selection, and related-work chats.</use_case>
     <section_count>8</section_count>
-    <char_count>287290</char_count>
-    <byte_count>287726</byte_count>
-    <estimated_tokens>71822</estimated_tokens>
+    <char_count>288404</char_count>
+    <byte_count>288847</byte_count>
+    <estimated_tokens>72101</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -225,9 +225,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0115_seed9354_no_autostop</id>
         <id>t0116_pooled_pca_cluster_factor_dsi07_pd10</id>
         <id>t0117_pooled_pca_cluster_factor_all_cells_4_seeds</id>
+        <id>t0118_resimulate_t0117_cluster_samples_ge_gi_vm</id>
       </source_ids>
       <content>
-Completed tasks: 110
+Completed tasks: 111
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -888,6 +889,12 @@ ID: t0117_pooled_pca_cluster_factor_all_cells_4_seeds
 Completed: 2026-05-22
 Short description: Repeat t0116 PCA + KMeans + varimax FA across seeds 44/77/7755/9354 with NO DSI/PD filter; tests whether t0116&#x27;s seed-specific basin pattern is a strict-cohort artefact.
 Result summary: Results Summary: Pooled PCA + Cluster + Factor Analysis of ALL Cells (4 seeds, no filter) Summary Pooled **4 431** unique cells (1 065 + 654 + 1 686 + 1 026 across seeds 44 / 77 / 7755 / 9354) from the same four NSGA-II runs as t0116, but with NO DSI / PD cohort filter. Ran the identical PCA + KMeans + varimax FA pipeline and produced three answer assets plus an explicit head-to-head `results/data/t0116_comparison.csv`. **Headline finding: the truncated-cohort artefact is confirmed** — F1 in the unfiltered pool is a joint DSI-PD factor (r_DSI = **+0.421**, r_PD = **+0.352**, both &gt; 0.30), whereas no factor crossed |r| &gt; 0.30 on both axes in t0116. The seed-specific basin pattern also weakens...
+
+## Re-simulate 10 cells per t0117 ephys cluster; plot g_E, g_I, Vm in PD and ND
+ID: t0118_resimulate_t0117_cluster_samples_ge_gi_vm
+Completed: 2026-05-22
+Short description: Stratified-sample 10 cells per t0117 electrophys cluster (40 cells) spanning DSI x PD, re-simulate the 3-mode trio in PD+ND, plot per-cluster g_E(t), g_I(t), V_m(t).
+Result summary: Results Summary: Re-Simulate 10 Cells per t0117 Electrophys Cluster Summary Stratified-sampled 40 cells (10 per t0117 electrophys cluster, k = 4) spanning DSI × PD quintiles from the unfiltered 4 431-cell pool and re-simulated each cell in the canonical 3-mode trio (EPSP_PASSIVE, IPSP_PASSIVE, FULL) for PD (0°) and ND (180°) directions — 240 NEURON runs total, zero failures, ~70 min wall-clock. Produced 4 per-cluster 10-row × 3-column trace figures (g_E / g_I / V_m, PD solid + ND dashed) and a 4-row × 3-column cross-cluster median-trace summary. Demonstration / exploratory artefact; no answer assets produced (`expected_assets: {}`). Metrics * **Cells re-simulated**: **40** (10 per...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
