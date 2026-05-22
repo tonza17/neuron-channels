@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Identify the canonical Bed B + morphology DSGC simulator entrypoint used by t0106/t0112/t0114/t0115 and the EPSP_PASSIVE/IPSP_PASSIVE/FULL mode-trio invocation; confirm bar-motion parameters.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-22T15:40:22Z",
-      "completed_at": null,
+      "completed_at": "2026-05-22T15:55:40Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
