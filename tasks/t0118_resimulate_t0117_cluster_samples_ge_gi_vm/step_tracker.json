@@ -104,10 +104,10 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md (with cluster-by-cluster trace interpretation and the cross-cluster summary chart), metrics.json ({}), costs.json ($0), remote_machines_used.json ([]).",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-22T18:11:01Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\012_results/"
     },
     {
       "step": 13,
