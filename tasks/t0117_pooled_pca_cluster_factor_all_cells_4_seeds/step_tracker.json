@@ -104,10 +104,10 @@
       "step": 12,
       "name": "suggestions",
       "description": "Generate suggestions.json with follow-up tasks based on the unfiltered-pool findings vs t0116.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-22T12:58:31Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\012_suggestions/"
     },
     {
       "step": 13,
