@@ -1,0 +1,2 @@
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\code\pooled_pca_with_overlay.py:127: UserWarning: You passed a edgecolor/edgecolors ('none') for an unfilled marker ('x').  Matplotlib is ignoring the edgecolor in favor of the facecolor.  This behavior may change in the future.
+  ax.scatter(

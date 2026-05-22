@@ -1,0 +1,8 @@
+Loading gen-0 (generation == 1) random init from 4 sources...
+  t0106_long_pdnd_nsga2_300gen (seed 44): n_gen0=96
+  t0112_t0106_seed77_replicate (seed 77): n_gen0=96
+  t0114_seed7755_no_autostop (seed 7755): n_gen0=96
+  t0115_seed9354_no_autostop (seed 9354): n_gen0=96
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\data\pooled_gen0.parquet (n_rows=384)
+Total gen-0 rows: 384 (= 96 Ã— 4 = 384)

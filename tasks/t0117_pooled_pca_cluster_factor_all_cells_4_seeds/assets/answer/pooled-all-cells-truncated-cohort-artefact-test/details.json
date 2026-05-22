@@ -1,0 +1,29 @@
+{
+  "spec_version": "2",
+  "answer_id": "pooled-all-cells-truncated-cohort-artefact-test",
+  "question": "Does at least one varimax factor recover a joint DSI-PD axis (|r_DSI| > 0.3 AND |r_PD| > 0.3) when the cohort filter is removed and the full DSI / PD quality range is in the pool, confirming the truncated-cohort artefact first observed at t0110 and t0116?",
+  "short_title": "One joint DSI-PD factor reappears in the unfiltered pool, confirming truncated-cohort artefact",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0106_long_pdnd_nsga2_300gen",
+    "t0112_t0106_seed77_replicate",
+    "t0114_seed7755_no_autostop",
+    "t0115_seed9354_no_autostop",
+    "t0108_t0106_cluster_factor_dsi05_pd10",
+    "t0110_relaxed_cohort_factor_analysis",
+    "t0116_pooled_pca_cluster_factor_dsi07_pd10"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0117_pooled_pca_cluster_factor_all_cells_4_seeds",
+  "date_created": "2026-05-22"
+}

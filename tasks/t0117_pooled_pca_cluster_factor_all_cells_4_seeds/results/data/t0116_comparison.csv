@@ -1,0 +1,25 @@
+quantity,t0116_value,t0117_value,delta
+pool_size_total_unique,869,4431,+3562
+per_seed_unique[t0106_long_pdnd_nsga2_300gen],121,1065,+944
+per_seed_raw[t0106_long_pdnd_nsga2_300gen],3744,3744,0 (same source files)
+per_seed_unique[t0112_t0106_seed77_replicate],10,654,+644
+per_seed_raw[t0112_t0106_seed77_replicate],2016,2016,0 (same source files)
+per_seed_unique[t0114_seed7755_no_autostop],675,1686,+1011
+per_seed_raw[t0114_seed7755_no_autostop],5952,5952,0 (same source files)
+per_seed_unique[t0115_seed9354_no_autostop],63,1026,+963
+per_seed_raw[t0115_seed9354_no_autostop],5280,5280,0 (same source files)
+electrophys_kmeans_k_chosen,3,4,+1
+electrophys_nmi_vs_seed,0.9288,0.5624,-0.3663
+morphology_kmeans_k_chosen,3,5,+2
+morphology_nmi_vs_seed,0.8888,0.3130,-0.5757
+varimax_factor_count,10,10,+0
+varimax_total_var_explained_pct,65.26,34.90,-30.36
+joint_factor_count_abs_r_gt_0p30_on_both,0,1,+1
+mean_disp_pc12[seed_44],15.026,4.867,-10.159
+mean_disp_68d[seed_44],61.252,9.336,-51.916
+mean_disp_pc12[seed_77],8.501,1.487,-7.015
+mean_disp_68d[seed_77],59.726,9.142,-50.584
+mean_disp_pc12[seed_7755],13.305,5.743,-7.562
+mean_disp_68d[seed_7755],60.576,8.832,-51.744
+mean_disp_pc12[seed_9354],2.370,1.590,-0.779
+mean_disp_68d[seed_9354],60.073,8.882,-51.191

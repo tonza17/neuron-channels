@@ -1,0 +1,26 @@
+Running KMeans on 54-d electrophys submatrix, shape=(4431, 54)
+
+KMeans sweep (k in (3, 4, 5, 6, 7)):
+  k=3: silhouette=0.1452, inertia=189352.04
+  k=4: silhouette=0.1578, inertia=180386.65
+  k=5: silhouette=0.1049, inertia=174690.39
+  k=6: silhouette=0.1118, inertia=170199.30
+  k=7: silhouette=0.1148, inertia=167035.38
+Headline k=4, silhouette=0.1578
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\images\electrophys_silhouette.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\results\data\electrophys_clusters.csv (n_rows=4431)
+
+Cluster sizes:
+cluster_id
+0    1664
+1     585
+2    1340
+3     842
+
+Seed x cluster crosstab:
+cluster_id    0    1     2    3
+seed
+44          445  584     0   36
+77          633    0     0   21
+7755        313    0  1340   33
+9354        273    1     0  752

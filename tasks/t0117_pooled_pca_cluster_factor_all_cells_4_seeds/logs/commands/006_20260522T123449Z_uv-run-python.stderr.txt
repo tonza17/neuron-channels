@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\code\load_pooled_cells.py", line 250, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\tasks\t0117_pooled_pca_cluster_factor_all_cells_4_seeds\code\load_pooled_cells.py", line 189, in main
+    assert counts.n_unique > 0.5 * counts.n_raw, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: VALIDATION GATE FAILED: t0106 dedup collapsed pool from 3744 to 1065 (< 50%). Inspect dedup decimals.
