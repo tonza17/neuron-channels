@@ -77,10 +77,10 @@
       "step": 9,
       "name": "creative-thinking",
       "description": "Skipped: light data-analysis task; alternative interpretations folded directly into results_detailed.md (matches t0108/t0116 precedent).",
-      "status": "not_started",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/009_creative-thinking/"
     },
     {
       "step": 10,
@@ -95,10 +95,10 @@
       "step": 11,
       "name": "compare-literature",
       "description": "Skipped: same reasoning as t0116 - unsupervised PCA + factor analysis on NSGA-II survivors has no quantitative published baseline of equivalent multi-seed factor decomposition.",
-      "status": "not_started",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/011_compare-literature/"
     },
     {
       "step": 12,
