@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Write plan/plan.md (REQ checklist mirrors t0116's; key diff: cohort filter dropped, pool ~14k cells, runtime ~60-90 min, add explicit head-to-head t0116 comparison subsection).",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-22T12:05:57Z",
-      "completed_at": null,
+      "completed_at": "2026-05-22T12:15:46Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
