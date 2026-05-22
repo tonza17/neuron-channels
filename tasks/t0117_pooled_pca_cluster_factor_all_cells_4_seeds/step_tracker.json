@@ -104,9 +104,9 @@
       "step": 12,
       "name": "suggestions",
       "description": "Generate suggestions.json with follow-up tasks based on the unfiltered-pool findings vs t0116.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-22T12:58:31Z",
-      "completed_at": null,
+      "completed_at": "2026-05-22T13:16:33Z",
       "log_file": "logs\\steps\\012_suggestions/"
     },
     {
