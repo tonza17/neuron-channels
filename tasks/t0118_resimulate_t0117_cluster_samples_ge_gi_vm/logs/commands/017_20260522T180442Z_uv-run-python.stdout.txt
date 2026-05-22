@@ -1,0 +1,4 @@
+wrote 40 rows to tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\results\data\dsi_sanity_check.csv
+failures: 1
+   cluster_id    cell_key  dsi_vector_sum  n_spikes_pd  n_spikes_nd  passed
+9           0  77_15_1356        0.926829            0            1   False

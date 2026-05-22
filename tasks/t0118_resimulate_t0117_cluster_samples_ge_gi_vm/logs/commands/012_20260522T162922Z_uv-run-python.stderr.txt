@@ -1,0 +1,39 @@
+
+cells:   0%|          | 0/40 [00:00<?, ?it/s]
+cells:   0%|          | 0/40 [03:49<?, ?it/s, cluster=0, ok=6, fail=0, dt_s=229.0]
+cells:   2%|2         | 1/40 [03:49<2:28:51, 229.01s/it, cluster=0, ok=6, fail=0, dt_s=229.0]
+cells:   2%|2         | 1/40 [04:21<2:28:51, 229.01s/it, cluster=0, ok=6, fail=0, dt_s=32.7]
+cells:   5%|5         | 2/40 [04:21<1:11:54, 113.53s/it, cluster=0, ok=6, fail=0, dt_s=32.7]
+cells:   5%|5         | 2/40 [04:54<1:11:54, 113.53s/it, cluster=0, ok=6, fail=0, dt_s=32.7]
+cells:   8%|7         | 3/40 [04:54<47:14, 76.62s/it, cluster=0, ok=6, fail=0, dt_s=32.7]
+cells:   8%|7         | 3/40 [04:54<1:00:31, 98.14s/it, cluster=0, ok=6, fail=0, dt_s=32.7]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\code\run_all_cells.py", line 218, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\code\run_all_cells.py", line 214, in main
+    run_sweep(limit=args.limit)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\code\run_all_cells.py", line 153, in run_sweep
+    result: CellSimResult = simulate_cell(
+                            ~~~~~~~~~~~~~^
+        cell_row=row,
+        ^^^^^^^^^^^^^
+        cell_index=cell_index_int,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        traces_root=TRACES_ROOT,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\code\simulate_cell.py", line 462, in simulate_cell
+    apply_parameter_vector(cell=cell, params=electrophys)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\code\apply_params.py", line 210, in apply_parameter_vector
+    _write_passive_and_uniform(sections=soma_dend_sections, params=params)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\code\apply_params.py", line 113, in _write_passive_and_uniform
+    setattr(seg, f"gbar_{suffix}", params.uniform_density(suffix=suffix))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: gbar_kdrt80, the mechanism does not exist at soma_t90(0.5)

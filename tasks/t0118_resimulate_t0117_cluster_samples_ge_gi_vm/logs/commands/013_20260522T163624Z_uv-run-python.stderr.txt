@@ -1,0 +1,11 @@
+
+cells:   0%|          | 0/4 [00:00<?, ?it/s]
+cells:   0%|          | 0/4 [03:48<?, ?it/s, cluster=0, ok=6, fail=0, dt_s=228.2]
+cells:  25%|##5       | 1/4 [03:48<11:24, 228.16s/it, cluster=0, ok=6, fail=0, dt_s=228.2]
+cells:  25%|##5       | 1/4 [04:19<11:24, 228.16s/it, cluster=1, ok=6, fail=0, dt_s=31.5]
+cells:  50%|#####     | 2/4 [04:19<03:44, 112.47s/it, cluster=1, ok=6, fail=0, dt_s=31.5]
+cells:  50%|#####     | 2/4 [04:35<03:44, 112.47s/it, cluster=2, ok=6, fail=0, dt_s=16.2]
+cells:  75%|#######5  | 3/4 [04:35<01:08, 68.50s/it, cluster=2, ok=6, fail=0, dt_s=16.2]
+cells:  75%|#######5  | 3/4 [16:18<01:08, 68.50s/it, cluster=3, ok=6, fail=0, dt_s=702.7]
+cells: 100%|##########| 4/4 [16:18<00:00, 318.89s/it, cluster=3, ok=6, fail=0, dt_s=702.7]
+cells: 100%|##########| 4/4 [16:18<00:00, 244.64s/it, cluster=3, ok=6, fail=0, dt_s=702.7]

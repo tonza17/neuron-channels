@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0118_resimulate_t0117_cluster_samples_ge_gi_vm",
+  "command": "uv run python -u -m tasks.t0118_resimulate_t0117_cluster_samples_ge_gi_vm.code.verify_outputs",
+  "exit_code": 0,
+  "duration_seconds": 1.742,
+  "started_at": "2026-05-22T18:04:54Z",
+  "completed_at": "2026-05-22T18:04:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0118_resimulate_t0117_cluster_samples_ge_gi_vm",
+  "stdout_file": "018_20260522T180454Z_uv-run-python.stdout.txt",
+  "stderr_file": "018_20260522T180454Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}
