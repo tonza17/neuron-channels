@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0118_resimulate_t0117_cluster_samples_ge_gi_vm",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/logs/steps/003_init-folders/step_log.md",
+  "exit_code": 0,
+  "duration_seconds": 0.83,
+  "started_at": "2026-05-22T15:39:25Z",
+  "completed_at": "2026-05-22T15:39:26Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0118_resimulate_t0117_cluster_samples_ge_gi_vm",
+  "stdout_file": "002_20260522T153925Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "002_20260522T153925Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}
