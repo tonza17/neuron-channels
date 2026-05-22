@@ -1,0 +1,13 @@
+{
+  "task_id": "t0118_resimulate_t0117_cluster_samples_ge_gi_vm",
+  "checked_at": "2026-05-22T15:37:25Z",
+  "result": "passed",
+  "dependencies": [
+    {"task_id": "t0080_bedb_mobo_v3_dendritic_spike_nsga2", "status": "completed", "satisfied": true},
+    {"task_id": "t0090_morphology_generator_diversity_test", "status": "completed", "satisfied": true},
+    {"task_id": "t0092_diagnose_morphology_generator_silence", "status": "completed", "satisfied": true},
+    {"task_id": "t0117_pooled_pca_cluster_factor_all_cells_4_seeds", "status": "completed", "satisfied": true}
+  ],
+  "errors": 0,
+  "warnings": 0
+}
