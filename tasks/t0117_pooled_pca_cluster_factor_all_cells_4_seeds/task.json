@@ -5,7 +5,7 @@
   "name": "Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds",
   "short_description": "Repeat t0116 PCA + KMeans + varimax FA across seeds 44/77/7755/9354 with NO DSI/PD filter; tests whether t0116's seed-specific basin pattern is a strict-cohort artefact.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0106_long_pdnd_nsga2_300gen",
     "t0112_t0106_seed77_replicate",
@@ -13,7 +13,7 @@
     "t0115_seed9354_no_autostop",
     "t0116_pooled_pca_cluster_factor_dsi07_pd10"
   ],
-  "start_time": null,
+  "start_time": "2026-05-22T11:57:25Z",
   "end_time": null,
   "expected_assets": {
     "answer": 3
