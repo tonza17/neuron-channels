@@ -32,19 +32,19 @@
       "step": 4,
       "name": "research-papers",
       "description": "Skipped: t0117 is a near-clone of t0116 with only the cohort filter relaxed; no new literature is needed.",
-      "status": "not_started",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/004_research-papers/"
     },
     {
       "step": 5,
       "name": "research-internet",
       "description": "Skipped: internal multi-seed comparison; no fresh external information required.",
-      "status": "not_started",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/005_research-internet/"
     },
     {
       "step": 6,
