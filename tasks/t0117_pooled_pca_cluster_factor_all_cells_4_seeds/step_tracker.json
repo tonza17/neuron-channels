@@ -49,11 +49,11 @@
     {
       "step": 6,
       "name": "research-code",
-      "description": "Confirm t0116 code modules can be copied verbatim with only the load_pooled_cells filter dropped; verify no new schema differences in source predictions files.",
-      "status": "pending",
+      "description": "Skipped: t0117 reuses t0116's code verbatim with a single one-line edit dropping the DSI/PD filter in load_pooled_cells.py. The comprehensive code research lives in tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/research/research_code.md and applies unchanged.",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/006_research-code/"
     },
     {
       "step": 7,
