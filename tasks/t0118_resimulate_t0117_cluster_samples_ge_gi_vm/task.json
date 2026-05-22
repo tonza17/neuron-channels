@@ -5,14 +5,14 @@
   "name": "Re-simulate 10 cells per t0117 ephys cluster; plot g_E, g_I, Vm in PD and ND",
   "short_description": "Stratified-sample 10 cells per t0117 electrophys cluster (40 cells) spanning DSI x PD, re-simulate the 3-mode trio in PD+ND, plot per-cluster g_E(t), g_I(t), V_m(t).",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
     "t0090_morphology_generator_diversity_test",
     "t0092_diagnose_morphology_generator_silence",
     "t0117_pooled_pca_cluster_factor_all_cells_4_seeds"
   ],
-  "start_time": null,
+  "start_time": "2026-05-22T15:33:58Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
