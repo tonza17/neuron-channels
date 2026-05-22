@@ -1,0 +1,8 @@
+inspecting first 2 cells of the manifest
+cell  cluster    DSI   PD_Hz   dir   max_Vm  n_spk   peak_gE   peak_gI
+   0        0   0.00     0.7     0   -20.48      0    0.0646    0.0294
+   0        0   0.00     0.7   180   -20.59      0    0.0570    0.0725
+  missing tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\results\data\traces\0\9354_2_129\FULL_0.parquet
+  missing tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\results\data\traces\0\9354_2_129\FULL_180.parquet
+
+sanity check passed (no DSI > 0.5 cell has PD_spikes <= ND_spikes)

@@ -1,0 +1,4 @@
+
+sweep complete: 4/4 cells,
+  24 trials succeeded, 0 trials failed
+  elapsed: 978.6 s (16.3 min)

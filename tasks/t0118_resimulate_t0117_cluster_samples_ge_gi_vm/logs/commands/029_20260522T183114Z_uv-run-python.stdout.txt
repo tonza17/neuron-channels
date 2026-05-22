@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 006_20260522T160341Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 012_20260522T162922Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 017_20260522T180442Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 5 warning(s)

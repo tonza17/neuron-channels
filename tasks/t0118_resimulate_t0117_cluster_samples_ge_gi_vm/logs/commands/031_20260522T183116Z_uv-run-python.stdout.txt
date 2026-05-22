@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\logs\sessions\capture_report.json.

@@ -1,0 +1,7 @@
+
+cells:   0%|          | 0/2 [00:00<?, ?it/s]
+cells:   0%|          | 0/2 [03:51<?, ?it/s, cluster=0, ok=6, fail=0, dt_s=231.3]
+cells:  50%|#####     | 1/2 [03:51<03:51, 231.30s/it, cluster=0, ok=6, fail=0, dt_s=231.3]
+cells:  50%|#####     | 1/2 [04:21<03:51, 231.30s/it, cluster=1, ok=6, fail=0, dt_s=30.5]
+cells: 100%|##########| 2/2 [04:21<00:00, 113.16s/it, cluster=1, ok=6, fail=0, dt_s=30.5]
+cells: 100%|##########| 2/2 [04:21<00:00, 130.88s/it, cluster=1, ok=6, fail=0, dt_s=30.5]

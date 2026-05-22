@@ -1,0 +1,8 @@
+wrote manifest with 40 rows to tasks\t0118_resimulate_t0117_cluster_samples_ge_gi_vm\results\data\selected_cells.csv
+per-cluster cell counts:
+cluster_id
+0    10
+1    10
+2    10
+3    10
+dtype: int64

@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "note": "CPU-only NEURON simulation; no paid APIs, no remote compute. Local Python (uv-managed) on Windows 11. Wall-clock ~70 min for the full 240-sim sweep plus ~5 min for the 4-cell pre-flight gate."
+}
