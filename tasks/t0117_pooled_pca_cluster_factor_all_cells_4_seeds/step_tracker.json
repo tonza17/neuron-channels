@@ -68,9 +68,9 @@
       "step": 8,
       "name": "implementation",
       "description": "Copy t0116 code verbatim, drop DSI/PD filter in load_pooled_cells, run PCA + KMeans + varimax FA + gen-0 overlay on the unfiltered pool, produce 3 answer assets.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-22T12:16:12Z",
-      "completed_at": null,
+      "completed_at": "2026-05-22T12:52:15Z",
       "log_file": "logs\\steps\\008_implementation/"
     },
     {
