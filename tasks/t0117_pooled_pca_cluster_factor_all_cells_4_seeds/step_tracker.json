@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0117_pooled_pca_cluster_factor_all_cells_4_seeds worktree branch from main.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-22T12:00:26Z",
-      "completed_at": null,
+      "completed_at": "2026-05-22T12:01:46Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
