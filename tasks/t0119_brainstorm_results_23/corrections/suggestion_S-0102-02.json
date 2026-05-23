@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-21",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0102_seedscale_n4_gen20",
+  "target_kind": "suggestion",
+  "target_id": "S-0102-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "Direct re-evaluation of t0083 / t0091 anchor library: question was 'substrate vs algorithm limitation'. Now answered empirically by t0106 (substrate is populated -- 123 LEGIT joint-pass at gen 39, 3.23% acceptance). Downgrade to medium."
+}

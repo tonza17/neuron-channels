@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-04",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0113_t0106_seed2247_replicate",
+  "target_kind": "suggestion",
+  "target_id": "S-0113-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "rationale": "Deferred to the next NSGA-II driver iteration. The dill-checkpoint pool-pickling failure has recurred (also documented at S-0114-07) but JSON-side resume has worked end-to-end across t0106/t0112/t0113/t0114/t0115. The next NSGA-II task in the lineage (t0122) will publish a driver revision that drops the dill resume channel entirely."
+}

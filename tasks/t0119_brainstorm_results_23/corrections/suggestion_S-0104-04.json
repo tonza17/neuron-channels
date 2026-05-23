@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-26",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "target_kind": "suggestion",
+  "target_id": "S-0104-04",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "IBEA replacement for NSGA-II (renewal of S-0102-03): same reason as S-0102-03. Algorithm-limitation argument weakened by t0106/t0114. Downgrade to medium."
+}

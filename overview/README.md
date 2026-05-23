@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-119-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-123-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-466-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (45K)
-| [full](llm-context/full.xml) (720K) | [roadmap](llm-context/roadmap.xml) (138K) |
-[results](llm-context/results-deep-dive.xml) (557K) |
-[assets](llm-context/literature-and-assets.xml) (72K)
+| [full](llm-context/full.xml) (727K) | [roadmap](llm-context/roadmap.xml) (142K) |
+[results](llm-context/results-deep-dive.xml) (560K) |
+[assets](llm-context/literature-and-assets.xml) (73K)
 
-*Last updated: 2026-05-22 18:36 UTC*
+*Last updated: 2026-05-23 22:49 UTC*
 
 * **Budget**: **$63** spent of $100
 * **Remaining**: **$37**
@@ -59,18 +59,22 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (4)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
+| 0120 | [Morphology generator geometry audit (15-20 cells)](../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) | [`description`](../tasks/t0120_morph_generator_geometry_audit/task_description.md) | — |
+| 0121 | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) | [`description`](../tasks/t0121_5seed_substrate_rate_canonical_report/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
 
 ---
 
-## [Blocked Tasks (0)](tasks/)
+## [Blocked Tasks (1)](tasks/)
 
-No blocked tasks.
+| # | Task | Blocked By |
+|---|------|------------|
+| 0122 | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | [`t0120_morph_generator_geometry_audit`](../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
 
 ---
 
@@ -82,10 +86,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (111 total)](tasks/by-status/completed.md)
+## [Recently Completed (112 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0119 | [Brainstorm results session 23](../overview/tasks/task_pages/t0119_brainstorm_results_23.md) | [`results`](../tasks/t0119_brainstorm_results_23/results/results_detailed.md) | 2026-05-23 00:00 |
 | 0118 | [Re-simulate 10 cells per t0117 ephys cluster; plot g_E, g_I, Vm in PD and ND](../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) | [`results`](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/results/results_detailed.md) | 2026-05-22 18:31 |
 | 0117 | [Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds](../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) | [`results`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/results_detailed.md) | 2026-05-22 13:16 |
 | 0116 | [Pooled PCA + cluster + factor analysis of DSI>0.7 / PD>10 cells across 4 seeds](../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) | [`results`](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/results/results_detailed.md) | 2026-05-21 20:35 |
@@ -95,9 +100,8 @@ No blocked tasks.
 | 0112 | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | [`results`](../tasks/t0112_t0106_seed77_replicate/results/results_detailed.md) | 2026-05-19 21:50 |
 | 0111 | [Brainstorm results session 22](../overview/tasks/task_pages/t0111_brainstorm_results_22.md) | [`results`](../tasks/t0111_brainstorm_results_22/results/results_detailed.md) | 2026-05-19 00:00 |
 | 0110 | [Factor analysis at relaxed cohort (DSI > 0.2 AND PD > 3) to test all-negative PD claim](../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) | [`results`](../tasks/t0110_relaxed_cohort_factor_analysis/results/results_detailed.md) | 2026-05-18 19:30 |
-| 0109 | [Morphology gallery (10 per cluster) for the four t0108 morphology clusters](../overview/tasks/task_pages/t0109_t0108_morph_cluster_gallery.md) | [`results`](../tasks/t0109_t0108_morph_cluster_gallery/results/results_detailed.md) | 2026-05-18 17:55 |
 
-*101 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*102 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +126,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (421 open)](suggestions/)
+## [Recent Suggestions (419 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
@@ -316,11 +320,11 @@ experiment-run, data-analysis. Cost: <$0.30.
 
 </details>
 
-*411 more open suggestions → [open suggestions](suggestions/)*
+*409 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (89)](suggestions/)
+## [High Priority Suggestions (66)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
@@ -453,24 +457,6 @@ arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: <
 </details>
 
 <details>
-<summary>📊 <strong>5-seed substrate-rate batch (S-0112-01) is now complete; write
-canonical report</strong> (S-0115-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
-
-t0115 closes the S-0112-01 batch with 5 seeds (44, 77, 2247, 7755, 9354) on the identical 68-d
-Bed B + 14-d morphology substrate. Final 5-seed mean LEGIT-joint-pass acceptance rate is 2.58%
-+/- SE 1.50% (SD 3.35%, 95% CI -0.36% to +5.52%). Point estimate is 6.45x above Hay 2011
-(0.40%) and 25.8x above Druckmann 2007 (0.10%), but the 95% CI brackets both literature
-references. Three of five seeds (44, 7755, 9354) independently exceed Hay. Concrete action:
-write a canonical substrate-rate report consolidating all five tasks' results into a single
-comparable document with consistent metric conventions, embeddable in the project overview.
-Recommended task types: data-analysis, answer-question. Cost: <$0.20.
-
-</details>
-
-<details>
 <summary>🧪 <strong>5-seed pooled re-analysis adding t0113 (seed 2247) via correction
 to the t0116 pipeline</strong> (S-0116-01)</summary>
 
@@ -509,7 +495,28 @@ types: data-analysis, comparative-analysis. Cost: <$0.20.
 
 </details>
 
-*79 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+<details>
+<summary>🧪 <strong>Connected-component topological basin test (vs KMeans+NMI) on
+the t0116 pooled pool</strong> (S-0116-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-21 | **Source**:
+[t0116_pooled_pca_cluster_factor_dsi07_pd10](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
+
+t0116's basin-connectivity answer rests on KMeans (k=3) silhouette + NMI(cluster,
+seed)=0.929/0.889. KMeans forces a partition even on a connected manifold and NMI inflates
+with small per-seed counts (seed 77 n=10). A topology-aware test asks the stronger question:
+is there any continuous path between seeds' cells in 68-d, or are they genuinely disconnected?
+Build a k-NN graph on the standardised 869x68 matrix (k in {5, 10, 20}), extract connected
+components via scipy.sparse.csgraph.connected_components, and report (a) component count vs
+k_nn, (b) per-component seed composition, (c) persistence of seed-isolation across k_nn
+values. Decision: if at k_nn=10 the pool has one giant component containing all 4 seeds,
+seed-aligned KMeans clusters are clusters-of-a-connected-manifold (weakens basin-isolation);
+if 4+ components each dominated by one seed, basin-isolation is corroborated. Distinct from
+S-0112-08 and S-0115-07. Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+*56 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 

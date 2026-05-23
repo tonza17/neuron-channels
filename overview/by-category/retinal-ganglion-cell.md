@@ -2871,7 +2871,7 @@ deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable
 <summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
 ProcessPoolExecutor</strong> (S-0090-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-07 | **Source**:
 [t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
 
 t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the

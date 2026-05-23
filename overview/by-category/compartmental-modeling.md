@@ -3160,7 +3160,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (353 open, 38 closed)
+## Suggestions (351 open, 40 closed)
 
 <details>
 <summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
@@ -3408,24 +3408,6 @@ and would NOT fire prematurely on t0113's gen-14 trace. Concrete action: globall
 HV-plateau detector constants in the NSGA-II driver template and the t0024 cell-build
 pipeline; document the new defaults in arf/skills/setup-remote-machine and
 arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: <$0.05.
-
-</details>
-
-<details>
-<summary>📊 <strong>5-seed substrate-rate batch (S-0112-01) is now complete; write
-canonical report</strong> (S-0115-02)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../../tasks/t0115_seed9354_no_autostop/)
-
-t0115 closes the S-0112-01 batch with 5 seeds (44, 77, 2247, 7755, 9354) on the identical 68-d
-Bed B + 14-d morphology substrate. Final 5-seed mean LEGIT-joint-pass acceptance rate is 2.58%
-+/- SE 1.50% (SD 3.35%, 95% CI -0.36% to +5.52%). Point estimate is 6.45x above Hay 2011
-(0.40%) and 25.8x above Druckmann 2007 (0.10%), but the 95% CI brackets both literature
-references. Three of five seeds (44, 7755, 9354) independently exceed Hay. Concrete action:
-write a canonical substrate-rate report consolidating all five tasks' results into a single
-comparable document with consistent metric conventions, embeddable in the project overview.
-Recommended task types: data-analysis, answer-question. Cost: <$0.20.
 
 </details>
 
@@ -4090,7 +4072,7 @@ comparative-analysis. Cost: ~$20 (two single-seed runs at $10 each).
 <summary>📊 <strong>N_EVAL_SEEDS = 20 robustness re-evaluation of top 10 t0106 cells
 (esp. the 3 DSI = 1.0 cells)</strong> (S-0106-02)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-18 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-18 | **Source**:
 [t0106_long_pdnd_nsga2_300gen](../../tasks/t0106_long_pdnd_nsga2_300gen/)
 
 Three t0106 top-50 cells (ranks 16, 19, 27) achieve ratio DSI = 1.0 with deterministic zero ND
@@ -4192,7 +4174,7 @@ hours).
 <summary>🧪 <strong>Inspect the seed-55 gen-11 DSI=0.54 cell's 68-d parameter vector
 — what makes it work; what would push PD up?</strong> (S-0104-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
 [t0104_nsga2_2obj_dsi_pdrate_3seeds](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/)
 
 Seed 55 generation 11 produced the first cell in the t0080-t0104 NSGA-II lineage with DSI
@@ -4214,7 +4196,7 @@ hours).
 parameter vector — the closest project-best joint trade-off</strong>
 (S-0104-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
 [t0104_nsga2_2obj_dsi_pdrate_3seeds](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/)
 
 Seed 55 generation 8 produced the project-best joint trade-off so far: DSI = 0.4192 at PD =
@@ -4252,7 +4234,7 @@ $0.10 (local-only, no Vast.ai).
 <summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget on Bed B +
 morphology substrate (renews S-0102-03)</strong> (S-0104-04)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
 [t0104_nsga2_2obj_dsi_pdrate_3seeds](../../tasks/t0104_nsga2_2obj_dsi_pdrate_3seeds/)
 
 t0104's 0/2,208 random-init joint-pass null with the DSI guard active strengthens the case for
@@ -4312,7 +4294,7 @@ locally; one verification run on Vast.ai).
 <summary>🧪 <strong>Re-run varimax factor analysis excluding integer morph_seed to
 test whether F1's correlates survive</strong> (S-0105-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
 [t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
 
 morph_seed (an integer dimension bounded [0, 99] driving generator randomness, not
@@ -4331,7 +4313,7 @@ local re-analysis of existing data). Effort: 1-2 hours.
 <summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells
 to validate the SK/BK mechanistic hypothesis</strong> (S-0105-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
 [t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
 
 PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL,
@@ -4371,7 +4353,7 @@ for direction selectivity. Recommended task type: data-analysis + experiment-run
 <summary>🧪 <strong>F1-axis-seeded NSGA-II initial population to test whether
 targeted seeding escapes the joint-corner block</strong> (S-0105-04)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
 [t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
 
 F1 is the only factor weakly correlated with both DSI (r = -0.322) and PD (r = -0.265). Its
@@ -4522,7 +4504,7 @@ of re-implementing python-pptx layout per task. Recommended task types: write-li
 <summary>🔧 <strong>Fix DSI vector-sum objective: gate by minimum total spike count
 to eliminate silenced-cell DSI=1.0 artifact</strong> (S-0102-01)</summary>
 
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
 [t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
 
 Finding 1 in results_detailed.md: 27 t0102 cells reach DSI = 1.0 because vector-sum DSI in
@@ -4543,7 +4525,7 @@ Cost: ~$2-3 (one pop=96 x 8-gen Vast.ai run).
 N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation</strong>
 (S-0102-02)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
 [t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
 
 creative_analysis.md Section 4 proposes a < $0.20 follow-up that disambiguates
@@ -4564,7 +4546,7 @@ task types: baseline-evaluation, comparative-analysis. Cost: < $0.20 (~95 evalua
 <summary>🧪 <strong>IBEA replacement for NSGA-II at matched budget (pop=96, gens=15,
 N=4, 2 GA seeds) on Bed B + morphology substrate</strong> (S-0102-03)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
 [t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
 
 Mohacsi 2024 (Neuroptimus benchmark, PLOS Comp Bio) reports IBEA is 'clearly the best among
@@ -4585,7 +4567,7 @@ envelope (IBEA's O(N^2) overhead manageable at pop=96).
 <summary>🧪 <strong>Dang 2023 theory-grounded NSGA-II at pop>=290 (mu = n log n
 floor) with N_EVAL_SEEDS=4, gens=10</strong> (S-0102-04)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-12 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-12 | **Source**:
 [t0102_seedscale_n4_gen20](../../tasks/t0102_seedscale_n4_gen20/)
 
 Dang 2023 Theorem 8 requires mu = Omega(n log n) for noisy NSGA-II to retain polynomial
@@ -4801,7 +4783,7 @@ NSGA-II toward PP-style many-seed (1+9)-ES if (b) wins on diversity.
 <summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
 warm-start was load-bearing</strong> (S-0099-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-10 | **Source**:
 [t0099_random_init_pareto_robustness](../../tasks/t0099_random_init_pareto_robustness/)
 
 t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
@@ -4818,7 +4800,7 @@ substantially. Cost ~$3.50 single seed.
 <summary>📊 <strong>Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto
 cells (HM-3 follow-up)</strong> (S-0099-02)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-10 | **Source**:
 [t0099_random_init_pareto_robustness](../../tasks/t0099_random_init_pareto_robustness/)
 
 HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both
@@ -5214,23 +5196,6 @@ debugging and low-parallelism interactive runs. Recommended task types: experime
 </details>
 
 <details>
-<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising cytoplasm
-volume</strong> (S-0097-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0097_multi_obj_optim](../../tasks/t0097_multi_obj_optim/)
-
-Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most
-evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010's `bf`
-in [0.2, 0.7] band; Chklovskii et al. 2002's 3/5-of-grey-matter wiring rule). Infrastructure
-already in place via the t0093-validated procedural morphology generator. Falsifiable
-prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on
-Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8
-budget bump if needed). Same population/generation budget as t0091.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising
 ATP-per-spike</strong> (S-0097-02)</summary>
 
@@ -5351,7 +5316,7 @@ write-library. Cost: $0.
 <summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
 to land the cluster re-score</strong> (S-0090-03)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-07 | **Source**:
 [t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
 
 t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
@@ -5543,7 +5508,7 @@ preserved; otherwise experiment-run with 2-cell budget < $0.20).
 <summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
 per-synapse value, then re-run</strong> (S-0086-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
 [t0086_robustness_cluster_bio_comparison](../../tasks/t0086_robustness_cluster_bio_comparison/)
 
 t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
@@ -6184,7 +6149,7 @@ confirm Pareto front is unchanged or expands. Recommended task types: correction
 <summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
 Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-03 | **Source**:
 [t0076_bedb_dsi_firing_rate_mobo](../../tasks/t0076_bedb_dsi_firing_rate_mobo/)
 
 t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076
@@ -6240,7 +6205,7 @@ flags); (iii) BoTorch wrapper supporting qLogNEHVI + Normalize transform + check
 <summary>📊 <strong>Plot polar tuning curves to distinguish SK_high narrowing from
 flat-top clipping</strong> (S-0074-01)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-02 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-02 | **Source**:
 [t0074_channel_tuning_width_bed_a](../../tasks/t0074_channel_tuning_width_bed_a/)
 
 SK_high produced HWHM = 41 deg (delta -42 deg, the largest narrowing in the sweep).
@@ -6259,7 +6224,7 @@ no new sim runs.
 <summary>📊 <strong>Verify NaR broadening hypothesis: ND-lobe firing rescue at
 sub-threshold angles</strong> (S-0074-02)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-02 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-02 | **Source**:
 [t0074_channel_tuning_width_bed_a](../../tasks/t0074_channel_tuning_width_bed_a/)
 
 NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate or vector-sum
@@ -6423,7 +6388,7 @@ design for t0075 active-dendrite work and improves t0074's biological plausibili
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
 (S-0067-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
 [t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
 
 t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
@@ -6581,7 +6546,7 @@ current). 9 conditions × 2 directions × 5 seeds = 90 trials, ~5 min.
 <summary>🧪 <strong>Harmonise PD/ND encoding across Bed A and Bed B so cross-bed
 sweep results are directly comparable</strong> (S-0070-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
 [t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
 
 The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally

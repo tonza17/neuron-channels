@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-01",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0106_long_pdnd_nsga2_300gen",
+  "target_kind": "suggestion",
+  "target_id": "S-0106-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "rationale": "Superseded by the 5-seed substrate-rate batch (S-0112-01) closed at t0115. Multi-seed confirmation of t0106 is now done: 5 seeds (44/77/2247/7755/9354) on the same 68-d Bed B + 14-d morphology substrate, mean 2.58% +/- SE 1.50% LEGIT joint-pass acceptance. No further single-purpose seed replicates needed."
+}

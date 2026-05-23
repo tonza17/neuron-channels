@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-23",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0102_seedscale_n4_gen20",
+  "target_kind": "suggestion",
+  "target_id": "S-0102-04",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "Dang 2023 theory-grounded NSGA-II at pop>=290: same logic as S-0102-03. t0106 and t0114 demonstrated that pop=96 is sufficient for joint-pass discovery on the 2-direction substrate. Pop scaling is no longer load-bearing. Downgrade to medium."
+}

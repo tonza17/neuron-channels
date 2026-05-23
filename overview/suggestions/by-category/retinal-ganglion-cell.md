@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
 86 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **77 open** (14
-high, 53 medium, 10 low), **9 closed**.
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **77 open** (13
+high, 54 medium, 10 low), **9 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -286,31 +286,6 @@ baseline ModelDB 189347 port. Once available, re-point tuning_curve_viz.test_smo
 to the real CSV and add the resulting PNGs to assets/library/tuning_curve_viz/files/ via a
 correction, replacing the synthetic fixture outputs. Recommended task types:
 feature-engineering, code-reproduction.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
-ProcessPoolExecutor</strong> (S-0090-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0090-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-07 |
-| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
-single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
-plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
-retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
-cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
-sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
-plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
-for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
-correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -1535,6 +1510,31 @@ the paper count. The 1.6x synapse overcount is the leading mechanistic hypothesi
 PSP amplitude inflation observed in t0046 (PD PSP 23.25 mV vs paper 5.8 +/- 3.1 mV);
 reconciling the count is a prerequisite for a quantitatively faithful Fig 1 reproduction.
 Recommended task types: experiment-run, code-reproduction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
+ProcessPoolExecutor</strong> (S-0090-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
+single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
+plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
+retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
+cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
+sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
+plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
+for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
+correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
 
 </details>
 

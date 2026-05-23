@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-29",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0105_cluster_factor_analysis_dsi_pd",
+  "target_kind": "suggestion",
+  "target_id": "S-0105-04",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "F1-axis-seeded NSGA-II: t0105 F1 was a strict-cohort artefact (per t0117 finding). t0117's unfiltered-pool F1 is more reliable but seeding NSGA-II along it is now lower priority than running a new biologically-grounded objective (t0122 cytoplasm-volume run). Downgrade to medium."
+}

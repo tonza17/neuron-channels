@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-13",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0074_channel_tuning_width_bed_a",
+  "target_kind": "suggestion",
+  "target_id": "S-0074-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "NaR broadening hypothesis on Bed A: same reason as S-0074-01. Bed A-specific, superseded by 68-d NSGA-II analysis. Downgrade to medium."
+}

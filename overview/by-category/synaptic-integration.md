@@ -2853,7 +2853,7 @@ selection. Recommended task types: experiment-run, data-analysis.
 <summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
 to land the cluster re-score</strong> (S-0090-03)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-07 | **Source**:
 [t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
 
 t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
@@ -2908,7 +2908,7 @@ patch to t0065's apply_params, then 6 conditions x 2 directions x 5 seeds = 60 t
 <summary>🧪 <strong>Harmonise PD/ND encoding across Bed A and Bed B so cross-bed
 sweep results are directly comparable</strong> (S-0070-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
 [t0070_writeup_two_model_beds](../../tasks/t0070_writeup_two_model_beds/)
 
 The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally

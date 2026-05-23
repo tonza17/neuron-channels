@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
 97 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **82 open** (22
-high, 49 medium, 11 low), **15 closed**.
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **82 open** (14
+high, 57 medium, 11 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -58,29 +58,6 @@ Kv7 sweep with insertion on the AIS rather than the soma. This was already propo
 t0075 candidate in earlier brainstorming (S-0067-03). Hypothesis: Kv7_AIS at 0.001-0.005
 mS/cm² produces a measurable change in either HWHM or vector-sum DSI; M-current's slow
 accumulation is well-suited to the AIS firing regime.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
-warm-start was load-bearing</strong> (S-0099-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0099-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-10 |
-| **Source task** | [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) |
-| **Source paper** | — |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
-cells vs t0091's 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the
-diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1
-only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass
-emerges -> anchor 1 was load-bearing alone. Outcome (b): no joint-pass -> warm-start diversity
-itself was load-bearing. Either narrows future morphology-extended NSGA-II design
-substantially. Cost ~$3.50 single seed.
 
 </details>
 
@@ -207,53 +184,6 @@ on/off. Recommended task types: experiment-run, data-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
-Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0076-04` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-03 |
-| **Source task** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076
-25-d Pareto front contains no cell with DSI>=0.6 AND rate>=40 Hz at any (Nav1.6, Kv3)
-combination. The contradiction is either (a) substrate-specific (t0068 used Bed A; t0076 used
-Bed B); (b) a t0068 local-minimum that wider search escaped; or (c) the other 23 t0076
-parameters destructively interfere with the rescue. Resolve by fixing the t0076 iter-424
-best-joint cell (DSI=0.42, rate=4.95 Hz) and sweeping ONLY (Nav1.6, Kv3) over the t0068 grid
-(5x5 densities, both substrates). Compare: does the rescue appear on Bed B at this fixed
-background? Does it disappear on Bed A when the other 23 t0076-style parameters are perturbed
-away from t0068 defaults? Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
-(S-0067-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0067-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
-DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
-5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
-(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
-threshold density at which directional inversion becomes statistically robust. This is the
-most surprising finding from t0067 and warrants quantitative refinement.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination
 sweep on the t0059 substrate</strong> (S-0059-02)</summary>
 
@@ -303,31 +233,6 @@ differs structurally from cell 767's (cf. [0.006, 0.001, 0.999, 0.995, 0.876, 0.
 Vm recording at soma + 4 dendritic locations + AIS, then run conductance-knockout ablations
 (zero out g_NaP_dend / g_NMDA / g_Nav_dend_distal) to identify the dominant DSI driver.
 Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Plot polar tuning curves to distinguish SK_high narrowing from
-flat-top clipping</strong> (S-0074-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0074-01` |
-| **Kind** | evaluation |
-| **Date added** | 2026-05-02 |
-| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-SK_high produced HWHM = 41 deg (delta -42 deg, the largest narrowing in the sweep).
-Creative-thinking flagged that this could be a flat-top clipping artefact rather than true
-narrowing: if SK acts as a firing-rate ceiling, the curve becomes flat-topped near the peak
-and HWHM becomes ill-defined. Resolution requires a per-condition polar curve plot for SK_high
-(and as a control, SK_med, SK_low, baseline). Cost: ~30 min coding using the existing t0011
-plot_polar_tuning_curve. If polar plot shows flat-top with sharp shoulders, the narrowing is a
-clipping artefact; if it shows a true narrow bell, the effect is real and SK_high is
-biologically interesting. This is purely an analysis task on the existing per_trial_full.csv —
-no new sim runs.
 
 </details>
 
@@ -386,31 +291,6 @@ Recommended task types: data-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
-ProcessPoolExecutor</strong> (S-0090-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0090-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-07 |
-| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
-single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
-plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
-retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
-cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
-sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
-plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
-for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
-correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Shrink AIS diameter to 0.5 μm and re-test channel
 insertions</strong> (S-0069-02)</summary>
 
@@ -429,32 +309,6 @@ produces a much larger local depolarisation. Test: rebuild the AIS at diam=0.5 �
 μm), keep all other parameters identical to t0069, re-run the 16-condition × 2-direction ×
 5-seed sweep. Combined with S-0069-01 (halved somatic Na), this should be the configuration
 that finally exposes AIS-localised Kv3 / Kv4 effects. Compute: ~10 min.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells
-to validate the SK/BK mechanistic hypothesis</strong> (S-0105-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0105-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-14 |
-| **Source task** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
-| **Source paper** | [`10.1038_s41467-026-70288-4`](../../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/paper/10.1038_s41467-026-70288-4/) |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL,
-BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric
-dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches
-PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K
-regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0,
-BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI +
-PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which
-Ca-K conductance is load-bearing for the asymmetric direction-selectivity regime. Recommended
-task types: experiment-run, data-analysis. Cost: ~$2-3 (small Vast.ai instance for 3-6 hours;
-or local if NEURON runs locally). Aligns with PolegPolsky2026's ML channel-importance finding.
 
 </details>
 
@@ -482,33 +336,6 @@ Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off obser
 </details>
 
 <details>
-<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
-per-synapse value, then re-run</strong> (S-0086-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0086-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-06 |
-| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
-| **Source paper** | [`sivyer_2013`](../../../tasks/t0086_robustness_cluster_bio_comparison/assets/paper/sivyer_2013/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
-conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
-pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
-parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
-from t0083's gen-17 final population for 5 additional generations at population 96. Test
-whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
-confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
-biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
-joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
-Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
-cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Tonic GABA + Mg-block NMDA combination on t0054-style
 architecture to test multiplicative gain rescue</strong> (S-0057-06)</summary>
 
@@ -532,31 +359,6 @@ gAMPA = 0.5 nS, seed 0 (16 grid cells, 5760 trials). Pass criterion: locate at l
 (gNMDA, GABA_BASE_NS) point with vector-sum DSI > 0.3 AND peak Hz >= 5 Hz, or rule it out.
 Distinct from S-0054-02 (voltage-independent NMDA + scalar GABA) and S-0055-03 (Mg-block NMDA
 + scalar GABA ladder). Recommended task types: build-model, experiment-run.
-
-</details>
-
-<details>
-<summary>📊 <strong>Verify NaR broadening hypothesis: ND-lobe firing rescue at
-sub-threshold angles</strong> (S-0074-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0074-02` |
-| **Kind** | evaluation |
-| **Date added** | 2026-05-02 |
-| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
-| **Source paper** | — |
-| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate or vector-sum
-DSI. Creative-thinking hypothesised NaR's slow `s` reactivation gate creates a sub-threshold
-floor that pushes ND-direction firing above zero, broadening the curve symmetrically. Test:
-load per_trial_full.csv, filter rows where condition_id in (nar_high, nar_med, baseline) and
-angle in (90, 120, 150, 180, 210, 240) deg, count trials with n_spikes > 0. Hypothesis
-confirmed if NaR_high has > 30% of trials firing at angle 90-180 deg vs baseline ~5%. Cost:
-pure-data analysis, no new sims (~15 min coding). If confirmed, NaR is a natural candidate for
-AIS-localised follow-up since AIS-localised NaR could selectively boost ND firing without
-affecting PD.
 
 </details>
 
@@ -676,6 +478,29 @@ the dominant-mechanism story may differ if NaP were instead on the AIS. Test by 
 density, and re-evaluating DSI / PD rate / fractional contribution. Hypothesis: AIS-localised
 NaP would shift dominance toward Nav1.6 or NMDA at the dendrite. Local CPU; 48 runs. Cost ~$0.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
+warm-start was load-bearing</strong> (S-0099-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0099-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-10 |
+| **Source task** | [`t0099_random_init_pareto_robustness`](../../../overview/tasks/task_pages/t0099_random_init_pareto_robustness.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
+cells vs t0091's 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the
+diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1
+only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass
+emerges -> anchor 1 was load-bearing alone. Outcome (b): no joint-pass -> warm-start diversity
+itself was load-bearing. Either narrows future morphology-extended NSGA-II design
+substantially. Cost ~$3.50 single seed.
 
 </details>
 
@@ -854,6 +679,31 @@ experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
+Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0076-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-03 |
+| **Source task** | [`t0076_bedb_dsi_firing_rate_mobo`](../../../overview/tasks/task_pages/t0076_bedb_dsi_firing_rate_mobo.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076
+25-d Pareto front contains no cell with DSI>=0.6 AND rate>=40 Hz at any (Nav1.6, Kv3)
+combination. The contradiction is either (a) substrate-specific (t0068 used Bed A; t0076 used
+Bed B); (b) a t0068 local-minimum that wider search escaped; or (c) the other 23 t0076
+parameters destructively interfere with the rescue. Resolve by fixing the t0076 iter-424
+best-joint cell (DSI=0.42, rate=4.95 Hz) and sweeping ONLY (Nav1.6, Kv3) over the t0068 grid
+(5x5 densities, both substrates). Compare: does the rescue appear on Bed B at this fixed
+background? Does it disappear on Bed A when the other 23 t0076-style parameters are perturbed
+away from t0068 defaults? Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>📚 <strong>Disambiguate the silently-overloaded HHst mechanism name across
 the two libraries via SUFFIX rename</strong> (S-0070-05)</summary>
 
@@ -1007,6 +857,28 @@ morphology and 177+177 synaptic budget, record DSI, preferred peak, null residua
 tuning-curve HWHM at each point, and publish the ridge of combinations that hit DSI 0.7-0.85
 with peak 40-80 Hz and null < 10 Hz. This directly supplies the RQ1 answer the project needs.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
+(S-0067-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0067-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0067_t0065_soma_channel_addition_sweep`](../../../overview/tasks/task_pages/t0067_t0065_soma_channel_addition_sweep.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
+DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer
+5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each
+(~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the
+threshold density at which directional inversion becomes statistically robust. This is the
+most surprising finding from t0067 and warrants quantitative refinement.
 
 </details>
 
@@ -1457,6 +1329,31 @@ should be explored. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>📊 <strong>Plot polar tuning curves to distinguish SK_high narrowing from
+flat-top clipping</strong> (S-0074-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0074-01` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-02 |
+| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+SK_high produced HWHM = 41 deg (delta -42 deg, the largest narrowing in the sweep).
+Creative-thinking flagged that this could be a flat-top clipping artefact rather than true
+narrowing: if SK acts as a firing-rate ceiling, the curve becomes flat-topped near the peak
+and HWHM becomes ill-defined. Resolution requires a per-condition polar curve plot for SK_high
+(and as a control, SK_med, SK_low, baseline). Cost: ~30 min coding using the existing t0011
+plot_polar_tuning_curve. If polar plot shows flat-top with sharp shoulders, the narrowing is a
+clipping artefact; if it shows a true narrow bell, the effect is real and SK_high is
+biologically interesting. This is purely an analysis task on the existing per_trial_full.csv —
+no new sim runs.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Quantify Bed A NMDA ND-suppression as a function of joint
 (gabaMOD, Mg2+) on the t0072 substrate</strong> (S-0072-01)</summary>
 
@@ -1641,6 +1538,31 @@ before adopting them as tight compartmental-model fitting targets.
 </details>
 
 <details>
+<summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
+ProcessPoolExecutor</strong> (S-0090-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
+single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours)
+plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01
+retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4
+cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON
+sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090
+plan): DSI collapses to <0.2 in all 4 cluster representatives if NaP is causally responsible
+for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 / GABA mix matters more than t0088's
+correlational analysis suggested. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Surface-density-rescaled Nav diameter sweep on t0024 to test
 surface-vs-volume compensation</strong> (S-0035-02)</summary>
 
@@ -1682,6 +1604,32 @@ Na/K densities; the repository values were used as authoritative. Run a 2x2x3 se
 sweep varying Ra (100/200), eleak (-60/-65), and Na density regime (code/paper/intermediate)
 with 10 trials per condition at PD/ND to isolate which single parameter change recovers peak
 rate without destroying DS. Scorer: t0012 tuning_curve_loss against the t0004 envelope.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells
+to validate the SK/BK mechanistic hypothesis</strong> (S-0105-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0105-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-14 |
+| **Source task** | [`t0105_cluster_factor_analysis_dsi_pd`](../../../overview/tasks/task_pages/t0105_cluster_factor_analysis_dsi_pd.md) |
+| **Source paper** | [`10.1038_s41467-026-70288-4`](../../../tasks/t0105_cluster_factor_analysis_dsi_pd/assets/paper/10.1038_s41467-026-70288-4/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL,
+BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric
+dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches
+PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K
+regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0,
+BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI +
+PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which
+Ca-K conductance is load-bearing for the asymmetric direction-selectivity regime. Recommended
+task types: experiment-run, data-analysis. Cost: ~$2-3 (small Vast.ai instance for 3-6 hours;
+or local if NEURON runs locally). Aligns with PolegPolsky2026's ML channel-importance finding.
 
 </details>
 
@@ -1732,6 +1680,33 @@ burst rate and compare with published DSGC spiking statistics.
 </details>
 
 <details>
+<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
+per-synapse value, then re-run</strong> (S-0086-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | [`sivyer_2013`](../../../tasks/t0086_robustness_cluster_bio_comparison/assets/paper/sivyer_2013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
+conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
+pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
+parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
+from t0083's gen-17 final population for 5 additional generations at population 96. Test
+whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
+confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
+biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
+joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
+Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
+cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🔧 <strong>Update t0033 optimiser headroom estimate to reflect narrow (0.06
 DSI) morphology dynamic range on t0022</strong> (S-0039-05)</summary>
 
@@ -1772,6 +1747,31 @@ a smoke test but its biophysics are never run. Add a short task that inserts khh
 1-compartment soma, drives it with the same IClamp protocol, and compares the resulting trace
 against the built-in hh to confirm the custom mechanism produces physiologically plausible
 spikes before downstream retinal tasks depend on it.
+
+</details>
+
+<details>
+<summary>📊 <strong>Verify NaR broadening hypothesis: ND-lobe firing rescue at
+sub-threshold angles</strong> (S-0074-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0074-02` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-02 |
+| **Source task** | [`t0074_channel_tuning_width_bed_a`](../../../overview/tasks/task_pages/t0074_channel_tuning_width_bed_a.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate or vector-sum
+DSI. Creative-thinking hypothesised NaR's slow `s` reactivation gate creates a sub-threshold
+floor that pushes ND-direction firing above zero, broadening the curve symmetrically. Test:
+load per_trial_full.csv, filter rows where condition_id in (nar_high, nar_med, baseline) and
+angle in (90, 120, 150, 180, 210, 240) deg, count trials with n_spikes > 0. Hypothesis
+confirmed if NaR_high has > 30% of trials firing at angle 90-180 deg vs baseline ~5%. Cost:
+pure-data analysis, no new sims (~15 min coding). If confirmed, NaR is a natural candidate for
+AIS-localised follow-up since AIS-localised NaR could selectively boost ND firing without
+affecting PD.
 
 </details>
 

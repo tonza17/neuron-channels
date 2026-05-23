@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-14",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0076_bedb_dsi_firing_rate_mobo",
+  "target_kind": "suggestion",
+  "target_id": "S-0076-04",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "t0076-t0068 Nav1.6 + Kv3 contradiction: pre-NSGA-II 25-d MOBO era. Now subsumed by 68-d NSGA-II which jointly optimises Nav1.6, Kv3, and 66 other parameters. Downgrade to medium."
+}

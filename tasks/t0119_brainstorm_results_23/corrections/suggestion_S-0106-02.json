@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-30",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0106_long_pdnd_nsga2_300gen",
+  "target_kind": "suggestion",
+  "target_id": "S-0106-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "N_EVAL_SEEDS=20 robustness re-evaluation of top-10 t0106 cells: superseded in spirit by t0107 (8-direction polar re-evaluation of 10 random top-50 t0106 cells) which addressed the related metric-validity concern. Still useful as a noise-floor check but no longer high-priority. Downgrade to medium."
+}

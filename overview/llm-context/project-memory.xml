@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-22T18:36:32Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-23T22:49:16Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>240469</char_count>
-    <byte_count>240856</byte_count>
-    <estimated_tokens>60117</estimated_tokens>
+    <char_count>243500</char_count>
+    <byte_count>243887</byte_count>
+    <estimated_tokens>60875</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -227,9 +227,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0116_pooled_pca_cluster_factor_dsi07_pd10</id>
         <id>t0117_pooled_pca_cluster_factor_all_cells_4_seeds</id>
         <id>t0118_resimulate_t0117_cluster_samples_ge_gi_vm</id>
+        <id>t0119_brainstorm_results_23</id>
       </source_ids>
       <content>
-Completed tasks: 111
+Completed tasks: 112
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -896,6 +897,12 @@ ID: t0118_resimulate_t0117_cluster_samples_ge_gi_vm
 Completed: 2026-05-22
 Short description: Stratified-sample 10 cells per t0117 electrophys cluster (40 cells) spanning DSI x PD, re-simulate the 3-mode trio in PD+ND, plot per-cluster g_E(t), g_I(t), V_m(t).
 Result summary: Results Summary: Re-Simulate 10 Cells per t0117 Electrophys Cluster Summary Stratified-sampled 40 cells (10 per t0117 electrophys cluster, k = 4) spanning DSI × PD quintiles from the unfiltered 4 431-cell pool and re-simulated each cell in the canonical 3-mode trio (EPSP_PASSIVE, IPSP_PASSIVE, FULL) for PD (0°) and ND (180°) directions — 240 NEURON runs total, zero failures, ~70 min wall-clock. Produced 4 per-cluster 10-row × 3-column trace figures (g_E / g_I / V_m, PD solid + ND dashed) and a 4-row × 3-column cross-cluster median-trace summary. Demonstration / exploratory artefact; no answer assets produced (`expected_assets: {}`). Metrics * **Cells re-simulated**: **40** (10 per...
+
+## Brainstorm results session 23
+ID: t0119_brainstorm_results_23
+Completed: 2026-05-23
+Short description: Brainstorm 23: gate next NSGA-II on morphology-geometry audit; commission cytoplasm-volume NSGA-II + 5-seed substrate-rate report; prune backlog (9 rejects + 21 downgrades).
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0119_brainstorm_results_23&quot; date_completed: &quot;2026-05-23&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 23 Summary Twenty-third strategic brainstorm. Researcher raised a critical concern about the procedural morphology generator&#x27;s geometry after inspecting t0115&#x27;s `top50_morphologies_seed9354.png` (soma appeared disconnected from dendrite tree in many panels). The session gated the next NSGA-II wave on a 15-20-cell morphology-geometry audit (t0120), and conditionally commissioned a biologically-grounded cytoplasm-volume NSGA-II run (t0122, S-0097-01) plus a write-up of the closed 5-seed substrate-rate batch (t0121, S-0115-02). The session also...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -905,9 +912,12 @@ Result summary: Results Summary: Re-Simulate 10 Cells per t0117 Electrophys Clus
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0120_morph_generator_geometry_audit</id>
+        <id>t0121_5seed_substrate_rate_canonical_report</id>
+        <id>t0122_dsi_cytoplasm_volume_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 6
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -928,6 +938,27 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Morphology generator geometry audit (15-20 cells)
+ID: t0120_morph_generator_geometry_audit
+Status: not_started
+Effective date: unknown
+Short description: Audit procedural morphology generator: verify primary stems start at origin_xy, parent/child endpoint match, and synapse pt3d xy frame matches origin_xy across 15-20 visually-diverse cells. Gates downstream NSGA-II.
+Dependencies: t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
+
+## Canonical 5-seed substrate-rate report (S-0112-01 batch closed)
+ID: t0121_5seed_substrate_rate_canonical_report
+Status: not_started
+Effective date: unknown
+Short description: Pure write-up consolidating t0106 / t0112 / t0113 / t0114 / t0115 5-seed LEGIT joint-pass acceptance rate into one canonical document with harmonised conventions and Hay 2011 / Druckmann 2007 comparisons.
+Dependencies: t0106_long_pdnd_nsga2_300gen, t0112_t0106_seed77_replicate, t0113_t0106_seed2247_replicate, t0114_seed7755_no_autostop, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
+
+## NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)
+ID: t0122_dsi_cytoplasm_volume_nsga2
+Status: not_started
+Effective date: unknown
+Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010 wiring cost). Gated on t0120 geometry audit passing. 1 GA seed, pop=96, N_EVAL_SEEDS=3, $8 cap.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0119_brainstorm_results_23, t0120_morph_generator_geometry_audit
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

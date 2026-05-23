@@ -2535,7 +2535,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (73 open, 17 closed)
+## Suggestions (72 open, 18 closed)
 
 <details>
 <summary>🧪 <strong>Re-simulate t0118 stratified sample on t0116 strict cohort (DSI >
@@ -2895,23 +2895,6 @@ changes. Recommended task types: experiment-run, data-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising cytoplasm
-volume</strong> (S-0097-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0097_multi_obj_optim](../../tasks/t0097_multi_obj_optim/)
-
-Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most
-evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010's `bf`
-in [0.2, 0.7] band; Chklovskii et al. 2002's 3/5-of-grey-matter wiring rule). Infrastructure
-already in place via the t0093-validated procedural morphology generator. Falsifiable
-prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on
-Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8
-budget bump if needed). Same population/generation budget as t0091.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Extend NSGA-II from t0083's gen-17 to gen 25 with 1.5x larger
 population (144) and parameter-clustering analysis</strong> (S-0083-01)</summary>
 
@@ -2954,7 +2937,7 @@ Recommended task types: experiment-run.
 <summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
 per-synapse value, then re-run</strong> (S-0086-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
 [t0086_robustness_cluster_bio_comparison](../../tasks/t0086_robustness_cluster_bio_comparison/)
 
 t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse

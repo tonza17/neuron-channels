@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-18",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0099_random_init_pareto_robustness",
+  "target_kind": "suggestion",
+  "target_id": "S-0099-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "Anchor-1-only warm-start NSGA-II: pre-t0106 era. t0106's 2-direction substrate and the t0111-t0115 multi-seed batch have moved the project past warm-start vs random-init questions. Downgrade to medium."
+}

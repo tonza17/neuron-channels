@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-20",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0102_seedscale_n4_gen20",
+  "target_kind": "suggestion",
+  "target_id": "S-0102-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "Silenced-cell DSI=1.0 fix: partially addressed by the silence-guard introduced in t0102 and tightened in t0104 / t0106. The remaining DSI=1.0 ceiling cells are handled by the LEGIT < 0.9999 convention. Downgrade to medium."
+}

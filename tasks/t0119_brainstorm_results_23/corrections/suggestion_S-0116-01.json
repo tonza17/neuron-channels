@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-08",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0116_pooled_pca_cluster_factor_dsi07_pd10",
+  "target_kind": "suggestion",
+  "target_id": "S-0116-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "rationale": "Superseded by t0117 (pooled PCA + cluster + factor analysis of ALL cells across 4 seeds, no filter). t0117's unfiltered pool confirmed the truncated-cohort artefact more powerfully than a 5-seed strict-cohort re-analysis would have. Adding t0113 (seed 2247, 0 LEGIT joint-pass) to a strict cohort would add minimal signal."
+}

@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-09",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0116_pooled_pca_cluster_factor_dsi07_pd10",
+  "target_kind": "suggestion",
+  "target_id": "S-0116-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "rationale": "Subsumed by S-0117-01 (bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9). The single DSI>0.5 point is one stratum of the proposed parametric sweep; doing only the single point would duplicate part of the larger sweep without adding marginal value."
+}

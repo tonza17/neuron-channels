@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-22",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0102_seedscale_n4_gen20",
+  "target_kind": "suggestion",
+  "target_id": "S-0102-03",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "IBEA replacement for NSGA-II: t0106's joint-pass yield (3.23%) and t0114's 8.13% weakened the algorithm-limitation argument. NSGA-II works fine on this substrate; IBEA comparison is now nice-to-have, not high-priority. Downgrade to medium."
+}

@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-15",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0086_robustness_cluster_bio_comparison",
+  "target_kind": "suggestion",
+  "target_id": "S-0086-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "NMDA prior tightening on t0083 substrate: pre-morphology-extended NSGA-II (t0091 and onwards). The morphology extension already exposed wider parameter space; standalone t0083-substrate NMDA-bound tightening is no longer the highest leverage path. Downgrade to medium."
+}

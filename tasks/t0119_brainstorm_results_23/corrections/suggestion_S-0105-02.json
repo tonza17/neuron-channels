@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-28",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0105_cluster_factor_analysis_dsi_pd",
+  "target_kind": "suggestion",
+  "target_id": "S-0105-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "Ca-K channel ablation sweep on top-PC1 asymmetric cells: t0105 era. Superseded in spirit by the cluster + factor pipeline carried through t0108/t0110/t0116/t0117. Specific Ca-K ablation can be revisited as a follow-up to S-0118-02 g_I sweep. Downgrade to medium."
+}

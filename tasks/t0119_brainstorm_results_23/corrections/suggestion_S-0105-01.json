@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-27",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0105_cluster_factor_analysis_dsi_pd",
+  "target_kind": "suggestion",
+  "target_id": "S-0105-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "morph_seed exclusion factor-analysis re-run: superseded by t0117 (4-seed unfiltered pool, 4431 cells) which confirmed F1 is a real joint factor in a much larger sample with multiple morph_seeds. Downgrade to medium."
+}

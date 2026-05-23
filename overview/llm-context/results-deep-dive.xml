@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-22T18:36:32Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-23T22:49:16Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>115</section_count>
-    <char_count>2226957</char_count>
-    <byte_count>2236652</byte_count>
-    <estimated_tokens>556739</estimated_tokens>
+    <section_count>116</section_count>
+    <char_count>2239532</char_count>
+    <byte_count>2249231</byte_count>
+    <estimated_tokens>559883</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -223,9 +223,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0116_pooled_pca_cluster_factor_dsi07_pd10</id>
         <id>t0117_pooled_pca_cluster_factor_all_cells_4_seeds</id>
         <id>t0118_resimulate_t0117_cluster_samples_ge_gi_vm</id>
+        <id>t0119_brainstorm_results_23</id>
       </source_ids>
       <content>
-Completed tasks: 111
+Completed tasks: 112
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -892,6 +893,12 @@ ID: t0118_resimulate_t0117_cluster_samples_ge_gi_vm
 Completed: 2026-05-22
 Short description: Stratified-sample 10 cells per t0117 electrophys cluster (40 cells) spanning DSI x PD, re-simulate the 3-mode trio in PD+ND, plot per-cluster g_E(t), g_I(t), V_m(t).
 Result summary: Results Summary: Re-Simulate 10 Cells per t0117 Electrophys Cluster Summary Stratified-sampled 40 cells (10 per t0117 electrophys cluster, k = 4) spanning DSI × PD quintiles from the unfiltered 4 431-cell pool and re-simulated each cell in the canonical 3-mode trio (EPSP_PASSIVE, IPSP_PASSIVE, FULL) for PD (0°) and ND (180°) directions — 240 NEURON runs total, zero failures, ~70 min wall-clock. Produced 4 per-cluster 10-row × 3-column trace figures (g_E / g_I / V_m, PD solid + ND dashed) and a 4-row × 3-column cross-cluster median-trace summary. Demonstration / exploratory artefact; no answer assets produced (`expected_assets: {}`). Metrics * **Cells re-simulated**: **40** (10 per...
+
+## Brainstorm results session 23
+ID: t0119_brainstorm_results_23
+Completed: 2026-05-23
+Short description: Brainstorm 23: gate next NSGA-II on morphology-geometry audit; commission cytoplasm-volume NSGA-II + 5-seed substrate-rate report; prune backlog (9 rejects + 21 downgrades).
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0119_brainstorm_results_23&quot; date_completed: &quot;2026-05-23&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 23 Summary Twenty-third strategic brainstorm. Researcher raised a critical concern about the procedural morphology generator&#x27;s geometry after inspecting t0115&#x27;s `top50_morphologies_seed9354.png` (soma appeared disconnected from dendrite tree in many panels). The session gated the next NSGA-II wave on a 15-20-cell morphology-geometry audit (t0120), and conditionally commissioned a biologically-grounded cytoplasm-volume NSGA-II run (t0122, S-0097-01) plus a write-up of the closed 5-seed substrate-rate batch (t0121, S-0115-02). The session also...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -901,9 +908,12 @@ Result summary: Results Summary: Re-Simulate 10 Cells per t0117 Electrophys Clus
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0120_morph_generator_geometry_audit</id>
+        <id>t0121_5seed_substrate_rate_canonical_report</id>
+        <id>t0122_dsi_cytoplasm_volume_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 6
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -924,6 +934,27 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## Morphology generator geometry audit (15-20 cells)
+ID: t0120_morph_generator_geometry_audit
+Status: not_started
+Effective date: unknown
+Short description: Audit procedural morphology generator: verify primary stems start at origin_xy, parent/child endpoint match, and synapse pt3d xy frame matches origin_xy across 15-20 visually-diverse cells. Gates downstream NSGA-II.
+Dependencies: t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
+
+## Canonical 5-seed substrate-rate report (S-0112-01 batch closed)
+ID: t0121_5seed_substrate_rate_canonical_report
+Status: not_started
+Effective date: unknown
+Short description: Pure write-up consolidating t0106 / t0112 / t0113 / t0114 / t0115 5-seed LEGIT joint-pass acceptance rate into one canonical document with harmonised conventions and Hay 2011 / Druckmann 2007 comparisons.
+Dependencies: t0106_long_pdnd_nsga2_300gen, t0112_t0106_seed77_replicate, t0113_t0106_seed2247_replicate, t0114_seed7755_no_autostop, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
+
+## NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)
+ID: t0122_dsi_cytoplasm_volume_nsga2
+Status: not_started
+Effective date: unknown
+Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010 wiring cost). Gated on t0120 geometry audit passing. 1 GA seed, pop=96, N_EVAL_SEEDS=3, $8 cap.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0119_brainstorm_results_23, t0120_morph_generator_geometry_audit
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -37590,6 +37621,175 @@ The plan decomposes this into 15 stable `REQ-*` items.
 | REQ-13 | **Done** | Cross-cluster 4 × 3 pointwise-median figure. | `results/images/cross_cluster_traces.png` |
 | REQ-14 | **Partial** | 39 / 40 cells satisfy PD-spike &gt; ND-spike for DSI &gt; 0.5. One cell (cluster 0, `77_15_1356`) is silent in t0118&#x27;s canonical −10 mV threshold and produces 0 PD / 1 ND spike — genuine edge case, not a pipeline bug. | `results/data/dsi_sanity_check.csv` |
 | REQ-15 | **Done** | `verify_outputs.py` returns `all checks passed`: manifest one-to-one with t0117 pool, every (cell, mode, direction) parquet has 1 400 rows with mode-correct columns. | `code/verify_outputs.py` |
+      </content>
+    </section>
+    <section id="t0119_brainstorm_results_23-results-detailed" source_kind="file">
+      <title>t0119_brainstorm_results_23 — Brainstorm results session 23 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0119_brainstorm_results_23</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0119_brainstorm_results_23/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0119_brainstorm_results_23&quot;
+date_completed: &quot;2026-05-23&quot;
+status: &quot;complete&quot;
+---
+### Results Detailed: Brainstorm Session 23
+
+#### Summary
+
+Twenty-third strategic brainstorm. Researcher raised a critical concern about the procedural
+morphology generator&#x27;s geometry after inspecting t0115&#x27;s `top50_morphologies_seed9354.png` (soma
+appeared disconnected from dendrite tree in many panels). The session gated the next NSGA-II wave on
+a 15-20-cell morphology-geometry audit (t0120), and conditionally commissioned a
+biologically-grounded cytoplasm-volume NSGA-II run (t0122, S-0097-01) plus a write-up of the closed
+5-seed substrate-rate batch (t0121, S-0115-02). The session also aggressively pruned the
+high-priority suggestion backlog: 9 rejections + 21 downgrades (30 correction files).
+
+#### Methodology
+
+1. **Phase 1 (Review project state)**:
+   * Ran `aggregate_tasks --format json --detail short` (119 tasks).
+   * Ran `aggregate_suggestions --format json --detail short --uncovered` (372 active uncovered; 51
+     high, 261 medium, 60 low) and `--detail full --priority high` (51 highs read in full).
+   * Ran `aggregate_costs --format json --detail short` ($62.90 / $100 spent; $37.10 left; no
+     thresholds tripped).
+   * Read `results/results_summary.md` for t0112, t0113, t0114, t0115, t0116, t0117, t0118.
+   * Read `results/compare_literature.md` for t0114.
+   * Read the recent answer asset
+     `t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-truncated-cohort-artefact-test/short_answer.md`.
+   * Ran the overview materialiser (`arf.scripts.overview.materialize`).
+   * Formed an independent priority reassessment grouping suggestions into top-priority, superseded,
+     and stale.
+
+2. **Phase 1.5 / 2 (Discuss decisions, with morphology diversion)**:
+   * Researcher interrupted the standard 4-question clarification with the morphology-geometry
+     concern.
+   * AI traced the generator code path end-to-end:
+     `tasks/t0090_morphology_generator_diversity_test/code/generator.py` `_apply_asymmetry` (lines
+     333-355), `_materialise_neuron_sections` (lines 358-505), `generate_morphology` (line 584),
+     `tasks/t0092_diagnose_morphology_generator_silence/code/morphology_generator_fix.py`,
+     `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/trial_helpers.py` `_section_midpoint_xy`
+     (line 160) and synapse-placement (lines 244-310), `tasks/t0080.../code/trial_driver.py`
+     `_bar_arrival_times`.
+   * Confirmed: NEURON electrical topology is `sec.connect()`-based and indifferent to xy; synapse
+     pt3d xy and `origin_xy` come from the same `pt3dadd` calls in `_materialise_neuron_sections`;
+     the bar-arrival projection `(syn_xy - origin_xy)` is in a self-consistent frame.
+   * Preliminary verdict: most likely a rendering / auto-zoom visual artefact, but needs empirical
+     verification before next NSGA-II runs.
+   * Researcher chose: morphology audit as gating task with 15-20 visually-diverse cells (not 5),
+     then proceed with new optimisation if audit passes.
+   * Round 1: proposed t0120 (audit), t0121 (5-seed canonical report, S-0115-02), t0122
+     (cytoplasm-volume NSGA-II, S-0097-01).
+   * Round 2: proposed aggressive cleanup (9 rejects + 21 downgrades).
+   * Round 3: researcher confirmed.
+
+3. **Phase 3-4 (Create brainstorm task)**:
+   * Created branch `task/t0119_brainstorm_results_23` from `main`.
+   * Created full brainstorm task folder structure (per
+     `arf/specifications/task_file_specification.md` and the brainstorm skill spec).
+   * Wrote `task.json` (spec_version 4, status &quot;completed&quot;, `expected_assets={}`),
+     `task_description.md`, `step_tracker.json` (4 steps), `plan/plan.md`, 3 research placeholders,
+     placeholders for `results/metrics.json` (`{}`), `costs.json` (zero),
+     `remote_machines_used.json` (`[]`), `suggestions.json` (empty array), the 4 step logs,
+     `logs/session_log.md`, and `.gitkeep` placeholders.
+
+4. **Phase 5 (Apply decisions)**:
+   * Created 3 child tasks with task.json + task_description.md only (no subdirectories per
+     create-task skill spec):
+     * `t0120_morph_generator_geometry_audit`
+     * `t0121_5seed_substrate_rate_canonical_report`
+     * `t0122_dsi_cytoplasm_volume_nsga2`
+   * Wrote 30 correction files using a generator script
+     (`C:\Users\md1avn\AppData\Local\Temp\write_corrections.py`): 9 rejections
+     (`suggestion_S-*.json` with `action=&quot;update&quot;`, `changes={&quot;status&quot;: &quot;rejected&quot;}`) and 21
+     downgrades (`changes={&quot;priority&quot;: &quot;medium&quot;}`). Per-suggestion rationale documents the specific
+     superseding task or policy decision.
+
+5. **Phase 6 (Record and finalize)** (this section):
+   * Wrote `results_summary.md` and `results_detailed.md`.
+   * Captured CLI session transcripts via
+     `arf.scripts.utils.capture_task_sessions --task-id t0119_brainstorm_results_23`.
+   * Ran `flowmark --inplace --nobackup` on all edited markdown files.
+   * Ran the four mandatory verificators: `verify_task_file`, `verify_corrections`,
+     `verify_suggestions`, `verify_logs`.
+   * Re-ran the overview materialiser so corrections show in `overview/`.
+   * Committed, pushed `task/t0119_brainstorm_results_23`, opened PR, ran `verify_pr_premerge`,
+     merged with a merge commit (not squash).
+
+#### Metrics
+
+| Item | Count |
+| --- | --- |
+| Tasks aggregated | 119 |
+| Suggestions aggregated (uncovered) | 372 |
+| High-priority suggestions read in full | 51 |
+| Source-task results summaries read | 7 (t0112-t0118) |
+| Source-task compare_literature.md read | 1 (t0114) |
+| Answer assets read | 1 (t0117 truncated-cohort artefact test) |
+| New tasks created | 3 |
+| Correction files written | 30 (9 rejections + 21 downgrades) |
+| Suggestions kept at high after wave | 12 |
+| Suggestions deferred to future sessions (still active) | ~349 |
+| Budget committed by this wave | ~$5-9 |
+| Budget left after this wave is executed | ~$28-32 of original $100 |
+
+#### Limitations
+
+* This is a planning task, no experiments run.
+* The morphology-geometry concern is being resolved by a separate task (t0120). The brainstorm
+  itself only commissions the diagnostic; it does not run it.
+* Aggressive cleanup involves judgement calls. The 21 high-to-medium downgrades remain reversible
+  via further corrections in any future brainstorm; if a downgraded suggestion turns out to still be
+  load-bearing, a future task can re-promote it.
+
+#### Files Created
+
+* `tasks/t0119_brainstorm_results_23/__init__.py`
+* `tasks/t0119_brainstorm_results_23/task.json`
+* `tasks/t0119_brainstorm_results_23/task_description.md`
+* `tasks/t0119_brainstorm_results_23/step_tracker.json`
+* `tasks/t0119_brainstorm_results_23/plan/plan.md`
+* `tasks/t0119_brainstorm_results_23/research/research_papers.md`
+* `tasks/t0119_brainstorm_results_23/research/research_internet.md`
+* `tasks/t0119_brainstorm_results_23/research/research_code.md`
+* `tasks/t0119_brainstorm_results_23/assets/.gitkeep`
+* `tasks/t0119_brainstorm_results_23/intervention/.gitkeep`
+* `tasks/t0119_brainstorm_results_23/results/results_summary.md` (this batch)
+* `tasks/t0119_brainstorm_results_23/results/results_detailed.md` (this file)
+* `tasks/t0119_brainstorm_results_23/results/metrics.json`
+* `tasks/t0119_brainstorm_results_23/results/suggestions.json`
+* `tasks/t0119_brainstorm_results_23/results/costs.json`
+* `tasks/t0119_brainstorm_results_23/results/remote_machines_used.json`
+* `tasks/t0119_brainstorm_results_23/logs/session_log.md`
+* `tasks/t0119_brainstorm_results_23/logs/commands/.gitkeep`
+* `tasks/t0119_brainstorm_results_23/logs/searches/.gitkeep`
+* `tasks/t0119_brainstorm_results_23/logs/sessions/.gitkeep`
+* `tasks/t0119_brainstorm_results_23/logs/steps/001_review-project-state/step_log.md`
+* `tasks/t0119_brainstorm_results_23/logs/steps/002_discuss-decisions/step_log.md`
+* `tasks/t0119_brainstorm_results_23/logs/steps/003_apply-decisions/step_log.md`
+* `tasks/t0119_brainstorm_results_23/logs/steps/004_finalize/step_log.md`
+* `tasks/t0119_brainstorm_results_23/corrections/suggestion_S-*.json` (30 files)
+* `tasks/t0120_morph_generator_geometry_audit/task.json`
+* `tasks/t0120_morph_generator_geometry_audit/task_description.md`
+* `tasks/t0121_5seed_substrate_rate_canonical_report/task.json`
+* `tasks/t0121_5seed_substrate_rate_canonical_report/task_description.md`
+* `tasks/t0122_dsi_cytoplasm_volume_nsga2/task.json`
+* `tasks/t0122_dsi_cytoplasm_volume_nsga2/task_description.md`
+
+#### Verification
+
+* `verify_task_file t0119_brainstorm_results_23` -- PASSED
+* `verify_corrections t0119_brainstorm_results_23` -- PASSED (30 corrections)
+* `verify_suggestions t0119_brainstorm_results_23` -- PASSED (empty array intentional)
+* `verify_logs t0119_brainstorm_results_23` -- PASSED (LG-W005, LG-W007, LG-W008 may appear and are
+  expected for a pure-planning brainstorm)
+* `verify_pr_premerge t0119_brainstorm_results_23 --pr-number &lt;N&gt;` -- PASSED before merge
       </content>
     </section>
   </sections>

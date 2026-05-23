@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-22T18:36:32Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-23T22:49:16Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>553789</char_count>
-    <byte_count>554332</byte_count>
-    <estimated_tokens>138447</estimated_tokens>
+    <char_count>566101</char_count>
+    <byte_count>566642</byte_count>
+    <estimated_tokens>141525</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -223,9 +223,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0116_pooled_pca_cluster_factor_dsi07_pd10</id>
         <id>t0117_pooled_pca_cluster_factor_all_cells_4_seeds</id>
         <id>t0118_resimulate_t0117_cluster_samples_ge_gi_vm</id>
+        <id>t0119_brainstorm_results_23</id>
       </source_ids>
       <content>
-Completed tasks: 111
+Completed tasks: 112
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -892,6 +893,12 @@ ID: t0118_resimulate_t0117_cluster_samples_ge_gi_vm
 Completed: 2026-05-22
 Short description: Stratified-sample 10 cells per t0117 electrophys cluster (40 cells) spanning DSI x PD, re-simulate the 3-mode trio in PD+ND, plot per-cluster g_E(t), g_I(t), V_m(t).
 Result summary: Results Summary: Re-Simulate 10 Cells per t0117 Electrophys Cluster Summary Stratified-sampled 40 cells (10 per t0117 electrophys cluster, k = 4) spanning DSI × PD quintiles from the unfiltered 4 431-cell pool and re-simulated each cell in the canonical 3-mode trio (EPSP_PASSIVE, IPSP_PASSIVE, FULL) for PD (0°) and ND (180°) directions — 240 NEURON runs total, zero failures, ~70 min wall-clock. Produced 4 per-cluster 10-row × 3-column trace figures (g_E / g_I / V_m, PD solid + ND dashed) and a 4-row × 3-column cross-cluster median-trace summary. Demonstration / exploratory artefact; no answer assets produced (`expected_assets: {}`). Metrics * **Cells re-simulated**: **40** (10 per...
+
+## Brainstorm results session 23
+ID: t0119_brainstorm_results_23
+Completed: 2026-05-23
+Short description: Brainstorm 23: gate next NSGA-II on morphology-geometry audit; commission cytoplasm-volume NSGA-II + 5-seed substrate-rate report; prune backlog (9 rejects + 21 downgrades).
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0119_brainstorm_results_23&quot; date_completed: &quot;2026-05-23&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 23 Summary Twenty-third strategic brainstorm. Researcher raised a critical concern about the procedural morphology generator&#x27;s geometry after inspecting t0115&#x27;s `top50_morphologies_seed9354.png` (soma appeared disconnected from dendrite tree in many panels). The session gated the next NSGA-II wave on a 15-20-cell morphology-geometry audit (t0120), and conditionally commissioned a biologically-grounded cytoplasm-volume NSGA-II run (t0122, S-0097-01) plus a write-up of the closed 5-seed substrate-rate batch (t0121, S-0115-02). The session also...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -901,9 +908,12 @@ Result summary: Results Summary: Re-Simulate 10 Cells per t0117 Electrophys Clus
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0120_morph_generator_geometry_audit</id>
+        <id>t0121_5seed_substrate_rate_canonical_report</id>
+        <id>t0122_dsi_cytoplasm_volume_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 6
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1226,6 +1236,337 @@ For each condition, compute:
 * Joint multi-axis optimisation — explicitly excluded; this is one-axis-at-a-time only.
 * Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
   channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
+
+## Morphology generator geometry audit (15-20 cells)
+ID: t0120_morph_generator_geometry_audit
+Status: not_started
+Effective date: unknown
+Short description: Audit procedural morphology generator: verify primary stems start at origin_xy, parent/child endpoint match, and synapse pt3d xy frame matches origin_xy across 15-20 visually-diverse cells. Gates downstream NSGA-II.
+Dependencies: t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
+
+#### Motivation
+
+In t0115&#x27;s `top50_morphologies_seed9354.png` and earlier seed-77 / seed-7755 morphology grids,
+several panels show the soma circle appearing far away from the dendrite tree with apparent empty
+space between them. The researcher flagged this as a possible geometry bug: if the soma is genuinely
+disconnected from the dendrites in the procedural generator
+(`tasks/t0090_morphology_generator_diversity_test/code/generator.py`), every 68-d
+morphology-extended NSGA-II result from t0091 onwards (t0091, t0099, t0102, t0104, t0106,
+t0112-t0115) could be electrically invalid and would need to be re-run.
+
+A preliminary code trace in brainstorm session 23 suggests the issue is most likely a rendering
+artefact (small soma circle, thin connecting primary stem, auto-zoomed bounding box on extreme
+asymmetric cells), and that:
+
+* NEURON electrical topology is `sec.connect()`-based and indifferent to xy coordinates.
+* Synapse pt3d xy and `origin_xy` are written by the same `_materialise_neuron_sections` function,
+  so the bar-arrival-time projection `(syn_xy - origin_xy)` is computed in a self-consistent frame.
+
+But this trace must be empirically verified before any new NSGA-II optimisation runs. The researcher
+selected this as the gating task for the post-t0118 wave.
+
+#### Scope
+
+Sample 15-20 cells stratified across the asymmetry-parameter extremes that drive the visual
+artefact, plus symmetric controls. Dump the full `section_endpoints_xy` and NEURON `h.x3d/h.y3d`
+pt3d for each cell. Verify three properties analytically and visually for each cell:
+
+1. **Primary stems start at `origin_xy`**: for every primary dendrite section,
+   `start_xy == origin_xy` (within float tolerance).
+2. **Parent / child endpoint match**: for every non-primary dendrite section,
+   `child.start_xy == parent.end_xy` (within float tolerance).
+3. **Synapse-vs-soma coordinate frame consistency**: place a test SAC synapse on each section, read
+   `h.x3d(mid), h.y3d(mid)`, and confirm it is in the same coordinate frame as `origin_xy` (no
+   offset, no scaling mismatch).
+
+#### Cells to Sample (15-20 total, stratified)
+
+Sample cells from the pooled Pareto fronts of t0091, t0099, t0112, t0114, t0115 across these strata:
+
+* 3 cells with high `|soma_offset_pd_um|` (top decile of the pooled distribution).
+* 3 cells with extreme `field_elongation_pd` (top and bottom deciles, 1-2 each).
+* 3 cells with extreme `branch_density_gradient_pd` (top decile by absolute value).
+* 3 cells with high `primary_branch_pd_concentration` (top decile, von Mises kappa).
+* 3 cells flagged visually as &quot;worst-looking&quot; by inspection of the t0115 top-50 PNG.
+* 3-5 symmetric controls with all 4 asymmetry parameters near their BEDB_BASE_POINT defaults
+  (soma_offset = 0, field_elongation = 1, branch_density_gradient = 0,
+  primary_branch_pd_concentration = 0).
+
+#### Approach
+
+1. **Sample cells**: load the pooled cells parquet from t0117 (4431 cells), compute per-cell
+   stratification keys from the 14-d morphology subvector, sample 15-20 cells across the strata
+   above.
+2. **Dump generator coords**: for each sampled cell, instantiate the morphology via
+   `generate_fixed_morphology` (matching the lineage convention), monkey-patch the NEURON DLL
+   loader, extract `section_endpoints_xy`, `origin_xy`, and per-section `h.x3d/h.y3d/h.z3d` for
+   every pt3d.
+3. **Coordinate-consistency checks** (analytic):
+   * For every primary dendrite section: `assert close(section.start_xy, origin_xy)`.
+   * For every non-primary section: walk the parent chain, assert child.start_xy close to
+     parent.end_xy at each level.
+   * For each section, place a temporary `ExpSyn` at midpoint, read `h.x3d/h.y3d` of the midpoint
+     pt3d, assert it falls on the line from `section.start_xy` to `section.end_xy`.
+4. **Per-cell pass/fail CSV**: write a CSV with one row per cell, columns for each of the three
+   checks (pass/fail), the asymmetry-parameter values, and the visual stratum tag.
+5. **Visual diagnostic gallery**: re-render each cell at 2x larger panel with explicit primary-stem
+   highlight (line-width 2.0, contrasting color) and a soma circle scaled to `soma_diameter_um` (not
+   the fixed 6 px). Add a thin debug line from `origin_xy` to each primary stem&#x27;s `end_xy` if the
+   primary stem origin would otherwise be invisible. Save as
+   `results/images/geometry_audit_gallery.png`.
+6. **Answer asset**: write one answer asset answering &quot;Is the procedural morphology generator&#x27;s
+   asymmetry transform geometrically consistent across the 15-20 sampled cells?&quot; with conditional
+   verdicts: (a) all 3 checks pass for all sampled cells -&gt; rendering-only issue, no re-runs needed;
+   (b) any check fails -&gt; framework-level decision needed before further NSGA-II.
+
+#### Expected Outputs
+
+* `results/data/sampled_cell_manifest.csv` -- which cells were sampled, stratum tag,
+  asymmetry-parameter values.
+* `results/data/coordinate_consistency_checks.csv` -- per-cell pass/fail for each of the 3 checks.
+* `results/data/section_endpoints_dump.json` -- full pt3d dump per cell for forensic analysis.
+* `results/images/geometry_audit_gallery.png` -- visual diagnostic gallery.
+* `assets/answer/morphology-generator-geometry-consistency/` -- 1 answer asset with the verdict.
+* `results/results_summary.md` and `results/results_detailed.md` with the verdict and per-cell
+  table.
+
+#### Budget
+
+Local CPU only, no remote machines. Estimate &lt;$0.10 (essentially $0 -- a few CPU hours).
+
+#### Dependencies
+
+* `t0090_morphology_generator_diversity_test` -- provides the procedural generator.
+* `t0092_diagnose_morphology_generator_silence` -- provides the `generate_fixed_morphology` wrapper
+  with the soma-area patch.
+* `t0115_seed9354_no_autostop` (or `t0117`) -- provides the pooled cells parquet for sampling.
+* `t0119_brainstorm_results_23` -- commissions this task.
+
+#### Verification Criteria
+
+* All 3 coordinate-consistency checks defined and run for every sampled cell.
+* Per-cell pass/fail CSV exists with one row per cell.
+* Visual diagnostic gallery saved and embedded in `results_detailed.md`.
+* Answer asset passes `verify_answer_asset` (or the local `verify_answers_local.py` fallback used by
+  recent tasks).
+* Verdict in the results summary unambiguously states either &quot;rendering-only&quot; or &quot;real geometry bug
+  requires framework decision&quot;.
+
+#### Cross-References
+
+* Researcher concern raised in `t0119_brainstorm_results_23/logs/session_log.md`.
+* Preliminary code trace performed in the brainstorm session covering `_apply_asymmetry`
+  (`generator.py` lines 333-355) and `_section_midpoint_xy` (`trial_helpers.py` line 160).
+
+## Canonical 5-seed substrate-rate report (S-0112-01 batch closed)
+ID: t0121_5seed_substrate_rate_canonical_report
+Status: not_started
+Effective date: unknown
+Short description: Pure write-up consolidating t0106 / t0112 / t0113 / t0114 / t0115 5-seed LEGIT joint-pass acceptance rate into one canonical document with harmonised conventions and Hay 2011 / Druckmann 2007 comparisons.
+Dependencies: t0106_long_pdnd_nsga2_300gen, t0112_t0106_seed77_replicate, t0113_t0106_seed2247_replicate, t0114_seed7755_no_autostop, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
+
+#### Source Suggestion
+
+S-0115-02: &quot;5-seed substrate-rate batch (S-0112-01) is now complete; write canonical report.&quot;
+
+#### Motivation
+
+The S-0112-01 substrate-rate confirmation batch closed with t0115 (seed 9354). The 5 GA seeds (44,
+77, 2247, 7755, 9354) on the 68-d Bed B + 14-d morphology substrate produced LEGIT joint-pass
+acceptance rates of 3.23%, 0.35%, 0.00%, 8.13%, 1.19% respectively. The 5-seed mean is 2.58% +/- SE
+1.50%, with a 95% CI of (-0.36%, +5.52%) that still brackets both Hay 2011&#x27;s 0.40% envelope upper
+bound and Druckmann 2007&#x27;s 0.10% baseline -- but 3 of 5 seeds individually beat Hay&#x27;s envelope, and
+the point estimate is 6.5x above Hay and 25.8x above Druckmann.
+
+The data lives in five separate task folders with slightly different reporting conventions (t0106
+reported on a $25 cap; t0112 used a $25 cap; t0113/t0114/t0115 used auto-stop disabled; t0106 used
+auto-stop enabled). A single canonical document with harmonised metric conventions is needed before
+this finding can be referenced by downstream tasks or external write-ups.
+
+#### Scope
+
+Pure write-up. No new simulation, no new NSGA-II runs. Re-read the 5 source tasks&#x27; results parquets
+and produce one consolidated canonical document plus one answer asset.
+
+#### Approach
+
+1. **Re-read source data**: load each of the 5 tasks&#x27; `results/data/pareto_front_seed*.json` (or
+   equivalent) and `all_evaluations_seed*.json` if available. Verify total evaluation counts match
+   the per-seed reports (3744, 2016, 1344, 5952, 5280).
+2. **Harmonise conventions**: re-compute LEGIT joint-pass count per seed using the canonical
+   definition (DSI &gt;= 0.5 AND PD-rate &gt;= 30 Hz AND DSI &lt; 0.9999). Cross-check against each task&#x27;s
+   reported number; flag and document any discrepancies.
+3. **Compute 5-seed statistics**: per-seed acceptance rate, 5-seed mean, sample SD, sample SE, 95%
+   CI (normal approx), 95% CI (bootstrap with B=10000), and counts of seeds beating Hay envelope.
+4. **Comparison table**: harmonise with Hay 2011&#x27;s 0.40% upper envelope and 0.0104% perisomatic
+   bottleneck, and with Druckmann 2007&#x27;s 0.10% baseline.
+5. **Per-seed convergence-trajectory comparison**: HV trajectory, plateau generation, total
+   evaluations, wall-clock per generation.
+6. **Charts**: (a) per-seed acceptance rate bar chart with Hay/Druckmann reference lines, (b) 5-seed
+   HV-trajectory overlay (one trace per seed), (c) DSI-vs-PD scatter for the pooled LEGIT joint-pass
+   cells colored by seed.
+7. **Answer asset**: write one answer asset answering &quot;What is the LEGIT joint-pass acceptance rate
+   on the 68-d Bed B + 14-d morphology substrate, estimated from a 5-seed random-init NSGA-II batch,
+   and how does it compare to Hay 2011 and Druckmann 2007?&quot;
+
+#### Expected Outputs
+
+* `results/data/per_seed_substrate_rate_5seed.csv` -- one row per seed with all relevant statistics.
+* `results/data/pooled_legit_jointpass_cells.parquet` -- pooled LEGIT joint-pass cells across the 5
+  seeds (DSI, PD, source-seed, generation, cell_id).
+* `results/images/per_seed_acceptance_bar.png` -- per-seed acceptance bar chart.
+* `results/images/hv_trajectory_5seed_overlay.png` -- 5-seed HV-trajectory overlay.
+* `results/images/dsi_pd_scatter_5seed_pooled.png` -- pooled scatter colored by seed.
+* `assets/answer/substrate-rate-5seed-canonical/` -- 1 answer asset.
+* `results/results_summary.md` and `results/results_detailed.md` with the canonical numbers.
+
+#### Budget
+
+Local CPU only, no remote machines. Estimate &lt;$0.20.
+
+#### Dependencies
+
+* `t0106_long_pdnd_nsga2_300gen` -- seed 44.
+* `t0112_t0106_seed77_replicate` -- seed 77.
+* `t0113_t0106_seed2247_replicate` -- seed 2247.
+* `t0114_seed7755_no_autostop` -- seed 7755.
+* `t0115_seed9354_no_autostop` -- seed 9354.
+* `t0119_brainstorm_results_23` -- commissions this task.
+
+#### Verification Criteria
+
+* All 5 per-seed acceptance rates match the source task reports within rounding.
+* 5-seed mean and SE match the brainstorm-session-23 summary (2.58% +/- 1.50%) within rounding.
+* Charts saved and embedded in `results_detailed.md`.
+* Answer asset passes `verify_answer_asset` (or local fallback).
+
+#### Cross-References
+
+* Source suggestion: S-0115-02.
+* Source tasks: t0106, t0112, t0113, t0114, t0115.
+* Hay 2011 -- 10.1371/journal.pcbi.1002107 (or t0114 `compare_literature.md` for citation).
+* Druckmann 2007 -- as cited in t0114 `compare_literature.md`.
+
+## NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)
+ID: t0122_dsi_cytoplasm_volume_nsga2
+Status: not_started
+Effective date: unknown
+Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010 wiring cost). Gated on t0120 geometry audit passing. 1 GA seed, pop=96, N_EVAL_SEEDS=3, $8 cap.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0119_brainstorm_results_23, t0120_morph_generator_geometry_audit
+
+#### Source Suggestion
+
+S-0097-01: &quot;Bed B NSGA-II maximising DSI and minimising cytoplasm volume.&quot;
+
+#### Motivation
+
+The t0097 multi-objective optimisation catalogue ranked DSI vs cytoplasm volume as the most
+biologically-grounded objective pair in the project:
+
+* Cajal&#x27;s cytoplasm-conservation principle and Chklovskii et al. 2002&#x27;s wiring-cost rule (3/5 of
+  grey-matter volume is dendrites + axons for optimal wiring) make cytoplasm a primary evolutionary
+  cost objective.
+* Cuntz et al. 2010 (10.1371/journal.pcbi.1002107) operationalised this as a `balancing factor`
+  `bf in [0.2, 0.7]` for real dendritic trees -- a falsifiable prediction the optimiser can be
+  tested against.
+* Cytoplasm volume per section = pi * (diameter / 2)^2 * length, summed over soma + dendrites + AIS.
+  Easy to compute from the existing `MorphologyResult` without any new generator code.
+
+This is the natural next NSGA-II direction after the 5-seed substrate-rate confirmation batch closed
+at t0115. Recurring biological-plausibility concerns about pure-DSI-maximisation runs (the optimiser
+hits NMDA / Nav densities 85-122 sigma above Sivyer 2013 priors) motivate adding a biological cost
+objective. Cytoplasm volume was chosen over alternatives (ATP/spike, +-10% robustness) for cost
+reasons -- it adds zero per-evaluation overhead since it is a pure geometric quantity computable
+from the morphology.
+
+#### Gating Dependency
+
+**This task must not start until `t0120_morph_generator_geometry_audit` has been completed and the
+geometry-audit verdict is &quot;rendering-only / no re-runs needed&quot;.** If the audit reveals a real
+geometry bug, this task should be cancelled and a framework-level decision is needed about whether
+to patch `_apply_asymmetry` and re-run all 68-d morphology-extended NSGA-II lineage tasks first.
+
+#### Scope
+
+One NSGA-II run, single GA seed, 2 objectives, on the 68-d Bed B + 14-d morphology substrate that
+has been validated by the t0106-t0115 lineage.
+
+#### Approach
+
+1. **Copy the t0115 NSGA-II substrate** end-to-end: 68-d parameter vector (54-d electrophys + 14-d
+   morphology), pop=96, N_EVAL_SEEDS=3, 2 antipodal directions (PD=0deg, ND=180deg), ratio DSI,
+   silence-guard tightened to &gt;= 3 PD spikes, `_POOL_RESTART_EVERY=10`, HV-plateau auto-stop
+   DISABLED, $8 hard cap.
+2. **Replace one objective**: drop the PD-rate objective from t0106&#x27;s 2-objective configuration and
+   replace with **cytoplasm volume**, computed as:
+   `vol = sum(pi * (sec.diam/2)^2 * sec.L for sec in [soma, *all_dends, ais_proximal, ais_distal])`.
+   Units: um^3. Objectives become (maximise DSI, minimise cytoplasm volume). PD-rate stays as a
+   tracked diagnostic but is not an optimiser objective.
+3. **GA seed**: draw via `secrets.randbelow(10000)` (avoid round-ish numbers; follow the t0113
+   convention).
+4. **Gen ceiling**: 60 (per the t0114/t0115 convention for auto-stop-disabled runs).
+5. **Stop trigger**: operator stop when HV trajectory visibly plateaus, OR $8 cost cap, OR gen 60
+   ceiling.
+6. **Run on Vast.ai EPYC** (32-core or 64-core, whichever is cheapest at provisioning time);
+   single-instance.
+7. **Post-run analysis**: Pareto front in (DSI, cytoplasm_volume) space, joint-pass cells (DSI
+   &gt; = 0.5 AND PD-rate &gt;= 30 Hz AND cytoplasm_volume &lt;= TBD), per-cell morphology gallery for top
+   &gt; ranks, **Cuntz 2010 balancing-factor check**: compute `bf` for top-10 cells and verify whether
+   &gt; the high-DSI corner falls in the predicted `[0.2, 0.7]` band.
+8. **Answer asset**: write one answer asset answering &quot;Does NSGA-II with a cytoplasm-volume cost
+   objective produce a high-DSI front in Cuntz 2010&#x27;s predicted balancing-factor `[0.2, 0.7]` band?&quot;
+
+#### Expected Outputs
+
+* `assets/predictions/nsga2-cytoplasm-volume-bedb-morph/` -- predictions asset per spec, with
+  per-cell 68-d vector + per-objective + per-direction firing.
+* `assets/answer/cuntz-balancing-factor-prediction-check/` -- 1 answer asset on the Cuntz
+  prediction.
+* `results/data/pareto_front_seed*.json` -- Pareto front cells in (DSI, cytoplasm_volume).
+* `results/data/all_evaluations_seed*.json` -- every evaluation.
+* `results/images/pareto_front_dsi_vs_volume.png` -- Pareto front chart.
+* `results/images/top50_morphologies_seed*.png` -- top-50 morphology grid (full dendrite trees per
+  the project default).
+* `results/images/cuntz_balancing_factor_top10.png` -- bf distribution for top-10 cells with Cuntz
+  [0.2, 0.7] band overlaid.
+* `results/results_summary.md`, `results/results_detailed.md`, `results/compare_literature.md`
+  comparing to Hay 2011 / Cuntz 2010 / Mohacsi 2024.
+
+#### Budget
+
+* Cost cap: **$8** (per-task default).
+* Expected: ~$4-8 (one Vast.ai EPYC instance for 6-12 hours).
+* If the run exceeds $8 watchdog trip, stop and write up partial results.
+
+#### Dependencies
+
+* `t0024_port_de_rosenroll_2026_dsgc` -- canonical Bed B cell.
+* `t0080_bedb_mobo_v3_dendritic_spike_nsga2` -- 54-d electrophys parameter scheme + apply_params.
+* `t0090_morphology_generator_diversity_test` -- procedural morphology generator.
+* `t0092_diagnose_morphology_generator_silence` -- `generate_fixed_morphology` wrapper.
+* `t0106_long_pdnd_nsga2_300gen` -- NSGA-II driver substrate (parent of the lineage).
+* `t0115_seed9354_no_autostop` -- most recent run conventions to copy from.
+* `t0119_brainstorm_results_23` -- commissions this task.
+* **`t0120_morph_generator_geometry_audit` -- GATING DEPENDENCY**.
+
+#### Verification Criteria
+
+* `t0120` verdict is &quot;rendering-only / no re-runs needed&quot; before this task starts.
+* Predictions asset passes `verify_predictions_asset`.
+* `metrics.json` registers `direction_selectivity_index` with explicit variants for `best_legit`,
+  `overall_max`, `dsi_eq_one_count`.
+* Cytoplasm volume formula is documented in `results_detailed.md` with per-section breakdown.
+* Cuntz 2010 balancing-factor test result is reported as either &quot;consistent with [0.2, 0.7] band&quot; or
+  &quot;violates band&quot;.
+* `compare_literature.md` includes a row comparing top-cell `bf` distribution to Cuntz 2010.
+
+#### Cross-References
+
+* Source suggestion: S-0097-01.
+* Source paper: Cuntz et al. 2010 -- 10.1371/journal.pcbi.1002107.
+* Related project answer: t0097
+  `assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation`.
+* Prior lineage: t0106, t0112, t0113, t0114, t0115.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1639,56 +1980,26 @@ Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_D
         <id>S-0049-01</id>
         <id>S-0053-01</id>
         <id>S-0054-01</id>
-        <id>S-0067-01</id>
         <id>S-0067-02</id>
-        <id>S-0070-01</id>
-        <id>S-0074-01</id>
-        <id>S-0074-02</id>
-        <id>S-0076-04</id>
         <id>S-0081-02</id>
         <id>S-0081-03</id>
-        <id>S-0086-01</id>
         <id>S-0090-01</id>
-        <id>S-0090-02</id>
-        <id>S-0090-03</id>
         <id>S-0091-01</id>
         <id>S-0091-02</id>
         <id>S-0092-01</id>
         <id>S-0097-01</id>
         <id>S-0097-02</id>
         <id>S-0097-03</id>
-        <id>S-0099-01</id>
-        <id>S-0099-02</id>
         <id>S-0101-01</id>
-        <id>S-0102-01</id>
-        <id>S-0102-02</id>
-        <id>S-0102-03</id>
-        <id>S-0102-04</id>
         <id>S-0103-01</id>
         <id>S-0103-02</id>
         <id>S-0103-03</id>
-        <id>S-0104-01</id>
-        <id>S-0104-02</id>
-        <id>S-0104-04</id>
-        <id>S-0105-01</id>
-        <id>S-0105-02</id>
-        <id>S-0105-04</id>
-        <id>S-0106-01</id>
-        <id>S-0106-02</id>
         <id>S-0112-01</id>
-        <id>S-0112-02</id>
-        <id>S-0112-03</id>
         <id>S-0112-05</id>
         <id>S-0113-01</id>
-        <id>S-0113-02</id>
         <id>S-0113-03</id>
-        <id>S-0114-01</id>
         <id>S-0114-02</id>
-        <id>S-0114-07</id>
-        <id>S-0115-01</id>
         <id>S-0115-02</id>
-        <id>S-0116-01</id>
-        <id>S-0116-02</id>
         <id>S-0116-03</id>
         <id>S-0116-06</id>
         <id>S-0117-01</id>
@@ -1859,9 +2170,11 @@ Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_D
         <id>S-0065-03</id>
         <id>S-0066-01</id>
         <id>S-0066-03</id>
+        <id>S-0067-01</id>
         <id>S-0067-03</id>
         <id>S-0067-04</id>
         <id>S-0068-03</id>
+        <id>S-0070-01</id>
         <id>S-0070-02</id>
         <id>S-0070-03</id>
         <id>S-0070-04</id>
@@ -1873,11 +2186,14 @@ Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_D
         <id>S-0072-02</id>
         <id>S-0072-03</id>
         <id>S-0072-04</id>
+        <id>S-0074-01</id>
+        <id>S-0074-02</id>
         <id>S-0074-04</id>
         <id>S-0074-05</id>
         <id>S-0074-06</id>
         <id>S-0074-07</id>
         <id>S-0074-08</id>
+        <id>S-0076-04</id>
         <id>S-0076-06</id>
         <id>S-0078-03</id>
         <id>S-0078-04</id>
@@ -1896,11 +2212,14 @@ Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_D
         <id>S-0083-01</id>
         <id>S-0083-04</id>
         <id>S-0083-06</id>
+        <id>S-0086-01</id>
         <id>S-0086-04</id>
         <id>S-0086-06</id>
         <id>S-0088-03</id>
         <id>S-0088-04</id>
         <id>S-0088-05</id>
+        <id>S-0090-02</id>
+        <id>S-0090-03</id>
         <id>S-0090-05</id>
         <id>S-0090-06</id>
         <id>S-0091-03</id>
@@ -1917,10 +2236,16 @@ Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_D
         <id>S-0097-04</id>
         <id>S-0097-05</id>
         <id>S-0098-01</id>
+        <id>S-0099-01</id>
+        <id>S-0099-02</id>
         <id>S-0099-03</id>
         <id>S-0099-04</id>
         <id>S-0101-02</id>
         <id>S-0101-03</id>
+        <id>S-0102-01</id>
+        <id>S-0102-02</id>
+        <id>S-0102-03</id>
+        <id>S-0102-04</id>
         <id>S-0102-05</id>
         <id>S-0102-06</id>
         <id>S-0102-07</id>
@@ -1933,12 +2258,19 @@ Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_D
         <id>S-0105-02</id>
         <id>S-0105-03</id>
         <id>S-0105-04</id>
+        <id>S-0104-01</id>
+        <id>S-0104-02</id>
+        <id>S-0104-04</id>
         <id>S-0104-05</id>
         <id>S-0104-06</id>
+        <id>S-0105-01</id>
+        <id>S-0105-02</id>
         <id>S-0105-03</id>
+        <id>S-0105-04</id>
         <id>S-0105-05</id>
         <id>S-0105-06</id>
         <id>S-0105-07</id>
+        <id>S-0106-02</id>
         <id>S-0106-03</id>
         <id>S-0106-04</id>
         <id>S-0106-06</id>
@@ -2025,7 +2357,7 @@ Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_D
         <id>S-0115-06</id>
       </source_ids>
       <content>
-Open suggestions: 409
+Open suggestions: 400
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2202,47 +2534,12 @@ Kind: experiment
 Source task: t0054_minimal_dsgc_ampa_nmda_scalar_gaba
 t0054 demonstrated that voltage-independent NMDA (Exp2Syn, no Mg block) collapses vector-sum DSI from 0.746 (gNMDA=0) to 0.082 (gNMDA=0.25) to 0.017 (gNMDA=1.0), confirming PolegPolsky2016&#x27;s prediction [Fig 5] that the Boltzmann Mg block is required for multiplicative DSI scaling. Replace the NMDA Exp2Syn with a Jahr-Stevens Mg-block point process (e.g., bipolarNMDA.mod from PolegPolsky2016 or an equivalent NMDA_Mg2 MOD), keeping all other t0054 parameters fixed (placement seed 0, AMPA tau1=0.5/tau2=2.5/0.5 nS, scalar gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 1.0} nS gNMDA sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion...
 
-## Find the NaP density at which DSI crosses zero
-ID: S-0067-01
-Priority: high
-Kind: experiment
-Source task: t0067_t0065_soma_channel_addition_sweep
-t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer 5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the threshold density at which directional inversion becomes statistically robust. This is the most surprising finding from t0067 and warrants quantitative refinement.
-
 ## Test channel co-expression: Nav1.6 + Kv3 jointly
 ID: S-0067-02
 Priority: high
 Kind: experiment
 Source task: t0067_t0065_soma_channel_addition_sweep
 t0067 tested each channel in isolation. Real fast-spiking neurons co-express Nav1.6 (fast-Na with low threshold) AND Kv3 (fast K+ for rapid repolarisation) — the joint expression enables sustained 100+ Hz firing without fatigue. Test co-insertion: 4 conditions on the t0065 substrate ({Nav1.6_med, Nav1.6_med + Kv3_med, Nav1.6_high, Nav1.6_high + Kv3_high}) × PD/ND × 5 seeds = 40 trials. Hypothesis: Kv3 co-insertion will RESCUE DSI by allowing the cell to recover from Nav1.6&#x27;s depolarising drive faster, restoring the inhibitory shunt&#x27;s modulatory power. If true, this is a proof-of-concept that biological &#x27;fast-spiking design&#x27; is intrinsically DS-friendly.
-
-## Harmonise PD/ND encoding across Bed A and Bed B so cross-bed sweep results are directly comparable
-ID: S-0070-01
-Priority: high
-Kind: experiment
-Source task: t0070_writeup_two_model_beds
-The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally different mechanisms. Bed A keeps bar geometry fixed and swaps a presynaptic envelope scalar `gabaMOD = 0.33` (PD) / `0.99` (ND) applied uniformly to every SACinhib synapse. Bed B keeps conductances fixed and rotates the bar direction (0 deg / 180 deg), simultaneously shifting per-synapse arrival times AND changing a sigmoidal release probability `p_rel ~= 0.05` (PD) / `0.80` (ND) plus AR(2) noise. Any cross-bed comparison (t0065 vs t0066, or future Bed B ports of t0067/t0068/t0069) is therefore confounded. Pick one canonical encoding (recommended: spatial bar rotation, biophysically grounded) and either...
-
-## Plot polar tuning curves to distinguish SK_high narrowing from flat-top clipping
-ID: S-0074-01
-Priority: high
-Kind: evaluation
-Source task: t0074_channel_tuning_width_bed_a
-SK_high produced HWHM = 41 deg (delta -42 deg, the largest narrowing in the sweep). Creative-thinking flagged that this could be a flat-top clipping artefact rather than true narrowing: if SK acts as a firing-rate ceiling, the curve becomes flat-topped near the peak and HWHM becomes ill-defined. Resolution requires a per-condition polar curve plot for SK_high (and as a control, SK_med, SK_low, baseline). Cost: ~30 min coding using the existing t0011 plot_polar_tuning_curve. If polar plot shows flat-top with sharp shoulders, the narrowing is a clipping artefact; if it shows a true narrow bell, the effect is real and SK_high is biologically interesting. This is purely an analysis task on the...
-
-## Verify NaR broadening hypothesis: ND-lobe firing rescue at sub-threshold angles
-ID: S-0074-02
-Priority: high
-Kind: evaluation
-Source task: t0074_channel_tuning_width_bed_a
-NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate or vector-sum DSI. Creative-thinking hypothesised NaR&#x27;s slow `s` reactivation gate creates a sub-threshold floor that pushes ND-direction firing above zero, broadening the curve symmetrically. Test: load per_trial_full.csv, filter rows where condition_id in (nar_high, nar_med, baseline) and angle in (90, 120, 150, 180, 210, 240) deg, count trials with n_spikes &gt; 0. Hypothesis confirmed if NaR_high has &gt; 30% of trials firing at angle 90-180 deg vs baseline ~5%. Cost: pure-data analysis, no new sims (~15 min coding). If confirmed, NaR is a natural candidate for AIS-localised follow-up since AIS-localised NaR could...
-
-## Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 + Kv3 effect at the t0076 best-joint operating point
-ID: S-0076-04
-Priority: high
-Kind: experiment
-Source task: t0076_bedb_dsi_firing_rate_mobo
-t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076 25-d Pareto front contains no cell with DSI&gt;=0.6 AND rate&gt;=40 Hz at any (Nav1.6, Kv3) combination. The contradiction is either (a) substrate-specific (t0068 used Bed A; t0076 used Bed B); (b) a t0068 local-minimum that wider search escaped; or (c) the other 23 t0076 parameters destructively interfere with the rescue. Resolve by fixing the t0076 iter-424 best-joint cell (DSI=0.42, rate=4.95 Hz) and sweeping ONLY (Nav1.6, Kv3) over the t0068 grid (5x5 densities, both substrates). Compare: does the rescue appear on Bed B at this fixed background? Does it disappear on Bed A when the other 23 t0076-style...
 
 ## Extend t0081 NSGA-II to gen 12-15 (1,152-1,440 cells) to characterise the joint-passing region
 ID: S-0081-02
@@ -2258,33 +2555,12 @@ Kind: experiment
 Source task: t0081_bedb_v3_warmstart_nsga2
 Cell 767 crosses the joint pass threshold (DSI 0.494 / PD 11.39 Hz) but the biophysical mechanism is unattributed: it could be NMDA Mg-block recruitment, distal Nav1.6 dendritic spikes, persistent Na (NaP) sustained depolarisation, or a combination. Generate per-direction (8 angles) Vm traces from the proximal soma, mid dendrite, and distal dendrite for cell 767 and the two neighbouring near-pass cells (637 and 762). Plot dendritic-spike onset times, NMDA conductance trajectories, and AIS spike correlation per direction. Local CPU run on a single cell + 8 directions takes ~10 min; no remote machine needed. Recommended task types: experiment-run, data-analysis.
 
-## Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013 per-synapse value, then re-run
-ID: S-0086-01
-Priority: high
-Kind: experiment
-Source task: t0086_robustness_cluster_bio_comparison
-t0086&#x27;s biological scorecard found that both Genuine-cell clusters have NMDA per-synapse conductance 85-122 sigma above Sivyer 2013&#x27;s published 0.1 nS. The NSGA-II search routinely pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013&#x27;s value as a soft cap) and re-run NSGA-II from t0083&#x27;s gen-17 final population for 5 additional generations at population 96. Test whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using biologically-plausible NMDA -- a major finding that would motivate...
-
 ## Retune BEDB_BASE_POINT so the procedural Bed-B cell elicits spikes under the t0083 channel set
 ID: S-0090-01
 Priority: high
 Kind: experiment
 Source task: t0090_morphology_generator_diversity_test
 The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter vector is STABLE but silent (DSI=0, peak Vm=-70.0 mV at PD); this single failure cascades into the partial verdicts on REQ-9 (Phase F Bed-B reproducibility), REQ-11 (G.2 NMDA calibration produced 0/7 valid recordings due to stimulus-time divergence), and REQ-12 (G.3 NaP knockout deferred). Sweep the two most likely culprits identified in the t0090 results_detailed.md analysis, mean_segment_length_um and branch_prob_per_um, on a small grid (e.g. 5x5) around the current Bed-B base point and pick the (params, seed) combination whose procedural cell most closely reproduces the de Rosenroll 2026 / t0024 Bed B port&#x27;s...
-
-## Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with ProcessPoolExecutor
-ID: S-0090-02
-Priority: high
-Kind: experiment
-Source task: t0090_morphology_generator_diversity_test
-t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours) plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01 retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4 cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090 plan): DSI collapses to &lt;0.2 in all 4 cluster representatives if NaP is causally responsible for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 /...
-
-## Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune to land the cluster re-score
-ID: S-0090-03
-Priority: high
-Kind: evaluation
-Source task: t0090_morphology_generator_diversity_test
-t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 / t0088 cluster centroids&#x27; NMDA per-synapse exotic-ness against Sivyer 2013&#x27;s published 0.1 nS in the corrected units. The output is a definitive verdict on whether t0086 / t0088&#x27;s NMDA ~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier biological mechanism. Recommended task types...
 
 ## Per-cell field_elongation_pd vs DSI test on the 57-cell t0091 Pareto to resolve HM-3 inconclusive
 ID: S-0091-01
@@ -2328,54 +2604,12 @@ Kind: experiment
 Source task: t0097_multi_obj_optim
 Directly addresses the researcher&#x27;s recurring biological-plausibility concern with pure-DSI maximisation (Marder-style population-statistic robustness is the field-standard treatment). Falsifiable prediction: high-DSI / high-robustness corner lies along compensatory hyperplanes, refuting the hypothesis that DSI maximisation drives the optimiser to fragile parameter-space extremes. Recipe: K=50-200 +/-10% perturbations per Pareto point; minimise SD of DSI. Budget: 36-72 h Vast.ai EPYC at $0.30/h, total $11-22 (multiplies t0091&#x27;s per-individual cost by K=50-200) — request explicit $25 budget cap or reduce population/generations.
 
-## Anchor-1-only warm-start NSGA-II to isolate which part of t0091&#x27;s warm-start was load-bearing
-ID: S-0099-01
-Priority: high
-Kind: experiment
-Source task: t0099_random_init_pareto_robustness
-t0099 confirmed t0091&#x27;s 5-anchor warm-start was load-bearing (0/55 random-init joint-pass cells vs t0091&#x27;s 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1 only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass emerges -&gt; anchor 1 was load-bearing alone. Outcome (b): no joint-pass -&gt; warm-start diversity itself was load-bearing. Either narrows future morphology-extended NSGA-II design substantially. Cost ~$3.50 single seed.
-
-## Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto cells (HM-3 follow-up)
-ID: S-0099-02
-Priority: high
-Kind: evaluation
-Source task: t0099_random_init_pareto_robustness
-HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both t0091 and t0099. Pure data-analysis on the now-available 57+19+22+14 = 112 Pareto cells: extract per-cell field_elongation_pd from each cell&#x27;s 14-d morphology vector, plot vs DSI vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could resolve a 2-task-old open question.
-
 ## Correct fabricated content in Poleg-Polsky 2026 summary.md via the corrections mechanism
 ID: S-0101-01
 Priority: high
 Kind: evaluation
 Source task: t0101_brainstorm_results_21
 tasks/t0010_hunt_missed_dsgc_models/assets/paper/10.1038_s41467-026-70288-4/summary.md has claims absent from the paper: (a) wrong title (published &#x27;supporting elementary motion detection&#x27;); (b) wrong primitives (&#x27;NMDA multiplicative gating&#x27;, &#x27;velocity-dependent coincidence detection&#x27;, &#x27;distance-graded delay lines&#x27;); (c) wrong search axes (&#x27;A-type potassium density&#x27;); (d) wrong scope (paper covers retina + cortex L2/3). Actual 8 primitives: H&amp;R, anti-H&amp;R, amplitude, temporal-alignment, B&amp;L, anti-B&amp;L, pause-in-inhibition, directionally-tuned inhibition. Real DSI 2.4-73.1% from subthreshold voltage. Downstream task writes corrections/paper_summary_10.1038_s41467-026-70288-4.json with...
-
-## Fix DSI vector-sum objective: gate by minimum total spike count to eliminate silenced-cell DSI=1.0 artifact
-ID: S-0102-01
-Priority: high
-Kind: technique
-Source task: t0102_seedscale_n4_gen20
-Finding 1 in results_detailed.md: 27 t0102 cells reach DSI = 1.0 because vector-sum DSI in evaluator.py divides by near-zero total spike count on silenced cells, with floating-point dust producing a spurious &#x27;perfect selectivity&#x27; score that pulls half the NSGA-II Pareto into the silence corner. Single-line fix: return 0.0 when total_spike_count across 16 directions is &lt; 10. Bug affects the entire t0080-t0102 lineage; highest-leverage change for recovering joint-pass cells at fixed algorithm and budget. Implementation: patch evaluator.py in a new task that copies the t0099 substrate, add a silenced-cell unit test, re-run random-init NSGA-II at pop=96, gens=8, 1 GA seed, N=4. Expected...
-
-## Direct re-evaluation of t0083 / t0091 anchor library at N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation
-ID: S-0102-02
-Priority: high
-Kind: evaluation
-Source task: t0102_seedscale_n4_gen20
-creative_analysis.md Section 4 proposes a &lt; $0.20 follow-up that disambiguates &#x27;substrate-limited vs algorithm-limited&#x27; definitively. Take the 5 anchor families from t0091&#x27;s warm-start (alt_topology, symmetric, bedb_like, t0083 anchors 1559 and 1677) and re-evaluate each at N_EVAL_SEEDS=4 with no NSGA-II/LHS/mutation -- just per-cell evaluation. Count how many clear the strict joint-pass corner. Outcome A (zero clear): joint corner is empirically unreachable on this substrate at N=4 regardless of algorithm; further NSGA-II is futile. Outcome B (&gt;= 1 clears): NSGA-II at random init is failing to find what is empirically present; algorithm replacement (IBEA/CMAES) justified. Also re-evaluate...
-
-## IBEA replacement for NSGA-II at matched budget (pop=96, gens=15, N=4, 2 GA seeds) on Bed B + morphology substrate
-ID: S-0102-03
-Priority: high
-Kind: experiment
-Source task: t0102_seedscale_n4_gen20
-Mohacsi 2024 (Neuroptimus benchmark, PLOS Comp Bio) reports IBEA is &#x27;clearly the best among the multi-objective methods&#x27; on six neuron-fitting benchmarks including Hay 2011 L5PC, outperforming all three NSGA-II implementations tested. t0102 only tested NSGA-II, leaving algorithm choice as an unexamined factor in the 0/4800 random-init joint-pass yield. Port the t0099 substrate to pymoo&#x27;s IBEA (or DEAP/BluePyOpt IBEA wrapper) at matched budget (pop=96, gens=15, N_EVAL_SEEDS=4, 2 GA seeds, $8 cap), apply the S-0102-01 DSI fix if available, and compare front structure to t0099+t0102. Expected: IBEA&#x27;s hypervolume-density selection avoids placing half the front in the DSI=1/PD=0 corner that...
-
-## Dang 2023 theory-grounded NSGA-II at pop&gt;=290 (mu = n log n floor) with N_EVAL_SEEDS=4, gens=10
-ID: S-0102-04
-Priority: high
-Kind: experiment
-Source task: t0102_seedscale_n4_gen20
-Dang 2023 Theorem 8 requires mu = Omega(n log n) for noisy NSGA-II to retain polynomial expected runtime under Bernoulli or Gaussian noise. For our 68-d substrate, the theoretical floor is Omega(68 * log(68)) = approximately 290; t0102 ran at pop=96, three times below this floor. compare_literature.md Methodology Differences identifies this as a principled lever to pull before concluding the substrate is structurally empty of joint-pass cells. Run a single random-init NSGA-II at pop=320 (slightly above the Dang floor for headroom), gens=10, N_EVAL_SEEDS=4, 1 GA seed -- total budget approximately 3200 evaluations, comparable to t0102. If pop&gt;=290 finds joint-pass cells where pop=96 found...
 
 ## Download Bae et al. 2018 dense EM reconstructions for Baden cluster IDs
 ID: S-0103-01
@@ -2398,82 +2632,12 @@ Kind: experiment
 Source task: t0103_extract_baden_2016_ds_morphologies
 t0090&#x27;s morphology generator currently samples field diameter, branch count, total length, and asymmetry from hand-picked ranges around the t0024 canonical De Rosenroll cell. The t0103 Baden subset (RF diameter, DSI, OSI per cell across 1,238 DS cells) plus the morphologies that the Bae 2018 / Ran 2020 follow-ups would deliver give us per-cluster biological envelopes for each shape statistic. Run a re-calibration task that fits empirical per-cluster distributions (mean +/- SD per Baden DS group) and replaces t0090&#x27;s parametric ranges, then re-runs a small NSGA-II validation to confirm the bio-grounded envelopes still admit the Pareto-front cells. This is the original motivation for...
 
-## Inspect the seed-55 gen-11 DSI=0.54 cell&#x27;s 68-d parameter vector — what makes it work; what would push PD up?
-ID: S-0104-01
-Priority: high
-Kind: experiment
-Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
-Seed 55 generation 11 produced the first cell in the t0080-t0104 NSGA-II lineage with DSI cleanly above 0.5 (DSI = 0.5417 at PD = 3.57 Hz). Read this cell&#x27;s 68-d parameter vector from assets/predictions/nsga2-seed55-bedb-morph-n4-gen20-2obj/files/predictions-seed55.jsonl (cell_id = 6 on the Pareto front). Compare the electrophys 54-d subvector and the 14-d morphology subvector against the seed-44 best cell (DSI = 0.4073) and against t0091&#x27;s reported joint-pass anchor at DSI = 0.511 / PD = 35.1 Hz. Identify what biophysical knobs concentrate near the high-DSI region of parameter space; perform a one-knob-at-a-time perturbation around this cell to see whether a single sodium- or...
-
-## Inspect the seed-55 gen-8 DSI=0.42 / PD=15 Hz cell&#x27;s 68-d parameter vector — the closest project-best joint trade-off
-ID: S-0104-02
-Priority: high
-Kind: experiment
-Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
-Seed 55 generation 8 produced the project-best joint trade-off so far: DSI = 0.4192 at PD = 15.00 Hz. This sits ~15 Hz below the strict joint-pass threshold of 30 Hz and ~0.08 DSI below the 0.5 threshold, but is the closest combined-axis cell observed across the full t0080-t0104 NSGA-II lineage. Read its 68-d vector from the seed-55 predictions JSONL (cell_id = 3 on the Pareto front), classify its anchor neighbourhood, and run a 2-knob perturbation grid varying the top-2 Cohen&#x27;s-d-distinguished electrophys knobs from the t0102 silence-vs-firing comparison. Outcome: a 2-d grid that estimates the local PD ceiling around this cell&#x27;s DSI = 0.4192 plateau. Recommended task types: experiment-run...
-
-## IBEA replacement for NSGA-II at matched budget on Bed B + morphology substrate (renews S-0102-03)
-ID: S-0104-04
-Priority: high
-Kind: experiment
-Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
-t0104&#x27;s 0/2,208 random-init joint-pass null with the DSI guard active strengthens the case for S-0102-03 (IBEA replacement). NSGA-II crowding-distance selection produced an L-shaped front in both t0102 (3-obj) and t0104 (2-obj) on the same substrate, suggesting the selection operator itself prefers extreme-corner cells over interior trade-off cells. Mohacsi 2024 explicitly recommends IBEA as the strongest multi-objective optimiser on neuron-fitting problems (six of six benchmarks beat NSGA-II). Port t0104&#x27;s substrate to pymoo IBEA at matched budget (pop = 96, gens = 12, N_EVAL_SEEDS = 4, 2 GA seeds, DSI guard active, n_obj = 2). Expected outcome: IBEA&#x27;s hypervolume-density selection produces...
-
-## Re-run varimax factor analysis excluding integer morph_seed to test whether F1&#x27;s correlates survive
-ID: S-0105-01
-Priority: high
-Kind: experiment
-Source task: t0105_cluster_factor_analysis_dsi_pd
-morph_seed (an integer dimension bounded [0, 99] driving generator randomness, not biologically meaningful) loads +0.68 on F1 next to NAP_PRIMARY (+0.75), SK_MID (+0.66), MG_CONC_MM (+0.65), and RA_OHM_CM (+0.65). F1&#x27;s r_DSI = -0.322 / r_PD = -0.265 could partly be a &#x27;warm-start vs random-init&#x27; indicator disguised as a mechanistic factor because t0091 fixed morph_seed = 31 while t0099/t0102/t0104 randomise it. Re-run the t0105 factor analysis on a 67-d matrix excluding morph_seed and check whether F1&#x27;s top loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, Ra) and its Pearson r vs DSI / PD survive. If they do, F1 is mechanistic; if F1 dissolves, F1 was a lineage indicator. Recommended task type...
-
-## Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells to validate the SK/BK mechanistic hypothesis
-ID: S-0105-02
-Priority: high
-Kind: experiment
-Source task: t0105_cluster_factor_analysis_dsi_pd
-PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL, BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0, BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI + PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which Ca-K conductance is load-bearing for the asymmetric...
-
-## F1-axis-seeded NSGA-II initial population to test whether targeted seeding escapes the joint-corner block
-ID: S-0105-04
-Priority: high
-Kind: experiment
-Source task: t0105_cluster_factor_analysis_dsi_pd
-F1 is the only factor weakly correlated with both DSI (r = -0.322) and PD (r = -0.265). Its top loadings span NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM (and morph_seed - see S-0105-01 caveat). Build a random-init NSGA-II run whose initial population samples along the F1 axis (positive and negative directions) and orthogonal to F1, instead of uniform sampling. If F1-axis seeding accelerates Pareto exploration into the joint corner, the substrate has a discoverable direction that random-init NSGA-II misses. If F1-axis seeding produces the same L-shape, the substrate-limit reading is reinforced. Recommended task type: experiment-run. Cost: ~$8-12 (one Vast.ai NSGA-II run at matched budget to...
-
-## Multi-seed confirmation of t0106 2-direction NSGA-II at GA seeds 55 and 66
-ID: S-0106-01
-Priority: high
-Kind: experiment
-Source task: t0106_long_pdnd_nsga2_300gen
-t0106&#x27;s 3.3% joint-pass yield (123 joint-pass cells / 3,744 evals) was produced from a single random GA seed. No published NSGA-II benchmark (Hay2011, Druckmann2007, Mohacsi2024) accepts a single-seed acceptance-rate point estimate. Re-run the exact t0106 configuration (2 antipodal directions, ratio DSI, N_EVAL_SEEDS = 3, pop = 96, n_gen = 40, operator-stop, silence guard) at GA seeds 55 and 66. Decision rule: if both seeds discover joint-pass cells (DSI &gt;= 0.5 AND PD &gt;= 30 Hz) within 40 gens, the 2-direction substrate is genuinely populated and the t0080-t0104 null was an objective-surface artefact, not a per-seed lucky draw. If either seed returns zero, weaken the headline. Recommended...
-
-## N_EVAL_SEEDS = 20 robustness re-evaluation of top 10 t0106 cells (esp. the 3 DSI = 1.0 cells)
-ID: S-0106-02
-Priority: high
-Kind: evaluation
-Source task: t0106_long_pdnd_nsga2_300gen
-Three t0106 top-50 cells (ranks 16, 19, 27) achieve ratio DSI = 1.0 with deterministic zero ND firing. Total-spike silence guard (&gt;= 10 spikes across PD + ND) is exceeded (47-154 spikes/trial) so they are not silence-guard artefacts, but Trenholm2013 reports peak ND ~ 27 +/- 12 Hz in real mouse Hb9 DSGCs and Oesch2005 reports OFF DSI = 0.74 +/- 0.13. ND = 0 across only 3 noise replicates may be an AR(2)-seed + deterministic-GABA loophole that fails at higher replication. Re-evaluate the top 10 cells (3 DSI = 1.0 + 7 next-best incl. DSI = 0.98 at PD = 84.5 Hz and PD-frontier DSI = 0.92 at PD = 122.6 Hz) at N_EVAL_SEEDS = 20. Decision: if DSI = 1.0 collapses to &lt;= 0.9, mark as...
-
 ## Multi-seed substrate-rate confirmation at restart cadence 10: N&gt;=3 new GA seeds on the t0106 substrate
 ID: S-0112-01
 Priority: high
 Kind: experiment
 Source task: t0112_t0106_seed77_replicate
 t0106 (seed 44) yielded 123 unique joint-pass cells (3.3% rate); t0112 (seed 77) yielded only 7 (0.35%) on the same substrate. With two seeds spanning a factor of ~17 in joint-pass density, the substrate-level acceptance rate is currently a 2-point sample and unreportable. Run N&gt;=3 additional GA seeds (suggested 33, 88, 99) on the identical t0106 substrate using t0112&#x27;s tighter pool_restart_every=10 and N_GEN=60 with HV-plateau auto-stop. Combined with t0106 (44) and t0112 (77), this yields a 5-seed sample suitable for reporting a substrate-level mean +/- s.e. acceptance rate against Hay2011&#x27;s 0.40% and Druckmann2007&#x27;s 0.10%. Distinct from S-0106-01 (which uses t0106&#x27;s exact cadence=25 at...
-
-## Isolate the pool-restart-cadence effect: paired re-runs at fixed seed comparing cadence 10 vs 25
-ID: S-0112-02
-Priority: high
-Kind: experiment
-Source task: t0112_t0106_seed77_replicate
-t0112&#x27;s 3.5x per-generation wall-clock speedup (620s/gen vs t0106&#x27;s 2,167s/gen) is confounded with the seed-44 -&gt; seed-77 change. Run two paired comparisons at matched seed but different pool_restart_every: (a) seed 44 with cadence=10 vs t0106&#x27;s existing seed-44/cadence-25 baseline; (b) seed 77 with cadence=25 vs t0112&#x27;s existing seed-77/cadence-10 baseline. Decision rule: if the cadence-10 variant matches its cadence-25 baseline on Pareto front geometry (best DSI, best PD, joint-pass count within seed noise) AND retains the 3-4x speedup, then cadence=10 should become the project default for all downstream NSGA-II tasks. If the cadence change shifts joint-pass yield, the speedup is...
-
-## HV-plateau auto-stop sensitivity: re-run t0112 seed 77 with auto-stop disabled to gen 60 ceiling
-ID: S-0112-03
-Priority: high
-Kind: experiment
-Source task: t0112_t0106_seed77_replicate
-t0112&#x27;s HV-plateau detector fired at gen 21 (well below the 60-gen ceiling), and t0106 produced most of its joint-pass cells in gens 21-39 - after t0112&#x27;s auto-stop. The 7-cell joint-pass count may be censored by an over-aggressive plateau detector when the local mode is &#x27;deep but narrow&#x27;. Re-run t0112 seed 77 with HV-plateau termination disabled (operator-stop or N_GEN=60 only); keep all other constants identical. Decision: if post-plateau gens (22-60) add &gt;=10 more unique joint-pass cells, the detector censors the long tail and should be reparameterised (longer window, tighter threshold, or removed) for all long-horizon runs. If post-plateau yield is &lt;=3 cells, the early auto-stop is...
 
 ## 16-direction polar re-evaluation of t0112&#x27;s 7 unique joint-pass cells (mirrors t0107 on t0106)
 ID: S-0112-05
@@ -2489,26 +2653,12 @@ Kind: experiment
 Source task: t0113_t0106_seed2247_replicate
 S-0112-01 requires &gt;=3 additional GA seeds at cadence-10 to upgrade the substrate-rate estimate from a 2-point sample to a 5-point sample. t0113 contributed one (random seed 2247) yielding 0 LEGIT joint-pass cells; the 3-seed sample (44/77/2247) now spans 0.15%-3.29% with mean 1.26% +/- 1.01% SE, and the 95% CI (-0.73%, 3.25%) brackets BOTH Hay2011 (0.40%) and Druckmann2007 (0.10%) baselines and cannot reject either. Draw two further random seeds via secrets.randbelow(10000) (avoid the round-ish-low-number bias of seeds 44, 77 and the curated set 33/88/99) and run each as a minimum-change replicate of t0113 (same cadence-10, N_GEN=60, HV-plateau detector, evaluator). Each new seed = one task...
 
-## Fix dill checkpoint pool-pickling failure in nsga2_driver.py: every gen across t0113 failed to dill-pickle
-ID: S-0113-02
-Priority: high
-Kind: library
-Source task: t0113_t0106_seed2247_replicate
-t0113&#x27;s per-generation dill checkpoint failed on all 14 gens with `NotImplementedError: pool objects cannot be passed between processes or pickled`. Root cause: pymoo&#x27;s `StarmapParallelization` wrapper holds a live `multiprocessing.Pool` reference inside the Algorithm object that dill cannot serialise. JSON-side resume worked, so runs were not lost, but the dill resume channel is broken across t0106/t0112/t0113. Fix options: (a) strip `problem.elementwise_runner` via `__getstate__/__setstate__` and re-attach on restore, (b) replace dill with cloudpickle, or (c) deprecate the dill checkpoint and make JSON checkpoint the sole resume mechanism (cleanest). Local-only, reusable across all...
-
 ## Widen HV-plateau detector window from 2 to 4-5 gens to prevent premature trigger by single-cell HV jumps
 ID: S-0113-03
 Priority: high
 Kind: technique
 Source task: t0113_t0106_seed2247_replicate
 t0113&#x27;s HV-plateau detector fired at gen 14 (earliest of the 3-seed sample; t0112=21, t0106=40) and BELOW Mohacsi2024&#x27;s published 20-60 gen NSGA-II convergence range. The soft gen 11-12 transition (HV 35.98 -&gt; 36.07 = +0.24%) satisfied the 1%-over-2-gens condition BEFORE the gen 13-14 jump (+26% from a single silence-guard cell joining the archive). Current constants (WINDOW=2, REL_THRESHOLD=0.01) are too aggressive when a single cell can inflate HV &gt;20% in one step. Widen WINDOW to 4-5 gens (matches Mohacsi2024 lower bound) and/or tighten REL_THRESHOLD to 0.005. Validate by replaying the detector offline on the existing t0106/t0112/t0113 HV traces. DISTINCT from S-0112-03 (single-seed...
-
-## Adopt (WINDOW=3, REL_THRESHOLD=0.015) as new project-default HV-plateau detector constants
-ID: S-0114-01
-Priority: high
-Kind: technique
-Source task: t0114_seed7755_no_autostop
-t0114&#x27;s offline detector replay (4 windows x 6 thresholds x 4 HV trajectories = 96 cells) selects (W*, T*) = (3, 0.015) as the smallest deviation from current (W=2, T=0.01) that (a) fires on t0106 at gen 39 within [20, 60], (b) does NOT fire prematurely on t0113&#x27;s recorded 14 gens (eliminates the gen-13 false positive), and (c) fires on t0114 at gen 26, inside Mohacsi2024&#x27;s 20-60 gen convergence band. Concrete action: update the HV-plateau detector constants in the NSGA-II driver / skill template from (WINDOW=2, REL_THRESHOLD=0.01) to (WINDOW=3, REL_THRESHOLD=0.015); cite the 4-trajectory replay as design justification. Formal realisation of the recommendation prepared but not adopted in...
 
 ## Execute t0115 seed-9354 NSGA-II run as the 5th seed completing the S-0112-01 substrate-rate batch
 ID: S-0114-02
@@ -2517,40 +2667,12 @@ Kind: experiment
 Source task: t0114_seed7755_no_autostop
 S-0112-01 requires a 5-seed sample at cadence-10 with auto-stop disabled to upgrade the substrate-rate estimate from 4-seed (44/77/2247/7755) to 5-seed. t0114 advanced this from 3 to 4 seeds (mean 2.93%, SE 1.86%, 95% CI -0.71% to +6.56% still brackets Hay 2011&#x27;s 0.40% and Druckmann 2007&#x27;s 0.10%). The 5th seed is needed to tighten the SE below the 0.40% Hay envelope; without it, the substrate-rate point estimate (currently 7.3x above the Hay 2011 envelope) cannot be claimed at p&lt;0.05 significance. Concrete action: execute the already-scaffolded t0115_seed9354_no_autostop task (seed 9354, auto-stop disabled, cadence-10, gen ceiling 300, $25 cap), pool the 5-seed results, write the canonical...
 
-## Resolve recurring dill-checkpoint pool-pickling failure: fix or formally retire dill resume channel
-ID: S-0114-07
-Priority: high
-Kind: library
-Source task: t0114_seed7755_no_autostop
-t0114&#x27;s per-generation dill checkpoint failed on all 62 gens with the same NotImplementedError (&#x27;pool objects cannot be passed between processes or pickled&#x27;) documented in S-0113-02. JSON-side resume works end-to-end so no runs were lost, but every gen logs a multi-line dill traceback polluting the step log. Root cause: pymoo&#x27;s StarmapParallelization wrapper holds a live multiprocessing.Pool that dill cannot serialise. Choose one: (a) __getstate__/__setstate__ on the wrapper to strip and re-attach problem.elementwise_runner, (b) swap dill for cloudpickle, or (c) deprecate the dill channel entirely and document JSON as the sole resume mechanism — removes log noise at zero risk. RECOMMENDED...
-
-## Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector defaults across the project
-ID: S-0115-01
-Priority: high
-Kind: technique
-Source task: t0115_seed9354_no_autostop
-t0115&#x27;s 55-gen unstopped HV trajectory adds a fifth datapoint to the offline detector-replay sweep proposed in S-0113-03 and refined in S-0114-01. The recommended (W*, T*) = (3, 0.015) pair would fire on t0115 around gen 30-45, inside Mohacsi2024&#x27;s 20-60 gen convergence band, and would NOT fire prematurely on t0113&#x27;s gen-14 trace. Concrete action: globally rewrite the HV-plateau detector constants in the NSGA-II driver template and the t0024 cell-build pipeline; document the new defaults in arf/skills/setup-remote-machine and arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: &lt;$0.05.
-
 ## 5-seed substrate-rate batch (S-0112-01) is now complete; write canonical report
 ID: S-0115-02
 Priority: high
 Kind: evaluation
 Source task: t0115_seed9354_no_autostop
 t0115 closes the S-0112-01 batch with 5 seeds (44, 77, 2247, 7755, 9354) on the identical 68-d Bed B + 14-d morphology substrate. Final 5-seed mean LEGIT-joint-pass acceptance rate is 2.58% +/- SE 1.50% (SD 3.35%, 95% CI -0.36% to +5.52%). Point estimate is 6.45x above Hay 2011 (0.40%) and 25.8x above Druckmann 2007 (0.10%), but the 95% CI brackets both literature references. Three of five seeds (44, 7755, 9354) independently exceed Hay. Concrete action: write a canonical substrate-rate report consolidating all five tasks&#x27; results into a single comparable document with consistent metric conventions, embeddable in the project overview. Recommended task types: data-analysis, answer-question...
-
-## 5-seed pooled re-analysis adding t0113 (seed 2247) via correction to the t0116 pipeline
-ID: S-0116-01
-Priority: high
-Kind: experiment
-Source task: t0116_pooled_pca_cluster_factor_dsi07_pd10
-t0116&#x27;s 4-seed pool (44/77/7755/9354) was a deliberate first cut; seed 2247 (t0113) was excluded because its joint-pass cells are silence-guard DSI=1.0 saturations (per S-0113-04/S-0113-06). Re-run the t0116 pipeline end-to-end with t0113 added as the fifth source (5-seed pool, same strict filter DSI&gt;0.7 AND PD&gt;10, silence-guard tightened to &gt;=3 PD spikes per S-0113-06), regenerate every chart and CSV, and write a corrections/ overlay that points consumers at the 5-seed artefacts. Decision rule: if seed-aligned cluster pattern survives (NMI &gt; 0.7 on both partitions), the basin-isolation finding is robust; if NMI drops below 0.5, the 4-seed result was an artefact of seed choice. Recommended...
-
-## Relaxed-cohort (DSI &gt; 0.5) pooled re-analysis to test truncated-cohort artefact on joint-factor decoupling
-ID: S-0116-02
-Priority: high
-Kind: experiment
-Source task: t0116_pooled_pca_cluster_factor_dsi07_pd10
-t0116&#x27;s strict DSI&gt;0.7 cohort produced no joint factor (|r|&gt;0.3 on both DSI and PD). t0110 documented that strict-cohort filters truncate joint variance (restriction-of-range); t0108&#x27;s strict cohort identified F10 as a joint factor, t0110&#x27;s relaxed cohort found a different sign pattern. Re-run the t0116 pipeline (4 or 5 seeds, depending on S-0116-01) with the cohort filter relaxed from DSI&gt;0.7 to DSI&gt;0.5 (matching t0108/t0110); regenerate the factor heatmap and per-factor DSI/PD correlations. Decision: if a joint factor emerges at the relaxed threshold, t0116&#x27;s &#x27;no joint factor&#x27; is a truncated-cohort artefact and the latent-drivers answer must be re-interpreted conditional on cohort...
 
 ## Connected-component topological basin test (vs KMeans+NMI) on the t0116 pooled pool
 ID: S-0116-03
@@ -3742,6 +3864,13 @@ Kind: experiment
 Source task: t0066_t0024_epsp_ipsp_vm_protocol
 Voltage trace cannot resolve g_inh(t) when e_GABA = v_rest (zero current at rest regardless of g). For the de Rosenroll cell specifically, combine the t0066 channel-isolation pattern (set ach NetCon weights = 0; HHst zeroed) with a SEClamp at -65 mV (or any non-equilibrium offset from e_GABA = -60). This will read inhibitory current in pA across the trial separately for PD (gaba_release_prob = 0.05) and ND (gaba_release_prob = 0.80). Expected: the time-integrated charge in ND should be ~3-16x larger than in PD depending on how synapse-level release prob translates to mean conductance. Reuses t0049&#x27;s SEClamp infrastructure (which was developed for the deposited cell — would need a small port...
 
+## Find the NaP density at which DSI crosses zero
+ID: S-0067-01
+Priority: medium
+Kind: experiment
+Source task: t0067_t0065_soma_channel_addition_sweep
+t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives DSI = -0.179 (inverted). The exact crossing density is between 0.8 and 2.4 mS/cm². Run a finer 5-point density sweep on NaP only (e.g., 0.8, 1.0, 1.3, 1.7, 2.4 mS/cm²) with 10 seeds each (~25 min compute) to characterise the DSI-vs-NaP-density transition curve and identify the threshold density at which directional inversion becomes statistically robust. This is the most surprising finding from t0067 and warrants quantitative refinement.
+
 ## Add a virtual AIS to the deposited cell and re-run the channel sweep
 ID: S-0067-03
 Priority: medium
@@ -3762,6 +3891,13 @@ Priority: medium
 Kind: experiment
 Source task: t0068_t0067_nav16_kv3_coexpression_rescue
 t0068 makes clear that channel-level rescue may not be possible — the GABA shunt&#x27;s leverage is fundamentally bounded when Nav1.6 boosts the depolarising drive. The natural alternative is to scale the GABA conductance up proportionally. Test: at Nav1.6_med (s2ggaba x 1.5x, 2.0x, 3.0x) and Nav1.6_high (s2ggaba x 1.5x, 2.0x, 3.0x). Hypothesis: a coordinated 2x synaptic upscale restores DSI to baseline. This isn&#x27;t a &#x27;rescue&#x27; in the channel-pharmacology sense, but it shows what would be required to compensate for a Nav-side gain change at the network level — relevant for understanding RGC robustness to channel-density variation. Implementation: 1-line patch to t0065&#x27;s apply_params, then 6...
+
+## Harmonise PD/ND encoding across Bed A and Bed B so cross-bed sweep results are directly comparable
+ID: S-0070-01
+Priority: medium
+Kind: experiment
+Source task: t0070_writeup_two_model_beds
+The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally different mechanisms. Bed A keeps bar geometry fixed and swaps a presynaptic envelope scalar `gabaMOD = 0.33` (PD) / `0.99` (ND) applied uniformly to every SACinhib synapse. Bed B keeps conductances fixed and rotates the bar direction (0 deg / 180 deg), simultaneously shifting per-synapse arrival times AND changing a sigmoidal release probability `p_rel ~= 0.05` (PD) / `0.80` (ND) plus AR(2) noise. Any cross-bed comparison (t0065 vs t0066, or future Bed B ports of t0067/t0068/t0069) is therefore confounded. Pick one canonical encoding (recommended: spatial bar rotation, biophysically grounded) and either...
 
 ## Build a unified model-bed-runner library exposing Bed A and Bed B behind one Python API
 ID: S-0070-02
@@ -3840,6 +3976,20 @@ Kind: library
 Source task: t0072_synaptic_traces_pd_nd
 t0072 produced a recording infrastructure that works across both Bed A (HOC-driven BIPsyn / SACinhib / SACexc) and Bed B (Python-driven Exp2Syn ACh / GABA via NetStim+NetCon). Extends t0048&#x27;s BIPsyn-only attach_conductance_recorders (proposed as S-0047-04 for Bed A only) along three new axes: (1) per-synapse local v via point_process.get_segment()._ref_v rather than only g, (2) automatic uS-&gt;nS unit conversion when the mechanism uses uS (Bed B Exp2Syn convention), (3) post-hoc per-synapse current I = g_nS * (v_local_mV - E_rev_mV) in pA with E_rev sourced from MOD PARAMETERs. Package: (a) attach_g_v_recorders(cell, synapse_lists, dt_record_ms, e_rev_per_kind_mV), (b) compute_currents_pA and...
 
+## Plot polar tuning curves to distinguish SK_high narrowing from flat-top clipping
+ID: S-0074-01
+Priority: medium
+Kind: evaluation
+Source task: t0074_channel_tuning_width_bed_a
+SK_high produced HWHM = 41 deg (delta -42 deg, the largest narrowing in the sweep). Creative-thinking flagged that this could be a flat-top clipping artefact rather than true narrowing: if SK acts as a firing-rate ceiling, the curve becomes flat-topped near the peak and HWHM becomes ill-defined. Resolution requires a per-condition polar curve plot for SK_high (and as a control, SK_med, SK_low, baseline). Cost: ~30 min coding using the existing t0011 plot_polar_tuning_curve. If polar plot shows flat-top with sharp shoulders, the narrowing is a clipping artefact; if it shows a true narrow bell, the effect is real and SK_high is biologically interesting. This is purely an analysis task on the...
+
+## Verify NaR broadening hypothesis: ND-lobe firing rescue at sub-threshold angles
+ID: S-0074-02
+Priority: medium
+Kind: evaluation
+Source task: t0074_channel_tuning_width_bed_a
+NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate or vector-sum DSI. Creative-thinking hypothesised NaR&#x27;s slow `s` reactivation gate creates a sub-threshold floor that pushes ND-direction firing above zero, broadening the curve symmetrically. Test: load per_trial_full.csv, filter rows where condition_id in (nar_high, nar_med, baseline) and angle in (90, 120, 150, 180, 210, 240) deg, count trials with n_spikes &gt; 0. Hypothesis confirmed if NaR_high has &gt; 30% of trials firing at angle 90-180 deg vs baseline ~5%. Cost: pure-data analysis, no new sims (~15 min coding). If confirmed, NaR is a natural candidate for AIS-localised follow-up since AIS-localised NaR could...
+
 ## BK + SK co-expression sweep: linear-add vs saturation
 ID: S-0074-04
 Priority: medium
@@ -3874,6 +4024,13 @@ Priority: medium
 Kind: experiment
 Source task: t0074_channel_tuning_width_bed_a
 t0074 covered Bed A only. Bed B (de-Rosenroll 2026, t0024 library) has different morphology, different synapse placement, and a built-in Ca pool — meaning the channel-level findings here may not generalise to Bed B. Repeat the same 25-condition × 12-angle × 5-seed sweep on Bed B. Cost: same ~70 min compute as t0074. Comparison points: which channels remain inert; whether NaP-induced DSI loss reproduces; whether SK_high HWHM narrowing reproduces (or is a Bed-A-specific artefact); whether the with-cad baseline DSI shift seen in Bed A is also seen in Bed B (where cad is native). This is a cross-substrate validation that strengthens any conclusions drawn from t0074.
+
+## Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 + Kv3 effect at the t0076 best-joint operating point
+ID: S-0076-04
+Priority: medium
+Kind: experiment
+Source task: t0076_bedb_dsi_firing_rate_mobo
+t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076 25-d Pareto front contains no cell with DSI&gt;=0.6 AND rate&gt;=40 Hz at any (Nav1.6, Kv3) combination. The contradiction is either (a) substrate-specific (t0068 used Bed A; t0076 used Bed B); (b) a t0068 local-minimum that wider search escaped; or (c) the other 23 t0076 parameters destructively interfere with the rescue. Resolve by fixing the t0076 iter-424 best-joint cell (DSI=0.42, rate=4.95 Hz) and sweeping ONLY (Nav1.6, Kv3) over the t0068 grid (5x5 densities, both substrates). Compare: does the rescue appear on Bed B at this fixed background? Does it disappear on Bed A when the other 23 t0076-style...
 
 ## Promote the t0076 BoTorch MOBO + ProcessPoolExecutor trial-driver harness into a reusable optimisation library
 ID: S-0076-06
@@ -4001,6 +4158,13 @@ Kind: evaluation
 Source task: t0083_bedb_v3_extend_nsga2_gen8plus
 Cells 1559 (DSI 0.706 / PD 39.18 Hz) and 1677 (DSI 0.657 / PD 40.71 Hz) are the project&#x27;s first cells to combine biologically-plausible DSI with PD firing rates above 30 Hz mean. Published `[Trenholm2013, Results p. 14064]` and `[Oesch2005, Results p. 754]` report peak rather than mean PD rates: 198 Hz Gaussian-convolved peak (Trenholm) and 148 Hz modal peak (Oesch). The current PD-rate metric is mean rate over 1400 ms; converting cells 1559 / 1677 to peak rate would resolve the mean-vs-peak metric mismatch and enable direct numerical comparison with Trenholm / Oesch. Re-run cells 1559 and 1677 in subprocess with full-resolution voltage / spike traces preserved, compute Gaussian-convolved...
 
+## Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013 per-synapse value, then re-run
+ID: S-0086-01
+Priority: medium
+Kind: experiment
+Source task: t0086_robustness_cluster_bio_comparison
+t0086&#x27;s biological scorecard found that both Genuine-cell clusters have NMDA per-synapse conductance 85-122 sigma above Sivyer 2013&#x27;s published 0.1 nS. The NSGA-II search routinely pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013&#x27;s value as a soft cap) and re-run NSGA-II from t0083&#x27;s gen-17 final population for 5 additional generations at population 96. Test whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using biologically-plausible NMDA -- a major finding that would motivate...
+
 ## 10-replication robustness extension: rerun the 6 Genuine + 7 Marginal cells at 10 outer seeds
 ID: S-0086-04
 Priority: medium
@@ -4035,6 +4199,20 @@ Priority: medium
 Kind: experiment
 Source task: t0088_recluster_marginals_and_vm_motifs
 t0088 found GABA rho0 exotic (&gt;+5 sigma) in all 4 clusters and GABA lambda exotic in 3 of 4 clusters. The model exploits exotic GABA spatial scale to shape direction-asymmetry. Test causally: set rho_0_gaba = 1.0 (Rosenroll baseline) or lambda_gaba_um = 80 (Rosenroll mean) per representative cell and re-measure DSI at 16 directions. Expected effect: if GABA spatial gradient is causal for direction selectivity, DSI degrades; if NaP alone explains DSI, DSI is preserved. 4 cells x 2 GABA-knockout variants x 16 directions = 128 sims; ~2 hours local CPU, $0 cost. Recommended task types: experiment-run, data-analysis.
+
+## Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with ProcessPoolExecutor
+ID: S-0090-02
+Priority: medium
+Kind: experiment
+Source task: t0090_morphology_generator_diversity_test
+t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the single-process wall-clock projection (~42 min/cell x 4 cluster representatives = ~3 hours) plus NEURON DLL state-management on Windows blew the implementation budget. After S-0090-01 retunes BEDB_BASE_POINT so the procedural cell fires under t0083 params, run the deferred 4 cells x 16 directions sweep across the 64-core EPYC using ProcessPoolExecutor with one NEURON sub-process per worker to bypass the DLL-cleanup serialisation cost. Pass criterion (per t0090 plan): DSI collapses to &lt;0.2 in all 4 cluster representatives if NaP is causally responsible for PD-vs-ND attribution; otherwise the NMDA / Nav1.6 /...
+
+## Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune to land the cluster re-score
+ID: S-0090-03
+Priority: medium
+Kind: evaluation
+Source task: t0090_morphology_generator_diversity_test
+t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 / t0088 cluster centroids&#x27; NMDA per-synapse exotic-ness against Sivyer 2013&#x27;s published 0.1 nS in the corrected units. The output is a definitive verdict on whether t0086 / t0088&#x27;s NMDA ~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier biological mechanism. Recommended task types...
 
 ## Multi-channel-set diversity re-test of t0090 morphologies to disentangle morphology vs channel-set sensitivity
 ID: S-0090-05
@@ -4148,6 +4326,20 @@ Kind: evaluation
 Source task: t0098_visualise_pareto_morphologies
 t0098 produced morphology charts but no per-cell decoded knob values. S-0091-04 (alt_topology basin deep-dive) and S-0091-07 (PCA on Pareto morph vectors) both need a CSV with one row per Pareto cell containing (cell_id, anchor, DSI, PD-rate, robustness, num_primary_branches, branch_prob_per_um, max_strahler_depth, mean_branching_angle_deg, rall_exponent, soma_offset_pd_um, field_elongation_pd, branch_density_gradient_pd, primary_branch_pd_concentration, mean_segment_length_um, soma_diameter_um, ais_length_um, branch_length_cv). Trivial extension of t0098&#x27;s _params_from_14d helper. Also covers HM-3&#x27;s per-cell field_elongation_pd vs DSI test which Spearman length-vs-DSI did not directly...
 
+## Anchor-1-only warm-start NSGA-II to isolate which part of t0091&#x27;s warm-start was load-bearing
+ID: S-0099-01
+Priority: medium
+Kind: experiment
+Source task: t0099_random_init_pareto_robustness
+t0099 confirmed t0091&#x27;s 5-anchor warm-start was load-bearing (0/55 random-init joint-pass cells vs t0091&#x27;s 1/57). Open question: was anchor 1 (Bed-B-like) sufficient, or did the diversity of all 5 anchors matter? Run NSGA-II with all 96 init cells cloned from anchor 1 only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (a): joint-pass emerges -&gt; anchor 1 was load-bearing alone. Outcome (b): no joint-pass -&gt; warm-start diversity itself was load-bearing. Either narrows future morphology-extended NSGA-II design substantially. Cost ~$3.50 single seed.
+
+## Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto cells (HM-3 follow-up)
+ID: S-0099-02
+Priority: medium
+Kind: evaluation
+Source task: t0099_random_init_pareto_robustness
+HM-3 (cells with stronger DS have higher field_elongation_pd) remained inconclusive in both t0091 and t0099. Pure data-analysis on the now-available 57+19+22+14 = 112 Pareto cells: extract per-cell field_elongation_pd from each cell&#x27;s 14-d morphology vector, plot vs DSI vector-sum, compute Spearman rho. n=112 gives statistical power. Cost $0. Could resolve a 2-task-old open question.
+
 ## Pool t0091 + t0099 anchor counts to confirm HM-2 (PD-asymmetric &gt; ND-asymmetric) at higher n
 ID: S-0099-03
 Priority: medium
@@ -4175,6 +4367,34 @@ Priority: medium
 Kind: experiment
 Source task: t0101_brainstorm_results_21
 Poleg-Polsky 2026 uses 50-100 GA seeds at pop=10, 300-1000 generations. Our convention is 1-2 GA seeds at pop=96, 8-17 generations. Hold total candidate budget fixed (e.g., 20 000 evaluations) and compare two configurations on the same 68-d substrate: (a) 2 seeds x pop=96 x 100 gens (closer to our convention, extreme generations), (b) 20 seeds x pop=10 x 100 gens (PP convention). Score: number of unique Pareto cells discovered, hypervolume, joint-pass cells, anchor diversity. Cost ~$10 at $0.24/hr Vast.ai for ~40 hours (one instance, both configurations sequentially). Could revise our future MOBO design from BoTorch-style large-pop NSGA-II toward PP-style many-seed (1+9)-ES if (b) wins on...
+
+## Fix DSI vector-sum objective: gate by minimum total spike count to eliminate silenced-cell DSI=1.0 artifact
+ID: S-0102-01
+Priority: medium
+Kind: technique
+Source task: t0102_seedscale_n4_gen20
+Finding 1 in results_detailed.md: 27 t0102 cells reach DSI = 1.0 because vector-sum DSI in evaluator.py divides by near-zero total spike count on silenced cells, with floating-point dust producing a spurious &#x27;perfect selectivity&#x27; score that pulls half the NSGA-II Pareto into the silence corner. Single-line fix: return 0.0 when total_spike_count across 16 directions is &lt; 10. Bug affects the entire t0080-t0102 lineage; highest-leverage change for recovering joint-pass cells at fixed algorithm and budget. Implementation: patch evaluator.py in a new task that copies the t0099 substrate, add a silenced-cell unit test, re-run random-init NSGA-II at pop=96, gens=8, 1 GA seed, N=4. Expected...
+
+## Direct re-evaluation of t0083 / t0091 anchor library at N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation
+ID: S-0102-02
+Priority: medium
+Kind: evaluation
+Source task: t0102_seedscale_n4_gen20
+creative_analysis.md Section 4 proposes a &lt; $0.20 follow-up that disambiguates &#x27;substrate-limited vs algorithm-limited&#x27; definitively. Take the 5 anchor families from t0091&#x27;s warm-start (alt_topology, symmetric, bedb_like, t0083 anchors 1559 and 1677) and re-evaluate each at N_EVAL_SEEDS=4 with no NSGA-II/LHS/mutation -- just per-cell evaluation. Count how many clear the strict joint-pass corner. Outcome A (zero clear): joint corner is empirically unreachable on this substrate at N=4 regardless of algorithm; further NSGA-II is futile. Outcome B (&gt;= 1 clears): NSGA-II at random init is failing to find what is empirically present; algorithm replacement (IBEA/CMAES) justified. Also re-evaluate...
+
+## IBEA replacement for NSGA-II at matched budget (pop=96, gens=15, N=4, 2 GA seeds) on Bed B + morphology substrate
+ID: S-0102-03
+Priority: medium
+Kind: experiment
+Source task: t0102_seedscale_n4_gen20
+Mohacsi 2024 (Neuroptimus benchmark, PLOS Comp Bio) reports IBEA is &#x27;clearly the best among the multi-objective methods&#x27; on six neuron-fitting benchmarks including Hay 2011 L5PC, outperforming all three NSGA-II implementations tested. t0102 only tested NSGA-II, leaving algorithm choice as an unexamined factor in the 0/4800 random-init joint-pass yield. Port the t0099 substrate to pymoo&#x27;s IBEA (or DEAP/BluePyOpt IBEA wrapper) at matched budget (pop=96, gens=15, N_EVAL_SEEDS=4, 2 GA seeds, $8 cap), apply the S-0102-01 DSI fix if available, and compare front structure to t0099+t0102. Expected: IBEA&#x27;s hypervolume-density selection avoids placing half the front in the DSI=1/PD=0 corner that...
+
+## Dang 2023 theory-grounded NSGA-II at pop&gt;=290 (mu = n log n floor) with N_EVAL_SEEDS=4, gens=10
+ID: S-0102-04
+Priority: medium
+Kind: experiment
+Source task: t0102_seedscale_n4_gen20
+Dang 2023 Theorem 8 requires mu = Omega(n log n) for noisy NSGA-II to retain polynomial expected runtime under Bernoulli or Gaussian noise. For our 68-d substrate, the theoretical floor is Omega(68 * log(68)) = approximately 290; t0102 ran at pop=96, three times below this floor. compare_literature.md Methodology Differences identifies this as a principled lever to pull before concluding the substrate is structurally empty of joint-pass cells. Run a single random-init NSGA-II at pop=320 (slightly above the Dang floor for headroom), gens=10, N_EVAL_SEEDS=4, 1 GA seed -- total budget approximately 3200 evaluations, comparable to t0102. If pop&gt;=290 finds joint-pass cells where pop=96 found...
 
 ## Anchor-distance lineage trace: quantify t0091 joint-pass cell as one-mutation descendant of alt_topology anchor
 ID: S-0102-05
@@ -4260,6 +4480,27 @@ Kind: library
 Source task: t0105_preliminary_figures_report
 t0105 introduced python-pptx&gt;=1.0 and implemented tasks/t0105_preliminary_figures_report/code/build_slides.py as a task-local one-figure-per-slide deck assembler with caption + source-task citation in slide notes. Multiple downstream tasks (per-report figure packs, brainstorm decks, t0104 follow-up, future MOBO writeups) will want the same machinery. Package build_slides.py as a reusable library asset under a host task -- expose build_deck(slides: list[SlideSpec], output_path: Path) and a SlideSpec dataclass (image_path, caption, notes, layout), register a details.json under assets/library/, and document the import path. Downstream tasks then call the library instead of re-implementing...
 
+## Inspect the seed-55 gen-11 DSI=0.54 cell&#x27;s 68-d parameter vector — what makes it work; what would push PD up?
+ID: S-0104-01
+Priority: medium
+Kind: experiment
+Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
+Seed 55 generation 11 produced the first cell in the t0080-t0104 NSGA-II lineage with DSI cleanly above 0.5 (DSI = 0.5417 at PD = 3.57 Hz). Read this cell&#x27;s 68-d parameter vector from assets/predictions/nsga2-seed55-bedb-morph-n4-gen20-2obj/files/predictions-seed55.jsonl (cell_id = 6 on the Pareto front). Compare the electrophys 54-d subvector and the 14-d morphology subvector against the seed-44 best cell (DSI = 0.4073) and against t0091&#x27;s reported joint-pass anchor at DSI = 0.511 / PD = 35.1 Hz. Identify what biophysical knobs concentrate near the high-DSI region of parameter space; perform a one-knob-at-a-time perturbation around this cell to see whether a single sodium- or...
+
+## Inspect the seed-55 gen-8 DSI=0.42 / PD=15 Hz cell&#x27;s 68-d parameter vector — the closest project-best joint trade-off
+ID: S-0104-02
+Priority: medium
+Kind: experiment
+Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
+Seed 55 generation 8 produced the project-best joint trade-off so far: DSI = 0.4192 at PD = 15.00 Hz. This sits ~15 Hz below the strict joint-pass threshold of 30 Hz and ~0.08 DSI below the 0.5 threshold, but is the closest combined-axis cell observed across the full t0080-t0104 NSGA-II lineage. Read its 68-d vector from the seed-55 predictions JSONL (cell_id = 3 on the Pareto front), classify its anchor neighbourhood, and run a 2-knob perturbation grid varying the top-2 Cohen&#x27;s-d-distinguished electrophys knobs from the t0102 silence-vs-firing comparison. Outcome: a 2-d grid that estimates the local PD ceiling around this cell&#x27;s DSI = 0.4192 plateau. Recommended task types: experiment-run...
+
+## IBEA replacement for NSGA-II at matched budget on Bed B + morphology substrate (renews S-0102-03)
+ID: S-0104-04
+Priority: medium
+Kind: experiment
+Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
+t0104&#x27;s 0/2,208 random-init joint-pass null with the DSI guard active strengthens the case for S-0102-03 (IBEA replacement). NSGA-II crowding-distance selection produced an L-shaped front in both t0102 (3-obj) and t0104 (2-obj) on the same substrate, suggesting the selection operator itself prefers extreme-corner cells over interior trade-off cells. Mohacsi 2024 explicitly recommends IBEA as the strongest multi-objective optimiser on neuron-fitting problems (six of six benchmarks beat NSGA-II). Port t0104&#x27;s substrate to pymoo IBEA at matched budget (pop = 96, gens = 12, N_EVAL_SEEDS = 4, 2 GA seeds, DSI guard active, n_obj = 2). Expected outcome: IBEA&#x27;s hypervolume-density selection produces...
+
 ## Targeted morphology sweep around the high-DSI region of the seed-55 Pareto front
 ID: S-0104-05
 Priority: medium
@@ -4274,12 +4515,33 @@ Kind: technique
 Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
 Per-generation wall-clock doubled over both t0104 seeds (~15 min/gen at gen 1 to ~120 min/gen at gen 11-12) despite worker-restart-between-generations being active in the inherited nsga2_driver.py. The extra leak surface is likely inside per-cell evaluation: HOC namespace allocations, NEURON mechanism state in non-RAM-tracked C memory, or matplotlib-figure handle leaks in the morphology generator&#x27;s chart-writing branch. Action: instrument psutil.Process().memory_info().rss before and after each cell evaluation across one full generation; identify which call-site grows. Then add a full multiprocessing.Pool.terminate()/recreate() every N generations (N = 3 baseline) in nsga2_driver.py...
 
+## Re-run varimax factor analysis excluding integer morph_seed to test whether F1&#x27;s correlates survive
+ID: S-0105-01
+Priority: medium
+Kind: experiment
+Source task: t0105_cluster_factor_analysis_dsi_pd
+morph_seed (an integer dimension bounded [0, 99] driving generator randomness, not biologically meaningful) loads +0.68 on F1 next to NAP_PRIMARY (+0.75), SK_MID (+0.66), MG_CONC_MM (+0.65), and RA_OHM_CM (+0.65). F1&#x27;s r_DSI = -0.322 / r_PD = -0.265 could partly be a &#x27;warm-start vs random-init&#x27; indicator disguised as a mechanistic factor because t0091 fixed morph_seed = 31 while t0099/t0102/t0104 randomise it. Re-run the t0105 factor analysis on a 67-d matrix excluding morph_seed and check whether F1&#x27;s top loadings (NAP_PRIMARY, SK_MID, MG_CONC_MM, Ra) and its Pearson r vs DSI / PD survive. If they do, F1 is mechanistic; if F1 dissolves, F1 was a lineage indicator. Recommended task type...
+
+## Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells to validate the SK/BK mechanistic hypothesis
+ID: S-0105-02
+Priority: medium
+Kind: experiment
+Source task: t0105_cluster_factor_analysis_dsi_pd
+PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL, BK_TERMINAL, SK_SOMA, BK_MID, NAP_PRIMARY. The mechanistic hypothesis is that asymmetric dendrites concentrate Ca influx along the PD axis, so high terminal SK/BK locally quenches PD-side over-excitation. Test by taking the top-3 PC1-positive asymmetric cells (high Ca-K regime, e.g. the t0102 / t0104 cells in the cohort), independently ablating SK_TERMINAL = 0, BK_TERMINAL = 0, SK_SOMA = 0, BK_MID = 0 (one at a time and combined), and re-evaluating DSI + PD on the de Rosenroll Bed B substrate. Outcome: a 4x4 ablation grid per cell showing which Ca-K conductance is load-bearing for the asymmetric...
+
 ## Investigate the symmetric high-DSI outlier pocket: cells with DSI &gt; 0.2 AND asym_score &lt; 0.5
 ID: S-0105-03
 Priority: medium
 Kind: experiment
 Source task: t0105_cluster_factor_analysis_dsi_pd
 All 20 symmetric cells in the t0105 primary cohort come from t0091&#x27;s warm-start (asym_score = 0 exactly), but two of them have DSI &gt; 0.2 (cells #2 from t0091 gen 1 with DSI = 0.329 / PD = 12.86 Hz; cell from t0091 with DSI = 0.198 / PD = 46.14 Hz). These are &#x27;symmetric high-DSI&#x27; outliers that contradict the simple &#x27;asymmetric morphology required for DSI&#x27; reading. Inspect their full 68-d parameter vectors, check whether their high DSI is silence-artifact-adjacent (PD &lt; 5 Hz with small spike count), and if not, run a small perturbation grid around their parameter neighbourhood to see whether a symmetric-morphology DSI &gt; 0.2 plateau exists. This would significantly alter the project&#x27;s...
+
+## F1-axis-seeded NSGA-II initial population to test whether targeted seeding escapes the joint-corner block
+ID: S-0105-04
+Priority: medium
+Kind: experiment
+Source task: t0105_cluster_factor_analysis_dsi_pd
+F1 is the only factor weakly correlated with both DSI (r = -0.322) and PD (r = -0.265). Its top loadings span NAP_PRIMARY, SK_MID, MG_CONC_MM, RA_OHM_CM (and morph_seed - see S-0105-01 caveat). Build a random-init NSGA-II run whose initial population samples along the F1 axis (positive and negative directions) and orthogonal to F1, instead of uniform sampling. If F1-axis seeding accelerates Pareto exploration into the joint corner, the substrate has a discoverable direction that random-init NSGA-II misses. If F1-axis seeding produces the same L-shape, the substrate-limit reading is reinforced. Recommended task type: experiment-run. Cost: ~$8-12 (one Vast.ai NSGA-II run at matched budget to...
 
 ## Per-lineage PCA decomposition: quantify how much cross-lineage heterogeneity contributes to PC1 separation
 ID: S-0105-05
@@ -4301,6 +4563,13 @@ Priority: medium
 Kind: technique
 Source task: t0105_cluster_factor_analysis_dsi_pd
 t0105 finds no joint DSI-PD factor — no single low-d axis carries both outcomes. NSGA-II (any objective vector size or noise budget) cannot ride a non-existent axis. MAP-Elites maintains a diversity grid over user-specified behavioural descriptors (e.g., asym_score x morphology_seed bins), promotes corner exploration over Pareto crowding, and may find isolated joint-corner cells that lie off any continuous axis. Run MAP-Elites at matched budget to t0104 seed 44 (~$5) on the same Bed B + morphology substrate with behavioural descriptors (asym_score, source_lineage_marker), compare the resulting joint-corner yield. Complements S-0102-03 / S-0104-04 IBEA suggestions but with a stronger...
+
+## N_EVAL_SEEDS = 20 robustness re-evaluation of top 10 t0106 cells (esp. the 3 DSI = 1.0 cells)
+ID: S-0106-02
+Priority: medium
+Kind: evaluation
+Source task: t0106_long_pdnd_nsga2_300gen
+Three t0106 top-50 cells (ranks 16, 19, 27) achieve ratio DSI = 1.0 with deterministic zero ND firing. Total-spike silence guard (&gt;= 10 spikes across PD + ND) is exceeded (47-154 spikes/trial) so they are not silence-guard artefacts, but Trenholm2013 reports peak ND ~ 27 +/- 12 Hz in real mouse Hb9 DSGCs and Oesch2005 reports OFF DSI = 0.74 +/- 0.13. ND = 0 across only 3 noise replicates may be an AR(2)-seed + deterministic-GABA loophole that fails at higher replication. Re-evaluate the top 10 cells (3 DSI = 1.0 + 7 next-best incl. DSI = 0.98 at PD = 84.5 Hz and PD-frontier DSI = 0.92 at PD = 122.6 Hz) at N_EVAL_SEEDS = 20. Decision: if DSI = 1.0 collapses to &lt;= 0.9, mark as...
 
 ## 16-direction vector-sum DSI re-evaluation of top 50 t0106 cells to bridge t0106 &lt;-&gt; t0104 metric
 ID: S-0106-03
