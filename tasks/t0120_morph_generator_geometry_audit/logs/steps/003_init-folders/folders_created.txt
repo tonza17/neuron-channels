@@ -1,0 +1,12 @@
+tasks/t0120_morph_generator_geometry_audit/assets/answer/
+tasks/t0120_morph_generator_geometry_audit/code/
+tasks/t0120_morph_generator_geometry_audit/corrections/
+tasks/t0120_morph_generator_geometry_audit/intervention/
+tasks/t0120_morph_generator_geometry_audit/logs/commands/
+tasks/t0120_morph_generator_geometry_audit/logs/searches/
+tasks/t0120_morph_generator_geometry_audit/logs/sessions/
+tasks/t0120_morph_generator_geometry_audit/logs/steps/
+tasks/t0120_morph_generator_geometry_audit/plan/
+tasks/t0120_morph_generator_geometry_audit/research/
+tasks/t0120_morph_generator_geometry_audit/results/
+tasks/t0120_morph_generator_geometry_audit/results/images/
