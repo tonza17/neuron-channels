@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-02",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0112_t0106_seed77_replicate",
+  "target_kind": "suggestion",
+  "target_id": "S-0112-02",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "rationale": "Superseded by t0114 (seed 7755) and t0115 (seed 9354), both with HV-plateau auto-stop disabled. Cadence-10 vs cadence-25 isolation is no longer load-bearing: the 5-seed batch closed under the cadence-10 protocol and confirmed it produces substrate-rate estimates above Hay 2011 envelope on 3 of 5 seeds."
+}

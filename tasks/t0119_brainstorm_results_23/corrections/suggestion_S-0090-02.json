@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-16",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0090_morphology_generator_diversity_test",
+  "target_kind": "suggestion",
+  "target_id": "S-0090-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "G.3 NaP-knockout sweep at scale: t0090 deferred this on Phase G. Now overtaken by the t0093 procedural-generator fix and the t0091-t0117 morphology-extended NSGA-II lineage which has produced 4000+ evaluations. Single-knob NaP knockout is no longer a strict prerequisite. Downgrade to medium."
+}

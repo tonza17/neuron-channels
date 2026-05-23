@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-05",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0114_seed7755_no_autostop",
+  "target_kind": "suggestion",
+  "target_id": "S-0114-01",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "rationale": "Moot per project's DISABLED-autostop policy. The researcher's standing rule is to default to DISABLED HV-plateau auto-stop for long NSGA-II runs and rely on budget cap + gen ceiling + operator stop. New (WINDOW, REL_THRESHOLD) detector defaults are no longer needed."
+}

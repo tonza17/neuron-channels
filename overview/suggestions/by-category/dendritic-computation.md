@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
 90 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **73 open** (15
-high, 53 medium, 5 low), **17 closed**.
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **72 open** (13
+high, 54 medium, 5 low), **18 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,29 +34,6 @@ vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against Pole
 spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
 addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
 experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising cytoplasm
-volume</strong> (S-0097-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0097-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-08 |
-| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1002107`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1002107/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most
-evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010's `bf`
-in [0.2, 0.7] band; Chklovskii et al. 2002's 3/5-of-grey-matter wiring rule). Infrastructure
-already in place via the t0093-validated procedural morphology generator. Falsifiable
-prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on
-Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8
-budget bump if needed). Same population/generation budget as t0091.
 
 </details>
 
@@ -356,33 +333,6 @@ dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed eva
 locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
 ~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
 types: experiment-run, baseline-evaluation.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
-per-synapse value, then re-run</strong> (S-0086-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0086-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-06 |
-| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
-| **Source paper** | [`sivyer_2013`](../../../tasks/t0086_robustness_cluster_bio_comparison/assets/paper/sivyer_2013/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
-
-t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
-conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
-pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
-parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
-from t0083's gen-17 final population for 5 additional generations at population 96. Test
-whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
-confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
-biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
-joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
-Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
-cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
 
 </details>
 
@@ -1671,6 +1621,33 @@ burst rate and compare with published DSGC spiking statistics.
 </details>
 
 <details>
+<summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
+per-synapse value, then re-run</strong> (S-0086-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0086-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-06 |
+| **Source task** | [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
+| **Source paper** | [`sivyer_2013`](../../../tasks/t0086_robustness_cluster_bio_comparison/assets/paper/sivyer_2013/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
+conductance 85-122 sigma above Sivyer 2013's published 0.1 nS. The NSGA-II search routinely
+pushes gnmda_dend to the upper boundary of its log-uniform [1e-5, 1e-2] uS range. Tighten the
+parameter bounds to [1e-5, 5e-4] uS (5x Sivyer 2013's value as a soft cap) and re-run NSGA-II
+from t0083's gen-17 final population for 5 additional generations at population 96. Test
+whether any joint-pass cells emerge in the biologically-plausible NMDA regime. If not, this
+confirms that the v3 substrate cannot satisfy the joint-pass DSI/PD criterion using
+biologically-plausible NMDA -- a major finding that would motivate either (a) revisiting the
+joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
+Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
+cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Widen soma_offset_pd_um morphology bound from [-150, +150] to
 [-200, +200] um and re-run 2-direction NSGA-II</strong> (S-0106-04)</summary>
 
@@ -1901,6 +1878,31 @@ gabaMOD with PD=0.33 ND=0.99 base 2 nS, soma+AIS HH). Re-run the {0, 0.25, 0.5, 
 sweep with the same 12 dirs x 10 trials x 3 modes protocol. Pass criterion: vector-sum DSI at
 gNMDA=0.25 must exceed 0.50 and peak Hz must reach >= 5 Hz. This directly addresses the
 headline negative result of t0054. Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>✅ <s>Bed B NSGA-II maximising DSI and minimising cytoplasm volume</s> —
+covered by <a
+href="../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/"><code>t0122_dsi_cytoplasm_volume_nsga2</code></a>
+(S-0097-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1002107`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1002107/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Highest biological-plausibility ranking in the t0097 catalogue. Cytoplasm volume is the most
+evolutionarily grounded cost objective (Cajal cytoplasm-conservation; Cuntz et al. 2010's `bf`
+in [0.2, 0.7] band; Chklovskii et al. 2002's 3/5-of-grey-matter wiring rule). Infrastructure
+already in place via the t0093-validated procedural morphology generator. Falsifiable
+prediction: high-DSI corner clusters at `bf` in [0.2, 0.7]. Budget feasibility: 12-24 h on
+Vast.ai EPYC 7763 64-core at $0.30/h, total $4-8 (within the per-task $5 default; flag for $8
+budget bump if needed). Same population/generation budget as t0091.
 
 </details>
 

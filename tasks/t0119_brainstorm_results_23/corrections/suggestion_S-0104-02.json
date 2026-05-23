@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-25",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0104_nsga2_2obj_dsi_pdrate_3seeds",
+  "target_kind": "suggestion",
+  "target_id": "S-0104-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "Seed-55 gen-8 DSI=0.42/PD=15 cell inspection: same reason as S-0104-01. Superseded by t0106+. Downgrade to medium."
+}

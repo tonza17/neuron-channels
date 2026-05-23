@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-11",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0070_writeup_two_model_beds",
+  "target_kind": "suggestion",
+  "target_id": "S-0070-01",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "Bed A vs Bed B harmonisation: the project has converged on Bed B + procedural morphology as the working substrate (t0091 onwards). Cross-bed comparison is no longer load-bearing. Downgrade to medium pending any future return to Bed A work."
+}

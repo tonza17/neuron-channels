@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-17",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0090_morphology_generator_diversity_test",
+  "target_kind": "suggestion",
+  "target_id": "S-0090-03",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "G.2 NMDA units calibration after BEDB_BASE_POINT retune: superseded by t0093 fix and the working morphology-extended NSGA-II lineage. NMDA-unit-aware re-scoring is now nice-to-have, not load-bearing. Downgrade to medium."
+}

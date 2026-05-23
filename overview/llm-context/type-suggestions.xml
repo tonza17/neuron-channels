@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-22T18:36:32Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-23T22:49:16Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>513248</char_count>
-    <byte_count>513434</byte_count>
-    <estimated_tokens>128312</estimated_tokens>
+    <char_count>513308</char_count>
+    <byte_count>513494</byte_count>
+    <estimated_tokens>128327</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -3250,7 +3250,7 @@ t0066 only tested PD (0°) and ND (180°). The de Rosenroll model&#x27;s bar-geo
 ## Find the NaP density at which DSI crosses zero
 ID: S-0067-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0067_t0065_soma_channel_addition_sweep
 Categories: voltage-gated-channels, direction-selectivity, compartmental-modeling
@@ -3415,7 +3415,7 @@ NaP at high density on the AIS gave the largest signal (-0.78 ΔDSI), 80% of the
 ## Harmonise PD/ND encoding across Bed A and Bed B so cross-bed sweep results are directly comparable
 ID: S-0070-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0070_writeup_two_model_beds
 Categories: direction-selectivity, compartmental-modeling, synaptic-integration
@@ -3555,7 +3555,7 @@ t0072 produced a recording infrastructure that works across both Bed A (HOC-driv
 ## Plot polar tuning curves to distinguish SK_high narrowing from flat-top clipping
 ID: S-0074-01
 Status: active
-Priority: high
+Priority: medium
 Kind: evaluation
 Source task: t0074_channel_tuning_width_bed_a
 Categories: voltage-gated-channels, direction-selectivity, compartmental-modeling
@@ -3566,7 +3566,7 @@ SK_high produced HWHM = 41 deg (delta -42 deg, the largest narrowing in the swee
 ## Verify NaR broadening hypothesis: ND-lobe firing rescue at sub-threshold angles
 ID: S-0074-02
 Status: active
-Priority: high
+Priority: medium
 Kind: evaluation
 Source task: t0074_channel_tuning_width_bed_a
 Categories: voltage-gated-channels, direction-selectivity, compartmental-modeling
@@ -3698,7 +3698,7 @@ Three concrete defects identified in the t0076 implementation block additional v
 ## Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 + Kv3 effect at the t0076 best-joint operating point
 ID: S-0076-04
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0076_bedb_dsi_firing_rate_mobo
 Categories: voltage-gated-channels, direction-selectivity, compartmental-modeling
@@ -4118,7 +4118,7 @@ Cells 1559 (DSI 0.706 / PD 39.18 Hz) and 1677 (DSI 0.657 / PD 40.71 Hz) are the 
 ## Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013 per-synapse value, then re-run
 ID: S-0086-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0086_robustness_cluster_bio_comparison
 Source paper: sivyer_2013
@@ -4266,7 +4266,7 @@ The procedural Bed-B-equivalent cell paired with the t0083 best-cell parameter v
 ## Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with ProcessPoolExecutor
 ID: S-0090-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0090_morphology_generator_diversity_test
 Categories: voltage-gated-channels, direction-selectivity, retinal-ganglion-cell
@@ -4277,7 +4277,7 @@ t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because
 ## Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune to land the cluster re-score
 ID: S-0090-03
 Status: active
-Priority: high
+Priority: medium
 Kind: evaluation
 Source task: t0090_morphology_generator_diversity_test
 Categories: synaptic-integration, compartmental-modeling
@@ -4626,7 +4626,7 @@ t0090&#x27;s MorphologyResult.section_endpoints_xy does not register AIS endpoin
 ## Anchor-1-only warm-start NSGA-II to isolate which part of t0091&#x27;s warm-start was load-bearing
 ID: S-0099-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0099_random_init_pareto_robustness
 Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels
@@ -4637,7 +4637,7 @@ t0099 confirmed t0091&#x27;s 5-anchor warm-start was load-bearing (0/55 random-i
 ## Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto cells (HM-3 follow-up)
 ID: S-0099-02
 Status: active
-Priority: high
+Priority: medium
 Kind: evaluation
 Source task: t0099_random_init_pareto_robustness
 Categories: compartmental-modeling, direction-selectivity
@@ -4716,7 +4716,7 @@ Poleg-Polsky 2026 uses 50-100 GA seeds at pop=10, 300-1000 generations. Our conv
 ## Fix DSI vector-sum objective: gate by minimum total spike count to eliminate silenced-cell DSI=1.0 artifact
 ID: S-0102-01
 Status: active
-Priority: high
+Priority: medium
 Kind: technique
 Source task: t0102_seedscale_n4_gen20
 Categories: compartmental-modeling, direction-selectivity
@@ -4727,7 +4727,7 @@ Finding 1 in results_detailed.md: 27 t0102 cells reach DSI = 1.0 because vector-
 ## Direct re-evaluation of t0083 / t0091 anchor library at N_EVAL_SEEDS=4 to disambiguate substrate vs algorithm limitation
 ID: S-0102-02
 Status: active
-Priority: high
+Priority: medium
 Kind: evaluation
 Source task: t0102_seedscale_n4_gen20
 Categories: compartmental-modeling, direction-selectivity
@@ -4738,7 +4738,7 @@ creative_analysis.md Section 4 proposes a &lt; $0.20 follow-up that disambiguate
 ## IBEA replacement for NSGA-II at matched budget (pop=96, gens=15, N=4, 2 GA seeds) on Bed B + morphology substrate
 ID: S-0102-03
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0102_seedscale_n4_gen20
 Source paper: 10.1371_journal.pcbi.1012039
@@ -4750,7 +4750,7 @@ Mohacsi 2024 (Neuroptimus benchmark, PLOS Comp Bio) reports IBEA is &#x27;clearl
 ## Dang 2023 theory-grounded NSGA-II at pop&gt;=290 (mu = n log n floor) with N_EVAL_SEEDS=4, gens=10
 ID: S-0102-04
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0102_seedscale_n4_gen20
 Source paper: 10.48550_arXiv.2306.04525
@@ -4946,7 +4946,7 @@ t0105 introduced python-pptx&gt;=1.0 and implemented tasks/t0105_preliminary_fig
 ## Inspect the seed-55 gen-11 DSI=0.54 cell&#x27;s 68-d parameter vector — what makes it work; what would push PD up?
 ID: S-0104-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
 Categories: direction-selectivity, compartmental-modeling
@@ -4957,7 +4957,7 @@ Seed 55 generation 11 produced the first cell in the t0080-t0104 NSGA-II lineage
 ## Inspect the seed-55 gen-8 DSI=0.42 / PD=15 Hz cell&#x27;s 68-d parameter vector — the closest project-best joint trade-off
 ID: S-0104-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
 Categories: direction-selectivity, compartmental-modeling
@@ -4979,7 +4979,7 @@ The t0080-era 8-direction angle constant ANGLES_8DIR_DEG remains in tasks/t0080_
 ## IBEA replacement for NSGA-II at matched budget on Bed B + morphology substrate (renews S-0102-03)
 ID: S-0104-04
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0104_nsga2_2obj_dsi_pdrate_3seeds
 Source paper: 10.1371_journal.pcbi.1012039
@@ -5013,7 +5013,7 @@ Per-generation wall-clock doubled over both t0104 seeds (~15 min/gen at gen 1 to
 ## Re-run varimax factor analysis excluding integer morph_seed to test whether F1&#x27;s correlates survive
 ID: S-0105-01
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0105_cluster_factor_analysis_dsi_pd
 Categories: compartmental-modeling, direction-selectivity
@@ -5024,7 +5024,7 @@ morph_seed (an integer dimension bounded [0, 99] driving generator randomness, n
 ## Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells to validate the SK/BK mechanistic hypothesis
 ID: S-0105-02
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0105_cluster_factor_analysis_dsi_pd
 Source paper: 10.1038_s41467-026-70288-4
@@ -5047,7 +5047,7 @@ All 20 symmetric cells in the t0105 primary cohort come from t0091&#x27;s warm-s
 ## F1-axis-seeded NSGA-II initial population to test whether targeted seeding escapes the joint-corner block
 ID: S-0105-04
 Status: active
-Priority: high
+Priority: medium
 Kind: experiment
 Source task: t0105_cluster_factor_analysis_dsi_pd
 Categories: direction-selectivity, compartmental-modeling
@@ -5090,7 +5090,7 @@ t0105 finds no joint DSI-PD factor — no single low-d axis carries both outcome
 
 ## Multi-seed confirmation of t0106 2-direction NSGA-II at GA seeds 55 and 66
 ID: S-0106-01
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0106_long_pdnd_nsga2_300gen
@@ -5102,7 +5102,7 @@ t0106&#x27;s 3.3% joint-pass yield (123 joint-pass cells / 3,744 evals) was prod
 ## N_EVAL_SEEDS = 20 robustness re-evaluation of top 10 t0106 cells (esp. the 3 DSI = 1.0 cells)
 ID: S-0106-02
 Status: active
-Priority: high
+Priority: medium
 Kind: evaluation
 Source task: t0106_long_pdnd_nsga2_300gen
 Source paper: 10.1523_JNEUROSCI.0808-13.2013
@@ -5180,7 +5180,7 @@ t0106 (seed 44) yielded 123 unique joint-pass cells (3.3% rate); t0112 (seed 77)
 
 ## Isolate the pool-restart-cadence effect: paired re-runs at fixed seed comparing cadence 10 vs 25
 ID: S-0112-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0112_t0106_seed77_replicate
@@ -5191,7 +5191,7 @@ t0112&#x27;s 3.5x per-generation wall-clock speedup (620s/gen vs t0106&#x27;s 2,
 
 ## HV-plateau auto-stop sensitivity: re-run t0112 seed 77 with auto-stop disabled to gen 60 ceiling
 ID: S-0112-03
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0112_t0106_seed77_replicate
@@ -5268,7 +5268,7 @@ S-0112-01 requires &gt;=3 additional GA seeds at cadence-10 to upgrade the subst
 
 ## Fix dill checkpoint pool-pickling failure in nsga2_driver.py: every gen across t0113 failed to dill-pickle
 ID: S-0113-02
-Status: active
+Status: rejected
 Priority: high
 Kind: library
 Source task: t0113_t0106_seed2247_replicate
@@ -5346,7 +5346,7 @@ t0106 had 1 silence-guard DSI=1.0 cell, t0112 had 0, t0113 has 2. If silence-gua
 
 ## Adopt (WINDOW=3, REL_THRESHOLD=0.015) as new project-default HV-plateau detector constants
 ID: S-0114-01
-Status: active
+Status: rejected
 Priority: high
 Kind: technique
 Source task: t0114_seed7755_no_autostop
@@ -5413,7 +5413,7 @@ t0114&#x27;s run was terminated by operator stop via the intervention/stop.md se
 
 ## Resolve recurring dill-checkpoint pool-pickling failure: fix or formally retire dill resume channel
 ID: S-0114-07
-Status: active
+Status: rejected
 Priority: high
 Kind: library
 Source task: t0114_seed7755_no_autostop
@@ -5436,7 +5436,7 @@ The S-0114-01 (W*, T*) = (3, 0.015) recommendation is computed offline from 4 HV
 
 ## Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector defaults across the project
 ID: S-0115-01
-Status: active
+Status: rejected
 Priority: high
 Kind: technique
 Source task: t0115_seed9354_no_autostop
@@ -5515,7 +5515,7 @@ Three of the five S-0112-01 batch seeds (44, 7755, 9354) all exceeded the Hay 20
 
 ## 5-seed pooled re-analysis adding t0113 (seed 2247) via correction to the t0116 pipeline
 ID: S-0116-01
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0116_pooled_pca_cluster_factor_dsi07_pd10
@@ -5526,7 +5526,7 @@ t0116&#x27;s 4-seed pool (44/77/7755/9354) was a deliberate first cut; seed 2247
 
 ## Relaxed-cohort (DSI &gt; 0.5) pooled re-analysis to test truncated-cohort artefact on joint-factor decoupling
 ID: S-0116-02
-Status: active
+Status: rejected
 Priority: high
 Kind: experiment
 Source task: t0116_pooled_pca_cluster_factor_dsi07_pd10

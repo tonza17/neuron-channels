@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-03",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0112_t0106_seed77_replicate",
+  "target_kind": "suggestion",
+  "target_id": "S-0112-03",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "rationale": "Superseded by t0114 (seed 7755) which ran the same substrate with auto-stop disabled and reached 484 LEGIT joint-pass cells at gen 62 -- 70x more than t0113's 14-gen premature-stop run. The auto-stop sensitivity question is now empirically answered."
+}

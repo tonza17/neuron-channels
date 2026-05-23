@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-06",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0114_seed7755_no_autostop",
+  "target_kind": "suggestion",
+  "target_id": "S-0114-07",
+  "action": "update",
+  "changes": {
+    "status": "rejected"
+  },
+  "rationale": "Deferred to the next NSGA-II driver iteration. Same as S-0113-02: the dill resume channel has produced zero successful resumes across the t0106-t0115 lineage; JSON resume works. The next driver revision (commissioned by t0122) will retire the dill channel formally."
+}

@@ -1,0 +1,25 @@
+{
+  "spec_version": 4,
+  "task_id": "t0120_morph_generator_geometry_audit",
+  "task_index": 120,
+  "name": "Morphology generator geometry audit (15-20 cells)",
+  "short_description": "Audit procedural morphology generator: verify primary stems start at origin_xy, parent/child endpoint match, and synapse pt3d xy frame matches origin_xy across 15-20 visually-diverse cells. Gates downstream NSGA-II.",
+  "long_description_file": "task_description.md",
+  "status": "not_started",
+  "dependencies": [
+    "t0090_morphology_generator_diversity_test",
+    "t0092_diagnose_morphology_generator_silence",
+    "t0115_seed9354_no_autostop",
+    "t0119_brainstorm_results_23"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "expected_assets": {
+    "answer": 1
+  },
+  "task_types": [
+    "data-analysis",
+    "answer-question"
+  ],
+  "source_suggestion": null
+}

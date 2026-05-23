@@ -1,0 +1,13 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0119-19",
+  "correcting_task": "t0119_brainstorm_results_23",
+  "target_task": "t0099_random_init_pareto_robustness",
+  "target_kind": "suggestion",
+  "target_id": "S-0099-02",
+  "action": "update",
+  "changes": {
+    "priority": "medium"
+  },
+  "rationale": "Per-cell field_elongation_pd vs DSI test on t0091 + t0099 Pareto: still scientifically interesting (HM-3 follow-up) but lower priority than the cohort-artefact and mechanistic-interpretation work commissioned in brainstorm session 23. Downgrade to medium."
+}

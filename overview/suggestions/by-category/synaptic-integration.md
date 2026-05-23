@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
 101 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **90 open** (17 high,
-66 medium, 7 low), **11 closed**.
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **90 open** (15 high,
+68 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -191,33 +191,6 @@ suppression. Recommended task types: experiment-run.
 </details>
 
 <details>
-<summary>🧪 <strong>Harmonise PD/ND encoding across Bed A and Bed B so cross-bed
-sweep results are directly comparable</strong> (S-0070-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0070-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-01 |
-| **Source task** | [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) |
-| **Source paper** | — |
-| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
-
-The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally
-different mechanisms. Bed A keeps bar geometry fixed and swaps a presynaptic envelope scalar
-`gabaMOD = 0.33` (PD) / `0.99` (ND) applied uniformly to every SACinhib synapse. Bed B keeps
-conductances fixed and rotates the bar direction (0 deg / 180 deg), simultaneously shifting
-per-synapse arrival times AND changing a sigmoidal release probability `p_rel ~= 0.05` (PD) /
-`0.80` (ND) plus AR(2) noise. Any cross-bed comparison (t0065 vs t0066, or future Bed B ports
-of t0067/t0068/t0069) is therefore confounded. Pick one canonical encoding (recommended:
-spatial bar rotation, biophysically grounded) and either (a) port it to Bed A by replacing the
-gabaMOD scalar with per-synapse spatial gating (extending S-0050-01), or (b) define a shared
-effective-inhibition-strength calibration curve. Recommended task types: experiment-run,
-comparative-analysis.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Implement AMPA + NMDA + GABA_A synapses with E-I temporal
 co-tuning and SAC-to-DSGC asymmetric inhibition in downstream DSGC
 model</strong> (S-0018-03)</summary>
@@ -351,30 +324,6 @@ criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes
 trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
 infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
 DSGC task.
-
-</details>
-
-<details>
-<summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
-to land the cluster re-score</strong> (S-0090-03)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0090-03` |
-| **Kind** | evaluation |
-| **Date added** | 2026-05-07 |
-| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
-| **Source paper** | — |
-| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
-
-t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
-NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus
-simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build
-the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 /
-t0088 cluster centroids' NMDA per-synapse exotic-ness against Sivyer 2013's published 0.1 nS
-in the corrected units. The output is a definitive verdict on whether t0086 / t0088's NMDA
-~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier
-biological mechanism. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -1040,6 +989,33 @@ budget 4-6 hours for full P3.
 </details>
 
 <details>
+<summary>🧪 <strong>Harmonise PD/ND encoding across Bed A and Bed B so cross-bed
+sweep results are directly comparable</strong> (S-0070-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0070-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-01 |
+| **Source task** | [`t0070_writeup_two_model_beds`](../../../overview/tasks/task_pages/t0070_writeup_two_model_beds.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+The t0070 writeup shows Bed A (t0008) and Bed B (t0024) encode PD vs ND by fundamentally
+different mechanisms. Bed A keeps bar geometry fixed and swaps a presynaptic envelope scalar
+`gabaMOD = 0.33` (PD) / `0.99` (ND) applied uniformly to every SACinhib synapse. Bed B keeps
+conductances fixed and rotates the bar direction (0 deg / 180 deg), simultaneously shifting
+per-synapse arrival times AND changing a sigmoidal release probability `p_rel ~= 0.05` (PD) /
+`0.80` (ND) plus AR(2) noise. Any cross-bed comparison (t0065 vs t0066, or future Bed B ports
+of t0067/t0068/t0069) is therefore confounded. Pick one canonical encoding (recommended:
+spatial bar rotation, biophysically grounded) and either (a) port it to Bed A by replacing the
+gabaMOD scalar with per-synapse spatial gating (extending S-0050-01), or (b) define a shared
+effective-inhibition-strength calibration curve. Recommended task types: experiment-run,
+comparative-analysis.
+
+</details>
+
+<details>
 <summary>🔧 <strong>Hybrid spatial-gating + amplitude-scaling inhibition mechanism
 on minimal DSGC</strong> (S-0053-05)</summary>
 
@@ -1591,6 +1567,30 @@ population mean. Re-run t0049's somatic SEClamp protocol to test whether somatic
 an ND-bias toward paper Fig 3C (PD ~12.5 / ND ~30 nS, DSI ~ -0.41). This is the primary 'fix
 path A' identified by t0050's mechanism analysis. Recommended task types: feature-engineering,
 experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-run G.2 NMDA units calibration after BEDB_BASE_POINT retune
+to land the cluster re-score</strong> (S-0090-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0090-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-07 |
+| **Source task** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0090 Phase G.2 ran the 7-point gnmda_dend sweep (1e-5 to 1e-2 uS) but every level returned
+NaN per-spine peak conductance because the procedural Bed-B cell diverges during stimulus
+simulation. After S-0090-01 corrects the silent-cell blocker, re-run the 7-point sweep, build
+the calibration curve mapping NetCon weight to per-spine conductance, and re-score the t0086 /
+t0088 cluster centroids' NMDA per-synapse exotic-ness against Sivyer 2013's published 0.1 nS
+in the corrected units. The output is a definitive verdict on whether t0086 / t0088's NMDA
+~85-122 sigma exotic flag is driven by a units / scope mismatch or by a genuinely outlier
+biological mechanism. Recommended task types: experiment-run, data-analysis.
 
 </details>
 

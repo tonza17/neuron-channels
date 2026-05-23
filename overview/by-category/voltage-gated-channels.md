@@ -1861,7 +1861,7 @@ experiment-run, data-analysis. Cost: <$0.30.
 <summary>🧪 <strong>Targeted Ca-K channel ablation sweep on top-PC1 asymmetric cells
 to validate the SK/BK mechanistic hypothesis</strong> (S-0105-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-14 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-14 | **Source**:
 [t0105_cluster_factor_analysis_dsi_pd](../../tasks/t0105_cluster_factor_analysis_dsi_pd/)
 
 PC1 separates symmetric from asymmetric cells at p = 1.48e-10 with top loadings SK_TERMINAL,
@@ -1881,7 +1881,7 @@ or local if NEURON runs locally). Aligns with PolegPolsky2026's ML channel-impor
 <summary>🧪 <strong>Anchor-1-only warm-start NSGA-II to isolate which part of t0091's
 warm-start was load-bearing</strong> (S-0099-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-10 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-10 | **Source**:
 [t0099_random_init_pareto_robustness](../../tasks/t0099_random_init_pareto_robustness/)
 
 t0099 confirmed t0091's 5-anchor warm-start was load-bearing (0/55 random-init joint-pass
@@ -1989,7 +1989,7 @@ deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable
 <summary>🧪 <strong>Run G.3 NaP-knockout sweep at scale on local 64-core EPYC with
 ProcessPoolExecutor</strong> (S-0090-02)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-07 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-07 | **Source**:
 [t0090_morphology_generator_diversity_test](../../tasks/t0090_morphology_generator_diversity_test/)
 
 t0090 Phase G.3 committed the NaP-knockout driver as infrastructure_only because the
@@ -2067,7 +2067,7 @@ Recommended task types: experiment-run.
 <summary>🧪 <strong>Tighten NSGA-II priors on gnmda_dend to match Sivyer 2013
 per-synapse value, then re-run</strong> (S-0086-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-06 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-06 | **Source**:
 [t0086_robustness_cluster_bio_comparison](../../tasks/t0086_robustness_cluster_bio_comparison/)
 
 t0086's biological scorecard found that both Genuine-cell clusters have NMDA per-synapse
@@ -2353,7 +2353,7 @@ Test whether tier-stratification breaks the inherent DSI-vs-rate trade-off obser
 <summary>🧪 <strong>Direct test of the t0076-vs-t0068 contradiction: isolate Nav1.6 +
 Kv3 effect at the t0076 best-joint operating point</strong> (S-0076-04)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-03 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-03 | **Source**:
 [t0076_bedb_dsi_firing_rate_mobo](../../tasks/t0076_bedb_dsi_firing_rate_mobo/)
 
 t0068 reported that Nav1.6 + Kv3 co-expression jointly rescues DSI and rate, but the t0076
@@ -2391,7 +2391,7 @@ experiment-run.
 <summary>📊 <strong>Plot polar tuning curves to distinguish SK_high narrowing from
 flat-top clipping</strong> (S-0074-01)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-02 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-02 | **Source**:
 [t0074_channel_tuning_width_bed_a](../../tasks/t0074_channel_tuning_width_bed_a/)
 
 SK_high produced HWHM = 41 deg (delta -42 deg, the largest narrowing in the sweep).
@@ -2410,7 +2410,7 @@ no new sim runs.
 <summary>📊 <strong>Verify NaR broadening hypothesis: ND-lobe firing rescue at
 sub-threshold angles</strong> (S-0074-02)</summary>
 
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-02 | **Source**:
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-02 | **Source**:
 [t0074_channel_tuning_width_bed_a](../../tasks/t0074_channel_tuning_width_bed_a/)
 
 NaR_med and NaR_high broadened HWHM by +34 / +36 deg without changing peak rate or vector-sum
@@ -2574,7 +2574,7 @@ design for t0075 active-dendrite work and improves t0074's biological plausibili
 <summary>🧪 <strong>Find the NaP density at which DSI crosses zero</strong>
 (S-0067-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-01 | **Source**:
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-01 | **Source**:
 [t0067_t0065_soma_channel_addition_sweep](../../tasks/t0067_t0065_soma_channel_addition_sweep/)
 
 t0067 showed NaP at 0.8 mS/cm² gives DSI = 0.117 (positive but low) and at 2.4 mS/cm² gives
