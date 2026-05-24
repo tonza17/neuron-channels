@@ -4,15 +4,15 @@
   <a href="papers/"><img src="https://img.shields.io/badge/Papers-94-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-4-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
-  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-16-9370DB" alt="Predictions"></a>
+  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-17-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-44-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-45-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-123-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-475-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-482-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,18 +29,18 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (46K)
-| [full](llm-context/full.xml) (736K) | [roadmap](llm-context/roadmap.xml) (142K) |
-[results](llm-context/results-deep-dive.xml) (567K) |
+| [full](llm-context/full.xml) (741K) | [roadmap](llm-context/roadmap.xml) (142K) |
+[results](llm-context/results-deep-dive.xml) (571K) |
 [assets](llm-context/literature-and-assets.xml) (74K)
 
-*Last updated: 2026-05-24 02:24 UTC*
+*Last updated: 2026-05-24 06:32 UTC*
 
 * **Budget**: **$63** spent of $100
 * **Remaining**: **$37**
-* **Usage**: `█████████████░░░░░░░` 62.9%
-* **GPU Machines**: **15** provisioned across 15 tasks · **$63** GPU spend
+* **Usage**: `█████████████░░░░░░░` 63.4%
+* **GPU Machines**: **16** provisioned across 16 tasks · **$63** GPU spend
   ([details](machines/))
-* **Provisioning**: 9 failed attempts · $0.07 wasted · 38% failure rate
+* **Provisioning**: 10 failed attempts · $0.07 wasted · 38% failure rate
 
 ---
 
@@ -59,13 +59,12 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
-| 0122 | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | [`description`](../tasks/t0122_dsi_cytoplasm_volume_nsga2/task_description.md) | 2026-05-23 |
 
 ---
 
@@ -83,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (114 total)](tasks/by-status/completed.md)
+## [Recently Completed (115 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0122 | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | [`results`](../tasks/t0122_dsi_cytoplasm_volume_nsga2/results/results_detailed.md) | 2026-05-24 06:30 |
 | 0121 | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) | [`results`](../tasks/t0121_5seed_substrate_rate_canonical_report/results/results_detailed.md) | 2026-05-24 02:25 |
 | 0120 | [Morphology generator geometry audit (15-20 cells)](../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) | [`results`](../tasks/t0120_morph_generator_geometry_audit/results/results_detailed.md) | 2026-05-24 00:45 |
 | 0119 | [Brainstorm results session 23](../overview/tasks/task_pages/t0119_brainstorm_results_23.md) | [`results`](../tasks/t0119_brainstorm_results_23/results/results_detailed.md) | 2026-05-23 00:00 |
@@ -96,9 +96,8 @@ No blocked tasks.
 | 0115 | [Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | [`results`](../tasks/t0115_seed9354_no_autostop/results/results_detailed.md) | 2026-05-21 02:55 |
 | 0114 | [Seed-7755 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | [`results`](../tasks/t0114_seed7755_no_autostop/results/results_detailed.md) | 2026-05-20 16:20 |
 | 0113 | [Seed-2247 random-seed replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md) | [`results`](../tasks/t0113_t0106_seed2247_replicate/results/results_detailed.md) | 2026-05-20 02:50 |
-| 0112 | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | [`results`](../tasks/t0112_t0106_seed77_replicate/results/results_detailed.md) | 2026-05-19 21:50 |
 
-*104 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*105 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -123,7 +122,7 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (428 open)](suggestions/)
+## [Recent Suggestions (435 open)](suggestions/)
 
 <details>
 <summary>🔧 <strong>Re-render t0112 / t0114 / t0115 top-50 morphology grids with
@@ -307,28 +306,30 @@ metric itself). Recommended task types: infrastructure-setup, data-analysis.
 </details>
 
 <details>
-<summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
-joint DSI-PD factor disappears</strong> (S-0117-01)</summary>
+<summary>🧪 <strong>Replicate t0122 cytoplasm-volume NSGA-II on 2-3 additional GA
+seeds for substrate-rate estimate</strong> (S-0122-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
-[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0122_dsi_cytoplasm_volume_nsga2](../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
 
-t0117 confirmed the truncated-cohort artefact: F1 is a joint DSI-PD factor (r_DSI=+0.421,
-r_PD=+0.352) at the unfiltered pool, while t0116 (DSI>0.7 AND PD>10) had zero joint factors.
-S-0116-02 covers a single point at DSI>0.5; this suggestion is a parametric sweep. Re-run the
-t0117 pipeline at four DSI thresholds {0.3, 0.5, 0.7, 0.9} on the same pooled all-cells
-parquet, fit varimax FA at each, and plot (a) joint-factor count vs threshold and (b) F1's
-r_DSI/r_PD vs threshold. Decision: monotonic crossover between 0.5 and 0.7 means smooth
-range-restriction; a sharp cliff means a specific cell class dominates the joint variance.
-Recommended task types: data-analysis, comparative-analysis. Cost: <$0.30.
+t0122 ran one GA seed (1524) and reported 0.17% LEGIT acceptance (10/5760) with 10/10 top-DSI
+cells in the Cuntz [0.2, 0.7] band. Mirroring the S-0112-01 pattern, the headline must be
+replicated on 2-3 more random GA seeds drawn via secrets.randbelow(10000) (non-round) before
+drawing population-statistic conclusions. Action: launch 2-3 independent runs of the t0122
+substrate (same 68-d Bed B + 14-d morph, F=[-dsi, +volume_um3], hard constants POP_SIZE=96,
+N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6.0, tightened guard pd_spikes_sum<3), aggregate
+per-seed LEGIT rates and Cuntz top-10 bf distributions, and compute a 3-seed mean +- SD
+comparable to t0121's 5-seed PD-rate estimate. Outcome: substrate-rate central estimate for
+the cytoplasm-volume axis, and answers whether bf=0.500 clustering is seed-invariant.
+Recommended task types: experiment-run, data-analysis.
 
 </details>
 
-*418 more open suggestions → [open suggestions](suggestions/)*
+*425 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (68)](suggestions/)
+## [High Priority Suggestions (71)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Re-run seeds 77 and 2247 with HV-plateau auto-stop DISABLED to
@@ -367,6 +368,65 @@ minimum-change replicate of t0115 (auto-stop disabled, cadence 10, gen ceiling 3
 if both CIs clear the Hay envelope upper bound at 7-8 seeds, the substrate-density claim can
 be made at p < 0.05 without the censoring caveat. Distinct from S-0113-01 (closed by t0114 +
 t0115). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Replicate t0122 cytoplasm-volume NSGA-II on 2-3 additional GA
+seeds for substrate-rate estimate</strong> (S-0122-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0122_dsi_cytoplasm_volume_nsga2](../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
+
+t0122 ran one GA seed (1524) and reported 0.17% LEGIT acceptance (10/5760) with 10/10 top-DSI
+cells in the Cuntz [0.2, 0.7] band. Mirroring the S-0112-01 pattern, the headline must be
+replicated on 2-3 more random GA seeds drawn via secrets.randbelow(10000) (non-round) before
+drawing population-statistic conclusions. Action: launch 2-3 independent runs of the t0122
+substrate (same 68-d Bed B + 14-d morph, F=[-dsi, +volume_um3], hard constants POP_SIZE=96,
+N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6.0, tightened guard pd_spikes_sum<3), aggregate
+per-seed LEGIT rates and Cuntz top-10 bf distributions, and compute a 3-seed mean +- SD
+comparable to t0121's 5-seed PD-rate estimate. Outcome: substrate-rate central estimate for
+the cytoplasm-volume axis, and answers whether bf=0.500 clustering is seed-invariant.
+Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Audit morphology generator for balancing-factor degeneracy: do
+all parameter combinations yield bf=0.500?</strong> (S-0122-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0122_dsi_cytoplasm_volume_nsga2](../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
+
+t0122's top-10 cells all reported Cuntz bf = 0.500 (exact midpoint), raising the question of
+whether the t0090/t0092 procedural morphology generator produces topologically balanced trees
+by construction across its 14-d parameter space, irrespective of optimiser selection. Action:
+take a quasi-random LHS sample of N=200-500 morphology vectors spanning the full 14-d bounds
+in constants_morphology.py, build each cell via generate_fixed_morphology (no NEURON sim),
+compute Cuntz bf via the t0122 compute_balancing_factor function, and plot the marginal bf
+distribution + per-knob bf vs parameter scatter. Verdict: if >95% of cells fall in [0.49,
+0.51] the generator is degenerate-balanced and the t0122 Cuntz prediction is generator-driven;
+otherwise the bf=0.500 clustering is genuinely selected for by the cytoplasm cost. Recommended
+task types: experiment-run, data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>3-objective NSGA-II extension: maximise DSI, maximise PD-rate,
+minimise cytoplasm volume</strong> (S-0122-03)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0122_dsi_cytoplasm_volume_nsga2](../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
+
+t0122's 2-objective Pareto front is L-shaped (volume dominates because it is easy to minimise)
+and top-DSI cells have PD-rate 23-26 Hz, just below the 30 Hz strict-LEGIT floor; only the
+strict-LEGIT cohort (10 cells, distinct from top-10 by DSI) cleared the floor. Action: extend
+the t0122 evaluator to emit out['F'] = [-dsi, -pd_rate_hz, +cytoplasm_volume_um3] (n_obj=3),
+keep other hard constants identical, draw a fresh non-round GA seed, run NSGA-II 60 gens on
+the same Vast.ai EPYC substrate; adjust REF_POINT_HV and HV_UTOPIA to 3 entries (DSI=0, PD=0,
+V=50000). Prediction: adding max-PD-rate shifts the Pareto frontier upward in PD, populates
+the strict-LEGIT cohort denser than t0122's 10 cells, and resolves the top-10-by-DSI vs
+strict-LEGIT cohort mismatch. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -464,66 +524,11 @@ task types: experiment-run, data-analysis. Cost: <$0.20.
 
 </details>
 
-<details>
-<summary>📊 <strong>Diagnose evaluator-disagreement bug for cell 77_15_1356: t0117
-DSI = 0.93, t0118 canonical protocol = 0 spikes</strong> (S-0118-03)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-22 | **Source**:
-[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
-
-t0118 found cell 77_15_1356 (cluster 0, seed 77) was assigned DSI = 0.93 by t0117's NSGA-II
-evaluator but produces 0 spikes in either direction under the canonical 1400 ms / -10 mV
-threshold protocol (FULL V_m peaks at -51 mV); g_I/g_E ratio = 3.87 (extreme inhibition
-dominance). The t0117 DSI score appears to be a finite-sample-noise artefact, unconfirmed.
-Investigate: (a) re-run t0117's evaluator on this cell, log per-trial PD and ND spike counts;
-(b) re-run with 10 eval-seed pairs and check stability; (c) trace the DSI formula for
-PD=1/ND=0 edge cases; (d) report whether other pool cells share this 'high-DSI-but-silent'
-pattern. Decision: if >= 1% of pool exhibits this disagreement, t0117/t0116 DSI columns need a
-corrections overlay. Recommended task types: data-analysis, correction. Cost: <$0.10.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Finalise (WINDOW=3, REL_THRESHOLD=0.015) HV-plateau detector
-defaults across the project</strong> (S-0115-01)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0115_seed9354_no_autostop](../tasks/t0115_seed9354_no_autostop/)
-
-t0115's 55-gen unstopped HV trajectory adds a fifth datapoint to the offline detector-replay
-sweep proposed in S-0113-03 and refined in S-0114-01. The recommended (W*, T*) = (3, 0.015)
-pair would fire on t0115 around gen 30-45, inside Mohacsi2024's 20-60 gen convergence band,
-and would NOT fire prematurely on t0113's gen-14 trace. Concrete action: globally rewrite the
-HV-plateau detector constants in the NSGA-II driver template and the t0024 cell-build
-pipeline; document the new defaults in arf/skills/setup-remote-machine and
-arf/skills/implementation. Recommended task types: infrastructure-setup. Cost: <$0.05.
-
-</details>
-
-<details>
-<summary>🧪 <strong>5-seed pooled re-analysis adding t0113 (seed 2247) via correction
-to the t0116 pipeline</strong> (S-0116-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-21 | **Source**:
-[t0116_pooled_pca_cluster_factor_dsi07_pd10](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/)
-
-t0116's 4-seed pool (44/77/7755/9354) was a deliberate first cut; seed 2247 (t0113) was
-excluded because its joint-pass cells are silence-guard DSI=1.0 saturations (per
-S-0113-04/S-0113-06). Re-run the t0116 pipeline end-to-end with t0113 added as the fifth
-source (5-seed pool, same strict filter DSI>0.7 AND PD>10, silence-guard tightened to >=3 PD
-spikes per S-0113-06), regenerate every chart and CSV, and write a corrections/ overlay that
-points consumers at the 5-seed artefacts. Decision rule: if seed-aligned cluster pattern
-survives (NMI > 0.7 on both partitions), the basin-isolation finding is robust; if NMI drops
-below 0.5, the 4-seed result was an artefact of seed choice. Recommended task types:
-data-analysis, correction. Cost: <$0.20.
-
-</details>
-
-*58 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*61 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (44 total)](answers/)
+## [Recent Answers (45 total)](answers/)
 
 <details>
 <summary><strong>Is the procedural morphology generator's asymmetry transform
@@ -561,6 +566,22 @@ estimate is roughly 6.5x Hay 2011's 0.40% envelope and 25.8x Druckmann 2007's 0.
 and 3 of 5 seeds individually exceed the Hay envelope. Both 95% CIs bracket zero and both
 literature baselines, so this batch cannot statistically reject the literature rates despite
 the elevated point estimate.
+
+</details>
+
+<details>
+<summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
+high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7]
+band?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-24 | **Full answer**:
+[`cuntz-balancing-factor-prediction-check`](../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/)
+
+Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose top-10 cells
+(ranked by DSI) place 10 of 10 (finite bf) cells inside the Cuntz 2010 [0.2, 0.7] empirical
+band. Adding the cytoplasm-volume cost objective pushed the optimiser toward morphologies
+consistent with the Cajal wiring-economy principle. This is evidence in favour of using
+cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
 
 </details>
 
@@ -700,25 +721,7 @@ drove the breakthrough.
 
 </details>
 
-<details>
-<summary><strong>Which factors (combinations of the 68 input parameters) explain DSI
-and PD diversity in the strict cohort (DSI > 0.5 AND PD > 10), and is there
-a joint factor?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-05-18 | **Full answer**:
-[`t0106-dsi-pd-factor-decomposition-strict-cohort`](../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-dsi-pd-factor-decomposition-strict-cohort/)
-
-Varimax factor analysis on the z-scored 68-d matrix of the 150-cell strict cohort retains 10
-factors and identifies F10 as the single joint DSI-PD factor (|r_DSI|=0.31, |r_PD|=0.45).
-PD-rate diversity is otherwise dominated by F1 (r=−0.545; SK_TERMINAL, SK_MID, CAT, NAV16_AIS,
-NAP_MID loadings); DSI diversity is split between F5 (r=−0.325) and F10 (r=+0.313). F10's
-positive direction raises DSI but suppresses PD, making it a trade-off axis along CAD_DEPTH,
-CAL, W_ACH, branch_prob_per_um, and mean_segment_length. No single factor jointly increases
-both objectives in this cohort.
-
-</details>
-
-*34 more answers → [answers](answers/)*
+*35 more answers → [answers](answers/)*
 
 ---
 
@@ -1318,10 +1321,11 @@ No models yet.
 
 ---
 
-## [Latest Predictions (16 total)](predictions/)
+## [Latest Predictions (17 total)](predictions/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [NSGA-II Pareto front: DSI vs cytoplasm volume on Bed B + 14-d morph](../tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\predictions\nsga2-cytoplasm-volume-bedb-morph\description.md) | [122](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | 2026-05-24 |
 | [NSGA-II seed 9354 on 68-d Bed B + 14-d morphology, 2 directions, 55-gen run with HV-plateau auto-stop DISABLED (5th seed of S-0112-01 batch)](../tasks\t0115_seed9354_no_autostop\assets\predictions\t0115-bedb-morph-nsga2-seed9354\description.md) | [115](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | 2026-05-21 |
 | [NSGA-II seed 7755 on 68-d Bed B + 14-d morphology, 2 directions, 62-gen run with HV-plateau auto-stop DISABLED (S-0113-03 live impl)](../tasks\t0114_seed7755_no_autostop\assets\predictions\t0114-bedb-morph-nsga2-seed7755\description.md) | [114](../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | 2026-05-20 |
 | [NSGA-II seed 2247 on 68-d Bed B + 14-d morphology, 2 directions, 60-gen replicate of t0106/t0112](../tasks\t0113_t0106_seed2247_replicate\assets\predictions\t0113-bedb-morph-nsga2-seed2247\description.md) | [113](../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md) | 2026-05-20 |
@@ -1331,9 +1335,8 @@ No models yet.
 | [NSGA-II seed=55 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init, 2-objective DSI+PD, DSI silence guard)](../tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\assets\predictions\nsga2-seed55-bedb-morph-n4-gen20-2obj\description.md) | [104](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 2026-05-12 |
 | [NSGA-II seed=55 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init)](../tasks\t0102_seedscale_n4_gen20\assets\predictions\nsga2-seed55-bedb-morph-n4-gen20\description.md) | [102](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-12 |
 | [NSGA-II seed=44 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init, 2-objective DSI+PD, DSI silence guard)](../tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\assets\predictions\nsga2-seed44-bedb-morph-n4-gen20-2obj\description.md) | [104](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 2026-05-12 |
-| [NSGA-II seed=44 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init)](../tasks\t0102_seedscale_n4_gen20\assets\predictions\nsga2-seed44-bedb-morph-n4-gen20\description.md) | [102](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-12 |
 
-*6 more predictions → [predictions](predictions/)*
+*7 more predictions → [predictions](predictions/)*
 
 ---
 
@@ -1356,7 +1359,7 @@ No models yet.
 
 ---
 
-## [Cost Leaders (16 tasks with spend)](costs/)
+## [Cost Leaders (17 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
@@ -1371,4 +1374,4 @@ No models yet.
 | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | [`$1.99`](../tasks/t0112_t0106_seed77_replicate/results/costs.json) | 2026-05-19 21:50 |
 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`$1.59`](../tasks/t0086_robustness_cluster_bio_comparison/results/costs.json) | 2026-05-06 18:24 |
 
-*6 more tasks with spend → [tasks with spend](costs/)*
+*7 more tasks with spend → [tasks with spend](costs/)*

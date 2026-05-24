@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-331 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **296 open** (55
-high, 218 medium, 23 low), **35 closed**.
+335 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **300 open** (57
+high, 220 medium, 23 low), **35 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,6 +34,31 @@ metric is a usable proxy for substrate exploration; otherwise the 2-direction jo
 cohort must be treated as candidate-only until polar-confirmed. Distinct from S-0106-03
 (covers 50 t0106 cells, not the 7 t0112 cells). Recommended task types: experiment-run,
 comparative-analysis. Cost: <$1 (7 cells x 8 dirs x 3 trials on one Vast.ai instance).
+
+</details>
+
+<details>
+<summary>🧪 <strong>3-objective NSGA-II extension: maximise DSI, maximise PD-rate,
+minimise cytoplasm volume</strong> (S-0122-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0122's 2-objective Pareto front is L-shaped (volume dominates because it is easy to minimise)
+and top-DSI cells have PD-rate 23-26 Hz, just below the 30 Hz strict-LEGIT floor; only the
+strict-LEGIT cohort (10 cells, distinct from top-10 by DSI) cleared the floor. Action: extend
+the t0122 evaluator to emit out['F'] = [-dsi, -pd_rate_hz, +cytoplasm_volume_um3] (n_obj=3),
+keep other hard constants identical, draw a fresh non-round GA seed, run NSGA-II 60 gens on
+the same Vast.ai EPYC substrate; adjust REF_POINT_HV and HV_UTOPIA to 3 entries (DSI=0, PD=0,
+V=50000). Prediction: adding max-PD-rate shifts the Pareto frontier upward in PD, populates
+the strict-LEGIT cohort denser than t0122's 10 cells, and resolves the top-10-by-DSI vs
+strict-LEGIT cohort mismatch. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -1253,6 +1278,32 @@ threshold, t0116's 'no joint factor' is a truncated-cohort artefact and the late
 answer must be re-interpreted conditional on cohort definition; if no joint factor emerges
 even at DSI>0.5, the multi-seed pool truly lacks a shared trade-off axis. Recommended task
 types: data-analysis, comparative-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Replicate t0122 cytoplasm-volume NSGA-II on 2-3 additional GA
+seeds for substrate-rate estimate</strong> (S-0122-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0122 ran one GA seed (1524) and reported 0.17% LEGIT acceptance (10/5760) with 10/10 top-DSI
+cells in the Cuntz [0.2, 0.7] band. Mirroring the S-0112-01 pattern, the headline must be
+replicated on 2-3 more random GA seeds drawn via secrets.randbelow(10000) (non-round) before
+drawing population-statistic conclusions. Action: launch 2-3 independent runs of the t0122
+substrate (same 68-d Bed B + 14-d morph, F=[-dsi, +volume_um3], hard constants POP_SIZE=96,
+N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6.0, tightened guard pd_spikes_sum<3), aggregate
+per-seed LEGIT rates and Cuntz top-10 bf distributions, and compute a 3-seed mean +- SD
+comparable to t0121's 5-seed PD-rate estimate. Outcome: substrate-rate central estimate for
+the cytoplasm-volume axis, and answers whether bf=0.500 clustering is seed-invariant.
+Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -2745,6 +2796,33 @@ AMPA/GABA event onsets. Expected: at null the distal membrane never crosses Nav 
 the whole AMPA window on either 6 nS or 12 nS; at preferred it crosses and fires. Closes
 creative_thinking hypothesis 4 and confirms the sub-threshold-clamp failure mode. Recommended
 task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Document silence-guard convention drift (t0115 total<10 vs t0122
+pd_spikes<3) and recompute t0115 rate under t0122 guard</strong>
+(S-0122-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-07` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0122 tightened the silence guard from t0115's 'total_mean_spikes < 10' to 'pd_spikes_sum < 3'
+to handle the cytoplasm-minimisation tiny-cell regime. This makes the t0122 0.17% vs t0121
+2.58% LEGIT comparison a lower bound on the substrate-tightness delta because of convention
+drift; the true delta could differ depending on how many t0121 cells the tighter guard would
+have excluded. Action: (1) document each task's silence-guard convention in the t0102-t0122
+lineage with file:line refs; (2) re-score t0115 seed-9354's all_evaluations.json.gz under
+t0122's guard, recompute the LEGIT acceptance rate, and report the delta vs t0115's original
+1.19%; (3) decide and document the canonical project-default guard going forward. Pure
+post-hoc analysis on existing assets, no new NSGA-II run. Recommended task types:
+data-analysis, answer-question.
 
 </details>
 
@@ -5664,6 +5742,32 @@ placement. This was deferred in t0008 because the bundled HOC hardcodes 3D-point
 section indices. Outcome is a third variant of the port asset running on a morphology that
 actually matches the measured dendritic diameter profile. Recommended task types:
 code-reproduction.
+
+</details>
+
+<details>
+<summary>📊 <strong>Recompute Cuntz balancing factor on t0122's strict-LEGIT cohort
+(10 cells, PD>=30Hz) as a sanity check</strong> (S-0122-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0122's Cuntz [0.2, 0.7] prediction was tested on the top-10 cells ranked by DSI WITHOUT
+enforcing the strict-LEGIT PD-rate >= 30 Hz floor (those cells have PD-rate 23-26 Hz). The
+strict-LEGIT cohort (10 cells, DSI<0.9999 AND PD>=30 Hz AND volume<=50000) is a distinct cell
+set with potentially different morphological profile; whether they also fall in the Cuntz band
+is unknown. Action: re-run compute_balancing_factor from t0122 code on each of the 10
+strict-LEGIT cells (re-build morphology via generate_fixed_morphology from each cell's 68-d
+vector in pareto_front_seed1524.json's legit_bool subset), report the bf distribution, and
+compare to the top-10-by-DSI bf=0.500 finding. No new NSGA-II run; pure local-CPU post-hoc
+analysis on the existing t0122 predictions asset. Recommended task types: data-analysis,
+answer-question.
 
 </details>
 

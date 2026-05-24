@@ -5,11 +5,11 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
-(9)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(90)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(10)](../answers/by-category/dendritic-computation.md) | [Suggestions
+(92)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
-(4)](../predictions/by-category/dendritic-computation.md)
+(5)](../predictions/by-category/dendritic-computation.md)
 
 ---
 
@@ -2320,7 +2320,23 @@ than reduced analytical models.
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 
-## Answers (9)
+## Answers (10)
+
+<details>
+<summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
+high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7]
+band?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-24 | **Full answer**:
+[`cuntz-balancing-factor-prediction-check`](../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/)
+
+Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose top-10 cells
+(ranked by DSI) place 10 of 10 (finite bf) cells inside the Cuntz 2010 [0.2, 0.7] empirical
+band. Adding the cytoplasm-volume cost objective pushed the optimiser toward morphologies
+consistent with the Cajal wiring-economy principle. This is evidence in favour of using
+cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
+
+</details>
 
 <details>
 <summary><strong>Which objective functions have been used in published
@@ -2535,7 +2551,47 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (72 open, 18 closed)
+## Suggestions (74 open, 18 closed)
+
+<details>
+<summary>🧪 <strong>Audit morphology generator for balancing-factor degeneracy: do
+all parameter combinations yield bf=0.500?</strong> (S-0122-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0122_dsi_cytoplasm_volume_nsga2](../../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
+
+t0122's top-10 cells all reported Cuntz bf = 0.500 (exact midpoint), raising the question of
+whether the t0090/t0092 procedural morphology generator produces topologically balanced trees
+by construction across its 14-d parameter space, irrespective of optimiser selection. Action:
+take a quasi-random LHS sample of N=200-500 morphology vectors spanning the full 14-d bounds
+in constants_morphology.py, build each cell via generate_fixed_morphology (no NEURON sim),
+compute Cuntz bf via the t0122 compute_balancing_factor function, and plot the marginal bf
+distribution + per-knob bf vs parameter scatter. Verdict: if >95% of cells fall in [0.49,
+0.51] the generator is degenerate-balanced and the t0122 Cuntz prediction is generator-driven;
+otherwise the bf=0.500 clustering is genuinely selected for by the cytoplasm cost. Recommended
+task types: experiment-run, data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Decompose t0122's cytoplasm volume into soma vs dendrites vs AIS
+contributions across the Pareto front</strong> (S-0122-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0122_dsi_cytoplasm_volume_nsga2](../../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
+
+t0122 computes cytoplasm volume as the sum over [soma, *all_dends, ais_proximal, ais_distal]
+and reports only the scalar total. The t0122 compute_per_section_volume_breakdown function
+returns {soma_um3, dendrites_um3, ais_um3} per cell but the breakdown was not surfaced.
+Whether the optimiser shrinks soma, dendrites, or AIS to drive volume down is unresolved, and
+the answer interacts with the bf=0.500 finding (if dendrite volume dominates, bf reflects
+dendritic geometry; if soma/AIS dominate, bf is decoupled from the optimised cost). Action:
+re-run compute_per_section_volume_breakdown on every cell in all_evaluations_seed1524.json.gz,
+write a 3-panel violin plot (soma/dendrites/ais) split by LEGIT vs silence-corner vs
+non-LEGIT, and report the per-section fractions for the top-10 cells. Recommended task types:
+data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Re-simulate t0118 stratified sample on t0116 strict cohort (DSI >

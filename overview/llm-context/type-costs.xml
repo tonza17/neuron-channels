@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-24T02:24:05Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-24T06:32:06Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>6860</char_count>
-    <byte_count>6860</byte_count>
-    <estimated_tokens>1715</estimated_tokens>
+    <char_count>6959</char_count>
+    <byte_count>6959</byte_count>
+    <estimated_tokens>1739</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,9 +18,9 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $100.00
-Total spent: $62.90
-Budget remaining: $37.10
-Spent: 62.9%
+Total spent: $63.40
+Budget remaining: $36.60
+Spent: 63.4%
 
 ### Cost Breakdown by Category
 
@@ -42,6 +42,7 @@ Spent: 62.9%
 * vast_ai_36137287: $0.75
 * vast-ai-driver-overhead: $0.74
 * vast-ai-rtx-pro-4000-idle: $0.65
+* vast-ai-titan-v: $0.50
 * vast-ai-idle: $0.43
 * vast-ai-epyc-7b13-setup-idle: $0.29
 * vast-ai-epyc7532: $0.15
@@ -49,13 +50,14 @@ Spent: 62.9%
 * vast_ai_setup_and_smoke_gates: $0.11
 * vast-ai-failed-ssh-attempt: $0.04
 * vast-ai-setup: $0.04
+* vast-ai-failed-attempt: $0.00
 * api: $0.00
 * local_compute: $0.00
 * remote_compute: $0.00
 
 ### Cost Breakdown by Service
 
-* vast_ai: $39.21
+* vast_ai: $39.71
 * vast_ai_compute: $3.93
 * vast-ai: $0.48
 
@@ -175,6 +177,7 @@ Spent: 62.9%
 * t0119_brainstorm_results_23: $0.00
 * t0120_morph_generator_geometry_audit: $0.00
 * t0121_5seed_substrate_rate_canonical_report: $0.00
+* t0122_dsi_cytoplasm_volume_nsga2: $0.50
       </content>
     </section>
   </sections>

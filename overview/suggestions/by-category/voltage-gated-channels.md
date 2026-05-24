@@ -1,14 +1,39 @@
 # Suggestions: `voltage-gated-channels`
 
-97 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **82 open** (14
-high, 57 medium, 11 low), **15 closed**.
+99 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **84 open** (15
+high, 58 medium, 11 low), **15 closed**.
 
 [Back to all suggestions](../README.md)
 
 ---
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>3-objective NSGA-II extension: maximise DSI, maximise PD-rate,
+minimise cytoplasm volume</strong> (S-0122-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0122's 2-objective Pareto front is L-shaped (volume dominates because it is easy to minimise)
+and top-DSI cells have PD-rate 23-26 Hz, just below the 30 Hz strict-LEGIT floor; only the
+strict-LEGIT cohort (10 cells, distinct from top-10 by DSI) cleared the floor. Action: extend
+the t0122 evaluator to emit out['F'] = [-dsi, -pd_rate_hz, +cytoplasm_volume_um3] (n_obj=3),
+keep other hard constants identical, draw a fresh non-round GA seed, run NSGA-II 60 gens on
+the same Vast.ai EPYC substrate; adjust REF_POINT_HV and HV_UTOPIA to 3 entries (DSI=0, PD=0,
+V=50000). Prediction: adding max-PD-rate shifts the Pareto frontier upward in PD, populates
+the strict-LEGIT cohort denser than t0122's 10 cells, and resolves the top-10-by-DSI vs
+strict-LEGIT cohort mismatch. Recommended task types: experiment-run, data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Active dendritic conductances (Nav1.6 + Kv3) layered on the t0059
@@ -478,6 +503,32 @@ the dominant-mechanism story may differ if NaP were instead on the AIS. Test by 
 density, and re-evaluating DSI / PD rate / fractional contribution. Hypothesis: AIS-localised
 NaP would shift dominance toward Nav1.6 or NMDA at the dendrite. Local CPU; 48 runs. Cost ~$0.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Alternative biological-cost NSGA-II: replace cytoplasm volume
+with membrane area as the second objective</strong> (S-0122-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0122's cytoplasm volume (sum(pi*(diam/2)^2 * L)) is a proxy for Cuntz 2010's wiring cost
+(total wiring length), tight only when diameters are uniform. A more biologically motivated
+cost is membrane area (sum(pi * diam * L)), which dominates ion-channel-density-driven ATP
+cost via Na+/K+ pump count. Action: fork the t0122 substrate, add compute_membrane_area_um2
+(one-line variation on compute_cytoplasm_volume_um3), set out['F'] = [-dsi,
++membrane_area_um2], keep other constants identical, draw a fresh non-round GA seed, run
+NSGA-II 60 gens on the same EPYC substrate. Prediction: membrane-area minimisation produces a
+DIFFERENT cell cohort (smaller diameter / longer length trade-off vs t0122's small diameter
+AND small length) but a SIMILAR DSI ceiling (within 0.01 absolute of t0122's 0.9753).
+Recommended task types: experiment-run, data-analysis.
 
 </details>
 

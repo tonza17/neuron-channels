@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-24T02:24:05Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-24T06:32:06Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>1372164</char_count>
-    <byte_count>1377801</byte_count>
-    <estimated_tokens>343041</estimated_tokens>
+    <char_count>1375975</char_count>
+    <byte_count>1381622</byte_count>
+    <estimated_tokens>343993</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -23546,12 +23546,14 @@ bound, even though the normal-approx CI still brackets 0.
 
 ## NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)
 ID: t0122_dsi_cytoplasm_volume_nsga2
-Status: not_started
-Effective date: 2026-05-23
-Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010 wiring cost). Gated on t0120 geometry audit passing. 1 GA seed, pop=96, N_EVAL_SEEDS=3, $8 cap.
+Status: completed
+Effective date: 2026-05-24
+Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, $6 cap. Gated on t0120 audit.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0119_brainstorm_results_23, t0120_morph_generator_geometry_audit
 Task types: experiment-run, data-analysis, answer-question
 Source suggestion: S-0097-01
+Start time: 2026-05-24T02:33:11Z
+End time: 2026-05-24T06:30:00Z
 
 #### Source Suggestion
 
@@ -23590,12 +23592,27 @@ to patch `_apply_asymmetry` and re-run all 68-d morphology-extended NSGA-II line
 One NSGA-II run, single GA seed, 2 objectives, on the 68-d Bed B + 14-d morphology substrate that
 has been validated by the t0106-t0115 lineage.
 
+#### Hard Constraints (must be reproduced in plan and implementation)
+
+These constraints are non-negotiable. The planning subagent must surface each one in `plan/plan.md`
+`## Verification Criteria` with an explicit check, and the implementation subagent must reproduce
+them in `code/constants.py`:
+
+* **`_POOL_RESTART_EVERY = 10`** — fresh random-init pool injection cadence. This is the project&#x27;s
+  standing 10-gen rule for NSGA-II pool-restart cadence, established by t0112 and carried through
+  t0113 / t0114 / t0115. NEVER use cadence 25 (t0106&#x27;s value, since superseded) or any other value.
+* **`HV_PLATEAU_AUTO_STOP = False`** — disabled per project policy (see memory:
+  `feedback_disable_hv_plateau_autostop.md`). Rely on operator-stop + budget cap + gen ceiling.
+* **`POP_SIZE = 96`**, **`N_EVAL_SEEDS = 3`** — match the t0114/t0115 protocol exactly.
+* **`N_GEN_MAX = 60`** — gen ceiling per the auto-stop-disabled convention.
+* **`COST_CAP_USD = 6.0`** — per-task hard cap (REDUCED from $8 because Vast.ai account balance is $7; $1 buffer for teardown / unexpected costs). Watchdog stops the run if exceeded. Previous runs in this lineage came in well under: t0113=$0.48, t0114=$1.13, t0115=$2.50.
+
 #### Approach
 
 1. **Copy the t0115 NSGA-II substrate** end-to-end: 68-d parameter vector (54-d electrophys + 14-d
    morphology), pop=96, N_EVAL_SEEDS=3, 2 antipodal directions (PD=0deg, ND=180deg), ratio DSI,
    silence-guard tightened to &gt;= 3 PD spikes, `_POOL_RESTART_EVERY=10`, HV-plateau auto-stop
-   DISABLED, $8 hard cap.
+   DISABLED, $6 hard cap.
 2. **Replace one objective**: drop the PD-rate objective from t0106&#x27;s 2-objective configuration and
    replace with **cytoplasm volume**, computed as:
    `vol = sum(pi * (sec.diam/2)^2 * sec.L for sec in [soma, *all_dends, ais_proximal, ais_distal])`.
@@ -23633,9 +23650,10 @@ has been validated by the t0106-t0115 lineage.
 
 #### Budget
 
-* Cost cap: **$8** (per-task default).
-* Expected: ~$4-8 (one Vast.ai EPYC instance for 6-12 hours).
-* If the run exceeds $8 watchdog trip, stop and write up partial results.
+* Cost cap: **$6** (REDUCED from $8 because Vast.ai account balance is $7; $1 buffer for
+  teardown / unexpected costs).
+* Expected actual: **$1-3** based on prior lineage (t0113=$0.48, t0114=$1.13, t0115=$2.50).
+* If the run exceeds $6 watchdog trip, stop and write up partial results.
 
 #### Dependencies
 
@@ -23666,6 +23684,57 @@ has been validated by the t0106-t0115 lineage.
 * Related project answer: t0097
   `assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation`.
 * Prior lineage: t0106, t0112, t0113, t0114, t0115.
+
+### Results Summary
+
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0122_dsi_cytoplasm_volume_nsga2&quot;
+date_completed: &quot;2026-05-24&quot;
+status: &quot;complete&quot;
+---
+### Results Summary: DSI vs Cytoplasm-Volume NSGA-II
+
+#### Summary
+
+68-d Bed B + 14-d morphology NSGA-II with cytoplasm volume replacing PD-rate as the second
+objective. 60 generations on Vast.ai EPYC 7K62 48-core (instance 37546422), GA seed 1524, 5760 cells
+evaluated. **Cuntz 2010 falsifiable prediction is CONFIRMED: 10/10 top-DSI cells fall in the
+predicted balancing-factor `[0.2, 0.7]` band**, all clustering at `bf = 0.500`. Best LEGIT DSI
+0.9753 at cytoplasm volume 250.2 um^3 (two orders of magnitude smaller than t0091&#x27;s ~30000 um^3
+cells). Total cost $0.50 of $6 cap (8.3%).
+
+#### Metrics
+
+* **GA seed**: **1524** (drawn via `secrets.randbelow(10000)`, non-round).
+* **Final generation**: **60 / 60** (clean max_gen ceiling exit; no watchdog, no operator-stop, no
+  plateau).
+* **Cells evaluated**: **5760**.
+* **Best LEGIT DSI** (DSI &lt; 0.9999 AND PD-rate &gt;= 30 Hz AND volume &lt;= 50000 um^3): **0.9753** at
+  cytoplasm volume = 250.2 um^3.
+* **n_legit (strict)**: **10**; **n_silence_corner (DSI = 1.0)**: **1116**.
+* **Cuntz 2010 in-band count (top-10 by DSI)**: **10 / 10** at `bf = 0.500` (midpoint of [0.2, 0.7]
+  band).
+* **Final hypervolume**: **49763.35** (ref point (0, 50000 um^3)).
+* **Total cost**: **$0.50** of $6 cap (8.3%); Vast.ai balance after: $6.50.
+* **Wall-clock**: ~66 min implementation + ~19 min setup + ~7 min teardown.
+
+#### Verification
+
+* `verify_research_code` -- PASSED (0/0).
+* `verify_plan` -- PASSED (0/0).
+* `verify_predictions_asset` -- PASSED (0 errors, 2 expected warnings: null model_id, empty
+  dataset_ids -- procedural-cell pattern).
+* Local-fallback answer-asset verifier (`meta.asset_types.answer.verificator`) -- PASSED (0/0).
+* `verify_machines_destroyed` -- PASSED (1 expected warning RM-W001 -- destroyed-instance API
+  returns NoneType, treated as benign).
+* `ruff check`, `ruff format`, `mypy -p tasks.t0122_dsi_cytoplasm_volume_nsga2.code` -- all PASSED
+  on 33 code files.
+* Smoke gate (8 checks) -- 8/8 PASS locally + remotely.
+* Unit tests (7 checks on evaluator silence-guard) -- 7/7 PASS.
+* All 6 hard constraints verified by grep + smoke-gate checks C1-C6 (`_POOL_RESTART_EVERY=10`,
+  `HV_PLATEAU_AUTO_STOP=False`, `POP_SIZE=96`, `N_EVAL_SEEDS=3`, `N_GEN_MAX=60`,
+  `COST_CAP_USD=6.0`).
       </content>
     </section>
   </sections>

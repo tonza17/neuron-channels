@@ -1,12 +1,41 @@
 # Answers by Date Added
 
-44 answer(s) grouped by creation date.
+45 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-05-24 (2)
+## 2026-05-24 (3)
+
+<details>
+<summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
+high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7]
+band?</strong></summary>
+
+**Confidence**: medium
+
+Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose top-10 cells
+(ranked by DSI) place 10 of 10 (finite bf) cells inside the Cuntz 2010  empirical band. Adding
+the cytoplasm-volume cost objective pushed the optimiser toward morphologies consistent with
+the Cajal wiring-economy principle. This is evidence in favour of using cytoplasm volume as a
+biological-cost regulariser in subsequent DSGC MOBO runs.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/full_answer.md) |
+| **ID** | [`cuntz-balancing-factor-prediction-check`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/) |
+| **Question** | Does NSGA-II with a cytoplasm-volume cost objective produce a high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7] band? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-24 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Paper sources** | `10.1371_journal.pcbi.1002107` |
+| **Task sources** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **URL sources** | [url 1](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107) |
+| **Created by** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+
+</details>
 
 <details>
 <summary><strong>Is the procedural morphology generator's asymmetry transform

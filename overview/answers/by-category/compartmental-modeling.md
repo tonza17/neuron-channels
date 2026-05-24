@@ -1,6 +1,6 @@
-# Answers: `compartmental-modeling` (36)
+# Answers: `compartmental-modeling` (37)
 
-36 answer(s).
+37 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -275,6 +275,35 @@ disagreements; every Figure 1-8 reproduction outcome is recorded with numerical 
 | **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0007_install_neuron_netpyne`](../../../overview/tasks/task_pages/t0007_install_neuron_netpyne.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0020_port_modeldb_189347_gabamod`](../../../overview/tasks/task_pages/t0020_port_modeldb_189347_gabamod.md) |
 | **URL sources** | [url 1](https://github.com/ModelDBRepository/189347), [url 2](https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=189347), [url 3](https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/bin/NIHMS766337-supplement.pdf) |
 | **Created by** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
+
+</details>
+
+<details>
+<summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
+high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7]
+band?</strong></summary>
+
+**Confidence**: medium
+
+Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose top-10 cells
+(ranked by DSI) place 10 of 10 (finite bf) cells inside the Cuntz 2010  empirical band. Adding
+the cytoplasm-volume cost objective pushed the optimiser toward morphologies consistent with
+the Cajal wiring-economy principle. This is evidence in favour of using cytoplasm volume as a
+biological-cost regulariser in subsequent DSGC MOBO runs.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/full_answer.md) |
+| **ID** | [`cuntz-balancing-factor-prediction-check`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/) |
+| **Question** | Does NSGA-II with a cytoplasm-volume cost objective produce a high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7] band? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-24 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Paper sources** | `10.1371_journal.pcbi.1002107` |
+| **Task sources** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **URL sources** | [url 1](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107) |
+| **Created by** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
 
 </details>
 

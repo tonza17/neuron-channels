@@ -1,14 +1,39 @@
 # Suggestions by Date Added
 
-475 suggestion(s) grouped by derived added date.
+482 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
 
-## 2026-05-24 (9)
+## 2026-05-24 (16)
 
 ## High Priority
+
+<details>
+<summary>🧪 <strong>3-objective NSGA-II extension: maximise DSI, maximise PD-rate,
+minimise cytoplasm volume</strong> (S-0122-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0122's 2-objective Pareto front is L-shaped (volume dominates because it is easy to minimise)
+and top-DSI cells have PD-rate 23-26 Hz, just below the 30 Hz strict-LEGIT floor; only the
+strict-LEGIT cohort (10 cells, distinct from top-10 by DSI) cleared the floor. Action: extend
+the t0122 evaluator to emit out['F'] = [-dsi, -pd_rate_hz, +cytoplasm_volume_um3] (n_obj=3),
+keep other hard constants identical, draw a fresh non-round GA seed, run NSGA-II 60 gens on
+the same Vast.ai EPYC substrate; adjust REF_POINT_HV and HV_UTOPIA to 3 entries (DSI=0, PD=0,
+V=50000). Prediction: adding max-PD-rate shifts the Pareto frontier upward in PD, populates
+the strict-LEGIT cohort denser than t0122's 10 cells, and resolves the top-10-by-DSI vs
+strict-LEGIT cohort mismatch. Recommended task types: experiment-run, data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Add 2-3 further random-init GA seeds to upgrade the
@@ -33,6 +58,32 @@ minimum-change replicate of t0115 (auto-stop disabled, cadence 10, gen ceiling 3
 if both CIs clear the Hay envelope upper bound at 7-8 seeds, the substrate-density claim can
 be made at p < 0.05 without the censoring caveat. Distinct from S-0113-01 (closed by t0114 +
 t0115). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Audit morphology generator for balancing-factor degeneracy: do
+all parameter combinations yield bf=0.500?</strong> (S-0122-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0122's top-10 cells all reported Cuntz bf = 0.500 (exact midpoint), raising the question of
+whether the t0090/t0092 procedural morphology generator produces topologically balanced trees
+by construction across its 14-d parameter space, irrespective of optimiser selection. Action:
+take a quasi-random LHS sample of N=200-500 morphology vectors spanning the full 14-d bounds
+in constants_morphology.py, build each cell via generate_fixed_morphology (no NEURON sim),
+compute Cuntz bf via the t0122 compute_balancing_factor function, and plot the marginal bf
+distribution + per-knob bf vs parameter scatter. Verdict: if >95% of cells fall in [0.49,
+0.51] the generator is degenerate-balanced and the t0122 Cuntz prediction is generator-driven;
+otherwise the bf=0.500 clustering is genuinely selected for by the cytoplasm cost. Recommended
+task types: experiment-run, data-analysis, answer-question.
 
 </details>
 
@@ -62,7 +113,112 @@ T=0.015)' detector, not disable-auto-stop). Recommended task types: experiment-r
 
 </details>
 
+<details>
+<summary>🧪 <strong>Replicate t0122 cytoplasm-volume NSGA-II on 2-3 additional GA
+seeds for substrate-rate estimate</strong> (S-0122-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0122 ran one GA seed (1524) and reported 0.17% LEGIT acceptance (10/5760) with 10/10 top-DSI
+cells in the Cuntz [0.2, 0.7] band. Mirroring the S-0112-01 pattern, the headline must be
+replicated on 2-3 more random GA seeds drawn via secrets.randbelow(10000) (non-round) before
+drawing population-statistic conclusions. Action: launch 2-3 independent runs of the t0122
+substrate (same 68-d Bed B + 14-d morph, F=[-dsi, +volume_um3], hard constants POP_SIZE=96,
+N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6.0, tightened guard pd_spikes_sum<3), aggregate
+per-seed LEGIT rates and Cuntz top-10 bf distributions, and compute a 3-seed mean +- SD
+comparable to t0121's 5-seed PD-rate estimate. Outcome: substrate-rate central estimate for
+the cytoplasm-volume axis, and answers whether bf=0.500 clustering is seed-invariant.
+Recommended task types: experiment-run, data-analysis.
+
+</details>
+
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>Alternative biological-cost NSGA-II: replace cytoplasm volume
+with membrane area as the second objective</strong> (S-0122-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0122's cytoplasm volume (sum(pi*(diam/2)^2 * L)) is a proxy for Cuntz 2010's wiring cost
+(total wiring length), tight only when diameters are uniform. A more biologically motivated
+cost is membrane area (sum(pi * diam * L)), which dominates ion-channel-density-driven ATP
+cost via Na+/K+ pump count. Action: fork the t0122 substrate, add compute_membrane_area_um2
+(one-line variation on compute_cytoplasm_volume_um3), set out['F'] = [-dsi,
++membrane_area_um2], keep other constants identical, draw a fresh non-round GA seed, run
+NSGA-II 60 gens on the same EPYC substrate. Prediction: membrane-area minimisation produces a
+DIFFERENT cell cohort (smaller diameter / longer length trade-off vs t0122's small diameter
+AND small length) but a SIMILAR DSI ceiling (within 0.01 absolute of t0122's 0.9753).
+Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Decompose t0122's cytoplasm volume into soma vs dendrites vs AIS
+contributions across the Pareto front</strong> (S-0122-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0122 computes cytoplasm volume as the sum over [soma, *all_dends, ais_proximal, ais_distal]
+and reports only the scalar total. The t0122 compute_per_section_volume_breakdown function
+returns {soma_um3, dendrites_um3, ais_um3} per cell but the breakdown was not surfaced.
+Whether the optimiser shrinks soma, dendrites, or AIS to drive volume down is unresolved, and
+the answer interacts with the bf=0.500 finding (if dendrite volume dominates, bf reflects
+dendritic geometry; if soma/AIS dominate, bf is decoupled from the optimised cost). Action:
+re-run compute_per_section_volume_breakdown on every cell in all_evaluations_seed1524.json.gz,
+write a 3-panel violin plot (soma/dendrites/ais) split by LEGIT vs silence-corner vs
+non-LEGIT, and report the per-section fractions for the top-10 cells. Recommended task types:
+data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Document silence-guard convention drift (t0115 total<10 vs t0122
+pd_spikes<3) and recompute t0115 rate under t0122 guard</strong>
+(S-0122-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-07` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0122 tightened the silence guard from t0115's 'total_mean_spikes < 10' to 'pd_spikes_sum < 3'
+to handle the cytoplasm-minimisation tiny-cell regime. This makes the t0122 0.17% vs t0121
+2.58% LEGIT comparison a lower bound on the substrate-tightness delta because of convention
+drift; the true delta could differ depending on how many t0121 cells the tighter guard would
+have excluded. Action: (1) document each task's silence-guard convention in the t0102-t0122
+lineage with file:line refs; (2) re-score t0115 seed-9354's all_evaluations.json.gz under
+t0122's guard, recompute the LEGIT acceptance rate, and report the delta vs t0115's original
+1.19%; (3) decide and document the canonical project-default guard going forward. Pure
+post-hoc analysis on existing assets, no new NSGA-II run. Recommended task types:
+data-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Matched-evaluation-budget substrate-rate comparison against Hay
@@ -139,6 +295,32 @@ linewidth 2.0, optional debug line from origin_xy to each primary-stem tip), fil
 overlays at the new chart paths, and add a README noting the originals were not
 geometry-wrong. Broader than S-0115-05 (which targets only t0114's dots-only artefact); the
 two can be merged into one correction task. Recommended task types: correction.
+
+</details>
+
+<details>
+<summary>📊 <strong>Recompute Cuntz balancing factor on t0122's strict-LEGIT cohort
+(10 cells, PD>=30Hz) as a sanity check</strong> (S-0122-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0122's Cuntz [0.2, 0.7] prediction was tested on the top-10 cells ranked by DSI WITHOUT
+enforcing the strict-LEGIT PD-rate >= 30 Hz floor (those cells have PD-rate 23-26 Hz). The
+strict-LEGIT cohort (10 cells, DSI<0.9999 AND PD>=30 Hz AND volume<=50000) is a distinct cell
+set with potentially different morphological profile; whether they also fall in the Cuntz band
+is unknown. Action: re-run compute_balancing_factor from t0122 code on each of the 10
+strict-LEGIT cells (re-build morphology via generate_fixed_morphology from each cell's 68-d
+vector in pareto_front_seed1524.json's legit_bool subset), report the bf distribution, and
+compare to the top-10-by-DSI bf=0.500 finding. No new NSGA-II run; pure local-CPU post-hoc
+analysis on the existing t0122 predictions asset. Recommended task types: data-analysis,
+answer-question.
 
 </details>
 

@@ -5,11 +5,11 @@ Output neurons of the retina whose axons form the optic nerve.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (44)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(11)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(12)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
 (86)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (3)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
-(12)](../predictions/by-category/retinal-ganglion-cell.md)
+(13)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -2361,7 +2361,23 @@ simulation.
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | completed | 2026-05-12 01:55 |
 
-## Answers (11)
+## Answers (12)
+
+<details>
+<summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
+high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7]
+band?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-24 | **Full answer**:
+[`cuntz-balancing-factor-prediction-check`](../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/)
+
+Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose top-10 cells
+(ranked by DSI) place 10 of 10 (finite bf) cells inside the Cuntz 2010 [0.2, 0.7] empirical
+band. Adding the cytoplasm-volume cost objective pushed the optimiser toward morphologies
+consistent with the Cajal wiring-economy principle. This is evidence in favour of using
+cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
+
+</details>
 
 <details>
 <summary><strong>Does the deposited ModelDB 189347 code reproduce Poleg-Polsky

@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-90 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **72 open** (13
-high, 54 medium, 5 low), **18 closed**.
+92 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **74 open** (14
+high, 55 medium, 5 low), **18 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -34,6 +34,32 @@ vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against Pole
 spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
 addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Audit morphology generator for balancing-factor degeneracy: do
+all parameter combinations yield bf=0.500?</strong> (S-0122-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0122's top-10 cells all reported Cuntz bf = 0.500 (exact midpoint), raising the question of
+whether the t0090/t0092 procedural morphology generator produces topologically balanced trees
+by construction across its 14-d parameter space, irrespective of optimiser selection. Action:
+take a quasi-random LHS sample of N=200-500 morphology vectors spanning the full 14-d bounds
+in constants_morphology.py, build each cell via generate_fixed_morphology (no NEURON sim),
+compute Cuntz bf via the t0122 compute_balancing_factor function, and plot the marginal bf
+distribution + per-knob bf vs parameter scatter. Verdict: if >95% of cells fall in [0.49,
+0.51] the generator is degenerate-balanced and the t0122 Cuntz prediction is generator-driven;
+otherwise the bf=0.500 clustering is genuinely selected for by the cytoplasm cost. Recommended
+task types: experiment-run, data-analysis, answer-question.
 
 </details>
 
@@ -585,6 +611,32 @@ comparison task should run matched 7-diameter and 5-length sweeps on both substr
 identical stimulus schedules and report whether the two discriminators agree on
 Schachter2010-vs-passive identification. If they disagree, that itself is a finding worth
 investigating.
+
+</details>
+
+<details>
+<summary>📊 <strong>Decompose t0122's cytoplasm volume into soma vs dendrites vs AIS
+contributions across the Pareto front</strong> (S-0122-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0122-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0122 computes cytoplasm volume as the sum over [soma, *all_dends, ais_proximal, ais_distal]
+and reports only the scalar total. The t0122 compute_per_section_volume_breakdown function
+returns {soma_um3, dendrites_um3, ais_um3} per cell but the breakdown was not surfaced.
+Whether the optimiser shrinks soma, dendrites, or AIS to drive volume down is unresolved, and
+the answer interacts with the bf=0.500 finding (if dendrite volume dominates, bf reflects
+dendritic geometry; if soma/AIS dominate, bf is decoupled from the optimised cost). Action:
+re-run compute_per_section_volume_breakdown on every cell in all_evaluations_seed1524.json.gz,
+write a 3-panel violin plot (soma/dendrites/ais) split by LEGIT vs silence-corner vs
+non-LEGIT, and report the per-section fractions for the top-10 cells. Recommended task types:
+data-analysis.
 
 </details>
 

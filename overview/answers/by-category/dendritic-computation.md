@@ -1,6 +1,6 @@
-# Answers: `dendritic-computation` (9)
+# Answers: `dendritic-computation` (10)
 
-9 answer(s).
+10 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -36,6 +36,35 @@ because the direction of the DSI response is not determined by L/lambda alone.
 | **Task sources** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0034_distal_dendrite_length_sweep_t0024`](../../../overview/tasks/task_pages/t0034_distal_dendrite_length_sweep_t0024.md), [`t0035_distal_dendrite_diameter_sweep_t0024`](../../../overview/tasks/task_pages/t0035_distal_dendrite_diameter_sweep_t0024.md), [`t0033_plan_dsgc_morphology_channel_optimisation`](../../../overview/tasks/task_pages/t0033_plan_dsgc_morphology_channel_optimisation.md) |
 | **URL sources** | — |
 | **Created by** | [`t0041_electrotonic_length_collapse_t0034_t0035`](../../../overview/tasks/task_pages/t0041_electrotonic_length_collapse_t0034_t0035.md) |
+
+</details>
+
+<details>
+<summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
+high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7]
+band?</strong></summary>
+
+**Confidence**: medium
+
+Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose top-10 cells
+(ranked by DSI) place 10 of 10 (finite bf) cells inside the Cuntz 2010  empirical band. Adding
+the cytoplasm-volume cost objective pushed the optimiser toward morphologies consistent with
+the Cajal wiring-economy principle. This is evidence in favour of using cytoplasm volume as a
+biological-cost regulariser in subsequent DSGC MOBO runs.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/full_answer.md) |
+| **ID** | [`cuntz-balancing-factor-prediction-check`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/) |
+| **Question** | Does NSGA-II with a cytoplasm-volume cost objective produce a high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7] band? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-24 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Paper sources** | `10.1371_journal.pcbi.1002107` |
+| **Task sources** | [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **URL sources** | [url 1](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107) |
+| **Created by** | [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
 
 </details>
 

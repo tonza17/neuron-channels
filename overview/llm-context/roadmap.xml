@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-24T02:24:05Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-24T06:32:06Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>566644</char_count>
-    <byte_count>567185</byte_count>
-    <estimated_tokens>141661</estimated_tokens>
+    <char_count>568131</char_count>
+    <byte_count>568672</byte_count>
+    <estimated_tokens>142032</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -226,9 +226,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0119_brainstorm_results_23</id>
         <id>t0120_morph_generator_geometry_audit</id>
         <id>t0121_5seed_substrate_rate_canonical_report</id>
+        <id>t0122_dsi_cytoplasm_volume_nsga2</id>
       </source_ids>
       <content>
-Completed tasks: 114
+Completed tasks: 115
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -913,6 +914,12 @@ ID: t0121_5seed_substrate_rate_canonical_report
 Completed: 2026-05-24
 Short description: Pure write-up consolidating t0106 / t0112 / t0113 / t0114 / t0115 5-seed LEGIT joint-pass acceptance rate into one canonical document with harmonised conventions and Hay 2011 / Druckmann 2007 comparisons.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0121_5seed_substrate_rate_canonical_report&quot; date_completed: &quot;2026-05-24&quot; status: &quot;complete&quot; --- Results Summary: Canonical 5-seed Substrate-Rate Report Summary Consolidated the S-0112-01 5-seed substrate-rate batch (t0106 seed 44, t0112 seed 77, t0113 seed 2247, t0114 seed 7755, t0115 seed 9354) into one canonical report with harmonised LEGIT-only conventions, both normal-approx and bootstrap 95% CIs, and a literature comparison table against Hay 2011 / Druckmann 2007 / Mohacsi 2024. The bootstrap CI (B=10000, seed=42) excludes 0% (lower bound +0.38%), strengthening the case that the substrate is more populated than Hay&#x27;s 0.40% envelope upper bound, even...
+
+## NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)
+ID: t0122_dsi_cytoplasm_volume_nsga2
+Completed: 2026-05-24
+Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, $6 cap. Gated on t0120 audit.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0122_dsi_cytoplasm_volume_nsga2&quot; date_completed: &quot;2026-05-24&quot; status: &quot;complete&quot; --- Results Summary: DSI vs Cytoplasm-Volume NSGA-II Summary 68-d Bed B + 14-d morphology NSGA-II with cytoplasm volume replacing PD-rate as the second objective. 60 generations on Vast.ai EPYC 7K62 48-core (instance 37546422), GA seed 1524, 5760 cells evaluated. **Cuntz 2010 falsifiable prediction is CONFIRMED: 10/10 top-DSI cells fall in the predicted balancing-factor `[0.2, 0.7]` band**, all clustering at `bf = 0.500`. Best LEGIT DSI 0.9753 at cytoplasm volume 250.2 um^3 (two orders of magnitude smaller than t0091&#x27;s ~30000 um^3 cells). Total cost $0.50 of $6 cap (8.3%)...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -922,10 +929,9 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0121_5seed_subst
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0122_dsi_cytoplasm_volume_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1248,127 +1254,6 @@ For each condition, compute:
 * Joint multi-axis optimisation — explicitly excluded; this is one-axis-at-a-time only.
 * Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
   channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
-
-## NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)
-ID: t0122_dsi_cytoplasm_volume_nsga2
-Status: not_started
-Effective date: 2026-05-23
-Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010 wiring cost). Gated on t0120 geometry audit passing. 1 GA seed, pop=96, N_EVAL_SEEDS=3, $8 cap.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0119_brainstorm_results_23, t0120_morph_generator_geometry_audit
-
-#### Source Suggestion
-
-S-0097-01: &quot;Bed B NSGA-II maximising DSI and minimising cytoplasm volume.&quot;
-
-#### Motivation
-
-The t0097 multi-objective optimisation catalogue ranked DSI vs cytoplasm volume as the most
-biologically-grounded objective pair in the project:
-
-* Cajal&#x27;s cytoplasm-conservation principle and Chklovskii et al. 2002&#x27;s wiring-cost rule (3/5 of
-  grey-matter volume is dendrites + axons for optimal wiring) make cytoplasm a primary evolutionary
-  cost objective.
-* Cuntz et al. 2010 (10.1371/journal.pcbi.1002107) operationalised this as a `balancing factor`
-  `bf in [0.2, 0.7]` for real dendritic trees -- a falsifiable prediction the optimiser can be
-  tested against.
-* Cytoplasm volume per section = pi * (diameter / 2)^2 * length, summed over soma + dendrites + AIS.
-  Easy to compute from the existing `MorphologyResult` without any new generator code.
-
-This is the natural next NSGA-II direction after the 5-seed substrate-rate confirmation batch closed
-at t0115. Recurring biological-plausibility concerns about pure-DSI-maximisation runs (the optimiser
-hits NMDA / Nav densities 85-122 sigma above Sivyer 2013 priors) motivate adding a biological cost
-objective. Cytoplasm volume was chosen over alternatives (ATP/spike, +-10% robustness) for cost
-reasons -- it adds zero per-evaluation overhead since it is a pure geometric quantity computable
-from the morphology.
-
-#### Gating Dependency
-
-**This task must not start until `t0120_morph_generator_geometry_audit` has been completed and the
-geometry-audit verdict is &quot;rendering-only / no re-runs needed&quot;.** If the audit reveals a real
-geometry bug, this task should be cancelled and a framework-level decision is needed about whether
-to patch `_apply_asymmetry` and re-run all 68-d morphology-extended NSGA-II lineage tasks first.
-
-#### Scope
-
-One NSGA-II run, single GA seed, 2 objectives, on the 68-d Bed B + 14-d morphology substrate that
-has been validated by the t0106-t0115 lineage.
-
-#### Approach
-
-1. **Copy the t0115 NSGA-II substrate** end-to-end: 68-d parameter vector (54-d electrophys + 14-d
-   morphology), pop=96, N_EVAL_SEEDS=3, 2 antipodal directions (PD=0deg, ND=180deg), ratio DSI,
-   silence-guard tightened to &gt;= 3 PD spikes, `_POOL_RESTART_EVERY=10`, HV-plateau auto-stop
-   DISABLED, $8 hard cap.
-2. **Replace one objective**: drop the PD-rate objective from t0106&#x27;s 2-objective configuration and
-   replace with **cytoplasm volume**, computed as:
-   `vol = sum(pi * (sec.diam/2)^2 * sec.L for sec in [soma, *all_dends, ais_proximal, ais_distal])`.
-   Units: um^3. Objectives become (maximise DSI, minimise cytoplasm volume). PD-rate stays as a
-   tracked diagnostic but is not an optimiser objective.
-3. **GA seed**: draw via `secrets.randbelow(10000)` (avoid round-ish numbers; follow the t0113
-   convention).
-4. **Gen ceiling**: 60 (per the t0114/t0115 convention for auto-stop-disabled runs).
-5. **Stop trigger**: operator stop when HV trajectory visibly plateaus, OR $8 cost cap, OR gen 60
-   ceiling.
-6. **Run on Vast.ai EPYC** (32-core or 64-core, whichever is cheapest at provisioning time);
-   single-instance.
-7. **Post-run analysis**: Pareto front in (DSI, cytoplasm_volume) space, joint-pass cells (DSI
-   &gt; = 0.5 AND PD-rate &gt;= 30 Hz AND cytoplasm_volume &lt;= TBD), per-cell morphology gallery for top
-   &gt; ranks, **Cuntz 2010 balancing-factor check**: compute `bf` for top-10 cells and verify whether
-   &gt; the high-DSI corner falls in the predicted `[0.2, 0.7]` band.
-8. **Answer asset**: write one answer asset answering &quot;Does NSGA-II with a cytoplasm-volume cost
-   objective produce a high-DSI front in Cuntz 2010&#x27;s predicted balancing-factor `[0.2, 0.7]` band?&quot;
-
-#### Expected Outputs
-
-* `assets/predictions/nsga2-cytoplasm-volume-bedb-morph/` -- predictions asset per spec, with
-  per-cell 68-d vector + per-objective + per-direction firing.
-* `assets/answer/cuntz-balancing-factor-prediction-check/` -- 1 answer asset on the Cuntz
-  prediction.
-* `results/data/pareto_front_seed*.json` -- Pareto front cells in (DSI, cytoplasm_volume).
-* `results/data/all_evaluations_seed*.json` -- every evaluation.
-* `results/images/pareto_front_dsi_vs_volume.png` -- Pareto front chart.
-* `results/images/top50_morphologies_seed*.png` -- top-50 morphology grid (full dendrite trees per
-  the project default).
-* `results/images/cuntz_balancing_factor_top10.png` -- bf distribution for top-10 cells with Cuntz
-  [0.2, 0.7] band overlaid.
-* `results/results_summary.md`, `results/results_detailed.md`, `results/compare_literature.md`
-  comparing to Hay 2011 / Cuntz 2010 / Mohacsi 2024.
-
-#### Budget
-
-* Cost cap: **$8** (per-task default).
-* Expected: ~$4-8 (one Vast.ai EPYC instance for 6-12 hours).
-* If the run exceeds $8 watchdog trip, stop and write up partial results.
-
-#### Dependencies
-
-* `t0024_port_de_rosenroll_2026_dsgc` -- canonical Bed B cell.
-* `t0080_bedb_mobo_v3_dendritic_spike_nsga2` -- 54-d electrophys parameter scheme + apply_params.
-* `t0090_morphology_generator_diversity_test` -- procedural morphology generator.
-* `t0092_diagnose_morphology_generator_silence` -- `generate_fixed_morphology` wrapper.
-* `t0106_long_pdnd_nsga2_300gen` -- NSGA-II driver substrate (parent of the lineage).
-* `t0115_seed9354_no_autostop` -- most recent run conventions to copy from.
-* `t0119_brainstorm_results_23` -- commissions this task.
-* **`t0120_morph_generator_geometry_audit` -- GATING DEPENDENCY**.
-
-#### Verification Criteria
-
-* `t0120` verdict is &quot;rendering-only / no re-runs needed&quot; before this task starts.
-* Predictions asset passes `verify_predictions_asset`.
-* `metrics.json` registers `direction_selectivity_index` with explicit variants for `best_legit`,
-  `overall_max`, `dsi_eq_one_count`.
-* Cytoplasm volume formula is documented in `results_detailed.md` with per-section breakdown.
-* Cuntz 2010 balancing-factor test result is reported as either &quot;consistent with [0.2, 0.7] band&quot; or
-  &quot;violates band&quot;.
-* `compare_literature.md` includes a row comparing top-cell `bf` distribution to Cuntz 2010.
-
-#### Cross-References
-
-* Source suggestion: S-0097-01.
-* Source paper: Cuntz et al. 2010 -- 10.1371/journal.pcbi.1002107.
-* Related project answer: t0097
-  `assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation`.
-* Prior lineage: t0106, t0112, t0113, t0114, t0115.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1417,11 +1302,12 @@ has been validated by the t0106-t0115 lineage.
         <id>pooled-all-cells-basin-connectivity-without-filter</id>
         <id>pooled-all-cells-displacement-from-init-full-pool</id>
         <id>pooled-all-cells-truncated-cohort-artefact-test</id>
+        <id>cuntz-balancing-factor-prediction-check</id>
         <id>morphology-generator-geometry-consistency</id>
         <id>substrate-rate-5seed-canonical</id>
       </source_ids>
       <content>
-Answers: 44
+Answers: 45
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1754,6 +1640,14 @@ Categories: direction-selectivity, compartmental-modeling
 
 Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_DSI = +0.421, r_PD = +0.352, both p &lt; 1e-100, n = 4431), satisfying |r| &gt; 0.3 on both axes. At the strict cohort (t0116) zero of ten factors satisfied this criterion. The reappearance of a joint factor once the filter is lifted confirms the truncated-cohort-artefact hypothesis: the strict cohort genuinely erases the shared latent that couples DSI and PD; the decoupling is not an intrinsic substrate property.
 
+## Does NSGA-II with a cytoplasm-volume cost objective produce a high-DSI front in Cuntz 2010&#x27;s predicted balancing-factor [0.2, 0.7] band?
+ID: cuntz-balancing-factor-prediction-check
+Created by: t0122_dsi_cytoplasm_volume_nsga2 on 2026-05-24
+Confidence: medium
+Categories: compartmental-modeling, dendritic-computation, retinal-ganglion-cell
+
+Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose top-10 cells (ranked by DSI) place 10 of 10 (finite bf) cells inside the Cuntz 2010 [0.2, 0.7] empirical band. Adding the cytoplasm-volume cost objective pushed the optimiser toward morphologies consistent with the Cajal wiring-economy principle. This is evidence in favour of using cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
+
 ## Is the procedural morphology generator&#x27;s asymmetry transform geometrically consistent across the 15-20 sampled cells, and do its results invalidate prior NSGA-II runs?
 ID: morphology-generator-geometry-consistency
 Created by: t0120_morph_generator_geometry_audit on 2026-05-24
@@ -1830,6 +1724,9 @@ The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, 
         <id>S-0118-03</id>
         <id>S-0121-01</id>
         <id>S-0121-02</id>
+        <id>S-0122-01</id>
+        <id>S-0122-02</id>
+        <id>S-0122-03</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -2125,6 +2022,10 @@ The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, 
         <id>S-0121-03</id>
         <id>S-0121-04</id>
         <id>S-0121-05</id>
+        <id>S-0122-04</id>
+        <id>S-0122-05</id>
+        <id>S-0122-06</id>
+        <id>S-0122-07</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -2186,7 +2087,7 @@ The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, 
         <id>S-0120-04</id>
       </source_ids>
       <content>
-Open suggestions: 409
+Open suggestions: 416
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2572,6 +2473,27 @@ Priority: high
 Kind: experiment
 Source task: t0121_5seed_substrate_rate_canonical_report
 The 5-seed bootstrap 95% CI (+0.38%, +5.53%) excludes 0% but still brackets both Hay 2011 (0.40%) and Druckmann 2007 (0.10%) baselines; the normal-approx CI (-0.35%, +5.51%) straddles 0. With n=5 the resampling pool is small and the CI is sensitive to seed 7755&#x27;s 8.13% draw and seed 2247&#x27;s 0% draw. Concrete action: draw 2-3 further random GA seeds via secrets.randbelow(10000) (avoiding the already-used 44, 77, 2247, 7755, 9354), run each as a minimum-change replicate of t0115 (auto-stop disabled, cadence 10, gen ceiling 300, budget cap ~$3 per seed), then re-run the t0121 pipeline against the expanded 7-8 seed sample. Decision: if both CIs clear the Hay envelope upper bound at 7-8 seeds, the...
+
+## Replicate t0122 cytoplasm-volume NSGA-II on 2-3 additional GA seeds for substrate-rate estimate
+ID: S-0122-01
+Priority: high
+Kind: experiment
+Source task: t0122_dsi_cytoplasm_volume_nsga2
+t0122 ran one GA seed (1524) and reported 0.17% LEGIT acceptance (10/5760) with 10/10 top-DSI cells in the Cuntz [0.2, 0.7] band. Mirroring the S-0112-01 pattern, the headline must be replicated on 2-3 more random GA seeds drawn via secrets.randbelow(10000) (non-round) before drawing population-statistic conclusions. Action: launch 2-3 independent runs of the t0122 substrate (same 68-d Bed B + 14-d morph, F=[-dsi, +volume_um3], hard constants POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6.0, tightened guard pd_spikes_sum&lt;3), aggregate per-seed LEGIT rates and Cuntz top-10 bf distributions, and compute a 3-seed mean +- SD comparable to t0121&#x27;s 5-seed PD-rate estimate. Outcome...
+
+## Audit morphology generator for balancing-factor degeneracy: do all parameter combinations yield bf=0.500?
+ID: S-0122-02
+Priority: high
+Kind: experiment
+Source task: t0122_dsi_cytoplasm_volume_nsga2
+t0122&#x27;s top-10 cells all reported Cuntz bf = 0.500 (exact midpoint), raising the question of whether the t0090/t0092 procedural morphology generator produces topologically balanced trees by construction across its 14-d parameter space, irrespective of optimiser selection. Action: take a quasi-random LHS sample of N=200-500 morphology vectors spanning the full 14-d bounds in constants_morphology.py, build each cell via generate_fixed_morphology (no NEURON sim), compute Cuntz bf via the t0122 compute_balancing_factor function, and plot the marginal bf distribution + per-knob bf vs parameter scatter. Verdict: if &gt;95% of cells fall in [0.49, 0.51] the generator is degenerate-balanced and the...
+
+## 3-objective NSGA-II extension: maximise DSI, maximise PD-rate, minimise cytoplasm volume
+ID: S-0122-03
+Priority: high
+Kind: experiment
+Source task: t0122_dsi_cytoplasm_volume_nsga2
+t0122&#x27;s 2-objective Pareto front is L-shaped (volume dominates because it is easy to minimise) and top-DSI cells have PD-rate 23-26 Hz, just below the 30 Hz strict-LEGIT floor; only the strict-LEGIT cohort (10 cells, distinct from top-10 by DSI) cleared the floor. Action: extend the t0122 evaluator to emit out[&#x27;F&#x27;] = [-dsi, -pd_rate_hz, +cytoplasm_volume_um3] (n_obj=3), keep other hard constants identical, draw a fresh non-round GA seed, run NSGA-II 60 gens on the same Vast.ai EPYC substrate; adjust REF_POINT_HV and HV_UTOPIA to 3 entries (DSI=0, PD=0, V=50000). Prediction: adding max-PD-rate shifts the Pareto frontier upward in PD, populates the strict-LEGIT cohort denser than t0122&#x27;s 10...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4637,6 +4559,34 @@ Priority: medium
 Kind: library
 Source task: t0121_5seed_substrate_rate_canonical_report
 t0121&#x27;s headline numbers - 5-seed mean LEGIT acceptance 2.58%, normal-approx 95% CI (-0.35%, +5.51%), bootstrap 95% CI (+0.38%, +5.53%), n_seeds_above_hay_envelope = 3 - currently live only in this task&#x27;s results files. Per ARF design they are not yet a registered project metric, so no aggregator can track them or compare them against future runs. Concrete action: register a new metric `legit_substrate_rate_pct` (unit: percent, scope: project-wide) in `meta/metrics/`, with the per-seed convention (`n_legit_joint_pass_unique / n_total_evals * 100`) baked into the metric definition. Backfill metric_results from t0106 / t0112 / t0113 / t0114 / t0115 / t0121 using the canonical convention so any...
+
+## Recompute Cuntz balancing factor on t0122&#x27;s strict-LEGIT cohort (10 cells, PD&gt;=30Hz) as a sanity check
+ID: S-0122-04
+Priority: medium
+Kind: evaluation
+Source task: t0122_dsi_cytoplasm_volume_nsga2
+t0122&#x27;s Cuntz [0.2, 0.7] prediction was tested on the top-10 cells ranked by DSI WITHOUT enforcing the strict-LEGIT PD-rate &gt;= 30 Hz floor (those cells have PD-rate 23-26 Hz). The strict-LEGIT cohort (10 cells, DSI&lt;0.9999 AND PD&gt;=30 Hz AND volume&lt;=50000) is a distinct cell set with potentially different morphological profile; whether they also fall in the Cuntz band is unknown. Action: re-run compute_balancing_factor from t0122 code on each of the 10 strict-LEGIT cells (re-build morphology via generate_fixed_morphology from each cell&#x27;s 68-d vector in pareto_front_seed1524.json&#x27;s legit_bool subset), report the bf distribution, and compare to the top-10-by-DSI bf=0.500 finding. No new NSGA-II...
+
+## Decompose t0122&#x27;s cytoplasm volume into soma vs dendrites vs AIS contributions across the Pareto front
+ID: S-0122-05
+Priority: medium
+Kind: evaluation
+Source task: t0122_dsi_cytoplasm_volume_nsga2
+t0122 computes cytoplasm volume as the sum over [soma, *all_dends, ais_proximal, ais_distal] and reports only the scalar total. The t0122 compute_per_section_volume_breakdown function returns {soma_um3, dendrites_um3, ais_um3} per cell but the breakdown was not surfaced. Whether the optimiser shrinks soma, dendrites, or AIS to drive volume down is unresolved, and the answer interacts with the bf=0.500 finding (if dendrite volume dominates, bf reflects dendritic geometry; if soma/AIS dominate, bf is decoupled from the optimised cost). Action: re-run compute_per_section_volume_breakdown on every cell in all_evaluations_seed1524.json.gz, write a 3-panel violin plot (soma/dendrites/ais) split by...
+
+## Alternative biological-cost NSGA-II: replace cytoplasm volume with membrane area as the second objective
+ID: S-0122-06
+Priority: medium
+Kind: experiment
+Source task: t0122_dsi_cytoplasm_volume_nsga2
+t0122&#x27;s cytoplasm volume (sum(pi*(diam/2)^2 * L)) is a proxy for Cuntz 2010&#x27;s wiring cost (total wiring length), tight only when diameters are uniform. A more biologically motivated cost is membrane area (sum(pi * diam * L)), which dominates ion-channel-density-driven ATP cost via Na+/K+ pump count. Action: fork the t0122 substrate, add compute_membrane_area_um2 (one-line variation on compute_cytoplasm_volume_um3), set out[&#x27;F&#x27;] = [-dsi, +membrane_area_um2], keep other constants identical, draw a fresh non-round GA seed, run NSGA-II 60 gens on the same EPYC substrate. Prediction: membrane-area minimisation produces a DIFFERENT cell cohort (smaller diameter / longer length trade-off vs t0122&#x27;s...
+
+## Document silence-guard convention drift (t0115 total&lt;10 vs t0122 pd_spikes&lt;3) and recompute t0115 rate under t0122 guard
+ID: S-0122-07
+Priority: medium
+Kind: evaluation
+Source task: t0122_dsi_cytoplasm_volume_nsga2
+t0122 tightened the silence guard from t0115&#x27;s &#x27;total_mean_spikes &lt; 10&#x27; to &#x27;pd_spikes_sum &lt; 3&#x27; to handle the cytoplasm-minimisation tiny-cell regime. This makes the t0122 0.17% vs t0121 2.58% LEGIT comparison a lower bound on the substrate-tightness delta because of convention drift; the true delta could differ depending on how many t0121 cells the tighter guard would have excluded. Action: (1) document each task&#x27;s silence-guard convention in the t0102-t0122 lineage with file:line refs; (2) re-score t0115 seed-9354&#x27;s all_evaluations.json.gz under t0122&#x27;s guard, recompute the LEGIT acceptance rate, and report the delta vs t0115&#x27;s original 1.19%; (3) decide and document the canonical...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
