@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Plan NSGA-II with cytoplasm-volume objective; Vast.ai EPYC instance; $6 cap.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-24T03:04:18Z",
-      "completed_at": null,
+      "completed_at": "2026-05-24T03:16:10Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
