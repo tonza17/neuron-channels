@@ -1,0 +1,12 @@
+assets/answer
+code
+corrections
+intervention
+logs/commands
+logs/searches
+logs/sessions
+logs/steps
+plan
+research
+results
+results/images
