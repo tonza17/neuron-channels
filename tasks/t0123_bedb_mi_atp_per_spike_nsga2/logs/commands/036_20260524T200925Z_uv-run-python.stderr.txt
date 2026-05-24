@@ -1,0 +1,2 @@
+usage: metrics_builder.py [-h] [--out OUT]
+metrics_builder.py: error: unrecognized arguments: --seed 441

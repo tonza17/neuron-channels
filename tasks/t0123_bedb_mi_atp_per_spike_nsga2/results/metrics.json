@@ -1,0 +1,108 @@
+{
+  "variants": [
+    {
+      "variant_id": "t0123-seed441-best-legit",
+      "label": "t0123 NSGA-II seed 441: best LEGIT cell by mi_count_bits",
+      "dimensions": {
+        "task_seed": 441,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 4,
+        "dsi_metric": "vector_sum",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_cells": 5760,
+        "n_legit": 0,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "dsi_subvariant": "best_legit",
+        "pd_rate_hz": null
+      },
+      "metrics": {
+        "direction_selectivity_index": null,
+        "mi_count_bits": null,
+        "atp_per_spike_molecules": null
+      }
+    },
+    {
+      "variant_id": "t0123-seed441-overall-max-mi",
+      "label": "t0123 NSGA-II seed 441: overall max mi_count_bits across all cells",
+      "dimensions": {
+        "task_seed": 441,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 4,
+        "dsi_metric": "vector_sum",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_cells": 5760,
+        "n_legit": 0,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "dsi_subvariant": "overall_max_mi",
+        "pd_rate_hz": 3.333333333333334
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.35630482034348054,
+        "mi_count_bits": 1.4589893596666386,
+        "atp_per_spike_molecules": 49704407.68098243
+      }
+    },
+    {
+      "variant_id": "t0123-seed441-overall-min-atp",
+      "label": "t0123 NSGA-II seed 441: overall min atp_per_spike_molecules",
+      "dimensions": {
+        "task_seed": 441,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 4,
+        "dsi_metric": "vector_sum",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_cells": 5760,
+        "n_legit": 0,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "dsi_subvariant": "overall_min_atp",
+        "pd_rate_hz": 0.7142857142857143
+      },
+      "metrics": {
+        "direction_selectivity_index": 7.204529898187539e-17,
+        "mi_count_bits": 0.0,
+        "atp_per_spike_molecules": 675500.8645167649
+      }
+    },
+    {
+      "variant_id": "t0123-seed441-top10-strong-bialek",
+      "label": "t0123 NSGA-II seed 441: top-10 Pareto cells under post-hoc Strong-Bialek 1998 direct method",
+      "dimensions": {
+        "task_seed": 441,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 4,
+        "dsi_metric": "vector_sum",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_cells": 5760,
+        "n_legit": 0,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "dsi_subvariant": "top10_strong_bialek",
+        "n_top_cells": 10
+      },
+      "metrics": {
+        "mi_strong_bialek_bits_per_sec": 0.0,
+        "atp_per_spike_molecules": 675500.8645167649,
+        "niven_2007_above_below_count": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+[build_results] loaded 5760 per-cell records from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0123_bedb_mi_atp_per_spike_nsga2\tasks\t0123_bedb_mi_atp_per_spike_nsga2\results\data\cell_trace_seed441.jsonl
+[build_results] 5760 unique cells
+[build_results] Pareto front: 10 cells
+[build_results] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0123_bedb_mi_atp_per_spike_nsga2\tasks\t0123_bedb_mi_atp_per_spike_nsga2\results\data\pareto_front_seed441.json
+[build_results] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0123_bedb_mi_atp_per_spike_nsga2\tasks\t0123_bedb_mi_atp_per_spike_nsga2\results\data\all_evaluations_seed441.json

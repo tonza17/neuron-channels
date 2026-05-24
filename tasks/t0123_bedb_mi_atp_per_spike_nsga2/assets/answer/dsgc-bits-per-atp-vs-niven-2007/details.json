@@ -1,0 +1,41 @@
+{
+  "spec_version": "2",
+  "answer_id": "dsgc-bits-per-atp-vs-niven-2007",
+  "question": "Where does the DSGC bits-per-ATP front sit relative to Niven 2007's fly-photoreceptor curve, and does it match the Niven super-linear cost-vs-information scaling?",
+  "short_title": "DSGC bits-per-ATP vs Niven 2007 fly-photoreceptor cost-vs-information scaling",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "dendritic-computation",
+    "retinal-ganglion-cell"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers",
+    "internet"
+  ],
+  "source_paper_ids": [
+    "10.1103_PhysRevLett.80.197"
+  ],
+  "source_urls": [
+    "https://doi.org/10.1242/jeb.005249",
+    "https://doi.org/10.1103/PhysRevLett.80.197"
+  ],
+  "source_task_ids": [
+    "t0097_multi_obj_optim",
+    "t0122_dsi_cytoplasm_volume_nsga2",
+    "t0123_bedb_mi_atp_per_spike_nsga2"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "date_created": "2026-05-24",
+  "metrics_at_creation": {
+    "task_seed": 441,
+    "n_top_cells": 10,
+    "log_log_p_exponent": null,
+    "log_log_fit_r_squared": null,
+    "mean_per_cell_r_squared": null,
+    "niven_2007_verdict": "Insufficient evidence"
+  }
+}

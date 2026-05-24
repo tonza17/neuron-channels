@@ -1,0 +1,1 @@
+[metrics_builder] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0123_bedb_mi_atp_per_spike_nsga2\tasks\t0123_bedb_mi_atp_per_spike_nsga2\results\metrics.json with 4 variants

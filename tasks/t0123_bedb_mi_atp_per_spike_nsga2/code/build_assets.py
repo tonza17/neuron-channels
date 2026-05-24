@@ -80,23 +80,30 @@ def _summarise_strong_bialek(*, sb_data: dict[str, Any]) -> dict[str, Any]:
     for c in cells:
         atp = c.get("atp_per_spike_molecules")
         bits = c.get("bits_per_sec")
-        if isinstance(atp, int | float) and isinstance(bits, int | float):
+        if (
+            isinstance(atp, int | float)
+            and isinstance(bits, int | float)
+            and math.isfinite(float(atp))
+            and math.isfinite(float(bits))
+        ):
             atp_values.append(float(atp))
             bits_values.append(float(bits))
-        if isinstance(c.get("r_squared"), int | float):
-            r_squared_per_cell.append(float(c["r_squared"]))
+        r2_raw = c.get("r_squared")
+        if isinstance(r2_raw, int | float) and math.isfinite(float(r2_raw)):
+            r_squared_per_cell.append(float(r2_raw))
     fit = _fit_log_log_exponent(atp_values=atp_values, bits_values=bits_values)
+    mean_r2: float | None = (
+        float(sum(r_squared_per_cell) / len(r_squared_per_cell))
+        if len(r_squared_per_cell) > 0
+        else None
+    )
     return {
         "n_cells": int(len(cells)),
         "atp_values": atp_values,
         "bits_values": bits_values,
         "p_exponent": fit[0] if fit is not None else None,
         "fit_r_squared": fit[1] if fit is not None else None,
-        "mean_r_squared_per_cell": (
-            float(sum(r_squared_per_cell) / len(r_squared_per_cell))
-            if len(r_squared_per_cell) > 0
-            else None
-        ),
+        "mean_r_squared_per_cell": mean_r2,
     }
 
 
@@ -168,8 +175,8 @@ def _build_short_answer(
         f"## Answer\n\n"
         f"{body}\n\n"
         f"## Sources\n\n"
-        f"* Paper: `10.1242_jeb.005249` (Niven et al. 2007)\n"
         f"* Paper: `10.1103_PhysRevLett.80.197` (Strong et al. 1998)\n"
+        f"* External: Niven et al. 2007 (https://doi.org/10.1242/jeb.005249)\n"
         f"* Task: `t0123_bedb_mi_atp_per_spike_nsga2`\n"
         f"* Predictions asset: "
         f"`tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/predictions/"
@@ -271,6 +278,18 @@ def _build_full_answer(
         f"ms windows, multiply by per-segment area in cm^2, divide by "
         f"elementary charge `e = 1.602e-19 C` and by the Na+/K+ ATPase "
         f"stoichiometry factor of 3.\n\n"
+        f"## Evidence from Internet Sources\n\n"
+        f"No external internet sources were used beyond the published "
+        f"papers cited above. The Niven 2007 reference values (4 fly "
+        f"photoreceptor species at ~200, ~400, ~700, and ~1000 bits/s) "
+        f"are taken directly from the paper at "
+        f"`https://doi.org/10.1242/jeb.005249` and reproduced verbatim in "
+        f"`code/build_pareto_plots.py:NIVEN_2007_SPECIES`. The Strong & "
+        f"Bialek 1998 direct-method MI estimator is reproduced from the "
+        f"paper at `https://doi.org/10.1103/PhysRevLett.80.197` and "
+        f"implemented in `code/mi_estimator.py:"
+        f"compute_mi_strong_bialek_bits_per_sec`. No supplementary "
+        f"datasets or web tools were consulted.\n\n"
         f"## Evidence from Code or Experiments\n\n"
         f"The t0123 NSGA-II run plus post-hoc Strong-Bialek re-evaluation "
         f"of the top-10 Pareto cells is the primary code-experiment "
@@ -321,11 +340,12 @@ def _build_full_answer(
         f"trade-off but complicates the comparison to Niven's "
         f"single-quantity bits/s.\n\n"
         f"## Sources\n\n"
-        f"* Paper: `10.1242_jeb.005249` (Niven et al. 2007, "
-        f'"Energy limitation as a selective pressure on the evolution of '
-        f'sensory systems")\n'
         f"* Paper: `10.1103_PhysRevLett.80.197` (Strong et al. 1998, "
         f'"Entropy and information in neural spike trains")\n'
+        f"* External: Niven et al. 2007, "
+        f'"Energy limitation as a selective pressure on the evolution of '
+        f'sensory systems" (https://doi.org/10.1242/jeb.005249); not in '
+        f"local paper corpus, referenced as external URL.\n"
         f"* Task: `t0123_bedb_mi_atp_per_spike_nsga2`\n"
         f"* Task: `t0097_multi_obj_optim` (Strong-Bialek + Sengupta "
         f"recipes catalogued)\n"
@@ -364,9 +384,9 @@ def _build_details(
         "answer_methods": [
             "code-experiment",
             "papers",
+            "internet",
         ],
         "source_paper_ids": [
-            "10.1242_jeb.005249",
             "10.1103_PhysRevLett.80.197",
         ],
         "source_urls": [
