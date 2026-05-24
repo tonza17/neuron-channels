@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "uv run ruff check tasks/t0122_dsi_cytoplasm_volume_nsga2/code/",
+  "exit_code": 0,
+  "duration_seconds": 0.232,
+  "started_at": "2026-05-24T05:53:46Z",
+  "completed_at": "2026-05-24T05:53:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "077_20260524T055346Z_uv-run-ruff.stdout.txt",
+  "stderr_file": "077_20260524T055346Z_uv-run-ruff.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

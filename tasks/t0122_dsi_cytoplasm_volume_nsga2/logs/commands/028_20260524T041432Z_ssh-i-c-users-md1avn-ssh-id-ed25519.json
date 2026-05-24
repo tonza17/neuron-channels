@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 26422 -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul root@ssh6.vast.ai cd /root/t0122_workdir/repo && mkdir -p tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/.libs && cp -P /root/t0122_workdir/mods/x86_64/libnrnmech.so tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/ && cp -rP /root/t0122_workdir/mods/x86_64/.libs/* tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/.libs/ 2>&1 || true; cp /root/t0122_workdir/mods/x86_64/libnrnmech.so tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/.libs/ 2>/dev/null || true; ls -la tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/ tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/.libs/",
+  "exit_code": 0,
+  "duration_seconds": 2.707,
+  "started_at": "2026-05-24T04:14:32Z",
+  "completed_at": "2026-05-24T04:14:35Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "028_20260524T041432Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "028_20260524T041432Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 2,
+  "truncated": false
+}

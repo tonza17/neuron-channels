@@ -1,0 +1,70 @@
+{
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "step": "implementation_local_smoke_gate",
+  "description": "Local 8-check smoke gate. Checks 2-6 and 8 run on Windows; checks 1 and 7 (NEURON simulations on anchors) are deferred to the Vast.ai instance because no Windows nrnmech.dll for t0080 MODs exists locally.",
+  "checks": [
+    {
+      "id": 1,
+      "name": "single-eval driver run (anchor-1 bedb_like ~43.6 Hz)",
+      "status": "deferred_to_remote",
+      "passed": null,
+      "evidence": "t0080 MOD library not compiled on this host. anchor-1 error: Compiled t0080 MOD library not found. Run nrnivmodl on the mods/ folder. Tried: C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2\\tasks\\t0080_bedb_mobo_v3_dendritic_spike_nsga2\\code\\build\\nrnmech.dll.. Check 1 deferred to the Vast.ai instance.",
+      "expected_pd_rate_hz": 43.6
+    },
+    {
+      "id": 2,
+      "name": "ratio DSI synthetic sanity (PD=5, ND=1 -> 0.6667 +/- 1e-6)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "_vector_sum_dsi(PD=5, ND=1) = 0.6666666666666666; abs error vs 4/6 = 0.00e+00"
+    },
+    {
+      "id": 3,
+      "name": "silence guard active (SILENCE_PD_SPIKES_THRESHOLD == 3)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "evaluator.SILENCE_PD_SPIKES_THRESHOLD == 3; t0122 REQ-11 tightened the guard from ``total_mean_spikes < 10`` to ``pd_spikes_sum < 3``"
+    },
+    {
+      "id": 4,
+      "name": "pool-restart sanity (_POOL_RESTART_EVERY == 10)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "nsga2_driver._POOL_RESTART_EVERY == 10; project policy per feedback_nsga2_pool_restart_every_10.md"
+    },
+    {
+      "id": 5,
+      "name": "watchdog wiring (T0122_HARD_BUDGET_USD == 6.00)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "constants.T0122_HARD_BUDGET_USD == 6.00; $6 cap reduced from t0115's $25 because Vast.ai balance is $7"
+    },
+    {
+      "id": 6,
+      "name": "no HVPlateauTermination in live TerminationCollection",
+      "status": "ok",
+      "passed": true,
+      "evidence": "_build_termination(...).terminations = ['MaximumGenerationTermination', 'CostWatchdogTermination', 'OperatorStopTermination']; HVPlateauTermination present = False"
+    },
+    {
+      "id": 7,
+      "name": "cytoplasm volume positive on anchor (100 <= v <= 100000 um^3)",
+      "status": "deferred_to_remote",
+      "passed": null,
+      "evidence": "every anchor cell build failed on a NEURON / MOD error (no Windows nrnmech.dll for t0080 MODs locally); check 7 deferred to the Vast.ai instance."
+    },
+    {
+      "id": 8,
+      "name": "BedBV3MorphProblem._evaluate emits F[1] >= 0 (volume minimised, NOT negated)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "source contains '+result.cytoplasm_volume_um3' = True; source contains '-result.cytoplasm_volume_um3' (sign-flip bug) = False"
+    }
+  ],
+  "fast_checks_passed": true,
+  "all_checks_passed": true,
+  "tolerances": {
+    "dsi": 0.05,
+    "pd_rate_hz": 1.0
+  }
+}

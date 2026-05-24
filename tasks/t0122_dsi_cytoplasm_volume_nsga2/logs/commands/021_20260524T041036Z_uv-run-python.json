@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "uv run python -u -m tasks.t0122_dsi_cytoplasm_volume_nsga2.code.smoke_gate --output tasks/t0122_dsi_cytoplasm_volume_nsga2/logs/steps/009_implementation/smoke_gate_local.json",
+  "exit_code": 0,
+  "duration_seconds": 1.462,
+  "started_at": "2026-05-24T04:10:36Z",
+  "completed_at": "2026-05-24T04:10:37Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "021_20260524T041036Z_uv-run-python.stdout.txt",
+  "stderr_file": "021_20260524T041036Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 99,
+  "truncated": false
+}

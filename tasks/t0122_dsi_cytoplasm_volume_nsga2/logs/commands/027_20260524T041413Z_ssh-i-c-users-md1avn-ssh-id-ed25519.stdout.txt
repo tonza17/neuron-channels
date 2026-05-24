@@ -1,0 +1,18 @@
+t0024_port_de_rosenroll_2026_dsgc
+t0080_bedb_mobo_v3_dendritic_spike_nsga2
+t0090_morphology_generator_diversity_test
+t0092_diagnose_morphology_generator_silence
+t0122_dsi_cytoplasm_volume_nsga2
+---
+__init__.py
+capture_task_sessions.py
+doi_to_slug.py
+find_similar_papers.py
+init_task_folders.py
+poststep.py
+prestep.py
+run_with_logs.py
+skip_step.py
+vast_machines.py
+---
+seed=1524 pool_restart_every=10 hv_auto_stop=False cap=$6.0 n_gen_max=60

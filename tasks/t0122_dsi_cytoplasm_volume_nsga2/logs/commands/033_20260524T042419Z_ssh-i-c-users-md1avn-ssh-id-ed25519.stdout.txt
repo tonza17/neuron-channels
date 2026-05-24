@@ -1,0 +1,33 @@
+{
+  "check_1_anchor1": 45.0,
+  "check_1_anchor1_dsi": 0.03278688524590164,
+  "check_1_anchor_volumes": [
+    [
+      "bedb_like",
+      1371.0477927672023
+    ],
+    [
+      "symmetric",
+      1399.7113710366866
+    ],
+    [
+      "pd_asymmetric",
+      2017.105893160515
+    ],
+    [
+      "nd_asymmetric",
+      1797.6842480062624
+    ],
+    [
+      "alt_topology",
+      636.0955797012941
+    ]
+  ],
+  "check_7": {
+    "id": 7,
+    "name": "cytoplasm volume positive on anchor (100 <= v <= 100000 um^3)",
+    "status": "ok",
+    "passed": true,
+    "evidence": "per-anchor volumes: [{'anchor_name': 'bedb_like', 'volume_um3': 1371.0477927672023, 'in_range': True, 'error': None}, {'anchor_name': 'symmetric', 'volume_um3': 1399.7113710366866, 'in_range': True, 'error': None}, {'anchor_name': 'pd_asymmetric', 'volume_um3': 2017.105893160515, 'in_range': True, 'error': None}, {'anchor_name': 'nd_asymmetric', 'volume_um3': 1797.6842480062624, 'in_range': True, 'error': None}, {'anchor_name': 'alt_topology', 'volume_um3': 636.0955797012941, 'in_range': True, 'error': None}]"
+  }
+}

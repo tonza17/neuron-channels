@@ -1,0 +1,11 @@
+E501 Line too long (101 > 100)
+   --> tasks\t0122_dsi_cytoplasm_volume_nsga2\code\smoke_gate.py:398:101
+    |
+397 |     src = inspect.getsource(BedBV3MorphProblem._evaluate)
+398 |     # Look for the load-bearing line ``out["F"] = ... +result.cytoplasm_volume_um3`` (positive sign).
+    |                                                                                                     ^
+399 |     has_positive_volume = (
+400 |         "+result.cytoplasm_volume_um3" in src
+    |
+
+Found 1 error.

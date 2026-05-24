@@ -1,0 +1,88 @@
+{
+  "variants": [
+    {
+      "variant_id": "t0122-seed1524-best-legit",
+      "label": "t0122 NSGA-II seed 1524: best legit DSI (highest non-silence-guard cell)",
+      "dimensions": {
+        "task_seed": 1524,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_cells": 5760,
+        "n_legit": 10,
+        "n_dsi_eq_one": 1116,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "min_legit_cytoplasm_volume_um3": 250.24132753292068,
+        "mean_top10_legit_cytoplasm_volume_um3": 285.5143762162144,
+        "cuntz_in_band_count": 10,
+        "cuntz_finite_count": 10,
+        "dsi_subvariant": "best_legit"
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.9753086419753088
+      }
+    },
+    {
+      "variant_id": "t0122-seed1524-overall-max",
+      "label": "t0122 NSGA-II seed 1524: overall max DSI (silence-guard saturated cells included)",
+      "dimensions": {
+        "task_seed": 1524,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_cells": 5760,
+        "n_legit": 10,
+        "n_dsi_eq_one": 1116,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "min_legit_cytoplasm_volume_um3": 250.24132753292068,
+        "mean_top10_legit_cytoplasm_volume_um3": 285.5143762162144,
+        "cuntz_in_band_count": 10,
+        "cuntz_finite_count": 10,
+        "dsi_subvariant": "overall_max"
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    },
+    {
+      "variant_id": "t0122-seed1524-dsi-eq-one",
+      "label": "t0122 NSGA-II seed 1524: silence-guard ceiling cell count (cells at DSI = 1.0)",
+      "dimensions": {
+        "task_seed": 1524,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "ratio",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_cells": 5760,
+        "n_legit": 10,
+        "n_dsi_eq_one": 1116,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "min_legit_cytoplasm_volume_um3": 250.24132753292068,
+        "mean_top10_legit_cytoplasm_volume_um3": 285.5143762162144,
+        "cuntz_in_band_count": 10,
+        "cuntz_finite_count": 10,
+        "dsi_subvariant": "dsi_eq_one_count"
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    }
+  ]
+}

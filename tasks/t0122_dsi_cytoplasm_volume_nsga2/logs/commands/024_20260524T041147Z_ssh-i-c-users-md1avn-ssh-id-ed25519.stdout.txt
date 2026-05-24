@@ -1,0 +1,4 @@
+/root/t0122_workdir/mods/x86_64/libnrnmech.so
+/usr/bin/tmux
+/usr/local/bin/python
+/usr/bin/rsync

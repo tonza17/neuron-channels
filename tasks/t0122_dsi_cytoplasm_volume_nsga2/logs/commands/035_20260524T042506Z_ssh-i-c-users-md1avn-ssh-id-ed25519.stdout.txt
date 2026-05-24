@@ -1,0 +1,7 @@
+t0122: 1 windows (created Sun May 24 04:25:08 2026)
+---
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.1881/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=1524] using 60 parallel workers
+[nsga2_driver seed=1524] starting: pop=96 max_gen=60 hard_cap=$6.00 rate=$0.1881/hr pool_restart_every=10

@@ -1,0 +1,10 @@
+usage: verify_metrics.py [-h] [--all] [metric_key]
+
+Verify metric definition files (or all metrics)
+
+positional arguments:
+  metric_key  Metric key (e.g. f1_all)
+
+options:
+  -h, --help  show this help message and exit
+  --all       Verify all metrics in meta/metrics/

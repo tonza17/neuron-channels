@@ -1,0 +1,11 @@
+{"gen": 43, "wall_clock_s": 3402.949586391449, "hv": 49763.170566430876, "n_cells_evaluated": 96}
+{"gen": 44, "wall_clock_s": 3427.2670664787292, "hv": 49763.17248660347, "n_cells_evaluated": 96}
+{"gen": 45, "wall_clock_s": 3454.321108818054, "hv": 49763.17744665989, "n_cells_evaluated": 96}
+{"gen": 46, "wall_clock_s": 3485.192897796631, "hv": 49763.18412829196, "n_cells_evaluated": 96}
+{"gen": 47, "wall_clock_s": 3519.481460571289, "hv": 49763.18796354197, "n_cells_evaluated": 96}
+---
+gen=47 hv=49763.19 cumulative_cost_usd=0.1838 elapsed_s=3519
+---STATS---
+n_cells=4512; best_dsi=1.0000; min_vol=236.8; max_dsi_below_1=0.9821; n_legit=10; n_silence_corner=560
+---TMUX---
+t0122: 1 windows (created Sun May 24 04:25:08 2026)

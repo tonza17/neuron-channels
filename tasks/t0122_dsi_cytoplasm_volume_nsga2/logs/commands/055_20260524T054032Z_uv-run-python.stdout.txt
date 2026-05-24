@@ -1,0 +1,3 @@
+[predictions] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\predictions\nsga2-cytoplasm-volume-bedb-morph\files\predictions.jsonl.gz (3302.5 KB) with 5760 cells
+[predictions] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\predictions\nsga2-cytoplasm-volume-bedb-morph\details.json
+[predictions] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\predictions\nsga2-cytoplasm-volume-bedb-morph\description.md

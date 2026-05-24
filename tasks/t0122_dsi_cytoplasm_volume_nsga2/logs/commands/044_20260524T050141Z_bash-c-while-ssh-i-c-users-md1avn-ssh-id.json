@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "bash -c while [[ $(ssh -i /c/Users/md1avn/.ssh/id_ed25519 -p 26422 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@ssh6.vast.ai \"tmux has-session -t t0122 2>&1; echo done\" 2>&1 | grep -c \"no server\\|exit\\|no session\\|done\" ) -eq 1 ]] && [[ $(ssh -i /c/Users/md1avn/.ssh/id_ed25519 -p 26422 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@ssh6.vast.ai \"wc -l < /root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/logs/steps/009_implementation/hv_trace.jsonl 2>/dev/null || echo 0\" 2>/dev/null | tail -1) -lt 60 ]]; do sleep 600; ssh -i /c/Users/md1avn/.ssh/id_ed25519 -p 26422 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@ssh6.vast.ai \"tail -3 /root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/logs/steps/009_implementation/hv_trace.jsonl 2>&1 | tail -1; echo timestamp=$(date -u)\" 2>&1 | grep -v \"Welcome\\|Have fun\" | tail -3; done && echo \"RUN COMPLETED OR HIT 60 GEN\"",
+  "exit_code": 0,
+  "duration_seconds": 1831.209,
+  "started_at": "2026-05-24T05:01:41Z",
+  "completed_at": "2026-05-24T05:32:13Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "044_20260524T050141Z_bash-c-while-ssh-i-c-users-md1avn-ssh-id.stdout.txt",
+  "stderr_file": "044_20260524T050141Z_bash-c-while-ssh-i-c-users-md1avn-ssh-id.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,1 @@
+gen=24 hv=49757.96 cumulative_cost_usd=0.1469 elapsed_s=2812

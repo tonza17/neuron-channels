@@ -1,0 +1,13 @@
+usage: verificator.py [-h] [--task-id TASK_ID] [predictions_id]
+
+Verify predictions asset folder(s)
+
+positional arguments:
+  predictions_id     Predictions ID (folder name) to verify. If omitted,
+                     verifies all predictions in the target directory.
+
+options:
+  -h, --help         show this help message and exit
+  --task-id TASK_ID  Task ID to locate predictions in
+                     tasks/<task_id>/assets/predictions/. If omitted, looks in
+                     top-level assets/predictions/.

@@ -1,0 +1,11 @@
+[morph] loading C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\results\data\cell_trace_seed1524.jsonl
+[morph] total cell records: 5760
+[morph] unique cells: 5760
+[morph] selected top-50 cells
+[morph]   built geometry 10/50
+[morph]   built geometry 20/50
+[morph]   built geometry 30/50
+[morph]   built geometry 40/50
+[morph]   built geometry 50/50
+[morph] built 50 geometries
+[morph] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\results\images\top50_morphologies_seed1524.png (204.0 KB)

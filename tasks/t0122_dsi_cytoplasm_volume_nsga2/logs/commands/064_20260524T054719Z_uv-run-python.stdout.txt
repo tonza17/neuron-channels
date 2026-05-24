@@ -1,0 +1,3 @@
+[answer] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\answer\cuntz-balancing-factor-prediction-check\short_answer.md
+[answer] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\answer\cuntz-balancing-factor-prediction-check\full_answer.md
+[answer] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\answer\cuntz-balancing-factor-prediction-check\details.json

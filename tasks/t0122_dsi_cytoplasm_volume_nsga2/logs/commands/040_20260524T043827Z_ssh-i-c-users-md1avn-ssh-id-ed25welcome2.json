@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25welcome25519 -p 26422 -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul root@ssh6.vast.ai tail -40 /root/t0122_workdir/run_seed1524.log; echo \"---HV---\"; cat /root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/logs/steps/009_implementation/hv_trace.jsonl 2>&1; echo \"---STATS---\"; wc -l /root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/results/data/cell_trace_seed1524.jsonl 2>&1; echo \"---BEST-DSI---\"; python -c \"import json; lines=[json.loads(l) for l in open(\\\"/root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/results/data/cell_trace_seed1524.jsonl\\\")]; print(f\\\"n_cells={len(lines)}; best_dsi={max(c[\\\"dsi_vector_sum\\\"] for c in lines):.4f}; min_vol={min(c[\\\"cytoplasm_volume_um3\\\"] for c in lines):.1f}; max_dsi_below_1={max((c[\\\"dsi_vector_sum\\\"] for c in lines if c[\\\"dsi_vector_sum\\\"] < 0.9999), default=0):.4f}; n_legit={sum(1 for c in lines if c[\\\"dsi_vector_sum\\\"]>=0.5 and c[\\\"dsi_vector_sum\\\"]<0.9999 and c[\\\"pd_rate_hz\\\"]>=30)}; n_silence_corner={sum(1 for c in lines if c[\\\"dsi_vector_sum\\\"]>=0.9999)}\\\")\"",
+  "exit_code": 255,
+  "duration_seconds": 5.279,
+  "started_at": "2026-05-24T04:38:27Z",
+  "completed_at": "2026-05-24T04:38:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "040_20260524T043827Z_ssh-i-c-users-md1avn-ssh-id-ed25welcome2.stdout.txt",
+  "stderr_file": "040_20260524T043827Z_ssh-i-c-users-md1avn-ssh-id-ed25welcome2.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 4,
+  "truncated": false
+}

@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Run 2-obj NSGA-II (max DSI, min cytoplasm vol). Operator monitors HV; stops on plateau or budget cap.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T03:41:21Z",
       "completed_at": null,
-      "log_file": "logs/steps/009_implementation/"
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,

@@ -1,0 +1,7 @@
+scratch_count_68d_cells.py:23: error: Missing type arguments for generic type "dict"  [type-arg]
+scratch_count_68d_cells.py:29: error: Returning Any from function declared to return "list[dict[Any, Any]]"  [no-any-return]
+scratch_count_68d_cells.py:31: error: Returning Any from function declared to return "list[dict[Any, Any]]"  [no-any-return]
+scratch_count_68d_cells.py:34: error: Missing type arguments for generic type "dict"  [type-arg]
+scratch_count_68d_cells.py:37: error: Returning Any from function declared to return "str | None"  [no-any-return]
+scratch_count_68d_cells.py:81: error: Missing type arguments for generic type "set"  [type-arg]
+Found 6 errors in 1 file (checked 333 source files)
