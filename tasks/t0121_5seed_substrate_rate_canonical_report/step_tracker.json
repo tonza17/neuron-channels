@@ -95,10 +95,10 @@
       "step": 11,
       "name": "compare-literature",
       "description": "Compare 5-seed substrate-rate vs Hay 2011 / Druckmann 2007 / Mohacsi 2024 conventions.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T02:05:24Z",
       "completed_at": null,
-      "log_file": "logs/steps/011_compare-literature/"
+      "log_file": "logs\\steps\\011_compare-literature/"
     },
     {
       "step": 12,
