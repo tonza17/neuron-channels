@@ -1,0 +1,22 @@
+Initialized task folder structure for t0124_bedb_dsi_atp_per_spike_nsga2.
+
+Directories created (with .gitkeep files):
+  plan/
+  research/
+  results/
+  results/images/
+  corrections/
+  intervention/
+  code/
+  logs/commands/
+  logs/searches/
+  logs/sessions/
+  logs/steps/
+  assets/predictions/
+  assets/answer/
+
+Files created:
+  __init__.py
+  code/__init__.py
+
+Total: 13 directories, 2 __init__.py files.
