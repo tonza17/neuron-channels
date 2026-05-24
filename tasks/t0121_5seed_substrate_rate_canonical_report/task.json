@@ -5,7 +5,7 @@
   "name": "Canonical 5-seed substrate-rate report (S-0112-01 batch closed)",
   "short_description": "Pure write-up consolidating t0106 / t0112 / t0113 / t0114 / t0115 5-seed LEGIT joint-pass acceptance rate into one canonical document with harmonised conventions and Hay 2011 / Druckmann 2007 comparisons.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0106_long_pdnd_nsga2_300gen",
     "t0112_t0106_seed77_replicate",
@@ -14,7 +14,7 @@
     "t0115_seed9354_no_autostop",
     "t0119_brainstorm_results_23"
   ],
-  "start_time": null,
+  "start_time": "2026-05-24T01:15:03Z",
   "end_time": null,
   "expected_assets": {
     "answer": 1
