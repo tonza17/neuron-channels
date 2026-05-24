@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0124_bedb_dsi_atp_per_spike_nsga2\tasks\t0124_bedb_dsi_atp_per_spike_nsga2\research\research_papers.md
+
+[32m[1mPASSED[0m — no errors or warnings
