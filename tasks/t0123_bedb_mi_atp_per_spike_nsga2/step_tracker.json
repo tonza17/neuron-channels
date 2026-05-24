@@ -59,9 +59,9 @@
       "step": 7,
       "name": "planning",
       "description": "Design fork of t0122 substrate: add per-segment seg.ina recording, ATP-per-spike calculator, spike-count MI estimator, post-hoc Strong-Bialek direct-method MI rerun. Plan ATP recipe smoke gate vs Carter-Bean 2009 before NSGA-II launches.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-24T13:01:04Z",
-      "completed_at": null,
+      "completed_at": "2026-05-24T13:13:05Z",
       "log_file": "logs\\steps\\007_planning/"
     },
     {
