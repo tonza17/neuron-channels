@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0115 NSGA-II driver to fork; t0090/t0092 morphology generator; t0091 trial_helpers; t0121 5-seed baseline; cytoplasm-volume formula derivation.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T02:47:48Z",
       "completed_at": null,
-      "log_file": "logs/steps/006_research-code/"
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,

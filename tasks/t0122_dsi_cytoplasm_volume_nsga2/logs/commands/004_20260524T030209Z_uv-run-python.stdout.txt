@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\research\research_code.md
+
+[33m[1mWARNINGS:[0m
+[33m  RC-W002 warning: Task Index entry [t0114] references task 't0114_5seed_replication_nsga2' which does not exist[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 1 warning(s)
