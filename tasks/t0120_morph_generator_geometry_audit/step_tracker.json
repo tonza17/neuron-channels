@@ -68,9 +68,9 @@
       "step": 8,
       "name": "implementation",
       "description": "Sample 15-20 cells, dump coords, run the 3 consistency checks, render the gallery, write the answer asset.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-23T23:57:39Z",
-      "completed_at": null,
+      "completed_at": "2026-05-24T00:28:02Z",
       "log_file": "logs\\steps\\008_implementation/"
     },
     {
