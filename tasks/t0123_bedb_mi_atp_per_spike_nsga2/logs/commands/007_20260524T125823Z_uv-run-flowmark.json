@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0123_bedb_mi_atp_per_spike_nsga2/research/research_code.md",
+  "exit_code": 0,
+  "duration_seconds": 0.713,
+  "started_at": "2026-05-24T12:58:23Z",
+  "completed_at": "2026-05-24T12:58:24Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0123_bedb_mi_atp_per_spike_nsga2",
+  "stdout_file": "007_20260524T125823Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "007_20260524T125823Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

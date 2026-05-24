@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "command": "python -X utf8 -m arf.scripts.aggregators.aggregate_tasks --format ids --status completed",
+  "exit_code": 1,
+  "duration_seconds": 0.166,
+  "started_at": "2026-05-24T12:49:45Z",
+  "completed_at": "2026-05-24T12:49:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0123_bedb_mi_atp_per_spike_nsga2",
+  "stdout_file": "003_20260524T124945Z_python-x-utf8.stdout.txt",
+  "stderr_file": "003_20260524T124945Z_python-x-utf8.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 6,
+  "truncated": false
+}
