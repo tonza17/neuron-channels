@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $63.40 of $100.00 USD. $36.60 remains overall and $36.60 remains before the 100% stop
+Spent $64.59 of $100.00 USD. $35.41 remains overall and $35.41 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,22 +8,22 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $100.00 USD |
-| Total spent | $63.40 USD |
-| Budget left | $36.60 USD |
-| Budget left before stop threshold | $36.60 USD |
-| Spent percent | 63.40% |
+| Total spent | $64.59 USD |
+| Budget left | $35.41 USD |
+| Budget left before stop threshold | $35.41 USD |
+| Spent percent | 64.59% |
 | Warn threshold | 80% ($80.00) |
 | Stop threshold | 100% ($100.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 115 |
-| Tasks with non-zero spend | 17 |
+| Tasks with cost records | 116 |
+| Tasks with non-zero spend | 18 |
 | Skipped tasks | 8 |
 
 ## Service Totals
 
 | Key | Cost (USD) |
 |-----|------------|
-| `vast_ai` | $39.71 |
+| `vast_ai` | $40.90 |
 | `vast_ai_compute` | $3.93 |
 | `vast-ai` | $0.48 |
 
@@ -46,21 +46,29 @@ threshold.
 | `vast-ai-seed11` | $1.13 |
 | `vast_ai_seed7755_compute` | $1.13 |
 | `vast-ai-quadro-p4000` | $1.06 |
+| `vast-ai-nsga2-productive` | $0.75 |
 | `vast_ai_36137287` | $0.75 |
 | `vast-ai-driver-overhead` | $0.74 |
 | `vast-ai-rtx-pro-4000-idle` | $0.65 |
 | `vast-ai-titan-v` | $0.50 |
 | `vast-ai-idle` | $0.43 |
 | `vast-ai-epyc-7b13-setup-idle` | $0.29 |
+| `vast-ai-idle-post-finalize` | $0.21 |
 | `vast-ai-epyc7532` | $0.15 |
 | `vast-ai-epyc-7b13-productive` | $0.15 |
+| `vast-ai-post-hoc-strong-bialek` | $0.11 |
 | `vast_ai_setup_and_smoke_gates` | $0.11 |
+| `vast-ai-idle-pre-post-hoc` | $0.09 |
 | `vast-ai-failed-ssh-attempt` | $0.04 |
 | `vast-ai-setup` | $0.04 |
+| `vast-ai-instance-setup` | $0.03 |
+| `vast-ai-network` | $0.01 |
 | `vast-ai-failed-attempt` | $0.00 |
 | `api` | $0.00 |
 | `local_compute` | $0.00 |
+| `per_instance_watchdog_USD` | $0.00 |
 | `remote_compute` | $0.00 |
+| `vast-ai-failed-attempts` | $0.00 |
 
 98 task cost record(s) are zero-cost and omitted from the main spend table.
 
@@ -85,6 +93,7 @@ threshold.
 | [`t0114_seed7755_no_autostop`](../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | completed | $1.13 | $8.00 | no |
 | [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | completed | $2.50 | $8.00 | no |
 | [`t0122_dsi_cytoplasm_volume_nsga2`](../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | completed | $0.50 | $6.00 | no |
+| [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | completed | $1.19 | $6.00 | no |
 
 ## Skipped Tasks
 

@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-92 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **74 open** (14
-high, 55 medium, 5 low), **18 closed**.
+93 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **75 open** (14
+high, 56 medium, 5 low), **18 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1696,6 +1696,33 @@ biologically-plausible NMDA -- a major finding that would motivate either (a) re
 joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
 Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
 cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of t0123 cell 2 (MI=1.459, PD=2.86 Hz) to
+explain near-silent count-MI mechanism</strong> (S-0123-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0123-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Cell 2 on the t0123 Pareto front reaches the highest mi_count_bits = 1.459 (73% of the log2(4)
+= 2.0 ceiling) at PD-rate 2.86 Hz, DSI 0.316. How does a near-silent cell produce a clean
+spike-count direction signal across 4 antipodal directions? Mirroring the t0084 cell-767
+deep-dive, this task should single-cell-resimulate cell 2 from its 68-d vector under the
+EPSP_PASSIVE / IPSP_PASSIVE / FULL standard mode trio (memory
+`feedback_dsgc_measurement_protocol.md`), record somatic Vm and per-compartment g_E / g_I at
+each direction, identify which subset of (channel densities, synapse placement, morphology
+bf=0.236, soma-share 94.5%) is driving the across-direction spike-count variance, and produce
+a one-cell mechanism narrative. Single-cell, no NSGA-II; local-CPU runtime <2 h. Output: one
+answer asset on the mechanism plus a Vm / g_E / g_I trace figure pack. Recommended task types:
+experiment-run, data-analysis, answer-question.
 
 </details>
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-24T06:32:06Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-05-24T21:18:32Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>533047</char_count>
-    <byte_count>533233</byte_count>
-    <estimated_tokens>133261</estimated_tokens>
+    <char_count>539606</char_count>
+    <byte_count>539792</byte_count>
+    <estimated_tokens>134901</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -499,9 +499,14 @@
         <id>S-0122-05</id>
         <id>S-0122-06</id>
         <id>S-0122-07</id>
+        <id>S-0123-01</id>
+        <id>S-0123-02</id>
+        <id>S-0123-03</id>
+        <id>S-0123-04</id>
+        <id>S-0123-05</id>
       </source_ids>
       <content>
-Suggestions: 482
+Suggestions: 487
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -5907,6 +5912,63 @@ Categories: compartmental-modeling, direction-selectivity
 Date added: 2026-05-24
 
 t0122 tightened the silence guard from t0115&#x27;s &#x27;total_mean_spikes &lt; 10&#x27; to &#x27;pd_spikes_sum &lt; 3&#x27; to handle the cytoplasm-minimisation tiny-cell regime. This makes the t0122 0.17% vs t0121 2.58% LEGIT comparison a lower bound on the substrate-tightness delta because of convention drift; the true delta could differ depending on how many t0121 cells the tighter guard would have excluded. Action: (1) document each task&#x27;s silence-guard convention in the t0102-t0122 lineage with file:line refs; (2) re-score t0115 seed-9354&#x27;s all_evaluations.json.gz under t0122&#x27;s guard, recompute the LEGIT acceptance rate, and report the delta vs t0115&#x27;s original 1.19%; (3) decide and document the canonical project-default guard going forward. Pure post-hoc analysis on existing assets, no new NSGA-II run. Recommended task types: data-analysis, answer-question.
+
+## Rerun MI-ATP NSGA-II with richer stimulus + PD-rate floor to fix Strong-Bialek bits/s = 0
+ID: S-0123-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+Source paper: 10.1103_PhysRevLett.80.197
+Categories: compartmental-modeling, retinal-ganglion-cell, direction-selectivity
+Date added: 2026-05-24
+
+t0123&#x27;s post-hoc Strong-Bialek bits/s = 0 for all 10 top-Pareto cells traces to a protocol mismatch: count-MI converged on cells producing ~3 PD spikes per 1400 ms trial (silence-guard boundary) where binary spike-time words are degenerate at every T &lt;= 100 ms; Niven 2007 comparison returns Insufficient evidence. Action: fork the t0123 substrate (same 68-d Bed B + 14-d morph, same two-tier MI + Sengupta ATP recipe) with three upgrades: (a) extend trial length to 3000-5000 ms so the 1/T extrapolation populates non-trivial spike-time words; (b) tighten the silence guard to a PD-rate floor pd_rate_hz&gt;=10 Hz so count-MI cannot exploit the silence boundary; (c) optionally add NMDA-mediated burst priming (t0062-style) to lift baseline firing into the spike-time-informative regime. Predict bits/s becomes positive and the Niven comparison becomes testable. Budget ~$5-8 Vast.ai EPYC. Recommended task types: experiment-run, data-analysis, comparative-analysis.
+
+## 3-objective NSGA-II maximising (MI, DSI) and minimising ATP-per-spike on same 68-d substrate
+ID: S-0123-02
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+Source paper: 10.1371_journal.pcbi.1000840
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell
+Date added: 2026-05-24
+
+t0123 decoupled function (MI) from selectivity (DSI) to make the Pareto front comparable to Niven 2007; side effect: Pareto-front DSI = 0.13-0.40, well below t0122&#x27;s high-DSI front (DSI = 0.97), so the project&#x27;s first-question DSGC selectivity mission is not served. Distinct from S-0097-04 (2-obj DSI + MI without ATP): this is a 3-objective extension that asks whether MI, DSI, and ATP-per-spike are mutually compatible or fundamentally trade off. Action: fork the t0123 evaluator to emit out[&#x27;F&#x27;] = [-mi_count_bits, -dsi_vector_sum, +atp_per_spike_molecules] (n_obj=3); keep all hard constants (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, N_DIRECTIONS=4, COST_CAP_USD=6.0, _POOL_RESTART_EVERY=10, HV_PLATEAU_AUTO_STOP=False); adjust REF_POINT_HV / HV_UTOPIA to 3 entries; draw a fresh non-round GA seed; run on Vast.ai EPYC. Predict the surface either separates high-DSI / low-ATP and high-MI / low-ATP clusters or collapses to a 2-d ridge. Recommended task types: experiment-run, data-analysis.
+
+## Vm-trace deep-dive of t0123 cell 2 (MI=1.459, PD=2.86 Hz) to explain near-silent count-MI mechanism
+ID: S-0123-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+Categories: compartmental-modeling, direction-selectivity, dendritic-computation
+Date added: 2026-05-24
+
+Cell 2 on the t0123 Pareto front reaches the highest mi_count_bits = 1.459 (73% of the log2(4) = 2.0 ceiling) at PD-rate 2.86 Hz, DSI 0.316. How does a near-silent cell produce a clean spike-count direction signal across 4 antipodal directions? Mirroring the t0084 cell-767 deep-dive, this task should single-cell-resimulate cell 2 from its 68-d vector under the EPSP_PASSIVE / IPSP_PASSIVE / FULL standard mode trio (memory `feedback_dsgc_measurement_protocol.md`), record somatic Vm and per-compartment g_E / g_I at each direction, identify which subset of (channel densities, synapse placement, morphology bf=0.236, soma-share 94.5%) is driving the across-direction spike-count variance, and produce a one-cell mechanism narrative. Single-cell, no NSGA-II; local-CPU runtime &lt;2 h. Output: one answer asset on the mechanism plus a Vm / g_E / g_I trace figure pack. Recommended task types: experiment-run, data-analysis, answer-question.
+
+## Verify Carter-Bean 2009 ATP/AP/cm benchmark and replace plan-quoted 2.41e21 ATP/cm typo
+ID: S-0123-04
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+Categories: compartmental-modeling, voltage-gated-channels
+Date added: 2026-05-24
+
+t0123&#x27;s plan quoted the Carter-Bean 2009 Purkinje-cell ATP/AP/cm benchmark as 2.41e21 ATP/cm -- 13 orders off plausible physics. Back-of-envelope (peak seg.ina ~ 100 mA/cm^2, segment area ~ 1e-8 cm^2, 2 ms AP window, e = 1.602e-19 C, 3 Na+/ATP) gives ~3e9 ATP/AP/cm; t0123&#x27;s observed 6.15e8 ATP/cm on the canonical Bed B cell is within an order of magnitude of that estimate. The smoke gate fell back to the plausibility band [1e6, 1e14] ATP/cm rather than the strict +/-30% Carter-Bean band; intervention/carter_bean_benchmark_mismatch.md was filed. Carter and Bean 2009 (DOI 10.1016/j.neuron.2009.12.011) is NOT in the project corpus. Action: (1) download the paper via /add-paper; (2) extract the correct ATP/AP/cm value; (3) write a t0097-style correction overlay updating the metabolic_energy_atp_per_spike entry; (4) update the smoke-gate strict band in future ATP NSGA-II templates. Recommended task types: download-paper, correction.
+
+## Fix pymoo NSGA-II dill checkpoint failure to enable resume-from-checkpoint across the lineage
+ID: S-0123-05
+Status: active
+Priority: medium
+Kind: technique
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+Categories: compartmental-modeling
+Date added: 2026-05-24
+
+Every generation of t0123 emitted a &#x27;dill checkpoint failed&#x27; warning from the pymoo NSGA-II driver&#x27;s pool-pickling path. JSON cell_trace + all_evaluations are still written each gen so no data is lost, but resume-from-checkpoint is non-functional: a Vast.ai preemption at gen 47 cannot be resumed. Affects every NSGA-II task in the t0102-t0123 lineage. Action: (1) reproduce locally on a 1-gen pop=8 mini-run; (2) identify the un-picklable object (likely a NEURON HOC handle in the ProcessPoolExecutor worker or a closure in _evaluate); (3) implement either (a) a custom Algorithm.serialize that strips un-picklable fields before dill, or (b) a JSON-based checkpoint storing population genotypes + per-cell eval cache that rehydrates a fresh Algorithm on resume; (4) add a resume_from_checkpoint integration test. Infrastructure task touching arf/scripts plus the shared NSGA-II driver. Recommended task types: infrastructure-setup, write-library.
       </content>
     </section>
   </sections>

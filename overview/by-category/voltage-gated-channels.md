@@ -6,7 +6,7 @@ Ion channels whose opening probability depends on membrane voltage.
 
 **Detail pages**: [Papers (30)](../papers/by-category/voltage-gated-channels.md) | [Answers
 (10)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(99)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(100)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
 (2)](../predictions/by-category/voltage-gated-channels.md)
 
@@ -1815,7 +1815,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (84 open, 15 closed)
+## Suggestions (84 open, 16 closed)
 
 <details>
 <summary>🧪 <strong>3-objective NSGA-II extension: maximise DSI, maximise PD-rate,
@@ -1853,6 +1853,27 @@ NSGA-II 60 gens on the same EPYC substrate. Prediction: membrane-area minimisati
 DIFFERENT cell cohort (smaller diameter / longer length trade-off vs t0122's small diameter
 AND small length) but a SIMILAR DSI ceiling (within 0.01 absolute of t0122's 0.9753).
 Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Verify Carter-Bean 2009 ATP/AP/cm benchmark and replace
+plan-quoted 2.41e21 ATP/cm typo</strong> (S-0123-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+t0123's plan quoted the Carter-Bean 2009 Purkinje-cell ATP/AP/cm benchmark as 2.41e21 ATP/cm
+-- 13 orders off plausible physics. Back-of-envelope (peak seg.ina ~ 100 mA/cm^2, segment area
+~ 1e-8 cm^2, 2 ms AP window, e = 1.602e-19 C, 3 Na+/ATP) gives ~3e9 ATP/AP/cm; t0123's
+observed 6.15e8 ATP/cm on the canonical Bed B cell is within an order of magnitude of that
+estimate. The smoke gate fell back to the plausibility band [1e6, 1e14] ATP/cm rather than the
+strict +/-30% Carter-Bean band; intervention/carter_bean_benchmark_mismatch.md was filed.
+Carter and Bean 2009 (DOI 10.1016/j.neuron.2009.12.011) is NOT in the project corpus. Action:
+(1) download the paper via /add-paper; (2) extract the correct ATP/AP/cm value; (3) write a
+t0097-style correction overlay updating the metabolic_energy_atp_per_spike entry; (4) update
+the smoke-gate strict band in future ATP NSGA-II templates. Recommended task types:
+download-paper, correction.
 
 </details>
 
@@ -2004,23 +2025,6 @@ refuting the hypothesis that DSI maximisation drives the optimiser to fragile pa
 extremes. Recipe: K=50-200 +/-10% perturbations per Pareto point; minimise SD of DSI. Budget:
 36-72 h Vast.ai EPYC at $0.30/h, total $11-22 (multiplies t0091's per-individual cost by
 K=50-200) — request explicit $25 budget cap or reduce population/generations.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising MI and minimising ATP-per-spike
-(bits-per-ATP front)</strong> (S-0097-05)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0097_multi_obj_optim](../../tasks/t0097_multi_obj_optim/)
-
-Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front
-directly comparable to Niven et al. 2007's empirical fly-photoreceptor 200-1000 bits/s
-super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the
-literature, so the experiment closes a genuine open question. Tradeoff: this experiment does
-not directly serve the project's first-question DSGC mission (DSI is not optimised); ranked
-medium because it serves a broader scientific question rather than the project's specific
-deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
 
 </details>
 

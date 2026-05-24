@@ -5,11 +5,11 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (45)](../papers/by-category/compartmental-modeling.md) | [Answers
-(37)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(407)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(38)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(412)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (14)](../libraries/by-category/compartmental-modeling.md) | [Predictions
-(13)](../predictions/by-category/compartmental-modeling.md)
+(14)](../predictions/by-category/compartmental-modeling.md)
 
 ---
 
@@ -2442,7 +2442,7 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 
-## Answers (37)
+## Answers (38)
 
 <details>
 <summary><strong>Is the procedural morphology generator's asymmetry transform
@@ -2496,6 +2496,20 @@ Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose to
 band. Adding the cytoplasm-volume cost objective pushed the optimiser toward morphologies
 consistent with the Cajal wiring-economy principle. This is evidence in favour of using
 cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
+
+</details>
+
+<details>
+<summary><strong>Where does the DSGC bits-per-ATP front sit relative to Niven 2007's
+fly-photoreceptor curve, and does it match the Niven super-linear
+cost-vs-information scaling?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-24 | **Full answer**:
+[`dsgc-bits-per-atp-vs-niven-2007`](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/answer/dsgc-bits-per-atp-vs-niven-2007/)
+
+Insufficient evidence. The t0123 single-seed NSGA-II run produced 10 top-Pareto cells under
+the post-hoc Strong-Bialek 1998 direct method; the log-log fit exponent p = n/a at r^2 = n/a
+is too noisy (n < 10 or r^2 < 0.5) to make a definitive statement about super-linear scaling.
 
 </details>
 
@@ -3215,7 +3229,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (367 open, 40 closed)
+## Suggestions (371 open, 41 closed)
 
 <details>
 <summary>🔧 <strong>Re-render t0112 / t0114 / t0115 top-50 morphology grids with
@@ -3535,6 +3549,111 @@ t0122's guard, recompute the LEGIT acceptance rate, and report the delta vs t011
 1.19%; (3) decide and document the canonical project-default guard going forward. Pure
 post-hoc analysis on existing assets, no new NSGA-II run. Recommended task types:
 data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rerun MI-ATP NSGA-II with richer stimulus + PD-rate floor to
+fix Strong-Bialek bits/s = 0</strong> (S-0123-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+t0123's post-hoc Strong-Bialek bits/s = 0 for all 10 top-Pareto cells traces to a protocol
+mismatch: count-MI converged on cells producing ~3 PD spikes per 1400 ms trial (silence-guard
+boundary) where binary spike-time words are degenerate at every T <= 100 ms; Niven 2007
+comparison returns Insufficient evidence. Action: fork the t0123 substrate (same 68-d Bed B +
+14-d morph, same two-tier MI + Sengupta ATP recipe) with three upgrades: (a) extend trial
+length to 3000-5000 ms so the 1/T extrapolation populates non-trivial spike-time words; (b)
+tighten the silence guard to a PD-rate floor pd_rate_hz>=10 Hz so count-MI cannot exploit the
+silence boundary; (c) optionally add NMDA-mediated burst priming (t0062-style) to lift
+baseline firing into the spike-time-informative regime. Predict bits/s becomes positive and
+the Niven comparison becomes testable. Budget ~$5-8 Vast.ai EPYC. Recommended task types:
+experiment-run, data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>3-objective NSGA-II maximising (MI, DSI) and minimising
+ATP-per-spike on same 68-d substrate</strong> (S-0123-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+t0123 decoupled function (MI) from selectivity (DSI) to make the Pareto front comparable to
+Niven 2007; side effect: Pareto-front DSI = 0.13-0.40, well below t0122's high-DSI front (DSI
+= 0.97), so the project's first-question DSGC selectivity mission is not served. Distinct from
+S-0097-04 (2-obj DSI + MI without ATP): this is a 3-objective extension that asks whether MI,
+DSI, and ATP-per-spike are mutually compatible or fundamentally trade off. Action: fork the
+t0123 evaluator to emit out['F'] = [-mi_count_bits, -dsi_vector_sum, +atp_per_spike_molecules]
+(n_obj=3); keep all hard constants (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, N_DIRECTIONS=4,
+COST_CAP_USD=6.0, _POOL_RESTART_EVERY=10, HV_PLATEAU_AUTO_STOP=False); adjust REF_POINT_HV /
+HV_UTOPIA to 3 entries; draw a fresh non-round GA seed; run on Vast.ai EPYC. Predict the
+surface either separates high-DSI / low-ATP and high-MI / low-ATP clusters or collapses to a
+2-d ridge. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of t0123 cell 2 (MI=1.459, PD=2.86 Hz) to
+explain near-silent count-MI mechanism</strong> (S-0123-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+Cell 2 on the t0123 Pareto front reaches the highest mi_count_bits = 1.459 (73% of the log2(4)
+= 2.0 ceiling) at PD-rate 2.86 Hz, DSI 0.316. How does a near-silent cell produce a clean
+spike-count direction signal across 4 antipodal directions? Mirroring the t0084 cell-767
+deep-dive, this task should single-cell-resimulate cell 2 from its 68-d vector under the
+EPSP_PASSIVE / IPSP_PASSIVE / FULL standard mode trio (memory
+`feedback_dsgc_measurement_protocol.md`), record somatic Vm and per-compartment g_E / g_I at
+each direction, identify which subset of (channel densities, synapse placement, morphology
+bf=0.236, soma-share 94.5%) is driving the across-direction spike-count variance, and produce
+a one-cell mechanism narrative. Single-cell, no NSGA-II; local-CPU runtime <2 h. Output: one
+answer asset on the mechanism plus a Vm / g_E / g_I trace figure pack. Recommended task types:
+experiment-run, data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Verify Carter-Bean 2009 ATP/AP/cm benchmark and replace
+plan-quoted 2.41e21 ATP/cm typo</strong> (S-0123-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+t0123's plan quoted the Carter-Bean 2009 Purkinje-cell ATP/AP/cm benchmark as 2.41e21 ATP/cm
+-- 13 orders off plausible physics. Back-of-envelope (peak seg.ina ~ 100 mA/cm^2, segment area
+~ 1e-8 cm^2, 2 ms AP window, e = 1.602e-19 C, 3 Na+/ATP) gives ~3e9 ATP/AP/cm; t0123's
+observed 6.15e8 ATP/cm on the canonical Bed B cell is within an order of magnitude of that
+estimate. The smoke gate fell back to the plausibility band [1e6, 1e14] ATP/cm rather than the
+strict +/-30% Carter-Bean band; intervention/carter_bean_benchmark_mismatch.md was filed.
+Carter and Bean 2009 (DOI 10.1016/j.neuron.2009.12.011) is NOT in the project corpus. Action:
+(1) download the paper via /add-paper; (2) extract the correct ATP/AP/cm value; (3) write a
+t0097-style correction overlay updating the metabolic_energy_atp_per_spike entry; (4) update
+the smoke-gate strict band in future ATP NSGA-II templates. Recommended task types:
+download-paper, correction.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Fix pymoo NSGA-II dill checkpoint failure to enable
+resume-from-checkpoint across the lineage</strong> (S-0123-05)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+Every generation of t0123 emitted a 'dill checkpoint failed' warning from the pymoo NSGA-II
+driver's pool-pickling path. JSON cell_trace + all_evaluations are still written each gen so
+no data is lost, but resume-from-checkpoint is non-functional: a Vast.ai preemption at gen 47
+cannot be resumed. Affects every NSGA-II task in the t0102-t0123 lineage. Action: (1)
+reproduce locally on a 1-gen pop=8 mini-run; (2) identify the un-picklable object (likely a
+NEURON HOC handle in the ProcessPoolExecutor worker or a closure in _evaluate); (3) implement
+either (a) a custom Algorithm.serialize that strips un-picklable fields before dill, or (b) a
+JSON-based checkpoint storing population genotypes + per-cell eval cache that rehydrates a
+fresh Algorithm on resume; (4) add a resume_from_checkpoint integration test. Infrastructure
+task touching arf/scripts plus the shared NSGA-II driver. Recommended task types:
+infrastructure-setup, write-library.
 
 </details>
 
@@ -5619,23 +5738,6 @@ against Dhingra & Smith 2004's ~60% gray-level loss benchmark. Caveat: the proje
 output before launching the full MOBO. Budget: 18-36 h Vast.ai EPYC at $0.30/h, total $5-11.
 MI is post-hoc on simulation output, so cost overhead is mostly in extra population to
 populate the MI Pareto direction. Priority dropped to medium pending recipe validation.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising MI and minimising ATP-per-spike
-(bits-per-ATP front)</strong> (S-0097-05)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0097_multi_obj_optim](../../tasks/t0097_multi_obj_optim/)
-
-Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front
-directly comparable to Niven et al. 2007's empirical fly-photoreceptor 200-1000 bits/s
-super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the
-literature, so the experiment closes a genuine open question. Tradeoff: this experiment does
-not directly serve the project's first-question DSGC mission (DSI is not optimised); ranked
-medium because it serves a broader scientific question rather than the project's specific
-deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
 
 </details>
 

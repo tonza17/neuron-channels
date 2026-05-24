@@ -1,18 +1,18 @@
-# Machine Provisioning (16 machines)
+# Machine Provisioning (17 machines)
 
-**16** machines provisioned across **16** tasks. Total cost: **$63.20**.
+**17** machines provisioned across **17** tasks. Total cost: **$64.39**.
 
-**10** failed provisioning attempts wasted **$0.07** (38.5% failure rate).
+**10** failed provisioning attempts wasted **$0.07** (37.0% failure rate).
 
 ## Summary
 
 | Field | Value |
 |-------|-------|
-| Total machines | 16 |
+| Total machines | 17 |
 | Total failed attempts | 10 |
-| Failure rate | 38.5% |
-| Avg provisioning time | 690s |
-| Total cost | $63.20 |
+| Failure rate | 37.0% |
+| Avg provisioning time | 672s |
+| Total cost | $64.39 |
 | Total wasted cost | $0.07 |
 
 ## Cost by GPU Tier
@@ -28,6 +28,7 @@
 | RTX PRO 4000 (idle, unused) | $3.14 |
 | RTX 3090 (idle, unused; CPU-only NEURON workload) | $1.99 |
 | (idle, unused; CPU-only NEURON workload) | $1.59 |
+| RTX 3060 (2x, idle, unused; CPU-only NEURON workload) | $1.19 |
 | Quadro P4000 | $1.06 |
 | RTX PRO 4000 (idle, unused; CPU-only NEURON workload) | $0.65 |
 | Titan V (idle, unused; CPU-only NEURON workload) | $0.50 |
@@ -68,3 +69,4 @@
 | [`t0114_seed7755_no_autostop`](../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | 1 | $1.13 | 0 | RTX A5000 (idle, unused; CPU-only NEURON workload) |
 | [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | 1 | $2.50 | 1 | RTX A5000 (idle, unused; CPU-only NEURON workload) |
 | [`t0122_dsi_cytoplasm_volume_nsga2`](../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | 1 | $0.50 | 1 | Titan V (idle, unused; CPU-only NEURON workload) |
+| [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | 1 | $1.19 | 0 | RTX 3060 (2x, idle, unused; CPU-only NEURON workload) |

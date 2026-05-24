@@ -6,10 +6,10 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (47)](../papers/by-category/direction-selectivity.md) | [Answers
 (33)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(335)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(338)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (3)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
-(13)](../predictions/by-category/direction-selectivity.md)
+(14)](../predictions/by-category/direction-selectivity.md)
 
 ---
 
@@ -3223,7 +3223,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (300 open, 35 closed)
+## Suggestions (303 open, 35 closed)
 
 <details>
 <summary>🧪 <strong>Re-run seeds 77 and 2247 with HV-plateau auto-stop DISABLED to
@@ -3402,6 +3402,69 @@ t0122's guard, recompute the LEGIT acceptance rate, and report the delta vs t011
 1.19%; (3) decide and document the canonical project-default guard going forward. Pure
 post-hoc analysis on existing assets, no new NSGA-II run. Recommended task types:
 data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rerun MI-ATP NSGA-II with richer stimulus + PD-rate floor to
+fix Strong-Bialek bits/s = 0</strong> (S-0123-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+t0123's post-hoc Strong-Bialek bits/s = 0 for all 10 top-Pareto cells traces to a protocol
+mismatch: count-MI converged on cells producing ~3 PD spikes per 1400 ms trial (silence-guard
+boundary) where binary spike-time words are degenerate at every T <= 100 ms; Niven 2007
+comparison returns Insufficient evidence. Action: fork the t0123 substrate (same 68-d Bed B +
+14-d morph, same two-tier MI + Sengupta ATP recipe) with three upgrades: (a) extend trial
+length to 3000-5000 ms so the 1/T extrapolation populates non-trivial spike-time words; (b)
+tighten the silence guard to a PD-rate floor pd_rate_hz>=10 Hz so count-MI cannot exploit the
+silence boundary; (c) optionally add NMDA-mediated burst priming (t0062-style) to lift
+baseline firing into the spike-time-informative regime. Predict bits/s becomes positive and
+the Niven comparison becomes testable. Budget ~$5-8 Vast.ai EPYC. Recommended task types:
+experiment-run, data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>3-objective NSGA-II maximising (MI, DSI) and minimising
+ATP-per-spike on same 68-d substrate</strong> (S-0123-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+t0123 decoupled function (MI) from selectivity (DSI) to make the Pareto front comparable to
+Niven 2007; side effect: Pareto-front DSI = 0.13-0.40, well below t0122's high-DSI front (DSI
+= 0.97), so the project's first-question DSGC selectivity mission is not served. Distinct from
+S-0097-04 (2-obj DSI + MI without ATP): this is a 3-objective extension that asks whether MI,
+DSI, and ATP-per-spike are mutually compatible or fundamentally trade off. Action: fork the
+t0123 evaluator to emit out['F'] = [-mi_count_bits, -dsi_vector_sum, +atp_per_spike_molecules]
+(n_obj=3); keep all hard constants (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, N_DIRECTIONS=4,
+COST_CAP_USD=6.0, _POOL_RESTART_EVERY=10, HV_PLATEAU_AUTO_STOP=False); adjust REF_POINT_HV /
+HV_UTOPIA to 3 entries; draw a fresh non-round GA seed; run on Vast.ai EPYC. Predict the
+surface either separates high-DSI / low-ATP and high-MI / low-ATP clusters or collapses to a
+2-d ridge. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of t0123 cell 2 (MI=1.459, PD=2.86 Hz) to
+explain near-silent count-MI mechanism</strong> (S-0123-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+Cell 2 on the t0123 Pareto front reaches the highest mi_count_bits = 1.459 (73% of the log2(4)
+= 2.0 ceiling) at PD-rate 2.86 Hz, DSI 0.316. How does a near-silent cell produce a clean
+spike-count direction signal across 4 antipodal directions? Mirroring the t0084 cell-767
+deep-dive, this task should single-cell-resimulate cell 2 from its 68-d vector under the
+EPSP_PASSIVE / IPSP_PASSIVE / FULL standard mode trio (memory
+`feedback_dsgc_measurement_protocol.md`), record somatic Vm and per-compartment g_E / g_I at
+each direction, identify which subset of (channel densities, synapse placement, morphology
+bf=0.236, soma-share 94.5%) is driving the across-direction spike-count variance, and produce
+a one-cell mechanism narrative. Single-cell, no NSGA-II; local-CPU runtime <2 h. Output: one
+answer asset on the mechanism plus a Vm / g_E / g_I trace figure pack. Recommended task types:
+experiment-run, data-analysis, answer-question.
 
 </details>
 

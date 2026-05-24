@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-335 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **300 open** (57
-high, 220 medium, 23 low), **35 closed**.
+338 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **303 open** (58
+high, 222 medium, 23 low), **35 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1308,6 +1308,33 @@ Recommended task types: experiment-run, data-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Rerun MI-ATP NSGA-II with richer stimulus + PD-rate floor to
+fix Strong-Bialek bits/s = 0</strong> (S-0123-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0123-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1103_PhysRevLett.80.197`](../../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/paper/10.1103_PhysRevLett.80.197/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0123's post-hoc Strong-Bialek bits/s = 0 for all 10 top-Pareto cells traces to a protocol
+mismatch: count-MI converged on cells producing ~3 PD spikes per 1400 ms trial (silence-guard
+boundary) where binary spike-time words are degenerate at every T <= 100 ms; Niven 2007
+comparison returns Insufficient evidence. Action: fork the t0123 substrate (same 68-d Bed B +
+14-d morph, same two-tier MI + Sengupta ATP recipe) with three upgrades: (a) extend trial
+length to 3000-5000 ms so the 1/T extrapolation populates non-trivial spike-time words; (b)
+tighten the silence guard to a PD-rate floor pd_rate_hz>=10 Hz so count-MI cannot exploit the
+silence boundary; (c) optionally add NMDA-mediated burst priming (t0062-style) to lift
+baseline firing into the spike-time-informative regime. Predict bits/s becomes positive and
+the Niven comparison becomes testable. Budget ~$5-8 Vast.ai EPYC. Recommended task types:
+experiment-run, data-analysis, comparative-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Substrate regression check on the t0076 iter-424 vector mapped
 to the v3 54-d parameter space</strong> (S-0080-02)</summary>
 
@@ -1530,6 +1557,33 @@ length and diameter nonlinearly. Run a 3x3 grid (length in {0.5, 1.0, 2.0} x dia
 and classify each cell as cable-limited, spike-amplified, or threshold-transition. Distinct
 from S-0030-04 (same approach on t0022 testbed, which was pinned at DSI=1.000 and cannot
 resolve the effect). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>3-objective NSGA-II maximising (MI, DSI) and minimising
+ATP-per-spike on same 68-d substrate</strong> (S-0123-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0123-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000840`](../../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/paper/10.1371_journal.pcbi.1000840/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0123 decoupled function (MI) from selectivity (DSI) to make the Pareto front comparable to
+Niven 2007; side effect: Pareto-front DSI = 0.13-0.40, well below t0122's high-DSI front (DSI
+= 0.97), so the project's first-question DSGC selectivity mission is not served. Distinct from
+S-0097-04 (2-obj DSI + MI without ATP): this is a 3-objective extension that asks whether MI,
+DSI, and ATP-per-spike are mutually compatible or fundamentally trade off. Action: fork the
+t0123 evaluator to emit out['F'] = [-mi_count_bits, -dsi_vector_sum, +atp_per_spike_molecules]
+(n_obj=3); keep all hard constants (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, N_DIRECTIONS=4,
+COST_CAP_USD=6.0, _POOL_RESTART_EVERY=10, HV_PLATEAU_AUTO_STOP=False); adjust REF_POINT_HV /
+HV_UTOPIA to 3 entries; draw a fresh non-round GA seed; run on Vast.ai EPYC. Predict the
+surface either separates high-DSI / low-ATP and high-MI / low-ATP clusters or collapses to a
+2-d ridge. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -6817,6 +6871,33 @@ confirmed if NaR_high has > 30% of trials firing at angle 90-180 deg vs baseline
 pure-data analysis, no new sims (~15 min coding). If confirmed, NaR is a natural candidate for
 AIS-localised follow-up since AIS-localised NaR could selectively boost ND firing without
 affecting PD.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of t0123 cell 2 (MI=1.459, PD=2.86 Hz) to
+explain near-silent count-MI mechanism</strong> (S-0123-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0123-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+Cell 2 on the t0123 Pareto front reaches the highest mi_count_bits = 1.459 (73% of the log2(4)
+= 2.0 ceiling) at PD-rate 2.86 Hz, DSI 0.316. How does a near-silent cell produce a clean
+spike-count direction signal across 4 antipodal directions? Mirroring the t0084 cell-767
+deep-dive, this task should single-cell-resimulate cell 2 from its 68-d vector under the
+EPSP_PASSIVE / IPSP_PASSIVE / FULL standard mode trio (memory
+`feedback_dsgc_measurement_protocol.md`), record somatic Vm and per-compartment g_E / g_I at
+each direction, identify which subset of (channel densities, synapse placement, morphology
+bf=0.236, soma-share 94.5%) is driving the across-direction spike-count variance, and produce
+a one-cell mechanism narrative. Single-cell, no NSGA-II; local-CPU runtime <2 h. Output: one
+answer asset on the mechanism plus a Vm / g_E / g_I trace figure pack. Recommended task types:
+experiment-run, data-analysis, answer-question.
 
 </details>
 

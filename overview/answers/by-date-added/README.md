@@ -1,12 +1,12 @@
 # Answers by Date Added
 
-45 answer(s) grouped by creation date.
+46 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-05-24 (3)
+## 2026-05-24 (4)
 
 <details>
 <summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
@@ -99,6 +99,33 @@ the elevated point estimate.
 | **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0113_t0106_seed2247_replicate`](../../../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md), [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
 | **URL sources** | — |
 | **Created by** | [`t0121_5seed_substrate_rate_canonical_report`](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
+
+</details>
+
+<details>
+<summary><strong>Where does the DSGC bits-per-ATP front sit relative to Niven 2007's
+fly-photoreceptor curve, and does it match the Niven super-linear
+cost-vs-information scaling?</strong></summary>
+
+**Confidence**: medium
+
+Insufficient evidence. The t0123 single-seed NSGA-II run produced 10 top-Pareto cells under
+the post-hoc Strong-Bialek 1998 direct method; the log-log fit exponent p = n/a at r^2 = n/a
+is too noisy (n < 10 or r^2 < 0.5) to make a definitive statement about super-linear scaling.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/answer/dsgc-bits-per-atp-vs-niven-2007/full_answer.md) |
+| **ID** | [`dsgc-bits-per-atp-vs-niven-2007`](../../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/answer/dsgc-bits-per-atp-vs-niven-2007/) |
+| **Question** | Where does the DSGC bits-per-ATP front sit relative to Niven 2007's fly-photoreceptor curve, and does it match the Niven super-linear cost-vs-information scaling? |
+| **Methods** | `code-experiment`, `papers`, `internet` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-24 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Paper sources** | `10.1103_PhysRevLett.80.197` |
+| **Task sources** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md), [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **URL sources** | [url 1](https://doi.org/10.1242/jeb.005249), [url 2](https://doi.org/10.1103/PhysRevLett.80.197) |
+| **Created by** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
 
 </details>
 

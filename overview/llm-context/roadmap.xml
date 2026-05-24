@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-24T06:32:06Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-24T21:18:32Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>568131</char_count>
-    <byte_count>568672</byte_count>
-    <estimated_tokens>142032</estimated_tokens>
+    <char_count>574622</char_count>
+    <byte_count>575163</byte_count>
+    <estimated_tokens>143655</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -227,9 +227,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0120_morph_generator_geometry_audit</id>
         <id>t0121_5seed_substrate_rate_canonical_report</id>
         <id>t0122_dsi_cytoplasm_volume_nsga2</id>
+        <id>t0123_bedb_mi_atp_per_spike_nsga2</id>
       </source_ids>
       <content>
-Completed tasks: 115
+Completed tasks: 116
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -920,6 +921,12 @@ ID: t0122_dsi_cytoplasm_volume_nsga2
 Completed: 2026-05-24
 Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, $6 cap. Gated on t0120 audit.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0122_dsi_cytoplasm_volume_nsga2&quot; date_completed: &quot;2026-05-24&quot; status: &quot;complete&quot; --- Results Summary: DSI vs Cytoplasm-Volume NSGA-II Summary 68-d Bed B + 14-d morphology NSGA-II with cytoplasm volume replacing PD-rate as the second objective. 60 generations on Vast.ai EPYC 7K62 48-core (instance 37546422), GA seed 1524, 5760 cells evaluated. **Cuntz 2010 falsifiable prediction is CONFIRMED: 10/10 top-DSI cells fall in the predicted balancing-factor `[0.2, 0.7]` band**, all clustering at `bf = 0.500`. Best LEGIT DSI 0.9753 at cytoplasm volume 250.2 um^3 (two orders of magnitude smaller than t0091&#x27;s ~30000 um^3 cells). Total cost $0.50 of $6 cap (8.3%)...
+
+## NSGA-II maximising MI and minimising ATP-per-spike (Bed B + 14-d morph)
+ID: t0123_bedb_mi_atp_per_spike_nsga2
+Completed: 2026-05-24
+Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective MI vs ATP-per-spike (Strong 1998 + Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 4-direction protocol, $6 cap.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0123_bedb_mi_atp_per_spike_nsga2&quot; status: &quot;completed&quot; date_completed: &quot;2026-05-24&quot; --- Results Summary: NSGA-II MI vs ATP-per-Spike (Bed B + 14-d Morph) Summary 68-d NSGA-II (54-d electrophys + 14-d morphology) on Bed B at GA seed 441, pop=96, N_EVAL_SEEDS=3, 4 antipodal directions, ran to gen 60 ceiling cleanly. The two-tier MI estimator surfaced a real discrepancy: count-MI hit **1.459 bits** at the high-MI corner while Strong-Bialek direct-method **bits/s = 0.0 for all 10 top Pareto cells**, because the optimiser exploited count-MI at the silence-guard boundary (~3 PD spikes/trial) where spike-time information is degenerate. Metrics * **Hypervolume gain**...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -1303,11 +1310,12 @@ For each condition, compute:
         <id>pooled-all-cells-displacement-from-init-full-pool</id>
         <id>pooled-all-cells-truncated-cohort-artefact-test</id>
         <id>cuntz-balancing-factor-prediction-check</id>
+        <id>dsgc-bits-per-atp-vs-niven-2007</id>
         <id>morphology-generator-geometry-consistency</id>
         <id>substrate-rate-5seed-canonical</id>
       </source_ids>
       <content>
-Answers: 45
+Answers: 46
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1648,6 +1656,14 @@ Categories: compartmental-modeling, dendritic-computation, retinal-ganglion-cell
 
 Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose top-10 cells (ranked by DSI) place 10 of 10 (finite bf) cells inside the Cuntz 2010 [0.2, 0.7] empirical band. Adding the cytoplasm-volume cost objective pushed the optimiser toward morphologies consistent with the Cajal wiring-economy principle. This is evidence in favour of using cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
 
+## Where does the DSGC bits-per-ATP front sit relative to Niven 2007&#x27;s fly-photoreceptor curve, and does it match the Niven super-linear cost-vs-information scaling?
+ID: dsgc-bits-per-atp-vs-niven-2007
+Created by: t0123_bedb_mi_atp_per_spike_nsga2 on 2026-05-24
+Confidence: medium
+Categories: compartmental-modeling, dendritic-computation, retinal-ganglion-cell
+
+Insufficient evidence. The t0123 single-seed NSGA-II run produced 10 top-Pareto cells under the post-hoc Strong-Bialek 1998 direct method; the log-log fit exponent p = n/a at r^2 = n/a is too noisy (n &lt; 10 or r^2 &lt; 0.5) to make a definitive statement about super-linear scaling.
+
 ## Is the procedural morphology generator&#x27;s asymmetry transform geometrically consistent across the 15-20 sampled cells, and do its results invalidate prior NSGA-II runs?
 ID: morphology-generator-geometry-consistency
 Created by: t0120_morph_generator_geometry_audit on 2026-05-24
@@ -1727,6 +1743,7 @@ The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, 
         <id>S-0122-01</id>
         <id>S-0122-02</id>
         <id>S-0122-03</id>
+        <id>S-0123-01</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -2026,6 +2043,10 @@ The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, 
         <id>S-0122-05</id>
         <id>S-0122-06</id>
         <id>S-0122-07</id>
+        <id>S-0123-02</id>
+        <id>S-0123-03</id>
+        <id>S-0123-04</id>
+        <id>S-0123-05</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -2087,7 +2108,7 @@ The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, 
         <id>S-0120-04</id>
       </source_ids>
       <content>
-Open suggestions: 416
+Open suggestions: 421
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2494,6 +2515,13 @@ Priority: high
 Kind: experiment
 Source task: t0122_dsi_cytoplasm_volume_nsga2
 t0122&#x27;s 2-objective Pareto front is L-shaped (volume dominates because it is easy to minimise) and top-DSI cells have PD-rate 23-26 Hz, just below the 30 Hz strict-LEGIT floor; only the strict-LEGIT cohort (10 cells, distinct from top-10 by DSI) cleared the floor. Action: extend the t0122 evaluator to emit out[&#x27;F&#x27;] = [-dsi, -pd_rate_hz, +cytoplasm_volume_um3] (n_obj=3), keep other hard constants identical, draw a fresh non-round GA seed, run NSGA-II 60 gens on the same Vast.ai EPYC substrate; adjust REF_POINT_HV and HV_UTOPIA to 3 entries (DSI=0, PD=0, V=50000). Prediction: adding max-PD-rate shifts the Pareto frontier upward in PD, populates the strict-LEGIT cohort denser than t0122&#x27;s 10...
+
+## Rerun MI-ATP NSGA-II with richer stimulus + PD-rate floor to fix Strong-Bialek bits/s = 0
+ID: S-0123-01
+Priority: high
+Kind: experiment
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+t0123&#x27;s post-hoc Strong-Bialek bits/s = 0 for all 10 top-Pareto cells traces to a protocol mismatch: count-MI converged on cells producing ~3 PD spikes per 1400 ms trial (silence-guard boundary) where binary spike-time words are degenerate at every T &lt;= 100 ms; Niven 2007 comparison returns Insufficient evidence. Action: fork the t0123 substrate (same 68-d Bed B + 14-d morph, same two-tier MI + Sengupta ATP recipe) with three upgrades: (a) extend trial length to 3000-5000 ms so the 1/T extrapolation populates non-trivial spike-time words; (b) tighten the silence guard to a PD-rate floor pd_rate_hz&gt;=10 Hz so count-MI cannot exploit the silence boundary; (c) optionally add NMDA-mediated burst...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4587,6 +4615,34 @@ Priority: medium
 Kind: evaluation
 Source task: t0122_dsi_cytoplasm_volume_nsga2
 t0122 tightened the silence guard from t0115&#x27;s &#x27;total_mean_spikes &lt; 10&#x27; to &#x27;pd_spikes_sum &lt; 3&#x27; to handle the cytoplasm-minimisation tiny-cell regime. This makes the t0122 0.17% vs t0121 2.58% LEGIT comparison a lower bound on the substrate-tightness delta because of convention drift; the true delta could differ depending on how many t0121 cells the tighter guard would have excluded. Action: (1) document each task&#x27;s silence-guard convention in the t0102-t0122 lineage with file:line refs; (2) re-score t0115 seed-9354&#x27;s all_evaluations.json.gz under t0122&#x27;s guard, recompute the LEGIT acceptance rate, and report the delta vs t0115&#x27;s original 1.19%; (3) decide and document the canonical...
+
+## 3-objective NSGA-II maximising (MI, DSI) and minimising ATP-per-spike on same 68-d substrate
+ID: S-0123-02
+Priority: medium
+Kind: experiment
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+t0123 decoupled function (MI) from selectivity (DSI) to make the Pareto front comparable to Niven 2007; side effect: Pareto-front DSI = 0.13-0.40, well below t0122&#x27;s high-DSI front (DSI = 0.97), so the project&#x27;s first-question DSGC selectivity mission is not served. Distinct from S-0097-04 (2-obj DSI + MI without ATP): this is a 3-objective extension that asks whether MI, DSI, and ATP-per-spike are mutually compatible or fundamentally trade off. Action: fork the t0123 evaluator to emit out[&#x27;F&#x27;] = [-mi_count_bits, -dsi_vector_sum, +atp_per_spike_molecules] (n_obj=3); keep all hard constants (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, N_DIRECTIONS=4, COST_CAP_USD=6.0, _POOL_RESTART_EVERY=10...
+
+## Vm-trace deep-dive of t0123 cell 2 (MI=1.459, PD=2.86 Hz) to explain near-silent count-MI mechanism
+ID: S-0123-03
+Priority: medium
+Kind: experiment
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+Cell 2 on the t0123 Pareto front reaches the highest mi_count_bits = 1.459 (73% of the log2(4) = 2.0 ceiling) at PD-rate 2.86 Hz, DSI 0.316. How does a near-silent cell produce a clean spike-count direction signal across 4 antipodal directions? Mirroring the t0084 cell-767 deep-dive, this task should single-cell-resimulate cell 2 from its 68-d vector under the EPSP_PASSIVE / IPSP_PASSIVE / FULL standard mode trio (memory `feedback_dsgc_measurement_protocol.md`), record somatic Vm and per-compartment g_E / g_I at each direction, identify which subset of (channel densities, synapse placement, morphology bf=0.236, soma-share 94.5%) is driving the across-direction spike-count variance, and...
+
+## Verify Carter-Bean 2009 ATP/AP/cm benchmark and replace plan-quoted 2.41e21 ATP/cm typo
+ID: S-0123-04
+Priority: medium
+Kind: evaluation
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+t0123&#x27;s plan quoted the Carter-Bean 2009 Purkinje-cell ATP/AP/cm benchmark as 2.41e21 ATP/cm -- 13 orders off plausible physics. Back-of-envelope (peak seg.ina ~ 100 mA/cm^2, segment area ~ 1e-8 cm^2, 2 ms AP window, e = 1.602e-19 C, 3 Na+/ATP) gives ~3e9 ATP/AP/cm; t0123&#x27;s observed 6.15e8 ATP/cm on the canonical Bed B cell is within an order of magnitude of that estimate. The smoke gate fell back to the plausibility band [1e6, 1e14] ATP/cm rather than the strict +/-30% Carter-Bean band; intervention/carter_bean_benchmark_mismatch.md was filed. Carter and Bean 2009 (DOI 10.1016/j.neuron.2009.12.011) is NOT in the project corpus. Action: (1) download the paper via /add-paper; (2) extract the...
+
+## Fix pymoo NSGA-II dill checkpoint failure to enable resume-from-checkpoint across the lineage
+ID: S-0123-05
+Priority: medium
+Kind: technique
+Source task: t0123_bedb_mi_atp_per_spike_nsga2
+Every generation of t0123 emitted a &#x27;dill checkpoint failed&#x27; warning from the pymoo NSGA-II driver&#x27;s pool-pickling path. JSON cell_trace + all_evaluations are still written each gen so no data is lost, but resume-from-checkpoint is non-functional: a Vast.ai preemption at gen 47 cannot be resumed. Affects every NSGA-II task in the t0102-t0123 lineage. Action: (1) reproduce locally on a 1-gen pop=8 mini-run; (2) identify the un-picklable object (likely a NEURON HOC handle in the ProcessPoolExecutor worker or a closure in _evaluate); (3) implement either (a) a custom Algorithm.serialize that strips un-picklable fields before dill, or (b) a JSON-based checkpoint storing population genotypes +...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05

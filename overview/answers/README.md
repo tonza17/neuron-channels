@@ -1,6 +1,6 @@
-# Answers (45)
+# Answers (46)
 
-45 answer(s).
+46 answer(s).
 
 **Browse by view**: By category: [`cable-theory`](by-category/cable-theory.md),
 [`compartmental-modeling`](by-category/compartmental-modeling.md),
@@ -1199,6 +1199,33 @@ ms):
 | **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md), [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0084_t0081_cell_767_vm_trace_deepdive`](../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md), [`t0086_robustness_cluster_bio_comparison`](../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) |
 | **URL sources** | — |
 | **Created by** | [`t0088_recluster_marginals_and_vm_motifs`](../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
+
+</details>
+
+<details>
+<summary><strong>Where does the DSGC bits-per-ATP front sit relative to Niven 2007's
+fly-photoreceptor curve, and does it match the Niven super-linear
+cost-vs-information scaling?</strong></summary>
+
+**Confidence**: medium
+
+Insufficient evidence. The t0123 single-seed NSGA-II run produced 10 top-Pareto cells under
+the post-hoc Strong-Bialek 1998 direct method; the log-log fit exponent p = n/a at r^2 = n/a
+is too noisy (n < 10 or r^2 < 0.5) to make a definitive statement about super-linear scaling.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/answer/dsgc-bits-per-atp-vs-niven-2007/full_answer.md) |
+| **ID** | [`dsgc-bits-per-atp-vs-niven-2007`](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/answer/dsgc-bits-per-atp-vs-niven-2007/) |
+| **Question** | Where does the DSGC bits-per-ATP front sit relative to Niven 2007's fly-photoreceptor curve, and does it match the Niven super-linear cost-vs-information scaling? |
+| **Methods** | `code-experiment`, `papers`, `internet` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-24 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/) |
+| **Paper sources** | `10.1103_PhysRevLett.80.197` |
+| **Task sources** | [`t0097_multi_obj_optim`](../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md), [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **URL sources** | [url 1](https://doi.org/10.1242/jeb.005249), [url 2](https://doi.org/10.1103/PhysRevLett.80.197) |
+| **Created by** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
 
 </details>
 

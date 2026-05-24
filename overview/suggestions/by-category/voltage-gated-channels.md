@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-99 suggestion(s) in category
+100 suggestion(s) in category
 [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **84 open** (15
-high, 58 medium, 11 low), **15 closed**.
+high, 58 medium, 11 low), **16 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -552,29 +552,6 @@ only (96 different t0083 electrophys vectors), pop=96, 8 gens, $5 cap. Outcome (
 emerges -> anchor 1 was load-bearing alone. Outcome (b): no joint-pass -> warm-start diversity
 itself was load-bearing. Either narrows future morphology-extended NSGA-II design
 substantially. Cost ~$3.50 single seed.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising MI and minimising ATP-per-spike
-(bits-per-ATP front)</strong> (S-0097-05)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0097-05` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-08 |
-| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Source paper** | [`10.1103_PhysRevLett.80.197`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1103_PhysRevLett.80.197/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front
-directly comparable to Niven et al. 2007's empirical fly-photoreceptor 200-1000 bits/s
-super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the
-literature, so the experiment closes a genuine open question. Tradeoff: this experiment does
-not directly serve the project's first-question DSGC mission (DSI is not optimised); ranked
-medium because it serves a broader scientific question rather than the project's specific
-deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
 
 </details>
 
@@ -1802,6 +1779,33 @@ spikes before downstream retinal tasks depend on it.
 </details>
 
 <details>
+<summary>📊 <strong>Verify Carter-Bean 2009 ATP/AP/cm benchmark and replace
+plan-quoted 2.41e21 ATP/cm typo</strong> (S-0123-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0123-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0123's plan quoted the Carter-Bean 2009 Purkinje-cell ATP/AP/cm benchmark as 2.41e21 ATP/cm
+-- 13 orders off plausible physics. Back-of-envelope (peak seg.ina ~ 100 mA/cm^2, segment area
+~ 1e-8 cm^2, 2 ms AP window, e = 1.602e-19 C, 3 Na+/ATP) gives ~3e9 ATP/AP/cm; t0123's
+observed 6.15e8 ATP/cm on the canonical Bed B cell is within an order of magnitude of that
+estimate. The smoke gate fell back to the plausibility band [1e6, 1e14] ATP/cm rather than the
+strict +/-30% Carter-Bean band; intervention/carter_bean_benchmark_mismatch.md was filed.
+Carter and Bean 2009 (DOI 10.1016/j.neuron.2009.12.011) is NOT in the project corpus. Action:
+(1) download the paper via /add-paper; (2) extract the correct ATP/AP/cm value; (3) write a
+t0097-style correction overlay updating the metabolic_energy_atp_per_spike entry; (4) update
+the smoke-gate strict band in future ATP NSGA-II templates. Recommended task types:
+download-paper, correction.
+
+</details>
+
+<details>
 <summary>📊 <strong>Verify NaR broadening hypothesis: ND-lobe firing rescue at
 sub-threshold angles</strong> (S-0074-02)</summary>
 
@@ -2172,6 +2176,31 @@ PSP magnitudes per gNMDA. Goal: test whether NMDA addition closes the peak-rate 
 t0004 30 Hz target without breaking the DSI = 1.0 design from gabaMOD, in a
 minimal-from-scratch substrate (not the deposited 189347 paper-port substrate of t0046-t0049).
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>✅ <s>Bed B NSGA-II maximising MI and minimising ATP-per-spike (bits-per-ATP
+front)</s> — covered by <a
+href="../../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/"><code>t0123_bedb_mi_atp_per_spike_nsga2</code></a>
+(S-0097-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1103_PhysRevLett.80.197`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1103_PhysRevLett.80.197/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front
+directly comparable to Niven et al. 2007's empirical fly-photoreceptor 200-1000 bits/s
+super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the
+literature, so the experiment closes a genuine open question. Tradeoff: this experiment does
+not directly serve the project's first-question DSGC mission (DSI is not optimised); ranked
+medium because it serves a broader scientific question rather than the project's specific
+deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
 
 </details>
 

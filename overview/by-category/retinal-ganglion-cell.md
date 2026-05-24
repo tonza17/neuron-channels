@@ -5,11 +5,11 @@ Output neurons of the retina whose axons form the optic nerve.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (44)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(12)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(86)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(13)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(88)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (3)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
-(13)](../predictions/by-category/retinal-ganglion-cell.md)
+(14)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -2361,7 +2361,7 @@ simulation.
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | completed | 2026-05-12 01:55 |
 
-## Answers (12)
+## Answers (13)
 
 <details>
 <summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
@@ -2376,6 +2376,20 @@ Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose to
 band. Adding the cytoplasm-volume cost objective pushed the optimiser toward morphologies
 consistent with the Cajal wiring-economy principle. This is evidence in favour of using
 cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
+
+</details>
+
+<details>
+<summary><strong>Where does the DSGC bits-per-ATP front sit relative to Niven 2007's
+fly-photoreceptor curve, and does it match the Niven super-linear
+cost-vs-information scaling?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-24 | **Full answer**:
+[`dsgc-bits-per-atp-vs-niven-2007`](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/answer/dsgc-bits-per-atp-vs-niven-2007/)
+
+Insufficient evidence. The t0123 single-seed NSGA-II run produced 10 top-Pareto cells under
+the post-hoc Strong-Bialek 1998 direct method; the log-log fit exponent p = n/a at r^2 = n/a
+is too noisy (n < 10 or r^2 < 0.5) to make a definitive statement about super-linear scaling.
 
 </details>
 
@@ -2624,7 +2638,49 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (77 open, 9 closed)
+## Suggestions (78 open, 10 closed)
+
+<details>
+<summary>🧪 <strong>Rerun MI-ATP NSGA-II with richer stimulus + PD-rate floor to
+fix Strong-Bialek bits/s = 0</strong> (S-0123-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+t0123's post-hoc Strong-Bialek bits/s = 0 for all 10 top-Pareto cells traces to a protocol
+mismatch: count-MI converged on cells producing ~3 PD spikes per 1400 ms trial (silence-guard
+boundary) where binary spike-time words are degenerate at every T <= 100 ms; Niven 2007
+comparison returns Insufficient evidence. Action: fork the t0123 substrate (same 68-d Bed B +
+14-d morph, same two-tier MI + Sengupta ATP recipe) with three upgrades: (a) extend trial
+length to 3000-5000 ms so the 1/T extrapolation populates non-trivial spike-time words; (b)
+tighten the silence guard to a PD-rate floor pd_rate_hz>=10 Hz so count-MI cannot exploit the
+silence boundary; (c) optionally add NMDA-mediated burst priming (t0062-style) to lift
+baseline firing into the spike-time-informative regime. Predict bits/s becomes positive and
+the Niven comparison becomes testable. Budget ~$5-8 Vast.ai EPYC. Recommended task types:
+experiment-run, data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>3-objective NSGA-II maximising (MI, DSI) and minimising
+ATP-per-spike on same 68-d substrate</strong> (S-0123-02)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+t0123 decoupled function (MI) from selectivity (DSI) to make the Pareto front comparable to
+Niven 2007; side effect: Pareto-front DSI = 0.13-0.40, well below t0122's high-DSI front (DSI
+= 0.97), so the project's first-question DSGC selectivity mission is not served. Distinct from
+S-0097-04 (2-obj DSI + MI without ATP): this is a 3-objective extension that asks whether MI,
+DSI, and ATP-per-spike are mutually compatible or fundamentally trade off. Action: fork the
+t0123 evaluator to emit out['F'] = [-mi_count_bits, -dsi_vector_sum, +atp_per_spike_molecules]
+(n_obj=3); keep all hard constants (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, N_DIRECTIONS=4,
+COST_CAP_USD=6.0, _POOL_RESTART_EVERY=10, HV_PLATEAU_AUTO_STOP=False); adjust REF_POINT_HV /
+HV_UTOPIA to 3 entries; draw a fresh non-round GA seed; run on Vast.ai EPYC. Predict the
+surface either separates high-DSI / low-ATP and high-MI / low-ATP clusters or collapses to a
+2-d ridge. Recommended task types: experiment-run, data-analysis.
+
+</details>
 
 <details>
 <summary>📊 <strong>8-direction polar re-evaluation of t0115's strict Pareto cells
@@ -2863,23 +2919,6 @@ against Dhingra & Smith 2004's ~60% gray-level loss benchmark. Caveat: the proje
 output before launching the full MOBO. Budget: 18-36 h Vast.ai EPYC at $0.30/h, total $5-11.
 MI is post-hoc on simulation output, so cost overhead is mostly in extra population to
 populate the MI Pareto direction. Priority dropped to medium pending recipe validation.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising MI and minimising ATP-per-spike
-(bits-per-ATP front)</strong> (S-0097-05)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-08 | **Source**:
-[t0097_multi_obj_optim](../../tasks/t0097_multi_obj_optim/)
-
-Decouples function (information) from selectivity (DSI). Produces a bits-per-ATP Pareto front
-directly comparable to Niven et al. 2007's empirical fly-photoreceptor 200-1000 bits/s
-super-linear cost-vs-information curve. The DSGC bits-per-ATP ratio is unmeasured in the
-literature, so the experiment closes a genuine open question. Tradeoff: this experiment does
-not directly serve the project's first-question DSGC mission (DSI is not optimised); ranked
-medium because it serves a broader scientific question rather than the project's specific
-deliverable. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — comparable to S-0097-02.
 
 </details>
 

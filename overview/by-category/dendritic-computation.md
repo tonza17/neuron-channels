@@ -5,11 +5,11 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
-(10)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(92)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(11)](../answers/by-category/dendritic-computation.md) | [Suggestions
+(93)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
-(5)](../predictions/by-category/dendritic-computation.md)
+(6)](../predictions/by-category/dendritic-computation.md)
 
 ---
 
@@ -2320,7 +2320,7 @@ than reduced analytical models.
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 
-## Answers (10)
+## Answers (11)
 
 <details>
 <summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
@@ -2335,6 +2335,20 @@ Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose to
 band. Adding the cytoplasm-volume cost objective pushed the optimiser toward morphologies
 consistent with the Cajal wiring-economy principle. This is evidence in favour of using
 cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
+
+</details>
+
+<details>
+<summary><strong>Where does the DSGC bits-per-ATP front sit relative to Niven 2007's
+fly-photoreceptor curve, and does it match the Niven super-linear
+cost-vs-information scaling?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-24 | **Full answer**:
+[`dsgc-bits-per-atp-vs-niven-2007`](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/answer/dsgc-bits-per-atp-vs-niven-2007/)
+
+Insufficient evidence. The t0123 single-seed NSGA-II run produced 10 top-Pareto cells under
+the post-hoc Strong-Bialek 1998 direct method; the log-log fit exponent p = n/a at r^2 = n/a
+is too noisy (n < 10 or r^2 < 0.5) to make a definitive statement about super-linear scaling.
 
 </details>
 
@@ -2551,7 +2565,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (74 open, 18 closed)
+## Suggestions (75 open, 18 closed)
 
 <details>
 <summary>🧪 <strong>Audit morphology generator for balancing-factor degeneracy: do
@@ -2590,6 +2604,27 @@ re-run compute_per_section_volume_breakdown on every cell in all_evaluations_see
 write a 3-panel violin plot (soma/dendrites/ais) split by LEGIT vs silence-corner vs
 non-LEGIT, and report the per-section fractions for the top-10 cells. Recommended task types:
 data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of t0123 cell 2 (MI=1.459, PD=2.86 Hz) to
+explain near-silent count-MI mechanism</strong> (S-0123-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0123_bedb_mi_atp_per_spike_nsga2](../../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
+
+Cell 2 on the t0123 Pareto front reaches the highest mi_count_bits = 1.459 (73% of the log2(4)
+= 2.0 ceiling) at PD-rate 2.86 Hz, DSI 0.316. How does a near-silent cell produce a clean
+spike-count direction signal across 4 antipodal directions? Mirroring the t0084 cell-767
+deep-dive, this task should single-cell-resimulate cell 2 from its 68-d vector under the
+EPSP_PASSIVE / IPSP_PASSIVE / FULL standard mode trio (memory
+`feedback_dsgc_measurement_protocol.md`), record somatic Vm and per-compartment g_E / g_I at
+each direction, identify which subset of (channel densities, synapse placement, morphology
+bf=0.236, soma-share 94.5%) is driving the across-direction spike-count variance, and produce
+a one-cell mechanism narrative. Single-cell, no NSGA-II; local-CPU runtime <2 h. Output: one
+answer asset on the mechanism plus a Vm / g_E / g_I trace figure pack. Recommended task types:
+experiment-run, data-analysis, answer-question.
 
 </details>
 
