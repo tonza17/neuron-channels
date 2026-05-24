@@ -113,10 +113,10 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Write compare_literature.md comparing top-10 (bits/s, ATP/spike) front to Niven 2007 fly-photoreceptor curve, Strong 1998 H1 ceiling, Dhingra-Smith 2004 RGC graded-vs-spike loss, Sengupta 2010 cross-cell-type ranges, Carter-Bean 2009 ATP/AP benchmark.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T20:42:07Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
       "step": 14,
