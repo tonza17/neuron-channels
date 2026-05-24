@@ -2,7 +2,7 @@
   "variants": [
     {
       "variant_id": "t0123-seed441-best-legit",
-      "label": "t0123 NSGA-II seed 441: best LEGIT cell by mi_count_bits",
+      "label": "t0123 NSGA-II seed 441: best LEGIT cell by mi_count_bits (DSI>=0.5 AND PD-rate>=30Hz)",
       "dimensions": {
         "task_seed": 441,
         "init_method": "lhs_random",
@@ -18,12 +18,12 @@
         "pool_restart_every": 10,
         "hv_plateau_auto_stop_disabled": true,
         "dsi_subvariant": "best_legit",
-        "pd_rate_hz": null
-      },
-      "metrics": {
-        "direction_selectivity_index": null,
+        "pd_rate_hz": null,
         "mi_count_bits": null,
         "atp_per_spike_molecules": null
+      },
+      "metrics": {
+        "direction_selectivity_index": null
       }
     },
     {
@@ -44,12 +44,12 @@
         "pool_restart_every": 10,
         "hv_plateau_auto_stop_disabled": true,
         "dsi_subvariant": "overall_max_mi",
-        "pd_rate_hz": 3.333333333333334
-      },
-      "metrics": {
-        "direction_selectivity_index": 0.35630482034348054,
+        "pd_rate_hz": 3.333333333333334,
         "mi_count_bits": 1.4589893596666386,
         "atp_per_spike_molecules": 49704407.68098243
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.35630482034348054
       }
     },
     {
@@ -70,12 +70,12 @@
         "pool_restart_every": 10,
         "hv_plateau_auto_stop_disabled": true,
         "dsi_subvariant": "overall_min_atp",
-        "pd_rate_hz": 0.7142857142857143
-      },
-      "metrics": {
-        "direction_selectivity_index": 7.204529898187539e-17,
+        "pd_rate_hz": 0.7142857142857143,
         "mi_count_bits": 0.0,
         "atp_per_spike_molecules": 675500.8645167649
+      },
+      "metrics": {
+        "direction_selectivity_index": 7.204529898187539e-17
       }
     },
     {
@@ -96,12 +96,13 @@
         "pool_restart_every": 10,
         "hv_plateau_auto_stop_disabled": true,
         "dsi_subvariant": "top10_strong_bialek",
-        "n_top_cells": 10
-      },
-      "metrics": {
+        "n_top_cells": 10,
         "mi_strong_bialek_bits_per_sec": 0.0,
         "atp_per_spike_molecules": 675500.8645167649,
         "niven_2007_above_below_count": null
+      },
+      "metrics": {
+        "direction_selectivity_index": null
       }
     }
   ]

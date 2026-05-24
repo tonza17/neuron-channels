@@ -104,10 +104,10 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json. Build Pareto + Niven-2007-comparison + Carter-Bean-ATP-check charts. Build top-50 morphology grid (full dendrite trees).",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T20:35:18Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\012_results/"
     },
     {
       "step": 13,
