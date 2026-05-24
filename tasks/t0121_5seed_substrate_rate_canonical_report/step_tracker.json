@@ -23,9 +23,9 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create mandatory task folder structure with assets/answer/ subfolder.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-24T01:20:50Z",
-      "completed_at": null,
+      "completed_at": "2026-05-24T01:22:47Z",
       "log_file": "logs\\steps\\003_init-folders/"
     },
     {
