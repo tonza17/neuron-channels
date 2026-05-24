@@ -113,9 +113,9 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Compare DSI/cytoplasm-volume front to Cuntz 2010 balancing-factor band [0.2, 0.7] and to t0121 5-seed substrate-rate baseline.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-24T06:11:35Z",
-      "completed_at": null,
+      "completed_at": "2026-05-24T06:18:59Z",
       "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
