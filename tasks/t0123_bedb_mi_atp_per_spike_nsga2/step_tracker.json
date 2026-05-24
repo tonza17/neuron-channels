@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0123_bedb_mi_atp_per_spike_nsga2 branch from main and plan the step list.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-24T12:21:33Z",
-      "completed_at": null,
+      "completed_at": "2026-05-24T12:25:46Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
