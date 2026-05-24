@@ -1,0 +1,7 @@
+SSH_OK
+Linux 8a17d5f27cdf 5.15.0-179-generic #189-Ubuntu SMP Tue May 5 18:20:56 UTC 2026 x86_64 GNU/Linux
+onstart_done
+total 8
+drwx------ 1 root root   29 May 24 13:51 .
+drwx------ 1 root root 4096 May 24 13:51 ..
+-rw------- 1 root root   94 May 24 13:51 authorized_keys

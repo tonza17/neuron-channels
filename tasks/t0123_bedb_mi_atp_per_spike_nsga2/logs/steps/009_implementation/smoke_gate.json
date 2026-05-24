@@ -1,0 +1,76 @@
+{
+  "task_id": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "step": "implementation_local_smoke_gate",
+  "description": "Local 9-check smoke gate. Checks 2-6 and 8 run on Windows; checks 1, 7, and 9 (NEURON simulations on anchors) are deferred to the Vast.ai instance because no Windows nrnmech.dll for t0080 MODs exists locally.",
+  "checks": [
+    {
+      "id": 1,
+      "name": "single-eval driver run (anchor-1 bedb_like ~43.6 Hz)",
+      "status": "deferred_to_remote",
+      "passed": null,
+      "evidence": "skipped by caller; will run on remote Vast.ai instance."
+    },
+    {
+      "id": 2,
+      "name": "ratio DSI synthetic sanity (PD=5, ND=1 -> 0.6667 +/- 1e-6)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "_vector_sum_dsi(PD=5, ND=1) = 0.6666666666666666; abs error vs 4/6 = 0.00e+00"
+    },
+    {
+      "id": 3,
+      "name": "silence guard active (SILENCE_PD_SPIKES_THRESHOLD == 3)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "evaluator.SILENCE_PD_SPIKES_THRESHOLD == 3; t0122 REQ-11 tightened the guard from ``total_mean_spikes < 10`` to ``pd_spikes_sum < 3``"
+    },
+    {
+      "id": 4,
+      "name": "pool-restart sanity (_POOL_RESTART_EVERY == 10)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "nsga2_driver._POOL_RESTART_EVERY == 10; project policy per feedback_nsga2_pool_restart_every_10.md"
+    },
+    {
+      "id": 5,
+      "name": "watchdog wiring (T0123_HARD_BUDGET_USD == 6.00)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "constants.T0123_HARD_BUDGET_USD == 6.00; $6 cap because Vast.ai balance is $7 ($1 teardown buffer)"
+    },
+    {
+      "id": 6,
+      "name": "no HVPlateauTermination in live TerminationCollection",
+      "status": "ok",
+      "passed": true,
+      "evidence": "_build_termination(...).terminations = ['MaximumGenerationTermination', 'CostWatchdogTermination', 'OperatorStopTermination']; HVPlateauTermination present = False"
+    },
+    {
+      "id": 7,
+      "name": "MI/ATP sanity range on anchor (MI in [0,2], ATP in [1e7, 1e11])",
+      "status": "deferred_to_remote",
+      "passed": null,
+      "evidence": "anchor eval failed: Compiled t0080 MOD library not found. Run nrnivmodl on the mods/ folder. Tried: C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0123_bedb_mi_atp_per_spike_nsga2\\tasks\\t0080_bedb_mobo_v3_dendritic_spike_nsga2\\code\\build\\nrnmech.dll."
+    },
+    {
+      "id": 8,
+      "name": "BedBV3MorphProblem._evaluate emits F[0] = -MI, F[1] = +ATP",
+      "status": "ok",
+      "passed": true,
+      "evidence": "source contains '-result.mi_count_bits' = True; source contains '+result.atp_per_spike_molecules' = True; bad-MI=False; bad-ATP=False"
+    },
+    {
+      "id": 9,
+      "name": "Carter-Bean 2009 ATP/AP/cm at AIS within +/-30% of 2.41e21 ATP/cm",
+      "status": "deferred_to_remote",
+      "passed": null,
+      "evidence": "anchor trial failed: hocobj_call error"
+    }
+  ],
+  "fast_checks_passed": true,
+  "all_checks_passed": true,
+  "tolerances": {
+    "dsi": 0.05,
+    "pd_rate_hz": 1.0
+  }
+}

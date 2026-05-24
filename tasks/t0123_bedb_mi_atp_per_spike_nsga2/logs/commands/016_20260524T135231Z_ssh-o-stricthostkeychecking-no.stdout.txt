@@ -1,0 +1,8 @@
+128
+MemTotal:       263944284 kB
+MemFree:        235055864 kB
+overlay          40G  412K   40G   1% /
+NVIDIA GeForce RTX 3060, 12288 MiB, 580.159.03
+NVIDIA GeForce RTX 3060, 12288 MiB, 580.159.03
+Python 3.12.13
+pip 25.0.1 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)

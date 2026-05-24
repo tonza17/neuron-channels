@@ -1,0 +1,25 @@
+total 39232
+drwxr-xr-x 2 1144306 1049089     4096 May 24 20:06 .
+drwxr-xr-x 4 1144306 1049089       48 May 24 14:26 ..
+-rw-r--r-- 1 root    root         554 May 24 14:48 algorithm_config.json
+-rw-r--r-- 1 root    root    15657102 May 24 20:01 all_evaluations_seed441.json
+-rw-r--r-- 1 root    root    11853233 May 24 19:00 cell_trace_seed441.jsonl
+-rw-r--r-- 1 root    root         117 May 24 14:48 evaluation_seeds.json
+-rw-r--r-- 1 root    root       11236 May 24 19:00 hv_trajectory_seed441.json
+-rw-r--r-- 1 root    root      172683 May 24 14:48 init_pop_seed441.json
+-rw-r--r-- 1 root    root    12417233 May 24 19:00 nsga2_checkpoint_seed441.json
+-rw-r--r-- 1 root    root       27676 May 24 20:01 pareto_front_seed441.json
+-rw-r--r-- 1 root    root        6035 May 24 20:06 post_hoc_strong_bialek_mi_top10.json
+---images---
+total 0
+drwxr-xr-x 2 1144306 1049089 22 May 24 12:41 .
+drwxr-xr-x 4 1144306 1049089 48 May 24 14:26 ..
+-rw-r--r-- 1 1144306 1049089  0 May 24 12:41 .gitkeep
+---logs dir---
+total 20
+drwxr-xr-x  6 1144306 1049089   67 May 24 12:41 .
+drwxr-xr-x 12 1144306 1049089 4096 May 24 14:31 ..
+drwxr-xr-x  2 1144306 1049089 8192 May 24 14:26 commands
+drwxr-xr-x  2 1144306 1049089   22 May 24 12:41 searches
+drwxr-xr-x  2 1144306 1049089   22 May 24 12:41 sessions
+drwxr-xr-x 11 1144306 1049089 4096 May 24 14:01 steps

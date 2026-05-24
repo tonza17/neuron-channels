@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "command": "uv run python -u -m meta.asset_types.predictions.verificator nsga2-mi-atp-per-spike-bedb-morph --task-id t0123_bedb_mi_atp_per_spike_nsga2",
+  "exit_code": 0,
+  "duration_seconds": 0.551,
+  "started_at": "2026-05-24T20:10:18Z",
+  "completed_at": "2026-05-24T20:10:19Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0123_bedb_mi_atp_per_spike_nsga2",
+  "stdout_file": "042_20260524T201018Z_uv-run-python.stdout.txt",
+  "stderr_file": "042_20260524T201018Z_uv-run-python.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 0,
+  "truncated": false
+}

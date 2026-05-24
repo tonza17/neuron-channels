@@ -1,0 +1,42 @@
+{
+  "total_cost_usd": 1.191,
+  "breakdown": {
+    "vast-ai-instance-setup": {
+      "cost_usd": 0.031,
+      "description": "Instance 37599740 setup window from creation at 13:50:43Z to NSGA-II start at 14:01:13Z = 10m 30s at $0.1785/hr = $0.031. Includes apt installs, pip install dependencies, t0080 MOD compile, and t0123 code SCP per the implementation step log."
+    },
+    "vast-ai-nsga2-productive": {
+      "cost_usd": 0.749,
+      "description": "Instance 37599740 NSGA-II productive time from 14:01:13Z to 19:00:43Z = 4h 59m 30s wall-clock. The in-run cost_watchdog reported final cost $0.7492 at gen 60 (60 generations completed, 10 Pareto cells emerged). HV_PLATEAU_AUTO_STOP=False, _POOL_RESTART_EVERY=10. Internal cost basis: $0.16/hr GPU + $0.0185/hr storage."
+    },
+    "vast-ai-idle-pre-post-hoc": {
+      "cost_usd": 0.089,
+      "description": "Idle period between NSGA-II termination at 19:00:43Z and post-hoc launch at 19:31Z = 30 min at $0.1785/hr = $0.089. The autonomous finalize script never started after NSGA-II terminated; this is the lost time before manual orchestration kicked off the Strong-Bialek post-hoc rerun."
+    },
+    "vast-ai-post-hoc-strong-bialek": {
+      "cost_usd": 0.110,
+      "description": "Strong-Bialek 1998 direct-method MI rerun on top-10 Pareto cells (8 directions x 20 trials per direction, dt=5 ms, T in {25,50,75,100} ms). Started 19:31Z, completed 20:06Z = 35 min wall-clock at $0.1785/hr = $0.110. All 10 cells returned bits_per_sec = 0.0 (silence-bounded cells; ~3 PD spikes at the silence guard boundary leave no extractable spike-time information at the 25-100 ms word range, h_total = h_noise = 0)."
+    },
+    "vast-ai-idle-post-finalize": {
+      "cost_usd": 0.207,
+      "description": "Idle period from 20:06Z (post-hoc completion) to instance destruction at 20:30:25Z = 24m 25s at $0.1785/hr = $0.073, PLUS the reconciliation slack between the internal narrative breakdown and the actual Vast.ai billing (the internal segment timestamps each use $0.1785/hr but Vast.ai bills GPU and storage on slightly different hour-quanta, 6.646 h and 6.663 h respectively, producing a $0.134 reconciliation residual that lands in this final segment). Combined: $0.207."
+    },
+    "vast-ai-network": {
+      "cost_usd": 0.005,
+      "description": "Network charges from vastai invoice: download 0.166 GB at $0.026/GB = $0.004 + upload 0.031 GB at $0.026/GB = $0.001."
+    },
+    "per_instance_watchdog_USD": {
+      "cost_usd": 0.0,
+      "description": "T0123_PER_INSTANCE_WATCHDOG_USD = $5.00 cap was never tripped. Actual instance spend $1.191 is 24% of the watchdog cap and 20% of the $6 task budget. The COST_CAP_USD = $6.00 hard budget was also never tripped."
+    },
+    "vast-ai-failed-attempts": {
+      "cost_usd": 0.0,
+      "description": "No failed instance creation attempts (instance 37599740 created on first try per machine_log.json, failed_attempts=[])."
+    }
+  },
+  "services": {
+    "vast_ai": 1.191
+  },
+  "budget_limit": 6.0,
+  "note": "Final post-teardown reconciliation. Per-charge-type totals from `vastai show invoices --raw` filtered to instance 37599740 after destruction: GPU 6.646 h x $0.16/hr = $1.063, storage 6.663 h x $0.0185/hr = $0.123, download 0.166 GB x $0.026 = $0.004, upload 0.031 GB x $0.026 = $0.001. Sum = $1.191. Total wall-clock duration from creation (2026-05-24T13:50:43Z) to destruction (2026-05-24T20:30:25Z) = 6.662 h. Actual cost is $0.045 (3.9%) above the pre-teardown estimate of $1.146 because the orchestrator-driven teardown happened ~24 min after the manual finalize handoff at 20:06Z rather than immediately. Total $1.191 remains well under the $6 task cap (20% utilisation)."
+}

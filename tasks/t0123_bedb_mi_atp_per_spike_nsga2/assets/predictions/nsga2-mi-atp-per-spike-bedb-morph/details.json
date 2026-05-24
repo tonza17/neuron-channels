@@ -1,0 +1,43 @@
+{
+  "spec_version": "2",
+  "predictions_id": "nsga2-mi-atp-per-spike-bedb-morph",
+  "name": "NSGA-II Pareto front: MI vs ATP-per-spike on Bed B + 14-d morph",
+  "short_description": "Per-cell evaluations from the t0123 68-d NSGA-II run optimising (maximise MI_count_bits, minimise ATP_per_spike) on the Bed B + 14-d morphology substrate. 4-direction protocol, single GA seed, pop=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, HV-plateau auto-stop disabled.",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "Procedural Bed B DSGC cell with 14-d morphology parameter space (t0090 generator + t0092 z-axis soma patch) and 54-d electrophys parameter scheme (t0080 NEURON MOD channels). Evaluated under a 4-direction antipodal protocol with AR(2)-correlated synaptic noise (t0024 de Rosenroll 2026 ports). ATP estimated from per-segment seg.ina inward integration per Sengupta 2010.",
+  "dataset_ids": [],
+  "prediction_format": "jsonl.gz",
+  "prediction_schema": "Each row: {generation, cell_index, vector_68d, mi_count_bits, atp_per_spike_molecules, atp_per_ap_molecules, atp_per_ap_compartment_breakdown, firing_hz_per_dir, dsi_vector_sum, pd_rate_hz, objective_F_minimised, silence_failed_bool, legit_bool}. Top-N cells additionally carry {mi_strong_bialek_bits_per_sec, std_err_bits_per_sec, r_squared}. See description.md for full field definitions.",
+  "instance_count": 5760,
+  "metrics_at_creation": {
+    "task_seed": 441,
+    "n_generations_completed": 60,
+    "n_cells_total": 5760,
+    "n_pareto_cells": 10,
+    "n_legit_cells": 0,
+    "best_mi_count_bits": 1.4589893596666386,
+    "min_atp_per_spike_molecules": 675500.8645167649,
+    "final_hypervolume": 29173000508.235092,
+    "final_cost_usd": 0.7490328687454733,
+    "top10_max_bits_per_sec": 0.0,
+    "top10_min_bits_per_sec": 0.0,
+    "top10_mean_bits_per_sec": 0.0,
+    "niven_2007_above_below_count": null
+  },
+  "files": [
+    {
+      "path": "files/predictions.jsonl.gz",
+      "description": "Gzipped JSONL with one row per unique cell evaluated by the NSGA-II run. See description.md and prediction_schema.",
+      "format": "jsonl.gz"
+    }
+  ],
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "date_created": "2026-05-24"
+}

@@ -1,0 +1,102 @@
+[
+ {
+  "amount": "2.921",
+  "description": "Instance 37545908 GPU  charge:    hours * $/hr",
+  "instance_id": 37545908,
+  "quantity": "16.851",
+  "rate": "0.1733",
+  "timestamp": 1779580800,
+  "type": "charge"
+ },
+ {
+  "amount": "0.187",
+  "description": "Instance 37545908 storage charge: hours * $/hr",
+  "instance_id": 37545908,
+  "quantity": "16.869",
+  "rate": "0.0111",
+  "timestamp": 1779580800,
+  "type": "charge"
+ },
+ {
+  "amount": "1.021",
+  "description": "Instance 37599740 GPU  charge:    hours * $/hr",
+  "instance_id": 37599740,
+  "quantity": "6.379",
+  "rate": "0.1600",
+  "timestamp": 1779580800,
+  "type": "charge"
+ },
+ {
+  "amount": "0.118",
+  "description": "Instance 37599740 storage charge: hours * $/hr",
+  "instance_id": 37599740,
+  "quantity": "6.396",
+  "rate": "0.0185",
+  "timestamp": 1779580800,
+  "type": "charge"
+ },
+ {
+  "amount": "0.004",
+  "description": "Instance 37599740 download charge: GB * $/GB",
+  "instance_id": 37599740,
+  "quantity": "0.166",
+  "rate": "0.026",
+  "timestamp": 1779580800,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37599740 upload charge:   GB * $/GB",
+  "instance_id": 37599740,
+  "quantity": "0.031",
+  "rate": "0.026",
+  "timestamp": 1779580800,
+  "type": "charge"
+ },
+ {
+  "amount": "0.471",
+  "description": "Instance 37546422 GPU  charge:    hours * $/hr",
+  "instance_id": 37546422,
+  "quantity": "2.525",
+  "rate": "0.1867",
+  "timestamp": 1779580800,
+  "type": "charge"
+ },
+ {
+  "amount": "0.028",
+  "description": "Instance 37546422 storage charge: hours * $/hr",
+  "instance_id": 37546422,
+  "quantity": "2.550",
+  "rate": "0.0111",
+  "timestamp": 1779580800,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37545923 storage charge: hours * $/hr",
+  "instance_id": 37545923,
+  "quantity": "0.104",
+  "rate": "0.0111",
+  "timestamp": 1779580800,
+  "type": "charge"
+ },
+ {
+  "amount": -10.0,
+  "extra": {
+   "last4": "6968",
+   "network": "visa"
+  },
+  "failed": null,
+  "id": 2871679,
+  "is_credit": true,
+  "last4": "6968",
+  "network": "visa",
+  "paid_timestamp": 1779626416.6111958,
+  "payment_expected": 1779972016.1873708,
+  "refunded": null,
+  "service": "stripe_payments",
+  "timestamp": 1779626416.1873708,
+  "transfer_group": "pi_3TabKDHRxJkb56aO0MX95fKc",
+  "type": "payment"
+ }
+]

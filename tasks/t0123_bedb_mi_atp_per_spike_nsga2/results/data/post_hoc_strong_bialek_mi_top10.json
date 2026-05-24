@@ -1,0 +1,267 @@
+{
+  "seed": 441,
+  "n_top_cells_requested": 10,
+  "n_top_cells_actual": 10,
+  "n_directions": 8,
+  "n_trials_per_direction": 20,
+  "word_lengths_ms": [
+    25,
+    50,
+    75,
+    100
+  ],
+  "dt_ms": 5.0,
+  "trial_duration_ms": 1400.0,
+  "cells": [
+    {
+      "rank": 1,
+      "cell_index": 2,
+      "mi_count_bits": 1.4589893596666386,
+      "atp_per_spike_molecules": 4756737.981196062,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 138.66722512245178
+    },
+    {
+      "rank": 2,
+      "cell_index": 3,
+      "mi_count_bits": 1.1393262397777593,
+      "atp_per_spike_molecules": 4718890.993798667,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 156.26322984695435
+    },
+    {
+      "rank": 3,
+      "cell_index": 8,
+      "mi_count_bits": 0.9643374506019364,
+      "atp_per_spike_molecules": 4702996.611594317,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 174.33191442489624
+    },
+    {
+      "rank": 4,
+      "cell_index": 7,
+      "mi_count_bits": 0.8552299848469279,
+      "atp_per_spike_molecules": 4684769.092257168,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 190.18418622016907
+    },
+    {
+      "rank": 5,
+      "cell_index": 4,
+      "mi_count_bits": 0.6581859867969045,
+      "atp_per_spike_molecules": 4579892.73795709,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 173.01813769340515
+    },
+    {
+      "rank": 6,
+      "cell_index": 5,
+      "mi_count_bits": 0.5355668649580483,
+      "atp_per_spike_molecules": 4563978.382114011,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 232.6610176563263
+    },
+    {
+      "rank": 7,
+      "cell_index": 6,
+      "mi_count_bits": 0.2702674841257715,
+      "atp_per_spike_molecules": 4562529.385730586,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 248.61839413642883
+    },
+    {
+      "rank": 8,
+      "cell_index": 9,
+      "mi_count_bits": 0.2294154011530165,
+      "atp_per_spike_molecules": 4558895.648830709,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 266.039692401886
+    },
+    {
+      "rank": 9,
+      "cell_index": 1,
+      "mi_count_bits": 0.11081000099916546,
+      "atp_per_spike_molecules": 4554094.020551941,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 285.35079312324524
+    },
+    {
+      "rank": 10,
+      "cell_index": 0,
+      "mi_count_bits": 0.0,
+      "atp_per_spike_molecules": 675500.8645167649,
+      "bits_per_sec": 0.0,
+      "std_err_bits_per_sec": NaN,
+      "r_squared": NaN,
+      "h_total_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "h_noise_per_t": {
+        "25": 0.0,
+        "50": 0.0,
+        "75": 0.0,
+        "100": 0.0
+      },
+      "n_directions": 8,
+      "n_trials_per_direction": 20,
+      "total_trials": 160,
+      "elapsed_s": 368.5508677959442
+    }
+  ]
+}

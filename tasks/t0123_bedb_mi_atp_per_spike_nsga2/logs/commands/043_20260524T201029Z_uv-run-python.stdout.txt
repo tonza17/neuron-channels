@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0123_bedb_mi_atp_per_spike_nsga2\tasks\t0123_bedb_mi_atp_per_spike_nsga2\assets\answer\dsgc-bits-per-atp-vs-niven-2007
+
+[31m[1mERRORS:[0m
+[31m  AA-E009 error: Referenced paper does not exist: '10.1242_jeb.005249'[0m
+[31m  AA-E012 error: Missing mandatory section: '## Evidence from Internet Sources'[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)

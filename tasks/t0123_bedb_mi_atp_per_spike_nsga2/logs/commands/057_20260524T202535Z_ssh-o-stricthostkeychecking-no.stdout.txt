@@ -1,0 +1,4 @@
+  29 /root/t0123_workdir/repo/tasks/t0123_bedb_mi_atp_per_spike_nsga2/results/data/algorithm_config.json
+   7 /root/t0123_workdir/repo/tasks/t0123_bedb_mi_atp_per_spike_nsga2/results/data/evaluation_seeds.json
+ 266 /root/t0123_workdir/repo/tasks/t0123_bedb_mi_atp_per_spike_nsga2/results/data/post_hoc_strong_bialek_mi_top10.json
+ 302 total

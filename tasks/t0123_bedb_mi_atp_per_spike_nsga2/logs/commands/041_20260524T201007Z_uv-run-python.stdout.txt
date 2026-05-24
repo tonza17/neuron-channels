@@ -1,0 +1,3 @@
+[answer] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0123_bedb_mi_atp_per_spike_nsga2\tasks\t0123_bedb_mi_atp_per_spike_nsga2\assets\answer\dsgc-bits-per-atp-vs-niven-2007\short_answer.md
+[answer] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0123_bedb_mi_atp_per_spike_nsga2\tasks\t0123_bedb_mi_atp_per_spike_nsga2\assets\answer\dsgc-bits-per-atp-vs-niven-2007\full_answer.md
+[answer] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0123_bedb_mi_atp_per_spike_nsga2\tasks\t0123_bedb_mi_atp_per_spike_nsga2\assets\answer\dsgc-bits-per-atp-vs-niven-2007\details.json

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 39740 root@ssh2.vast.ai pip install --quiet --break-system-packages neuron==8.2.7 pymoo dill numpy pandas scipy matplotlib pydantic tqdm scikit-learn 2>&1 | tail -10",
+  "exit_code": 0,
+  "duration_seconds": 34.649,
+  "started_at": "2026-05-24T13:53:13Z",
+  "completed_at": "2026-05-24T13:53:48Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0123_bedb_mi_atp_per_spike_nsga2",
+  "stdout_file": "018_20260524T135313Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "018_20260524T135313Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 2,
+  "truncated": false
+}

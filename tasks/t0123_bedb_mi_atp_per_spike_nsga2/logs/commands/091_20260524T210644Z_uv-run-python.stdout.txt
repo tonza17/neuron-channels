@@ -1,0 +1,18 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0123_bedb_mi_atp_per_spike_nsga2\tasks\t0123_bedb_mi_atp_per_spike_nsga2\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260524T124101Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 003_20260524T124945Z_python-x-utf8.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 006_20260524T125659Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 036_20260524T200925Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 037_20260524T200927Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 038_20260524T200928Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 043_20260524T201029Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 070_20260524T203034Z_vastai-show-instance.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 072_20260524T203212Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 078_20260524T205601Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 12 warning(s)

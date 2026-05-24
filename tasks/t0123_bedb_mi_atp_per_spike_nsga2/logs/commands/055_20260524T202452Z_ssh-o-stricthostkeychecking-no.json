@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 39740 root@ssh2.vast.ai cat /root/t0123_workdir/post_hoc.log 2>&1; echo '---END post_hoc.log---'; ls -la /root/t0123_workdir/repo/tasks/t0123_bedb_mi_atp_per_spike_nsga2/logs/steps/ 2>&1",
+  "exit_code": 0,
+  "duration_seconds": 4.154,
+  "started_at": "2026-05-24T20:24:52Z",
+  "completed_at": "2026-05-24T20:24:56Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0123_bedb_mi_atp_per_spike_nsga2",
+  "stdout_file": "055_20260524T202452Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "055_20260524T202452Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 22,
+  "stderr_lines": 2,
+  "truncated": false
+}

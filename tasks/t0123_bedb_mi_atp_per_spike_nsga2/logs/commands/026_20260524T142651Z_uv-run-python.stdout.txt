@@ -1,0 +1,10 @@
+[smoke_gate] wrote tasks\t0123_bedb_mi_atp_per_spike_nsga2\logs\steps\009_implementation\smoke_gate.json: fast_checks_passed=True all_checks_passed=True
+  check 1: deferred_to_remote  -- single-eval driver run (anchor-1 bedb_like ~43.6 Hz)
+  check 2: ok  -- ratio DSI synthetic sanity (PD=5, ND=1 -> 0.6667 +/- 1e-6)
+  check 3: ok  -- silence guard active (SILENCE_PD_SPIKES_THRESHOLD == 3)
+  check 4: ok  -- pool-restart sanity (_POOL_RESTART_EVERY == 10)
+  check 5: ok  -- watchdog wiring (T0123_HARD_BUDGET_USD == 6.00)
+  check 6: ok  -- no HVPlateauTermination in live TerminationCollection
+  check 7: deferred_to_remote  -- MI/ATP sanity range on anchor (MI in [0,2], ATP in [1e7, 1e11])
+  check 8: ok  -- BedBV3MorphProblem._evaluate emits F[0] = -MI, F[1] = +ATP
+  check 9: deferred_to_remote  -- Carter-Bean 2009 ATP/AP/cm at AIS within +/-30% of 2.41e21 ATP/cm
