@@ -5,7 +5,7 @@
   "name": "NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)",
   "short_description": "68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010 wiring cost). Gated on t0120 geometry audit passing. 1 GA seed, pop=96, N_EVAL_SEEDS=3, $8 cap.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
@@ -16,7 +16,7 @@
     "t0119_brainstorm_results_23",
     "t0120_morph_generator_geometry_audit"
   ],
-  "start_time": null,
+  "start_time": "2026-05-24T02:33:11Z",
   "end_time": null,
   "expected_assets": {
     "predictions": 1,
