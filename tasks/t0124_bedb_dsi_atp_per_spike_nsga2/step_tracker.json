@@ -1,0 +1,140 @@
+{
+  "task_id": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0124_bedb_dsi_atp_per_spike_nsga2 branch from main and initialize step plan.",
+      "status": "in_progress",
+      "started_at": "2026-05-24T22:59:16Z",
+      "completed_at": null,
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify all 10 dependency tasks completed via verify_task_dependencies.py.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task folder structure: assets/, corrections/, intervention/, logs/, plan/, research/, results/, code/.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Review the project paper corpus for evidence on Sengupta 2010 ATP recipe, Carter-Bean 2009 AIS benchmark, Attwell-Laughlin 2001 budget, Niven 2007 bits-per-ATP curve, Cuntz 2010 wiring cost, Remme 2018 MSO MOBO template; write research/research_papers.md.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Search for any recent (post-corpus) DSGC energy/MOBO publications or Carter-Bean canonical-value re-derivations; write research/research_internet.md.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review t0123 ATP recipe / seg.ina recorder / Carter-Bean smoke-gate code, t0122 DSI silence-guard code, t0115 NSGA-II substrate; write research/research_code.md.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Synthesize research into plan/plan.md with all 11 mandatory sections; surface every hard constraint from task_description.md in Verification Criteria; re-derive Carter-Bean canonical value (S-0123-04 partial fix).",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Provision Vast.ai EPYC (cheapest 32-core or 64-core); confirm SSH + environment; verify Vast.ai balance >= $7 before launch.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Copy t0123 substrate, swap MI->DSI objective, reduce N_DIRECTIONS=2; run Carter-Bean smoke-gate; launch 1-seed NSGA-II (pop=96, N_EVAL_SEEDS=3, gen_max=60, _POOL_RESTART_EVERY=10, HV-plateau auto-stop disabled, $6 cap); collect predictions asset.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Destroy Vast.ai instance, finalize machine_log.json + remote_machines_used.json + costs.json.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Out-of-the-box analysis: DSI-ATP front shape vs Carter-Bean Na/K-overlap prediction; cross-reference to t0122 cytoplasm front for joint geometric+metabolic cost view.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; embed Pareto front + Carter-Bean check + Attwell-Laughlin budget + top-50 morphologies + HV trajectory charts.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Spawn /compare-literature subagent. Compare DSGC DSI-ATP front to Carter-Bean 2009, Attwell-Laughlin 2001, Sengupta 2010, Niven 2007, Cuntz 2010 (cross-ref to t0122), Remme 2018.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Spawn /generate-suggestions subagent. Generate follow-up suggestions for 3-objective (DSI+MI+ATP) extensions, alternative cost objectives, and any uncovered design gaps.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task.json completed with end_time; final commit before PR.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    }
+  ]
+}
