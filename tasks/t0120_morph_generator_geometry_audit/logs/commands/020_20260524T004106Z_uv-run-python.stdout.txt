@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0120_morph_generator_geometry_audit\tasks\t0120_morph_generator_geometry_audit\task.json
+
+[33m[1mWARNINGS:[0m
+[33m  TF-W001 warning: short_description is 215 characters (maximum: 200)[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 1 warning(s)

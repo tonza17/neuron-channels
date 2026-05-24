@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0120_morph_generator_geometry_audit",
+  "command": "uv run python -m arf.scripts.verificators.verify_plan t0120_morph_generator_geometry_audit",
+  "exit_code": 0,
+  "duration_seconds": 0.516,
+  "started_at": "2026-05-23T23:55:12Z",
+  "completed_at": "2026-05-23T23:55:12Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0120_morph_generator_geometry_audit",
+  "stdout_file": "004_20260523T235512Z_uv-run-python.stdout.txt",
+  "stderr_file": "004_20260523T235512Z_uv-run-python.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 0,
+  "truncated": false
+}

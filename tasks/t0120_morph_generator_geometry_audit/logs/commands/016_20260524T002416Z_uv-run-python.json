@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0120_morph_generator_geometry_audit",
+  "command": "uv run python -u -m tasks.t0120_morph_generator_geometry_audit.code.build_answer_asset",
+  "exit_code": 0,
+  "duration_seconds": 1.252,
+  "started_at": "2026-05-24T00:24:16Z",
+  "completed_at": "2026-05-24T00:24:17Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0120_morph_generator_geometry_audit",
+  "stdout_file": "016_20260524T002416Z_uv-run-python.stdout.txt",
+  "stderr_file": "016_20260524T002416Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,25 @@
+[checks] reading C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0120_morph_generator_geometry_audit\tasks\t0120_morph_generator_geometry_audit\results\data\section_endpoints_dump.json
+[checks] loaded 20 cells
+[checks] cell_id=9354_40_3816 check1=pass check2=pass check3=pass soma_frame_offset=149.962 (expected=149.962) n_degenerate=0
+[checks] cell_id=7755_59_5619 check1=pass check2=pass check3=pass soma_frame_offset=149.814 (expected=149.814) n_degenerate=0
+[checks] cell_id=7755_1_68 check1=pass check2=pass check3=FAIL soma_frame_offset=149.719 (expected=149.719) n_degenerate=0
+[checks] cell_id=44_1_49 check1=pass check2=pass check3=pass soma_frame_offset=123.945 (expected=123.945) n_degenerate=0
+[checks] cell_id=77_2_177 check1=pass check2=pass check3=pass soma_frame_offset=29.640 (expected=29.640) n_degenerate=0
+[checks] cell_id=77_1_52 check1=pass check2=pass check3=pass soma_frame_offset=18.322 (expected=18.322) n_degenerate=0
+[checks] cell_id=9354_13_1247 check1=pass check2=pass check3=FAIL soma_frame_offset=127.612 (expected=127.612) n_degenerate=0
+[checks] cell_id=44_1_35 check1=pass check2=pass check3=pass soma_frame_offset=98.913 (expected=98.913) n_degenerate=0
+[checks] cell_id=9354_22_2025 check1=pass check2=pass check3=pass soma_frame_offset=143.051 (expected=143.051) n_degenerate=0
+[checks] cell_id=77_16_1486 check1=pass check2=pass check3=FAIL soma_frame_offset=144.429 (expected=144.429) n_degenerate=0
+[checks] cell_id=77_13_1164 check1=pass check2=pass check3=pass soma_frame_offset=143.851 (expected=143.851) n_degenerate=0
+[checks] cell_id=77_10_882 check1=pass check2=pass check3=pass soma_frame_offset=144.429 (expected=144.429) n_degenerate=0
+[checks] cell_id=44_13_1206 check1=pass check2=pass check3=pass soma_frame_offset=149.601 (expected=149.601) n_degenerate=0
+[checks] cell_id=77_15_1368 check1=pass check2=pass check3=pass soma_frame_offset=145.841 (expected=145.841) n_degenerate=0
+[checks] cell_id=9354_11_1021 check1=pass check2=pass check3=pass soma_frame_offset=148.700 (expected=148.700) n_degenerate=0
+[checks] cell_id=9354_55_5231 check1=pass check2=pass check3=pass soma_frame_offset=149.234 (expected=149.234) n_degenerate=0
+[checks] cell_id=77_2_115 check1=pass check2=pass check3=pass soma_frame_offset=3.021 (expected=3.021) n_degenerate=0
+[checks] cell_id=77_1_20 check1=pass check2=pass check3=pass soma_frame_offset=3.021 (expected=3.021) n_degenerate=0
+[checks] cell_id=77_4_340 check1=pass check2=pass check3=pass soma_frame_offset=3.254 (expected=3.254) n_degenerate=0
+[checks] cell_id=77_3_200 check1=pass check2=pass check3=pass soma_frame_offset=4.911 (expected=4.911) n_degenerate=0
+[checks] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0120_morph_generator_geometry_audit\tasks\t0120_morph_generator_geometry_audit\results\data\coordinate_consistency_checks.csv
+[checks] PASS counts: check1=20/20, check2=20/20, check3=17/20
+[checks] max |soma_frame_offset_um - |soma_offset_pd_um|| = 0.000000 um (should be ~ 0)
