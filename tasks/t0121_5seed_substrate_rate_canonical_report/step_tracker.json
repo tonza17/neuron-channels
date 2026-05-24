@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Identify result parquets in t0106/t0112/t0113/t0114/t0115; document reusable conventions and data schemas.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T01:23:10Z",
       "completed_at": null,
-      "log_file": "logs/steps/006_research-code/"
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,

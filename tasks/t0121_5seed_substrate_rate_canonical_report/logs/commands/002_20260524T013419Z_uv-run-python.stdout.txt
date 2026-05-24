@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\research\research_code.md
+
+[33m[1mWARNINGS:[0m
+[33m  RC-W002 warning: Task Index entry [Hay2011] references task 't0078_bedb_mobo_v2_ais_tiered_ahp` (paper asset host)' which does not exist[0m
+[33m  RC-W002 warning: Task Index entry [Druckmann2007] references task 't0097_multi_obj_optim` (paper asset host)' which does not exist[0m
+[33m  RC-W002 warning: Task Index entry [Mohacsi2024] references task 't0102_seedscale_n4_gen20` (paper asset host)' which does not exist[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 3 warning(s)
