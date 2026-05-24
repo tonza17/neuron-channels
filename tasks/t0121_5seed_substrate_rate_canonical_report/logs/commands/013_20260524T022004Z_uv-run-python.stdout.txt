@@ -1,0 +1,2 @@
+Captured 0 session transcript(s) into C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\logs\sessions.
+Wrote capture report to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\logs\sessions\capture_report.json.

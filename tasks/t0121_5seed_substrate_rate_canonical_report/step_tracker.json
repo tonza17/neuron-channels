@@ -1,0 +1,122 @@
+{
+  "task_id": "t0121_5seed_substrate_rate_canonical_report",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0121_5seed_substrate_rate_canonical_report branch from main.",
+      "status": "completed",
+      "started_at": "2026-05-24T01:17:11Z",
+      "completed_at": "2026-05-24T01:18:04Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify all 6 dependencies (t0106, t0112, t0113, t0114, t0115, t0119) are completed.",
+      "status": "completed",
+      "started_at": "2026-05-24T01:19:08Z",
+      "completed_at": "2026-05-24T01:19:48Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task folder structure with assets/answer/ subfolder.",
+      "status": "completed",
+      "started_at": "2026-05-24T01:20:50Z",
+      "completed_at": "2026-05-24T01:22:47Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: pure write-up; Hay 2011 / Druckmann 2007 references are already documented in t0114 compare_literature.md.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: no external information required; consolidates existing in-project data.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Identify result parquets in t0106/t0112/t0113/t0114/t0115; document reusable conventions and data schemas.",
+      "status": "completed",
+      "started_at": "2026-05-24T01:23:10Z",
+      "completed_at": "2026-05-24T01:37:08Z",
+      "log_file": "logs\\steps\\006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Plan the 5-seed consolidation pipeline, harmonised conventions, chart list, and answer-asset structure.",
+      "status": "completed",
+      "started_at": "2026-05-24T01:37:29Z",
+      "completed_at": "2026-05-24T01:46:58Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "implementation",
+      "description": "Load 5-seed parquets, recompute per-seed and 5-seed stats, produce CSV + 3 PNGs + 1 answer asset.",
+      "status": "completed",
+      "started_at": "2026-05-24T01:47:20Z",
+      "completed_at": "2026-05-24T02:01:50Z",
+      "log_file": "logs\\steps\\008_implementation/"
+    },
+    {
+      "step": 9,
+      "name": "creative-thinking",
+      "description": "Skipped: write-up task; no alternative-approach exploration needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/009_creative-thinking/"
+    },
+    {
+      "step": 10,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json.",
+      "status": "completed",
+      "started_at": "2026-05-24T02:02:39Z",
+      "completed_at": "2026-05-24T02:04:48Z",
+      "log_file": "logs\\steps\\010_results/"
+    },
+    {
+      "step": 11,
+      "name": "compare-literature",
+      "description": "Compare 5-seed substrate-rate vs Hay 2011 / Druckmann 2007 / Mohacsi 2024 conventions.",
+      "status": "completed",
+      "started_at": "2026-05-24T02:05:24Z",
+      "completed_at": "2026-05-24T02:11:25Z",
+      "log_file": "logs\\steps\\011_compare-literature/"
+    },
+    {
+      "step": 12,
+      "name": "suggestions",
+      "description": "Write follow-up suggestions from the consolidated finding.",
+      "status": "completed",
+      "started_at": "2026-05-24T02:11:44Z",
+      "completed_at": "2026-05-24T02:19:37Z",
+      "log_file": "logs\\steps\\012_suggestions/"
+    },
+    {
+      "step": 13,
+      "name": "reporting",
+      "description": "Run verificators, capture sessions, mark task completed, PR, merge.",
+      "status": "completed",
+      "started_at": "2026-05-24T02:20:03Z",
+      "completed_at": "2026-05-24T02:21:18Z",
+      "log_file": "logs\\steps\\013_reporting/"
+    }
+  ]
+}

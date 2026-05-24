@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results
+
+[33m[1mWARNINGS:[0m
+[33m  TR-W013 warning: results_detailed.md is missing ## Examples section (mandatory for experiment-type tasks)[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 1 warning(s)

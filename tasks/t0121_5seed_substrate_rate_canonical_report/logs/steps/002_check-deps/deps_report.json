@@ -1,0 +1,15 @@
+{
+  "task_id": "t0121_5seed_substrate_rate_canonical_report",
+  "checked_at": "2026-05-24T01:19:10Z",
+  "result": "passed",
+  "dependencies": [
+    {"task_id": "t0106_long_pdnd_nsga2_300gen", "status": "completed", "satisfied": true},
+    {"task_id": "t0112_t0106_seed77_replicate", "status": "completed", "satisfied": true},
+    {"task_id": "t0113_t0106_seed2247_replicate", "status": "completed", "satisfied": true},
+    {"task_id": "t0114_seed7755_no_autostop", "status": "completed", "satisfied": true},
+    {"task_id": "t0115_seed9354_no_autostop", "status": "completed", "satisfied": true},
+    {"task_id": "t0119_brainstorm_results_23", "status": "completed", "satisfied": true}
+  ],
+  "errors": 0,
+  "warnings": 0
+}

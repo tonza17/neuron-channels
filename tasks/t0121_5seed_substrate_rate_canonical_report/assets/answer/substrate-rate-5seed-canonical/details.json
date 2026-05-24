@@ -1,0 +1,35 @@
+{
+  "spec_version": "2",
+  "answer_id": "substrate-rate-5seed-canonical",
+  "question": "What is the LEGIT joint-pass acceptance rate on the 68-d Bed B + 14-d morphology NSGA-II substrate, estimated from a 5-seed random-init batch, and how does it compare to Hay 2011 and Druckmann 2007?",
+  "short_title": "5-seed substrate-rate canonical estimate",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1371_journal.pcbi.1002107",
+    "10.3389_neuro.01.1.1.001.2007",
+    "10.1371_journal.pcbi.1012039"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0106_long_pdnd_nsga2_300gen",
+    "t0112_t0106_seed77_replicate",
+    "t0113_t0106_seed2247_replicate",
+    "t0114_seed7755_no_autostop",
+    "t0115_seed9354_no_autostop",
+    "t0078_bedb_mobo_v2_ais_tiered_ahp",
+    "t0097_multi_obj_optim",
+    "t0102_seedscale_n4_gen20"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0121_5seed_substrate_rate_canonical_report",
+  "date_created": "2026-05-24"
+}

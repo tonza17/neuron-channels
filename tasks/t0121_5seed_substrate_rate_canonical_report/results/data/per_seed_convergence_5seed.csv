@@ -1,0 +1,6 @@
+seed,task_id,n_generations_completed,n_total_evals,final_hypervolume,stop_trigger,wall_clock_per_gen_s,pool_restart_every,hv_plateau_autostop,protocol_drift_notes
+t0106_seed44,t0106_long_pdnd_nsga2_300gen,39,3744,122.0288,hv_plateau,2277.4305,25,True,Legacy cadence 25; HV-plateau auto-stop fired at gen 39 above the Mohacsi 2024 20-60 convergence band.
+t0112_seed77,t0112_t0106_seed77_replicate,21,2016,107.4602,hv_plateau,833.2173,10,True,Cadence 10 (10th-gen rule adopted); HV-plateau auto-stop fired at gen 21 inside the Mohacsi 2024 convergence band.
+t0113_seed2247,t0113_t0106_seed2247_replicate,14,1344,45.6221,hv_plateau,164.0369,10,True,"Cadence 10; HV-plateau auto-stop fired prematurely at gen 14 below the Mohacsi 2024 20-60 convergence band -- zero LEGIT plausibly a censoring artefact, not a substrate-yield zero."
+t0114_seed7755,t0114_seed7755_no_autostop,62,5952,111.5353,operator_stop,199.5699,10,False,Cadence 10; HV-plateau auto-stop DISABLED per S-0113-03; operator stop at gen 62 after visible plateau at HV ~111.
+t0115_seed9354,t0115_seed9354_no_autostop,55,5280,50.5646,operator_stop,574.967,10,False,Cadence 10; HV-plateau auto-stop DISABLED per S-0113-03; operator stop at gen 55 after visible plateau at HV ~50.

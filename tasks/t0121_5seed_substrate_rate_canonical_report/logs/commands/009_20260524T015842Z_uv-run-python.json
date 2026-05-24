@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0121_5seed_substrate_rate_canonical_report",
+  "command": "uv run python -u -m tasks.t0121_5seed_substrate_rate_canonical_report.code.main",
+  "exit_code": 0,
+  "duration_seconds": 5.06,
+  "started_at": "2026-05-24T01:58:42Z",
+  "completed_at": "2026-05-24T01:58:47Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0121_5seed_substrate_rate_canonical_report",
+  "stdout_file": "009_20260524T015842Z_uv-run-python.stdout.txt",
+  "stderr_file": "009_20260524T015842Z_uv-run-python.stderr.txt",
+  "stdout_lines": 22,
+  "stderr_lines": 0,
+  "truncated": false
+}
