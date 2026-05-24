@@ -1,0 +1,90 @@
+{
+  "seed": 1524,
+  "k": 10,
+  "band_low": 0.2,
+  "band_high": 0.7,
+  "in_band_count": 10,
+  "finite_count": 10,
+  "entries": [
+    {
+      "rank": 1,
+      "dsi": 0.982142857142857,
+      "cytoplasm_volume_um3": 236.89154907470135,
+      "pd_rate_hz": 26.42857142857143,
+      "bf": 0.5,
+      "in_band": true
+    },
+    {
+      "rank": 2,
+      "dsi": 0.982142857142857,
+      "cytoplasm_volume_um3": 257.0345105873152,
+      "pd_rate_hz": 26.42857142857143,
+      "bf": 0.5,
+      "in_band": true
+    },
+    {
+      "rank": 3,
+      "dsi": 0.9809523809523808,
+      "cytoplasm_volume_um3": 236.89612651202472,
+      "pd_rate_hz": 24.761904761904763,
+      "bf": 0.5000000000000001,
+      "in_band": true
+    },
+    {
+      "rank": 4,
+      "dsi": 0.9805825242718446,
+      "cytoplasm_volume_um3": 236.8008411240943,
+      "pd_rate_hz": 24.28571428571429,
+      "bf": 0.5,
+      "in_band": true
+    },
+    {
+      "rank": 5,
+      "dsi": 0.9805825242718446,
+      "cytoplasm_volume_um3": 237.29272439002943,
+      "pd_rate_hz": 24.28571428571429,
+      "bf": 0.5,
+      "in_band": true
+    },
+    {
+      "rank": 6,
+      "dsi": 0.9797979797979797,
+      "cytoplasm_volume_um3": 237.189747478629,
+      "pd_rate_hz": 23.333333333333332,
+      "bf": 0.5,
+      "in_band": true
+    },
+    {
+      "rank": 7,
+      "dsi": 0.9797979797979797,
+      "cytoplasm_volume_um3": 239.05012087051816,
+      "pd_rate_hz": 23.333333333333332,
+      "bf": 0.4999999999999999,
+      "in_band": true
+    },
+    {
+      "rank": 8,
+      "dsi": 0.9797979797979797,
+      "cytoplasm_volume_um3": 239.05041429509637,
+      "pd_rate_hz": 23.333333333333332,
+      "bf": 0.5,
+      "in_band": true
+    },
+    {
+      "rank": 9,
+      "dsi": 0.9795918367346937,
+      "cytoplasm_volume_um3": 236.80344108906888,
+      "pd_rate_hz": 23.0952380952381,
+      "bf": 0.5,
+      "in_band": true
+    },
+    {
+      "rank": 10,
+      "dsi": 0.9795918367346937,
+      "cytoplasm_volume_um3": 237.29996403143423,
+      "pd_rate_hz": 23.0952380952381,
+      "bf": 0.5,
+      "in_band": true
+    }
+  ]
+}

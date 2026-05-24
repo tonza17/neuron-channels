@@ -1,0 +1,3 @@
+[pareto] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\results\images\pareto_front_dsi_vs_volume.png (59.3 KB)
+[cuntz] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\results\images\cuntz_balancing_factor_top10.png (39.0 KB)
+[cuntz] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\results\data\cuntz_top10_seed1524.json

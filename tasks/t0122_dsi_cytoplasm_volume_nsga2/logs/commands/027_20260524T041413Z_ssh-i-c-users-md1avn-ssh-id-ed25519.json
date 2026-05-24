@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 26422 -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul root@ssh6.vast.ai mkdir -p /root/t0122_workdir/repo && cd /root/t0122_workdir/repo && tar -xzf /root/t0122_workdir/payload.tar.gz && ls tasks/ && echo \"---\" && ls arf/scripts/utils/ | head -10 && echo \"---\" && python -c \"from tasks.t0122_dsi_cytoplasm_volume_nsga2.code.constants import T0122_SEEDS, _POOL_RESTART_EVERY, HV_PLATEAU_AUTO_STOP, COST_CAP_USD, N_GEN_MAX; print(f\\\"seed={T0122_SEEDS[0]} pool_restart_every={_POOL_RESTART_EVERY} hv_auto_stop={HV_PLATEAU_AUTO_STOP} cap=\\${COST_CAP_USD} n_gen_max={N_GEN_MAX}\\\")\"",
+  "exit_code": 0,
+  "duration_seconds": 3.282,
+  "started_at": "2026-05-24T04:14:13Z",
+  "completed_at": "2026-05-24T04:14:16Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "027_20260524T041413Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "027_20260524T041413Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 18,
+  "stderr_lines": 2,
+  "truncated": false
+}

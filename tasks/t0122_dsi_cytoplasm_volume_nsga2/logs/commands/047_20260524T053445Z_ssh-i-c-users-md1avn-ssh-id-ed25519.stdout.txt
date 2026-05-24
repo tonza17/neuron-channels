@@ -1,0 +1,18 @@
+{"gen": 56, "wall_clock_s": 3784.9086060523987, "hv": 49763.20257411102, "n_cells_evaluated": 96}
+{"gen": 57, "wall_clock_s": 3819.048144340515, "hv": 49763.20264230698, "n_cells_evaluated": 96}
+{"gen": 58, "wall_clock_s": 3857.431535959244, "hv": 49763.34999030759, "n_cells_evaluated": 96}
+{"gen": 59, "wall_clock_s": 3899.206924200058, "hv": 49763.34999030759, "n_cells_evaluated": 96}
+{"gen": 60, "wall_clock_s": 3942.856296777725, "hv": 49763.351143409935, "n_cells_evaluated": 96}
+---tmux---
+no server running on /tmp/tmux-0/default
+---tail-log---
+drwxr-xr-x 2 1144306 1049089     4096 May 24 05:30 .
+drwxr-xr-x 4 1144306 1049089       48 May 24 04:09 ..
+-rw-r--r-- 1 root    root         522 May 24 04:25 algorithm_config.json
+-rw-r--r-- 1 root    root    12517777 May 24 05:30 all_evaluations_seed1524.json
+-rw-r--r-- 1 root    root     9700306 May 24 05:30 cell_trace_seed1524.jsonl
+-rw-r--r-- 1 root    root         117 May 24 04:25 evaluation_seeds.json
+-rw-r--r-- 1 root    root       11124 May 24 05:30 hv_trajectory_seed1524.json
+-rw-r--r-- 1 root    root      172649 May 24 04:25 init_pop_seed1524.json
+-rw-r--r-- 1 root    root    12430568 May 24 05:30 nsga2_checkpoint_seed1524.json
+-rw-r--r-- 1 root    root        8363 May 24 05:30 pareto_front_seed1524.json

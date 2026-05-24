@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\predictions\nsga2-cytoplasm-volume-bedb-morph
+
+[31m[1mERRORS:[0m
+[31m  PR-E012 error: description.md is missing YAML frontmatter[0m
+
+[33m[1mWARNINGS:[0m
+[33m  PR-W014 warning: model_id is null (no model asset linked)[0m
+[33m  PR-W015 warning: dataset_ids is empty (no dataset assets linked)[0m
+
+[31m[1mFAILED[0m â€” 1 error(s), 2 warning(s)

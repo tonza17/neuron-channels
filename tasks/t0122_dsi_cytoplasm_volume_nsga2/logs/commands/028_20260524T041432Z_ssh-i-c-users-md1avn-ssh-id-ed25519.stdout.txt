@@ -1,0 +1,12 @@
+tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/:
+total 120
+drwxr-xr-x 3 root    root        40 May 24 04:14 .
+drwxr-xr-x 3 1144306 1049089   4096 May 24 04:14 ..
+drwxr-xr-x 2 root    root        27 May 24 04:14 .libs
+-rwxr-xr-x 1 root    root    118704 May 24 04:14 libnrnmech.so
+
+tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/.libs/:
+total 116
+drwxr-xr-x 2 root root     27 May 24 04:14 .
+drwxr-xr-x 3 root root     40 May 24 04:14 ..
+-rwxr-xr-x 1 root root 118704 May 24 04:14 libnrnmech.so

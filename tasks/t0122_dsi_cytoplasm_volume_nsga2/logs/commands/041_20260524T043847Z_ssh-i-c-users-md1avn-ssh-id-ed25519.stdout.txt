@@ -1,0 +1,38 @@
+[run_seed1524] repo root: /root/t0122_workdir/repo
+[run_seed1524] per-cell trace: /root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/results/data/cell_trace_seed1524.jsonl
+[run_seed1524] Phase A: building random init population for seed 1524
+[random_init] seed=1524 wrote /root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/results/data/init_pop_seed1524.json shape=(96, 68)
+[run_seed1524] Compiling t0080 MOD library if not already present
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[run_seed1524] bootstrap imported successfully
+============================================================
+[run_seed1524] Seed 1524 starting at 2026-05-24T04:25:09Z
+[run_seed1524] N_GEN ceiling = 60; HV-plateau auto-stop DISABLED
+[run_seed1524] Cost cap = $6.00; per-instance cap = $5.00
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.1881/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=1524] using 60 parallel workers
+[nsga2_driver seed=1524] starting: pop=96 max_gen=60 hard_cap=$6.00 rate=$0.1881/hr pool_restart_every=10
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       96 |      3 |             - |             -
+[seed 1524 gen 1] HV=12173.7496  pop_size=96  cost_so_far=$0.0089  elapsed=170s
+[nsga2_driver seed=1524 gen=1] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     2 |      192 |      4 |  1.5558691093 |         nadir
+[seed 1524 gen 2] HV=12323.5807  pop_size=96  cost_so_far=$0.0202  elapsed=386s
+[nsga2_driver seed=1524 gen=2] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     3 |      288 |      5 |  0.0267039759 |             f
+[seed 1524 gen 3] HV=12326.7670  pop_size=96  cost_so_far=$0.0319  elapsed=610s
+[nsga2_driver seed=1524 gen=3] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---HV---
+{"gen": 1, "wall_clock_s": 170.4623827934265, "hv": 12173.749580901478, "n_cells_evaluated": 96}
+{"gen": 2, "wall_clock_s": 385.7478229999542, "hv": 12323.58070286434, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 609.7147974967957, "hv": 12326.766978049507, "n_cells_evaluated": 96}
+---STATS---
+383 /root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/results/data/cell_trace_seed1524.jsonl
+---BEST-DSI---
+n_cells=383; best_dsi=0.2500; min_vol=300.9; max_dsi_below_1=0.2500; n_legit=0; n_silence_corner=0

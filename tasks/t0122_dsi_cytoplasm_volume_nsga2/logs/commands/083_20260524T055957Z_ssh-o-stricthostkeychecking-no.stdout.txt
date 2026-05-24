@@ -1,0 +1,18 @@
+mods
+payload.tar.gz
+repo
+results_payload.tar.gz
+run_seed1524.log
+t0083_payload.tar.gz
+--- REPO RESULTS ---
+data
+images
+--- DATA ---
+algorithm_config.json
+all_evaluations_seed1524.json
+cell_trace_seed1524.jsonl
+evaluation_seeds.json
+hv_trajectory_seed1524.json
+init_pop_seed1524.json
+nsga2_checkpoint_seed1524.json
+pareto_front_seed1524.json

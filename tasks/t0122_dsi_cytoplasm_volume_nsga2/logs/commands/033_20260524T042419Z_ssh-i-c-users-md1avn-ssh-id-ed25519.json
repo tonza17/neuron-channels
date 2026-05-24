@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 26422 -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul root@ssh6.vast.ai cat /root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/logs/steps/009_implementation/smoke_gate_remote.json | python -c \"import json,sys; d=json.load(sys.stdin); print(json.dumps({\\\"check_1_anchor1\\\":d[\\\"checks\\\"][0][\\\"anchor1_pd_rate_hz\\\"], \\\"check_1_anchor1_dsi\\\":d[\\\"checks\\\"][0][\\\"anchor1_dsi\\\"], \\\"check_1_anchor_volumes\\\":[(a[\\\"anchor_name\\\"],a[\\\"cytoplasm_volume_um3\\\"]) for a in d[\\\"checks\\\"][0][\\\"per_anchor\\\"]], \\\"check_7\\\":d[\\\"checks\\\"][6]}, indent=2))\"",
+  "exit_code": 0,
+  "duration_seconds": 2.724,
+  "started_at": "2026-05-24T04:24:19Z",
+  "completed_at": "2026-05-24T04:24:22Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "033_20260524T042419Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "033_20260524T042419Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 33,
+  "stderr_lines": 2,
+  "truncated": false
+}

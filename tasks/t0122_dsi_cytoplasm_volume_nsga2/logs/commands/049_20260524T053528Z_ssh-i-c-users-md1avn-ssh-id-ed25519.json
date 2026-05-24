@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 26422 -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul root@ssh6.vast.ai cd /root/t0122_workdir/repo && tar -czf /root/t0122_workdir/results_payload.tar.gz tasks/t0122_dsi_cytoplasm_volume_nsga2/results/data/ tasks/t0122_dsi_cytoplasm_volume_nsga2/logs/steps/009_implementation/",
+  "exit_code": 0,
+  "duration_seconds": 15.647,
+  "started_at": "2026-05-24T05:35:28Z",
+  "completed_at": "2026-05-24T05:35:44Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "049_20260524T053528Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "049_20260524T053528Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}

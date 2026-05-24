@@ -1,0 +1,8 @@
+{"gen": 1, "wall_clock_s": 170.4623827934265, "hv": 12173.749580901478, "n_cells_evaluated": 96}
+{"gen": 2, "wall_clock_s": 385.7478229999542, "hv": 12323.58070286434, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 609.7147974967957, "hv": 12326.766978049507, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 850.222620010376, "hv": 12375.426157111873, "n_cells_evaluated": 96}
+{"gen": 5, "wall_clock_s": 1103.994014263153, "hv": 16528.114306497057, "n_cells_evaluated": 96}
+{"gen": 6, "wall_clock_s": 1342.1801438331604, "hv": 49624.61939210798, "n_cells_evaluated": 96}
+---STATS---
+n_cells=667; best_dsi=1.0000; min_vol=288.3; max_dsi_below_1=0.8378; n_legit=0; n_silence_corner=3

@@ -1,0 +1,1 @@
+[metrics_builder] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\results\metrics.json with 3 variants

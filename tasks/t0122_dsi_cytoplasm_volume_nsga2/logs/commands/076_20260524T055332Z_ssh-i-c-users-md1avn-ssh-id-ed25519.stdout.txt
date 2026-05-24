@@ -1,0 +1,3 @@
+no server running on /tmp/tmux-0/default
+---last cost from hv_trajectory---
+gen=60 hv=49763.35 cost_usd=0.2060 elapsed_s=3942

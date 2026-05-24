@@ -1,0 +1,10 @@
+Warning: Permanently added '[ssh6.vast.ai]:26422' (ED25519) to the list of known hosts.
+{"gen": 23, "wall_clock_s": 2784.7315385341644, "hv": 49757.957468185115, "n_cells_evaluated": 96}
+timestamp=24 May 2026 05:11:50
+Warning: Permanently added '[ssh6.vast.ai]:26422' (ED25519) to the list of known hosts.
+{"gen": 43, "wall_clock_s": 3402.949586391449, "hv": 49763.170566430876, "n_cells_evaluated": 96}
+timestamp=24 May 2026 05:21:59
+Warning: Permanently added '[ssh6.vast.ai]:26422' (ED25519) to the list of known hosts.
+{"gen": 60, "wall_clock_s": 3942.856296777725, "hv": 49763.351143409935, "n_cells_evaluated": 96}
+timestamp=24 May 2026 05:32:08
+RUN COMPLETED OR HIT 60 GEN

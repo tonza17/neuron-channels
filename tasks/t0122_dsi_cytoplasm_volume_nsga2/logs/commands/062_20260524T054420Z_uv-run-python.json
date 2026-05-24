@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "uv run python -u -m meta.asset_types.predictions.verificator --task-id t0122_dsi_cytoplasm_volume_nsga2 nsga2-cytoplasm-volume-bedb-morph",
+  "exit_code": 0,
+  "duration_seconds": 0.353,
+  "started_at": "2026-05-24T05:44:20Z",
+  "completed_at": "2026-05-24T05:44:20Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "062_20260524T054420Z_uv-run-python.stdout.txt",
+  "stderr_file": "062_20260524T054420Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}

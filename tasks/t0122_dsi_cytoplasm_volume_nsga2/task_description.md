@@ -37,12 +37,27 @@ to patch `_apply_asymmetry` and re-run all 68-d morphology-extended NSGA-II line
 One NSGA-II run, single GA seed, 2 objectives, on the 68-d Bed B + 14-d morphology substrate that
 has been validated by the t0106-t0115 lineage.
 
+## Hard Constraints (must be reproduced in plan and implementation)
+
+These constraints are non-negotiable. The planning subagent must surface each one in `plan/plan.md`
+`## Verification Criteria` with an explicit check, and the implementation subagent must reproduce
+them in `code/constants.py`:
+
+* **`_POOL_RESTART_EVERY = 10`** — fresh random-init pool injection cadence. This is the project's
+  standing 10-gen rule for NSGA-II pool-restart cadence, established by t0112 and carried through
+  t0113 / t0114 / t0115. NEVER use cadence 25 (t0106's value, since superseded) or any other value.
+* **`HV_PLATEAU_AUTO_STOP = False`** — disabled per project policy (see memory:
+  `feedback_disable_hv_plateau_autostop.md`). Rely on operator-stop + budget cap + gen ceiling.
+* **`POP_SIZE = 96`**, **`N_EVAL_SEEDS = 3`** — match the t0114/t0115 protocol exactly.
+* **`N_GEN_MAX = 60`** — gen ceiling per the auto-stop-disabled convention.
+* **`COST_CAP_USD = 6.0`** — per-task hard cap (REDUCED from $8 because Vast.ai account balance is $7; $1 buffer for teardown / unexpected costs). Watchdog stops the run if exceeded. Previous runs in this lineage came in well under: t0113=$0.48, t0114=$1.13, t0115=$2.50.
+
 ## Approach
 
 1. **Copy the t0115 NSGA-II substrate** end-to-end: 68-d parameter vector (54-d electrophys + 14-d
    morphology), pop=96, N_EVAL_SEEDS=3, 2 antipodal directions (PD=0deg, ND=180deg), ratio DSI,
    silence-guard tightened to >= 3 PD spikes, `_POOL_RESTART_EVERY=10`, HV-plateau auto-stop
-   DISABLED, $8 hard cap.
+   DISABLED, $6 hard cap.
 2. **Replace one objective**: drop the PD-rate objective from t0106's 2-objective configuration and
    replace with **cytoplasm volume**, computed as:
    `vol = sum(pi * (sec.diam/2)^2 * sec.L for sec in [soma, *all_dends, ais_proximal, ais_distal])`.
@@ -80,9 +95,10 @@ has been validated by the t0106-t0115 lineage.
 
 ## Budget
 
-* Cost cap: **$8** (per-task default).
-* Expected: ~$4-8 (one Vast.ai EPYC instance for 6-12 hours).
-* If the run exceeds $8 watchdog trip, stop and write up partial results.
+* Cost cap: **$6** (REDUCED from $8 because Vast.ai account balance is $7; $1 buffer for
+  teardown / unexpected costs).
+* Expected actual: **$1-3** based on prior lineage (t0113=$0.48, t0114=$1.13, t0115=$2.50).
+* If the run exceeds $6 watchdog trip, stop and write up partial results.
 
 ## Dependencies
 

@@ -1,0 +1,40 @@
+{
+  "spec_version": "2",
+  "answer_id": "cuntz-balancing-factor-prediction-check",
+  "question": "Does NSGA-II with a cytoplasm-volume cost objective produce a high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7] band?",
+  "short_title": "Cuntz 2010 bf prediction check (DSI vs cytoplasm-volume Pareto front)",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "dendritic-computation",
+    "retinal-ganglion-cell"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1371_journal.pcbi.1002107"
+  ],
+  "source_urls": [
+    "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002107"
+  ],
+  "source_task_ids": [
+    "t0091_morphology_extended_nsga2_v1",
+    "t0115_seed9354_no_autostop",
+    "t0120_morph_generator_geometry_audit",
+    "t0122_dsi_cytoplasm_volume_nsga2"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0122_dsi_cytoplasm_volume_nsga2",
+  "date_created": "2026-05-24",
+  "metrics_at_creation": {
+    "task_seed": 1524,
+    "cuntz_band_low": 0.2,
+    "cuntz_band_high": 0.7,
+    "in_band_count": 10,
+    "finite_count": 10,
+    "k": 10
+  }
+}

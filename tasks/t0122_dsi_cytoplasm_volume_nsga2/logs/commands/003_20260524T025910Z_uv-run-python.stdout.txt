@@ -1,0 +1,24 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0078] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0099] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0104] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0112] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0113] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0122] has no matching Task Index entry[0m
+[31m  RC-E007 error: Task Index entry [t0024] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0080] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0090] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0091] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0092] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0102] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0106] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0114] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0115] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0118] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0120] is missing the Task ID field[0m
+[31m  RC-E007 error: Task Index entry [t0121] is missing the Task ID field[0m
+
+[31m[1mFAILED[0m â€” 18 error(s), 0 warning(s)

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 26422 -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul root@ssh6.vast.ai grep -E \"FINISHED|wrote.*pareto|terminated|final cost\" /root/t0122_workdir/run_seed1524.log 2>&1 | tail -10; echo \"---\"; ls -la /root/t0122_workdir/repo/tasks/t0122_dsi_cytoplasm_volume_nsga2/results/data/",
+  "exit_code": 0,
+  "duration_seconds": 3.306,
+  "started_at": "2026-05-24T05:35:07Z",
+  "completed_at": "2026-05-24T05:35:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "048_20260524T053507Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "048_20260524T053507Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 14,
+  "stderr_lines": 2,
+  "truncated": false
+}

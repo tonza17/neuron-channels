@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\meta\metrics\t0122_dsi_cytoplasm_volume_nsga2\description.json
+
+[31m[1mERRORS:[0m
+[31m  MT-E001 error: Metric definition does not exist or is not valid JSON: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\meta\metrics\t0122_dsi_cytoplasm_volume_nsga2\description.json[0m
+
+[31m[1mFAILED[0m â€” 1 error(s), 0 warning(s)

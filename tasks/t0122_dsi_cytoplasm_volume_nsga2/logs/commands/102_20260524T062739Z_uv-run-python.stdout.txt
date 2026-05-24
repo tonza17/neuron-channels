@@ -1,0 +1,24 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0122_dsi_cytoplasm_volume_nsga2\tasks\t0122_dsi_cytoplasm_volume_nsga2\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 003_20260524T025910Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 011_20260524T040709Z_uv-run-ruff.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 015_20260524T040816Z_uv-run-mypy.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 017_20260524T040847Z_uv-run-mypy.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 018_20260524T040859Z_uv-run-mypy.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 019_20260524T040922Z_uv-run-mypy.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 036_20260524T042526Z_ssh-i-c-users-md1avn-ssh-id-ed25519.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 040_20260524T043827Z_ssh-i-c-users-md1avn-ssh-id-ed25welcome2.json has non-zero exit code: 255[0m
+[33m  LG-W004 warning: Command log 057_20260524T054047Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 058_20260524T054120Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 060_20260524T054205Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 063_20260524T054432Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 074_20260524T055127Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 081_20260524T055927Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 082_20260524T055940Z_ssh-o-stricthostkeychecking-no.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 087_20260524T060232Z_vastai-show-instance.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 090_20260524T060450Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 18 warning(s)

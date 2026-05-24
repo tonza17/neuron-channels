@@ -1,0 +1,11 @@
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[smoke_gate] wrote tasks/t0122_dsi_cytoplasm_volume_nsga2/logs/steps/009_implementation/smoke_gate_remote.json: fast_checks_passed=True all_checks_passed=True
+  check 1: ok  -- single-eval driver run (anchor-1 bedb_like ~43.6 Hz)
+  check 2: ok  -- ratio DSI synthetic sanity (PD=5, ND=1 -> 0.6667 +/- 1e-6)
+  check 3: ok  -- silence guard active (SILENCE_PD_SPIKES_THRESHOLD == 3)
+  check 4: ok  -- pool-restart sanity (_POOL_RESTART_EVERY == 10)
+  check 5: ok  -- watchdog wiring (T0122_HARD_BUDGET_USD == 6.00)
+  check 6: ok  -- no HVPlateauTermination in live TerminationCollection
+  check 7: ok  -- cytoplasm volume positive on anchor (100 <= v <= 100000 um^3)
+  check 8: ok  -- BedBV3MorphProblem._evaluate emits F[1] >= 0 (volume minimised, NOT negated)

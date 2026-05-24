@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0122_dsi_cytoplasm_volume_nsga2",
+  "command": "uv run python -u -m arf.scripts.verificators.verify_predictions_asset --task-id t0122_dsi_cytoplasm_volume_nsga2",
+  "exit_code": 1,
+  "duration_seconds": 0.23,
+  "started_at": "2026-05-24T06:28:02Z",
+  "completed_at": "2026-05-24T06:28:03Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0122_dsi_cytoplasm_volume_nsga2",
+  "stdout_file": "107_20260524T062802Z_uv-run-python.stdout.txt",
+  "stderr_file": "107_20260524T062802Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 1,
+  "truncated": false
+}

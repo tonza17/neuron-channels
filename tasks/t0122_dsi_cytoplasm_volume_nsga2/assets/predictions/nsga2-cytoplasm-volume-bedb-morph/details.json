@@ -1,0 +1,41 @@
+{
+  "spec_version": "2",
+  "predictions_id": "nsga2-cytoplasm-volume-bedb-morph",
+  "name": "NSGA-II Pareto front: DSI vs cytoplasm volume on Bed B + 14-d morph",
+  "short_description": "Per-cell evaluations from the t0122 68-d NSGA-II run optimising (maximise DSI, minimise cytoplasm volume) on the Bed B + 14-d morphology substrate. Single GA seed; pop=96; N_EVAL_SEEDS=3; N_GEN_MAX=60; HV-plateau auto-stop disabled.",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "Procedural Bed B DSGC cell with 14-d morphology parameter space (t0090 generator + t0092 z-axis soma patch) and 54-d electrophys parameter scheme (t0080 NEURON MOD channels). Evaluated under a 2-direction PD-vs-ND protocol with AR(2)-correlated synaptic noise (t0024 de Rosenroll 2026 ports).",
+  "dataset_ids": [],
+  "prediction_format": "jsonl.gz",
+  "prediction_schema": "Each row: {vector_68d, dsi_vector_sum, pd_rate_hz, robustness, cytoplasm_volume_um3, objective_F_minimised, silence_failed_bool, legit_bool}. See description.md for full field definitions.",
+  "instance_count": 5760,
+  "metrics_at_creation": {
+    "task_seed": 1524,
+    "n_generations_completed": 60,
+    "n_cells_total": 5760,
+    "n_pareto_cells": 2,
+    "n_legit_cells": 10,
+    "best_legit_dsi": 0.9753086419753088,
+    "min_legit_cytoplasm_volume_um3": 250.24132753292068,
+    "final_hypervolume": 49763.351143409935,
+    "final_cost_usd": 0.20595092873024998,
+    "cuntz_in_band_count": 10,
+    "cuntz_finite_count": 10
+  },
+  "files": [
+    {
+      "path": "files/predictions.jsonl.gz",
+      "description": "Gzipped JSONL with one row per unique cell evaluated by the NSGA-II run. See description.md and prediction_schema.",
+      "format": "jsonl.gz"
+    }
+  ],
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "retinal-ganglion-cell"
+  ],
+  "created_by_task": "t0122_dsi_cytoplasm_volume_nsga2",
+  "date_created": "2026-05-24"
+}
