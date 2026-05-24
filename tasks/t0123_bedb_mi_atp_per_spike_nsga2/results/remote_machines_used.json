@@ -9,15 +9,15 @@
     "ram_gb": 63,
     "disk_gb": 40,
     "location": "Norway, NO",
-    "duration_hours": 6.39,
-    "cost_usd": 1.146,
+    "duration_hours": 6.6617,
+    "cost_usd": 1.191,
     "price_per_hour_usd": 0.17851851851851852,
     "reliability": 0.9983,
     "image": "python:3.12-bookworm",
     "created_at": "2026-05-24T13:50:43Z",
     "ready_at": "2026-05-24T13:56:57Z",
-    "destroyed_at": null,
+    "destroyed_at": "2026-05-24T20:30:25Z",
     "workload": "NSGA-II (60 gen, pop=96, n_eval_seeds=3, n_directions=4, single seed 441) followed by post-hoc Strong-Bialek 1998 direct-method MI rerun on top-10 Pareto cells (8 directions x 20 trials per direction)",
-    "note": "Instance still running at the time this file was written; teardown is a separate orchestrator step. The duration_hours and cost_usd are accurate as of the manual finalize handoff (~2026-05-24T20:10:00Z UTC); they will increase modestly until teardown."
+    "note": "Final post-teardown billing from `vastai show invoices --raw` filtered to instance 37599740: GPU 6.646 h x $0.16/hr = $1.063, storage 6.663 h x $0.0185/hr = $0.123, download 0.166 GB x $0.026 = $0.004, upload 0.031 GB x $0.026 = $0.001. Total $1.191. Total wall-clock duration from creation (2026-05-24T13:50:43Z) to destruction (2026-05-24T20:30:25Z) = 6.662 h. The actual cost is $0.045 (3.9%) above the pre-teardown estimate of $1.146 due to additional idle time between the manual finalize handoff at ~20:10Z and teardown at 20:30Z."
   }
 ]

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "command": "vastai show instances --raw",
+  "exit_code": 0,
+  "duration_seconds": 2.154,
+  "started_at": "2026-05-24T20:32:36Z",
+  "completed_at": "2026-05-24T20:32:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0123_bedb_mi_atp_per_spike_nsga2",
+  "stdout_file": "074_20260524T203236Z_vastai-show-instances.stdout.txt",
+  "stderr_file": "074_20260524T203236Z_vastai-show-instances.stderr.txt",
+  "stdout_lines": 123,
+  "stderr_lines": 0,
+  "truncated": false
+}

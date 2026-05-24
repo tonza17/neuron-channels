@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 39740 root@ssh2.vast.ai stat -c '%s %n' /root/t0123_workdir/repo/tasks/t0123_bedb_mi_atp_per_spike_nsga2/logs/steps/009_implementation/smoke_gate.json /root/t0123_workdir/repo/tasks/t0123_bedb_mi_atp_per_spike_nsga2/logs/steps/009_implementation/hv_trace.jsonl 2>&1; echo '---checkpoint total size---'; du -sh /root/t0123_workdir/repo/tasks/t0123_bedb_mi_atp_per_spike_nsga2/logs/steps/009_implementation/checkpoints/ 2>&1",
+  "exit_code": 0,
+  "duration_seconds": 4.174,
+  "started_at": "2026-05-24T20:26:47Z",
+  "completed_at": "2026-05-24T20:26:52Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0123_bedb_mi_atp_per_spike_nsga2",
+  "stdout_file": "060_20260524T202647Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "060_20260524T202647Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 2,
+  "truncated": false
+}

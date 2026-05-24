@@ -1,0 +1,22 @@
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[post_hoc_strong_bialek] cell 1/10: starting
+[post_hoc_strong_bialek] cell 1/10: bits_per_sec=0.00 r^2=nan (139.3s)
+[post_hoc_strong_bialek] cell 2/10: starting
+[post_hoc_strong_bialek] cell 2/10: bits_per_sec=0.00 r^2=nan (157.9s)
+[post_hoc_strong_bialek] cell 3/10: starting
+[post_hoc_strong_bialek] cell 3/10: bits_per_sec=0.00 r^2=nan (176.1s)
+[post_hoc_strong_bialek] cell 4/10: starting
+---END post_hoc.log---
+total 4
+drwxr-xr-x 11 1144306 1049089 4096 May 24 14:01 .
+drwxr-xr-x  6 1144306 1049089   67 May 24 12:41 ..
+drwxr-xr-x  2 1144306 1049089   29 May 24 12:24 001_create-branch
+drwxr-xr-x  2 1144306 1049089   30 May 24 12:26 002_check-deps
+drwxr-xr-x  2 1144306 1049089   33 May 24 12:41 003_init-folders
+drwxr-xr-x  2 1144306 1049089   25 May 24 12:42 004_research-papers
+drwxr-xr-x  2 1144306 1049089   25 May 24 12:42 005_research-internet
+drwxr-xr-x  2 1144306 1049089   25 May 24 12:59 006_research-code
+drwxr-xr-x  2 1144306 1049089   25 May 24 13:12 007_planning
+drwxr-xr-x  2 1144306 1049089   49 May 24 14:00 008_setup-machines
+drwxr-xr-x  3 1144306 1049089   70 May 24 14:53 009_implementation

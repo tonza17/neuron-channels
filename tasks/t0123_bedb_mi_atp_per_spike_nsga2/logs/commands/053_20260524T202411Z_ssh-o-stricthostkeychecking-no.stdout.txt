@@ -1,0 +1,33 @@
+total 40
+drwxr-xr-x 4 root root   107 May 24 19:56 .
+drwx------ 1 root root  4096 May 24 13:55 ..
+drwxr-xr-x 3 root root  4096 May 24 13:56 mods
+-rw-r--r-- 1 root root   468 May 24 20:04 post_hoc.log
+-rw-r--r-- 1 root root  1383 May 24 20:06 post_hoc_strong_bialek.log
+drwxr-xr-x 6 root root   111 May 24 14:29 repo
+-rw-r--r-- 1 root root 23284 May 24 19:00 run_seed441.log
+---repo tree---
+total 40
+drwxr-xr-x 12 1144306 1049089  4096 May 24 14:31 .
+drwxr-xr-x  9 root    root     4096 May 24 14:30 ..
+-rw-r--r--  1 1144306 1049089     0 May 24 12:41 __init__.py
+drwxr-xr-x  2 root    root       38 May 24 14:31 __pycache__
+drwxr-xr-x  4 1144306 1049089    39 May 24 12:41 assets
+drwxr-xr-x  3 1144306 1049089  4096 May 24 14:46 code
+drwxr-xr-x  2 1144306 1049089    22 May 24 12:41 corrections
+drwxr-xr-x  2 1144306 1049089     6 May 24 14:26 data
+drwxr-xr-x  2 1144306 1049089    22 May 24 12:41 intervention
+drwxr-xr-x  6 1144306 1049089    67 May 24 12:41 logs
+drwxr-xr-x  2 1144306 1049089    37 May 24 13:11 plan
+drwxr-xr-x  2 1144306 1049089    46 May 24 12:58 research
+drwxr-xr-x  4 1144306 1049089    48 May 24 14:26 results
+-rw-r--r--  1 1144306 1049089  5841 May 24 14:01 step_tracker.json
+-rw-r--r--  1 1144306 1049089  1130 May 24 12:20 task.json
+-rw-r--r--  1 1144306 1049089 14303 May 24 12:20 task_description.md
+---results---
+total 8
+drwxr-xr-x  4 1144306 1049089   48 May 24 14:26 .
+drwxr-xr-x 12 1144306 1049089 4096 May 24 14:31 ..
+-rw-r--r--  1 1144306 1049089    0 May 24 12:41 .gitkeep
+drwxr-xr-x  2 1144306 1049089 4096 May 24 20:06 data
+drwxr-xr-x  2 1144306 1049089   22 May 24 12:41 images
