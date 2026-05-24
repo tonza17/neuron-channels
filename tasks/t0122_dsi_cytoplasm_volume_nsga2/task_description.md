@@ -37,6 +37,21 @@ to patch `_apply_asymmetry` and re-run all 68-d morphology-extended NSGA-II line
 One NSGA-II run, single GA seed, 2 objectives, on the 68-d Bed B + 14-d morphology substrate that
 has been validated by the t0106-t0115 lineage.
 
+## Hard Constraints (must be reproduced in plan and implementation)
+
+These constraints are non-negotiable. The planning subagent must surface each one in `plan/plan.md`
+`## Verification Criteria` with an explicit check, and the implementation subagent must reproduce
+them in `code/constants.py`:
+
+* **`_POOL_RESTART_EVERY = 10`** — fresh random-init pool injection cadence. This is the project's
+  standing 10-gen rule for NSGA-II pool-restart cadence, established by t0112 and carried through
+  t0113 / t0114 / t0115. NEVER use cadence 25 (t0106's value, since superseded) or any other value.
+* **`HV_PLATEAU_AUTO_STOP = False`** — disabled per project policy (see memory:
+  `feedback_disable_hv_plateau_autostop.md`). Rely on operator-stop + budget cap + gen ceiling.
+* **`POP_SIZE = 96`**, **`N_EVAL_SEEDS = 3`** — match the t0114/t0115 protocol exactly.
+* **`N_GEN_MAX = 60`** — gen ceiling per the auto-stop-disabled convention.
+* **`COST_CAP_USD = 8.0`** — per-task hard cap; watchdog stops the run if exceeded.
+
 ## Approach
 
 1. **Copy the t0115 NSGA-II substrate** end-to-end: 68-d parameter vector (54-d electrophys + 14-d
