@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-16-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-42-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-43-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-123-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-466-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-470-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (45K)
-| [full](llm-context/full.xml) (727K) | [roadmap](llm-context/roadmap.xml) (142K) |
-[results](llm-context/results-deep-dive.xml) (560K) |
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (46K)
+| [full](llm-context/full.xml) (732K) | [roadmap](llm-context/roadmap.xml) (141K) |
+[results](llm-context/results-deep-dive.xml) (564K) |
 [assets](llm-context/literature-and-assets.xml) (73K)
 
-*Last updated: 2026-05-23 22:49 UTC*
+*Last updated: 2026-05-24 00:46 UTC*
 
 * **Budget**: **$63** spent of $100
 * **Remaining**: **$37**
@@ -63,18 +63,16 @@ No tasks in progress.
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0120 | [Morphology generator geometry audit (15-20 cells)](../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) | [`description`](../tasks/t0120_morph_generator_geometry_audit/task_description.md) | — |
-| 0121 | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) | [`description`](../tasks/t0121_5seed_substrate_rate_canonical_report/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
+| 0121 | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) | [`description`](../tasks/t0121_5seed_substrate_rate_canonical_report/task_description.md) | 2026-05-23 |
+| 0122 | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | [`description`](../tasks/t0122_dsi_cytoplasm_volume_nsga2/task_description.md) | 2026-05-23 |
 
 ---
 
-## [Blocked Tasks (1)](tasks/)
+## [Blocked Tasks (0)](tasks/)
 
-| # | Task | Blocked By |
-|---|------|------------|
-| 0122 | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | [`t0120_morph_generator_geometry_audit`](../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
+No blocked tasks.
 
 ---
 
@@ -86,10 +84,11 @@ No tasks in progress.
 
 ---
 
-## [Recently Completed (112 total)](tasks/by-status/completed.md)
+## [Recently Completed (113 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0120 | [Morphology generator geometry audit (15-20 cells)](../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) | [`results`](../tasks/t0120_morph_generator_geometry_audit/results/results_detailed.md) | 2026-05-24 00:45 |
 | 0119 | [Brainstorm results session 23](../overview/tasks/task_pages/t0119_brainstorm_results_23.md) | [`results`](../tasks/t0119_brainstorm_results_23/results/results_detailed.md) | 2026-05-23 00:00 |
 | 0118 | [Re-simulate 10 cells per t0117 ephys cluster; plot g_E, g_I, Vm in PD and ND](../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) | [`results`](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/results/results_detailed.md) | 2026-05-22 18:31 |
 | 0117 | [Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds](../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) | [`results`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/results_detailed.md) | 2026-05-22 13:16 |
@@ -99,9 +98,8 @@ No tasks in progress.
 | 0113 | [Seed-2247 random-seed replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md) | [`results`](../tasks/t0113_t0106_seed2247_replicate/results/results_detailed.md) | 2026-05-20 02:50 |
 | 0112 | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | [`results`](../tasks/t0112_t0106_seed77_replicate/results/results_detailed.md) | 2026-05-19 21:50 |
 | 0111 | [Brainstorm results session 22](../overview/tasks/task_pages/t0111_brainstorm_results_22.md) | [`results`](../tasks/t0111_brainstorm_results_22/results/results_detailed.md) | 2026-05-19 00:00 |
-| 0110 | [Factor analysis at relaxed cohort (DSI > 0.2 AND PD > 3) to test all-negative PD claim](../overview/tasks/task_pages/t0110_relaxed_cohort_factor_analysis.md) | [`results`](../tasks/t0110_relaxed_cohort_factor_analysis/results/results_detailed.md) | 2026-05-18 19:30 |
 
-*102 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*103 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -126,7 +124,88 @@ No tasks in progress.
 
 ---
 
-## [Recent Suggestions (419 open)](suggestions/)
+## [Recent Suggestions (423 open)](suggestions/)
+
+<details>
+<summary>🔧 <strong>Re-render t0112 / t0114 / t0115 top-50 morphology grids with
+t0120's rendering conventions (correction)</strong> (S-0120-01)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0120_morph_generator_geometry_audit](../tasks/t0120_morph_generator_geometry_audit/)
+
+t0120 confirmed the soma-disconnect visual artefact in t0115's top50_morphologies_seed9354.png
+(and the seed-44/77/7755 analogues from t0106/t0112/t0114) is rendering-only, driven by three
+conventions in build_top50_morphologies.py: fixed Circle(radius=6.0) soma (too small vs
+typical 100-150 um soma_offset_pd_um), LineCollection(linewidths=0.4) primary stems (visually
+negligible), and auto-zoom that amplifies asymmetry. Concrete action: regenerate the four PNGs
+using t0120's conventions (Circle(radius=soma_diameter_um/2), tab:red primary stems at
+linewidth 2.0, optional debug line from origin_xy to each primary-stem tip), file corrections/
+overlays at the new chart paths, and add a README noting the originals were not
+geometry-wrong. Broader than S-0115-05 (which targets only t0114's dots-only artefact); the
+two can be merged into one correction task. Recommended task types: correction.
+
+</details>
+
+<details>
+<summary>📚 <strong>Replace lineage `_section_midpoint_xy` silent-(0,0) fallback with
+t0120's strict raise-on-n3d==0 version</strong> (S-0120-02)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0120_morph_generator_geometry_audit](../tasks/t0120_morph_generator_geometry_audit/)
+
+t0120 ships a strict `_section_midpoint_xy_strict` in `code/dump_helpers.py` that raises
+`RuntimeError('degenerate section: h.n3d() == 0')` instead of silently returning `(0.0, 0.0)`
+(lineage behaviour in `tasks/t0091_morphology_extended_nsga2_v1/code/trial_helpers.py` lines
+160-178, copied into every NSGA-II task t0091-t0118). The silent fallback is dangerous: if a
+degenerate dendrite section ever appears, every synapse on that section would be placed at the
+world origin and the bar arrival-time projection would be silently wrong by tens of
+micrometres. The 20-cell t0120 audit never tripped the strict raise but covers only 0.5% of
+the t0117 pool. Concrete action: package the strict version as a shared library (or extend
+S-0090-07's generator-promotion path) with a deprecation shim on lineage callsites so future
+NSGA-II tasks (incl. t0122) raise loudly. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Add a degenerate-section detector to the NSGA-II evaluation loop
+(flag cells with any h.n3d() == 0 section)</strong> (S-0120-03)</summary>
+
+**Kind**: library | **Priority**: low | **Date**: 2026-05-24 | **Source**:
+[t0120_morph_generator_geometry_audit](../tasks/t0120_morph_generator_geometry_audit/)
+
+Out of scope for t0120 but flagged during it: the procedural DSGC generator could in principle
+produce dendrite sections whose pt3d count is zero (degenerate stubs) under combinations of
+asymmetry knobs not covered by existing t0092 / t0120 tests. Such sections would silently
+corrupt synapse placement and bar arrival timing under the lineage `_section_midpoint_xy` (see
+S-0120-02). Concrete action: extend the NSGA-II eval loop (used by t0122 and future NSGA-II
+tasks) with a one-line check after `generate_fixed_morphology`: `for sec in cell.all_dends:
+assert int(cell.h.n3d(sec=sec)) > 0`. If the assertion fires, mark the individual as
+infeasible (constraint violation) and record the failing 14-d morphology vector so the
+generator can be patched. Pairs naturally with S-0092-05 (generator regression battery) and
+S-0120-02. Recommended task types: write-library, infrastructure-setup.
+
+</details>
+
+<details>
+<summary>📊 <strong>Whole-pool geometry audit: scale t0120's 20-cell sample up to all
+4431 t0117 cells (background batch)</strong> (S-0120-04)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-24 | **Source**:
+[t0120_morph_generator_geometry_audit](../tasks/t0120_morph_generator_geometry_audit/)
+
+t0120 verified geometry consistency on 20 cells stratified across asymmetry-parameter extremes
+plus symmetric controls (0.5% of the t0117 pooled pool); 60 / 60 checks passed with max errors
+four orders below threshold. A whole-pool audit would surface any rare combination of the 14
+morphology knobs that triggers a frame mismatch outside the sampled strata. Concrete action:
+reuse `code/dump_cells.py` and `code/run_checks.py` from t0120; iterate over all 4431 t0117
+cells (skip per-cell pt3d JSON dump to keep disk bounded; retain only the per-cell check
+pass/fail row); write a single coordinate_consistency_checks_full.csv and a short summary
+stating the count of any cell failing any check. Runs in background (~12 CPU hours
+single-process); cost effectively $0. Low priority because the stratified sample already
+covers realistic failure modes; this is defence-in-depth. Recommended task types:
+data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
@@ -244,83 +323,7 @@ task types: data-analysis, answer-question. Cost: <$0.10.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Re-simulate t0118 stratified sample on t0116 strict cohort (DSI >
-0.7 AND PD > 10) for a good-DSGC trace gallery</strong> (S-0118-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
-[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
-
-t0118 found the unfiltered pool is heavily DSI ~ 0; only cluster 2 (s7755) supplied DSI >= 0.2
-cells, so the per-cluster trace grids do not show good DSGC behaviour for clusters 0/1/3.
-Apply the identical 10-per-cluster stratified-by-DSI-x-PD sampler and 3-mode trio protocol to
-t0116's strict 869-cell cohort, then re-cluster those cells with t0116's k=3 partition.
-Outcome: 30 cells (10 per t0116 cluster) whose traces actually show the canonical DSGC
-asymmetry mechanism across multiple clusters, not just one. Distinct from t0118 (unfiltered
-pool) and from S-0116-* (which stay in FA/clustering space without re-simulating). Recommended
-task types: experiment-run, data-analysis. Cost: <$0.20.
-
-</details>
-
-<details>
-<summary>🧪 <strong>g_I sensitivity sweep on cluster-2 DSGC-competent cells: how does
-DSI vary with inhibition strength?</strong> (S-0118-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
-[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
-
-t0118 found g_I / g_E ratio at peak g_E is the most variable cell-level metric (6 orders of
-magnitude, 0.03 to 440), and cluster 2 (s7755) is the only cluster where re-simulated traces
-show the DSGC asymmetry mechanism. Take the 5 highest-DSI cluster-2 cells, hold every other
-parameter fixed, and sweep global GABA NetCon weight (w_gaba_us) in 7 log steps from 0.1x to
-10x (plus symmetric w_ach control). For each (cell, w_gaba_factor) re-run the FULL mode in
-PD+ND, extract DSI, peak g_I, g_I/g_E ratio. Plot DSI vs w_gaba per cell. Decision: if DSI
-peaks at the same w_gaba factor across cells, the cohort shares a canonical E-I balance; if
-optimum varies, the optimiser found cell-specific compensation. ~140 NEURON runs. Recommended
-task types: experiment-run, data-analysis. Cost: <$0.20.
-
-</details>
-
-<details>
-<summary>📊 <strong>Diagnose evaluator-disagreement bug for cell 77_15_1356: t0117
-DSI = 0.93, t0118 canonical protocol = 0 spikes</strong> (S-0118-03)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-22 | **Source**:
-[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
-
-t0118 found cell 77_15_1356 (cluster 0, seed 77) was assigned DSI = 0.93 by t0117's NSGA-II
-evaluator but produces 0 spikes in either direction under the canonical 1400 ms / -10 mV
-threshold protocol (FULL V_m peaks at -51 mV); g_I/g_E ratio = 3.87 (extreme inhibition
-dominance). The t0117 DSI score appears to be a finite-sample-noise artefact, unconfirmed.
-Investigate: (a) re-run t0117's evaluator on this cell, log per-trial PD and ND spike counts;
-(b) re-run with 10 eval-seed pairs and check stability; (c) trace the DSI formula for
-PD=1/ND=0 edge cases; (d) report whether other pool cells share this 'high-DSI-but-silent'
-pattern. Decision: if >= 1% of pool exhibits this disagreement, t0117/t0116 DSI columns need a
-corrections overlay. Recommended task types: data-analysis, correction. Cost: <$0.10.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Factor-axis trace gallery: sample cells along t0117 F1/F3/F5
-loading axes and re-simulate the 3-mode trio</strong> (S-0118-04)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-22 | **Source**:
-[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
-
-t0118 establishes a clean re-simulation pipeline (3-mode trio, g_E / g_I / V_m, PD+ND, 1400
-ms). t0117's salient factors are F1 (joint DSI-PD, 12.6% var), F3 (pure-ephys PD), F5
-(depolarisation-block axis hypothesised in t0118 analysis). Link from factor space to
-biophysics is currently inferential. Concrete action: project all 4431 t0117 cells onto F1,
-F3, F5 individually; bin cells into 7 quantiles along each factor score, sample 3 cells per
-bin (21 cells x 3 factors = 63 cells), re-simulate the t0118 protocol. For each factor produce
-a 7-row x 3-column grid showing how g_E/g_I/V_m signatures change along the factor axis.
-Decision: monotonic variation = biophysically meaningful factor; unrelated = statistical
-artefact. Distinct from S-0117-06 (interprets F1 loadings statically). Recommended task types:
-experiment-run, data-analysis. Cost: <$0.30.
-
-</details>
-
-*409 more open suggestions → [open suggestions](suggestions/)*
+*413 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
@@ -520,7 +523,29 @@ S-0112-08 and S-0115-07. Recommended task types: data-analysis. Cost: <$0.20.
 
 ---
 
-## [Recent Answers (42 total)](answers/)
+## [Recent Answers (43 total)](answers/)
+
+<details>
+<summary><strong>Is the procedural morphology generator's asymmetry transform
+geometrically consistent across the 15-20 sampled cells, and do its results
+invalidate prior NSGA-II runs?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-05-24 | **Full answer**:
+[`morphology-generator-geometry-consistency`](../tasks/t0120_morph_generator_geometry_audit/assets/answer/morphology-generator-geometry-consistency/)
+
+Yes -- across 20 cells sampled from the t0117 pooled pool (stratified across the four
+asymmetry parameters plus worst-looking cells and symmetric controls), all three
+coordinate-consistency checks pass (60 of 60 evaluations), with maximum Python-side endpoint
+error of 0.0 um and maximum NEURON pt3d lateral deviation of 19.6 nm (float-arithmetic noise,
+four orders below the 0.1 um audit threshold). The deliberate soma-frame split introduced by
+the t0092 fix (Python origin_xy at the post-asymmetry soma position, NEURON soma pt3d pinned
+at (0, 0)) is benign because SAC synapses are placed only on dendrites in the t0091 / t0118
+protocol, so the bar arrival-time projection `(syn_xy - origin_xy)` cancels soma_offset
+correctly. Prior 68-d morphology-extended NSGA-II results (t0091, t0099, t0102, t0104, t0106,
+t0112, t0114, t0115, t0118) are NOT invalidated; the soma-disconnection visual artefact in
+t0115's top50_morphologies_seed9354.png is a rendering convention issue, not a geometry bug.
+
+</details>
 
 <details>
 <summary><strong>Does the unfiltered pool (every NSGA-II evaluation, no DSI/PD
@@ -694,25 +719,7 @@ and high PD is therefore largely morphology-agnostic within this cohort.
 
 </details>
 
-<details>
-<summary><strong>When t0106 cells with DSI > 0.5 AND PD > 10 Hz are clustered by
-their 14-d morphology parameters, do the clusters carry a distinguishable
-electrophys signature?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-18 | **Full answer**:
-[`t0106-morphology-clusters-electrophys-signature`](../tasks/t0108_t0106_cluster_factor_dsi05_pd10/assets/answer/t0106-morphology-clusters-electrophys-signature/)
-
-Yes, strongly. K-means on the z-scored 14-d morphology submatrix of the 150-cell strict cohort
-gives a balanced k=4 split (silhouette 0.233, sizes 21/55/67/7), and 30 of 54 electrophys
-parameters separate the clusters at Bonferroni p < 0.05. The strongest discriminators are
-NAV16_AIS_GBAR, NAV16_MID_GBAR, CAL_GBAR, CAT_GBAR, IH_GBAR, and AIS_DIAMETER_UM (all p_bonf <
-1e-6). Cluster 3 (n=7, low PD ~29 Hz) carries a distinctive high-K low-axonal-Na regime with
-very different NAV16_AIS, CAT, SK_TERMINAL, and KV3_PRIMARY values from clusters 0–2. Each
-morphology type therefore imposes a distinct channel regime in this cohort.
-
-</details>
-
-*32 more answers → [answers](answers/)*
+*33 more answers → [answers](answers/)*
 
 ---
 

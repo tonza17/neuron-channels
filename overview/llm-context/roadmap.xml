@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-23T22:49:16Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-24T00:46:58Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>566101</char_count>
-    <byte_count>566642</byte_count>
-    <estimated_tokens>141525</estimated_tokens>
+    <char_count>564854</char_count>
+    <byte_count>565395</byte_count>
+    <estimated_tokens>141213</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -224,9 +224,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0117_pooled_pca_cluster_factor_all_cells_4_seeds</id>
         <id>t0118_resimulate_t0117_cluster_samples_ge_gi_vm</id>
         <id>t0119_brainstorm_results_23</id>
+        <id>t0120_morph_generator_geometry_audit</id>
       </source_ids>
       <content>
-Completed tasks: 112
+Completed tasks: 113
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -899,6 +900,12 @@ ID: t0119_brainstorm_results_23
 Completed: 2026-05-23
 Short description: Brainstorm 23: gate next NSGA-II on morphology-geometry audit; commission cytoplasm-volume NSGA-II + 5-seed substrate-rate report; prune backlog (9 rejects + 21 downgrades).
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0119_brainstorm_results_23&quot; date_completed: &quot;2026-05-23&quot; status: &quot;complete&quot; --- Results Summary: Brainstorm Session 23 Summary Twenty-third strategic brainstorm. Researcher raised a critical concern about the procedural morphology generator&#x27;s geometry after inspecting t0115&#x27;s `top50_morphologies_seed9354.png` (soma appeared disconnected from dendrite tree in many panels). The session gated the next NSGA-II wave on a 15-20-cell morphology-geometry audit (t0120), and conditionally commissioned a biologically-grounded cytoplasm-volume NSGA-II run (t0122, S-0097-01) plus a write-up of the closed 5-seed substrate-rate batch (t0121, S-0115-02). The session also...
+
+## Morphology generator geometry audit (15-20 cells)
+ID: t0120_morph_generator_geometry_audit
+Completed: 2026-05-24
+Short description: Audit procedural morphology generator: verify primary stems start at origin_xy, parent/child endpoint match, and synapse pt3d xy frame matches origin_xy across 15-20 visually-diverse cells. Gates downstream NSGA-II.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0120_morph_generator_geometry_audit&quot; date_completed: &quot;2026-05-24&quot; status: &quot;complete&quot; --- Results Summary: Morphology Generator Geometry Audit Summary Audited the procedural DSGC morphology generator on 20 cells stratified across asymmetry-parameter extremes plus symmetric controls. All three coordinate-consistency checks pass for every cell (60/60). The deliberate soma-frame split introduced by the t0092 z-axis pt3d patch is **benign**; prior 68-d morphology-extended NSGA-II results (t0091, t0099, t0102, t0104, t0106, t0112-t0115, t0118) are NOT invalidated. The visual disconnect in t0115&#x27;s top-50 morphology grid is a rendering-only artefact...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -908,12 +915,11 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0119_brainstorm_
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0120_morph_generator_geometry_audit</id>
         <id>t0121_5seed_substrate_rate_canonical_report</id>
         <id>t0122_dsi_cytoplasm_volume_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 6
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1237,131 +1243,10 @@ For each condition, compute:
 * Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
   channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
 
-## Morphology generator geometry audit (15-20 cells)
-ID: t0120_morph_generator_geometry_audit
-Status: not_started
-Effective date: unknown
-Short description: Audit procedural morphology generator: verify primary stems start at origin_xy, parent/child endpoint match, and synapse pt3d xy frame matches origin_xy across 15-20 visually-diverse cells. Gates downstream NSGA-II.
-Dependencies: t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
-
-#### Motivation
-
-In t0115&#x27;s `top50_morphologies_seed9354.png` and earlier seed-77 / seed-7755 morphology grids,
-several panels show the soma circle appearing far away from the dendrite tree with apparent empty
-space between them. The researcher flagged this as a possible geometry bug: if the soma is genuinely
-disconnected from the dendrites in the procedural generator
-(`tasks/t0090_morphology_generator_diversity_test/code/generator.py`), every 68-d
-morphology-extended NSGA-II result from t0091 onwards (t0091, t0099, t0102, t0104, t0106,
-t0112-t0115) could be electrically invalid and would need to be re-run.
-
-A preliminary code trace in brainstorm session 23 suggests the issue is most likely a rendering
-artefact (small soma circle, thin connecting primary stem, auto-zoomed bounding box on extreme
-asymmetric cells), and that:
-
-* NEURON electrical topology is `sec.connect()`-based and indifferent to xy coordinates.
-* Synapse pt3d xy and `origin_xy` are written by the same `_materialise_neuron_sections` function,
-  so the bar-arrival-time projection `(syn_xy - origin_xy)` is computed in a self-consistent frame.
-
-But this trace must be empirically verified before any new NSGA-II optimisation runs. The researcher
-selected this as the gating task for the post-t0118 wave.
-
-#### Scope
-
-Sample 15-20 cells stratified across the asymmetry-parameter extremes that drive the visual
-artefact, plus symmetric controls. Dump the full `section_endpoints_xy` and NEURON `h.x3d/h.y3d`
-pt3d for each cell. Verify three properties analytically and visually for each cell:
-
-1. **Primary stems start at `origin_xy`**: for every primary dendrite section,
-   `start_xy == origin_xy` (within float tolerance).
-2. **Parent / child endpoint match**: for every non-primary dendrite section,
-   `child.start_xy == parent.end_xy` (within float tolerance).
-3. **Synapse-vs-soma coordinate frame consistency**: place a test SAC synapse on each section, read
-   `h.x3d(mid), h.y3d(mid)`, and confirm it is in the same coordinate frame as `origin_xy` (no
-   offset, no scaling mismatch).
-
-#### Cells to Sample (15-20 total, stratified)
-
-Sample cells from the pooled Pareto fronts of t0091, t0099, t0112, t0114, t0115 across these strata:
-
-* 3 cells with high `|soma_offset_pd_um|` (top decile of the pooled distribution).
-* 3 cells with extreme `field_elongation_pd` (top and bottom deciles, 1-2 each).
-* 3 cells with extreme `branch_density_gradient_pd` (top decile by absolute value).
-* 3 cells with high `primary_branch_pd_concentration` (top decile, von Mises kappa).
-* 3 cells flagged visually as &quot;worst-looking&quot; by inspection of the t0115 top-50 PNG.
-* 3-5 symmetric controls with all 4 asymmetry parameters near their BEDB_BASE_POINT defaults
-  (soma_offset = 0, field_elongation = 1, branch_density_gradient = 0,
-  primary_branch_pd_concentration = 0).
-
-#### Approach
-
-1. **Sample cells**: load the pooled cells parquet from t0117 (4431 cells), compute per-cell
-   stratification keys from the 14-d morphology subvector, sample 15-20 cells across the strata
-   above.
-2. **Dump generator coords**: for each sampled cell, instantiate the morphology via
-   `generate_fixed_morphology` (matching the lineage convention), monkey-patch the NEURON DLL
-   loader, extract `section_endpoints_xy`, `origin_xy`, and per-section `h.x3d/h.y3d/h.z3d` for
-   every pt3d.
-3. **Coordinate-consistency checks** (analytic):
-   * For every primary dendrite section: `assert close(section.start_xy, origin_xy)`.
-   * For every non-primary section: walk the parent chain, assert child.start_xy close to
-     parent.end_xy at each level.
-   * For each section, place a temporary `ExpSyn` at midpoint, read `h.x3d/h.y3d` of the midpoint
-     pt3d, assert it falls on the line from `section.start_xy` to `section.end_xy`.
-4. **Per-cell pass/fail CSV**: write a CSV with one row per cell, columns for each of the three
-   checks (pass/fail), the asymmetry-parameter values, and the visual stratum tag.
-5. **Visual diagnostic gallery**: re-render each cell at 2x larger panel with explicit primary-stem
-   highlight (line-width 2.0, contrasting color) and a soma circle scaled to `soma_diameter_um` (not
-   the fixed 6 px). Add a thin debug line from `origin_xy` to each primary stem&#x27;s `end_xy` if the
-   primary stem origin would otherwise be invisible. Save as
-   `results/images/geometry_audit_gallery.png`.
-6. **Answer asset**: write one answer asset answering &quot;Is the procedural morphology generator&#x27;s
-   asymmetry transform geometrically consistent across the 15-20 sampled cells?&quot; with conditional
-   verdicts: (a) all 3 checks pass for all sampled cells -&gt; rendering-only issue, no re-runs needed;
-   (b) any check fails -&gt; framework-level decision needed before further NSGA-II.
-
-#### Expected Outputs
-
-* `results/data/sampled_cell_manifest.csv` -- which cells were sampled, stratum tag,
-  asymmetry-parameter values.
-* `results/data/coordinate_consistency_checks.csv` -- per-cell pass/fail for each of the 3 checks.
-* `results/data/section_endpoints_dump.json` -- full pt3d dump per cell for forensic analysis.
-* `results/images/geometry_audit_gallery.png` -- visual diagnostic gallery.
-* `assets/answer/morphology-generator-geometry-consistency/` -- 1 answer asset with the verdict.
-* `results/results_summary.md` and `results/results_detailed.md` with the verdict and per-cell
-  table.
-
-#### Budget
-
-Local CPU only, no remote machines. Estimate &lt;$0.10 (essentially $0 -- a few CPU hours).
-
-#### Dependencies
-
-* `t0090_morphology_generator_diversity_test` -- provides the procedural generator.
-* `t0092_diagnose_morphology_generator_silence` -- provides the `generate_fixed_morphology` wrapper
-  with the soma-area patch.
-* `t0115_seed9354_no_autostop` (or `t0117`) -- provides the pooled cells parquet for sampling.
-* `t0119_brainstorm_results_23` -- commissions this task.
-
-#### Verification Criteria
-
-* All 3 coordinate-consistency checks defined and run for every sampled cell.
-* Per-cell pass/fail CSV exists with one row per cell.
-* Visual diagnostic gallery saved and embedded in `results_detailed.md`.
-* Answer asset passes `verify_answer_asset` (or the local `verify_answers_local.py` fallback used by
-  recent tasks).
-* Verdict in the results summary unambiguously states either &quot;rendering-only&quot; or &quot;real geometry bug
-  requires framework decision&quot;.
-
-#### Cross-References
-
-* Researcher concern raised in `t0119_brainstorm_results_23/logs/session_log.md`.
-* Preliminary code trace performed in the brainstorm session covering `_apply_asymmetry`
-  (`generator.py` lines 333-355) and `_section_midpoint_xy` (`trial_helpers.py` line 160).
-
 ## Canonical 5-seed substrate-rate report (S-0112-01 batch closed)
 ID: t0121_5seed_substrate_rate_canonical_report
 Status: not_started
-Effective date: unknown
+Effective date: 2026-05-23
 Short description: Pure write-up consolidating t0106 / t0112 / t0113 / t0114 / t0115 5-seed LEGIT joint-pass acceptance rate into one canonical document with harmonised conventions and Hay 2011 / Druckmann 2007 comparisons.
 Dependencies: t0106_long_pdnd_nsga2_300gen, t0112_t0106_seed77_replicate, t0113_t0106_seed2247_replicate, t0114_seed7755_no_autostop, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
 
@@ -1450,7 +1335,7 @@ Local CPU only, no remote machines. Estimate &lt;$0.20.
 ## NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)
 ID: t0122_dsi_cytoplasm_volume_nsga2
 Status: not_started
-Effective date: unknown
+Effective date: 2026-05-23
 Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs cytoplasm volume (Cuntz 2010 wiring cost). Gated on t0120 geometry audit passing. 1 GA seed, pop=96, N_EVAL_SEEDS=3, $8 cap.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0119_brainstorm_results_23, t0120_morph_generator_geometry_audit
 
@@ -1615,9 +1500,10 @@ has been validated by the t0106-t0115 lineage.
         <id>pooled-all-cells-basin-connectivity-without-filter</id>
         <id>pooled-all-cells-displacement-from-init-full-pool</id>
         <id>pooled-all-cells-truncated-cohort-artefact-test</id>
+        <id>morphology-generator-geometry-consistency</id>
       </source_ids>
       <content>
-Answers: 42
+Answers: 43
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1949,6 +1835,14 @@ Confidence: high
 Categories: direction-selectivity, compartmental-modeling
 
 Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_DSI = +0.421, r_PD = +0.352, both p &lt; 1e-100, n = 4431), satisfying |r| &gt; 0.3 on both axes. At the strict cohort (t0116) zero of ten factors satisfied this criterion. The reappearance of a joint factor once the filter is lifted confirms the truncated-cohort-artefact hypothesis: the strict cohort genuinely erases the shared latent that couples DSI and PD; the decoupling is not an intrinsic substrate property.
+
+## Is the procedural morphology generator&#x27;s asymmetry transform geometrically consistent across the 15-20 sampled cells, and do its results invalidate prior NSGA-II runs?
+ID: morphology-generator-geometry-consistency
+Created by: t0120_morph_generator_geometry_audit on 2026-05-24
+Confidence: high
+Categories: compartmental-modeling
+
+Yes -- across 20 cells sampled from the t0117 pooled pool (stratified across the four asymmetry parameters plus worst-looking cells and symmetric controls), all three coordinate-consistency checks pass (60 of 60 evaluations), with maximum Python-side endpoint error of 0.0 um and maximum NEURON pt3d lateral deviation of 19.6 nm (float-arithmetic noise, four orders below the 0.1 um audit threshold). The deliberate soma-frame split introduced by the t0092 fix (Python origin_xy at the post-asymmetry soma position, NEURON soma pt3d pinned at (0, 0)) is benign because SAC synapses are placed only on dendrites in the t0091 / t0118 protocol, so the bar arrival-time projection `(syn_xy - origin_xy)`...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -2298,6 +2192,8 @@ Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_D
         <id>S-0118-04</id>
         <id>S-0118-05</id>
         <id>S-0118-06</id>
+        <id>S-0120-01</id>
+        <id>S-0120-02</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -2355,9 +2251,11 @@ Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_D
         <id>S-0113-08</id>
         <id>S-0114-06</id>
         <id>S-0115-06</id>
+        <id>S-0120-03</id>
+        <id>S-0120-04</id>
       </source_ids>
       <content>
-Open suggestions: 400
+Open suggestions: 404
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -4760,6 +4658,20 @@ Kind: evaluation
 Source task: t0118_resimulate_t0117_cluster_samples_ge_gi_vm
 t0118 identifies g_I / g_E ratio at peak g_E as the dominant cross-cell axis (6 orders of magnitude, 0.03 to 440). The cluster-by-cluster interpretation proposes a categorical mapping: cluster 1 &lt; 0.5 (excitation-dominated), 0/2 in 0.5-5 (balanced), 3 &gt; 10 (inhibition-dominated). Currently qualitative. Build a quantitative classifier: fit a single-feature logistic regression and KNN predicting cluster_id from g_I/g_E ratio (per_cell_metrics.csv); report accuracy + per-cluster precision/recall. Stretch: train a linear regressor from t0118&#x27;s 40-cell 68-d -&gt; g_I/g_E pairs, predict ratio for the full t0117 4431-cell pool, map back to cluster IDs, report agreement vs t0117&#x27;s KMeans labels...
 
+## Re-render t0112 / t0114 / t0115 top-50 morphology grids with t0120&#x27;s rendering conventions (correction)
+ID: S-0120-01
+Priority: medium
+Kind: technique
+Source task: t0120_morph_generator_geometry_audit
+t0120 confirmed the soma-disconnect visual artefact in t0115&#x27;s top50_morphologies_seed9354.png (and the seed-44/77/7755 analogues from t0106/t0112/t0114) is rendering-only, driven by three conventions in build_top50_morphologies.py: fixed Circle(radius=6.0) soma (too small vs typical 100-150 um soma_offset_pd_um), LineCollection(linewidths=0.4) primary stems (visually negligible), and auto-zoom that amplifies asymmetry. Concrete action: regenerate the four PNGs using t0120&#x27;s conventions (Circle(radius=soma_diameter_um/2), tab:red primary stems at linewidth 2.0, optional debug line from origin_xy to each primary-stem tip), file corrections/ overlays at the new chart paths, and add a README...
+
+## Replace lineage `_section_midpoint_xy` silent-(0,0) fallback with t0120&#x27;s strict raise-on-n3d==0 version
+ID: S-0120-02
+Priority: medium
+Kind: library
+Source task: t0120_morph_generator_geometry_audit
+t0120 ships a strict `_section_midpoint_xy_strict` in `code/dump_helpers.py` that raises `RuntimeError(&#x27;degenerate section: h.n3d() == 0&#x27;)` instead of silently returning `(0.0, 0.0)` (lineage behaviour in `tasks/t0091_morphology_extended_nsga2_v1/code/trial_helpers.py` lines 160-178, copied into every NSGA-II task t0091-t0118). The silent fallback is dangerous: if a degenerate dendrite section ever appears, every synapse on that section would be placed at the world origin and the bar arrival-time projection would be silently wrong by tens of micrometres. The 20-cell t0120 audit never tripped the strict raise but covers only 0.5% of the t0117 pool. Concrete action: package the strict version...
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -5158,6 +5070,20 @@ Priority: low
 Kind: library
 Source task: t0115_seed9354_no_autostop
 Across t0114 + t0115 the operator triggered ~12 SCP re-pulls of the all_evaluations_seed*.json file (mean ~5 MB each). Each pull took 15-30 s SSH overhead, in total ~5 minutes of wasted wall-clock just for fetches. A streaming variant (write a small remote helper that emits only the new evaluations since the last fetch, indexed by generation; client maintains a local accumulator) would reduce per-pull cost to &lt;2 s. Concrete action: add `tail_evaluations.py` to the t0114/t0115 family code; expose via a remote SSH alias `nsga2-tail`. Recommended task types: write-library. Cost: &lt;$0.05.
+
+## Add a degenerate-section detector to the NSGA-II evaluation loop (flag cells with any h.n3d() == 0 section)
+ID: S-0120-03
+Priority: low
+Kind: library
+Source task: t0120_morph_generator_geometry_audit
+Out of scope for t0120 but flagged during it: the procedural DSGC generator could in principle produce dendrite sections whose pt3d count is zero (degenerate stubs) under combinations of asymmetry knobs not covered by existing t0092 / t0120 tests. Such sections would silently corrupt synapse placement and bar arrival timing under the lineage `_section_midpoint_xy` (see S-0120-02). Concrete action: extend the NSGA-II eval loop (used by t0122 and future NSGA-II tasks) with a one-line check after `generate_fixed_morphology`: `for sec in cell.all_dends: assert int(cell.h.n3d(sec=sec)) &gt; 0`. If the assertion fires, mark the individual as infeasible (constraint violation) and record the failing...
+
+## Whole-pool geometry audit: scale t0120&#x27;s 20-cell sample up to all 4431 t0117 cells (background batch)
+ID: S-0120-04
+Priority: low
+Kind: evaluation
+Source task: t0120_morph_generator_geometry_audit
+t0120 verified geometry consistency on 20 cells stratified across asymmetry-parameter extremes plus symmetric controls (0.5% of the t0117 pooled pool); 60 / 60 checks passed with max errors four orders below threshold. A whole-pool audit would surface any rare combination of the 14 morphology knobs that triggers a frame mismatch outside the sampled strata. Concrete action: reuse `code/dump_cells.py` and `code/run_checks.py` from t0120; iterate over all 4431 t0117 cells (skip per-cell pt3d JSON dump to keep disk bounded; retain only the per-cell check pass/fail row); write a single coordinate_consistency_checks_full.csv and a short summary stating the count of any cell failing any check. Runs...
       </content>
     </section>
   </sections>

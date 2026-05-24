@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-391 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **351 open** (60
-high, 250 medium, 41 low), **40 closed**.
+395 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **355 open** (60
+high, 252 medium, 43 low), **40 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -6441,6 +6441,32 @@ experiment-run.
 </details>
 
 <details>
+<summary>🔧 <strong>Re-render t0112 / t0114 / t0115 top-50 morphology grids with
+t0120's rendering conventions (correction)</strong> (S-0120-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0120-01` |
+| **Kind** | technique |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0120 confirmed the soma-disconnect visual artefact in t0115's top50_morphologies_seed9354.png
+(and the seed-44/77/7755 analogues from t0106/t0112/t0114) is rendering-only, driven by three
+conventions in build_top50_morphologies.py: fixed Circle(radius=6.0) soma (too small vs
+typical 100-150 um soma_offset_pd_um), LineCollection(linewidths=0.4) primary stems (visually
+negligible), and auto-zoom that amplifies asymmetry. Concrete action: regenerate the four PNGs
+using t0120's conventions (Circle(radius=soma_diameter_um/2), tab:red primary stems at
+linewidth 2.0, optional debug line from origin_xy to each primary-stem tip), file corrections/
+overlays at the new chart paths, and add a README noting the originals were not
+geometry-wrong. Broader than S-0115-05 (which targets only t0114's dots-only artefact); the
+two can be merged into one correction task. Recommended task types: correction.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Re-run Bed B MOBO with tau_ca_multiplier upper bound increased
 from [1, 20x] to [1, 200x] to test the slow-Kv AHP regime</strong>
 (S-0078-03)</summary>
@@ -6815,6 +6841,32 @@ NaP-induced DSI loss reproduces; whether SK_high HWHM narrowing reproduces (or i
 Bed-A-specific artefact); whether the with-cad baseline DSI shift seen in Bed A is also seen
 in Bed B (where cad is native). This is a cross-substrate validation that strengthens any
 conclusions drawn from t0074.
+
+</details>
+
+<details>
+<summary>📚 <strong>Replace lineage `_section_midpoint_xy` silent-(0,0) fallback with
+t0120's strict raise-on-n3d==0 version</strong> (S-0120-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0120-02` |
+| **Kind** | library |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0120 ships a strict `_section_midpoint_xy_strict` in `code/dump_helpers.py` that raises
+`RuntimeError('degenerate section: h.n3d() == 0')` instead of silently returning `(0.0, 0.0)`
+(lineage behaviour in `tasks/t0091_morphology_extended_nsga2_v1/code/trial_helpers.py` lines
+160-178, copied into every NSGA-II task t0091-t0118). The silent fallback is dangerous: if a
+degenerate dendrite section ever appears, every synapse on that section would be placed at the
+world origin and the bar arrival-time projection would be silently wrong by tens of
+micrometres. The 20-cell t0120 audit never tripped the strict raise but covers only 0.5% of
+the t0117 pool. Concrete action: package the strict version as a shared library (or extend
+S-0090-07's generator-promotion path) with a deprecation shim on lineage callsites so future
+NSGA-II tasks (incl. t0122) raise loudly. Recommended task types: write-library.
 
 </details>
 
@@ -7838,6 +7890,32 @@ fundamental enabler. If no after 20 gens, warm-start remains essential. Cost ~$1
 </details>
 
 <details>
+<summary>📚 <strong>Add a degenerate-section detector to the NSGA-II evaluation loop
+(flag cells with any h.n3d() == 0 section)</strong> (S-0120-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0120-03` |
+| **Kind** | library |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Out of scope for t0120 but flagged during it: the procedural DSGC generator could in principle
+produce dendrite sections whose pt3d count is zero (degenerate stubs) under combinations of
+asymmetry knobs not covered by existing t0092 / t0120 tests. Such sections would silently
+corrupt synapse placement and bar arrival timing under the lineage `_section_midpoint_xy` (see
+S-0120-02). Concrete action: extend the NSGA-II eval loop (used by t0122 and future NSGA-II
+tasks) with a one-line check after `generate_fixed_morphology`: `for sec in cell.all_dends:
+assert int(cell.h.n3d(sec=sec)) > 0`. If the assertion fires, mark the individual as
+infeasible (constraint violation) and record the failing 14-d morphology vector so the
+generator can be patched. Pairs naturally with S-0092-05 (generator regression battery) and
+S-0120-02. Recommended task types: write-library, infrastructure-setup.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Add Ih (HCN) channel to dendrites and measure its effect on E-I
 integration window</strong> (S-0022-08)</summary>
 
@@ -8785,6 +8863,33 @@ steps, 100 ms duration) and compare resulting current traces against Pfeiffer-Fr
 deviate by > 20%, retune the MOD parameters or vendor an RGC-specific MOD instead. Cost: ~1
 hour coding + 10 min sim + 30 min comparison plotting. Outcome: either a validation note in
 the library description, or a v0.2.0 of the channel pack with retuned RGC-specific kinetics.
+
+</details>
+
+<details>
+<summary>📊 <strong>Whole-pool geometry audit: scale t0120's 20-cell sample up to all
+4431 t0117 cells (background batch)</strong> (S-0120-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0120-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0120 verified geometry consistency on 20 cells stratified across asymmetry-parameter extremes
+plus symmetric controls (0.5% of the t0117 pooled pool); 60 / 60 checks passed with max errors
+four orders below threshold. A whole-pool audit would surface any rare combination of the 14
+morphology knobs that triggers a frame mismatch outside the sampled strata. Concrete action:
+reuse `code/dump_cells.py` and `code/run_checks.py` from t0120; iterate over all 4431 t0117
+cells (skip per-cell pt3d JSON dump to keep disk bounded; retain only the per-cell check
+pass/fail row); write a single coordinate_consistency_checks_full.csv and a short summary
+stating the count of any cell failing any check. Runs in background (~12 CPU hours
+single-process); cost effectively $0. Low priority because the stratified sample already
+covers realistic failure modes; this is defence-in-depth. Recommended task types:
+data-analysis.
 
 </details>
 

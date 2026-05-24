@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-23T22:49:16Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-24T00:46:58Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>6761</char_count>
-    <byte_count>6761</byte_count>
-    <estimated_tokens>1690</estimated_tokens>
+    <char_count>6807</char_count>
+    <byte_count>6807</byte_count>
+    <estimated_tokens>1701</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -173,6 +173,7 @@ Spent: 62.9%
 * t0117_pooled_pca_cluster_factor_all_cells_4_seeds: $0.00
 * t0118_resimulate_t0117_cluster_samples_ge_gi_vm: $0.00
 * t0119_brainstorm_results_23: $0.00
+* t0120_morph_generator_geometry_audit: $0.00
       </content>
     </section>
   </sections>

@@ -6,7 +6,427 @@
 
 ---
 
-## 2026-05-23 (1)
+## 2026-05-24 (1)
+
+## ✅ Completed
+
+<details>
+<summary>✅ 0120 — <strong>Morphology generator geometry audit (15-20 cells)</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0120_morph_generator_geometry_audit` |
+| **Status** | completed |
+| **Effective date** | 2026-05-24 |
+| **Dependencies** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0119_brainstorm_results_23`](../../../overview/tasks/task_pages/t0119_brainstorm_results_23.md) |
+| **Expected assets** | 1 answer |
+| **Source suggestion** | — |
+| **Task types** | [`data-analysis`](../../../meta/task_types/data-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Start time** | 2026-05-23T23:22:10Z |
+| **End time** | 2026-05-24T00:45:00Z |
+| **Step progress** | 9/12 |
+| **Task page** | [Morphology generator geometry audit (15-20 cells)](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
+| **Task folder** | [`t0120_morph_generator_geometry_audit/`](../../../tasks/t0120_morph_generator_geometry_audit/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0120_morph_generator_geometry_audit/results/results_detailed.md) |
+
+# Morphology Generator Geometry Audit (15-20 cells)
+
+## Motivation
+
+In t0115's `top50_morphologies_seed9354.png` and earlier seed-77 / seed-7755 morphology grids,
+several panels show the soma circle appearing far away from the dendrite tree with apparent
+empty space between them. The researcher flagged this as a possible geometry bug: if the soma
+is genuinely disconnected from the dendrites in the procedural generator
+(`tasks/t0090_morphology_generator_diversity_test/code/generator.py`), every 68-d
+morphology-extended NSGA-II result from t0091 onwards (t0091, t0099, t0102, t0104, t0106,
+t0112-t0115) could be electrically invalid and would need to be re-run.
+
+A preliminary code trace in brainstorm session 23 suggests the issue is most likely a
+rendering artefact (small soma circle, thin connecting primary stem, auto-zoomed bounding box
+on extreme asymmetric cells), and that:
+
+* NEURON electrical topology is `sec.connect()`-based and indifferent to xy coordinates.
+* Synapse pt3d xy and `origin_xy` are written by the same `_materialise_neuron_sections`
+  function, so the bar-arrival-time projection `(syn_xy - origin_xy)` is computed in a
+  self-consistent frame.
+
+But this trace must be empirically verified before any new NSGA-II optimisation runs. The
+researcher selected this as the gating task for the post-t0118 wave.
+
+## Scope
+
+Sample 15-20 cells stratified across the asymmetry-parameter extremes that drive the visual
+artefact, plus symmetric controls. Dump the full `section_endpoints_xy` and NEURON
+`h.x3d/h.y3d` pt3d for each cell. Verify three properties analytically and visually for each
+cell:
+
+1. **Primary stems start at `origin_xy`**: for every primary dendrite section, `start_xy ==
+   origin_xy` (within float tolerance).
+2. **Parent / child endpoint match**: for every non-primary dendrite section, `child.start_xy
+   == parent.end_xy` (within float tolerance).
+3. **Synapse-vs-soma coordinate frame consistency**: place a test SAC synapse on each section,
+   read `h.x3d(mid), h.y3d(mid)`, and confirm it is in the same coordinate frame as
+   `origin_xy` (no offset, no scaling mismatch).
+
+## Cells to Sample (15-20 total, stratified)
+
+Sample cells from the pooled Pareto fronts of t0091, t0099, t0112, t0114, t0115 across these
+strata:
+
+* 3 cells with high `|soma_offset_pd_um|` (top decile of the pooled distribution).
+* 3 cells with extreme `field_elongation_pd` (top and bottom deciles, 1-2 each).
+* 3 cells with extreme `branch_density_gradient_pd` (top decile by absolute value).
+* 3 cells with high `primary_branch_pd_concentration` (top decile, von Mises kappa).
+* 3 cells flagged visually as "worst-looking" by inspection of the t0115 top-50 PNG.
+* 3-5 symmetric controls with all 4 asymmetry parameters near their BEDB_BASE_POINT defaults
+  (soma_offset = 0, field_elongation = 1, branch_density_gradient = 0,
+  primary_branch_pd_concentration = 0).
+
+## Approach
+
+1. **Sample cells**: load the pooled cells parquet from t0117 (4431 cells), compute per-cell
+   stratification keys from the 14-d morphology subvector, sample 15-20 cells across the
+   strata above.
+2. **Dump generator coords**: for each sampled cell, instantiate the morphology via
+   `generate_fixed_morphology` (matching the lineage convention), monkey-patch the NEURON DLL
+   loader, extract `section_endpoints_xy`, `origin_xy`, and per-section `h.x3d/h.y3d/h.z3d`
+   for every pt3d.
+3. **Coordinate-consistency checks** (analytic):
+   * For every primary dendrite section: `assert close(section.start_xy, origin_xy)`.
+   * For every non-primary section: walk the parent chain, assert child.start_xy close to
+     parent.end_xy at each level.
+   * For each section, place a temporary `ExpSyn` at midpoint, read `h.x3d/h.y3d` of the
+     midpoint pt3d, assert it falls on the line from `section.start_xy` to `section.end_xy`.
+4. **Per-cell pass/fail CSV**: write a CSV with one row per cell, columns for each of the
+   three checks (pass/fail), the asymmetry-parameter values, and the visual stratum tag.
+5. **Visual diagnostic gallery**: re-render each cell at 2x larger panel with explicit
+   primary-stem highlight (line-width 2.0, contrasting color) and a soma circle scaled to
+   `soma_diameter_um` (not the fixed 6 px). Add a thin debug line from `origin_xy` to each
+   primary stem's `end_xy` if the primary stem origin would otherwise be invisible. Save as
+   `results/images/geometry_audit_gallery.png`.
+6. **Answer asset**: write one answer asset answering "Is the procedural morphology
+   generator's asymmetry transform geometrically consistent across the 15-20 sampled cells?"
+   with conditional verdicts: (a) all 3 checks pass for all sampled cells -> rendering-only
+   issue, no re-runs needed; (b) any check fails -> framework-level decision needed before
+   further NSGA-II.
+
+## Expected Outputs
+
+* `results/data/sampled_cell_manifest.csv` -- which cells were sampled, stratum tag,
+  asymmetry-parameter values.
+* `results/data/coordinate_consistency_checks.csv` -- per-cell pass/fail for each of the 3
+  checks.
+* `results/data/section_endpoints_dump.json` -- full pt3d dump per cell for forensic analysis.
+* `results/images/geometry_audit_gallery.png` -- visual diagnostic gallery.
+* `assets/answer/morphology-generator-geometry-consistency/` -- 1 answer asset with the
+  verdict.
+* `results/results_summary.md` and `results/results_detailed.md` with the verdict and per-cell
+  table.
+
+## Budget
+
+Local CPU only, no remote machines. Estimate <$0.10 (essentially $0 -- a few CPU hours).
+
+## Dependencies
+
+* `t0090_morphology_generator_diversity_test` -- provides the procedural generator.
+* `t0092_diagnose_morphology_generator_silence` -- provides the `generate_fixed_morphology`
+  wrapper with the soma-area patch.
+* `t0115_seed9354_no_autostop` (or `t0117`) -- provides the pooled cells parquet for sampling.
+* `t0119_brainstorm_results_23` -- commissions this task.
+
+## Verification Criteria
+
+* All 3 coordinate-consistency checks defined and run for every sampled cell.
+* Per-cell pass/fail CSV exists with one row per cell.
+* Visual diagnostic gallery saved and embedded in `results_detailed.md`.
+* Answer asset passes `verify_answer_asset` (or the local `verify_answers_local.py` fallback
+  used by recent tasks).
+* Verdict in the results summary unambiguously states either "rendering-only" or "real
+  geometry bug requires framework decision".
+
+## Cross-References
+
+* Researcher concern raised in `t0119_brainstorm_results_23/logs/session_log.md`.
+* Preliminary code trace performed in the brainstorm session covering `_apply_asymmetry`
+  (`generator.py` lines 333-355) and `_section_midpoint_xy` (`trial_helpers.py` line 160).
+
+**Results summary:**
+
+> ---
+> spec_version: "1"
+> task_id: "t0120_morph_generator_geometry_audit"
+> date_completed: "2026-05-24"
+> status: "complete"
+> ---
+> **Results Summary: Morphology Generator Geometry Audit**
+>
+> **Summary**
+>
+> Audited the procedural DSGC morphology generator on 20 cells stratified across
+> asymmetry-parameter
+> extremes plus symmetric controls. All three coordinate-consistency checks pass for every
+> cell
+> (60/60). The deliberate soma-frame split introduced by the t0092 z-axis pt3d patch is
+> **benign**;
+> prior 68-d morphology-extended NSGA-II results (t0091, t0099, t0102, t0104, t0106,
+> t0112-t0115,
+> t0118) are NOT invalidated. The visual disconnect in t0115's top-50 morphology grid is a
+> rendering-only artefact. **t0122_dsi_cytoplasm_volume_nsga2 is unblocked.**
+>
+> **Metrics**
+>
+> * **Cells sampled**: **20** across 7 strata (SOMA_OFFSET_TOP 3, ELONGATION_TOP 2,
+>   ELONGATION_BOTTOM
+
+</details>
+
+## 2026-05-23 (3)
+
+## ⏹ Not Started
+
+<details>
+<summary>⏹ 0122 — <strong>NSGA-II maximising DSI and minimising cytoplasm volume
+(Bed B + 14-d morph)</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0122_dsi_cytoplasm_volume_nsga2` |
+| **Status** | not_started |
+| **Effective date** | 2026-05-23 |
+| **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0119_brainstorm_results_23`](../../../overview/tasks/task_pages/t0119_brainstorm_results_23.md), [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
+| **Expected assets** | 1 predictions, 1 answer |
+| **Source suggestion** | `S-0097-01` |
+| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/), [`data-analysis`](../../../meta/task_types/data-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Task page** | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
+| **Task folder** | [`t0122_dsi_cytoplasm_volume_nsga2/`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/) |
+
+# NSGA-II Maximising DSI and Minimising Cytoplasm Volume
+
+## Source Suggestion
+
+S-0097-01: "Bed B NSGA-II maximising DSI and minimising cytoplasm volume."
+
+## Motivation
+
+The t0097 multi-objective optimisation catalogue ranked DSI vs cytoplasm volume as the most
+biologically-grounded objective pair in the project:
+
+* Cajal's cytoplasm-conservation principle and Chklovskii et al. 2002's wiring-cost rule (3/5
+  of grey-matter volume is dendrites + axons for optimal wiring) make cytoplasm a primary
+  evolutionary cost objective.
+* Cuntz et al. 2010 (10.1371/journal.pcbi.1002107) operationalised this as a `balancing
+  factor` `bf in [0.2, 0.7]` for real dendritic trees -- a falsifiable prediction the
+  optimiser can be tested against.
+* Cytoplasm volume per section = pi * (diameter / 2)^2 * length, summed over soma + dendrites
+  + AIS. Easy to compute from the existing `MorphologyResult` without any new generator code.
+
+This is the natural next NSGA-II direction after the 5-seed substrate-rate confirmation batch
+closed at t0115. Recurring biological-plausibility concerns about pure-DSI-maximisation runs
+(the optimiser hits NMDA / Nav densities 85-122 sigma above Sivyer 2013 priors) motivate
+adding a biological cost objective. Cytoplasm volume was chosen over alternatives (ATP/spike,
++-10% robustness) for cost reasons -- it adds zero per-evaluation overhead since it is a pure
+geometric quantity computable from the morphology.
+
+## Gating Dependency
+
+**This task must not start until `t0120_morph_generator_geometry_audit` has been completed and
+the geometry-audit verdict is "rendering-only / no re-runs needed".** If the audit reveals a
+real geometry bug, this task should be cancelled and a framework-level decision is needed
+about whether to patch `_apply_asymmetry` and re-run all 68-d morphology-extended NSGA-II
+lineage tasks first.
+
+## Scope
+
+One NSGA-II run, single GA seed, 2 objectives, on the 68-d Bed B + 14-d morphology substrate
+that has been validated by the t0106-t0115 lineage.
+
+## Approach
+
+1. **Copy the t0115 NSGA-II substrate** end-to-end: 68-d parameter vector (54-d electrophys +
+   14-d morphology), pop=96, N_EVAL_SEEDS=3, 2 antipodal directions (PD=0deg, ND=180deg),
+   ratio DSI, silence-guard tightened to >= 3 PD spikes, `_POOL_RESTART_EVERY=10`, HV-plateau
+   auto-stop DISABLED, $8 hard cap.
+2. **Replace one objective**: drop the PD-rate objective from t0106's 2-objective
+   configuration and replace with **cytoplasm volume**, computed as: `vol = sum(pi *
+   (sec.diam/2)^2 * sec.L for sec in [soma, *all_dends, ais_proximal, ais_distal])`. Units:
+   um^3. Objectives become (maximise DSI, minimise cytoplasm volume). PD-rate stays as a
+   tracked diagnostic but is not an optimiser objective.
+3. **GA seed**: draw via `secrets.randbelow(10000)` (avoid round-ish numbers; follow the t0113
+   convention).
+4. **Gen ceiling**: 60 (per the t0114/t0115 convention for auto-stop-disabled runs).
+5. **Stop trigger**: operator stop when HV trajectory visibly plateaus, OR $8 cost cap, OR gen
+   60 ceiling.
+6. **Run on Vast.ai EPYC** (32-core or 64-core, whichever is cheapest at provisioning time);
+   single-instance.
+7. **Post-run analysis**: Pareto front in (DSI, cytoplasm_volume) space, joint-pass cells (DSI
+   > = 0.5 AND PD-rate >= 30 Hz AND cytoplasm_volume <= TBD), per-cell morphology gallery for top
+   > ranks, **Cuntz 2010 balancing-factor check**: compute `bf` for top-10 cells and verify whether
+   > the high-DSI corner falls in the predicted `[0.2, 0.7]` band.
+8. **Answer asset**: write one answer asset answering "Does NSGA-II with a cytoplasm-volume
+   cost objective produce a high-DSI front in Cuntz 2010's predicted balancing-factor `[0.2,
+   0.7]` band?"
+
+## Expected Outputs
+
+* `assets/predictions/nsga2-cytoplasm-volume-bedb-morph/` -- predictions asset per spec, with
+  per-cell 68-d vector + per-objective + per-direction firing.
+* `assets/answer/cuntz-balancing-factor-prediction-check/` -- 1 answer asset on the Cuntz
+  prediction.
+* `results/data/pareto_front_seed*.json` -- Pareto front cells in (DSI, cytoplasm_volume).
+* `results/data/all_evaluations_seed*.json` -- every evaluation.
+* `results/images/pareto_front_dsi_vs_volume.png` -- Pareto front chart.
+* `results/images/top50_morphologies_seed*.png` -- top-50 morphology grid (full dendrite trees
+  per the project default).
+* `results/images/cuntz_balancing_factor_top10.png` -- bf distribution for top-10 cells with
+  Cuntz [0.2, 0.7] band overlaid.
+* `results/results_summary.md`, `results/results_detailed.md`, `results/compare_literature.md`
+  comparing to Hay 2011 / Cuntz 2010 / Mohacsi 2024.
+
+## Budget
+
+* Cost cap: **$8** (per-task default).
+* Expected: ~$4-8 (one Vast.ai EPYC instance for 6-12 hours).
+* If the run exceeds $8 watchdog trip, stop and write up partial results.
+
+## Dependencies
+
+* `t0024_port_de_rosenroll_2026_dsgc` -- canonical Bed B cell.
+* `t0080_bedb_mobo_v3_dendritic_spike_nsga2` -- 54-d electrophys parameter scheme +
+  apply_params.
+* `t0090_morphology_generator_diversity_test` -- procedural morphology generator.
+* `t0092_diagnose_morphology_generator_silence` -- `generate_fixed_morphology` wrapper.
+* `t0106_long_pdnd_nsga2_300gen` -- NSGA-II driver substrate (parent of the lineage).
+* `t0115_seed9354_no_autostop` -- most recent run conventions to copy from.
+* `t0119_brainstorm_results_23` -- commissions this task.
+* **`t0120_morph_generator_geometry_audit` -- GATING DEPENDENCY**.
+
+## Verification Criteria
+
+* `t0120` verdict is "rendering-only / no re-runs needed" before this task starts.
+* Predictions asset passes `verify_predictions_asset`.
+* `metrics.json` registers `direction_selectivity_index` with explicit variants for
+  `best_legit`, `overall_max`, `dsi_eq_one_count`.
+* Cytoplasm volume formula is documented in `results_detailed.md` with per-section breakdown.
+* Cuntz 2010 balancing-factor test result is reported as either "consistent with [0.2, 0.7]
+  band" or "violates band".
+* `compare_literature.md` includes a row comparing top-cell `bf` distribution to Cuntz 2010.
+
+## Cross-References
+
+* Source suggestion: S-0097-01.
+* Source paper: Cuntz et al. 2010 -- 10.1371/journal.pcbi.1002107.
+* Related project answer: t0097
+  `assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation`.
+* Prior lineage: t0106, t0112, t0113, t0114, t0115.
+
+</details>
+
+<details>
+<summary>⏹ 0121 — <strong>Canonical 5-seed substrate-rate report (S-0112-01 batch
+closed)</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0121_5seed_substrate_rate_canonical_report` |
+| **Status** | not_started |
+| **Effective date** | 2026-05-23 |
+| **Dependencies** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0113_t0106_seed2247_replicate`](../../../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md), [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0119_brainstorm_results_23`](../../../overview/tasks/task_pages/t0119_brainstorm_results_23.md) |
+| **Expected assets** | 1 answer |
+| **Source suggestion** | `S-0115-02` |
+| **Task types** | [`data-analysis`](../../../meta/task_types/data-analysis/), [`comparative-analysis`](../../../meta/task_types/comparative-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
+| **Task page** | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
+| **Task folder** | [`t0121_5seed_substrate_rate_canonical_report/`](../../../tasks/t0121_5seed_substrate_rate_canonical_report/) |
+
+# Canonical 5-seed Substrate-Rate Report (S-0112-01 batch closed)
+
+## Source Suggestion
+
+S-0115-02: "5-seed substrate-rate batch (S-0112-01) is now complete; write canonical report."
+
+## Motivation
+
+The S-0112-01 substrate-rate confirmation batch closed with t0115 (seed 9354). The 5 GA seeds
+(44, 77, 2247, 7755, 9354) on the 68-d Bed B + 14-d morphology substrate produced LEGIT
+joint-pass acceptance rates of 3.23%, 0.35%, 0.00%, 8.13%, 1.19% respectively. The 5-seed mean
+is 2.58% +/- SE 1.50%, with a 95% CI of (-0.36%, +5.52%) that still brackets both Hay 2011's
+0.40% envelope upper bound and Druckmann 2007's 0.10% baseline -- but 3 of 5 seeds
+individually beat Hay's envelope, and the point estimate is 6.5x above Hay and 25.8x above
+Druckmann.
+
+The data lives in five separate task folders with slightly different reporting conventions
+(t0106 reported on a $25 cap; t0112 used a $25 cap; t0113/t0114/t0115 used auto-stop disabled;
+t0106 used auto-stop enabled). A single canonical document with harmonised metric conventions
+is needed before this finding can be referenced by downstream tasks or external write-ups.
+
+## Scope
+
+Pure write-up. No new simulation, no new NSGA-II runs. Re-read the 5 source tasks' results
+parquets and produce one consolidated canonical document plus one answer asset.
+
+## Approach
+
+1. **Re-read source data**: load each of the 5 tasks' `results/data/pareto_front_seed*.json`
+   (or equivalent) and `all_evaluations_seed*.json` if available. Verify total evaluation
+   counts match the per-seed reports (3744, 2016, 1344, 5952, 5280).
+2. **Harmonise conventions**: re-compute LEGIT joint-pass count per seed using the canonical
+   definition (DSI >= 0.5 AND PD-rate >= 30 Hz AND DSI < 0.9999). Cross-check against each
+   task's reported number; flag and document any discrepancies.
+3. **Compute 5-seed statistics**: per-seed acceptance rate, 5-seed mean, sample SD, sample SE,
+   95% CI (normal approx), 95% CI (bootstrap with B=10000), and counts of seeds beating Hay
+   envelope.
+4. **Comparison table**: harmonise with Hay 2011's 0.40% upper envelope and 0.0104%
+   perisomatic bottleneck, and with Druckmann 2007's 0.10% baseline.
+5. **Per-seed convergence-trajectory comparison**: HV trajectory, plateau generation, total
+   evaluations, wall-clock per generation.
+6. **Charts**: (a) per-seed acceptance rate bar chart with Hay/Druckmann reference lines, (b)
+   5-seed HV-trajectory overlay (one trace per seed), (c) DSI-vs-PD scatter for the pooled
+   LEGIT joint-pass cells colored by seed.
+7. **Answer asset**: write one answer asset answering "What is the LEGIT joint-pass acceptance
+   rate on the 68-d Bed B + 14-d morphology substrate, estimated from a 5-seed random-init
+   NSGA-II batch, and how does it compare to Hay 2011 and Druckmann 2007?"
+
+## Expected Outputs
+
+* `results/data/per_seed_substrate_rate_5seed.csv` -- one row per seed with all relevant
+  statistics.
+* `results/data/pooled_legit_jointpass_cells.parquet` -- pooled LEGIT joint-pass cells across
+  the 5 seeds (DSI, PD, source-seed, generation, cell_id).
+* `results/images/per_seed_acceptance_bar.png` -- per-seed acceptance bar chart.
+* `results/images/hv_trajectory_5seed_overlay.png` -- 5-seed HV-trajectory overlay.
+* `results/images/dsi_pd_scatter_5seed_pooled.png` -- pooled scatter colored by seed.
+* `assets/answer/substrate-rate-5seed-canonical/` -- 1 answer asset.
+* `results/results_summary.md` and `results/results_detailed.md` with the canonical numbers.
+
+## Budget
+
+Local CPU only, no remote machines. Estimate <$0.20.
+
+## Dependencies
+
+* `t0106_long_pdnd_nsga2_300gen` -- seed 44.
+* `t0112_t0106_seed77_replicate` -- seed 77.
+* `t0113_t0106_seed2247_replicate` -- seed 2247.
+* `t0114_seed7755_no_autostop` -- seed 7755.
+* `t0115_seed9354_no_autostop` -- seed 9354.
+* `t0119_brainstorm_results_23` -- commissions this task.
+
+## Verification Criteria
+
+* All 5 per-seed acceptance rates match the source task reports within rounding.
+* 5-seed mean and SE match the brainstorm-session-23 summary (2.58% +/- 1.50%) within
+  rounding.
+* Charts saved and embedded in `results_detailed.md`.
+* Answer asset passes `verify_answer_asset` (or local fallback).
+
+## Cross-References
+
+* Source suggestion: S-0115-02.
+* Source tasks: t0106, t0112, t0113, t0114, t0115.
+* Hay 2011 -- 10.1371/journal.pcbi.1002107 (or t0114 `compare_literature.md` for citation).
+* Druckmann 2007 -- as cited in t0114 `compare_literature.md`.
+
+</details>
 
 ## ✅ Completed
 
@@ -21599,391 +22019,5 @@ morphology shortlist.
 >
 > 1. **Create t0002: literature survey of DSGC compartmental models** — one broad survey
 >    covering
-
-</details>
-
-## unknown (3)
-
-## ⏹ Not Started
-
-<details>
-<summary>⏹ 0122 — <strong>NSGA-II maximising DSI and minimising cytoplasm volume
-(Bed B + 14-d morph)</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0122_dsi_cytoplasm_volume_nsga2` |
-| **Status** | not_started |
-| **Effective date** | — |
-| **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0119_brainstorm_results_23`](../../../overview/tasks/task_pages/t0119_brainstorm_results_23.md), [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
-| **Expected assets** | 1 predictions, 1 answer |
-| **Source suggestion** | `S-0097-01` |
-| **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/), [`data-analysis`](../../../meta/task_types/data-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
-| **Task page** | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) |
-| **Task folder** | [`t0122_dsi_cytoplasm_volume_nsga2/`](../../../tasks/t0122_dsi_cytoplasm_volume_nsga2/) |
-
-# NSGA-II Maximising DSI and Minimising Cytoplasm Volume
-
-## Source Suggestion
-
-S-0097-01: "Bed B NSGA-II maximising DSI and minimising cytoplasm volume."
-
-## Motivation
-
-The t0097 multi-objective optimisation catalogue ranked DSI vs cytoplasm volume as the most
-biologically-grounded objective pair in the project:
-
-* Cajal's cytoplasm-conservation principle and Chklovskii et al. 2002's wiring-cost rule (3/5
-  of grey-matter volume is dendrites + axons for optimal wiring) make cytoplasm a primary
-  evolutionary cost objective.
-* Cuntz et al. 2010 (10.1371/journal.pcbi.1002107) operationalised this as a `balancing
-  factor` `bf in [0.2, 0.7]` for real dendritic trees -- a falsifiable prediction the
-  optimiser can be tested against.
-* Cytoplasm volume per section = pi * (diameter / 2)^2 * length, summed over soma + dendrites
-  + AIS. Easy to compute from the existing `MorphologyResult` without any new generator code.
-
-This is the natural next NSGA-II direction after the 5-seed substrate-rate confirmation batch
-closed at t0115. Recurring biological-plausibility concerns about pure-DSI-maximisation runs
-(the optimiser hits NMDA / Nav densities 85-122 sigma above Sivyer 2013 priors) motivate
-adding a biological cost objective. Cytoplasm volume was chosen over alternatives (ATP/spike,
-+-10% robustness) for cost reasons -- it adds zero per-evaluation overhead since it is a pure
-geometric quantity computable from the morphology.
-
-## Gating Dependency
-
-**This task must not start until `t0120_morph_generator_geometry_audit` has been completed and
-the geometry-audit verdict is "rendering-only / no re-runs needed".** If the audit reveals a
-real geometry bug, this task should be cancelled and a framework-level decision is needed
-about whether to patch `_apply_asymmetry` and re-run all 68-d morphology-extended NSGA-II
-lineage tasks first.
-
-## Scope
-
-One NSGA-II run, single GA seed, 2 objectives, on the 68-d Bed B + 14-d morphology substrate
-that has been validated by the t0106-t0115 lineage.
-
-## Approach
-
-1. **Copy the t0115 NSGA-II substrate** end-to-end: 68-d parameter vector (54-d electrophys +
-   14-d morphology), pop=96, N_EVAL_SEEDS=3, 2 antipodal directions (PD=0deg, ND=180deg),
-   ratio DSI, silence-guard tightened to >= 3 PD spikes, `_POOL_RESTART_EVERY=10`, HV-plateau
-   auto-stop DISABLED, $8 hard cap.
-2. **Replace one objective**: drop the PD-rate objective from t0106's 2-objective
-   configuration and replace with **cytoplasm volume**, computed as: `vol = sum(pi *
-   (sec.diam/2)^2 * sec.L for sec in [soma, *all_dends, ais_proximal, ais_distal])`. Units:
-   um^3. Objectives become (maximise DSI, minimise cytoplasm volume). PD-rate stays as a
-   tracked diagnostic but is not an optimiser objective.
-3. **GA seed**: draw via `secrets.randbelow(10000)` (avoid round-ish numbers; follow the t0113
-   convention).
-4. **Gen ceiling**: 60 (per the t0114/t0115 convention for auto-stop-disabled runs).
-5. **Stop trigger**: operator stop when HV trajectory visibly plateaus, OR $8 cost cap, OR gen
-   60 ceiling.
-6. **Run on Vast.ai EPYC** (32-core or 64-core, whichever is cheapest at provisioning time);
-   single-instance.
-7. **Post-run analysis**: Pareto front in (DSI, cytoplasm_volume) space, joint-pass cells (DSI
-   > = 0.5 AND PD-rate >= 30 Hz AND cytoplasm_volume <= TBD), per-cell morphology gallery for top
-   > ranks, **Cuntz 2010 balancing-factor check**: compute `bf` for top-10 cells and verify whether
-   > the high-DSI corner falls in the predicted `[0.2, 0.7]` band.
-8. **Answer asset**: write one answer asset answering "Does NSGA-II with a cytoplasm-volume
-   cost objective produce a high-DSI front in Cuntz 2010's predicted balancing-factor `[0.2,
-   0.7]` band?"
-
-## Expected Outputs
-
-* `assets/predictions/nsga2-cytoplasm-volume-bedb-morph/` -- predictions asset per spec, with
-  per-cell 68-d vector + per-objective + per-direction firing.
-* `assets/answer/cuntz-balancing-factor-prediction-check/` -- 1 answer asset on the Cuntz
-  prediction.
-* `results/data/pareto_front_seed*.json` -- Pareto front cells in (DSI, cytoplasm_volume).
-* `results/data/all_evaluations_seed*.json` -- every evaluation.
-* `results/images/pareto_front_dsi_vs_volume.png` -- Pareto front chart.
-* `results/images/top50_morphologies_seed*.png` -- top-50 morphology grid (full dendrite trees
-  per the project default).
-* `results/images/cuntz_balancing_factor_top10.png` -- bf distribution for top-10 cells with
-  Cuntz [0.2, 0.7] band overlaid.
-* `results/results_summary.md`, `results/results_detailed.md`, `results/compare_literature.md`
-  comparing to Hay 2011 / Cuntz 2010 / Mohacsi 2024.
-
-## Budget
-
-* Cost cap: **$8** (per-task default).
-* Expected: ~$4-8 (one Vast.ai EPYC instance for 6-12 hours).
-* If the run exceeds $8 watchdog trip, stop and write up partial results.
-
-## Dependencies
-
-* `t0024_port_de_rosenroll_2026_dsgc` -- canonical Bed B cell.
-* `t0080_bedb_mobo_v3_dendritic_spike_nsga2` -- 54-d electrophys parameter scheme +
-  apply_params.
-* `t0090_morphology_generator_diversity_test` -- procedural morphology generator.
-* `t0092_diagnose_morphology_generator_silence` -- `generate_fixed_morphology` wrapper.
-* `t0106_long_pdnd_nsga2_300gen` -- NSGA-II driver substrate (parent of the lineage).
-* `t0115_seed9354_no_autostop` -- most recent run conventions to copy from.
-* `t0119_brainstorm_results_23` -- commissions this task.
-* **`t0120_morph_generator_geometry_audit` -- GATING DEPENDENCY**.
-
-## Verification Criteria
-
-* `t0120` verdict is "rendering-only / no re-runs needed" before this task starts.
-* Predictions asset passes `verify_predictions_asset`.
-* `metrics.json` registers `direction_selectivity_index` with explicit variants for
-  `best_legit`, `overall_max`, `dsi_eq_one_count`.
-* Cytoplasm volume formula is documented in `results_detailed.md` with per-section breakdown.
-* Cuntz 2010 balancing-factor test result is reported as either "consistent with [0.2, 0.7]
-  band" or "violates band".
-* `compare_literature.md` includes a row comparing top-cell `bf` distribution to Cuntz 2010.
-
-## Cross-References
-
-* Source suggestion: S-0097-01.
-* Source paper: Cuntz et al. 2010 -- 10.1371/journal.pcbi.1002107.
-* Related project answer: t0097
-  `assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation`.
-* Prior lineage: t0106, t0112, t0113, t0114, t0115.
-
-</details>
-
-<details>
-<summary>⏹ 0121 — <strong>Canonical 5-seed substrate-rate report (S-0112-01 batch
-closed)</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0121_5seed_substrate_rate_canonical_report` |
-| **Status** | not_started |
-| **Effective date** | — |
-| **Dependencies** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0113_t0106_seed2247_replicate`](../../../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md), [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0119_brainstorm_results_23`](../../../overview/tasks/task_pages/t0119_brainstorm_results_23.md) |
-| **Expected assets** | 1 answer |
-| **Source suggestion** | `S-0115-02` |
-| **Task types** | [`data-analysis`](../../../meta/task_types/data-analysis/), [`comparative-analysis`](../../../meta/task_types/comparative-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
-| **Task page** | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
-| **Task folder** | [`t0121_5seed_substrate_rate_canonical_report/`](../../../tasks/t0121_5seed_substrate_rate_canonical_report/) |
-
-# Canonical 5-seed Substrate-Rate Report (S-0112-01 batch closed)
-
-## Source Suggestion
-
-S-0115-02: "5-seed substrate-rate batch (S-0112-01) is now complete; write canonical report."
-
-## Motivation
-
-The S-0112-01 substrate-rate confirmation batch closed with t0115 (seed 9354). The 5 GA seeds
-(44, 77, 2247, 7755, 9354) on the 68-d Bed B + 14-d morphology substrate produced LEGIT
-joint-pass acceptance rates of 3.23%, 0.35%, 0.00%, 8.13%, 1.19% respectively. The 5-seed mean
-is 2.58% +/- SE 1.50%, with a 95% CI of (-0.36%, +5.52%) that still brackets both Hay 2011's
-0.40% envelope upper bound and Druckmann 2007's 0.10% baseline -- but 3 of 5 seeds
-individually beat Hay's envelope, and the point estimate is 6.5x above Hay and 25.8x above
-Druckmann.
-
-The data lives in five separate task folders with slightly different reporting conventions
-(t0106 reported on a $25 cap; t0112 used a $25 cap; t0113/t0114/t0115 used auto-stop disabled;
-t0106 used auto-stop enabled). A single canonical document with harmonised metric conventions
-is needed before this finding can be referenced by downstream tasks or external write-ups.
-
-## Scope
-
-Pure write-up. No new simulation, no new NSGA-II runs. Re-read the 5 source tasks' results
-parquets and produce one consolidated canonical document plus one answer asset.
-
-## Approach
-
-1. **Re-read source data**: load each of the 5 tasks' `results/data/pareto_front_seed*.json`
-   (or equivalent) and `all_evaluations_seed*.json` if available. Verify total evaluation
-   counts match the per-seed reports (3744, 2016, 1344, 5952, 5280).
-2. **Harmonise conventions**: re-compute LEGIT joint-pass count per seed using the canonical
-   definition (DSI >= 0.5 AND PD-rate >= 30 Hz AND DSI < 0.9999). Cross-check against each
-   task's reported number; flag and document any discrepancies.
-3. **Compute 5-seed statistics**: per-seed acceptance rate, 5-seed mean, sample SD, sample SE,
-   95% CI (normal approx), 95% CI (bootstrap with B=10000), and counts of seeds beating Hay
-   envelope.
-4. **Comparison table**: harmonise with Hay 2011's 0.40% upper envelope and 0.0104%
-   perisomatic bottleneck, and with Druckmann 2007's 0.10% baseline.
-5. **Per-seed convergence-trajectory comparison**: HV trajectory, plateau generation, total
-   evaluations, wall-clock per generation.
-6. **Charts**: (a) per-seed acceptance rate bar chart with Hay/Druckmann reference lines, (b)
-   5-seed HV-trajectory overlay (one trace per seed), (c) DSI-vs-PD scatter for the pooled
-   LEGIT joint-pass cells colored by seed.
-7. **Answer asset**: write one answer asset answering "What is the LEGIT joint-pass acceptance
-   rate on the 68-d Bed B + 14-d morphology substrate, estimated from a 5-seed random-init
-   NSGA-II batch, and how does it compare to Hay 2011 and Druckmann 2007?"
-
-## Expected Outputs
-
-* `results/data/per_seed_substrate_rate_5seed.csv` -- one row per seed with all relevant
-  statistics.
-* `results/data/pooled_legit_jointpass_cells.parquet` -- pooled LEGIT joint-pass cells across
-  the 5 seeds (DSI, PD, source-seed, generation, cell_id).
-* `results/images/per_seed_acceptance_bar.png` -- per-seed acceptance bar chart.
-* `results/images/hv_trajectory_5seed_overlay.png` -- 5-seed HV-trajectory overlay.
-* `results/images/dsi_pd_scatter_5seed_pooled.png` -- pooled scatter colored by seed.
-* `assets/answer/substrate-rate-5seed-canonical/` -- 1 answer asset.
-* `results/results_summary.md` and `results/results_detailed.md` with the canonical numbers.
-
-## Budget
-
-Local CPU only, no remote machines. Estimate <$0.20.
-
-## Dependencies
-
-* `t0106_long_pdnd_nsga2_300gen` -- seed 44.
-* `t0112_t0106_seed77_replicate` -- seed 77.
-* `t0113_t0106_seed2247_replicate` -- seed 2247.
-* `t0114_seed7755_no_autostop` -- seed 7755.
-* `t0115_seed9354_no_autostop` -- seed 9354.
-* `t0119_brainstorm_results_23` -- commissions this task.
-
-## Verification Criteria
-
-* All 5 per-seed acceptance rates match the source task reports within rounding.
-* 5-seed mean and SE match the brainstorm-session-23 summary (2.58% +/- 1.50%) within
-  rounding.
-* Charts saved and embedded in `results_detailed.md`.
-* Answer asset passes `verify_answer_asset` (or local fallback).
-
-## Cross-References
-
-* Source suggestion: S-0115-02.
-* Source tasks: t0106, t0112, t0113, t0114, t0115.
-* Hay 2011 -- 10.1371/journal.pcbi.1002107 (or t0114 `compare_literature.md` for citation).
-* Druckmann 2007 -- as cited in t0114 `compare_literature.md`.
-
-</details>
-
-<details>
-<summary>⏹ 0120 — <strong>Morphology generator geometry audit (15-20 cells)</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0120_morph_generator_geometry_audit` |
-| **Status** | not_started |
-| **Effective date** | — |
-| **Dependencies** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0119_brainstorm_results_23`](../../../overview/tasks/task_pages/t0119_brainstorm_results_23.md) |
-| **Expected assets** | 1 answer |
-| **Source suggestion** | — |
-| **Task types** | [`data-analysis`](../../../meta/task_types/data-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
-| **Task page** | [Morphology generator geometry audit (15-20 cells)](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
-| **Task folder** | [`t0120_morph_generator_geometry_audit/`](../../../tasks/t0120_morph_generator_geometry_audit/) |
-
-# Morphology Generator Geometry Audit (15-20 cells)
-
-## Motivation
-
-In t0115's `top50_morphologies_seed9354.png` and earlier seed-77 / seed-7755 morphology grids,
-several panels show the soma circle appearing far away from the dendrite tree with apparent
-empty space between them. The researcher flagged this as a possible geometry bug: if the soma
-is genuinely disconnected from the dendrites in the procedural generator
-(`tasks/t0090_morphology_generator_diversity_test/code/generator.py`), every 68-d
-morphology-extended NSGA-II result from t0091 onwards (t0091, t0099, t0102, t0104, t0106,
-t0112-t0115) could be electrically invalid and would need to be re-run.
-
-A preliminary code trace in brainstorm session 23 suggests the issue is most likely a
-rendering artefact (small soma circle, thin connecting primary stem, auto-zoomed bounding box
-on extreme asymmetric cells), and that:
-
-* NEURON electrical topology is `sec.connect()`-based and indifferent to xy coordinates.
-* Synapse pt3d xy and `origin_xy` are written by the same `_materialise_neuron_sections`
-  function, so the bar-arrival-time projection `(syn_xy - origin_xy)` is computed in a
-  self-consistent frame.
-
-But this trace must be empirically verified before any new NSGA-II optimisation runs. The
-researcher selected this as the gating task for the post-t0118 wave.
-
-## Scope
-
-Sample 15-20 cells stratified across the asymmetry-parameter extremes that drive the visual
-artefact, plus symmetric controls. Dump the full `section_endpoints_xy` and NEURON
-`h.x3d/h.y3d` pt3d for each cell. Verify three properties analytically and visually for each
-cell:
-
-1. **Primary stems start at `origin_xy`**: for every primary dendrite section, `start_xy ==
-   origin_xy` (within float tolerance).
-2. **Parent / child endpoint match**: for every non-primary dendrite section, `child.start_xy
-   == parent.end_xy` (within float tolerance).
-3. **Synapse-vs-soma coordinate frame consistency**: place a test SAC synapse on each section,
-   read `h.x3d(mid), h.y3d(mid)`, and confirm it is in the same coordinate frame as
-   `origin_xy` (no offset, no scaling mismatch).
-
-## Cells to Sample (15-20 total, stratified)
-
-Sample cells from the pooled Pareto fronts of t0091, t0099, t0112, t0114, t0115 across these
-strata:
-
-* 3 cells with high `|soma_offset_pd_um|` (top decile of the pooled distribution).
-* 3 cells with extreme `field_elongation_pd` (top and bottom deciles, 1-2 each).
-* 3 cells with extreme `branch_density_gradient_pd` (top decile by absolute value).
-* 3 cells with high `primary_branch_pd_concentration` (top decile, von Mises kappa).
-* 3 cells flagged visually as "worst-looking" by inspection of the t0115 top-50 PNG.
-* 3-5 symmetric controls with all 4 asymmetry parameters near their BEDB_BASE_POINT defaults
-  (soma_offset = 0, field_elongation = 1, branch_density_gradient = 0,
-  primary_branch_pd_concentration = 0).
-
-## Approach
-
-1. **Sample cells**: load the pooled cells parquet from t0117 (4431 cells), compute per-cell
-   stratification keys from the 14-d morphology subvector, sample 15-20 cells across the
-   strata above.
-2. **Dump generator coords**: for each sampled cell, instantiate the morphology via
-   `generate_fixed_morphology` (matching the lineage convention), monkey-patch the NEURON DLL
-   loader, extract `section_endpoints_xy`, `origin_xy`, and per-section `h.x3d/h.y3d/h.z3d`
-   for every pt3d.
-3. **Coordinate-consistency checks** (analytic):
-   * For every primary dendrite section: `assert close(section.start_xy, origin_xy)`.
-   * For every non-primary section: walk the parent chain, assert child.start_xy close to
-     parent.end_xy at each level.
-   * For each section, place a temporary `ExpSyn` at midpoint, read `h.x3d/h.y3d` of the
-     midpoint pt3d, assert it falls on the line from `section.start_xy` to `section.end_xy`.
-4. **Per-cell pass/fail CSV**: write a CSV with one row per cell, columns for each of the
-   three checks (pass/fail), the asymmetry-parameter values, and the visual stratum tag.
-5. **Visual diagnostic gallery**: re-render each cell at 2x larger panel with explicit
-   primary-stem highlight (line-width 2.0, contrasting color) and a soma circle scaled to
-   `soma_diameter_um` (not the fixed 6 px). Add a thin debug line from `origin_xy` to each
-   primary stem's `end_xy` if the primary stem origin would otherwise be invisible. Save as
-   `results/images/geometry_audit_gallery.png`.
-6. **Answer asset**: write one answer asset answering "Is the procedural morphology
-   generator's asymmetry transform geometrically consistent across the 15-20 sampled cells?"
-   with conditional verdicts: (a) all 3 checks pass for all sampled cells -> rendering-only
-   issue, no re-runs needed; (b) any check fails -> framework-level decision needed before
-   further NSGA-II.
-
-## Expected Outputs
-
-* `results/data/sampled_cell_manifest.csv` -- which cells were sampled, stratum tag,
-  asymmetry-parameter values.
-* `results/data/coordinate_consistency_checks.csv` -- per-cell pass/fail for each of the 3
-  checks.
-* `results/data/section_endpoints_dump.json` -- full pt3d dump per cell for forensic analysis.
-* `results/images/geometry_audit_gallery.png` -- visual diagnostic gallery.
-* `assets/answer/morphology-generator-geometry-consistency/` -- 1 answer asset with the
-  verdict.
-* `results/results_summary.md` and `results/results_detailed.md` with the verdict and per-cell
-  table.
-
-## Budget
-
-Local CPU only, no remote machines. Estimate <$0.10 (essentially $0 -- a few CPU hours).
-
-## Dependencies
-
-* `t0090_morphology_generator_diversity_test` -- provides the procedural generator.
-* `t0092_diagnose_morphology_generator_silence` -- provides the `generate_fixed_morphology`
-  wrapper with the soma-area patch.
-* `t0115_seed9354_no_autostop` (or `t0117`) -- provides the pooled cells parquet for sampling.
-* `t0119_brainstorm_results_23` -- commissions this task.
-
-## Verification Criteria
-
-* All 3 coordinate-consistency checks defined and run for every sampled cell.
-* Per-cell pass/fail CSV exists with one row per cell.
-* Visual diagnostic gallery saved and embedded in `results_detailed.md`.
-* Answer asset passes `verify_answer_asset` (or the local `verify_answers_local.py` fallback
-  used by recent tasks).
-* Verdict in the results summary unambiguously states either "rendering-only" or "real
-  geometry bug requires framework decision".
-
-## Cross-References
-
-* Researcher concern raised in `t0119_brainstorm_results_23/logs/session_log.md`.
-* Preliminary code trace performed in the brainstorm session covering `_apply_asymmetry`
-  (`generator.py` lines 333-355) and `_section_midpoint_xy` (`trial_helpers.py` line 160).
 
 </details>
