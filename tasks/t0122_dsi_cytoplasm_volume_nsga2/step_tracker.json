@@ -68,10 +68,10 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision Vast.ai EPYC instance, push code, verify env.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T03:16:32Z",
       "completed_at": null,
-      "log_file": "logs/steps/008_setup-machines/"
+      "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
       "step": 9,
