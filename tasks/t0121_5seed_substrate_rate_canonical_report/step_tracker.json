@@ -104,10 +104,10 @@
       "step": 12,
       "name": "suggestions",
       "description": "Write follow-up suggestions from the consolidated finding.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T02:11:44Z",
       "completed_at": null,
-      "log_file": "logs/steps/012_suggestions/"
+      "log_file": "logs\\steps\\012_suggestions/"
     },
     {
       "step": 13,
