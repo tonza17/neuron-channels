@@ -1,0 +1,2 @@
+{'bkt80': True, 'calt80': True, 'catt80': True, 'iht80': True, 'kdrt80': True, 'kv3t80': True, 'kv4t80': True, 'kv7t80': True, 'napt80': True, 'nart80': True, 'nav16t80': True, 'skahpt80': True, 'skt80': True}
+ALL_MECHS_OK

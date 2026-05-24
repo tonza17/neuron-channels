@@ -1,0 +1,14 @@
+total 52
+-rw-r--r-- 1 root root 2077 May 24 13:55 bkt80.mod
+-rw-r--r-- 1 root root 1818 May 24 13:55 calt80.mod
+-rw-r--r-- 1 root root 1471 May 24 13:55 catt80.mod
+-rw-r--r-- 1 root root 1603 May 24 13:55 iht80.mod
+-rw-r--r-- 1 root root 1628 May 24 13:55 kdrt80.mod
+-rw-r--r-- 1 root root 1024 May 24 13:55 kv3t80.mod
+-rw-r--r-- 1 root root 1208 May 24 13:55 kv4t80.mod
+-rw-r--r-- 1 root root 1552 May 24 13:55 kv7t80.mod
+-rw-r--r-- 1 root root  995 May 24 13:55 napt80.mod
+-rw-r--r-- 1 root root 1470 May 24 13:55 nart80.mod
+-rw-r--r-- 1 root root 1380 May 24 13:55 nav16t80.mod
+-rw-r--r-- 1 root root 2129 May 24 13:55 skahpt80.mod
+-rw-r--r-- 1 root root 1691 May 24 13:55 skt80.mod

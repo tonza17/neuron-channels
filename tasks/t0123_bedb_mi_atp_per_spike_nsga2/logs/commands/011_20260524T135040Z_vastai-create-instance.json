@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0123_bedb_mi_atp_per_spike_nsga2",
+  "command": "vastai create instance 13388148 --image python:3.12-bookworm --ssh --disk 40 --label neuron-channels/t0123_bedb_mi_atp_per_spike_nsga2 --onstart-cmd mkdir -p /root/.ssh && chmod 700 /root/.ssh && echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKX8HNJVobKPStUhgjTLgutEc8tzrLTuaRR5dpVMBHdo md1avn-t0123' > /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys && touch /root/.no_auto_tmux && echo 'onstart_done' > /root/onstart.marker --raw",
+  "exit_code": 0,
+  "duration_seconds": 3.144,
+  "started_at": "2026-05-24T13:50:40Z",
+  "completed_at": "2026-05-24T13:50:43Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0123_bedb_mi_atp_per_spike_nsga2",
+  "stdout_file": "011_20260524T135040Z_vastai-create-instance.stdout.txt",
+  "stderr_file": "011_20260524T135040Z_vastai-create-instance.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

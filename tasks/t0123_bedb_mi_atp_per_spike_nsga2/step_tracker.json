@@ -68,10 +68,10 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision single Vast.ai EPYC instance (32-core or 64-core, cheapest at provisioning time) following t0122's protocol; gated on Vast.ai balance >= $7.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T13:43:23Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
       "step": 9,
