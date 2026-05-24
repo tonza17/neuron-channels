@@ -68,9 +68,9 @@
       "step": 8,
       "name": "implementation",
       "description": "Load 5-seed parquets, recompute per-seed and 5-seed stats, produce CSV + 3 PNGs + 1 answer asset.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-24T01:47:20Z",
-      "completed_at": null,
+      "completed_at": "2026-05-24T02:01:50Z",
       "log_file": "logs\\steps\\008_implementation/"
     },
     {
