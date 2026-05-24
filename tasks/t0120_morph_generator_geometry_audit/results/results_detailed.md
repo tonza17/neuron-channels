@@ -36,10 +36,10 @@ pattern):
 
 | Stratum | Cells | Selection rule |
 | --- | --- | --- |
-| `SOMA_OFFSET_TOP` | 3 | top decile of ` |
+| `SOMA_OFFSET_TOP` | 3 | top decile of abs(soma_offset_pd_um) |
 | `ELONGATION_TOP` | 2 | top decile of `field_elongation_pd` |
 | `ELONGATION_BOTTOM` | 1 | bottom decile of `field_elongation_pd` |
-| `BRANCH_DENSITY_TOP` | 3 | top decile of ` |
+| `BRANCH_DENSITY_TOP` | 3 | top decile of abs(branch_density_gradient_pd) |
 | `PRIMARY_CONCENTRATION_TOP` | 3 | top decile of `primary_branch_pd_concentration` (kappa) |
 | `WORST_LOOKING` | 4 | hand-curated list in `code/worst_looking_cells.csv` from t0115 PNG |
 | `SYMMETRIC_CONTROL` | 4 | all 4 asymmetry parameters within +/- 1 SD of defaults |
