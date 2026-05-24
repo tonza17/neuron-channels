@@ -1,0 +1,23 @@
+total 34052
+drwxr-xr-x 2 1144306 1049089     4096 May 24 05:30 .
+drwxr-xr-x 4 1144306 1049089       48 May 24 04:09 ..
+-rw-r--r-- 1 root    root         522 May 24 04:25 algorithm_config.json
+-rw-r--r-- 1 root    root    12517777 May 24 05:30 all_evaluations_seed1524.json
+-rw-r--r-- 1 root    root     9700306 May 24 05:30 cell_trace_seed1524.jsonl
+-rw-r--r-- 1 root    root         117 May 24 04:25 evaluation_seeds.json
+-rw-r--r-- 1 root    root       11124 May 24 05:30 hv_trajectory_seed1524.json
+-rw-r--r-- 1 root    root      172649 May 24 04:25 init_pop_seed1524.json
+-rw-r--r-- 1 root    root    12430568 May 24 05:30 nsga2_checkpoint_seed1524.json
+-rw-r--r-- 1 root    root        8363 May 24 05:30 pareto_front_seed1524.json
+--- IMAGES ---
+total 0
+drwxr-xr-x 2 1144306 1049089 22 May 24 02:45 .
+drwxr-xr-x 4 1144306 1049089 48 May 24 04:09 ..
+-rw-r--r-- 1 1144306 1049089  0 May 24 02:45 .gitkeep
+--- TOP-LEVEL ---
+total 8
+drwxr-xr-x  4 1144306 1049089   48 May 24 04:09 .
+drwxr-xr-x 12 1144306 1049089 4096 May 24 04:14 ..
+-rw-r--r--  1 1144306 1049089    0 May 24 02:45 .gitkeep
+drwxr-xr-x  2 1144306 1049089 4096 May 24 05:30 data
+drwxr-xr-x  2 1144306 1049089   22 May 24 02:45 images

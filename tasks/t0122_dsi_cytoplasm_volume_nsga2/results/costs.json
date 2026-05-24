@@ -1,0 +1,18 @@
+{
+  "total_cost_usd": 0.5,
+  "breakdown": {
+    "vast-ai-titan-v": {
+      "cost_usd": 0.499,
+      "description": "Instance 37546422 (EPYC 7K62 48-Core Virginia US, 2x Titan V idle/unused, CPU-only NEURON+pymoo NSGA-II): GPU charge 2.525 hrs x $0.1867/hr = $0.471 + storage charge 2.550 hrs x $0.0111/hr = $0.028 (per vastai invoice). Hosted the t0122 NSGA-II run on single seed 1524 to gen 60 (HV_PLATEAU_AUTO_STOP=False, _POOL_RESTART_EVERY=10)."
+    },
+    "vast-ai-failed-attempt": {
+      "cost_usd": 0.001,
+      "description": "Failed instance 37545923 (EPYC 7C13 64-Core, offer 34684539): storage-only charge 0.104 hrs x $0.0111/hr = $0.001 (per vastai invoice). Host returned 'Required resources currently unavailable, state change queued' across 3 retries; never reached running."
+    }
+  },
+  "services": {
+    "vast_ai": 0.5
+  },
+  "budget_limit": 6.0,
+  "note": "Actual Vast.ai spend $0.50 well under the $6 task cap. Final billed hours and rates taken from `vastai show invoices --raw` after destroy."
+}

@@ -1,0 +1,16 @@
+Are you sure you want to destroy instance 37546422? This is irreversible and will delete all data. [y/N] query args:
+{'api_key': '9c2eb618b90820c09400e5c0a63b193243f59e9ba99c5bbada6191f7a3972498'}
+
+base: https://console.vast.ai/api/v0/instances/37546422/? + query:
+https://console.vast.ai/api/v0/instances/37546422/?api_key=<REDACTED>
+
+
+[i]  Prepared Request:
+DELETE https://console.vast.ai/api/v0/instances/37546422/?api_key=<REDACTED>
+Headers: {
+ "Authorization": "Bearer <REDACTED>
+}
+Body: {}
+____________________________________________________________________________________________________
+
+destroying instance 37546422.

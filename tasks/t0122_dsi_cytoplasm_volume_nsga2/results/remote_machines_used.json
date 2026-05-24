@@ -1,0 +1,11 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "37546422",
+    "gpu": "Titan V (idle, unused; CPU-only NEURON workload)",
+    "gpu_count": 2,
+    "ram_gb": 125,
+    "duration_hours": 2.55,
+    "cost_usd": 0.499
+  }
+]
