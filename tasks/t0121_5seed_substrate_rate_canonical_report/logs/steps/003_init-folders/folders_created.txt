@@ -1,0 +1,12 @@
+tasks/t0121_5seed_substrate_rate_canonical_report/assets/answer/
+tasks/t0121_5seed_substrate_rate_canonical_report/code/
+tasks/t0121_5seed_substrate_rate_canonical_report/corrections/
+tasks/t0121_5seed_substrate_rate_canonical_report/intervention/
+tasks/t0121_5seed_substrate_rate_canonical_report/logs/commands/
+tasks/t0121_5seed_substrate_rate_canonical_report/logs/searches/
+tasks/t0121_5seed_substrate_rate_canonical_report/logs/sessions/
+tasks/t0121_5seed_substrate_rate_canonical_report/logs/steps/
+tasks/t0121_5seed_substrate_rate_canonical_report/plan/
+tasks/t0121_5seed_substrate_rate_canonical_report/research/
+tasks/t0121_5seed_substrate_rate_canonical_report/results/
+tasks/t0121_5seed_substrate_rate_canonical_report/results/images/
