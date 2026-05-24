@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search for any recent (post-corpus) DSGC energy/MOBO publications or Carter-Bean canonical-value re-derivations; write research/research_internet.md.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-24T23:29:44Z",
-      "completed_at": null,
+      "completed_at": "2026-05-24T23:46:31Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
