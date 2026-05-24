@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0120_morph_generator_geometry_audit\tasks\t0120_morph_generator_geometry_audit\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W003 warning: suggestions[0]: description is 1186 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[1]: title is 130 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[1]: description is 1158 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[2]: title is 152 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[2]: description is 1032 characters, exceeds 1000[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 5 warning(s)

@@ -95,10 +95,10 @@
       "step": 11,
       "name": "suggestions",
       "description": "Write suggestions.json with follow-ups based on the audit verdict.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-24T00:32:56Z",
       "completed_at": null,
-      "log_file": "logs/steps/011_suggestions/"
+      "log_file": "logs\\steps\\011_suggestions/"
     },
     {
       "step": 12,
