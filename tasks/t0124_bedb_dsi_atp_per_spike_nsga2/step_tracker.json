@@ -32,9 +32,9 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review the project paper corpus for evidence on Sengupta 2010 ATP recipe, Carter-Bean 2009 AIS benchmark, Attwell-Laughlin 2001 budget, Niven 2007 bits-per-ATP curve, Cuntz 2010 wiring cost, Remme 2018 MSO MOBO template; write research/research_papers.md.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-24T23:09:59Z",
-      "completed_at": null,
+      "completed_at": "2026-05-24T23:29:14Z",
       "log_file": "logs\\steps\\004_research-papers/"
     },
     {
