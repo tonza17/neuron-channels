@@ -1,0 +1,43 @@
+[dump] processing all 20 cells
+[dump] cell 1 id=9354_40_3816 stratum=SOMA_OFFSET_TOP morph_seed=611031843 soma_offset=-149.96 elong=1.79
+[dump]   n_sections=45 n_primary=4 n_dends=42 soma_n3d=2 origin_xy=(-149.962, +0.000) soma_frame_offset_um=149.962
+[dump] cell 2 id=7755_59_5619 stratum=SOMA_OFFSET_TOP morph_seed=712141421 soma_offset=+149.81 elong=1.38
+[dump]   n_sections=8 n_primary=5 n_dends=5 soma_n3d=2 origin_xy=(+149.814, +0.000) soma_frame_offset_um=149.814
+[dump] cell 3 id=7755_1_68 stratum=SOMA_OFFSET_TOP morph_seed=1314203670 soma_offset=+149.72 elong=2.62
+[dump]   n_sections=115 n_primary=6 n_dends=112 soma_n3d=2 origin_xy=(+149.719, +0.000) soma_frame_offset_um=149.719
+[dump] cell 4 id=44_1_49 stratum=ELONGATION_TOP morph_seed=1167165264 soma_offset=-123.95 elong=3.00
+[dump]   n_sections=10 n_primary=3 n_dends=7 soma_n3d=2 origin_xy=(-123.945, +0.000) soma_frame_offset_um=123.945
+[dump] cell 5 id=77_2_177 stratum=ELONGATION_TOP morph_seed=1004695153 soma_offset=-29.64 elong=3.00
+[dump]   n_sections=10 n_primary=7 n_dends=7 soma_n3d=2 origin_xy=(-29.640, +0.000) soma_frame_offset_um=29.640
+[dump] cell 6 id=77_1_52 stratum=ELONGATION_BOTTOM morph_seed=241560666 soma_offset=+18.32 elong=1.00
+[dump]   n_sections=43 n_primary=6 n_dends=40 soma_n3d=2 origin_xy=(+18.322, +0.000) soma_frame_offset_um=18.322
+[dump] cell 7 id=9354_13_1247 stratum=BRANCH_DENSITY_TOP morph_seed=1663470800 soma_offset=-127.61 elong=2.67
+[dump]   n_sections=187 n_primary=6 n_dends=184 soma_n3d=2 origin_xy=(-127.612, +0.000) soma_frame_offset_um=127.612
+[dump] cell 8 id=44_1_35 stratum=BRANCH_DENSITY_TOP morph_seed=1152912271 soma_offset=+98.91 elong=2.49
+[dump]   n_sections=6 n_primary=3 n_dends=3 soma_n3d=2 origin_xy=(+98.913, +0.000) soma_frame_offset_um=98.913
+[dump] cell 9 id=9354_22_2025 stratum=BRANCH_DENSITY_TOP morph_seed=603408424 soma_offset=-143.05 elong=2.58
+[dump]   n_sections=213 n_primary=4 n_dends=210 soma_n3d=2 origin_xy=(-143.051, +0.000) soma_frame_offset_um=143.051
+[dump] cell 10 id=77_16_1486 stratum=PRIMARY_CONCENTRATION_TOP morph_seed=1778568763 soma_offset=-144.43 elong=2.24
+[dump]   n_sections=272 n_primary=5 n_dends=269 soma_n3d=2 origin_xy=(-144.429, +0.000) soma_frame_offset_um=144.429
+[dump] cell 11 id=77_13_1164 stratum=PRIMARY_CONCENTRATION_TOP morph_seed=1724422217 soma_offset=-143.85 elong=1.59
+[dump]   n_sections=152 n_primary=5 n_dends=149 soma_n3d=2 origin_xy=(-143.851, +0.000) soma_frame_offset_um=143.851
+[dump] cell 12 id=77_10_882 stratum=PRIMARY_CONCENTRATION_TOP morph_seed=1778568763 soma_offset=-144.43 elong=1.59
+[dump]   n_sections=128 n_primary=5 n_dends=125 soma_n3d=2 origin_xy=(-144.429, +0.000) soma_frame_offset_um=144.429
+[dump] cell 13 id=44_13_1206 stratum=WORST_LOOKING morph_seed=1586186576 soma_offset=-149.60 elong=1.23
+[dump]   n_sections=51 n_primary=6 n_dends=48 soma_n3d=2 origin_xy=(-149.601, +0.000) soma_frame_offset_um=149.601
+[dump] cell 14 id=77_15_1368 stratum=WORST_LOOKING morph_seed=2089478 soma_offset=-145.84 elong=2.00
+[dump]   n_sections=80 n_primary=3 n_dends=77 soma_n3d=2 origin_xy=(-145.841, +0.000) soma_frame_offset_um=145.841
+[dump] cell 15 id=9354_11_1021 stratum=WORST_LOOKING morph_seed=581670252 soma_offset=-148.70 elong=2.68
+[dump]   n_sections=189 n_primary=6 n_dends=186 soma_n3d=2 origin_xy=(-148.700, +0.000) soma_frame_offset_um=148.700
+[dump] cell 16 id=9354_55_5231 stratum=WORST_LOOKING morph_seed=611031843 soma_offset=-149.23 elong=1.79
+[dump]   n_sections=27 n_primary=4 n_dends=24 soma_n3d=2 origin_xy=(-149.234, +0.000) soma_frame_offset_um=149.234
+[dump] cell 17 id=77_2_115 stratum=SYMMETRIC_CONTROL morph_seed=1233626717 soma_offset=-3.02 elong=1.12
+[dump]   n_sections=93 n_primary=6 n_dends=90 soma_n3d=2 origin_xy=(-3.021, +0.000) soma_frame_offset_um=3.021
+[dump] cell 18 id=77_1_20 stratum=SYMMETRIC_CONTROL morph_seed=1234008703 soma_offset=-3.02 elong=1.13
+[dump]   n_sections=78 n_primary=5 n_dends=75 soma_n3d=2 origin_xy=(-3.021, +0.000) soma_frame_offset_um=3.021
+[dump] cell 19 id=77_4_340 stratum=SYMMETRIC_CONTROL morph_seed=1199769189 soma_offset=-3.25 elong=1.18
+[dump]   n_sections=18 n_primary=5 n_dends=15 soma_n3d=2 origin_xy=(-3.254, +0.000) soma_frame_offset_um=3.254
+[dump] cell 20 id=77_3_200 stratum=SYMMETRIC_CONTROL morph_seed=1199769189 soma_offset=-4.91 elong=1.18
+[dump]   n_sections=21 n_primary=6 n_dends=18 soma_n3d=2 origin_xy=(-4.911, +0.000) soma_frame_offset_um=4.911
+[dump] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0120_morph_generator_geometry_audit\tasks\t0120_morph_generator_geometry_audit\results\data\section_endpoints_dump.json
+[dump] file size = 2004.3 KB

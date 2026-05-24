@@ -1,0 +1,14 @@
+[sample] loaded pool with 4431 cells, columns include morphology params
+[sample] raw counts per stratum: soma_offset=3, elong_top=2, elong_bot=1, branch_density=3, primary_conc=3, worst_looking=3, symmetric=0
+[sample] after dedup: 14 unique cells
+[sample] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0120_morph_generator_geometry_audit\tasks\t0120_morph_generator_geometry_audit\results\data\sampled_cell_manifest.csv
+[sample] n_rows=14
+[sample] stratum tag counts:
+stratum_tag
+BRANCH_DENSITY_TOP           3
+ELONGATION_BOTTOM            1
+ELONGATION_TOP               2
+PRIMARY_CONCENTRATION_TOP    3
+SOMA_OFFSET_TOP              3
+WORST_LOOKING                2
+dtype: int64

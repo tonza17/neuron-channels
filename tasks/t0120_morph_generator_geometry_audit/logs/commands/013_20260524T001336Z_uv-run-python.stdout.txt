@@ -1,0 +1,3 @@
+[gallery] reading C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0120_morph_generator_geometry_audit\tasks\t0120_morph_generator_geometry_audit\results\data\section_endpoints_dump.json
+[gallery] loaded 20 cells
+[gallery] saved gallery with 20 panels to C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0120_morph_generator_geometry_audit\tasks\t0120_morph_generator_geometry_audit\results\images\geometry_audit_gallery.png (size = 958.4 KB)

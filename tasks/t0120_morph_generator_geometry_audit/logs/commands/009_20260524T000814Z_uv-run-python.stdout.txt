@@ -1,0 +1,4 @@
+[dump] SMOKE TEST: limiting to 1 of 20 cells
+[dump] cell 1 id=9354_40_3816 stratum=SOMA_OFFSET_TOP morph_seed=611031843 soma_offset=-149.96 elong=1.79
+[dump]   n_sections=45 n_primary=4 n_dends=42 soma_n3d=2 origin_xy=(-149.962, +0.000) soma_frame_offset_um=149.962
+[dump] SMOKE TEST: not writing JSON file. Processed 1 cells.

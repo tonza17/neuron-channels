@@ -1,0 +1,27 @@
+{
+  "spec_version": "2",
+  "answer_id": "morphology-generator-geometry-consistency",
+  "question": "Is the procedural morphology generator's asymmetry transform geometrically consistent across the 15-20 sampled cells, and do its results invalidate prior NSGA-II runs?",
+  "short_title": "Yes -- generator geometry is consistent across all 20 cells; the visual artefact is rendering-only and prior NSGA-II runs are NOT invalidated",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0090_morphology_generator_diversity_test",
+    "t0091_morphology_extended_nsga2_v1",
+    "t0092_diagnose_morphology_generator_silence",
+    "t0115_seed9354_no_autostop",
+    "t0117_pooled_pca_cluster_factor_all_cells_4_seeds",
+    "t0119_brainstorm_results_23"
+  ],
+  "confidence": "high",
+  "created_by_task": "t0120_morph_generator_geometry_audit",
+  "date_created": "2026-05-24"
+}
