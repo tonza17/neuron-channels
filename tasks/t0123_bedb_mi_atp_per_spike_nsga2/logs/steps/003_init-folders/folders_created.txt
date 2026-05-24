@@ -1,0 +1,13 @@
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/answer/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/predictions/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/code/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/corrections/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/intervention/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/logs/commands/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/logs/searches/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/logs/sessions/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/logs/steps/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/plan/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/research/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/results/
+tasks/t0123_bedb_mi_atp_per_spike_nsga2/results/images/
