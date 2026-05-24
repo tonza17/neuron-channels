@@ -5,8 +5,8 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (45)](../papers/by-category/compartmental-modeling.md) | [Answers
-(35)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(395)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(36)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(400)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (14)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (12)](../predictions/by-category/compartmental-modeling.md)
@@ -2442,7 +2442,7 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 
-## Answers (35)
+## Answers (36)
 
 <details>
 <summary><strong>Is the procedural morphology generator's asymmetry transform
@@ -2463,6 +2463,23 @@ protocol, so the bar arrival-time projection `(syn_xy - origin_xy)` cancels soma
 correctly. Prior 68-d morphology-extended NSGA-II results (t0091, t0099, t0102, t0104, t0106,
 t0112, t0114, t0115, t0118) are NOT invalidated; the soma-disconnection visual artefact in
 t0115's top50_morphologies_seed9354.png is a rendering convention issue, not a geometry bug.
+
+</details>
+
+<details>
+<summary><strong>What is the LEGIT joint-pass acceptance rate on the 68-d Bed B +
+14-d morphology NSGA-II substrate, estimated from a 5-seed random-init
+batch, and how does it compare to Hay 2011 and Druckmann 2007?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-24 | **Full answer**:
+[`substrate-rate-5seed-canonical`](../../tasks/t0121_5seed_substrate_rate_canonical_report/assets/answer/substrate-rate-5seed-canonical/)
+
+The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, a
+normal-approx 95% CI of (-0.35%, 5.51%), and a bootstrap 95% CI of (0.38%, 5.53%); the point
+estimate is roughly 6.5x Hay 2011's 0.40% envelope and 25.8x Druckmann 2007's 0.10% baseline,
+and 3 of 5 seeds individually exceed the Hay envelope. Both 95% CIs bracket zero and both
+literature baselines, so this batch cannot statistically reject the literature rates despite
+the elevated point estimate.
 
 </details>
 
@@ -3182,7 +3199,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (355 open, 40 closed)
+## Suggestions (360 open, 40 closed)
 
 <details>
 <summary>🔧 <strong>Re-render t0112 / t0114 / t0115 top-50 morphology grids with
@@ -3262,6 +3279,106 @@ stating the count of any cell failing any check. Runs in background (~12 CPU hou
 single-process); cost effectively $0. Low priority because the stratified sample already
 covers realistic failure modes; this is defence-in-depth. Recommended task types:
 data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run seeds 77 and 2247 with HV-plateau auto-stop DISABLED to
+test the censoring-artefact hypothesis</strong> (S-0121-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0121_5seed_substrate_rate_canonical_report](../../tasks/t0121_5seed_substrate_rate_canonical_report/)
+
+The 5-seed canonical estimate's lower tail is dominated by seed 77 (7 LEGIT, gen 21 stop) and
+seed 2247 (0 LEGIT, gen 14 stop, 6 gens below Mohacsi 2024's 20-60 convergence band). Both ran
+under legacy auto-stop-enabled; t0121 flags both as plausible censoring artefacts. The
+project's now-current policy (memory note 'Disable HV-plateau auto-stop') is to DISABLE
+auto-stop. Concrete action: replicate t0112 (seed 77) and t0113 (seed 2247) with auto-stop
+DISABLED, _POOL_RESTART_EVERY=10, gen ceiling 300, budget cap matching t0114 / t0115.
+Decision: if either seed crosses the Hay 0.40% envelope, re-estimate the canonical 5-seed mean
+and close the censoring caveat. If both stay below 0.40% at full budget, the seeds are
+substrate-sparse not censored. Distinct from S-0114-08 (which tests the offline '(W=3,
+T=0.015)' detector, not disable-auto-stop). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add 2-3 further random-init GA seeds to upgrade the
+substrate-rate estimate from 5-seed to 7-8 seed</strong> (S-0121-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
+[t0121_5seed_substrate_rate_canonical_report](../../tasks/t0121_5seed_substrate_rate_canonical_report/)
+
+The 5-seed bootstrap 95% CI (+0.38%, +5.53%) excludes 0% but still brackets both Hay 2011
+(0.40%) and Druckmann 2007 (0.10%) baselines; the normal-approx CI (-0.35%, +5.51%) straddles
+0. With n=5 the resampling pool is small and the CI is sensitive to seed 7755's 8.13% draw and
+seed 2247's 0% draw. Concrete action: draw 2-3 further random GA seeds via
+secrets.randbelow(10000) (avoiding the already-used 44, 77, 2247, 7755, 9354), run each as a
+minimum-change replicate of t0115 (auto-stop disabled, cadence 10, gen ceiling 300, budget cap
+~$3 per seed), then re-run the t0121 pipeline against the expanded 7-8 seed sample. Decision:
+if both CIs clear the Hay envelope upper bound at 7-8 seeds, the substrate-density claim can
+be made at p < 0.05 without the censoring caveat. Distinct from S-0113-01 (closed by t0114 +
+t0115). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Stratified / per-seed-weighted bootstrap CI to replace t0121's
+flat-resample 5-number bootstrap</strong> (S-0121-03)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0121_5seed_substrate_rate_canonical_report](../../tasks/t0121_5seed_substrate_rate_canonical_report/)
+
+t0121's bootstrap CI is an unstratified resample of 5 per-seed rates with equal weight. With
+per-seed denominators ranging 1344-5952 (4.4x spread), flat weighting under-weights the
+more-precise seeds. Defensible alternatives: (a) cell-level resample stratified by seed
+(preserve per-seed denominators, resample cells within each seed before averaging), or (b)
+inverse-variance weighting with within-seed SE = sqrt(p*(1-p)/n_total). Concrete action:
+implement both in a small `weighted_bootstrap.py` library, report all three CI variants (flat,
+cell-stratified, inverse-variance) on the existing 5-seed data, and decide which is canonical
+for downstream substrate-rate citations. Decision: if the cell-stratified CI excludes 0% and
+is tighter than the flat CI, adopt as canonical and update t0121 numbers via correction.
+Recommended task types: data-analysis, write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Matched-evaluation-budget substrate-rate comparison against Hay
+2011 and Druckmann 2007 (extrapolation experiment)</strong> (S-0121-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0121_5seed_substrate_rate_canonical_report](../../tasks/t0121_5seed_substrate_rate_canonical_report/)
+
+t0121's per-seed budget spans 1344-5952 evaluations vs Hay 2011's 500,000 and Druckmann 2007's
+300,000 - this work runs 50x-372x fewer evals per seed than published references. The
+point-estimate comparison (6.45x above Hay envelope, 25.8x above Druckmann) is therefore made
+at very different sample sizes; whether the per-seed rate converges, decays, or oscillates at
+matched spend is open. Concrete action: take the highest-yield seed (7755), re-run NSGA-II to
+a 50,000-evaluation budget (~10x current spend, ~$15-25), record the per-1000-eval running
+rate trajectory, and test whether the asymptote stays above or drops below Hay's 0.40% as
+budget grows. Decision: if the running rate stays > 1% at 50K evals, the substrate-density
+claim is budget-robust. If it decays below 0.40%, t0121's headline is an early-NSGA-II
+transient. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Pre-register the 5-seed canonical substrate-rate numbers as a
+project metric registered via meta/metrics/</strong> (S-0121-05)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
+[t0121_5seed_substrate_rate_canonical_report](../../tasks/t0121_5seed_substrate_rate_canonical_report/)
+
+t0121's headline numbers - 5-seed mean LEGIT acceptance 2.58%, normal-approx 95% CI (-0.35%,
++5.51%), bootstrap 95% CI (+0.38%, +5.53%), n_seeds_above_hay_envelope = 3 - currently live
+only in this task's results files. Per ARF design they are not yet a registered project
+metric, so no aggregator can track them or compare them against future runs. Concrete action:
+register a new metric `legit_substrate_rate_pct` (unit: percent, scope: project-wide) in
+`meta/metrics/`, with the per-seed convention (`n_legit_joint_pass_unique / n_total_evals *
+100`) baked into the metric definition. Backfill metric_results from t0106 / t0112 / t0113 /
+t0114 / t0115 / t0121 using the canonical convention so any future seed can be aggregated
+against the baseline. Distinct from S-0121-03 (which is about CI methodology, not the headline
+metric itself). Recommended task types: infrastructure-setup, data-analysis.
 
 </details>
 

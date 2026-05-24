@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-24T00:46:58Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-24T02:24:05Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>1369827</char_count>
-    <byte_count>1375464</byte_count>
-    <estimated_tokens>342456</estimated_tokens>
+    <char_count>1372164</char_count>
+    <byte_count>1377801</byte_count>
+    <estimated_tokens>343041</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -23406,12 +23406,14 @@ task may now proceed.
 
 ## Canonical 5-seed substrate-rate report (S-0112-01 batch closed)
 ID: t0121_5seed_substrate_rate_canonical_report
-Status: not_started
-Effective date: 2026-05-23
+Status: completed
+Effective date: 2026-05-24
 Short description: Pure write-up consolidating t0106 / t0112 / t0113 / t0114 / t0115 5-seed LEGIT joint-pass acceptance rate into one canonical document with harmonised conventions and Hay 2011 / Druckmann 2007 comparisons.
 Dependencies: t0106_long_pdnd_nsga2_300gen, t0112_t0106_seed77_replicate, t0113_t0106_seed2247_replicate, t0114_seed7755_no_autostop, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
 Task types: data-analysis, comparative-analysis, answer-question
 Source suggestion: S-0115-02
+Start time: 2026-05-24T01:15:03Z
+End time: 2026-05-24T02:25:00Z
 
 #### Source Suggestion
 
@@ -23494,6 +23496,53 @@ Local CPU only, no remote machines. Estimate &lt;$0.20.
 * Source tasks: t0106, t0112, t0113, t0114, t0115.
 * Hay 2011 -- 10.1371/journal.pcbi.1002107 (or t0114 `compare_literature.md` for citation).
 * Druckmann 2007 -- as cited in t0114 `compare_literature.md`.
+
+### Results Summary
+
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0121_5seed_substrate_rate_canonical_report&quot;
+date_completed: &quot;2026-05-24&quot;
+status: &quot;complete&quot;
+---
+### Results Summary: Canonical 5-seed Substrate-Rate Report
+
+#### Summary
+
+Consolidated the S-0112-01 5-seed substrate-rate batch (t0106 seed 44, t0112 seed 77, t0113 seed
+2247, t0114 seed 7755, t0115 seed 9354) into one canonical report with harmonised LEGIT-only
+conventions, both normal-approx and bootstrap 95% CIs, and a literature comparison table against Hay
+2011 / Druckmann 2007 / Mohacsi 2024. The bootstrap CI (B=10000, seed=42) excludes 0% (lower bound
++0.38%), strengthening the case that the substrate is more populated than Hay&#x27;s 0.40% envelope upper
+bound, even though the normal-approx CI still brackets 0.
+
+#### Metrics
+
+* **Per-seed LEGIT acceptance**: t0106/44 = **3.2318%** (121/3744), t0112/77 = **0.3472%** (7/2016),
+  t0113/2247 = **0.0000%** (0/1344), t0114/7755 = **8.1317%** (484/5952), t0115/9354 = **1.1932%**
+  (63/5280).
+* **5-seed mean**: **2.58%** (sample SD = 3.35%, sample SE = 1.50%).
+* **Normal-approx 95% CI**: **(-0.35%, +5.51%)** -- straddles 0%.
+* **Bootstrap 95% CI** (B=10000, seed=42): **(+0.38%, +5.53%)** -- excludes 0%; strengthens the
+  point estimate.
+* **n_seeds above Hay 2011 envelope (0.40%)**: **3** of 5 (seeds 44, 7755, 9354 each independently
+  beat the envelope by 8x / 20x / 3x respectively).
+* **Convention drift**: seed 7755 silence-guard-included legacy headline 12.95% -&gt; canonical LEGIT
+  8.13% (delta -4.82%); seed 44 3.63% -&gt; 3.23% (delta -0.40%); seed 2247 0.15% -&gt; 0.00% (delta
+  -0.15%).
+* **Pooled cells**: 675 LEGIT joint-pass cells (121 + 7 + 0 + 484 + 63) collected into one parquet
+  for downstream analysis.
+
+#### Verification
+
+* `verify_research_code` -- PASSED (0 errors, 0 warnings).
+* `verify_plan` -- PASSED (0 errors, 0 warnings).
+* Local-fallback answer-asset verifier (`meta.asset_types.answer.verificator`) -- PASSED (0 errors,
+  0 warnings).
+* `ruff check`, `ruff format`, `mypy -p tasks.t0121_5seed_substrate_rate_canonical_report.code` --
+  all PASSED on 11 Python files.
+* Per-seed counts cross-checked via assert: 121 + 7 + 0 + 484 + 63 = 675 (pooled parquet row count
+  matches).
 
 ## NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)
 ID: t0122_dsi_cytoplasm_volume_nsga2

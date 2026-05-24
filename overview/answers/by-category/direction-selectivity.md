@@ -1,6 +1,6 @@
-# Answers: `direction-selectivity` (32)
+# Answers: `direction-selectivity` (33)
 
-32 answer(s).
+33 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -682,6 +682,36 @@ is the binding constraint, not a definitive portability verdict.
 | **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0008_port_modeldb_189347`](../../../overview/tasks/task_pages/t0008_port_modeldb_189347.md), [`t0012_tuning_curve_scoring_loss_library`](../../../overview/tasks/task_pages/t0012_tuning_curve_scoring_loss_library.md) |
 | **URL sources** | [url 1](https://github.com/geoffder/Spatial-Offset-DSGC-NEURON-Model), [url 2](https://github.com/geoffder/ds-circuit-ei-microarchitecture), [url 3](https://doi.org/10.5281/zenodo.17666157), [url 4](https://github.com/PolegPolskyLab/DS-mechanisms), [url 5](https://modeldb.science/189347), [url 6](https://modeldb.science/267646) |
 | **Created by** | [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md) |
+
+</details>
+
+<details>
+<summary><strong>What is the LEGIT joint-pass acceptance rate on the 68-d Bed B +
+14-d morphology NSGA-II substrate, estimated from a 5-seed random-init
+batch, and how does it compare to Hay 2011 and Druckmann 2007?</strong></summary>
+
+**Confidence**: medium
+
+The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, a
+normal-approx 95% CI of (-0.35%, 5.51%), and a bootstrap 95% CI of (0.38%, 5.53%); the point
+estimate is roughly 6.5x Hay 2011's 0.40% envelope and 25.8x Druckmann 2007's 0.10% baseline,
+and 3 of 5 seeds individually exceed the Hay envelope. Both 95% CIs bracket zero and both
+literature baselines, so this batch cannot statistically reject the literature rates despite
+the elevated point estimate.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0121_5seed_substrate_rate_canonical_report/assets/answer/substrate-rate-5seed-canonical/full_answer.md) |
+| **ID** | [`substrate-rate-5seed-canonical`](../../../tasks/t0121_5seed_substrate_rate_canonical_report/assets/answer/substrate-rate-5seed-canonical/) |
+| **Question** | What is the LEGIT joint-pass acceptance rate on the 68-d Bed B + 14-d morphology NSGA-II substrate, estimated from a 5-seed random-init batch, and how does it compare to Hay 2011 and Druckmann 2007? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-24 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | `10.1371_journal.pcbi.1002107`, `10.3389_neuro.01.1.1.001.2007`, `10.1371_journal.pcbi.1012039` |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0113_t0106_seed2247_replicate`](../../../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md), [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **URL sources** | — |
+| **Created by** | [`t0121_5seed_substrate_rate_canonical_report`](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
 
 </details>
 

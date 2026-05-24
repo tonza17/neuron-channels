@@ -1,12 +1,12 @@
 # Answers by Date Added
 
-43 answer(s) grouped by creation date.
+44 answer(s) grouped by creation date.
 
 [Back to all answers](../README.md)
 
 ---
 
-## 2026-05-24 (1)
+## 2026-05-24 (2)
 
 <details>
 <summary><strong>Is the procedural morphology generator's asymmetry transform
@@ -40,6 +40,36 @@ t0115's top50_morphologies_seed9354.png is a rendering convention issue, not a g
 | **Task sources** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0091_morphology_extended_nsga2_v1`](../../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md), [`t0119_brainstorm_results_23`](../../../overview/tasks/task_pages/t0119_brainstorm_results_23.md) |
 | **URL sources** | — |
 | **Created by** | [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) |
+
+</details>
+
+<details>
+<summary><strong>What is the LEGIT joint-pass acceptance rate on the 68-d Bed B +
+14-d morphology NSGA-II substrate, estimated from a 5-seed random-init
+batch, and how does it compare to Hay 2011 and Druckmann 2007?</strong></summary>
+
+**Confidence**: medium
+
+The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, a
+normal-approx 95% CI of (-0.35%, 5.51%), and a bootstrap 95% CI of (0.38%, 5.53%); the point
+estimate is roughly 6.5x Hay 2011's 0.40% envelope and 25.8x Druckmann 2007's 0.10% baseline,
+and 3 of 5 seeds individually exceed the Hay envelope. Both 95% CIs bracket zero and both
+literature baselines, so this batch cannot statistically reject the literature rates despite
+the elevated point estimate.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0121_5seed_substrate_rate_canonical_report/assets/answer/substrate-rate-5seed-canonical/full_answer.md) |
+| **ID** | [`substrate-rate-5seed-canonical`](../../../tasks/t0121_5seed_substrate_rate_canonical_report/assets/answer/substrate-rate-5seed-canonical/) |
+| **Question** | What is the LEGIT joint-pass acceptance rate on the 68-d Bed B + 14-d morphology NSGA-II substrate, estimated from a 5-seed random-init batch, and how does it compare to Hay 2011 and Druckmann 2007? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-24 |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+| **Paper sources** | `10.1371_journal.pcbi.1002107`, `10.3389_neuro.01.1.1.001.2007`, `10.1371_journal.pcbi.1012039` |
+| **Task sources** | [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0112_t0106_seed77_replicate`](../../../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md), [`t0113_t0106_seed2247_replicate`](../../../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md), [`t0114_seed7755_no_autostop`](../../../overview/tasks/task_pages/t0114_seed7755_no_autostop.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0078_bedb_mobo_v2_ais_tiered_ahp`](../../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md), [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0102_seedscale_n4_gen20`](../../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
+| **URL sources** | — |
+| **Created by** | [`t0121_5seed_substrate_rate_canonical_report`](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
 
 </details>
 

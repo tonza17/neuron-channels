@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-24T00:46:58Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-05-24T02:24:05Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>564854</char_count>
-    <byte_count>565395</byte_count>
-    <estimated_tokens>141213</estimated_tokens>
+    <char_count>566644</char_count>
+    <byte_count>567185</byte_count>
+    <estimated_tokens>141661</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -225,9 +225,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0118_resimulate_t0117_cluster_samples_ge_gi_vm</id>
         <id>t0119_brainstorm_results_23</id>
         <id>t0120_morph_generator_geometry_audit</id>
+        <id>t0121_5seed_substrate_rate_canonical_report</id>
       </source_ids>
       <content>
-Completed tasks: 113
+Completed tasks: 114
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -906,6 +907,12 @@ ID: t0120_morph_generator_geometry_audit
 Completed: 2026-05-24
 Short description: Audit procedural morphology generator: verify primary stems start at origin_xy, parent/child endpoint match, and synapse pt3d xy frame matches origin_xy across 15-20 visually-diverse cells. Gates downstream NSGA-II.
 Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0120_morph_generator_geometry_audit&quot; date_completed: &quot;2026-05-24&quot; status: &quot;complete&quot; --- Results Summary: Morphology Generator Geometry Audit Summary Audited the procedural DSGC morphology generator on 20 cells stratified across asymmetry-parameter extremes plus symmetric controls. All three coordinate-consistency checks pass for every cell (60/60). The deliberate soma-frame split introduced by the t0092 z-axis pt3d patch is **benign**; prior 68-d morphology-extended NSGA-II results (t0091, t0099, t0102, t0104, t0106, t0112-t0115, t0118) are NOT invalidated. The visual disconnect in t0115&#x27;s top-50 morphology grid is a rendering-only artefact...
+
+## Canonical 5-seed substrate-rate report (S-0112-01 batch closed)
+ID: t0121_5seed_substrate_rate_canonical_report
+Completed: 2026-05-24
+Short description: Pure write-up consolidating t0106 / t0112 / t0113 / t0114 / t0115 5-seed LEGIT joint-pass acceptance rate into one canonical document with harmonised conventions and Hay 2011 / Druckmann 2007 comparisons.
+Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0121_5seed_substrate_rate_canonical_report&quot; date_completed: &quot;2026-05-24&quot; status: &quot;complete&quot; --- Results Summary: Canonical 5-seed Substrate-Rate Report Summary Consolidated the S-0112-01 5-seed substrate-rate batch (t0106 seed 44, t0112 seed 77, t0113 seed 2247, t0114 seed 7755, t0115 seed 9354) into one canonical report with harmonised LEGIT-only conventions, both normal-approx and bootstrap 95% CIs, and a literature comparison table against Hay 2011 / Druckmann 2007 / Mohacsi 2024. The bootstrap CI (B=10000, seed=42) excludes 0% (lower bound +0.38%), strengthening the case that the substrate is more populated than Hay&#x27;s 0.40% envelope upper bound, even...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -915,11 +922,10 @@ Result summary: --- spec_version: &quot;1&quot; task_id: &quot;t0120_morph_gener
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0121_5seed_substrate_rate_canonical_report</id>
         <id>t0122_dsi_cytoplasm_volume_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1243,95 +1249,6 @@ For each condition, compute:
 * Other AIS channel candidates (Nav1.2, Kv1, Kv4 alpha-DTX-sensitive subtype) — out of scope; the
   channel set is fixed at {HHst, Nav1.6, Kv3, Kv7}. Future follow-ups may extend the channel set.
 
-## Canonical 5-seed substrate-rate report (S-0112-01 batch closed)
-ID: t0121_5seed_substrate_rate_canonical_report
-Status: not_started
-Effective date: 2026-05-23
-Short description: Pure write-up consolidating t0106 / t0112 / t0113 / t0114 / t0115 5-seed LEGIT joint-pass acceptance rate into one canonical document with harmonised conventions and Hay 2011 / Druckmann 2007 comparisons.
-Dependencies: t0106_long_pdnd_nsga2_300gen, t0112_t0106_seed77_replicate, t0113_t0106_seed2247_replicate, t0114_seed7755_no_autostop, t0115_seed9354_no_autostop, t0119_brainstorm_results_23
-
-#### Source Suggestion
-
-S-0115-02: &quot;5-seed substrate-rate batch (S-0112-01) is now complete; write canonical report.&quot;
-
-#### Motivation
-
-The S-0112-01 substrate-rate confirmation batch closed with t0115 (seed 9354). The 5 GA seeds (44,
-77, 2247, 7755, 9354) on the 68-d Bed B + 14-d morphology substrate produced LEGIT joint-pass
-acceptance rates of 3.23%, 0.35%, 0.00%, 8.13%, 1.19% respectively. The 5-seed mean is 2.58% +/- SE
-1.50%, with a 95% CI of (-0.36%, +5.52%) that still brackets both Hay 2011&#x27;s 0.40% envelope upper
-bound and Druckmann 2007&#x27;s 0.10% baseline -- but 3 of 5 seeds individually beat Hay&#x27;s envelope, and
-the point estimate is 6.5x above Hay and 25.8x above Druckmann.
-
-The data lives in five separate task folders with slightly different reporting conventions (t0106
-reported on a $25 cap; t0112 used a $25 cap; t0113/t0114/t0115 used auto-stop disabled; t0106 used
-auto-stop enabled). A single canonical document with harmonised metric conventions is needed before
-this finding can be referenced by downstream tasks or external write-ups.
-
-#### Scope
-
-Pure write-up. No new simulation, no new NSGA-II runs. Re-read the 5 source tasks&#x27; results parquets
-and produce one consolidated canonical document plus one answer asset.
-
-#### Approach
-
-1. **Re-read source data**: load each of the 5 tasks&#x27; `results/data/pareto_front_seed*.json` (or
-   equivalent) and `all_evaluations_seed*.json` if available. Verify total evaluation counts match
-   the per-seed reports (3744, 2016, 1344, 5952, 5280).
-2. **Harmonise conventions**: re-compute LEGIT joint-pass count per seed using the canonical
-   definition (DSI &gt;= 0.5 AND PD-rate &gt;= 30 Hz AND DSI &lt; 0.9999). Cross-check against each task&#x27;s
-   reported number; flag and document any discrepancies.
-3. **Compute 5-seed statistics**: per-seed acceptance rate, 5-seed mean, sample SD, sample SE, 95%
-   CI (normal approx), 95% CI (bootstrap with B=10000), and counts of seeds beating Hay envelope.
-4. **Comparison table**: harmonise with Hay 2011&#x27;s 0.40% upper envelope and 0.0104% perisomatic
-   bottleneck, and with Druckmann 2007&#x27;s 0.10% baseline.
-5. **Per-seed convergence-trajectory comparison**: HV trajectory, plateau generation, total
-   evaluations, wall-clock per generation.
-6. **Charts**: (a) per-seed acceptance rate bar chart with Hay/Druckmann reference lines, (b) 5-seed
-   HV-trajectory overlay (one trace per seed), (c) DSI-vs-PD scatter for the pooled LEGIT joint-pass
-   cells colored by seed.
-7. **Answer asset**: write one answer asset answering &quot;What is the LEGIT joint-pass acceptance rate
-   on the 68-d Bed B + 14-d morphology substrate, estimated from a 5-seed random-init NSGA-II batch,
-   and how does it compare to Hay 2011 and Druckmann 2007?&quot;
-
-#### Expected Outputs
-
-* `results/data/per_seed_substrate_rate_5seed.csv` -- one row per seed with all relevant statistics.
-* `results/data/pooled_legit_jointpass_cells.parquet` -- pooled LEGIT joint-pass cells across the 5
-  seeds (DSI, PD, source-seed, generation, cell_id).
-* `results/images/per_seed_acceptance_bar.png` -- per-seed acceptance bar chart.
-* `results/images/hv_trajectory_5seed_overlay.png` -- 5-seed HV-trajectory overlay.
-* `results/images/dsi_pd_scatter_5seed_pooled.png` -- pooled scatter colored by seed.
-* `assets/answer/substrate-rate-5seed-canonical/` -- 1 answer asset.
-* `results/results_summary.md` and `results/results_detailed.md` with the canonical numbers.
-
-#### Budget
-
-Local CPU only, no remote machines. Estimate &lt;$0.20.
-
-#### Dependencies
-
-* `t0106_long_pdnd_nsga2_300gen` -- seed 44.
-* `t0112_t0106_seed77_replicate` -- seed 77.
-* `t0113_t0106_seed2247_replicate` -- seed 2247.
-* `t0114_seed7755_no_autostop` -- seed 7755.
-* `t0115_seed9354_no_autostop` -- seed 9354.
-* `t0119_brainstorm_results_23` -- commissions this task.
-
-#### Verification Criteria
-
-* All 5 per-seed acceptance rates match the source task reports within rounding.
-* 5-seed mean and SE match the brainstorm-session-23 summary (2.58% +/- 1.50%) within rounding.
-* Charts saved and embedded in `results_detailed.md`.
-* Answer asset passes `verify_answer_asset` (or local fallback).
-
-#### Cross-References
-
-* Source suggestion: S-0115-02.
-* Source tasks: t0106, t0112, t0113, t0114, t0115.
-* Hay 2011 -- 10.1371/journal.pcbi.1002107 (or t0114 `compare_literature.md` for citation).
-* Druckmann 2007 -- as cited in t0114 `compare_literature.md`.
-
 ## NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)
 ID: t0122_dsi_cytoplasm_volume_nsga2
 Status: not_started
@@ -1501,9 +1418,10 @@ has been validated by the t0106-t0115 lineage.
         <id>pooled-all-cells-displacement-from-init-full-pool</id>
         <id>pooled-all-cells-truncated-cohort-artefact-test</id>
         <id>morphology-generator-geometry-consistency</id>
+        <id>substrate-rate-5seed-canonical</id>
       </source_ids>
       <content>
-Answers: 43
+Answers: 44
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1843,6 +1761,14 @@ Confidence: high
 Categories: compartmental-modeling
 
 Yes -- across 20 cells sampled from the t0117 pooled pool (stratified across the four asymmetry parameters plus worst-looking cells and symmetric controls), all three coordinate-consistency checks pass (60 of 60 evaluations), with maximum Python-side endpoint error of 0.0 um and maximum NEURON pt3d lateral deviation of 19.6 nm (float-arithmetic noise, four orders below the 0.1 um audit threshold). The deliberate soma-frame split introduced by the t0092 fix (Python origin_xy at the post-asymmetry soma position, NEURON soma pt3d pinned at (0, 0)) is benign because SAC synapses are placed only on dendrites in the t0091 / t0118 protocol, so the bar arrival-time projection `(syn_xy - origin_xy)`...
+
+## What is the LEGIT joint-pass acceptance rate on the 68-d Bed B + 14-d morphology NSGA-II substrate, estimated from a 5-seed random-init batch, and how does it compare to Hay 2011 and Druckmann 2007?
+ID: substrate-rate-5seed-canonical
+Created by: t0121_5seed_substrate_rate_canonical_report on 2026-05-24
+Confidence: medium
+Categories: direction-selectivity, compartmental-modeling
+
+The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, a normal-approx 95% CI of (-0.35%, 5.51%), and a bootstrap 95% CI of (0.38%, 5.53%); the point estimate is roughly 6.5x Hay 2011&#x27;s 0.40% envelope and 25.8x Druckmann 2007&#x27;s 0.10% baseline, and 3 of 5 seeds individually exceed the Hay envelope. Both 95% CIs bracket zero and both literature baselines, so this batch cannot statistically reject the literature rates despite the elevated point estimate.
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -1902,6 +1828,8 @@ Yes -- across 20 cells sampled from the t0117 pooled pool (stratified across the
         <id>S-0118-01</id>
         <id>S-0118-02</id>
         <id>S-0118-03</id>
+        <id>S-0121-01</id>
+        <id>S-0121-02</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -2194,6 +2122,9 @@ Yes -- across 20 cells sampled from the t0117 pooled pool (stratified across the
         <id>S-0118-06</id>
         <id>S-0120-01</id>
         <id>S-0120-02</id>
+        <id>S-0121-03</id>
+        <id>S-0121-04</id>
+        <id>S-0121-05</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -2255,7 +2186,7 @@ Yes -- across 20 cells sampled from the t0117 pooled pool (stratified across the
         <id>S-0120-04</id>
       </source_ids>
       <content>
-Open suggestions: 404
+Open suggestions: 409
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -2627,6 +2558,20 @@ Priority: high
 Kind: evaluation
 Source task: t0118_resimulate_t0117_cluster_samples_ge_gi_vm
 t0118 found cell 77_15_1356 (cluster 0, seed 77) was assigned DSI = 0.93 by t0117&#x27;s NSGA-II evaluator but produces 0 spikes in either direction under the canonical 1400 ms / -10 mV threshold protocol (FULL V_m peaks at -51 mV); g_I/g_E ratio = 3.87 (extreme inhibition dominance). The t0117 DSI score appears to be a finite-sample-noise artefact, unconfirmed. Investigate: (a) re-run t0117&#x27;s evaluator on this cell, log per-trial PD and ND spike counts; (b) re-run with 10 eval-seed pairs and check stability; (c) trace the DSI formula for PD=1/ND=0 edge cases; (d) report whether other pool cells share this &#x27;high-DSI-but-silent&#x27; pattern. Decision: if &gt;= 1% of pool exhibits this disagreement...
+
+## Re-run seeds 77 and 2247 with HV-plateau auto-stop DISABLED to test the censoring-artefact hypothesis
+ID: S-0121-01
+Priority: high
+Kind: experiment
+Source task: t0121_5seed_substrate_rate_canonical_report
+The 5-seed canonical estimate&#x27;s lower tail is dominated by seed 77 (7 LEGIT, gen 21 stop) and seed 2247 (0 LEGIT, gen 14 stop, 6 gens below Mohacsi 2024&#x27;s 20-60 convergence band). Both ran under legacy auto-stop-enabled; t0121 flags both as plausible censoring artefacts. The project&#x27;s now-current policy (memory note &#x27;Disable HV-plateau auto-stop&#x27;) is to DISABLE auto-stop. Concrete action: replicate t0112 (seed 77) and t0113 (seed 2247) with auto-stop DISABLED, _POOL_RESTART_EVERY=10, gen ceiling 300, budget cap matching t0114 / t0115. Decision: if either seed crosses the Hay 0.40% envelope, re-estimate the canonical 5-seed mean and close the censoring caveat. If both stay below 0.40% at full...
+
+## Add 2-3 further random-init GA seeds to upgrade the substrate-rate estimate from 5-seed to 7-8 seed
+ID: S-0121-02
+Priority: high
+Kind: experiment
+Source task: t0121_5seed_substrate_rate_canonical_report
+The 5-seed bootstrap 95% CI (+0.38%, +5.53%) excludes 0% but still brackets both Hay 2011 (0.40%) and Druckmann 2007 (0.10%) baselines; the normal-approx CI (-0.35%, +5.51%) straddles 0. With n=5 the resampling pool is small and the CI is sensitive to seed 7755&#x27;s 8.13% draw and seed 2247&#x27;s 0% draw. Concrete action: draw 2-3 further random GA seeds via secrets.randbelow(10000) (avoiding the already-used 44, 77, 2247, 7755, 9354), run each as a minimum-change replicate of t0115 (auto-stop disabled, cadence 10, gen ceiling 300, budget cap ~$3 per seed), then re-run the t0121 pipeline against the expanded 7-8 seed sample. Decision: if both CIs clear the Hay envelope upper bound at 7-8 seeds, the...
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -4671,6 +4616,27 @@ Priority: medium
 Kind: library
 Source task: t0120_morph_generator_geometry_audit
 t0120 ships a strict `_section_midpoint_xy_strict` in `code/dump_helpers.py` that raises `RuntimeError(&#x27;degenerate section: h.n3d() == 0&#x27;)` instead of silently returning `(0.0, 0.0)` (lineage behaviour in `tasks/t0091_morphology_extended_nsga2_v1/code/trial_helpers.py` lines 160-178, copied into every NSGA-II task t0091-t0118). The silent fallback is dangerous: if a degenerate dendrite section ever appears, every synapse on that section would be placed at the world origin and the bar arrival-time projection would be silently wrong by tens of micrometres. The 20-cell t0120 audit never tripped the strict raise but covers only 0.5% of the t0117 pool. Concrete action: package the strict version...
+
+## Stratified / per-seed-weighted bootstrap CI to replace t0121&#x27;s flat-resample 5-number bootstrap
+ID: S-0121-03
+Priority: medium
+Kind: technique
+Source task: t0121_5seed_substrate_rate_canonical_report
+t0121&#x27;s bootstrap CI is an unstratified resample of 5 per-seed rates with equal weight. With per-seed denominators ranging 1344-5952 (4.4x spread), flat weighting under-weights the more-precise seeds. Defensible alternatives: (a) cell-level resample stratified by seed (preserve per-seed denominators, resample cells within each seed before averaging), or (b) inverse-variance weighting with within-seed SE = sqrt(p*(1-p)/n_total). Concrete action: implement both in a small `weighted_bootstrap.py` library, report all three CI variants (flat, cell-stratified, inverse-variance) on the existing 5-seed data, and decide which is canonical for downstream substrate-rate citations. Decision: if the...
+
+## Matched-evaluation-budget substrate-rate comparison against Hay 2011 and Druckmann 2007 (extrapolation experiment)
+ID: S-0121-04
+Priority: medium
+Kind: experiment
+Source task: t0121_5seed_substrate_rate_canonical_report
+t0121&#x27;s per-seed budget spans 1344-5952 evaluations vs Hay 2011&#x27;s 500,000 and Druckmann 2007&#x27;s 300,000 - this work runs 50x-372x fewer evals per seed than published references. The point-estimate comparison (6.45x above Hay envelope, 25.8x above Druckmann) is therefore made at very different sample sizes; whether the per-seed rate converges, decays, or oscillates at matched spend is open. Concrete action: take the highest-yield seed (7755), re-run NSGA-II to a 50,000-evaluation budget (~10x current spend, ~$15-25), record the per-1000-eval running rate trajectory, and test whether the asymptote stays above or drops below Hay&#x27;s 0.40% as budget grows. Decision: if the running rate stays &gt; 1%...
+
+## Pre-register the 5-seed canonical substrate-rate numbers as a project metric registered via meta/metrics/
+ID: S-0121-05
+Priority: medium
+Kind: library
+Source task: t0121_5seed_substrate_rate_canonical_report
+t0121&#x27;s headline numbers - 5-seed mean LEGIT acceptance 2.58%, normal-approx 95% CI (-0.35%, +5.51%), bootstrap 95% CI (+0.38%, +5.53%), n_seeds_above_hay_envelope = 3 - currently live only in this task&#x27;s results files. Per ARF design they are not yet a registered project metric, so no aggregator can track them or compare them against future runs. Concrete action: register a new metric `legit_substrate_rate_pct` (unit: percent, scope: project-wide) in `meta/metrics/`, with the per-seed convention (`n_legit_joint_pass_unique / n_total_evals * 100`) baked into the metric definition. Backfill metric_results from t0106 / t0112 / t0113 / t0114 / t0115 / t0121 using the canonical convention so any...
 
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05

@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-326 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **291 open** (53
-high, 215 medium, 23 low), **35 closed**.
+331 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **296 open** (55
+high, 218 medium, 23 low), **35 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -86,6 +86,32 @@ vector-sum DSI > 0.3. Distinct from S-0009-03 (calibrates densities against Pole
 spike-shape and Ih-sag waveforms only) and S-0002-01 (somatic g_Na/g_K only). Directly
 addresses RQ4 on the bar-locked substrate. Recommended task types: build-model,
 experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Add 2-3 further random-init GA seeds to upgrade the
+substrate-rate estimate from 5-seed to 7-8 seed</strong> (S-0121-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0121-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0121_5seed_substrate_rate_canonical_report`](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The 5-seed bootstrap 95% CI (+0.38%, +5.53%) excludes 0% but still brackets both Hay 2011
+(0.40%) and Druckmann 2007 (0.10%) baselines; the normal-approx CI (-0.35%, +5.51%) straddles
+0. With n=5 the resampling pool is small and the CI is sensitive to seed 7755's 8.13% draw and
+seed 2247's 0% draw. Concrete action: draw 2-3 further random GA seeds via
+secrets.randbelow(10000) (avoiding the already-used 44, 77, 2247, 7755, 9354), run each as a
+minimum-change replicate of t0115 (auto-stop disabled, cadence 10, gen ceiling 300, budget cap
+~$3 per seed), then re-run the t0121 pipeline against the expanded 7-8 seed sample. Decision:
+if both CIs clear the Hay envelope upper bound at 7-8 seeds, the substrate-density claim can
+be made at p < 0.05 without the censoring caveat. Distinct from S-0113-01 (closed by t0114 +
+t0115). Recommended task types: experiment-run.
 
 </details>
 
@@ -1101,6 +1127,32 @@ r_DSI/r_PD. Distinct from S-0116-04 (strict cohort where only s7755 had enough c
 Decision: if all four per-seed analogues hit |r|>0.3 on both axes with the same top loadings,
 F1 is a true substrate property; if loadings diverge, F1 is partly a between-seed confound.
 Recommended task types: data-analysis. Cost: <$0.20.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run seeds 77 and 2247 with HV-plateau auto-stop DISABLED to
+test the censoring-artefact hypothesis</strong> (S-0121-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0121-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0121_5seed_substrate_rate_canonical_report`](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+The 5-seed canonical estimate's lower tail is dominated by seed 77 (7 LEGIT, gen 21 stop) and
+seed 2247 (0 LEGIT, gen 14 stop, 6 gens below Mohacsi 2024's 20-60 convergence band). Both ran
+under legacy auto-stop-enabled; t0121 flags both as plausible censoring artefacts. The
+project's now-current policy (memory note 'Disable HV-plateau auto-stop') is to DISABLE
+auto-stop. Concrete action: replicate t0112 (seed 77) and t0113 (seed 2247) with auto-stop
+DISABLED, _POOL_RESTART_EVERY=10, gen ceiling 300, budget cap matching t0114 / t0115.
+Decision: if either seed crosses the Hay 0.40% envelope, re-estimate the canonical 5-seed mean
+and close the censoring caveat. If both stay below 0.40% at full budget, the seeds are
+substrate-sparse not censored. Distinct from S-0114-08 (which tests the offline '(W=3,
+T=0.015)' detector, not disable-auto-stop). Recommended task types: experiment-run.
 
 </details>
 
@@ -4115,6 +4167,32 @@ experiment-run. Cost: ~$5-8.
 </details>
 
 <details>
+<summary>🧪 <strong>Matched-evaluation-budget substrate-rate comparison against Hay
+2011 and Druckmann 2007 (extrapolation experiment)</strong> (S-0121-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0121-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0121_5seed_substrate_rate_canonical_report`](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1002107`](../../../tasks/t0121_5seed_substrate_rate_canonical_report/assets/paper/10.1371_journal.pcbi.1002107/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0121's per-seed budget spans 1344-5952 evaluations vs Hay 2011's 500,000 and Druckmann 2007's
+300,000 - this work runs 50x-372x fewer evals per seed than published references. The
+point-estimate comparison (6.45x above Hay envelope, 25.8x above Druckmann) is therefore made
+at very different sample sizes; whether the per-seed rate converges, decays, or oscillates at
+matched spend is open. Concrete action: take the highest-yield seed (7755), re-run NSGA-II to
+a 50,000-evaluation budget (~10x current spend, ~$15-25), record the per-1000-eval running
+rate trajectory, and test whether the asymptote stays above or drops below Hay's 0.40% as
+budget grows. Decision: if the running rate stays > 1% at 50K evals, the substrate-density
+claim is budget-robust. If it decays below 0.40%, t0121's headline is an early-NSGA-II
+transient. Recommended task types: experiment-run.
+
+</details>
+
+<details>
 <summary>🔧 <strong>Morinaga 2024 sign-averaging objective formulation to handle
 heavy-tailed DSI noise (alpha close to 1) at fixed budget</strong>
 (S-0102-07)</summary>
@@ -5162,6 +5240,32 @@ NSGA-II toward PP-style many-seed (1+9)-ES if (b) wins on diversity.
 </details>
 
 <details>
+<summary>📚 <strong>Pre-register the 5-seed canonical substrate-rate numbers as a
+project metric registered via meta/metrics/</strong> (S-0121-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0121-05` |
+| **Kind** | library |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0121_5seed_substrate_rate_canonical_report`](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0121's headline numbers - 5-seed mean LEGIT acceptance 2.58%, normal-approx 95% CI (-0.35%,
++5.51%), bootstrap 95% CI (+0.38%, +5.53%), n_seeds_above_hay_envelope = 3 - currently live
+only in this task's results files. Per ARF design they are not yet a registered project
+metric, so no aggregator can track them or compare them against future runs. Concrete action:
+register a new metric `legit_substrate_rate_pct` (unit: percent, scope: project-wide) in
+`meta/metrics/`, with the per-seed convention (`n_legit_joint_pass_unique / n_total_evals *
+100`) baked into the metric definition. Backfill metric_results from t0106 / t0112 / t0113 /
+t0114 / t0115 / t0121 using the canonical convention so any future seed can be aggregated
+against the baseline. Distinct from S-0121-03 (which is about CI methodology, not the headline
+metric itself). Recommended task types: infrastructure-setup, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Probe the AIS+axon's electrical-sink contribution by varying
 axon length</strong> (S-0069-03)</summary>
 
@@ -6039,6 +6143,32 @@ methodology note. Re-compute HV on the t0080 stored cells under the chosen conve
 amend `results/metrics.json` via a correction. Apply the convention prospectively to all
 future MOBO tasks. No new compute needed. Recommended task types: data-analysis,
 infrastructure-setup.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Stratified / per-seed-weighted bootstrap CI to replace t0121's
+flat-resample 5-number bootstrap</strong> (S-0121-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0121-03` |
+| **Kind** | technique |
+| **Date added** | 2026-05-24 |
+| **Source task** | [`t0121_5seed_substrate_rate_canonical_report`](../../../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0121's bootstrap CI is an unstratified resample of 5 per-seed rates with equal weight. With
+per-seed denominators ranging 1344-5952 (4.4x spread), flat weighting under-weights the
+more-precise seeds. Defensible alternatives: (a) cell-level resample stratified by seed
+(preserve per-seed denominators, resample cells within each seed before averaging), or (b)
+inverse-variance weighting with within-seed SE = sqrt(p*(1-p)/n_total). Concrete action:
+implement both in a small `weighted_bootstrap.py` library, report all three CI variants (flat,
+cell-stratified, inverse-variance) on the existing 5-seed data, and decide which is canonical
+for downstream substrate-rate citations. Decision: if the cell-stratified CI excludes 0% and
+is tighter than the flat CI, adopt as canonical and update t0121 numbers via correction.
+Recommended task types: data-analysis, write-library.
 
 </details>
 
