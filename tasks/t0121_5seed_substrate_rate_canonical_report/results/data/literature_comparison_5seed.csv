@@ -1,0 +1,6 @@
+study,rate_pct,substrate_d,notes,cite_paper_id
+Hay 2011 full envelope,0.4,22,~2000 accepted / 500K evaluations on L5b pyramidal cell; full perisomatic + back-propagating AP fits.,10.1371_journal.pcbi.1002107
+Hay 2011 perisomatic-only,0.0104,22,52 accepted / 500K evals; substrate-limited counterexample (perisomatic-only fit set).,10.1371_journal.pcbi.1002107
+Druckmann 2007 baseline,0.1,12,300 accepted / 300K evals on 12-d cortical interneuron substrate.,10.3389_neuro.01.1.1.001.2007
+Mohacsi 2024 convergence band,,,"NSGA-II asymptotes within 20-60 generations on 3-12 param problems; reports gen band, not an acceptance rate.",10.1371_journal.pcbi.1012039
+This work 5-seed mean (LEGIT canonical),2.5808,68,"t0106/t0112/t0113/t0114/t0115 5-seed batch; normal-approx 95% CI = (-0.35, 5.51); bootstrap 95% CI = (0.38, 5.53).",

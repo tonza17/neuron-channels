@@ -1,0 +1,6 @@
+seed_label,task_id,task_seed,n_total_evals,n_legit_joint_pass_unique,acceptance_rate_pct,convention
+t0106_seed44,t0106_long_pdnd_nsga2_300gen,44,3744,121,3.2318,unique_legit_jp_cells_per_total_evals
+t0112_seed77,t0112_t0106_seed77_replicate,77,2016,7,0.3472,unique_legit_jp_cells_per_total_evals
+t0113_seed2247,t0113_t0106_seed2247_replicate,2247,1344,0,0.0,unique_legit_jp_cells_per_total_evals
+t0114_seed7755,t0114_seed7755_no_autostop,7755,5952,484,8.1317,unique_legit_jp_cells_per_total_evals
+t0115_seed9354,t0115_seed9354_no_autostop,9354,5280,63,1.1932,unique_legit_jp_cells_per_total_evals

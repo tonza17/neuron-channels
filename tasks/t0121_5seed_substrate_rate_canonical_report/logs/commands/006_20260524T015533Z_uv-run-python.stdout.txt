@@ -1,0 +1,22 @@
+[load] t0106_seed44 from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0106_long_pdnd_nsga2_300gen\assets\predictions\nsga2-seed44-bedb-morph-2dir-300gen\files\all_evaluations_seed44.json.gz
+t0106_seed44 t0106_long_pdnd_nsga2_300gen 3744 evals 121 LEGIT 3.2318%
+[load] t0112_seed77 from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0112_t0106_seed77_replicate\results\data\all_evaluations_seed77.json.gz
+t0112_seed77 t0112_t0106_seed77_replicate 2016 evals 7 LEGIT 0.3472%
+[load] t0113_seed2247 from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0113_t0106_seed2247_replicate\assets\predictions\t0113-bedb-morph-nsga2-seed2247\files\all_evaluations_seed2247.json.gz
+t0113_seed2247 t0113_t0106_seed2247_replicate 1344 evals 0 LEGIT 0.0000%
+[load] t0114_seed7755 from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0114_seed7755_no_autostop\results\data\all_evaluations_seed7755.json
+t0114_seed7755 t0114_seed7755_no_autostop 5952 evals 484 LEGIT 8.1317%
+[load] t0115_seed9354 from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0115_seed9354_no_autostop\results\data\all_evaluations_seed9354.json
+t0115_seed9354 t0115_seed9354_no_autostop 5280 evals 63 LEGIT 1.1932%
+5-seed mean = 2.58 +/- SE 1.50; normal-approx 95% CI = (-0.35, 5.51); bootstrap 95% CI = (0.38, 5.53); n_seeds > Hay = 3
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results\data\per_seed_substrate_rate_5seed.csv
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results\data\pooled_legit_jointpass_cells.parquet: 675 rows
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results\data\convention_drift_5seed.csv
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results\data\per_seed_convergence_5seed.csv
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results\data\substrate_stats_5seed.csv
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results\data\literature_comparison_5seed.csv
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results\images\per_seed_acceptance_bar.png
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results\images\hv_trajectory_5seed_overlay.png
+wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\results\images\dsi_pd_scatter_5seed_pooled.png
+wrote answer asset at C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0121_5seed_substrate_rate_canonical_report\tasks\t0121_5seed_substrate_rate_canonical_report\assets\answer\substrate-rate-5seed-canonical
+wrote 5 CSVs, 1 parquet, 3 charts, 1 answer asset to tasks/t0121_5seed_substrate_rate_canonical_report/

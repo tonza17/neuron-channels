@@ -1,0 +1,9 @@
+metric,value,normal_approx_lo,normal_approx_hi,bootstrap_lo,bootstrap_hi
+mean_pct,2.5808,-0.353,5.5146,0.3775,5.5254
+sample_sd_pct,3.3471,,,,
+sample_se_pct,1.4969,,,,
+normal_approx_ci_lo_pct,-0.353,,,,
+normal_approx_ci_hi_pct,5.5146,,,,
+bootstrap_ci_lo_pct,0.3775,,,,
+bootstrap_ci_hi_pct,5.5254,,,,
+n_seeds_above_hay_envelope,3,,,,
