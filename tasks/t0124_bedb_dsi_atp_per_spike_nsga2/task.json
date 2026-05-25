@@ -5,7 +5,7 @@
   "name": "NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)",
   "short_description": "68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs ATP-per-spike (Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 2-direction protocol, $6 cap.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0024_port_de_rosenroll_2026_dsgc",
     "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
@@ -19,7 +19,7 @@
     "t0123_bedb_mi_atp_per_spike_nsga2"
   ],
   "start_time": "2026-05-24T22:55:41Z",
-  "end_time": null,
+  "end_time": "2026-05-25T02:55:00Z",
   "expected_assets": {
     "predictions": 1,
     "answer": 1

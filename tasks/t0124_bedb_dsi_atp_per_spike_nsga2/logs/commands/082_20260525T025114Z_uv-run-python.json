@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "command": "uv run python -m arf.scripts.utils.capture_task_sessions --task-id t0124_bedb_dsi_atp_per_spike_nsga2",
+  "exit_code": 0,
+  "duration_seconds": 0.762,
+  "started_at": "2026-05-25T02:51:14Z",
+  "completed_at": "2026-05-25T02:51:15Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0124_bedb_dsi_atp_per_spike_nsga2",
+  "stdout_file": "082_20260525T025114Z_uv-run-python.stdout.txt",
+  "stderr_file": "082_20260525T025114Z_uv-run-python.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

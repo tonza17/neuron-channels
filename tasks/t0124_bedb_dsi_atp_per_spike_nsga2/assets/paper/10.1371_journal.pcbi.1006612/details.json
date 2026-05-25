@@ -1,0 +1,63 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1371_journal.pcbi.1006612",
+  "doi": "10.1371/journal.pcbi.1006612",
+  "title": "Function and energy consumption constrain neuronal biophysics in a canonical computation: Coincidence detection",
+  "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006612",
+  "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006612&type=printable",
+  "date_published": "2018-12-06",
+  "year": 2018,
+  "authors": [
+    {
+      "name": "Michiel W. H. Remme",
+      "country": "DE",
+      "institution": "Humboldt-Universitat zu Berlin",
+      "orcid": "0000-0003-0400-6074"
+    },
+    {
+      "name": "John Rinzel",
+      "country": "US",
+      "institution": "New York University",
+      "orcid": "0000-0002-6803-9425"
+    },
+    {
+      "name": "Susanne Schreiber",
+      "country": "DE",
+      "institution": "Humboldt-Universitat zu Berlin",
+      "orcid": "0000-0003-3913-5650"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Humboldt-Universitat zu Berlin",
+      "country": "DE"
+    },
+    {
+      "name": "New York University",
+      "country": "US"
+    },
+    {
+      "name": "Courant Institute of Mathematical Sciences",
+      "country": "US"
+    }
+  ],
+  "journal": "PLOS Computational Biology",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "voltage-gated-channels",
+    "synaptic-integration",
+    "dendritic-computation",
+    "cable-theory"
+  ],
+  "abstract": "Neural morphology and membrane properties vary greatly between cell types in the nervous system. The computations and local circuit connectivity that neurons support are thought to be the key factors constraining the cells' biophysical properties. Nevertheless, additional constraints can be expected to further shape neuronal design. Here, we focus on a particularly energy-intense system (as indicated by metabolic markers): principal neurons in the medial superior olive (MSO) nucleus of the auditory brainstem. Based on a modeling approach, we show that a trade-off between the level of performance of a functionally relevant computation and energy consumption predicts optimal ranges for cell morphology and membrane properties. The biophysical parameters appear most strongly constrained by functional needs, while energy use is minimized as long as function can be maintained. The key factors that determine model performance and energy consumption are 1) the saturation of the synaptic conductance input and 2) the temporal resolution of the postsynaptic signals as they reach the soma, which is largely determined by active membrane properties. MSO cells seem to operate close to pareto optimality, i.e., the trade-off boundary between performance and energy consumption that is formed by the set of optimal models. Good performance for drastically lower costs could in theory be achieved by small neurons without dendrites, as seen in the avian auditory system, pointing to additional constraints for mammalian MSO cells, including their circuit connectivity.",
+  "citation_key": "Remme2018",
+  "summary_path": "summary.md",
+  "files": [
+    "files/remme_2018_mso-coincidence-pareto-energy.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "date_added": "2026-05-25"
+}

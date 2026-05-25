@@ -1,0 +1,46 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2009.12.011",
+  "doi": "10.1016/j.neuron.2009.12.011",
+  "title": "Sodium Entry during Action Potentials of Mammalian Neurons: Incomplete Inactivation and Reduced Metabolic Efficiency in Fast-Spiking Neurons",
+  "url": "https://www.cell.com/neuron/fulltext/S0896-6273(09)01001-0",
+  "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2810867/pdf/nihms165398.pdf",
+  "date_published": "2009-12-24",
+  "year": 2009,
+  "authors": [
+    {
+      "name": "Brett C. Carter",
+      "country": "US",
+      "institution": "Harvard Medical School",
+      "orcid": null
+    },
+    {
+      "name": "Bruce P. Bean",
+      "country": "US",
+      "institution": "Harvard Medical School",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Harvard Medical School",
+      "country": "US"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "patch-clamp"
+  ],
+  "abstract": "We measured the time course of sodium entry during action potentials of mouse central neurons at 37 °C to examine how efficiently sodium entry is coupled to depolarization. In cortical pyramidal neurons, sodium entry was nearly completely confined to the rising phase of the spike: only ~25% more sodium enters than the theoretical minimum necessary for spike depolarization. However, in fast-spiking GABAergic neurons (cerebellar Purkinje cells and cortical interneurons), twice as much sodium enters as the theoretical minimum. The extra entry occurs because sodium channel inactivation is incomplete during the falling phase of the spike. The efficiency of sodium entry in different cell types is primarily a function of action potential shape and not cell type-specific differences in sodium channel kinetics. The narrow spikes of fast-spiking GABAergic neurons result in incomplete inactivation of sodium channels; this reduces metabolic efficiency but likely enhances the ability to fire spikes at high frequency.",
+  "citation_key": "Carter2009",
+  "summary_path": "summary.md",
+  "files": [
+    "files/carter_2009_sodium-entry-fast-spiking.html"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "date_added": "2026-05-25"
+}

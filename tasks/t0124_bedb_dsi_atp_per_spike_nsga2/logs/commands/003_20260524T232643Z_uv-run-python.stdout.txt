@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0124_bedb_dsi_atp_per_spike_nsga2\tasks\t0124_bedb_dsi_atp_per_spike_nsga2\research\research_papers.md
+
+[31m[1mERRORS:[0m
+[31m  RP-E006 error: Inline citation [KochPoggio1982] has no matching Paper Index entry[0m
+[31m  RP-E006 error: Inline citation [Mainen1996] has no matching Paper Index entry[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)

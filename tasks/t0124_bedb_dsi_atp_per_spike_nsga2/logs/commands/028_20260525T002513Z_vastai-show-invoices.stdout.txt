@@ -1,0 +1,39 @@
+[
+ {
+  "amount": -10.0,
+  "extra": {
+   "last4": "6968",
+   "network": "visa"
+  },
+  "failed": null,
+  "id": 2871679,
+  "is_credit": true,
+  "last4": "6968",
+  "network": "visa",
+  "paid_timestamp": 1779626416.6111958,
+  "payment_expected": 1779972016.1873708,
+  "refunded": null,
+  "service": "stripe_payments",
+  "timestamp": 1779626416.1873708,
+  "transfer_group": "pi_3TabKDHRxJkb56aO0MX95fKc",
+  "type": "payment"
+ },
+ {
+  "amount": "0.073",
+  "description": "Instance 37545908 GPU  charge:    hours * $/hr",
+  "instance_id": 37545908,
+  "quantity": "0.419",
+  "rate": "0.1733",
+  "timestamp": 1779667200,
+  "type": "charge"
+ },
+ {
+  "amount": "0.005",
+  "description": "Instance 37545908 storage charge: hours * $/hr",
+  "instance_id": 37545908,
+  "quantity": "0.419",
+  "rate": "0.0111",
+  "timestamp": 1779667200,
+  "type": "charge"
+ }
+]

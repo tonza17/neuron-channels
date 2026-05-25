@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0124_bedb_dsi_atp_per_spike_nsga2\tasks\t0124_bedb_dsi_atp_per_spike_nsga2\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E006 error: Inline citation [Attwell2001] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Hay2011] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Mohacsi2024] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Sengupta2010] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Sivyer2013] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Trenholm2013] has no matching Source Index entry[0m
+[31m  RI-E006 error: Inline citation [Werginz2024] has no matching Source Index entry[0m
+
+[31m[1mFAILED[0m — 7 error(s), 0 warning(s)

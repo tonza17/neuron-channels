@@ -1,0 +1,22 @@
+{
+  "total_cost_usd": 0.2935,
+  "breakdown": {
+    "vast-ai-epyc-7b13-t0124": {
+      "cost_usd": 0.2935,
+      "description": "Vast.ai instance 37679733 (AMD EPYC 7B13 64-Core, 128 effective vCPUs, 220 GB RAM, 1x RTX A4000 idle, British Columbia CA, $0.1615/hr total = $0.1467/hr GPU + $0.0148/hr storage for the 40 GB disk). Total wall-clock duration from creation 2026-05-25T00:29:35Z to destruction 2026-05-25T02:18:39Z = 1.818 h. dph_total $0.16148 * 1.8178 h = $0.2935. Includes the full lifecycle: instance creation + apt installs + pip dependencies (NEURON 8.2.7, pymoo 0.6.1.6, dill, numpy, pandas, scipy, matplotlib, pydantic, tqdm, sklearn) + t0080 MOD compile + t0024 DSGC MOD compile + t0124 code SCP + Carter-Bean smoke-gate + NSGA-II run (60-gen ceiling, pop=96, n_eval_seeds=3, n_directions=2, single seed 6650) + post-run downloads + teardown."
+    },
+    "per_instance_watchdog_USD": {
+      "cost_usd": 0.0,
+      "description": "T0124_PER_INSTANCE_WATCHDOG_USD = $5.00 cap was never tripped. Actual instance spend $0.2935 is 5.9% of the watchdog cap and 4.9% of the $6 task budget. The COST_CAP_USD = $6.00 hard budget was also never tripped."
+    },
+    "vast-ai-failed-attempts": {
+      "cost_usd": 0.0,
+      "description": "No failed instance creation attempts (instance 37679733 created on first try per machine_log.json, failed_attempts=[])."
+    }
+  },
+  "services": {
+    "vast_ai": 0.2935
+  },
+  "budget_limit": 6.0,
+  "note": "Pre-aggregator cost estimate from dph_total * total_duration_hours. Final Vast.ai invoice reconciliation deferred to post-task aggregation (see t0123 precedent where final invoice landed within 4% of the dph-based estimate). The dph_total $0.16148/hr includes both GPU billing ($0.1467) and storage ($0.0148). Total wall-clock duration 1.818 h from creation 2026-05-25T00:29:35Z to destruction 2026-05-25T02:18:39Z. Total $0.2935 is well under the $6 task cap (4.9% utilisation) and is $0.90 cheaper than t0123's $1.191 because t0124 halved both the direction count (2 vs 4) and the per-cell trial budget (6 vs 12 trials per cell)."
+}

@@ -1,0 +1,56 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_jcbfm.2012.35",
+  "doi": "10.1038/jcbfm.2012.35",
+  "title": "Updated Energy Budgets for Neural Computation in the Neocortex and Cerebellum",
+  "url": "https://journals.sagepub.com/doi/10.1038/jcbfm.2012.35",
+  "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1038/jcbfm.2012.35",
+  "date_published": "2012-03-21",
+  "year": 2012,
+  "authors": [
+    {
+      "name": "Clare Howarth",
+      "country": "CA",
+      "institution": "Brain Research Centre, Department of Psychiatry, University of British Columbia",
+      "orcid": null
+    },
+    {
+      "name": "Padraig Gleeson",
+      "country": "GB",
+      "institution": "Departments of Neuroscience, Physiology and Pharmacology, UCL",
+      "orcid": null
+    },
+    {
+      "name": "David Attwell",
+      "country": "GB",
+      "institution": "Departments of Neuroscience, Physiology and Pharmacology, UCL",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of British Columbia",
+      "country": "CA"
+    },
+    {
+      "name": "University College London",
+      "country": "GB"
+    }
+  ],
+  "journal": "Journal of Cerebral Blood Flow & Metabolism",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "voltage-gated-channels"
+  ],
+  "abstract": "The brain's energy supply determines its information processing power, and generates functional imaging signals. The energy use on the different subcellular processes underlying neural information processing has been estimated previously for the grey matter of the cerebral and cerebellar cortex. However, these estimates need reevaluating following recent work demonstrating that action potentials in mammalian neurons are much more energy efficient than was previously thought. Using this new knowledge, this paper provides revised estimates for the energy expenditure on neural computation in a simple model for the cerebral cortex and a detailed model of the cerebellar cortex. In cerebral cortex, most signaling energy (50%) is used on postsynaptic glutamate receptors, 21% is used on action potentials, 20% on resting potentials, 5% on presynaptic transmitter release, and 4% on transmitter recycling. In the cerebellar cortex, excitatory neurons use 75% and inhibitory neurons 25% of the signaling energy, and most energy is used on information processing by non-principal neurons: Purkinje cells use only 15% of the signaling energy. The majority of cerebellar signaling energy use is on the maintenance of resting potentials (54%) and postsynaptic receptors (22%), while action potentials account for only 17% of the signaling energy use.",
+  "citation_key": "Howarth2012",
+  "summary_path": "summary.md",
+  "files": [
+    "files/howarth_2012_updated-energy-budgets.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "date_added": "2026-05-25"
+}

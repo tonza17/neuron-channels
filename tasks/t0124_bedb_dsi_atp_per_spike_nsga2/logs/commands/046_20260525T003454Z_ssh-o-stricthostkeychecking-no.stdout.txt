@@ -1,0 +1,15 @@
+
+==============NVSMI LOG==============
+
+Timestamp                                              : Mon May 25 00:34:57 2026
+Driver Version                                         : 590.48.01
+CUDA Version                                           : 13.1
+
+Attached GPUs                                          : 1
+GPU 00000000:81:00.0
+    Compute Mode                                       : Default
+
+---
+CUDA Version                                           : 13.1
+---
+bash: line 1: nvcc: command not found

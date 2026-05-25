@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0124_bedb_dsi_atp_per_spike_nsga2\arf\scripts\verificators\verify_machines_destroyed.py", line 23, in <module>
+    from arf.scripts.verificators.common.paths import (
+    ...<4 lines>...
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0124_bedb_dsi_atp_per_spike_nsga2\arf\scripts\verificators\common\__init__.py", line 6, in <module>
+    from arf.scripts.verificators.common.frontmatter import (
+    ...<3 lines>...
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0124_bedb_dsi_atp_per_spike_nsga2\arf\scripts\verificators\common\frontmatter.py", line 5, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'

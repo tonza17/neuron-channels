@@ -1,0 +1,70 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.21203_rs.3.rs-5989609_v1",
+  "doi": "10.21203/rs.3.rs-5989609/v1",
+  "title": "Energetic diversity in retinal ganglion cells is modulated by neuronal activity and correlates with resilience to degeneration",
+  "url": "https://www.researchsquare.com/article/rs-5989609/v1",
+  "pdf_url": "https://www.researchsquare.com/article/rs-5989609/v1.pdf",
+  "date_published": "2025-03-12",
+  "year": 2025,
+  "authors": [
+    {
+      "name": "Zelun Wang",
+      "country": "US",
+      "institution": "Washington University School of Medicine, St. Louis",
+      "orcid": "0000-0003-3768-6934"
+    },
+    {
+      "name": "Christopher Zhao",
+      "country": "US",
+      "institution": "Washington University School of Medicine, St. Louis",
+      "orcid": null
+    },
+    {
+      "name": "Shelly Xu",
+      "country": "US",
+      "institution": "Washington University School of Medicine, St. Louis",
+      "orcid": null
+    },
+    {
+      "name": "Sean McCracken",
+      "country": "US",
+      "institution": "Washington University School of Medicine, St. Louis",
+      "orcid": null
+    },
+    {
+      "name": "Rajendra S. Apte",
+      "country": "US",
+      "institution": "Washington University School of Medicine, St. Louis",
+      "orcid": "0000-0003-2281-2336"
+    },
+    {
+      "name": "Philip R. Williams",
+      "country": "US",
+      "institution": "Washington University School of Medicine, St. Louis",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Washington University School of Medicine, St. Louis",
+      "country": "US"
+    }
+  ],
+  "journal": "Research Square (preprint)",
+  "venue_type": "preprint",
+  "categories": [
+    "retinal-ganglion-cell",
+    "direction-selectivity"
+  ],
+  "abstract": "Neuronal function requires high energy expenditure that is likely customized to meet specific signaling demands. However, little is known about diversity of metabolic homeostasis among divergently-functioning types of neurons. To this end, we examined retinal ganglion cells (RGCs), a population of closely related, yet electrophysiologically distinct excitatory projection neurons. Using in vivo 2-photon imaging to measure ATP with single cell resolution, we identified differential homeostatic energy maintenance in the RGC population that correspond to distinct RGC types. In the presence of circuit activity, the most active RGC type (Alpha RGCs), had lower homeostatic ATP levels than other types and exhibited the greatest magnitude of ATP decline when ATP synthesis was inhibited. By simultaneously manipulating circuit activity and mitochondrial function, we found that while oxidative phosphorylation was required to meet ATP demands during circuit activity, it was expendable to maintain resting ATP levels. We also examined ATP signatures associated with survival and injury response after axotomy and report a correlation between low homeostatic ATP and increased survival. In addition, we observed transient ATP increases in RGCs following axon injury. Together, these findings identify diversity of energy handling capabilities of dynamically active neurons with implications for neuronal resilience.",
+  "citation_key": "Wang2025",
+  "summary_path": "summary.md",
+  "files": [
+    "files/williams_2025_energetic-diversity-rgcs.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "date_added": "2026-05-25"
+}

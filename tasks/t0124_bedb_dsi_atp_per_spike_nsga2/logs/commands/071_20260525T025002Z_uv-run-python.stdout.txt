@@ -1,0 +1,20 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0124_bedb_dsi_atp_per_spike_nsga2\tasks\t0124_bedb_dsi_atp_per_spike_nsga2\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20260524T230817Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 003_20260524T232643Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 005_20260524T233109Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 006_20260524T234211Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 016_20260524T235703Z_python-u-m.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 019_20260525T000156Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 021_20260525T000458Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 027_20260525T002502Z_vastai-show-credit.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 054_20260525T021814Z_vastai-show-instance.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 055_20260525T021939Z_python-m-arf-scripts-verificators-verify.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 056_20260525T021949Z_uv-run-python.json has non-zero exit code: 2[0m
+[33m  LG-W004 warning: Command log 059_20260525T023852Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 14 warning(s)
