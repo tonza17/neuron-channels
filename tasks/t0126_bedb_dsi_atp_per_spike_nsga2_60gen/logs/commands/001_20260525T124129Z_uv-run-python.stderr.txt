@@ -1,0 +1,1 @@
+Error: --step-log-dir must be inside tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/. Got: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\logs\steps\003_init-folders
