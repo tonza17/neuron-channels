@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "vastai destroy instance 37767708 --yes --raw",
+  "exit_code": 0,
+  "duration_seconds": 2.254,
+  "started_at": "2026-05-25T20:08:19Z",
+  "completed_at": "2026-05-25T20:08:21Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "072_20260525T200819Z_vastai-destroy-instance.stdout.txt",
+  "stderr_file": "072_20260525T200819Z_vastai-destroy-instance.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}
