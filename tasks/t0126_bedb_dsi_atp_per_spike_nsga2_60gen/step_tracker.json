@@ -68,9 +68,9 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision Vast.ai EPYC instance for NSGA-II run.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-25T12:56:37Z",
-      "completed_at": null,
+      "completed_at": "2026-05-25T13:10:01Z",
       "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
