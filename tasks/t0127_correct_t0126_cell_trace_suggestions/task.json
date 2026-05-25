@@ -5,11 +5,11 @@
   "name": "Correct t0126 suggestions S-0126-01 and S-0126-06 (synthesised cell_trace)",
   "short_description": "Supersede S-0126-01 and S-0126-06 with one rerun-with-proper-launcher follow-up; both originals rely on cell_trace data that t0126 never recorded.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0126_bedb_dsi_atp_per_spike_nsga2_60gen"
   ],
-  "start_time": null,
+  "start_time": "2026-05-25T23:35:36Z",
   "end_time": null,
   "expected_assets": {},
   "task_types": [
