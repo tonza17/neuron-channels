@@ -1,0 +1,20 @@
+---EXIT STATUS---
+  "n_generations_completed": 60
+NSGA2_EXIT=0
+---OUTPUTS---
+total 24624
+drwxr-xr-x 2 root root     4096 May 25 19:07 .
+drwxr-xr-x 4 root root       32 May 25 13:27 ..
+-rw-r--r-- 1 root root      555 May 25 13:54 algorithm_config.json
+-rw-r--r-- 1 root root 12552129 May 25 19:07 all_evaluations_seed8929.json
+-rw-r--r-- 1 root root      117 May 25 13:54 evaluation_seeds.json
+-rw-r--r-- 1 root root    11248 May 25 19:07 hv_trajectory_seed8929.json
+-rw-r--r-- 1 root root   172608 May 25 13:53 init_pop_seed8929.json
+-rw-r--r-- 1 root root 12427936 May 25 19:07 nsga2_checkpoint_seed8929.json
+-rw-r--r-- 1 root root    24977 May 25 19:07 pareto_front_seed8929.json
+---FINAL TAIL---
+  "final_cost_usd": 0.9621359605493826,
+  "watchdog_tripped": false,
+  "n_generations_completed": 60
+}
+NSGA2_EXIT=0

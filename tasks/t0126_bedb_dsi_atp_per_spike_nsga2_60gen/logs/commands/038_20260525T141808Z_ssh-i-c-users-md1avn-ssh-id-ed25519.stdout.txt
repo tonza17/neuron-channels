@@ -1,0 +1,43 @@
+Total evals: 576
+Valid evals (DSI > -1, ATP finite): 558
+Pareto-front size: 14
+
+PARETO FRONT (sorted by DSI desc)
+rank  idx  gen     DSI     ATP/spike       PD_Hz   ND_Hz
+   1    0    1   0.7273     1.840e+07        ?       ?
+   2   96    2   0.7273     1.840e+07        ?       ?
+   3  192    3   0.7273     1.840e+07        ?       ?
+   4  288    4   0.7273     1.840e+07        ?       ?
+   5  384    5   0.7273     1.840e+07        ?       ?
+   6  480    6   0.7273     1.840e+07        ?       ?
+   7  290    4   0.4118     1.111e+07        ?       ?
+   8  386    5   0.4118     1.111e+07        ?       ?
+   9  482    6   0.4118     1.111e+07        ?       ?
+  10  387    5   0.0047     9.234e+06        ?       ?
+  11  483    6   0.0047     9.234e+06        ?       ?
+  12  289    4   0.0000     6.601e+06        ?       ?
+  13  385    5   0.0000     6.601e+06        ?       ?
+  14  481    6   0.0000     6.601e+06        ?       ?
+
+TOP 5 highest DSI (any ATP)
+  idx=0 gen=1 DSI=0.7273 ATP=1.840e+07
+  idx=96 gen=2 DSI=0.7273 ATP=1.840e+07
+  idx=192 gen=3 DSI=0.7273 ATP=1.840e+07
+  idx=288 gen=4 DSI=0.7273 ATP=1.840e+07
+  idx=384 gen=5 DSI=0.7273 ATP=1.840e+07
+
+TOP 5 cheapest ATP with DSI > 0.3
+  idx=290 gen=4 DSI=0.4118 ATP=1.111e+07
+  idx=386 gen=5 DSI=0.4118 ATP=1.111e+07
+  idx=482 gen=6 DSI=0.4118 ATP=1.111e+07
+  idx=194 gen=3 DSI=0.4000 ATP=1.371e+07
+  idx=292 gen=4 DSI=0.4000 ATP=1.371e+07
+
+DSI distribution by bucket
+  neg      0
+  0.0-0.1  506
+  0.1-0.3  30
+  0.3-0.5  16
+  0.5-0.7  0
+  0.7-0.9  6
+  0.9-1.0  0

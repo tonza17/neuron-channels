@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 17708 root@ssh2.vast.ai echo '---LATEST LOG---'; tail -8 /root/t0126_workdir/nsga2.log 2>/dev/null | grep -E '(seed.*gen|n_eval|nsga2_driver)'; echo '---LAST 3 HV TRACE---'; find /root/t0126_workdir -name 'hv_trace*.jsonl' -exec ls -la {} \\; 2>/dev/null; find /root/t0126_workdir -name 'hv_trace*.jsonl' -exec tail -3 {} \\; 2>/dev/null; echo '---RESULTS SIZE---'; du -sh /root/t0126_workdir/results 2>/dev/null; ls /root/t0126_workdir/results/data/ 2>/dev/null",
+  "exit_code": 2,
+  "duration_seconds": 3.393,
+  "started_at": "2026-05-25T14:10:04Z",
+  "completed_at": "2026-05-25T14:10:07Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "033_20260525T141004Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "033_20260525T141004Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 13,
+  "stderr_lines": 2,
+  "truncated": false
+}

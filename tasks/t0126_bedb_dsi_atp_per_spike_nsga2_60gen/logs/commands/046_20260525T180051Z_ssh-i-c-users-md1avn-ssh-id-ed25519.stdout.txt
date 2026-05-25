@@ -1,0 +1,10 @@
+Distinct Pareto points: 7
+
+DSI     ATP/spike       first_gen
+1.0000   1.599e+07  gen 35
+0.4595   1.232e+07  gen 36
+0.4118   1.111e+07  gen 4
+0.3333   8.305e+06  gen 10
+0.0588   8.209e+06  gen 31
+0.0345   6.796e+06  gen 23
+0.0000   4.398e+06  gen 39

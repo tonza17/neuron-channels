@@ -1,0 +1,22 @@
+{
+  "total_cost_usd": 0.9621,
+  "breakdown": {
+    "vast-ai-epyc-7c13-t0126": {
+      "cost_usd": 0.9621,
+      "description": "Vast.ai instance 37767708 (AMD EPYC 7C13 64-Core, 32 effective vCPUs, 64 GB RAM, 1x Tesla V100 idle, Virginia US, $0.1844/hr total = $0.1733/hr GPU + $0.0111/hr storage for the 40 GB disk). Final cost reported by the NSGA-II cost_watchdog at the end of the gen 60 run was $0.9621 (final_cost_usd from nsga2_driver exit summary). Includes the full lifecycle: instance creation + apt installs + pip dependencies (NEURON 8.2.7, pymoo 0.6.1.6, dill, numpy, pandas, scipy, matplotlib, pydantic, tqdm, sklearn) + t0080 MOD compile + t0024 DSGC MOD compile + t0126 code SCP + Carter-Bean smoke-gate + NSGA-II run (60-gen ceiling reached cleanly with NSGA2_EXIT=0, pop=96, n_eval_seeds=3, n_directions=2, single seed 8929) + post-run downloads. Wallclock for the NSGA-II run alone was 18,777 s (5.22 h) as reported by the driver exit log; the cost_watchdog ran continuously over that span at $0.1844/hr. The orchestrator's step 010_teardown destroys the instance after this wrap-up completes."
+    },
+    "per_instance_watchdog_USD": {
+      "cost_usd": 0.0,
+      "description": "T0126_PER_INSTANCE_WATCHDOG_USD = $5.00 cap was never tripped. Actual instance spend $0.9621 is 19.2% of the watchdog cap and 16.0% of the $6 task budget. The COST_CAP_USD = $6.00 hard budget was also never tripped. watchdog_tripped=false in the nsga2_driver exit summary."
+    },
+    "vast-ai-failed-attempts": {
+      "cost_usd": 0.0,
+      "description": "No failed instance creation attempts (instance 37767708 created on first try per machine_log.json failed_attempts=[])."
+    }
+  },
+  "services": {
+    "vast_ai": 0.9621
+  },
+  "budget_limit": 6.0,
+  "note": "Pre-aggregator cost estimate from the NSGA-II cost_watchdog's continuous accumulator. The watchdog read $0.1844/hr from logs/steps/008_setup-machines/machine_log.json and tracked actual spend on each generation tick; final_cost_usd at gen 60 exit = $0.9621359605. This is 3.3x t0124's $0.2935 because t0126 ran a full 60 generations vs t0124's operator-stopped gen 9, while keeping the same pop/eval/direction settings. The Virginia US 7C13 instance is also 14% more expensive per hour than t0124's BC-Canada 7B13 ($0.1844 vs $0.1615) but has 32 effective vCPUs vs 128 (per-core throughput is comparable in NEURON-bound NSGA-II per t0115/t0122/t0123/t0124 calibration). watchdog_tripped=false; the full 60-generation ceiling was reached with NSGA2_EXIT=0."
+}

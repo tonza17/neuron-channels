@@ -1,0 +1,23 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "37767708",
+    "gpu": "Tesla V100-SXM2-32GB (1x, idle, unused; CPU-only NEURON workload)",
+    "gpu_count": 1,
+    "cpu_name": "AMD EPYC 7C13 64-Core Processor",
+    "cpu_cores_effective": 32,
+    "ram_gb": 64,
+    "disk_gb": 40,
+    "location": "Virginia, US",
+    "duration_hours": 5.216,
+    "cost_usd": 0.9621,
+    "price_per_hour_usd": 0.18444444444444444,
+    "reliability": 0.9947,
+    "image": "python:3.12-bookworm",
+    "created_at": "2026-05-25T13:02:51Z",
+    "ready_at": "2026-05-25T13:07:00Z",
+    "destroyed_at": null,
+    "workload": "NSGA-II (60-gen ceiling REACHED cleanly with NSGA2_EXIT=0, pop=96, n_eval_seeds=3, n_directions=2 antipodal 0/180 deg, single GA seed 8929 drawn via secrets.randbelow(10000) avoiding lineage seeds {77, 441, 1524, 2247, 7755, 9354} and explicitly avoiding t0124's seed 6650) on Bed B + 14-d morphology substrate. Two-objective DSI vs ATP-per-spike (Sengupta 2010). HV_PLATEAU_AUTO_STOP=False (REQ-2), _POOL_RESTART_EVERY=10 (REQ-6), OperatorStopTermination REMOVED from live TerminationCollection (REQ-15/REQ-16). Carter-Bean 2009 AIS smoke-gate PASSED at observed_atp_per_ap_per_cm = 6.138e8 inside the canonical [1e8, 1e9] band before NSGA-II launch. Final HV = 1.999e10, Pareto front n=6 cells spanning DSI [0.0, 1.0] and ATP [1.83e6, 7.82e6]. watchdog_tripped=false; final_cost_usd=$0.9621.",
+    "note": "Final pre-aggregator estimate from the NSGA-II cost_watchdog's continuous accumulator (read $0.1844/hr from machine_log.json, tracked actual spend per generation). Final value at gen 60 exit = $0.9621. Wallclock for the NSGA-II run was 18,777 s (5.22 h) per the driver exit log; this excludes the apt install + pip + MOD compile + smoke-gate window of ~30 minutes before NSGA-II launch, so total instance lifetime through wrap-up download is closer to 5.7 h (Virginia US 7C13 at $0.1844/hr). Under the $6 task cap (16.0% utilisation) and the $5 per-instance watchdog (19.2% utilisation). The 1x Tesla V100 GPU was idle throughout -- CPU-only NEURON workload on the 32 effective AMD EPYC 7C13 cores. The orchestrator's step 010_teardown destroys the instance after wrap-up; destroyed_at will be populated by that step's post-task aggregation."
+  }
+]

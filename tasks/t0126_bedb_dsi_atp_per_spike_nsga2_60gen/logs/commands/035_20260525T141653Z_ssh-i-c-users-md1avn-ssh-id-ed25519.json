@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 17708 root@ssh2.vast.ai python3 -c \"\nimport json\np = '/root/t0126_workdir/repo/tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/results/data/all_evaluations_seed8929.json'\nwith open(p) as f: data = json.load(f)\nprint(f'Total evals: {len(data)}')\n# Extract DSI and ATP per spike; find non-dominated\ncells = []\nfor c in data:\n    dsi = c.get('dsi_best_legit', c.get('dsi', None))\n    atp = c.get('atp_per_spike_molecules', c.get('atp_per_spike', None))\n    if dsi is None or atp is None: continue\n    cells.append((c.get('cell_id', c.get('id', '?')), dsi, atp, c.get('pd_rate_hz', c.get('pd_firing_rate_hz', None)), c.get('nd_rate_hz', c.get('nd_firing_rate_hz', None)), c.get('gen', None)))\n# Non-dominated: maximise DSI, minimise ATP\ncells.sort(key=lambda x: (-x[1], x[2]))\ndef dominated(c, others):\n    for o in others:\n        if o is c: continue\n        if o[1] >= c[1] and o[2] <= c[2] and (o[1] > c[1] or o[2] < c[2]): return True\n    return False\nnd = [c for c in cells if not dominated(c, cells)]\nprint(f'Non-dominated cells: {len(nd)}')\nprint()\nprint(f'{\"cell_id\":<14} {\"DSI\":>7} {\"ATP/spike\":>14} {\"PD_Hz\":>8} {\"ND_Hz\":>8} {\"gen\":>4}')\nfor c in nd[:15]:\n    cid, dsi, atp, pd, nd_, g = c\n    pdv = f'{pd:.2f}' if isinstance(pd, (int, float)) else '?'\n    ndv = f'{nd_:.2f}' if isinstance(nd_, (int, float)) else '?'\n    gv = str(g) if g is not None else '?'\n    print(f'{str(cid)[:14]:<14} {dsi:>7.4f} {atp:>14.3e} {pdv:>8} {ndv:>8} {gv:>4}')\nprint()\nprint('--- top 5 by DSI (any ATP) ---')\ntop_dsi = sorted(cells, key=lambda x:-x[1])[:5]\nfor c in top_dsi:\n    cid, dsi, atp, pd, nd_, g = c\n    pdv = f'{pd:.2f}' if isinstance(pd, (int, float)) else '?'\n    ndv = f'{nd_:.2f}' if isinstance(nd_, (int, float)) else '?'\n    print(f'  {str(cid)[:14]:<14} DSI={dsi:.4f} ATP={atp:.3e} PD={pdv}Hz ND={ndv}Hz gen={g}')\n\"\n",
+  "exit_code": 1,
+  "duration_seconds": 4.041,
+  "started_at": "2026-05-25T14:16:53Z",
+  "completed_at": "2026-05-25T14:16:57Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "035_20260525T141653Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "035_20260525T141653Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 5,
+  "truncated": false
+}

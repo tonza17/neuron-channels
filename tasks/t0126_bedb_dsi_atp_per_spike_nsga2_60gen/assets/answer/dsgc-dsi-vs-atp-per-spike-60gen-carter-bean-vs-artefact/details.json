@@ -1,0 +1,49 @@
+{
+  "spec_version": "2",
+  "answer_id": "dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact",
+  "question": "Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean Na/K-overlap penalty, and where do its top cells sit relative to the revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and historically, the original Attwell-Laughlin 2001 47% anchor)?",
+  "short_title": "DSGC DSI vs ATP-per-spike: Carter-Bean and Howarth/Attwell-Laughlin comparison",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "voltage-gated-channels"
+  ],
+  "answer_methods": [
+    "papers",
+    "code-experiment"
+  ],
+  "source_paper_ids": [
+    "10.1371_journal.pcbi.1000840",
+    "10.1097_00004647-200110000-00001",
+    "10.1523_JNEUROSCI.1592-24.2024",
+    "10.1038_nn.3565",
+    "10.1371_journal.pcbi.1002107"
+  ],
+  "source_task_ids": [
+    "t0080_bedb_mobo_v3_dendritic_spike_nsga2",
+    "t0097_multi_obj_optim",
+    "t0122_dsi_cytoplasm_volume_nsga2",
+    "t0123_bedb_mi_atp_per_spike_nsga2"
+  ],
+  "source_urls": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2810867/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3390818/"
+  ],
+  "confidence": "low",
+  "created_by_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "date_created": "2026-05-25",
+  "evidence_summary": {
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "bootstrap_pearson_dsi_atp": {
+      "r": 0.9800774652208802,
+      "ci_low": 0.9719026877319277,
+      "ci_high": 0.9999651176313071,
+      "n": 6
+    },
+    "n_legit": 6,
+    "n_pareto": 6
+  }
+}

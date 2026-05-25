@@ -1,0 +1,11 @@
+[comparator] t0124 front: n=5, seed=6650
+[comparator] t0126 front: n=6, seed=8929
+[comparator] t0124 cells dominated by t0126 front: 5/5
+[comparator] verdict: INSUFFICIENT_EVIDENCE
+[comparator] rationale: only 6 legit Pareto cells (need n >= 20); the front structure cannot be quantitatively characterised.
+[comparator] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\pareto_front_t0124_vs_t0126.png
+[post_run] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\data\comparator_report.json
+[post_run] verdict: INSUFFICIENT_EVIDENCE
+[post_run] rationale: only 6 legit Pareto cells (need n >= 20); the front structure cannot be quantitatively characterised.
+[post_run] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\hv_trajectory_seed8929.png
+[post_run] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\pareto_front_dsi_vs_atp.png

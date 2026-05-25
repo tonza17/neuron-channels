@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 17708 root@ssh2.vast.ai grep -E 'seed.*gen.*HV=' /root/t0126_workdir/nsga2.log | sed -E 's/.*gen ([0-9]+)\\] HV=([0-9.]+).*cost_so_far=\\.*elapsed=([0-9]+)s/gen \\1  HV=\\2  cost=$\\3  t=\\4s/'",
+  "exit_code": 1,
+  "duration_seconds": 3.425,
+  "started_at": "2026-05-25T16:22:37Z",
+  "completed_at": "2026-05-25T16:22:41Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "041_20260525T162237Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "041_20260525T162237Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 3,
+  "truncated": false
+}

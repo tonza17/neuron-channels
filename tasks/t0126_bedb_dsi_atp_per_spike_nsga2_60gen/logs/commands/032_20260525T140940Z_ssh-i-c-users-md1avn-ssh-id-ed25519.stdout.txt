@@ -1,0 +1,26 @@
+nsga2: 1 windows (created Mon May 25 13:54:12 2026)
+---LOG TAIL---
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.1844/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=8929] using 60 parallel workers
+[nsga2_driver seed=8929] starting: pop=96 max_gen=60 hard_cap=$6.00 rate=$0.1844/hr pool_restart_every=10
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       96 |      2 |             - |             -
+[seed 8929 gen 1] HV=14532070303.0576  pop_size=96  cost_so_far=$0.0071  elapsed=138s
+[nsga2_driver seed=8929 gen=1] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     2 |      192 |      2 |  0.000000E+00 |             f
+[seed 8929 gen 2] HV=14532070303.0576  pop_size=96  cost_so_far=$0.0151  elapsed=295s
+[nsga2_driver seed=8929 gen=2] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     3 |      288 |      3 |  0.2028167265 |             f
+[seed 8929 gen 3] HV=14533948585.5906  pop_size=96  cost_so_far=$0.0271  elapsed=529s
+[nsga2_driver seed=8929 gen=3] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     4 |      384 |      3 |  0.0285170497 |         ideal
+[seed 8929 gen 4] HV=14535074817.0223  pop_size=96  cost_so_far=$0.0399  elapsed=778s
+[nsga2_driver seed=8929 gen=4] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---HV TRACE---
+---DATA DIR---
+---DISK---
+overlay          40G  708M   40G   2% /

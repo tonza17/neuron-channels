@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\code\build_t0126_outputs.py", line 1311, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\code\build_t0126_outputs.py", line 1240, in main
+    comparator_report = run_dsi_atp_comparators(
+        pareto_cells=pareto, repo_root=REPO_ROOT, top_n=10, bootstrap_n=1000
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\code\dsi_atp_comparators.py", line 365, in run_dsi_atp_comparators
+    cb_verdicts.append(classify_carter_bean(measured_atp_per_ap_per_cm=atp_per_ap_per_cm))
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\code\dsi_atp_comparators.py", line 138, in classify_carter_bean
+    fold_diff = gmean / measured_atp_per_ap_per_cm
+                ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero

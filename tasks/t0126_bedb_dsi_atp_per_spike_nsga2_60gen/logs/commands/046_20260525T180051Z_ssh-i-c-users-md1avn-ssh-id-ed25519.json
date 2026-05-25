@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 17708 root@ssh2.vast.ai python3 -c \"\nimport json\nwith open('/root/t0126_workdir/repo/tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/results/data/all_evaluations_seed8929.json') as f:\n    data = json.load(f)\nevals = data['evaluations']\ncells = [(i, e.get('dsi_best_legit'), e.get('atp_per_spike_molecules'), e.get('generation'), e) for i,e in enumerate(evals)]\nvalid = [c for c in cells if c[1] is not None and c[1] > -0.999 and c[2] is not None and c[2] != float('inf')]\ndef dom(a,b): return b[1]>=a[1] and b[2]<=a[2] and (b[1]>a[1] or b[2]<a[2])\nfront = [c for c in valid if not any(dom(c,o) for o in valid if o is not c)]\n# de-duplicate by (DSI, ATP) rounded\nseen = set()\nunique = []\nfor c in front:\n    k = (round(c[1],6), round(c[2],2))\n    if k in seen: continue\n    seen.add(k)\n    unique.append(c)\nunique.sort(key=lambda x: -x[1])\nprint('Distinct Pareto points:', len(unique))\nprint()\nprint('DSI     ATP/spike       first_gen')\nfor c in unique:\n    i,dsi,atp,g,e = c\n    print('%6.4f  %10.3e  gen %d' % (dsi, atp, g))\n\"",
+  "exit_code": 0,
+  "duration_seconds": 4.05,
+  "started_at": "2026-05-25T18:00:51Z",
+  "completed_at": "2026-05-25T18:00:55Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "046_20260525T180051Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "046_20260525T180051Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 2,
+  "truncated": false
+}
