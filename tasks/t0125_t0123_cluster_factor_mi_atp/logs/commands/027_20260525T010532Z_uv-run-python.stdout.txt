@@ -1,0 +1,16 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W003 warning: suggestions[1]: description is 1094 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[2]: title is 136 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[2]: description is 1278 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[3]: title is 130 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[3]: description is 1295 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[4]: description is 1183 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[5]: description is 1336 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[6]: title is 121 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[6]: description is 1385 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[7]: description is 1142 characters, exceeds 1000[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 10 warning(s)
