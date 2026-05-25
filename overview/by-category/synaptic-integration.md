@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (49)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(101)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(102)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2730,7 +2730,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (90 open, 11 closed)
+## Suggestions (91 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of cell (19, 1816) -- high-MI / high-ATP /
+extended-dendrite outlier</strong> (S-0125-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+Cell (19, 1816) hits the MI ceiling (1.459 bits) at ATP = 4.97e7 molecules/spike (cohort
+99th-percentile) with 79% of ATP spent in dendrites (cohort mean 17.8%); cell (30, 2828)
+matches the MI at 0.5% dendrite share. This is the cleanest case of 'high MI is consistent
+with both compact-dendrite/low-ATP and extended-dendrite/high-ATP geometries'. Distinct from
+S-0123-03 (cell 2, near-silent high-MI cell): this is the complementary deep-dive on the OTHER
+end of the iso-MI ridge. Action: single-cell resimulate (19, 1816) from its 68-d vector under
+the EPSP_PASSIVE / IPSP_PASSIVE / FULL trio (memory feedback_dsgc_measurement_protocol),
+record somatic + dendritic Vm and per-compartment g_E / g_I / i_Na / i_K. Identify which
+subset drives the across-direction count signal vs the dendritic ATP overhead. Local CPU < 2
+h. Recommended task types: experiment-run, data-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>g_I sensitivity sweep on cluster-2 DSGC-competent cells: how does

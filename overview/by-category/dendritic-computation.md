@@ -5,8 +5,8 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
-(11)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(93)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(13)](../answers/by-category/dendritic-computation.md) | [Suggestions
+(95)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
 (6)](../predictions/by-category/dendritic-computation.md)
@@ -2320,7 +2320,49 @@ than reduced analytical models.
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 
-## Answers (11)
+## Answers (13)
+
+<details>
+<summary><strong>Which morphology parameters most distinguish low-ATP from high-ATP
+cells in the t0123 spiking cohort, and does the low-ATP group spend
+relatively more ATP at the AIS than in the dendrites?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`low-vs-high-atp-morphology-signature`](../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/low-vs-high-atp-morphology-signature/)
+
+The top 5 morphology parameters by |Cliff's delta| separating high-ATP (top quartile of
+atp_per_spike, n = 782) from low-ATP (bottom quartile, n = 782) cells are:
+mean_segment_length_um (delta = -0.725, low-ATP cells have ~43% longer segments),
+branch_length_cv (delta = +0.554, low-ATP cells are more uniform in branch length),
+branch_density_gradient_pd (delta = +0.504, low-ATP cells have weaker preferred-direction
+dendrite-density gradient), field_elongation_pd (delta = -0.469, low-ATP cells have more
+elongated dendritic field), and ais_length_um (delta = +0.376, low-ATP cells have shorter AIS
+by ~12%). The ATP-share answer is Yes for the AIS but the dendrite/soma swap dominates:
+low-ATP cells concentrate 93% of per-AP ATP at the soma and 6% at the AIS with only 0.4% in
+dendrites, while high-ATP cells push 62% into dendrites and 35% into soma with only 2.6% at
+the AIS.
+
+</details>
+
+<details>
+<summary><strong>Which combination of electrophys + morphology parameters most
+distinguishes the Pareto-favoured corner (high MI, low ATP) from the
+Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what
+are the per-corner cell counts and means?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`pareto-favoured-corner-signature`](../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/pareto-favoured-corner-signature/)
+
+The top 5 parameters by absolute z-score difference between the high_mi_low_atp and
+low_mi_high_atp corners (each cell z-scored against the full-cohort standardiser, mean per
+corner) are: KDR_GBAR (-1.19), branch_length_cv (-1.08), BK_SOMA_GBAR (-1.06), IH_GBAR
+(-1.06), and RA_OHM_CM (+1.06). The Pareto-favoured corner contains 1221 spiking cells (mean
+MI = 0.984 bits, mean ATP = 5.34e6 molecules / spike, mean DSI = 0.237, mean PD rate = 2.61
+Hz) versus 1220 cells in the dominated corner (mean MI = 0.063 bits, mean ATP = 2.61e7
+molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbalance (1221 +
+1220 = 2441 cells vs 343 + 341 = 684 off-diagonal) is the joint Pareto signature.
+
+</details>
 
 <details>
 <summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
@@ -2565,7 +2607,48 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (75 open, 18 closed)
+## Suggestions (77 open, 18 closed)
+
+<details>
+<summary>🧪 <strong>Partial-correlation analysis of MI vs electrophys (control
+morphology) and ATP vs morphology (control electrophys)</strong>
+(S-0125-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's PCA colourings make the separation visible: high-MI cells cluster in the electrophys
+PCA but are absent from the morphology PCA; log10(ATP) shows a gradient in the morphology PCA,
+flatter in electrophys. NMI table corroborates (electrophys-vs-MI 0.178, electrophys-vs-ATP
+0.186, morphology-vs-MI 0.121, morphology-vs-ATP 0.176). These are pairwise correlations and
+could share a common cause. Action: on the existing spiking-cohort parquet, compute Spearman
+partial r for (a) MI vs each of 54 electrophys params partialling out 14 morphology params;
+(b) ATP vs each of 14 morphology params partialling out 54 electrophys params; (c) MI vs ATP
+partialling out morphology; (d) MI vs ATP partialling out electrophys. Report top-10 with
+bootstrap CI; compare to t0125 group_comparison.csv. Single CPU-only follow-up. Recommended
+task types: data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of cell (19, 1816) -- high-MI / high-ATP /
+extended-dendrite outlier</strong> (S-0125-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+Cell (19, 1816) hits the MI ceiling (1.459 bits) at ATP = 4.97e7 molecules/spike (cohort
+99th-percentile) with 79% of ATP spent in dendrites (cohort mean 17.8%); cell (30, 2828)
+matches the MI at 0.5% dendrite share. This is the cleanest case of 'high MI is consistent
+with both compact-dendrite/low-ATP and extended-dendrite/high-ATP geometries'. Distinct from
+S-0123-03 (cell 2, near-silent high-MI cell): this is the complementary deep-dive on the OTHER
+end of the iso-MI ridge. Action: single-cell resimulate (19, 1816) from its 68-d vector under
+the EPSP_PASSIVE / IPSP_PASSIVE / FULL trio (memory feedback_dsgc_measurement_protocol),
+record somatic + dendritic Vm and per-compartment g_E / g_I / i_Na / i_K. Identify which
+subset drives the across-direction count signal vs the dendritic ATP overhead. Local CPU < 2
+h. Recommended task types: experiment-run, data-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Audit morphology generator for balancing-factor degeneracy: do

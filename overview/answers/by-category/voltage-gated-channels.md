@@ -1,6 +1,6 @@
-# Answers: `voltage-gated-channels` (10)
+# Answers: `voltage-gated-channels` (13)
 
-10 answer(s).
+13 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -41,6 +41,38 @@ open conductance in the t0024 voltage-clamp regime.
 | **Task sources** | [`t0083_bedb_v3_extend_nsga2_gen8plus`](../../../overview/tasks/task_pages/t0083_bedb_v3_extend_nsga2_gen8plus.md), [`t0086_robustness_cluster_bio_comparison`](../../../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md), [`t0088_recluster_marginals_and_vm_motifs`](../../../overview/tasks/task_pages/t0088_recluster_marginals_and_vm_motifs.md) |
 | **URL sources** | — |
 | **Created by** | [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md) |
+
+</details>
+
+<details>
+<summary><strong>Does the 68-d substrate of the t0123 single-seed MI vs
+ATP-per-spike NSGA-II run admit a joint MI x ATP latent factor (|r| > 0.30
+on both metrics simultaneously), or are MI and ATP driven by decoupled
+factors?</strong></summary>
+
+**Confidence**: medium
+
+No, the t0123 substrate does not contain a joint MI x ATP factor. Varimax factor analysis on
+the full 5760-cell pool retained 10 factors (16 Kaiser eigenvalues > 1, total variance
+explained 34.3%) and zero factors satisfy |r_MI| > 0.30 AND |r_ATP| > 0.30 simultaneously. The
+two strongest MI-loaded factors carry r_MI = -0.358 / +0.463 but only r_ATP = +0.205 / +0.063,
+and the strongest ATP-loaded factor (F1) ranks 7th on |r_MI|. This contrasts with t0117's
+pooled four-seed DSI x PD substrate which found one joint factor F1 (r_DSI = +0.421, r_PD =
++0.352, 12.6% variance).
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/mi-atp-joint-structure-in-t0123-substrate/full_answer.md) |
+| **ID** | [`mi-atp-joint-structure-in-t0123-substrate`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/mi-atp-joint-structure-in-t0123-substrate/) |
+| **Question** | Does the 68-d substrate of the t0123 single-seed MI vs ATP-per-spike NSGA-II run admit a joint MI x ATP latent factor (|r| > 0.30 on both metrics simultaneously), or are MI and ATP driven by decoupled factors? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | `10.1371_journal.pcbi.0020094`, `10.1038_nn1352`, `10.1038_nrn1949`, `10.1371_journal.pcbi.1000840`, `10.1103_PhysRevLett.80.197`, `10.1523_jneurosci.5346-03.2004` |
+| **Task sources** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md), [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md), [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md), [`t0108_t0106_cluster_factor_dsi05_pd10`](../../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md) |
+| **URL sources** | — |
+| **Created by** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
 
 </details>
 
@@ -265,6 +297,70 @@ multi-replicate confirmation requires t0083 or a follow-up multi-seed study.
 | **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0081_bedb_v3_warmstart_nsga2`](../../../overview/tasks/task_pages/t0081_bedb_v3_warmstart_nsga2.md) |
 | **URL sources** | — |
 | **Created by** | [`t0084_t0081_cell_767_vm_trace_deepdive`](../../../overview/tasks/task_pages/t0084_t0081_cell_767_vm_trace_deepdive.md) |
+
+</details>
+
+<details>
+<summary><strong>Which combination of electrophys + morphology parameters most
+distinguishes the Pareto-favoured corner (high MI, low ATP) from the
+Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what
+are the per-corner cell counts and means?</strong></summary>
+
+**Confidence**: medium
+
+The top 5 parameters by absolute z-score difference between the high_mi_low_atp and
+low_mi_high_atp corners (each cell z-scored against the full-cohort standardiser, mean per
+corner) are: KDR_GBAR (-1.19), branch_length_cv (-1.08), BK_SOMA_GBAR (-1.06), IH_GBAR
+(-1.06), and RA_OHM_CM (+1.06). The Pareto-favoured corner contains 1221 spiking cells (mean
+MI = 0.984 bits, mean ATP = 5.34e6 molecules / spike, mean DSI = 0.237, mean PD rate = 2.61
+Hz) versus 1220 cells in the dominated corner (mean MI = 0.063 bits, mean ATP = 2.61e7
+molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbalance (1221 +
+1220 = 2441 cells vs 343 + 341 = 684 off-diagonal) is the joint Pareto signature.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/pareto-favoured-corner-signature/full_answer.md) |
+| **ID** | [`pareto-favoured-corner-signature`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/pareto-favoured-corner-signature/) |
+| **Question** | Which combination of electrophys + morphology parameters most distinguishes the Pareto-favoured corner (high MI, low ATP) from the Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what are the per-corner cell counts and means? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Paper sources** | `10.1371_journal.pcbi.1002107`, `10.3389_neuro.01.1.1.001.2007`, `10.1038_nature16468` |
+| **Task sources** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md), [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md), [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **URL sources** | — |
+| **Created by** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+
+</details>
+
+<details>
+<summary><strong>Which electrophys parameters most distinguish high-MI from low-MI
+cells in the t0123 spiking cohort, with effect size and direction?</strong></summary>
+
+**Confidence**: medium
+
+The top 5 electrophys parameters by |Cliff's delta| separating high-MI (top quartile of
+mi_count_bits, n = 819) from low-MI (bottom quartile, n = 1024) cells are: IH_GBAR (delta =
+-0.786, high-MI cells have ~32x lower mean), CAD_TAUR_MS (delta = -0.717, high-MI cells have
+~3.6x faster calcium-buffer time constant), KDR_GBAR (delta = -0.668, high-MI cells have ~9x
+lower mean), SK_AIS_GBAR (delta = +0.632, high-MI cells have higher AIS-localised SK density),
+and SKAHP_TAU_CA_MULTIPLIER (delta = -0.627, high-MI cells have ~2.4x shorter calcium-driven
+AHP time constant). All five Mann-Whitney U p-values are below 1e-115, so the effects are
+statistically robust against the n ~ 1000 sample sizes.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/high-vs-low-mi-electrophys-signature/full_answer.md) |
+| **ID** | [`high-vs-low-mi-electrophys-signature`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/high-vs-low-mi-electrophys-signature/) |
+| **Question** | Which electrophys parameters most distinguish high-MI from low-MI cells in the t0123 spiking cohort, with effect size and direction? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | `10.1371_journal.pcbi.1000840`, `10.1103_PhysRevLett.80.197`, `10.1523_jneurosci.5346-03.2004`, `10.1152_jn.1997.78.4.1948` |
+| **Task sources** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md), [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md), [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **URL sources** | — |
+| **Created by** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
 
 </details>
 

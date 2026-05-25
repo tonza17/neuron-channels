@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-100 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **84 open** (15
-high, 58 medium, 11 low), **16 closed**.
+102 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **85 open** (15
+high, 59 medium, 11 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -112,29 +112,6 @@ wall-clock, $0 cost. Recommended task types: data-analysis, correction.
 </details>
 
 <details>
-<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising
-ATP-per-spike</strong> (S-0097-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0097-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-08 |
-| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000840`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1000840/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per
-spike). Remme et al. 2018's MSO function-vs-energy MOBO provides a direct methodology template
-generalising to NEURON. DSGC's GABAergic-style fast-spiking should produce
-Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower
-energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e`
-per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed
-per-task default; flag for explicit budget approval.
-
-</details>
-
-<details>
 <summary>🧪 <strong>Bed B NSGA-II maximising DSI and robustness under +/-10%
 channel-density perturbation</strong> (S-0097-03)</summary>
 
@@ -232,6 +209,32 @@ t0055 at each E synapse, sweep gNMDA in {0.0, 0.25, 0.5, 1.0} nS x gAMPA in {1.0
 at GABA_BASE_NS = 0.10 nS (12 cells, 4320 trials at 10 trials x 12 directions x 3 modes). Pass
 criterion: vector-sum DSI > 0.3 AND peak Hz >= 5 Hz. Distinct from S-0057-06 (global tonic
 window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Patch t0080 with an explicit myelinated axon to fix the
+soma-vs-axon ATP-share inversion vs Attwell 2001</strong> (S-0125-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | [`10.1097_00004647-200110000-00001`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/paper/10.1097_00004647-200110000-00001/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0125 finds 76.7% soma / 5.5% AIS / 17.8% dendrite ATP share -- inverted from Attwell &
+Laughlin 2001's 4% soma / 82% axon / 14% dendrite rodent-cortical breakdown. methodology_notes
+and compare_literature attribute this to t0080 lacking an explicit myelinated axon (only a
+procedural AIS). Action: extend the t0080 cell builder with one or two nodes of Ranvier +
+myelin segments at realistic R_m (~50 kOhm cm^2), C_m (~0.04 uF/cm^2), and Na/K channel
+densities; re-run t0123's MI vs ATP-per-spike NSGA-II at matched compute; re-check
+soma/AIS/axon/dendrite ATP shares against Attwell 2001 Table 4 and Sengupta 2010. Test whether
+the Pareto front shifts and whether compartment-ATP diversity broadens to match the rodent
+picture. Budget ~$10-15 Vast.ai EPYC. Recommended task types: build-model, experiment-run,
+comparative-analysis.
 
 </details>
 
@@ -756,6 +759,32 @@ Bed B's SUFFIX (e.g., to `HHst_det`) via corrections on the t0024 library, recom
 `build_cell.py` and downstream protocol code, and add a verificator scanning
 `tasks/*/assets/library/*/sources/*.mod` for duplicate SUFFIX. Recommended task types:
 write-library, infrastructure-setup, correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Disjoint parameter-basin enumeration of high-MI cells to quantify
+Achard 2006 degeneracy on the t0123 substrate</strong> (S-0125-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | [`10.1371_journal.pcbi.0020094`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/paper/10.1371_journal.pcbi.0020094/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0125's electrophys silhouette = 0.083 (low) paired with chi-square p = 1e-236 (highly
+significant) is the signature of Achard 2006's 'loosely connected hyperplane' geometry. t0125
+confirmed the qualitative pattern (5 of 68 parameters with |Cliff's delta| > 0.6 for MI
+groups, ~7%) but did NOT count DISJOINT parameter basins producing mi_count_bits > 1.0.
+Action: on the spiking-cohort parquet, restrict to cells with MI > 1.0 (n ~ 600-800), apply
+single-linkage hierarchical clustering in the standardised 54-d electrophys subspace tuned to
+3-10 connected components, report per-component median pairwise distance, per-parameter range,
+and cross-component nearest-neighbour distance. Replicate in morphology and full-68-d. Tests
+Marder 2006 'many models, one behaviour' on t0123; motivates per-basin re-seeded NSGA-II.
+CPU-only. Recommended task types: data-analysis, answer-question.
 
 </details>
 
@@ -2176,6 +2205,31 @@ PSP magnitudes per gNMDA. Goal: test whether NMDA addition closes the peak-rate 
 t0004 30 Hz target without breaking the DSI = 1.0 design from gabaMOD, in a
 minimal-from-scratch substrate (not the deposited 189347 paper-port substrate of t0046-t0049).
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>✅ <s>Bed B NSGA-II maximising DSI and minimising ATP-per-spike</s> —
+covered by <a
+href="../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/"><code>t0124_bedb_dsi_atp_per_spike_nsga2</code></a>
+(S-0097-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000840`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1000840/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per
+spike). Remme et al. 2018's MSO function-vs-energy MOBO provides a direct methodology template
+generalising to NEURON. DSGC's GABAergic-style fast-spiking should produce
+Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower
+energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e`
+per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed
+per-task default; flag for explicit budget approval.
 
 </details>
 

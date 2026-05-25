@@ -1,7 +1,7 @@
 # Suggestions: `cable-theory`
 
-29 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **25
-open** (1 high, 21 medium, 3 low), **4 closed**.
+30 suggestion(s) in category [`cable-theory`](../../../meta/categories/cable-theory/) **26
+open** (2 high, 21 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -32,6 +32,32 @@ gPD_voltage), peak / null PSP magnitudes, primary and vector-sum DSI, and peak H
 Goal: produce a quantitative voltage-vs-conductance saturation curve that future
 scalar-gabaMOD models can use to translate nominal conductance ratios into expected somatic
 suppression. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Patch t0080 with an explicit myelinated axon to fix the
+soma-vs-axon ATP-share inversion vs Attwell 2001</strong> (S-0125-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | [`10.1097_00004647-200110000-00001`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/paper/10.1097_00004647-200110000-00001/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0125 finds 76.7% soma / 5.5% AIS / 17.8% dendrite ATP share -- inverted from Attwell &
+Laughlin 2001's 4% soma / 82% axon / 14% dendrite rodent-cortical breakdown. methodology_notes
+and compare_literature attribute this to t0080 lacking an explicit myelinated axon (only a
+procedural AIS). Action: extend the t0080 cell builder with one or two nodes of Ranvier +
+myelin segments at realistic R_m (~50 kOhm cm^2), C_m (~0.04 uF/cm^2), and Na/K channel
+densities; re-run t0123's MI vs ATP-per-spike NSGA-II at matched compute; re-check
+soma/AIS/axon/dendrite ATP shares against Attwell 2001 Table 4 and Sengupta 2010. Test whether
+the Pareto front shifts and whether compartment-ATP diversity broadens to match the rodent
+picture. Budget ~$10-15 Vast.ai EPYC. Recommended task types: build-model, experiment-run,
+comparative-analysis.
 
 </details>
 

@@ -5,8 +5,8 @@ Mathematical framework describing voltage spread in passive and active cables.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (11)](../papers/by-category/cable-theory.md) | [Answers
-(3)](../answers/by-category/cable-theory.md) | [Suggestions
-(29)](../suggestions/by-category/cable-theory.md) | [Datasets
+(4)](../answers/by-category/cable-theory.md) | [Suggestions
+(30)](../suggestions/by-category/cable-theory.md) | [Datasets
 (1)](../datasets/by-category/cable-theory.md)
 
 ---
@@ -597,7 +597,29 @@ than reduced analytical models.
 | 0027 | [Literature survey: modeling effect of cell morphology on direction selectivity](../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) | completed | 2026-04-21 22:23 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 
-## Answers (3)
+## Answers (4)
+
+<details>
+<summary><strong>Which morphology parameters most distinguish low-ATP from high-ATP
+cells in the t0123 spiking cohort, and does the low-ATP group spend
+relatively more ATP at the AIS than in the dendrites?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`low-vs-high-atp-morphology-signature`](../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/low-vs-high-atp-morphology-signature/)
+
+The top 5 morphology parameters by |Cliff's delta| separating high-ATP (top quartile of
+atp_per_spike, n = 782) from low-ATP (bottom quartile, n = 782) cells are:
+mean_segment_length_um (delta = -0.725, low-ATP cells have ~43% longer segments),
+branch_length_cv (delta = +0.554, low-ATP cells are more uniform in branch length),
+branch_density_gradient_pd (delta = +0.504, low-ATP cells have weaker preferred-direction
+dendrite-density gradient), field_elongation_pd (delta = -0.469, low-ATP cells have more
+elongated dendritic field), and ais_length_um (delta = +0.376, low-ATP cells have shorter AIS
+by ~12%). The ATP-share answer is Yes for the AIS but the dendrite/soma swap dominates:
+low-ATP cells concentrate 93% of per-AP ATP at the soma and 6% at the AIS with only 0.4% in
+dendrites, while high-ATP cells push 62% into dendrites and 35% into soma with only 2.6% at
+the AIS.
+
+</details>
 
 <details>
 <summary><strong>Do the t0034 distal-length sweep and the t0035 distal-diameter
@@ -660,7 +682,27 @@ and reproducing the graded-vs- spike contrast-sensitivity trade-off.
 
 </details>
 
-## Suggestions (25 open, 4 closed)
+## Suggestions (26 open, 4 closed)
+
+<details>
+<summary>🧪 <strong>Patch t0080 with an explicit myelinated axon to fix the
+soma-vs-axon ATP-share inversion vs Attwell 2001</strong> (S-0125-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125 finds 76.7% soma / 5.5% AIS / 17.8% dendrite ATP share -- inverted from Attwell &
+Laughlin 2001's 4% soma / 82% axon / 14% dendrite rodent-cortical breakdown. methodology_notes
+and compare_literature attribute this to t0080 lacking an explicit myelinated axon (only a
+procedural AIS). Action: extend the t0080 cell builder with one or two nodes of Ranvier +
+myelin segments at realistic R_m (~50 kOhm cm^2), C_m (~0.04 uF/cm^2), and Na/K channel
+densities; re-run t0123's MI vs ATP-per-spike NSGA-II at matched compute; re-check
+soma/AIS/axon/dendrite ATP shares against Attwell 2001 Table 4 and Sengupta 2010. Test whether
+the Pareto front shifts and whether compartment-ATP diversity broadens to match the rodent
+picture. Budget ~$10-15 Vast.ai EPYC. Recommended task types: build-model, experiment-run,
+comparative-analysis.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Replace 1/e-crossing EPSP-decay metric with an exponential fit

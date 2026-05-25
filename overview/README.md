@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-18-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-46-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-50-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-124-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-487-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-126-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-495-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (47K)
-| [full](llm-context/full.xml) (748K) | [roadmap](llm-context/roadmap.xml) (144K) |
-[results](llm-context/results-deep-dive.xml) (577K) |
-[assets](llm-context/literature-and-assets.xml) (74K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (48K)
+| [full](llm-context/full.xml) (772K) | [roadmap](llm-context/roadmap.xml) (151K) |
+[results](llm-context/results-deep-dive.xml) (586K) |
+[assets](llm-context/literature-and-assets.xml) (76K)
 
-*Last updated: 2026-05-24 21:18 UTC*
+*Last updated: 2026-05-25 01:16 UTC*
 
 * **Budget**: **$65** spent of $100
 * **Remaining**: **$35**
@@ -53,9 +53,11 @@
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | 2026-05-24 22:55 |
 
 ---
 
@@ -82,10 +84,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (116 total)](tasks/by-status/completed.md)
+## [Recently Completed (117 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0125 | [Cluster + factor analysis of t0123 cells: high vs low MI and ATP](../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) | [`results`](../tasks/t0125_t0123_cluster_factor_mi_atp/results/results_detailed.md) | 2026-05-25 01:12 |
 | 0123 | [NSGA-II maximising MI and minimising ATP-per-spike (Bed B + 14-d morph)](../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | [`results`](../tasks/t0123_bedb_mi_atp_per_spike_nsga2/results/results_detailed.md) | 2026-05-24 21:08 |
 | 0122 | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | [`results`](../tasks/t0122_dsi_cytoplasm_volume_nsga2/results/results_detailed.md) | 2026-05-24 06:30 |
 | 0121 | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) | [`results`](../tasks/t0121_5seed_substrate_rate_canonical_report/results/results_detailed.md) | 2026-05-24 02:25 |
@@ -95,9 +98,8 @@ No blocked tasks.
 | 0117 | [Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds](../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) | [`results`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/results_detailed.md) | 2026-05-22 13:16 |
 | 0116 | [Pooled PCA + cluster + factor analysis of DSI>0.7 / PD>10 cells across 4 seeds](../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) | [`results`](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/results/results_detailed.md) | 2026-05-21 20:35 |
 | 0115 | [Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | [`results`](../tasks/t0115_seed9354_no_autostop/results/results_detailed.md) | 2026-05-21 02:55 |
-| 0114 | [Seed-7755 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0114_seed7755_no_autostop.md) | [`results`](../tasks/t0114_seed7755_no_autostop/results/results_detailed.md) | 2026-05-20 16:20 |
 
-*106 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*107 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,7 +124,167 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (439 open)](suggestions/)
+## [Recent Suggestions (446 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
+the zero-joint-factor verdict</strong> (S-0125-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's zero-joint MI x ATP varimax verdict is derived from a SINGLE NSGA-II seed (441).
+Precedent: t0116 (single seed) found no joint DSI x PD factor; t0117 (4 seeds) recovered one.
+The verdict is known to be seed-sensitive on this substrate. Action: replicate t0123 on 2-3
+additional non-round GA seeds (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6,
+HV-plateau auto-stop DISABLED per memory feedback_disable_hv_plateau_autostop,
+_POOL_RESTART_EVERY=10) and rerun the t0125 cluster + Kaiser-cap varimax pipeline on the
+pooled 4-seed pool. Predicted outcome: either F1's ATP loading crosses 0.30 (joint factor
+reappears) or stays decoupled (objective-pair-specific verdict confirmed). Budget ~$15-25
+Vast.ai EPYC. Recommended task types: experiment-run, data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Patch t0080 with an explicit myelinated axon to fix the
+soma-vs-axon ATP-share inversion vs Attwell 2001</strong> (S-0125-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125 finds 76.7% soma / 5.5% AIS / 17.8% dendrite ATP share -- inverted from Attwell &
+Laughlin 2001's 4% soma / 82% axon / 14% dendrite rodent-cortical breakdown. methodology_notes
+and compare_literature attribute this to t0080 lacking an explicit myelinated axon (only a
+procedural AIS). Action: extend the t0080 cell builder with one or two nodes of Ranvier +
+myelin segments at realistic R_m (~50 kOhm cm^2), C_m (~0.04 uF/cm^2), and Na/K channel
+densities; re-run t0123's MI vs ATP-per-spike NSGA-II at matched compute; re-check
+soma/AIS/axon/dendrite ATP shares against Attwell 2001 Table 4 and Sengupta 2010. Test whether
+the Pareto front shifts and whether compartment-ATP diversity broadens to match the rodent
+picture. Budget ~$10-15 Vast.ai EPYC. Recommended task types: build-model, experiment-run,
+comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>8-direction MI NSGA-II to lift the 2-bit ceiling and re-test the
+joint factor at higher MI resolution</strong> (S-0125-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's top cells saturate at mi_count_bits = 1.459 (73% of log2(4) = 2.0). Three Pareto cells
+converged on identical (MI, DSI, PD-rate) -- a deterministic optimum at the ceiling.
+Compressed MI variance pulls all joint loadings toward zero. Distinct from S-0123-01 (extended
+trial length + PD-rate floor for Strong-Bialek bits/s) and from polar 8-direction
+re-evaluation suggestions on DSI lineages (those re-score existing cells; this is a fresh
+NSGA-II). Action: fork t0123 with N_DIRECTIONS = 8 (ceiling = log2(8) = 3.0 bits), keep other
+constants matched (POP_SIZE = 96, N_EVAL_SEEDS = 3, HV auto-stop OFF, pool restart every 10);
+scale trial duration only if firing rate falls (per memory
+feedback_dsgc_measurement_protocol); rerun cluster + factor analysis. Budget ~$10-15 Vast.ai
+EPYC. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Partial-correlation analysis of MI vs electrophys (control
+morphology) and ATP vs morphology (control electrophys)</strong>
+(S-0125-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's PCA colourings make the separation visible: high-MI cells cluster in the electrophys
+PCA but are absent from the morphology PCA; log10(ATP) shows a gradient in the morphology PCA,
+flatter in electrophys. NMI table corroborates (electrophys-vs-MI 0.178, electrophys-vs-ATP
+0.186, morphology-vs-MI 0.121, morphology-vs-ATP 0.176). These are pairwise correlations and
+could share a common cause. Action: on the existing spiking-cohort parquet, compute Spearman
+partial r for (a) MI vs each of 54 electrophys params partialling out 14 morphology params;
+(b) ATP vs each of 14 morphology params partialling out 54 electrophys params; (c) MI vs ATP
+partialling out morphology; (d) MI vs ATP partialling out electrophys. Report top-10 with
+bootstrap CI; compare to t0125 group_comparison.csv. Single CPU-only follow-up. Recommended
+task types: data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Off-diagonal-corner-constrained NSGA-II to sample the
+undersampled high-MI/high-ATP and low-MI/low-ATP corners</strong>
+(S-0125-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125 finds a 3.6x diagonal-vs-off-diagonal corner imbalance: 1221 high_MI/low_ATP + 1220
+low_MI/high_ATP vs only 343 high_MI/high_ATP + 341 low_MI/low_ATP cells. Off-diagonal corners
+are real -- cell (19, 1816) hits MI=1.459 at ATP=4.97e7 (8.7x more expensive than equivalent
+(30, 2828)) -- but undersampled because NSGA-II exploited the cheap-and-informative half.
+Action: rerun the t0123 NSGA-II twice with constrained objectives (a) maximise BOTH MI and ATP
+(forces high_MI/high_ATP corner); (b) minimise BOTH (forces low_MI/low_ATP corner). Sample 96
+cells per corner; rerun the t0125 cluster + factor pipeline on the union plus the original
+t0123 pool. Tests whether off-diagonal corners share or have private latent drivers. Budget
+~$8-12 Vast.ai EPYC. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of cell (19, 1816) -- high-MI / high-ATP /
+extended-dendrite outlier</strong> (S-0125-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+Cell (19, 1816) hits the MI ceiling (1.459 bits) at ATP = 4.97e7 molecules/spike (cohort
+99th-percentile) with 79% of ATP spent in dendrites (cohort mean 17.8%); cell (30, 2828)
+matches the MI at 0.5% dendrite share. This is the cleanest case of 'high MI is consistent
+with both compact-dendrite/low-ATP and extended-dendrite/high-ATP geometries'. Distinct from
+S-0123-03 (cell 2, near-silent high-MI cell): this is the complementary deep-dive on the OTHER
+end of the iso-MI ridge. Action: single-cell resimulate (19, 1816) from its 68-d vector under
+the EPSP_PASSIVE / IPSP_PASSIVE / FULL trio (memory feedback_dsgc_measurement_protocol),
+record somatic + dendritic Vm and per-compartment g_E / g_I / i_Na / i_K. Identify which
+subset drives the across-direction count signal vs the dendritic ATP overhead. Local CPU < 2
+h. Recommended task types: experiment-run, data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Disjoint parameter-basin enumeration of high-MI cells to quantify
+Achard 2006 degeneracy on the t0123 substrate</strong> (S-0125-07)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's electrophys silhouette = 0.083 (low) paired with chi-square p = 1e-236 (highly
+significant) is the signature of Achard 2006's 'loosely connected hyperplane' geometry. t0125
+confirmed the qualitative pattern (5 of 68 parameters with |Cliff's delta| > 0.6 for MI
+groups, ~7%) but did NOT count DISJOINT parameter basins producing mi_count_bits > 1.0.
+Action: on the spiking-cohort parquet, restrict to cells with MI > 1.0 (n ~ 600-800), apply
+single-linkage hierarchical clustering in the standardised 54-d electrophys subspace tuned to
+3-10 connected components, report per-component median pairwise distance, per-parameter range,
+and cross-component nearest-neighbour distance. Replicate in morphology and full-68-d. Tests
+Marder 2006 'many models, one behaviour' on t0123; motivates per-basin re-seeded NSGA-II.
+CPU-only. Recommended task types: data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Bootstrap loading stability for the single-seed MI factors to
+bracket the 0.358 / 0.205 joint-threshold gap</strong> (S-0125-08)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's zero-joint verdict rides on F1's r_MI = -0.358 (above threshold) paired with r_ATP =
++0.205 (below threshold) -- ATP only 0.095 below the 0.30 cutoff. Verdict could flip under
+resampling. Distinct from S-0117-03 (bootstrap on t0117 4-seed DSI x PD F1): this is the MI x
+ATP single-seed analogue. Action: on the existing t0125 standardiser and 5760-cell parquet,
+draw B = 500 bootstrap resamples, refit FA(n=10) + varimax, report (a) per-factor 5/50/95
+percentile loadings on every 68-d parameter; (b) per-factor 5/50/95 percentile r vs MI and
+ATP; (c) probability that >=1 factor crosses |r| > 0.30 on both axes per resample; (d)
+threshold sensitivity at 0.20, 0.25, 0.30, 0.35. Bounds the joint-factor verdict and produces
+the threshold-sensitivity curve flagged in compare_literature. CPU-only. Recommended task
+types: data-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Re-render t0112 / t0114 / t0115 top-50 morphology grids with
@@ -164,172 +326,50 @@ NSGA-II tasks (incl. t0122) raise loudly. Recommended task types: write-library.
 
 </details>
 
-<details>
-<summary>📚 <strong>Add a degenerate-section detector to the NSGA-II evaluation loop
-(flag cells with any h.n3d() == 0 section)</strong> (S-0120-03)</summary>
-
-**Kind**: library | **Priority**: low | **Date**: 2026-05-24 | **Source**:
-[t0120_morph_generator_geometry_audit](../tasks/t0120_morph_generator_geometry_audit/)
-
-Out of scope for t0120 but flagged during it: the procedural DSGC generator could in principle
-produce dendrite sections whose pt3d count is zero (degenerate stubs) under combinations of
-asymmetry knobs not covered by existing t0092 / t0120 tests. Such sections would silently
-corrupt synapse placement and bar arrival timing under the lineage `_section_midpoint_xy` (see
-S-0120-02). Concrete action: extend the NSGA-II eval loop (used by t0122 and future NSGA-II
-tasks) with a one-line check after `generate_fixed_morphology`: `for sec in cell.all_dends:
-assert int(cell.h.n3d(sec=sec)) > 0`. If the assertion fires, mark the individual as
-infeasible (constraint violation) and record the failing 14-d morphology vector so the
-generator can be patched. Pairs naturally with S-0092-05 (generator regression battery) and
-S-0120-02. Recommended task types: write-library, infrastructure-setup.
-
-</details>
-
-<details>
-<summary>📊 <strong>Whole-pool geometry audit: scale t0120's 20-cell sample up to all
-4431 t0117 cells (background batch)</strong> (S-0120-04)</summary>
-
-**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-24 | **Source**:
-[t0120_morph_generator_geometry_audit](../tasks/t0120_morph_generator_geometry_audit/)
-
-t0120 verified geometry consistency on 20 cells stratified across asymmetry-parameter extremes
-plus symmetric controls (0.5% of the t0117 pooled pool); 60 / 60 checks passed with max errors
-four orders below threshold. A whole-pool audit would surface any rare combination of the 14
-morphology knobs that triggers a frame mismatch outside the sampled strata. Concrete action:
-reuse `code/dump_cells.py` and `code/run_checks.py` from t0120; iterate over all 4431 t0117
-cells (skip per-cell pt3d JSON dump to keep disk bounded; retain only the per-cell check
-pass/fail row); write a single coordinate_consistency_checks_full.csv and a short summary
-stating the count of any cell failing any check. Runs in background (~12 CPU hours
-single-process); cost effectively $0. Low priority because the stratified sample already
-covers realistic failure modes; this is defence-in-depth. Recommended task types:
-data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-run seeds 77 and 2247 with HV-plateau auto-stop DISABLED to
-test the censoring-artefact hypothesis</strong> (S-0121-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
-[t0121_5seed_substrate_rate_canonical_report](../tasks/t0121_5seed_substrate_rate_canonical_report/)
-
-The 5-seed canonical estimate's lower tail is dominated by seed 77 (7 LEGIT, gen 21 stop) and
-seed 2247 (0 LEGIT, gen 14 stop, 6 gens below Mohacsi 2024's 20-60 convergence band). Both ran
-under legacy auto-stop-enabled; t0121 flags both as plausible censoring artefacts. The
-project's now-current policy (memory note 'Disable HV-plateau auto-stop') is to DISABLE
-auto-stop. Concrete action: replicate t0112 (seed 77) and t0113 (seed 2247) with auto-stop
-DISABLED, _POOL_RESTART_EVERY=10, gen ceiling 300, budget cap matching t0114 / t0115.
-Decision: if either seed crosses the Hay 0.40% envelope, re-estimate the canonical 5-seed mean
-and close the censoring caveat. If both stay below 0.40% at full budget, the seeds are
-substrate-sparse not censored. Distinct from S-0114-08 (which tests the offline '(W=3,
-T=0.015)' detector, not disable-auto-stop). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Add 2-3 further random-init GA seeds to upgrade the
-substrate-rate estimate from 5-seed to 7-8 seed</strong> (S-0121-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
-[t0121_5seed_substrate_rate_canonical_report](../tasks/t0121_5seed_substrate_rate_canonical_report/)
-
-The 5-seed bootstrap 95% CI (+0.38%, +5.53%) excludes 0% but still brackets both Hay 2011
-(0.40%) and Druckmann 2007 (0.10%) baselines; the normal-approx CI (-0.35%, +5.51%) straddles
-0. With n=5 the resampling pool is small and the CI is sensitive to seed 7755's 8.13% draw and
-seed 2247's 0% draw. Concrete action: draw 2-3 further random GA seeds via
-secrets.randbelow(10000) (avoiding the already-used 44, 77, 2247, 7755, 9354), run each as a
-minimum-change replicate of t0115 (auto-stop disabled, cadence 10, gen ceiling 300, budget cap
-~$3 per seed), then re-run the t0121 pipeline against the expanded 7-8 seed sample. Decision:
-if both CIs clear the Hay envelope upper bound at 7-8 seeds, the substrate-density claim can
-be made at p < 0.05 without the censoring caveat. Distinct from S-0113-01 (closed by t0114 +
-t0115). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Stratified / per-seed-weighted bootstrap CI to replace t0121's
-flat-resample 5-number bootstrap</strong> (S-0121-03)</summary>
-
-**Kind**: technique | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
-[t0121_5seed_substrate_rate_canonical_report](../tasks/t0121_5seed_substrate_rate_canonical_report/)
-
-t0121's bootstrap CI is an unstratified resample of 5 per-seed rates with equal weight. With
-per-seed denominators ranging 1344-5952 (4.4x spread), flat weighting under-weights the
-more-precise seeds. Defensible alternatives: (a) cell-level resample stratified by seed
-(preserve per-seed denominators, resample cells within each seed before averaging), or (b)
-inverse-variance weighting with within-seed SE = sqrt(p*(1-p)/n_total). Concrete action:
-implement both in a small `weighted_bootstrap.py` library, report all three CI variants (flat,
-cell-stratified, inverse-variance) on the existing 5-seed data, and decide which is canonical
-for downstream substrate-rate citations. Decision: if the cell-stratified CI excludes 0% and
-is tighter than the flat CI, adopt as canonical and update t0121 numbers via correction.
-Recommended task types: data-analysis, write-library.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Matched-evaluation-budget substrate-rate comparison against Hay
-2011 and Druckmann 2007 (extrapolation experiment)</strong> (S-0121-04)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
-[t0121_5seed_substrate_rate_canonical_report](../tasks/t0121_5seed_substrate_rate_canonical_report/)
-
-t0121's per-seed budget spans 1344-5952 evaluations vs Hay 2011's 500,000 and Druckmann 2007's
-300,000 - this work runs 50x-372x fewer evals per seed than published references. The
-point-estimate comparison (6.45x above Hay envelope, 25.8x above Druckmann) is therefore made
-at very different sample sizes; whether the per-seed rate converges, decays, or oscillates at
-matched spend is open. Concrete action: take the highest-yield seed (7755), re-run NSGA-II to
-a 50,000-evaluation budget (~10x current spend, ~$15-25), record the per-1000-eval running
-rate trajectory, and test whether the asymptote stays above or drops below Hay's 0.40% as
-budget grows. Decision: if the running rate stays > 1% at 50K evals, the substrate-density
-claim is budget-robust. If it decays below 0.40%, t0121's headline is an early-NSGA-II
-transient. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>📚 <strong>Pre-register the 5-seed canonical substrate-rate numbers as a
-project metric registered via meta/metrics/</strong> (S-0121-05)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
-[t0121_5seed_substrate_rate_canonical_report](../tasks/t0121_5seed_substrate_rate_canonical_report/)
-
-t0121's headline numbers - 5-seed mean LEGIT acceptance 2.58%, normal-approx 95% CI (-0.35%,
-+5.51%), bootstrap 95% CI (+0.38%, +5.53%), n_seeds_above_hay_envelope = 3 - currently live
-only in this task's results files. Per ARF design they are not yet a registered project
-metric, so no aggregator can track them or compare them against future runs. Concrete action:
-register a new metric `legit_substrate_rate_pct` (unit: percent, scope: project-wide) in
-`meta/metrics/`, with the per-seed convention (`n_legit_joint_pass_unique / n_total_evals *
-100`) baked into the metric definition. Backfill metric_results from t0106 / t0112 / t0113 /
-t0114 / t0115 / t0121 using the canonical convention so any future seed can be aggregated
-against the baseline. Distinct from S-0121-03 (which is about CI methodology, not the headline
-metric itself). Recommended task types: infrastructure-setup, data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Replicate t0122 cytoplasm-volume NSGA-II on 2-3 additional GA
-seeds for substrate-rate estimate</strong> (S-0122-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
-[t0122_dsi_cytoplasm_volume_nsga2](../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
-
-t0122 ran one GA seed (1524) and reported 0.17% LEGIT acceptance (10/5760) with 10/10 top-DSI
-cells in the Cuntz [0.2, 0.7] band. Mirroring the S-0112-01 pattern, the headline must be
-replicated on 2-3 more random GA seeds drawn via secrets.randbelow(10000) (non-round) before
-drawing population-statistic conclusions. Action: launch 2-3 independent runs of the t0122
-substrate (same 68-d Bed B + 14-d morph, F=[-dsi, +volume_um3], hard constants POP_SIZE=96,
-N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6.0, tightened guard pd_spikes_sum<3), aggregate
-per-seed LEGIT rates and Cuntz top-10 bf distributions, and compute a 3-seed mean +- SD
-comparable to t0121's 5-seed PD-rate estimate. Outcome: substrate-rate central estimate for
-the cytoplasm-volume axis, and answers whether bf=0.500 clustering is seed-invariant.
-Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-*429 more open suggestions → [open suggestions](suggestions/)*
+*436 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (72)](suggestions/)
+## [High Priority Suggestions (73)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
+the zero-joint-factor verdict</strong> (S-0125-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's zero-joint MI x ATP varimax verdict is derived from a SINGLE NSGA-II seed (441).
+Precedent: t0116 (single seed) found no joint DSI x PD factor; t0117 (4 seeds) recovered one.
+The verdict is known to be seed-sensitive on this substrate. Action: replicate t0123 on 2-3
+additional non-round GA seeds (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6,
+HV-plateau auto-stop DISABLED per memory feedback_disable_hv_plateau_autostop,
+_POOL_RESTART_EVERY=10) and rerun the t0125 cluster + Kaiser-cap varimax pipeline on the
+pooled 4-seed pool. Predicted outcome: either F1's ATP loading crosses 0.30 (joint factor
+reappears) or stays decoupled (objective-pair-specific verdict confirmed). Budget ~$15-25
+Vast.ai EPYC. Recommended task types: experiment-run, data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Patch t0080 with an explicit myelinated axon to fix the
+soma-vs-axon ATP-share inversion vs Attwell 2001</strong> (S-0125-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125 finds 76.7% soma / 5.5% AIS / 17.8% dendrite ATP share -- inverted from Attwell &
+Laughlin 2001's 4% soma / 82% axon / 14% dendrite rodent-cortical breakdown. methodology_notes
+and compare_literature attribute this to t0080 lacking an explicit myelinated axon (only a
+procedural AIS). Action: extend the t0080 cell builder with one or two nodes of Ranvier +
+myelin segments at realistic R_m (~50 kOhm cm^2), C_m (~0.04 uF/cm^2), and Na/K channel
+densities; re-run t0123's MI vs ATP-per-spike NSGA-II at matched compute; re-check
+soma/AIS/axon/dendrite ATP shares against Attwell 2001 Table 4 and Sengupta 2010. Test whether
+the Pareto front shifts and whether compartment-ATP diversity broadens to match the rodent
+picture. Budget ~$10-15 Vast.ai EPYC. Recommended task types: build-model, experiment-run,
+comparative-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Re-run seeds 77 and 2247 with HV-plateau auto-stop DISABLED to
@@ -489,48 +529,90 @@ Recommended task types: data-analysis. Cost: <$0.20.
 
 </details>
 
-<details>
-<summary>📊 <strong>Bootstrap loading stability and oblique-rotation sensitivity for
-the unfiltered-pool F1 joint factor</strong> (S-0117-03)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-22 | **Source**:
-[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
-
-t0117's headline finding is a single factor (F1, 12.6% variance, r_DSI=+0.421, r_PD=+0.352)
-and the truncated-cohort verdict rides on it. Total variance dropped from 65.3% (t0116) to
-34.9% (t0117), so F1 may be less stable. Draw B=200 bootstrap resamples of the 4431-cell pool,
-refit FA(n=10)+varimax, align factors to t0117 by max-cosine, report median +/- IQR of F1's
-r_DSI, r_PD, variance, and top-7 loadings. Also rerun with oblique promax (kappa=4) and
-n_components=11. Distinct from S-0116-05 (strict cohort where no joint factor existed); this
-validates the unfiltered-pool joint factor. Decision: if F1's r_DSI/r_PD 95% CIs straddle 0.3,
-the verdict needs softening; if both stay clear of 0.3, the verdict is robust. Recommended
-task types: data-analysis, comparative-analysis. Cost: <$0.20.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-simulate t0118 stratified sample on t0116 strict cohort (DSI >
-0.7 AND PD > 10) for a good-DSGC trace gallery</strong> (S-0118-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
-[t0118_resimulate_t0117_cluster_samples_ge_gi_vm](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/)
-
-t0118 found the unfiltered pool is heavily DSI ~ 0; only cluster 2 (s7755) supplied DSI >= 0.2
-cells, so the per-cluster trace grids do not show good DSGC behaviour for clusters 0/1/3.
-Apply the identical 10-per-cluster stratified-by-DSI-x-PD sampler and 3-mode trio protocol to
-t0116's strict 869-cell cohort, then re-cluster those cells with t0116's k=3 partition.
-Outcome: 30 cells (10 per t0116 cluster) whose traces actually show the canonical DSGC
-asymmetry mechanism across multiple clusters, not just one. Distinct from t0118 (unfiltered
-pool) and from S-0116-* (which stay in FA/clustering space without re-simulating). Recommended
-task types: experiment-run, data-analysis. Cost: <$0.20.
-
-</details>
-
-*62 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*63 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (46 total)](answers/)
+## [Recent Answers (50 total)](answers/)
+
+<details>
+<summary><strong>Which electrophys parameters most distinguish high-MI from low-MI
+cells in the t0123 spiking cohort, with effect size and direction?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`high-vs-low-mi-electrophys-signature`](../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/high-vs-low-mi-electrophys-signature/)
+
+The top 5 electrophys parameters by |Cliff's delta| separating high-MI (top quartile of
+mi_count_bits, n = 819) from low-MI (bottom quartile, n = 1024) cells are: IH_GBAR (delta =
+-0.786, high-MI cells have ~32x lower mean), CAD_TAUR_MS (delta = -0.717, high-MI cells have
+~3.6x faster calcium-buffer time constant), KDR_GBAR (delta = -0.668, high-MI cells have ~9x
+lower mean), SK_AIS_GBAR (delta = +0.632, high-MI cells have higher AIS-localised SK density),
+and SKAHP_TAU_CA_MULTIPLIER (delta = -0.627, high-MI cells have ~2.4x shorter calcium-driven
+AHP time constant). All five Mann-Whitney U p-values are below 1e-115, so the effects are
+statistically robust against the n ~ 1000 sample sizes.
+
+</details>
+
+<details>
+<summary><strong>Which morphology parameters most distinguish low-ATP from high-ATP
+cells in the t0123 spiking cohort, and does the low-ATP group spend
+relatively more ATP at the AIS than in the dendrites?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`low-vs-high-atp-morphology-signature`](../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/low-vs-high-atp-morphology-signature/)
+
+The top 5 morphology parameters by |Cliff's delta| separating high-ATP (top quartile of
+atp_per_spike, n = 782) from low-ATP (bottom quartile, n = 782) cells are:
+mean_segment_length_um (delta = -0.725, low-ATP cells have ~43% longer segments),
+branch_length_cv (delta = +0.554, low-ATP cells are more uniform in branch length),
+branch_density_gradient_pd (delta = +0.504, low-ATP cells have weaker preferred-direction
+dendrite-density gradient), field_elongation_pd (delta = -0.469, low-ATP cells have more
+elongated dendritic field), and ais_length_um (delta = +0.376, low-ATP cells have shorter AIS
+by ~12%). The ATP-share answer is Yes for the AIS but the dendrite/soma swap dominates:
+low-ATP cells concentrate 93% of per-AP ATP at the soma and 6% at the AIS with only 0.4% in
+dendrites, while high-ATP cells push 62% into dendrites and 35% into soma with only 2.6% at
+the AIS.
+
+</details>
+
+<details>
+<summary><strong>Does the 68-d substrate of the t0123 single-seed MI vs
+ATP-per-spike NSGA-II run admit a joint MI x ATP latent factor (|r| > 0.30
+on both metrics simultaneously), or are MI and ATP driven by decoupled
+factors?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`mi-atp-joint-structure-in-t0123-substrate`](../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/mi-atp-joint-structure-in-t0123-substrate/)
+
+No, the t0123 substrate does not contain a joint MI x ATP factor. Varimax factor analysis on
+the full 5760-cell pool retained 10 factors (16 Kaiser eigenvalues > 1, total variance
+explained 34.3%) and zero factors satisfy |r_MI| > 0.30 AND |r_ATP| > 0.30 simultaneously. The
+two strongest MI-loaded factors carry r_MI = -0.358 / +0.463 but only r_ATP = +0.205 / +0.063,
+and the strongest ATP-loaded factor (F1) ranks 7th on |r_MI|. This contrasts with t0117's
+pooled four-seed DSI x PD substrate which found one joint factor F1 (r_DSI = +0.421, r_PD =
++0.352, 12.6% variance).
+
+</details>
+
+<details>
+<summary><strong>Which combination of electrophys + morphology parameters most
+distinguishes the Pareto-favoured corner (high MI, low ATP) from the
+Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what
+are the per-corner cell counts and means?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`pareto-favoured-corner-signature`](../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/pareto-favoured-corner-signature/)
+
+The top 5 parameters by absolute z-score difference between the high_mi_low_atp and
+low_mi_high_atp corners (each cell z-scored against the full-cohort standardiser, mean per
+corner) are: KDR_GBAR (-1.19), branch_length_cv (-1.08), BK_SOMA_GBAR (-1.06), IH_GBAR
+(-1.06), and RA_OHM_CM (+1.06). The Pareto-favoured corner contains 1221 spiking cells (mean
+MI = 0.984 bits, mean ATP = 5.34e6 molecules / spike, mean DSI = 0.237, mean PD rate = 2.61
+Hz) versus 1220 cells in the dominated corner (mean MI = 0.063 bits, mean ATP = 2.61e7
+molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbalance (1221 +
+1220 = 2441 cells vs 343 + 341 = 684 off-diagonal) is the joint Pareto signature.
+
+</details>
 
 <details>
 <summary><strong>Is the procedural morphology generator's asymmetry transform
@@ -642,81 +724,7 @@ near gen-1.
 
 </details>
 
-<details>
-<summary><strong>Does at least one varimax factor recover a joint DSI-PD axis
-(|r_DSI| > 0.3 AND |r_PD| > 0.3) when the cohort filter is removed and the
-full DSI / PD quality range is in the pool, confirming the truncated-cohort
-artefact first observed at t0110 and t0116?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-22 | **Full answer**:
-[`pooled-all-cells-truncated-cohort-artefact-test`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-truncated-cohort-artefact-test/)
-
-Yes — F1 of the unfiltered-pool varimax solution is a joint DSI-PD factor (r_DSI = +0.421,
-r_PD = +0.352, both p < 1e-100, n = 4431), satisfying |r| > 0.3 on both axes. At the strict
-cohort (t0116) zero of ten factors satisfied this criterion. The reappearance of a joint
-factor once the filter is lifted confirms the truncated-cohort-artefact hypothesis: the strict
-cohort genuinely erases the shared latent that couples DSI and PD; the decoupling is not an
-intrinsic substrate property.
-
-</details>
-
-<details>
-<summary><strong>Does the joint-pass cohort (DSI > 0.7 AND PD > 10 Hz) form a single
-connected manifold in 68-d across four NSGA-II seeds (44, 77, 7755, 9354),
-or do the seeds occupy seed-specific sub-basins?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-21 | **Full answer**:
-[`pooled-survivors-basin-connectivity-dsi07-pd10`](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-basin-connectivity-dsi07-pd10/)
-
-The four-seed pool occupies seed-specific sub-basins, not one connected manifold. KMeans (k=3)
-on the standardised 54-d electrophys subspace produces an almost-perfect seed partition
-(NMI=0.929, chi-square p<1e-300): cluster 0 = 63/67 seed 9354, cluster 1 = 673/678 seed 7755,
-cluster 2 = 121/124 seed 44 (seed 77 contributes 10 scattered cells across all clusters). The
-14-d morphology partition is similarly seed-aligned (NMI=0.889). In the combined 68-d PCA
-scatter the four seed colours occupy visibly disjoint regions of the PC1-PC2 plane, so the
-cross-seed overlap implied by a single connected basin is not observed at the DSI > 0.7 cut.
-
-</details>
-
-<details>
-<summary><strong>How far did NSGA-II travel from its gen-0 random initialisation in
-each seed (44, 77, 7755, 9354), measured in the 68-d standardised parameter
-space and in PC1+PC2 space of the combined 68-d PCA?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-21 | **Full answer**:
-[`pooled-survivors-displacement-from-init-dsi07-pd10`](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-displacement-from-init-dsi07-pd10/)
-
-The four seeds travel comparably in the full 68-d standardised space (mean displacement
-59.7-61.3 standardised units, p95 60.8-61.7) but diverge sharply in the combined PC1+PC2
-plane: seed 44 traveled 15.0 PCA units, seed 7755 traveled 13.3, seed 77 traveled 8.5, and
-seed 9354 traveled only 2.4. The 68-d uniformity is consistent with each seed's gen-0
-distribution covering similar shells of the LHS-sampled parameter space, while the PC1+PC2
-divergence reflects the seed-specific direction of NSGA-II descent — the leading components
-are exactly the cross-seed axis along which the basins separate. All four seeds traveled
-substantially further than their own gen-0 within-seed spread, confirming optimisation moved
-the survivors out of the random-init region.
-
-</details>
-
-<details>
-<summary><strong>Which factors (after varimax rotation on the full 68-d pool) load
-most strongly on dsi_vector_sum and pd_rate_hz, and are they
-morphology-dominated, electrophys-dominated, or mixed?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-05-21 | **Full answer**:
-[`pooled-survivors-latent-drivers-dsi07-pd10`](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/assets/answer/pooled-survivors-latent-drivers-dsi07-pd10/)
-
-F1 is the dominant DSI driver (r=-0.589, p ~ 1e-82) and is mixed — its top loadings include
-both electrophys channels (SK_AIS, SKAHP, NAP) and a morphology parameter
-(primary_branch_pd_concentration). F3 is the dominant PD-rate driver (r=+0.746, p ~ 1e-155)
-and is purely electrophys (NAR, IH, NAV16_SOMA, BK channels, RA). No single factor crosses
-|r|>0.3 on both DSI and PD simultaneously, so the strict-cohort pool does not contain a joint
-DSI-PD axis — the answer to "are the drivers shared?" is no in this strict cohort, but t0110's
-relaxed-cohort analysis shows this is a known truncated-cohort artefact.
-
-</details>
-
-*36 more answers → [answers](answers/)*
+*40 more answers → [answers](answers/)*
 
 ---
 

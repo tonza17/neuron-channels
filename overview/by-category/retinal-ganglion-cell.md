@@ -6,7 +6,7 @@ Output neurons of the retina whose axons form the optic nerve.
 
 **Detail pages**: [Papers (44)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
 (13)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(88)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(92)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (3)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
 (14)](../predictions/by-category/retinal-ganglion-cell.md)
@@ -2638,7 +2638,86 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (78 open, 10 closed)
+## Suggestions (82 open, 10 closed)
+
+<details>
+<summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
+the zero-joint-factor verdict</strong> (S-0125-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's zero-joint MI x ATP varimax verdict is derived from a SINGLE NSGA-II seed (441).
+Precedent: t0116 (single seed) found no joint DSI x PD factor; t0117 (4 seeds) recovered one.
+The verdict is known to be seed-sensitive on this substrate. Action: replicate t0123 on 2-3
+additional non-round GA seeds (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6,
+HV-plateau auto-stop DISABLED per memory feedback_disable_hv_plateau_autostop,
+_POOL_RESTART_EVERY=10) and rerun the t0125 cluster + Kaiser-cap varimax pipeline on the
+pooled 4-seed pool. Predicted outcome: either F1's ATP loading crosses 0.30 (joint factor
+reappears) or stays decoupled (objective-pair-specific verdict confirmed). Budget ~$15-25
+Vast.ai EPYC. Recommended task types: experiment-run, data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>8-direction MI NSGA-II to lift the 2-bit ceiling and re-test the
+joint factor at higher MI resolution</strong> (S-0125-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's top cells saturate at mi_count_bits = 1.459 (73% of log2(4) = 2.0). Three Pareto cells
+converged on identical (MI, DSI, PD-rate) -- a deterministic optimum at the ceiling.
+Compressed MI variance pulls all joint loadings toward zero. Distinct from S-0123-01 (extended
+trial length + PD-rate floor for Strong-Bialek bits/s) and from polar 8-direction
+re-evaluation suggestions on DSI lineages (those re-score existing cells; this is a fresh
+NSGA-II). Action: fork t0123 with N_DIRECTIONS = 8 (ceiling = log2(8) = 3.0 bits), keep other
+constants matched (POP_SIZE = 96, N_EVAL_SEEDS = 3, HV auto-stop OFF, pool restart every 10);
+scale trial duration only if firing rate falls (per memory
+feedback_dsgc_measurement_protocol); rerun cluster + factor analysis. Budget ~$10-15 Vast.ai
+EPYC. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Off-diagonal-corner-constrained NSGA-II to sample the
+undersampled high-MI/high-ATP and low-MI/low-ATP corners</strong>
+(S-0125-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125 finds a 3.6x diagonal-vs-off-diagonal corner imbalance: 1221 high_MI/low_ATP + 1220
+low_MI/high_ATP vs only 343 high_MI/high_ATP + 341 low_MI/low_ATP cells. Off-diagonal corners
+are real -- cell (19, 1816) hits MI=1.459 at ATP=4.97e7 (8.7x more expensive than equivalent
+(30, 2828)) -- but undersampled because NSGA-II exploited the cheap-and-informative half.
+Action: rerun the t0123 NSGA-II twice with constrained objectives (a) maximise BOTH MI and ATP
+(forces high_MI/high_ATP corner); (b) minimise BOTH (forces low_MI/low_ATP corner). Sample 96
+cells per corner; rerun the t0125 cluster + factor pipeline on the union plus the original
+t0123 pool. Tests whether off-diagonal corners share or have private latent drivers. Budget
+~$8-12 Vast.ai EPYC. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of cell (19, 1816) -- high-MI / high-ATP /
+extended-dendrite outlier</strong> (S-0125-06)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+Cell (19, 1816) hits the MI ceiling (1.459 bits) at ATP = 4.97e7 molecules/spike (cohort
+99th-percentile) with 79% of ATP spent in dendrites (cohort mean 17.8%); cell (30, 2828)
+matches the MI at 0.5% dendrite share. This is the cleanest case of 'high MI is consistent
+with both compact-dendrite/low-ATP and extended-dendrite/high-ATP geometries'. Distinct from
+S-0123-03 (cell 2, near-silent high-MI cell): this is the complementary deep-dive on the OTHER
+end of the iso-MI ridge. Action: single-cell resimulate (19, 1816) from its 68-d vector under
+the EPSP_PASSIVE / IPSP_PASSIVE / FULL trio (memory feedback_dsgc_measurement_protocol),
+record somatic + dendritic Vm and per-compartment g_E / g_I / i_Na / i_K. Identify which
+subset drives the across-direction count signal vs the dendritic ATP overhead. Local CPU < 2
+h. Recommended task types: experiment-run, data-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Rerun MI-ATP NSGA-II with richer stimulus + PD-rate floor to

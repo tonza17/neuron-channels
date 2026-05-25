@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-93 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **75 open** (14
-high, 56 medium, 5 low), **18 closed**.
+95 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **77 open** (14
+high, 58 medium, 5 low), **18 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1165,6 +1165,33 @@ Cost: $0 (local CPU). Recommended task types: data-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Partial-correlation analysis of MI vs electrophys (control
+morphology) and ATP vs morphology (control electrophys)</strong>
+(S-0125-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0125's PCA colourings make the separation visible: high-MI cells cluster in the electrophys
+PCA but are absent from the morphology PCA; log10(ATP) shows a gradient in the morphology PCA,
+flatter in electrophys. NMI table corroborates (electrophys-vs-MI 0.178, electrophys-vs-ATP
+0.186, morphology-vs-MI 0.121, morphology-vs-ATP 0.176). These are pairwise correlations and
+could share a common cause. Action: on the existing spiking-cohort parquet, compute Spearman
+partial r for (a) MI vs each of 54 electrophys params partialling out 14 morphology params;
+(b) ATP vs each of 14 morphology params partialling out 54 electrophys params; (c) MI vs ATP
+partialling out morphology; (d) MI vs ATP partialling out electrophys. Report top-10 with
+bootstrap CI; compare to t0125 group_comparison.csv. Single CPU-only follow-up. Recommended
+task types: data-analysis, answer-question.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Per-compartment distal-spike detector on t0024 length sweep to
 verify Schachter2010 local-spike-failure at 1.5x and 2.0x</strong>
 (S-0034-04)</summary>
@@ -1696,6 +1723,32 @@ biologically-plausible NMDA -- a major finding that would motivate either (a) re
 joint-pass thresholds, (b) revisiting the substrate's NMDA implementation, or (c) revisiting
 Sivyer 2013's measurement scope. Expected cost: ~$1.50 USD on Vast.ai EPYC 7B13 (5 gens x 96
 cells x 30 s = 4 h x $0.35/hr). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of cell (19, 1816) -- high-MI / high-ATP /
+extended-dendrite outlier</strong> (S-0125-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | — |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Cell (19, 1816) hits the MI ceiling (1.459 bits) at ATP = 4.97e7 molecules/spike (cohort
+99th-percentile) with 79% of ATP spent in dendrites (cohort mean 17.8%); cell (30, 2828)
+matches the MI at 0.5% dendrite share. This is the cleanest case of 'high MI is consistent
+with both compact-dendrite/low-ATP and extended-dendrite/high-ATP geometries'. Distinct from
+S-0123-03 (cell 2, near-silent high-MI cell): this is the complementary deep-dive on the OTHER
+end of the iso-MI ridge. Action: single-cell resimulate (19, 1816) from its 68-d vector under
+the EPSP_PASSIVE / IPSP_PASSIVE / FULL trio (memory feedback_dsgc_measurement_protocol),
+record somatic + dendritic Vm and per-compartment g_E / g_I / i_Na / i_K. Identify which
+subset drives the across-direction count signal vs the dendritic ATP overhead. Local CPU < 2
+h. Recommended task types: experiment-run, data-analysis, answer-question.
 
 </details>
 

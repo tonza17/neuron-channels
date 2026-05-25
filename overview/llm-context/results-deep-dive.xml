@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-24T21:18:32Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-05-25T01:16:20Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>120</section_count>
-    <char_count>2307095</char_count>
-    <byte_count>2316818</byte_count>
-    <estimated_tokens>576773</estimated_tokens>
+    <section_count>121</section_count>
+    <char_count>2342949</char_count>
+    <byte_count>2352710</byte_count>
+    <estimated_tokens>585737</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -228,9 +228,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0121_5seed_substrate_rate_canonical_report</id>
         <id>t0122_dsi_cytoplasm_volume_nsga2</id>
         <id>t0123_bedb_mi_atp_per_spike_nsga2</id>
+        <id>t0125_t0123_cluster_factor_mi_atp</id>
       </source_ids>
       <content>
-Completed tasks: 116
+Completed tasks: 117
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -927,6 +928,12 @@ ID: t0123_bedb_mi_atp_per_spike_nsga2
 Completed: 2026-05-24
 Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective MI vs ATP-per-spike (Strong 1998 + Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 4-direction protocol, $6 cap.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0123_bedb_mi_atp_per_spike_nsga2&quot; status: &quot;completed&quot; date_completed: &quot;2026-05-24&quot; --- Results Summary: NSGA-II MI vs ATP-per-Spike (Bed B + 14-d Morph) Summary 68-d NSGA-II (54-d electrophys + 14-d morphology) on Bed B at GA seed 441, pop=96, N_EVAL_SEEDS=3, 4 antipodal directions, ran to gen 60 ceiling cleanly. The two-tier MI estimator surfaced a real discrepancy: count-MI hit **1.459 bits** at the high-MI corner while Strong-Bialek direct-method **bits/s = 0.0 for all 10 top Pareto cells**, because the optimiser exploited count-MI at the silence-guard boundary (~3 PD spikes/trial) where spike-time information is degenerate. Metrics * **Hypervolume gain**...
+
+## Cluster + factor analysis of t0123 cells: high vs low MI and ATP
+ID: t0125_t0123_cluster_factor_mi_atp
+Completed: 2026-05-25
+Short description: PCA + KMeans on electrophys (54-d) and morphology (14-d) + varimax FA on 68-d for t0123 cells; quartile-group comparisons of high vs low MI and high vs low ATP-per-spike.
+Result summary: Results Summary: t0125 Cluster + Factor Analysis of t0123 MI vs ATP Summary Applied the canonical PCA + KMeans + varimax factor-analysis pipeline (inherited from t0108 / t0116 / t0117) to the **5,760** t0123 cells with a dual full / spiking-cohort design. The headline finding is **negative for the joint-driver hypothesis**: **zero** varimax factors satisfy `|r_MI| &gt; 0.30 AND |r_ATP| &gt; 0.30` simultaneously, in direct contrast to t0117 which found one joint DSI x PD factor. Despite the decoupled latent structure, MI and ATP are positively correlated at the cell level (**3.6x** diagonal-vs-off-diagonal corner-count imbalance), and the high-MI / low-ATP &quot;Pareto-favoured&quot; corner has **1,221** of...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -936,9 +943,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0123_bedb_mi_atp
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0124_bedb_dsi_atp_per_spike_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -959,6 +967,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)
+ID: t0124_bedb_dsi_atp_per_spike_nsga2
+Status: in_progress
+Effective date: 2026-05-24
+Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs ATP-per-spike (Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 2-direction protocol, $6 cap.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0097_multi_obj_optim, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0120_morph_generator_geometry_audit, t0122_dsi_cytoplasm_volume_nsga2, t0123_bedb_mi_atp_per_spike_nsga2
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1011,9 +1026,13 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>dsgc-bits-per-atp-vs-niven-2007</id>
         <id>morphology-generator-geometry-consistency</id>
         <id>substrate-rate-5seed-canonical</id>
+        <id>high-vs-low-mi-electrophys-signature</id>
+        <id>low-vs-high-atp-morphology-signature</id>
+        <id>mi-atp-joint-structure-in-t0123-substrate</id>
+        <id>pareto-favoured-corner-signature</id>
       </source_ids>
       <content>
-Answers: 46
+Answers: 50
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1377,6 +1396,38 @@ Confidence: medium
 Categories: direction-selectivity, compartmental-modeling
 
 The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, a normal-approx 95% CI of (-0.35%, 5.51%), and a bootstrap 95% CI of (0.38%, 5.53%); the point estimate is roughly 6.5x Hay 2011&#x27;s 0.40% envelope and 25.8x Druckmann 2007&#x27;s 0.10% baseline, and 3 of 5 seeds individually exceed the Hay envelope. Both 95% CIs bracket zero and both literature baselines, so this batch cannot statistically reject the literature rates despite the elevated point estimate.
+
+## Which electrophys parameters most distinguish high-MI from low-MI cells in the t0123 spiking cohort, with effect size and direction?
+ID: high-vs-low-mi-electrophys-signature
+Created by: t0125_t0123_cluster_factor_mi_atp on 2026-05-25
+Confidence: medium
+Categories: compartmental-modeling, voltage-gated-channels
+
+The top 5 electrophys parameters by |Cliff&#x27;s delta| separating high-MI (top quartile of mi_count_bits, n = 819) from low-MI (bottom quartile, n = 1024) cells are: IH_GBAR (delta = -0.786, high-MI cells have ~32x lower mean), CAD_TAUR_MS (delta = -0.717, high-MI cells have ~3.6x faster calcium-buffer time constant), KDR_GBAR (delta = -0.668, high-MI cells have ~9x lower mean), SK_AIS_GBAR (delta = +0.632, high-MI cells have higher AIS-localised SK density), and SKAHP_TAU_CA_MULTIPLIER (delta = -0.627, high-MI cells have ~2.4x shorter calcium-driven AHP time constant). All five Mann-Whitney U p-values are below 1e-115, so the effects are statistically robust against the n ~ 1000 sample sizes.
+
+## Which morphology parameters most distinguish low-ATP from high-ATP cells in the t0123 spiking cohort, and does the low-ATP group spend relatively more ATP at the AIS than in the dendrites?
+ID: low-vs-high-atp-morphology-signature
+Created by: t0125_t0123_cluster_factor_mi_atp on 2026-05-25
+Confidence: medium
+Categories: compartmental-modeling, dendritic-computation, cable-theory
+
+The top 5 morphology parameters by |Cliff&#x27;s delta| separating high-ATP (top quartile of atp_per_spike, n = 782) from low-ATP (bottom quartile, n = 782) cells are: mean_segment_length_um (delta = -0.725, low-ATP cells have ~43% longer segments), branch_length_cv (delta = +0.554, low-ATP cells are more uniform in branch length), branch_density_gradient_pd (delta = +0.504, low-ATP cells have weaker preferred-direction dendrite-density gradient), field_elongation_pd (delta = -0.469, low-ATP cells have more elongated dendritic field), and ais_length_um (delta = +0.376, low-ATP cells have shorter AIS by ~12%). The ATP-share answer is Yes for the AIS but the dendrite/soma swap dominates: low-ATP...
+
+## Does the 68-d substrate of the t0123 single-seed MI vs ATP-per-spike NSGA-II run admit a joint MI x ATP latent factor (|r| &gt; 0.30 on both metrics simultaneously), or are MI and ATP driven by decoupled factors?
+ID: mi-atp-joint-structure-in-t0123-substrate
+Created by: t0125_t0123_cluster_factor_mi_atp on 2026-05-25
+Confidence: medium
+Categories: compartmental-modeling, voltage-gated-channels
+
+No, the t0123 substrate does not contain a joint MI x ATP factor. Varimax factor analysis on the full 5760-cell pool retained 10 factors (16 Kaiser eigenvalues &gt; 1, total variance explained 34.3%) and zero factors satisfy |r_MI| &gt; 0.30 AND |r_ATP| &gt; 0.30 simultaneously. The two strongest MI-loaded factors carry r_MI = -0.358 / +0.463 but only r_ATP = +0.205 / +0.063, and the strongest ATP-loaded factor (F1) ranks 7th on |r_MI|. This contrasts with t0117&#x27;s pooled four-seed DSI x PD substrate which found one joint factor F1 (r_DSI = +0.421, r_PD = +0.352, 12.6% variance).
+
+## Which combination of electrophys + morphology parameters most distinguishes the Pareto-favoured corner (high MI, low ATP) from the Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what are the per-corner cell counts and means?
+ID: pareto-favoured-corner-signature
+Created by: t0125_t0123_cluster_factor_mi_atp on 2026-05-25
+Confidence: medium
+Categories: compartmental-modeling, voltage-gated-channels, dendritic-computation
+
+The top 5 parameters by absolute z-score difference between the high_mi_low_atp and low_mi_high_atp corners (each cell z-scored against the full-cohort standardiser, mean per corner) are: KDR_GBAR (-1.19), branch_length_cv (-1.08), BK_SOMA_GBAR (-1.06), IH_GBAR (-1.06), and RA_OHM_CM (+1.06). The Pareto-favoured corner contains 1221 spiking cells (mean MI = 0.984 bits, mean ATP = 5.34e6 molecules / spike, mean DSI = 0.237, mean PD rate = 2.61 Hz) versus 1220 cells in the dominated corner (mean MI = 0.063 bits, mean ATP = 2.61e7 molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbalance (1221 + 1220 = 2441 cells vs 343 + 341 = 684 off-diagonal) is the joint Pareto...
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-results-detailed" source_kind="file">
@@ -38920,6 +38971,593 @@ Quote from `task_description.md`:
 | REQ-23 | `results/metrics.json` 4-variant format | Done | 4 variants: `best_legit`, `overall_max_mi`, `overall_min_atp`, `top10_strong_bialek`. `verify_task_metrics`: PASSED. |
 | REQ-24 | Predictions asset `nsga2-mi-atp-per-spike-bedb-morph` | Done | 5760 cells; `verify_predictions_asset`: PASSED, 0 errors. |
 | REQ-25 | Answer asset `dsgc-bits-per-atp-vs-niven-2007` | Done | Verdict: &quot;Insufficient evidence&quot; (log-log fit undefined at bits/s = 0). `verify_answer_asset`: PASSED, 0 errors. |
+      </content>
+    </section>
+    <section id="t0125_t0123_cluster_factor_mi_atp-results-detailed" source_kind="file">
+      <title>t0125_t0123_cluster_factor_mi_atp — Cluster + factor analysis of t0123 cells: high vs low MI and ATP — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0125_t0123_cluster_factor_mi_atp</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0125_t0123_cluster_factor_mi_atp/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0125_t0123_cluster_factor_mi_atp&quot;
+---
+### Results Detailed: t0125 Cluster + Factor Analysis of t0123 MI vs ATP
+
+#### Summary
+
+Adapted the canonical PCA + KMeans + varimax FA pipeline (t0108 / t0116 / t0117 template) to the
+t0123 single-seed NSGA-II run that optimised spike-count MI vs ATP-per-spike on the 68-d Bed B +
+14-d morphology substrate. Loaded **5,760** dedup-unique cells (full cohort) and the **3,125**-cell
+spiking subset (`pd_rate_hz &gt; 1.0 AND not silence_failed`), produced 12 unique charts + 4 morphology
+galleries (60 dendrite trees total), 13 result tables, and **4** answer assets. Headline finding:
+**MI and ATP are decoupled at the varimax-factor level** (no factor crosses |r| &gt; 0.30 on both)
+despite a strong positive correlation at the cell level (3.6x diagonal-vs-off-diagonal corner-count
+imbalance). Soma dominates the per-AP ATP budget (76.7% mean share) and low-ATP cells concentrate
+even further at the soma (93% mean), inverting the canonical Attwell-Laughlin cortical breakdown.
+
+#### Methodology
+
+* **Machine**: local Windows 11 workstation, CPU-only. No remote machines.
+* **Runtime**: ~80 minutes wall-clock for the full pipeline (load -&gt; standardise -&gt; PCA -&gt; KMeans
+  silhouette sweep -&gt; FA + Kaiser cap -&gt; group comparison + Cliff&#x27;s delta -&gt; corner heatmap -&gt; ATP
+  share -&gt; cluster purity -&gt; morphology gallery via NEURON pt3d).
+* **Timestamps**: implementation started 2026-05-24T23:55:46Z, completed 2026-05-25T01:15:00Z.
+* **Methods**:
+  * Standardiser: per-column z-score on the full cohort (mean / std; zero-std columns clipped to
+    1.0).
+  * PCA: `sklearn.decomposition.PCA` on combined 68-d, electrophys-only 54-d, and morphology-only
+    14-d.
+  * KMeans: `sklearn.cluster.KMeans(random_state=42, n_init=10)` swept over `k = (3, 4, 5, 6, 7)`,
+    headline `k` picked by maximum mean silhouette.
+  * Factor analysis: `sklearn.decomposition.FactorAnalysis(n_components=68, random_state=42)` -&gt;
+    Kaiser eigenvalue cut (&gt;1) capped to 10 -&gt; refit -&gt; in-house iterative-SVD varimax (`gamma=1.0`,
+    `tol=1e-6`, `max_iter=500`).
+  * Effect sizes: Mann-Whitney U two-sided (`scipy.stats.mannwhitneyu`) + in-house Cliff&#x27;s delta
+    (`code/effect_sizes.py`, 6 unit tests).
+  * Cohort filter: `pd_rate_hz &gt; 1.0 AND silence_failed == False`. Group thresholds and corner
+    counts persisted to `results/data/group_thresholds.json`.
+  * Morphology rendering: NEURON pt3d (`h.x3d / y3d / diam3d`) full dendrite trees per memory
+    `feedback_top50_morphologies_full_dendrites`.
+  * Cross-task imports: t0117 code modules copied verbatim into `code/` with namespace updates (per
+    CLAUDE.md rule 3); t0090 and t0092 procedural morphology generators imported as libraries (the
+    exception to the cross-task rule).
+
+#### Pool counts and group thresholds
+
+| Cohort | Cells |
+| --- | --- |
+| Raw t0123 records | 5,760 |
+| Dedup-unique (6-decimal vector hash) | 5,760 |
+| Spiking (`pd_rate_hz &gt; 1.0 AND not silence_failed`) | 3,125 |
+| Gen-0 (generation == 1) | 96 |
+
+Quartile thresholds (spiking cohort): MI Q1 = 0.000 bits, Q2 = 0.565, Q3 = 0.964. ATP-per-spike Q1 =
+5.30e6, Q2 = 6.55e6, Q3 = 1.24e7 molecules.
+
+Corner counts (spiking cohort, median splits): **high_MI/low_ATP = 1221**, **high_MI/high_ATP =
+343**, **low_MI/low_ATP = 341**, **low_MI/high_ATP = 1220**. The diagonal sum (2441) exceeds the
+off-diagonal sum (684) by **3.57x**, indicating MI and ATP are positively correlated at the cell
+level (high-MI cells tend to be low-ATP cells and vice versa).
+
+#### Visualizations
+
+##### PCA, three-panel views
+
+The three panels of each PCA figure are combined 68-d, electrophys-only 54-d, and morphology-only
+14-d. PC1+PC2 percent variance is annotated on each axis.
+
+![PCA coloured by MI](images/pca_combined_color_mi.png)
+
+`pca_combined_color_mi.png` shows that high-MI cells (yellow) form a tight cluster in the
+electrophys PC1 &lt; 0 region and are largely absent from the morphology PCA, indicating **electrophys
+drives MI more than morphology does**.
+
+![PCA coloured by ATP (log10)](images/pca_combined_color_atp.png)
+
+`pca_combined_color_atp.png` shows the inverse trend: log10(ATP) gradient is visible in the
+morphology PCA but flatter in the electrophys PCA, indicating **morphology drives ATP more than
+electrophys does**. This complementarity is the structural explanation for the zero-joint-factor
+result.
+
+![PCA coloured by MI x ATP corner](images/pca_combined_color_corner.png)
+
+`pca_combined_color_corner.png` confirms the high_MI/low_ATP (Pareto-favoured) and low_MI/high_ATP
+(dominated) corners occupy the densest, near-opposite tails of PC1, while the off-diagonal corners
+are sparse and overlap the cohort centre.
+
+![PCA with gen-0 overlay](images/pca_with_gen0_overlay.png)
+
+The 96 gen-0 random-init individuals overlay the optimised pool&#x27;s PC1+PC2 space, showing NSGA-II
+moved cells substantially: overall mean PC1+PC2 displacement = 7.13 (95th-percentile 10.07), and the
+high_MI/low_ATP corner saw the largest displacement (mean 9.50, 95th 10.32) — consistent with
+NSGA-II actively seeking the Pareto front.
+
+##### KMeans silhouette sweeps
+
+![Electrophys silhouette](images/electrophys_silhouette.png)
+
+Electrophys silhouette peaks at **k=4** (0.083). The cluster representative table is
+`results/data/electrophys_clusters.csv`.
+
+![Morphology silhouette](images/morphology_silhouette.png)
+
+Morphology silhouette peaks at **k=5** (0.158), notably higher than the electrophys score,
+suggesting the 14-d morphology subspace has cleaner cluster structure than the 54-d electrophys
+subspace.
+
+##### Morphology cluster galleries (full NEURON pt3d dendrite trees)
+
+Each gallery contains 5x3 = 15 representatives ranked by `mi_count_bits / atp_per_spike_molecules`
+(bits-per-ATP) within the cluster, restricted to the spiking cohort.
+
+![Electrophys cluster 0](images/electrophys_cluster_0_morphs.png)
+![Electrophys cluster 1](images/electrophys_cluster_1_morphs.png)
+![Electrophys cluster 2](images/electrophys_cluster_2_morphs.png)
+![Electrophys cluster 3](images/electrophys_cluster_3_morphs.png)
+
+##### Varimax factor analysis
+
+![Factor loadings heatmap](images/factor_loadings_heatmap.png)
+
+The heatmap of the 10 varimax-rotated factors x 68 parameters shows broad loading on electrophys
+parameters (PC1-side) and a narrower, distinct loading on morphology (`mean_segment_length_um`,
+`branch_length_cv`, etc.) but no single factor jointly loads on MI and ATP. Full numeric
+correlations and the classification column are in `results/data/factor_correlations.csv`:
+
+| Factor | r_MI | r_ATP | r_DSI | r_PD | classification |
+| --- | --- | --- | --- | --- | --- |
+| F1 | -0.358 | +0.205 | -0.347 | +0.030 | mi_only |
+| F2 | +0.463 | +0.063 | +0.413 | +0.201 | mi_only |
+| F3 | +0.206 | -0.115 | +0.230 | -0.159 | none |
+| F4 | +0.111 | +0.032 | +0.147 | +0.065 | none |
+| F5 | +0.105 | +0.061 | +0.080 | +0.038 | none |
+| F6 | +0.006 | +0.047 | +0.003 | +0.109 | none |
+| F7 | -0.009 | +0.086 | -0.003 | +0.129 | none |
+| F8 | +0.204 | +0.019 | +0.180 | +0.013 | none |
+| F9 | +0.022 | -0.059 | +0.024 | -0.067 | none |
+| F10 | +0.011 | +0.020 | +0.009 | -0.016 | none |
+
+**No factor satisfies `joint_mi_atp_flag = True`** (|r| &gt; 0.30 on both MI and ATP).
+
+##### Cliff&#x27;s delta ranked bar charts
+
+![Cliff&#x27;s delta: high vs low MI](images/cliffs_delta_high_vs_low_mi.png)
+
+The top-20 |Cliff&#x27;s delta| parameters for high-MI vs low-MI cells are dominated by intrinsic
+electrophys parameters — IH_GBAR (-0.79), CAD_TAUR_MS (-0.72), KDR_GBAR (-0.67), SK_AIS_GBAR
+(+0.63), SKAHP_TAU_CA_MULTIPLIER (-0.63) — confirming the PCA finding that electrophys drives MI.
+
+![Cliff&#x27;s delta: high vs low ATP](images/cliffs_delta_high_vs_low_atp.png)
+
+The top-20 for high-ATP vs low-ATP are a mix of electrophys (BK_TERMINAL_GBAR +0.69, NAV16_MID_GBAR
++0.64) and morphology (mean_segment_length_um -0.73, branch_length_cv +0.55). The strongest single
+ATP discriminator is morphological — **mean_segment_length_um**, with short dendritic segments
+correlating with low ATP per spike.
+
+##### 2x2 MI x ATP corner heatmap
+
+![Corner heatmap](images/corner_param_heatmap.png)
+
+The 68 x 4 z-scored corner means visualise which parameters separate the four MI x ATP quadrants.
+The Pareto-favoured corner (high_MI/low_ATP) is characterised by strong positive NAV16_AIS_GBAR
+(+0.57), SK_AIS_GBAR, and KV3 elevations and negative IH_GBAR / CAD_TAUR_MS; the dominated corner
+(low_MI/high_ATP) is approximately the mirror.
+
+##### ATP compartment shares
+
+![ATP share ternary](images/atp_share_ternary.png)
+![ATP share violins](images/atp_share_violins.png)
+
+The ternary plot shows the four MI x ATP corners stack vertically along the soma &lt;-&gt; dendrite edge
+of the simplex with the AIS share staying low (mean 5.5%). The violin panel quantifies the contrast:
+low-ATP cells concentrate **93%** of per-AP ATP at the soma vs **62%** in the dendrites for high-ATP
+cells. This contradicts the canonical Attwell-Laughlin breakdown (axon 82%, dendrites 14%, soma 4%)
+— the t0125 model concentrates AP energy in the soma, not the axon.
+
+#### Examples
+
+The following 11 cells illustrate the joint MI / ATP / DSI / PD distribution. Each block shows the
+exact record from `data/t0125_spiking_cells.parquet` (the loader output the rest of the pipeline
+reads). Cells are identified by `(generation, cell_index)`.
+
+##### Best 1: cell (51, 4810) -- top bits-per-ATP, Pareto front
+
+```json
+{
+  &quot;generation&quot;: 51,
+  &quot;cell_index&quot;: 4810,
+  &quot;mi_count_bits&quot;: 1.4589893596666386,
+  &quot;atp_per_spike_molecules&quot;: 4756737.981196062,
+  &quot;dsi_vector_sum&quot;: 0.3162277660168379,
+  &quot;pd_rate_hz&quot;: 2.857142857142857,
+  &quot;atp_soma&quot;: 4494461.495327889,
+  &quot;atp_ais&quot;: 232253.3973627749,
+  &quot;atp_dendrites_total&quot;: 30023.088505398187
+}
+```
+
+Reaches the spike-count MI ceiling (`log2(4) - bias` ~ 1.46 bits) at the lowest ATP-per-spike in the
+cohort. 94.5% of ATP at the soma, 0.6% in the dendrites -- the prototype Pareto cell.
+
+##### Best 2: cell (59, 5643)
+
+```json
+{
+  &quot;generation&quot;: 59,
+  &quot;cell_index&quot;: 5643,
+  &quot;mi_count_bits&quot;: 1.4589893596666386,
+  &quot;atp_per_spike_molecules&quot;: 4780283.875595512,
+  &quot;dsi_vector_sum&quot;: 0.3162277660168379,
+  &quot;pd_rate_hz&quot;: 2.857142857142857,
+  &quot;atp_soma&quot;: 4517750.730902616,
+  &quot;atp_ais&quot;: 230749.17593879285,
+  &quot;atp_dendrites_total&quot;: 31783.9687541024
+}
+```
+
+Same MI / DSI / PD-rate signature as cell (51, 4810); NSGA-II converged on the same operating point
+in three independent cells, suggesting a near-deterministic optimum given the substrate.
+
+##### Best 3: cell (57, 5424)
+
+```json
+{
+  &quot;generation&quot;: 57,
+  &quot;cell_index&quot;: 5424,
+  &quot;mi_count_bits&quot;: 1.4589893596666386,
+  &quot;atp_per_spike_molecules&quot;: 4813833.841124552,
+  &quot;dsi_vector_sum&quot;: 0.3162277660168379,
+  &quot;pd_rate_hz&quot;: 2.857142857142857,
+  &quot;atp_soma&quot;: 4581585.598085737,
+  &quot;atp_ais&quot;: 207065.65964902387,
+  &quot;atp_dendrites_total&quot;: 25182.583389790798
+}
+```
+
+Third Pareto-front cell. Together with cells (51, 4810) and (59, 5643), these are the actual t0123
+Pareto cells in (MI, ATP) space.
+
+##### Worst 1: cell (1, 4) -- zero MI despite firing
+
+```json
+{
+  &quot;generation&quot;: 1,
+  &quot;cell_index&quot;: 4,
+  &quot;mi_count_bits&quot;: 0.0,
+  &quot;atp_per_spike_molecules&quot;: 18244303.179105602,
+  &quot;dsi_vector_sum&quot;: 5.897955049882633e-17,
+  &quot;pd_rate_hz&quot;: 4.285714285714286,
+  &quot;atp_soma&quot;: 9281779.31464655,
+  &quot;atp_ais&quot;: 948380.9187748223,
+  &quot;atp_dendrites_total&quot;: 8014142.945684231
+}
+```
+
+Gen-0 random-init cell fires at 4.3 Hz but encodes zero directional information at the 4-direction
+count-MI estimator. 44% of ATP in dendrites -- typical low-MI / high-ATP &quot;dominated&quot; corner.
+
+##### Worst 2: cell (1, 8) -- high firing, zero MI
+
+```json
+{
+  &quot;generation&quot;: 1,
+  &quot;cell_index&quot;: 8,
+  &quot;mi_count_bits&quot;: 0.0,
+  &quot;atp_per_spike_molecules&quot;: 15075282.542278035,
+  &quot;dsi_vector_sum&quot;: 5.649027278170325e-17,
+  &quot;pd_rate_hz&quot;: 19.28571428571429,
+  &quot;atp_soma&quot;: 10395430.79856601,
+  &quot;atp_ais&quot;: 929313.698361163,
+  &quot;atp_dendrites_total&quot;: 3750538.04535086
+}
+```
+
+Fires at 19.3 Hz but still has zero MI: the cell discharges equally across all four directions. This
+is what an &quot;unselective&quot; DSGC looks like in the t0123 substrate.
+
+##### Worst 3: cell (1, 11) -- worst ATP-per-spike
+
+```json
+{
+  &quot;generation&quot;: 1,
+  &quot;cell_index&quot;: 11,
+  &quot;mi_count_bits&quot;: 0.0,
+  &quot;atp_per_spike_molecules&quot;: 48710631.904302634,
+  &quot;dsi_vector_sum&quot;: 5.52000058772841e-17,
+  &quot;pd_rate_hz&quot;: 20.714285714285715,
+  &quot;atp_soma&quot;: 8624127.857600173,
+  &quot;atp_ais&quot;: 2659394.6996856392,
+  &quot;atp_dendrites_total&quot;: 37427109.347016826
+}
+```
+
+Most expensive cell in this sample at 4.87e7 ATP/spike. 77% of ATP is in the dendrites; zero MI
+despite the highest firing rate (20.7 Hz). Uniformly bad on both objectives.
+
+##### Contrastive 1: cell (30, 2828) -- high MI / low ATP
+
+```json
+{
+  &quot;generation&quot;: 30,
+  &quot;cell_index&quot;: 2828,
+  &quot;mi_count_bits&quot;: 1.4589893596666386,
+  &quot;atp_per_spike_molecules&quot;: 5686299.128393824,
+  &quot;dsi_vector_sum&quot;: 0.3162277660168379,
+  &quot;pd_rate_hz&quot;: 2.857142857142857,
+  &quot;atp_soma&quot;: 5095245.274360853,
+  &quot;atp_ais&quot;: 564573.1746877071,
+  &quot;atp_dendrites_total&quot;: 26480.679345264147
+}
+```
+
+MI at the ceiling (1.459 bits), low ATP (5.7e6). Pair with cell (19, 1816) below.
+
+##### Contrastive 2: cell (19, 1816) -- high MI / HIGH ATP
+
+```json
+{
+  &quot;generation&quot;: 19,
+  &quot;cell_index&quot;: 1816,
+  &quot;mi_count_bits&quot;: 1.4589893596666386,
+  &quot;atp_per_spike_molecules&quot;: 49704407.68098243,
+  &quot;dsi_vector_sum&quot;: 0.35630482034348054,
+  &quot;pd_rate_hz&quot;: 3.333333333333334,
+  &quot;atp_soma&quot;: 9787499.656632485,
+  &quot;atp_ais&quot;: 610310.2295128409,
+  &quot;atp_dendrites_total&quot;: 39306597.79483711
+}
+```
+
+Same MI = 1.459 bits as cell (30, 2828) but **8.7x more expensive per spike** (4.97e7 vs 5.69e6).
+79% of ATP is in the dendrites here vs 0.5% in (30, 2828). Direct proof that the (MI, ATP) Pareto
+front is two-dimensional: achieving MI ceiling does not require the low-ATP geometry; high MI is
+consistent with both compact-dendrite (low ATP) and extended-dendrite (high ATP) configurations.
+
+##### Boundary 1: cell (27, 2555) -- near median on both axes
+
+```json
+{
+  &quot;generation&quot;: 27,
+  &quot;cell_index&quot;: 2555,
+  &quot;mi_count_bits&quot;: 0.5699579180264102,
+  &quot;atp_per_spike_molecules&quot;: 6492094.765434377,
+  &quot;dsi_vector_sum&quot;: 0.21209125149788163,
+  &quot;pd_rate_hz&quot;: 1.4285714285714286,
+  &quot;atp_soma&quot;: 5931323.1162902685,
+  &quot;atp_ais&quot;: 542239.6817579035,
+  &quot;atp_dendrites_total&quot;: 18531.96738620567
+}
+```
+
+Median MI (0.57), median ATP (~6.5e6). Lands in the high_MI/low_ATP corner because both axes are
+exactly at their median (the median split assigns ties to the &quot;high&quot; side).
+
+##### Boundary 2: cell (47, 4455) -- median MI/ATP but very different DSI
+
+```json
+{
+  &quot;generation&quot;: 47,
+  &quot;cell_index&quot;: 4455,
+  &quot;mi_count_bits&quot;: 0.5699579180264102,
+  &quot;atp_per_spike_molecules&quot;: 6477721.327219318,
+  &quot;dsi_vector_sum&quot;: 0.015342771384953142,
+  &quot;pd_rate_hz&quot;: 14.285714285714286,
+  &quot;atp_soma&quot;: 6282714.06300913,
+  &quot;atp_ais&quot;: 189946.1811030425,
+  &quot;atp_dendrites_total&quot;: 5061.0831071452585
+}
+```
+
+Same MI = 0.57 as cell (27, 2555) but DSI is essentially zero (0.015) and PD-rate is 10x higher
+(14.3 vs 1.4 Hz). Shows that the (MI, ATP) pair does not fully determine DSI: two cells can match on
+both objectives and still have very different selectivity.
+
+##### Boundary 3: cell (22, 2023) -- near-median triple
+
+```json
+{
+  &quot;generation&quot;: 22,
+  &quot;cell_index&quot;: 2023,
+  &quot;mi_count_bits&quot;: 0.5699579180264102,
+  &quot;atp_per_spike_molecules&quot;: 6703904.499197614,
+  &quot;dsi_vector_sum&quot;: 0.18976585660336784,
+  &quot;pd_rate_hz&quot;: 1.4285714285714286,
+  &quot;atp_soma&quot;: 6208226.253892355,
+  &quot;atp_ais&quot;: 480506.91302141146,
+  &quot;atp_dendrites_total&quot;: 15171.3322838489
+}
+```
+
+Median MI (0.57), median ATP (6.7e6), moderate DSI (0.19), PD-rate 1.4 Hz. The triple of (median MI,
+median ATP, modest DSI) is the central cluster of the spiking cohort.
+
+These 11 cells motivate S-0123-02 (three-objective NSGA-II with DSI added) and S-0123-03 (Vm-trace
+deep-dive of a near-silent high-MI cell). Cell (27, 2555) vs (47, 4455) in particular shows that
+**MI and ATP alone do not capture selectivity** -- the project&#x27;s first-question DSGC mission still
+needs DSI as an explicit objective.
+
+#### Analysis
+
+* The **decoupled MI x ATP varimax structure** is the cleanest finding. In t0117, F1 jointly loaded
+  on DSI (+0.42) and PD (+0.35). Here, the largest joint MI loading (F1, -0.358) is paired with a
+  much smaller ATP loading (+0.205). The factor structure says: there exists a latent that primarily
+  controls MI (with weak ATP coupling) and a different latent set that controls ATP. This is
+  consistent with the PCA colourings — MI structure visible in the electrophys PCA, ATP structure
+  visible in the morphology PCA.
+* Despite decoupled latent structure, **MI and ATP are positively correlated at the cell level**
+  (3.6x corner imbalance). The interpretation: NSGA-II preferentially explored the
+  cheap-and-informative half of the substrate, leaving the expensive-and-uninformative half
+  populated by gen-0 random init. The off-diagonal corners (343 high_MI/high_ATP + 341
+  low_MI/low_ATP) are real but undersampled by the optimiser.
+* The **electrophys signature of high-MI cells** (IH_GBAR -0.79, CAD_TAUR_MS -0.72, KDR_GBAR -0.67)
+  is biologically interpretable: low Ih makes the cell more excitable, low KDR slows AP
+  repolarisation, and low CAD_TAUR keeps intracellular Ca2+ transients sharp — all of which
+  sharpen spike timing and increase the per-spike directional discriminability. The positive
+  SK_AIS_GBAR (+0.63) is a counter-effect (SK_AIS would suppress firing) and needs deeper Vm-trace
+  analysis.
+* The **morphology signature of low-ATP cells** (mean_segment_length_um -0.73) makes geometric
+  sense: shorter segments accumulate less Na+ inward current per AP. The positive branch_length_cv
+  (+0.55) and branch_density_gradient_pd (+0.50) suggest that low-ATP cells have less uniform, more
+  PD-asymmetric dendritic trees.
+* The **ATP-share inversion** (76.7% soma vs Attwell-Laughlin&#x27;s 4% soma / 82% axon) is the largest
+  unexpected finding. It almost certainly reflects the t0080 model&#x27;s lack of axonal myelination
+  geometry and the procedural-AIS construction, both of which would normally shift ATP cost into the
+  axon. Documented in `methodology_notes.md` and flagged for the compare-literature step.
+
+#### Cluster-group purity
+
+| Partition | Reference | NMI | chi-square p | n |
+| --- | --- | --- | --- | --- |
+| electrophys_cluster | MI_quartile | 0.178 | 1.0e-236 | 3125 |
+| electrophys_cluster | ATP_quartile | 0.186 | 1.0e-235 | 3125 |
+| morphology_cluster | MI_quartile | 0.121 | 7.2e-162 | 3125 |
+| morphology_cluster | ATP_quartile | 0.176 | 1.3e-258 | 3125 |
+
+All four contingencies are highly significant (chi-square p &lt; 1e-160) but NMI is low (&lt;0.20),
+meaning **clusters carry MI / ATP information but are not pure MI / ATP partitions**. The
+electrophys clusters carry slightly more ATP info (0.186) than MI info (0.178). The morphology
+clusters carry more ATP info (0.176) than MI info (0.121), consistent with the PCA-level
+interpretation that morphology drives ATP more than MI.
+
+#### Verification
+
+* `verify_task_dependencies.py` — PASSED (0 errors, 0 warnings) at check-deps.
+* `verify_research_papers.py` — PASSED.
+* `verify_research_code.py` — PASSED.
+* `verify_plan.py` — PASSED.
+* `verify_task_file.py`, `verify_task_metrics.py`, `verify_task_results.py`,
+  `verify_task_folder.py`, `verify_logs.py` — to be run in `reporting` step.
+* Inline answer-asset checker — PASSED for all 4 answer assets (zero errors / warnings).
+  `verify_answer_asset.py` does not exist in this checkout.
+* `ruff check --fix .` — clean.
+* `ruff format .` — clean (7 files reformatted at first pass).
+* `mypy -p tasks.t0125_t0123_cluster_factor_mi_atp.code` — Success.
+* `pytest tasks/t0125_..._mi_atp/code/test_effect_sizes.py` — 6 passed.
+
+#### Limitations
+
+* **Single NSGA-II seed** (seed 441). The cluster structure could be seed-specific in the same way
+  t0116 / t0117 found seed-specific basins. The closest comparison would be replicating t0123 with a
+  second GA seed and re-running this analysis.
+* **MI ceiling at 2 bits**. The 4-direction protocol caps `mi_count_bits` at `log2(4) = 2.0`. The
+  cohort already saturates at 1.459 bits (73% of the ceiling), so finer MI discrimination among the
+  very-best cells is lost. A direct-method 8-direction MI rerun on the top-10 cells (already done by
+  t0123) shows zero bits/s because the direct-method estimator needs more trials.
+* **ATP recipe sensitivity**. The t0123 ATP-per-spike denominator can become unstable for
+  near-silent cells; we excluded them with `pd_rate_hz &gt; 1.0`. The Attwell-Laughlin comparison (and
+  the soma-vs-axon inversion) hinges on the t0080 model&#x27;s lack of an explicit myelinated axon. A
+  future correction should either patch the model or normalise to within-class fractions only.
+* **3.6x corner imbalance** means the off-diagonal corners (343 and 341 cells) have ~1/3.6 the
+  statistical power of the diagonal corners for the per-corner mean and per-corner morphology
+  gallery. Effect sizes from the rare corners are noisier.
+* **No direct biological anchor**. The DSGC bits-per-ATP curve is not measured in published
+  literature (only the fly photoreceptor data from Niven 2007 is the closest proxy). The
+  compare-literature step will quantify the gap.
+
+#### Files Created
+
+##### Code
+
+* `code/__init__.py`, `code/paths.py`, `code/constants.py`
+* `code/load_t0123_cells.py`, `code/load_t0123_gen0.py`, `code/fit_standardiser.py`
+* `code/group_thresholds.py`, `code/cluster_helpers.py`
+* `code/pca_with_overlay.py`, `code/cluster_electrophys.py`, `code/cluster_morphology.py`
+* `code/factor_analysis.py`
+* `code/effect_sizes.py` (with `test_effect_sizes.py`, 6 tests), `code/group_comparison.py`,
+  `code/corner_heatmap.py`, `code/atp_compartment_shares.py`, `code/cluster_group_purity.py`
+* `code/morphology_rendering.py`, `code/render_electrophys_cluster_morphs.py`
+
+##### Data (`data/`)
+
+* `t0125_cells.parquet` (full cohort, 5760 rows, 2.5 MB)
+* `t0125_spiking_cells.parquet` (3125 rows, 1.4 MB)
+* `t0125_gen0.parquet` (96 rows, 110 KB)
+* `t0125_standardiser.npz`, `pca_models.pkl`
+
+##### Results tables (`results/data/`)
+
+* `pool_counts.csv`, `group_thresholds.json`, `gen0_displacement.csv`
+* `electrophys_clusters.csv`, `morphology_clusters.csv`
+* `morphology_cluster_0_representatives.csv` ... `morphology_cluster_4_representatives.csv`
+* `factor_correlations.csv`, `factor_loadings.csv`
+* `group_comparison.csv` (68 parameters x 12 stats columns)
+* `corner_param_means.csv` (68 parameters x 4 corners, z-scored)
+* `atp_compartment_shares.csv` (per-cell soma / AIS / dendrite shares)
+* `cluster_group_purity.csv` (4 NMI rows)
+* `methodology_notes.md` (deltas from t0117 template, headline findings preview, reading order)
+
+##### Charts (`results/images/`)
+
+* `pca_combined_color_mi.png`, `pca_combined_color_atp.png`, `pca_combined_color_corner.png`
+* `pca_with_gen0_overlay.png`
+* `electrophys_silhouette.png`, `morphology_silhouette.png`
+* `electrophys_cluster_0_morphs.png` ... `electrophys_cluster_3_morphs.png`
+* `factor_loadings_heatmap.png`
+* `cliffs_delta_high_vs_low_mi.png`, `cliffs_delta_high_vs_low_atp.png`
+* `corner_param_heatmap.png`
+* `atp_share_ternary.png`, `atp_share_violins.png`
+
+##### Answer assets (`assets/answer/`)
+
+* `mi-atp-joint-structure-in-t0123-substrate/` (details.json + short_answer.md + full_answer.md)
+* `high-vs-low-mi-electrophys-signature/`
+* `low-vs-high-atp-morphology-signature/`
+* `pareto-favoured-corner-signature/`
+
+##### Result documents
+
+* `results_summary.md`, `results_detailed.md`, `metrics.json` (`{}`), `costs.json`
+  (`{&quot;total_cost_usd&quot;: 0, &quot;breakdown&quot;: {}}`), `remote_machines_used.json` (`[]`)
+
+#### Task Requirement Coverage
+
+Operative task text from `task.json`:
+
+&gt; Name: &quot;Cluster + factor analysis of t0123 cells: high vs low MI and ATP&quot;. Short description: &quot;PCA
+&gt; \+ KMeans on electrophys (54-d) and morphology (14-d) + varimax FA on 68-d for t0123 cells;
+&gt; quartile-group comparisons of high vs low MI and high vs low ATP-per-spike.&quot;
+
+The long description in `task_description.md` enumerates the data source (t0123 predictions asset,
+single seed 441), the dual full / spiking cohort definition, the MI x ATP quartile group
+definitions, 10 analyses to run (PCA / KMeans / FA / Cliff&#x27;s delta / corner heatmap / ATP shares /
+cluster purity / morphology galleries), and four answer-asset questions (MI-ATP joint structure,
+high-vs-low MI electrophys signature, low-vs-high ATP morphology signature, Pareto-favoured corner
+signature).
+
+The plan refines these into **REQ-1 through REQ-22**. Status:
+
+| REQ | Status | Result | Evidence |
+| --- | --- | --- | --- |
+| REQ-1 | Done | 5760 raw t0123 cells loaded from `predictions.jsonl.gz` | `results/data/pool_counts.csv` |
+| REQ-2 | Done | Dedup at 6 decimals retained all 5760 cells | `pool_counts.csv` (`dedup_unique_count == 5760`) |
+| REQ-3 | Done | Full + spiking cohorts persisted | `data/t0125_cells.parquet` (5760) and `data/t0125_spiking_cells.parquet` (3125) |
+| REQ-4 | Done | Quartile + median thresholds + corner counts persisted | `results/data/group_thresholds.json` |
+| REQ-5 | Done | Standardiser fitted ONCE on the full cohort | `data/t0125_standardiser.npz` |
+| REQ-6 | Done | Three-panel PCA coloured by MI | `results/images/pca_combined_color_mi.png` |
+| REQ-7 | Done | Three-panel PCA coloured by ATP (log10) | `results/images/pca_combined_color_atp.png` |
+| REQ-8 | Done | Three-panel PCA coloured by MI x ATP corner | `results/images/pca_combined_color_corner.png` |
+| REQ-9 | Done | Gen-0 overlay + per-corner displacement table | `results/images/pca_with_gen0_overlay.png`, `results/data/gen0_displacement.csv` |
+| REQ-10 | Done | Electrophys KMeans, headline k=4 | `results/images/electrophys_silhouette.png`, `results/data/electrophys_clusters.csv` |
+| REQ-11 | Done | 4 morphology grids (5x3=15 cells each), full dendrite trees, ranked by bits-per-ATP | `results/images/electrophys_cluster_{0..3}_morphs.png` |
+| REQ-12 | Done | Morphology KMeans, k=5, silhouette + 5 representative tables | `results/images/morphology_silhouette.png`, `results/data/morphology_clusters.csv`, `morphology_cluster_{0..4}_representatives.csv` |
+| REQ-13 | Done | FA with 10 varimax factors, joint_mi_atp_flag, classification, all 4 outcome r columns. Joint factor count = 0 | `results/data/factor_correlations.csv`, `factor_loadings.csv`, `results/images/factor_loadings_heatmap.png` |
+| REQ-14 | Done | 68-row per-parameter group comparison (mean / std / MWU p / Cliff&#x27;s delta) for MI and ATP | `results/data/group_comparison.csv` |
+| REQ-15 | Done | Top-20 Cliff&#x27;s delta bar charts for MI and ATP | `results/images/cliffs_delta_high_vs_low_{mi,atp}.png` |
+| REQ-16 | Done | 68 x 4 z-scored corner means table + heatmap | `results/data/corner_param_means.csv`, `results/images/corner_param_heatmap.png` |
+| REQ-17 | Done | Per-cell ATP compartment shares + ternary + violin panel | `results/data/atp_compartment_shares.csv`, `results/images/atp_share_{ternary,violins}.png` |
+| REQ-18 | Done | 4 (partition, reference) NMI + chi-square rows | `results/data/cluster_group_purity.csv` |
+| REQ-19 | Done | Methodology notes with t0117 -&gt; t0125 deltas, headline preview, reading order | `results/data/methodology_notes.md` |
+| REQ-20 | Done | 4 answer assets, all pass spec checks | `assets/answer/{mi-atp-joint-structure-in-t0123-substrate, high-vs-low-mi-electrophys-signature, low-vs-high-atp-morphology-signature, pareto-favoured-corner-signature}/` |
+| REQ-21 | Done | Top-5 parameter tables present in answer documents 2, 3, 4 | full_answer.md in answers 2, 3, 4 |
+| REQ-22 | Done | Per-corner counts + per-corner means | `results/data/corner_param_means.csv` + `group_thresholds.json` |
+
+**All 22 plan requirements are Done. No requirements are Partial or Not done.**
       </content>
     </section>
   </sections>

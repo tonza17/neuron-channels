@@ -1,6 +1,6 @@
-# Answers: `cable-theory` (3)
+# Answers: `cable-theory` (4)
 
-3 answer(s).
+4 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -103,5 +103,40 @@ beyond the retina.
 | **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0010_hunt_missed_dsgc_models`](../../../overview/tasks/task_pages/t0010_hunt_missed_dsgc_models.md), [`t0013_resolve_morphology_provenance`](../../../overview/tasks/task_pages/t0013_resolve_morphology_provenance.md) |
 | **URL sources** | [url 1](https://scholar.google.com/), [url 2](https://pubmed.ncbi.nlm.nih.gov/), [url 3](https://www.biorxiv.org/) |
 | **Created by** | [`t0027_literature_survey_morphology_ds_modeling`](../../../overview/tasks/task_pages/t0027_literature_survey_morphology_ds_modeling.md) |
+
+</details>
+
+<details>
+<summary><strong>Which morphology parameters most distinguish low-ATP from high-ATP
+cells in the t0123 spiking cohort, and does the low-ATP group spend
+relatively more ATP at the AIS than in the dendrites?</strong></summary>
+
+**Confidence**: medium
+
+The top 5 morphology parameters by |Cliff's delta| separating high-ATP (top quartile of
+atp_per_spike, n = 782) from low-ATP (bottom quartile, n = 782) cells are:
+mean_segment_length_um (delta = -0.725, low-ATP cells have ~43% longer segments),
+branch_length_cv (delta = +0.554, low-ATP cells are more uniform in branch length),
+branch_density_gradient_pd (delta = +0.504, low-ATP cells have weaker preferred-direction
+dendrite-density gradient), field_elongation_pd (delta = -0.469, low-ATP cells have more
+elongated dendritic field), and ais_length_um (delta = +0.376, low-ATP cells have shorter AIS
+by ~12%). The ATP-share answer is Yes for the AIS but the dendrite/soma swap dominates:
+low-ATP cells concentrate 93% of per-AP ATP at the soma and 6% at the AIS with only 0.4% in
+dendrites, while high-ATP cells push 62% into dendrites and 35% into soma with only 2.6% at
+the AIS.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/low-vs-high-atp-morphology-signature/full_answer.md) |
+| **ID** | [`low-vs-high-atp-morphology-signature`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/low-vs-high-atp-morphology-signature/) |
+| **Question** | Which morphology parameters most distinguish low-ATP from high-ATP cells in the t0123 spiking cohort, and does the low-ATP group spend relatively more ATP at the AIS than in the dendrites? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Paper sources** | `10.1038_382363a0`, `10.1152_jn.1997.78.4.1948`, `10.1371_journal.pcbi.1000877`, `10.1097_00004647-200110000-00001`, `10.1371_journal.pcbi.1000840` |
+| **Task sources** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md), [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md), [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **URL sources** | — |
+| **Created by** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
 
 </details>

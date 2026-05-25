@@ -1,9 +1,10 @@
 # Project Tasks
 
-124 tasks. ⏹ **2 not_started**, ⚠️ **1 intervention_blocked**, ✅ **116 completed**, ❌ **5
-cancelled**.
+126 tasks. ⏳ **1 in_progress**, ⏹ **2 not_started**, ⚠️ **1 intervention_blocked**, ✅ **117
+completed**, ❌ **5 cancelled**.
 
-**Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [⚠️
+**Browse by view**: By status: [⏳ `in_progress`](by-status/in_progress.md), [⏹
+`not_started`](by-status/not_started.md), [⚠️
 `intervention_blocked`](by-status/intervention_blocked.md), [✅
 `completed`](by-status/completed.md), [❌ `cancelled`](by-status/cancelled.md); [By date
 added](by-date-added/README.md)
@@ -18,11 +19,22 @@ graph LR
     t0012_tuning_curve_scoring_loss_library["✅ t0012_tuning_curve_scoring_loss_library"]
     t0022_modify_dsgc_channel_testbed["✅ t0022_modify_dsgc_channel_testbed"]
     t0023_port_hanson_2019_dsgc["⚠️ t0023_port_hanson_2019_dsgc"]
+    t0024_port_de_rosenroll_2026_dsgc["✅ t0024_port_de_rosenroll_2026_dsgc"]
     t0031_fetch_paywalled_morphology_papers["⏹ t0031_fetch_paywalled_morphology_papers"]
     t0067_t0065_soma_channel_addition_sweep["✅ t0067_t0065_soma_channel_addition_sweep"]
     t0069_t0067_ais_localised_channel_sweep["✅ t0069_t0067_ais_localised_channel_sweep"]
     t0074_channel_tuning_width_bed_a["✅ t0074_channel_tuning_width_bed_a"]
     t0075_bio_realistic_ais_param_sweep["⏹ t0075_bio_realistic_ais_param_sweep"]
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2["✅ t0080_bedb_mobo_v3_dendritic_spike_nsga2"]
+    t0090_morphology_generator_diversity_test["✅ t0090_morphology_generator_diversity_test"]
+    t0092_diagnose_morphology_generator_silence["✅ t0092_diagnose_morphology_generator_silence"]
+    t0097_multi_obj_optim["✅ t0097_multi_obj_optim"]
+    t0106_long_pdnd_nsga2_300gen["✅ t0106_long_pdnd_nsga2_300gen"]
+    t0115_seed9354_no_autostop["✅ t0115_seed9354_no_autostop"]
+    t0120_morph_generator_geometry_audit["✅ t0120_morph_generator_geometry_audit"]
+    t0122_dsi_cytoplasm_volume_nsga2["✅ t0122_dsi_cytoplasm_volume_nsga2"]
+    t0123_bedb_mi_atp_per_spike_nsga2["✅ t0123_bedb_mi_atp_per_spike_nsga2"]
+    t0124_bedb_dsi_atp_per_spike_nsga2["⏳ t0124_bedb_dsi_atp_per_spike_nsga2"]
 
     t0012_tuning_curve_scoring_loss_library --> t0008_port_modeldb_189347
     t0008_port_modeldb_189347 --> t0022_modify_dsgc_channel_testbed
@@ -30,6 +42,9 @@ graph LR
     t0008_port_modeldb_189347 --> t0023_port_hanson_2019_dsgc
     t0012_tuning_curve_scoring_loss_library --> t0023_port_hanson_2019_dsgc
     t0022_modify_dsgc_channel_testbed --> t0023_port_hanson_2019_dsgc
+    t0008_port_modeldb_189347 --> t0024_port_de_rosenroll_2026_dsgc
+    t0012_tuning_curve_scoring_loss_library --> t0024_port_de_rosenroll_2026_dsgc
+    t0022_modify_dsgc_channel_testbed --> t0024_port_de_rosenroll_2026_dsgc
     t0008_port_modeldb_189347 --> t0067_t0065_soma_channel_addition_sweep
     t0008_port_modeldb_189347 --> t0069_t0067_ais_localised_channel_sweep
     t0067_t0065_soma_channel_addition_sweep --> t0069_t0067_ais_localised_channel_sweep
@@ -40,9 +55,321 @@ graph LR
     t0067_t0065_soma_channel_addition_sweep --> t0075_bio_realistic_ais_param_sweep
     t0069_t0067_ais_localised_channel_sweep --> t0075_bio_realistic_ais_param_sweep
     t0074_channel_tuning_width_bed_a --> t0075_bio_realistic_ais_param_sweep
+    t0024_port_de_rosenroll_2026_dsgc --> t0080_bedb_mobo_v3_dendritic_spike_nsga2
+    t0069_t0067_ais_localised_channel_sweep --> t0080_bedb_mobo_v3_dendritic_spike_nsga2
+    t0024_port_de_rosenroll_2026_dsgc --> t0090_morphology_generator_diversity_test
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0090_morphology_generator_diversity_test
+    t0024_port_de_rosenroll_2026_dsgc --> t0092_diagnose_morphology_generator_silence
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0092_diagnose_morphology_generator_silence
+    t0090_morphology_generator_diversity_test --> t0092_diagnose_morphology_generator_silence
+    t0024_port_de_rosenroll_2026_dsgc --> t0106_long_pdnd_nsga2_300gen
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0106_long_pdnd_nsga2_300gen
+    t0106_long_pdnd_nsga2_300gen --> t0115_seed9354_no_autostop
+    t0090_morphology_generator_diversity_test --> t0120_morph_generator_geometry_audit
+    t0092_diagnose_morphology_generator_silence --> t0120_morph_generator_geometry_audit
+    t0115_seed9354_no_autostop --> t0120_morph_generator_geometry_audit
+    t0024_port_de_rosenroll_2026_dsgc --> t0122_dsi_cytoplasm_volume_nsga2
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0122_dsi_cytoplasm_volume_nsga2
+    t0090_morphology_generator_diversity_test --> t0122_dsi_cytoplasm_volume_nsga2
+    t0092_diagnose_morphology_generator_silence --> t0122_dsi_cytoplasm_volume_nsga2
+    t0106_long_pdnd_nsga2_300gen --> t0122_dsi_cytoplasm_volume_nsga2
+    t0115_seed9354_no_autostop --> t0122_dsi_cytoplasm_volume_nsga2
+    t0120_morph_generator_geometry_audit --> t0122_dsi_cytoplasm_volume_nsga2
+    t0024_port_de_rosenroll_2026_dsgc --> t0123_bedb_mi_atp_per_spike_nsga2
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0123_bedb_mi_atp_per_spike_nsga2
+    t0090_morphology_generator_diversity_test --> t0123_bedb_mi_atp_per_spike_nsga2
+    t0092_diagnose_morphology_generator_silence --> t0123_bedb_mi_atp_per_spike_nsga2
+    t0097_multi_obj_optim --> t0123_bedb_mi_atp_per_spike_nsga2
+    t0106_long_pdnd_nsga2_300gen --> t0123_bedb_mi_atp_per_spike_nsga2
+    t0115_seed9354_no_autostop --> t0123_bedb_mi_atp_per_spike_nsga2
+    t0120_morph_generator_geometry_audit --> t0123_bedb_mi_atp_per_spike_nsga2
+    t0122_dsi_cytoplasm_volume_nsga2 --> t0123_bedb_mi_atp_per_spike_nsga2
+    t0024_port_de_rosenroll_2026_dsgc --> t0124_bedb_dsi_atp_per_spike_nsga2
+    t0080_bedb_mobo_v3_dendritic_spike_nsga2 --> t0124_bedb_dsi_atp_per_spike_nsga2
+    t0090_morphology_generator_diversity_test --> t0124_bedb_dsi_atp_per_spike_nsga2
+    t0092_diagnose_morphology_generator_silence --> t0124_bedb_dsi_atp_per_spike_nsga2
+    t0097_multi_obj_optim --> t0124_bedb_dsi_atp_per_spike_nsga2
+    t0106_long_pdnd_nsga2_300gen --> t0124_bedb_dsi_atp_per_spike_nsga2
+    t0115_seed9354_no_autostop --> t0124_bedb_dsi_atp_per_spike_nsga2
+    t0120_morph_generator_geometry_audit --> t0124_bedb_dsi_atp_per_spike_nsga2
+    t0122_dsi_cytoplasm_volume_nsga2 --> t0124_bedb_dsi_atp_per_spike_nsga2
+    t0123_bedb_mi_atp_per_spike_nsga2 --> t0124_bedb_dsi_atp_per_spike_nsga2
 ```
 
 ---
+
+## ⏳ In Progress
+
+<details>
+<summary>⏳ 0124 — <strong>NSGA-II maximising DSI and minimising ATP-per-spike (Bed
+B + 14-d morph)</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0124_bedb_dsi_atp_per_spike_nsga2` |
+| **Status** | in_progress |
+| **Effective date** | 2026-05-24 |
+| **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0090_morphology_generator_diversity_test`](../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0092_diagnose_morphology_generator_silence`](../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0097_multi_obj_optim`](../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0106_long_pdnd_nsga2_300gen`](../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0120_morph_generator_geometry_audit`](../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md), [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **Expected assets** | 1 predictions, 1 answer |
+| **Source suggestion** | `S-0097-02` |
+| **Task types** | [`experiment-run`](../../meta/task_types/experiment-run/), [`data-analysis`](../../meta/task_types/data-analysis/), [`answer-question`](../../meta/task_types/answer-question/) |
+| **Start time** | 2026-05-24T22:55:41Z |
+| **Task page** | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Task folder** | [`t0124_bedb_dsi_atp_per_spike_nsga2/`](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/) |
+
+# NSGA-II Maximising DSI and Minimising ATP-per-Spike
+
+## Source Suggestion
+
+S-0097-02: "Bed B NSGA-II maximising DSI and minimising ATP-per-spike."
+
+## Motivation
+
+The t0097 multi-objective optimisation catalogue
+(`assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation`) ranked
+DSI vs ATP-per-spike as the **highest-priority biologically-anchored function-vs-energy pair**
+for the project. It directly serves the project's first-question DSGC selectivity mission
+while trading function against a falsifiable metabolic cost objective:
+
+* **Function objective**: direction selectivity index (DSI = (R_PD - R_ND) / (R_PD + R_ND)) --
+  the project's headline first-question metric.
+* **Energy objective**: ATP molecules consumed per spike, derived from Sengupta et al. 2010's
+  recipe `(1/3) * sum_compartments int(I_Na^inward) dt / e`. Anchored to the canonical
+  Attwell-Laughlin 2001 energy budget (~47% of cortical signalling ATP is per-spike Na+
+  pumping).
+* **Empirical anchors**: Carter and Bean 2009 measured ~4 mM-mol ATP per AP per cm at the AIS
+  of cerebellar Purkinje cells (the closest fast-spiking comparator). Sengupta et al. 2010's
+  cross- cell-type calibration places cortical pyramidal cells at
+  ~25%-above-theoretical-minimum Na/K overlap, while fast-spiking cells (Purkinje, cortical
+  interneurons) sit at ~100%-above-minimum. Remme et al. 2018's MSO function-vs-energy MOBO
+  (Pareto-coding -- ITD discrimination vs Na+ ATP) is the direct methodological template.
+
+Recurring biological-plausibility concerns about pure-DSI-maximisation runs (the optimiser
+hits NMDA / Nav densities 85-122 sigma above Sivyer 2013 priors -- see t0080 / t0115
+follow-ups) motivate adding a hard biological cost objective. Unlike t0122 (DSI + cytoplasm
+volume), the cost here is a **dynamic per-spike metabolic cost** rather than a geometric cost.
+The two costs are complementary: t0122 tests Cajal / Cuntz wiring-cost predictions; t0124
+tests Attwell-Laughlin / Carter-Bean per-spike Na/K-overlap predictions on the same substrate.
+
+The DSGC's DSI-vs-ATP-per-spike Pareto front is **unmeasured in the published literature** --
+this experiment generates a falsifiable prediction for it and locates the DSGC relative to the
+Carter-Bean Purkinje benchmark and the Attwell-Laughlin signalling-budget anchor.
+
+## Gating Dependency
+
+This task may start immediately. The t0122 / t0123 lineage validated the substrate (68-d Bed B
++ 14-d morphology, $6 cap regime), and the t0120 geometry-audit verdict "rendering-only / no
+re-runs needed" remains in force. t0123 supplies the seg.ina recording infrastructure and the
+Carter-Bean smoke-gate -- both inherited verbatim. No new gating prerequisites.
+
+## Scope
+
+One NSGA-II run, single GA seed, 2 objectives, on the 68-d Bed B + 14-d morphology substrate
+validated by the t0106-t0115 lineage and exercised by t0122 / t0123.
+
+## Hard Constraints (must be reproduced in plan and implementation)
+
+These constraints are non-negotiable. The planning subagent must surface each one in
+`plan/plan.md` `## Verification Criteria` with an explicit check, and the implementation
+subagent must reproduce them in `code/constants.py`:
+
+* **`_POOL_RESTART_EVERY = 10`** -- fresh random-init pool injection cadence. The project's
+  standing 10-gen rule (established by t0112, carried through every subsequent NSGA-II task
+  t0113 / t0114 / t0115 / t0122 / t0123). NEVER use any other cadence.
+* **`HV_PLATEAU_AUTO_STOP = False`** -- disabled per project policy (see memory:
+  `feedback_disable_hv_plateau_autostop.md`). Rely on operator-stop + budget cap + gen
+  ceiling.
+* **`POP_SIZE = 96`**, **`N_EVAL_SEEDS = 3`** -- match the t0114 / t0115 / t0122 / t0123
+  protocol exactly.
+* **`N_GEN_MAX = 60`** -- gen ceiling per the auto-stop-disabled convention.
+* **`N_DIRECTIONS = 2`** -- antipodal pair at 0deg (PD) / 180deg (ND), t0122-style. DSI only
+  needs one antipodal pair; ATP-per-spike is direction-independent (per-spike normalisation).
+  Reducing from t0123's 4 directions halves per-evaluation cost while losing nothing for the
+  DSI + ATP objective pair. The MI count-entropy ceiling that motivated t0123's 4-direction
+  protocol does not apply here -- MI is only tracked as a diagnostic.
+* **`COST_CAP_USD = 6.0`** -- matches t0122 / t0123. Vast.ai account balance to be re-verified
+  immediately before launch; if balance < $7, reduce cap to balance - $1 (teardown buffer).
+  Watchdog stops the run if exceeded. Expected actual: $1-3 based on t0122 lineage at
+  2-direction protocol.
+
+## DSI Recipe (silence-guarded ratio)
+
+Per the t0122 convention, DSI is the **silence-guarded direction selectivity ratio**:
+
+```text
+R_PD = mean spike count over N_EVAL_SEEDS trials at 0deg
+R_ND = mean spike count over N_EVAL_SEEDS trials at 180deg
+DSI = (R_PD - R_ND) / (R_PD + R_ND)        if R_PD >= 3 spikes
+DSI = -1.0                                  if R_PD < 3 spikes (silence guard)
+```
+
+* The silence guard is non-negotiable: cells with R_PD < 3 PD spikes are assigned DSI = -1 so
+  the NSGA-II non-dominated sort rejects them. This prevents the optimiser from gaming the
+  ratio with near-zero spike counts (e.g., 0/0 -> NaN, or 1/0 -> DSI = 1 with one chance
+  spike).
+* PD is fixed at 0deg and ND at 180deg per the t0024 / Bed B convention. No PD-rotation
+  search.
+* Headline DSI variant: `best_legit` (top DSI among cells passing the silence guard).
+* Tracked DSI variants in `metrics.json`: `best_legit`, `overall_max`, `dsi_eq_one_count`.
+
+## ATP-per-Spike Recipe (Sengupta 2010, inherited from t0123)
+
+Per the t0097 catalogue's `metabolic_energy_atp_per_spike` entry, derived from Sengupta et al.
+2010 and implemented by t0123:
+
+```text
+N_ATP_per_spike = (1/3) * (1/e) * sum_compartments int_{t_AP_start}^{t_AP_end} I_Na^inward(t) dt
+```
+
+Implementation requirements (mirror t0123 exactly):
+
+1. Record `seg.ina` per segment at simulation `dt` for **soma + AIS proximal + AIS distal +
+   all dendritic segments**. Re-use t0123's recorder.py extension.
+2. Run only `FULL` mode for ATP estimation (HH on, real spikes). EPSP / IPSP passive modes
+   produce no meaningful Na+ inward current and are skipped.
+3. Detect AP windows from the somatic Vm threshold crossing at -20 mV with a 2 ms refractory
+   after detection. AP window = +/-2 ms around peak.
+4. Convert `seg.ina` (mA/cm^2) per segment to total current via per-segment surface area
+   (`seg.area() * 1e-2` for cm^2), then integrate over the AP window in seconds.
+5. Charge per AP per compartment: `Q^(c, AP) = int I_Na^inward dt * seg.area_cm2`. The
+   "inward" restriction means `min(I_Na, 0)` integrated (Na+ current is negative inward in
+   NEURON convention; take `-min(I_Na, 0)` magnitude).
+6. ATP per AP per compartment: `N_ATP^(c, AP) = (Q^(c, AP) / e) / 3` with `e = 1.602e-19 C`.
+7. Sum across compartments to get per-AP per-cell ATP cost.
+8. Headline objective: total ATP across all FULL-mode trials / total spike count across all
+   FULL-mode trials. Units: ATP molecules per spike. **Lower is better.**
+9. If total spike count == 0, set `atp_per_spike = +inf` (sentinel) so the cell is dominated.
+   This sentinel must be reconciled with the DSI silence guard -- a cell with R_PD < 3 PD
+   spikes will already have DSI = -1, so the ATP sentinel is only triggered for pathologically
+   silent cells that somehow passed earlier filters.
+
+### Smoke-gate (inherited from t0123, must re-run after any seg.ina recorder change)
+
+* Before launching NSGA-II, run the ATP recipe on the canonical Bed B cell and verify that the
+  per-AP ATP cost at the AIS proximal + AIS distal compartments matches the Carter and Bean
+  2009 ~4 mM-mol/cm benchmark **within 30%**.
+* If the smoke-gate fails, the run is aborted and the recipe is debugged (most common cause: a
+  surface-area unit-conversion bug; second most common: missing compartments in the seg.ina
+  record list).
+* Follow up on S-0123-04 ("Verify Carter-Bean 2009 ATP/AP/cm benchmark and replace plan-quoted
+  2.41e21 ATP/cm typo") in this task's smoke-gate: re-derive the Carter-Bean benchmark from
+  first principles and document the canonical value in `plan/plan.md`.
+
+## Approach
+
+1. **Copy the t0123 NSGA-II substrate** end-to-end: 68-d parameter vector (54-d electrophys +
+   14-d morphology), pop=96, N_EVAL_SEEDS=3, DSI silence-guard >= 3 PD spikes,
+   `_POOL_RESTART_EVERY=10`, HV-plateau auto-stop DISABLED, $6 hard cap, seg.ina recording
+   infrastructure.
+2. **Replace direction set**: 2 antipodal directions (0deg / 180deg) instead of t0123's 4
+   (0deg / 90deg / 180deg / 270deg). Per-evaluation wall-clock drops by ~2x; expected total
+   cost $1-3.
+3. **Replace both objectives**: drop MI and t0122's cytoplasm volume; **maximise DSI**
+   (silence- guarded ratio, t0122 convention) and **minimise ATP-per-spike** (Sengupta recipe,
+   ATP molecules per spike).
+4. **Re-use t0123's seg.ina recording** in `recorder.py` for soma + AIS proximal + AIS distal
+   + all dendrite segments. No new recorder code -- only verify the recorder loads correctly
+   on the 2-direction protocol via the smoke-gate.
+5. **Carter-Bean smoke-gate**: verify the canonical Bed B cell's ATP/AP at the AIS within 30%
+   of ~4 mM-mol/cm. Resolve S-0123-04 by documenting the canonical value with first-principles
+   derivation.
+6. **GA seed**: draw via `secrets.randbelow(10000)` (avoid round-ish numbers; t0113 / t0115
+   convention).
+7. **Gen ceiling**: 60.
+8. **Stop trigger**: operator stop when HV trajectory visibly plateaus OR $6 cost cap OR gen
+   60 ceiling.
+9. **Run on Vast.ai EPYC** (32-core or 64-core, whichever is cheapest at provisioning time);
+   single-instance.
+10. **Post-run analysis** (in this order):
+    * Pareto front in (DSI_best_legit, ATP_per_spike_molecules) space.
+    * Per-cell diagnostics tracked but NOT optimised: PD-rate (Hz), ND-rate (Hz), cytoplasm
+      volume (um^3, free since t0122 added the helper), MI_count_bits (free since t0123 added
+      the estimator -- record but do not optimise).
+    * **Carter-Bean 2009 ATP-per-AP benchmark check** on the canonical cell and the top-3
+      Pareto cells.
+    * **Attwell-Laughlin 2001 signalling-budget anchor**: compute the implied per-cell
+      signalling ATP rate (ATP/spike * PD-rate) for top-N cells and report where they sit
+      relative to the 47%-of-cortical-budget canonical figure.
+    * **Top-50 morphology grid**: full dendrite trees per the project default (see memory
+      `feedback_top50_morphologies_full_dendrites.md`).
+    * **Joint-pass cells**: DSI >= 0.5 AND PD-rate >= 30 Hz AND ATP_per_spike <= TBD (median
+      of the front used as the threshold for downstream selection).
+11. **Answer asset**: write one answer asset answering "Does the DSGC DSI-vs-ATP-per-spike
+    Pareto front show a Carter-Bean-style Na/K-overlap penalty, and where does it sit relative
+    to Attwell-Laughlin's 47% signalling ATP budget?"
+
+## Expected Outputs
+
+* `assets/predictions/nsga2-dsi-atp-per-spike-bedb-morph/` -- predictions asset per spec, with
+  per-cell 68-d vector, per-direction firing (PD / ND), DSI_best_legit,
+  ATP_per_spike_molecules, ATP_per_AP_molecules per compartment group, PD-rate, ND-rate,
+  cytoplasm_volume_um3 (diagnostic), MI_count_bits (diagnostic).
+* `assets/answer/dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin/` -- one answer
+  asset on the Carter-Bean + Attwell-Laughlin comparison.
+* `results/data/pareto_front_seed*.json` -- Pareto front cells in (DSI, ATP_per_spike).
+* `results/data/all_evaluations_seed*.json` -- every evaluation.
+* `results/images/pareto_front_dsi_vs_atp.png` -- Pareto front chart, DSI on y, ATP/spike on
+  x.
+* `results/images/carter_bean_atp_per_ap_check.png` -- distribution of ATP/AP across top-10
+  cells with the Carter and Bean 2009 ~4 mM-mol/cm benchmark overlaid.
+* `results/images/attwell_laughlin_signalling_budget.png` -- top-N cells' implied signalling
+  ATP rate (ATP/spike * PD-rate) overlaid on Attwell-Laughlin 2001's 47%-budget anchor.
+* `results/images/top50_morphologies_seed*.png` -- top-50 morphology grid (**full dendrite
+  trees** per the project default).
+* `results/images/hv_trajectory_seed*.png` -- hypervolume vs generation.
+* `results/results_summary.md`, `results/results_detailed.md`, `results/compare_literature.md`
+  comparing to Attwell-Laughlin 2001 / Sengupta 2010 / Carter-Bean 2009 / Niven 2007 / Cuntz
+  2010 (cross-reference to t0122 cytoplasm-volume front) / Remme 2018 (MSO MOBO methodology
+  template).
+
+## Budget
+
+* Cost cap: **$6** (matches t0122 / t0123; Vast.ai balance to be re-verified at launch).
+* Expected actual: **$1-3** based on t0122 (DSI + 2-direction protocol, came in well under
+  $3). t0123's $3-5 estimate scaled by 0.5x (halved direction count) gives ~$1.5-2.5.
+* If the run exceeds $6 watchdog trip, stop and write up partial results.
+
+## Verification Criteria
+
+* `_POOL_RESTART_EVERY == 10`, `HV_PLATEAU_AUTO_STOP == False`, `POP_SIZE == 96`,
+  `N_EVAL_SEEDS == 3`, `N_DIRECTIONS == 2`, `N_GEN_MAX == 60`, `COST_CAP_USD == 6.0` asserted
+  in `code/constants.py` at module import.
+* Smoke-gate verifies the canonical Bed B cell's ATP/AP at the AIS matches Carter and Bean
+  2009 ~4 mM-mol/cm benchmark within 30%; if not, the run is aborted and the recipe is
+  debugged.
+* DSI silence-guard threshold == 3 PD spikes; cells below the guard receive DSI = -1.
+* `metrics.json` registers (a) `direction_selectivity_index` with variants `best_legit`,
+  `overall_max`, `dsi_eq_one_count`; (b) headline `atp_per_spike_molecules`; (c) diagnostic
+  variants `pd_firing_rate_hz`, `nd_firing_rate_hz`, `cytoplasm_volume_um3`, `mi_count_bits`.
+* Predictions asset passes `verify_predictions_asset`.
+* `compare_literature.md` includes rows comparing the DSGC DSI-vs-ATP front to:
+  * Carter-Bean 2009 ATP/AP/cm benchmark (within 30% / over by Xx / under by Xx).
+  * Attwell-Laughlin 2001 47% signalling-budget anchor (top-N cells fall above / on / below).
+  * Cuntz 2010 balancing-factor band [0.2, 0.7] (cross-reference to t0122 front).
+* The answer asset states whether the DSGC DSI-vs-ATP-per-spike front shows a Carter-Bean
+  Na/K- overlap penalty (high-DSI corner more energy-expensive than expected, or comparable to
+  / cheaper than the AIS benchmark), with explicit quantitative comparison and bootstrap CI.
+
+## Cross-References
+
+* Source suggestion: S-0097-02.
+* Source paper: Sengupta et al. 2010 -- 10.1371/journal.pcbi.1000840 (the S-0097-02 anchor
+  paper).
+* Related papers from t0097's corpus: Attwell and Laughlin 2001 (energy budget), Carter and
+  Bean 2009 (calibration benchmark), Niven et al. 2007 (bits-per-ATP curve, indirect
+  comparator from t0123), Cuntz et al. 2010 (cytoplasm cross-reference to t0122 front), Remme
+  et al. 2018 (function-vs-energy MOBO methodology template).
+* Related project answer: t0097
+  `assets/answer/objective-functions-for-single-neuron-multi-objective-optimisation`.
+* Prior NSGA-II lineage: t0106 / t0112 / t0113 / t0114 / t0115 (substrate); t0122 (DSI +
+  cytoplasm volume, immediate sibling on the function objective); t0123 (MI + ATP-per-spike,
+  immediate sibling on the cost objective -- supplies the seg.ina recorder, Carter-Bean
+  smoke-gate, and ATP recipe verbatim).
+* Follow-up scope from t0123: this task partially addresses S-0123-04 by re-deriving the
+  Carter-Bean canonical value in the smoke-gate. S-0123-01 / S-0123-02 / S-0123-03 / S-0123-05
+  remain as separate follow-ups.
+
+</details>
 
 ## ⏹ Not Started
 
@@ -425,6 +752,363 @@ follow-up tasks and must not be performed here.
 </details>
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0125 — <strong>Cluster + factor analysis of t0123 cells: high vs low
+MI and ATP</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0125_t0123_cluster_factor_mi_atp` |
+| **Status** | completed |
+| **Effective date** | 2026-05-25 |
+| **Dependencies** | [`t0108_t0106_cluster_factor_dsi05_pd10`](../../overview/tasks/task_pages/t0108_t0106_cluster_factor_dsi05_pd10.md), [`t0116_pooled_pca_cluster_factor_dsi07_pd10`](../../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md), [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md), [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **Expected assets** | 4 answer |
+| **Source suggestion** | — |
+| **Task types** | [`data-analysis`](../../meta/task_types/data-analysis/), [`comparative-analysis`](../../meta/task_types/comparative-analysis/), [`answer-question`](../../meta/task_types/answer-question/) |
+| **Start time** | 2026-05-24T23:02:37Z |
+| **End time** | 2026-05-25T01:12:00Z |
+| **Step progress** | 11/15 |
+| **Task page** | [Cluster + factor analysis of t0123 cells: high vs low MI and ATP](../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Task folder** | [`t0125_t0123_cluster_factor_mi_atp/`](../../tasks/t0125_t0123_cluster_factor_mi_atp/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0125_t0123_cluster_factor_mi_atp/results/results_detailed.md) |
+
+# Cluster + Factor Analysis of t0123 Cells: High vs Low MI and ATP
+
+## Motivation
+
+t0123 ran a single-seed (seed 441) 60-generation NSGA-II maximising spike-count mutual
+information (`mi_count_bits`) and minimising metabolic cost (`atp_per_spike_molecules`) on the
+68-d Bed B + 14-d morphology substrate. The run produced 5760 evaluated cells, 10 Pareto
+cells, and reported a best `mi_count_bits = 1.459` (73% of the `log2(4) = 2.0` ceiling) and a
+minimum `atp_per_spike_molecules = 6.76e5`.
+
+The single-cell Pareto front answers "where does the DSGC bits-per-ATP front sit relative to
+Niven 2007" but says nothing about **how** the 68-d parameter space organises around the two
+objectives. Before launching the 3-objective MI + DSI + ATP follow-up (S-0123-02), we need to
+know:
+
+* Are high-MI cells and low-ATP cells found in the same regions of the 68-d substrate, or do
+  they occupy disjoint clusters?
+* Which electrophys parameters (channel densities, synapse densities, axial resistance, etc.)
+  systematically differ between high-MI and low-MI cells? Between low-ATP and high-ATP cells?
+* Which morphology parameters (segment count, branch order, segment diameter, segment length,
+  soma share, etc.) differ across the four corner groups (high-MI / low-ATP, high-MI /
+  high-ATP, low-MI / low-ATP, low-MI / high-ATP)?
+* Does at least one varimax factor on the 68-d vector load jointly on MI and ATP — implying a
+  shared latent driver — or do separate factors drive each objective?
+* How does the per-compartment ATP cost share (soma / AIS / dendrites; from
+  `atp_per_ap_compartment_breakdown`) covary with the MI and ATP groupings?
+
+This task applies the canonical t0108 / t0116 / t0117 cluster-and-factor pipeline (PCA +
+KMeans on electrophys-only and morphology-only subspaces + Kaiser-cap varimax factor analysis
+on the full 68-d vector) to the t0123 cell pool, replacing the prior DSI / PD axes with MI and
+ATP-per-spike.
+
+## Scope
+
+### Data source (one NSGA-II run, single GA seed)
+
+* `tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/predictions/nsga2-mi-atp-per-spike-bedb-morph/files/predictions.jsonl.gz`
+  — seed 441, all 5760 cells evaluated by the t0123 NSGA-II run.
+
+Use the predictions asset as the authoritative data source, not
+`results/data/all_evaluations_seed441.json.gz` (same content, different format).
+
+### Pool definition
+
+* Load every record from the predictions asset.
+* Deduplicate by the 68-d vector rounded to 6 decimals (`DEDUP_DECIMALS = 6`, same convention
+  as t0108 / t0116 / t0117).
+* Record raw count, dedup-unique count, and post-filter counts (see below) before any
+  analysis.
+
+### Cohort filter
+
+Two cohorts are analysed in parallel:
+
+1. **Full cohort** — every dedup-unique cell, including near-silent cells. This is the primary
+   pool for PCA, KMeans, and factor analysis (mirrors t0117's full-cohort design).
+2. **Spiking cohort** — cells with `pd_rate_hz > 1.0 Hz` AND `silence_failed_bool == False`.
+   This is required for the ATP-per-spike comparison because near-silent cells have a
+   denominator approaching zero and produce unstable `atp_per_spike_molecules` values. Used
+   for the group-comparison and Pareto-corner analyses.
+
+Per-cohort counts must be reported in `results_detailed.md`.
+
+### Feature vector
+
+Identical to t0108 / t0117: 68-d `vector_68d` with indices 0-53 the 54-d Bed-B electrophys
+vector and 54-67 the 14-d morphology vector. Authoritative names in
+`tasks/t0108_t0106_cluster_factor_dsi05_pd10/code/constants.py` `ALL_PARAM_NAMES`.
+
+### Group definitions
+
+For the spiking cohort:
+
+* **MI groups**: top quartile by `mi_count_bits` = "high MI"; bottom quartile = "low MI".
+* **ATP groups**: top quartile by `atp_per_spike_molecules` = "high ATP"; bottom quartile =
+  "low ATP".
+* **MI x ATP corners**: four 2 x 2 quadrants formed by the median split on each axis. Cells in
+  the top-left quadrant (high MI, low ATP) are the "Pareto-favoured" corner; bottom-right (low
+  MI, high ATP) is the "dominated" corner.
+
+Quartile and median thresholds must be recorded in `results/data/group_thresholds.json`.
+
+### Analyses to run
+
+1. **Combined 68-d PCA + side panels (one figure, three subplots).** Combined PCA /
+   electrophys-only PCA / morphology-only PCA, each panel showing PC1 vs PC2 of the full
+   cohort, coloured by `mi_count_bits` (viridis). Per-panel report of `% variance explained`
+   for PC1 and PC2. Saved to `results/images/pca_combined_color_mi.png`.
+
+2. **Same three-panel figure coloured by `atp_per_spike_molecules`** (log10, viridis). Saved
+   to `results/images/pca_combined_color_atp.png`.
+
+3. **Same three-panel figure coloured by MI x ATP corner** (4 categorical colours from tab10).
+   Saved to `results/images/pca_combined_color_corner.png`.
+
+4. **Gen-0 (`generation == 1`) random-init overlay.** Same axes as Step 1, with the 96 gen-0
+   individuals projected onto the PCAs fitted in Step 1 (no refit; reuse the standardiser).
+   Compute mean and 95th-percentile Euclidean displacement in PC1+PC2 space and in 68-d
+   standardised space, both overall and per MI x ATP corner. Saved to
+   `results/images/pca_with_gen0_overlay.png` and `results/data/gen0_displacement.csv`.
+
+5. **KMeans on 54-d electrophys subspace, auto-pick k in [3, 7] by silhouette.** Standardiser
+   fit on the full-cohort union pool. Pick k by maximum mean silhouette. Report silhouette
+   curve, chosen k, per-cluster cell counts, and per-cluster mean MI / ATP / DSI / PD /
+   firing-rate. Saved to `results/images/electrophys_silhouette.png` and
+   `results/data/electrophys_clusters.csv`. For each cluster render a 5 x 3 grid of 15
+   representative cells (full dendrite trees via NEURON pt3d — not somas; per memory
+   `feedback_top50_morphologies_full_dendrites.md`). Representatives ranked by `mi_count_bits
+   / atp_per_spike_molecules` (bits-per-ATP) within cluster, restricted to the spiking cohort.
+   Saved to `results/images/electrophys_cluster_<k>_morphs.png` (one PNG per cluster).
+
+6. **KMeans on 14-d morphology subspace, auto-pick k in [3, 7] by silhouette.** Same procedure
+   on the morphology subspace. For each morphology cluster, write a 15-row representative
+   table with `(generation, cell_index, mi_count_bits, atp_per_spike_molecules,
+   dsi_vector_sum, pd_rate_hz, ephys_PC1, ephys_PC2, ephys_PC3, soma_share_atp)` where
+   `soma_share_atp` is the soma fraction of `atp_per_ap_compartment_breakdown`. Saved to
+   `results/data/morphology_cluster_<k>_representatives.csv`.
+
+7. **Factor analysis on the full 68-d feature matrix, Kaiser criterion, varimax-rotated.**
+   Standardise the full cohort -> fit `sklearn.decomposition.FactorAnalysis(n_components=68)`;
+   count Kaiser eigenvalues > 1 from the correlation matrix; cap at `KAISER_FACTOR_CAP = 10`
+   (inherited from t0108); refit FA with the chosen count; apply varimax rotation via the
+   iterative-SVD helper from t0108. Render the loadings heatmap with `RdBu_r` colourmap and
+   symmetric vmin/vmax to `results/images/factor_loadings_heatmap.png`. Report per-factor
+   variance and Pearson r vs `mi_count_bits` AND `atp_per_spike_molecules` AND
+   `dsi_vector_sum` AND `pd_rate_hz` in `results/data/factor_correlations.csv`. Identify any
+   factor with |r| > 0.3 on both MI AND ATP (joint factor) and any factor with |r| > 0.3 on MI
+   only or ATP only (decoupled factors).
+
+8. **High vs low group comparison (electrophys + morphology).** For each of the 68 parameters,
+   compute on the spiking cohort:
+
+   * Mean and standard deviation in the high-MI group, low-MI group, high-ATP group, low-ATP
+     group.
+   * Mann-Whitney U two-sided p-value: high-MI vs low-MI, high-ATP vs low-ATP.
+   * Cliff's delta effect size (non-parametric): high-MI vs low-MI, high-ATP vs low-ATP.
+
+   Save the full table to `results/data/group_comparison.csv`. Render two ranked bar charts of
+   Cliff's delta:
+
+   * `results/images/cliffs_delta_high_vs_low_mi.png` -- top-20 parameters by |delta| for MI.
+   * `results/images/cliffs_delta_high_vs_low_atp.png` -- top-20 parameters by |delta| for
+     ATP.
+
+9. **2 x 2 corner heatmap.** For the 68 parameters, compute the mean (z-scored on the full
+   cohort) in each of the four MI x ATP corners. Render as a 68 x 4 heatmap (RdBu_r, symmetric
+   vmin/vmax) to `results/images/corner_param_heatmap.png` and save the underlying matrix to
+   `results/data/corner_param_means.csv`. This is the central visualisation answering "what
+   distinguishes the Pareto-favoured corner from the dominated corner".
+
+10. **ATP compartment breakdown.** Using `atp_per_ap_compartment_breakdown` (keys: `soma`,
+    `ais`, `dendrites_total`), compute the per-cell soma / AIS / dendrite **shares** of total
+    per-AP ATP cost on the spiking cohort. Compare share distributions across MI groups (high
+    vs low) and ATP groups (high vs low) with a ternary plot
+    (`results/images/atp_share_ternary.png`) and a violin-plot panel
+    (`results/images/atp_share_violins.png`). Save shares per cell to
+    `results/data/atp_compartment_shares.csv`.
+
+### Key questions (each becomes one `assets/answer/` asset)
+
+1. **MI-ATP joint structure** — Does the 68-d substrate have a joint latent driving both MI
+   and ATP-per-spike, or are MI and ATP driven by decoupled factors? Evidence: varimax factor
+   correlations (joint factor with |r| > 0.3 on both MI AND ATP vs decoupled factors with |r|
+   > 0.3 on one only) plus the PCA colourings from Steps 1-2. State whether the MI / ATP
+   Pareto trade-off observed in t0123 is the result of a single trade-off axis or multiple
+   competing axes.
+
+2. **Electrophys signature of high-MI vs low-MI cells** — Which channel densities, axial
+   resistance, synapse densities, or other electrophys parameters most distinguish high-MI
+   from low-MI cells? Evidence: Cliff's delta ranked bar chart, per-cluster mean MI table, and
+   electrophys-KMeans cluster purity by MI-quartile group. State the top-5 parameters by
+   |Cliff's delta| with effect sizes and directions.
+
+3. **Morphology signature of low-ATP vs high-ATP cells** — Which morphology parameters most
+   distinguish low-ATP-per-spike cells from high-ATP-per-spike cells? Evidence: Cliff's delta
+   ranked bar chart restricted to the 14 morphology parameters, morphology-KMeans cluster
+   purity by ATP-quartile group, and the ATP compartment breakdown (does the low-ATP group
+   spend relatively more ATP at the AIS and less in the dendrites?). State the top-5
+   morphology parameters by
+   |Cliff's delta| with effect sizes and directions.
+
+4. **Pareto-favoured corner signature** — Which combination of electrophys and morphology
+   parameters distinguishes the high-MI / low-ATP corner (Pareto-favoured) from the low-MI /
+   high-ATP corner (dominated)? Evidence: 2 x 2 corner heatmap (Step 9) and per-corner
+   morphology gallery. State the 5 parameters with the largest absolute z-score difference
+   between the two corners, the per-corner cell counts, and the per-corner mean (MI, ATP, DSI,
+   PD-rate).
+
+## Approach
+
+* Re-use every code module from
+  `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/` as the structural template
+  (loader, PCA, KMeans + silhouette sweep, varimax FA + Kaiser cap, NEURON pt3d morphology
+  rendering, cluster representative selection rule). Per the cross-task import rule (CLAUDE.md
+  rule 3), code is **copied into this task's `code/` directory** rather than imported. Adapt
+  the loader to read the single t0123 predictions asset rather than four per-seed prediction
+  files, and replace the cohort filter with the dual full / spiking cohort definition above.
+* Reuse `ALL_PARAM_NAMES` (68 entries) from t0108's `code/constants.py` by copying the
+  constant into this task's `code/constants.py`.
+* The standardiser, PCA, KMeans, and FA must all be fit on the full-cohort union pool. Group
+  comparisons in Steps 8-10 use the spiking cohort but project onto the full-cohort PCA fits.
+* `data/t0123_cells.parquet` (~5.7k rows, dedup-unique full cohort) and
+  `data/t0123_spiking_cells.parquet` (spiking cohort subset) are persisted for downstream
+  reproducibility. Gen-0 cells (`generation == 1`, n=96) saved to `data/t0123_gen0.parquet`.
+* Mann-Whitney U via `scipy.stats.mannwhitneyu(alternative="two-sided")`. Cliff's delta via
+  the standard rank-based formula (no third-party dependency needed; implement in
+  `code/effect_sizes.py`).
+* Expected runtime: similar to t0117 (CPU-only, KMeans + silhouette dominates). ~30-60 minutes
+  wall-clock on 5760 cells.
+
+## Expected Outputs
+
+### Assets
+
+* `assets/answer/<answer_id_1>/` — MI-ATP joint structure question
+* `assets/answer/<answer_id_2>/` — high-MI vs low-MI electrophys signature question
+* `assets/answer/<answer_id_3>/` — low-ATP vs high-ATP morphology signature question
+* `assets/answer/<answer_id_4>/` — Pareto-favoured corner signature question
+
+### Charts (under `results/images/`)
+
+* `pca_combined_color_mi.png` -- three-panel PCA coloured by MI
+* `pca_combined_color_atp.png` -- three-panel PCA coloured by ATP (log10)
+* `pca_combined_color_corner.png` -- three-panel PCA coloured by MI x ATP corner
+* `pca_with_gen0_overlay.png` -- gen-0 overlay
+* `electrophys_silhouette.png`, `morphology_silhouette.png` -- silhouette sweeps
+* `electrophys_cluster_<k>_morphs.png` (one per ephys cluster) -- 5x3 morphology gallery per
+  ephys cluster, full dendrite trees, ranked by bits-per-ATP within cluster
+* `factor_loadings_heatmap.png` -- varimax loadings heatmap
+* `cliffs_delta_high_vs_low_mi.png` -- top-20 |Cliff's delta| for MI groups
+* `cliffs_delta_high_vs_low_atp.png` -- top-20 |Cliff's delta| for ATP groups
+* `corner_param_heatmap.png` -- 68 x 4 z-scored parameter means by MI x ATP corner
+* `atp_share_ternary.png` -- soma/AIS/dendrite ATP share ternary, coloured by corner
+* `atp_share_violins.png` -- per-compartment ATP share violins by MI group and ATP group
+
+### Tables (under `results/data/`)
+
+* `pool_counts.csv` -- raw / dedup-unique / spiking-cohort counts
+* `group_thresholds.json` -- quartile and median cutoffs for MI and ATP
+* `gen0_displacement.csv` -- per-corner gen-0 displacement
+* `electrophys_clusters.csv`, `morphology_clusters.csv` -- per-cell cluster membership +
+  summary stats
+* `morphology_cluster_<k>_representatives.csv` (one per morph cluster)
+* `cluster_group_purity.csv` -- contingency table + NMI of KMeans clusters vs MI / ATP
+  quartile groups
+* `factor_correlations.csv` -- Pearson r of each varimax factor vs MI / ATP / DSI / PD
+* `factor_loadings.csv` -- 68-row varimax loadings matrix
+* `group_comparison.csv` -- per-parameter mean / std / U-p / Cliff's delta for high vs low MI
+  and high vs low ATP
+* `corner_param_means.csv` -- 68 x 4 z-scored parameter means by MI x ATP corner
+* `atp_compartment_shares.csv` -- per-cell soma / AIS / dendrite ATP shares
+* `methodology_notes.md` -- choices, deviations from t0117, threshold rationale
+
+### Results documents
+
+* `results/results_summary.md` -- 2-3 sentence headline + key numbers
+* `results/results_detailed.md` -- full results with all charts embedded via
+  `![desc](images/filename.png)` syntax; per-section commentary; per-question verdict
+* `results/compare_literature.md` -- one comparison row vs t0117's joint-factor finding
+  (truncated-cohort artefact confirmed in t0117 for DSI x PD; does an equivalent finding hold
+  for MI x ATP?)
+
+## Compute and Budget
+
+CPU-only. No remote machines. ~30-60 minutes wall-clock (KMeans + silhouette on ~5.7k cells
+dominates). $0 paid services. No new dependencies beyond what t0117 already uses
+(`scikit-learn`, `pandas`, `numpy`, `scipy`, `matplotlib`, `neuron` for pt3d morphology
+rendering).
+
+## Cross-References
+
+* **Methodology precedent**: t0117 (no-filter cohort across 4 seeds, DSI x PD axes), t0116
+  (strict cohort across 4 seeds, DSI x PD axes), t0108 (original strict-cohort version on
+  t0106 seed 44). Every code module is reused as a structural template, with the loader and
+  cohort-filter modules rewritten for the t0123 single-seed source.
+* **Source data**: t0123 (NSGA-II MI vs ATP-per-spike, seed 441, 5760 cells, 10 Pareto).
+* **Related open suggestions**: none of the t0123 suggestions cover this analysis directly;
+  S-0123-02 (3-objective MI + DSI + ATP NSGA-II) and S-0123-03 (cell 2 deep-dive) are the
+  closest downstream follow-ups and benefit from the cluster / factor structure produced here.
+* **Truncated-cohort artefact context**: memory
+  `project_truncated_cohort_artefact_confirmed.md` (t0117 confirmed F1 is a joint DSI-PD
+  factor in the unfiltered pool). The MI-ATP equivalent is the central question of answer 1
+  here.
+* **Methodology preferences**: memory `feedback_top50_morphologies_full_dendrites.md` (render
+  full dendrite trees in morphology grids, not just somas).
+
+## Verification Criteria
+
+* `data/t0123_cells.parquet` row count equals the dedup-unique count logged at load time, and
+  `data/t0123_spiking_cells.parquet` row count equals the cohort-filtered subset.
+* `group_thresholds.json` contains numeric values for MI Q1, MI Q3, ATP Q1, ATP Q3, MI median,
+  ATP median.
+* Every PCA / KMeans / FA fit uses the standardiser fitted on the full-cohort union pool (not
+  the spiking subset).
+* Every chart referenced in `results_detailed.md` exists on disk and is embedded with markdown
+  image syntax (not just listed as text).
+* Every claim in each of the four answer assets is grounded in a specific table or chart in
+  `results_detailed.md`. Each answer asset cites the specific row/column of
+  `group_comparison.csv` or `factor_correlations.csv` underpinning its verdict.
+* Headline numbers (joint-factor count, per-question top-5 parameters with effect sizes,
+  per-corner cell counts) must be reported even if they are negative (no result-suppression).
+* `compare_literature.md` includes a one-row comparison of the MI-ATP joint factor result vs
+  t0117's DSI-PD joint factor finding.
+
+**Results summary:**
+
+> **Results Summary: t0125 Cluster + Factor Analysis of t0123 MI vs ATP**
+>
+> **Summary**
+>
+> Applied the canonical PCA + KMeans + varimax factor-analysis pipeline (inherited from t0108
+> / t0116
+> / t0117) to the **5,760** t0123 cells with a dual full / spiking-cohort design. The headline
+> finding
+> is **negative for the joint-driver hypothesis**: **zero** varimax factors satisfy
+> `|r_MI| > 0.30 AND |r_ATP| > 0.30` simultaneously, in direct contrast to t0117 which found
+> one joint
+> DSI x PD factor. Despite the decoupled latent structure, MI and ATP are positively
+> correlated at the
+> cell level (**3.6x** diagonal-vs-off-diagonal corner-count imbalance), and the high-MI /
+> low-ATP
+> "Pareto-favoured" corner has **1,221** of the 3,125 spiking cells.
+>
+> **Metrics**
+>
+> * **Joint MI-ATP factors** (|r| > 0.30 on both): **0** (largest joint loading: F1 with
+> `r_MI = -0.358`, `r_ATP = +0.205`).
+> * **Top |Cliff's delta| for MI**: IH_GBAR **-0.79**, CAD_TAUR_MS **-0.72**, KDR_GBAR
+>   **-0.67**,
+> SK_AIS_GBAR **+0.63**, SKAHP_TAU_CA_MULTIPLIER **-0.63**.
+> * **Top |Cliff's delta| for ATP morphology**: mean_segment_length_um **-0.73**,
+>   branch_length_cv
+> **+0.55**, branch_density_gradient_pd **+0.50**, field_elongation_pd **-0.47**,
+> ais_length_um
+
+</details>
 
 <details>
 <summary>✅ 0123 — <strong>NSGA-II maximising MI and minimising ATP-per-spike (Bed

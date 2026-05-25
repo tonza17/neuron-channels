@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-101 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **90 open** (15 high,
-68 medium, 7 low), **11 closed**.
+102 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **91 open** (15 high,
+69 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -2072,6 +2072,32 @@ library `gaba_drive_saturation` taking both t0052 and t0053 IPSP data and fittin
 depth. Future scalar / spatial / hybrid inhibition models call this during design to check
 whether their nominal parameters land in the saturating regime. Sharpens S-0052-05 with a
 two-point dataset. Recommended task types: write-library.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Vm-trace deep-dive of cell (19, 1816) -- high-MI / high-ATP /
+extended-dendrite outlier</strong> (S-0125-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-06` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | — |
+| **Categories** | [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+Cell (19, 1816) hits the MI ceiling (1.459 bits) at ATP = 4.97e7 molecules/spike (cohort
+99th-percentile) with 79% of ATP spent in dendrites (cohort mean 17.8%); cell (30, 2828)
+matches the MI at 0.5% dendrite share. This is the cleanest case of 'high MI is consistent
+with both compact-dendrite/low-ATP and extended-dendrite/high-ATP geometries'. Distinct from
+S-0123-03 (cell 2, near-silent high-MI cell): this is the complementary deep-dive on the OTHER
+end of the iso-MI ridge. Action: single-cell resimulate (19, 1816) from its 68-d vector under
+the EPSP_PASSIVE / IPSP_PASSIVE / FULL trio (memory feedback_dsgc_measurement_protocol),
+record somatic + dendritic Vm and per-compartment g_E / g_I / i_Na / i_K. Identify which
+subset drives the across-direction count signal vs the dendritic ATP overhead. Local CPU < 2
+h. Recommended task types: experiment-run, data-analysis, answer-question.
 
 </details>
 

@@ -1,6 +1,6 @@
-# Answers: `dendritic-computation` (11)
+# Answers: `dendritic-computation` (13)
 
-11 answer(s).
+13 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -316,6 +316,39 @@ multi-replicate confirmation requires t0083 or a follow-up multi-seed study.
 </details>
 
 <details>
+<summary><strong>Which combination of electrophys + morphology parameters most
+distinguishes the Pareto-favoured corner (high MI, low ATP) from the
+Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what
+are the per-corner cell counts and means?</strong></summary>
+
+**Confidence**: medium
+
+The top 5 parameters by absolute z-score difference between the high_mi_low_atp and
+low_mi_high_atp corners (each cell z-scored against the full-cohort standardiser, mean per
+corner) are: KDR_GBAR (-1.19), branch_length_cv (-1.08), BK_SOMA_GBAR (-1.06), IH_GBAR
+(-1.06), and RA_OHM_CM (+1.06). The Pareto-favoured corner contains 1221 spiking cells (mean
+MI = 0.984 bits, mean ATP = 5.34e6 molecules / spike, mean DSI = 0.237, mean PD rate = 2.61
+Hz) versus 1220 cells in the dominated corner (mean MI = 0.063 bits, mean ATP = 2.61e7
+molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbalance (1221 +
+1220 = 2441 cells vs 343 + 341 = 684 off-diagonal) is the joint Pareto signature.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/pareto-favoured-corner-signature/full_answer.md) |
+| **ID** | [`pareto-favoured-corner-signature`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/pareto-favoured-corner-signature/) |
+| **Question** | Which combination of electrophys + morphology parameters most distinguishes the Pareto-favoured corner (high MI, low ATP) from the Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what are the per-corner cell counts and means? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+| **Paper sources** | `10.1371_journal.pcbi.1002107`, `10.3389_neuro.01.1.1.001.2007`, `10.1038_nature16468` |
+| **Task sources** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md), [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md), [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **URL sources** | — |
+| **Created by** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+
+</details>
+
+<details>
 <summary><strong>Which dendritic-computation motifs observed in cortical,
 hippocampal, and cerebellar neurons plausibly transfer to DSGC dendrites,
 and what are the biophysical caveats?</strong></summary>
@@ -343,6 +376,41 @@ falsify rather than to assume, pending DSGC-specific patch validation.
 | **Task sources** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md), [`t0015_literature_survey_cable_theory`](../../../overview/tasks/task_pages/t0015_literature_survey_cable_theory.md) |
 | **URL sources** | — |
 | **Created by** | [`t0016_literature_survey_dendritic_computation`](../../../overview/tasks/task_pages/t0016_literature_survey_dendritic_computation.md) |
+
+</details>
+
+<details>
+<summary><strong>Which morphology parameters most distinguish low-ATP from high-ATP
+cells in the t0123 spiking cohort, and does the low-ATP group spend
+relatively more ATP at the AIS than in the dendrites?</strong></summary>
+
+**Confidence**: medium
+
+The top 5 morphology parameters by |Cliff's delta| separating high-ATP (top quartile of
+atp_per_spike, n = 782) from low-ATP (bottom quartile, n = 782) cells are:
+mean_segment_length_um (delta = -0.725, low-ATP cells have ~43% longer segments),
+branch_length_cv (delta = +0.554, low-ATP cells are more uniform in branch length),
+branch_density_gradient_pd (delta = +0.504, low-ATP cells have weaker preferred-direction
+dendrite-density gradient), field_elongation_pd (delta = -0.469, low-ATP cells have more
+elongated dendritic field), and ais_length_um (delta = +0.376, low-ATP cells have shorter AIS
+by ~12%). The ATP-share answer is Yes for the AIS but the dendrite/soma swap dominates:
+low-ATP cells concentrate 93% of per-AP ATP at the soma and 6% at the AIS with only 0.4% in
+dendrites, while high-ATP cells push 62% into dendrites and 35% into soma with only 2.6% at
+the AIS.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/low-vs-high-atp-morphology-signature/full_answer.md) |
+| **ID** | [`low-vs-high-atp-morphology-signature`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/low-vs-high-atp-morphology-signature/) |
+| **Question** | Which morphology parameters most distinguish low-ATP from high-ATP cells in the t0123 spiking cohort, and does the low-ATP group spend relatively more ATP at the AIS than in the dendrites? |
+| **Methods** | `code-experiment`, `papers` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Paper sources** | `10.1038_382363a0`, `10.1152_jn.1997.78.4.1948`, `10.1371_journal.pcbi.1000877`, `10.1097_00004647-200110000-00001`, `10.1371_journal.pcbi.1000840` |
+| **Task sources** | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md), [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md), [`t0117_pooled_pca_cluster_factor_all_cells_4_seeds`](../../../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) |
+| **URL sources** | — |
+| **Created by** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
 
 </details>
 

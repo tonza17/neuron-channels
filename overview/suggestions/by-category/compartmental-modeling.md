@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-412 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **371 open** (66
-high, 262 medium, 43 low), **41 closed**.
+418 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **376 open** (67
+high, 266 medium, 43 low), **42 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -342,29 +342,6 @@ distribution + per-knob bf vs parameter scatter. Verdict: if >95% of cells fall 
 0.51] the generator is degenerate-balanced and the t0122 Cuntz prediction is generator-driven;
 otherwise the bf=0.500 clustering is genuinely selected for by the cytoplasm cost. Recommended
 task types: experiment-run, data-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising
-ATP-per-spike</strong> (S-0097-02)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0097-02` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-08 |
-| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Source paper** | [`10.1371_journal.pcbi.1000840`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1000840/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
-
-Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per
-spike). Remme et al. 2018's MSO function-vs-energy MOBO provides a direct methodology template
-generalising to NEURON. DSGC's GABAergic-style fast-spiking should produce
-Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower
-energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e`
-per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed
-per-task default; flag for explicit budget approval.
 
 </details>
 
@@ -1128,6 +1105,57 @@ PD >= 30 Hz) within 40 gens, the 2-direction substrate is genuinely populated an
 t0080-t0104 null was an objective-surface artefact, not a per-seed lucky draw. If either seed
 returns zero, weaken the headline. Recommended task types: experiment-run,
 comparative-analysis. Cost: ~$20 (two single-seed runs at $10 each).
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
+the zero-joint-factor verdict</strong> (S-0125-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0125's zero-joint MI x ATP varimax verdict is derived from a SINGLE NSGA-II seed (441).
+Precedent: t0116 (single seed) found no joint DSI x PD factor; t0117 (4 seeds) recovered one.
+The verdict is known to be seed-sensitive on this substrate. Action: replicate t0123 on 2-3
+additional non-round GA seeds (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6,
+HV-plateau auto-stop DISABLED per memory feedback_disable_hv_plateau_autostop,
+_POOL_RESTART_EVERY=10) and rerun the t0125 cluster + Kaiser-cap varimax pipeline on the
+pooled 4-seed pool. Predicted outcome: either F1's ATP loading crosses 0.30 (joint factor
+reappears) or stays decoupled (objective-pair-specific verdict confirmed). Budget ~$15-25
+Vast.ai EPYC. Recommended task types: experiment-run, data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Patch t0080 with an explicit myelinated axon to fix the
+soma-vs-axon ATP-share inversion vs Attwell 2001</strong> (S-0125-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | [`10.1097_00004647-200110000-00001`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/paper/10.1097_00004647-200110000-00001/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`cable-theory`](../../../meta/categories/cable-theory/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0125 finds 76.7% soma / 5.5% AIS / 17.8% dendrite ATP share -- inverted from Attwell &
+Laughlin 2001's 4% soma / 82% axon / 14% dendrite rodent-cortical breakdown. methodology_notes
+and compare_literature attribute this to t0080 lacking an explicit myelinated axon (only a
+procedural AIS). Action: extend the t0080 cell builder with one or two nodes of Ranvier +
+myelin segments at realistic R_m (~50 kOhm cm^2), C_m (~0.04 uF/cm^2), and Na/K channel
+densities; re-run t0123's MI vs ATP-per-spike NSGA-II at matched compute; re-check
+soma/AIS/axon/dendrite ATP shares against Attwell 2001 Table 4 and Sengupta 2010. Test whether
+the Pareto front shifts and whether compartment-ATP diversity broadens to match the rodent
+picture. Budget ~$10-15 Vast.ai EPYC. Recommended task types: build-model, experiment-run,
+comparative-analysis.
 
 </details>
 
@@ -2599,6 +2627,32 @@ follow-up.
 </details>
 
 <details>
+<summary>📊 <strong>Bootstrap loading stability for the single-seed MI factors to
+bracket the 0.358 / 0.205 joint-threshold gap</strong> (S-0125-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-08` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0125's zero-joint verdict rides on F1's r_MI = -0.358 (above threshold) paired with r_ATP =
++0.205 (below threshold) -- ATP only 0.095 below the 0.30 cutoff. Verdict could flip under
+resampling. Distinct from S-0117-03 (bootstrap on t0117 4-seed DSI x PD F1): this is the MI x
+ATP single-seed analogue. Action: on the existing t0125 standardiser and 5760-cell parquet,
+draw B = 500 bootstrap resamples, refit FA(n=10) + varimax, report (a) per-factor 5/50/95
+percentile loadings on every 68-d parameter; (b) per-factor 5/50/95 percentile r vs MI and
+ATP; (c) probability that >=1 factor crosses |r| > 0.30 on both axes per resample; (d)
+threshold sensitivity at 0.20, 0.25, 0.30, 0.35. Bounds the joint-factor verdict and produces
+the threshold-sensitivity curve flagged in compare_literature. CPU-only. Recommended task
+types: data-analysis, answer-question.
+
+</details>
+
+<details>
 <summary>📊 <strong>Bootstrap loading-stability and oblique-rotation sensitivity for
 the t0116 10-factor varimax solution</strong> (S-0116-05)</summary>
 
@@ -3374,6 +3428,32 @@ Bed B's SUFFIX (e.g., to `HHst_det`) via corrections on the t0024 library, recom
 `build_cell.py` and downstream protocol code, and add a verificator scanning
 `tasks/*/assets/library/*/sources/*.mod` for duplicate SUFFIX. Recommended task types:
 write-library, infrastructure-setup, correction.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Disjoint parameter-basin enumeration of high-MI cells to quantify
+Achard 2006 degeneracy on the t0123 substrate</strong> (S-0125-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | [`10.1371_journal.pcbi.0020094`](../../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/paper/10.1371_journal.pcbi.0020094/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0125's electrophys silhouette = 0.083 (low) paired with chi-square p = 1e-236 (highly
+significant) is the signature of Achard 2006's 'loosely connected hyperplane' geometry. t0125
+confirmed the qualitative pattern (5 of 68 parameters with |Cliff's delta| > 0.6 for MI
+groups, ~7%) but did NOT count DISJOINT parameter basins producing mi_count_bits > 1.0.
+Action: on the spiking-cohort parquet, restrict to cells with MI > 1.0 (n ~ 600-800), apply
+single-linkage hierarchical clustering in the standardised 54-d electrophys subspace tuned to
+3-10 connected components, report per-component median pairwise distance, per-parameter range,
+and cross-component nearest-neighbour distance. Replicate in morphology and full-68-d. Tests
+Marder 2006 'many models, one behaviour' on t0123; motivates per-basin re-seeded NSGA-II.
+CPU-only. Recommended task types: data-analysis, answer-question.
 
 </details>
 
@@ -5596,6 +5676,32 @@ CPU. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Off-diagonal-corner-constrained NSGA-II to sample the
+undersampled high-MI/high-ATP and low-MI/low-ATP corners</strong>
+(S-0125-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0125 finds a 3.6x diagonal-vs-off-diagonal corner imbalance: 1221 high_MI/low_ATP + 1220
+low_MI/high_ATP vs only 343 high_MI/high_ATP + 341 low_MI/low_ATP cells. Off-diagonal corners
+are real -- cell (19, 1816) hits MI=1.459 at ATP=4.97e7 (8.7x more expensive than equivalent
+(30, 2828)) -- but undersampled because NSGA-II exploited the cheap-and-informative half.
+Action: rerun the t0123 NSGA-II twice with constrained objectives (a) maximise BOTH MI and ATP
+(forces high_MI/high_ATP corner); (b) minimise BOTH (forces low_MI/low_ATP corner). Sample 96
+cells per corner; rerun the t0125 cluster + factor pipeline on the union plus the original
+t0123 pool. Tests whether off-diagonal corners share or have private latent drivers. Budget
+~$8-12 Vast.ai EPYC. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Online validation of (W=3, T=0.015): re-run t0106 / t0113 / t0114
 seeds with new detector live</strong> (S-0114-08)</summary>
 
@@ -5806,6 +5912,33 @@ the 14 knobs by their causal importance for joint Pareto inclusion, beyond the a
 aggregation. This complements S-0091-01 (which is single-feature Spearman) and S-0091-04
 (which is alt-topology vs bedb-like comparison) with an exhaustive feature-importance audit.
 Cost: $0 (local CPU). Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Partial-correlation analysis of MI vs electrophys (control
+morphology) and ATP vs morphology (control electrophys)</strong>
+(S-0125-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0125's PCA colourings make the separation visible: high-MI cells cluster in the electrophys
+PCA but are absent from the morphology PCA; log10(ATP) shows a gradient in the morphology PCA,
+flatter in electrophys. NMI table corroborates (electrophys-vs-MI 0.178, electrophys-vs-ATP
+0.186, morphology-vs-MI 0.121, morphology-vs-ATP 0.176). These are pairwise correlations and
+could share a common cause. Action: on the existing spiking-cohort parquet, compute Spearman
+partial r for (a) MI vs each of 54 electrophys params partialling out 14 morphology params;
+(b) ATP vs each of 14 morphology params partialling out 54 electrophys params; (c) MI vs ATP
+partialling out morphology; (d) MI vs ATP partialling out electrophys. Report top-10 with
+bootstrap CI; compare to t0125 group_comparison.csv. Single CPU-only follow-up. Recommended
+task types: data-analysis, answer-question.
 
 </details>
 
@@ -9509,6 +9642,31 @@ and compare the distribution against paper text and figure descriptions. This ex
 somatic asymmetry collapse and informs whether the deposited model needs a spatial
 redistribution correction or a per-side conductance scaling. Recommended task types:
 data-analysis.
+
+</details>
+
+<details>
+<summary>✅ <s>Bed B NSGA-II maximising DSI and minimising ATP-per-spike</s> —
+covered by <a
+href="../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/"><code>t0124_bedb_dsi_atp_per_spike_nsga2</code></a>
+(S-0097-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0097-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-08 |
+| **Source task** | [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000840`](../../../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1000840/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per
+spike). Remme et al. 2018's MSO function-vs-energy MOBO provides a direct methodology template
+generalising to NEURON. DSGC's GABAergic-style fast-spiking should produce
+Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower
+energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e`
+per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed
+per-task default; flag for explicit budget approval.
 
 </details>
 

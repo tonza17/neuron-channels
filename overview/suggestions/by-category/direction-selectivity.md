@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-338 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **303 open** (58
-high, 222 medium, 23 low), **35 closed**.
+339 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **304 open** (58
+high, 223 medium, 23 low), **35 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1635,6 +1635,32 @@ isolation); this 5-seed run addresses joint-factor robustness. Decision: if F1 s
 |r|>0.3 on both axes with the same top loadings, the truncated-cohort verdict is seed-robust;
 if F1 collapses or shuffles, the joint factor is partly 4-seed-specific. Recommended task
 types: data-analysis, comparative-analysis. Cost: <$0.25.
+
+</details>
+
+<details>
+<summary>🧪 <strong>8-direction MI NSGA-II to lift the 2-bit ceiling and re-test the
+joint factor at higher MI resolution</strong> (S-0125-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0125-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0125_t0123_cluster_factor_mi_atp`](../../../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) |
+| **Source paper** | — |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+t0125's top cells saturate at mi_count_bits = 1.459 (73% of log2(4) = 2.0). Three Pareto cells
+converged on identical (MI, DSI, PD-rate) -- a deterministic optimum at the ceiling.
+Compressed MI variance pulls all joint loadings toward zero. Distinct from S-0123-01 (extended
+trial length + PD-rate floor for Strong-Bialek bits/s) and from polar 8-direction
+re-evaluation suggestions on DSI lineages (those re-score existing cells; this is a fresh
+NSGA-II). Action: fork t0123 with N_DIRECTIONS = 8 (ceiling = log2(8) = 3.0 bits), keep other
+constants matched (POP_SIZE = 96, N_EVAL_SEEDS = 3, HV auto-stop OFF, pool restart every 10);
+scale trial duration only if firing rate falls (per memory
+feedback_dsgc_measurement_protocol); rerun cluster + factor analysis. Budget ~$10-15 Vast.ai
+EPYC. Recommended task types: experiment-run, data-analysis.
 
 </details>
 

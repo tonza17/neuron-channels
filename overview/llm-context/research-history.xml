@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-24T21:18:32Z">
+<llm_context_archive preset_id="research-history" generated_at_utc="2026-05-25T01:16:20Z">
   <archive_summary>
     <title>Research History</title>
     <description>Research-stage documents across completed tasks, plus core project context.</description>
     <use_case>Literature review continuity, methodology discussion, and prior-investigation lookup.</use_case>
-    <section_count>194</section_count>
-    <char_count>3833272</char_count>
-    <byte_count>3842329</byte_count>
-    <estimated_tokens>958318</estimated_tokens>
+    <section_count>196</section_count>
+    <char_count>3934036</char_count>
+    <byte_count>3943366</byte_count>
+    <estimated_tokens>983509</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -228,9 +228,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0121_5seed_substrate_rate_canonical_report</id>
         <id>t0122_dsi_cytoplasm_volume_nsga2</id>
         <id>t0123_bedb_mi_atp_per_spike_nsga2</id>
+        <id>t0125_t0123_cluster_factor_mi_atp</id>
       </source_ids>
       <content>
-Completed tasks: 116
+Completed tasks: 117
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -927,6 +928,12 @@ ID: t0123_bedb_mi_atp_per_spike_nsga2
 Completed: 2026-05-24
 Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective MI vs ATP-per-spike (Strong 1998 + Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 4-direction protocol, $6 cap.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0123_bedb_mi_atp_per_spike_nsga2&quot; status: &quot;completed&quot; date_completed: &quot;2026-05-24&quot; --- Results Summary: NSGA-II MI vs ATP-per-Spike (Bed B + 14-d Morph) Summary 68-d NSGA-II (54-d electrophys + 14-d morphology) on Bed B at GA seed 441, pop=96, N_EVAL_SEEDS=3, 4 antipodal directions, ran to gen 60 ceiling cleanly. The two-tier MI estimator surfaced a real discrepancy: count-MI hit **1.459 bits** at the high-MI corner while Strong-Bialek direct-method **bits/s = 0.0 for all 10 top Pareto cells**, because the optimiser exploited count-MI at the silence-guard boundary (~3 PD spikes/trial) where spike-time information is degenerate. Metrics * **Hypervolume gain**...
+
+## Cluster + factor analysis of t0123 cells: high vs low MI and ATP
+ID: t0125_t0123_cluster_factor_mi_atp
+Completed: 2026-05-25
+Short description: PCA + KMeans on electrophys (54-d) and morphology (14-d) + varimax FA on 68-d for t0123 cells; quartile-group comparisons of high vs low MI and high vs low ATP-per-spike.
+Result summary: Results Summary: t0125 Cluster + Factor Analysis of t0123 MI vs ATP Summary Applied the canonical PCA + KMeans + varimax factor-analysis pipeline (inherited from t0108 / t0116 / t0117) to the **5,760** t0123 cells with a dual full / spiking-cohort design. The headline finding is **negative for the joint-driver hypothesis**: **zero** varimax factors satisfy `|r_MI| &gt; 0.30 AND |r_ATP| &gt; 0.30` simultaneously, in direct contrast to t0117 which found one joint DSI x PD factor. Despite the decoupled latent structure, MI and ATP are positively correlated at the cell level (**3.6x** diagonal-vs-off-diagonal corner-count imbalance), and the high-MI / low-ATP &quot;Pareto-favoured&quot; corner has **1,221** of...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -936,9 +943,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0123_bedb_mi_atp
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0124_bedb_dsi_atp_per_spike_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -959,6 +967,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)
+ID: t0124_bedb_dsi_atp_per_spike_nsga2
+Status: in_progress
+Effective date: 2026-05-24
+Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs ATP-per-spike (Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 2-direction protocol, $6 cap.
+Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0097_multi_obj_optim, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0120_morph_generator_geometry_audit, t0122_dsi_cytoplasm_volume_nsga2, t0123_bedb_mi_atp_per_spike_nsga2
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1011,9 +1026,13 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>dsgc-bits-per-atp-vs-niven-2007</id>
         <id>morphology-generator-geometry-consistency</id>
         <id>substrate-rate-5seed-canonical</id>
+        <id>high-vs-low-mi-electrophys-signature</id>
+        <id>low-vs-high-atp-morphology-signature</id>
+        <id>mi-atp-joint-structure-in-t0123-substrate</id>
+        <id>pareto-favoured-corner-signature</id>
       </source_ids>
       <content>
-Answers: 46
+Answers: 50
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1377,6 +1396,38 @@ Confidence: medium
 Categories: direction-selectivity, compartmental-modeling
 
 The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, a normal-approx 95% CI of (-0.35%, 5.51%), and a bootstrap 95% CI of (0.38%, 5.53%); the point estimate is roughly 6.5x Hay 2011&#x27;s 0.40% envelope and 25.8x Druckmann 2007&#x27;s 0.10% baseline, and 3 of 5 seeds individually exceed the Hay envelope. Both 95% CIs bracket zero and both literature baselines, so this batch cannot statistically reject the literature rates despite the elevated point estimate.
+
+## Which electrophys parameters most distinguish high-MI from low-MI cells in the t0123 spiking cohort, with effect size and direction?
+ID: high-vs-low-mi-electrophys-signature
+Created by: t0125_t0123_cluster_factor_mi_atp on 2026-05-25
+Confidence: medium
+Categories: compartmental-modeling, voltage-gated-channels
+
+The top 5 electrophys parameters by |Cliff&#x27;s delta| separating high-MI (top quartile of mi_count_bits, n = 819) from low-MI (bottom quartile, n = 1024) cells are: IH_GBAR (delta = -0.786, high-MI cells have ~32x lower mean), CAD_TAUR_MS (delta = -0.717, high-MI cells have ~3.6x faster calcium-buffer time constant), KDR_GBAR (delta = -0.668, high-MI cells have ~9x lower mean), SK_AIS_GBAR (delta = +0.632, high-MI cells have higher AIS-localised SK density), and SKAHP_TAU_CA_MULTIPLIER (delta = -0.627, high-MI cells have ~2.4x shorter calcium-driven AHP time constant). All five Mann-Whitney U p-values are below 1e-115, so the effects are statistically robust against the n ~ 1000 sample sizes.
+
+## Which morphology parameters most distinguish low-ATP from high-ATP cells in the t0123 spiking cohort, and does the low-ATP group spend relatively more ATP at the AIS than in the dendrites?
+ID: low-vs-high-atp-morphology-signature
+Created by: t0125_t0123_cluster_factor_mi_atp on 2026-05-25
+Confidence: medium
+Categories: compartmental-modeling, dendritic-computation, cable-theory
+
+The top 5 morphology parameters by |Cliff&#x27;s delta| separating high-ATP (top quartile of atp_per_spike, n = 782) from low-ATP (bottom quartile, n = 782) cells are: mean_segment_length_um (delta = -0.725, low-ATP cells have ~43% longer segments), branch_length_cv (delta = +0.554, low-ATP cells are more uniform in branch length), branch_density_gradient_pd (delta = +0.504, low-ATP cells have weaker preferred-direction dendrite-density gradient), field_elongation_pd (delta = -0.469, low-ATP cells have more elongated dendritic field), and ais_length_um (delta = +0.376, low-ATP cells have shorter AIS by ~12%). The ATP-share answer is Yes for the AIS but the dendrite/soma swap dominates: low-ATP...
+
+## Does the 68-d substrate of the t0123 single-seed MI vs ATP-per-spike NSGA-II run admit a joint MI x ATP latent factor (|r| &gt; 0.30 on both metrics simultaneously), or are MI and ATP driven by decoupled factors?
+ID: mi-atp-joint-structure-in-t0123-substrate
+Created by: t0125_t0123_cluster_factor_mi_atp on 2026-05-25
+Confidence: medium
+Categories: compartmental-modeling, voltage-gated-channels
+
+No, the t0123 substrate does not contain a joint MI x ATP factor. Varimax factor analysis on the full 5760-cell pool retained 10 factors (16 Kaiser eigenvalues &gt; 1, total variance explained 34.3%) and zero factors satisfy |r_MI| &gt; 0.30 AND |r_ATP| &gt; 0.30 simultaneously. The two strongest MI-loaded factors carry r_MI = -0.358 / +0.463 but only r_ATP = +0.205 / +0.063, and the strongest ATP-loaded factor (F1) ranks 7th on |r_MI|. This contrasts with t0117&#x27;s pooled four-seed DSI x PD substrate which found one joint factor F1 (r_DSI = +0.421, r_PD = +0.352, 12.6% variance).
+
+## Which combination of electrophys + morphology parameters most distinguishes the Pareto-favoured corner (high MI, low ATP) from the Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what are the per-corner cell counts and means?
+ID: pareto-favoured-corner-signature
+Created by: t0125_t0123_cluster_factor_mi_atp on 2026-05-25
+Confidence: medium
+Categories: compartmental-modeling, voltage-gated-channels, dendritic-computation
+
+The top 5 parameters by absolute z-score difference between the high_mi_low_atp and low_mi_high_atp corners (each cell z-scored against the full-cohort standardiser, mean per corner) are: KDR_GBAR (-1.19), branch_length_cv (-1.08), BK_SOMA_GBAR (-1.06), IH_GBAR (-1.06), and RA_OHM_CM (+1.06). The Pareto-favoured corner contains 1221 spiking cells (mean MI = 0.984 bits, mean ATP = 5.34e6 molecules / spike, mean DSI = 0.237, mean PD rate = 2.61 Hz) versus 1220 cells in the dominated corner (mean MI = 0.063 bits, mean ATP = 2.61e7 molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbalance (1221 + 1220 = 2441 cells vs 343 + 341 = 684 off-diagonal) is the joint Pareto...
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-research_papers" source_kind="file">
@@ -63790,6 +63841,1410 @@ points with R^2 reporting is the minimum-viable validation.
 * **Relevance**: **GATING DEPENDENCY** (transitive from [t0122]). Verdict: &quot;rendering-only artefact,
   no NSGA-II re-runs needed.&quot; 60/60 coordinate-consistency checks pass means the realised dendrite
   geometry that the ATP recipe iterates over is correct. No need to patch `_apply_asymmetry`.
+      </content>
+    </section>
+    <section id="t0125_t0123_cluster_factor_mi_atp-research_papers" source_kind="file">
+      <title>t0125_t0123_cluster_factor_mi_atp — Cluster + factor analysis of t0123 cells: high vs low MI and ATP — research_papers.md</title>
+      <source_name>research_papers.md</source_name>
+      <source_ids>
+        <id>t0125_t0123_cluster_factor_mi_atp</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0125_t0123_cluster_factor_mi_atp/research/research_papers.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0125_t0123_cluster_factor_mi_atp&quot;
+research_stage: &quot;papers&quot;
+papers_reviewed: 19
+papers_cited: 17
+categories_consulted:
+  - &quot;compartmental-modeling&quot;
+  - &quot;voltage-gated-channels&quot;
+  - &quot;dendritic-computation&quot;
+  - &quot;cable-theory&quot;
+  - &quot;retinal-ganglion-cell&quot;
+  - &quot;direction-selectivity&quot;
+  - &quot;synaptic-integration&quot;
+date_completed: &quot;2026-05-25&quot;
+status: &quot;complete&quot;
+---
+### Research Papers — Cluster + Factor Analysis of t0123 Cells (MI vs ATP-per-Spike)
+
+#### Task Objective
+
+This task applies the canonical t0108 / t0116 / t0117 cluster-and-factor pipeline (PCA + KMeans on
+electrophys (54-d) and morphology (14-d) subspaces + Kaiser-cap varimax factor analysis on the full
+68-d vector) to the t0123 single-seed NSGA-II run that optimised spike-count mutual information
+(`mi_count_bits`, Strong-Bialek-direct surrogate) against ATP-per-spike (Sengupta-style integrated
+Na+ load), with 5 760 dedup-unique cells evaluated under seed 441. The substantive deliverables are
+four answer assets: (1) is there a joint latent factor driving both MI and ATP, or are the two
+objectives driven by decoupled factors; (2) which electrophys parameters most distinguish high-MI
+from low-MI cells; (3) which morphology parameters most distinguish low-ATP from high-ATP cells; and
+(4) which combined signature distinguishes the Pareto-favoured corner (high MI, low ATP) from the
+dominated corner (low MI, high ATP). The literature review below establishes the prior on what such
+a 68-d substrate is expected to look like once it is dissected by PCA, KMeans, and varimax factor
+analysis, and what specific numbers (Na+ overlap factor, MI bits-per-spike ceiling, channel
+co-variation patterns) the four answer assets should be calibrated against.
+
+#### Category Selection Rationale
+
+Seven categories from `meta/categories/` were consulted. **`compartmental-modeling`** is the
+methodological substrate — every MOO / parameter-ensemble paper this task relies on
+[Hay2011, Druckmann2007, Achard2006, Prinz2004, VanGeit2016] is a compartmental-model fitting study,
+and the cluster + factor pipeline (t0108 / t0116 / t0117) is itself a compartmental-model
+ensemble-analysis tool. **`voltage-gated-channels`** is core because the 54-d electrophys subvector
+is dominated by Na, K, Ca, and HCN channel densities whose interactions are the canonical site of
+parameter degeneracy [Marder2006, Prinz2004, Achard2006] and whose Na+/K+ kinetic overlap directly
+controls ATP-per-spike [Sengupta2010, Attwell2001]. **`dendritic-computation`** supports the
+hypothesis that dendritic structure (14 morphology parameters) and dendritic channel density jointly
+shape both MI and ATP [LondonHausser2005, Mainen1996]. **`cable-theory`** is consulted because cable
+properties (axial resistance, compartment length and diameter) drive how dendritic Na+ load
+translates into spike generation and therefore ATP cost [KochPoggio1982, Mainen1996, Cuntz2010].
+**`retinal-ganglion-cell`** is core because the cells under analysis are mouse-style DSGCs, the only
+RGC information-rate measurement in the corpus is in an RGC [Dhingra2004], and the RGC HH machinery
+[FohlmeisterMiller1997] is what physically generates the Na+ load this task clusters. The
+**`direction-selectivity`** and **`synaptic-integration`** categories are consulted because t0123
+preserves a DSI/PD-rate diagnostic alongside MI/ATP and the question of whether high-MI cells are
+also high-DSI cells (or anti-correlated) is one the cluster output should answer; however no DS or
+synaptic-integration paper is directly cited because the task does not optimise DSI and the
+canonical DS references are already extensively used by the t0078 / t0080 / t0091 lineage.
+
+Excluded category: **`patch-clamp`** was scanned but contributes no paper that directly informs the
+68-d cluster / factor analysis methodology — patch-clamp papers in this corpus supply the
+experimental ground truth for channel densities but not the high-d parameter-space dissection
+toolkit. No paper in the corpus is dedicated to clustering / factor-analysis methodology *per se*;
+the methodological precedents are drawn from MOO papers that cluster the resulting ensembles
+([Druckmann2007, Achard2006, Prinz2004]) and from Baden 2016&#x27;s RGC functional taxonomy [Baden2016]
+which uses an analogous unsupervised-clustering pipeline on real RGC functional fingerprints.
+
+#### Key Findings
+
+##### High-Dimensional Conductance-Density Spaces Form Loosely Connected Hyperplanes, Not Blobs or Points
+
+The single most important precedent for this task is [Achard2006]&#x27;s analysis of the 24-parameter
+cerebellar Purkinje-cell parameter landscape. After running nine independent (57+19) self-adaptive
+evolution-strategy runs of ~8 000 evaluations each (415 generations on a 10-node cluster), they
+retained 20 acceptable models with fitness 2.58 to 3.45 (Achard &amp; De Schutter 2006, Methods, p. 4).
+The geometry of the &quot;good&quot; region was neither a single connected blob nor a set of isolated points,
+but **a collection of loosely connected hyperplanes** — thin lower-dimensional manifolds. They
+explicitly state that a 6- or 10-points-per-dimension grid search would miss ~65% of these solutions
+because the good region is structured (Achard &amp; De Schutter 2006, Discussion). Several individual
+channels (gCaTm, gKAm, gKMd, gKhs) varied across their entire allowed range while others (gNaFs,
+gCaPd, gKdrs, gKdrm) remained tightly bounded across the 20 acceptable models. This is the
+qualitative shape the t0125 PCA on the 68-d t0123 substrate is expected to recover: high-MI and
+low-ATP cells are likely to form a thin manifold within the 68-d cube rather than a compact ball,
+and the varimax factor analysis is the right tool for reading off which combinations of channels
+co-vary along that manifold.
+
+[Prinz2004] gives the quantitative back-up at network scale: brute-force simulation of **20 250 000
+three-cell pyloric STG networks** yielded **4 047 375 networks (20%)** that produced a pyloric-like
+triphasic rhythm and **452 516 networks (2.2%)** that matched all 15 quantitative criteria
+[Prinz et al. 2004, Results, Table 2]. Every one of the 150 cell-combination configurations and the
+full functional range of every synaptic conductance was represented in the matching set, with one
+notable exception (LP-to-PY). This is the empirical demonstration of &quot;many models, one behaviour&quot;
+that [Marder2006] reviews as parameter degeneracy: individual channel densities can vary two- to
+fourfold across cells of the same identified type while activity profiles remain conserved, because
+compensating channels co-vary [Marder &amp; Goaillard 2006, Box 1, p. 565].
+
+**Hypothesis (the central question of answer asset 1)**: if [Achard2006]&#x27;s &quot;loose hyperplanes&quot; and
+[Prinz2004]&#x27;s &quot;many models&quot; picture extends to the t0123 68-d substrate, then the varimax factor
+analysis should recover a small number (3-10) of factors that capture a substantial fraction of the
+variance, and the answer &quot;is MI ↔ ATP a joint axis or two decoupled axes&quot; turns on whether one
+factor carries |r| &gt; 0.3 on both `mi_count_bits` and `atp_per_spike_molecules`. The DSI/PD precedent
+in t0117 (project-internal) showed F1 with r_DSI = +0.421 and r_PD = +0.352, a single joint DSI-PD
+factor at 12.6% variance explained, in the unfiltered 4-seed pool. The t0125 question is whether MI
+and ATP behave the same way in the single-seed t0123 pool. **Best practice** from
+[Achard2006, Prinz2004, Marder2006]: every cluster/factor analysis of a MOO output ensemble should
+report (a) the joint distribution of each parameter across the ensemble, (b) the compensatory
+covariance structure (which channels co-vary), and (c) the per-cluster ranges of all parameters, not
+just the per-parameter means.
+
+##### Per-AP ATP Cost Is Dominated by Na+/K+ Overlap, Not AP Shape
+
+The ATP-per-spike axis of the t0123 Pareto front is set by Na+/K+ overlap during the action
+potential, not by AP amplitude or width [Sengupta2010]. Across seven published Hodgkin-Huxley models
+— squid axon, crab leg motor neuron, mouse fast-spiking interneuron, honeybee Kenyon cell, rat
+hippocampal interneuron, rat cerebellar granule cell, mouse thalamo-cortical relay — per-AP Na+
+load spans **17-fold** (squid = **1 098 nC/cm^2**, mouse thalamo-cortical relay = **65 nC/cm^2**;
+Sengupta et al. 2010, Table 1, p. 5), while the capacitive-minimum Na+ load (the minimum charge
+required to depolarise the membrane to the AP peak) varies only **2.3-fold** (98 to 56 nC/cm^2). The
+difference is almost entirely the **overlap load**: Na+ that enters while K+ is also flowing
+outward, dissipating without contributing to depolarisation. The linear regression of overlap load
+vs total Na+ load across all seven models has slope ~1 and **R^2 = 0.99 (p &lt; 0.0001)**
+[Sengupta et al. 2010, Figure 3, p. 6]. AP efficiency (capacitive-minimum / total Na+ load) ranges
+from **9% in the squid (6.3 °C)** through **20-40% in mammalian crab motor / mouse fast-spiking /
+honeybee Kenyon**, **75% in rat hippocampal interneuron**, to **~100% in rat granule and mouse
+thalamo-cortical relay** [Sengupta et al. 2010, Table 1, p. 5]. Two APs with identical height and
+half-width can be produced by current pairs differing **1.76-fold in Na+ load** (1 275 vs 2 244
+nC/cm^2; Sengupta et al. 2010, Figure S1).
+
+The corresponding ATP-per-AP cost varies **~17-fold across the same seven models** (squid = **2.3 x
+10^12 ATP/cm^2** vs mouse thalamo-cortical relay = **1.35 x 10^11 ATP/cm^2**) and the Na+/K+ pump
+stoichiometry is **3 Na+ per 1 ATP**, so ATP per AP per cm^2 = (Na+ load) x N_A / (3 x F)
+[Attwell2001, Eq. 9, p. 1136]. The Attwell-Laughlin canonical recipe — used as the t0123
+implementation reference — converts integrated Na+ influx (in coulombs per compartment per AP) to
+ATP molecules via division by `(3 * e)` with `e = 1.602e-19 C`
+[Attwell &amp; Laughlin 2001, Materials and Methods, p. 1136]. The benchmark per-AP cost in a rodent
+cortical neuron is **3.84 x 10^8 ATP** (Na+ load **1.15 x 10^9 ions**), with **axon collaterals =
+82%, dendrites = 14%, soma = 4%** [Attwell &amp; Laughlin 2001, Table 4, p. 1140]. Total per-spike cost
+including 2 000 released vesicles is **7.1 x 10^8 ATP/spike**
+[Attwell &amp; Laughlin 2001, Results, p. 1141].
+
+**Hypothesis** (central to answer assets 2 and 3): high-ATP cells in the t0123 pool are expected to
+sit at high Na+ overlap factor (`alpha = total Na+ / capacitive minimum`) — i.e., elevated somatic
++ AIS Nav densities and/or slowed K+ kinetics that delay repolarisation. The Cliff&#x27;s-delta ranked
+  bar chart from Step 8 should isolate parameters that control Nav density (`g_nav16_*`), Kv density
+  (`g_kv3_*`, `g_kv4_*`), and Na+ inactivation time constant — these are the canonical &quot;energy
+  levers&quot; identified in [Sengupta et al. 2010, Discussion, p. 11], where reducing Na+ inactivation
+  tau is the single most effective biophysical lever for lowering AP energy (more effective than
+  reducing channel density). **Best practice** from [Sengupta2010]: AP shape (amplitude, half-width)
+  is **not** a reliable predictor of energy cost — the cluster analysis must therefore use the
+  direct integrated Na+ recipe rather than a waveform proxy. The DSGC mammalian neurons in t0123 are
+  expected to cluster around the mammalian alpha ~ 1.0-1.5 band rather than the squid alpha ~ 4-11
+  band, because mammalian neurons are observed to lie close to the capacitive minimum
+  [Sengupta et al. 2010, Table 1, p. 5; Carter &amp; Bean cited in discussion at p. 11]. Carter &amp; Bean
+  (2009) is not in the asset corpus but is cited via [Sengupta2010] as the mouse cortical pyramidal
+  benchmark at **alpha ~ 1.2** — the t0125 ATP histogram should cluster around this value if the
+  NSGA-II found biologically plausible cells.
+
+##### Mutual Information in RGC Spike Trains Is Bounded by the Spike Generator, Not by Synaptic Input
+
+The single direct RGC information-rate measurement in the corpus comes from [Dhingra2004]:
+brisk-transient guinea-pig RGCs at 37 °C, recorded with sharp electrodes, presented a flashed spot
+over the receptive-field centre, analysed with ideal-observer decoders applied independently to the
+graded-potential trace and to the spike train. Key quantitative results: **detection threshold from
+graded potential = 1.5% contrast; from spikes = 3.8% contrast** (~2.5x degradation by the spike
+generator); **spikes carry roughly 60% fewer distinguishable gray levels** than the graded
+potential; the graded-potential dipper onsets at **~2% contrast** and the spike dipper at **~4%
+contrast** [Dhingra &amp; Smith 2004, Figs. 5-7, pp. 5345-5347]. The information loss is dominated by
+the spike-generator threshold nonlinearity, not by stochastic noise
+[Dhingra &amp; Smith 2004, Discussion, p. 5349]. [Dhingra2004] also documents an explicit trade-off:
+**depolarisation reduces detection threshold but also reduces dynamic range** — a Pareto trade-off
+in the same RGC type the project simulates.
+
+The corresponding ceiling-and-baseline for the t0123 4-direction protocol comes from [Strong1998]&#x27;s
+direct-method information rate in the fly H1 motion-sensitive neuron: total spike-train entropy rate
+at `Δτ = 3 ms` of **157 ± 3 bits/s**, noise entropy rate that yields information rate **78 ± 5
+bits/s = 1.8 ± 0.1 bits/spike**, efficiency **~50%** across `Δτ ∈ [2 ms, 800 ms]`, peak
+information rate up to **~90 bits/s** [Strong et al. 1998, Results, p. 198]. The t0123 inner-loop
+estimator is **not** the full direct method (only 3 trials per direction is insufficient for the 1/T
+extrapolation) but a Miller-Madow-corrected spike-count plug-in MI on a 4 x B contingency table with
+ceiling `log2(4) = 2 bits/stimulus` (t0123 task_description.md, &quot;MI Estimator Choice&quot;). The post-hoc
+validation on the top-10 Pareto cells uses 8 directions x 20 trials per direction = 160 trials with
+Strong-Bialek direct-method MI in bits/s, exactly the [Strong1998] recipe at resolution `dt = 5 ms`
+and `T ∈ {25, 50, 75, 100} ms`.
+
+**Hypothesis** (relevant to answer 1 and answer 4): high-MI cells in the 68-d substrate likely
+cluster around parameters that (a) keep the spike generator close to threshold without
+depolarisation block — moderate Nav densities + moderate Kv densities — and (b) sustain enough
+PD-rate that the 4-direction spike-count distributions can support `log2(4) = 2 bits`. The Miller-
+Madow-corrected plug-in MI on only 12 trials per cell is biased, but as a **relative** selection
+signal for NSGA-II it is well-defined. The factor analysis should reveal whether MI co-varies with
+the parameters that control PD firing rate (Nav, AIS Nav, synaptic strength) or with a distinct axis
+(channel kinetics that determine information per spike rather than spike count). **Best practice**
+from [Strong1998] and [Dhingra2004]: any reported information rate must specify the resolution
+`Δτ`, the window `T`, the number of trials, the bias-correction method, and the units (bits/spike,
+bits/s, or bits/stimulus). The t0125 cluster analysis should treat `mi_count_bits` as the
+bits/stimulus surrogate, not as the Strong-Bialek bits/s rate, and should defer claims about
+absolute MI rates to the post-hoc 8-dir x 20-trials Pareto-cell validation.
+
+##### Morphology Is a Functional Axis, Not a Passive Scaffold
+
+The cluster analysis on the 14-d morphology subvector (Step 6) rests on the established result that
+morphology alone, with a fixed channel set, determines firing pattern. [Mainen1996] showed that
+distributing the **same** channel set across reconstructions of layer 3 aspiny stellate (regular-
+spiking) vs layer 5 pyramidal (intrinsic-bursting) vs layer 4 spiny stellate (fast-spiking) cells
+reproduces the experimentally observed firing patterns of those cell types — morphology alone is
+sufficient. [KochPoggio1982] gave the historical anchor: the first formal cable-theoretic argument
+that **dendritic morphology has a functional interpretation** rather than being arbitrary, using
+passive cable theory on cat retinal ganglion cells with **R_i = 70 Ω·cm, C_m = 2 µF/cm^2, R_m = 2
+500 Ω·cm^2** to argue that branching geometry plus shunting inhibition can compute direction
+selectivity. [FohlmeisterMiller1997] reinforces this in the project&#x27;s home cell type: in
+multicompartmental amphibian RGCs with five nonlinear ion channels plus leak, **cell geometry
+(soma-dendritic-axon proportions) controls the f-I curve** — for the t0125 ATP question, this
+means the 14 morphology parameters (segment count, branch order, segment diameter, segment length,
+soma radius, soma share, etc.) should plausibly form distinct KMeans clusters with distinct mean
+ATP-per-spike values.
+
+[LondonHausser2005] is the canonical synthesis: dendrites can act as passive cables, active spike
+conductors, amplifiers, coincidence detectors, and direction-discriminators, each with
+characteristic biophysical signatures (London &amp; Hausser 2005, Box 1). The review documents the menu
+of single-cell computations that a multi-objective optimiser can target *for* (MI, coincidence
+detection) and *against* (energy, cytoplasm). [Cuntz2010] formalises the morphology-vs-conduction-
+time trade-off via the balancing factor `bf`, with biologically realistic dendritic arbors
+clustering at **bf ∈ [0.2, 0.7]** (Cuntz et al. 2010, Figure 4) — for the t0125 morphology
+cluster analysis, this is the prior on which morphology subspace is biologically plausible.
+
+**Hypothesis** (answer 3): morphology clusters in the t0123 pool should split high-ATP from low-ATP
+cells primarily along axes that control total membrane area (segment count, mean segment length,
+mean segment diameter) — because total Na+ load per AP scales linearly with the dendritic membrane
+area carrying Nav channels [Attwell2001, Sengupta2010]. **Best practice** from [Hay2011, Cuntz2010]:
+every morphology-objective analysis should be tested for **discretisation invariance** — halving
+or doubling compartment density should change the integrated Na+ objective by no more than a few
+percent. **Best practice** from [Mainen1996]: do **not** interpret a morphology cluster in isolation
+from its channel densities — the same morphology with different channels gives qualitatively
+different firing patterns, so the t0125 corner heatmap (Step 9) is the right visualisation because
+it shows the *joint* electrophys + morphology signature of each MI x ATP corner rather than treating
+the two subspaces as independent.
+
+##### Unsupervised Clustering Is the Established Method for High-d Cell-Type Discovery in the Retina
+
+The closest methodological precedent in real retinal data is [Baden2016]: two-photon Ca^2+ imaging
+of &gt;11 000 mouse RGCs, with each cell reduced to a functional feature vector (SVD of moving-bar
+direction-by-time matrices + chirp average + full-field step + colour + receptive-field diameter +
+soma area + ON/OFF index + DSi + OSi + response-quality + immunohistochemistry markers). The
+clustering pipeline was an **unsupervised probabilistic Mixture-of-Gaussians model with the number
+of clusters selected by the minimum BIC**, run independently on DS-positive cells (cell_dp &lt; 0.05, n
+= 1 757) and non-DS cells [Baden et al. 2016, Methods, p. 348]. The pipeline returned **24 DS
+clusters and 48 non-DS clusters**, merged across DS / non-DS domains into **32 RGC functional
+groups** plus 17 displaced amacrine groups [Baden et al. 2016, Results, Figure 2]. 8 DS-containing
+groups (G2, G6, G12, G13, G16, G25, G26, G29) together account for **70% of all 1 757 DS cells
+recorded**.
+
+For the t0125 task the methodological parallels are exact: a high-d feature vector per cell, an
+unsupervised clustering pipeline that auto-picks the cluster count by an objective criterion
+(silhouette in t0125 rather than BIC in Baden 2016), separate clustering on a function-relevant
+subspace (DS/non-DS in Baden 2016; electrophys-only and morphology-only in t0125), and a final
+reading of which cluster captures which functional groups (RGC type in Baden 2016; MI / ATP / corner
+in t0125). **Best practice** from [Baden2016]: the cluster count selection criterion (BIC or
+silhouette) must be reported with its full curve, not just the peak — different curve shapes imply
+different interpretations (a flat curve means the data does not strongly prefer any k; a sharp peak
+supports the chosen k). The silhouette curve for k ∈ [3, 7] in t0125 Steps 5 and 6 is the exact
+analogue of Baden&#x27;s BIC curve and must be saved to disk.
+
+##### Multi-Objective Optimisation Methodology and the Pareto-Acceptable-Ensemble Reporting Convention
+
+The MOO methodology line — [Hay2011], [Druckmann2007], [VanGeit2016] — establishes the reporting
+convention this task should follow. [Hay2011] fit 22 free parameters of an L5b pyramidal cell to
+**20 firing-feature objectives** (10 perisomatic + 10 BAP-activated Ca-spike &quot;BAC&quot; features) with
+population 1 000 x 500 generations = **500 000 evaluations**, accepting all models whose every
+feature lies within **2-3 SD** of the experimental mean and producing ~2 000 acceptable models that
+are reported as a Pareto-acceptable ensemble (ModelDB 139653) rather than as a single best fit
+[Hay et al. 2011, Results, p. 6]. Two single-target sub-fits give a quantitative case for joint
+optimisation and joint cluster analysis: BAC-only fitting yields **899 acceptable models** but those
+models then fail perisomatic targets (e.g., apical Nat density **82.5 pS/um^2** below the
+BAC-acceptable range of **101-133.5 pS/um^2** when the perisomatic constraint is added back in);
+perisomatic-only fitting yields only **52 acceptable models** [Hay et al. 2011, Discussion, p. 9].
+The two single-target acceptable sets do not overlap on the joint feature space — exactly the &quot;are
+MI and ATP found in the same region or in disjoint clusters&quot; question this task asks.
+
+[Druckmann2007] introduced the per-feature SD-normalisation convention: every objective is expressed
+in units of the corresponding experimental SD (or, when no SD is available, the best- effort
+biological tolerance). The original Druckmann fit used a 12-parameter compartmental model with
+NSGA-II at **300 organisms x 1 000 generations = 300 000 evaluations** to fit two electrical classes
+of rat somatosensory cortical interneurons [Druckmann et al. 2007, Methods, p. 9]. [VanGeit2016]
+packaged this methodology into BluePyOpt — wraps DEAP for the evolutionary algorithms (IBEA and
+NSGA-II), NEURON as the simulator, and eFEL for feature extraction. Use Case 2 in [VanGeit2016]
+reproduces the Hay 2011 18-parameter L5PC fit by matching 31 eFeatures from in vitro patch-clamp
+recordings in **~4 hours on 50 cores with IBEA at 100 individuals x 100 generations = 10 000
+evaluations** [Van Geit et al. 2016, Use Case 2, p. 11] — orders of magnitude smaller than
+[Hay2011]&#x27;s original 500 000 because the search space is reduced and the algorithm is upgraded.
+
+**Best practice** from this line for t0125&#x27;s per-question verdicts: report the full Pareto front and
+the per-cluster parameter distribution (Hay-style ensemble), not just the means; express
+between-group differences in units of pooled SD (Druckmann-style); record the K-means cluster labels
+next to the parameter vector for every cell, so a downstream task can re-analyse with a different
+cluster count without re-running the simulation. **Hypothesis (cross-cutting)**: the &quot;shape&quot; of the
+t0123 NSGA-II output ensemble should resemble [Achard2006]&#x27;s &quot;loose hyperplanes&quot; qualitatively,
+while the per-channel ranges should be narrower than [Achard2006]&#x27;s 20-model Purkinje fit (because
+the t0123 substrate has stronger biological priors on every parameter from t0078 / t0080 / t0091 /
+t0102).
+
+#### Methodology Insights
+
+* **Per-AP ATP recipe (Attwell-Laughlin canonical form)**: ATP per AP per compartment =
+  `(integrated_Na_inward_current * area_cm2) / (3 * e)` with `e = 1.602e-19 C` and the Na+/K+ pump
+  stoichiometry of 3 Na+ exported per ATP hydrolysed [Attwell2001, Eq. 9, p. 1136]. The t0123
+  implementation already uses this; the t0125 cluster analysis must consume the resulting per-cell
+  `atp_per_spike_molecules` directly from the predictions asset.
+
+* **Sengupta calibration band for mammalian neurons**: AP efficiency (capacitive-minimum / total Na+
+  load) for mammalian neurons sits at **75-100%**, alpha (overlap factor) at **1.0-1.5**
+  [Sengupta2010, Table 1, p. 5]. The Carter-Bean (2009) cortical pyramidal benchmark at **alpha ~
+  1.2** is the closest reference for a DSGC. Any t0123 cell with alpha &gt; 2 (i.e., overlap load &gt;
+  total capacitive load) should be flagged as biologically implausible — this is a sanity check
+  for the high-ATP corner of the t0125 cluster analysis.
+
+* **MI bias-correction convention**: the inner-loop t0123 estimator uses Miller-Madow correction
+  `bias_MM = (R-1)(C-1)/(2N ln 2)` with R = 4 (directions), C = B (bins), N = 12 (trials) on the 4 x
+  B contingency table [Strong1998, Eqs. 4, 6]. The post-hoc validation uses Strong-Bialek direct
+  method with 1/T extrapolation [Strong1998, Eq. 4, p. 198]. The t0125 cluster analysis consumes the
+  inner-loop `mi_count_bits` values and should report MI in bits/stimulus, with the
+  `log2(4) = 2 bits` ceiling noted in every chart caption.
+
+* **Cluster count selection**: silhouette sweep over k ∈ [3, 7] with the chosen k = argmax of mean
+  silhouette is the t0117 convention this task inherits. The full silhouette curve must be saved to
+  disk, not just the peak [Baden2016 methodological parallel: BIC curve, p. 348].
+
+* **Per-feature SD-normalisation**: when reporting between-group differences (high-MI vs low-MI,
+  high-ATP vs low-ATP), express each parameter difference in units of the pooled SD of that
+  parameter across the full cohort [Druckmann2007, Methods, p. 10]. The t0125 corner heatmap (Step
+  9\) already does this by z-scoring on the full cohort. The Cliff&#x27;s delta bar charts (Step 8) are
+  the non-parametric SD-free analogue and should be reported alongside the parametric mean ± SD per
+  group.
+
+* **Pareto-acceptable-ensemble reporting, not single-best-cell reporting**: the four answer assets
+  should report per-cluster means and per-cluster ranges, not the single hypervolume-maximising cell
+  [Hay2011, Discussion, p. 9]. The &quot;Pareto-favoured corner signature&quot; (answer 4) is a population
+  statement: the 5 parameters with the largest absolute z-score difference between the
+  high-MI/low-ATP corner and the low-MI/high-ATP corner, averaged across the cells in each corner,
+  not the difference between two individual Pareto cells.
+
+* **Joint-factor threshold**: a varimax factor counts as &quot;joint&quot; if |Pearson r| &gt; 0.30 against both
+  `mi_count_bits` AND `atp_per_spike_molecules`; &quot;decoupled&quot; if |r| &gt; 0.30 against exactly one. The
+  t0117 precedent (project-internal) used the same threshold and found one joint DSI-PD factor
+  (r_DSI = +0.421, r_PD = +0.352). The threshold is the same here; the substantive question is
+  whether the count is 0, 1, or &gt;1, and what the variance-explained fraction of the joint factor is.
+  Parallel reporting convention to Druckmann/Hay&#x27;s per-objective SD normalisation.
+
+* **Discretisation-invariance regression**: any morphology-integrated objective (ATP-per-spike
+  included, because it integrates Na+ across compartments) must be regression-tested across two
+  compartment-density settings (e.g., 20 µm and 10 µm). [Hines1997, Hay2011] 20-µm convention is
+  the floor; doubling resolution should not change the objective by more than a few percent or the
+  recipe needs revisiting. The t0123 implementation already uses the standard 20-µm spec; the t0125
+  cluster analysis does not need to repeat this check but should cite it.
+
+* **Best practice from RGC-type clustering [Baden2016]**: cluster on the function-relevant subspace
+  (DS / non-DS in Baden; electrophys-only and morphology-only in t0125) rather than on the full
+  joint vector — separate clustering yields more interpretable cluster identities. The t0123 /
+  t0125 design already does this (separate KMeans on the 54-d electrophys subspace and the 14-d
+  morphology subspace) — this is the right choice per Baden&#x27;s precedent.
+
+#### Gaps and Limitations
+
+* **No paper in the corpus measures bits-per-ATP in a DSGC**: Niven et al. 2007 (fly photoreceptors,
+  the canonical bits-per-ATP Pareto curve, 200-1000 bits/s scaling super-linearly with ATP cost at
+  fixed cost of ~20% of maximum consumption) is not in the asset corpus — it appears only via
+  internet research in `tasks/t0097_multi_obj_optim/research/research_internet.md`. The t0125
+  cluster analysis cannot directly cite Niven 2007; the parent task t0123 explicitly notes this
+  measurement is &quot;unmeasured in the published literature&quot; for DSGCs and the t0125 Pareto-corner
+  analysis is the project&#x27;s contribution to closing that gap.
+
+* **No paper in the corpus measures the AIS-vs-dendrite-vs-soma ATP share for a real DSGC**:
+  [Attwell2001] gives the rodent cortical breakdown (axon collaterals 82%, dendrites 14%, soma 4%;
+  Table 4 p. 1140), but neither the asset corpus nor any internet-discovered paper provides a
+  DSGC-specific measurement. The t0125 ternary plot (Step 10) is therefore an exploratory output
+  with no published comparison; the **Hallermann2012** state-and-location-dependence-of-metabolic-
+  cost paper that would supply a cortical-pyramidal-cell precedent is also only in internet
+  research, not in the asset corpus.
+
+* **No paper in the corpus provides factor analysis on a high-d compartmental-model parameter
+  vector**: [Achard2006] explicitly says the good-region is a &quot;set of loosely connected hyperplanes&quot;
+  but does not run PCA or factor analysis on the resulting 20-model ensemble — instead it reports
+  per-channel ranges. [Prinz2004] reports per-parameter histograms across the ~452 K matching
+  networks but does not run PCA or KMeans. The t0125 pipeline (t0108 / t0116 / t0117 precedent) is
+  the project&#x27;s internal methodology contribution; the literature precedent for the analytical tool
+  itself is [Baden2016] on **functional fingerprints of real cells**, not on simulated parameter
+  vectors. This means the t0125 cluster identities are interpretable only within the t0123 substrate
+  and should not be claimed as cell-type discoveries.
+
+* **No paper in the corpus directly couples MI and ATP as joint optimisation objectives**: the
+  closest published precedent is Remme et al. 2018 (MSO neurons, coincidence detection vs energy)
+  which is **not** in the asset corpus — only available via internet research. The MOO-methodology
+  papers in the corpus ([Hay2011, Druckmann2007, VanGeit2016, Achard2006]) optimise to multiple
+  *electrophysiological-feature* objectives all of which are derived from spike-waveform statistics;
+  none of them includes information-theoretic or energy objectives in the optimised set. This is the
+  genuine novelty of the t0123 / t0125 lineage and the reason the four answer assets cannot
+  benchmark their numbers against a directly comparable published result.
+
+* **No paper in the corpus uses bias-corrected spike-count MI on a 4-direction protocol**: the only
+  RGC information-rate measurement [Dhingra2004] is contrast-detection on a single spot, not
+  direction-decoding on 4 antipodal directions; [Strong1998] uses a continuous random-walk stimulus,
+  not a 4-class discrete stimulus. The Miller-Madow correction is a standard tool but its
+  appropriateness for the small-N (N = 12 trials per cell) regime is not directly validated by any
+  corpus paper. The cross-validation against the 8-direction x 20-trial Strong-Bialek post-hoc MI is
+  the project&#x27;s internal sanity check — this should be reported in t0125 if the predictions asset
+  includes it.
+
+* **Cluster-validation methodology**: [Baden2016] used BIC for cluster-count selection on a
+  Mixture-of-Gaussians model; t0125 uses silhouette on a KMeans model. The two criteria can
+  disagree. No paper in the corpus directly compares them for the kind of parameter-ensemble
+  clustering this task does. The silhouette + per-cluster purity (NMI vs MI / ATP quartile groups)
+  combination from t0117 is the project&#x27;s internal best-of-both convention.
+
+#### Recommendations for This Task
+
+1. **Interpret the varimax factor loadings as Achard-style &quot;loose hyperplanes,&quot; not as discrete
+   cell-type axes**: the 68-d substrate is expected to admit a small number of factors with
+   substantial variance explained per factor, but per-factor variances of ~10-15% are normal in this
+   kind of MOO ensemble [Achard2006, Druckmann2007]. Do not over-interpret a single joint-factor
+   result as definitive evidence for a single MI ↔ ATP trade-off — verify by also checking
+   whether two decoupled factors (MI-only + ATP-only) together capture more variance than the joint
+   factor alone.
+
+2. **Calibrate the high-ATP corner against the Sengupta mammalian band**: report
+   `alpha = total integrated Na+ load per AP / capacitive minimum` for the high-ATP corner cells. If
+   alpha &gt; 2, flag these cells as biologically implausible in the answer asset for question 3
+   [Sengupta2010, Table 1, p. 5]. The Carter-Bean cortical pyramidal alpha ~ 1.2 cited in
+   [Sengupta2010, Discussion, p. 11] is the closest mammalian benchmark.
+
+3. **Frame the answer-1 verdict (joint vs decoupled factor) as the central result, with the t0117
+   DSI-PD result as the methodological precedent**: the t0117 finding (one joint factor F1 with
+   r_DSI = +0.421, r_PD = +0.352, 12.6% variance explained, in the unfiltered 4-seed pool) provides
+   the analog the t0125 result should be compared against. State explicitly in
+   `compare_literature.md` whether the MI-ATP case looks the same (one joint factor + multiple
+   decoupled factors), opposite (no joint factor, only decoupled), or richer (multiple joint
+   factors).
+
+4. **Report Cliff&#x27;s delta with both magnitudes and directions for the top-5 parameters per
+   question** (answers 2 and 3): the 68-parameter ranked bar charts (Steps 8) are the primary
+   visualisation. State the top-5 parameters with effect size (Cliff&#x27;s delta) AND direction (which
+   group has the higher value) AND a one-sentence biological interpretation tied to [Sengupta2010]
+   for ATP-relevant parameters and [Dhingra2004, Strong1998] for MI-relevant parameters.
+
+5. **Report the per-corner morphology gallery alongside the corner heatmap** (Step 9): the corner
+   heatmap is the central quantitative answer to question 4, but a 5 x 3 representative-cell gallery
+   (full dendrite trees, per the project memory `feedback_top50_morphologies_full_dendrites.md`) for
+   the high-MI/low-ATP and low-MI/high-ATP corners gives the **biological** plausibility check that
+   the corner heatmap alone cannot — interpret each gallery using the
+   [Mainen1996, Cuntz2010, FohlmeisterMiller1997] morphology-as-functional-axis framework.
+
+6. **Cite [Achard2006] and [Prinz2004] as the precedents for &quot;many parameter combinations, one
+   functional output&quot;**: when the cluster analysis reveals that the high-MI / low-ATP corner is
+   composed of cells with substantially different per-parameter values (which is the expected
+   outcome based on these precedents), state this explicitly as confirmation of degeneracy rather
+   than as a failure of the cluster to identify a clean signature [Marder2006, Box 1, p. 565].
+
+7. **Validate the silhouette-selected cluster count k by reporting the full silhouette curve and
+   per-cluster cell counts**: the silhouette peak can be weak in MOO-output ensembles where the true
+   underlying structure is hyperplanar rather than blob-like [Achard2006]. If the peak is flat
+   (&lt;0.05 difference from neighbouring k), report this as a &quot;k not strongly preferred&quot; caveat and
+   run a sensitivity check at k ± 1 [Baden2016 methodological parallel for the BIC curve].
+
+8. **For the MI ceiling, always report the `log2(4) = 2 bits/stimulus` upper bound alongside the
+   measured MI**: t0123 hit a best `mi_count_bits = 1.459` (73% of ceiling). The t0125 cluster
+   analysis should show what fraction of cells in each corner reach what fraction of ceiling and not
+   over-state absolute MI values without the ceiling context
+   [Strong1998, Dhingra2004 caveat on bits-per-stimulus vs bits-per-second].
+
+#### Paper Index
+
+##### [Achard2006]
+
+* **Title**: Complex Parameter Landscape for a Complex Neuron Model
+* **Authors**: Achard, P., De Schutter, E.
+* **Year**: 2006
+* **DOI**: `10.1371/journal.pcbi.0020094`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.0020094/`
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Relevance**: The single most important methodological precedent for this task. Demonstrates that
+  the high-d parameter space of an MOO-acceptable neuron-model ensemble forms &quot;a collection of
+  loosely connected hyperplanes&quot; rather than a single blob or set of isolated points — exactly the
+  geometric prior the t0125 PCA + KMeans + varimax factor analysis is designed to reveal in the
+  t0123 68-d substrate.
+
+##### [Prinz2004]
+
+* **Title**: Similar Network Activity from Disparate Circuit Parameters
+* **Authors**: Prinz, A. A., Bucher, D., Marder, E.
+* **Year**: 2004
+* **DOI**: `10.1038/nn1352`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.1038_nn1352/`
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Relevance**: Empirical quantitative case for parameter degeneracy at network scale (20.25 M
+  simulated networks, 2.2% match all 15 criteria). Supports the t0125 interpretation that high-MI /
+  low-ATP cells in the t0123 pool are likely to comprise multiple distinct parameter combinations
+  rather than a single tight cluster — directly relevant to answer 4 (Pareto- favoured corner
+  signature).
+
+##### [Marder2006]
+
+* **Title**: Variability, Compensation and Homeostasis in Neuron and Network Function
+* **Authors**: Marder, E., Goaillard, J.-M.
+* **Year**: 2006
+* **DOI**: `10.1038/nrn1949`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.1038_nrn1949/`
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Relevance**: Canonical review framing of parameter degeneracy: channel densities can vary two-
+  to fourfold across cells of the same identified type while activity profiles remain conserved
+  because compensating channels co-vary. Provides the conceptual frame for interpreting the t0125
+  Cliff&#x27;s-delta and corner-heatmap results — channel pairs co-varying along factor axes are the
+  signature of compensation.
+
+##### [Hay2011]
+
+* **Title**: Models of Neocortical Layer 5b Pyramidal Cells Capturing a Wide Range of Dendritic and
+  Perisomatic Active Properties
+* **Authors**: Hay, E., Hill, S., Schurmann, F., Markram, H., Segev, I.
+* **Year**: 2011
+* **DOI**: `10.1371/journal.pcbi.1002107`
+* **Asset**: `tasks/t0078_bedb_mobo_v2_ais_tiered_ahp/assets/paper/10.1371_journal.pcbi.1002107/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`, `dendritic-computation`
+* **Relevance**: Canonical multi-objective optimisation reference and source for the Pareto-
+  acceptable-ensemble reporting convention. The two-target sub-fit finding (BAC-only 899 models vs
+  perisomatic-only 52 models, non-overlapping acceptable sets) is the direct precedent for asking
+  whether high-MI and low-ATP cells in t0123 occupy the same or disjoint regions of the 68-d
+  substrate.
+
+##### [Druckmann2007]
+
+* **Title**: A Novel Multiple Objective Optimization Framework for Constraining Conductance-Based
+  Neuron Models by Experimental Data
+* **Authors**: Druckmann, S., Banitt, Y., Gidon, A., Schurmann, F., Markram, H., Segev, I.
+* **Year**: 2007
+* **DOI**: `10.3389/neuro.01.1.1.001.2007`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.3389_neuro.01.1.1.001.2007/`
+* **Categories**: `compartmental-modeling`, `voltage-gated-channels`
+* **Relevance**: The original MOO-for-single-neuron-models framework. Establishes the per-feature-
+  SD-normalisation reporting convention that the t0125 between-group comparison should adopt. Also
+  relevant as the historical precedent for using NSGA-II-like algorithms on conductance- based
+  compartmental models, which is the t0123 substrate this task analyses.
+
+##### [VanGeit2016]
+
+* **Title**: BluePyOpt: Leveraging Open Source Software and Cloud Infrastructure to Optimise Model
+  Parameters in Neuroscience
+* **Authors**: Van Geit, W., Gevaert, M., Chindemi, G., et al.
+* **Year**: 2016
+* **DOI**: `10.3389/fninf.2016.00017`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.3389_fninf.2016.00017/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: Packages the [Hay2011] / [Druckmann2007] methodology into a reusable open-source
+  framework (DEAP + NEURON + eFEL). Confirms that the per-objective evaluator + per-feature SD
+  scoring pattern is the field standard, supporting t0125&#x27;s choice to report per-cluster parameter
+  distributions and Cliff&#x27;s delta with the same explicit per-feature decomposition.
+
+##### [Attwell2001]
+
+* **Title**: An Energy Budget for Signaling in the Grey Matter of the Brain
+* **Authors**: Attwell, D., Laughlin, S. B.
+* **Year**: 2001
+* **DOI**: `10.1097/00004647-200110000-00001`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.1097_00004647-200110000-00001/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Relevance**: Foundational reference for the ATP-per-spike axis of the t0123 NSGA-II. Supplies
+  the canonical Na+ load / 3 conversion (Eq. 9) that t0123 implements, the per-event reference
+  values (3.84 x 10^8 ATP per AP, 7.1 x 10^8 ATP/spike), and the compartmental breakdown (axon 82%,
+  dendrites 14%, soma 4%) against which the t0125 ATP-compartment-share ternary plot (Step 10)
+  should be compared.
+
+##### [Sengupta2010]
+
+* **Title**: Action Potential Energy Efficiency Varies Among Neuron Types in Vertebrates and
+  Invertebrates
+* **Authors**: Sengupta, B., Stemmler, M., Laughlin, S. B., Niven, J. E.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000840`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1000840/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Relevance**: The single most quantitatively useful reference for the high-ATP vs low-ATP cluster
+  signature (answer 3). Establishes that AP shape is a poor predictor of energy cost (1.76-fold
+  Na+-load differences at identical waveform); that Na+/K+ overlap is the dominant cost driver (R^2
+  = 0.99); that mammalian neurons cluster at alpha ~ 1.0-1.5 vs squid alpha ~ 4-11; and that
+  reducing Na+ inactivation tau is the single highest-leverage energy lever. Directly informs the
+  biological interpretation of the t0125 Cliff&#x27;s-delta and factor-loadings for Nav-related
+  parameters.
+
+##### [Strong1998]
+
+* **Title**: Entropy and Information in Neural Spike Trains
+* **Authors**: Strong, S. P., Koberle, R., de Ruyter van Steveninck, R. R., Bialek, W.
+* **Year**: 1998
+* **DOI**: `10.1103/PhysRevLett.80.197`
+* **Asset**: `tasks/t0097_multi_obj_optim/assets/paper/10.1103_PhysRevLett.80.197/`
+* **Categories**: `compartmental-modeling`
+* **Relevance**: The methodological foundation for the t0123 MI estimator and for the post-hoc
+  Pareto-cell direct-method validation. Establishes the practical recipe (`R_info = S - N`,
+  bin-and-window, Ma lower bound, 1/T extrapolation, 1/size finite-data correction) and the
+  reference rates (~50% efficiency, ~1.8 bits/spike, up to 90 bits/s in H1). The t0125 cluster
+  analysis consumes `mi_count_bits` directly but must respect the `log2(4) = 2 bits/stimulus`
+  ceiling on the 4-direction protocol and not over-interpret absolute MI values without the
+  Strong-Bialek context.
+
+##### [Dhingra2004]
+
+* **Title**: Spike Generator Limits Efficiency of Information Transfer in a Retinal Ganglion Cell
+* **Authors**: Dhingra, N. K., Smith, R. G.
+* **Year**: 2004
+* **DOI**: `10.1523/jneurosci.5346-03.2004`
+* **Asset**:
+  `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1523_jneurosci.5346-03.2004/`
+* **Categories**: `retinal-ganglion-cell`, `voltage-gated-channels`, `compartmental-modeling`
+* **Relevance**: The only direct RGC information-rate measurement in the corpus. Anchors the MI axis
+  of the t0123 Pareto front in real RGC physiology: spike generator degrades graded-potential
+  information by ~2.5x (1.5% vs 3.8% contrast threshold, ~60% gray-level loss), and depolarisation
+  trades off detection-threshold against dynamic-range — a Pareto trade-off in the same RGC type
+  the t0123 substrate simulates. Supports the answer-1 framing that MI in t0123 is bounded by the
+  spike generator, not by synaptic input.
+
+##### [Mainen1996]
+
+* **Title**: Influence of dendritic structure on firing pattern in model neocortical neurons
+* **Authors**: Mainen, Z. F., Sejnowski, T. J.
+* **Year**: 1996
+* **DOI**: `10.1038/382363a0`
+* **Asset**: `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1038_382363a0/`
+* **Categories**: `cable-theory`, `dendritic-computation`, `compartmental-modeling`
+* **Relevance**: Establishes that morphology alone (with fixed channel set) is sufficient to
+  determine firing pattern across regular-spiking / intrinsic-bursting / fast-spiking neuron types.
+  Foundational support for the t0125 morphology KMeans cluster analysis (Step 6) and for the
+  expectation that morphology clusters will split high-ATP from low-ATP cells primarily along
+  total-membrane-area axes (segment count, segment length, segment diameter).
+
+##### [FohlmeisterMiller1997]
+
+* **Title**: Mechanisms by Which Cell Geometry Controls Repetitive Impulse Firing in Retinal
+  Ganglion Cells
+* **Authors**: Fohlmeister, J. F., Miller, R. F.
+* **Year**: 1997
+* **DOI**: `10.1152/jn.1997.78.4.1948`
+* **Asset**:
+  `tasks/t0019_literature_survey_voltage_gated_channels/assets/paper/10.1152_jn.1997.78.4.1948/`
+* **Categories**: `voltage-gated-channels`, `compartmental-modeling`
+* **Relevance**: Project home cell type (amphibian RGC) with the canonical 5-channel HH model that
+  defines what RGC repetitive firing looks like in a compartmental simulation. Demonstrates that
+  cell geometry (soma-dendrite-axon proportions) controls the f-I curve — directly relevant to the
+  t0125 question of whether morphology clusters in the t0123 pool predict ATP-per-spike and
+  spike-count MI.
+
+##### [KochPoggio1982]
+
+* **Title**: Retinal ganglion cells: a functional interpretation of dendritic morphology
+* **Authors**: Koch, C., Poggio, T.
+* **Year**: 1982
+* **DOI**: `10.1098/rstb.1982.0084`
+* **Asset**: `tasks/t0015_literature_survey_cable_theory/assets/paper/10.1098_rstb.1982.0084/`
+* **Categories**: `cable-theory`, `retinal-ganglion-cell`, `dendritic-computation`
+* **Relevance**: Historical anchor for the claim that dendritic morphology has a functional
+  interpretation rather than being arbitrary. Justifies the inclusion of the 14-d morphology
+  subvector as an analysis axis on equal footing with the 54-d electrophys subvector in the t0125
+  cluster pipeline, and supplies canonical passive-cable parameters that the t0123 substrate
+  inherits.
+
+##### [LondonHausser2005]
+
+* **Title**: Dendritic Computation
+* **Authors**: London, M., Hausser, M.
+* **Year**: 2005
+* **DOI**: `10.1146/annurev.neuro.28.061604.135703`
+* **Asset**:
+  `tasks/t0016_literature_survey_dendritic_computation/assets/paper/10.1146_annurev.neuro.28.061604.135703/`
+* **Categories**: `dendritic-computation`, `cable-theory`, `compartmental-modeling`
+* **Relevance**: Canonical review of dendritic computation. Provides the conceptual menu (passive
+  cables, active spike conductors, amplifiers, coincidence detectors, direction-discriminators) for
+  interpreting what kind of computation each KMeans cluster in the t0125 electrophys subspace is
+  performing, and justifies why MI and ATP are both biologically meaningful objectives rather than
+  arbitrary engineering metrics.
+
+##### [Cuntz2010]
+
+* **Title**: One Rule to Grow Them All: A General Theory of Neuronal Branching and Its Practical
+  Application
+* **Authors**: Cuntz, H., Forstner, F., Borst, A., Hausser, M.
+* **Year**: 2010
+* **DOI**: `10.1371/journal.pcbi.1000877`
+* **Asset**:
+  `tasks/t0027_literature_survey_morphology_ds_modeling/assets/paper/10.1371_journal.pcbi.1000877/`
+* **Categories**: `compartmental-modeling`, `dendritic-computation`, `cable-theory`
+* **Relevance**: Formalises the morphology-vs-conduction-time trade-off via the balancing factor
+  `bf`, with biologically realistic dendritic arbors clustering at `bf ∈ [0.2, 0.7]`. Supplies the
+  biological-plausibility prior for the t0125 morphology KMeans (Step 6) and the
+  discretisation-invariance reasoning for the ATP-per-spike integration over compartments.
+
+##### [Hines1997]
+
+* **Title**: The NEURON Simulation Environment
+* **Authors**: Hines, M. L., Carnevale, N. T.
+* **Year**: 1997
+* **DOI**: `10.1162/neco.1997.9.6.1179`
+* **Asset**:
+  `tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/`
+* **Categories**: `compartmental-modeling`, `cable-theory`, `voltage-gated-channels`
+* **Relevance**: Canonical reference for the NEURON simulation substrate that t0123 runs on.
+  Establishes the &lt;= 20-µm compartment discretisation convention that the t0123 per-compartment Na+
+  integration relies on; cited to justify why the t0125 cluster analysis can consume the per-cell
+  `atp_per_spike_molecules` directly without re-checking discretisation invariance.
+
+##### [Baden2016]
+
+* **Title**: The functional diversity of retinal ganglion cells in the mouse
+* **Authors**: Baden, T., Berens, P., Franke, K., Roman Roson, M., Bethge, M., Euler, T.
+* **Year**: 2016
+* **DOI**: `10.1038/nature16468`
+* **Asset**: `tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/`
+* **Categories**: `retinal-ganglion-cell`, `direction-selectivity`
+* **Relevance**: The closest methodological precedent for the t0125 unsupervised-clustering pipeline
+  on a high-d feature vector. Used Mixture-of-Gaussians with BIC-based cluster-count selection on
+  &gt;11 000 mouse RGC functional fingerprints, separating DS-positive from non-DS cells before
+  clustering — the analytical analogue of t0125&#x27;s separate KMeans on the electrophys-only and
+  morphology-only subspaces. Supplies the best-practice convention of reporting the full
+  cluster-count selection curve, not just the chosen k.
+      </content>
+    </section>
+    <section id="t0125_t0123_cluster_factor_mi_atp-research_code" source_kind="file">
+      <title>t0125_t0123_cluster_factor_mi_atp — Cluster + factor analysis of t0123 cells: high vs low MI and ATP — research_code.md</title>
+      <source_name>research_code.md</source_name>
+      <source_ids>
+        <id>t0125_t0123_cluster_factor_mi_atp</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0125_t0123_cluster_factor_mi_atp/research/research_code.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;1&quot;
+task_id: &quot;t0125_t0123_cluster_factor_mi_atp&quot;
+research_stage: &quot;code&quot;
+tasks_reviewed: 12
+tasks_cited: 10
+libraries_found: 19
+libraries_relevant: 2
+date_completed: &quot;2026-05-25&quot;
+status: &quot;complete&quot;
+---
+### Research Code — t0125 Cluster + Factor Analysis of t0123 MI / ATP-per-Spike Cells
+
+#### Task Objective
+
+Adapt the canonical PCA + KMeans + varimax factor analysis pipeline used by t0108, t0116, and t0117
+to the t0123 single-seed (seed 441) NSGA-II run that optimised spike-count MI vs ATP-per-spike on
+the 68-d Bed B + 14-d morphology substrate. The task analyses all 5 760 evaluated cells across two
+cohorts (full unfiltered cohort, and a spiking cohort defined by
+`pd_rate_hz &gt; 1.0 Hz AND NOT silence_failed_bool`), produces a 2 x 2 MI x ATP corner decomposition,
+runs Cliff&#x27;s-delta and Mann-Whitney group comparisons, and answers four questions as
+`assets/answer/` assets: (1) does the 68-d substrate have a joint MI x ATP latent or decoupled
+factors? (2) which electrophys parameters distinguish high-MI from low-MI cells? (3) which
+morphology parameters distinguish low-ATP from high-ATP cells? (4) which combination of parameters
+distinguishes the Pareto-favoured corner from the dominated corner?
+
+#### Library Landscape
+
+The library aggregator script `arf.scripts.aggregators.aggregate_libraries` referenced by the
+research-code skill is not implemented in this fork (only `aggregate_tasks`,
+`aggregate_metric_results`, `aggregate_suggestions`, `aggregate_categories`, `aggregate_costs`,
+`aggregate_machines`, `aggregate_task_types`, and `aggregate_metrics` exist under
+`arf/scripts/aggregators/`). Library and answer discovery was therefore done by direct filesystem
+inspection of `tasks/*/assets/library/` and `tasks/*/assets/answer/`. A total of **19 library
+assets** with valid `details.json` files were enumerated.
+
+**Domain-irrelevant libraries (17 of 19)** — these are NEURON / DSGC compartmental-model
+simulation libraries (channel packs, baseline channel sets, ModelDB ports, minimal cells, scalar /
+spatial GABA variants, AIS extensions) that do not bear on a CPU-only pandas / scikit-learn /
+matplotlib clustering and factor analysis: `modeldb_189347_dsgc` (t0008), `tuning_curve_viz`
+(t0011), `tuning_curve_loss` (t0012), `modeldb_189347_dsgc_gabamod` (t0020),
+`modeldb_189347_dsgc_dendritic` (t0022), `de_rosenroll_2026_dsgc` (t0024),
+`modeldb_189347_dsgc_exact` (t0046), `minimal_dsgc_scalar_gaba` (t0052), `minimal_dsgc_spatial_gaba`
+(t0053), `minimal_dsgc_ampa_nmda_scalar_gaba` (t0054), `minimal_dsgc_mg_block_nmda` (t0055),
+`minimal_dsgc_tonic_gaba_sweep` (t0057), `minimal_dsgc_bar_locked_gaba_ampa_sweep` (t0059),
+`dsgc_active_channel_pack` (t0074), `de_rosenroll_2026_dsgc_ais` (t0078), and
+`de_rosenroll_2026_dsgc_ais_dendritic_spike` (t0080).
+
+**Relevant libraries (2 of 19)** — both required for Step 5&#x27;s per-cluster morphology galleries
+(NEURON pt3d rendering of full dendrite trees), exactly as already used by t0117 and t0109.
+
+* `procedural_dsgc_morphology_generator` (t0090) — registered at
+  `tasks/t0090_morphology_generator_diversity_test/assets/library/`. Key entry points:
+  `MorphologyParams` (frozen dataclass with the 14 morphology fields needed to reconstruct cells
+  from the 68-d vector slice `vec[54:68]`), `MorphologyResult` (with `h`, `soma`, `all_dends`,
+  `section_endpoints_xy`, `origin_xy`), `BEDB_BASE_POINT`, and `PARAM_BOUNDS`. Import path:
+  `from tasks.t0090_morphology_generator_diversity_test.code.morphology_params import MorphologyParams`.
+* `procedural_dsgc_morphology_generator_fix` (t0092) — registered at
+  `tasks/t0092_diagnose_morphology_generator_silence/assets/library/`. Single entry point
+  `generate_fixed_morphology(*, params, morph_seed=None)` is the canonical drop-in replacement for
+  t0090&#x27;s `generate_morphology` and is the project-standard build call used by t0109&#x27;s gallery,
+  t0117&#x27;s render module, and `scratch_t0112_top15_morphologies.py`. Import path:
+  `from tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix import generate_fixed_morphology`.
+
+These two libraries cover all morphology-rendering needs. No pandas / scikit-learn / matplotlib code
+is registered as a library — the closest precedents (t0117 [t0117], t0116 [t0116], t0108 [t0108])
+are bundled task code that must be copied per the cross-task-import rule (CLAUDE.md rule 3).
+
+#### Prior Answer Assets
+
+The answer aggregator is also not implemented; the assets directory was walked directly. Of the 49
+existing answer assets, the relevant subset for this task is:
+
+* `[t0117] pooled-all-cells-truncated-cohort-artefact-test` — confirmed F1 in the unfiltered
+  cross-seed pool is a joint DSI x PD factor (r_DSI = +0.421, r_PD = +0.352) when no cohort filter
+  is applied. **Directly informs answer 1 here**: the MI x ATP analogue must be evaluated on the
+  full t0123 pool exactly the same way.
+* `[t0117] pooled-all-cells-latent-drivers` and
+  `[t0117] pooled-all-cells-basin-connectivity-without-filter` — companion findings about the
+  full-pool varimax structure and cluster-vs-seed purity.
+* `[t0116] pooled-survivors-latent-drivers-dsi07-pd10` — strict-cohort counterpart finding (F1
+  drives DSI mixed, F3 drives PD purely electrophys, no joint factor). t0116 / t0117 contrast
+  defines the truncated-cohort artefact this task replicates for MI x ATP.
+* `[t0108] t0106-dsi-pd-factor-decomposition-strict-cohort` and
+  `[t0108] t0106-electrophys-clusters-morphology-signature` — original strict-cohort pipeline on
+  t0106 seed 44 cells. F10 emerged as a single joint trade-off factor under the strict cohort.
+* `[t0086] cluster-biological-plausibility-attribution` and
+  `[t0088] are-cluster-motifs-mechanistically-distinct` — earlier (pre-procedural-morphology) work
+  on biological-plausibility clustering of joint-pass cells under the t0080 v3 channel set. The
+  methodological lesson reused here is that cluster purity needs an external categorical reference
+  (biological / parameter group) to be meaningful; for t0125 that reference is the MI and ATP
+  quartile group.
+* `[t0123] dsgc-bits-per-atp-vs-niven-2007` — the only answer asset produced by t0123 itself,
+  reporting the bits-per-ATP Pareto front against the Niven 2007 fly-photoreceptor curve. Does not
+  speak to substrate structure but documents that the top-10 Pareto cells all had
+  `bits_per_sec = 0.0` under Strong-Bialek because of the low PD-rate (`~3` spikes per 1 400 ms
+  trial), an important caveat for any MI-based interpretation here.
+
+These prior answers establish the trade-off-axis question pattern (high vs low quartile group,
+`abs(r) &gt; 0.30` joint-factor threshold, NMI for cluster purity) that t0125 must mechanically
+transpose from DSI x PD to MI x ATP.
+
+#### Key Findings
+
+##### t0123 predictions schema — sufficient for the full pipeline, single-file load
+
+t0123 [t0123] writes one predictions asset
+`tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/predictions/nsga2-mi-atp-per-spike-bedb-morph/files/predictions.jsonl.gz`
+with **5 760 rows** and the per-record schema (`details.json` line 11; full doc at
+`assets/predictions/.../description.md`):
+
+```text
+{generation, cell_index, vector_68d, mi_count_bits, atp_per_spike_molecules,
+ atp_per_ap_molecules, atp_per_ap_compartment_breakdown,
+ firing_hz_per_dir, dsi_vector_sum, pd_rate_hz, objective_F_minimised,
+ silence_failed_bool, legit_bool}
+```
+
+Top-N (10) Pareto cells additionally carry `mi_strong_bialek_bits_per_sec`, `std_err_bits_per_sec`,
+and `r_squared`. The format is **gzipped JSONL** (one record per line, no wrapper) — same as t0114
+/ t0115 in t0117. The 68-d vector layout is identical to t0108 / t0117 (54-d electrophys + 14-d
+morphology) because t0123 forked the t0122 substrate which forked the t0080 / t0090 substrate
+without re-ordering parameters [t0123].
+
+Concrete loader implications for this task (vs t0117&#x27;s loader):
+
+* Only **one source file**, not four; drop the `SOURCES` tuple and the per-seed `n_raw` / `n_unique`
+  aggregation.
+* The format is `.jsonl.gz` — reuse the JSONL branch of t0117&#x27;s `_iter_records` (decoded line by
+  line) and drop the `.json.gz` branch.
+* The dedup-by-rounded-68d-vector convention (`DEDUP_DECIMALS = 6`) is preserved verbatim — t0117
+  collapsed seed 44 from 3 744 raw to 1 065 unique (28 %); a similar collapse is expected here.
+* The cohort-filter logic must be **replaced** entirely. t0116 filtered on
+  `dsi_vector_sum &gt; 0.7 AND pd_rate_hz &gt; 10.0`; t0117 applied no filter. t0125 keeps **two cohorts
+  in parallel**: full unfiltered (PCA / KMeans / FA, like t0117) and spiking
+  (`pd_rate_hz &gt; 1.0 AND NOT silence_failed_bool`, used for ATP-per-spike comparisons because the
+  denominator approaches zero for near-silent cells).
+* Three new diagnostic columns must be promoted to top-level DataFrame columns by the loader:
+  `mi_count_bits`, `atp_per_spike_molecules`, and the **dict** field
+  `atp_per_ap_compartment_breakdown` (keys: `soma`, `ais`, `dendrites_total`). The breakdown is most
+  cleanly stored as three separate columns (`atp_soma`, `atp_ais`, `atp_dendrites_total`) plus three
+  derived **share** columns (`atp_share_soma`, `atp_share_ais`, `atp_share_dendrites_total`).
+
+##### Pipeline architecture from t0108 / t0116 / t0117
+
+t0117 [t0117] (15 source files, 2 374 lines) is the most direct structural template because it runs
+the no-filter variant of the analysis and uses the union-pool standardiser invariant. Its module
+layout — `paths.py` (63 lines), `constants.py` (158 lines), `cluster_helpers.py` (170 lines),
+`load_pooled_cells.py` (254 lines), `load_pooled_gen0.py` (126 lines), `fit_standardiser.py` (57
+lines), `pooled_pca_with_overlay.py` (379 lines), `factor_analysis.py` (262 lines),
+`cluster_electrophys.py` (159 lines), `cluster_morphology.py` (195 lines),
+`render_electrophys_cluster_morphs.py` (220 lines), `morphology_rendering.py` (178 lines),
+`cluster_seed_purity.py` (85 lines), `methodology_and_comparison.py` (267 lines) — maps almost
+1-to-1 onto the t0125 step list.
+
+t0116 [t0116] (16 source files, 2 282 lines) is structurally identical to t0117 except for the
+loader (`load_pooled_cells.py` applies the strict DSI / PD filter) and the methodology / comparison
+module (compares t0116 strict cohort against the t0108 strict cohort). It also includes a local
+re-implementation of `verify_answer_asset` called `verify_answers_local.py` (150 lines) that is
+**NOT** needed for t0125 because the project&#x27;s `verify_answer_asset` verificator now exists.
+
+t0108 [t0108] (8 source files, 1 738 lines) is the original strict-cohort version. Its
+`factor_analysis.py` (362 lines) is the **authoritative source of the `varimax_rotation` helper**
+(lines 48-78, iterative-SVD; gamma=1, tol=1e-6, max_iter=500) — t0116, t0117, and t0125 all reuse
+this helper verbatim. Its `code/constants.py` (111 lines) is the **authoritative source of
+`ALL_PARAM_NAMES`** (54-d `ELECTROPHYS_PARAM_NAMES` + 14-d `MORPHOLOGY_PARAM_NAMES`, sealed with
+length asserts).
+
+Common architecture across all three:
+
+* `paths.py` centralises every input / output `Path` constant; tests by file presence are easy.
+* `constants.py` owns parameter names, k-sweep range, Kaiser cap, joint-factor threshold, dedup
+  decimals, KMeans random state. t0117 uses `K_SWEEP = (3, 4, 5, 6, 7)` and
+  `KAISER_FACTOR_CAP = 10`; t0125 inherits both because the task description says &quot;auto-pick k in
+  [3, 7]&quot;.
+* `cluster_helpers.py` defines the `PooledStandardiser` frozen dataclass (mean / std arrays as
+  `NDArray[np.float64]`, `transform` method, `save_standardiser` / `load_standardiser` to / from
+  `.npz`), plus `fit_pooled_standardiser`, `zscore_matrix`, `run_pca`, `run_kmeans_sweep`,
+  `top_k_loadings`, and `write_json`. Zero-std columns are clipped to 1.0 to avoid division-by-zero
+  — this matters because `morph_seed` and a few electrophys parameters can be near-constant in
+  narrow cohorts.
+* The standardiser is fitted **once** on the full-cohort union pool and serialised to
+  `data/pooled_standardiser.npz`. Every downstream PCA, KMeans, FA, and gen-0 projection reuses the
+  same fit. Per-seed (or per-cohort) re-fitting is forbidden. The t0117 module docstring explicitly
+  warns: &quot;Per-seed re-fitting would absorb cross-seed scale differences into the standardiser and
+  erase the very signal the analysis is designed to detect.&quot; For t0125 the same rule applies between
+  the full and spiking cohorts — the spiking-cohort analysis must reuse the full-cohort
+  standardiser, not refit on the spiking subset.
+
+##### Factor analysis details that must be preserved
+
+The factor-analysis flow in `code/factor_analysis.py` (both t0108 and t0117 versions) goes:
+
+1. `_drop_constant_columns` removes columns whose `std &lt; 1e-8` from the standardised matrix to avoid
+   degenerate FA; record the kept indices and names. For t0123 cells this should drop few or no
+   columns because the full pool spans 60 generations of NSGA-II offspring across the bounds.
+2. `np.linalg.eigvalsh(np.cov(z, rowvar=False, ddof=0))[::-1]` produces correlation-matrix
+   eigenvalues sorted descending. `n_eig_above_one = sum(eig &gt; 1.0)` is the Kaiser criterion;
+   `n_factors = max(1, min(n_eig_above_one, KAISER_FACTOR_CAP))` (cap = 10).
+3. `FactorAnalysis(n_components=n_factors, rotation=None, random_state=42)` fits the unrotated
+   loadings; `varimax_rotation` (the iterative-SVD helper, copied from t0108) rotates them to
+   gamma=1 varimax. The rotation method is **stand-alone**; do not use scikit-learn&#x27;s
+   `rotation=&quot;varimax&quot;` — t0108 deliberately used the in-house iterative-SVD code.
+4. Rotated factor scores via the **regression approximation**:
+   `scores = Z @ Lambda @ pinv(Lambda.T @ Lambda)` — closed-form, deterministic given the rotated
+   loadings.
+5. Variance explained per factor = `sum(Lambda**2, axis=0) / n_kept_dims`. Total variance explained
+   is the sum.
+6. Pearson r and p between each rotated factor score and **each outcome metric**. For t0117 the
+   outcomes were `dsi_vector_sum` and `pd_rate_hz`. For t0125 the outcomes are `mi_count_bits`,
+   `atp_per_spike_molecules`, `dsi_vector_sum`, and `pd_rate_hz` — same code, four columns instead
+   of two.
+7. Joint-factor flag: `abs(r_metric_a) &gt; 0.30 AND abs(r_metric_b) &gt; 0.30`. For t0125 the &quot;joint MI x
+   ATP factor&quot; check uses metrics_a = MI and metrics_b = ATP; the additional |r| &gt; 0.30 vs DSI and
+   PD give classifications &quot;MI-only&quot;, &quot;ATP-only&quot;, &quot;MI+ATP joint&quot;, &quot;MI+DSI joint&quot;, &quot;ATP+PD joint&quot;
+   etc.
+
+The loadings heatmap is rendered with `RdBu_r` colourmap and symmetric
+`vmin / vmax = +/- max(|loadings|)`, matching t0108 / t0117 verbatim. Figure height scales as
+`0.18 * 68 + 1` inches.
+
+##### KMeans + silhouette auto-pick
+
+`run_kmeans_sweep` in `cluster_helpers.py` iterates `K_SWEEP = (3, 4, 5, 6, 7)`, runs
+`KMeans(n_clusters=k, random_state=42, n_init=10).fit_predict(...)`, computes
+`silhouette_score(matrix_zscored, labels)`, and picks the headline `k` by `max(silhouette)`. The
+sweep runs separately on the 54-d electrophys submatrix and on the 14-d morphology submatrix, both
+pre-standardised by the full-cohort `PooledStandardiser` [t0117]. For 5 760 cells the sweep is
+comfortably CPU-bound and finishes in 1-2 minutes — t0117 ran on 4 431 cells in similar time per
+the task description&#x27;s ~30-60 min total wall estimate.
+
+##### Morphology rendering for cluster galleries
+
+t0117 [t0117] and t0109 [t0109] both render NEURON pt3d morphologies — full dendrite trees, not
+just somas (`feedback_top50_morphologies_full_dendrites.md` memory). Helpers live in
+`tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/morphology_rendering.py` (178 lines,
+copied from t0116 which copied from t0109). The key steps:
+
+* `to_morph_params(vec)` slices the 14-d morphology tail off the 68-d vector, coerces
+  `num_primary_branches` and `max_strahler_depth` to `int(round(...))`, and applies
+  `morph_seed % (2**31 - 1)` to avoid INT32 overflow. **The `% MAX_MORPH_SEED` coercion is
+  mandatory** — t0109 line 130 explicitly documents this.
+* `build_and_extract(params)` calls `generate_fixed_morphology(params=params)` from the t0092
+  library, then extracts pt3d arrays via `h.x3d(i) / h.y3d(i) / h.diam3d(i)` over `result.soma` and
+  every section in `result.all_dends`. The `h.delete_section(sec=s)` cleanup at the end is also
+  mandatory to prevent NEURON RSS creep across many cells in one process.
+* `plot_cell(ax, built, label)` renders dendrites as blue line segments scaled by mean diameter,
+  soma as a red `mpatches.Circle` of radius `max(4 um, mean diameter / 2)`, plus a PD arrow.
+* `global_extents(built_list)` returns a single square (xlo, xhi, ylo, yhi) covering every cell so
+  all panels share the same axes — visual comparison across the cluster is then valid.
+* `render_electrophys_cluster_morphs._select_top_per_cluster` ranks within cluster by `DSI * PD`
+  descending. **For t0125 this ranking metric must change**: per task description Step 5, rank
+  representatives by `mi_count_bits / atp_per_spike_molecules` (bits-per-ATP) within cluster,
+  restricted to the spiking cohort. The grid is **5 rows x 3 cols = 15 panels**, same as t0117.
+
+##### Effect sizes and group comparisons
+
+The t0125 task description adds two analyses that have no exact precedent in t0108 / t0116 / t0117
+but are easily expressed:
+
+* **Mann-Whitney U two-sided p-value** via `scipy.stats.mannwhitneyu(alternative=&quot;two-sided&quot;)` —
+  already available in the project&#x27;s deps. No previous task ran this at scale across 68 parameters,
+  but t0108&#x27;s `cluster_electrophys.py` uses Kruskal-Wallis (`scipy.stats.kruskal`) with Bonferroni
+  correction across 54 features, which is structurally identical.
+* **Cliff&#x27;s delta effect size** — the rank-based statistic `delta = (#x&gt;y - #x&lt;y) / (n_x * n_y)`.
+  No prior task implemented this. The standard formula is about 20 lines including ties handling;
+  the task description says to put it in `code/effect_sizes.py`. Recommended reference
+  implementation: pair `np.argsort` of the combined vector with `np.searchsorted` to count
+  exceedances in O(n log n).
+
+##### Common patterns across analysis tasks
+
+* Path constants live in `code/paths.py` and use `REPO_ROOT = Path(__file__).resolve().parents[3]`
+  then derived paths. The chart helpers always call
+  `out_path.parent.mkdir(parents=True, exist_ok=True)` before saving.
+* Constants live in `code/constants.py`. The 54-d / 14-d / 68-d parameter-name tuples are sealed
+  with `assert len(...) == N_*_DIMS`.
+* Every chart is rendered with `matplotlib.use(&quot;Agg&quot;)` for headless CPU runs, `dpi=150`, and an
+  explicit `fig.tight_layout()` + `fig.savefig(path, dpi=CHART_DPI)` + `plt.close(fig)` cleanup.
+  This pattern is uniform across t0108, t0116, t0117, t0123, and t0109.
+* Every numeric CSV emits explicit dtypes via the `_typed_dataframe` helper pattern; parquet files
+  always go through `_typed_dataframe` then `to_parquet(path, index=False)`.
+* Every module is callable both as `python -u -m tasks.&lt;task&gt;.code.&lt;module&gt;` and via `main()` guard
+  at the bottom.
+
+#### Reusable Code and Assets
+
+##### Libraries — import directly via library
+
+* `procedural_dsgc_morphology_generator` (t0090) — **import via library**.
+  `from tasks.t0090_morphology_generator_diversity_test.code.morphology_params import MorphologyParams`.
+  Provides the 14-field `MorphologyParams` frozen dataclass (`num_primary_branches: int`,
+  `branch_prob_per_um: float`, ..., `branch_length_cv: float`) with `from_dict` / `to_dict` /
+  `from_bedb_base_point` constructors. Needed by Step 5 morphology rendering.
+* `procedural_dsgc_morphology_generator_fix` (t0092) — **import via library**.
+  `from tasks.t0092_diagnose_morphology_generator_silence.code.morphology_generator_fix import generate_fixed_morphology`.
+  Signature:
+  `generate_fixed_morphology(*, params: MorphologyParams, morph_seed: int | None = None) -&gt; MorphologyResult`.
+  Returns object with `h`, `soma`, `all_dends`, `section_endpoints_xy`, `origin_xy`. Used in every
+  per-cluster morphology gallery in this project.
+
+##### Task code — copy into t0125 `code/` directory
+
+* `tasks/t0108_t0106_cluster_factor_dsi05_pd10/code/constants.py` — **copy into task**. Source of
+  `ALL_PARAM_NAMES`, `ELECTROPHYS_PARAM_NAMES` (54), `MORPHOLOGY_PARAM_NAMES` (14),
+  `N_ELECTROPHYS_DIMS = 54`, `N_MORPHOLOGY_DIMS = 14`, `N_TOTAL_DIMS = 68`. About 110 lines. Strip
+  the `DSI_THRESHOLD` / `PD_THRESHOLD_HZ` / `SOURCE_TASK` / `SOURCE_SEED` constants and add
+  t0125-specific constants: `SPIKING_PD_RATE_HZ_THRESHOLD = 1.0`, `MI_QUARTILE_TOP_QUANTILE = 0.75`,
+  `MI_QUARTILE_BOTTOM_QUANTILE = 0.25`, `CLIFFS_DELTA_TOP_N = 20`,
+  `T0123_PREDICTIONS_REL_PATH = Path(&quot;tasks/t0123_.../predictions.jsonl.gz&quot;)`.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/cluster_helpers.py` — **copy into
+  task**. 170 lines. `PooledStandardiser`, `fit_pooled_standardiser`, `save_standardiser`,
+  `load_standardiser`, `zscore_matrix`, `run_pca`, `run_kmeans_sweep`, `top_k_loadings`,
+  `write_json`, `PCAResult` / `KMeansResult` / `KMeansSweepResult` dataclasses. **Adaptation**:
+  change the namespace in the import header to
+  `tasks.t0125_t0123_cluster_factor_mi_atp.code.constants`. No behavioural changes needed.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/fit_standardiser.py` — **copy into
+  task**. 57 lines. Reads `data/t0123_cells.parquet` (renamed from `pooled_all_cells.parquet`), fits
+  the standardiser on the full cohort, saves to `data/t0123_standardiser.npz`. Only path and
+  module-namespace changes needed.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/load_pooled_cells.py` — **copy +
+  major adaptation**. 254 lines. **Critical changes**:
+  * Drop the `SOURCES` tuple and per-source loop. Read only the single
+    `tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/predictions/.../files/predictions.jsonl.gz`
+    file.
+  * Keep only the `.jsonl.gz` branch of `_iter_records` (drop the `.json.gz` branch).
+  * Promote new columns to top-level: `mi_count_bits`, `atp_per_spike_molecules`,
+    `silence_failed_bool`, `atp_soma`, `atp_ais`, `atp_dendrites_total` (from
+    `atp_per_ap_compartment_breakdown`).
+  * Apply the dedup-by-rounded-68d-vector rule (`DEDUP_DECIMALS = 6`) unchanged.
+  * Persist two parquets: `data/t0123_cells.parquet` (full cohort, dedup-unique) and
+    `data/t0123_spiking_cells.parquet` (spiking cohort subset).
+  * Write `results/data/pool_counts.csv` (raw / dedup-unique / spiking-cohort counts) and
+    `results/data/group_thresholds.json` (MI Q1 / Q3 / median, ATP Q1 / Q3 / median).
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/load_pooled_gen0.py` — **copy +
+  minor adaptation**. 126 lines. Drop the per-source loop. Read t0123 predictions, keep only
+  `generation == 1` records (96 expected). Persist `data/t0123_gen0.parquet`. Same dtype and
+  column-typing pattern.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/pooled_pca_with_overlay.py` —
+  **copy + major adaptation**. 379 lines. Restructure the 1 x 3 PCA panel into **three separate
+  figures**, each with the three PCAs (combined / electrophys / morphology) coloured by:
+  * `pca_combined_color_mi.png` — viridis on `mi_count_bits`
+  * `pca_combined_color_atp.png` — viridis on `log10(atp_per_spike_molecules)`
+  * `pca_combined_color_corner.png` — categorical tab10 on the 4 MI x ATP quadrants. Replace
+    `_scatter_cells_by_seed` with `_scatter_cells_by_value` (continuous colormap) and
+    `_scatter_cells_by_corner` (categorical). Keep gen-0 overlay (`pca_with_gen0_overlay.png`) and
+    the displacement table (`gen0_displacement.csv`), but segment displacement statistics **per MI x
+    ATP corner** instead of per seed.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/factor_analysis.py` — **copy +
+  minor adaptation**. 262 lines. Reuses `varimax_rotation` (lines 48-78 of t0108&#x27;s version,
+  identical iterative-SVD; gamma=1, tol=1e-6, max_iter=500), `FactorResult`,
+  `_drop_constant_columns`, `run_factor_analysis`, `_plot_loadings_heatmap`. **Adaptation**: extend
+  the correlation table to four metrics (`mi_count_bits`, `atp_per_spike_molecules`,
+  `dsi_vector_sum`, `pd_rate_hz`) instead of two. Add a `joint_mi_atp_flag` column with the |r| &gt;
+  0.30 rule and a `factor_classification` column (&quot;joint_MI_ATP&quot;, &quot;MI_only&quot;, &quot;ATP_only&quot;,
+  &quot;decoupled&quot;) for downstream answer 1.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/cluster_electrophys.py` — **copy +
+  minor adaptation**. 159 lines. KMeans on the 54-d electrophys submatrix with silhouette auto-pick
+  over `K_SWEEP = (3, 4, 5, 6, 7)`. The output CSV needs the MI / ATP / DSI / PD columns added per
+  cell (Step 5&#x27;s &quot;per-cluster mean MI / ATP / DSI / PD / firing-rate&quot; requirement); strip the
+  `_seed`-specific reporting.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/cluster_morphology.py` — **copy
+  + minor adaptation**. 195 lines. KMeans on the 14-d morphology submatrix. Output per-cluster
+    representative table; **adaptation**: the 15-row representative table now needs
+    `(generation, cell_index, mi_count_bits, atp_per_spike_molecules, dsi_vector_sum, pd_rate_hz, ephys_PC1, ephys_PC2, ephys_PC3, soma_share_atp)`
+    (Step 6&#x27;s requirement) — add
+    `soma_share_atp = atp_soma / (atp_soma + atp_ais + atp_dendrites_total)`.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/render_electrophys_cluster_morphs.py`
+  — **copy + minor adaptation**. 220 lines. The 5 x 3 grid is preserved. **Critical adaptation**:
+  replace the within-cluster ranking metric from `DSI * PD` (t0117) to
+  `mi_count_bits / atp_per_spike_molecules` (bits-per-ATP) restricted to the spiking cohort.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/morphology_rendering.py` — **copy
+  unchanged** (after namespace update). 178 lines. NEURON pt3d helpers (`SectionPts`, `BuiltMorph`,
+  `CellLabel`, `to_morph_params`, `extract_section_pts`, `build_and_extract`, `global_extents`,
+  `plot_cell`). The `MAX_MORPH_SEED = 2**31 - 1` modulo and the `h.delete_section` cleanup are
+  mandatory; do not strip them.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/cluster_seed_purity.py` — **copy +
+  heavy adaptation**. 85 lines. Replace the `(cluster, seed)` purity calculation with a
+  `(cluster, MI_quartile_group)` and `(cluster, ATP_quartile_group)` contingency table per
+  partition. Output renamed `results/data/cluster_group_purity.csv`. NMI + chi-square reporting
+  structure stays.
+
+* `tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/code/paths.py` — **copy + path
+  renames**. 63 lines. All `pooled_*` names become `t0123_*` and the new outputs from the t0125 step
+  list are added: `pca_combined_color_mi.png`, `pca_combined_color_atp.png`,
+  `pca_combined_color_corner.png`, `cliffs_delta_high_vs_low_mi.png`,
+  `cliffs_delta_high_vs_low_atp.png`, `corner_param_heatmap.png`, `atp_share_ternary.png`,
+  `atp_share_violins.png`, `group_thresholds.json`, `pool_counts.csv`, `group_comparison.csv`,
+  `corner_param_means.csv`, `atp_compartment_shares.csv`.
+
+##### New modules required (no precedent)
+
+* `code/effect_sizes.py` — **new code**. Implement `cliffs_delta(x: NDArray, y: NDArray) -&gt; float`
+  via rank-based formula. Roughly 30 lines including ties handling. Test via
+  `code/test_effect_sizes.py` against a known-result example.
+* `code/group_comparison.py` — **new code, ~150 lines**. For each of 68 parameters, compute mean /
+  std in high-MI / low-MI / high-ATP / low-ATP groups, Mann-Whitney U two-sided p, Cliff&#x27;s delta, on
+  the spiking cohort. Emit `results/data/group_comparison.csv` and the two ranked-bar
+  `cliffs_delta_*.png` charts (top-20 by `|delta|`).
+* `code/corner_heatmap.py` — **new code, ~100 lines**. 68 x 4 z-scored mean matrix in the four MI
+  x ATP corners; render as `RdBu_r` heatmap with symmetric vmin / vmax; save the matrix to
+  `results/data/corner_param_means.csv`.
+* `code/atp_compartment_shares.py` — **new code, ~200 lines**. Per-cell soma / AIS / dendrite
+  shares of total per-AP ATP cost on the spiking cohort. Render ternary plot
+  (`results/images/atp_share_ternary.png`, coloured by corner) and 6-panel violin plot
+  (`results/images/atp_share_violins.png`, by MI group and ATP group). Save per-cell shares to
+  `results/data/atp_compartment_shares.csv`. The `mpltern` package is the standard ternary helper;
+  check `pyproject.toml` — if absent, fall back to a hand-rolled barycentric scatter.
+
+##### Source data — pre-existing asset
+
+* **Predictions asset**:
+  `tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/predictions/nsga2-mi-atp-per-spike-bedb-morph/files/predictions.jsonl.gz`
+  [t0123]. 5 760 records, jsonl.gz format. Validated by t0123&#x27;s `verify_predictions_asset`.
+  Authoritative — do **not** read the alternative
+  `tasks/t0123_*/results/data/all_evaluations_seed441.json.gz` per the task description.
+
+#### Lessons Learned
+
+##### Standardiser fit is a single point of correctness
+
+t0108, t0116, and t0117 all converge on the same invariant: fit the standardiser **once** on the
+union pool (or the full cohort), persist it, and reuse it across every PCA, KMeans, FA, and
+projection. t0117&#x27;s `fit_standardiser.py` and the `PooledStandardiser` dataclass embody this. The
+risk if violated: per-cohort refitting absorbs cohort-specific scale into the standardiser and
+erases the signal the analysis is designed to detect. t0125 has two cohorts (full + spiking) and
+must use the full-cohort standardiser everywhere, including the spiking-cohort group comparisons.
+
+##### Truncated-cohort artefacts are real
+
+t0116 [t0116] found zero joint DSI x PD factors under the strict cohort (DSI &gt; 0.7 AND PD &gt; 10);
+t0117 [t0117] confirmed that removing the filter restored a joint factor F1 (r_DSI = +0.421, r_PD =
++0.352) on the same underlying NSGA-II output. The MI x ATP analogue is **the central question** of
+t0125&#x27;s answer 1. The full cohort (5 760 cells, including silent and near-silent cells) must be used
+for the FA correlations; the spiking cohort is only for the ATP-per-spike group comparisons because
+the denominator is unstable for near-silent cells.
+
+##### Cluster purity requires a meaningful external categorical reference
+
+t0117&#x27;s cluster-vs-seed NMI works because seed is the natural categorical reference for a multi-seed
+pool. t0125 has only one seed, so cluster-vs-seed is meaningless. The replacement references are the
+**MI quartile group** and the **ATP quartile group** (one categorical variable each, 2 or 4 levels
+depending on the analysis). Per-cluster mean MI / ATP / DSI / PD provides the continuous companion
+view.
+
+##### NEURON pt3d morphology rendering needs the `h.delete_section` cleanup
+
+t0109 [t0109] and t0117 both call `h.delete_section(sec=s)` for every soma and dendrite section
+after extracting pt3d arrays, wrapped in `contextlib.suppress(RuntimeError, AttributeError)`.
+Without this cleanup NEURON&#x27;s RSS grows linearly with the number of cells built per process and can
+OOM on large galleries. Memory `feedback_top50_morphologies_full_dendrites.md` requires **full
+dendrite trees** (not soma-only), so the cleanup matters even more — each cell typically has 100+
+dendrite sections.
+
+##### Single-file source simplifies the loader but loses the dedup gate
+
+t0117&#x27;s loader has an explicit validation gate: t0106 must yield n_raw &gt; 0 and n_unique &gt; 0.1 *
+n_raw (more than 10 % of records survive 6-decimal dedup). For t0125 with only one source, the same
+gate applies (n_unique &gt; 0.1 * 5 760 = 576). NSGA-II naturally collapses many converged offspring;
+28 % survival in t0106 and similar elsewhere; expect 1 000-3 000 unique cells after dedup.
+
+##### MI count-bits has a low ceiling and a degenerate corner
+
+t0123 [t0123] reported `best_mi_count_bits = 1.459` at the high-MI corner but
+`Strong-Bialek bits_per_sec = 0.0` for all 10 top-Pareto cells because PD-rate was too low (~3
+spikes / 1 400 ms trial) to populate non-trivial spike-time words. This is a methodological caveat
+for any MI-based interpretation in t0125: cells in the &quot;high-MI&quot; quartile may include optimisation
+artefacts where MI is high but the underlying spike train is degenerate. The spiking cohort filter
+(`pd_rate_hz &gt; 1.0 AND NOT silence_failed_bool`) partly mitigates this, but answer 1 must note that
+the MI metric is count-MI on a 4-direction contingency, not a rate or bits/s code.
+
+##### Validate dependencies before relying on aggregator output
+
+The library and answer aggregators (`aggregate_libraries.py`, `aggregate_answers.py`) referenced by
+the research-code skill do **not exist** in this fork. Direct filesystem walking of
+`tasks/*/assets/{library,answer}/` is the fallback. Future skill invocations should detect this
+upfront rather than failing with `ModuleNotFoundError`.
+
+#### Recommendations for This Task
+
+##### Module structure (highest priority)
+
+Set up `code/` mirroring t0117&#x27;s layout, then add four new modules:
+
+```text
+tasks/t0125_t0123_cluster_factor_mi_atp/code/
+  __init__.py
+  paths.py                                  # copy + rename from t0117
+  constants.py                              # copy from t0108, strip DSI/PD constants, add t0125 ones
+  cluster_helpers.py                        # copy verbatim from t0117 (namespace change only)
+  load_t0123_cells.py                       # copy + heavily adapt from t0117 load_pooled_cells.py
+  load_t0123_gen0.py                        # copy + minor adapt from t0117 load_pooled_gen0.py
+  fit_standardiser.py                       # copy + rename from t0117
+  pca_with_overlay.py                       # copy + heavily adapt from t0117 pooled_pca_with_overlay.py
+  factor_analysis.py                        # copy + minor adapt from t0117
+  cluster_electrophys.py                    # copy + minor adapt from t0117
+  cluster_morphology.py                     # copy + minor adapt from t0117
+  cluster_group_purity.py                   # copy + heavily adapt from t0117 cluster_seed_purity.py
+  morphology_rendering.py                   # copy verbatim from t0117 (namespace change only)
+  render_electrophys_cluster_morphs.py      # copy + minor adapt from t0117 (rank by bits-per-ATP)
+  effect_sizes.py                           # NEW
+  group_comparison.py                       # NEW (Step 8: 68-param Cliff&#x27;s delta + MWU)
+  corner_heatmap.py                         # NEW (Step 9: 68 x 4 z-scored corner means)
+  atp_compartment_shares.py                 # NEW (Step 10: soma/AIS/dendrite shares ternary + violins)
+  methodology_notes.py                      # copy + adapt from t0117 (compare against t0117 not t0116)
+  test_effect_sizes.py                      # NEW (unit tests for Cliff&#x27;s delta)
+```
+
+Approximate total: ~3 000 lines (similar to t0117&#x27;s 2 374 lines plus ~600 lines of new code for the
+t0125-specific analyses).
+
+##### Use the existing library imports, do not re-vendor morphology helpers
+
+The `procedural_dsgc_morphology_generator` and `procedural_dsgc_morphology_generator_fix` libraries
+are project-registered. Direct import path is the only sanctioned cross-task code reuse. Do not copy
+`morphology_generator_fix.py` or `morphology_params.py` into t0125&#x27;s `code/` directory.
+
+##### Preserve every t0117 / t0108 hyperparameter
+
+* `DEDUP_DECIMALS = 6` — keep verbatim.
+* `K_SWEEP = (3, 4, 5, 6, 7)` — keep verbatim (matches task description Step 5/6).
+* `KMEANS_RANDOM_STATE = 42`, `N_INIT_KMEANS = 10` — keep verbatim.
+* `KAISER_FACTOR_CAP = 10` — keep verbatim.
+* `JOINT_FACTOR_R_THRESHOLD = 0.30` — keep verbatim (task description uses |r| &gt; 0.3).
+* `RANDOM_SEED = 42` (FactorAnalysis), `CHART_DPI = 150` — keep verbatim.
+* Varimax: `gamma = 1.0`, `tol = 1e-6`, `max_iter = 500`, in-house iterative-SVD — keep verbatim.
+
+##### Two-cohort architecture
+
+The full cohort is the standardiser-fit cohort, the PCA-fit cohort, the KMeans-fit cohort, and the
+FA-fit cohort. The spiking cohort is **only** used for: Cliff&#x27;s delta + MWU group comparisons (Step
+8), the cluster-representative ranking by bits-per-ATP (Step 5/6), the 2 x 2 corner z-scored heatmap
+(Step 9), and the ATP compartment-share comparison (Step 10). Mixing these up — e.g. refitting the
+standardiser on the spiking cohort — will silently corrupt the joint-factor finding.
+
+##### Preserve full dendrite trees in morphology grids
+
+Per memory `feedback_top50_morphologies_full_dendrites.md`, render full dendrite trees, not
+soma-only. The t0117 `morphology_rendering.py` already does this; do not change the rendering code.
+The `5 x 3 = 15` cells per cluster panel layout is fixed by Step 5.
+
+##### Output one answer asset per question, citing source CSV rows / chart files
+
+The task description defines four questions, each becoming one `assets/answer/&lt;id&gt;/` asset following
+`meta/asset_types/answer/specification.md`. Each answer must cite the specific row / column of
+`group_comparison.csv` or `factor_correlations.csv` underpinning its verdict, the specific chart
+image, and the per-corner cell counts. Use `meta/asset_types/answer/` specification version 2
+(`ANSWER_SPEC_VERSION = &quot;2&quot;`).
+
+##### Compare-literature pass against t0117
+
+`results/compare_literature.md` must include one row comparing the t0125 MI x ATP joint-factor
+finding against t0117&#x27;s DSI x PD joint-factor finding (truncated-cohort artefact confirmation for
+the DSI x PD axis; same hypothesis testable for MI x ATP here). The structure of
+`tasks/t0117_*/code/methodology_and_comparison.py` (267 lines) is the template — copy and
+re-target the comparison from &quot;t0117 vs t0116&quot; to &quot;t0125 vs t0117&quot; with the metric pairs
+substituted.
+
+#### Task Index
+
+##### [t0086]
+
+* **Task ID**: `t0086_robustness_cluster_bio_comparison`
+* **Name**: Robustness cluster biological-plausibility attribution
+* **Status**: completed
+* **Relevance**: Established the cluster-vs-categorical-reference NMI methodology
+  (biological-plausibility groups as the reference) that t0125 transposes to MI / ATP quartile
+  groups for cluster purity.
+
+##### [t0088]
+
+* **Task ID**: `t0088_recluster_marginals_and_vm_motifs`
+* **Name**: Re-cluster t0086 13-cell pool in t0080 54-d v3 parameter space
+* **Status**: completed
+* **Relevance**: Companion analysis to t0086 confirming that mechanism distinctness across clusters
+  requires per-cluster mechanism inspection (not just centroid distance) — informs Step 5/6
+  representative-cell selection rule.
+
+##### [t0090]
+
+* **Task ID**: `t0090_morphology_generator_diversity_test`
+* **Name**: Procedural DSGC morphology generator + diversity test
+* **Status**: completed
+* **Relevance**: Source of the `procedural_dsgc_morphology_generator` library and the
+  `MorphologyParams` dataclass needed by Step 5/6&#x27;s morphology galleries.
+
+##### [t0092]
+
+* **Task ID**: `t0092_diagnose_morphology_generator_silence`
+* **Name**: Diagnose t0090 procedural-cell silence; ship the soma-area fix
+* **Status**: completed
+* **Relevance**: Source of the `procedural_dsgc_morphology_generator_fix` library and the
+  `generate_fixed_morphology` function — the project-standard cell-build entry point used in every
+  morphology gallery from t0109 onwards, including t0125.
+
+##### [t0106]
+
+* **Task ID**: `t0106_long_pdnd_nsga2_300gen`
+* **Name**: Long PD-ND NSGA-II 300 generations
+* **Status**: completed
+* **Relevance**: Source of the original 68-d vector layout (54-d electrophys + 14-d morphology)
+  inherited by t0108 / t0116 / t0117 / t0122 / t0123 / t0125. The `_dedupe_cells` and
+  `_passes_filter` patterns originate in t0108 over this run&#x27;s outputs.
+
+##### [t0108]
+
+* **Task ID**: `t0108_t0106_cluster_factor_dsi05_pd10`
+* **Name**: Cluster + factor analysis on t0106 (strict cohort DSI &gt; 0.5, PD &gt; 10)
+* **Status**: completed
+* **Relevance**: Original strict-cohort version of the pipeline. **Authoritative source of
+  `ALL_PARAM_NAMES` constants** and the in-house `varimax_rotation` iterative-SVD helper that t0116
+  / t0117 / t0125 all reuse verbatim.
+
+##### [t0109]
+
+* **Task ID**: `t0109_t0108_morph_cluster_gallery`
+* **Name**: Morphology gallery for t0108 clusters
+* **Status**: completed
+* **Relevance**: Original NEURON pt3d morphology rendering pipeline (`_to_morph_params`,
+  `_build_and_extract`, `_plot_cell`, `_global_extents`, `_select_top_per_cluster`). t0117 copied
+  these helpers; t0125 will inherit them through the same copy chain.
+
+##### [t0116]
+
+* **Task ID**: `t0116_pooled_pca_cluster_factor_dsi07_pd10`
+* **Name**: Pooled PCA + cluster + factor analysis (DSI &gt; 0.7, PD &gt; 10) across 4 seeds
+* **Status**: completed
+* **Relevance**: Strict-cohort variant of the multi-seed pooled pipeline. Found **no joint DSI x PD
+  factor** under the strict filter; t0117 reversed this finding. t0125 replicates the same test for
+  MI x ATP and cites both t0116 and t0117 as the methodology precedents.
+
+##### [t0117]
+
+* **Task ID**: `t0117_pooled_pca_cluster_factor_all_cells_4_seeds`
+* **Name**: Pooled PCA + cluster + factor analysis (no DSI / PD filter) across 4 seeds
+* **Status**: completed
+* **Relevance**: **Primary structural template for t0125.** Every module (loader, standardiser fit,
+  PCA + gen-0 overlay, factor analysis, KMeans on both subspaces, cluster purity, morphology
+  rendering, methodology-comparison) is the direct copy source. Confirmed the truncated-cohort
+  artefact for DSI x PD (joint F1 with r_DSI = +0.421, r_PD = +0.352); t0125 tests whether the same
+  artefact holds for MI x ATP.
+
+##### [t0123]
+
+* **Task ID**: `t0123_bedb_mi_atp_per_spike_nsga2`
+* **Name**: NSGA-II MI vs ATP-per-spike on Bed B + 14-d morph (seed 441, 60 gens)
+* **Status**: completed
+* **Relevance**: **Sole source of input data for this task**. Produced the 5 760-cell predictions
+  asset that t0125 analyses, including the new `mi_count_bits`, `atp_per_spike_molecules`, and
+  `atp_per_ap_compartment_breakdown` fields. The full per-record schema is documented in t0123&#x27;s
+  `build_predictions_assets.py` and the asset&#x27;s `description.md`.
       </content>
     </section>
   </sections>

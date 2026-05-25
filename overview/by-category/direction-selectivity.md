@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (47)](../papers/by-category/direction-selectivity.md) | [Answers
 (33)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(338)](../suggestions/by-category/direction-selectivity.md) | [Datasets
+(339)](../suggestions/by-category/direction-selectivity.md) | [Datasets
 (3)](../datasets/by-category/direction-selectivity.md) | [Libraries
 (15)](../libraries/by-category/direction-selectivity.md) | [Predictions
 (14)](../predictions/by-category/direction-selectivity.md)
@@ -3223,7 +3223,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (303 open, 35 closed)
+## Suggestions (304 open, 35 closed)
+
+<details>
+<summary>🧪 <strong>8-direction MI NSGA-II to lift the 2-bit ceiling and re-test the
+joint factor at higher MI resolution</strong> (S-0125-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's top cells saturate at mi_count_bits = 1.459 (73% of log2(4) = 2.0). Three Pareto cells
+converged on identical (MI, DSI, PD-rate) -- a deterministic optimum at the ceiling.
+Compressed MI variance pulls all joint loadings toward zero. Distinct from S-0123-01 (extended
+trial length + PD-rate floor for Strong-Bialek bits/s) and from polar 8-direction
+re-evaluation suggestions on DSI lineages (those re-score existing cells; this is a fresh
+NSGA-II). Action: fork t0123 with N_DIRECTIONS = 8 (ceiling = log2(8) = 3.0 bits), keep other
+constants matched (POP_SIZE = 96, N_EVAL_SEEDS = 3, HV auto-stop OFF, pool restart every 10);
+scale trial duration only if firing rate falls (per memory
+feedback_dsgc_measurement_protocol); rerun cluster + factor analysis. Budget ~$10-15 Vast.ai
+EPYC. Recommended task types: experiment-run, data-analysis.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Re-run seeds 77 and 2247 with HV-plateau auto-stop DISABLED to

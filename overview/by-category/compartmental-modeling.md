@@ -5,8 +5,8 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (45)](../papers/by-category/compartmental-modeling.md) | [Answers
-(38)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(412)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
+(42)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(418)](../suggestions/by-category/compartmental-modeling.md) | [Datasets
 (1)](../datasets/by-category/compartmental-modeling.md) | [Libraries
 (14)](../libraries/by-category/compartmental-modeling.md) | [Predictions
 (14)](../predictions/by-category/compartmental-modeling.md)
@@ -2442,7 +2442,86 @@ mind when generalizing to vertebrate retinal-ganglion or cortical DS models.
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 
-## Answers (38)
+## Answers (42)
+
+<details>
+<summary><strong>Which electrophys parameters most distinguish high-MI from low-MI
+cells in the t0123 spiking cohort, with effect size and direction?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`high-vs-low-mi-electrophys-signature`](../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/high-vs-low-mi-electrophys-signature/)
+
+The top 5 electrophys parameters by |Cliff's delta| separating high-MI (top quartile of
+mi_count_bits, n = 819) from low-MI (bottom quartile, n = 1024) cells are: IH_GBAR (delta =
+-0.786, high-MI cells have ~32x lower mean), CAD_TAUR_MS (delta = -0.717, high-MI cells have
+~3.6x faster calcium-buffer time constant), KDR_GBAR (delta = -0.668, high-MI cells have ~9x
+lower mean), SK_AIS_GBAR (delta = +0.632, high-MI cells have higher AIS-localised SK density),
+and SKAHP_TAU_CA_MULTIPLIER (delta = -0.627, high-MI cells have ~2.4x shorter calcium-driven
+AHP time constant). All five Mann-Whitney U p-values are below 1e-115, so the effects are
+statistically robust against the n ~ 1000 sample sizes.
+
+</details>
+
+<details>
+<summary><strong>Which morphology parameters most distinguish low-ATP from high-ATP
+cells in the t0123 spiking cohort, and does the low-ATP group spend
+relatively more ATP at the AIS than in the dendrites?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`low-vs-high-atp-morphology-signature`](../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/low-vs-high-atp-morphology-signature/)
+
+The top 5 morphology parameters by |Cliff's delta| separating high-ATP (top quartile of
+atp_per_spike, n = 782) from low-ATP (bottom quartile, n = 782) cells are:
+mean_segment_length_um (delta = -0.725, low-ATP cells have ~43% longer segments),
+branch_length_cv (delta = +0.554, low-ATP cells are more uniform in branch length),
+branch_density_gradient_pd (delta = +0.504, low-ATP cells have weaker preferred-direction
+dendrite-density gradient), field_elongation_pd (delta = -0.469, low-ATP cells have more
+elongated dendritic field), and ais_length_um (delta = +0.376, low-ATP cells have shorter AIS
+by ~12%). The ATP-share answer is Yes for the AIS but the dendrite/soma swap dominates:
+low-ATP cells concentrate 93% of per-AP ATP at the soma and 6% at the AIS with only 0.4% in
+dendrites, while high-ATP cells push 62% into dendrites and 35% into soma with only 2.6% at
+the AIS.
+
+</details>
+
+<details>
+<summary><strong>Does the 68-d substrate of the t0123 single-seed MI vs
+ATP-per-spike NSGA-II run admit a joint MI x ATP latent factor (|r| > 0.30
+on both metrics simultaneously), or are MI and ATP driven by decoupled
+factors?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`mi-atp-joint-structure-in-t0123-substrate`](../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/mi-atp-joint-structure-in-t0123-substrate/)
+
+No, the t0123 substrate does not contain a joint MI x ATP factor. Varimax factor analysis on
+the full 5760-cell pool retained 10 factors (16 Kaiser eigenvalues > 1, total variance
+explained 34.3%) and zero factors satisfy |r_MI| > 0.30 AND |r_ATP| > 0.30 simultaneously. The
+two strongest MI-loaded factors carry r_MI = -0.358 / +0.463 but only r_ATP = +0.205 / +0.063,
+and the strongest ATP-loaded factor (F1) ranks 7th on |r_MI|. This contrasts with t0117's
+pooled four-seed DSI x PD substrate which found one joint factor F1 (r_DSI = +0.421, r_PD =
++0.352, 12.6% variance).
+
+</details>
+
+<details>
+<summary><strong>Which combination of electrophys + morphology parameters most
+distinguishes the Pareto-favoured corner (high MI, low ATP) from the
+Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what
+are the per-corner cell counts and means?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-25 | **Full answer**:
+[`pareto-favoured-corner-signature`](../../tasks/t0125_t0123_cluster_factor_mi_atp/assets/answer/pareto-favoured-corner-signature/)
+
+The top 5 parameters by absolute z-score difference between the high_mi_low_atp and
+low_mi_high_atp corners (each cell z-scored against the full-cohort standardiser, mean per
+corner) are: KDR_GBAR (-1.19), branch_length_cv (-1.08), BK_SOMA_GBAR (-1.06), IH_GBAR
+(-1.06), and RA_OHM_CM (+1.06). The Pareto-favoured corner contains 1221 spiking cells (mean
+MI = 0.984 bits, mean ATP = 5.34e6 molecules / spike, mean DSI = 0.237, mean PD rate = 2.61
+Hz) versus 1220 cells in the dominated corner (mean MI = 0.063 bits, mean ATP = 2.61e7
+molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbalance (1221 +
+1220 = 2441 cells vs 343 + 341 = 684 off-diagonal) is the joint Pareto signature.
+
+</details>
 
 <details>
 <summary><strong>Is the procedural morphology generator's asymmetry transform
@@ -3229,7 +3308,127 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (371 open, 41 closed)
+## Suggestions (376 open, 42 closed)
+
+<details>
+<summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
+the zero-joint-factor verdict</strong> (S-0125-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's zero-joint MI x ATP varimax verdict is derived from a SINGLE NSGA-II seed (441).
+Precedent: t0116 (single seed) found no joint DSI x PD factor; t0117 (4 seeds) recovered one.
+The verdict is known to be seed-sensitive on this substrate. Action: replicate t0123 on 2-3
+additional non-round GA seeds (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6,
+HV-plateau auto-stop DISABLED per memory feedback_disable_hv_plateau_autostop,
+_POOL_RESTART_EVERY=10) and rerun the t0125 cluster + Kaiser-cap varimax pipeline on the
+pooled 4-seed pool. Predicted outcome: either F1's ATP loading crosses 0.30 (joint factor
+reappears) or stays decoupled (objective-pair-specific verdict confirmed). Budget ~$15-25
+Vast.ai EPYC. Recommended task types: experiment-run, data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Patch t0080 with an explicit myelinated axon to fix the
+soma-vs-axon ATP-share inversion vs Attwell 2001</strong> (S-0125-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125 finds 76.7% soma / 5.5% AIS / 17.8% dendrite ATP share -- inverted from Attwell &
+Laughlin 2001's 4% soma / 82% axon / 14% dendrite rodent-cortical breakdown. methodology_notes
+and compare_literature attribute this to t0080 lacking an explicit myelinated axon (only a
+procedural AIS). Action: extend the t0080 cell builder with one or two nodes of Ranvier +
+myelin segments at realistic R_m (~50 kOhm cm^2), C_m (~0.04 uF/cm^2), and Na/K channel
+densities; re-run t0123's MI vs ATP-per-spike NSGA-II at matched compute; re-check
+soma/AIS/axon/dendrite ATP shares against Attwell 2001 Table 4 and Sengupta 2010. Test whether
+the Pareto front shifts and whether compartment-ATP diversity broadens to match the rodent
+picture. Budget ~$10-15 Vast.ai EPYC. Recommended task types: build-model, experiment-run,
+comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Partial-correlation analysis of MI vs electrophys (control
+morphology) and ATP vs morphology (control electrophys)</strong>
+(S-0125-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's PCA colourings make the separation visible: high-MI cells cluster in the electrophys
+PCA but are absent from the morphology PCA; log10(ATP) shows a gradient in the morphology PCA,
+flatter in electrophys. NMI table corroborates (electrophys-vs-MI 0.178, electrophys-vs-ATP
+0.186, morphology-vs-MI 0.121, morphology-vs-ATP 0.176). These are pairwise correlations and
+could share a common cause. Action: on the existing spiking-cohort parquet, compute Spearman
+partial r for (a) MI vs each of 54 electrophys params partialling out 14 morphology params;
+(b) ATP vs each of 14 morphology params partialling out 54 electrophys params; (c) MI vs ATP
+partialling out morphology; (d) MI vs ATP partialling out electrophys. Report top-10 with
+bootstrap CI; compare to t0125 group_comparison.csv. Single CPU-only follow-up. Recommended
+task types: data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Off-diagonal-corner-constrained NSGA-II to sample the
+undersampled high-MI/high-ATP and low-MI/low-ATP corners</strong>
+(S-0125-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125 finds a 3.6x diagonal-vs-off-diagonal corner imbalance: 1221 high_MI/low_ATP + 1220
+low_MI/high_ATP vs only 343 high_MI/high_ATP + 341 low_MI/low_ATP cells. Off-diagonal corners
+are real -- cell (19, 1816) hits MI=1.459 at ATP=4.97e7 (8.7x more expensive than equivalent
+(30, 2828)) -- but undersampled because NSGA-II exploited the cheap-and-informative half.
+Action: rerun the t0123 NSGA-II twice with constrained objectives (a) maximise BOTH MI and ATP
+(forces high_MI/high_ATP corner); (b) minimise BOTH (forces low_MI/low_ATP corner). Sample 96
+cells per corner; rerun the t0125 cluster + factor pipeline on the union plus the original
+t0123 pool. Tests whether off-diagonal corners share or have private latent drivers. Budget
+~$8-12 Vast.ai EPYC. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Disjoint parameter-basin enumeration of high-MI cells to quantify
+Achard 2006 degeneracy on the t0123 substrate</strong> (S-0125-07)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's electrophys silhouette = 0.083 (low) paired with chi-square p = 1e-236 (highly
+significant) is the signature of Achard 2006's 'loosely connected hyperplane' geometry. t0125
+confirmed the qualitative pattern (5 of 68 parameters with |Cliff's delta| > 0.6 for MI
+groups, ~7%) but did NOT count DISJOINT parameter basins producing mi_count_bits > 1.0.
+Action: on the spiking-cohort parquet, restrict to cells with MI > 1.0 (n ~ 600-800), apply
+single-linkage hierarchical clustering in the standardised 54-d electrophys subspace tuned to
+3-10 connected components, report per-component median pairwise distance, per-parameter range,
+and cross-component nearest-neighbour distance. Replicate in morphology and full-68-d. Tests
+Marder 2006 'many models, one behaviour' on t0123; motivates per-basin re-seeded NSGA-II.
+CPU-only. Recommended task types: data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Bootstrap loading stability for the single-seed MI factors to
+bracket the 0.358 / 0.205 joint-threshold gap</strong> (S-0125-08)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0125_t0123_cluster_factor_mi_atp](../../tasks/t0125_t0123_cluster_factor_mi_atp/)
+
+t0125's zero-joint verdict rides on F1's r_MI = -0.358 (above threshold) paired with r_ATP =
++0.205 (below threshold) -- ATP only 0.095 below the 0.30 cutoff. Verdict could flip under
+resampling. Distinct from S-0117-03 (bootstrap on t0117 4-seed DSI x PD F1): this is the MI x
+ATP single-seed analogue. Action: on the existing t0125 standardiser and 5760-cell parquet,
+draw B = 500 bootstrap resamples, refit FA(n=10) + varimax, report (a) per-factor 5/50/95
+percentile loadings on every 68-d parameter; (b) per-factor 5/50/95 percentile r vs MI and
+ATP; (c) probability that >=1 factor crosses |r| > 0.30 on both axes per resample; (d)
+threshold sensitivity at 0.20, 0.25, 0.30, 0.35. Bounds the joint-factor verdict and produces
+the threshold-sensitivity curve flagged in compare_literature. CPU-only. Recommended task
+types: data-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🔧 <strong>Re-render t0112 / t0114 / t0115 top-50 morphology grids with
@@ -5687,23 +5886,6 @@ cells, and try (a) explicit `for sec in list(h.allsec()): h.delete_section(sec=s
 `h('forall delete_section()')`, or (c) creating a fresh `neuron.h` namespace per cell. Output:
 fix in t0080's library or documented note + minimal reproducer. Matters for single-process
 debugging and low-parallelism interactive runs. Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Bed B NSGA-II maximising DSI and minimising
-ATP-per-spike</strong> (S-0097-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-08 | **Source**:
-[t0097_multi_obj_optim](../../tasks/t0097_multi_obj_optim/)
-
-Anchored to the canonical Attwell-Laughlin energy budget (47% of cortical signalling ATP per
-spike). Remme et al. 2018's MSO function-vs-energy MOBO provides a direct methodology template
-generalising to NEURON. DSGC's GABAergic-style fast-spiking should produce
-Carter-Bean-2009-style Na/K-overlap penalty; the front should expand toward dramatically lower
-energy as Na+ density and overlap are jointly reduced. Recipe: `(1/3) sum int(I_Na) dt / e`
-per compartment per AP. Budget: 24-48 h Vast.ai EPYC at $0.30/h, total $8-15 — may exceed
-per-task default; flag for explicit budget approval.
 
 </details>
 
