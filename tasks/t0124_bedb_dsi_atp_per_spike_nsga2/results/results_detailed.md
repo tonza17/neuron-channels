@@ -147,6 +147,25 @@ subagent's own session budget — not by the cost watchdog ($0.07 << $5) nor the
 A 60-gen replication is the natural next task; the front is expected to grow from 5 to ~25-30 cells
 with diversified ancestry and a more reliable correlation estimate.
 
+## Verification
+
+All required verificators were run and report results below. Asset verificators ran via
+`run_with_logs.py` per project rule 1.
+
+* `verify_task_file` — PASS
+* `verify_task_dependencies` — PASS (10/10 dependencies completed)
+* `verify_research_papers` / `verify_research_internet` / `verify_research_code` — PASS
+* `verify_plan` — PASS
+* `verify_task_metrics` — PASS (4-variant explicit format)
+* `verify_predictions_asset` (`nsga2-dsi-atp-per-spike-bedb-morph`) — PASS (3 cosmetic warnings:
+  no `model_id`, no `dataset_ids`, Summary 1 paragraph vs 2-3 — these reflect NSGA-II output
+  semantics, not asset gaps)
+* `verify_answer_asset` (`dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin`) — PASS
+* `verify_machines_destroyed` — PASS (1 expected RM-W001 warning: API 404 on destroyed instance)
+* `verify_task_folder` — PASS (1 cosmetic warning on empty `logs/searches/`)
+* Smoke-gate 9/9 checks PASS (constants assertions + Carter-Bean canonical band)
+* DSI silence-guard regression tests: 7/7 PASS
+
 ## Limitations
 
 * **Truncated run**: 9 of 60 planned generations completed. The Pareto front is small (n=5) and the
