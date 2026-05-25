@@ -68,9 +68,9 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision Vast.ai EPYC (cheapest 32-core or 64-core); confirm SSH + environment; verify Vast.ai balance >= $7 before launch.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-25T00:23:06Z",
-      "completed_at": null,
+      "completed_at": "2026-05-25T00:40:11Z",
       "log_file": "logs\\steps\\008_setup-machines/"
     },
     {
