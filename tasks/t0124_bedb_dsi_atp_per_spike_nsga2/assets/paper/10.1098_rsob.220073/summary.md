@@ -1,7 +1,10 @@
-## ﻿---
-
-spec_version: "3" paper_id: "10.1098_rsob.220073" citation_key: "Jedlicka2022" summarized_by_task:
-"t0124_bedb_dsi_atp_per_spike_nsga2" date_summarized: "2026-05-25"
+---
+spec_version: "3"
+paper_id: "10.1098_rsob.220073"
+citation_key: "Jedlicka2022"
+summarized_by_task: "t0124_bedb_dsi_atp_per_spike_nsga2"
+date_summarized: "2026-05-25"
+---
 
 # Pareto Optimality, Economy-Effectiveness Trade-offs and Ion Channel Degeneracy
 
