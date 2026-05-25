@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Copy t0123 substrate, swap MI->DSI objective, reduce N_DIRECTIONS=2; run Carter-Bean smoke-gate; launch 1-seed NSGA-II (pop=96, N_EVAL_SEEDS=3, gen_max=60, _POOL_RESTART_EVERY=10, HV-plateau auto-stop disabled, $6 cap); collect predictions asset.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-25T00:41:12Z",
-      "completed_at": null,
+      "completed_at": "2026-05-25T02:14:49Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
