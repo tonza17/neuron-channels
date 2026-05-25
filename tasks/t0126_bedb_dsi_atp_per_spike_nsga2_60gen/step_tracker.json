@@ -5,9 +5,9 @@
       "step": 1,
       "name": "create-branch",
       "description": "Create task/t0126_bedb_dsi_atp_per_spike_nsga2_60gen worktree from main and plan steps.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-25T12:37:26Z",
-      "completed_at": null,
+      "completed_at": "2026-05-25T12:39:48Z",
       "log_file": "logs/steps/001_create-branch/"
     },
     {
