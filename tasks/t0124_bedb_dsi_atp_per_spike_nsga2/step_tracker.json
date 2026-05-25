@@ -104,9 +104,9 @@
       "step": 12,
       "name": "results",
       "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json; embed Pareto front + Carter-Bean check + Attwell-Laughlin budget + top-50 morphologies + HV trajectory charts.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-25T02:23:38Z",
-      "completed_at": null,
+      "completed_at": "2026-05-25T02:28:48Z",
       "log_file": "logs\\steps\\012_results/"
     },
     {
