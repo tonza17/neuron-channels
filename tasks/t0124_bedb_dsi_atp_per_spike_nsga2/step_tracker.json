@@ -113,10 +113,10 @@
       "step": 13,
       "name": "compare-literature",
       "description": "Spawn /compare-literature subagent. Compare DSGC DSI-ATP front to Carter-Bean 2009, Attwell-Laughlin 2001, Sengupta 2010, Niven 2007, Cuntz 2010 (cross-ref to t0122), Remme 2018.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-25T02:29:09Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\013_compare-literature/"
     },
     {
       "step": 14,
