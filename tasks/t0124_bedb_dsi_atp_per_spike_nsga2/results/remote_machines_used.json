@@ -1,0 +1,23 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "37679733",
+    "gpu": "RTX A4000 (1x, idle, unused; CPU-only NEURON workload)",
+    "gpu_count": 1,
+    "cpu_name": "AMD EPYC 7B13 64-Core Processor",
+    "cpu_cores_effective": 128,
+    "ram_gb": 220,
+    "disk_gb": 40,
+    "location": "British Columbia, CA",
+    "duration_hours": 1.8178,
+    "cost_usd": 0.2935,
+    "price_per_hour_usd": 0.16148148148148148,
+    "reliability": 0.9976,
+    "image": "python:3.12-bookworm",
+    "created_at": "2026-05-25T00:29:35Z",
+    "ready_at": "2026-05-25T00:30:57Z",
+    "destroyed_at": "2026-05-25T02:18:39Z",
+    "workload": "NSGA-II (60 gen ceiling, pop=96, n_eval_seeds=3, n_directions=2 antipodal 0/180 deg, single GA seed 6650 drawn via secrets.randbelow(10000)) on Bed B + 14-d morphology substrate. Two-objective DSI vs ATP-per-spike (Sengupta 2010). HV_PLATEAU_AUTO_STOP=False, _POOL_RESTART_EVERY=10. Carter-Bean 2009 AIS smoke-gate passed within 30% of canonical reference before NSGA-II launch.",
+    "note": "Final pre-aggregator estimate from dph_total * total_duration_hours = 0.16148 * 1.8178 = $0.2935. Total wall-clock duration from creation (2026-05-25T00:29:35Z) to destruction (2026-05-25T02:18:39Z) = 1.818 h. Under the $6 task cap (4.9% utilisation) and well under the $5 per-instance watchdog. The 1x RTX A4000 GPU was idle throughout -- CPU-only NEURON workload on the 128 effective AMD EPYC 7B13 cores."
+  }
+]

@@ -86,10 +86,10 @@
       "step": 10,
       "name": "teardown",
       "description": "Destroy Vast.ai instance, finalize machine_log.json + remote_machines_used.json + costs.json.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-25T02:15:07Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\010_teardown/"
     },
     {
       "step": 11,
