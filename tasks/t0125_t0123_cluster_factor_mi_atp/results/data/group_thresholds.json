@@ -1,0 +1,19 @@
+{
+  "mi_q1": 0.0,
+  "mi_median": 0.5646098270911124,
+  "mi_q3": 0.9643374506019364,
+  "atp_q1": 5301331.989634434,
+  "atp_median": 6546672.332298476,
+  "atp_q3": 12431809.950874167,
+  "spiking_cohort_count": 3125,
+  "high_mi_count": 819,
+  "low_mi_count": 1024,
+  "high_atp_count": 782,
+  "low_atp_count": 782,
+  "corner_counts": {
+    "high_mi_low_atp": 1221,
+    "high_mi_high_atp": 343,
+    "low_mi_low_atp": 341,
+    "low_mi_high_atp": 1220
+  }
+}

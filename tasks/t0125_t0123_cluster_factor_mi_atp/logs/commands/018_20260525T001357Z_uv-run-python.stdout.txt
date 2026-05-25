@@ -1,0 +1,4 @@
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\data\atp_compartment_shares.csv (n_rows=3125)
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\atp_share_ternary.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\atp_share_violins.png
+  Mean shares: soma=0.767, AIS=0.055, dend=0.178

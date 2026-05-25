@@ -1,0 +1,5 @@
+Fitting union-pool standardiser on matrix shape=(5760, 68)
+mean.shape=(68,), std.shape=(68,)
+min(std)=2.823543e-04
+max(std)=6.802359e+08
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\data\t0125_standardiser.npz

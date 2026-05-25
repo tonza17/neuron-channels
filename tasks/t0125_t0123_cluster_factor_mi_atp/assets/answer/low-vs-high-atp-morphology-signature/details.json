@@ -1,0 +1,33 @@
+{
+  "spec_version": "2",
+  "answer_id": "low-vs-high-atp-morphology-signature",
+  "question": "Which morphology parameters most distinguish low-ATP from high-ATP cells in the t0123 spiking cohort, and does the low-ATP group spend relatively more ATP at the AIS than in the dendrites?",
+  "short_title": "Low-ATP morphology signature: long segments, low branch-length CV, small dendritic gradient, compact field; soma keeps ~77% of AP ATP across both groups",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "dendritic-computation",
+    "cable-theory"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1038_382363a0",
+    "10.1152_jn.1997.78.4.1948",
+    "10.1371_journal.pcbi.1000877",
+    "10.1097_00004647-200110000-00001",
+    "10.1371_journal.pcbi.1000840"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0123_bedb_mi_atp_per_spike_nsga2",
+    "t0125_t0123_cluster_factor_mi_atp",
+    "t0117_pooled_pca_cluster_factor_all_cells_4_seeds"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0125_t0123_cluster_factor_mi_atp",
+  "date_created": "2026-05-25"
+}

@@ -1,0 +1,11 @@
+  electrophys_cluster vs MI_quartile_group: NMI=0.1783, chi2_p=1.003e-236, n_cells=3125
+  electrophys_cluster vs ATP_quartile_group: NMI=0.1858, chi2_p=1.031e-235, n_cells=3125
+  morphology_cluster vs MI_quartile_group: NMI=0.1210, chi2_p=7.151e-162, n_cells=3125
+  morphology_cluster vs ATP_quartile_group: NMI=0.1762, chi2_p=1.318e-258, n_cells=3125
+
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\data\cluster_group_purity.csv
+          partition          reference      nmi        chi2_p  n_cells
+electrophys_cluster  MI_quartile_group 0.178267 1.002779e-236     3125
+electrophys_cluster ATP_quartile_group 0.185832 1.030612e-235     3125
+ morphology_cluster  MI_quartile_group 0.121038 7.151087e-162     3125
+ morphology_cluster ATP_quartile_group 0.176155 1.318065e-258     3125

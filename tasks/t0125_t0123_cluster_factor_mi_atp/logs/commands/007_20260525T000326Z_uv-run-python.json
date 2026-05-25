@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0125_t0123_cluster_factor_mi_atp",
+  "command": "uv run python -u -m tasks.t0125_t0123_cluster_factor_mi_atp.code.load_t0123_cells",
+  "exit_code": 0,
+  "duration_seconds": 5.366,
+  "started_at": "2026-05-25T00:03:26Z",
+  "completed_at": "2026-05-25T00:03:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0125_t0123_cluster_factor_mi_atp",
+  "stdout_file": "007_20260525T000326Z_uv-run-python.stdout.txt",
+  "stderr_file": "007_20260525T000326Z_uv-run-python.stderr.txt",
+  "stdout_lines": 7,
+  "stderr_lines": 0,
+  "truncated": false
+}

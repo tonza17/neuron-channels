@@ -1,0 +1,19 @@
+FA matrix shape=(5760, 68)
+
+Kaiser eigenvalues > 1: 16 (cap = 10)
+n_factors retained: 10
+Total variance explained: 0.3427
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\factor_loadings_heatmap.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\data\factor_loadings.csv
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\data\factor_correlations.csv
+factor_id  variance_explained      r_mi          p_mi     r_atp        p_atp     r_dsi         p_dsi      r_pd         p_pd  joint_mi_atp_flag factor_classification
+       F1            0.097863 -0.357647 2.196591e-173  0.205017 1.041612e-55 -0.346712 2.235546e-162  0.030398 2.105127e-02              False               mi_only
+       F2            0.051616  0.462536 2.364597e-303  0.062942 1.746916e-06  0.413400 1.188014e-236  0.200667 2.130846e-53              False               mi_only
+       F3            0.059587  0.206264  2.217465e-56 -0.114971 2.080332e-18  0.229869  6.056632e-70 -0.159215 5.162760e-34              False                  none
+       F4            0.033674  0.110794  3.373546e-17  0.032034 1.504539e-02  0.147154  3.006400e-29  0.065188 7.359848e-07              False                  none
+       F5            0.022231  0.104662  1.673695e-15  0.061461 3.042089e-06  0.080307  1.038492e-09  0.037580 4.337762e-03              False                  none
+       F6            0.017414  0.006243  6.357125e-01  0.047317 3.276926e-04  0.002530  8.477764e-01  0.108552 1.442291e-16              False                  none
+       F7            0.013313 -0.009205  4.848683e-01  0.085939 6.446837e-11 -0.002926  8.243004e-01  0.129383 6.278736e-23              False                  none
+       F8            0.019673  0.203755  4.937284e-55  0.019382 1.413460e-01  0.179606  5.846098e-43  0.012699 3.352531e-01              False                  none
+       F9            0.013572  0.021848  9.732525e-02 -0.059103 7.170426e-06  0.023747  7.152860e-02 -0.067384 3.074860e-07              False                  none
+      F10            0.013766  0.010785  4.131619e-01  0.020230 1.247422e-01  0.008996  4.948693e-01 -0.015561 2.376752e-01              False                  none

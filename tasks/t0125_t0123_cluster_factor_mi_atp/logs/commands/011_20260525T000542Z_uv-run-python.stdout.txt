@@ -1,0 +1,14 @@
+Loaded 5760 cells, 96 gen-0 rows
+  combined PCA: PC1=0.1310 PC2=0.0735
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\pca_combined_color_mi.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\pca_combined_color_atp.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\pca_combined_color_corner.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\data\pca_models.pkl
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\pca_with_gen0_overlay.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\data\gen0_displacement.csv
+       partition  n_cells  mean_pc12_displacement  p95_pc12_displacement  mean_68d_displacement  p95_68d_displacement
+         overall     5760                7.128851              10.073185              10.999751             11.730780
+ high_mi_low_atp     1222                9.498384              10.323495              11.144238             11.753061
+high_mi_high_atp      346                7.329462               9.934394              11.014971             11.778653
+  low_mi_low_atp     1307                8.511854               9.813794              11.065337             11.652388
+ low_mi_high_atp     2885                5.474582               9.374893              10.907012             11.746827

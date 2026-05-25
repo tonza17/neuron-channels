@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\code\render_electrophys_cluster_morphs.py", line 217, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\code\render_electrophys_cluster_morphs.py", line 206, in main
+    _render_cluster_grid(
+    ~~~~~~~~~~~~~~~~~~~~^
+        cluster_id=cid,
+        ^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        output_path=out_path,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\code\render_electrophys_cluster_morphs.py", line 118, in _render_cluster_grid
+    built: BuiltMorph = build_and_extract(params=params)
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\code\morphology_rendering.py", line 92, in build_and_extract
+    result: Any = generate_fixed_morphology(params=params)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0092_diagnose_morphology_generator_silence\code\morphology_generator_fix.py", line 92, in generate_fixed_morphology
+    result = generate_morphology(params=params, morph_seed=morph_seed)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0090_morphology_generator_diversity_test\code\generator.py", line 600, in generate_morphology
+    h = _get_neuron_h()
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0090_morphology_generator_diversity_test\code\generator.py", line 104, in _get_neuron_h
+    ensure_t80_dll_loaded(h=h)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py", line 50, in ensure_t80_dll_loaded
+    dll_path = str(resolve_t80_mod_library()).replace("\\", "/")
+                   ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\paths.py", line 34, in resolve_t80_mod_library
+    raise FileNotFoundError(
+    ...<2 lines>...
+    )
+FileNotFoundError: Compiled t0080 MOD library not found. Run nrnivmodl on the mods/ folder. Tried: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\build\nrnmech.dll.
