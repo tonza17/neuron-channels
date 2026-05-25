@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Spawn /generate-suggestions subagent. Generate follow-up suggestions for 3-objective (DSI+MI+ATP) extensions, alternative cost objectives, and any uncovered design gaps.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-25T02:37:23Z",
-      "completed_at": null,
+      "completed_at": "2026-05-25T02:49:19Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
