@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0123 ATP recipe / seg.ina recorder / Carter-Bean smoke-gate code, t0122 DSI silence-guard code, t0115 NSGA-II substrate; write research/research_code.md.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-24T23:49:18Z",
-      "completed_at": null,
+      "completed_at": "2026-05-25T00:08:39Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
