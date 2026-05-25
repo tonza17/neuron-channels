@@ -1,0 +1,19 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0127-01",
+      "title": "Rerun t0126 protocol via run_seed*.sh on 3-5 fresh non-lineage seeds to recover real cell_trace and close S-0124-01 + S-0126-06 in one shot",
+      "description": "Supersedes t0126's S-0126-01 (multi-seed 3-5-seed 60-gen closure of S-0124-01 n>=20 threshold) and S-0126-06 (per-cell mi_count_bits / cytoplasm_volume backfill from cell_trace JSONL). t0126's cell_trace was synthesised post-hoc from objective-only data because the launcher bypassed run_seed8929.sh, so T0126_CELL_TRACE_JSONL was never exported and _append_cell_trace silently dropped every per-cell record (see tasks/t0126/logs/steps/009_implementation/step_log.md Phase 5). Both successor suggestions are blocked on the same missing data. Action: (1) Fork t0126's substrate verbatim -- 68-d Bed B + 14-d morph, POP_SIZE=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2, N_GEN_MAX=60, _POOL_RESTART_EVERY=10, HV_PLATEAU_AUTO_STOP=False, OperatorStopTermination removed, smoke-gate 9/9 checks PASS, silence-guard PD<3 threshold. (2) Draw 3-5 fresh GA seeds via secrets.randbelow(10000), rejecting all lineage seeds {77, 441, 1524, 2247, 6650, 7755, 8929, 9354} plus any multiple of 100/500/1000. (3) Launch each seed via `bash code/run_seedNNNN.sh` under `tmux new-session -d` -- NEVER by invoking `nsga2_driver` directly. The run_seedNNNN.sh wrapper must export T<TASK>_CELL_TRACE_JSONL so the evaluator's per-cell side-channel JSONL is written for all evaluations. (4) Add a smoke-gate assertion at NSGA-II start: `assert os.environ.get('T<TASK>_CELL_TRACE_JSONL') is not None, 'cell_trace env var must be set; launch via run_seed*.sh'`. (5) Pool the resulting Pareto fronts across seeds, compute bootstrap r(DSI, ATP) on the pooled front at pooled n>=20 (closes S-0124-01). (6) Use the recorded per-cell cell_trace_seedNNNN.jsonl files to populate per-cell Carter-Bean band test (closes the inherited per-cell ATP/AP/cm = 0 gap), Cuntz balancing-factor band test (closes the inside_band_fraction=NaN), cross-task MI consistency check (closes the t0123/t0124/t0126 MI cross-comparison NOT MEASURED), and the four INDETERMINATE signalling-budget rows in t0126's compare_literature.md (Howarth cortex / cerebellum, Attwell-Laughlin 47%, signalling-fraction general) -- the latter four close because real pd_rate_hz and total ATP turnover enable computing the denominator. Cost envelope: ~3x t0126's $1.31 = $4-5 budget cap; per-seed 5-6 h on Vast.ai EPYC. Recommended task types: experiment-run, data-analysis, comparative-analysis.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0127_correct_t0126_cell_trace_suggestions",
+      "source_paper": "10.1016_j.neuron.2009.12.011",
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ]
+    }
+  ]
+}

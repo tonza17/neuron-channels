@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0127-02",
+  "correcting_task": "t0127_correct_t0126_cell_trace_suggestions",
+  "target_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "target_kind": "suggestion",
+  "target_id": "S-0126-06",
+  "action": "replace",
+  "changes": {
+    "replacement_task": "t0127_correct_t0126_cell_trace_suggestions",
+    "replacement_id": "S-0127-01"
+  },
+  "rationale": "S-0126-06 (per-Pareto-cell back-fill of mi_count_bits and cytoplasm_volume from cell_trace JSONL traces, plus Cuntz and MI cross-checks on the t0126 front) is impossible as written. There is nothing to back-fill from: t0126's cell_trace_seed8929.jsonl was never produced from the run, it was synthesised post-hoc from all_evaluations_seed8929.json (which stores only DSI and ATP per evaluation, no per-direction or per-compartment fields). Every row carries synthesised_from_all_evaluations=true and firing_hz_per_dir=None; pd_rate_hz is a hard-coded placeholder (40.0 for 5742 non-silenced cells, 0.0 for 18 silenced cells). The post-run aggregator already exposes these fields as the only source it has, so backfill cannot recover real measurements. Replacement S-0127-01 supersedes by rerunning the t0126 protocol via the proper run_seed*.sh shell wrapper so the cell_trace env var is exported and per-cell firing_hz_per_dir, mi_count_bits, cytoplasm_volume_um3, and atp_per_ap_compartment_breakdown are recorded for real. This single rerun then enables the Cuntz balancing-factor band test, the cross-task MI consistency check, the per-cell Carter-Bean band test, and pooled bootstrap r(DSI, ATP) at n>=20 -- i.e., closes both S-0124-01 and S-0126-06 in one task."
+}

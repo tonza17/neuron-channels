@@ -1,0 +1,14 @@
+{
+  "spec_version": "3",
+  "correction_id": "C-0127-01",
+  "correcting_task": "t0127_correct_t0126_cell_trace_suggestions",
+  "target_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "target_kind": "suggestion",
+  "target_id": "S-0126-01",
+  "action": "replace",
+  "changes": {
+    "replacement_task": "t0127_correct_t0126_cell_trace_suggestions",
+    "replacement_id": "S-0127-01"
+  },
+  "rationale": "S-0126-01 (multi-seed 3-5 fresh-seed 60-gen NSGA-II closure of S-0124-01 n>=20 threshold) is unworkable as written. It relies on pooling t0126's Pareto-front cells with t0126's per-direction firing data, but t0126's per-cell records are fabricated, not recorded: the launcher invoked the NSGA-II driver directly under tmux instead of via run_seed8929.sh, so T0126_CELL_TRACE_JSONL was never exported, evaluator._cell_trace_path() returned None, and _append_cell_trace silently dropped every per-cell record (documented in tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/logs/steps/009_implementation/step_log.md Phase 5). Replacement S-0127-01 supersedes by adding the proper-launcher rule and an env-var assertion at NSGA-II start, recovering real cell_trace data on each new seed and closing the n>=20 bar in one shot, while also closing S-0126-06 (per-cell mi/cytoplasm/Carter-Bean backfill) and four INDETERMINATE signalling-budget rows in t0126's compare_literature.md."
+}
