@@ -1,0 +1,15 @@
+
+[40m[97m  #  Description                                     Quantity  Rate    Amount[0m
+[48;5;240m[97m  1  Instance_37545908_GPU__charge:____hours_*_$/hr  12.902    0.1733  2.236 [0m
+[40m[97m  2  Instance_37545908_storage_charge:_hours_*_$/hr  12.902    0.0111  0.143 [0m
+[48;5;240m[97m  3  Instance_37679733_GPU__charge:____hours_*_$/hr  1.779     0.1467  0.261 [0m
+[40m[97m  4  Instance_37679733_storage_charge:_hours_*_$/hr  1.890     0.0148  0.028 [0m
+
+[40m[97m  #  Timestamp     Type  [0m
+[48;5;240m[97m  1  1779667200.0  charge[0m
+[40m[97m  2  1779667200.0  charge[0m
+[48;5;240m[97m  3  1779667200.0  charge[0m
+[40m[97m  4  1779667200.0  charge[0m
+
+Total: $2.668
+Current:  {'charges': 0, 'service_fee': 0, 'total': 0, 'credit': 8.613923165250327}

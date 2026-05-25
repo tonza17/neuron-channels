@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "scp -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -P 17708 tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/bkt80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/calt80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/catt80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/iht80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/kdrt80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/kv3t80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/kv4t80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/kv7t80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/napt80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/nart80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/nav16t80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/skahpt80.mod tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/skt80.mod root@ssh2.vast.ai:/root/t0126_workdir/mods/",
+  "exit_code": 0,
+  "duration_seconds": 11.309,
+  "started_at": "2026-05-25T13:05:36Z",
+  "completed_at": "2026-05-25T13:05:48Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "024_20260525T130536Z_scp-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "024_20260525T130536Z_scp-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}
