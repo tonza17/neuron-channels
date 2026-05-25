@@ -4,16 +4,16 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (44)](../papers/by-category/dendritic-computation.md) | [Answers
+**Detail pages**: [Papers (45)](../papers/by-category/dendritic-computation.md) | [Answers
 (13)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(95)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(97)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
 (6)](../predictions/by-category/dendritic-computation.md)
 
 ---
 
-## Papers (44)
+## Papers (45)
 
 <details>
 <summary>📝 <strong>Retinal waves shape starburst amacrine cell dendrite development
@@ -728,6 +728,63 @@ biocytin fills, Neurolucida tracings, a `141009` or `Pair1DSGC` identifier, or a
 deposition statement. The NeuroMorpho.org linkage of neuron 102976 to this DOI is therefore
 not supported by the paper itself and must be resolved by inspecting a different Feller-lab
 source (lab repository, earlier paired-recording paper, or unpublished deposition metadata).
+
+</details>
+
+<details>
+<summary>📖 <strong>Function and energy consumption constrain neuronal biophysics in
+a canonical computation: Coincidence detection</strong> — Remme et al.,
+2018</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1006612` |
+| **Authors** | Michiel W. H. Remme, John Rinzel, Susanne Schreiber |
+| **Venue** | PLOS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1006612` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006612 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`cable-theory`](../../meta/categories/cable-theory/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1371_journal.pcbi.1006612/summary.md) |
+
+Remme, Rinzel, and Schreiber address whether the morphology and membrane parameters of a real
+mammalian neuron reflect a joint optimisation between functional performance and metabolic
+energy consumption, or whether one of those two constraints dominates. They choose the
+principal MSO cell of the auditory brainstem as their test case because (i) the functional
+computation -- interaural time difference coincidence detection -- is unambiguous and
+quantifiable, and (ii) prior immunohistochemistry has flagged MSO neurons as exceptionally
+energy-intense, making any function-energy compromise easy to detect.
+
+They build a minimal compartmental model -- soma plus two passive dendrites carrying a uniform
+voltage-gated low-threshold potassium current IKLT -- fit it to published gerbil patch-clamp
+data on EPSP attenuation, EPSP halfwidth, and input resistance with and without DTX block, and
+exhaustively sweep six biophysical parameters (three morphological, three membrane) one at a
+time and in selected two-parameter combinations. Performance is the firing-rate modulation
+between ITD = 0 ms and ITD = 0.5 ms under a 500 Hz phase-locked pure-tone input; energy cost
+is total Na+ influx across the cell converted to ATP/s via the Attwell-Laughlin 3-Na+-per-ATP
+ion-counting scheme. Each parameter sweep is plotted as a curve in (energy cost,
+1/performance) space, and the lower-left envelope across all sweeps is identified as the local
+Pareto-optimal front.
+
+The empirically fitted MSO model produces **~320 spikes/s** rate modulation at **6.2 x 10^9
+ATP/s** and sits essentially on the Pareto front: no single-parameter perturbation can improve
+performance without raising cost or vice versa. The KLT current is essential -- passive
+variants halve performance and double cost. Most morphological and membrane parameters show a
+clear performance peak near the measured default, while energy cost rises monotonically with
+cell size; the cell appears to spend energy only where function demands it. A dendrite-less
+point-neuron control matches most of the performance at far lower cost, so the measured
+dendritic morphology must reflect non-function-non-energy constraints (e.g. surface area for
+synapses, circuit wiring).
+
+This paper is the direct methodological template for t0124. The task's "DSI vs ATP per spike"
+NSGA-II optimisation is the natural extension of Remme et al.'s exhaustive sweep into many
+more dimensions, on a direction-selective retinal ganglion cell instead of an MSO cell. The
+ion-counting cost calculation, the choice to use a scalar performance metric in opposition to
+a scalar metabolic metric, the practice of locating empirical defaults on the computed Pareto
+front, and the search for a small set of mechanistic factors that explain the front shape are
+all strategies t0124 should reuse. This will be the primary literature anchor for t0124's
+compare-literature stage.
 
 </details>
 
@@ -2304,7 +2361,7 @@ than reduced analytical models.
 
 </details>
 
-## Tasks (11)
+## Tasks (12)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2319,6 +2376,7 @@ than reduced analytical models.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
+| 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | completed | 2026-05-25 02:55 |
 
 ## Answers (13)
 
@@ -2607,7 +2665,49 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (77 open, 18 closed)
+## Suggestions (79 open, 18 closed)
+
+<details>
+<summary>📊 <strong>Joint 3-D (DSI, cytoplasm_volume, ATP/spike) cross-task analysis
+combining t0122 and t0124 fronts</strong> (S-0124-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+t0122 produced a (DSI, cytoplasm volume) Pareto front; t0124 produced a (DSI, ATP/spike)
+Pareto front on the same 68-d substrate. Cell ancestry is independent but both record
+cytoplasm_volume_um3 as a diagnostic and both export the 68-d parameter vector per cell.
+Post-hoc joint analysis can test whether high-DSI cells fall in both the Cuntz 2010 [0.2, 0.7]
+balancing-factor band AND the Carter-Bean PASS band -- a much stronger
+evolutionary-optimisation argument than either pair alone. Action: load
+pareto_front_seed*.json + all_evaluations_seed*.json.gz from both tasks, re-evaluate ATP/spike
+on t0122 cells and cytoplasm volume on t0124 cells via single-CPU resimulation of the top-N
+cells under the same evaluator, render a 3-D scatter (DSI, log10(volume), log10(ATP/spike))
+with Pareto contours, and report which cells fall in joint-pass cones. No new NSGA-II run.
+Recommended task types: data-analysis, comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Hallermann 2012 per-compartment alpha decomposition on t0124
+Pareto cells</strong> (S-0124-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+t0124's compare_literature flagged the Hallermann 2012 prediction (AIS alpha 1.5-2.0 vs
+dendrite alpha 1.0-1.3, predicted positive delta 0.3-0.7) as NOT MEASURED because
+comparator_report.json aggregates only AIS ATP/AP/cm and a whole-cell signalling rate. The
+per-compartment seg.ina FULL-mode traces ARE saved (cell_trace.jsonl) -- the test requires a
+post-hoc decomposition of integral(I_Na^inward) per compartment-group divided by the
+analytically-computed capacitive-minimum Na+ entry per group. Action: write
+decompose_alpha_per_compartment.py reading cell_trace.jsonl, compute per-compartment alpha for
+the 5 Pareto cells plus any S-0124-01 cohort expansion, render a violin plot of (alpha_AIS -
+alpha_dendrite) per cell with the Hallermann 0.3-0.7 band overlaid. Falsifies if the delta is
+consistently negative or near zero. Recommended task types: data-analysis,
+comparative-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Partial-correlation analysis of MI vs electrophys (control

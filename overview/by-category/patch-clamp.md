@@ -4,13 +4,13 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (31)](../papers/by-category/patch-clamp.md) | [Answers
+**Detail pages**: [Papers (33)](../papers/by-category/patch-clamp.md) | [Answers
 (3)](../answers/by-category/patch-clamp.md) | [Suggestions
 (24)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
-## Papers (31)
+## Papers (33)
 
 <details>
 <summary>📖 <strong>Retinal ganglion cells encode the direction of motion outside
@@ -1035,6 +1035,57 @@ simultaneously hit the peak-rate target and the DSI target.
 </details>
 
 <details>
+<summary>📖 <strong>State and location dependence of action potential metabolic cost
+in cortical pyramidal neurons</strong> — Hallermann et al., 2012</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nn.3132` |
+| **Authors** | Stefan Hallermann, Christiaan P. J. de Kock, Greg J. Stuart, Maarten H. P. Kole |
+| **Venue** | Nature Neuroscience (journal) |
+| **DOI** | `10.1038/nn.3132` |
+| **URL** | https://doi.org/10.1038/nn.3132 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1038_nn.3132/summary.md) |
+
+Hallermann, de Kock, Stuart and Kole ask a structural question about brain energy: where,
+inside a cortical pyramidal neuron, does the action-potential ATP budget actually go, and what
+controls the local energy efficiency at each site. Prior to this study, whole-cell estimates
+from Sengupta et al. and Attwell and Laughlin treated the AP as a single number per spike;
+Hallermann et al. break that number open into its compartmental contributions and link the
+local inefficiency to a single, measurable property of the local waveform.
+
+Methodologically, they combine direct patch-clamp recordings from soma, AIS, axon proper and
+nodes of Ranvier in rat neocortical pyramidal cells with a NEURON-based compartmental
+simulation. The recorded and simulated AP waveforms are converted into a Na(+)/K(+)
+charge-overlap ratio (alpha) that quantifies how much Na(+) entry is "wasted" by simultaneous
+K(+) outflow -- and thus how much ATP the Na(+)/K(+) pump must subsequently expend to restore
+the ion gradients. The voltage-state dependence of alpha is then tested by varying the resting
+membrane potential, and the per-compartment alpha values from the model are integrated to
+recover the whole-cell ATP per spike and the share attributable to each compartment.
+
+The headline findings are that AP initiation in the AIS and forward propagation along the axon
+are energetically inefficient (alpha > 1, voltage-state dependent), whereas dendritic
+backpropagation is efficient (alpha near 1). Per unit area, the AIS and the nodes of Ranvier
+are the costliest compartments; per cell, the dendrites and axon collaterals dominate the ATP
+budget because of their much larger membrane area. Crucially, the elevated cost of AP
+initiation is presented not as a defect but as the biophysical price the cell pays for
+reliable high-frequency firing.
+
+For task `t0124`, this paper is directly testable on the top-N NSGA-II Pareto cells: we can
+extract per-compartment alpha from each optimised cell, check whether AIS alpha > dendritic
+alpha as Hallermann predicts, and use the alpha distribution as a literature-grounded
+biological plausibility filter on the Pareto front. The Hallermann paper is in this sense the
+natural spatial companion to Sengupta 2010's whole-cell ATP recipe already in use in this
+project: Sengupta gives us a single ATP-per-spike number for the cell, Hallermann tells us
+what that number must look like when broken down by subcellular compartment, and ModelDB
+144526 provides the reference NEURON implementation of the metric.
+
+</details>
+
+<details>
 <summary>📖 <strong>Visual Stimulation Reverses the Directional Preference of
 Direction-Selective Retinal Ganglion Cells</strong> — Rivlin-Etzion et
 al., 2012</summary>
@@ -1289,6 +1340,61 @@ decay kinetics, and a specific lead-lag offset between inhibition and excitation
 constraints directly inform both the EPSP/IPSP amplitude-and-kinetics sweep and the
 wave-stimulus protocol described in the project scope, and supply a matched ON vs ON-OFF
 comparison framework against which the model velocity-tuning output can be validated.
+
+</details>
+
+<details>
+<summary>📖 <strong>Sodium Entry during Action Potentials of Mammalian Neurons:
+Incomplete Inactivation and Reduced Metabolic Efficiency in Fast-Spiking
+Neurons</strong> — Carter & Bean, 2009</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2009.12.011` |
+| **Authors** | Brett C. Carter, Bruce P. Bean |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2009.12.011` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(09)01001-0 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`patch-clamp`](../../meta/categories/patch-clamp/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1016_j.neuron.2009.12.011/summary.md) |
+
+Carter and Bean address a longstanding gap between the Hodgkin-Huxley squid-axon prediction of
+~4-fold-excess Na+ entry per action potential and the actual per-spike metabolic cost of
+mammalian central neurons. They use a same-cell paired current-clamp + voltage-clamp protocol
+with TTX subtraction at physiological temperature (37 °C) to directly measure integrated
+TTX-sensitive Na+ charge during native action potentials in four cell classes: cortical
+pyramidal, cerebellar Purkinje, CA1 hippocampal pyramidal, and cortical parvalbumin+
+basket-cell interneurons.
+
+The key methodological move is the "sodium entry ratio" -- total Na+ charge per spike divided
+by the theoretical minimum (CΔV) needed to swing the membrane through the AP's voltage range.
+A ratio of 1.0 means perfect Na+/K+ temporal segregation (no overlap during the falling
+phase). A second method comparing total Na+ entry to rising-phase Na+ entry produced nearly
+identical results and enabled a cross-waveform experiment in which each cell type's AP was
+replayed into every other cell type, decoupling the AP-shape contribution from the
+channel-kinetics contribution.
+
+Cortical pyramidal cells achieved 1.24 ± 0.29; Purkinje cells 2.00 ± 0.61; cortical
+interneurons 1.98 ± 0.55; CA1 pyramidal 1.62 ± 0.67. Across all 28 neurons, spike width and
+sodium entry ratio were inversely correlated (Spearman ρ = -0.48, p = 0.012). The
+cross-waveform experiment showed that this correlation is driven by AP shape, not
+cell-type-specific channel kinetics: narrow spikes prevent complete Na+ channel inactivation
+during the falling phase, allowing extra Na+ influx while driving force is still high. The
+mechanism is mediated by Kv3 potassium channels: their fast activation produces narrow spikes
+that enable sustained high-frequency firing but double the per-spike metabolic load.
+
+For this project, Carter-Bean 2009 is the load-bearing calibration benchmark for the t0123 /
+t0124 ATP-per-spike recipe. The canonical Bed B DSGC's AIS-segregated per-AP per-cm Na+ cost
+must land within ±30% of one of Carter-Bean's reference cell types (Purkinje for the
+fast-spiking comparator; pyramidal for the slow comparator). The Pareto front t0124 produces
+over DSI vs ATP-per-spike is then interpretable in Carter-Bean coordinates: high-DSI cells
+with narrow somatic APs should pay a Purkinje-style overlap penalty, while broad-AP cells
+should fall on the pyramidal-style efficiency end. This anchors the project's per-spike
+metabolic-cost objective to a falsifiable empirical reference rather than a free parameter,
+fulfilling REQ-14 of the t0123 / t0124 plan and the project's biological-plausibility
+constraint.
 
 </details>
 
@@ -1620,7 +1726,7 @@ means and standard deviations.
 
 </details>
 
-## Tasks (8)
+## Tasks (9)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -1632,6 +1738,7 @@ means and standard deviations.
 | 0078 | [Bed B v2 MOBO with AIS, tier-stratified channels, and slow Kv-AHP](../../overview/tasks/task_pages/t0078_bedb_mobo_v2_ais_tiered_ahp.md) | completed | 2026-05-04 16:25 |
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | 2026-05-08 15:55 |
+| 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | completed | 2026-05-25 02:55 |
 
 ## Answers (3)
 

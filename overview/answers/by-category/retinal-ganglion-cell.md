@@ -1,6 +1,6 @@
-# Answers: `retinal-ganglion-cell` (13)
+# Answers: `retinal-ganglion-cell` (14)
 
-13 answer(s).
+14 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -166,6 +166,35 @@ metric saturates at 1.0 across every cell because PSP peaks dwarf baselines on t
 | **Task sources** | [`t0046_reproduce_poleg_polsky_2016_exact`](../../../overview/tasks/task_pages/t0046_reproduce_poleg_polsky_2016_exact.md) |
 | **URL sources** | — |
 | **Created by** | [`t0047_validate_pp16_fig3_cond_noise`](../../../overview/tasks/task_pages/t0047_validate_pp16_fig3_cond_noise.md) |
+
+</details>
+
+<details>
+<summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
+Na/K-overlap penalty, and where do its top cells sit relative to the
+revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and
+historically, the original Attwell-Laughlin 2001 47% anchor)?</strong></summary>
+
+**Confidence**: low
+
+INSUFFICIENT EVIDENCE: only 5 legit cells passed the silence guard. The Pareto front structure
+cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r
+between DSI and ATP-per-spike across the legit top-5 cohort is r = 0.806 (95% CI: , n_legit =
+5, n_pareto = 5). Run reached 9 / 60 gens at $0.07; stop trigger operator_stop.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/answer/dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin/full_answer.md) |
+| **ID** | [`dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/answer/dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin/) |
+| **Question** | Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean Na/K-overlap penalty, and where do its top cells sit relative to the revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and historically, the original Attwell-Laughlin 2001 47% anchor)? |
+| **Methods** | `papers`, `code-experiment` |
+| **Confidence** | low |
+| **Date created** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | `10.1371_journal.pcbi.1000840`, `10.1097_00004647-200110000-00001`, `10.1523_JNEUROSCI.1592-24.2024`, `10.1038_nn.3565`, `10.1371_journal.pcbi.1002107` |
+| **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md), [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **URL sources** | [url 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC2810867/), [url 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC3390818/) |
+| **Created by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
 
 </details>
 

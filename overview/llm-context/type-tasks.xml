@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-05-25T01:16:20Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-05-25T02:57:19Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>1431595</char_count>
-    <byte_count>1437286</byte_count>
-    <estimated_tokens>357898</estimated_tokens>
+    <char_count>1434210</char_count>
+    <byte_count>1439930</byte_count>
+    <estimated_tokens>358552</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -24030,13 +24030,14 @@ Coverage section.
 
 ## NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)
 ID: t0124_bedb_dsi_atp_per_spike_nsga2
-Status: in_progress
-Effective date: 2026-05-24
+Status: completed
+Effective date: 2026-05-25
 Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs ATP-per-spike (Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 2-direction protocol, $6 cap.
 Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0097_multi_obj_optim, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0120_morph_generator_geometry_audit, t0122_dsi_cytoplasm_volume_nsga2, t0123_bedb_mi_atp_per_spike_nsga2
 Task types: experiment-run, data-analysis, answer-question
 Source suggestion: S-0097-02
 Start time: 2026-05-24T22:55:41Z
+End time: 2026-05-25T02:55:00Z
 
 #### Source Suggestion
 
@@ -24275,6 +24276,58 @@ Implementation requirements (mirror t0123 exactly):
 * Follow-up scope from t0123: this task partially addresses S-0123-04 by re-deriving the Carter-Bean
   canonical value in the smoke-gate. S-0123-01 / S-0123-02 / S-0123-03 / S-0123-05 remain as
   separate follow-ups.
+
+### Results Summary
+
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0124_bedb_dsi_atp_per_spike_nsga2&quot;
+date_completed: &quot;2026-05-25&quot;
+status: &quot;completed&quot;
+---
+### Results Summary — t0124 NSGA-II DSI vs ATP-per-Spike
+
+#### Summary
+
+68-d NSGA-II maximising silence-guarded DSI and minimising Sengupta 2010 ATP-per-spike, run on
+Vast.ai EPYC 7B13 with seed 6650, ran for **9 generations of 60** (operator_stop triggered by
+subagent session budget; cost watchdog never tripped) and produced a **5-cell Pareto front** with
+best legit DSI **0.882** at ATP **1.293e7 molecules/spike**, min ATP **2.11e6 molecules/spike** at
+DSI **0.00**, and a bootstrap correlation r(DSI, ATP) = **+0.806 [0.716, 1.000]** on the
+partial-front cohort — a Carter-Bean-style positive coupling that is suggestive but not definitive
+at n=5.
+
+#### Metrics
+
+* **direction_selectivity_index** (best_legit variant): **0.8824** (DSI silence-guard threshold = 3
+  PD spikes; cell 1)
+* **direction_selectivity_index** (overall_max variant): **0.8824** (same cell; no silence-guard
+  override needed)
+* **direction_selectivity_index** (dsi_eq_one_count variant): **0** (no degenerate DSI=1.0 cells)
+* **atp_per_spike_molecules** (overall_min): **2.112e6** (cell 4, DSI 0.00 — no selectivity but
+  cheapest energy)
+* **atp_per_spike_molecules** (best_legit cell): **1.293e7** (cell 1; 6.1× more expensive per spike
+  than min)
+* Bootstrap r(DSI, ATP) across the 5-cell Pareto: **+0.806** (95% CI [0.716, 1.000])
+* Carter-Bean smoke-gate canonical AIS ATP/AP/cm = **6.137e8** (PASS — inside first-principles
+  [3e7, 3e9] band per plan re-derivation)
+* Total cost: **$0.2935** (4.9% of $6 task cap, well under expected $1-3 band)
+
+#### Verification
+
+* `verify_task_file` — PASS
+* `verify_task_dependencies` — PASS (10/10 dependencies completed)
+* `verify_research_papers` / `verify_research_internet` / `verify_research_code` — PASS
+* `verify_plan` — PASS
+* `verify_task_metrics` — PASS
+* `verify_predictions_asset` (`nsga2-dsi-atp-per-spike-bedb-morph`) — PASS (3 cosmetic warnings:
+  no `model_id`, no `dataset_ids`, Summary 1 paragraph vs 2-3 — these reflect NSGA-II output
+  semantics, not asset gaps)
+* `verify_answer_asset` (`dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin`) — PASS
+* `verify_machines_destroyed` — PASS (1 expected RM-W001 warning: API 404 on destroyed instance)
+* `verify_task_folder` — PASS (1 cosmetic warning on empty `logs/searches/`)
+* Smoke-gate 9/9 checks PASS (constants assertions + Carter-Bean canonical band)
+* DSI silence-guard regression tests: 7/7 PASS
 
 ## Cluster + factor analysis of t0123 cells: high vs low MI and ATP
 ID: t0125_t0123_cluster_factor_mi_atp

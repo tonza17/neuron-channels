@@ -1,8 +1,8 @@
 # Suggestions: `dendritic-computation`
 
-95 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **77 open** (14
-high, 58 medium, 5 low), **18 closed**.
+97 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **79 open** (14
+high, 60 medium, 5 low), **18 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -965,6 +965,33 @@ currently lacks. Recommended task types: experiment-run.
 </details>
 
 <details>
+<summary>📊 <strong>Hallermann 2012 per-compartment alpha decomposition on t0124
+Pareto cells</strong> (S-0124-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1038_nn.3132`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1038_nn.3132/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0124's compare_literature flagged the Hallermann 2012 prediction (AIS alpha 1.5-2.0 vs
+dendrite alpha 1.0-1.3, predicted positive delta 0.3-0.7) as NOT MEASURED because
+comparator_report.json aggregates only AIS ATP/AP/cm and a whole-cell signalling rate. The
+per-compartment seg.ina FULL-mode traces ARE saved (cell_trace.jsonl) -- the test requires a
+post-hoc decomposition of integral(I_Na^inward) per compartment-group divided by the
+analytically-computed capacitive-minimum Na+ entry per group. Action: write
+decompose_alpha_per_compartment.py reading cell_trace.jsonl, compute per-compartment alpha for
+the 5 Pareto cells plus any S-0124-01 cohort expansion, render a violin plot of (alpha_AIS -
+alpha_dendrite) per cell with the Hallermann 0.3-0.7 band overlaid. Falsifies if the delta is
+consistently negative or near zero. Recommended task types: data-analysis,
+comparative-analysis, answer-question.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Ih (HCN) conductance ablation sweep on t0024 distal dendrites to
 test h-current role in distal cable behaviour</strong> (S-0035-04)</summary>
 
@@ -1009,6 +1036,33 @@ peak per cell. Output: `peak_direction_per_morph.json` mapping morph_id -> peak_
 plus a polar-tuning-curve panel. If peaks shift systematically with asymmetry knobs, this
 resolves t0091's design question of whether per-cell PD must be re-discovered after morphology
 changes. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Joint 3-D (DSI, cytoplasm_volume, ATP/spike) cross-task analysis
+combining t0122 and t0124 fronts</strong> (S-0124-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-03` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1371_journal.pcbi.1000877`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1371_journal.pcbi.1000877/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0122 produced a (DSI, cytoplasm volume) Pareto front; t0124 produced a (DSI, ATP/spike)
+Pareto front on the same 68-d substrate. Cell ancestry is independent but both record
+cytoplasm_volume_um3 as a diagnostic and both export the 68-d parameter vector per cell.
+Post-hoc joint analysis can test whether high-DSI cells fall in both the Cuntz 2010 [0.2, 0.7]
+balancing-factor band AND the Carter-Bean PASS band -- a much stronger
+evolutionary-optimisation argument than either pair alone. Action: load
+pareto_front_seed*.json + all_evaluations_seed*.json.gz from both tasks, re-evaluate ATP/spike
+on t0122 cells and cytoplasm volume on t0124 cells via single-CPU resimulation of the top-N
+cells under the same evaluator, render a 3-D scatter (DSI, log10(volume), log10(ATP/spike))
+with Pareto contours, and report which cells fall in joint-pass cones. No new NSGA-II run.
+Recommended task types: data-analysis, comparative-analysis, answer-question.
 
 </details>
 

@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-102 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **91 open** (15 high,
-69 medium, 7 low), **11 closed**.
+103 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **92 open** (15 high,
+70 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1283,6 +1283,32 @@ on the reproduced DSGC baseline (AMPA+GABA only, AMPA+GABA+NMDA with PolegPolsky
 parameters, AMPA+GABA+NMDA with NMDA_gain swept 1-4x) and report the DSI, peak rate, and HWHM
 trajectories. This answers a specific open RQ3/RQ4-adjacent question that the literature
 states but does not isolate experimentally. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>NMDA vs Nav dichotomy on the high-DSI corner: is NMDA-driven DSI
+cheaper per spike than Nav-driven DSI?</strong> (S-0124-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1016_j.neuron.2009.12.011`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1016_j.neuron.2009.12.011/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Mechanistic prediction: NMDA-driven high-DSI cells should be cheaper per spike than Nav-driven
+ones because NMDA spikes are slower (smaller Na/K overlap) and Ca2+ ATPase costs ~1 ATP per 3
+Ca2+ vs Na/K ATPase's ~1 ATP per 3 Na+, with NMDA's ~3:1 Ca/Na ratio amplifying the advantage.
+If true, the Carter-Bean penalty applies only to the Nav-pathway DSI branch and the +0.806
+correlation hides an NMDA-cheap sub-front. Action: on the S-0124-01 60-gen output plus the
+t0124 partial front, extract per-cell (gnmda_dend, nav16_dend_distal, nav16_ais_proximal,
+nav16_ais_distal) from the 68-d vectors, define a NMDA-Nav balance axis = z(gnmda_dend) -
+z(nav16_dend_distal), and scatter it against ATP/spike conditioned on DSI > 0.5. Falsifies if
+NMDA-balance shows no negative correlation with ATP/spike on high-DSI cells. Local-CPU
+post-hoc on saved JSONs. Recommended task types: data-analysis, answer-question.
 
 </details>
 

@@ -1,6 +1,6 @@
-# Papers: `direction-selectivity` (47)
+# Papers: `direction-selectivity` (48)
 
-47 papers across 26 year(s).
+48 papers across 26 year(s).
 
 [Back to all papers](../README.md)
 
@@ -148,7 +148,7 @@ manually.
 
 </details>
 
-## 2025 (2)
+## 2025 (3)
 
 <details>
 <summary>📝 A Complete Spatial Map of Mouse Retinal Ganglion Cells Reveals Density
@@ -211,6 +211,65 @@ GABA/glycine receptors) warns against over-extrapolating any optimised mouse-DSG
 primate central vision. This paper also confirms the Poleg-Polsky group's continued activity
 on mouse DSGC biology, which is relevant context for the de Rosenroll 2026 DSGC model that
 motivates this task.
+
+</details>
+
+<details>
+<summary>📝 Energetic diversity in retinal ganglion cells is modulated by neuronal
+activity and correlates with resilience to degeneration — Wang et al., 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.21203_rs.3.rs-5989609_v1` |
+| **Authors** | Zelun Wang, Christopher Zhao, Shelly Xu, Sean McCracken, Rajendra S. Apte, Philip R. Williams |
+| **Venue** | Research Square (preprint) (preprint) |
+| **DOI** | `10.21203/rs.3.rs-5989609/v1` |
+| **URL** | https://www.researchsquare.com/article/rs-5989609/v1 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.21203_rs.3.rs-5989609_v1/summary.md) |
+
+Wang et al. address an open question about whether closely related but electrophysiologically
+distinct excitatory projection neurons differ in steady-state metabolic homeostasis when they
+share a single tissue microenvironment. They use in vivo 2-photon imaging of the
+ATeam1.03-nD/nA FRET ATP biosensor in mouse RGCs and exploit post hoc immunostaining (SPP1,
+TBR2, CART) plus BigWarp landmark alignment to assign every imaged soma to one of three RGC
+families: alphaRGCs, ipRGCs, and ON-OFF DSGCs. The motivation is partly mechanistic (what
+drives per-type metabolic differences?) and partly applied (do metabolic traits predict
+resilience to optic nerve injury?).
+
+Methodologically, the study combines per-cell ATP imaging with pharmacological perturbations:
+ETC inhibitors (rotenone, TTFA, antimycin A, KCN) to block ATP synthesis stage by stage;
+Str/Bic and NBQX/AP5 to manipulate circuit activity; and a 14-day optic nerve crush followed
+by longitudinal imaging. Quantitative confocal microscopy of mitochondrial and ETC protein
+expression (TOM20, NDUFB8, SDHA, UQCRC2, ATP5A) on thousands of cells per stain checks whether
+ATP differences reflect supply or demand. Image processing relies on Cellpose, Suite2p,
+TrackMate, BigWarp and SIFT registration, with code released at
+`https://github.com/zelunw/RGC-ATP`.
+
+The headline findings: (1) alphaRGCs, the most active type, have **lower** homeostatic ATP
+than ipRGCs and ooDSGCs; (2) alphaRGCs are most depleted by Complex I-III block, but Complex
+IV block depletes all RGCs equally; (3) silencing activity with NBQX/AP5 rescues alphaRGC ATP
+decline under ROT, proving activity-driven turnover dominates; (4) alphaRGCs have **higher**,
+not lower, mitochondrial protein expression -- supply is fine, demand is the issue; (5)
+pre-injury baseline ATP is **lower** in RGCs that survive ONC, holding for alphaRGCs and
+non-alphaRGCs separately; (6) population ATP transiently rises 2-6 days post-ONC. The absolute
+intracellular ATP spread across the population is **~2-3.5 mM** on a 6-10 mM baseline.
+
+For the present project, the most actionable result is the **per-type baseline ATP ordering**:
+alphaRGC < ipRGC ~= ooDSGC. The user-supplied note that ooDSGCs rank highest matches the
+homeostatic intracellular ATP data (ooDSGCs are in the high-ATP group), but the inference that
+ooDSGCs are the most active type is incorrect -- alphaRGCs are. For the t0124 Pareto front,
+this means (i) ooDSGCs are not the most energy-hungry RGC type per unit time and the optimal
+ATP-per-spike landscape should reflect a moderate-activity, moderate-ATP-baseline cell; (ii)
+any implied total ATP turnover per Pareto-front DSGC must be sustainable under the measured
+steady-state intracellular ATP range (6-10 mM whole-retina; ~2-3.5 mM cell-to-cell spread);
+(iii) the paper offers no per-spike ATP number directly, so the cross-check is steady-state
+plausibility, not a numerical match. Limitations to flag: the ATeam-FRET signal is bounded by
+a 10 mM saturation ceiling, activity is operationalised as 2-photon-laser-evoked retinal
+response not directional motion, and alphaRGCs include subtypes that themselves differ in ATP.
+As a 2025 preprint, the paper is "In Review" and the results are not yet peer reviewed.
 
 </details>
 

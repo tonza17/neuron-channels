@@ -1,18 +1,18 @@
-# Machine Provisioning (17 machines)
+# Machine Provisioning (18 machines)
 
-**17** machines provisioned across **17** tasks. Total cost: **$64.39**.
+**18** machines provisioned across **18** tasks. Total cost: **$64.69**.
 
-**10** failed provisioning attempts wasted **$0.07** (37.0% failure rate).
+**10** failed provisioning attempts wasted **$0.07** (35.7% failure rate).
 
 ## Summary
 
 | Field | Value |
 |-------|-------|
-| Total machines | 17 |
+| Total machines | 18 |
 | Total failed attempts | 10 |
-| Failure rate | 37.0% |
-| Avg provisioning time | 672s |
-| Total cost | $64.39 |
+| Failure rate | 35.7% |
+| Avg provisioning time | 650s |
+| Total cost | $64.69 |
 | Total wasted cost | $0.07 |
 
 ## Cost by GPU Tier
@@ -33,6 +33,7 @@
 | RTX PRO 4000 (idle, unused; CPU-only NEURON workload) | $0.65 |
 | Titan V (idle, unused; CPU-only NEURON workload) | $0.50 |
 | RTX 4060 Ti (idle, unused; CPU-only NEURON workload) | $0.43 |
+| RTX A4000 (1x, idle, unused; CPU-only NEURON workload) | $0.29 |
 
 ## Failure Reasons
 
@@ -70,3 +71,4 @@
 | [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | 1 | $2.50 | 1 | RTX A5000 (idle, unused; CPU-only NEURON workload) |
 | [`t0122_dsi_cytoplasm_volume_nsga2`](../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | 1 | $0.50 | 1 | Titan V (idle, unused; CPU-only NEURON workload) |
 | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | 1 | $1.19 | 0 | RTX 3060 (2x, idle, unused; CPU-only NEURON workload) |
+| [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | 1 | $0.29 | 0 | RTX A4000 (1x, idle, unused; CPU-only NEURON workload) |

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-25T01:16:20Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-25T02:57:19Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>7315</char_count>
-    <byte_count>7315</byte_count>
-    <estimated_tokens>1828</estimated_tokens>
+    <char_count>7392</char_count>
+    <byte_count>7392</byte_count>
+    <estimated_tokens>1848</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,9 +18,9 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $100.00
-Total spent: $64.59
-Budget remaining: $35.41
-Spent: 64.6%
+Total spent: $64.88
+Budget remaining: $35.12
+Spent: 64.9%
 
 ### Cost Breakdown by Category
 
@@ -45,6 +45,7 @@ Spent: 64.6%
 * vast-ai-rtx-pro-4000-idle: $0.65
 * vast-ai-titan-v: $0.50
 * vast-ai-idle: $0.43
+* vast-ai-epyc-7b13-t0124: $0.29
 * vast-ai-epyc-7b13-setup-idle: $0.29
 * vast-ai-idle-post-finalize: $0.21
 * vast-ai-epyc7532: $0.15
@@ -65,7 +66,7 @@ Spent: 64.6%
 
 ### Cost Breakdown by Service
 
-* vast_ai: $40.90
+* vast_ai: $41.19
 * vast_ai_compute: $3.93
 * vast-ai: $0.48
 
@@ -187,6 +188,7 @@ Spent: 64.6%
 * t0121_5seed_substrate_rate_canonical_report: $0.00
 * t0122_dsi_cytoplasm_volume_nsga2: $0.50
 * t0123_bedb_mi_atp_per_spike_nsga2: $1.19
+* t0124_bedb_dsi_atp_per_spike_nsga2: $0.29
 * t0125_t0123_cluster_factor_mi_atp: $0.00
       </content>
     </section>

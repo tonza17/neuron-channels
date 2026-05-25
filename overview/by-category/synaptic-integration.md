@@ -4,15 +4,15 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (49)](../papers/by-category/synaptic-integration.md) | [Answers
+**Detail pages**: [Papers (50)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(102)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(103)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
 ---
 
-## Papers (49)
+## Papers (50)
 
 <details>
 <summary>📝 <strong>Retinal waves shape starburst amacrine cell dendrite development
@@ -788,6 +788,63 @@ biocytin fills, Neurolucida tracings, a `141009` or `Pair1DSGC` identifier, or a
 deposition statement. The NeuroMorpho.org linkage of neuron 102976 to this DOI is therefore
 not supported by the paper itself and must be resolved by inspecting a different Feller-lab
 source (lab repository, earlier paired-recording paper, or unpublished deposition metadata).
+
+</details>
+
+<details>
+<summary>📖 <strong>Function and energy consumption constrain neuronal biophysics in
+a canonical computation: Coincidence detection</strong> — Remme et al.,
+2018</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1006612` |
+| **Authors** | Michiel W. H. Remme, John Rinzel, Susanne Schreiber |
+| **Venue** | PLOS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1006612` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006612 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../meta/categories/dendritic-computation/), [`cable-theory`](../../meta/categories/cable-theory/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1371_journal.pcbi.1006612/summary.md) |
+
+Remme, Rinzel, and Schreiber address whether the morphology and membrane parameters of a real
+mammalian neuron reflect a joint optimisation between functional performance and metabolic
+energy consumption, or whether one of those two constraints dominates. They choose the
+principal MSO cell of the auditory brainstem as their test case because (i) the functional
+computation -- interaural time difference coincidence detection -- is unambiguous and
+quantifiable, and (ii) prior immunohistochemistry has flagged MSO neurons as exceptionally
+energy-intense, making any function-energy compromise easy to detect.
+
+They build a minimal compartmental model -- soma plus two passive dendrites carrying a uniform
+voltage-gated low-threshold potassium current IKLT -- fit it to published gerbil patch-clamp
+data on EPSP attenuation, EPSP halfwidth, and input resistance with and without DTX block, and
+exhaustively sweep six biophysical parameters (three morphological, three membrane) one at a
+time and in selected two-parameter combinations. Performance is the firing-rate modulation
+between ITD = 0 ms and ITD = 0.5 ms under a 500 Hz phase-locked pure-tone input; energy cost
+is total Na+ influx across the cell converted to ATP/s via the Attwell-Laughlin 3-Na+-per-ATP
+ion-counting scheme. Each parameter sweep is plotted as a curve in (energy cost,
+1/performance) space, and the lower-left envelope across all sweeps is identified as the local
+Pareto-optimal front.
+
+The empirically fitted MSO model produces **~320 spikes/s** rate modulation at **6.2 x 10^9
+ATP/s** and sits essentially on the Pareto front: no single-parameter perturbation can improve
+performance without raising cost or vice versa. The KLT current is essential -- passive
+variants halve performance and double cost. Most morphological and membrane parameters show a
+clear performance peak near the measured default, while energy cost rises monotonically with
+cell size; the cell appears to spend energy only where function demands it. A dendrite-less
+point-neuron control matches most of the performance at far lower cost, so the measured
+dendritic morphology must reflect non-function-non-energy constraints (e.g. surface area for
+synapses, circuit wiring).
+
+This paper is the direct methodological template for t0124. The task's "DSI vs ATP per spike"
+NSGA-II optimisation is the natural extension of Remme et al.'s exhaustive sweep into many
+more dimensions, on a direction-selective retinal ganglion cell instead of an MSO cell. The
+ion-counting cost calculation, the choice to use a scalar performance metric in opposition to
+a scalar metabolic metric, the practice of locating empirical defaults on the computed Pareto
+front, and the search for a small set of mechanistic factors that explain the front shape are
+all strategies t0124 should reuse. This will be the primary literature anchor for t0124's
+compare-literature stage.
 
 </details>
 
@@ -2536,7 +2593,7 @@ simulation.
 
 </details>
 
-## Tasks (12)
+## Tasks (13)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2552,6 +2609,7 @@ simulation.
 | 0080 | [Bed B v3 MOBO with dendritic-spike machinery and NSGA-II](../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md) | completed | 2026-05-04 22:45 |
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | 2026-05-08 15:55 |
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
+| 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | completed | 2026-05-25 02:55 |
 
 ## Answers (8)
 
@@ -2730,7 +2788,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (91 open, 11 closed)
+## Suggestions (92 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>NMDA vs Nav dichotomy on the high-DSI corner: is NMDA-driven DSI
+cheaper per spike than Nav-driven DSI?</strong> (S-0124-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+Mechanistic prediction: NMDA-driven high-DSI cells should be cheaper per spike than Nav-driven
+ones because NMDA spikes are slower (smaller Na/K overlap) and Ca2+ ATPase costs ~1 ATP per 3
+Ca2+ vs Na/K ATPase's ~1 ATP per 3 Na+, with NMDA's ~3:1 Ca/Na ratio amplifying the advantage.
+If true, the Carter-Bean penalty applies only to the Nav-pathway DSI branch and the +0.806
+correlation hides an NMDA-cheap sub-front. Action: on the S-0124-01 60-gen output plus the
+t0124 partial front, extract per-cell (gnmda_dend, nav16_dend_distal, nav16_ais_proximal,
+nav16_ais_distal) from the 68-d vectors, define a NMDA-Nav balance axis = z(gnmda_dend) -
+z(nav16_dend_distal), and scatter it against ATP/spike conditioned on DSI > 0.5. Falsifies if
+NMDA-balance shows no negative correlation with ATP/spike on high-DSI cells. Local-CPU
+post-hoc on saved JSONs. Recommended task types: data-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Vm-trace deep-dive of cell (19, 1816) -- high-MI / high-ATP /

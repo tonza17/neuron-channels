@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-25T01:16:20Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-05-25T02:57:19Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>256067</char_count>
-    <byte_count>256454</byte_count>
-    <estimated_tokens>64016</estimated_tokens>
+    <char_count>257833</char_count>
+    <byte_count>258221</byte_count>
+    <estimated_tokens>64458</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -232,10 +232,11 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0121_5seed_substrate_rate_canonical_report</id>
         <id>t0122_dsi_cytoplasm_volume_nsga2</id>
         <id>t0123_bedb_mi_atp_per_spike_nsga2</id>
+        <id>t0124_bedb_dsi_atp_per_spike_nsga2</id>
         <id>t0125_t0123_cluster_factor_mi_atp</id>
       </source_ids>
       <content>
-Completed tasks: 117
+Completed tasks: 118
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -933,6 +934,12 @@ Completed: 2026-05-24
 Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective MI vs ATP-per-spike (Strong 1998 + Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 4-direction protocol, $6 cap.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0123_bedb_mi_atp_per_spike_nsga2&quot; status: &quot;completed&quot; date_completed: &quot;2026-05-24&quot; --- Results Summary: NSGA-II MI vs ATP-per-Spike (Bed B + 14-d Morph) Summary 68-d NSGA-II (54-d electrophys + 14-d morphology) on Bed B at GA seed 441, pop=96, N_EVAL_SEEDS=3, 4 antipodal directions, ran to gen 60 ceiling cleanly. The two-tier MI estimator surfaced a real discrepancy: count-MI hit **1.459 bits** at the high-MI corner while Strong-Bialek direct-method **bits/s = 0.0 for all 10 top Pareto cells**, because the optimiser exploited count-MI at the silence-guard boundary (~3 PD spikes/trial) where spike-time information is degenerate. Metrics * **Hypervolume gain**...
 
+## NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)
+ID: t0124_bedb_dsi_atp_per_spike_nsga2
+Completed: 2026-05-25
+Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs ATP-per-spike (Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 2-direction protocol, $6 cap.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0124_bedb_dsi_atp_per_spike_nsga2&quot; date_completed: &quot;2026-05-25&quot; status: &quot;completed&quot; --- Results Summary — t0124 NSGA-II DSI vs ATP-per-Spike Summary 68-d NSGA-II maximising silence-guarded DSI and minimising Sengupta 2010 ATP-per-spike, run on Vast.ai EPYC 7B13 with seed 6650, ran for **9 generations of 60** (operator_stop triggered by subagent session budget; cost watchdog never tripped) and produced a **5-cell Pareto front** with best legit DSI **0.882** at ATP **1.293e7 molecules/spike**, min ATP **2.11e6 molecules/spike** at DSI **0.00**, and a bootstrap correlation r(DSI, ATP) = **+0.806 [0.716, 1.000]** on the partial-front cohort — a Carter-Bean-style...
+
 ## Cluster + factor analysis of t0123 cells: high vs low MI and ATP
 ID: t0125_t0123_cluster_factor_mi_atp
 Completed: 2026-05-25
@@ -947,10 +954,9 @@ Result summary: Results Summary: t0125 Cluster + Factor Analysis of t0123 MI vs 
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
-        <id>t0124_bedb_dsi_atp_per_spike_nsga2</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 3
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -971,13 +977,6 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
-
-## NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)
-ID: t0124_bedb_dsi_atp_per_spike_nsga2
-Status: in_progress
-Effective date: 2026-05-24
-Short description: 68-d NSGA-II on Bed B + 14-d morphology, 2-objective DSI vs ATP-per-spike (Sengupta 2010). 1 GA seed, pop=96, N_EVAL_SEEDS=3, 2-direction protocol, $6 cap.
-Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_spike_nsga2, t0090_morphology_generator_diversity_test, t0092_diagnose_morphology_generator_silence, t0097_multi_obj_optim, t0106_long_pdnd_nsga2_300gen, t0115_seed9354_no_autostop, t0120_morph_generator_geometry_audit, t0122_dsi_cytoplasm_volume_nsga2, t0123_bedb_mi_atp_per_spike_nsga2
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1030,13 +1029,14 @@ Dependencies: t0024_port_de_rosenroll_2026_dsgc, t0080_bedb_mobo_v3_dendritic_sp
         <id>dsgc-bits-per-atp-vs-niven-2007</id>
         <id>morphology-generator-geometry-consistency</id>
         <id>substrate-rate-5seed-canonical</id>
+        <id>dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin</id>
         <id>high-vs-low-mi-electrophys-signature</id>
         <id>low-vs-high-atp-morphology-signature</id>
         <id>mi-atp-joint-structure-in-t0123-substrate</id>
         <id>pareto-favoured-corner-signature</id>
       </source_ids>
       <content>
-Answers: 50
+Answers: 51
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1401,6 +1401,14 @@ Categories: direction-selectivity, compartmental-modeling
 
 The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, a normal-approx 95% CI of (-0.35%, 5.51%), and a bootstrap 95% CI of (0.38%, 5.53%); the point estimate is roughly 6.5x Hay 2011&#x27;s 0.40% envelope and 25.8x Druckmann 2007&#x27;s 0.10% baseline, and 3 of 5 seeds individually exceed the Hay envelope. Both 95% CIs bracket zero and both literature baselines, so this batch cannot statistically reject the literature rates despite the elevated point estimate.
 
+## Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean Na/K-overlap penalty, and where do its top cells sit relative to the revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and historically, the original Attwell-Laughlin 2001 47% anchor)?
+ID: dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin
+Created by: t0124_bedb_dsi_atp_per_spike_nsga2 on 2026-05-25
+Confidence: low
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels
+
+INSUFFICIENT EVIDENCE: only 5 legit cells passed the silence guard. The Pareto front structure cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r between DSI and ATP-per-spike across the legit top-5 cohort is r = 0.806 (95% CI: [0.716, 1.000], n_legit = 5, n_pareto = 5). Run reached 9 / 60 gens at $0.07; stop trigger operator_stop.
+
 ## Which electrophys parameters most distinguish high-MI from low-MI cells in the t0123 spiking cohort, with effect size and direction?
 ID: high-vs-low-mi-electrophys-signature
 Created by: t0125_t0123_cluster_factor_mi_atp on 2026-05-25
@@ -1607,6 +1615,12 @@ t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With 
       <title>Paper Summaries</title>
       <source_name>aggregate_papers_full</source_name>
       <source_ids>
+        <id>10.21203_rs.3.rs-5989609_v1</id>
+        <id>10.1098_rsob.220073</id>
+        <id>10.1371_journal.pcbi.1006612</id>
+        <id>10.1038_nn.3132</id>
+        <id>10.1038_jcbfm.2012.35</id>
+        <id>10.1016_j.neuron.2009.12.011</id>
         <id>10.48550_arXiv.2503.21495</id>
         <id>10.1101_2025.02.10.637538</id>
         <id>10.48550_arXiv.2401.14014</id>
@@ -1621,15 +1635,51 @@ t0033 is scoped to sweep t0022 parameters against a primary-DSI objective. With 
         <id>10.1371_journal.pcbi.1000840</id>
         <id>10.1242_jeb.017574</id>
         <id>10.3389_neuro.01.1.1.001.2007</id>
-        <id>10.1371_journal.pcbi.0020094</id>
-        <id>10.1038_nrn1949</id>
-        <id>10.1038_nn1352</id>
-        <id>no-doi_Chklovskii2002_wiring-optimization-cortical</id>
-        <id>10.1097_00004647-200110000-00001</id>
-        <id>10.1103_PhysRevLett.80.197</id>
       </source_ids>
       <content>
 Papers: 20
+
+## Energetic diversity in retinal ganglion cells is modulated by neuronal activity and correlates with resilience to degeneration
+ID: 10.21203_rs.3.rs-5989609_v1
+Year: 2025
+Authors: Zelun Wang, Christopher Zhao, Shelly Xu, Sean McCracken
+Added by task: t0124_bedb_dsi_atp_per_spike_nsga2
+Wang et al. address an open question about whether closely related but electrophysiologically distinct excitatory projection neurons differ in steady-state metabolic homeostasis when they share a single tissue microenvironment. They use in vivo 2-photon imaging of the ATeam1.03-nD/nA FRET ATP biosensor in mouse RGCs and exploit post hoc immunostaining (SPP1, TBR2, CART) plus BigWarp landmark alignment to assign every imaged soma to one of three RGC families: alphaRGCs, ipRGCs, and ON-OFF DSGCs. The motivation is partly mechanistic (what drives per-type...
+
+## Pareto optimality, economy-effectiveness trade-offs and ion channel degeneracy: improving population modelling for single neurons
+ID: 10.1098_rsob.220073
+Year: 2022
+Authors: Peter Jedlicka, Alexander D. Bird, Hermann Cuntz
+Added by task: t0124_bedb_dsi_atp_per_spike_nsga2
+The paper, by Jedlicka, Bird and Cuntz (Open Biology 2022), is a methodological review that argues for adopting **Pareto optimality** as a unifying framework for constraining the high-dimensional parameter space of conductance-based neuron population models. The motivation is the well-known problem of **ion channel degeneracy**: many disparate combinations of ionic conductances yield indistinguishable voltage traces, leaving population-modelling pipelines with a vast space of valid but biologically implausible candidates. The research question is whether...
+
+## Function and energy consumption constrain neuronal biophysics in a canonical computation: Coincidence detection
+ID: 10.1371_journal.pcbi.1006612
+Year: 2018
+Authors: Michiel W. H. Remme, John Rinzel, Susanne Schreiber
+Added by task: t0124_bedb_dsi_atp_per_spike_nsga2
+Remme, Rinzel, and Schreiber address whether the morphology and membrane parameters of a real mammalian neuron reflect a joint optimisation between functional performance and metabolic energy consumption, or whether one of those two constraints dominates. They choose the principal MSO cell of the auditory brainstem as their test case because (i) the functional computation -- interaural time difference coincidence detection -- is unambiguous and quantifiable, and (ii) prior immunohistochemistry has flagged MSO neurons as exceptionally energy-intense...
+
+## State and location dependence of action potential metabolic cost in cortical pyramidal neurons
+ID: 10.1038_nn.3132
+Year: 2012
+Authors: Stefan Hallermann, Christiaan P. J. de Kock, Greg J. Stuart, Maarten H. P. Kole
+Added by task: t0124_bedb_dsi_atp_per_spike_nsga2
+Hallermann, de Kock, Stuart and Kole ask a structural question about brain energy: where, inside a cortical pyramidal neuron, does the action-potential ATP budget actually go, and what controls the local energy efficiency at each site. Prior to this study, whole-cell estimates from Sengupta et al. and Attwell and Laughlin treated the AP as a single number per spike; Hallermann et al. break that number open into its compartmental contributions and link the local inefficiency to a single, measurable property of the local waveform. Methodologically, they...
+
+## Updated Energy Budgets for Neural Computation in the Neocortex and Cerebellum
+ID: 10.1038_jcbfm.2012.35
+Year: 2012
+Authors: Clare Howarth, Padraig Gleeson, David Attwell
+Added by task: t0124_bedb_dsi_atp_per_spike_nsga2
+Howarth, Gleeson and Attwell (2012) revise the two most-cited bottom-up energy budgets for mammalian grey matter -- Attwell and Laughlin (2001) for neocortex and Howarth et al. (2010) for cerebellum -- in light of new mammalian measurements showing that action potentials are far more energy-efficient than the squid-axon work of Hodgkin (1975) suggested. The research question is narrow but consequential: when the Na+/K+ temporal-overlap factor drops from 4 to roughly 1-2, what fraction of grey-matter signalling ATP actually goes into spiking, and how does...
+
+## Sodium Entry during Action Potentials of Mammalian Neurons: Incomplete Inactivation and Reduced Metabolic Efficiency in Fast-Spiking Neurons
+ID: 10.1016_j.neuron.2009.12.011
+Year: 2009
+Authors: Brett C. Carter, Bruce P. Bean
+Added by task: t0124_bedb_dsi_atp_per_spike_nsga2
+Carter and Bean address a longstanding gap between the Hodgkin-Huxley squid-axon prediction of ~4-fold-excess Na+ entry per action potential and the actual per-spike metabolic cost of mammalian central neurons. They use a same-cell paired current-clamp + voltage-clamp protocol with TTX subtraction at physiological temperature (37 °C) to directly measure integrated TTX-sensitive Na+ charge during native action potentials in four cell classes: cortical pyramidal, cerebellar Purkinje, CA1 hippocampal pyramidal, and cortical parvalbumin+ basket-cell...
 
 ## Adaptive Resampling with Bootstrap for Noisy Multi-Objective Optimization Problems
 ID: 10.48550_arXiv.2503.21495
@@ -1728,48 +1778,6 @@ Year: 2007
 Authors: Shaul Druckmann, Yoav Banitt, Albert Gidon, Felix Schurmann
 Added by task: t0097_multi_obj_optim
 Druckmann et al. (2007) confront a methodological problem at the core of conductance-based neuron modelling: how to automatically fit the maximal-conductance vector of a compartmental model to noisy in vitro recordings, given that repeated identical current injections produce visibly different voltage traces in the same cell. They argue that the dominant single-trace, single-error-function approach is mis-specified - it ignores intrinsic variability and forces an arbitrary weighting of heterogeneous error terms (e.g. spike timing vs spike shape). Their...
-
-## Complex Parameter Landscape for a Complex Neuron Model
-ID: 10.1371_journal.pcbi.0020094
-Year: 2006
-Authors: Pablo Achard, Erik De Schutter
-Added by task: t0097_multi_obj_optim
-Achard and De Schutter ask whether a complex, biophysically detailed compartmental neuron admits multiple distinct sets of voltage- and calcium-gated channel conductances that reproduce the cell&#x27;&#x27;s detailed firing behavior. The motivation comes from two convergent lines of evidence: experimental work on lobster and crab stomatogastric ganglion neurons showing 2-4x interanimal variability in channel expression with preserved activity, and prior modelling work (Goldman 2001, Prinz 2003-2004) showing parameter degeneracy in low-dimensional stomatogastric...
-
-## Variability, compensation and homeostasis in neuron and network function
-ID: 10.1038_nrn1949
-Year: 2006
-Authors: Eve Marder, Jean-Marc Goaillard
-Added by task: t0097_multi_obj_optim
-This review by Marder and Goaillard codifies the now-standard observation that nervous-system variables --- ionic conductances, channel densities, synaptic weights --- vary substantially across animals of the same species and across cells of the same identified type, while the behavioural output of single neurons and networks remains conserved. The authors motivate the question by contrasting protein turnover (minutes to weeks) with neuronal lifetime (years to decades), arguing that homeostatic mechanisms must continuously rebuild the cell while...
-
-## Similar network activity from disparate circuit parameters
-ID: 10.1038_nn1352
-Year: 2004
-Authors: Astrid A. Prinz, Dirk Bucher, Eve Marder
-Added by task: t0097_multi_obj_optim
-Prinz, Bucher and Marder ask how tightly neuronal properties and synaptic strengths must be tuned to produce a specific network output. They focus on the crustacean pyloric rhythm because its connectivity, neurons, and motor pattern are unusually well characterised. The motivation is to test the implicit assumption underlying much of neurophysiology, that animal-to-animal variability is &quot;experimental noise&quot; rather than a structural feature of the nervous system. The hypothesis is that, just as similar single-neuron firing can arise from many...
-
-## Wiring Optimization in Cortical Circuits
-ID: no-doi_Chklovskii2002_wiring-optimization-cortical
-Year: 2002
-Authors: Dmitri B. Chklovskii, Thomas Schikorski, Charles F. Stevens
-Added by task: t0097_multi_obj_optim
-Chklovskii, Schikorski, and Stevens (2002) ask why cortical gray matter has the cellular composition that it does. Earlier work in the wiring-economy tradition (Cajal; Cherniak; Mitchison; Chklovskii and Stevens 2000) had argued qualitatively that wire length is minimised under selection pressure, but these arguments did not predict any quantitative property of cortical anatomy that could be falsified by direct measurement. The paper closes this gap by recasting the problem as a constrained optimisation: maximise synapse density subject to bounded axonal...
-
-## An Energy Budget for Signaling in the Grey Matter of the Brain
-ID: 10.1097_00004647-200110000-00001
-Year: 2001
-Authors: David Attwell, Simon B. Laughlin
-Added by task: t0097_multi_obj_optim
-Attwell and Laughlin (2001) ask a single quantitative question: how much ATP does each elementary neuronal signaling event cost, and do these per-event costs sum to the experimentally measured total energy consumption of brain grey matter? The motivation is that, prior to 2001, neural energy estimates were either top-down (whole-brain glucose/oxygen consumption with no decomposition) or based on heat production from single-cell preparations, which severely underestimated AP cost. The authors aim to construct a biophysically grounded...
-
-## Entropy and Information in Neural Spike Trains
-ID: 10.1103_PhysRevLett.80.197
-Year: 1998
-Authors: Steven P. Strong, Roland Koberle, Rob R. de Ruyter van Steveninck, William Bialek
-Added by task: t0097_multi_obj_optim
-Strong, Koberle, de Ruyter van Steveninck, and Bialek address a foundational question in sensory neuroscience: how much information about a time-varying stimulus does a single neuron spike train actually transmit, and in particular, does the precise timing of spikes (down to millisecond resolution) contribute, or is the relevant variable just the firing rate? The paper scope is deliberately model-free — it refuses to assume any particular decoding scheme or hypothesized feature of the code (rate, ISI, bursts, latency) — and instead grounds the...
       </content>
     </section>
     <section id="datasets" source_kind="aggregator">

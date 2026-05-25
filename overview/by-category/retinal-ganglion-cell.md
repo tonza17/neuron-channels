@@ -4,16 +4,16 @@ Output neurons of the retina whose axons form the optic nerve.
 
 [Back to Dashboard](../README.md)
 
-**Detail pages**: [Papers (44)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(13)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(92)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+**Detail pages**: [Papers (45)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
+(14)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(95)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (3)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
-(14)](../predictions/by-category/retinal-ganglion-cell.md)
+(15)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
 
-## Papers (44)
+## Papers (45)
 
 <details>
 <summary>📝 <strong>Retinal waves shape starburst amacrine cell dendrite development
@@ -274,6 +274,66 @@ benchmarks. It does not change the t0080 NSGA-II parameter bounds, the dendritic
 conductance ranges, or the AHP-tail metrics, but it strengthens the rationale for the project
 narrow focus on the DRD4 cell type rather than generalising claims to RGC direction encoding
 as a whole.
+
+</details>
+
+<details>
+<summary>📝 <strong>Energetic diversity in retinal ganglion cells is modulated by
+neuronal activity and correlates with resilience to degeneration</strong>
+— Wang et al., 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.21203_rs.3.rs-5989609_v1` |
+| **Authors** | Zelun Wang, Christopher Zhao, Shelly Xu, Sean McCracken, Rajendra S. Apte, Philip R. Williams |
+| **Venue** | Research Square (preprint) (preprint) |
+| **DOI** | `10.21203/rs.3.rs-5989609/v1` |
+| **URL** | https://www.researchsquare.com/article/rs-5989609/v1 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`retinal-ganglion-cell`](../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.21203_rs.3.rs-5989609_v1/summary.md) |
+
+Wang et al. address an open question about whether closely related but electrophysiologically
+distinct excitatory projection neurons differ in steady-state metabolic homeostasis when they
+share a single tissue microenvironment. They use in vivo 2-photon imaging of the
+ATeam1.03-nD/nA FRET ATP biosensor in mouse RGCs and exploit post hoc immunostaining (SPP1,
+TBR2, CART) plus BigWarp landmark alignment to assign every imaged soma to one of three RGC
+families: alphaRGCs, ipRGCs, and ON-OFF DSGCs. The motivation is partly mechanistic (what
+drives per-type metabolic differences?) and partly applied (do metabolic traits predict
+resilience to optic nerve injury?).
+
+Methodologically, the study combines per-cell ATP imaging with pharmacological perturbations:
+ETC inhibitors (rotenone, TTFA, antimycin A, KCN) to block ATP synthesis stage by stage;
+Str/Bic and NBQX/AP5 to manipulate circuit activity; and a 14-day optic nerve crush followed
+by longitudinal imaging. Quantitative confocal microscopy of mitochondrial and ETC protein
+expression (TOM20, NDUFB8, SDHA, UQCRC2, ATP5A) on thousands of cells per stain checks whether
+ATP differences reflect supply or demand. Image processing relies on Cellpose, Suite2p,
+TrackMate, BigWarp and SIFT registration, with code released at
+`https://github.com/zelunw/RGC-ATP`.
+
+The headline findings: (1) alphaRGCs, the most active type, have **lower** homeostatic ATP
+than ipRGCs and ooDSGCs; (2) alphaRGCs are most depleted by Complex I-III block, but Complex
+IV block depletes all RGCs equally; (3) silencing activity with NBQX/AP5 rescues alphaRGC ATP
+decline under ROT, proving activity-driven turnover dominates; (4) alphaRGCs have **higher**,
+not lower, mitochondrial protein expression -- supply is fine, demand is the issue; (5)
+pre-injury baseline ATP is **lower** in RGCs that survive ONC, holding for alphaRGCs and
+non-alphaRGCs separately; (6) population ATP transiently rises 2-6 days post-ONC. The absolute
+intracellular ATP spread across the population is **~2-3.5 mM** on a 6-10 mM baseline.
+
+For the present project, the most actionable result is the **per-type baseline ATP ordering**:
+alphaRGC < ipRGC ~= ooDSGC. The user-supplied note that ooDSGCs rank highest matches the
+homeostatic intracellular ATP data (ooDSGCs are in the high-ATP group), but the inference that
+ooDSGCs are the most active type is incorrect -- alphaRGCs are. For the t0124 Pareto front,
+this means (i) ooDSGCs are not the most energy-hungry RGC type per unit time and the optimal
+ATP-per-spike landscape should reflect a moderate-activity, moderate-ATP-baseline cell; (ii)
+any implied total ATP turnover per Pareto-front DSGC must be sustainable under the measured
+steady-state intracellular ATP range (6-10 mM whole-retina; ~2-3.5 mM cell-to-cell spread);
+(iii) the paper offers no per-spike ATP number directly, so the cross-check is steady-state
+plausibility, not a numerical match. Limitations to flag: the ATeam-FRET signal is bounded by
+a 10 mM saturation ceiling, activity is operationalised as 2-photon-laser-evoked retinal
+response not directional motion, and alphaRGCs include subtypes that themselves differ in ATP.
+As a 2025 preprint, the paper is "In Review" and the results are not yet peer reviewed.
 
 </details>
 
@@ -2345,7 +2405,7 @@ simulation.
 
 </details>
 
-## Tasks (11)
+## Tasks (12)
 
 | # | Task | Status | Completed |
 |---|------|--------|-----------|
@@ -2360,8 +2420,26 @@ simulation.
 | 0091 | [First joint 68-d NSGA-II with morphology in eval loop, 5-anchor warm-start](../../overview/tasks/task_pages/t0091_morphology_extended_nsga2_v1.md) | completed | 2026-05-08 15:55 |
 | 0102 | [68-d NSGA-II at GA seeds=2, N_SEEDS=4, gens=20, random init](../../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | completed | 2026-05-12 18:44 |
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | completed | 2026-05-12 01:55 |
+| 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | completed | 2026-05-25 02:55 |
 
-## Answers (13)
+## Answers (14)
+
+<details>
+<summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
+Na/K-overlap penalty, and where do its top cells sit relative to the
+revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and
+historically, the original Attwell-Laughlin 2001 47% anchor)?</strong></summary>
+
+**Confidence**: low | **Date**: 2026-05-25 | **Full answer**:
+[`dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin`](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/answer/dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin/)
+
+INSUFFICIENT EVIDENCE: only 5 legit cells passed the silence guard. The Pareto front structure
+cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r
+between DSI and ATP-per-spike across the legit top-5 cohort is r = 0.806 (95% CI: [0.716,
+1.000], n_legit = 5, n_pareto = 5). Run reached 9 / 60 gens at $0.07; stop trigger
+operator_stop.
+
+</details>
 
 <details>
 <summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
@@ -2638,7 +2716,70 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (82 open, 10 closed)
+## Suggestions (85 open, 10 closed)
+
+<details>
+<summary>🧪 <strong>Fresh-seed 60-gen replication of DSI vs ATP-per-spike NSGA-II to
+test Carter-Bean penalty vs artefact</strong> (S-0124-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+t0124 truncated at gen 9 of 60 by operator_stop (subagent session budget, not cost cap; HV
+still ascending). The bootstrap r(DSI, ATP) = +0.806 [0.716, 1.000] on the n=5 partial front
+is suggestive of a Carter-Bean Na/K-overlap penalty but undeterminable from artefact because
+_POOL_RESTART_EVERY=10 has not fired and all 5 cells share LHS-init ancestry. Action: fork the
+t0124 substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2,
+N_GEN_MAX=60, COST_CAP_USD=6.0, HV plateau autostop=False, DSI silence-guard PD<3 -> DSI=-1,
+Sengupta ATP recipe, Carter-Bean smoke-gate), draw a fresh non-round GA seed via
+secrets.randbelow(10000), run to gen 60 on Vast.ai EPYC. Decision rule: if r > +0.5 with CI
+excluding 0 at n>=20 accept the penalty interpretation; if r drops below +0.3 accept the
+early-NSGA-II artefact null. Recommended task types: experiment-run, data-analysis,
+comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>DSGC-specific signalling-ATP fraction estimate: anchor top-N
+cells to whole-retina ATP turnover (Okawa 2008)</strong> (S-0124-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+The Howarth 2012 17%/21% AP-fraction-of-signalling-ATP comparison returned INDETERMINATE for
+all 5 Pareto cells because per-cell signalling-ATP rate (7.54e6-7.39e8 ATP/s) is computed but
+the whole-tissue ATP turnover denominator is not measurable from t0124's evaluator output.
+Howarth's cortex/cerebellum anchors also predate retinal measurement -- retina is dominated by
+photoreceptor outer-segment dark current, so the DSGC-specific signalling fraction may be even
+lower. Action: extract whole-retina ATP consumption rates from Okawa et al. 2008 (mouse
+retina, ~7.5e16 ATP/s per cm^2) plus per-cell-density estimates for ooDSGCs from published RGC
+counts; compute the implied DSGC per-cell ATP turnover budget; report top-N t0124 cells'
+(ATP/spike * PD-rate) as a fraction of that DSGC-specific budget. Closes the Howarth gap with
+retina-specific anchors. Recommended task types: internet-research, download-paper,
+data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Wang 2025 baseline-ATP standby-readiness reinterpretation
+cross-check on t0124 cells</strong> (S-0124-07)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+Wang 2025 reports steady-state intracellular ATP-pool ordering alpha-RGC < ipRGC < ooDSGC but
+does NOT measure per-spike ATP. The standard 'ooDSGCs are spike-energy-expensive'
+interpretation is therefore unsupported; the alternative 'standby readiness' view says ooDSGCs
+maintain high baseline ATP precisely because they spike infrequently and amortise per-burst
+cost. Action: compute implied total per-second ATP demand (ATP/spike * PD-rate * directional
+duty cycle) for t0124 top-N cells from the S-0124-01 60-gen front, compare against published
+RGC type-specific firing-rate baselines (Sivyer 2013 ooDSGC ~5-15 Hz; alpha-RGC ~30-80 Hz),
+and rank implied total ATP demand across simulated types. If the ranking inverts vs Wang's
+baseline-ATP ranking, 'standby readiness' is supported; if it matches,
+'spike-energy-expensive' is supported. Falsifiable mechanism test. Recommended task types:
+data-analysis, comparative-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of

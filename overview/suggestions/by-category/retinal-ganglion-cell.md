@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-92 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **82 open** (15
-high, 57 medium, 10 low), **10 closed**.
+95 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **85 open** (16
+high, 58 medium, 11 low), **10 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -133,6 +133,33 @@ from supplementary materials), register them as a dataset asset, and tag each mo
 its preferred-direction angle and any Baden-cluster correspondence available. Useful as a
 second, independent morphology source against Bae 2018 for the t0090 envelope grounding.
 Recommended task types: download-dataset, download-paper.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Fresh-seed 60-gen replication of DSI vs ATP-per-spike NSGA-II to
+test Carter-Bean penalty vs artefact</strong> (S-0124-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1016_j.neuron.2009.12.011`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1016_j.neuron.2009.12.011/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0124 truncated at gen 9 of 60 by operator_stop (subagent session budget, not cost cap; HV
+still ascending). The bootstrap r(DSI, ATP) = +0.806 [0.716, 1.000] on the n=5 partial front
+is suggestive of a Carter-Bean Na/K-overlap penalty but undeterminable from artefact because
+_POOL_RESTART_EVERY=10 has not fired and all 5 cells share LHS-init ancestry. Action: fork the
+t0124 substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2,
+N_GEN_MAX=60, COST_CAP_USD=6.0, HV plateau autostop=False, DSI silence-guard PD<3 -> DSI=-1,
+Sengupta ATP recipe, Carter-Bean smoke-gate), draw a fresh non-round GA seed via
+secrets.randbelow(10000), run to gen 60 on Vast.ai EPYC. Decision rule: if r > +0.5 with CI
+excluding 0 at n>=20 accept the penalty interpretation; if r drops below +0.3 accept the
+early-NSGA-II artefact null. Recommended task types: experiment-run, data-analysis,
+comparative-analysis.
 
 </details>
 
@@ -823,6 +850,33 @@ neighbouring Pair2/Pair3 SAC+DSGC pairs), validate with validate_swc.py, and reg
 dataset assets so downstream modelling tasks can drive dsgc-baseline-morphology with
 anatomically paired SAC presynaptic input. Strengthens the SAC presynaptic drive asset of
 S-0002-08. Recommended task types: download-dataset.
+
+</details>
+
+<details>
+<summary>📊 <strong>DSGC-specific signalling-ATP fraction estimate: anchor top-N
+cells to whole-retina ATP turnover (Okawa 2008)</strong> (S-0124-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-04` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1038_jcbfm.2012.35`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1038_jcbfm.2012.35/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+The Howarth 2012 17%/21% AP-fraction-of-signalling-ATP comparison returned INDETERMINATE for
+all 5 Pareto cells because per-cell signalling-ATP rate (7.54e6-7.39e8 ATP/s) is computed but
+the whole-tissue ATP turnover denominator is not measurable from t0124's evaluator output.
+Howarth's cortex/cerebellum anchors also predate retinal measurement -- retina is dominated by
+photoreceptor outer-segment dark current, so the DSGC-specific signalling fraction may be even
+lower. Action: extract whole-retina ATP consumption rates from Okawa et al. 2008 (mouse
+retina, ~7.5e16 ATP/s per cm^2) plus per-cell-density estimates for ooDSGCs from published RGC
+counts; compute the implied DSGC per-cell ATP turnover budget; report top-N t0124 cells'
+(ATP/spike * PD-rate) as a fraction of that DSGC-specific budget. Closes the Howarth gap with
+retina-specific anchors. Recommended task types: internet-research, download-paper,
+data-analysis, answer-question.
 
 </details>
 
@@ -2062,6 +2116,33 @@ terminals as smooth cables. Add explicit spine compartments (varying spine densi
 capacitance shifts the dendritic-spike threshold gradient in a DS-relevant way, complementing
 predictions from [Schachter2010] and [Sivyer2013]. Lower priority than the five predictive
 sweeps but uniquely fills a corpus-wide blindspot identified in creative_thinking.md.
+
+</details>
+
+<details>
+<summary>📊 <strong>Wang 2025 baseline-ATP standby-readiness reinterpretation
+cross-check on t0124 cells</strong> (S-0124-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-07` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.21203_rs.3.rs-5989609_v1`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.21203_rs.3.rs-5989609_v1/) |
+| **Categories** | [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Wang 2025 reports steady-state intracellular ATP-pool ordering alpha-RGC < ipRGC < ooDSGC but
+does NOT measure per-spike ATP. The standard 'ooDSGCs are spike-energy-expensive'
+interpretation is therefore unsupported; the alternative 'standby readiness' view says ooDSGCs
+maintain high baseline ATP precisely because they spike infrequently and amortise per-burst
+cost. Action: compute implied total per-second ATP demand (ATP/spike * PD-rate * directional
+duty cycle) for t0124 top-N cells from the S-0124-01 60-gen front, compare against published
+RGC type-specific firing-rate baselines (Sivyer 2013 ooDSGC ~5-15 Hz; alpha-RGC ~30-80 Hz),
+and rank implied total ATP demand across simulated types. If the ranking inverts vs Wang's
+baseline-ATP ranking, 'standby readiness' is supported; if it matches,
+'spike-energy-expensive' is supported. Falsifiable mechanism test. Recommended task types:
+data-analysis, comparative-analysis, answer-question.
 
 </details>
 

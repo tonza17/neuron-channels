@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $64.59 of $100.00 USD. $35.41 remains overall and $35.41 remains before the 100% stop
+Spent $64.88 of $100.00 USD. $35.12 remains overall and $35.12 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,22 +8,22 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $100.00 USD |
-| Total spent | $64.59 USD |
-| Budget left | $35.41 USD |
-| Budget left before stop threshold | $35.41 USD |
-| Spent percent | 64.59% |
+| Total spent | $64.88 USD |
+| Budget left | $35.12 USD |
+| Budget left before stop threshold | $35.12 USD |
+| Spent percent | 64.88% |
 | Warn threshold | 80% ($80.00) |
 | Stop threshold | 100% ($100.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 117 |
-| Tasks with non-zero spend | 18 |
-| Skipped tasks | 9 |
+| Tasks with cost records | 118 |
+| Tasks with non-zero spend | 19 |
+| Skipped tasks | 8 |
 
 ## Service Totals
 
 | Key | Cost (USD) |
 |-----|------------|
-| `vast_ai` | $40.90 |
+| `vast_ai` | $41.19 |
 | `vast_ai_compute` | $3.93 |
 | `vast-ai` | $0.48 |
 
@@ -52,6 +52,7 @@ threshold.
 | `vast-ai-rtx-pro-4000-idle` | $0.65 |
 | `vast-ai-titan-v` | $0.50 |
 | `vast-ai-idle` | $0.43 |
+| `vast-ai-epyc-7b13-t0124` | $0.29 |
 | `vast-ai-epyc-7b13-setup-idle` | $0.29 |
 | `vast-ai-idle-post-finalize` | $0.21 |
 | `vast-ai-epyc7532` | $0.15 |
@@ -94,6 +95,7 @@ threshold.
 | [`t0115_seed9354_no_autostop`](../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | completed | $2.50 | $8.00 | no |
 | [`t0122_dsi_cytoplasm_volume_nsga2`](../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | completed | $0.50 | $6.00 | no |
 | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | completed | $1.19 | $6.00 | no |
+| [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | completed | $0.29 | $6.00 | no |
 
 ## Skipped Tasks
 
@@ -107,4 +109,3 @@ threshold.
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
 | `t0096_literature_survey_multi_objective_neuron_optimisation` | results/costs.json is missing or invalid |
-| `t0124_bedb_dsi_atp_per_spike_nsga2` | results/costs.json is missing or invalid |

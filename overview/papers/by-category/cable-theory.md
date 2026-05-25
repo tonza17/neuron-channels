@@ -1,12 +1,68 @@
-# Papers: `cable-theory` (11)
+# Papers: `cable-theory` (12)
 
-11 papers across 9 year(s).
+12 papers across 9 year(s).
 
 [Back to all papers](../README.md)
 
 ---
 
-## 2018 (1)
+## 2018 (2)
+
+<details>
+<summary>📖 Function and energy consumption constrain neuronal biophysics in a
+canonical computation: Coincidence detection — Remme et al., 2018</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1006612` |
+| **Authors** | Michiel W. H. Remme, John Rinzel, Susanne Schreiber |
+| **Venue** | PLOS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1006612` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006612 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`cable-theory`](../../../meta/categories/cable-theory/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1371_journal.pcbi.1006612/summary.md) |
+
+Remme, Rinzel, and Schreiber address whether the morphology and membrane parameters of a real
+mammalian neuron reflect a joint optimisation between functional performance and metabolic
+energy consumption, or whether one of those two constraints dominates. They choose the
+principal MSO cell of the auditory brainstem as their test case because (i) the functional
+computation -- interaural time difference coincidence detection -- is unambiguous and
+quantifiable, and (ii) prior immunohistochemistry has flagged MSO neurons as exceptionally
+energy-intense, making any function-energy compromise easy to detect.
+
+They build a minimal compartmental model -- soma plus two passive dendrites carrying a uniform
+voltage-gated low-threshold potassium current IKLT -- fit it to published gerbil patch-clamp
+data on EPSP attenuation, EPSP halfwidth, and input resistance with and without DTX block, and
+exhaustively sweep six biophysical parameters (three morphological, three membrane) one at a
+time and in selected two-parameter combinations. Performance is the firing-rate modulation
+between ITD = 0 ms and ITD = 0.5 ms under a 500 Hz phase-locked pure-tone input; energy cost
+is total Na+ influx across the cell converted to ATP/s via the Attwell-Laughlin 3-Na+-per-ATP
+ion-counting scheme. Each parameter sweep is plotted as a curve in (energy cost,
+1/performance) space, and the lower-left envelope across all sweeps is identified as the local
+Pareto-optimal front.
+
+The empirically fitted MSO model produces **~320 spikes/s** rate modulation at **6.2 x 10^9
+ATP/s** and sits essentially on the Pareto front: no single-parameter perturbation can improve
+performance without raising cost or vice versa. The KLT current is essential -- passive
+variants halve performance and double cost. Most morphological and membrane parameters show a
+clear performance peak near the measured default, while energy cost rises monotonically with
+cell size; the cell appears to spend energy only where function demands it. A dendrite-less
+point-neuron control matches most of the performance at far lower cost, so the measured
+dendritic morphology must reflect non-function-non-energy constraints (e.g. surface area for
+synapses, circuit wiring).
+
+This paper is the direct methodological template for t0124. The task's "DSI vs ATP per spike"
+NSGA-II optimisation is the natural extension of Remme et al.'s exhaustive sweep into many
+more dimensions, on a direction-selective retinal ganglion cell instead of an MSO cell. The
+ion-counting cost calculation, the choice to use a scalar performance metric in opposition to
+a scalar metabolic metric, the practice of locating empirical defaults on the computed Pareto
+front, and the search for a small set of mechanistic factors that explain the front shape are
+all strategies t0124 should reuse. This will be the primary literature anchor for t0124's
+compare-literature stage.
+
+</details>
 
 <details>
 <summary>📖 Non-uniform weighting of local motion inputs underlies dendritic

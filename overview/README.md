@@ -1,18 +1,18 @@
 # Project Dashboard
 
 <p align="center">
-  <a href="papers/"><img src="https://img.shields.io/badge/Papers-94-4169E1" alt="Papers"></a>
+  <a href="papers/"><img src="https://img.shields.io/badge/Papers-100-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-4-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
-  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-18-9370DB" alt="Predictions"></a>
+  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-19-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-50-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-51-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-126-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-495-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-503-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,19 +28,19 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (48K)
-| [full](llm-context/full.xml) (772K) | [roadmap](llm-context/roadmap.xml) (151K) |
-[results](llm-context/results-deep-dive.xml) (586K) |
-[assets](llm-context/literature-and-assets.xml) (76K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (49K)
+| [full](llm-context/full.xml) (776K) | [roadmap](llm-context/roadmap.xml) (149K) |
+[results](llm-context/results-deep-dive.xml) (592K) |
+[assets](llm-context/literature-and-assets.xml) (78K)
 
-*Last updated: 2026-05-25 01:16 UTC*
+*Last updated: 2026-05-25 02:57 UTC*
 
 * **Budget**: **$65** spent of $100
 * **Remaining**: **$35**
-* **Usage**: `█████████████░░░░░░░` 64.6%
-* **GPU Machines**: **17** provisioned across 17 tasks · **$64** GPU spend
+* **Usage**: `█████████████░░░░░░░` 64.9%
+* **GPU Machines**: **18** provisioned across 18 tasks · **$65** GPU spend
   ([details](machines/))
-* **Provisioning**: 10 failed attempts · $0.07 wasted · 37% failure rate
+* **Provisioning**: 10 failed attempts · $0.07 wasted · 36% failure rate
 
 ---
 
@@ -53,11 +53,9 @@
 
 ---
 
-## [In Progress (1)](tasks/by-status/in_progress.md)
+## [In Progress (0)](tasks/by-status/in_progress.md)
 
-| # | Task | Started |
-|---|------|---------|
-| 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | 2026-05-24 22:55 |
+No tasks in progress.
 
 ---
 
@@ -84,10 +82,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (117 total)](tasks/by-status/completed.md)
+## [Recently Completed (118 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | [`results`](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/results/results_detailed.md) | 2026-05-25 02:55 |
 | 0125 | [Cluster + factor analysis of t0123 cells: high vs low MI and ATP](../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) | [`results`](../tasks/t0125_t0123_cluster_factor_mi_atp/results/results_detailed.md) | 2026-05-25 01:12 |
 | 0123 | [NSGA-II maximising MI and minimising ATP-per-spike (Bed B + 14-d morph)](../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | [`results`](../tasks/t0123_bedb_mi_atp_per_spike_nsga2/results/results_detailed.md) | 2026-05-24 21:08 |
 | 0122 | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | [`results`](../tasks/t0122_dsi_cytoplasm_volume_nsga2/results/results_detailed.md) | 2026-05-24 06:30 |
@@ -97,9 +96,8 @@ No blocked tasks.
 | 0118 | [Re-simulate 10 cells per t0117 ephys cluster; plot g_E, g_I, Vm in PD and ND](../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) | [`results`](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/results/results_detailed.md) | 2026-05-22 18:31 |
 | 0117 | [Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds](../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) | [`results`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/results_detailed.md) | 2026-05-22 13:16 |
 | 0116 | [Pooled PCA + cluster + factor analysis of DSI>0.7 / PD>10 cells across 4 seeds](../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) | [`results`](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/results/results_detailed.md) | 2026-05-21 20:35 |
-| 0115 | [Seed-9354 NSGA-II replicate of t0106 with auto-stop disabled](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | [`results`](../tasks/t0115_seed9354_no_autostop/results/results_detailed.md) | 2026-05-21 02:55 |
 
-*107 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*108 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -124,7 +122,173 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (446 open)](suggestions/)
+## [Recent Suggestions (454 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Fresh-seed 60-gen replication of DSI vs ATP-per-spike NSGA-II to
+test Carter-Bean penalty vs artefact</strong> (S-0124-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+t0124 truncated at gen 9 of 60 by operator_stop (subagent session budget, not cost cap; HV
+still ascending). The bootstrap r(DSI, ATP) = +0.806 [0.716, 1.000] on the n=5 partial front
+is suggestive of a Carter-Bean Na/K-overlap penalty but undeterminable from artefact because
+_POOL_RESTART_EVERY=10 has not fired and all 5 cells share LHS-init ancestry. Action: fork the
+t0124 substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2,
+N_GEN_MAX=60, COST_CAP_USD=6.0, HV plateau autostop=False, DSI silence-guard PD<3 -> DSI=-1,
+Sengupta ATP recipe, Carter-Bean smoke-gate), draw a fresh non-round GA seed via
+secrets.randbelow(10000), run to gen 60 on Vast.ai EPYC. Decision rule: if r > +0.5 with CI
+excluding 0 at n>=20 accept the penalty interpretation; if r drops below +0.3 accept the
+early-NSGA-II artefact null. Recommended task types: experiment-run, data-analysis,
+comparative-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Framework fix: decouple long NSGA-II launches from the
+implementation subagent session budget</strong> (S-0124-02)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+The t0124 gen-9 truncation was triggered by the implementation subagent running out of context
+while polling NSGA-II progress, with only $0.07 of $6 spent and no HV plateau. Recurring
+across the t0102-t0124 NSGA-II lineage (multi-hour Vast.ai runs vs subagent context limits)
+and distinct from S-0123-05 (pymoo dill checkpoint). Action: restructure the implementation
+skill so the subagent only (a) provisions the machine, (b) runs the smoke-gate, (c) launches
+NSGA-II in background with checkpoint loop, (d) returns a launched-handle artefact
+(instance_id, pid, expected_completion). The orchestrator then polls via a separate
+poll-progress skill and triggers post-run analysis when complete or budget-trip. Touches
+arf/skills/implementation, arf/skills/execute-task, the run_with_logs harness, and one new
+poll-progress skill. Recommended task types: infrastructure-setup, write-library.
+
+</details>
+
+<details>
+<summary>📊 <strong>Joint 3-D (DSI, cytoplasm_volume, ATP/spike) cross-task analysis
+combining t0122 and t0124 fronts</strong> (S-0124-03)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+t0122 produced a (DSI, cytoplasm volume) Pareto front; t0124 produced a (DSI, ATP/spike)
+Pareto front on the same 68-d substrate. Cell ancestry is independent but both record
+cytoplasm_volume_um3 as a diagnostic and both export the 68-d parameter vector per cell.
+Post-hoc joint analysis can test whether high-DSI cells fall in both the Cuntz 2010 [0.2, 0.7]
+balancing-factor band AND the Carter-Bean PASS band -- a much stronger
+evolutionary-optimisation argument than either pair alone. Action: load
+pareto_front_seed*.json + all_evaluations_seed*.json.gz from both tasks, re-evaluate ATP/spike
+on t0122 cells and cytoplasm volume on t0124 cells via single-CPU resimulation of the top-N
+cells under the same evaluator, render a 3-D scatter (DSI, log10(volume), log10(ATP/spike))
+with Pareto contours, and report which cells fall in joint-pass cones. No new NSGA-II run.
+Recommended task types: data-analysis, comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>DSGC-specific signalling-ATP fraction estimate: anchor top-N
+cells to whole-retina ATP turnover (Okawa 2008)</strong> (S-0124-04)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+The Howarth 2012 17%/21% AP-fraction-of-signalling-ATP comparison returned INDETERMINATE for
+all 5 Pareto cells because per-cell signalling-ATP rate (7.54e6-7.39e8 ATP/s) is computed but
+the whole-tissue ATP turnover denominator is not measurable from t0124's evaluator output.
+Howarth's cortex/cerebellum anchors also predate retinal measurement -- retina is dominated by
+photoreceptor outer-segment dark current, so the DSGC-specific signalling fraction may be even
+lower. Action: extract whole-retina ATP consumption rates from Okawa et al. 2008 (mouse
+retina, ~7.5e16 ATP/s per cm^2) plus per-cell-density estimates for ooDSGCs from published RGC
+counts; compute the implied DSGC per-cell ATP turnover budget; report top-N t0124 cells'
+(ATP/spike * PD-rate) as a fraction of that DSGC-specific budget. Closes the Howarth gap with
+retina-specific anchors. Recommended task types: internet-research, download-paper,
+data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>NMDA vs Nav dichotomy on the high-DSI corner: is NMDA-driven DSI
+cheaper per spike than Nav-driven DSI?</strong> (S-0124-05)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+Mechanistic prediction: NMDA-driven high-DSI cells should be cheaper per spike than Nav-driven
+ones because NMDA spikes are slower (smaller Na/K overlap) and Ca2+ ATPase costs ~1 ATP per 3
+Ca2+ vs Na/K ATPase's ~1 ATP per 3 Na+, with NMDA's ~3:1 Ca/Na ratio amplifying the advantage.
+If true, the Carter-Bean penalty applies only to the Nav-pathway DSI branch and the +0.806
+correlation hides an NMDA-cheap sub-front. Action: on the S-0124-01 60-gen output plus the
+t0124 partial front, extract per-cell (gnmda_dend, nav16_dend_distal, nav16_ais_proximal,
+nav16_ais_distal) from the 68-d vectors, define a NMDA-Nav balance axis = z(gnmda_dend) -
+z(nav16_dend_distal), and scatter it against ATP/spike conditioned on DSI > 0.5. Falsifies if
+NMDA-balance shows no negative correlation with ATP/spike on high-DSI cells. Local-CPU
+post-hoc on saved JSONs. Recommended task types: data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Hallermann 2012 per-compartment alpha decomposition on t0124
+Pareto cells</strong> (S-0124-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+t0124's compare_literature flagged the Hallermann 2012 prediction (AIS alpha 1.5-2.0 vs
+dendrite alpha 1.0-1.3, predicted positive delta 0.3-0.7) as NOT MEASURED because
+comparator_report.json aggregates only AIS ATP/AP/cm and a whole-cell signalling rate. The
+per-compartment seg.ina FULL-mode traces ARE saved (cell_trace.jsonl) -- the test requires a
+post-hoc decomposition of integral(I_Na^inward) per compartment-group divided by the
+analytically-computed capacitive-minimum Na+ entry per group. Action: write
+decompose_alpha_per_compartment.py reading cell_trace.jsonl, compute per-compartment alpha for
+the 5 Pareto cells plus any S-0124-01 cohort expansion, render a violin plot of (alpha_AIS -
+alpha_dendrite) per cell with the Hallermann 0.3-0.7 band overlaid. Falsifies if the delta is
+consistently negative or near zero. Recommended task types: data-analysis,
+comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Wang 2025 baseline-ATP standby-readiness reinterpretation
+cross-check on t0124 cells</strong> (S-0124-07)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+Wang 2025 reports steady-state intracellular ATP-pool ordering alpha-RGC < ipRGC < ooDSGC but
+does NOT measure per-spike ATP. The standard 'ooDSGCs are spike-energy-expensive'
+interpretation is therefore unsupported; the alternative 'standby readiness' view says ooDSGCs
+maintain high baseline ATP precisely because they spike infrequently and amortise per-burst
+cost. Action: compute implied total per-second ATP demand (ATP/spike * PD-rate * directional
+duty cycle) for t0124 top-N cells from the S-0124-01 60-gen front, compare against published
+RGC type-specific firing-rate baselines (Sivyer 2013 ooDSGC ~5-15 Hz; alpha-RGC ~30-80 Hz),
+and rank implied total ATP demand across simulated types. If the ranking inverts vs Wang's
+baseline-ATP ranking, 'standby readiness' is supported; if it matches,
+'spike-energy-expensive' is supported. Falsifiable mechanism test. Recommended task types:
+data-analysis, comparative-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Carter-Bean narrow-AP Na/K-overlap test: AP-width vs ATP/spike
+on t0124 Pareto cells</strong> (S-0124-08)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+The compare_literature analysis identifies AP-width extraction as the highest-priority
+follow-up for testing the Carter-Bean 2009 narrow-spike Na/K-overlap mechanism on t0124 data.
+comparator_report.json records ATP/AP/cm per cell but not AP half-width or rise/decay times.
+Per-compartment somatic Vm traces (FULL mode) are saved -- extracting AP half-width via Vm
+crossings at +/-half-peak on each detected spike is a one-off post-hoc step. Action: write
+extract_ap_width.py reading the somatic Vm trace per Pareto cell from cell_trace.jsonl, detect
+spikes via the existing -20 mV crossing + 2 ms refractory in atp_per_spike.py, compute
+half-width per AP, scatter median half-width vs ATP/spike across the front. Carter-Bean
+predicts a negative slope (narrower AP -> higher Na/K overlap -> higher ATP/spike). Coarse on
+n=5; tight on the S-0124-01 60-gen front. Local-CPU post-hoc. Recommended task types:
+data-analysis, answer-question.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
@@ -165,172 +329,52 @@ comparative-analysis.
 
 </details>
 
-<details>
-<summary>🧪 <strong>8-direction MI NSGA-II to lift the 2-bit ceiling and re-test the
-joint factor at higher MI resolution</strong> (S-0125-03)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-t0125's top cells saturate at mi_count_bits = 1.459 (73% of log2(4) = 2.0). Three Pareto cells
-converged on identical (MI, DSI, PD-rate) -- a deterministic optimum at the ceiling.
-Compressed MI variance pulls all joint loadings toward zero. Distinct from S-0123-01 (extended
-trial length + PD-rate floor for Strong-Bialek bits/s) and from polar 8-direction
-re-evaluation suggestions on DSI lineages (those re-score existing cells; this is a fresh
-NSGA-II). Action: fork t0123 with N_DIRECTIONS = 8 (ceiling = log2(8) = 3.0 bits), keep other
-constants matched (POP_SIZE = 96, N_EVAL_SEEDS = 3, HV auto-stop OFF, pool restart every 10);
-scale trial duration only if firing rate falls (per memory
-feedback_dsgc_measurement_protocol); rerun cluster + factor analysis. Budget ~$10-15 Vast.ai
-EPYC. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Partial-correlation analysis of MI vs electrophys (control
-morphology) and ATP vs morphology (control electrophys)</strong>
-(S-0125-04)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-t0125's PCA colourings make the separation visible: high-MI cells cluster in the electrophys
-PCA but are absent from the morphology PCA; log10(ATP) shows a gradient in the morphology PCA,
-flatter in electrophys. NMI table corroborates (electrophys-vs-MI 0.178, electrophys-vs-ATP
-0.186, morphology-vs-MI 0.121, morphology-vs-ATP 0.176). These are pairwise correlations and
-could share a common cause. Action: on the existing spiking-cohort parquet, compute Spearman
-partial r for (a) MI vs each of 54 electrophys params partialling out 14 morphology params;
-(b) ATP vs each of 14 morphology params partialling out 54 electrophys params; (c) MI vs ATP
-partialling out morphology; (d) MI vs ATP partialling out electrophys. Report top-10 with
-bootstrap CI; compare to t0125 group_comparison.csv. Single CPU-only follow-up. Recommended
-task types: data-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Off-diagonal-corner-constrained NSGA-II to sample the
-undersampled high-MI/high-ATP and low-MI/low-ATP corners</strong>
-(S-0125-05)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-t0125 finds a 3.6x diagonal-vs-off-diagonal corner imbalance: 1221 high_MI/low_ATP + 1220
-low_MI/high_ATP vs only 343 high_MI/high_ATP + 341 low_MI/low_ATP cells. Off-diagonal corners
-are real -- cell (19, 1816) hits MI=1.459 at ATP=4.97e7 (8.7x more expensive than equivalent
-(30, 2828)) -- but undersampled because NSGA-II exploited the cheap-and-informative half.
-Action: rerun the t0123 NSGA-II twice with constrained objectives (a) maximise BOTH MI and ATP
-(forces high_MI/high_ATP corner); (b) minimise BOTH (forces low_MI/low_ATP corner). Sample 96
-cells per corner; rerun the t0125 cluster + factor pipeline on the union plus the original
-t0123 pool. Tests whether off-diagonal corners share or have private latent drivers. Budget
-~$8-12 Vast.ai EPYC. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Vm-trace deep-dive of cell (19, 1816) -- high-MI / high-ATP /
-extended-dendrite outlier</strong> (S-0125-06)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-Cell (19, 1816) hits the MI ceiling (1.459 bits) at ATP = 4.97e7 molecules/spike (cohort
-99th-percentile) with 79% of ATP spent in dendrites (cohort mean 17.8%); cell (30, 2828)
-matches the MI at 0.5% dendrite share. This is the cleanest case of 'high MI is consistent
-with both compact-dendrite/low-ATP and extended-dendrite/high-ATP geometries'. Distinct from
-S-0123-03 (cell 2, near-silent high-MI cell): this is the complementary deep-dive on the OTHER
-end of the iso-MI ridge. Action: single-cell resimulate (19, 1816) from its 68-d vector under
-the EPSP_PASSIVE / IPSP_PASSIVE / FULL trio (memory feedback_dsgc_measurement_protocol),
-record somatic + dendritic Vm and per-compartment g_E / g_I / i_Na / i_K. Identify which
-subset drives the across-direction count signal vs the dendritic ATP overhead. Local CPU < 2
-h. Recommended task types: experiment-run, data-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Disjoint parameter-basin enumeration of high-MI cells to quantify
-Achard 2006 degeneracy on the t0123 substrate</strong> (S-0125-07)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-t0125's electrophys silhouette = 0.083 (low) paired with chi-square p = 1e-236 (highly
-significant) is the signature of Achard 2006's 'loosely connected hyperplane' geometry. t0125
-confirmed the qualitative pattern (5 of 68 parameters with |Cliff's delta| > 0.6 for MI
-groups, ~7%) but did NOT count DISJOINT parameter basins producing mi_count_bits > 1.0.
-Action: on the spiking-cohort parquet, restrict to cells with MI > 1.0 (n ~ 600-800), apply
-single-linkage hierarchical clustering in the standardised 54-d electrophys subspace tuned to
-3-10 connected components, report per-component median pairwise distance, per-parameter range,
-and cross-component nearest-neighbour distance. Replicate in morphology and full-68-d. Tests
-Marder 2006 'many models, one behaviour' on t0123; motivates per-basin re-seeded NSGA-II.
-CPU-only. Recommended task types: data-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>📊 <strong>Bootstrap loading stability for the single-seed MI factors to
-bracket the 0.358 / 0.205 joint-threshold gap</strong> (S-0125-08)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-t0125's zero-joint verdict rides on F1's r_MI = -0.358 (above threshold) paired with r_ATP =
-+0.205 (below threshold) -- ATP only 0.095 below the 0.30 cutoff. Verdict could flip under
-resampling. Distinct from S-0117-03 (bootstrap on t0117 4-seed DSI x PD F1): this is the MI x
-ATP single-seed analogue. Action: on the existing t0125 standardiser and 5760-cell parquet,
-draw B = 500 bootstrap resamples, refit FA(n=10) + varimax, report (a) per-factor 5/50/95
-percentile loadings on every 68-d parameter; (b) per-factor 5/50/95 percentile r vs MI and
-ATP; (c) probability that >=1 factor crosses |r| > 0.30 on both axes per resample; (d)
-threshold sensitivity at 0.20, 0.25, 0.30, 0.35. Bounds the joint-factor verdict and produces
-the threshold-sensitivity curve flagged in compare_literature. CPU-only. Recommended task
-types: data-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Re-render t0112 / t0114 / t0115 top-50 morphology grids with
-t0120's rendering conventions (correction)</strong> (S-0120-01)</summary>
-
-**Kind**: technique | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
-[t0120_morph_generator_geometry_audit](../tasks/t0120_morph_generator_geometry_audit/)
-
-t0120 confirmed the soma-disconnect visual artefact in t0115's top50_morphologies_seed9354.png
-(and the seed-44/77/7755 analogues from t0106/t0112/t0114) is rendering-only, driven by three
-conventions in build_top50_morphologies.py: fixed Circle(radius=6.0) soma (too small vs
-typical 100-150 um soma_offset_pd_um), LineCollection(linewidths=0.4) primary stems (visually
-negligible), and auto-zoom that amplifies asymmetry. Concrete action: regenerate the four PNGs
-using t0120's conventions (Circle(radius=soma_diameter_um/2), tab:red primary stems at
-linewidth 2.0, optional debug line from origin_xy to each primary-stem tip), file corrections/
-overlays at the new chart paths, and add a README noting the originals were not
-geometry-wrong. Broader than S-0115-05 (which targets only t0114's dots-only artefact); the
-two can be merged into one correction task. Recommended task types: correction.
-
-</details>
-
-<details>
-<summary>📚 <strong>Replace lineage `_section_midpoint_xy` silent-(0,0) fallback with
-t0120's strict raise-on-n3d==0 version</strong> (S-0120-02)</summary>
-
-**Kind**: library | **Priority**: medium | **Date**: 2026-05-24 | **Source**:
-[t0120_morph_generator_geometry_audit](../tasks/t0120_morph_generator_geometry_audit/)
-
-t0120 ships a strict `_section_midpoint_xy_strict` in `code/dump_helpers.py` that raises
-`RuntimeError('degenerate section: h.n3d() == 0')` instead of silently returning `(0.0, 0.0)`
-(lineage behaviour in `tasks/t0091_morphology_extended_nsga2_v1/code/trial_helpers.py` lines
-160-178, copied into every NSGA-II task t0091-t0118). The silent fallback is dangerous: if a
-degenerate dendrite section ever appears, every synapse on that section would be placed at the
-world origin and the bar arrival-time projection would be silently wrong by tens of
-micrometres. The 20-cell t0120 audit never tripped the strict raise but covers only 0.5% of
-the t0117 pool. Concrete action: package the strict version as a shared library (or extend
-S-0090-07's generator-promotion path) with a deprecation shim on lineage callsites so future
-NSGA-II tasks (incl. t0122) raise loudly. Recommended task types: write-library.
-
-</details>
-
-*436 more open suggestions → [open suggestions](suggestions/)*
+*444 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (73)](suggestions/)
+## [High Priority Suggestions (75)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Fresh-seed 60-gen replication of DSI vs ATP-per-spike NSGA-II to
+test Carter-Bean penalty vs artefact</strong> (S-0124-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+t0124 truncated at gen 9 of 60 by operator_stop (subagent session budget, not cost cap; HV
+still ascending). The bootstrap r(DSI, ATP) = +0.806 [0.716, 1.000] on the n=5 partial front
+is suggestive of a Carter-Bean Na/K-overlap penalty but undeterminable from artefact because
+_POOL_RESTART_EVERY=10 has not fired and all 5 cells share LHS-init ancestry. Action: fork the
+t0124 substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2,
+N_GEN_MAX=60, COST_CAP_USD=6.0, HV plateau autostop=False, DSI silence-guard PD<3 -> DSI=-1,
+Sengupta ATP recipe, Carter-Bean smoke-gate), draw a fresh non-round GA seed via
+secrets.randbelow(10000), run to gen 60 on Vast.ai EPYC. Decision rule: if r > +0.5 with CI
+excluding 0 at n>=20 accept the penalty interpretation; if r drops below +0.3 accept the
+early-NSGA-II artefact null. Recommended task types: experiment-run, data-analysis,
+comparative-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Framework fix: decouple long NSGA-II launches from the
+implementation subagent session budget</strong> (S-0124-02)</summary>
+
+**Kind**: technique | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+
+The t0124 gen-9 truncation was triggered by the implementation subagent running out of context
+while polling NSGA-II progress, with only $0.07 of $6 spent and no HV plateau. Recurring
+across the t0102-t0124 NSGA-II lineage (multi-hour Vast.ai runs vs subagent context limits)
+and distinct from S-0123-05 (pymoo dill checkpoint). Action: restructure the implementation
+skill so the subagent only (a) provisions the machine, (b) runs the smoke-gate, (c) launches
+NSGA-II in background with checkpoint loop, (d) returns a launched-handle artefact
+(instance_id, pid, expected_completion). The orchestrator then polls via a separate
+poll-progress skill and triggers post-run analysis when complete or budget-trip. Touches
+arf/skills/implementation, arf/skills/execute-task, the run_with_logs harness, and one new
+poll-progress skill. Recommended task types: infrastructure-setup, write-library.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
@@ -491,49 +535,28 @@ experiment-run, data-analysis, comparative-analysis.
 
 </details>
 
-<details>
-<summary>🧪 <strong>Bracketed-cohort sweep at DSI>0.3/0.5/0.7/0.9 to map where the
-joint DSI-PD factor disappears</strong> (S-0117-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
-[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
-
-t0117 confirmed the truncated-cohort artefact: F1 is a joint DSI-PD factor (r_DSI=+0.421,
-r_PD=+0.352) at the unfiltered pool, while t0116 (DSI>0.7 AND PD>10) had zero joint factors.
-S-0116-02 covers a single point at DSI>0.5; this suggestion is a parametric sweep. Re-run the
-t0117 pipeline at four DSI thresholds {0.3, 0.5, 0.7, 0.9} on the same pooled all-cells
-parquet, fit varimax FA at each, and plot (a) joint-factor count vs threshold and (b) F1's
-r_DSI/r_PD vs threshold. Decision: monotonic crossover between 0.5 and 0.7 means smooth
-range-restriction; a sharp cliff means a specific cell class dominates the joint variance.
-Recommended task types: data-analysis, comparative-analysis. Cost: <$0.30.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Per-seed factor analysis on the unfiltered pool: do the 4 seeds
-share F1, or are loadings seed-dependent?</strong> (S-0117-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-22 | **Source**:
-[t0117_pooled_pca_cluster_factor_all_cells_4_seeds](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/)
-
-t0117's pooled F1 is the central joint DSI-PD driver (r_DSI=+0.421, r_PD=+0.352, 12.6%
-variance). Basin-connectivity (ephys NMI=0.562, morph NMI=0.313) shows seeds still partly
-cluster; F1 could be (a) a shared substrate property or (b) a cross-basin confound where
-DSI/PD co-vary with seed identity. Refit FA(n=10) + varimax independently on each seed's
-unfiltered slice (s44 n=1065, s77 n=654, s7755 n=1686, s9354 n=1026 - all well powered,
-n>10*features=680), align factors to t0117 F1 by max-cosine, report per-seed top-10 loadings +
-r_DSI/r_PD. Distinct from S-0116-04 (strict cohort where only s7755 had enough cells).
-Decision: if all four per-seed analogues hit |r|>0.3 on both axes with the same top loadings,
-F1 is a true substrate property; if loadings diverge, F1 is partly a between-seed confound.
-Recommended task types: data-analysis. Cost: <$0.20.
-
-</details>
-
-*63 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*65 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (50 total)](answers/)
+## [Recent Answers (51 total)](answers/)
+
+<details>
+<summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
+Na/K-overlap penalty, and where do its top cells sit relative to the
+revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and
+historically, the original Attwell-Laughlin 2001 47% anchor)?</strong></summary>
+
+**Confidence**: low | **Date**: 2026-05-25 | **Full answer**:
+[`dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin`](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/answer/dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin/)
+
+INSUFFICIENT EVIDENCE: only 5 legit cells passed the silence guard. The Pareto front structure
+cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r
+between DSI and ATP-per-spike across the legit top-5 cohort is r = 0.806 (95% CI: [0.716,
+1.000], n_legit = 5, n_pareto = 5). Run reached 9 / 60 gens at $0.07; stop trigger
+operator_stop.
+
+</details>
 
 <details>
 <summary><strong>Which electrophys parameters most distinguish high-MI from low-MI
@@ -703,32 +726,346 @@ detectable but no longer dominant.
 
 </details>
 
-<details>
-<summary><strong>How far did NSGA-II travel from gen-0 (generation == 1) in each
-seed when the full quality range is admitted (no DSI / PD filter), and is
-the per-seed displacement pattern observed at the strict cohort (seed 44
-furthest, seed 9354 closest) preserved at the unfiltered pool?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-22 | **Full answer**:
-[`pooled-all-cells-displacement-from-init-full-pool`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-displacement-from-init-full-pool/)
-
-Per-seed displacement drops by roughly 5-10x at the unfiltered pool: mean 68-d displacement
-collapses from ~60 (all seeds, t0116) to ~9 (all seeds, t0117), and mean PC1+PC2 displacement
-from 15.0 / 8.5 / 13.3 / 2.4 (seeds 44 / 77 / 7755 / 9354 at t0116) to 4.9 / 1.5 / 5.7 / 1.6
-(t0117). The relative ordering is partially preserved — seeds 44 and 7755 remain the two
-furthest from random init at t0117 (4.9 and 5.7 in PC12, top of the table), and seed 9354
-remains close to its random init (1.6) — but seed 77 drops from second-furthest to nearly tied
-with seed 9354 because the strict cohort retained only the Pareto-front tip of seed 77 (n=10),
-while the unfiltered pool admits all 654 of its cells, dominated by lower-quality individuals
-near gen-1.
-
-</details>
-
-*40 more answers → [answers](answers/)*
+*41 more answers → [answers](answers/)*
 
 ---
 
-## [Latest Papers (94 total)](papers/)
+## [Latest Papers (100 total)](papers/)
+
+<details>
+<summary>📝 <strong>Energetic diversity in retinal ganglion cells is modulated by
+neuronal activity and correlates with resilience to degeneration</strong>
+— Wang et al., 2025</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.21203_rs.3.rs-5989609_v1` |
+| **Authors** | Zelun Wang, Christopher Zhao, Shelly Xu, Sean McCracken, Rajendra S. Apte, Philip R. Williams |
+| **Venue** | Research Square (preprint) (preprint) |
+| **DOI** | `10.21203/rs.3.rs-5989609/v1` |
+| **URL** | https://www.researchsquare.com/article/rs-5989609/v1 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../meta/categories/direction-selectivity/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.21203_rs.3.rs-5989609_v1/summary.md) |
+
+Wang et al. address an open question about whether closely related but electrophysiologically
+distinct excitatory projection neurons differ in steady-state metabolic homeostasis when they
+share a single tissue microenvironment. They use in vivo 2-photon imaging of the
+ATeam1.03-nD/nA FRET ATP biosensor in mouse RGCs and exploit post hoc immunostaining (SPP1,
+TBR2, CART) plus BigWarp landmark alignment to assign every imaged soma to one of three RGC
+families: alphaRGCs, ipRGCs, and ON-OFF DSGCs. The motivation is partly mechanistic (what
+drives per-type metabolic differences?) and partly applied (do metabolic traits predict
+resilience to optic nerve injury?).
+
+Methodologically, the study combines per-cell ATP imaging with pharmacological perturbations:
+ETC inhibitors (rotenone, TTFA, antimycin A, KCN) to block ATP synthesis stage by stage;
+Str/Bic and NBQX/AP5 to manipulate circuit activity; and a 14-day optic nerve crush followed
+by longitudinal imaging. Quantitative confocal microscopy of mitochondrial and ETC protein
+expression (TOM20, NDUFB8, SDHA, UQCRC2, ATP5A) on thousands of cells per stain checks whether
+ATP differences reflect supply or demand. Image processing relies on Cellpose, Suite2p,
+TrackMate, BigWarp and SIFT registration, with code released at
+`https://github.com/zelunw/RGC-ATP`.
+
+The headline findings: (1) alphaRGCs, the most active type, have **lower** homeostatic ATP
+than ipRGCs and ooDSGCs; (2) alphaRGCs are most depleted by Complex I-III block, but Complex
+IV block depletes all RGCs equally; (3) silencing activity with NBQX/AP5 rescues alphaRGC ATP
+decline under ROT, proving activity-driven turnover dominates; (4) alphaRGCs have **higher**,
+not lower, mitochondrial protein expression -- supply is fine, demand is the issue; (5)
+pre-injury baseline ATP is **lower** in RGCs that survive ONC, holding for alphaRGCs and
+non-alphaRGCs separately; (6) population ATP transiently rises 2-6 days post-ONC. The absolute
+intracellular ATP spread across the population is **~2-3.5 mM** on a 6-10 mM baseline.
+
+For the present project, the most actionable result is the **per-type baseline ATP ordering**:
+alphaRGC < ipRGC ~= ooDSGC. The user-supplied note that ooDSGCs rank highest matches the
+homeostatic intracellular ATP data (ooDSGCs are in the high-ATP group), but the inference that
+ooDSGCs are the most active type is incorrect -- alphaRGCs are. For the t0124 Pareto front,
+this means (i) ooDSGCs are not the most energy-hungry RGC type per unit time and the optimal
+ATP-per-spike landscape should reflect a moderate-activity, moderate-ATP-baseline cell; (ii)
+any implied total ATP turnover per Pareto-front DSGC must be sustainable under the measured
+steady-state intracellular ATP range (6-10 mM whole-retina; ~2-3.5 mM cell-to-cell spread);
+(iii) the paper offers no per-spike ATP number directly, so the cross-check is steady-state
+plausibility, not a numerical match. Limitations to flag: the ATeam-FRET signal is bounded by
+a 10 mM saturation ceiling, activity is operationalised as 2-photon-laser-evoked retinal
+response not directional motion, and alphaRGCs include subtypes that themselves differ in ATP.
+As a 2025 preprint, the paper is "In Review" and the results are not yet peer reviewed.
+
+</details>
+
+<details>
+<summary>📖 <strong>Function and energy consumption constrain neuronal biophysics in
+a canonical computation: Coincidence detection</strong> — Remme et al.,
+2018</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1371_journal.pcbi.1006612` |
+| **Authors** | Michiel W. H. Remme, John Rinzel, Susanne Schreiber |
+| **Venue** | PLOS Computational Biology (journal) |
+| **DOI** | `10.1371/journal.pcbi.1006612` |
+| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006612 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../meta/categories/synaptic-integration/), [`dendritic-computation`](../meta/categories/dendritic-computation/), [`cable-theory`](../meta/categories/cable-theory/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1371_journal.pcbi.1006612/summary.md) |
+
+Remme, Rinzel, and Schreiber address whether the morphology and membrane parameters of a real
+mammalian neuron reflect a joint optimisation between functional performance and metabolic
+energy consumption, or whether one of those two constraints dominates. They choose the
+principal MSO cell of the auditory brainstem as their test case because (i) the functional
+computation -- interaural time difference coincidence detection -- is unambiguous and
+quantifiable, and (ii) prior immunohistochemistry has flagged MSO neurons as exceptionally
+energy-intense, making any function-energy compromise easy to detect.
+
+They build a minimal compartmental model -- soma plus two passive dendrites carrying a uniform
+voltage-gated low-threshold potassium current IKLT -- fit it to published gerbil patch-clamp
+data on EPSP attenuation, EPSP halfwidth, and input resistance with and without DTX block, and
+exhaustively sweep six biophysical parameters (three morphological, three membrane) one at a
+time and in selected two-parameter combinations. Performance is the firing-rate modulation
+between ITD = 0 ms and ITD = 0.5 ms under a 500 Hz phase-locked pure-tone input; energy cost
+is total Na+ influx across the cell converted to ATP/s via the Attwell-Laughlin 3-Na+-per-ATP
+ion-counting scheme. Each parameter sweep is plotted as a curve in (energy cost,
+1/performance) space, and the lower-left envelope across all sweeps is identified as the local
+Pareto-optimal front.
+
+The empirically fitted MSO model produces **~320 spikes/s** rate modulation at **6.2 x 10^9
+ATP/s** and sits essentially on the Pareto front: no single-parameter perturbation can improve
+performance without raising cost or vice versa. The KLT current is essential -- passive
+variants halve performance and double cost. Most morphological and membrane parameters show a
+clear performance peak near the measured default, while energy cost rises monotonically with
+cell size; the cell appears to spend energy only where function demands it. A dendrite-less
+point-neuron control matches most of the performance at far lower cost, so the measured
+dendritic morphology must reflect non-function-non-energy constraints (e.g. surface area for
+synapses, circuit wiring).
+
+This paper is the direct methodological template for t0124. The task's "DSI vs ATP per spike"
+NSGA-II optimisation is the natural extension of Remme et al.'s exhaustive sweep into many
+more dimensions, on a direction-selective retinal ganglion cell instead of an MSO cell. The
+ion-counting cost calculation, the choice to use a scalar performance metric in opposition to
+a scalar metabolic metric, the practice of locating empirical defaults on the computed Pareto
+front, and the search for a small set of mechanistic factors that explain the front shape are
+all strategies t0124 should reuse. This will be the primary literature anchor for t0124's
+compare-literature stage.
+
+</details>
+
+<details>
+<summary>📖 <strong>Pareto optimality, economy-effectiveness trade-offs and ion
+channel degeneracy: improving population modelling for single
+neurons</strong> — Jedlicka et al., 2022</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1098_rsob.220073` |
+| **Authors** | Peter Jedlicka, Alexander D. Bird, Hermann Cuntz |
+| **Venue** | Open Biology (journal) |
+| **DOI** | `10.1098/rsob.220073` |
+| **URL** | https://royalsocietypublishing.org/doi/10.1098/rsob.220073 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1098_rsob.220073/summary.md) |
+
+The paper, by Jedlicka, Bird and Cuntz (Open Biology 2022), is a methodological review that
+argues for adopting **Pareto optimality** as a unifying framework for constraining the
+high-dimensional parameter space of conductance-based neuron population models. The motivation
+is the well-known problem of **ion channel degeneracy**: many disparate combinations of ionic
+conductances yield indistinguishable voltage traces, leaving population-modelling pipelines
+with a vast space of valid but biologically implausible candidates. The research question is
+whether evolution selects, among the degenerate solutions, the subset that is Pareto optimal
+for a trade-off between functional effectiveness and energy economy.
+
+Methodologically the paper has no new simulations -- it synthesizes (1) the Shoval-Alon
+theorems from systems biology, which predict that Pareto fronts in n-d parameter space
+collapse to (m-1)-dimensional polytopes with m vertices when m tasks are jointly optimized,
+(2) the standard **current-counting ATP-accounting** approach for conductance-based models due
+to Attwell-Laughlin and refined by Remme et al., and (3) the **Pareto Task Inference (ParTI)**
+algorithm of Shoval-Hart for inferring tasks from data. The authors then walk through three
+case studies from the literature (MSO coincidence detection, L5 PC dendritic computation,
+stomatogastric ganglion) where Pareto-style analysis has either been done explicitly or could
+be done.
+
+The headline findings are conceptual rather than quantitative: the geometric theorems imply
+that Pareto-optimal subsets of n-d conductance spaces should be **(m-1)-d manifolds**,
+naturally explaining experimentally observed ion channel correlations. The MSO example shows
+that an experimentally constrained model sits on the Pareto front for the
+coincidence-detection vs ATP-cost trade-off; the L5 PC example links low Kv3.1 and Ca-HVA
+expression in the dendritic hot zone to joint efficiency in energy and computation. Pareto
+Task Inference applied to Patch-seq data is proposed as a way to deduce functional archetypes
+without specifying tasks a priori.
+
+For this project, and specifically for task t0124 (DSI vs ATP per spike NSGA-II on a 68-d
+DSGC), the paper provides direct theoretical grounding. It justifies reporting the NSGA-II
+Pareto front as a biologically meaningful low-d manifold (predicted to be a 1-d curve through
+68-d space for two objectives), motivates testing whether parameter sets on the front exhibit
+predictable conductance correlations, and supports the project use of degeneracy as an
+explanatory hypothesis (multiple 68-d parameter sets yield equivalent DSI but vary in ATP
+cost). The framework also suggests follow-up tasks: PCA of the Pareto front to test the
+1-d-manifold prediction, and ParTI on the population of valid DSGC models to infer whether DSI
+and ATP cost are the only relevant tasks or whether additional latent objectives (e.g.
+robustness) are needed.
+
+</details>
+
+<details>
+<summary>📖 <strong>Updated Energy Budgets for Neural Computation in the Neocortex
+and Cerebellum</strong> — Howarth et al., 2012</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_jcbfm.2012.35` |
+| **Authors** | Clare Howarth, Padraig Gleeson, David Attwell |
+| **Venue** | Journal of Cerebral Blood Flow & Metabolism (journal) |
+| **DOI** | `10.1038/jcbfm.2012.35` |
+| **URL** | https://journals.sagepub.com/doi/10.1038/jcbfm.2012.35 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1038_jcbfm.2012.35/summary.md) |
+
+Howarth, Gleeson and Attwell (2012) revise the two most-cited bottom-up energy budgets for
+mammalian grey matter -- Attwell and Laughlin (2001) for neocortex and Howarth et al. (2010)
+for cerebellum -- in light of new mammalian measurements showing that action potentials are
+far more energy-efficient than the squid-axon work of Hodgkin (1975) suggested. The research
+question is narrow but consequential: when the Na+/K+ temporal-overlap factor drops from 4 to
+roughly 1-2, what fraction of grey-matter signalling ATP actually goes into spiking, and how
+does the rest redistribute?
+
+The methodology is analytical ATP accounting, not numerical simulation. Each subcellular
+process is reduced to an ion flux, ion fluxes are converted to ATP via Na+/K+-ATPase
+stoichiometry (1 ATP per 3 Na+), and per-cell totals are weighted by published cell-class
+densities to reach grey-matter rates. Cell-type-specific overlap factors are taken from the
+new mammalian measurements: **1.24** for cortical pyramidal neurons (Carter and Bean 2009),
+**2** for Purkinje and other large cerebellar cells, **1.3** for mossy and climbing fibres
+(Alle et al. 2009), and **1.04** for cerebellar granule cells (Sengupta et al. 2010). A
+supplementary interactive spreadsheet exposes every parameter for reuse.
+
+The headline finding is a major redistribution of the cortical budget: the action-potential
+fraction drops from **47% to 21%**, postsynaptic receptors rise from **34% to 50%** and become
+the dominant cost, and total predicted signalling consumption falls from **30 to 20.4 micromol
+ATP/g/min**. The cerebellar budget shifts similarly: APs drop from **36% to 17%**, resting
+potentials rise from **42% to 54%**, and total falls from **16.5 to 12.8 micromol ATP/g/min**.
+Purkinje cells consume only **15%** of cerebellar signalling ATP despite their size, because
+granule cells outnumber them 274-fold and consume **67%**.
+
+For t0124, this paper provides the calibrated literature anchor needed by
+`compare_literature.md`. The original t0124 plan referenced the Attwell-Laughlin 2001 "47% of
+signalling ATP per spike" figure, but that number was superseded by **21%** for cortex and
+**17%** for cerebellum in the present paper. Howarth per-cell value for a Purkinje cell --
+**8.19 x 10^9 ATP/s** under 1.24-2-style overlap factors -- and the recipe used to derive it
+are directly cross-comparable with t0124 per-spike `(1/3)(1/e) integral I_Na^inward` cost,
+allowing the Pareto front location on the per-spike-ATP axis to be interpreted against a
+published, peer-reviewed band. The 17-21% signalling-ATP-per-spike fraction is also robust to
+a 54% change in the assumed overlap factor, so it provides a defensible anchor regardless of
+how exactly the DSGC overlap factor is treated.
+
+</details>
+
+<details>
+<summary>📖 <strong>State and location dependence of action potential metabolic cost
+in cortical pyramidal neurons</strong> — Hallermann et al., 2012</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1038_nn.3132` |
+| **Authors** | Stefan Hallermann, Christiaan P. J. de Kock, Greg J. Stuart, Maarten H. P. Kole |
+| **Venue** | Nature Neuroscience (journal) |
+| **DOI** | `10.1038/nn.3132` |
+| **URL** | https://doi.org/10.1038/nn.3132 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`patch-clamp`](../meta/categories/patch-clamp/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1038_nn.3132/summary.md) |
+
+Hallermann, de Kock, Stuart and Kole ask a structural question about brain energy: where,
+inside a cortical pyramidal neuron, does the action-potential ATP budget actually go, and what
+controls the local energy efficiency at each site. Prior to this study, whole-cell estimates
+from Sengupta et al. and Attwell and Laughlin treated the AP as a single number per spike;
+Hallermann et al. break that number open into its compartmental contributions and link the
+local inefficiency to a single, measurable property of the local waveform.
+
+Methodologically, they combine direct patch-clamp recordings from soma, AIS, axon proper and
+nodes of Ranvier in rat neocortical pyramidal cells with a NEURON-based compartmental
+simulation. The recorded and simulated AP waveforms are converted into a Na(+)/K(+)
+charge-overlap ratio (alpha) that quantifies how much Na(+) entry is "wasted" by simultaneous
+K(+) outflow -- and thus how much ATP the Na(+)/K(+) pump must subsequently expend to restore
+the ion gradients. The voltage-state dependence of alpha is then tested by varying the resting
+membrane potential, and the per-compartment alpha values from the model are integrated to
+recover the whole-cell ATP per spike and the share attributable to each compartment.
+
+The headline findings are that AP initiation in the AIS and forward propagation along the axon
+are energetically inefficient (alpha > 1, voltage-state dependent), whereas dendritic
+backpropagation is efficient (alpha near 1). Per unit area, the AIS and the nodes of Ranvier
+are the costliest compartments; per cell, the dendrites and axon collaterals dominate the ATP
+budget because of their much larger membrane area. Crucially, the elevated cost of AP
+initiation is presented not as a defect but as the biophysical price the cell pays for
+reliable high-frequency firing.
+
+For task `t0124`, this paper is directly testable on the top-N NSGA-II Pareto cells: we can
+extract per-compartment alpha from each optimised cell, check whether AIS alpha > dendritic
+alpha as Hallermann predicts, and use the alpha distribution as a literature-grounded
+biological plausibility filter on the Pareto front. The Hallermann paper is in this sense the
+natural spatial companion to Sengupta 2010's whole-cell ATP recipe already in use in this
+project: Sengupta gives us a single ATP-per-spike number for the cell, Hallermann tells us
+what that number must look like when broken down by subcellular compartment, and ModelDB
+144526 provides the reference NEURON implementation of the metric.
+
+</details>
+
+<details>
+<summary>📖 <strong>Sodium Entry during Action Potentials of Mammalian Neurons:
+Incomplete Inactivation and Reduced Metabolic Efficiency in Fast-Spiking
+Neurons</strong> — Carter & Bean, 2009</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `10.1016_j.neuron.2009.12.011` |
+| **Authors** | Brett C. Carter, Bruce P. Bean |
+| **Venue** | Neuron (journal) |
+| **DOI** | `10.1016/j.neuron.2009.12.011` |
+| **URL** | https://www.cell.com/neuron/fulltext/S0896-6273(09)01001-0 |
+| **Date added** | 2026-05-25 |
+| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`patch-clamp`](../meta/categories/patch-clamp/) |
+| **Added by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Full summary** | [`summary.md`](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1016_j.neuron.2009.12.011/summary.md) |
+
+Carter and Bean address a longstanding gap between the Hodgkin-Huxley squid-axon prediction of
+~4-fold-excess Na+ entry per action potential and the actual per-spike metabolic cost of
+mammalian central neurons. They use a same-cell paired current-clamp + voltage-clamp protocol
+with TTX subtraction at physiological temperature (37 °C) to directly measure integrated
+TTX-sensitive Na+ charge during native action potentials in four cell classes: cortical
+pyramidal, cerebellar Purkinje, CA1 hippocampal pyramidal, and cortical parvalbumin+
+basket-cell interneurons.
+
+The key methodological move is the "sodium entry ratio" -- total Na+ charge per spike divided
+by the theoretical minimum (CΔV) needed to swing the membrane through the AP's voltage range.
+A ratio of 1.0 means perfect Na+/K+ temporal segregation (no overlap during the falling
+phase). A second method comparing total Na+ entry to rising-phase Na+ entry produced nearly
+identical results and enabled a cross-waveform experiment in which each cell type's AP was
+replayed into every other cell type, decoupling the AP-shape contribution from the
+channel-kinetics contribution.
+
+Cortical pyramidal cells achieved 1.24 ± 0.29; Purkinje cells 2.00 ± 0.61; cortical
+interneurons 1.98 ± 0.55; CA1 pyramidal 1.62 ± 0.67. Across all 28 neurons, spike width and
+sodium entry ratio were inversely correlated (Spearman ρ = -0.48, p = 0.012). The
+cross-waveform experiment showed that this correlation is driven by AP shape, not
+cell-type-specific channel kinetics: narrow spikes prevent complete Na+ channel inactivation
+during the falling phase, allowing extra Na+ influx while driving force is still high. The
+mechanism is mediated by Kv3 potassium channels: their fast activation produces narrow spikes
+that enable sustained high-frequency firing but double the per-spike metabolic load.
+
+For this project, Carter-Bean 2009 is the load-bearing calibration benchmark for the t0123 /
+t0124 ATP-per-spike recipe. The canonical Bed B DSGC's AIS-segregated per-AP per-cm Na+ cost
+must land within ±30% of one of Carter-Bean's reference cell types (Purkinje for the
+fast-spiking comparator; pyramidal for the slow comparator). The Pareto front t0124 produces
+over DSI vs ATP-per-spike is then interpretable in Carter-Bean coordinates: high-DSI cells
+with narrow somatic APs should pay a Purkinje-style overlap penalty, while broad-AP cells
+should fall on the pyramidal-style efficiency end. This anchors the project's per-spike
+metabolic-cost objective to a falsifiable empirical reference rather than a free parameter,
+fulfilling REQ-14 of the t0123 / t0124 plan and the project's biological-plausibility
+constraint.
+
+</details>
 
 <details>
 <summary>📖 <strong>Noisy evolutionary optimization algorithms – A comprehensive
@@ -950,360 +1287,7 @@ larger population (not more seeds) is a principled next lever.
 
 </details>
 
-<details>
-<summary>📝 <strong>Adaptive Resampling with Bootstrap for Noisy Multi-Objective
-Optimization Problems</strong> — Budszuhn et al., 2025</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.48550_arXiv.2503.21495` |
-| **Authors** | Timo Budszuhn, Mark Joachim Krallmann, Daniel Horn |
-| **Venue** | arXiv preprint (preprint) |
-| **DOI** | `10.48550/arXiv.2503.21495` |
-| **URL** | https://arxiv.org/abs/2503.21495 |
-| **Date added** | 2026-05-11 |
-| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
-| **Added by** | [`t0102_seedscale_n4_gen20`](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
-| **Full summary** | [`summary.md`](../tasks/t0102_seedscale_n4_gen20/assets/paper/10.48550_arXiv.2503.21495/summary.md) |
-
-Budszuhn, Krallmann, and Horn study the resource-allocation problem at the heart of noisy
-multi-objective optimization: every evaluation either explores a new candidate or sharpens an
-existing estimate, and the algorithm must decide which without knowing the noise distribution.
-Their target is NSGA-II, an elitist algorithm that is particularly damaged by overestimated
-points. Prior work either fixes a static number of evaluations per point, uses rank or
-variance heuristics, or assumes Gaussian noise to estimate a probability of dominance. None of
-these adapt to unknown noise shape.
-
-The authors' contribution is Adaptive Resampling with Bootstrap (ARB), a sequential decision
-function that bootstraps the sample-mean distribution at each point, estimates the probability
-of dominating any current Pareto-front member from 100 paired bootstrap draws, and triggers
-resampling only when that probability lies in a tunable window (alpha_l, alpha_u). To make the
-bootstrap work after a single observation, they maintain a population-level pool E of the 100
-most recent scaled residuals and mix global draws with point-local draws, weighting the local
-component more heavily as N grows. The full evaluation uses UPC benchmark functions with
-Gaussian and chi-squared noise at six standard deviations, NSGA-II popSize 40, and 30
-replications of 50,000 evaluations per setting.
-
-ARB is the most flexible algorithm tested. With realistic pre-study parameter selection it
-ranks second across all noise regimes and significantly beats RTEA in **64.7 percent** of
-scenarios and the other dynamic NSGA-II resamplers in **71.0 percent**. The only competitor
-that wins overall is static N = 1 (no resampling), and only because chi-squared noise is
-one-sided bounded -- when overestimation is impossible, paying for resamples is pure waste.
-Under Gaussian noise, RTEA's strict elitism does well but is still beaten by ARB on average.
-The headline finding is therefore not "ARB is universally best" but "ARB is the only strategy
-that does not collapse on at least one noise type, because its decision rule is
-distribution-free".
-
-This paper matters for t0102 because the current DSGC compartmental-modelling pipeline fixes
-the number of stochastic-seed evaluations (N_SEEDS) statically per design point -- exactly the
-static N strategy the paper compares against. ARB is the natural candidate for a follow-up
-suggestion S-0102-NEW-01 that would replace that constant with an adaptive resampler driven by
-the probability of dominance over the running Pareto front of (loss, cost) or (loss,
-biological plausibility). Before adoption we must verify that DSGC noise is closer to Gaussian
-than to a bounded chi-squared shape -- if seed-to-seed loss variation is heavily right-skewed
-and one-sided, the paper's own results suggest static N might still be near-optimal and the
-engineering cost of ARB would not pay back. Heteroscedasticity across morphologies is also
-untested in the paper and must be checked empirically before any production switch.
-
-</details>
-
-<details>
-<summary>📝 <strong>A Complete Spatial Map of Mouse Retinal Ganglion Cells Reveals
-Density and Gene Expression Specializations</strong> — Budoff &
-Poleg-Polsky, 2025</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1101_2025.02.10.637538` |
-| **Authors** | Samuel A. Budoff, Alon Poleg-Polsky |
-| **Venue** | bioRxiv (preprint) |
-| **DOI** | `10.1101/2025.02.10.637538` |
-| **URL** | https://www.biorxiv.org/content/10.1101/2025.02.10.637538v1 |
-| **Date added** | 2026-05-11 |
-| **Categories** | [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../meta/categories/direction-selectivity/) |
-| **Added by** | [`t0102_seedscale_n4_gen20`](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) |
-| **Full summary** | [`summary.md`](../tasks/t0102_seedscale_n4_gen20/assets/paper/10.1101_2025.02.10.637538/summary.md) |
-
-Budoff and Poleg-Polsky (2025) present the first complete spatial atlas of all 45 mouse
-retinal ganglion cell subtypes. The motivation is direct: scRNA-seq has catalogued ~45 mouse
-RGC subtypes, but spatial mapping had reached only about 17 of them, leaving most of the
-population's retinal topography and any regional specialization unknown. The study asks where
-each genetically defined subtype lives, whether subtypes show local mosaic regularity, whether
-gene expression varies within a subtype as a function of retinal position, and how the mouse
-area retinae temporalis (ART) compares transcriptomically to the primate macula.
-
-Methodologically the paper combines four pieces: (1) en-face cryosectioning of intact
-ganglion-cell layers on 10X Genomics Xenium slides, (2) a custom 300-gene Xenium panel chosen
-by the GraSP neural-network-ensemble feature selector (225 unbiased genes plus 75 manually
-picked synaptic-protein and voltage-gated-channel genes), (3) Baysor Bayesian cell
-segmentation with Xenium nuclear priors, and (4) CuttleNet, a two-stage hierarchical deep
-neural network with a class "head" and dynamically routed subtype "tentacles" trained on
-integrated mouse scRNA-seq atlases. Five C57BL/6J retinas were imaged, IHC-stained with RBPMS
-and tomato lectin, and projected onto a normalized Cartesian retina aligned by the Opn1sw/mw
-opsin gradient. Local mosaicism was assessed with VDRI/NNRI/effective-radius statistics
-against bootstrap nulls; global clustering used Moran's I plus Kulldorff scan statistics and
-F1 overlap with ethologically relevant visual-field masks; DEGs were tested by ANOVA with
-multiple-comparison correction.
-
-The atlas reveals that about two-thirds of mouse RGC subtypes (29 of 45) tile the retina
-nearly uniformly, with the remaining third splitting into a ventral, sky-facing group and a
-dorso-temporal, ART-preferring group containing the α-RGC family and several intrinsically
-photosensitive RGC subtypes. Local mosaic regularity was confirmed for 18 of 26 well-sampled
-subtypes. Most known maps (αONS, αONT, αOFFS, W3, J-RGCs, M1/M2/M4/M5 ipRGCs) were reproduced,
-with the only material disagreement being a modest ventral-temporal peak for αOFFT (T45)
-instead of the previously reported uniform distribution. About 0.9% of gene x subtype
-combinations showed within-subtype regional DEGs, mostly along the sky-vs-ground axis; T6, T8,
-T14, T16, T17, and T36 carried the most DEGs. The mouse ART correlates weakly with the primate
-macula transcriptomically: voltage-gated sodium channel expression is positively correlated
-(driven by ventral Group-3 subtypes), while GABA and glycine receptors are anti-correlated.
-
-For this project, the paper provides three concrete deliverables. First, it pins the
-dorso-temporal location of the α-RGC family that is mechanistically closest to ON-OFF DSGCs,
-fixing the regional context in which the project's single-cell DSGC model lives. Second, the
-demonstration that voltage-gated sodium channel and GABA receptor gene expression varies
-within a subtype as a function of retinal position gives direct biological support to the
-project's core premise that systematic parametric exploration of Na/K conductance combinations
-is biologically realistic -- a single DSGC subtype is not a single biophysical operating
-point. Third, the divergence between the mouse ART and primate macula (especially for
-GABA/glycine receptors) warns against over-extrapolating any optimised mouse-DSGC model to
-primate central vision. This paper also confirms the Poleg-Polsky group's continued activity
-on mouse DSGC biology, which is relevant context for the de Rosenroll 2026 DSGC model that
-motivates this task.
-
-</details>
-
-<details>
-<summary>📖 <strong>The functional diversity of retinal ganglion cells in the
-mouse</strong> — Baden et al., 2016</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1038_nature16468` |
-| **Authors** | Tom Baden, Philipp Berens, Katrin Franke, Miroslav Román Rosón, Matthias Bethge, Thomas Euler |
-| **Venue** | Nature (journal) |
-| **DOI** | `10.1038/nature16468` |
-| **URL** | https://www.nature.com/articles/nature16468 |
-| **Date added** | 2026-05-11 |
-| **Categories** | [`direction-selectivity`](../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../meta/categories/retinal-ganglion-cell/) |
-| **Added by** | [`t0103_extract_baden_2016_ds_morphologies`](../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) |
-| **Full summary** | [`summary.md`](../tasks/t0103_extract_baden_2016_ds_morphologies/assets/paper/10.1038_nature16468/summary.md) |
-
-Baden, Berens, Franke, Roman Roson, Bethge, and Euler used dense two-photon calcium imaging of
-RGC somata in whole-mount mouse retina, combined with a standardised stimulus battery (chirp,
-moving bar, full-field, coloured, checkerboard) and unsupervised probabilistic clustering, to
-produce a near-saturating taxonomy of mouse RGC functional types. Across 11,210 cell
-recordings from 15 retinas, they identify a minimum of 32 RGC functional groups — nearly
-double the prior anatomical estimate of 15-20 — plus an additional ~17 displaced amacrine cell
-groups.
-
-The clustering strategy is methodologically important: rather than mixing direction-selective
-and non-DS cells in a single clustering pass, the authors first apply a permutation-based DS
-significance test (cell_dp < 0.05) and cluster the two subsets independently, then merge
-similar clusters back together with explicit evidence. This yields 24 DS clusters merged into
-8 DS- dominated groups (G2, G6, G12, G13, G16, G25, G26, G29) that account for 70% of all
-1,757 DS cells. They confirm cluster identities via independent juxtacellular
-electrophysiology with biocytin fills, immunohistochemistry for known markers (GAD67, SMI-32,
-melanopsin), and genetic labels in PV-Cre and Pcp2 transgenic lines. Cluster quality is high
-for major groups (median posterior > 0.9) and coverage factors typically cluster around 1,
-supporting interpretation as single types.
-
-The paper's primary results are quantitatively striking. Of 11,210 imaged GCL somata, 7,982
-were RGCs; the remaining cells were displaced amacrines or unclassifiable. Of the RGCs, 1,757
-(35%) were direction-selective at the cell_dp < 0.05 significance threshold. The 32 RGC groups
-break down into 9 OFF + 12 ON + 3 ON-OFF non-DS groups and 2 OFF + 4 ON + 2 ON-OFF DS groups.
-Cluster posterior quality exceeds 0.9 for the major groups, coverage factors cluster around 1
-for most groups, and biocytin morphologies in a 245-cell validation subset confirm
-cluster-to-morphology correspondence for the classical alpha, JAM-B, and ON-OFF DS types.
-
-For this project, the Baden 2016 paper and the accompanying Dryad release define the canonical
-reference dataset for direction-selective RGC properties in the mouse retina. The 8
-DS-containing groups, their cluster-mean moving-bar responses, IPL stratification depths, and
-scalar indices (DSi, OSi, response quality) are the targets that any DSGC compartmental
-simulation in this project must match. The per-cell traces enable construction of
-biologically-grounded parameter envelopes for the t0090 morphology generator and validation
-distributions for the t0102 joint-pass corner. The principal limitation is that morphological
-reconstructions are not provided for the bulk of recorded cells — DS-cell morphologies for
-downstream modelling must be sourced from a complementary paper such as Bae et al. 2018 or Ran
-et al. 2020. The cell-level reconciliation of the user- supplied cluster IDs `[2, 17, 18, 19,
-22, 35, 36, 40]` against the authoritative paper taxonomy is recorded in
-`code/visualization_code_notes.md`; only G2 from the user list is in the paper's DS-group set,
-which is documented as a blocking intervention in `intervention/cluster_id_mismatch.json`.
-
-</details>
-
-<details>
-<summary>📖 <strong>BluePyOpt: Leveraging Open Source Software and Cloud
-Infrastructure to Optimise Model Parameters in Neuroscience</strong> —
-Geit et al., 2016</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.3389_fninf.2016.00017` |
-| **Authors** | Werner Van Geit, Michael Gevaert, Giuseppe Chindemi, Christian Rossert, Jean-Denis Courcol, Eilif B. Muller, Felix Schurmann, Idan Segev, Henry Markram |
-| **Venue** | Frontiers in Neuroinformatics (journal) |
-| **DOI** | `10.3389/fninf.2016.00017` |
-| **URL** | https://www.frontiersin.org/articles/10.3389/fninf.2016.00017/full |
-| **Date added** | 2026-05-08 |
-| **Categories** | [`compartmental-modeling`](../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/) |
-| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.3389_fninf.2016.00017/summary.md) |
-
-This Technology Report introduces BluePyOpt, a Python package developed at the Blue Brain
-Project to standardise the multi-objective evolutionary optimisation of neuroscience models.
-The motivation is that while stochastic search methods like genetic algorithms and CMA-ES have
-proven effective for fitting compartmental neuron models, configuring them correctly remains a
-domain expertise problem that excludes most neuroscientists from the technique. BluePyOpt
-addresses this by providing a reusable object-oriented API and turn-key cloud-deployment
-scripts, lowering the barrier so that a working optimisation can be expressed in a short
-Python script.
-
-The framework wraps DEAP for the evolutionary algorithms (IBEA, NSGA-II, CMA-ES, PSO), NEURON
-for electrophysiological simulation, and eFEL for feature extraction. Its core abstraction is
-a clean separation between an `Optimisation` (the search algorithm), an `Evaluator` (the
-parameter-to- objective mapping), and an `ephys` model layer (`CellModel`, `Morphology`,
-`Mechanism`, `Protocol`, `Stimulus`, `Recording`, `eFELFeature`, `SingletonObjective`,
-`ObjectivesCalculator`). Distance- dependent ion-channel distributions, parameter freezing,
-holding currents, and back-propagating- AP protocols are all first-class API objects.
-Parallelisation is handled by user-supplied `map` functions (Python, multiprocessing, SCOOP,
-MPI4Py); Ansible playbooks automate AWS, Vagrant, and cluster deployment.
-
-The paper validates the framework on three representative use cases. A single-compartment
-Hodgkin-Huxley fit converges in 4 minutes on one CPU. A 18-parameter, 31-feature optimisation
-of a layer-5 pyramidal cell reproduces the published Markram et al. 2015 model in
-approximately 4 hours on 50 cores, recovering a diverse hall-of-fame of equally good
-solutions. A 9-parameter calcium-based STDP model is fit to LTP/LTD curves from Nevian and
-Sakmann (2006), demonstrating that the framework is not restricted to voltage-trace fitting.
-
-For this project, BluePyOpt is the methodology backbone of the parameter-optimisation work.
-The paper is the canonical citation for the project's chosen optimisation toolchain, sitting
-alongside Druckmann et al. (2007) and Hay et al. (2011) as the methodological core. It
-directly specifies the recommended adoption pattern: encode each project objective (DSI
-matching, target firing rates, EPSP/IPSP amplitudes) as an `eFELFeature` plus
-`SingletonObjective`, package the model as a `CellModel` with `Protocol` per stimulus
-condition, and run IBEA or NSGA-II via DEAP. The L5PC compute budget and the reported
-non-uniqueness of solutions also set practical expectations for this project's own
-optimisation runs and for how to interpret their output as a population of
-electrophysiological regimes rather than a single best individual.
-
-</details>
-
-<details>
-<summary>📖 <strong>Entropy and Information in Neural Spike Trains</strong> — Strong
-et al., 1998</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1103_PhysRevLett.80.197` |
-| **Authors** | Steven P. Strong, Roland Koberle, Rob R. de Ruyter van Steveninck, William Bialek |
-| **Venue** | Physical Review Letters (journal) |
-| **DOI** | `10.1103/PhysRevLett.80.197` |
-| **URL** | https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.80.197 |
-| **Date added** | 2026-05-08 |
-| **Categories** | — |
-| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1103_PhysRevLett.80.197/summary.md) |
-
-Strong, Koberle, de Ruyter van Steveninck, and Bialek address a foundational question in
-sensory neuroscience: how much information about a time-varying stimulus does a single neuron
-spike train actually transmit, and in particular, does the precise timing of spikes (down to
-millisecond resolution) contribute, or is the relevant variable just the firing rate? The
-paper scope is deliberately model-free — it refuses to assume any particular decoding scheme
-or hypothesized feature of the code (rate, ISI, bursts, latency) — and instead grounds the
-measurement in Shannon mutual information.
-
-The core methodology is the "direct method." The spike train is discretized at resolution
-`Δτ`, windowed into binary words of length `T`, and the empirical word distribution gives a
-naive plug-in entropy. Three innovations make this practical at finite sample sizes: a
-polynomial extrapolation `S_0 + S_1/size + S_2/size^2` to infinite data, the Ma
-coincidence-based lower bound stratified by spike count, and a linear extrapolation of
-`S(T)/T` versus `1/T` to recover the entropy rate. Information rate is then the difference of
-total spike-train entropy and noise entropy `R_info = S - N`, where the noise entropy is
-computed from many repeats of the same stimulus. The crossover where the naive estimate drops
-below the Ma bound provides a hard diagnostic for when sampling becomes unreliable.
-
-Applied to H1 in the fly visual system under random-walk motion stimuli, the method yields `S
-= 157 ± 3 bits/s` and `R_info = 78 ± 5 bits/s` at `Δτ = 3 ms`, equivalent to **1.8 ± 0.1
-bits/spike** and roughly **50% efficiency**. Information rates reach **~90 bits/s** at the
-finest resolution. Across a 400-fold sweep of time resolutions (`2 ms ≤ Δτ ≤ 800 ms`),
-efficiency stays approximately constant — the model-free signature that fine spike timing is
-genuinely encoding information. A reanalysis of monkey V1 data shows that the method works on
-mammalian central neurons with as little as 3 minutes of recording.
-
-For the t0097 multi-objective optimization task, this paper is the foundational citation
-underlying the information-theoretic objective category. It supplies the concrete
-computational recipe — discretize into binary words, count word frequencies, extrapolate to
-infinite data, subtract noise entropy estimated across repeats — for computing the
-**information transmission rate (ITR)** of a simulated DSGC spike train. The practical
-implications are: (i) the simulation protocol must support many repeated trials at fixed
-stimulus to estimate `N(Δτ)`; (ii) ITR should be reported across a sweep of `Δτ` so the
-efficiency curve can be inspected; (iii) the Ma lower bound and the `1/size`-extrapolation are
-essential sanity checks that should be implemented alongside the naive estimator; and (iv) a
-target efficiency in the 30-50% range with information per spike of order 1-2 bits/spike is a
-reasonable biological sanity-check range for the optimised DSGC model.
-
-</details>
-
-<details>
-<summary>📖 <strong>Action Potential Energy Efficiency Varies Among Neuron Types in
-Vertebrates and Invertebrates</strong> — Sengupta et al., 2010</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `10.1371_journal.pcbi.1000840` |
-| **Authors** | Biswa Sengupta, Martin Stemmler, Simon B. Laughlin, Jeremy E. Niven |
-| **Venue** | PLOS Computational Biology (journal) |
-| **DOI** | `10.1371/journal.pcbi.1000840` |
-| **URL** | https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000840 |
-| **Date added** | 2026-05-08 |
-| **Categories** | [`voltage-gated-channels`](../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../meta/categories/compartmental-modeling/) |
-| **Added by** | [`t0097_multi_obj_optim`](../overview/tasks/task_pages/t0097_multi_obj_optim.md) |
-| **Full summary** | [`summary.md`](../tasks/t0097_multi_obj_optim/assets/paper/10.1371_journal.pcbi.1000840/summary.md) |
-
-Sengupta, Stemmler, Laughlin and Niven (2010) ask whether the per-action-potential energy cost
-of biological neurons is set by waveform alone, or whether the underlying ionic currents allow
-large cost differences hidden by similar AP shapes. They re-implement seven published
-Hodgkin-Huxley single-compartment models spanning the squid giant axon, a crab leg motor
-neuron, four mammalian neurons (mouse fast-spiking interneuron, rat hippocampal interneuron,
-rat cerebellar granule cell, mouse thalamo-cortical relay) and a honeybee Kenyon cell, and
-compare per-AP Na+ loads on a common, model-independent basis. The motivation is to establish
-a principled per-cell-type energy metric that can serve as a bottom-up calibration anchor for
-cortical energy budgets and for downstream modelers comparing their own neurons energy use to
-literature.
-
-The methodology is a deterministic single-compartment HH simulation driven by constant
-injected current to elicit repetitive firing, with per-AP Na+ load computed by integrating the
-inward Na+ current over one limit-cycle period. Cost is converted to ATP using the 3 Na+/ATP
-stoichiometry of the Na+/K+ pump. The authors then introduce a five-parameter constrained
-optimization (gNa, gK, tau_m, tau_h, tau_n) that combines a Nelder-Mead simplex with a
-Newton-method hill climber, enforcing AP existence by a hard penalty and AP height by a soft
-quadratic loss. Conductances and time constants are bounded to 30-400% of the original
-published values. The same optimization is run across six of the seven models, and the changes
-in parameters are compared.
-
-The headline result is that the per-AP Na+ load varies 17-fold across the seven models, while
-the capacitive-minimum Na+ load varies only 2.3-fold; the difference is almost entirely the
-overlap load, which has a linear correlation R^2 = 0.99 with the total Na+ load (slope ~ 1).
-Mammalian neurons (RG, RHI, MTCR) operate near the capacitive minimum (efficiency ~ 75-100%,
-alpha ~ 1.0-1.3), while the squid axon at 6.3 degrees C is profligate (efficiency 9%, alpha =
-11.2). Constrained optimization reduces the squid Na+ load 4.2-fold while leaving the mouse
-thalamo-cortical neuron essentially unchanged, confirming that mammalian APs already sit close
-to a local optimum. Optimized parameter changes vary qualitatively across models: each model
-has its own local energy valley.
-
-For this project, the paper is the canonical citation for the per-AP energy objective in the
-t0097 multi-objective optimization catalogue. The energy recipe `int(I_Na) dt / 3` (per
-compartment, per AP, in ATP molecules) is exactly what t0097 will report alongside the
-angle-tuning loss as a co-objective in the NSGA-II Pareto search. The Na+ overlap factor alpha
-is the natural normalized cost metric for cross-neuron comparison, and the mammalian alpha
-range of 1.0-1.5 calibrated here sets the realistic biological lower bound for any DSGC
-compartmental model. The model-dependence of optimal parameter changes also reinforces the
-project preference for a population-based ranking search (NSGA-II) over a one-shot template,
-since each DSGC morphology will see a different energy landscape under the joint angle-tuning
-+ energy objective.
-
-</details>
-
-*84 more papers → [papers](papers/)*
+*90 more papers → [papers](papers/)*
 
 ---
 
@@ -1324,10 +1308,11 @@ No models yet.
 
 ---
 
-## [Latest Predictions (18 total)](predictions/)
+## [Latest Predictions (19 total)](predictions/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [NSGA-II DSI vs ATP-per-Spike on Bed B + 14-d Morphology](../tasks\t0124_bedb_dsi_atp_per_spike_nsga2\assets\predictions\nsga2-dsi-atp-per-spike-bedb-morph\description.md) | [124](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | 2026-05-25 |
 | [NSGA-II Pareto front: MI vs ATP-per-spike on Bed B + 14-d morph](../tasks\t0123_bedb_mi_atp_per_spike_nsga2\assets\predictions\nsga2-mi-atp-per-spike-bedb-morph\description.md) | [123](../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | 2026-05-24 |
 | [NSGA-II Pareto front: DSI vs cytoplasm volume on Bed B + 14-d morph](../tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\predictions\nsga2-cytoplasm-volume-bedb-morph\description.md) | [122](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | 2026-05-24 |
 | [NSGA-II seed 9354 on 68-d Bed B + 14-d morphology, 2 directions, 55-gen run with HV-plateau auto-stop DISABLED (5th seed of S-0112-01 batch)](../tasks\t0115_seed9354_no_autostop\assets\predictions\t0115-bedb-morph-nsga2-seed9354\description.md) | [115](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | 2026-05-21 |
@@ -1337,9 +1322,8 @@ No models yet.
 | [NSGA-II seed 44 on 68-d Bed B + 14-d morphology, 2 directions, 300-gen target](../tasks\t0106_long_pdnd_nsga2_300gen\assets\predictions\nsga2-seed44-bedb-morph-2dir-300gen\description.md) | [106](../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | 2026-05-18 |
 | [8-direction polar re-evaluation of 10 sampled t0106 top-50 cells](../tasks\t0107_t0106_polar_8dir_recheck\assets\predictions\eight-dir-polar-recheck-top10-t0106\description.md) | [107](../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | 2026-05-18 |
 | [NSGA-II seed=55 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init, 2-objective DSI+PD, DSI silence guard)](../tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\assets\predictions\nsga2-seed55-bedb-morph-n4-gen20-2obj\description.md) | [104](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 2026-05-12 |
-| [NSGA-II seed=55 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init)](../tasks\t0102_seedscale_n4_gen20\assets\predictions\nsga2-seed55-bedb-morph-n4-gen20\description.md) | [102](../overview/tasks/task_pages/t0102_seedscale_n4_gen20.md) | 2026-05-12 |
 
-*8 more predictions → [predictions](predictions/)*
+*9 more predictions → [predictions](predictions/)*
 
 ---
 
@@ -1362,7 +1346,7 @@ No models yet.
 
 ---
 
-## [Cost Leaders (18 tasks with spend)](costs/)
+## [Cost Leaders (19 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
@@ -1377,4 +1361,4 @@ No models yet.
 | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | [`$1.99`](../tasks/t0112_t0106_seed77_replicate/results/costs.json) | 2026-05-19 21:50 |
 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`$1.59`](../tasks/t0086_robustness_cluster_bio_comparison/results/costs.json) | 2026-05-06 18:24 |
 
-*8 more tasks with spend → [tasks with spend](costs/)*
+*9 more tasks with spend → [tasks with spend](costs/)*

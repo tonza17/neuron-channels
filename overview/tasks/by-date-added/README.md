@@ -6,7 +6,7 @@
 
 ---
 
-## 2026-05-25 (1)
+## 2026-05-25 (2)
 
 ## ✅ Completed
 
@@ -367,26 +367,25 @@ rendering).
 
 </details>
 
-## 2026-05-24 (5)
-
-## ⏳ In Progress
-
 <details>
-<summary>⏳ 0124 — <strong>NSGA-II maximising DSI and minimising ATP-per-spike (Bed
+<summary>✅ 0124 — <strong>NSGA-II maximising DSI and minimising ATP-per-spike (Bed
 B + 14-d morph)</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0124_bedb_dsi_atp_per_spike_nsga2` |
-| **Status** | in_progress |
-| **Effective date** | 2026-05-24 |
+| **Status** | completed |
+| **Effective date** | 2026-05-25 |
 | **Dependencies** | [`t0024_port_de_rosenroll_2026_dsgc`](../../../overview/tasks/task_pages/t0024_port_de_rosenroll_2026_dsgc.md), [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0090_morphology_generator_diversity_test`](../../../overview/tasks/task_pages/t0090_morphology_generator_diversity_test.md), [`t0092_diagnose_morphology_generator_silence`](../../../overview/tasks/task_pages/t0092_diagnose_morphology_generator_silence.md), [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0106_long_pdnd_nsga2_300gen`](../../../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md), [`t0115_seed9354_no_autostop`](../../../overview/tasks/task_pages/t0115_seed9354_no_autostop.md), [`t0120_morph_generator_geometry_audit`](../../../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md), [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
 | **Expected assets** | 1 predictions, 1 answer |
 | **Source suggestion** | `S-0097-02` |
 | **Task types** | [`experiment-run`](../../../meta/task_types/experiment-run/), [`data-analysis`](../../../meta/task_types/data-analysis/), [`answer-question`](../../../meta/task_types/answer-question/) |
 | **Start time** | 2026-05-24T22:55:41Z |
+| **End time** | 2026-05-25T02:55:00Z |
+| **Step progress** | 15/15 |
 | **Task page** | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
 | **Task folder** | [`t0124_bedb_dsi_atp_per_spike_nsga2/`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/results/results_detailed.md) |
 
 # NSGA-II Maximising DSI and Minimising ATP-per-Spike
 
@@ -640,7 +639,37 @@ Implementation requirements (mirror t0123 exactly):
   Carter-Bean canonical value in the smoke-gate. S-0123-01 / S-0123-02 / S-0123-03 / S-0123-05
   remain as separate follow-ups.
 
+**Results summary:**
+
+> ---
+> spec_version: "2"
+> task_id: "t0124_bedb_dsi_atp_per_spike_nsga2"
+> date_completed: "2026-05-25"
+> status: "completed"
+> ---
+> **Results Summary — t0124 NSGA-II DSI vs ATP-per-Spike**
+>
+> **Summary**
+>
+> 68-d NSGA-II maximising silence-guarded DSI and minimising Sengupta 2010 ATP-per-spike, run
+> on
+> Vast.ai EPYC 7B13 with seed 6650, ran for **9 generations of 60** (operator_stop triggered
+> by
+> subagent session budget; cost watchdog never tripped) and produced a **5-cell Pareto front**
+> with
+> best legit DSI **0.882** at ATP **1.293e7 molecules/spike**, min ATP **2.11e6
+> molecules/spike** at
+> DSI **0.00**, and a bootstrap correlation r(DSI, ATP) = **+0.806 [0.716, 1.000]** on the
+> partial-front cohort — a Carter-Bean-style positive coupling that is suggestive but not
+> definitive
+> at n=5.
+>
+> **Metrics**
+>
+
 </details>
+
+## 2026-05-24 (4)
 
 ## ✅ Completed
 

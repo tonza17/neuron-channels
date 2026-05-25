@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-102 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **85 open** (15
-high, 59 medium, 11 low), **17 closed**.
+105 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **88 open** (15
+high, 62 medium, 11 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -610,6 +610,33 @@ experiments. Recommended task types: experiment-run, feature-engineering.
 </details>
 
 <details>
+<summary>📊 <strong>Carter-Bean narrow-AP Na/K-overlap test: AP-width vs ATP/spike
+on t0124 Pareto cells</strong> (S-0124-08)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-08` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1016_j.neuron.2009.12.011`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1016_j.neuron.2009.12.011/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The compare_literature analysis identifies AP-width extraction as the highest-priority
+follow-up for testing the Carter-Bean 2009 narrow-spike Na/K-overlap mechanism on t0124 data.
+comparator_report.json records ATP/AP/cm per cell but not AP half-width or rise/decay times.
+Per-compartment somatic Vm traces (FULL mode) are saved -- extracting AP half-width via Vm
+crossings at +/-half-peak on each detected spike is a one-off post-hoc step. Action: write
+extract_ap_width.py reading the somatic Vm trace per Pareto cell from cell_trace.jsonl, detect
+spikes via the existing -20 mV crossing + 2 ms refractory in atp_per_spike.py, compute
+half-width per AP, scatter median half-width vs ATP/spike across the front. Carter-Bean
+predicts a negative slope (narrower AP -> higher Na/K overlap -> higher ATP/spike). Coarse on
+n=5; tight on the S-0124-01 60-gen front. Local-CPU post-hoc. Recommended task types:
+data-analysis, answer-question.
+
+</details>
+
+<details>
 <summary>📊 <strong>Cell-767-anchored parameter-space pruning to identify well-tuned
 dims that can be clamped in future Bed B optimisation</strong> (S-0081-04)</summary>
 
@@ -964,6 +991,33 @@ than legacy DSI as the metric.
 </details>
 
 <details>
+<summary>📊 <strong>Hallermann 2012 per-compartment alpha decomposition on t0124
+Pareto cells</strong> (S-0124-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1038_nn.3132`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1038_nn.3132/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/) |
+
+t0124's compare_literature flagged the Hallermann 2012 prediction (AIS alpha 1.5-2.0 vs
+dendrite alpha 1.0-1.3, predicted positive delta 0.3-0.7) as NOT MEASURED because
+comparator_report.json aggregates only AIS ATP/AP/cm and a whole-cell signalling rate. The
+per-compartment seg.ina FULL-mode traces ARE saved (cell_trace.jsonl) -- the test requires a
+post-hoc decomposition of integral(I_Na^inward) per compartment-group divided by the
+analytically-computed capacitive-minimum Na+ entry per group. Action: write
+decompose_alpha_per_compartment.py reading cell_trace.jsonl, compute per-compartment alpha for
+the 5 Pareto cells plus any S-0124-01 cohort expansion, render a violin plot of (alpha_AIS -
+alpha_dendrite) per cell with the Hallermann 0.3-0.7 band overlaid. Falsifies if the delta is
+consistently negative or near zero. Recommended task types: data-analysis,
+comparative-analysis, answer-question.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Ih (HCN) conductance ablation sweep on t0024 distal dendrites to
 test h-current role in distal cable behaviour</strong> (S-0035-04)</summary>
 
@@ -1307,6 +1361,32 @@ distal AIS. Expected outcome: peak rate scales monotonically with Nav1.6 density
 inside 30-40 Hz at ~8 S/cm^2, matching Poleg-Polsky & Diamond 2016 and Oesch2005.
 Dependencies: t0022 library asset. Effort ~12 hours. Recommended task type: experiment-run,
 comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>NMDA vs Nav dichotomy on the high-DSI corner: is NMDA-driven DSI
+cheaper per spike than Nav-driven DSI?</strong> (S-0124-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-05` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1016_j.neuron.2009.12.011`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1016_j.neuron.2009.12.011/) |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Mechanistic prediction: NMDA-driven high-DSI cells should be cheaper per spike than Nav-driven
+ones because NMDA spikes are slower (smaller Na/K overlap) and Ca2+ ATPase costs ~1 ATP per 3
+Ca2+ vs Na/K ATPase's ~1 ATP per 3 Na+, with NMDA's ~3:1 Ca/Na ratio amplifying the advantage.
+If true, the Carter-Bean penalty applies only to the Nav-pathway DSI branch and the +0.806
+correlation hides an NMDA-cheap sub-front. Action: on the S-0124-01 60-gen output plus the
+t0124 partial front, extract per-cell (gnmda_dend, nav16_dend_distal, nav16_ais_proximal,
+nav16_ais_distal) from the 68-d vectors, define a NMDA-Nav balance axis = z(gnmda_dend) -
+z(nav16_dend_distal), and scatter it against ATP/spike conditioned on DSI > 0.5. Falsifies if
+NMDA-balance shows no negative correlation with ATP/spike on high-DSI cells. Local-CPU
+post-hoc on saved JSONs. Recommended task types: data-analysis, answer-question.
 
 </details>
 
