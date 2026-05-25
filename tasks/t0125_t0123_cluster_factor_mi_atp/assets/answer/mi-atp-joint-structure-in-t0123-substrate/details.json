@@ -1,0 +1,34 @@
+{
+  "spec_version": "2",
+  "answer_id": "mi-atp-joint-structure-in-t0123-substrate",
+  "question": "Does the 68-d substrate of the t0123 single-seed MI vs ATP-per-spike NSGA-II run admit a joint MI x ATP latent factor (|r| > 0.30 on both metrics simultaneously), or are MI and ATP driven by decoupled factors?",
+  "short_title": "MI and ATP are driven by decoupled factors in the t0123 substrate (zero joint factors)",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "voltage-gated-channels"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1371_journal.pcbi.0020094",
+    "10.1038_nn1352",
+    "10.1038_nrn1949",
+    "10.1371_journal.pcbi.1000840",
+    "10.1103_PhysRevLett.80.197",
+    "10.1523_jneurosci.5346-03.2004"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0123_bedb_mi_atp_per_spike_nsga2",
+    "t0117_pooled_pca_cluster_factor_all_cells_4_seeds",
+    "t0116_pooled_pca_cluster_factor_dsi07_pd10",
+    "t0108_t0106_cluster_factor_dsi05_pd10"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0125_t0123_cluster_factor_mi_atp",
+  "date_created": "2026-05-25"
+}

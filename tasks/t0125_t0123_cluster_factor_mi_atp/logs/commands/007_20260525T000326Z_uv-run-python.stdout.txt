@@ -1,0 +1,7 @@
+Loading t0123 predictions from C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0123_bedb_mi_atp_per_spike_nsga2\assets\predictions\nsga2-mi-atp-per-spike-bedb-morph\files\predictions.jsonl.gz
+  raw_count = 5760
+  dedup_unique_count = 5760
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\data\t0125_cells.parquet (n_rows=5760)
+  spiking_cohort_count = 3125
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\data\t0125_spiking_cells.parquet (n_rows=3125)
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\data\pool_counts.csv

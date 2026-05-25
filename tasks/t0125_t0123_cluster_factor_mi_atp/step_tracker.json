@@ -1,0 +1,140 @@
+{
+  "task_id": "t0125_t0123_cluster_factor_mi_atp",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0125_t0123_cluster_factor_mi_atp branch from main and plan steps.",
+      "status": "completed",
+      "started_at": "2026-05-24T23:06:00Z",
+      "completed_at": "2026-05-24T23:09:38Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0108, t0116, t0117, t0123 dependencies are completed.",
+      "status": "completed",
+      "started_at": "2026-05-24T23:10:09Z",
+      "completed_at": "2026-05-24T23:11:03Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task folder structure.",
+      "status": "completed",
+      "started_at": "2026-05-24T23:11:24Z",
+      "completed_at": "2026-05-24T23:12:42Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Review papers in corpus related to MI / ATP / cluster + factor analysis methodology for neurons.",
+      "status": "completed",
+      "started_at": "2026-05-24T23:13:00Z",
+      "completed_at": "2026-05-24T23:31:25Z",
+      "log_file": "logs\\steps\\004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: pure internal data-analysis task on t0123 predictions; no new external info needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review t0108 / t0116 / t0117 cluster + factor analysis code as the template; review t0123 predictions schema.",
+      "status": "completed",
+      "started_at": "2026-05-24T23:32:33Z",
+      "completed_at": "2026-05-24T23:45:19Z",
+      "log_file": "logs\\steps\\006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Design implementation plan for the cluster + factor pipeline adapted to MI / ATP axes.",
+      "status": "completed",
+      "started_at": "2026-05-24T23:45:37Z",
+      "completed_at": "2026-05-24T23:54:29Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: CPU-only local analysis, no remote machines needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Implement the loader, PCA / KMeans / FA pipeline, group comparisons, ATP compartment breakdown, charts, and the 4 answer assets.",
+      "status": "completed",
+      "started_at": "2026-05-24T23:55:46Z",
+      "completed_at": "2026-05-25T00:42:37Z",
+      "log_file": "logs\\steps\\009_implementation/"
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines were set up.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: analysis pipeline is canonical and well-defined; no alternative approaches required.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json (zero), and ensure all charts embedded.",
+      "status": "completed",
+      "started_at": "2026-05-25T00:43:21Z",
+      "completed_at": "2026-05-25T00:52:16Z",
+      "log_file": "logs\\steps\\012_results/"
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare MI-ATP joint-factor finding to t0117's DSI-PD truncated-cohort artefact result.",
+      "status": "completed",
+      "started_at": "2026-05-25T00:52:34Z",
+      "completed_at": "2026-05-25T00:59:18Z",
+      "log_file": "logs\\steps\\013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions from the cluster + factor + group-comparison findings.",
+      "status": "completed",
+      "started_at": "2026-05-25T00:59:49Z",
+      "completed_at": "2026-05-25T01:09:13Z",
+      "log_file": "logs\\steps\\014_suggestions/"
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task completed.",
+      "status": "completed",
+      "started_at": "2026-05-25T01:09:37Z",
+      "completed_at": "2026-05-25T01:11:41Z",
+      "log_file": "logs\\steps\\015_reporting/"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "name": "Cluster + factor analysis of t0123 cells: high vs low MI and ATP",
   "short_description": "PCA + KMeans on electrophys (54-d) and morphology (14-d) + varimax FA on 68-d for t0123 cells; quartile-group comparisons of high vs low MI and high vs low ATP-per-spike.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0108_t0106_cluster_factor_dsi05_pd10",
     "t0116_pooled_pca_cluster_factor_dsi07_pd10",
@@ -13,7 +13,7 @@
     "t0123_bedb_mi_atp_per_spike_nsga2"
   ],
   "start_time": "2026-05-24T23:02:37Z",
-  "end_time": null,
+  "end_time": "2026-05-25T01:12:00Z",
   "expected_assets": {
     "answer": 4
   },

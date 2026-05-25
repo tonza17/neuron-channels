@@ -1,0 +1,4 @@
+Group sizes: high_mi=819, low_mi=1024, high_atp=782, low_atp=782
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\data\group_comparison.csv (n_rows=68)
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\cliffs_delta_high_vs_low_mi.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\cliffs_delta_high_vs_low_atp.png

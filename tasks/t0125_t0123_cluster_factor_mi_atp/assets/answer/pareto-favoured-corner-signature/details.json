@@ -1,0 +1,31 @@
+{
+  "spec_version": "2",
+  "answer_id": "pareto-favoured-corner-signature",
+  "question": "Which combination of electrophys + morphology parameters most distinguishes the Pareto-favoured corner (high MI, low ATP) from the Pareto-dominated corner (low MI, high ATP) in the t0123 substrate, and what are the per-corner cell counts and means?",
+  "short_title": "Pareto-favoured corner: low KDR / low CV / low BK / low IH / high axial resistance (1221 cells vs 1220 in dominated corner)",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "voltage-gated-channels",
+    "dendritic-computation"
+  ],
+  "answer_methods": [
+    "code-experiment",
+    "papers"
+  ],
+  "source_paper_ids": [
+    "10.1371_journal.pcbi.1002107",
+    "10.3389_neuro.01.1.1.001.2007",
+    "10.1038_nature16468"
+  ],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0123_bedb_mi_atp_per_spike_nsga2",
+    "t0125_t0123_cluster_factor_mi_atp",
+    "t0117_pooled_pca_cluster_factor_all_cells_4_seeds"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0125_t0123_cluster_factor_mi_atp",
+  "date_created": "2026-05-25"
+}

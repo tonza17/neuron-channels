@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0125_t0123_cluster_factor_mi_atp",
+  "command": "uv run python -m arf.scripts.verificators.verify_compare_literature t0125_t0123_cluster_factor_mi_atp",
+  "exit_code": 0,
+  "duration_seconds": 0.804,
+  "started_at": "2026-05-25T00:58:20Z",
+  "completed_at": "2026-05-25T00:58:21Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0125_t0123_cluster_factor_mi_atp",
+  "stdout_file": "026_20260525T005820Z_uv-run-python.stdout.txt",
+  "stderr_file": "026_20260525T005820Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

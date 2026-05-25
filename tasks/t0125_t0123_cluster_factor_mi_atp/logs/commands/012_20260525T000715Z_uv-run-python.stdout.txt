@@ -1,0 +1,25 @@
+Running KMeans on 54-d electrophys submatrix, shape=(5760, 54)
+
+KMeans sweep (k in (3, 4, 5, 6, 7)):
+  k=3: silhouette=0.0814, inertia=261854.34
+  k=4: silhouette=0.0834, inertia=250845.71
+  k=5: silhouette=0.0760, inertia=244779.78
+  k=6: silhouette=0.0732, inertia=239104.58
+  k=7: silhouette=0.0529, inertia=233472.02
+Headline k=4, silhouette=0.0834
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\images\electrophys_silhouette.png
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\data\electrophys_clusters.csv (n_rows=5760)
+
+Cluster sizes:
+cluster_id
+0    2117
+1    1021
+2    1846
+3     776
+
+Per-cluster means:
+ cluster_id  mi_count_bits  atp_per_spike_molecules  dsi_vector_sum  pd_rate_hz  n_cells
+          0       0.647307             1.778186e+07        0.157827    4.449018     2117
+          1       0.022548             1.552272e+09        0.005693    5.457535     1021
+          2       0.038087             2.338884e+07        0.018125    2.248878     1846
+          3       0.217554             7.176611e+08        0.050677    7.366225      776

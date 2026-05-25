@@ -1,0 +1,5 @@
+Loaded 3125 spiking cells
+  MI: q1=0.0000, med=0.5646, q3=0.9643
+  ATP: q1=5.301e+06, med=6.547e+06, q3=1.243e+07
+Wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results\data\group_thresholds.json
+  corner_counts: {'high_mi_low_atp': 1221, 'high_mi_high_atp': 343, 'low_mi_low_atp': 341, 'low_mi_high_atp': 1220} (sum=3125 == spiking_cohort_count=3125)

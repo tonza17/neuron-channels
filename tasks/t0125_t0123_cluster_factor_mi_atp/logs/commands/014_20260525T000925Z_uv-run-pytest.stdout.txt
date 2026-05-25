@@ -1,0 +1,16 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 6 items
+
+tasks/t0125_t0123_cluster_factor_mi_atp/code/test_effect_sizes.py::test_cliffs_delta_x_all_less PASSED [ 16%]
+tasks/t0125_t0123_cluster_factor_mi_atp/code/test_effect_sizes.py::test_cliffs_delta_x_all_greater PASSED [ 33%]
+tasks/t0125_t0123_cluster_factor_mi_atp/code/test_effect_sizes.py::test_cliffs_delta_identical PASSED [ 50%]
+tasks/t0125_t0123_cluster_factor_mi_atp/code/test_effect_sizes.py::test_cliffs_delta_ties_only PASSED [ 66%]
+tasks/t0125_t0123_cluster_factor_mi_atp/code/test_effect_sizes.py::test_cliffs_delta_partial_overlap PASSED [ 83%]
+tasks/t0125_t0123_cluster_factor_mi_atp/code/test_effect_sizes.py::test_cliffs_delta_known_negative PASSED [100%]
+
+============================== 6 passed in 0.27s ==============================
