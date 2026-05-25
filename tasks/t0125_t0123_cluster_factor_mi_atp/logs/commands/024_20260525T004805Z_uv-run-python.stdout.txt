@@ -1,0 +1,10 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0125_t0123_cluster_factor_mi_atp\tasks\t0125_t0123_cluster_factor_mi_atp\results
+
+[31m[1mERRORS:[0m
+[31m  TR-E020 error: ## Examples section contains no fenced code blocks — examples must show actual inputs and outputs in code blocks[0m
+
+[33m[1mWARNINGS:[0m
+[33m  TR-W014 warning: ## Examples section has 0 examples (bullets, code blocks, numbered items), minimum is 10[0m
+
+[31m[1mFAILED[0m — 1 error(s), 1 warning(s)
