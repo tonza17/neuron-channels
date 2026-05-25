@@ -1,0 +1,107 @@
+{
+  "n_top_cells": 5,
+  "n_pareto": 5,
+  "n_legit": 5,
+  "carter_bean_per_cell": [
+    {
+      "measured_atp_per_ap_per_cm": 239552494.69363293,
+      "fold_difference_vs_gmean": 1.3200771147103523,
+      "within_band": true,
+      "label": "within_band"
+    },
+    {
+      "measured_atp_per_ap_per_cm": 494028265.4349127,
+      "fold_difference_vs_gmean": 1.5622545472765585,
+      "within_band": true,
+      "label": "within_band"
+    },
+    {
+      "measured_atp_per_ap_per_cm": 262721301.50516456,
+      "fold_difference_vs_gmean": 1.2036624522074453,
+      "within_band": true,
+      "label": "within_band"
+    },
+    {
+      "measured_atp_per_ap_per_cm": 341968500.4660251,
+      "fold_difference_vs_gmean": 1.0813993495049912,
+      "within_band": true,
+      "label": "within_band"
+    },
+    {
+      "measured_atp_per_ap_per_cm": 30601975.809709024,
+      "fold_difference_vs_gmean": 10.333573491568771,
+      "within_band": true,
+      "label": "within_band"
+    }
+  ],
+  "howarth_attwell_laughlin_per_cell": [
+    {
+      "raw_signalling_atp_rate": 147725787.76793283,
+      "corrected_signalling_atp_rate": 738628938.8396642,
+      "fraction_of_howarth_17_cortex": NaN,
+      "fraction_of_howarth_21_cerebellum": NaN,
+      "fraction_of_attwell_laughlin_47_legacy": NaN,
+      "label": "unknown_total_atp_rate"
+    },
+    {
+      "raw_signalling_atp_rate": 9016727.477356808,
+      "corrected_signalling_atp_rate": 45083637.38678404,
+      "fraction_of_howarth_17_cortex": NaN,
+      "fraction_of_howarth_21_cerebellum": NaN,
+      "fraction_of_attwell_laughlin_47_legacy": NaN,
+      "label": "unknown_total_atp_rate"
+    },
+    {
+      "raw_signalling_atp_rate": 12584120.136301348,
+      "corrected_signalling_atp_rate": 62920600.68150674,
+      "fraction_of_howarth_17_cortex": NaN,
+      "fraction_of_howarth_21_cerebellum": NaN,
+      "fraction_of_attwell_laughlin_47_legacy": NaN,
+      "label": "unknown_total_atp_rate"
+    },
+    {
+      "raw_signalling_atp_rate": 6281822.5202650195,
+      "corrected_signalling_atp_rate": 31409112.6013251,
+      "fraction_of_howarth_17_cortex": NaN,
+      "fraction_of_howarth_21_cerebellum": NaN,
+      "fraction_of_attwell_laughlin_47_legacy": NaN,
+      "label": "unknown_total_atp_rate"
+    },
+    {
+      "raw_signalling_atp_rate": 1508568.61306786,
+      "corrected_signalling_atp_rate": 7542843.0653393,
+      "fraction_of_howarth_17_cortex": NaN,
+      "fraction_of_howarth_21_cerebellum": NaN,
+      "fraction_of_attwell_laughlin_47_legacy": NaN,
+      "label": "unknown_total_atp_rate"
+    }
+  ],
+  "cuntz_cross_ref": {
+    "t0122_pareto_path": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0124_bedb_dsi_atp_per_spike_nsga2\\tasks\\t0122_dsi_cytoplasm_volume_nsga2\\results\\data\\pareto_front_seed1524.json",
+    "n_t0122_cells": 2,
+    "inside_band_fraction": NaN,
+    "band_low": 0.2,
+    "band_high": 0.7,
+    "note": "t0122 Pareto front loaded; per-cell Cuntz balancing factor computation requires DSI + cytoplasm volume + total dendritic length jointly, which is downstream of the Pareto rows. The band [0.2, 0.7] is reported as a literature reference only."
+  },
+  "bootstrap_correlation_dsi_atp": {
+    "r": 0.8059481842676995,
+    "ci_low": 0.7158179470104497,
+    "ci_high": 1.0,
+    "n": 5,
+    "n_resamples": 1000
+  },
+  "summary": {
+    "n_top_cells": 5,
+    "n_pareto_total": 5,
+    "n_legit_top": 5,
+    "carter_bean_label_counts": {
+      "within_band": 5,
+      "warning": 0,
+      "fail": 0
+    },
+    "howarth_attwell_laughlin_label_counts": {
+      "unknown_total_atp_rate": 5
+    }
+  }
+}

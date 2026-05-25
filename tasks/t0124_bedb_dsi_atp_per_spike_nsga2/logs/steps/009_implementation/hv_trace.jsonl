@@ -1,0 +1,9 @@
+{"gen": 1, "wall_clock_s": 154.01611399650574, "hv": 949163167.8833565, "n_cells_evaluated": 96}
+{"gen": 2, "wall_clock_s": 308.2098910808563, "hv": 2840518345.4985304, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 466.71620321273804, "hv": 2850742823.245267, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 629.4776611328125, "hv": 3331571556.514251, "n_cells_evaluated": 96}
+{"gen": 5, "wall_clock_s": 797.4483733177185, "hv": 17636046081.324368, "n_cells_evaluated": 96}
+{"gen": 6, "wall_clock_s": 971.3144814968109, "hv": 17636162026.420456, "n_cells_evaluated": 96}
+{"gen": 7, "wall_clock_s": 1185.1051511764526, "hv": 17636253678.499657, "n_cells_evaluated": 96}
+{"gen": 8, "wall_clock_s": 1400.8766674995422, "hv": 17636714765.016483, "n_cells_evaluated": 96}
+{"gen": 9, "wall_clock_s": 1623.0326354503632, "hv": 17636714765.016483, "n_cells_evaluated": 96}

@@ -1,0 +1,39 @@
+{
+  "spec_version": "2",
+  "predictions_id": "nsga2-dsi-atp-per-spike-bedb-morph",
+  "name": "NSGA-II DSI vs ATP-per-Spike on Bed B + 14-d Morphology",
+  "short_description": "Per-cell predictions from one t0124 NSGA-II run on the 68-d Bed B + 14-d morphology substrate with two minimised objectives: -DSI (vector-sum, silence-guarded) and +ATP per spike (Sengupta 2010 recipe).",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "68-d Bed B compartmental DSGC model (54-d electrophysiological + 14-d morphology), NEURON-backed, NSGA-II via pymoo, single GA seed.",
+  "dataset_ids": [],
+  "prediction_format": "jsonl.gz",
+  "prediction_schema": "Per-cell records: generation, vector_68d (54-d electrophys + 14-d morph), dsi_vector_sum (silence-guarded), atp_per_spike_molecules (lower is better), objective_F_minimised = [-DSI, +ATP], is_pareto, silence_failed_bool, legit_bool, pd_rate_hz, nd_rate_hz, firing_hz_per_dir, cytoplasm_volume_um3 (diagnostic), mi_count_bits (diagnostic), atp_per_ap_molecules, atp_per_ap_compartment_breakdown.",
+  "instance_count": 864,
+  "metrics_at_creation": {
+    "best_dsi_legit": 0.8823529411764706,
+    "min_atp_per_spike": 2111996.058295004,
+    "joint_pass_count": 0,
+    "n_generations_completed": 9,
+    "n_cells_total": 864,
+    "n_cells_pareto": 5,
+    "final_hypervolume": 17636714765.016483,
+    "final_cost_usd": 0.0728,
+    "stop_trigger": "operator_stop"
+  },
+  "files": [
+    {
+      "path": "files/predictions.jsonl.gz",
+      "description": "One JSON record per evaluated cell, gzip-compressed.",
+      "format": "jsonl"
+    }
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "voltage-gated-channels"
+  ],
+  "created_by_task": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "date_created": "2026-05-25"
+}
