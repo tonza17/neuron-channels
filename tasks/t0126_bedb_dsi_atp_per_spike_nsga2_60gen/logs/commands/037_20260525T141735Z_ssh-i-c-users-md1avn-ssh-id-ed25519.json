@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 17708 root@ssh2.vast.ai python3 -c \"\nimport json\np = '/root/t0126_workdir/repo/tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/results/data/all_evaluations_seed8929.json'\nwith open(p) as f: data = json.load(f)\nevals = data['evaluations']\nprint(f'total evals: {len(evals)}')\nprint('keys of [0]:', list(evals[0].keys()))\nprint()\n# Build (DSI, ATP) list\ncells = []\nfor i, e in enumerate(evals):\n    dsi = e.get('dsi_best_legit')\n    atp = e.get('atp_per_spike_molecules')\n    g = e.get('generation')\n    cells.append((i, dsi, atp, g, e))\n# Filter valid\nvalid = [c for c in cells if c[1] is not None and c[1] > -1.0 and c[2] is not None and c[2] != float('inf')]\nprint(f'valid (DSI>-1, ATP finite): {len(valid)}')\n# Non-dominated\ndef dom(a, b):\n    return b[1] >= a[1] and b[2] <= a[2] and (b[1] > a[1] or b[2] < a[2])\nnd = [c for c in valid if not any(dom(c, other) for other in valid if other is not c)]\nnd.sort(key=lambda x: -x[1])\nprint(f'Pareto-front cells (so far): {len(nd)}')\nprint()\nprint(f'{\"idx\":>5} {\"gen\":>4} {\"DSI\":>8} {\"ATP/spike\":>14}  extras')\nfor c in nd[:30]:\n    i, dsi, atp, g, e = c\n    pd = e.get('pd_firing_rate_hz', e.get('pd_rate_hz', '?'))\n    nd_r = e.get('nd_firing_rate_hz', e.get('nd_rate_hz', '?'))\n    pd_s = f'{pd:.2f}' if isinstance(pd, (int,float)) else str(pd)\n    nd_s = f'{nd_r:.2f}' if isinstance(nd_r, (int,float)) else str(nd_r)\n    print(f'{i:>5} {g:>4} {dsi:>8.4f} {atp:>14.3e}  PD={pd_s}Hz ND={nd_s}Hz')\nprint()\nprint('--- top 5 DSI (regardless of dominance) ---')\ntop = sorted(valid, key=lambda x: -x[1])[:5]\nfor c in top:\n    i, dsi, atp, g, e = c\n    print(f'  idx={i} gen={g} DSI={dsi:.4f} ATP={atp:.3e}')\nprint()\nprint('--- top 5 cheapest ATP (DSI > 0.3) ---')\ncheap = sorted([c for c in valid if c[1] > 0.3], key=lambda x: x[2])[:5]\nfor c in cheap:\n    i, dsi, atp, g, e = c\n    print(f'  idx={i} gen={g} DSI={dsi:.4f} ATP={atp:.3e}')\n\"",
+  "exit_code": 1,
+  "duration_seconds": 3.805,
+  "started_at": "2026-05-25T14:17:35Z",
+  "completed_at": "2026-05-25T14:17:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "037_20260525T141735Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "037_20260525T141735Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 5,
+  "truncated": false
+}

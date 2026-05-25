@@ -1,0 +1,5 @@
+Welcome to vast.ai. If authentication fails, try again after a few seconds, and double check your ssh key.
+Have fun!
+Traceback (most recent call last):
+  File "<string>", line 26, in <module>
+NameError: name 'idx' is not defined. Did you mean: 'id'?

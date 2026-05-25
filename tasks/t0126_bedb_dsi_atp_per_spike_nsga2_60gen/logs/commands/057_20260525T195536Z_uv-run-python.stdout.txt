@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\meta\metrics\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\description.json
+
+[31m[1mERRORS:[0m
+[31m  MT-E006 error: File name 'tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen' does not match snake_case pattern[0m
+[31m  MT-E001 error: Metric definition does not exist or is not valid JSON: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\meta\metrics\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\description.json[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)

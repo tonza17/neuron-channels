@@ -1,0 +1,11 @@
+[morph] loading C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\data\cell_trace_seed8929.jsonl
+[morph] total cell records: 5760
+[morph] unique cells: 952
+[morph] selected top-50 cells
+[morph]   built geometry 10/50
+[morph]   built geometry 20/50
+[morph]   built geometry 30/50
+[morph]   built geometry 40/50
+[morph]   built geometry 50/50
+[morph] built 50 geometries
+[morph] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\top50_morphologies_seed8929.png (179.3 KB)

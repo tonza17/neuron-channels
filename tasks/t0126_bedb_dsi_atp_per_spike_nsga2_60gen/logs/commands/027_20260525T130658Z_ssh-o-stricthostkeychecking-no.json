@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "ssh -o StrictHostKeyChecking=no -i C:/Users/md1avn/.ssh/id_ed25519 -p 17708 root@ssh2.vast.ai cd /root/t0126_workdir/mods && python3 -c 'from neuron import h; names = [\"bkt80\",\"calt80\",\"catt80\",\"iht80\",\"kdrt80\",\"kv3t80\",\"kv4t80\",\"kv7t80\",\"napt80\",\"nart80\",\"nav16t80\",\"skahpt80\",\"skt80\"]; print(\"All mechanisms auto-loaded:\", all(hasattr(h, n) for n in names)); [print(\"  missing:\", n) for n in names if not hasattr(h, n)]; print(\"Mechanism count:\", sum(hasattr(h, n) for n in names))'",
+  "exit_code": 0,
+  "duration_seconds": 3.447,
+  "started_at": "2026-05-25T13:06:58Z",
+  "completed_at": "2026-05-25T13:07:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "027_20260525T130658Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "027_20260525T130658Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 4,
+  "truncated": false
+}

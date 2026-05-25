@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "python -c \nimport shutil\nimport os\nsrc = 'tasks/t0124_bedb_dsi_atp_per_spike_nsga2/code'\ndst = 'tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/code'\nfor f in sorted(os.listdir(src)):\n    sp = os.path.join(src, f)\n    dp = os.path.join(dst, f)\n    if f == 'build_t0124_outputs.py':\n        print('SKIP', f)\n        continue\n    if f == 'run_seed6650.sh':\n        # rename\n        dp = os.path.join(dst, 'run_seed8929.sh')\n        print('COPY-RENAME', f, '->', 'run_seed8929.sh')\n    else:\n        print('COPY', f)\n    if os.path.isdir(sp):\n        if os.path.exists(dp):\n            shutil.rmtree(dp)\n        shutil.copytree(sp, dp)\n    else:\n        shutil.copy2(sp, dp)\nprint('DONE')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.181,
+  "started_at": "2026-05-25T13:13:45Z",
+  "completed_at": "2026-05-25T13:13:45Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "029_20260525T131345Z_python-c-import-shutil-import-os-src-tas.stdout.txt",
+  "stderr_file": "029_20260525T131345Z_python-c-import-shutil-import-os-src-tas.stderr.txt",
+  "stdout_lines": 40,
+  "stderr_lines": 0,
+  "truncated": false
+}

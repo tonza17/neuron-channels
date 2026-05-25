@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "vastai show credit",
+  "exit_code": 2,
+  "duration_seconds": 1.585,
+  "started_at": "2026-05-25T12:58:18Z",
+  "completed_at": "2026-05-25T12:58:19Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "008_20260525T125818Z_vastai-show-credit.stdout.txt",
+  "stderr_file": "008_20260525T125818Z_vastai-show-credit.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 4,
+  "truncated": false
+}

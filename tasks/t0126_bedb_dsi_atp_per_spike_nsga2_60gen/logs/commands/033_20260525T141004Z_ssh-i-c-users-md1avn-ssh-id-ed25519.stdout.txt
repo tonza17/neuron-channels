@@ -1,0 +1,13 @@
+---LATEST LOG---
+[seed 8929 gen 2] HV=14532070303.0576  pop_size=96  cost_so_far=$0.0151  elapsed=295s
+[nsga2_driver seed=8929 gen=2] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+[seed 8929 gen 3] HV=14533948585.5906  pop_size=96  cost_so_far=$0.0271  elapsed=529s
+[nsga2_driver seed=8929 gen=3] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+[seed 8929 gen 4] HV=14535074817.0223  pop_size=96  cost_so_far=$0.0399  elapsed=778s
+[nsga2_driver seed=8929 gen=4] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---LAST 3 HV TRACE---
+-rw-r--r-- 1 root root 389 May 25 14:07 /root/t0126_workdir/repo/tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/logs/steps/009_implementation/hv_trace.jsonl
+{"gen": 2, "wall_clock_s": 294.7705326080322, "hv": 14532070303.057562, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 528.5818326473236, "hv": 14533948585.590612, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 778.1368606090546, "hv": 14535074817.022295, "n_cells_evaluated": 96}
+---RESULTS SIZE---

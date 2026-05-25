@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results
+
+[31m[1mERRORS:[0m
+[31m  TR-E001 error: results_summary.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\results_summary.md[0m
+[31m  TR-E002 error: results_detailed.md does not exist: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\results_detailed.md[0m
+
+[31m[1mFAILED[0m — 2 error(s), 0 warning(s)

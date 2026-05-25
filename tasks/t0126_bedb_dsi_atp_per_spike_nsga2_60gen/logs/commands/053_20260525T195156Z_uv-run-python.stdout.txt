@@ -1,0 +1,6 @@
+[build_t0126_outputs] pareto=6 all_evals=5760 hv_trace=60
+[build_t0126_outputs] also loaded 5760 cell-trace rows
+[chart_pareto] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\pareto_front_dsi_vs_atp.png
+[chart_hv] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\hv_trajectory_seed8929.png
+[chart_carter_bean] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\carter_bean_atp_per_ap_check.png
+[chart_signalling] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\attwell_laughlin_signalling_budget.png

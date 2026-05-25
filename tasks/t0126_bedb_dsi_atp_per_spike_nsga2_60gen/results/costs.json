@@ -1,0 +1,22 @@
+{
+  "total_cost_usd": 1.3084,
+  "breakdown": {
+    "vast-ai-epyc-7c13-t0126": {
+      "cost_usd": 1.3084,
+      "description": "Vast.ai instance 37767708 (AMD EPYC 7C13 64-Core, 32 effective vCPUs, 64 GB RAM, 1x Tesla V100 idle, Virginia US, $0.1844/hr total = $0.1733/hr GPU + $0.0111/hr storage for the 40 GB disk). Final cost = full instance lifetime from created_at 2026-05-25T13:02:51Z to destroyed_at 2026-05-25T20:08:29Z (duration_hours=7.0939, dph=$0.1844 -> cost=$1.3084). The NSGA-II cost_watchdog's in-driver final_cost_usd=$0.9621 covered only the active 5.22 h NSGA-II run window (18,777 s wallclock). The additional $0.3463 covers the lifetime before NSGA-II launch (apt install + pip dependencies for NEURON 8.2.7 / pymoo 0.6.1.6 / dill / numpy / pandas / scipy / matplotlib / pydantic / tqdm / sklearn + t0080 MOD compile + t0024 DSGC MOD compile + t0126 code SCP + Carter-Bean smoke-gate, ~30 min) and the post-run window between gen-60 exit and teardown (wrap-up download + orchestrator hand-off, ~1.4 h). 60-gen ceiling reached cleanly with NSGA2_EXIT=0, pop=96, n_eval_seeds=3, n_directions=2, single seed 8929. Instance destroyed via 'vastai destroy instance 37767708 --yes' in step 010_teardown."
+    },
+    "per_instance_watchdog_USD": {
+      "cost_usd": 0.0,
+      "description": "T0126_PER_INSTANCE_WATCHDOG_USD = $5.00 cap was never tripped. Final full-lifetime spend $1.3084 is 26.2% of the watchdog cap and 21.8% of the $6 task budget. The COST_CAP_USD = $6.00 hard budget was also never tripped. watchdog_tripped=false in the nsga2_driver exit summary. Note: the in-driver watchdog only tracks the active NSGA-II window ($0.9621); the lifetime cost includes setup and teardown idle time which the watchdog does not see."
+    },
+    "vast-ai-failed-attempts": {
+      "cost_usd": 0.0,
+      "description": "No failed instance creation attempts (instance 37767708 created on first try per machine_log.json failed_attempts=[])."
+    }
+  },
+  "services": {
+    "vast_ai": 1.3084
+  },
+  "budget_limit": 6.0,
+  "note": "Final post-teardown cost. Two figures are recorded across the task: (1) the NSGA-II driver's in-flight cost_watchdog reported final_cost_usd=$0.9621 at gen 60 exit -- this only covers the 5.22 h active NSGA-II window (driver exit log); (2) the full instance lifetime from create to destroy is 7.0939 h at $0.1844/hr = $1.3084 (machine_log.json created_at -> destroyed_at). The $0.3463 delta covers ~30 min of pre-NSGA-II setup (apt + pip + MOD compile + smoke-gate) and ~1.4 h of post-run wrap-up (download + teardown). costs.json totals reflect option (2) -- the actual Vast.ai spend -- per remote_machines_specification.md. This is 4.5x t0124's $0.2935 (t0124 was operator-stopped at gen 9 after only ~1 h instance time, vs t0126's full 60-generation run + setup + teardown). The Virginia US 7C13 instance is 14% more expensive per hour than t0124's BC-Canada 7B13 ($0.1844 vs $0.1615) but has comparable per-core throughput in NEURON-bound NSGA-II per t0115/t0122/t0123/t0124 calibration. watchdog_tripped=false; the full 60-generation ceiling was reached with NSGA2_EXIT=0."
+}

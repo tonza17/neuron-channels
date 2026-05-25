@@ -1,0 +1,23 @@
+nsga2: 1 windows (created Mon May 25 13:54:12 2026)
+---HV TRAJECTORY---
+[seed 8929 gen 27] HV=16220719699.3602  pop_size=96  cost_so_far=$0.4578  elapsed=8936s
+[seed 8929 gen 28] HV=16220719699.3602  pop_size=96  cost_so_far=$0.4910  elapsed=9583s
+[seed 8929 gen 29] HV=16220719699.3602  pop_size=96  cost_so_far=$0.5302  elapsed=10348s
+[seed 8929 gen 30] HV=16220719699.3602  pop_size=96  cost_so_far=$0.5846  elapsed=11411s
+[seed 8929 gen 31] HV=16220721240.6539  pop_size=96  cost_so_far=$0.5898  elapsed=11512s
+[seed 8929 gen 32] HV=16220721240.6539  pop_size=96  cost_so_far=$0.5986  elapsed=11684s
+[seed 8929 gen 33] HV=16220721240.6539  pop_size=96  cost_so_far=$0.6095  elapsed=11895s
+[seed 8929 gen 34] HV=19986807469.7294  pop_size=96  cost_so_far=$0.6226  elapsed=12152s
+[seed 8929 gen 35] HV=19987041136.5520  pop_size=96  cost_so_far=$0.6384  elapsed=12460s
+[seed 8929 gen 36] HV=19987186447.6966  pop_size=96  cost_so_far=$0.6571  elapsed=12825s
+---FRONT---
+Total evals: 3456
+Valid evals (DSI > -1, ATP finite): 3438
+Pareto-front size: 84
+
+PARETO FRONT (sorted by DSI desc)
+rank  idx  gen     DSI     ATP/spike       PD_Hz   ND_Hz
+   1 3270   35   1.0000     1.599e+07        ?       ?
+   2 3364   36   1.0000     1.599e+07        ?       ?
+   3 3365   36   0.4595     1.232e+07        ?       ?
+   4  290    4   0.4118     1.111e+07        ?       ?

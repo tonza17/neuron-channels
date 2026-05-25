@@ -1,0 +1,2 @@
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\code\build_pareto_plots.py:347: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend(loc="upper right", fontsize=8)

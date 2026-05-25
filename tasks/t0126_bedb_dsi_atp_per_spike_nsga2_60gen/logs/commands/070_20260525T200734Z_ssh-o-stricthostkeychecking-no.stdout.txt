@@ -1,0 +1,7 @@
+  "final_cost_usd": 0.9621359605493826,
+  "watchdog_tripped": false,
+  "n_generations_completed": 60
+}
+NSGA2_EXIT=0
+data
+images

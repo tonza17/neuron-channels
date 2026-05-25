@@ -1,0 +1,40 @@
+nsga2: 1 windows (created Mon May 25 13:54:12 2026)
+---HV (last 12)---
+[seed 8929 gen 28] HV=16220719699.3602  pop_size=96  cost_so_far=$0.4910  elapsed=9583s
+[seed 8929 gen 29] HV=16220719699.3602  pop_size=96  cost_so_far=$0.5302  elapsed=10348s
+[seed 8929 gen 30] HV=16220719699.3602  pop_size=96  cost_so_far=$0.5846  elapsed=11411s
+[seed 8929 gen 31] HV=16220721240.6539  pop_size=96  cost_so_far=$0.5898  elapsed=11512s
+[seed 8929 gen 32] HV=16220721240.6539  pop_size=96  cost_so_far=$0.5986  elapsed=11684s
+[seed 8929 gen 33] HV=16220721240.6539  pop_size=96  cost_so_far=$0.6095  elapsed=11895s
+[seed 8929 gen 34] HV=19986807469.7294  pop_size=96  cost_so_far=$0.6226  elapsed=12152s
+[seed 8929 gen 35] HV=19987041136.5520  pop_size=96  cost_so_far=$0.6384  elapsed=12460s
+[seed 8929 gen 36] HV=19987186447.6966  pop_size=96  cost_so_far=$0.6571  elapsed=12825s
+[seed 8929 gen 37] HV=19987186447.6966  pop_size=96  cost_so_far=$0.6792  elapsed=13257s
+[seed 8929 gen 38] HV=19987186447.6966  pop_size=96  cost_so_far=$0.7037  elapsed=13734s
+[seed 8929 gen 39] HV=19987186447.6966  pop_size=96  cost_so_far=$0.7304  elapsed=14255s
+---FRONT---
+Total evals: 3744
+Valid evals (DSI > -1, ATP finite): 3726
+Pareto-front size: 102
+
+PARETO FRONT (sorted by DSI desc)
+rank  idx  gen     DSI     ATP/spike       PD_Hz   ND_Hz
+   1 3270   35   1.0000     1.599e+07        ?       ?
+   2 3364   36   1.0000     1.599e+07        ?       ?
+   3 3460   37   1.0000     1.599e+07        ?       ?
+   4 3556   38   1.0000     1.599e+07        ?       ?
+   5 3652   39   1.0000     1.599e+07        ?       ?
+   6 3365   36   0.4595     1.232e+07        ?       ?
+   7 3461   37   0.4595     1.232e+07        ?       ?
+   8 3557   38   0.4595     1.232e+07        ?       ?
+   9 3653   39   0.4595     1.232e+07        ?       ?
+  10  290    4   0.4118     1.111e+07        ?       ?
+  11  386    5   0.4118     1.111e+07        ?       ?
+  12  482    6   0.4118     1.111e+07        ?       ?
+  13  578    7   0.4118     1.111e+07        ?       ?
+  14  674    8   0.4118     1.111e+07        ?       ?
+  15  770    9   0.4118     1.111e+07        ?       ?
+  16  866   10   0.4118     1.111e+07        ?       ?
+  17  961   11   0.4118     1.111e+07        ?       ?
+  18 1057   12   0.4118     1.111e+07        ?       ?
+  19 1153   13   0.4118     1.111e+07        ?       ?

@@ -1,0 +1,21 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W003 warning: suggestions[0]: description is 1461 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[1]: title is 122 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[1]: description is 1399 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[2]: title is 121 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[2]: description is 1634 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[3]: description is 1472 characters, exceeds 1000[0m
+[33m  SG-W003 warning: suggestions[4]: description is 1447 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[5]: title is 140 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[5]: description is 1451 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[6]: title is 131 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[6]: description is 1436 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[7]: title is 126 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[7]: description is 1462 characters, exceeds 1000[0m
+[33m  SG-W001 warning: suggestions[8]: title is 141 characters, exceeds 120[0m
+[33m  SG-W003 warning: suggestions[8]: description is 1345 characters, exceeds 1000[0m
+
+[33m[1mPASSED[0m — 0 error(s), 15 warning(s)

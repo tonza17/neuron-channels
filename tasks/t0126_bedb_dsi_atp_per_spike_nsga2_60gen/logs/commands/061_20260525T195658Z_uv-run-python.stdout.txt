@@ -1,0 +1,9 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\assets\predictions\nsga2-dsi-atp-per-spike-bedb-morph-60gen
+
+[33m[1mWARNINGS:[0m
+[33m  PR-W014 warning: model_id is null (no model asset linked)[0m
+[33m  PR-W015 warning: dataset_ids is empty (no dataset assets linked)[0m
+[33m  PR-W004 warning: Summary section has 1 paragraphs (expected: 2-3)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 3 warning(s)

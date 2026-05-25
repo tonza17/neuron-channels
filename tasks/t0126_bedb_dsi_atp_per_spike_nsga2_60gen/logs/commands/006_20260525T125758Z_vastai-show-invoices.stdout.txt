@@ -1,0 +1,38 @@
+[
+ {
+  "amount": "2.233",
+  "description": "Instance 37545908 GPU  charge:    hours * $/hr",
+  "instance_id": 37545908,
+  "quantity": "12.882",
+  "rate": "0.1733",
+  "timestamp": 1779667200,
+  "type": "charge"
+ },
+ {
+  "amount": "0.143",
+  "description": "Instance 37545908 storage charge: hours * $/hr",
+  "instance_id": 37545908,
+  "quantity": "12.882",
+  "rate": "0.0111",
+  "timestamp": 1779667200,
+  "type": "charge"
+ },
+ {
+  "amount": "0.261",
+  "description": "Instance 37679733 GPU  charge:    hours * $/hr",
+  "instance_id": 37679733,
+  "quantity": "1.779",
+  "rate": "0.1467",
+  "timestamp": 1779667200,
+  "type": "charge"
+ },
+ {
+  "amount": "0.028",
+  "description": "Instance 37679733 storage charge: hours * $/hr",
+  "instance_id": 37679733,
+  "quantity": "1.890",
+  "rate": "0.0148",
+  "timestamp": 1779667200,
+  "type": "charge"
+ }
+]

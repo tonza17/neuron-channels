@@ -1,0 +1,3 @@
+/root/t0126_workdir/mods/x86_64/libnrnmech.so
+READY
+overlay          40G  702M   40G   2% /

@@ -1,0 +1,123 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0126-01",
+      "title": "Multi-seed (3-5 fresh seeds) 60-gen DSI vs ATP-per-spike NSGA-II to clear the n>=20 S-0124-01 decision threshold",
+      "description": "t0126 closed S-0124-01 with verdict INSUFFICIENT_EVIDENCE because the final Pareto front converged to only n=6 cells (single seed 8929), below the plan-mandated n>=20 threshold, even though bootstrap r(DSI, ATP) = +0.980 [0.972, 1.000] and the artefact null is rejected. The n=6 cap is intrinsic to the DSI/ATP axes at single-seed (t0122's DSI/cytoplasm front reached 26 cells under identical NSGA-II machinery), so the principled fix is multi-seed aggregation. Action: fork t0126's substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2, N_GEN_MAX=60, COST_CAP_USD=18.0 = 3x t0126 envelope, _POOL_RESTART_EVERY=10, HV_PLATEAU_AUTO_STOP=False, OperatorStopTermination removed), draw 3-5 fresh non-round GA seeds via secrets.randbelow(10000) (rejecting all prior lineage seeds {77, 441, 1524, 2247, 6650, 7755, 8929, 9354}, multiples of 100/500/1000), launch each in tmux on Vast.ai EPYC. Aggregate the Pareto fronts across seeds, compute bootstrap r(DSI, ATP) on the pooled front (target n>=20). Decision rule: pooled r > +0.5 with CI excluding 0 at pooled n>=20 -> accept CARTER_BEAN_PENALTY; pooled r < +0.3 -> accept ARTEFACT_NULL. This is the principled n>=20 closure of S-0124-01 and is DISTINCT from S-0125-01 (which is multi-seed MI/ATP on the t0123 substrate, not DSI/ATP) and from S-0122-01 (multi-seed DSI/cytoplasm, different second objective). Recommended task types: experiment-run, data-analysis, comparative-analysis.",
+      "kind": "experiment",
+      "priority": "high",
+      "source_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+      "source_paper": "10.1016_j.neuron.2009.12.011",
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "retinal-ganglion-cell"
+      ]
+    },
+    {
+      "id": "S-0126-02",
+      "title": "Per-Pareto-cell AIS ATP/AP/cm aggregator: recover per-segment ATP-per-AP from saved cell traces (inherited gap from t0124)",
+      "description": "comparator_report.json reports measured_atp_per_ap_per_cm = 0 for all 6 t0126 Pareto cells (label \"fail\", within_band=false) -- inherited verbatim from t0124. The canonical anchor cell's smoke-gate value (6.138e8 ATP/AP/cm, inside the Carter-Bean [1e8, 1e9] band) validates the recipe at smoke-gate time, but the post-run aggregator does not recompute per-segment ATP-per-AP at the AIS for each Pareto cell from the saved per-segment seg.ina traces. This forces the Carter2009 per-cell band test to NOT MEASURED on every t0122/t0124/t0126 run despite the per-compartment data being present in cell_trace_seed*.jsonl. Action: write per_cell_carter_bean_aggregator.py that (a) loads cell_trace_seed*.jsonl for each Pareto cell, (b) detects APs at the AIS via -20 mV crossing + 2 ms refractory, (c) integrates inward I_Na within +/-2 ms of each AP at each AIS segment, (d) divides by 3*e*A_cm to produce ATP/AP/cm per AIS segment, (e) aggregates median over AIS segments per cell, (f) tests against the canonical [1e8, 1e9] band and the [3e7, 3e9] PASS band, (g) emits per-cell labels in the updated comparator_report.json. Re-run on t0122/t0124/t0126 Pareto fronts. Distinct from S-0124-06 (Hallermann per-compartment alpha decomposition; a different physical quantity) and S-0124-08 (AP-width vs ATP/spike, somatic Vm only). Recommended task types: data-analysis, write-library, comparative-analysis.",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+      "source_paper": "10.1016_j.neuron.2009.12.011",
+      "categories": [
+        "compartmental-modeling",
+        "voltage-gated-channels"
+      ]
+    },
+    {
+      "id": "S-0126-03",
+      "title": "Extend evaluator to record whole-cell total ATP turnover; close 4 INDETERMINATE signalling-budget comparisons in one shot",
+      "description": "t0126's compare_literature.md returns INDETERMINATE for Howarth 2012 17% cerebellum, Howarth 2012 21% cortex, Attwell-Laughlin 2001 47% legacy, and the signalling-budget fraction more broadly -- all because the evaluator computes only the per-spike Na+ pump cost (signalling component) and not the housekeeping, glutamate-receptor, or resting-potential-maintenance costs needed to form the whole-cell ATP turnover denominator. 4 of 6 INDETERMINATE rows in t0126's per-comparator summary share this single root cause. Action: extend code/recorder.py and code/atp_per_spike.py to also record (a) total inward current at rest (membrane leak + Ih + KCNQ resting drives), (b) Na+/K+ ATPase pump current proportional to resting [Na+]i, (c) AMPA/NMDA receptor Na+ entry over the trial window, and (d) Ca2+ ATPase cost from CaT/CaL during the AP. Sum to per-second whole-cell ATP turnover at rest and during PD response. Re-run the t0126 protocol on the top-5 cells (single-CPU, ~30 min/cell), compute fraction_of_howarth_17_cortex / fraction_of_howarth_21_cerebellum / fraction_of_attwell_laughlin_47_legacy properly. This closes 4 INDETERMINATE comparisons (Howarth cortex, Howarth cerebellum, Attwell-Laughlin legacy, signalling-fraction in general). Distinct from S-0124-04 (which proposes an Okawa 2008 whole-retina denominator via published literature constants); this proposal computes the denominator INTERNALLY from the simulation. The two suggestions are complementary -- S-0124-04 closes the retina-specific reference, S-0126-03 closes the per-cell denominator. Recommended task types: write-library, experiment-run, data-analysis.",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+      "source_paper": "10.1038_jcbfm.2012.35",
+      "categories": [
+        "compartmental-modeling",
+        "voltage-gated-channels"
+      ]
+    },
+    {
+      "id": "S-0126-04",
+      "title": "Lower bar-drive amplitude to bring t0126 Pareto-front PD-rates into the Sivyer 2013 [5, 15] Hz physiological band",
+      "description": "All 6 t0126 Pareto cells fire at PD = 40 Hz, ~2.7x above the Sivyer 2013 [5, 15] Hz upper bound for canonical rabbit ooDSGC PD response (compare_literature.md: FAIL marking on the only direct cell-type-matched comparator). The 40 Hz floor is imposed by the t0080-lineage evaluator's strong synthetic driving current, which was deliberately chosen to keep cells above the silence-guard PD<3 spikes threshold, but pushes them out of biological range. The Carter-Bean DSI/ATP front is therefore measured at a non-biological driving regime, weakening the connection to Sivyer 2013-style in-vitro recordings. Action: parameter sweep on bar drive amplitude (synaptic conductance scale or wave-stimulus magnitude) at 4-5 levels spanning ~30% to ~100% of t0080's current value, run a short 20-gen NSGA-II at each level (smaller pool e.g. POP=48 to control cost), measure resulting Pareto-front PD-rate distribution per level, pick the level where the high-DSI corner falls into [5, 15] Hz, then re-run the full 60-gen NSGA-II at the selected drive level on 2 seeds. Decision rule: re-baselined Pareto front with PD-rate in band vs t0126's out-of-band front -- if Carter-Bean r(DSI, ATP) survives at the lower drive, the penalty is robust to the protocol artefact; if r collapses, the t0126 r=+0.980 is partially a high-drive artefact. Distinct from S-0123-01 (which is MI/ATP with PD-rate floor as a CONSTRAINT, not a sweep). Recommended task types: experiment-run, data-analysis.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+      "source_paper": "10.1113_jphysiol.2012.245506",
+      "categories": [
+        "direction-selectivity",
+        "retinal-ganglion-cell",
+        "synaptic-integration"
+      ]
+    },
+    {
+      "id": "S-0126-05",
+      "title": "Three-task 3-D (DSI, cytoplasm volume, ATP/spike) joint Pareto-front analysis combining t0122, t0124, and t0126",
+      "description": "Distinct from S-0124-03: that suggestion proposed a 3-D joint analysis using ONLY t0122 + t0124 fronts (n=26 + n=5 = 31 cells, with t0124's front truncated at gen 9). t0126's 60-gen DSI/ATP front now provides a third independent measurement (n=6 cells reaching DSI=1.0 at ATP=7.82e6, ~30x cheaper than t0124's high-DSI corner) on the SAME 68-d substrate. Action: (a) load pareto_front_seed*.json from t0122 (DSI/cytoplasm; seed 1524), t0124 (DSI/ATP gen-9; seed 6650), and t0126 (DSI/ATP gen-60; seed 8929); (b) for each cell record the 68-d parameter vector + DSI + (cytoplasm_volume_um3 OR ATP/spike); (c) re-evaluate ATP/spike on the t0122 cells and cytoplasm_volume on the t0122/t0124/t0126 cells via single-CPU resimulation under the t0126 evaluator (target ~40 cells; ~30 min/cell on CPU); (d) render a 3-D scatter (DSI, log10(cytoplasm_volume), log10(ATP/spike)) with Pareto contours and the Cuntz 2010 [0.2, 0.7] band overlaid; (e) test whether cells in the joint-pass cone (DSI>=0.7 AND Cuntz balancing factor in [0.2, 0.7] AND Carter-Bean PASS band) are enriched on the lineage Pareto fronts vs random sampling. The t0126 high-DSI/low-ATP corner reframes the t0124-only 3-D analysis: t0124's high-DSI cells were 30x more energy-expensive than t0126's, so joint-pass cells from t0124 may not be representative. Use t0126's tighter front as the high-DSI anchor. Recommended task types: data-analysis, comparative-analysis, answer-question.",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+      "source_paper": "10.1371_journal.pcbi.1000877",
+      "categories": [
+        "compartmental-modeling",
+        "direction-selectivity",
+        "dendritic-computation"
+      ]
+    },
+    {
+      "id": "S-0126-06",
+      "title": "Back-fill mi_count_bits and cytoplasm_volume per-Pareto-cell from cell_trace JSONL traces and run Cuntz / MI cross-checks on the t0126 front",
+      "description": "t0126's metrics.json variants report mi_count_bits and cytoplasm_volume_um3 as null for all 6 Pareto cells -- the post-run aggregator does not recover them from per-gen cell_trace_seed8929.jsonl. The diagnostic quantities ARE recorded per evaluation (the t0080 lineage tracks them) but the t0124-inherited aggregator only forwards DSI and ATP/spike to the Pareto rows. This blocks two downstream comparisons that t0126 could close locally without a new NSGA-II run: (a) Cuntz 2010 balancing-factor band test on the t0126 Pareto cells (comparator_report.json reports inside_band_fraction=NaN currently), and (b) cross-task MI consistency with t0123 (whose smoke-gate matches t0126's within 0.2% but whose MI values are not on the t0126 axis). Action: write backfill_pareto_diagnostics.py that (a) parses cell_trace_seed8929.jsonl for the 6 Pareto cell IDs, (b) extracts mi_count_bits and cytoplasm_volume_um3 per cell, (c) appends them as new dimensions in metrics.json variants (or writes a correction file under tasks/t0126/corrections/), (d) computes per-cell Cuntz balancing factor from cytoplasm + total dendritic length, (e) emits a corrections/t0126_diagnostic_backfill.json overlay. Updates the per-comparator summary table: Cuntz INDETERMINATE -> PASS/FAIL, MI cross-task NOT MEASURED -> consistent/inconsistent. Distinct from S-0124-03 / S-0126-05 (cross-task; this is single-task backfill). Recommended task types: data-analysis, correction.",
+      "kind": "evaluation",
+      "priority": "medium",
+      "source_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+      "source_paper": "10.1371_journal.pcbi.1000877",
+      "categories": [
+        "compartmental-modeling",
+        "dendritic-computation"
+      ]
+    },
+    {
+      "id": "S-0126-07",
+      "title": "Mechanistic post-hoc analysis of the gen-11 and gen-34 HV structural jumps to identify which parameter shifts unlock cheaper basins",
+      "description": "t0126's HV trajectory shows two qualitatively distinct structural jumps: gen 10->11 (+11.6%, post-pool-restart-#1) and gen 33->34 (+23.1%, post-pool-restart-#4), with the other three pool restarts (gens 20, 40, 50) producing flat HV. This is direct project-level evidence for _POOL_RESTART_EVERY=10 but raises a sharper mechanistic question: WHICH parameter shifts in the pool-restart-injected fresh random cells unlocked the cheaper basins? S-0114-04 (pool-restart-CADENCE sweep) is the orthogonal infrastructure question (different sub-question). Action: (a) extract from cell_trace_seed8929.jsonl the parameter vectors of the gen-11 and gen-34 pool-restart-injected cells that joined the elite (the first to exceed the prior HV ceiling); (b) compute per-parameter median + IQR for (i) pre-jump elite, (ii) post-jump elite, (iii) full pool-restart-injected pool; (c) rank parameters by absolute median shift normalised by IQR; (d) repeat the analysis for the three FLAT pool restarts to identify which parameters did NOT shift; (e) render a parallel-coordinate plot of the top-5 shifting parameters across gens 10/11, 33/34, and the three flat restarts. Identifies which morphology or electrophys axes admit fundamentally cheaper basins under pool restart -- direct guide for designing biased pool-restart distributions in future NSGA-II runs. Local-CPU post-hoc on saved JSONs. Recommended task types: data-analysis, answer-question.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0126-08",
+      "title": "Codify the t0126 background-launch + OperatorStopTermination-removed pattern as a reusable ARF NSGA-II infrastructure template",
+      "description": "S-0124-02 (decouple long NSGA-II launches from implementation subagent session budget) is now VALIDATED by t0126's clean 60-gen finish: the implementation subagent disconnected mid-run, the run continued unattended in tmux, OperatorStopTermination was correctly absent from the live TerminationCollection (sentinel STOP_FILE = pathlib.Path('/dev/null/never')), and the watchdog + max-generation ceiling sufficed for termination control. This is direct empirical evidence that the t0124-proposed pattern works. But S-0124-02 itself was a one-off proposal; the pattern is currently re-implemented ad-hoc in each task's code/. Distinct because it elevates a working pattern to framework infrastructure rather than re-proposing a new framework fix. Action: extract the working t0126 pattern into a reusable arf/skills/nsga2_background_run/ skill containing (a) tmux session helper script tmux_launch_nsga2.sh, (b) STOP_FILE sentinel pattern in arf/scripts/utils/, (c) MaximumGenerationTermination + CostWatchdogTermination as the canonical termination pair (no OperatorStopTermination, no HVPlateauTermination by default), (d) a poll-progress-and-exit skill the orchestrator can call to detect run completion. Add an arf/specifications/nsga2_runs_specification.md documenting the pattern. Re-target future NSGA-II tasks (S-0126-01 multi-seed in particular) at this skill instead of re-implementing ad-hoc. Recommended task types: infrastructure-setup, write-library.",
+      "kind": "technique",
+      "priority": "medium",
+      "source_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling"
+      ]
+    },
+    {
+      "id": "S-0126-09",
+      "title": "Update Niven 2008 paper asset citation key and ensure the vertebrate-retinal-neuron ATP/spike band PASS is captured in project-level overview",
+      "description": "t0126 is the first project task to PASS the Niven 2008 vertebrate-retinal-neuron ATP/spike band [~1e6, ~1e7 molecules/spike] across the full Pareto front (all 6 cells in range; min 1.83e6 at DSI=0, max 7.82e6 at DSI=1.0). The result is reported in compare_literature.md (PASS row, direct quantitative match) but the t0124 lineage cited the paper as 'Niven 2007' (research_papers.md) while the canonical bibliographic record is Niven & Laughlin J Exp Biol 211(11), 2008. The citation_key drift is documented in t0126's Limitations but not fixed at the asset level. Action: (a) verify the paper-asset folder under tasks/t0002.*/assets/paper/ (or wherever the Niven citation lives) and confirm details.json citation_key matches Niven2008; (b) if Niven2007 is used elsewhere, write a correction file under tasks/t0126/corrections/ that re-maps the citation_key in the relevant asset(s); (c) add the t0126 vertebrate-retinal-neuron band PASS as a one-line entry in overview/results_index.md or the equivalent project-level overview file; (d) ensure future Niven-band comparisons in downstream tasks cite the corrected key. Low priority because it is bookkeeping not science; high value because the Niven PASS is the only direct published quantitative cross-species match in the t0126 comparator set. Recommended task types: correction, data-analysis.",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+      "source_paper": null,
+      "categories": [
+        "compartmental-modeling",
+        "retinal-ganglion-cell"
+      ]
+    }
+  ]
+}

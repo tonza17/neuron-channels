@@ -1,0 +1,140 @@
+{
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0126_bedb_dsi_atp_per_spike_nsga2_60gen worktree from main and plan steps.",
+      "status": "completed",
+      "started_at": "2026-05-25T12:37:26Z",
+      "completed_at": "2026-05-25T12:39:48Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify t0124 dependency is completed.",
+      "status": "completed",
+      "started_at": "2026-05-25T12:40:13Z",
+      "completed_at": "2026-05-25T12:40:59Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task folder structure.",
+      "status": "completed",
+      "started_at": "2026-05-25T12:41:19Z",
+      "completed_at": "2026-05-25T12:43:22Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped per user direction: verbatim replication of t0124, inherits t0124 paper research.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped per user direction: verbatim replication of t0124, no new external information needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Skipped per user direction: this task copies t0124's code verbatim; no new code research.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Write plan/plan.md inheriting t0124's protocol verbatim; document fresh GA seed draw.",
+      "status": "completed",
+      "started_at": "2026-05-25T12:44:29Z",
+      "completed_at": "2026-05-25T12:56:18Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Provision Vast.ai EPYC instance for NSGA-II run.",
+      "status": "completed",
+      "started_at": "2026-05-25T12:56:37Z",
+      "completed_at": "2026-05-25T13:10:01Z",
+      "log_file": "logs\\steps\\008_setup-machines/"
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Copy t0124 code, draw fresh GA seed, smoke-gate, run NSGA-II to gen 60.",
+      "status": "completed",
+      "started_at": "2026-05-25T13:10:34Z",
+      "completed_at": "2026-05-25T20:04:57Z",
+      "log_file": "logs\\steps\\009_implementation/"
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Destroy Vast.ai instance and finalize cost tracking.",
+      "status": "completed",
+      "started_at": "2026-05-25T20:05:16Z",
+      "completed_at": "2026-05-25T20:15:44Z",
+      "log_file": "logs\\steps\\010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped per user direction: verbatim replication of t0124, inherits its creative-thinking output.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json with full 60-gen front analysis.",
+      "status": "completed",
+      "started_at": "2026-05-25T20:16:19Z",
+      "completed_at": "2026-05-25T20:32:37Z",
+      "log_file": "logs\\steps\\012_results/"
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Compare front against Carter-Bean / Attwell-Laughlin / Sengupta and side-by-side with t0124.",
+      "status": "completed",
+      "started_at": "2026-05-25T20:32:55Z",
+      "completed_at": "2026-05-25T20:42:33Z",
+      "log_file": "logs\\steps\\013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up task suggestions from 60-gen results.",
+      "status": "completed",
+      "started_at": "2026-05-25T20:42:51Z",
+      "completed_at": "2026-05-25T21:42:00Z",
+      "log_file": "logs\\steps\\014_suggestions/"
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, mark task completed.",
+      "status": "completed",
+      "started_at": "2026-05-25T21:54:15Z",
+      "completed_at": "2026-05-25T21:55:30Z",
+      "log_file": "logs\\steps\\015_reporting/"
+    }
+  ]
+}

@@ -5,12 +5,12 @@
   "name": "NSGA-II DSI vs ATP-per-spike Bed B + 14-d morph: 60-gen replication",
   "short_description": "Fresh-seed 60-gen replication of t0124 NSGA-II (DSI vs ATP-per-spike, Bed B + 14-d morph); tests whether +0.806 r(DSI,ATP) is a Carter-Bean penalty or early-NSGA-II artefact.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0124_bedb_dsi_atp_per_spike_nsga2"
   ],
   "start_time": "2026-05-25T12:34:54Z",
-  "end_time": null,
+  "end_time": "2026-05-25T21:55:00Z",
   "expected_assets": {
     "predictions": 1,
     "answer": 1

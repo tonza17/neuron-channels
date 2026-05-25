@@ -1,0 +1,20 @@
+no server running on /tmp/tmux-0/default
+---HV (last 10)---
+[seed 8929 gen 51] HV=19992731888.2895  pop_size=96  cost_so_far=$0.8848  elapsed=17270s
+[seed 8929 gen 52] HV=19993083760.4146  pop_size=96  cost_so_far=$0.8901  elapsed=17372s
+[seed 8929 gen 53] HV=19993112651.4731  pop_size=96  cost_so_far=$0.8980  elapsed=17527s
+[seed 8929 gen 54] HV=19993112651.4731  pop_size=96  cost_so_far=$0.9059  elapsed=17681s
+[seed 8929 gen 55] HV=19994337476.3148  pop_size=96  cost_so_far=$0.9143  elapsed=17846s
+[seed 8929 gen 56] HV=19994677143.1826  pop_size=96  cost_so_far=$0.9230  elapsed=18015s
+[seed 8929 gen 57] HV=19994677143.1826  pop_size=96  cost_so_far=$0.9321  elapsed=18192s
+[seed 8929 gen 58] HV=19994677143.1826  pop_size=96  cost_so_far=$0.9416  elapsed=18379s
+[seed 8929 gen 59] HV=19994677143.1826  pop_size=96  cost_so_far=$0.9516  elapsed=18574s
+[seed 8929 gen 60] HV=19994677143.1826  pop_size=96  cost_so_far=$0.9620  elapsed=18777s
+---DISTINCT FRONT---
+Distinct Pareto points: 6
+  DSI=1.0000  ATP= 7.819e+06  first_gen=55
+  DSI=0.9000  ATP= 6.898e+06  first_gen=56
+  DSI=0.5714  ATP= 4.333e+06  first_gen=55
+  DSI=0.5385  ATP= 4.279e+06  first_gen=56
+  DSI=0.5000  ATP= 3.934e+06  first_gen=56
+  DSI=0.0000  ATP= 1.827e+06  first_gen=49

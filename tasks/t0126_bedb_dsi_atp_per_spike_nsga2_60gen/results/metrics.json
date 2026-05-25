@@ -1,0 +1,120 @@
+{
+  "variants": [
+    {
+      "variant_id": "t0126-seed8929-best-legit",
+      "label": "best_legit DSI cell (headline)",
+      "dimensions": {
+        "task_seed": 8929,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "vector_sum",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 60,
+        "n_cells_pareto": 6,
+        "n_cells_total": 5760,
+        "n_legit": 6,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "dsi_subvariant": "best_legit",
+        "atp_per_spike_molecules": 7818625.100530212,
+        "pd_firing_rate_hz": 40.0,
+        "nd_firing_rate_hz": 0.0,
+        "cytoplasm_volume_um3": null,
+        "mi_count_bits": null
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    },
+    {
+      "variant_id": "t0126-seed8929-overall-max-dsi",
+      "label": "overall max DSI cell (silence guard ignored)",
+      "dimensions": {
+        "task_seed": 8929,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "vector_sum",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 60,
+        "n_cells_pareto": 6,
+        "n_cells_total": 5760,
+        "n_legit": 6,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "dsi_subvariant": "overall_max_dsi",
+        "atp_per_spike_molecules": 7818625.100530212,
+        "pd_firing_rate_hz": 40.0,
+        "nd_firing_rate_hz": 0.0,
+        "cytoplasm_volume_um3": null,
+        "mi_count_bits": null
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    },
+    {
+      "variant_id": "t0126-seed8929-overall-min-atp",
+      "label": "overall min ATP-per-spike cell",
+      "dimensions": {
+        "task_seed": 8929,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "vector_sum",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 60,
+        "n_cells_pareto": 6,
+        "n_cells_total": 5760,
+        "n_legit": 6,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "dsi_subvariant": "overall_min_atp",
+        "atp_per_spike_molecules": 1826993.0663116325,
+        "pd_firing_rate_hz": 40.0,
+        "nd_firing_rate_hz": 0.0,
+        "cytoplasm_volume_um3": null,
+        "mi_count_bits": null
+      },
+      "metrics": {
+        "direction_selectivity_index": 6.123233995736766e-17
+      }
+    },
+    {
+      "variant_id": "t0126-seed8929-dsi-eq-one-count",
+      "label": "count of DSI == 1.0 (ND-silenced near-degenerate)",
+      "dimensions": {
+        "task_seed": 8929,
+        "init_method": "lhs_random",
+        "n_obj": 2,
+        "n_directions": 2,
+        "dsi_metric": "vector_sum",
+        "dsi_silence_guard_active": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 60,
+        "n_cells_pareto": 6,
+        "n_cells_total": 5760,
+        "n_legit": 6,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "dsi_subvariant": "dsi_eq_one_count",
+        "dsi_eq_one_count": 1
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    }
+  ]
+}

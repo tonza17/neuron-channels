@@ -1,0 +1,2 @@
+usage: vastai show deposit ID [options]
+vastai.exe show deposit: error: the following arguments are required: id

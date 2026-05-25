@@ -1,0 +1,5 @@
+top-level type: dict
+keys: ['evaluations']
+  'evaluations' -> list
+    [0] sample keys: ['generation', 'vector_68d', 'objective_F_minimised', 'dsi_best_legit', 'atp_per_spike_molecules']
+---

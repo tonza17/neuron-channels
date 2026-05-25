@@ -1,0 +1,3 @@
+[pareto] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\pareto_front_mi_vs_atp.png (38.8 KB)
+[niven] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\niven_2007_comparison.png (68.7 KB)
+[carter_bean] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\results\images\carter_bean_atp_per_ap_check.png (22.0 KB)

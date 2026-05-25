@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 17708 root@ssh2.vast.ai echo connected; cat /root/onstart.marker 2>/dev/null || echo onstart_pending; uname -a; cat /etc/os-release | head -3; python3 --version; nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader 2>/dev/null || echo no-nvidia-smi; nproc; df -h / | tail -1",
+  "exit_code": 0,
+  "duration_seconds": 3.802,
+  "started_at": "2026-05-25T13:03:36Z",
+  "completed_at": "2026-05-25T13:03:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "020_20260525T130336Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "020_20260525T130336Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 3,
+  "truncated": false
+}

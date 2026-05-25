@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 17708 root@ssh2.vast.ai tmux ls 2>&1 | head -1; echo '---HV (last 10)---'; grep 'HV=' /root/t0126_workdir/nsga2.log | tail -10; echo '---DISTINCT FRONT---'; python3 -c \"\nimport json\nwith open('/root/t0126_workdir/repo/tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/results/data/all_evaluations_seed8929.json') as f:\n    data = json.load(f)\nevals = data['evaluations']\ncells = [(i, e.get('dsi_best_legit'), e.get('atp_per_spike_molecules'), e.get('generation')) for i,e in enumerate(evals)]\nvalid = [c for c in cells if c[1] is not None and c[1] > -0.999 and c[2] is not None and c[2] != float('inf')]\ndef dom(a,b): return b[1]>=a[1] and b[2]<=a[2] and (b[1]>a[1] or b[2]<a[2])\nfront = [c for c in valid if not any(dom(c,o) for o in valid if o is not c)]\nseen=set(); uniq=[]\nfor c in front:\n    k=(round(c[1],6),round(c[2],2))\n    if k in seen: continue\n    seen.add(k); uniq.append(c)\nuniq.sort(key=lambda x:-x[1])\nprint('Distinct Pareto points:', len(uniq))\nfor c in uniq:\n    print('  DSI=%6.4f  ATP=%10.3e  first_gen=%d' % (c[1], c[2], c[3]))\n\"",
+  "exit_code": 0,
+  "duration_seconds": 34.016,
+  "started_at": "2026-05-25T19:37:50Z",
+  "completed_at": "2026-05-25T19:38:24Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "stdout_file": "047_20260525T193750Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "047_20260525T193750Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 20,
+  "stderr_lines": 2,
+  "truncated": false
+}
