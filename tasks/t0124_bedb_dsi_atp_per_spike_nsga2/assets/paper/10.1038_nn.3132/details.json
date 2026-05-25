@@ -1,0 +1,69 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nn.3132",
+  "doi": "10.1038/nn.3132",
+  "title": "State and location dependence of action potential metabolic cost in cortical pyramidal neurons",
+  "url": "https://doi.org/10.1038/nn.3132",
+  "pdf_url": null,
+  "date_published": "2012-06-03",
+  "year": 2012,
+  "authors": [
+    {
+      "name": "Stefan Hallermann",
+      "country": "DE",
+      "institution": "European Neuroscience Institute Goettingen",
+      "orcid": "0000-0001-9376-7048"
+    },
+    {
+      "name": "Christiaan P. J. de Kock",
+      "country": "NL",
+      "institution": "Amsterdam Neuroscience, VU University Amsterdam",
+      "orcid": "0000-0002-6697-0179"
+    },
+    {
+      "name": "Greg J. Stuart",
+      "country": "AU",
+      "institution": "Eccles Institute of Neuroscience, Australian National University",
+      "orcid": "0000-0001-9395-2219"
+    },
+    {
+      "name": "Maarten H. P. Kole",
+      "country": "NL",
+      "institution": "Netherlands Institute for Neuroscience; Australian National University",
+      "orcid": "0000-0002-3883-5682"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "European Neuroscience Institute Goettingen",
+      "country": "DE"
+    },
+    {
+      "name": "Amsterdam Neuroscience, VU University Amsterdam",
+      "country": "NL"
+    },
+    {
+      "name": "Eccles Institute of Neuroscience, Australian National University",
+      "country": "AU"
+    },
+    {
+      "name": "Netherlands Institute for Neuroscience",
+      "country": "NL"
+    }
+  ],
+  "journal": "Nature Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "voltage-gated-channels",
+    "compartmental-modeling",
+    "patch-clamp"
+  ],
+  "abstract": "Action potential generation and conduction requires large quantities of energy to restore Na(+) and K(+) ion gradients. We investigated the subcellular location and voltage dependence of this metabolic cost in rat neocortical pyramidal neurons. Using Na(+)/K(+) charge overlap as a measure of action potential energy efficiency, we found that action potential initiation in the axon initial segment (AIS) and forward propagation into the axon were energetically inefficient, depending on the resting membrane potential. In contrast, action potential backpropagation into dendrites was efficient. Computer simulations predicted that, although the AIS and nodes of Ranvier had the highest metabolic cost per membrane area, action potential backpropagation into the dendrites and forward propagation into axon collaterals dominated energy consumption in cortical pyramidal neurons. Finally, we found that the high metabolic cost of action potential initiation and propagation down the axon is a trade-off between energy minimization and maximization of the conduction reliability of high-frequency action potentials.",
+  "citation_key": "Hallermann2012",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Paper is paywalled in Nature Neuroscience (Springer Nature, DOI 10.1038/nn.3132) and no open-access copy exists. Confirmed closed: Unpaywall (is_oa=false, oa_locations=[]), OpenAlex (oa_status=closed, no pdf_url), Semantic Scholar (no openAccessPdf), Europe PMC (hasPDF=N, isOpenAccess=N, inPMC=N), PubMed Central idconv (no PMCID for PMID 22660478), CrossRef (no TDM link), NCBI eLink LinkOut (only NeuroMorpho.Org and ModelDB 144526 lookups, no PDF). Nature.com landing page requires authentication (303 redirect to IDP). Metadata and abstract collected from CrossRef, OpenAlex and PubMed; summary written from the abstract and the paper's widely cited published findings.",
+  "added_by_task": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "date_added": "2026-05-25"
+}
