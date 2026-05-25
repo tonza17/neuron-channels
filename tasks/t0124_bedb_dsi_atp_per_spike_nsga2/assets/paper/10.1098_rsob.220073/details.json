@@ -1,0 +1,64 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1098_rsob.220073",
+  "doi": "10.1098/rsob.220073",
+  "title": "Pareto optimality, economy-effectiveness trade-offs and ion channel degeneracy: improving population modelling for single neurons",
+  "url": "https://royalsocietypublishing.org/doi/10.1098/rsob.220073",
+  "pdf_url": "https://royalsocietypublishing.org/doi/pdf/10.1098/rsob.220073",
+  "date_published": "2022-07-13",
+  "year": 2022,
+  "authors": [
+    {
+      "name": "Peter Jedlicka",
+      "country": "DE",
+      "institution": "Justus-Liebig-University Giessen",
+      "orcid": "0000-0001-6571-5742"
+    },
+    {
+      "name": "Alexander D. Bird",
+      "country": "DE",
+      "institution": "Justus-Liebig-University Giessen",
+      "orcid": "0000-0003-4895-8253"
+    },
+    {
+      "name": "Hermann Cuntz",
+      "country": "DE",
+      "institution": "Frankfurt Institute for Advanced Studies",
+      "orcid": "0000-0001-5445-0507"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Justus-Liebig-University Giessen",
+      "country": "DE"
+    },
+    {
+      "name": "Goethe University Frankfurt",
+      "country": "DE"
+    },
+    {
+      "name": "Frankfurt Institute for Advanced Studies",
+      "country": "DE"
+    },
+    {
+      "name": "Ernst Strungmann Institute for Neuroscience",
+      "country": "DE"
+    }
+  ],
+  "journal": "Open Biology",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "voltage-gated-channels"
+  ],
+  "abstract": "Neurons encounter unavoidable evolutionary trade-offs between multiple tasks. They must consume as little energy as possible while effectively fulfilling their functions. Cells displaying the best performance for such multi-task trade-offs are said to be Pareto optimal, with their ion channel configurations underpinning their functionality. Ion channel degeneracy, however, implies that multiple ion channel configurations can lead to functionally similar behaviour. Therefore, instead of a single model, neuroscientists often use populations of models with distinct combinations of ionic conductances. This approach is called population (database or ensemble) modelling. It remains unclear, which ion channel parameters in the vast population of functional models are more likely to be found in the brain. Here we argue that Pareto optimality can serve as a guiding principle for addressing this issue by helping to identify the subpopulations of conductance-based models that perform best for the trade-off between economy and functionality. In this way, the high-dimensional parameter space of neuronal models might be reduced to geometrically simple low-dimensional manifolds, potentially explaining experimentally observed ion channel correlations. Conversely, Pareto inference might also help deduce neuronal functions from high-dimensional Patch-seq data. In summary, Pareto optimality is a promising framework for improving population modelling of neurons and their circuits.",
+  "citation_key": "Jedlicka2022",
+  "summary_path": "summary.md",
+  "files": [
+    "files/jedlicka_2022_pareto-optimality-ion-channels.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "date_added": "2026-05-25"
+}

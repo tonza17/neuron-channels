@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0124_bedb_dsi_atp_per_spike_nsga2",
+  "command": "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=nul -i C:/Users/md1avn/.ssh/id_ed25519 -p 39732 root@ssh6.vast.ai python3 -c 'import neuron, numpy, scipy, pandas, matplotlib, pymoo, dill, pydantic, tqdm, sklearn; print(\"neuron\", neuron.__version__); print(\"numpy\", numpy.__version__); print(\"scipy\", scipy.__version__); print(\"pandas\", pandas.__version__); print(\"matplotlib\", matplotlib.__version__); print(\"pymoo\", pymoo.__version__); print(\"dill\", dill.__version__); print(\"pydantic\", pydantic.VERSION); print(\"tqdm\", tqdm.__version__); print(\"sklearn\", sklearn.__version__)'",
+  "exit_code": 0,
+  "duration_seconds": 4.645,
+  "started_at": "2026-05-25T00:32:39Z",
+  "completed_at": "2026-05-25T00:32:44Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0124_bedb_dsi_atp_per_spike_nsga2",
+  "stdout_file": "040_20260525T003239Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "040_20260525T003239Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 4,
+  "truncated": false
+}
