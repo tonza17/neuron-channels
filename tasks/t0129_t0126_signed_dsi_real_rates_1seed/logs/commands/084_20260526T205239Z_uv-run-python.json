@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "uv run python -m arf.scripts.verificators.verify_task_results t0129_t0126_signed_dsi_real_rates_1seed",
+  "exit_code": 0,
+  "duration_seconds": 0.388,
+  "started_at": "2026-05-26T20:52:39Z",
+  "completed_at": "2026-05-26T20:52:39Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "084_20260526T205239Z_uv-run-python.stdout.txt",
+  "stderr_file": "084_20260526T205239Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}
