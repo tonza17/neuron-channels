@@ -82,9 +82,19 @@ if [ ! -f "${WORKDIR}/.stage2_uv_done" ]; then
                 ruff.toml \
                 .gitignore \
                 tasks/t0024_port_de_rosenroll_2026_dsgc \
+                tasks/t0069_t0067_ais_localised_channel_sweep \
+                tasks/t0072_synaptic_traces_pd_nd \
                 tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2 \
+                tasks/t0083_bedb_v3_extend_nsga2_gen8plus \
                 tasks/t0090_morphology_generator_diversity_test \
+                tasks/t0091_morphology_extended_nsga2_v1 \
                 tasks/t0092_diagnose_morphology_generator_silence \
+                tasks/t0093_resweep_and_t0090_correction \
+                tasks/t0099_random_init_pareto_robustness \
+                tasks/t0122_dsi_cytoplasm_volume_nsga2 \
+                tasks/t0124_bedb_dsi_atp_per_spike_nsga2 \
+                tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen \
+                tasks/t0127_correct_t0126_cell_trace_suggestions \
                 tasks/t0128_t0127_rerun_dsi_atp_3seeds 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
             git checkout "${BRANCH}" 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
         )
