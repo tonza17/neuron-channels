@@ -69,7 +69,27 @@ if [ ! -f "${WORKDIR}/.stage2_uv_done" ]; then
         log "uv not found after install, aborting stage 2"
     else
         if [ ! -d "${WORKDIR}/repo" ]; then
-            git clone --depth 1 -b "${BRANCH}" "${REPO_URL}" "${WORKDIR}/repo" 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
+            # Sparse clone: avoid checking out the 20k+ files of historical task data
+            # (megabyte-sized JSONs in tasks/t0001..t0127). Pull only the framework
+            # plus the directly-needed task folders (t0080 mods, t0090 morph
+            # generator, and t0128 itself).
+            git clone --depth 1 --filter=blob:none --no-checkout -b "${BRANCH}" \
+                "${REPO_URL}" "${WORKDIR}/repo" 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
+            (
+                cd "${WORKDIR}/repo"
+                git sparse-checkout init --cone
+                git sparse-checkout set \
+                    arf \
+                    meta \
+                    pyproject.toml \
+                    uv.lock \
+                    ruff.toml \
+                    .gitignore \
+                    tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2 \
+                    tasks/t0090_morphology_generator_diversity_test \
+                    tasks/t0128_t0127_rerun_dsi_atp_3seeds 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
+                git checkout "${BRANCH}" 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
+            )
         else
             (cd "${WORKDIR}/repo" && git fetch origin "${BRANCH}" && git checkout "${BRANCH}" && git reset --hard "origin/${BRANCH}") 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
         fi
