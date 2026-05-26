@@ -1,0 +1,1 @@
+-rw-r--r-- 1 root root 2966 May 26 15:21 /root/t0129_workdir/nsga2_seed3517.log

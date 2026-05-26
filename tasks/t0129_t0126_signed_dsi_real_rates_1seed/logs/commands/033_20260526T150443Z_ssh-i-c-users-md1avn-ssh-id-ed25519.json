@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 14958 -o StrictHostKeyChecking=no -o LogLevel=ERROR root@ssh4.vast.ai cd /root/t0129_workdir/repo && PYTHONPATH=/root/t0129_workdir/repo python3 -u -m tasks.t0129_t0126_signed_dsi_real_rates_1seed.code.smoke_gate --output /root/t0129_workdir/smoke_gate_remote.json",
+  "exit_code": 0,
+  "duration_seconds": 915.942,
+  "started_at": "2026-05-26T15:04:43Z",
+  "completed_at": "2026-05-26T15:19:59Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "033_20260526T150443Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "033_20260526T150443Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 2,
+  "truncated": false
+}

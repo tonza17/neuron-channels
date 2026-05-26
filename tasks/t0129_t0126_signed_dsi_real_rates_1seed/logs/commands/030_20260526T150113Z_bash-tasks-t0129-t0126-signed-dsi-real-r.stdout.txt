@@ -1,0 +1,48 @@
+[sync-push] LOCAL_REPO_ROOT=/c/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0129_t0126_signed_dsi_real_rates_1seed
+[sync-push] MAIN_REPO_ROOT=/c/Users/md1avn/Documents/GitHub/neuron-channels
+[sync-push] Creating remote repo skeleton at /root/t0129_workdir/repo
+[sync-push] Pushing t0024 code: /c/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0024_port_de_rosenroll_2026_dsgc/code -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/code
+[sync-push] Pushing t0024 MOD sources: /c/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources
+[sync-push] Pushing t0080 code+mods: /c/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code
+[sync-push] Pushing t0083 results/data: /c/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/data -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0083_bedb_v3_extend_nsga2_gen8plus/results/data
+[sync-push] Pushing t0090 code: /c/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0090_morphology_generator_diversity_test/code -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0090_morphology_generator_diversity_test/code
+[sync-push] Pushing t0091 results/data: /c/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0091_morphology_extended_nsga2_v1/results/data -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0091_morphology_extended_nsga2_v1/results/data
+[sync-push] Pushing t0092 code: /c/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0092_diagnose_morphology_generator_silence/code -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0092_diagnose_morphology_generator_silence/code
+[sync-push] Pushing t0093 data: /c/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0093_resweep_and_t0090_correction/data -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0093_resweep_and_t0090_correction/data
+[sync-push] Pushing t0126 results/data: /c/Users/md1avn/Documents/GitHub/neuron-channels/tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/results/data -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/results/data
+[sync-push] Pushing t0129 code: /c/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0129_t0126_signed_dsi_real_rates_1seed/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code -> root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code
+[sync-push] Verifying remote tree:
+total 4
+drwxr-xr-x 11 root root 4096 May 26 15:02 .
+drwxr-xr-x  3 root root   19 May 26 15:01 ..
+-rw-r--r--  1 root root    0 May 26 15:01 __init__.py
+drwxr-xr-x  4 root root   51 May 26 15:01 t0024_port_de_rosenroll_2026_dsgc
+drwxr-xr-x  3 root root   37 May 26 15:01 t0080_bedb_mobo_v3_dendritic_spike_nsga2
+drwxr-xr-x  3 root root   21 May 26 15:01 t0083_bedb_v3_extend_nsga2_gen8plus
+drwxr-xr-x  3 root root   18 May 26 15:01 t0090_morphology_generator_diversity_test
+drwxr-xr-x  3 root root   21 May 26 15:02 t0091_morphology_extended_nsga2_v1
+drwxr-xr-x  3 root root   18 May 26 15:02 t0092_diagnose_morphology_generator_silence
+drwxr-xr-x  3 root root   18 May 26 15:02 t0093_resweep_and_t0090_correction
+drwxr-xr-x  3 root root   21 May 26 15:02 t0126_bedb_dsi_atp_per_spike_nsga2_60gen
+drwxr-xr-x  5 root root  133 May 26 15:03 t0129_t0126_signed_dsi_real_rates_1seed
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/.gitkeep
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/anchor_classifier.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/anchor_definitions.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/apply_params.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/atp_per_spike.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/biological_priors.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/biological_scorecard.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/bootstrap.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/build_assets.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/build_cell_ais.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/build_pareto_plots.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/build_predictions_assets.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/build_results.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/build_t0129_outputs.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/build_top50_morphologies.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/constants.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/constants_electrophys.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/constants_morphology.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/cost_watchdog.py
+/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/cuntz_balancing_factor.py
+[sync-push] DONE

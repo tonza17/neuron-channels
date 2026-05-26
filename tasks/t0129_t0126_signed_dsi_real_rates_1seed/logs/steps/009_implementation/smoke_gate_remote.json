@@ -1,0 +1,160 @@
+{
+  "task_id": "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
+  "step": "implementation_local_smoke_gate",
+  "description": "Local 9-check smoke gate. Checks 2-6 and 8 run on Windows; checks 1, 7, and 9 (NEURON simulations on anchors) are deferred to the Vast.ai instance because no Windows nrnmech.dll for t0080 MODs exists locally.",
+  "checks": [
+    {
+      "id": 1,
+      "name": "single-eval driver run (anchor-1 bedb_like ~43.6 Hz)",
+      "status": "ok",
+      "passed": true,
+      "expected_pd_rate_hz": 43.6,
+      "anchor1_pd_rate_hz": 45.23809523809524,
+      "anchor1_dsi": 0.049723756906077346,
+      "per_anchor": [
+        {
+          "anchor_index": 0,
+          "anchor_name": "bedb_like",
+          "dsi_signed": 0.049723756906077346,
+          "pd_rate_hz": 45.23809523809524,
+          "robustness": 0.7979455225291332,
+          "mi_count_bits": 0.7294154011530162,
+          "atp_per_spike_molecules": 199879183.86309478,
+          "is_unstable": false,
+          "n_errors": 0,
+          "elapsed_s": 64.30404376983643,
+          "error": null
+        },
+        {
+          "anchor_index": 1,
+          "anchor_name": "symmetric",
+          "dsi_signed": 0.07303370786516852,
+          "pd_rate_hz": 45.476190476190474,
+          "robustness": 0.7666762115824319,
+          "mi_count_bits": 0.5218966515135944,
+          "atp_per_spike_molecules": 205944994.8753832,
+          "is_unstable": false,
+          "n_errors": 0,
+          "elapsed_s": 115.5194582939148,
+          "error": null
+        },
+        {
+          "anchor_index": 2,
+          "anchor_name": "pd_asymmetric",
+          "dsi_signed": 0.04519774011299431,
+          "pd_rate_hz": 44.04761904761905,
+          "robustness": 0.7963567756127307,
+          "mi_count_bits": 0.5952786949499486,
+          "atp_per_spike_molecules": 242674502.32888678,
+          "is_unstable": false,
+          "n_errors": 0,
+          "elapsed_s": 165.3838529586792,
+          "error": null
+        },
+        {
+          "anchor_index": 3,
+          "anchor_name": "nd_asymmetric",
+          "dsi_signed": -0.41904761904761906,
+          "pd_rate_hz": 14.523809523809524,
+          "robustness": 0.5745510083594634,
+          "mi_count_bits": 0.33317477597272727,
+          "atp_per_spike_molecules": 211685625.93667486,
+          "is_unstable": false,
+          "n_errors": 0,
+          "elapsed_s": 202.23736357688904,
+          "error": null
+        },
+        {
+          "anchor_index": 4,
+          "anchor_name": "alt_topology",
+          "dsi_signed": 0.7600000000000001,
+          "pd_rate_hz": 5.238095238095238,
+          "robustness": 0.9554961164235521,
+          "mi_count_bits": 0.5646098270911126,
+          "atp_per_spike_molecules": 54295903.735200025,
+          "is_unstable": false,
+          "n_errors": 0,
+          "elapsed_s": 207.94337582588196,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "signed antipodal DSI synthetic sanity (PD=5, ND=1 -> 0.6667 +/- 1e-6)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "_signed_antipodal_dsi(PD=5, ND=1) = 0.6666666666666666; abs error vs 4/6 = 0.00e+00"
+    },
+    {
+      "id": 3,
+      "name": "silence guard active (SILENCE_PD_SPIKES_THRESHOLD == 3)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "evaluator.SILENCE_PD_SPIKES_THRESHOLD == 3; t0122 REQ-11 tightened the guard from ``total_mean_spikes < 10`` to ``pd_spikes_sum < 3``"
+    },
+    {
+      "id": 4,
+      "name": "pool-restart sanity (_POOL_RESTART_EVERY == 10)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "nsga2_driver._POOL_RESTART_EVERY == 10; project policy per feedback_nsga2_pool_restart_every_10.md"
+    },
+    {
+      "id": 5,
+      "name": "watchdog wiring (T0129_HARD_BUDGET_USD == 8.00)",
+      "status": "ok",
+      "passed": true,
+      "evidence": "constants.T0129_HARD_BUDGET_USD == 8.00; $8 project per-task default cap (local CPU; defensive only)"
+    },
+    {
+      "id": 6,
+      "name": "no HVPlateauTermination in live TerminationCollection",
+      "status": "ok",
+      "passed": true,
+      "evidence": "_build_termination(...).terminations = ['MaximumGenerationTermination', 'CostWatchdogTermination']; HVPlateauTermination present = False"
+    },
+    {
+      "id": 7,
+      "name": "DSI/ATP sanity range on anchor (DSI in [-1,1], ATP in [1e6, 1e14])",
+      "status": "ok",
+      "passed": true,
+      "evidence": "anchor 0 dsi_signed=0.0497 (in_range=True); atp_per_spike=1.996e+08 (in_range=True); silence_failed=False"
+    },
+    {
+      "id": 8,
+      "name": "BedBV3MorphProblem._evaluate emits F[0] = -DSI, F[1] = +ATP",
+      "status": "ok",
+      "passed": true,
+      "evidence": "source contains '-result.dsi_signed' = True; source contains '+result.atp_per_spike_molecules' = True; bad-DSI=False; bad-ATP=False"
+    },
+    {
+      "id": 9,
+      "name": "Carter-Bean 2009 ATP/AP/cm at AIS in canonical [1e8, 1e9] band (PASS within [3e7, 3e9]; WARN within [1e6, 1e14])",
+      "status": "ok",
+      "passed": true,
+      "verdict": "PASS",
+      "carter_bean_canonical_band": [
+        100000000.0,
+        1000000000.0
+      ],
+      "carter_bean_canonical_gmean": 316227766.01683795,
+      "carter_bean_pass_band": [
+        30000000.0,
+        3000000000.0
+      ],
+      "carter_bean_fallback_band": [
+        1000000.0,
+        100000000000000.0
+      ],
+      "observed_atp_per_ap_per_cm": 609697911.7607831,
+      "evidence": "observed=6.097e+08 ATP/AP/cm; verdict=PASS; PASS band=[3e7, 3e9]; WARN band=[1e6, 1e14]; canonical (first-principles) band=[1e8, 1e9] gmean=3e8; n_aps=64 ais_length_um=25.06. S-0123-04 resolved: plan-quoted 2.41e21 ATP/cm typo replaced with first-principles canonical band from Sengupta 2010 alpha tables + Werginz 2024 RGC AIS Nav density (see plan/plan.md Approach section)."
+    }
+  ],
+  "fast_checks_passed": true,
+  "all_checks_passed": true,
+  "tolerances": {
+    "dsi": 0.05,
+    "pd_rate_hz": 1.0
+  }
+}

@@ -1,0 +1,122 @@
+[bootstrap] WORKDIR=/root/t0129_workdir
+[bootstrap] REPO_DIR=/root/t0129_workdir/repo
+[bootstrap] Linux 73dbc5032254 5.15.0-174-generic #184-Ubuntu SMP Fri Mar 13 18:41:50 UTC 2026 x86_64 GNU/Linux
+[bootstrap] Python 3.12.13
+[bootstrap] Step 1: apt install build deps and tmux
+[bootstrap] apt step done
+[bootstrap] Step 2: pip install Python deps
+[bootstrap] pip versions installed:
+  neuron: 8.2.7+
+  pymoo: 0.6.1.6
+  numpy: 2.4.6
+  pandas: 3.0.3
+  scipy: 1.17.1
+  matplotlib: 3.10.9
+  pydantic: 2.13.4
+  tqdm: 4.67.3
+  sklearn: 1.8.0
+  joblib: 1.5.3
+  networkx: 3.6.1
+  dill: 0.4.1
+[bootstrap] nrnivmodl: /usr/local/bin/nrnivmodl
+[bootstrap] Step 3a: compiling t0080 mods in /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods
+/root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods
+Mod files: "././bkt80.mod" "././calt80.mod" "././catt80.mod" "././iht80.mod" "././kdrt80.mod" "././kv3t80.mod" "././kv4t80.mod" "././kv7t80.mod" "././napt80.mod" "././nart80.mod" "././nav16t80.mod" "././skahpt80.mod" "././skt80.mod"
+
+Creating 'x86_64' directory for .o files.
+
+ -> [32mCompiling[0m mod_func.cpp
+ -> [32mNMODL[0m .././bkt80.mod
+ -> [32mNMODL[0m .././calt80.mod
+ -> [32mNMODL[0m .././catt80.mod
+ -> [32mNMODL[0m .././iht80.mod
+ -> [32mNMODL[0m .././kdrt80.mod
+ -> [32mNMODL[0m .././kv3t80.mod
+ -> [32mNMODL[0m .././kv4t80.mod
+ -> [32mNMODL[0m .././kv7t80.mod
+ -> [32mNMODL[0m .././napt80.mod
+ -> [32mNMODL[0m .././nav16t80.mod
+ -> [32mNMODL[0m .././nart80.mod
+ -> [32mNMODL[0m .././skahpt80.mod
+ -> [32mNMODL[0m .././skt80.mod
+ -> [32mCompiling[0m bkt80.c
+ -> [32mCompiling[0m calt80.c
+ -> [32mCompiling[0m catt80.c
+ -> [32mCompiling[0m iht80.c
+ -> [32mCompiling[0m kdrt80.c
+ -> [32mCompiling[0m kv3t80.c
+ -> [32mCompiling[0m kv4t80.c
+ -> [32mCompiling[0m kv7t80.c
+ -> [32mCompiling[0m napt80.c
+ -> [32mCompiling[0m nart80.c
+ -> [32mCompiling[0m nav16t80.c
+ -> [32mCompiling[0m skahpt80.c
+ -> [32mCompiling[0m skt80.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+total 580
+drwxr-xr-x 3 root    root      4096 May 26 15:04 .
+drwxr-xr-x 3 1144306 1049089   4096 May 26 15:04 ..
+drwxr-xr-x 2 root    root        27 May 26 15:04 .libs
+-rw-r--r-- 1 root    root     15907 May 26 15:04 bkt80.c
+-rw-r--r-- 1 root    root     15224 May 26 15:04 bkt80.o
+-rw-r--r-- 1 root    root     15099 May 26 15:04 calt80.c
+-rw-r--r-- 1 root    root     13432 May 26 15:04 calt80.o
+-rw-r--r-- 1 root    root     14740 May 26 15:04 catt80.c
+-rw-r--r-- 1 root    root     13080 May 26 15:04 catt80.o
+-rw-r--r-- 1 root    root     14468 May 26 15:04 iht80.c
+-rw-r--r-- 1 root    root     12376 May 26 15:04 iht80.o
+-rw-r--r-- 1 root    root     14859 May 26 15:04 kdrt80.c
+-rw-r--r-- 1 root    root     13008 May 26 15:04 kdrt80.o
+-rw-r--r-- 1 root    root     13438 May 26 15:04 kv3t80.c
+-rw-r--r-- 1 root    root     12224 May 26 15:04 kv3t80.o
+-rw-r--r-- 1 root    root     14468 May 26 15:04 kv4t80.c
+-rw-r--r-- 1 root    root     12824 May 26 15:04 kv4t80.o
+-rw-r--r-- 1 root    root     14265 May 26 15:04 kv7t80.c
+-rw-r--r-- 1 root    root     13472 May 26 15:04 kv7t80.o
+total 120
+drwxr-xr-x 2 root root     27 May 26 15:04 .
+drwxr-xr-x 3 root root   4096 May 26 15:04 ..
+-rwxr-xr-x 1 root root 118704 May 26 15:04 libnrnmech.so
+[bootstrap] Step 3b: compiling t0024 mods in /root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources
+/root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources
+Mod files: "././Exp2NMDA.mod" "././HHst_noiseless.mod" "././cadecay.mod"
+
+Creating 'x86_64' directory for .o files.
+
+ -> [32mCompiling[0m mod_func.cpp
+ -> [32mNMODL[0m .././Exp2NMDA.mod
+ -> [32mNMODL[0m .././HHst_noiseless.mod
+ -> [32mNMODL[0m .././cadecay.mod
+ -> [32mCompiling[0m Exp2NMDA.c
+ -> [32mCompiling[0m cadecay.c
+ -> [32mCompiling[0m HHst_noiseless.c
+ => [32mLINKING[0m shared library ./libnrnmech.so
+ => [32mLINKING[0m executable ./special LDFLAGS are:    -pthread
+Successfully created x86_64/special
+total 272
+drwxr-xr-x 3 root    root     4096 May 26 15:04 .
+drwxr-xr-x 3 1144306 1049089   166 May 26 15:04 ..
+drwxr-xr-x 2 root    root       27 May 26 15:04 .libs
+-rw-r--r-- 1 root    root    17958 May 26 15:04 Exp2NMDA.c
+-rw-r--r-- 1 root    root    16552 May 26 15:04 Exp2NMDA.o
+-rw-r--r-- 1 root    root    43356 May 26 15:04 HHst_noiseless.c
+-rw-r--r-- 1 root    root    44344 May 26 15:04 HHst_noiseless.o
+-rw-r--r-- 1 root    root    16449 May 26 15:04 cadecay.c
+-rw-r--r-- 1 root    root    13608 May 26 15:04 cadecay.o
+-rwxr-xr-x 1 root    root    64888 May 26 15:04 libnrnmech.so
+-rw-r--r-- 1 root    root     1210 May 26 15:04 makemod2c_inc
+-rw-r--r-- 1 root    root      629 May 26 15:04 mod_func.cpp
+-rw-r--r-- 1 root    root     2480 May 26 15:04 mod_func.o
+-rwxr-xr-x 1 root    root     4452 May 26 15:04 special
+-rwxr-xr-x 1 root    root    16696 May 26 15:04 special.nrn
+total 68
+drwxr-xr-x 2 root root    27 May 26 15:04 .
+drwxr-xr-x 3 root root  4096 May 26 15:04 ..
+-rwxr-xr-x 1 root root 64888 May 26 15:04 libnrnmech.so
+[bootstrap] Step 4: smoke import test
+[smoke-import] neuron.h ok
+[smoke-import] t0080 .so candidates: ['/root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/libnrnmech.so', '/root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/.libs/libnrnmech.so']
+[smoke-import] t0024 .so candidates: ['/root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/libnrnmech.so', '/root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/.libs/libnrnmech.so']
+[bootstrap] DONE at 2026-05-26T15:04:09Z
