@@ -1,0 +1,79 @@
+{
+  "variants": [
+    {
+      "variant_id": "t0129-seed3517-headline",
+      "label": "Headline cell (max signed DSI) on final Pareto front",
+      "dimensions": {
+        "dsi_metric": "signed_antipodal",
+        "task_seed": 3517,
+        "n_obj": 2,
+        "n_directions": 2,
+        "antipodal_pair_deg": "0_180",
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 60,
+        "pop_size": 96,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "silence_guard_threshold_pd_spikes": 3,
+        "n_cells_pareto": 9,
+        "n_cells_total": 5760,
+        "n_cells_viable": 5496,
+        "n_cells_silenced": 264,
+        "n_cells_viable_negative_dsi": 95,
+        "headline_cell_id": 4,
+        "atp_per_spike_molecules": 6659150.098702777,
+        "pd_firing_rate_hz": 6.428571428571429,
+        "nd_firing_rate_hz": 0.0,
+        "final_hypervolume": 19995904075.787148
+      },
+      "metrics": {
+        "direction_selectivity_index": 1.0
+      }
+    },
+    {
+      "variant_id": "t0129-seed3517-pareto-median",
+      "label": "Median signed DSI across the final 9-cell Pareto front",
+      "dimensions": {
+        "dsi_metric": "signed_antipodal",
+        "task_seed": 3517,
+        "n_obj": 2,
+        "n_directions": 2,
+        "antipodal_pair_deg": "0_180",
+        "n_eval_seeds": 3,
+        "n_generations_target": 60,
+        "n_generations_completed": 60,
+        "pop_size": 96,
+        "pool_restart_every": 10,
+        "hv_plateau_auto_stop_disabled": true,
+        "n_cells_pareto": 9,
+        "atp_per_spike_molecules_pareto_median": 3633357.6653955295,
+        "atp_per_spike_molecules_pareto_min": 779758.0730795636,
+        "pd_firing_rate_hz_pareto_median": 2.619047619047619,
+        "nd_firing_rate_hz_pareto_median": 0.7142857142857143,
+        "dsi_signed_pareto_min": 0.0,
+        "dsi_signed_pareto_max": 1.0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.5714285714285715
+      }
+    },
+    {
+      "variant_id": "t0129-vs-t0126-sign-flipped",
+      "label": "t0126-Pareto cells with vector-sum > 0.5 that would flip sign under signed DSI",
+      "dimensions": {
+        "comparison": "t0126_vs_t0129",
+        "t0126_seed": 8929,
+        "t0129_seed": 3517,
+        "t0126_pareto_size": 6,
+        "t0126_cells_with_dsi_vector_sum_gt_0p5": 4,
+        "t0126_cells_with_sign_flip_count": null,
+        "sign_flip_count_provenance": "unknowable_from_t0126_artefacts",
+        "sign_flip_count_blocker": "t0126_did_not_persist_per_direction_spike_counts_and_pd_rate_hz_40_is_synthesised_placeholder"
+      },
+      "metrics": {
+        "direction_selectivity_index": null
+      }
+    }
+  ]
+}
