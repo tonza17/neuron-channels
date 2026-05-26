@@ -68,10 +68,10 @@
       "step": 8,
       "name": "setup-machines",
       "description": "Provision a Vast.ai instance matching t0126's profile (~32 vCPU EPYC), so the t0129 NSGA-II run completes in the same ~9h envelope as t0126 and the cross-task comparison is apples-to-apples. UN-SKIPPED 2026-05-26 after the local 4-worker run was killed at ~7 min/cell (extrapolated 5-7 days for 60 gen).",
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
-      "log_file": null
+      "status": "completed",
+      "started_at": "2026-05-26T13:43:00Z",
+      "completed_at": "2026-05-26T13:56:55Z",
+      "log_file": "logs/steps/008_setup-machines/"
     },
     {
       "step": 9,
