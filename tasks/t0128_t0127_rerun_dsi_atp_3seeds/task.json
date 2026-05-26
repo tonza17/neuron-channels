@@ -5,12 +5,12 @@
   "name": "S-0127-01: 3-seed DSI vs ATP NSGA-II rerun via run_seed*.sh wrapper",
   "short_description": "Rerun t0126 protocol verbatim on 3 fresh non-lineage seeds via the proper run_seed*.sh shell wrapper so cell_trace is recorded; pool fronts to clear n>=20 and recover per-cell diagnostics.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [
     "t0126_bedb_dsi_atp_per_spike_nsga2_60gen",
     "t0127_correct_t0126_cell_trace_suggestions"
   ],
-  "start_time": null,
+  "start_time": "2026-05-26T02:19:22Z",
   "end_time": null,
   "expected_assets": {
     "predictions": 1,
