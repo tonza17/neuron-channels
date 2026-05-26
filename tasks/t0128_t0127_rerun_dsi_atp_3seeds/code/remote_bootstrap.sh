@@ -161,8 +161,33 @@ if [ ! -f "${WORKDIR}/.stage4_smokegate_ok" ] && [ -f "${WORKDIR}/.stage3_mods_d
     fi
 fi
 
+# ============== STAGE 4b: generate init_pop_seedNNNN.json (LHS) ==============
+# Each NSGA-II run loads init_pop_seedNNNN.json (POP_SIZE x 68 LHS sample). For
+# fresh seeds (2608, 8276, 9986) these need to be generated before launching.
+if [ ! -f "${WORKDIR}/.stage4b_initpop_done" ] && [ -f "${WORKDIR}/.stage4_smokegate_ok" ]; then
+    log "stage 4b: generate init_pop_seedNNNN.json for all T0128_SEEDS"
+    cd "${WORKDIR}/repo"
+    PYTHONPATH="${WORKDIR}/repo" python3 -u -m \
+        tasks.t0128_t0127_rerun_dsi_atp_3seeds.code.random_init \
+        2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -10
+    # Verify all 3 files exist.
+    all_present=true
+    for s in 2608 8276 9986; do
+        if [ ! -f "${WORKDIR}/repo/${TASK_REL}/results/data/init_pop_seed${s}.json" ]; then
+            log "stage 4b: init_pop_seed${s}.json MISSING after run"
+            all_present=false
+        fi
+    done
+    if $all_present; then
+        touch "${WORKDIR}/.stage4b_initpop_done"
+        log "stage 4b done"
+    else
+        log "stage 4b FAILED"
+    fi
+fi
+
 # ============== STAGE 5: 3-seed sequential NSGA-II ==============
-if [ ! -f "${WORKDIR}/COMPLETE" ] && [ -f "${WORKDIR}/.stage4_smokegate_ok" ]; then
+if [ ! -f "${WORKDIR}/COMPLETE" ] && [ -f "${WORKDIR}/.stage4b_initpop_done" ]; then
     log "stage 5: launch 3-seed sequential NSGA-II"
     cd "${WORKDIR}/repo"
     bash "${WORKDIR}/repo/${TASK_REL}/code/run_all_seeds_sequential.sh" 2>&1 | tee -a "${WORKDIR}/run_all.log"
@@ -173,7 +198,7 @@ fi
 
 # ============== STAGE 6: keep alive for sync-back ==============
 log "bootstrap loop finished; stage markers:"
-for m in .stage1_apt_done .stage2_uv_done .stage3_mods_done .stage4_smokegate_ok COMPLETE; do
+for m in .stage1_apt_done .stage2_uv_done .stage3_mods_done .stage4_smokegate_ok .stage4b_initpop_done COMPLETE; do
     if [ -f "${WORKDIR}/${m}" ]; then
         log "  ${m} OK"
     else
