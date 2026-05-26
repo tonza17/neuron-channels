@@ -67,11 +67,11 @@
     {
       "step": 8,
       "name": "setup-machines",
-      "description": "Skipped: local CPU only; NSGA-II + NEURON run on the researcher's workstation.",
-      "status": "skipped",
+      "description": "Provision a Vast.ai instance matching t0126's profile (~32 vCPU EPYC), so the t0129 NSGA-II run completes in the same ~9h envelope as t0126 and the cross-task comparison is apples-to-apples. UN-SKIPPED 2026-05-26 after the local 4-worker run was killed at ~7 min/cell (extrapolated 5-7 days for 60 gen).",
+      "status": "pending",
       "started_at": null,
       "completed_at": null,
-      "log_file": "logs/steps/008_setup-machines/"
+      "log_file": null
     },
     {
       "step": 9,
@@ -85,11 +85,11 @@
     {
       "step": 10,
       "name": "teardown",
-      "description": "Skipped: no remote machines to tear down.",
-      "status": "skipped",
+      "description": "Destroy the Vast.ai instance after NSGA-II completes and results have been downloaded; finalise costs.json and remote_machines_used.json. UN-SKIPPED 2026-05-26 alongside setup-machines.",
+      "status": "pending",
       "started_at": null,
       "completed_at": null,
-      "log_file": "logs/steps/010_teardown/"
+      "log_file": null
     },
     {
       "step": 11,
