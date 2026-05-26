@@ -111,26 +111,47 @@ export PATH="/root/.local/bin:${PATH}"
 if [ ! -f "${WORKDIR}/.stage3_mods_done" ] && [ -d "${WORKDIR}/repo" ]; then
     log "stage 3: compile NEURON MOD library (t0080 mods)"
     cd "${WORKDIR}/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods"
-    # NEURON's nrnivmodl is installed inside the uv venv at .venv/bin/nrnivmodl
-    # but uv run can't spawn it directly (No such file or directory). Source the
-    # venv activate script to get nrnivmodl onto PATH.
-    NRNIVMODL="${WORKDIR}/repo/.venv/bin/nrnivmodl"
-    if [ ! -x "${NRNIVMODL}" ]; then
-        log "stage 3: ${NRNIVMODL} missing, falling back to PATH probe"
-        # shellcheck disable=SC1091
-        source "${WORKDIR}/repo/.venv/bin/activate" 2>/dev/null || true
-        NRNIVMODL=$(command -v nrnivmodl || true)
-    fi
+
+    # NEURON's nrnivmodl ships inside the neuron Python package data directory,
+    # NOT in .venv/bin/ (uv doesn't promote it to PATH). Use Python to locate it.
+    log "stage 3: locating nrnivmodl via Python introspection"
+    NRNIVMODL=$(uv run --project "${WORKDIR}/repo" python -c "
+import neuron, pathlib, sys
+candidates = [
+    pathlib.Path(neuron.__file__).parent / '.data' / 'bin' / 'nrnivmodl',
+    pathlib.Path(neuron.__file__).parent / 'bin' / 'nrnivmodl',
+    pathlib.Path(sys.prefix) / 'bin' / 'nrnivmodl',
+    pathlib.Path(sys.prefix) / 'nrn' / 'bin' / 'nrnivmodl',
+]
+for c in candidates:
+    if c.is_file():
+        print(c); sys.exit(0)
+sys.exit(1)
+" 2>&1 | tail -1)
+
     if [ -z "${NRNIVMODL}" ] || [ ! -x "${NRNIVMODL}" ]; then
-        log "stage 3 FAILED: nrnivmodl not found in venv"
+        log "stage 3: python introspection failed; trying find under .venv"
+        NRNIVMODL=$(find "${WORKDIR}/repo/.venv" -name nrnivmodl -type f 2>/dev/null | head -1)
+    fi
+
+    if [ -z "${NRNIVMODL}" ] || [ ! -x "${NRNIVMODL}" ]; then
+        log "stage 3 FAILED: nrnivmodl not found anywhere in venv"
+        log "stage 3 diagnostic: neuron package contents:"
+        uv run --project "${WORKDIR}/repo" python -c "import neuron, pathlib; p=pathlib.Path(neuron.__file__).parent; print(p); [print(f) for f in p.rglob('nrnivmodl')]" 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -20
     else
         log "stage 3: using ${NRNIVMODL}"
-        "${NRNIVMODL}" . 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -10
+        # nrnivmodl needs to find shared libraries from the neuron package;
+        # source the venv activate to set up LD_LIBRARY_PATH etc.
+        # shellcheck disable=SC1091
+        source "${WORKDIR}/repo/.venv/bin/activate" 2>/dev/null || true
+        "${NRNIVMODL}" . 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -15
         if [ -f "x86_64/.libs/libnrnmech.so" ] || [ -f "x86_64/libnrnmech.so" ]; then
             touch "${WORKDIR}/.stage3_mods_done"
             log "stage 3 done"
         else
             log "stage 3 FAILED (libnrnmech.so not produced)"
+            log "stage 3 diagnostic: x86_64 dir contents:"
+            ls -la x86_64/ 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -20
         fi
     fi
 fi
