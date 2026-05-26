@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "uv run pytest tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py -v",
+  "exit_code": 0,
+  "duration_seconds": 22.256,
+  "started_at": "2026-05-26T13:37:35Z",
+  "completed_at": "2026-05-26T13:37:58Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "013_20260526T133735Z_uv-run-pytest.stdout.txt",
+  "stderr_file": "013_20260526T133735Z_uv-run-pytest.stderr.txt",
+  "stdout_lines": 20,
+  "stderr_lines": 0,
+  "truncated": false
+}
