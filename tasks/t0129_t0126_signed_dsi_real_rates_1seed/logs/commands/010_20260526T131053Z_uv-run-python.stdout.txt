@@ -1,0 +1,8 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\plan\plan.md
+
+[33m[1mWARNINGS:[0m
+[33m  PL-W006 warning: '## Task Requirement Checklist' does not appear to contain structured `REQ-*` checklist items[0m
+[33m  PL-W007 warning: '## Step by Step' does not reference any `REQ-*` items[0m
+
+[33m[1mPASSED[0m — 0 error(s), 2 warning(s)

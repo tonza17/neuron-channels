@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "uv run flowmark --inplace --nobackup tasks/t0129_t0126_signed_dsi_real_rates_1seed/plan/plan.md",
+  "exit_code": 0,
+  "duration_seconds": 1.353,
+  "started_at": "2026-05-26T13:10:33Z",
+  "completed_at": "2026-05-26T13:10:34Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "009_20260526T131033Z_uv-run-flowmark.stdout.txt",
+  "stderr_file": "009_20260526T131033Z_uv-run-flowmark.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}
