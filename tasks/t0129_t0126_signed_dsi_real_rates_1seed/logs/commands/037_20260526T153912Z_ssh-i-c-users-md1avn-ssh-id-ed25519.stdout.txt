@@ -1,0 +1,51 @@
+nsga2_seed3517: 1 windows (created Tue May 26 15:22:24 2026)
+---PROC---
+---LOGTAIL---
+[run_seed3517] cell_params sink: /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/cell_params.jsonl
+[run_seed3517] Phase A: building random init population for seed 3517
+[random_init] seed=3517 wrote /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/data/init_pop_seed3517.json shape=(96, 68)
+[run_seed3517] Compiling t0080 MOD library if not already present
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[run_seed3517] bootstrap imported successfully
+============================================================
+[run_seed3517] Seed 3517 starting at 2026-05-26T15:22:25Z
+[run_seed3517] N_GEN ceiling = 60; HV-plateau auto-stop DISABLED
+[run_seed3517] Cost cap = $8.00; per-instance cap = $5.00
+[run_seed3517] OperatorStopTermination REMOVED
+[run_seed3517] Signed antipodal DSI; cell_params via constructor sink
+============================================================
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+[cost_watchdog] resolved hourly rate: $0.1911/hr from machine_log.json (REQ-X)
+[nsga2_driver seed=3517] using 60 parallel workers
+[nsga2_driver seed=3517] starting: pop=96 max_gen=60 hard_cap=$8.00 rate=$0.1911/hr pool_restart_every=10
+==========================================================
+n_gen  |  n_eval  | n_nds  |      eps      |   indicator
+==========================================================
+     1 |       96 |      3 |             - |             -
+[seed 3517 gen 1] HV=676974272.5045  pop_size=96  cost_so_far=$0.0062  elapsed=117s
+[nsga2_driver seed=3517 gen=1] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     2 |      192 |      4 |  0.8983050847 |         ideal
+[seed 3517 gen 2] HV=6651650941.4510  pop_size=96  cost_so_far=$0.0132  elapsed=248s
+[nsga2_driver seed=3517 gen=2] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     3 |      288 |      4 |  0.1001051335 |         ideal
+[seed 3517 gen 3] HV=6654899931.2920  pop_size=96  cost_so_far=$0.0213  elapsed=401s
+[nsga2_driver seed=3517 gen=3] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     4 |      384 |      4 |  0.0429534493 |         ideal
+[seed 3517 gen 4] HV=6654899931.2920  pop_size=96  cost_so_far=$0.0302  elapsed=569s
+[nsga2_driver seed=3517 gen=4] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     5 |      480 |      5 |  0.0123625964 |             f
+[seed 3517 gen 5] HV=6654945837.3522  pop_size=96  cost_so_far=$0.0400  elapsed=753s
+[nsga2_driver seed=3517 gen=5] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+     6 |      576 |      6 |  0.0282150214 |             f
+[seed 3517 gen 6] HV=6654948618.3551  pop_size=96  cost_so_far=$0.0510  elapsed=962s
+[nsga2_driver seed=3517 gen=6] WARNING: dill checkpoint failed (NotImplementedError: pool objects cannot be passed between processes or pickled); trace + evaluations still written
+---CELLPARAMS---
+577 /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/cell_params.jsonl
+---HV---
+{"gen": 2, "wall_clock_s": 248.0614082813263, "hv": 6651650941.451026, "n_cells_evaluated": 96}
+{"gen": 3, "wall_clock_s": 400.85161876678467, "hv": 6654899931.291999, "n_cells_evaluated": 96}
+{"gen": 4, "wall_clock_s": 568.9237108230591, "hv": 6654899931.291999, "n_cells_evaluated": 96}
+{"gen": 5, "wall_clock_s": 753.1244606971741, "hv": 6654945837.352247, "n_cells_evaluated": 96}
+{"gen": 6, "wall_clock_s": 961.6508603096008, "hv": 6654948618.355064, "n_cells_evaluated": 96}

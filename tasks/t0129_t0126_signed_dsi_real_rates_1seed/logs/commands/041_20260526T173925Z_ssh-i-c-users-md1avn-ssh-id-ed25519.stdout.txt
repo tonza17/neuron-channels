@@ -1,0 +1,12 @@
+[seed 3517 gen 19] HV=19994061632.2907  pop_size=96  cost_so_far=$0.3057  elapsed=5759s
+[seed 3517 gen 20] HV=19994061632.2907  pop_size=96  cost_so_far=$0.3462  elapsed=6522s
+[seed 3517 gen 21] HV=19994158990.5081  pop_size=96  cost_so_far=$0.3510  elapsed=6613s
+[seed 3517 gen 22] HV=19994187717.4383  pop_size=96  cost_so_far=$0.3576  elapsed=6736s
+[seed 3517 gen 23] HV=19994232494.0324  pop_size=96  cost_so_far=$0.3663  elapsed=6900s
+[seed 3517 gen 24] HV=19994344091.4100  pop_size=96  cost_so_far=$0.3770  elapsed=7102s
+[seed 3517 gen 25] HV=19994580685.6988  pop_size=96  cost_so_far=$0.3891  elapsed=7329s
+[seed 3517 gen 26] HV=19994730727.8268  pop_size=96  cost_so_far=$0.4012  elapsed=7557s
+[seed 3517 gen 27] HV=19994831622.0057  pop_size=96  cost_so_far=$0.4144  elapsed=7806s
+[seed 3517 gen 28] HV=19994849927.0630  pop_size=96  cost_so_far=$0.4289  elapsed=8079s
+---
+2700 /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/cell_params.jsonl

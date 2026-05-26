@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 14958 root@ssh4.vast.ai grep -E \"^\\[seed 3517 gen|^[[:space:]]*[0-9]+ \\|\" /root/t0129_workdir/nsga2_seed3517.log | tail -25; echo \"---\"; wc -l /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/cell_params.jsonl; echo \"---HV---\"; tail -5 /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/logs/steps/009_implementation/hv_trace.jsonl 2>&1 || tail -5 /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/data/hv_trajectory_seed3517.json",
+  "exit_code": 0,
+  "duration_seconds": 3.608,
+  "started_at": "2026-05-26T16:23:41Z",
+  "completed_at": "2026-05-26T16:23:44Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "039_20260526T162341Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "039_20260526T162341Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 33,
+  "stderr_lines": 2,
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "scp -i C:/Users/md1avn/.ssh/id_ed25519 -P 14958 -o StrictHostKeyChecking=no root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/cell_params.jsonl C:/Users/md1avn/AppData/Local/Temp/cell_params_t0129_snapshot.jsonl",
+  "exit_code": 0,
+  "duration_seconds": 9.851,
+  "started_at": "2026-05-26T17:40:03Z",
+  "completed_at": "2026-05-26T17:40:12Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "042_20260526T174003Z_scp-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "042_20260526T174003Z_scp-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 2,
+  "truncated": false
+}

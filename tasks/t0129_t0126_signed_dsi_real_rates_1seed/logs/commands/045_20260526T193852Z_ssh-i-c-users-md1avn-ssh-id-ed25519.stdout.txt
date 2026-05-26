@@ -1,0 +1,25 @@
+total 8984
+drwxr-xr-x 4 root root      57 May 26 15:21 .
+drwxr-xr-x 8 root root     184 May 26 15:04 ..
+-rw-r--r-- 1 root root 9194454 May 26 18:45 cell_params.jsonl
+drwxr-xr-x 2 root root    4096 May 26 18:45 data
+drwxr-xr-x 2 root root       6 May 26 15:04 images
+---
+algorithm_config.json
+all_evaluations_seed3517.json
+evaluation_seeds.json
+hv_trajectory_seed3517.json
+init_pop_seed3517.json
+nsga2_checkpoint_seed3517.json
+pareto_front_seed3517.json
+---
+5760 /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/cell_params.jsonl
+---
+checkpoints
+hv_trace.jsonl
+---
+-rw-r--r-- 1 root root 23624 May 26 18:45 /root/t0129_workdir/nsga2_seed3517.log
+---
+-rw-r--r-- 1 root root    37453 May 26 18:45 pareto_front_seed3517.json
+[run_seed3517] cell_params.jsonl line count:
+5760 /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/cell_params.jsonl
