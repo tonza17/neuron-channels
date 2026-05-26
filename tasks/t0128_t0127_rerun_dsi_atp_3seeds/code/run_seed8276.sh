@@ -15,7 +15,7 @@ echo "[run_seed${SEED}] T0128_CELL_TRACE_JSONL=${T0128_CELL_TRACE_JSONL}"
 echo "[run_seed${SEED}] starting NSGA-II at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
 cd "${REPO_ROOT}"
-uv run python -u -m tasks.t0128_t0127_rerun_dsi_atp_3seeds.code.nsga2_driver \
+PYTHONPATH="${REPO_ROOT}" python3 -u -m tasks.t0128_t0127_rerun_dsi_atp_3seeds.code.nsga2_driver \
     --seed "${SEED}" \
     --teardown-on-watchdog \
     2>&1 | tee "/root/t0128_workdir/nsga2_seed${SEED}.log"

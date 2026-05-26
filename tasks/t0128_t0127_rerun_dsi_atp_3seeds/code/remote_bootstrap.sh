@@ -58,101 +58,73 @@ if [ ! -f "${WORKDIR}/.stage1_apt_done" ]; then
     fi
 fi
 
-# ============== STAGE 2: uv + repo + python deps ==============
+# ============== STAGE 2: repo clone + Python deps via system pip ==============
+# Follows t0126's setup pattern (machine_log.json commit 22):
+#   pip install --break-system-packages -q neuron==8.2.7 pymoo==0.6.1.6 dill==0.4.1 ...
+# NEURON ships nrnivmodl on /usr/local/bin when installed this way. Avoids
+# the uv-venv complications that blocked stage 3 on previous attempts.
 if [ ! -f "${WORKDIR}/.stage2_uv_done" ]; then
-    log "stage 2: uv install + clone + sync"
-    if [ ! -d "${WORKDIR}/.uv" ]; then
-        curl -LsSf https://astral.sh/uv/install.sh | sh
-    fi
-    export PATH="/root/.local/bin:${PATH}"
-    if ! command -v uv >/dev/null 2>&1; then
-        log "uv not found after install, aborting stage 2"
-    else
-        if [ ! -d "${WORKDIR}/repo" ]; then
-            # Sparse clone: avoid checking out the 20k+ files of historical task data
-            # (megabyte-sized JSONs in tasks/t0001..t0127). Pull only the framework
-            # plus the directly-needed task folders (t0080 mods, t0090 morph
-            # generator, and t0128 itself).
-            git clone --depth 1 --filter=blob:none --no-checkout -b "${BRANCH}" \
-                "${REPO_URL}" "${WORKDIR}/repo" 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
-            (
-                cd "${WORKDIR}/repo"
-                git sparse-checkout init --cone
-                git sparse-checkout set \
-                    arf \
-                    meta \
-                    pyproject.toml \
-                    uv.lock \
-                    ruff.toml \
-                    .gitignore \
-                    tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2 \
-                    tasks/t0090_morphology_generator_diversity_test \
-                    tasks/t0128_t0127_rerun_dsi_atp_3seeds 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
-                git checkout "${BRANCH}" 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
-            )
-        else
-            (cd "${WORKDIR}/repo" && git fetch origin "${BRANCH}" && git checkout "${BRANCH}" && git reset --hard "origin/${BRANCH}") 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
-        fi
-        if [ -d "${WORKDIR}/repo" ]; then
+    log "stage 2: clone repo + pip install NEURON deps"
+
+    # Repo clone: sparse-checkout avoids the 20k+ files of historical task data
+    # (megabyte-sized JSONs in tasks/t0001..t0127). Pull only what t0128 needs.
+    if [ ! -d "${WORKDIR}/repo" ]; then
+        git clone --depth 1 --filter=blob:none --no-checkout -b "${BRANCH}" \
+            "${REPO_URL}" "${WORKDIR}/repo" 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
+        (
             cd "${WORKDIR}/repo"
-            uv sync --frozen 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -20
-            if [ $? -eq 0 ]; then
-                touch "${WORKDIR}/.stage2_uv_done"
-                log "stage 2 done"
-            else
-                log "stage 2 FAILED (uv sync)"
-            fi
-        fi
+            git sparse-checkout init --cone
+            git sparse-checkout set \
+                arf \
+                meta \
+                pyproject.toml \
+                uv.lock \
+                ruff.toml \
+                .gitignore \
+                tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2 \
+                tasks/t0090_morphology_generator_diversity_test \
+                tasks/t0128_t0127_rerun_dsi_atp_3seeds 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
+            git checkout "${BRANCH}" 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
+        )
+    else
+        (cd "${WORKDIR}/repo" && git fetch origin "${BRANCH}" && git checkout "${BRANCH}" && git reset --hard "origin/${BRANCH}") 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
+    fi
+
+    # System pip install (t0126 pattern). --break-system-packages bypasses PEP 668.
+    # Pinned versions match the t0124/t0126 lineage so smoke-gate fingerprints match.
+    log "stage 2: pip install NEURON 8.2.7 + pymoo 0.6.1.6 + dill 0.4.1 ..."
+    pip3 install --break-system-packages -q \
+        neuron==8.2.7 pymoo==0.6.1.6 dill==0.4.1 \
+        numpy pandas scipy matplotlib pydantic tqdm scikit-learn \
+        2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -10
+    if python3 -c "import neuron; print(neuron.__version__)" >/dev/null 2>&1; then
+        touch "${WORKDIR}/.stage2_uv_done"
+        log "stage 2 done (neuron $(python3 -c 'import neuron; print(neuron.__version__)') installed)"
+    else
+        log "stage 2 FAILED (neuron import failed after pip install)"
     fi
 fi
-export PATH="/root/.local/bin:${PATH}"
 
 # ============== STAGE 3: NEURON MOD library ==============
 if [ ! -f "${WORKDIR}/.stage3_mods_done" ] && [ -d "${WORKDIR}/repo" ]; then
     log "stage 3: compile NEURON MOD library (t0080 mods)"
     cd "${WORKDIR}/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods"
 
-    # NEURON's nrnivmodl ships inside the neuron Python package data directory,
-    # NOT in .venv/bin/ (uv doesn't promote it to PATH). Use Python to locate it.
-    log "stage 3: locating nrnivmodl via Python introspection"
-    NRNIVMODL=$(uv run --project "${WORKDIR}/repo" python -c "
-import neuron, pathlib, sys
-candidates = [
-    pathlib.Path(neuron.__file__).parent / '.data' / 'bin' / 'nrnivmodl',
-    pathlib.Path(neuron.__file__).parent / 'bin' / 'nrnivmodl',
-    pathlib.Path(sys.prefix) / 'bin' / 'nrnivmodl',
-    pathlib.Path(sys.prefix) / 'nrn' / 'bin' / 'nrnivmodl',
-]
-for c in candidates:
-    if c.is_file():
-        print(c); sys.exit(0)
-sys.exit(1)
-" 2>&1 | tail -1)
-
-    if [ -z "${NRNIVMODL}" ] || [ ! -x "${NRNIVMODL}" ]; then
-        log "stage 3: python introspection failed; trying find under .venv"
-        NRNIVMODL=$(find "${WORKDIR}/repo/.venv" -name nrnivmodl -type f 2>/dev/null | head -1)
-    fi
-
-    if [ -z "${NRNIVMODL}" ] || [ ! -x "${NRNIVMODL}" ]; then
-        log "stage 3 FAILED: nrnivmodl not found anywhere in venv"
-        log "stage 3 diagnostic: neuron package contents:"
-        uv run --project "${WORKDIR}/repo" python -c "import neuron, pathlib; p=pathlib.Path(neuron.__file__).parent; print(p); [print(f) for f in p.rglob('nrnivmodl')]" 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -20
-    else
-        log "stage 3: using ${NRNIVMODL}"
-        # nrnivmodl needs to find shared libraries from the neuron package;
-        # source the venv activate to set up LD_LIBRARY_PATH etc.
-        # shellcheck disable=SC1091
-        source "${WORKDIR}/repo/.venv/bin/activate" 2>/dev/null || true
-        "${NRNIVMODL}" . 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -15
+    # NEURON installed via system pip puts nrnivmodl on /usr/local/bin (or
+    # similar PATH location). Just call it directly.
+    if command -v nrnivmodl >/dev/null 2>&1; then
+        log "stage 3: using $(command -v nrnivmodl)"
+        nrnivmodl . 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -15
         if [ -f "x86_64/.libs/libnrnmech.so" ] || [ -f "x86_64/libnrnmech.so" ]; then
             touch "${WORKDIR}/.stage3_mods_done"
             log "stage 3 done"
         else
             log "stage 3 FAILED (libnrnmech.so not produced)"
-            log "stage 3 diagnostic: x86_64 dir contents:"
             ls -la x86_64/ 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -20
         fi
+    else
+        log "stage 3 FAILED: nrnivmodl not on PATH"
+        which python3 pip3 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
     fi
 fi
 
@@ -163,7 +135,7 @@ if [ ! -f "${WORKDIR}/.stage4_smokegate_ok" ] && [ -f "${WORKDIR}/.stage3_mods_d
     export T0128_CELL_TRACE_JSONL="${WORKDIR}/smoketest_celltrace.jsonl"
     mkdir -p "${WORKDIR}/repo/${TASK_REL}/results/data"
     mkdir -p "${WORKDIR}/repo/${TASK_REL}/logs/steps/008_setup-machines"
-    if uv run python -u -m tasks.t0128_t0127_rerun_dsi_atp_3seeds.code.smoke_gate \
+    if PYTHONPATH="${WORKDIR}/repo" python3 -u -m tasks.t0128_t0127_rerun_dsi_atp_3seeds.code.smoke_gate \
         --output "${WORKDIR}/repo/${TASK_REL}/logs/steps/008_setup-machines/smoke_gate_remote.json" \
         2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -30; then
         # smoke_gate returns 0 if fast checks pass even if deferred checks
