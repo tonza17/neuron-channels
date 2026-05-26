@@ -1,0 +1,33 @@
+[seed 3517 gen 3] HV=6654899931.2920  pop_size=96  cost_so_far=$0.0213  elapsed=401s
+     4 |      384 |      4 |  0.0429534493 |         ideal
+[seed 3517 gen 4] HV=6654899931.2920  pop_size=96  cost_so_far=$0.0302  elapsed=569s
+     5 |      480 |      5 |  0.0123625964 |             f
+[seed 3517 gen 5] HV=6654945837.3522  pop_size=96  cost_so_far=$0.0400  elapsed=753s
+     6 |      576 |      6 |  0.0282150214 |             f
+[seed 3517 gen 6] HV=6654948618.3551  pop_size=96  cost_so_far=$0.0510  elapsed=962s
+     7 |      672 |      3 |  0.0566869272 |             f
+[seed 3517 gen 7] HV=6656265334.6732  pop_size=96  cost_so_far=$0.0635  elapsed=1196s
+     8 |      768 |      4 |  2.5519582329 |         nadir
+[seed 3517 gen 8] HV=6661984178.5127  pop_size=96  cost_so_far=$0.0785  elapsed=1480s
+     9 |      864 |      4 |  0.000000E+00 |             f
+[seed 3517 gen 9] HV=6661984178.5127  pop_size=96  cost_so_far=$0.0966  elapsed=1819s
+    10 |      960 |      4 |  0.6666666667 |         ideal
+[seed 3517 gen 10] HV=19991124172.8748  pop_size=96  cost_so_far=$0.1168  elapsed=2201s
+    11 |     1056 |      5 |  0.0056388663 |             f
+[seed 3517 gen 11] HV=19991126589.2599  pop_size=96  cost_so_far=$0.1204  elapsed=2268s
+    12 |     1152 |      5 |  0.0171708177 |         ideal
+[seed 3517 gen 12] HV=19991126589.2599  pop_size=96  cost_so_far=$0.1271  elapsed=2395s
+    13 |     1248 |      4 |  0.1310211484 |         ideal
+[seed 3517 gen 13] HV=19993386493.6115  pop_size=96  cost_so_far=$0.1375  elapsed=2589s
+    14 |     1344 |      5 |  0.0241032373 |             f
+[seed 3517 gen 14] HV=19993391866.1078  pop_size=96  cost_so_far=$0.1545  elapsed=2911s
+    15 |     1440 |      6 |  0.0585930330 |         ideal
+[seed 3517 gen 15] HV=19993400419.1148  pop_size=96  cost_so_far=$0.1763  elapsed=3322s
+---
+1489 /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/cell_params.jsonl
+---HV---
+{"gen": 11, "wall_clock_s": 2268.529514312744, "hv": 19991126589.25988, "n_cells_evaluated": 96}
+{"gen": 12, "wall_clock_s": 2395.182586669922, "hv": 19991126589.25988, "n_cells_evaluated": 96}
+{"gen": 13, "wall_clock_s": 2589.4767649173737, "hv": 19993386493.611492, "n_cells_evaluated": 96}
+{"gen": 14, "wall_clock_s": 2911.1573898792267, "hv": 19993391866.107845, "n_cells_evaluated": 96}
+{"gen": 15, "wall_clock_s": 3322.09392285347, "hv": 19993400419.114773, "n_cells_evaluated": 96}

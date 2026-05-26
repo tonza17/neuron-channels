@@ -1,0 +1,10 @@
+[smoke_gate] wrote tasks\t0129_t0126_signed_dsi_real_rates_1seed\logs\steps\009_implementation\smoke_gate.json: fast_checks_passed=True all_checks_passed=True
+  check 1: deferred_to_remote  -- single-eval driver run (anchor-1 bedb_like ~43.6 Hz)
+  check 2: ok  -- signed antipodal DSI synthetic sanity (PD=5, ND=1 -> 0.6667 +/- 1e-6)
+  check 3: ok  -- silence guard active (SILENCE_PD_SPIKES_THRESHOLD == 3)
+  check 4: ok  -- pool-restart sanity (_POOL_RESTART_EVERY == 10)
+  check 5: ok  -- watchdog wiring (T0129_HARD_BUDGET_USD == 8.00)
+  check 6: ok  -- no HVPlateauTermination in live TerminationCollection
+  check 7: ok  -- DSI/ATP sanity range on anchor (DSI in [-1,1], ATP in [1e6, 1e14])
+  check 8: ok  -- BedBV3MorphProblem._evaluate emits F[0] = -DSI, F[1] = +ATP
+  check 9: ok  -- Carter-Bean 2009 ATP/AP/cm at AIS in canonical [1e8, 1e9] band (PASS within [3e7, 3e9]; WARN within [1e6, 1e14])

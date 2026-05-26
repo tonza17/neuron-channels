@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "bash -c echo wrapper-smoke-ok",
+  "exit_code": 0,
+  "duration_seconds": 0.227,
+  "started_at": "2026-05-26T14:59:18Z",
+  "completed_at": "2026-05-26T14:59:18Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "029_20260526T145918Z_bash-c-echo-wrapper-smoke-ok.stdout.txt",
+  "stderr_file": "029_20260526T145918Z_bash-c-echo-wrapper-smoke-ok.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

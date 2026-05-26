@@ -1,0 +1,20 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 10 items
+
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_silence_pd_threshold_value PASSED [ 10%]
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_all_silent_returns_dsi_minus_one PASSED [ 20%]
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_one_pd_spike_returns_dsi_minus_one PASSED [ 30%]
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_two_pd_spikes_returns_dsi_minus_one PASSED [ 40%]
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_three_pd_spikes_does_not_trip_guard PASSED [ 50%]
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_firing_positive_control_pd_dominant PASSED [ 60%]
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_signed_dsi_synthetic_pd5_nd1_positive PASSED [ 70%]
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_signed_dsi_negative_when_nd_dominates PASSED [ 80%]
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_signed_dsi_zero_when_pd_equals_nd PASSED [ 90%]
+tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/test_evaluator_dsi_signed.py::test_signed_dsi_silence_sentinel_when_both_zero PASSED [100%]
+
+============================= 10 passed in 17.92s =============================

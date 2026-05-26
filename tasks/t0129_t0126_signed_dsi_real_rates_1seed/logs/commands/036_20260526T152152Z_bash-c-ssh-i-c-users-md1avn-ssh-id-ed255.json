@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "bash -c ssh -i /c/Users/md1avn/.ssh/id_ed25519 -p 14958 -o StrictHostKeyChecking=no -o LogLevel=ERROR root@ssh4.vast.ai \"mkdir -p /root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/logs/steps/008_setup-machines\" && scp -i /c/Users/md1avn/.ssh/id_ed25519 -P 14958 -o StrictHostKeyChecking=no -o LogLevel=ERROR tasks/t0129_t0126_signed_dsi_real_rates_1seed/logs/steps/008_setup-machines/machine_log.json root@ssh4.vast.ai:/root/t0129_workdir/repo/tasks/t0129_t0126_signed_dsi_real_rates_1seed/logs/steps/008_setup-machines/machine_log.json",
+  "exit_code": 0,
+  "duration_seconds": 7.799,
+  "started_at": "2026-05-26T15:21:52Z",
+  "completed_at": "2026-05-26T15:22:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "036_20260526T152152Z_bash-c-ssh-i-c-users-md1avn-ssh-id-ed255.stdout.txt",
+  "stderr_file": "036_20260526T152152Z_bash-c-ssh-i-c-users-md1avn-ssh-id-ed255.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

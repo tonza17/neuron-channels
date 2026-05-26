@@ -1,0 +1,25 @@
+{
+  "spec_version": "2",
+  "answer_id": "does-signed-dsi-change-t0126-pareto-structure",
+  "question": "Does the signed-DSI re-evaluation of t0126's protocol change the Pareto structure, or is the vector-sum / signed distinction immaterial on the antipodal pair?",
+  "short_title": "Does signed DSI change t0126's Pareto structure?",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "voltage-gated-channels"
+  ],
+  "answer_methods": [
+    "code-experiment"
+  ],
+  "source_paper_ids": [],
+  "source_urls": [],
+  "source_task_ids": [
+    "t0126_bedb_dsi_atp_per_spike_nsga2_60gen"
+  ],
+  "confidence": "medium",
+  "created_by_task": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "date_created": "2026-05-26"
+}

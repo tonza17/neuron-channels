@@ -1,0 +1,434 @@
+[
+ {
+  "amount": "0.502",
+  "description": "Instance 37545908 GPU  charge:    hours * $/hr",
+  "instance_id": 37545908,
+  "quantity": "2.896",
+  "rate": "0.1733",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.032",
+  "description": "Instance 37545908 storage charge: hours * $/hr",
+  "instance_id": 37545908,
+  "quantity": "2.896",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.014",
+  "description": "Instance 37900658 GPU  charge:    hours * $/hr",
+  "instance_id": 37900658,
+  "quantity": "0.097",
+  "rate": "0.1467",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37900658 storage charge: hours * $/hr",
+  "instance_id": 37900658,
+  "quantity": "0.097",
+  "rate": "0.0148",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.029",
+  "description": "Instance 37852728 GPU  charge:    hours * $/hr",
+  "instance_id": 37852728,
+  "quantity": "0.153",
+  "rate": "0.1867",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.003",
+  "description": "Instance 37852728 storage charge: hours * $/hr",
+  "instance_id": 37852728,
+  "quantity": "0.163",
+  "rate": "0.0185",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37853188 storage charge: hours * $/hr",
+  "instance_id": 37853188,
+  "quantity": "0.073",
+  "rate": "0.0185",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.142",
+  "description": "Instance 37901118 GPU  charge:    hours * $/hr",
+  "instance_id": 37901118,
+  "quantity": "0.970",
+  "rate": "0.1467",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.014",
+  "description": "Instance 37901118 storage charge: hours * $/hr",
+  "instance_id": 37901118,
+  "quantity": "0.970",
+  "rate": "0.0148",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37901118 download charge: GB * $/GB",
+  "instance_id": 37901118,
+  "quantity": "0.183",
+  "rate": "0.005",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.002",
+  "description": "Instance 37885872 GPU  charge:    hours * $/hr",
+  "instance_id": 37885872,
+  "quantity": "0.010",
+  "rate": "0.1733",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.218",
+  "description": "Instance 37889502 GPU  charge:    hours * $/hr",
+  "instance_id": 37889502,
+  "quantity": "1.260",
+  "rate": "0.1733",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.014",
+  "description": "Instance 37889502 storage charge: hours * $/hr",
+  "instance_id": 37889502,
+  "quantity": "1.260",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.004",
+  "description": "Instance 37889502 download charge: GB * $/GB",
+  "instance_id": 37889502,
+  "quantity": "3.260",
+  "rate": "0.001",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.038",
+  "description": "Instance 37853919 GPU  charge:    hours * $/hr",
+  "instance_id": 37853919,
+  "quantity": "0.220",
+  "rate": "0.1733",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.003",
+  "description": "Instance 37853919 storage charge: hours * $/hr",
+  "instance_id": 37853919,
+  "quantity": "0.227",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.006",
+  "description": "Instance 37854789 GPU  charge:    hours * $/hr",
+  "instance_id": 37854789,
+  "quantity": "0.051",
+  "rate": "0.1173",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37854789 storage charge: hours * $/hr",
+  "instance_id": 37854789,
+  "quantity": "0.066",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.029",
+  "description": "Instance 37896752 GPU  charge:    hours * $/hr",
+  "instance_id": 37896752,
+  "quantity": "0.168",
+  "rate": "0.1733",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.002",
+  "description": "Instance 37896752 storage charge: hours * $/hr",
+  "instance_id": 37896752,
+  "quantity": "0.168",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.004",
+  "description": "Instance 37896752 download charge: GB * $/GB",
+  "instance_id": 37896752,
+  "quantity": "3.260",
+  "rate": "0.001",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.023",
+  "description": "Instance 37886178 GPU  charge:    hours * $/hr",
+  "instance_id": 37886178,
+  "quantity": "0.133",
+  "rate": "0.1733",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.002",
+  "description": "Instance 37886178 storage charge: hours * $/hr",
+  "instance_id": 37886178,
+  "quantity": "0.142",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.012",
+  "description": "Instance 37886651 GPU  charge:    hours * $/hr",
+  "instance_id": 37886651,
+  "quantity": "0.067",
+  "rate": "0.1733",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37886651 storage charge: hours * $/hr",
+  "instance_id": 37886651,
+  "quantity": "0.067",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.022",
+  "description": "Instance 37897566 GPU  charge:    hours * $/hr",
+  "instance_id": 37897566,
+  "quantity": "0.127",
+  "rate": "0.1733",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37897566 storage charge: hours * $/hr",
+  "instance_id": 37897566,
+  "quantity": "0.127",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.004",
+  "description": "Instance 37897566 download charge: GB * $/GB",
+  "instance_id": 37897566,
+  "quantity": "3.260",
+  "rate": "0.001",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.024",
+  "description": "Instance 37854933 GPU  charge:    hours * $/hr",
+  "instance_id": 37854933,
+  "quantity": "0.205",
+  "rate": "0.1173",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.002",
+  "description": "Instance 37854933 storage charge: hours * $/hr",
+  "instance_id": 37854933,
+  "quantity": "0.217",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.047",
+  "description": "Instance 37907050 GPU  charge:    hours * $/hr",
+  "instance_id": 37907050,
+  "quantity": "0.321",
+  "rate": "0.1467",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.005",
+  "description": "Instance 37907050 storage charge: hours * $/hr",
+  "instance_id": 37907050,
+  "quantity": "0.328",
+  "rate": "0.0148",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37907050 download charge: GB * $/GB",
+  "instance_id": 37907050,
+  "quantity": "0.285",
+  "rate": "0.005",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.017",
+  "description": "Instance 37898236 GPU  charge:    hours * $/hr",
+  "instance_id": 37898236,
+  "quantity": "0.113",
+  "rate": "0.1467",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.002",
+  "description": "Instance 37898236 storage charge: hours * $/hr",
+  "instance_id": 37898236,
+  "quantity": "0.113",
+  "rate": "0.0148",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.015",
+  "description": "Instance 37898236 download charge: GB * $/GB",
+  "instance_id": 37898236,
+  "quantity": "3.150",
+  "rate": "0.005",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.016",
+  "description": "Instance 37898764 GPU  charge:    hours * $/hr",
+  "instance_id": 37898764,
+  "quantity": "0.108",
+  "rate": "0.1467",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.002",
+  "description": "Instance 37898764 storage charge: hours * $/hr",
+  "instance_id": 37898764,
+  "quantity": "0.108",
+  "rate": "0.0148",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37898764 download charge: GB * $/GB",
+  "instance_id": 37898764,
+  "quantity": "0.177",
+  "rate": "0.005",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.072",
+  "description": "Instance 37886930 GPU  charge:    hours * $/hr",
+  "instance_id": 37886930,
+  "quantity": "0.414",
+  "rate": "0.1733",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.005",
+  "description": "Instance 37886930 storage charge: hours * $/hr",
+  "instance_id": 37886930,
+  "quantity": "0.414",
+  "rate": "0.0111",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.004",
+  "description": "Instance 37886930 download charge: GB * $/GB",
+  "instance_id": 37886930,
+  "quantity": "3.260",
+  "rate": "0.001",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.033",
+  "description": "Instance 37899197 GPU  charge:    hours * $/hr",
+  "instance_id": 37899197,
+  "quantity": "0.227",
+  "rate": "0.1467",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.003",
+  "description": "Instance 37899197 storage charge: hours * $/hr",
+  "instance_id": 37899197,
+  "quantity": "0.235",
+  "rate": "0.0148",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37899197 download charge: GB * $/GB",
+  "instance_id": 37899197,
+  "quantity": "0.177",
+  "rate": "0.005",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.058",
+  "description": "Instance 37908746 GPU  charge:    hours * $/hr",
+  "instance_id": 37908746,
+  "quantity": "0.399",
+  "rate": "0.1467",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.006",
+  "description": "Instance 37908746 storage charge: hours * $/hr",
+  "instance_id": 37908746,
+  "quantity": "0.399",
+  "rate": "0.0148",
+  "timestamp": 1779753600,
+  "type": "charge"
+ },
+ {
+  "amount": "0.001",
+  "description": "Instance 37908746 download charge: GB * $/GB",
+  "instance_id": 37908746,
+  "quantity": "0.285",
+  "rate": "0.005",
+  "timestamp": 1779753600,
+  "type": "charge"
+ }
+]

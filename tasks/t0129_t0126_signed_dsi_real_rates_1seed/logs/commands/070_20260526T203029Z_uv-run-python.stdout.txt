@@ -1,0 +1,6 @@
+[t0129 charts] loaded 5760 cell_params rows, 9 t0129 Pareto cells, 6 t0126 Pareto cells
+[t0129 charts] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\results\images\pareto_front_dsi_signed_vs_atp.png
+[t0129 charts] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\results\images\dsi_signed_distribution.png
+[t0129 charts] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\results\images\pd_vs_nd_rate_scatter.png
+[t0129 charts] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\results\images\pareto_t0126_vs_t0129_overlay.png
+[t0129 charts] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\results\data\t0126_vs_t0129_sign_flip_count.json

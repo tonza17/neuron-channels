@@ -1,0 +1,14 @@
+  neuron: 8.2.7+
+  pymoo: 0.6.1.6
+  numpy: 2.4.6
+  pandas: 3.0.3
+  scipy: 1.17.1
+  matplotlib: 3.10.9
+  pydantic: 2.13.4
+  tqdm: 4.67.3
+  sklearn: 1.8.0
+  joblib: 1.5.3
+  networkx: 3.6.1
+  dill: 0.4.1
+/root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/libnrnmech.so
+/root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/libnrnmech.so

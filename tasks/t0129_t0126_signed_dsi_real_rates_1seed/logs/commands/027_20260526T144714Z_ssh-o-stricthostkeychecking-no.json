@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "ssh -o StrictHostKeyChecking=no -o ConnectTimeout=15 -i C:/Users/md1avn/.ssh/id_ed25519 -p 14958 root@ssh4.vast.ai echo connected; cat /root/onstart.marker 2>/dev/null || echo NO_MARKER; python3 --version; which git rsync python3 pip; uname -a; df -h / | tail -1; nproc; cat /proc/meminfo | head -3",
+  "exit_code": 0,
+  "duration_seconds": 3.457,
+  "started_at": "2026-05-26T14:47:14Z",
+  "completed_at": "2026-05-26T14:47:17Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "027_20260526T144714Z_ssh-o-stricthostkeychecking-no.stdout.txt",
+  "stderr_file": "027_20260526T144714Z_ssh-o-stricthostkeychecking-no.stderr.txt",
+  "stdout_lines": 13,
+  "stderr_lines": 3,
+  "truncated": false
+}

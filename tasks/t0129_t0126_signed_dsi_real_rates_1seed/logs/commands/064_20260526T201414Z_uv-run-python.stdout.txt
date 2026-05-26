@@ -1,0 +1,9 @@
+[t0129 assets] loaded 5760 cell_params rows, 9 Pareto cells
+[t0129 assets] generated at 2026-05-26T20:14:15.662724+00:00
+[t0129 assets] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\assets\predictions\nsga2-dsi-signed-atp-per-spike-bedb-morph-t0129\files\predictions-pareto-9-cells.jsonl
+[t0129 assets] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\assets\predictions\nsga2-dsi-signed-atp-per-spike-bedb-morph-t0129\files\predictions-all-cells.jsonl.gz
+[t0129 assets] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\assets\predictions\nsga2-dsi-signed-atp-per-spike-bedb-morph-t0129\details.json
+[t0129 assets] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\assets\predictions\nsga2-dsi-signed-atp-per-spike-bedb-morph-t0129\description.md
+[t0129 assets] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\assets\answer\does-signed-dsi-change-t0126-pareto-structure\details.json
+[t0129 assets] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\assets\answer\does-signed-dsi-change-t0126-pareto-structure\short_answer.md
+[t0129 assets] wrote C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\assets\answer\does-signed-dsi-change-t0126-pareto-structure\full_answer.md

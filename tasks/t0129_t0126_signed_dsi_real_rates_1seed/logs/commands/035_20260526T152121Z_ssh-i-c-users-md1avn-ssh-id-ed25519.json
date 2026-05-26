@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 14958 -o StrictHostKeyChecking=no -o LogLevel=ERROR root@ssh4.vast.ai cd /root/t0129_workdir/repo && export PYTHONPATH=/root/t0129_workdir/repo && tmux kill-session -t nsga2_seed3517 2>/dev/null || true; tmux new-session -d -s nsga2_seed3517 \"bash tasks/t0129_t0126_signed_dsi_real_rates_1seed/code/run_seed3517.sh > /root/t0129_workdir/nsga2_seed3517.log 2>&1\"; sleep 2; tmux ls; ls -la /root/t0129_workdir/nsga2_seed3517.log",
+  "exit_code": 0,
+  "duration_seconds": 5.627,
+  "started_at": "2026-05-26T15:21:21Z",
+  "completed_at": "2026-05-26T15:21:26Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "035_20260526T152121Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "035_20260526T152121Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 1,
+  "truncated": false
+}

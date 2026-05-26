@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "vastai show credit --raw",
+  "exit_code": 2,
+  "duration_seconds": 1.888,
+  "started_at": "2026-05-26T14:44:45Z",
+  "completed_at": "2026-05-26T14:44:47Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "021_20260526T144445Z_vastai-show-credit.stdout.txt",
+  "stderr_file": "021_20260526T144445Z_vastai-show-credit.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 4,
+  "truncated": false
+}

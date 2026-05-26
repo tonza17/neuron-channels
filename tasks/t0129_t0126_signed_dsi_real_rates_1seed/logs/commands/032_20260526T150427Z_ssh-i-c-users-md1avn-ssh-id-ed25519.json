@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "command": "ssh -i C:/Users/md1avn/.ssh/id_ed25519 -p 14958 -o StrictHostKeyChecking=no -o LogLevel=ERROR root@ssh4.vast.ai python3 -c \"\nimport importlib\nfor pkg in (\\\"neuron\\\", \\\"pymoo\\\", \\\"numpy\\\", \\\"pandas\\\", \\\"scipy\\\", \\\"matplotlib\\\", \\\"pydantic\\\", \\\"tqdm\\\", \\\"sklearn\\\", \\\"joblib\\\", \\\"networkx\\\", \\\"dill\\\"):\n    try:\n        m = importlib.import_module(pkg)\n        print(f\\\"  {pkg}: {getattr(m, \\\"__version__\\\", \\\"?\\\")}\\\")\n    except Exception as e:\n        print(f\\\"  {pkg}: IMPORT FAILED ({type(e).__name__}: {e})\\\")\n\" && ls /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/libnrnmech.so && ls /root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/libnrnmech.so",
+  "exit_code": 0,
+  "duration_seconds": 4.803,
+  "started_at": "2026-05-26T15:04:27Z",
+  "completed_at": "2026-05-26T15:04:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0129_t0126_signed_dsi_real_rates_1seed",
+  "stdout_file": "032_20260526T150427Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stdout.txt",
+  "stderr_file": "032_20260526T150427Z_ssh-i-c-users-md1avn-ssh-id-ed25519.stderr.txt",
+  "stdout_lines": 14,
+  "stderr_lines": 2,
+  "truncated": false
+}

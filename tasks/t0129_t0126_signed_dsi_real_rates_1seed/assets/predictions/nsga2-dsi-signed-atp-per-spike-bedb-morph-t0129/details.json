@@ -1,0 +1,50 @@
+{
+  "spec_version": "2",
+  "predictions_id": "nsga2-dsi-signed-atp-per-spike-bedb-morph-t0129",
+  "name": "NSGA-II Signed DSI vs ATP per Spike, Bed B + 14-d Morph, Seed 3517",
+  "short_description": "Per-cell predictions from one t0129 NSGA-II run on the 68-d Bed B + 14-d morphology substrate (single fresh seed 3517) with two minimised objectives: -dsi_signed (signed antipodal DSI in [-1, 1], silence-guarded) and +atp_per_spike_molecules (Sengupta 2010 recipe). Replaces t0126's vector-sum DSI with the literature signed formula and persists real per-cell PD/ND firing rates.",
+  "description_path": "description.md",
+  "model_id": null,
+  "model_description": "68-d Bed B compartmental DSGC model (54-d electrophysiological + 14-d morphology), NEURON-backed simulation via the t0080 channel MOD pack and t0024 vendored DSGC NEURON template. NSGA-II driven by pymoo with SBX crossover (eta=15) and polynomial mutation (eta=20). Single GA seed (3517); 96 individuals per generation x 60 generations = 5,760 evaluations. Antipodal direction pair [0 deg, 180 deg], TSTOP_MS=1400, N_EVAL_SEEDS=3. Silence guard at pd_spikes_sum < 3 returns the sentinel dsi_signed=-1.0.",
+  "dataset_ids": [],
+  "prediction_format": "jsonl",
+  "prediction_schema": "Per-cell records. Pareto-only file fields: pareto_rank (int), generation (int), cell_idx_in_gen (int), vector_68d (list[float] of length 68 = 54-d electrophys + 14-d morphology), morphology_vector_14d (list[float]), dsi_signed (float in [-1, 1] from signed antipodal formula), atp_per_spike_molecules (float, Sengupta 2010), pd_rate_hz (float, real spike count / 1.4 s at 0 deg), nd_rate_hz (float, real spike count / 1.4 s at 180 deg), silence_failed (bool), n_errors (int), objective_F_minimised (list[float], -dsi_signed and +atp_per_spike_molecules), is_pareto (bool). All-cells file fields: gen (int, -1 for Phase A random init), cell_idx (int), param_vector (list[float, 68]), dsi_signed, atp_per_spike_molecules, pd_rate_hz, nd_rate_hz, silence_failed, n_errors.",
+  "instance_count": 5760,
+  "metrics_at_creation": {
+    "best_dsi_signed": 1.0,
+    "median_dsi_signed_pareto": 0.5714285714285715,
+    "min_atp_per_spike_molecules": 779758.0730795636,
+    "median_atp_per_spike_pareto": 3633357.6653955295,
+    "n_pareto_cells": 9,
+    "n_cells_total": 5760,
+    "n_cells_viable": 5496,
+    "n_cells_silenced": 264,
+    "n_cells_viable_negative_dsi": 95,
+    "n_generations_completed": 60,
+    "final_hypervolume": 19995904075.787148,
+    "stop_trigger": "n_gen_reached",
+    "sign_flip_count_vs_t0126": null,
+    "final_cost_usd_active_window": 0.6469,
+    "final_cost_usd_full_lifetime": 0.965008
+  },
+  "files": [
+    {
+      "path": "files/predictions-pareto-9-cells.jsonl",
+      "description": "The 9-cell final Pareto front, one JSON record per cell with the full 68-d parameter vector and matched per-cell pd_rate_hz / nd_rate_hz from cell_params.jsonl.",
+      "format": "jsonl"
+    },
+    {
+      "path": "files/predictions-all-cells.jsonl.gz",
+      "description": "All 5,760 evaluated cells (Phase A random init at gen=-1 plus every NSGA-II generation 1..60), gzip-compressed copy of results/cell_params.jsonl. Contains the full 68-d parameter vector and real per-cell PD/ND firing rates for every evaluated cell, replacing t0126's synthesised cell_trace_seed8929.jsonl.",
+      "format": "jsonl"
+    }
+  ],
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "voltage-gated-channels"
+  ],
+  "created_by_task": "t0129_t0126_signed_dsi_real_rates_1seed",
+  "date_created": "2026-05-26"
+}

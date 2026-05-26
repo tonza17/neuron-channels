@@ -1,0 +1,8 @@
+{
+  "seeds": [
+    2684470948,
+    4091952314,
+    233227757
+  ],
+  "method": "np.random.SeedSequence(42).spawn(3)"
+}

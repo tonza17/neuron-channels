@@ -1,0 +1,40 @@
+debconf: delaying package configuration, since apt-utils is not installed
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
+Translating bkt80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/bkt80.c
+Translating calt80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/calt80.c
+Translating catt80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/catt80.c
+Thread Safe
+Thread Safe
+Thread Safe
+Translating iht80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/iht80.c
+Translating kdrt80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/kdrt80.c
+Translating kv3t80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/kv3t80.c
+Thread Safe
+Thread Safe
+Thread Safe
+Translating kv7t80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/kv7t80.c
+Translating kv4t80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/kv4t80.c
+Translating napt80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/napt80.c
+Thread Safe
+Thread Safe
+Thread Safe
+Translating nav16t80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/nav16t80.c
+Translating nart80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/nart80.c
+Translating skahpt80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/skahpt80.c
+Thread Safe
+Thread Safe
+Thread Safe
+Translating skt80.mod into /root/t0129_workdir/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/x86_64/skt80.c
+Thread Safe
+Translating Exp2NMDA.mod into /root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/Exp2NMDA.c
+Translating HHst_noiseless.mod into /root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/HHst_noiseless.c
+Thread Safe
+Translating cadecay.mod into /root/t0129_workdir/repo/tasks/t0024_port_de_rosenroll_2026_dsgc/assets/library/de_rosenroll_2026_dsgc/sources/x86_64/cadecay.c
+Thread Safe
+Notice: This mechanism cannot be used with CVODE
+Thread Safe
+Warning: no DISPLAY environment variable.
+--No graphics will be displayed.
