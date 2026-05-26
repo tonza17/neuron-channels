@@ -86,10 +86,10 @@
       "step": 10,
       "name": "teardown",
       "description": "Destroy the Vast.ai instance after NSGA-II completes and results have been downloaded; finalise costs.json and remote_machines_used.json. UN-SKIPPED 2026-05-26 alongside setup-machines.",
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
-      "log_file": null
+      "status": "completed",
+      "started_at": "2026-05-26T19:35:00Z",
+      "completed_at": "2026-05-26T19:55:00Z",
+      "log_file": "logs/steps/010_teardown/"
     },
     {
       "step": 11,

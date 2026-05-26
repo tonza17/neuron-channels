@@ -1,0 +1,30 @@
+{
+  "total_cost_usd": 0.965008,
+  "breakdown": {
+    "vast-ai-epyc-7c13-t0129": {
+      "cost_usd": 0.965008,
+      "description": "Vast.ai instance 37924958 (AMD EPYC 7C13 64-Core, 32 effective vCPUs, 64 GB RAM, 1x Tesla V100 idle, Virginia US, $0.1911/hr total = $0.1733/hr base + $0.0178/hr storage for the 64 GB disk). Final cost = full instance lifetime from ready_at 2026-05-26T14:46:55Z to destroyed_at 2026-05-26T19:49:52Z (duration_hours=5.0492, dph=$0.1911 -> cost=$0.9650). Per the caller's teardown instruction, total_duration_hours is computed from ready_at (not created_at); the additional 22 s from created_at to ready_at adds ~$0.001 which is rounded into total_cost_usd. The NSGA-II cost_watchdog's in-driver final_cost_usd=$0.6469 covered only the active 3.385 h NSGA-II run window (12,184 s wallclock per the run log final HV line). The additional $0.318 covers the lifetime before NSGA-II launch (apt install + pip dependencies for NEURON 8.2.7 / pymoo 0.6.1.6 / dill / numpy / pandas / scipy / matplotlib / pydantic / tqdm / sklearn + t0080 MOD compile + t0024 DSGC MOD compile + t0129 code SCP + Carter-Bean smoke-gate, ~38 min) and the post-run window between gen-60 exit and teardown (wrap-up SCP downloads + orchestrator hand-off, ~1.07 h). 60-gen ceiling reached cleanly with NSGA2_EXIT=0, pop=96, n_eval_seeds=3, n_directions=2 antipodal 0/180 deg, single seed 3517. Instance destroyed via 'vastai destroy instance 37924958 --yes' in step 010_teardown."
+    },
+    "per_instance_watchdog_USD": {
+      "cost_usd": 0.0,
+      "description": "T0129_HARD_BUDGET_USD = $8.00 (project per-task default) cap was never tripped. Final full-lifetime spend $0.9650 is 12.1% of the per-task cap, 32.2% of the caller's $3.00 hard cap, and 56.0% of the $1.72 plan estimate. The cost_watchdog tracked only the active NSGA-II window ($0.6469); the lifetime cost includes setup and teardown idle time which the watchdog does not see. watchdog_tripped=false."
+    },
+    "vast-ai-failed-attempts": {
+      "cost_usd": 0.0,
+      "description": "No failed instance creation attempts (instance 37924958 created on first try per machine_log.json failed_attempts=[])."
+    },
+    "api_calls": {
+      "cost_usd": 0.0,
+      "description": "No paid API calls (no OpenAI / Anthropic / SerpAPI / etc.) -- this is a code-and-simulation task."
+    },
+    "local_compute": {
+      "cost_usd": 0.0,
+      "description": "Local laptop compute (Windows 11, the killed 4-worker local NSGA-II attempt that produced results/local_killed_run/cell_params_local_killed.jsonl) is not metered."
+    }
+  },
+  "services": {
+    "vast_ai": 0.965008
+  },
+  "budget_limit": 3.0,
+  "note": "Final post-teardown cost. Two figures are recorded across the task: (1) the NSGA-II driver's in-flight cost_watchdog reported final_cost_usd=$0.6469 at gen 60 exit -- this only covers the 3.385 h active NSGA-II window (12,184 s per the run log final HV line); (2) the full instance lifetime from ready to destroy is 5.0492 h at $0.1911/hr = $0.9650 (machine_log.json ready_at -> destroyed_at per the caller's teardown instruction). The $0.318 delta covers ~38 min of pre-NSGA-II setup (apt + pip + MOD compile + smoke-gate) and ~1.07 h of post-run wrap-up (SCP downloads + teardown idle). costs.json totals reflect option (2) -- the actual Vast.ai spend -- per remote_machines_specification.md. Substantially CHEAPER than t0126's $1.3084 (sister partition on the same physical machine 34698, $0.1844/hr): both NSGA-II runs reached gen 60 cleanly but t0129's active window was 3.385 h vs t0126's 5.22 h, and t0129's setup was 38 min vs t0126's ~30 min. The 35% cost reduction comes mostly from the shorter NSGA-II window (t0129 evaluator changes did not add measurable compute; per-cell jsonl writes were negligible I/O) plus the shorter post-run idle (1.07 h vs t0126's 1.4 h). The Virginia US 7C13 instance is 4% more expensive per hour than t0126's sister partition ($0.1911 vs $0.1844) because t0129 took the 64 GB disk partition vs t0126's 40 GB. watchdog_tripped=false; the full 60-generation ceiling was reached with NSGA2_EXIT=0."
+}

@@ -1,0 +1,26 @@
+usage: vastai destroy instance id [-h] [-y] [--api-key API_KEY] [--raw]
+
+positional arguments:
+ id                 id of instance to delete
+
+options:
+ -h, --help         show this help message and exit
+ -y, --yes          Skip confirmation prompt
+
+Global options (available for all commands):
+ --url URL          Server REST API URL
+ --retry RETRY      Retry limit
+ --explain          Output verbose explanation of mapping of CLI calls to HTTPS API endpoints
+ --raw              Output machine-readable json
+ --full             Print full results instead of paging with `less` for commands that support it
+ --curl             Show a curl equivalency to the call
+ --api-key API_KEY  API Key to use. defaults to using the one stored in C:\Users\md1avn\.config\vastai\vast_api_key
+ --version          Show CLI version
+ --no-color         Disable colored output for commands that support it
+
+________________________________________________________________________________
+
+Perfoms the same action as pressing the "DESTROY" button on the website at https://console.vast.ai/instances/
+Example: vastai destroy instance 4242
+Use -y or --yes to skip the confirmation prompt.
+________________________________________________________________________________

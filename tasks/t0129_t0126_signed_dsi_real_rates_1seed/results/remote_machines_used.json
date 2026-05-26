@@ -1,0 +1,23 @@
+[
+  {
+    "provider": "vast.ai",
+    "machine_id": "37924958",
+    "gpu": "Tesla V100 (1x, idle, unused; CPU-only NEURON workload)",
+    "gpu_count": 1,
+    "cpu_name": "AMD EPYC 7C13 64-Core Processor",
+    "cpu_cores_effective": 32,
+    "ram_gb": 64,
+    "disk_gb": 64,
+    "location": "Virginia, US",
+    "duration_hours": 5.049167,
+    "cost_usd": 0.965008,
+    "price_per_hour_usd": 0.19111111111111112,
+    "reliability": 0.9954337,
+    "image": "python:3.12-bookworm",
+    "created_at": "2026-05-26T14:46:33Z",
+    "ready_at": "2026-05-26T14:46:55Z",
+    "destroyed_at": "2026-05-26T19:49:52Z",
+    "workload": "NSGA-II (60-gen ceiling REACHED cleanly with NSGA2_EXIT=0, pop=96, n_eval_seeds=3, n_directions=2 antipodal 0/180 deg, single GA seed 3517) on Bed B + 14-d morphology substrate. Two-objective DSI vs ATP-per-spike with t0129's two evaluator changes vs t0126: (1) signed DSI replacing |DSI| as the objective, (2) per-cell real firing rate (from simulator) replacing the placeholder pd_rate_hz=40 in the cell_trace persistence path (t0126's cell_trace was synthesised; t0129's is recorded -- see memory project_t0126_cell_trace_synthesised.md and project_t0126_rerun_supersedes_S-0126-01_and_06.md). HV_PLATEAU_AUTO_STOP=False (REQ-2), _POOL_RESTART_EVERY=10 (REQ-6). Final HV = 19995904075.7871 at gen 60, Pareto front n=9 cells. watchdog_tripped=false; final_cost_usd reported by driver=$0.6469 (active-run window only, 12,184 s = 3.385 h); full instance lifetime cost=$0.9650.",
+    "note": "Final cost reflects full instance lifetime from ready_at 2026-05-26T14:46:55Z to destroyed_at 2026-05-26T19:49:52Z (duration_hours=5.0492, dph=$0.1911 -> cost=$0.9650). The NSGA-II cost_watchdog reported final_cost_usd=$0.6469 covering only the active 3.385 h NSGA-II run window (12,184 s wallclock per the run log final HV line). The additional $0.318 covers the lifetime before NSGA-II launch (apt install + pip dependencies + t0080 MOD compile + t0024 DSGC MOD compile + t0129 code SCP + Carter-Bean smoke-gate, ~38 min) and the post-run window between gen-60 exit and teardown (wrap-up SCP downloads + orchestrator hand-off, ~1.07 h). Under the $3 caller hard cap (32.2% utilisation) and the $8 project per-task default (12.1% utilisation). Substantially CHEAPER than t0126's $1.31 (sister partition on the same physical machine 34698) because the NSGA-II run window was 3.385 h vs t0126's 5.22 h -- the t0129 evaluator changes (signed DSI, real per-cell firing rate) did not add measurable compute, and the per-cell jsonl writes (cell_params.jsonl) were negligible I/O. The 1x Tesla V100 GPU was idle throughout -- CPU-only NEURON workload on the 32 effective AMD EPYC 7C13 cores. Instance 37924958 destroyed cleanly via 'vastai destroy instance 37924958 --yes' at 2026-05-26T19:49:52Z; 'vastai show instances --raw' immediately after returned [], and 'vastai show instance 37924958' raised TypeError on row['start_date'] (the SDK's manifestation of instance-not-found)."
+  }
+]
