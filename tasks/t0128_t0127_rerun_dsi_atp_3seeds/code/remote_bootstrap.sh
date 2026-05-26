@@ -111,7 +111,21 @@ export PATH="/root/.local/bin:${PATH}"
 if [ ! -f "${WORKDIR}/.stage3_mods_done" ] && [ -d "${WORKDIR}/repo" ]; then
     log "stage 3: compile NEURON MOD library (t0080 mods)"
     cd "${WORKDIR}/repo/tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods"
-    if uv run --project "${WORKDIR}/repo" nrnivmodl . 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -10; then
+    # NEURON's nrnivmodl is installed inside the uv venv at .venv/bin/nrnivmodl
+    # but uv run can't spawn it directly (No such file or directory). Source the
+    # venv activate script to get nrnivmodl onto PATH.
+    NRNIVMODL="${WORKDIR}/repo/.venv/bin/nrnivmodl"
+    if [ ! -x "${NRNIVMODL}" ]; then
+        log "stage 3: ${NRNIVMODL} missing, falling back to PATH probe"
+        # shellcheck disable=SC1091
+        source "${WORKDIR}/repo/.venv/bin/activate" 2>/dev/null || true
+        NRNIVMODL=$(command -v nrnivmodl || true)
+    fi
+    if [ -z "${NRNIVMODL}" ] || [ ! -x "${NRNIVMODL}" ]; then
+        log "stage 3 FAILED: nrnivmodl not found in venv"
+    else
+        log "stage 3: using ${NRNIVMODL}"
+        "${NRNIVMODL}" . 2>&1 | tee -a "${WORKDIR}/bootstrap.log" | tail -10
         if [ -f "x86_64/.libs/libnrnmech.so" ] || [ -f "x86_64/libnrnmech.so" ]; then
             touch "${WORKDIR}/.stage3_mods_done"
             log "stage 3 done"
@@ -153,6 +167,14 @@ if [ ! -f "${WORKDIR}/COMPLETE" ] && [ -f "${WORKDIR}/.stage4_smokegate_ok" ]; t
 fi
 
 # ============== STAGE 6: keep alive for sync-back ==============
-log "all stages done, keeping container alive for result sync"
+log "bootstrap loop finished; stage markers:"
+for m in .stage1_apt_done .stage2_uv_done .stage3_mods_done .stage4_smokegate_ok COMPLETE; do
+    if [ -f "${WORKDIR}/${m}" ]; then
+        log "  ${m} OK"
+    else
+        log "  ${m} MISSING"
+    fi
+done
 log "(use: scp -P <port> root@<host>:'${WORKDIR}/repo/${TASK_REL}/results/data/*' to grab results)"
+log "keeping container alive (sleep infinity)"
 sleep infinity
