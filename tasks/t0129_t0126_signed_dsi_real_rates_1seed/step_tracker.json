@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Fork t0126 code into tasks/t0129/code/, apply signed-DSI + per-cell rate edits, persist cell_params.jsonl, run seed-3517 NSGA-II via run_seed3517.sh, compute Pareto + comparison to t0126.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-05-26T13:21:56Z",
-      "completed_at": null,
-      "log_file": "logs\\steps\\009_implementation/"
+      "completed_at": "2026-05-26T19:30:00Z",
+      "log_file": "logs/steps/009_implementation/"
     },
     {
       "step": 10,
