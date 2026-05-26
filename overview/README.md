@@ -4,15 +4,15 @@
   <a href="papers/"><img src="https://img.shields.io/badge/Papers-100-4169E1" alt="Papers"></a>
   <a href="datasets/"><img src="https://img.shields.io/badge/Datasets-4-2E8B57" alt="Datasets"></a>
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
-  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-19-9370DB" alt="Predictions"></a>
+  <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-21-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-51-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-53-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-126-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-503-DAA520" alt="Suggestions"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-130-4682B4" alt="Tasks"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-521-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -28,19 +28,19 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (49K)
-| [full](llm-context/full.xml) (776K) | [roadmap](llm-context/roadmap.xml) (149K) |
-[results](llm-context/results-deep-dive.xml) (592K) |
-[assets](llm-context/literature-and-assets.xml) (78K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (50K)
+| [full](llm-context/full.xml) (813K) | [roadmap](llm-context/roadmap.xml) (159K) |
+[results](llm-context/results-deep-dive.xml) (621K) |
+[assets](llm-context/literature-and-assets.xml) (79K)
 
-*Last updated: 2026-05-25 02:57 UTC*
+*Last updated: 2026-05-26 21:10 UTC*
 
-* **Budget**: **$65** spent of $100
-* **Remaining**: **$35**
-* **Usage**: `█████████████░░░░░░░` 64.9%
-* **GPU Machines**: **18** provisioned across 18 tasks · **$65** GPU spend
+* **Budget**: **$67** spent of $100
+* **Remaining**: **$33**
+* **Usage**: `█████████████░░░░░░░` 67.2%
+* **GPU Machines**: **20** provisioned across 20 tasks · **$67** GPU spend
   ([details](machines/))
-* **Provisioning**: 10 failed attempts · $0.07 wasted · 36% failure rate
+* **Provisioning**: 10 failed attempts · $0.07 wasted · 33% failure rate
 
 ---
 
@@ -53,9 +53,11 @@
 
 ---
 
-## [In Progress (0)](tasks/by-status/in_progress.md)
+## [In Progress (1)](tasks/by-status/in_progress.md)
 
-No tasks in progress.
+| # | Task | Started |
+|---|------|---------|
+| 0128 | [S-0127-01: 3-seed DSI vs ATP NSGA-II rerun via run_seed*.sh wrapper](../overview/tasks/task_pages/t0128_t0127_rerun_dsi_atp_3seeds.md) | 2026-05-26 02:19 |
 
 ---
 
@@ -82,10 +84,13 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (118 total)](tasks/by-status/completed.md)
+## [Recently Completed (121 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0129 | [Reproduce t0126 with signed DSI=(PD-ND)/(PD+ND) and real per-cell firing rates](../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) | [`results`](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/results_detailed.md) | 2026-05-26 21:05 |
+| 0127 | [Correct t0126 suggestions S-0126-01 and S-0126-06 (synthesised cell_trace)](../overview/tasks/task_pages/t0127_correct_t0126_cell_trace_suggestions.md) | [`results`](../tasks/t0127_correct_t0126_cell_trace_suggestions/results/results_detailed.md) | 2026-05-26 00:30 |
+| 0126 | [NSGA-II DSI vs ATP-per-spike Bed B + 14-d morph: 60-gen replication](../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) | [`results`](../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/results/results_detailed.md) | 2026-05-25 21:55 |
 | 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | [`results`](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/results/results_detailed.md) | 2026-05-25 02:55 |
 | 0125 | [Cluster + factor analysis of t0123 cells: high vs low MI and ATP](../overview/tasks/task_pages/t0125_t0123_cluster_factor_mi_atp.md) | [`results`](../tasks/t0125_t0123_cluster_factor_mi_atp/results/results_detailed.md) | 2026-05-25 01:12 |
 | 0123 | [NSGA-II maximising MI and minimising ATP-per-spike (Bed B + 14-d morph)](../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | [`results`](../tasks/t0123_bedb_mi_atp_per_spike_nsga2/results/results_detailed.md) | 2026-05-24 21:08 |
@@ -93,11 +98,8 @@ No blocked tasks.
 | 0121 | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) | [`results`](../tasks/t0121_5seed_substrate_rate_canonical_report/results/results_detailed.md) | 2026-05-24 02:25 |
 | 0120 | [Morphology generator geometry audit (15-20 cells)](../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) | [`results`](../tasks/t0120_morph_generator_geometry_audit/results/results_detailed.md) | 2026-05-24 00:45 |
 | 0119 | [Brainstorm results session 23](../overview/tasks/task_pages/t0119_brainstorm_results_23.md) | [`results`](../tasks/t0119_brainstorm_results_23/results/results_detailed.md) | 2026-05-23 00:00 |
-| 0118 | [Re-simulate 10 cells per t0117 ephys cluster; plot g_E, g_I, Vm in PD and ND](../overview/tasks/task_pages/t0118_resimulate_t0117_cluster_samples_ge_gi_vm.md) | [`results`](../tasks/t0118_resimulate_t0117_cluster_samples_ge_gi_vm/results/results_detailed.md) | 2026-05-22 18:31 |
-| 0117 | [Pooled PCA + cluster + factor analysis of ALL cells across 4 seeds](../overview/tasks/task_pages/t0117_pooled_pca_cluster_factor_all_cells_4_seeds.md) | [`results`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/results/results_detailed.md) | 2026-05-22 13:16 |
-| 0116 | [Pooled PCA + cluster + factor analysis of DSI>0.7 / PD>10 cells across 4 seeds](../overview/tasks/task_pages/t0116_pooled_pca_cluster_factor_dsi07_pd10.md) | [`results`](../tasks/t0116_pooled_pca_cluster_factor_dsi07_pd10/results/results_detailed.md) | 2026-05-21 20:35 |
 
-*108 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*111 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -122,26 +124,332 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (454 open)](suggestions/)
+## [Recent Suggestions (470 open)](suggestions/)
 
 <details>
-<summary>🧪 <strong>Fresh-seed 60-gen replication of DSI vs ATP-per-spike NSGA-II to
-test Carter-Bean penalty vs artefact</strong> (S-0124-01)</summary>
+<summary>🧪 <strong>Re-run t0126 seed 8929 with t0129 signed-DSI evaluator to recover
+true sign-flip count (closes REQ-20)</strong> (S-0129-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
 
-t0124 truncated at gen 9 of 60 by operator_stop (subagent session budget, not cost cap; HV
-still ascending). The bootstrap r(DSI, ATP) = +0.806 [0.716, 1.000] on the n=5 partial front
-is suggestive of a Carter-Bean Na/K-overlap penalty but undeterminable from artefact because
-_POOL_RESTART_EVERY=10 has not fired and all 5 cells share LHS-init ancestry. Action: fork the
-t0124 substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2,
-N_GEN_MAX=60, COST_CAP_USD=6.0, HV plateau autostop=False, DSI silence-guard PD<3 -> DSI=-1,
-Sengupta ATP recipe, Carter-Bean smoke-gate), draw a fresh non-round GA seed via
-secrets.randbelow(10000), run to gen 60 on Vast.ai EPYC. Decision rule: if r > +0.5 with CI
-excluding 0 at n>=20 accept the penalty interpretation; if r drops below +0.3 accept the
-early-NSGA-II artefact null. Recommended task types: experiment-run, data-analysis,
+REQ-20 of t0129 is Partial: the true number of t0126 Pareto cells that flip sign under signed
+DSI is unknowable (upper bound is 4, from the count of t0126-Pareto cells with dsi_vector_sum
+> 0.5), because t0126 did not persist per-direction spike counts and pd_rate_hz=40 is a
+synthesised placeholder. Re-run the SAME GA seed (8929) using the t0129 evaluator (signed DSI,
+real PD/ND firing rates, cell_params.jsonl sink) and the SAME 68-d parameter bounds and hard
+invariants (POP_SIZE=96, N_GEN=60, _POOL_RESTART_EVERY=10, HV-plateau auto-stop disabled, $8
+cap). Compare the resulting 60-gen Pareto front and per-cell signed DSI to t0126's recorded
+vector-sum Pareto cells (cell-by-cell, ranked by within-front rank), and report the exact
+sign-flip count among t0126's 6 cells. Expected cost: ~$1.00 Vast.ai (matches t0126
+single-seed envelope). Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-seed (3-5 fresh seeds) t0129 protocol extension to bracket
+negative-DSI fraction and Pareto-front stability</strong> (S-0129-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0129's headline (95/5,496 viable cells with negative signed DSI = 1.7%; 9-cell Pareto front
+spanning DSI in [0, 1]) is on a single GA seed (3517). The corresponding numbers from other
+t0124/t0126/t0128 seeds are unknown, so it is impossible to state whether 1.7% is typical, a
+low outlier, or a high outlier. Run the t0129 evaluator and driver verbatim on 3-5 additional
+fresh GA seeds (NOT in the lineage set {441, 6650, 8929, 2608, 8276, 9986, 3517}). For each
+seed report (a) viable-cell count, (b) negative-DSI count and deepest reversal, (c) final-gen
+Pareto-front size and DSI/ATP corner positions, (d) headline cell DSI and ATP. Synthesise as
+bootstrap-CI bands on the four key statistics. Expected cost: ~$4-5 (4 seeds x ~$1).
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-fit t0117 unfiltered-pool factor analysis with signed DSI
+replacing vector-sum on the 4-seed pooled cohort</strong> (S-0129-03)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0117 found a joint DSI-PD factor (F1, r_DSI=+0.421, r_PD=+0.352) on a pooled 4-seed
+unfiltered cohort that consumed dsi_vector_sum as the DSI feature. t0129 shows that 1.7% of
+viable cells have genuinely reversed preference (dsi_signed < 0) which vector-sum collapses to
+positive magnitude indistinguishable from true PD-preferring cells of the same magnitude. The
+sign collapse contaminates the DSI column used to fit F1. Recompute signed DSI for every cell
+in t0117's pooled parquet using the per-direction spike counts (available in t0117's per-seed
+evaluation dumps if persisted; otherwise restricted to the subset where they are recoverable),
+refit the 10-factor varimax solution, and report whether F1's r_DSI changes sign or magnitude.
+Decision rule: |r_DSI change| > 0.10 means t0117's joint-factor verdict is
+sign-collapse-contaminated. Recommended task types: data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0124 NSGA-II under signed DSI on t0124 GA seeds to test
+whether the DSI-ATP frontier depends on sign convention</strong>
+(S-0129-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0124 ran NSGA-II on DSI vs ATP/spike with vector-sum DSI as the first objective. t0129 shows
+on a single seed that 95/5,496 viable cells (1.7%) have negative signed DSI; the t0129 Pareto
+front happens to contain no reversed-preference cells (they are dominated by DSI=0 cells at
+the ATP minimum), but t0124's particular seed and termination might have surfaced reversed
+cells onto its front. Re-run the t0124 NSGA-II protocol on t0124's GA seeds with the t0129
+evaluator (signed DSI as first objective, real PD/ND rates) and report (a) cell-by-cell
+sign-flip count among t0124's recorded Pareto cells, and (b) whether the re-run Pareto front
+contains any cell with dsi_signed < 0. Expected cost: per-seed cost of t0126 envelope
+(~$1/seed). Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-fit t0116 strict-cohort factor analysis using signed DSI to
+test the no-joint-factor verdict</strong> (S-0129-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0116 reported zero joint DSI-PD factors on the strict-cohort (vector-sum DSI > 0.7 AND PD >
+10 Hz) pool, the finding that the memory project_truncated_cohort_artefact_confirmed.md
+attributes to range restriction. The DSI > 0.7 cutoff was applied to vector-sum DSI: any
+reversed-preference cell with |signed DSI| > 0.7 would have entered the cohort despite firing
+more in the ND direction. Recompute signed DSI on the cells in t0116's pool, drop cells with
+dsi_signed < 0.7 (the literature-correct filter), refit the factor analysis on the corrected
+strict cohort, and compare joint-factor counts and loadings to t0116's original. Decision
+rule: identical verdict means sign collapse did not materially affect cohort selection;
+different verdict means t0116's strict-cohort finding was partly sign-collapse-dependent.
+Recommended task types: data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-fit t0125 MI/ATP cluster-factor analysis with signed-DSI
+cohort filtering to test the zero-joint-factor verdict</strong> (S-0129-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0125 analysed MI-vs-ATP cluster-factor structure on a single-seed MI NSGA-II run and reported
+a near-zero joint MI-ATP factor. The cohort selection and factor inputs use vector-sum DSI as
+a covariate / cohort gate. Reversed-preference cells with high |signed DSI| are mis-classified
+as preferring PD, which could distort the MI calculation (MI is direction-symmetric but cell
+labels for cohort filtering are not). Apply the signed-DSI recoding to t0125's per-cell
+parquet using whatever per-direction spike data is recoverable, refit the cluster-factor
+pipeline on the corrected cohort, and report whether the joint-factor verdict changes. If
+per-direction spike counts are not recoverable for t0125, report this as the scope-of-recovery
+limitation and recommend the smaller-scope alternative of a fresh MI NSGA-II re-run with the
+t0129 evaluator on one fresh seed. Recommended task types: data-analysis,
 comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Deep-dive (Vm traces, morphology, dendritic-spike attribution) on
+t0129 Pareto cells 4 (DSI=1.0) and 7 (DSI=0.87)</strong> (S-0129-07)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+Pareto cell 4 (gen 57, signed DSI=1.0, PD rate 6.43 Hz, ND rate 0.0 Hz, ATP 6.66 M
+molec/spike) is the canonical ND-silenced DSGC corner, and Pareto cell 7 (gen 59, DSI=0.870,
+PD rate 10.24 Hz, ND rate 0.71 Hz, ATP 5.03 M molec/spike) is the highest-PD-rate Pareto cell
+with both PD rate and ATP/spike within the Sivyer-2013 physiological band (5-15 Hz PD rate,
+sub-10 M molec/spike). Re-simulate both cells with full Vm traces at soma and 3 dendritic
+loci, render the morphology with full dendrite tree at the same orientation, and run the
+standard dendritic-spike-attribution analysis (per-compartment Nav/Kv/Ih conductance
+contributions to ATP/spike). Output: 2-cell deep-dive PNG bundle + per-cell Carter-Bean
+ATP/AP/cm decomposition + Wei2018 figure-style Vm trace plate. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Formalise the t0129 cell_params.jsonl per-cell parameter-dump
+protocol as a project-wide NSGA-II evaluator standard</strong> (S-0129-08)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0129 introduced cell_params.jsonl as the per-cell diagnostic sink, replacing the
+env-var-driven cell_trace.jsonl pattern that t0126 used and that silently dropped data in
+worker processes (memory feedback_nsga2_launch_via_run_script and
+project_t0126_cell_trace_synthesised). The t0129 implementation captures the sink path at
+problem-constructor time (BedBV3MorphProblem.__init__), pickling it into every worker, which
+closes the failure mode. The schema (gen, cell_idx, param_vector, dsi_signed, atp_per_spike,
+pd_rate_hz, nd_rate_hz, silence_failed, n_errors) is enough to reconstruct any
+parameter-vs-objective scatter or factor analysis. Promote this to a documented project-wide
+pattern: write a meta/specifications file (or extend the existing evaluator template) defining
+the schema, the constructor-capture pattern, and a verificator that asserts cell_params.jsonl
+exists and is non-empty after Phase A. Recommended task types: infrastructure-setup,
+write-library.
+
+</details>
+
+<details>
+<summary>📊 <strong>Adopt signed antipodal DSI as the canonical DSI metric across all
+DSGC project tasks; deprecate vector-sum DSI</strong> (S-0129-09)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+The signed-vs-vector-sum DSI distinction is not aesthetic: vector-sum gives a 50%-wrong answer
+about preferred direction for 1.7% of viable cells on the t0129 cohort, and the DS-RGC
+literature (Wei 2018, Sivyer 2013) uses the signed definition exclusively. The two metrics'
+magnitudes are arithmetically equal on the antipodal pair, so adoption is zero-cost for
+existing analyses (they can re-read |dsi_signed| where they used dsi_vector_sum). Concrete
+action: (a) update meta/metrics/direction_selectivity_index/specification.md to state
+signed-antipodal as the canonical formula, (b) add a deprecation note pointing to t0129 for
+the rationale, (c) update the evaluator template and the t0080 baseline to expose dsi_signed
+as the canonical field, (d) leave t0126's frozen dsi_vector_sum field name in place per
+immutability but flag it via a metric correction overlay. Recommended task types:
+infrastructure-setup, correction.
+
+</details>
+
+<details>
+<summary>📊 <strong>Cross-task audit: enumerate every downstream task that consumed
+t0126's pd_rate_hz=40 placeholder</strong> (S-0129-10)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+Memory project_t0126_cell_trace_synthesised confirms t0126's per-cell pd_rate_hz=40 was a
+synthesised placeholder; t0129 confirms the true Pareto-median PD rate is 2.62 Hz and the
+Pareto-max PD rate is 10.24 Hz (off by 4x to 20x). Any downstream analysis that filtered
+cells, computed thresholds, or scored cells using t0126's pd_rate_hz is potentially
+miscalibrated. Walk every task in tasks/ that lists t0126 as a dependency or reads t0126's
+predictions asset, scan their code/research/results for references to pd_rate_hz, and produce
+a single audit table (task ID, file, line, threshold-or-statistic-used, affected-metric,
+recommended-correction). Recommended task types: data-analysis, correction.
+
+</details>
+
+*460 more open suggestions → [open suggestions](suggestions/)*
+
+---
+
+## [High Priority Suggestions (82)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Re-run t0126 seed 8929 with t0129 signed-DSI evaluator to recover
+true sign-flip count (closes REQ-20)</strong> (S-0129-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+REQ-20 of t0129 is Partial: the true number of t0126 Pareto cells that flip sign under signed
+DSI is unknowable (upper bound is 4, from the count of t0126-Pareto cells with dsi_vector_sum
+> 0.5), because t0126 did not persist per-direction spike counts and pd_rate_hz=40 is a
+synthesised placeholder. Re-run the SAME GA seed (8929) using the t0129 evaluator (signed DSI,
+real PD/ND firing rates, cell_params.jsonl sink) and the SAME 68-d parameter bounds and hard
+invariants (POP_SIZE=96, N_GEN=60, _POOL_RESTART_EVERY=10, HV-plateau auto-stop disabled, $8
+cap). Compare the resulting 60-gen Pareto front and per-cell signed DSI to t0126's recorded
+vector-sum Pareto cells (cell-by-cell, ranked by within-front rank), and report the exact
+sign-flip count among t0126's 6 cells. Expected cost: ~$1.00 Vast.ai (matches t0126
+single-seed envelope). Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-seed (3-5 fresh seeds) t0129 protocol extension to bracket
+negative-DSI fraction and Pareto-front stability</strong> (S-0129-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0129's headline (95/5,496 viable cells with negative signed DSI = 1.7%; 9-cell Pareto front
+spanning DSI in [0, 1]) is on a single GA seed (3517). The corresponding numbers from other
+t0124/t0126/t0128 seeds are unknown, so it is impossible to state whether 1.7% is typical, a
+low outlier, or a high outlier. Run the t0129 evaluator and driver verbatim on 3-5 additional
+fresh GA seeds (NOT in the lineage set {441, 6650, 8929, 2608, 8276, 9986, 3517}). For each
+seed report (a) viable-cell count, (b) negative-DSI count and deepest reversal, (c) final-gen
+Pareto-front size and DSI/ATP corner positions, (d) headline cell DSI and ATP. Synthesise as
+bootstrap-CI bands on the four key statistics. Expected cost: ~$4-5 (4 seeds x ~$1).
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Re-fit t0117 unfiltered-pool factor analysis with signed DSI
+replacing vector-sum on the 4-seed pooled cohort</strong> (S-0129-03)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0117 found a joint DSI-PD factor (F1, r_DSI=+0.421, r_PD=+0.352) on a pooled 4-seed
+unfiltered cohort that consumed dsi_vector_sum as the DSI feature. t0129 shows that 1.7% of
+viable cells have genuinely reversed preference (dsi_signed < 0) which vector-sum collapses to
+positive magnitude indistinguishable from true PD-preferring cells of the same magnitude. The
+sign collapse contaminates the DSI column used to fit F1. Recompute signed DSI for every cell
+in t0117's pooled parquet using the per-direction spike counts (available in t0117's per-seed
+evaluation dumps if persisted; otherwise restricted to the subset where they are recoverable),
+refit the 10-factor varimax solution, and report whether F1's r_DSI changes sign or magnitude.
+Decision rule: |r_DSI change| > 0.10 means t0117's joint-factor verdict is
+sign-collapse-contaminated. Recommended task types: data-analysis, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Formalise the t0129 cell_params.jsonl per-cell parameter-dump
+protocol as a project-wide NSGA-II evaluator standard</strong> (S-0129-08)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0129 introduced cell_params.jsonl as the per-cell diagnostic sink, replacing the
+env-var-driven cell_trace.jsonl pattern that t0126 used and that silently dropped data in
+worker processes (memory feedback_nsga2_launch_via_run_script and
+project_t0126_cell_trace_synthesised). The t0129 implementation captures the sink path at
+problem-constructor time (BedBV3MorphProblem.__init__), pickling it into every worker, which
+closes the failure mode. The schema (gen, cell_idx, param_vector, dsi_signed, atp_per_spike,
+pd_rate_hz, nd_rate_hz, silence_failed, n_errors) is enough to reconstruct any
+parameter-vs-objective scatter or factor analysis. Promote this to a documented project-wide
+pattern: write a meta/specifications file (or extend the existing evaluator template) defining
+the schema, the constructor-capture pattern, and a verificator that asserts cell_params.jsonl
+exists and is non-empty after Phase A. Recommended task types: infrastructure-setup,
+write-library.
+
+</details>
+
+<details>
+<summary>📊 <strong>Adopt signed antipodal DSI as the canonical DSI metric across all
+DSGC project tasks; deprecate vector-sum DSI</strong> (S-0129-09)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+The signed-vs-vector-sum DSI distinction is not aesthetic: vector-sum gives a 50%-wrong answer
+about preferred direction for 1.7% of viable cells on the t0129 cohort, and the DS-RGC
+literature (Wei 2018, Sivyer 2013) uses the signed definition exclusively. The two metrics'
+magnitudes are arithmetically equal on the antipodal pair, so adoption is zero-cost for
+existing analyses (they can re-read |dsi_signed| where they used dsi_vector_sum). Concrete
+action: (a) update meta/metrics/direction_selectivity_index/specification.md to state
+signed-antipodal as the canonical formula, (b) add a deprecation note pointing to t0129 for
+the rationale, (c) update the evaluator template and the t0080 baseline to expose dsi_signed
+as the canonical field, (d) leave t0126's frozen dsi_vector_sum field name in place per
+immutability but flag it via a metric correction overlay. Recommended task types:
+infrastructure-setup, correction.
+
+</details>
+
+<details>
+<summary>📊 <strong>Cross-task audit: enumerate every downstream task that consumed
+t0126's pd_rate_hz=40 placeholder</strong> (S-0129-10)</summary>
+
+**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+Memory project_t0126_cell_trace_synthesised confirms t0126's per-cell pd_rate_hz=40 was a
+synthesised placeholder; t0129 confirms the true Pareto-median PD rate is 2.62 Hz and the
+Pareto-max PD rate is 10.24 Hz (off by 4x to 20x). Any downstream analysis that filtered
+cells, computed thresholds, or scored cells using t0126's pd_rate_hz is potentially
+miscalibrated. Walk every task in tasks/ that lists t0126 as a dependency or reads t0126's
+predictions asset, scan their code/research/results for references to pd_rate_hz, and produce
+a single audit table (task ID, file, line, threshold-or-statistic-used, affected-metric,
+recommended-correction). Recommended task types: data-analysis, correction.
 
 </details>
 
@@ -162,131 +470,6 @@ NSGA-II in background with checkpoint loop, (d) returns a launched-handle artefa
 poll-progress skill and triggers post-run analysis when complete or budget-trip. Touches
 arf/skills/implementation, arf/skills/execute-task, the run_with_logs harness, and one new
 poll-progress skill. Recommended task types: infrastructure-setup, write-library.
-
-</details>
-
-<details>
-<summary>📊 <strong>Joint 3-D (DSI, cytoplasm_volume, ATP/spike) cross-task analysis
-combining t0122 and t0124 fronts</strong> (S-0124-03)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
-
-t0122 produced a (DSI, cytoplasm volume) Pareto front; t0124 produced a (DSI, ATP/spike)
-Pareto front on the same 68-d substrate. Cell ancestry is independent but both record
-cytoplasm_volume_um3 as a diagnostic and both export the 68-d parameter vector per cell.
-Post-hoc joint analysis can test whether high-DSI cells fall in both the Cuntz 2010 [0.2, 0.7]
-balancing-factor band AND the Carter-Bean PASS band -- a much stronger
-evolutionary-optimisation argument than either pair alone. Action: load
-pareto_front_seed*.json + all_evaluations_seed*.json.gz from both tasks, re-evaluate ATP/spike
-on t0122 cells and cytoplasm volume on t0124 cells via single-CPU resimulation of the top-N
-cells under the same evaluator, render a 3-D scatter (DSI, log10(volume), log10(ATP/spike))
-with Pareto contours, and report which cells fall in joint-pass cones. No new NSGA-II run.
-Recommended task types: data-analysis, comparative-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>📊 <strong>DSGC-specific signalling-ATP fraction estimate: anchor top-N
-cells to whole-retina ATP turnover (Okawa 2008)</strong> (S-0124-04)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
-
-The Howarth 2012 17%/21% AP-fraction-of-signalling-ATP comparison returned INDETERMINATE for
-all 5 Pareto cells because per-cell signalling-ATP rate (7.54e6-7.39e8 ATP/s) is computed but
-the whole-tissue ATP turnover denominator is not measurable from t0124's evaluator output.
-Howarth's cortex/cerebellum anchors also predate retinal measurement -- retina is dominated by
-photoreceptor outer-segment dark current, so the DSGC-specific signalling fraction may be even
-lower. Action: extract whole-retina ATP consumption rates from Okawa et al. 2008 (mouse
-retina, ~7.5e16 ATP/s per cm^2) plus per-cell-density estimates for ooDSGCs from published RGC
-counts; compute the implied DSGC per-cell ATP turnover budget; report top-N t0124 cells'
-(ATP/spike * PD-rate) as a fraction of that DSGC-specific budget. Closes the Howarth gap with
-retina-specific anchors. Recommended task types: internet-research, download-paper,
-data-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>🧪 <strong>NMDA vs Nav dichotomy on the high-DSI corner: is NMDA-driven DSI
-cheaper per spike than Nav-driven DSI?</strong> (S-0124-05)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
-
-Mechanistic prediction: NMDA-driven high-DSI cells should be cheaper per spike than Nav-driven
-ones because NMDA spikes are slower (smaller Na/K overlap) and Ca2+ ATPase costs ~1 ATP per 3
-Ca2+ vs Na/K ATPase's ~1 ATP per 3 Na+, with NMDA's ~3:1 Ca/Na ratio amplifying the advantage.
-If true, the Carter-Bean penalty applies only to the Nav-pathway DSI branch and the +0.806
-correlation hides an NMDA-cheap sub-front. Action: on the S-0124-01 60-gen output plus the
-t0124 partial front, extract per-cell (gnmda_dend, nav16_dend_distal, nav16_ais_proximal,
-nav16_ais_distal) from the 68-d vectors, define a NMDA-Nav balance axis = z(gnmda_dend) -
-z(nav16_dend_distal), and scatter it against ATP/spike conditioned on DSI > 0.5. Falsifies if
-NMDA-balance shows no negative correlation with ATP/spike on high-DSI cells. Local-CPU
-post-hoc on saved JSONs. Recommended task types: data-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>📊 <strong>Hallermann 2012 per-compartment alpha decomposition on t0124
-Pareto cells</strong> (S-0124-06)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
-
-t0124's compare_literature flagged the Hallermann 2012 prediction (AIS alpha 1.5-2.0 vs
-dendrite alpha 1.0-1.3, predicted positive delta 0.3-0.7) as NOT MEASURED because
-comparator_report.json aggregates only AIS ATP/AP/cm and a whole-cell signalling rate. The
-per-compartment seg.ina FULL-mode traces ARE saved (cell_trace.jsonl) -- the test requires a
-post-hoc decomposition of integral(I_Na^inward) per compartment-group divided by the
-analytically-computed capacitive-minimum Na+ entry per group. Action: write
-decompose_alpha_per_compartment.py reading cell_trace.jsonl, compute per-compartment alpha for
-the 5 Pareto cells plus any S-0124-01 cohort expansion, render a violin plot of (alpha_AIS -
-alpha_dendrite) per cell with the Hallermann 0.3-0.7 band overlaid. Falsifies if the delta is
-consistently negative or near zero. Recommended task types: data-analysis,
-comparative-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>📊 <strong>Wang 2025 baseline-ATP standby-readiness reinterpretation
-cross-check on t0124 cells</strong> (S-0124-07)</summary>
-
-**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
-
-Wang 2025 reports steady-state intracellular ATP-pool ordering alpha-RGC < ipRGC < ooDSGC but
-does NOT measure per-spike ATP. The standard 'ooDSGCs are spike-energy-expensive'
-interpretation is therefore unsupported; the alternative 'standby readiness' view says ooDSGCs
-maintain high baseline ATP precisely because they spike infrequently and amortise per-burst
-cost. Action: compute implied total per-second ATP demand (ATP/spike * PD-rate * directional
-duty cycle) for t0124 top-N cells from the S-0124-01 60-gen front, compare against published
-RGC type-specific firing-rate baselines (Sivyer 2013 ooDSGC ~5-15 Hz; alpha-RGC ~30-80 Hz),
-and rank implied total ATP demand across simulated types. If the ranking inverts vs Wang's
-baseline-ATP ranking, 'standby readiness' is supported; if it matches,
-'spike-energy-expensive' is supported. Falsifiable mechanism test. Recommended task types:
-data-analysis, comparative-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>📊 <strong>Carter-Bean narrow-AP Na/K-overlap test: AP-width vs ATP/spike
-on t0124 Pareto cells</strong> (S-0124-08)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
-
-The compare_literature analysis identifies AP-width extraction as the highest-priority
-follow-up for testing the Carter-Bean 2009 narrow-spike Na/K-overlap mechanism on t0124 data.
-comparator_report.json records ATP/AP/cm per cell but not AP half-width or rise/decay times.
-Per-compartment somatic Vm traces (FULL mode) are saved -- extracting AP half-width via Vm
-crossings at +/-half-peak on each detected spike is a one-off post-hoc step. Action: write
-extract_ap_width.py reading the somatic Vm trace per Pareto cell from cell_trace.jsonl, detect
-spikes via the existing -20 mV crossing + 2 ms refractory in atp_per_spike.py, compute
-half-width per AP, scatter median half-width vs ATP/spike across the front. Carter-Bean
-predicts a negative slope (narrower AP -> higher Na/K overlap -> higher ATP/spike). Coarse on
-n=5; tight on the S-0124-01 60-gen front. Local-CPU post-hoc. Recommended task types:
-data-analysis, answer-question.
 
 </details>
 
@@ -329,217 +512,59 @@ comparative-analysis.
 
 </details>
 
-*444 more open suggestions → [open suggestions](suggestions/)*
+<details>
+<summary>📚 <strong>Per-Pareto-cell AIS ATP/AP/cm aggregator: recover per-segment
+ATP-per-AP from saved cell traces (inherited gap from t0124)</strong>
+(S-0126-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0126_bedb_dsi_atp_per_spike_nsga2_60gen](../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/)
+
+comparator_report.json reports measured_atp_per_ap_per_cm = 0 for all 6 t0126 Pareto cells
+(label "fail", within_band=false) -- inherited verbatim from t0124. The canonical anchor
+cell's smoke-gate value (6.138e8 ATP/AP/cm, inside the Carter-Bean [1e8, 1e9] band) validates
+the recipe at smoke-gate time, but the post-run aggregator does not recompute per-segment
+ATP-per-AP at the AIS for each Pareto cell from the saved per-segment seg.ina traces. This
+forces the Carter2009 per-cell band test to NOT MEASURED on every t0122/t0124/t0126 run
+despite the per-compartment data being present in cell_trace_seed*.jsonl. Action: write
+per_cell_carter_bean_aggregator.py that (a) loads cell_trace_seed*.jsonl for each Pareto cell,
+(b) detects APs at the AIS via -20 mV crossing + 2 ms refractory, (c) integrates inward I_Na
+within +/-2 ms of each AP at each AIS segment, (d) divides by 3*e*A_cm to produce ATP/AP/cm
+per AIS segment, (e) aggregates median over AIS segments per cell, (f) tests against the
+canonical [1e8, 1e9] band and the [3e7, 3e9] PASS band, (g) emits per-cell labels in the
+updated comparator_report.json. Re-run on t0122/t0124/t0126 Pareto fronts. Distinct from
+S-0124-06 (Hallermann per-compartment alpha decomposition; a different physical quantity) and
+S-0124-08 (AP-width vs ATP/spike, somatic Vm only). Recommended task types: data-analysis,
+write-library, comparative-analysis.
+
+</details>
+
+*72 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (75)](suggestions/)
+## [Recent Answers (53 total)](answers/)
 
 <details>
-<summary>🧪 <strong>Fresh-seed 60-gen replication of DSI vs ATP-per-spike NSGA-II to
-test Carter-Bean penalty vs artefact</strong> (S-0124-01)</summary>
+<summary><strong>Does the signed-DSI re-evaluation of t0126's protocol change the
+Pareto structure, or is the vector-sum / signed distinction immaterial
+on the antipodal pair?</strong></summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+**Confidence**: medium | **Date**: 2026-05-26 | **Full answer**:
+[`does-signed-dsi-change-t0126-pareto-structure`](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/assets/answer/does-signed-dsi-change-t0126-pareto-structure/)
 
-t0124 truncated at gen 9 of 60 by operator_stop (subagent session budget, not cost cap; HV
-still ascending). The bootstrap r(DSI, ATP) = +0.806 [0.716, 1.000] on the n=5 partial front
-is suggestive of a Carter-Bean Na/K-overlap penalty but undeterminable from artefact because
-_POOL_RESTART_EVERY=10 has not fired and all 5 cells share LHS-init ancestry. Action: fork the
-t0124 substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2,
-N_GEN_MAX=60, COST_CAP_USD=6.0, HV plateau autostop=False, DSI silence-guard PD<3 -> DSI=-1,
-Sengupta ATP recipe, Carter-Bean smoke-gate), draw a fresh non-round GA seed via
-secrets.randbelow(10000), run to gen 60 on Vast.ai EPYC. Decision rule: if r > +0.5 with CI
-excluding 0 at n>=20 accept the penalty interpretation; if r drops below +0.3 accept the
-early-NSGA-II artefact null. Recommended task types: experiment-run, data-analysis,
-comparative-analysis.
-
-</details>
-
-<details>
-<summary>🔧 <strong>Framework fix: decouple long NSGA-II launches from the
-implementation subagent session budget</strong> (S-0124-02)</summary>
-
-**Kind**: technique | **Priority**: high | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
-
-The t0124 gen-9 truncation was triggered by the implementation subagent running out of context
-while polling NSGA-II progress, with only $0.07 of $6 spent and no HV plateau. Recurring
-across the t0102-t0124 NSGA-II lineage (multi-hour Vast.ai runs vs subagent context limits)
-and distinct from S-0123-05 (pymoo dill checkpoint). Action: restructure the implementation
-skill so the subagent only (a) provisions the machine, (b) runs the smoke-gate, (c) launches
-NSGA-II in background with checkpoint loop, (d) returns a launched-handle artefact
-(instance_id, pid, expected_completion). The orchestrator then polls via a separate
-poll-progress skill and triggers post-run analysis when complete or budget-trip. Touches
-arf/skills/implementation, arf/skills/execute-task, the run_with_logs harness, and one new
-poll-progress skill. Recommended task types: infrastructure-setup, write-library.
+Yes. The signed-DSI re-evaluation surfaces structure that vector-sum DSI silently discards: on
+this single seed (3517) 95 viable cells out of 5,496 have genuinely reversed preference (R_ND
+> R_PD, deepest reversal `dsi_signed = -0.778`) and would have been collapsed to positive
+magnitude under vector-sum DSI. None of these reversed cells reach the t0129 final Pareto
+front (they are dominated in F-space by the silent / DSI=0 cluster at the ATP minimum), but
+they would have been Pareto candidates under the t0126 vector-sum objective, polluting the
+high-magnitude region of t0126's front with cells whose preferred direction is actually
+opposite to what vector-sum suggests. The sign-flip count for t0126's own Pareto cells cannot
+be recovered because t0126 did not persist per-direction spike counts and its `pd_rate_hz =
+40` is a synthesised placeholder.
 
 </details>
-
-<details>
-<summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
-the zero-joint-factor verdict</strong> (S-0125-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-t0125's zero-joint MI x ATP varimax verdict is derived from a SINGLE NSGA-II seed (441).
-Precedent: t0116 (single seed) found no joint DSI x PD factor; t0117 (4 seeds) recovered one.
-The verdict is known to be seed-sensitive on this substrate. Action: replicate t0123 on 2-3
-additional non-round GA seeds (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6,
-HV-plateau auto-stop DISABLED per memory feedback_disable_hv_plateau_autostop,
-_POOL_RESTART_EVERY=10) and rerun the t0125 cluster + Kaiser-cap varimax pipeline on the
-pooled 4-seed pool. Predicted outcome: either F1's ATP loading crosses 0.30 (joint factor
-reappears) or stays decoupled (objective-pair-specific verdict confirmed). Budget ~$15-25
-Vast.ai EPYC. Recommended task types: experiment-run, data-analysis, comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Patch t0080 with an explicit myelinated axon to fix the
-soma-vs-axon ATP-share inversion vs Attwell 2001</strong> (S-0125-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-t0125 finds 76.7% soma / 5.5% AIS / 17.8% dendrite ATP share -- inverted from Attwell &
-Laughlin 2001's 4% soma / 82% axon / 14% dendrite rodent-cortical breakdown. methodology_notes
-and compare_literature attribute this to t0080 lacking an explicit myelinated axon (only a
-procedural AIS). Action: extend the t0080 cell builder with one or two nodes of Ranvier +
-myelin segments at realistic R_m (~50 kOhm cm^2), C_m (~0.04 uF/cm^2), and Na/K channel
-densities; re-run t0123's MI vs ATP-per-spike NSGA-II at matched compute; re-check
-soma/AIS/axon/dendrite ATP shares against Attwell 2001 Table 4 and Sengupta 2010. Test whether
-the Pareto front shifts and whether compartment-ATP diversity broadens to match the rodent
-picture. Budget ~$10-15 Vast.ai EPYC. Recommended task types: build-model, experiment-run,
-comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Re-run seeds 77 and 2247 with HV-plateau auto-stop DISABLED to
-test the censoring-artefact hypothesis</strong> (S-0121-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
-[t0121_5seed_substrate_rate_canonical_report](../tasks/t0121_5seed_substrate_rate_canonical_report/)
-
-The 5-seed canonical estimate's lower tail is dominated by seed 77 (7 LEGIT, gen 21 stop) and
-seed 2247 (0 LEGIT, gen 14 stop, 6 gens below Mohacsi 2024's 20-60 convergence band). Both ran
-under legacy auto-stop-enabled; t0121 flags both as plausible censoring artefacts. The
-project's now-current policy (memory note 'Disable HV-plateau auto-stop') is to DISABLE
-auto-stop. Concrete action: replicate t0112 (seed 77) and t0113 (seed 2247) with auto-stop
-DISABLED, _POOL_RESTART_EVERY=10, gen ceiling 300, budget cap matching t0114 / t0115.
-Decision: if either seed crosses the Hay 0.40% envelope, re-estimate the canonical 5-seed mean
-and close the censoring caveat. If both stay below 0.40% at full budget, the seeds are
-substrate-sparse not censored. Distinct from S-0114-08 (which tests the offline '(W=3,
-T=0.015)' detector, not disable-auto-stop). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Add 2-3 further random-init GA seeds to upgrade the
-substrate-rate estimate from 5-seed to 7-8 seed</strong> (S-0121-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
-[t0121_5seed_substrate_rate_canonical_report](../tasks/t0121_5seed_substrate_rate_canonical_report/)
-
-The 5-seed bootstrap 95% CI (+0.38%, +5.53%) excludes 0% but still brackets both Hay 2011
-(0.40%) and Druckmann 2007 (0.10%) baselines; the normal-approx CI (-0.35%, +5.51%) straddles
-0. With n=5 the resampling pool is small and the CI is sensitive to seed 7755's 8.13% draw and
-seed 2247's 0% draw. Concrete action: draw 2-3 further random GA seeds via
-secrets.randbelow(10000) (avoiding the already-used 44, 77, 2247, 7755, 9354), run each as a
-minimum-change replicate of t0115 (auto-stop disabled, cadence 10, gen ceiling 300, budget cap
-~$3 per seed), then re-run the t0121 pipeline against the expanded 7-8 seed sample. Decision:
-if both CIs clear the Hay envelope upper bound at 7-8 seeds, the substrate-density claim can
-be made at p < 0.05 without the censoring caveat. Distinct from S-0113-01 (closed by t0114 +
-t0115). Recommended task types: experiment-run.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Replicate t0122 cytoplasm-volume NSGA-II on 2-3 additional GA
-seeds for substrate-rate estimate</strong> (S-0122-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
-[t0122_dsi_cytoplasm_volume_nsga2](../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
-
-t0122 ran one GA seed (1524) and reported 0.17% LEGIT acceptance (10/5760) with 10/10 top-DSI
-cells in the Cuntz [0.2, 0.7] band. Mirroring the S-0112-01 pattern, the headline must be
-replicated on 2-3 more random GA seeds drawn via secrets.randbelow(10000) (non-round) before
-drawing population-statistic conclusions. Action: launch 2-3 independent runs of the t0122
-substrate (same 68-d Bed B + 14-d morph, F=[-dsi, +volume_um3], hard constants POP_SIZE=96,
-N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6.0, tightened guard pd_spikes_sum<3), aggregate
-per-seed LEGIT rates and Cuntz top-10 bf distributions, and compute a 3-seed mean +- SD
-comparable to t0121's 5-seed PD-rate estimate. Outcome: substrate-rate central estimate for
-the cytoplasm-volume axis, and answers whether bf=0.500 clustering is seed-invariant.
-Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Audit morphology generator for balancing-factor degeneracy: do
-all parameter combinations yield bf=0.500?</strong> (S-0122-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
-[t0122_dsi_cytoplasm_volume_nsga2](../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
-
-t0122's top-10 cells all reported Cuntz bf = 0.500 (exact midpoint), raising the question of
-whether the t0090/t0092 procedural morphology generator produces topologically balanced trees
-by construction across its 14-d parameter space, irrespective of optimiser selection. Action:
-take a quasi-random LHS sample of N=200-500 morphology vectors spanning the full 14-d bounds
-in constants_morphology.py, build each cell via generate_fixed_morphology (no NEURON sim),
-compute Cuntz bf via the t0122 compute_balancing_factor function, and plot the marginal bf
-distribution + per-knob bf vs parameter scatter. Verdict: if >95% of cells fall in [0.49,
-0.51] the generator is degenerate-balanced and the t0122 Cuntz prediction is generator-driven;
-otherwise the bf=0.500 clustering is genuinely selected for by the cytoplasm cost. Recommended
-task types: experiment-run, data-analysis, answer-question.
-
-</details>
-
-<details>
-<summary>🧪 <strong>3-objective NSGA-II extension: maximise DSI, maximise PD-rate,
-minimise cytoplasm volume</strong> (S-0122-03)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
-[t0122_dsi_cytoplasm_volume_nsga2](../tasks/t0122_dsi_cytoplasm_volume_nsga2/)
-
-t0122's 2-objective Pareto front is L-shaped (volume dominates because it is easy to minimise)
-and top-DSI cells have PD-rate 23-26 Hz, just below the 30 Hz strict-LEGIT floor; only the
-strict-LEGIT cohort (10 cells, distinct from top-10 by DSI) cleared the floor. Action: extend
-the t0122 evaluator to emit out['F'] = [-dsi, -pd_rate_hz, +cytoplasm_volume_um3] (n_obj=3),
-keep other hard constants identical, draw a fresh non-round GA seed, run NSGA-II 60 gens on
-the same Vast.ai EPYC substrate; adjust REF_POINT_HV and HV_UTOPIA to 3 entries (DSI=0, PD=0,
-V=50000). Prediction: adding max-PD-rate shifts the Pareto frontier upward in PD, populates
-the strict-LEGIT cohort denser than t0122's 10 cells, and resolves the top-10-by-DSI vs
-strict-LEGIT cohort mismatch. Recommended task types: experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Rerun MI-ATP NSGA-II with richer stimulus + PD-rate floor to
-fix Strong-Bialek bits/s = 0</strong> (S-0123-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-24 | **Source**:
-[t0123_bedb_mi_atp_per_spike_nsga2](../tasks/t0123_bedb_mi_atp_per_spike_nsga2/)
-
-t0123's post-hoc Strong-Bialek bits/s = 0 for all 10 top-Pareto cells traces to a protocol
-mismatch: count-MI converged on cells producing ~3 PD spikes per 1400 ms trial (silence-guard
-boundary) where binary spike-time words are degenerate at every T <= 100 ms; Niven 2007
-comparison returns Insufficient evidence. Action: fork the t0123 substrate (same 68-d Bed B +
-14-d morph, same two-tier MI + Sengupta ATP recipe) with three upgrades: (a) extend trial
-length to 3000-5000 ms so the 1/T extrapolation populates non-trivial spike-time words; (b)
-tighten the silence guard to a PD-rate floor pd_rate_hz>=10 Hz so count-MI cannot exploit the
-silence boundary; (c) optionally add NMDA-mediated burst priming (t0062-style) to lift
-baseline firing into the spike-time-informative regime. Predict bits/s becomes positive and
-the Niven comparison becomes testable. Budget ~$5-8 Vast.ai EPYC. Recommended task types:
-experiment-run, data-analysis, comparative-analysis.
-
-</details>
-
-*65 more high-priority suggestions → [high-priority suggestions](suggestions/)*
-
----
-
-## [Recent Answers (51 total)](answers/)
 
 <details>
 <summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
@@ -638,6 +663,23 @@ molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbal
 </details>
 
 <details>
+<summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
+Na/K-overlap penalty, and where do its top cells sit relative to the
+revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and
+historically, the original Attwell-Laughlin 2001 47% anchor)?</strong></summary>
+
+**Confidence**: low | **Date**: 2026-05-25 | **Full answer**:
+[`dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact`](../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/assets/answer/dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact/)
+
+INSUFFICIENT EVIDENCE: only 6 legit cells passed the silence guard. The Pareto front structure
+cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r
+between DSI and ATP-per-spike across the legit top-6 cohort is r = 0.980 (95% CI: [0.972,
+1.000], n_legit = 6, n_pareto = 6). Run reached 60 / 60 gens at $0.96; stop trigger
+n_gen_reached.
+
+</details>
+
+<details>
 <summary><strong>Is the procedural morphology generator's asymmetry transform
 geometrically consistent across the 15-20 sampled cells, and do its results
 invalidate prior NSGA-II runs?</strong></summary>
@@ -692,41 +734,7 @@ cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
 
 </details>
 
-<details>
-<summary><strong>Where does the DSGC bits-per-ATP front sit relative to Niven 2007's
-fly-photoreceptor curve, and does it match the Niven super-linear
-cost-vs-information scaling?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-05-24 | **Full answer**:
-[`dsgc-bits-per-atp-vs-niven-2007`](../tasks/t0123_bedb_mi_atp_per_spike_nsga2/assets/answer/dsgc-bits-per-atp-vs-niven-2007/)
-
-Insufficient evidence. The t0123 single-seed NSGA-II run produced 10 top-Pareto cells under
-the post-hoc Strong-Bialek 1998 direct method; the log-log fit exponent p = n/a at r^2 = n/a
-is too noisy (n < 10 or r^2 < 0.5) to make a definitive statement about super-linear scaling.
-
-</details>
-
-<details>
-<summary><strong>Does the unfiltered pool (every NSGA-II evaluation, no DSI/PD
-cohort filter) form a single connected manifold across seeds 44, 77, 7755,
-and 9354, or does the seed-specific basin pattern observed at the strict
-cohort (t0116) persist when low-DSI / low-PD cells are also
-admitted?</strong></summary>
-
-**Confidence**: high | **Date**: 2026-05-22 | **Full answer**:
-[`pooled-all-cells-basin-connectivity-without-filter`](../tasks/t0117_pooled_pca_cluster_factor_all_cells_4_seeds/assets/answer/pooled-all-cells-basin-connectivity-without-filter/)
-
-The seed-specific basin pattern partially dissolves once the cohort filter is removed: the
-pool reconnects across seeds but does not form a single connected manifold. Electrophys KMeans
-NMI vs seed drops from 0.929 (t0116, strict cohort) to 0.562 (t0117, no filter, n=4431 cells,
-k=4), and morphology NMI drops from 0.889 to 0.313 — the morphology subspace shows much
-stronger reconnection than the electrophys subspace. Even at the unfiltered pool both
-partitions remain significantly seed-aligned (chi-square p<<0.001), so seed effects are
-detectable but no longer dominant.
-
-</details>
-
-*41 more answers → [answers](answers/)*
+*43 more answers → [answers](answers/)*
 
 ---
 
@@ -1308,11 +1316,13 @@ No models yet.
 
 ---
 
-## [Latest Predictions (19 total)](predictions/)
+## [Latest Predictions (21 total)](predictions/)
 
 | Name | Source | Created |
 |------|--------|---------|
+| [NSGA-II Signed DSI vs ATP per Spike, Bed B + 14-d Morph, Seed 3517](../tasks\t0129_t0126_signed_dsi_real_rates_1seed\assets\predictions\nsga2-dsi-signed-atp-per-spike-bedb-morph-t0129\description.md) | [129](../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) | 2026-05-26 |
 | [NSGA-II DSI vs ATP-per-Spike on Bed B + 14-d Morphology](../tasks\t0124_bedb_dsi_atp_per_spike_nsga2\assets\predictions\nsga2-dsi-atp-per-spike-bedb-morph\description.md) | [124](../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | 2026-05-25 |
+| [NSGA-II DSI vs ATP-per-Spike on Bed B + 14-d Morphology](../tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\assets\predictions\nsga2-dsi-atp-per-spike-bedb-morph-60gen\description.md) | [126](../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) | 2026-05-25 |
 | [NSGA-II Pareto front: MI vs ATP-per-spike on Bed B + 14-d morph](../tasks\t0123_bedb_mi_atp_per_spike_nsga2\assets\predictions\nsga2-mi-atp-per-spike-bedb-morph\description.md) | [123](../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | 2026-05-24 |
 | [NSGA-II Pareto front: DSI vs cytoplasm volume on Bed B + 14-d morph](../tasks\t0122_dsi_cytoplasm_volume_nsga2\assets\predictions\nsga2-cytoplasm-volume-bedb-morph\description.md) | [122](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | 2026-05-24 |
 | [NSGA-II seed 9354 on 68-d Bed B + 14-d morphology, 2 directions, 55-gen run with HV-plateau auto-stop DISABLED (5th seed of S-0112-01 batch)](../tasks\t0115_seed9354_no_autostop\assets\predictions\t0115-bedb-morph-nsga2-seed9354\description.md) | [115](../overview/tasks/task_pages/t0115_seed9354_no_autostop.md) | 2026-05-21 |
@@ -1320,10 +1330,8 @@ No models yet.
 | [NSGA-II seed 2247 on 68-d Bed B + 14-d morphology, 2 directions, 60-gen replicate of t0106/t0112](../tasks\t0113_t0106_seed2247_replicate\assets\predictions\t0113-bedb-morph-nsga2-seed2247\description.md) | [113](../overview/tasks/task_pages/t0113_t0106_seed2247_replicate.md) | 2026-05-20 |
 | [NSGA-II seed 77 on 68-d Bed B + 14-d morphology, 2 directions, seed-77 replicate of t0106](../tasks\t0112_t0106_seed77_replicate\assets\predictions\t0112-bedb-morph-nsga2-seed77\description.md) | [112](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | 2026-05-19 |
 | [NSGA-II seed 44 on 68-d Bed B + 14-d morphology, 2 directions, 300-gen target](../tasks\t0106_long_pdnd_nsga2_300gen\assets\predictions\nsga2-seed44-bedb-morph-2dir-300gen\description.md) | [106](../overview/tasks/task_pages/t0106_long_pdnd_nsga2_300gen.md) | 2026-05-18 |
-| [8-direction polar re-evaluation of 10 sampled t0106 top-50 cells](../tasks\t0107_t0106_polar_8dir_recheck\assets\predictions\eight-dir-polar-recheck-top10-t0106\description.md) | [107](../overview/tasks/task_pages/t0107_t0106_polar_8dir_recheck.md) | 2026-05-18 |
-| [NSGA-II seed=55 Bed B + morphology N_EVAL_SEEDS=4 N_GEN=20 (LHS random init, 2-objective DSI+PD, DSI silence guard)](../tasks\t0104_nsga2_2obj_dsi_pdrate_3seeds\assets\predictions\nsga2-seed55-bedb-morph-n4-gen20-2obj\description.md) | [104](../overview/tasks/task_pages/t0104_nsga2_2obj_dsi_pdrate_3seeds.md) | 2026-05-12 |
 
-*9 more predictions → [predictions](predictions/)*
+*11 more predictions → [predictions](predictions/)*
 
 ---
 
@@ -1346,7 +1354,7 @@ No models yet.
 
 ---
 
-## [Cost Leaders (19 tasks with spend)](costs/)
+## [Cost Leaders (21 tasks with spend)](costs/)
 
 | Task | Cost | Date |
 |------|------|------|
@@ -1361,4 +1369,4 @@ No models yet.
 | [Seed-77 minimum-change replicate of t0106 long 2-direction NSGA-II](../overview/tasks/task_pages/t0112_t0106_seed77_replicate.md) | [`$1.99`](../tasks/t0112_t0106_seed77_replicate/results/costs.json) | 2026-05-19 21:50 |
 | [Robustness + cluster + bio-comparison of t0081/t0083 joint-pass cells](../overview/tasks/task_pages/t0086_robustness_cluster_bio_comparison.md) | [`$1.59`](../tasks/t0086_robustness_cluster_bio_comparison/results/costs.json) | 2026-05-06 18:24 |
 
-*9 more tasks with spend → [tasks with spend](costs/)*
+*11 more tasks with spend → [tasks with spend](costs/)*

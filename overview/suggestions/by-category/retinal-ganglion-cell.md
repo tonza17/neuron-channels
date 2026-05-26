@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-95 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **85 open** (16
-high, 58 medium, 11 low), **10 closed**.
+102 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **90 open** (17
+high, 61 medium, 12 low), **12 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -137,33 +137,6 @@ Recommended task types: download-dataset, download-paper.
 </details>
 
 <details>
-<summary>🧪 <strong>Fresh-seed 60-gen replication of DSI vs ATP-per-spike NSGA-II to
-test Carter-Bean penalty vs artefact</strong> (S-0124-01)</summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `S-0124-01` |
-| **Kind** | experiment |
-| **Date added** | 2026-05-25 |
-| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
-| **Source paper** | [`10.1016_j.neuron.2009.12.011`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1016_j.neuron.2009.12.011/) |
-| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
-
-t0124 truncated at gen 9 of 60 by operator_stop (subagent session budget, not cost cap; HV
-still ascending). The bootstrap r(DSI, ATP) = +0.806 [0.716, 1.000] on the n=5 partial front
-is suggestive of a Carter-Bean Na/K-overlap penalty but undeterminable from artefact because
-_POOL_RESTART_EVERY=10 has not fired and all 5 cells share LHS-init ancestry. Action: fork the
-t0124 substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2,
-N_GEN_MAX=60, COST_CAP_USD=6.0, HV plateau autostop=False, DSI silence-guard PD<3 -> DSI=-1,
-Sengupta ATP recipe, Carter-Bean smoke-gate), draw a fresh non-round GA seed via
-secrets.randbelow(10000), run to gen 60 on Vast.ai EPYC. Decision rule: if r > +0.5 with CI
-excluding 0 at n>=20 accept the penalty interpretation; if r drops below +0.3 accept the
-early-NSGA-II artefact null. Recommended task types: experiment-run, data-analysis,
-comparative-analysis.
-
-</details>
-
-<details>
 <summary>🧪 <strong>GABA-reduction ladder on Mg-block t0055 architecture to find a
 DSI-preserving operating point with peak Hz >= 5</strong> (S-0055-03)</summary>
 
@@ -241,6 +214,31 @@ window, gAMPA=0.5 fixed). Recommended task types: build-model, experiment-run.
 </details>
 
 <details>
+<summary>🧪 <strong>Multi-seed (3-5 fresh seeds) t0129 protocol extension to bracket
+negative-DSI fraction and Pareto-front stability</strong> (S-0129-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0129-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-26 |
+| **Source task** | [`t0129_t0126_signed_dsi_real_rates_1seed`](../../../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0129's headline (95/5,496 viable cells with negative signed DSI = 1.7%; 9-cell Pareto front
+spanning DSI in [0, 1]) is on a single GA seed (3517). The corresponding numbers from other
+t0124/t0126/t0128 seeds are unknown, so it is impossible to state whether 1.7% is typical, a
+low outlier, or a high outlier. Run the t0129 evaluator and driver verbatim on 3-5 additional
+fresh GA seeds (NOT in the lineage set {441, 6650, 8929, 2608, 8276, 9986, 3517}). For each
+seed report (a) viable-cell count, (b) negative-DSI count and deepest reversal, (c) final-gen
+Pareto-front size and DSI/ATP corner positions, (d) headline cell DSI and ATP. Synthesise as
+bootstrap-CI bands on the four key statistics. Expected cost: ~$4-5 (4 seeds x ~$1).
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
 the zero-joint-factor verdict</strong> (S-0125-01)</summary>
 
@@ -313,6 +311,32 @@ envelope's true peak (no spike contamination) per direction. Pass criterion: FUL
 bit-identical to t0055; EPSP_PASSIVE peak Vm < spike threshold (~-50 mV) at every direction
 and gNMDA. Recommended task type: experiment-run. Bridges the protocol fix into the Mg-block
 lineage and produces re-publishable EPSP/IPSP figures.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0126 seed 8929 with t0129 signed-DSI evaluator to recover
+true sign-flip count (closes REQ-20)</strong> (S-0129-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0129-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-26 |
+| **Source task** | [`t0129_t0126_signed_dsi_real_rates_1seed`](../../../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+REQ-20 of t0129 is Partial: the true number of t0126 Pareto cells that flip sign under signed
+DSI is unknowable (upper bound is 4, from the count of t0126-Pareto cells with dsi_vector_sum
+> 0.5), because t0126 did not persist per-direction spike counts and pd_rate_hz=40 is a
+synthesised placeholder. Re-run the SAME GA seed (8929) using the t0129 evaluator (signed DSI,
+real PD/ND firing rates, cell_params.jsonl sink) and the SAME 68-d parameter bounds and hard
+invariants (POP_SIZE=96, N_GEN=60, _POOL_RESTART_EVERY=10, HV-plateau auto-stop disabled, $8
+cap). Compare the resulting 60-gen Pareto front and per-cell signed DSI to t0126's recorded
+vector-sum Pareto cells (cell-by-cell, ranked by within-front rank), and report the exact
+sign-flip count among t0126's 6 cells. Expected cost: ~$1.00 Vast.ai (matches t0126
+single-seed envelope). Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -801,6 +825,32 @@ otherwise identical from-scratch substrate. Recommended task types: comparative-
 </details>
 
 <details>
+<summary>🧪 <strong>Deep-dive (Vm traces, morphology, dendritic-spike attribution) on
+t0129 Pareto cells 4 (DSI=1.0) and 7 (DSI=0.87)</strong> (S-0129-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0129-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-26 |
+| **Source task** | [`t0129_t0126_signed_dsi_real_rates_1seed`](../../../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+Pareto cell 4 (gen 57, signed DSI=1.0, PD rate 6.43 Hz, ND rate 0.0 Hz, ATP 6.66 M
+molec/spike) is the canonical ND-silenced DSGC corner, and Pareto cell 7 (gen 59, DSI=0.870,
+PD rate 10.24 Hz, ND rate 0.71 Hz, ATP 5.03 M molec/spike) is the highest-PD-rate Pareto cell
+with both PD rate and ATP/spike within the Sivyer-2013 physiological band (5-15 Hz PD rate,
+sub-10 M molec/spike). Re-simulate both cells with full Vm traces at soma and 3 dendritic
+loci, render the morphology with full dendrite tree at the same orientation, and run the
+standard dendritic-spike-attribution analysis (per-compartment Nav/Kv/Ih conductance
+contributions to ATP/spike). Output: 2-cell deep-dive PNG bundle + per-cell Carter-Bean
+ATP/AP/cm decomposition + Wei2018 figure-style Vm trace plate. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>📂 <strong>Download additional Feller-archive DSGC reconstructions to enable
 cross-cell variability sensitivity analysis</strong> (S-0005-03)</summary>
 
@@ -1076,6 +1126,38 @@ passive-properties simulation (Ra=100 Ohm-cm, Rm fit jointly) so that soma Rin l
 (3.694/1.653/0.439 um) and emit a corrections file that overrides
 dsgc-baseline-morphology-calibrated with the fitted radii. Blocks downstream DSI reproductions
 against Schachter's tree. Recommended task types: feature-engineering, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Lower bar-drive amplitude to bring t0126 Pareto-front PD-rates
+into the Sivyer 2013 [5, 15] Hz physiological band</strong> (S-0126-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0126-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) |
+| **Source paper** | [`10.1113_jphysiol.2012.245506`](../../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/assets/paper/10.1113_jphysiol.2012.245506/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+All 6 t0126 Pareto cells fire at PD = 40 Hz, ~2.7x above the Sivyer 2013 [5, 15] Hz upper
+bound for canonical rabbit ooDSGC PD response (compare_literature.md: FAIL marking on the only
+direct cell-type-matched comparator). The 40 Hz floor is imposed by the t0080-lineage
+evaluator's strong synthetic driving current, which was deliberately chosen to keep cells
+above the silence-guard PD<3 spikes threshold, but pushes them out of biological range. The
+Carter-Bean DSI/ATP front is therefore measured at a non-biological driving regime, weakening
+the connection to Sivyer 2013-style in-vitro recordings. Action: parameter sweep on bar drive
+amplitude (synaptic conductance scale or wave-stimulus magnitude) at 4-5 levels spanning ~30%
+to ~100% of t0080's current value, run a short 20-gen NSGA-II at each level (smaller pool e.g.
+POP=48 to control cost), measure resulting Pareto-front PD-rate distribution per level, pick
+the level where the high-DSI corner falls into [5, 15] Hz, then re-run the full 60-gen NSGA-II
+at the selected drive level on 2 seeds. Decision rule: re-baselined Pareto front with PD-rate
+in band vs t0126's out-of-band front -- if Carter-Bean r(DSI, ATP) survives at the lower
+drive, the penalty is robust to the protocol artefact; if r collapses, the t0126 r=+0.980 is
+partially a high-drive artefact. Distinct from S-0123-01 (which is MI/ATP with PD-rate floor
+as a CONSTRAINT, not a sweep). Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -1445,6 +1527,32 @@ tighten the SD bands on PSP and AP-rate distributions, (b) replace the `atan2(me
 mean ND PSP)` slope approximation with a fit to the 8-direction tuning curve as the paper
 does, and (c) reveal the true Fig 7 0 Mg2+ ROC AUC instead of the small-N saturation at 1.00
 (paper reports 0.83). Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0124 NSGA-II under signed DSI on t0124 GA seeds to test
+whether the DSI-ATP frontier depends on sign convention</strong>
+(S-0129-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0129-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-26 |
+| **Source task** | [`t0129_t0126_signed_dsi_real_rates_1seed`](../../../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0124 ran NSGA-II on DSI vs ATP/spike with vector-sum DSI as the first objective. t0129 shows
+on a single seed that 95/5,496 viable cells (1.7%) have negative signed DSI; the t0129 Pareto
+front happens to contain no reversed-preference cells (they are dominated by DSI=0 cells at
+the ATP minimum), but t0124's particular seed and termination might have surfaced reversed
+cells onto its front. Re-run the t0124 NSGA-II protocol on t0124's GA seeds with the t0129
+evaluator (signed DSI as first objective, real PD/ND rates) and report (a) cell-by-cell
+sign-flip count among t0124's recorded Pareto cells, and (b) whether the re-run Pareto front
+contains any cell with dsi_signed < 0. Expected cost: per-seed cost of t0126 envelope
+(~$1/seed). Recommended task types: experiment-run, comparative-analysis.
 
 </details>
 
@@ -2120,6 +2228,38 @@ sweeps but uniquely fills a corpus-wide blindspot identified in creative_thinkin
 </details>
 
 <details>
+<summary>📊 <strong>Update Niven 2008 paper asset citation key and ensure the
+vertebrate-retinal-neuron ATP/spike band PASS is captured in project-level
+overview</strong> (S-0126-09)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0126-09` |
+| **Kind** | evaluation |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0126 is the first project task to PASS the Niven 2008 vertebrate-retinal-neuron ATP/spike
+band [~1e6, ~1e7 molecules/spike] across the full Pareto front (all 6 cells in range; min
+1.83e6 at DSI=0, max 7.82e6 at DSI=1.0). The result is reported in compare_literature.md (PASS
+row, direct quantitative match) but the t0124 lineage cited the paper as 'Niven 2007'
+(research_papers.md) while the canonical bibliographic record is Niven & Laughlin J Exp Biol
+211(11), 2008. The citation_key drift is documented in t0126's Limitations but not fixed at
+the asset level. Action: (a) verify the paper-asset folder under tasks/t0002.*/assets/paper/
+(or wherever the Niven citation lives) and confirm details.json citation_key matches
+Niven2008; (b) if Niven2007 is used elsewhere, write a correction file under
+tasks/t0126/corrections/ that re-maps the citation_key in the relevant asset(s); (c) add the
+t0126 vertebrate-retinal-neuron band PASS as a one-line entry in overview/results_index.md or
+the equivalent project-level overview file; (d) ensure future Niven-band comparisons in
+downstream tasks cite the corrected key. Low priority because it is bookkeeping not science;
+high value because the Niven PASS is the only direct published quantitative cross-species
+match in the t0126 comparator set. Recommended task types: correction, data-analysis.
+
+</details>
+
+<details>
 <summary>📊 <strong>Wang 2025 baseline-ATP standby-readiness reinterpretation
 cross-check on t0124 cells</strong> (S-0124-07)</summary>
 
@@ -2226,6 +2366,35 @@ read each paper's Methods to confirm which one introduced the 141009_Pair1DSGC r
 then file a corrections asset that updates dsgc-baseline-morphology source_paper_id to the
 correct paper_id slug. This unblocks correct citation of the morphology in every downstream
 paper-comparison task. Recommended task types: download-paper.
+
+</details>
+
+<details>
+<summary>✅ <s>Fresh-seed 60-gen replication of DSI vs ATP-per-spike NSGA-II to test
+Carter-Bean penalty vs artefact</s> — covered by <a
+href="../../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/"><code>t0126_bedb_dsi_atp_per_spike_nsga2_60gen</code></a>
+(S-0124-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0124-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+| **Source paper** | [`10.1016_j.neuron.2009.12.011`](../../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/assets/paper/10.1016_j.neuron.2009.12.011/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+t0124 truncated at gen 9 of 60 by operator_stop (subagent session budget, not cost cap; HV
+still ascending). The bootstrap r(DSI, ATP) = +0.806 [0.716, 1.000] on the n=5 partial front
+is suggestive of a Carter-Bean Na/K-overlap penalty but undeterminable from artefact because
+_POOL_RESTART_EVERY=10 has not fired and all 5 cells share LHS-init ancestry. Action: fork the
+t0124 substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2,
+N_GEN_MAX=60, COST_CAP_USD=6.0, HV plateau autostop=False, DSI silence-guard PD<3 -> DSI=-1,
+Sengupta ATP recipe, Carter-Bean smoke-gate), draw a fresh non-round GA seed via
+secrets.randbelow(10000), run to gen 60 on Vast.ai EPYC. Decision rule: if r > +0.5 with CI
+excluding 0 at n>=20 accept the penalty interpretation; if r drops below +0.3 accept the
+early-NSGA-II artefact null. Recommended task types: experiment-run, data-analysis,
+comparative-analysis.
 
 </details>
 
@@ -2360,6 +2529,52 @@ per-channel conductance via `g(t) = i(t) / (V_clamp - e_rev)` with `e_NMDA = e_A
 `e_SACinhib = -60 mV`. Compare against paper targets within +/- 25%. Distinct from S-0046-02
 (synapse-count) and S-0046-05 (supplementary PDF); also distinct from S-0019-XX which targets
 a downstream model build, not the deposited code. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>✅ <s>Rerun t0126 protocol via run_seed*.sh on 3-5 fresh non-lineage seeds
+to recover real cell_trace and close S-0124-01 + S-0126-06 in one shot</s>
+— covered by <a
+href="../../../tasks/t0128_t0127_rerun_dsi_atp_3seeds/"><code>t0128_t0127_rerun_dsi_atp_3seeds</code></a>
+(S-0127-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0127-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-26 |
+| **Source task** | [`t0127_correct_t0126_cell_trace_suggestions`](../../../overview/tasks/task_pages/t0127_correct_t0126_cell_trace_suggestions.md) |
+| **Source paper** | [`10.1016_j.neuron.2009.12.011`](../../../tasks/t0127_correct_t0126_cell_trace_suggestions/assets/paper/10.1016_j.neuron.2009.12.011/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Supersedes t0126's S-0126-01 (multi-seed 3-5-seed 60-gen closure of S-0124-01 n>=20 threshold)
+and S-0126-06 (per-cell mi_count_bits / cytoplasm_volume backfill from cell_trace JSONL).
+t0126's cell_trace was synthesised post-hoc from objective-only data because the launcher
+bypassed run_seed8929.sh, so T0126_CELL_TRACE_JSONL was never exported and _append_cell_trace
+silently dropped every per-cell record (see
+tasks/t0126/logs/steps/009_implementation/step_log.md Phase 5). Both successor suggestions are
+blocked on the same missing data. Action: (1) Fork t0126's substrate verbatim -- 68-d Bed B +
+14-d morph, POP_SIZE=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2, N_GEN_MAX=60, _POOL_RESTART_EVERY=10,
+HV_PLATEAU_AUTO_STOP=False, OperatorStopTermination removed, smoke-gate 9/9 checks PASS,
+silence-guard PD<3 threshold. (2) Draw 3-5 fresh GA seeds via secrets.randbelow(10000),
+rejecting all lineage seeds {77, 441, 1524, 2247, 6650, 7755, 8929, 9354} plus any multiple of
+100/500/1000. (3) Launch each seed via `bash code/run_seedNNNN.sh` under `tmux new-session -d`
+-- NEVER by invoking `nsga2_driver` directly. The run_seedNNNN.sh wrapper must export
+T<TASK>_CELL_TRACE_JSONL so the evaluator's per-cell side-channel JSONL is written for all
+evaluations. (4) Add a smoke-gate assertion at NSGA-II start: `assert
+os.environ.get('T<TASK>_CELL_TRACE_JSONL') is not None, 'cell_trace env var must be set;
+launch via run_seed*.sh'`. (5) Pool the resulting Pareto fronts across seeds, compute
+bootstrap r(DSI, ATP) on the pooled front at pooled n>=20 (closes S-0124-01). (6) Use the
+recorded per-cell cell_trace_seedNNNN.jsonl files to populate per-cell Carter-Bean band test
+(closes the inherited per-cell ATP/AP/cm = 0 gap), Cuntz balancing-factor band test (closes
+the inside_band_fraction=NaN), cross-task MI consistency check (closes the t0123/t0124/t0126
+MI cross-comparison NOT MEASURED), and the four INDETERMINATE signalling-budget rows in
+t0126's compare_literature.md (Howarth cortex / cerebellum, Attwell-Laughlin 47%,
+signalling-fraction general) -- the latter four close because real pd_rate_hz and total ATP
+turnover enable computing the denominator. Cost envelope: ~3x t0126's $1.31 = $4-5 budget cap;
+per-seed 5-6 h on Vast.ai EPYC. Recommended task types: experiment-run, data-analysis,
+comparative-analysis.
 
 </details>
 

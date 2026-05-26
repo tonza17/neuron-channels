@@ -1,6 +1,6 @@
-# Answers: `retinal-ganglion-cell` (14)
+# Answers: `retinal-ganglion-cell` (16)
 
-14 answer(s).
+16 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -177,6 +177,35 @@ historically, the original Attwell-Laughlin 2001 47% anchor)?</strong></summary>
 
 **Confidence**: low
 
+INSUFFICIENT EVIDENCE: only 6 legit cells passed the silence guard. The Pareto front structure
+cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r
+between DSI and ATP-per-spike across the legit top-6 cohort is r = 0.980 (95% CI: , n_legit =
+6, n_pareto = 6). Run reached 60 / 60 gens at $0.96; stop trigger n_gen_reached.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/assets/answer/dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact/full_answer.md) |
+| **ID** | [`dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact`](../../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/assets/answer/dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact/) |
+| **Question** | Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean Na/K-overlap penalty, and where do its top cells sit relative to the revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and historically, the original Attwell-Laughlin 2001 47% anchor)? |
+| **Methods** | `papers`, `code-experiment` |
+| **Confidence** | low |
+| **Date created** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | `10.1371_journal.pcbi.1000840`, `10.1097_00004647-200110000-00001`, `10.1523_JNEUROSCI.1592-24.2024`, `10.1038_nn.3565`, `10.1371_journal.pcbi.1002107` |
+| **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md), [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
+| **URL sources** | [url 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC2810867/), [url 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC3390818/) |
+| **Created by** | [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) |
+
+</details>
+
+<details>
+<summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
+Na/K-overlap penalty, and where do its top cells sit relative to the
+revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and
+historically, the original Attwell-Laughlin 2001 47% anchor)?</strong></summary>
+
+**Confidence**: low
+
 INSUFFICIENT EVIDENCE: only 5 legit cells passed the silence guard. The Pareto front structure
 cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r
 between DSI and ATP-per-spike across the legit top-5 cohort is r = 0.806 (95% CI: , n_legit =
@@ -195,6 +224,40 @@ between DSI and ATP-per-spike across the legit top-5 cohort is r = 0.806 (95% CI
 | **Task sources** | [`t0080_bedb_mobo_v3_dendritic_spike_nsga2`](../../../overview/tasks/task_pages/t0080_bedb_mobo_v3_dendritic_spike_nsga2.md), [`t0097_multi_obj_optim`](../../../overview/tasks/task_pages/t0097_multi_obj_optim.md), [`t0122_dsi_cytoplasm_volume_nsga2`](../../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md), [`t0123_bedb_mi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) |
 | **URL sources** | [url 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC2810867/), [url 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC3390818/) |
 | **Created by** | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) |
+
+</details>
+
+<details>
+<summary><strong>Does the signed-DSI re-evaluation of t0126's protocol change the
+Pareto structure, or is the vector-sum / signed distinction immaterial
+on the antipodal pair?</strong></summary>
+
+**Confidence**: medium
+
+Yes. The signed-DSI re-evaluation surfaces structure that vector-sum DSI silently discards: on
+this single seed (3517) 95 viable cells out of 5,496 have genuinely reversed preference (R_ND
+> R_PD, deepest reversal `dsi_signed = -0.778`) and would have been collapsed to positive
+magnitude under vector-sum DSI. None of these reversed cells reach the t0129 final Pareto
+front (they are dominated in F-space by the silent / DSI=0 cluster at the ATP minimum), but
+they would have been Pareto candidates under the t0126 vector-sum objective, polluting the
+high-magnitude region of t0126's front with cells whose preferred direction is actually
+opposite to what vector-sum suggests. The sign-flip count for t0126's own Pareto cells cannot
+be recovered because t0126 did not persist per-direction spike counts and its `pd_rate_hz =
+40` is a synthesised placeholder.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0129_t0126_signed_dsi_real_rates_1seed/assets/answer/does-signed-dsi-change-t0126-pareto-structure/full_answer.md) |
+| **ID** | [`does-signed-dsi-change-t0126-pareto-structure`](../../../tasks/t0129_t0126_signed_dsi_real_rates_1seed/assets/answer/does-signed-dsi-change-t0126-pareto-structure/) |
+| **Question** | Does the signed-DSI re-evaluation of t0126's protocol change the Pareto structure, or is the vector-sum / signed distinction immaterial on the antipodal pair? |
+| **Methods** | `code-experiment` |
+| **Confidence** | medium |
+| **Date created** | 2026-05-26 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Paper sources** | — |
+| **Task sources** | [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) |
+| **URL sources** | — |
+| **Created by** | [`t0129_t0126_signed_dsi_real_rates_1seed`](../../../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) |
 
 </details>
 

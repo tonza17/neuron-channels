@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="costs" generated_at_utc="2026-05-25T02:57:19Z">
+<llm_context_archive type_id="costs" generated_at_utc="2026-05-26T21:09:59Z">
   <archive_summary>
     <title>Project Costs</title>
     <description>Complete cost breakdown with budget, per-service, and per-task details.</description>
     <section_count>1</section_count>
-    <char_count>7392</char_count>
-    <byte_count>7392</byte_count>
-    <estimated_tokens>1848</estimated_tokens>
+    <char_count>7628</char_count>
+    <byte_count>7628</byte_count>
+    <estimated_tokens>1907</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -18,9 +18,9 @@
       <source_name>aggregate_costs_full</source_name>
       <content>
 Total budget: $100.00
-Total spent: $64.88
-Budget remaining: $35.12
-Spent: 64.9%
+Total spent: $67.16
+Budget remaining: $32.84
+Spent: 67.2%
 
 ### Cost Breakdown by Category
 
@@ -36,9 +36,11 @@ Spent: 64.9%
 * vast_ai_36149741: $2.39
 * vast-ai-seed22: $1.96
 * vast-ai-setup-smoke-idle: $1.42
+* vast-ai-epyc-7c13-t0126: $1.31
 * vast-ai-seed11: $1.13
 * vast_ai_seed7755_compute: $1.13
 * vast-ai-quadro-p4000: $1.06
+* vast-ai-epyc-7c13-t0129: $0.97
 * vast-ai-nsga2-productive: $0.75
 * vast_ai_36137287: $0.75
 * vast-ai-driver-overhead: $0.74
@@ -59,6 +61,7 @@ Spent: 64.9%
 * vast-ai-network: $0.01
 * vast-ai-failed-attempt: $0.00
 * api: $0.00
+* api_calls: $0.00
 * local_compute: $0.00
 * per_instance_watchdog_USD: $0.00
 * remote_compute: $0.00
@@ -66,7 +69,7 @@ Spent: 64.9%
 
 ### Cost Breakdown by Service
 
-* vast_ai: $41.19
+* vast_ai: $43.47
 * vast_ai_compute: $3.93
 * vast-ai: $0.48
 
@@ -190,6 +193,9 @@ Spent: 64.9%
 * t0123_bedb_mi_atp_per_spike_nsga2: $1.19
 * t0124_bedb_dsi_atp_per_spike_nsga2: $0.29
 * t0125_t0123_cluster_factor_mi_atp: $0.00
+* t0126_bedb_dsi_atp_per_spike_nsga2_60gen: $1.31
+* t0127_correct_t0126_cell_trace_suggestions: $0.00
+* t0129_t0126_signed_dsi_real_rates_1seed: $0.97
       </content>
     </section>
   </sections>

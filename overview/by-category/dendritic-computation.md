@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (45)](../papers/by-category/dendritic-computation.md) | [Answers
 (13)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(97)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(99)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
 (6)](../predictions/by-category/dendritic-computation.md)
@@ -2665,7 +2665,27 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (79 open, 18 closed)
+## Suggestions (81 open, 18 closed)
+
+<details>
+<summary>🧪 <strong>Deep-dive (Vm traces, morphology, dendritic-spike attribution) on
+t0129 Pareto cells 4 (DSI=1.0) and 7 (DSI=0.87)</strong> (S-0129-07)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+Pareto cell 4 (gen 57, signed DSI=1.0, PD rate 6.43 Hz, ND rate 0.0 Hz, ATP 6.66 M
+molec/spike) is the canonical ND-silenced DSGC corner, and Pareto cell 7 (gen 59, DSI=0.870,
+PD rate 10.24 Hz, ND rate 0.71 Hz, ATP 5.03 M molec/spike) is the highest-PD-rate Pareto cell
+with both PD rate and ATP/spike within the Sivyer-2013 physiological band (5-15 Hz PD rate,
+sub-10 M molec/spike). Re-simulate both cells with full Vm traces at soma and 3 dendritic
+loci, render the morphology with full dendrite tree at the same orientation, and run the
+standard dendritic-spike-attribution analysis (per-compartment Nav/Kv/Ih conductance
+contributions to ATP/spike). Output: 2-cell deep-dive PNG bundle + per-cell Carter-Bean
+ATP/AP/cm decomposition + Wei2018 figure-style Vm trace plate. Recommended task types:
+experiment-run, data-analysis.
+
+</details>
 
 <details>
 <summary>📊 <strong>Joint 3-D (DSI, cytoplasm_volume, ATP/spike) cross-task analysis
@@ -2747,6 +2767,33 @@ the EPSP_PASSIVE / IPSP_PASSIVE / FULL trio (memory feedback_dsgc_measurement_pr
 record somatic + dendritic Vm and per-compartment g_E / g_I / i_Na / i_K. Identify which
 subset drives the across-direction count signal vs the dendritic ATP overhead. Local CPU < 2
 h. Recommended task types: experiment-run, data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📊 <strong>Three-task 3-D (DSI, cytoplasm volume, ATP/spike) joint
+Pareto-front analysis combining t0122, t0124, and t0126</strong>
+(S-0126-05)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0126_bedb_dsi_atp_per_spike_nsga2_60gen](../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/)
+
+Distinct from S-0124-03: that suggestion proposed a 3-D joint analysis using ONLY t0122 +
+t0124 fronts (n=26 + n=5 = 31 cells, with t0124's front truncated at gen 9). t0126's 60-gen
+DSI/ATP front now provides a third independent measurement (n=6 cells reaching DSI=1.0 at
+ATP=7.82e6, ~30x cheaper than t0124's high-DSI corner) on the SAME 68-d substrate. Action: (a)
+load pareto_front_seed*.json from t0122 (DSI/cytoplasm; seed 1524), t0124 (DSI/ATP gen-9; seed
+6650), and t0126 (DSI/ATP gen-60; seed 8929); (b) for each cell record the 68-d parameter
+vector + DSI + (cytoplasm_volume_um3 OR ATP/spike); (c) re-evaluate ATP/spike on the t0122
+cells and cytoplasm_volume on the t0122/t0124/t0126 cells via single-CPU resimulation under
+the t0126 evaluator (target ~40 cells; ~30 min/cell on CPU); (d) render a 3-D scatter (DSI,
+log10(cytoplasm_volume), log10(ATP/spike)) with Pareto contours and the Cuntz 2010 [0.2, 0.7]
+band overlaid; (e) test whether cells in the joint-pass cone (DSI>=0.7 AND Cuntz balancing
+factor in [0.2, 0.7] AND Carter-Bean PASS band) are enriched on the lineage Pareto fronts vs
+random sampling. The t0126 high-DSI/low-ATP corner reframes the t0124-only 3-D analysis:
+t0124's high-DSI cells were 30x more energy-expensive than t0126's, so joint-pass cells from
+t0124 may not be representative. Use t0126's tighter front as the high-DSI anchor. Recommended
+task types: data-analysis, comparative-analysis, answer-question.
 
 </details>
 

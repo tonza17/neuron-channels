@@ -1,8 +1,8 @@
 # Suggestions: `synaptic-integration`
 
-103 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **92 open** (15 high,
-70 medium, 7 low), **11 closed**.
+104 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **93 open** (15 high,
+71 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -1185,6 +1185,38 @@ unpinned). A 0.5 nS-spaced sweep over {5.0, 4.5, 4.0, 3.5, 3.0} nS at baseline d
 t0022 (5 levels x 12 angles x 10 trials = 600 trials, ~20 min local CPU) would localise the
 threshold to within 0.5 nS and reveal whether the DSI vs GABA curve is sharp or gradual.
 Important for characterising how fragile the operational window really is.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Lower bar-drive amplitude to bring t0126 Pareto-front PD-rates
+into the Sivyer 2013 [5, 15] Hz physiological band</strong> (S-0126-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0126-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) |
+| **Source paper** | [`10.1113_jphysiol.2012.245506`](../../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/assets/paper/10.1113_jphysiol.2012.245506/) |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`synaptic-integration`](../../../meta/categories/synaptic-integration/) |
+
+All 6 t0126 Pareto cells fire at PD = 40 Hz, ~2.7x above the Sivyer 2013 [5, 15] Hz upper
+bound for canonical rabbit ooDSGC PD response (compare_literature.md: FAIL marking on the only
+direct cell-type-matched comparator). The 40 Hz floor is imposed by the t0080-lineage
+evaluator's strong synthetic driving current, which was deliberately chosen to keep cells
+above the silence-guard PD<3 spikes threshold, but pushes them out of biological range. The
+Carter-Bean DSI/ATP front is therefore measured at a non-biological driving regime, weakening
+the connection to Sivyer 2013-style in-vitro recordings. Action: parameter sweep on bar drive
+amplitude (synaptic conductance scale or wave-stimulus magnitude) at 4-5 levels spanning ~30%
+to ~100% of t0080's current value, run a short 20-gen NSGA-II at each level (smaller pool e.g.
+POP=48 to control cost), measure resulting Pareto-front PD-rate distribution per level, pick
+the level where the high-DSI corner falls into [5, 15] Hz, then re-run the full 60-gen NSGA-II
+at the selected drive level on 2 seeds. Decision rule: re-baselined Pareto front with PD-rate
+in band vs t0126's out-of-band front -- if Carter-Bean r(DSI, ATP) survives at the lower
+drive, the penalty is robust to the protocol artefact; if r collapses, the t0126 r=+0.980 is
+partially a high-drive artefact. Distinct from S-0123-01 (which is MI/ATP with PD-rate floor
+as a CONSTRAINT, not a sweep). Recommended task types: experiment-run, data-analysis.
 
 </details>
 

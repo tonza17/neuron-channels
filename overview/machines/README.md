@@ -1,18 +1,18 @@
-# Machine Provisioning (18 machines)
+# Machine Provisioning (20 machines)
 
-**18** machines provisioned across **18** tasks. Total cost: **$64.69**.
+**20** machines provisioned across **20** tasks. Total cost: **$66.96**.
 
-**10** failed provisioning attempts wasted **$0.07** (35.7% failure rate).
+**10** failed provisioning attempts wasted **$0.07** (33.3% failure rate).
 
 ## Summary
 
 | Field | Value |
 |-------|-------|
-| Total machines | 18 |
+| Total machines | 20 |
 | Total failed attempts | 10 |
-| Failure rate | 35.7% |
-| Avg provisioning time | 650s |
-| Total cost | $64.69 |
+| Failure rate | 33.3% |
+| Avg provisioning time | 612s |
+| Total cost | $66.96 |
 | Total wasted cost | $0.07 |
 
 ## Cost by GPU Tier
@@ -26,6 +26,7 @@
 | RTX 5060 Ti (idle, unused) | $3.93 |
 | RTX A5000 (idle, unused; CPU-only NEURON workload) | $3.63 |
 | RTX PRO 4000 (idle, unused) | $3.14 |
+| Tesla V100 (1x, idle, unused; CPU-only NEURON workload) | $2.27 |
 | RTX 3090 (idle, unused; CPU-only NEURON workload) | $1.99 |
 | (idle, unused; CPU-only NEURON workload) | $1.59 |
 | RTX 3060 (2x, idle, unused; CPU-only NEURON workload) | $1.19 |
@@ -72,3 +73,5 @@
 | [`t0122_dsi_cytoplasm_volume_nsga2`](../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | 1 | $0.50 | 1 | Titan V (idle, unused; CPU-only NEURON workload) |
 | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | 1 | $1.19 | 0 | RTX 3060 (2x, idle, unused; CPU-only NEURON workload) |
 | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | 1 | $0.29 | 0 | RTX A4000 (1x, idle, unused; CPU-only NEURON workload) |
+| [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) | 1 | $1.31 | 0 | Tesla V100 (1x, idle, unused; CPU-only NEURON workload) |
+| [`t0129_t0126_signed_dsi_real_rates_1seed`](../../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) | 1 | $0.97 | 0 | Tesla V100 (1x, idle, unused; CPU-only NEURON workload) |

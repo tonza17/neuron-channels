@@ -1,6 +1,6 @@
 # Predictions: `voltage-gated-channels`
 
-3 predictions asset(s).
+5 predictions asset(s).
 
 [Back to all predictions](../README.md)
 
@@ -121,6 +121,298 @@ field.
    96 --n-gen 60 --n-eval-seeds 3 --n-directions 2`.
 6. `python -u -m tasks.t0124_bedb_dsi_atp_per_spike_nsga2.code.build_t0124_outputs --seed
    6650`.
+
+</details>
+
+<details>
+<summary>📊 <strong>NSGA-II DSI vs ATP-per-Spike on Bed B + 14-d Morphology</strong>
+(<code>nsga2-dsi-atp-per-spike-bedb-morph-60gen</code>) — 5760 instances
+(jsonl.gz)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `nsga2-dsi-atp-per-spike-bedb-morph-60gen` |
+| **Model ID** | — |
+| **Model** | 68-d Bed B compartmental DSGC model (54-d electrophysiological + 14-d morphology), NEURON-backed, NSGA-II via pymoo, single GA seed. |
+| **Datasets** |  |
+| **Format** | jsonl.gz |
+| **Instances** | 5760 |
+| **Date created** | 2026-05-25 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Created by** | [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0126_bedb_dsi_atp_per_spike_nsga2_60gen\assets\predictions\nsga2-dsi-atp-per-spike-bedb-morph-60gen\description.md) |
+
+**Metrics at creation:**
+
+* **best_dsi_legit**: 1.0
+* **min_atp_per_spike**: 1826993.0663116325
+* **joint_pass_count**: 2
+* **n_generations_completed**: 60
+* **n_cells_total**: 5760
+* **n_cells_pareto**: 6
+* **final_hypervolume**: 19994677143.18259
+* **final_cost_usd**: 0.9621
+* **stop_trigger**: n_gen_reached
+
+# NSGA-II DSI vs ATP-per-Spike on Bed B + 14-d Morphology
+
+## Metadata
+
+* **Task**: `t0126_bedb_dsi_atp_per_spike_nsga2_60gen`
+* **GA seed**: 8929
+* **Pop size**: 96
+* **N_EVAL_SEEDS**: 3; **N_DIRECTIONS**: 2 (antipodal pair 0/180 deg)
+* **Generations completed**: 60 / 60
+* **Pool-restart cadence**: every 10 generations
+* **HV-plateau auto-stop**: disabled (per project policy)
+* **Cost cap**: $6.00
+* **Final cost**: $0.9621
+* **Stop trigger**: n_gen_reached
+
+## Overview
+
+This predictions asset captures every cell evaluated by the t0126 single-seed NSGA-II run on
+the 68-d Bed B + 14-d morphology substrate. The two minimised objectives are F[0] =
+-dsi_vector_sum (DSI maximised, with silence-guard sentinel = -1 for cells with R_PD < 3 PD
+spikes) and F[1] = +atp_per_spike_molecules (Sengupta 2010 recipe; lower is better). The
+Pareto front captures the DSI / ATP trade-off across the 68-d parameter space.
+
+## Model
+
+68-d Bed B compartmental DSGC model (54-d electrophysiological + 14-d morphology).
+NEURON-backed simulation via the t0080 channel MOD pack and t0024 vendored DSGC NEURON
+template. NSGA-II driven by pymoo with default SBX crossover (eta=15) and polynomial mutation
+(eta=20).
+
+## Data
+
+Synthetic procedurally-generated DSGC morphologies (no external dataset; the 14-d morphology
+vector is sampled from tasks/t0090's PARAM_BOUNDS). Per cell the protocol runs 3 evaluation
+seeds x 2 directions (0 deg PD and 180 deg ND) = 6 trials. Each trial is a 1.4 s simulation
+with full HH mechanics and the Sengupta 2010 ATP-per-spike recipe (per-segment Na+ current
+integrated over each AP window).
+
+## Prediction Format
+
+JSONL gzip-compressed (`files/predictions.jsonl.gz`). One JSON object per evaluated cell.
+Schema (see `details.json` `prediction_schema` for full list): `generation`, `vector_68d`
+(54-d electrophys + 14-d morph), `dsi_vector_sum`, `atp_per_spike_molecules`,
+`objective_F_minimised`, `is_pareto`, `silence_failed_bool`, `legit_bool`, plus per-direction
+firing rates and diagnostic cytoplasm volume / MI / per-compartment ATP breakdown.
+
+## Metrics
+
+* **Best legit DSI**: 1.0000
+* **Min ATP per spike**: 1.827e+06 molecules
+* **Joint-pass cells (DSI >= 0.5 AND PD >= 30 Hz AND ATP <= median)**: 2
+* **Final hypervolume**: 1.9995e+10
+* **n_cells_total**: 5760
+* **n_cells_pareto**: 6
+
+## Main Ideas
+
+* The Pareto front captures the DSI / ATP trade-off in the 68-d Bed B + 14-d morphology
+  substrate; downstream tasks can mine this asset for joint-pass cells satisfying both
+  function and energy criteria.
+* Cells with DSI = -1 (silence guard tripped) are kept in the asset for completeness but
+  flagged via `legit_bool = false` and `silence_failed_bool = true`.
+* The Sengupta 2010 ATP recipe is verified against the Carter & Bean 2009 first-principles
+  canonical band [1e8, 1e9] ATP/AP/cm via the pre-launch smoke-gate (check 9); on the
+  canonical anchor cell the recipe sits inside the PASS band.
+
+## Summary
+
+This asset is the primary output of t0126. Downstream tasks (e.g., literature comparison,
+joint Pareto analysis with t0122's cytoplasm front, follow-up multi-seed replication) consume
+the per-cell records via the predictions aggregator. The asset's `metrics_at_creation` field
+summarises the headline numbers; the canonical `description.md` (this file) provides the
+methodological context, and the `details.json` field manifest enumerates every per-cell schema
+field.
+
+## Reproducing the asset
+
+1. Provision a Vast.ai EPYC instance.
+2. `nrnivmodl` on `tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2/code/mods/`.
+3. `python -u -m tasks.t0126_bedb_dsi_atp_per_spike_nsga2_60gen.code.random_init`.
+4. `python -u -m tasks.t0126_bedb_dsi_atp_per_spike_nsga2_60gen.code.smoke_gate`.
+5. `python -u -m tasks.t0126_bedb_dsi_atp_per_spike_nsga2_60gen.code.nsga2_driver --seed 8929
+   --pop 96 --n-gen 60 --n-eval-seeds 3 --n-directions 2`.
+6. `python -u -m tasks.t0126_bedb_dsi_atp_per_spike_nsga2_60gen.code.build_t0126_outputs
+   --seed 8929`.
+
+</details>
+
+<details>
+<summary>📊 <strong>NSGA-II Signed DSI vs ATP per Spike, Bed B + 14-d Morph, Seed
+3517</strong>
+(<code>nsga2-dsi-signed-atp-per-spike-bedb-morph-t0129</code>) — 5760
+instances (jsonl)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `nsga2-dsi-signed-atp-per-spike-bedb-morph-t0129` |
+| **Model ID** | — |
+| **Model** | 68-d Bed B compartmental DSGC model (54-d electrophysiological + 14-d morphology), NEURON-backed simulation via the t0080 channel MOD pack and t0024 vendored DSGC NEURON template. NSGA-II driven by pymoo with SBX crossover (eta=15) and polynomial mutation (eta=20). Single GA seed (3517); 96 individuals per generation x 60 generations = 5,760 evaluations. Antipodal direction pair [0 deg, 180 deg], TSTOP_MS=1400, N_EVAL_SEEDS=3. Silence guard at pd_spikes_sum < 3 returns the sentinel dsi_signed=-1.0. |
+| **Datasets** |  |
+| **Format** | jsonl |
+| **Instances** | 5760 |
+| **Date created** | 2026-05-26 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+| **Created by** | [`t0129_t0126_signed_dsi_real_rates_1seed`](../../../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) |
+| **Documentation** | [`description.md`](../../../tasks\t0129_t0126_signed_dsi_real_rates_1seed\assets\predictions\nsga2-dsi-signed-atp-per-spike-bedb-morph-t0129\description.md) |
+
+**Metrics at creation:**
+
+* **best_dsi_signed**: 1.0
+* **median_dsi_signed_pareto**: 0.5714285714285715
+* **min_atp_per_spike_molecules**: 779758.0730795636
+* **median_atp_per_spike_pareto**: 3633357.6653955295
+* **n_pareto_cells**: 9
+* **n_cells_total**: 5760
+* **n_cells_viable**: 5496
+* **n_cells_silenced**: 264
+* **n_cells_viable_negative_dsi**: 95
+* **n_generations_completed**: 60
+* **final_hypervolume**: 19995904075.787148
+* **stop_trigger**: n_gen_reached
+* **sign_flip_count_vs_t0126**: None
+* **final_cost_usd_active_window**: 0.6469
+* **final_cost_usd_full_lifetime**: 0.965008
+
+# NSGA-II Signed DSI vs ATP per Spike on Bed B + 14-d Morphology (t0129)
+
+## Metadata
+
+* **Task**: `t0129_t0126_signed_dsi_real_rates_1seed`
+* **GA seed**: 3517 (fresh; not in the t0124/t0126/t0128 lineage)
+* **Pop size**: 96
+* **N_EVAL_SEEDS**: 3; **N_DIRECTIONS**: 2 (antipodal pair 0/180 deg)
+* **Generations completed**: 60 / 60
+* **Pool-restart cadence**: every 10 generations
+* **HV-plateau auto-stop**: disabled (per project policy
+  `feedback_disable_hv_plateau_autostop`)
+* **Cost cap**: $8.00 (project per-task default)
+* **Final cost (active NSGA-II window)**: $0.6469
+* **Final cost (full instance lifetime)**: $0.9650
+* **Stop trigger**: n_gen_reached
+
+## Overview
+
+This predictions asset captures every cell evaluated by the t0129 single-seed NSGA-II run on
+the 68-d Bed B + 14-d morphology substrate. The two minimised objectives are `F[0] =
+-dsi_signed` (signed antipodal DSI maximised, range `[-1, 1]`, silence-guard sentinel = -1 for
+cells with `R_PD < 3` PD spikes) and `F[1] = +atp_per_spike_molecules` (Sengupta 2010 recipe;
+lower is better). The signed antipodal DSI is the literature DS-RGC definition `DSI = (R_PD -
+R_ND) / (R_PD + R_ND)`, where `R_PD` is the mean PD-direction firing rate (0 deg) and `R_ND`
+is the mean ND-direction firing rate (180 deg). The Pareto front captures the DSI / ATP
+trade-off across the 68-d parameter space with reversed-preference cells now visible as
+negative values.
+
+This asset corrects two known issues with t0126's analogous predictions
+(`nsga2-dsi-atp-per-spike-bedb-morph-60gen`):
+
+1. **Signed DSI replaces vector-sum DSI.** Vector-sum collapses the antipodal pair `[0, 180
+   deg]` to a non-negative scalar `|R_PD - R_ND| / (R_PD + R_ND)`, discarding the sign.
+   Reversed-preference cells (R_ND > R_PD) look identical to true-PD-preferring cells under
+   vector-sum; signed DSI makes them detectable as negative values.
+
+2. **Real per-cell PD/ND firing rates.** t0126's downstream `cell_trace_seed8929.jsonl` was
+   hand-synthesised after the run with `pd_rate_hz = 40` as a hard-coded placeholder for every
+   cell (per project memory `project_t0126_cell_trace_synthesised`). This asset captures the
+   real per-direction firing rates the evaluator computes from actual spike counts; no
+   placeholders, no env-var-driven sink that can silently drop in worker processes.
+
+## Model
+
+68-d Bed B compartmental DSGC model (54-d electrophysiological + 14-d morphology).
+NEURON-backed simulation via the t0080 channel MOD pack (13 channels, dendritic-spike capable)
+and the t0024 vendored DSGC NEURON template. NSGA-II driven by pymoo (0.6.1.6) with SBX
+crossover (`eta=15`) and polynomial mutation (`eta=20`). Single GA seed (3517); 96 individuals
+per generation x 60 generations = 5,760 evaluations. Antipodal direction pair `[0 deg, 180
+deg]`, `TSTOP_MS = 1400`, `N_EVAL_SEEDS = 3`. Silence guard at `pd_spikes_sum < 3` returns the
+sentinel `dsi_signed = -1.0`. Pool-restart cadence: every 10 generations (per project memory
+`feedback_nsga2_pool_restart_every_10`). HV-plateau auto-stop is disabled (per project memory
+`feedback_disable_hv_plateau_autostop`).
+
+## Data
+
+Synthetic procedurally-generated DSGC morphologies (no external dataset; the 14-d morphology
+vector is sampled from the t0090 morphology generator's `PARAM_BOUNDS`). Per cell the protocol
+runs 3 evaluation seeds x 2 directions (0 deg PD and 180 deg ND) = 6 trials. Each trial is a
+1.4 s simulation with full HH mechanics, the t0080 channel pack, and the Sengupta 2010
+ATP-per-spike recipe (per-segment Na+ current integrated over each AP window). The same 68-d
+parameter bounds are used as in t0126; no parameter-space changes.
+
+## Prediction Format
+
+Two files:
+
+1. `files/predictions-pareto-9-cells.jsonl` -- one JSON record per Pareto cell. Fields:
+   `pareto_rank`, `generation`, `cell_idx_in_gen`, `vector_68d`, `morphology_vector_14d`,
+   `dsi_signed`, `atp_per_spike_molecules`, `pd_rate_hz`, `nd_rate_hz`, `silence_failed`,
+   `n_errors`, `objective_F_minimised` (= `[-dsi_signed, +atp_per_spike_molecules]`),
+   `is_pareto`.
+
+2. `files/predictions-all-cells.jsonl.gz` -- one JSON record per evaluated cell,
+   gzip-compressed (raw size 9.2 MB exceeds the 3 MB compression threshold). This is a
+   verbatim copy of `results/cell_params.jsonl`. Fields: `gen` (-1 for Phase A random init,
+   1..59 for NSGA-II generations), `cell_idx`, `param_vector` (68 floats), `dsi_signed`,
+   `atp_per_spike_molecules`, `pd_rate_hz`, `nd_rate_hz`, `silence_failed`, `n_errors`.
+
+The Pareto file lets downstream tasks read the headline result without decompressing 5,760
+rows; the all-cells file lets them mine the full parameter-space coverage. Both files use the
+same 68-d vector convention as t0126 (first 54 dimensions electrophys, last 14 morphology).
+
+## Metrics
+
+* **Best signed DSI**: **1.0000** (at ATP **0.780e+06** to **3.633e+06** molecules/spike
+  across the front)
+* **Median signed DSI (Pareto)**: **0.5714**
+* **Min ATP per spike (Pareto)**: **0.780e+06** molecules
+* **Median ATP per spike (Pareto)**: **3.633e+06** molecules
+* **Headline cell PD/ND rates**: PD = **6.429 Hz**, ND = **0.000 Hz** (DSI=1.0 corner is
+  ND-silenced)
+* **n_cells_total**: **5,760** (96 Phase A + 5,664 NSGA-II)
+* **n_cells_pareto**: **9**
+* **n_cells_viable** (silence guard not tripped): **5,496**
+* **n_cells_silenced** (silence guard tripped, `dsi_signed=-1` sentinel): **264**
+* **n_cells_viable_negative_dsi** (reversed preference R_ND > R_PD): **95**
+* **min DSI among viable cells** (deepest reversed-preference): **-0.7778**
+* **Final hypervolume**: **1.9996e+10**
+
+## Main Ideas
+
+* The signed-DSI re-evaluation reveals **95 viable cells** with genuinely reversed preference
+  (R_ND \> R_PD) that vector-sum DSI would have shown as positive- magnitude cells. The
+  deepest reversal is `dsi_signed = -0.778`. None of these cells are Pareto-optimal under
+  signed DSI (negative DSI is dominated in F-space by the large cluster of DSI=0
+  silent-or-bidirectional cells at the ATP minimum), but they WOULD have occupied the Pareto
+  front under vector-sum, polluting the high-magnitude region with cells whose preferred
+  direction is actually opposite to what vector-sum suggests.
+* The 9-cell t0129 Pareto front is **structurally similar** to t0126's 6-cell front (both span
+  DSI from 0 to 1 at ATP in the 1-8 million molecules/spike range), but the t0129 minimum ATP
+  is about **2.3x lower** (0.78e+06 vs 1.83e+06 in t0126; the difference is seed variation,
+  not a methodological change).
+* Real per-cell PD/ND firing rates replace t0126's `pd_rate_hz = 40` placeholder. The
+  Pareto-median PD rate is **2.62 Hz** and median ND rate is **0.71 Hz** -- far below t0126's
+  recorded 40 Hz placeholder. Downstream analyses (joint-pass thresholds, factor analysis of
+  rate-vs-DSI structure) that consumed t0126's placeholders gave biased results; t0129
+  provides the corrective baseline on a fresh seed.
+
+## Summary
+
+This asset is the primary output of t0129. It captures the full per-cell parameter-vector +
+objective record for every evaluation in the NSGA-II run (5,760 cells across Phase A and 60
+generations) plus the final 9-cell Pareto front under signed antipodal DSI. The two evaluator
+corrections (signed DSI replacing vector-sum; real per-cell firing rates replacing the
+placeholder) close the two known data-integrity gaps in t0126's analogous asset. Downstream
+tasks can mine the all-cells file for parameter-space coverage analysis or the Pareto file for
+direct headline-cell comparison; both files use the same 68-d vector convention as t0126 so
+cross-task comparisons are direct.
+
+The asset's `metrics_at_creation` field summarises the headline numbers; this canonical
+description provides the methodological context, and `details.json` enumerates the full
+per-cell schema for both files.
 
 </details>
 

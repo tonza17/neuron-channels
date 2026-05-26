@@ -1,6 +1,6 @@
 # Project Costs
 
-Spent $64.88 of $100.00 USD. $35.12 remains overall and $35.12 remains before the 100% stop
+Spent $67.16 of $100.00 USD. $32.84 remains overall and $32.84 remains before the 100% stop
 threshold.
 
 ## Budget Summary
@@ -8,22 +8,22 @@ threshold.
 | Field | Value |
 |-------|-------|
 | Total budget | $100.00 USD |
-| Total spent | $64.88 USD |
-| Budget left | $35.12 USD |
-| Budget left before stop threshold | $35.12 USD |
-| Spent percent | 64.88% |
+| Total spent | $67.16 USD |
+| Budget left | $32.84 USD |
+| Budget left before stop threshold | $32.84 USD |
+| Spent percent | 67.16% |
 | Warn threshold | 80% ($80.00) |
 | Stop threshold | 100% ($100.00) |
 | Default per-task limit | $8.00 USD |
-| Tasks with cost records | 118 |
-| Tasks with non-zero spend | 19 |
-| Skipped tasks | 8 |
+| Tasks with cost records | 121 |
+| Tasks with non-zero spend | 21 |
+| Skipped tasks | 9 |
 
 ## Service Totals
 
 | Key | Cost (USD) |
 |-----|------------|
-| `vast_ai` | $41.19 |
+| `vast_ai` | $43.47 |
 | `vast_ai_compute` | $3.93 |
 | `vast-ai` | $0.48 |
 
@@ -43,9 +43,11 @@ threshold.
 | `vast_ai_36149741` | $2.39 |
 | `vast-ai-seed22` | $1.96 |
 | `vast-ai-setup-smoke-idle` | $1.42 |
+| `vast-ai-epyc-7c13-t0126` | $1.31 |
 | `vast-ai-seed11` | $1.13 |
 | `vast_ai_seed7755_compute` | $1.13 |
 | `vast-ai-quadro-p4000` | $1.06 |
+| `vast-ai-epyc-7c13-t0129` | $0.97 |
 | `vast-ai-nsga2-productive` | $0.75 |
 | `vast_ai_36137287` | $0.75 |
 | `vast-ai-driver-overhead` | $0.74 |
@@ -66,12 +68,13 @@ threshold.
 | `vast-ai-network` | $0.01 |
 | `vast-ai-failed-attempt` | $0.00 |
 | `api` | $0.00 |
+| `api_calls` | $0.00 |
 | `local_compute` | $0.00 |
 | `per_instance_watchdog_USD` | $0.00 |
 | `remote_compute` | $0.00 |
 | `vast-ai-failed-attempts` | $0.00 |
 
-99 task cost record(s) are zero-cost and omitted from the main spend table.
+100 task cost record(s) are zero-cost and omitted from the main spend table.
 
 ## Task Spend
 
@@ -96,6 +99,8 @@ threshold.
 | [`t0122_dsi_cytoplasm_volume_nsga2`](../../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | completed | $0.50 | $6.00 | no |
 | [`t0123_bedb_mi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | completed | $1.19 | $6.00 | no |
 | [`t0124_bedb_dsi_atp_per_spike_nsga2`](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | completed | $0.29 | $6.00 | no |
+| [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) | completed | $1.31 | $6.00 | no |
+| [`t0129_t0126_signed_dsi_real_rates_1seed`](../../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) | completed | $0.97 | $3.00 | no |
 
 ## Skipped Tasks
 
@@ -109,3 +114,4 @@ threshold.
 | `t0045_coreneuron_vastai_speedup_benchmark` | results/costs.json is missing or invalid |
 | `t0075_bio_realistic_ais_param_sweep` | results/costs.json is missing or invalid |
 | `t0096_literature_survey_multi_objective_neuron_optimisation` | results/costs.json is missing or invalid |
+| `t0128_t0127_rerun_dsi_atp_3seeds` | results/costs.json is missing or invalid |

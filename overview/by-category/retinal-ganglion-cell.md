@@ -5,11 +5,11 @@ Output neurons of the retina whose axons form the optic nerve.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (45)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(14)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(95)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
+(16)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(102)](../suggestions/by-category/retinal-ganglion-cell.md) | [Datasets
 (3)](../datasets/by-category/retinal-ganglion-cell.md) | [Libraries
 (9)](../libraries/by-category/retinal-ganglion-cell.md) | [Predictions
-(15)](../predictions/by-category/retinal-ganglion-cell.md)
+(17)](../predictions/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -2422,7 +2422,28 @@ simulation.
 | 0103 | [Extract direction-selective cell data from Baden et al. 2016](../../overview/tasks/task_pages/t0103_extract_baden_2016_ds_morphologies.md) | completed | 2026-05-12 01:55 |
 | 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | completed | 2026-05-25 02:55 |
 
-## Answers (14)
+## Answers (16)
+
+<details>
+<summary><strong>Does the signed-DSI re-evaluation of t0126's protocol change the
+Pareto structure, or is the vector-sum / signed distinction immaterial
+on the antipodal pair?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-26 | **Full answer**:
+[`does-signed-dsi-change-t0126-pareto-structure`](../../tasks/t0129_t0126_signed_dsi_real_rates_1seed/assets/answer/does-signed-dsi-change-t0126-pareto-structure/)
+
+Yes. The signed-DSI re-evaluation surfaces structure that vector-sum DSI silently discards: on
+this single seed (3517) 95 viable cells out of 5,496 have genuinely reversed preference (R_ND
+> R_PD, deepest reversal `dsi_signed = -0.778`) and would have been collapsed to positive
+magnitude under vector-sum DSI. None of these reversed cells reach the t0129 final Pareto
+front (they are dominated in F-space by the silent / DSI=0 cluster at the ATP minimum), but
+they would have been Pareto candidates under the t0126 vector-sum objective, polluting the
+high-magnitude region of t0126's front with cells whose preferred direction is actually
+opposite to what vector-sum suggests. The sign-flip count for t0126's own Pareto cells cannot
+be recovered because t0126 did not persist per-direction spike counts and its `pd_rate_hz =
+40` is a synthesised placeholder.
+
+</details>
 
 <details>
 <summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
@@ -2438,6 +2459,23 @@ cannot be quantitatively characterised under the single-seed protocol. The boots
 between DSI and ATP-per-spike across the legit top-5 cohort is r = 0.806 (95% CI: [0.716,
 1.000], n_legit = 5, n_pareto = 5). Run reached 9 / 60 gens at $0.07; stop trigger
 operator_stop.
+
+</details>
+
+<details>
+<summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
+Na/K-overlap penalty, and where do its top cells sit relative to the
+revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and
+historically, the original Attwell-Laughlin 2001 47% anchor)?</strong></summary>
+
+**Confidence**: low | **Date**: 2026-05-25 | **Full answer**:
+[`dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact`](../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/assets/answer/dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact/)
+
+INSUFFICIENT EVIDENCE: only 6 legit cells passed the silence guard. The Pareto front structure
+cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r
+between DSI and ATP-per-spike across the legit top-6 cohort is r = 0.980 (95% CI: [0.972,
+1.000], n_legit = 6, n_pareto = 6). Run reached 60 / 60 gens at $0.96; stop trigger
+n_gen_reached.
 
 </details>
 
@@ -2716,26 +2754,84 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (85 open, 10 closed)
+## Suggestions (90 open, 12 closed)
 
 <details>
-<summary>🧪 <strong>Fresh-seed 60-gen replication of DSI vs ATP-per-spike NSGA-II to
-test Carter-Bean penalty vs artefact</strong> (S-0124-01)</summary>
+<summary>🧪 <strong>Re-run t0126 seed 8929 with t0129 signed-DSI evaluator to recover
+true sign-flip count (closes REQ-20)</strong> (S-0129-01)</summary>
 
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
-[t0124_bedb_dsi_atp_per_spike_nsga2](../../tasks/t0124_bedb_dsi_atp_per_spike_nsga2/)
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
 
-t0124 truncated at gen 9 of 60 by operator_stop (subagent session budget, not cost cap; HV
-still ascending). The bootstrap r(DSI, ATP) = +0.806 [0.716, 1.000] on the n=5 partial front
-is suggestive of a Carter-Bean Na/K-overlap penalty but undeterminable from artefact because
-_POOL_RESTART_EVERY=10 has not fired and all 5 cells share LHS-init ancestry. Action: fork the
-t0124 substrate verbatim (68-d Bed B + 14-d morph, POP=96, N_EVAL_SEEDS=3, N_DIRECTIONS=2,
-N_GEN_MAX=60, COST_CAP_USD=6.0, HV plateau autostop=False, DSI silence-guard PD<3 -> DSI=-1,
-Sengupta ATP recipe, Carter-Bean smoke-gate), draw a fresh non-round GA seed via
-secrets.randbelow(10000), run to gen 60 on Vast.ai EPYC. Decision rule: if r > +0.5 with CI
-excluding 0 at n>=20 accept the penalty interpretation; if r drops below +0.3 accept the
-early-NSGA-II artefact null. Recommended task types: experiment-run, data-analysis,
-comparative-analysis.
+REQ-20 of t0129 is Partial: the true number of t0126 Pareto cells that flip sign under signed
+DSI is unknowable (upper bound is 4, from the count of t0126-Pareto cells with dsi_vector_sum
+> 0.5), because t0126 did not persist per-direction spike counts and pd_rate_hz=40 is a
+synthesised placeholder. Re-run the SAME GA seed (8929) using the t0129 evaluator (signed DSI,
+real PD/ND firing rates, cell_params.jsonl sink) and the SAME 68-d parameter bounds and hard
+invariants (POP_SIZE=96, N_GEN=60, _POOL_RESTART_EVERY=10, HV-plateau auto-stop disabled, $8
+cap). Compare the resulting 60-gen Pareto front and per-cell signed DSI to t0126's recorded
+vector-sum Pareto cells (cell-by-cell, ranked by within-front rank), and report the exact
+sign-flip count among t0126's 6 cells. Expected cost: ~$1.00 Vast.ai (matches t0126
+single-seed envelope). Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Multi-seed (3-5 fresh seeds) t0129 protocol extension to bracket
+negative-DSI fraction and Pareto-front stability</strong> (S-0129-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0129's headline (95/5,496 viable cells with negative signed DSI = 1.7%; 9-cell Pareto front
+spanning DSI in [0, 1]) is on a single GA seed (3517). The corresponding numbers from other
+t0124/t0126/t0128 seeds are unknown, so it is impossible to state whether 1.7% is typical, a
+low outlier, or a high outlier. Run the t0129 evaluator and driver verbatim on 3-5 additional
+fresh GA seeds (NOT in the lineage set {441, 6650, 8929, 2608, 8276, 9986, 3517}). For each
+seed report (a) viable-cell count, (b) negative-DSI count and deepest reversal, (c) final-gen
+Pareto-front size and DSI/ATP corner positions, (d) headline cell DSI and ATP. Synthesise as
+bootstrap-CI bands on the four key statistics. Expected cost: ~$4-5 (4 seeds x ~$1).
+Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Re-run t0124 NSGA-II under signed DSI on t0124 GA seeds to test
+whether the DSI-ATP frontier depends on sign convention</strong>
+(S-0129-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+t0124 ran NSGA-II on DSI vs ATP/spike with vector-sum DSI as the first objective. t0129 shows
+on a single seed that 95/5,496 viable cells (1.7%) have negative signed DSI; the t0129 Pareto
+front happens to contain no reversed-preference cells (they are dominated by DSI=0 cells at
+the ATP minimum), but t0124's particular seed and termination might have surfaced reversed
+cells onto its front. Re-run the t0124 NSGA-II protocol on t0124's GA seeds with the t0129
+evaluator (signed DSI as first objective, real PD/ND rates) and report (a) cell-by-cell
+sign-flip count among t0124's recorded Pareto cells, and (b) whether the re-run Pareto front
+contains any cell with dsi_signed < 0. Expected cost: per-seed cost of t0126 envelope
+(~$1/seed). Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Deep-dive (Vm traces, morphology, dendritic-spike attribution) on
+t0129 Pareto cells 4 (DSI=1.0) and 7 (DSI=0.87)</strong> (S-0129-07)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
+[t0129_t0126_signed_dsi_real_rates_1seed](../../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
+
+Pareto cell 4 (gen 57, signed DSI=1.0, PD rate 6.43 Hz, ND rate 0.0 Hz, ATP 6.66 M
+molec/spike) is the canonical ND-silenced DSGC corner, and Pareto cell 7 (gen 59, DSI=0.870,
+PD rate 10.24 Hz, ND rate 0.71 Hz, ATP 5.03 M molec/spike) is the highest-PD-rate Pareto cell
+with both PD rate and ATP/spike within the Sivyer-2013 physiological band (5-15 Hz PD rate,
+sub-10 M molec/spike). Re-simulate both cells with full Vm traces at soma and 3 dendritic
+loci, render the morphology with full dendrite tree at the same orientation, and run the
+standard dendritic-spike-attribution analysis (per-compartment Nav/Kv/Ih conductance
+contributions to ATP/spike). Output: 2-cell deep-dive PNG bundle + per-cell Carter-Bean
+ATP/AP/cm decomposition + Wei2018 figure-style Vm trace plate. Recommended task types:
+experiment-run, data-analysis.
 
 </details>
 
@@ -2857,6 +2953,58 @@ the EPSP_PASSIVE / IPSP_PASSIVE / FULL trio (memory feedback_dsgc_measurement_pr
 record somatic + dendritic Vm and per-compartment g_E / g_I / i_Na / i_K. Identify which
 subset drives the across-direction count signal vs the dendritic ATP overhead. Local CPU < 2
 h. Recommended task types: experiment-run, data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Lower bar-drive amplitude to bring t0126 Pareto-front PD-rates
+into the Sivyer 2013 [5, 15] Hz physiological band</strong> (S-0126-04)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-25 | **Source**:
+[t0126_bedb_dsi_atp_per_spike_nsga2_60gen](../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/)
+
+All 6 t0126 Pareto cells fire at PD = 40 Hz, ~2.7x above the Sivyer 2013 [5, 15] Hz upper
+bound for canonical rabbit ooDSGC PD response (compare_literature.md: FAIL marking on the only
+direct cell-type-matched comparator). The 40 Hz floor is imposed by the t0080-lineage
+evaluator's strong synthetic driving current, which was deliberately chosen to keep cells
+above the silence-guard PD<3 spikes threshold, but pushes them out of biological range. The
+Carter-Bean DSI/ATP front is therefore measured at a non-biological driving regime, weakening
+the connection to Sivyer 2013-style in-vitro recordings. Action: parameter sweep on bar drive
+amplitude (synaptic conductance scale or wave-stimulus magnitude) at 4-5 levels spanning ~30%
+to ~100% of t0080's current value, run a short 20-gen NSGA-II at each level (smaller pool e.g.
+POP=48 to control cost), measure resulting Pareto-front PD-rate distribution per level, pick
+the level where the high-DSI corner falls into [5, 15] Hz, then re-run the full 60-gen NSGA-II
+at the selected drive level on 2 seeds. Decision rule: re-baselined Pareto front with PD-rate
+in band vs t0126's out-of-band front -- if Carter-Bean r(DSI, ATP) survives at the lower
+drive, the penalty is robust to the protocol artefact; if r collapses, the t0126 r=+0.980 is
+partially a high-drive artefact. Distinct from S-0123-01 (which is MI/ATP with PD-rate floor
+as a CONSTRAINT, not a sweep). Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Update Niven 2008 paper asset citation key and ensure the
+vertebrate-retinal-neuron ATP/spike band PASS is captured in project-level
+overview</strong> (S-0126-09)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-05-25 | **Source**:
+[t0126_bedb_dsi_atp_per_spike_nsga2_60gen](../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/)
+
+t0126 is the first project task to PASS the Niven 2008 vertebrate-retinal-neuron ATP/spike
+band [~1e6, ~1e7 molecules/spike] across the full Pareto front (all 6 cells in range; min
+1.83e6 at DSI=0, max 7.82e6 at DSI=1.0). The result is reported in compare_literature.md (PASS
+row, direct quantitative match) but the t0124 lineage cited the paper as 'Niven 2007'
+(research_papers.md) while the canonical bibliographic record is Niven & Laughlin J Exp Biol
+211(11), 2008. The citation_key drift is documented in t0126's Limitations but not fixed at
+the asset level. Action: (a) verify the paper-asset folder under tasks/t0002.*/assets/paper/
+(or wherever the Niven citation lives) and confirm details.json citation_key matches
+Niven2008; (b) if Niven2007 is used elsewhere, write a correction file under
+tasks/t0126/corrections/ that re-maps the citation_key in the relevant asset(s); (c) add the
+t0126 vertebrate-retinal-neuron band PASS as a one-line entry in overview/results_index.md or
+the equivalent project-level overview file; (d) ensure future Niven-band comparisons in
+downstream tasks cite the corrected key. Low priority because it is bookkeeping not science;
+high value because the Niven PASS is the only direct published quantitative cross-species
+match in the t0126 comparator set. Recommended task types: correction, data-analysis.
 
 </details>
 

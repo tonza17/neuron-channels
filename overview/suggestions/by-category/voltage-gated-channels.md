@@ -1,7 +1,7 @@
 # Suggestions: `voltage-gated-channels`
 
-105 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **88 open** (15
+107 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **90 open** (17
 high, 62 medium, 11 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
@@ -186,6 +186,42 @@ on/off. Recommended task types: experiment-run, data-analysis.
 </details>
 
 <details>
+<summary>📚 <strong>Extend evaluator to record whole-cell total ATP turnover; close 4
+INDETERMINATE signalling-budget comparisons in one shot</strong>
+(S-0126-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0126-03` |
+| **Kind** | library |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) |
+| **Source paper** | [`10.1038_jcbfm.2012.35`](../../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/assets/paper/10.1038_jcbfm.2012.35/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+t0126's compare_literature.md returns INDETERMINATE for Howarth 2012 17% cerebellum, Howarth
+2012 21% cortex, Attwell-Laughlin 2001 47% legacy, and the signalling-budget fraction more
+broadly -- all because the evaluator computes only the per-spike Na+ pump cost (signalling
+component) and not the housekeeping, glutamate-receptor, or resting-potential-maintenance
+costs needed to form the whole-cell ATP turnover denominator. 4 of 6 INDETERMINATE rows in
+t0126's per-comparator summary share this single root cause. Action: extend code/recorder.py
+and code/atp_per_spike.py to also record (a) total inward current at rest (membrane leak + Ih
++ KCNQ resting drives), (b) Na+/K+ ATPase pump current proportional to resting [Na+]i, (c)
+AMPA/NMDA receptor Na+ entry over the trial window, and (d) Ca2+ ATPase cost from CaT/CaL
+during the AP. Sum to per-second whole-cell ATP turnover at rest and during PD response.
+Re-run the t0126 protocol on the top-5 cells (single-CPU, ~30 min/cell), compute
+fraction_of_howarth_17_cortex / fraction_of_howarth_21_cerebellum /
+fraction_of_attwell_laughlin_47_legacy properly. This closes 4 INDETERMINATE comparisons
+(Howarth cortex, Howarth cerebellum, Attwell-Laughlin legacy, signalling-fraction in general).
+Distinct from S-0124-04 (which proposes an Okawa 2008 whole-retina denominator via published
+literature constants); this proposal computes the denominator INTERNALLY from the simulation.
+The two suggestions are complementary -- S-0124-04 closes the retina-specific reference,
+S-0126-03 closes the per-cell denominator. Recommended task types: write-library,
+experiment-run, data-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination
 sweep on the t0059 substrate</strong> (S-0059-02)</summary>
 
@@ -261,6 +297,39 @@ differs structurally from cell 767's (cf. [0.006, 0.001, 0.999, 0.995, 0.876, 0.
 Vm recording at soma + 4 dendritic locations + AIS, then run conductance-knockout ablations
 (zero out g_NaP_dend / g_NMDA / g_Nav_dend_distal) to identify the dominant DSI driver.
 Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📚 <strong>Per-Pareto-cell AIS ATP/AP/cm aggregator: recover per-segment
+ATP-per-AP from saved cell traces (inherited gap from t0124)</strong>
+(S-0126-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0126-02` |
+| **Kind** | library |
+| **Date added** | 2026-05-25 |
+| **Source task** | [`t0126_bedb_dsi_atp_per_spike_nsga2_60gen`](../../../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) |
+| **Source paper** | [`10.1016_j.neuron.2009.12.011`](../../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/assets/paper/10.1016_j.neuron.2009.12.011/) |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) |
+
+comparator_report.json reports measured_atp_per_ap_per_cm = 0 for all 6 t0126 Pareto cells
+(label "fail", within_band=false) -- inherited verbatim from t0124. The canonical anchor
+cell's smoke-gate value (6.138e8 ATP/AP/cm, inside the Carter-Bean [1e8, 1e9] band) validates
+the recipe at smoke-gate time, but the post-run aggregator does not recompute per-segment
+ATP-per-AP at the AIS for each Pareto cell from the saved per-segment seg.ina traces. This
+forces the Carter2009 per-cell band test to NOT MEASURED on every t0122/t0124/t0126 run
+despite the per-compartment data being present in cell_trace_seed*.jsonl. Action: write
+per_cell_carter_bean_aggregator.py that (a) loads cell_trace_seed*.jsonl for each Pareto cell,
+(b) detects APs at the AIS via -20 mV crossing + 2 ms refractory, (c) integrates inward I_Na
+within +/-2 ms of each AP at each AIS segment, (d) divides by 3*e*A_cm to produce ATP/AP/cm
+per AIS segment, (e) aggregates median over AIS segments per cell, (f) tests against the
+canonical [1e8, 1e9] band and the [3e7, 3e9] PASS band, (g) emits per-cell labels in the
+updated comparator_report.json. Re-run on t0122/t0124/t0126 Pareto fronts. Distinct from
+S-0124-06 (Hallermann per-compartment alpha decomposition; a different physical quantity) and
+S-0124-08 (AP-width vs ATP/spike, somatic Vm only). Recommended task types: data-analysis,
+write-library, comparative-analysis.
 
 </details>
 

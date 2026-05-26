@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-25T02:57:19Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-26T21:09:59Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>195259</char_count>
-    <byte_count>195616</byte_count>
-    <estimated_tokens>48814</estimated_tokens>
+    <char_count>201389</char_count>
+    <byte_count>201746</byte_count>
+    <estimated_tokens>50347</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -229,9 +229,12 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0123_bedb_mi_atp_per_spike_nsga2</id>
         <id>t0124_bedb_dsi_atp_per_spike_nsga2</id>
         <id>t0125_t0123_cluster_factor_mi_atp</id>
+        <id>t0126_bedb_dsi_atp_per_spike_nsga2_60gen</id>
+        <id>t0127_correct_t0126_cell_trace_suggestions</id>
+        <id>t0129_t0126_signed_dsi_real_rates_1seed</id>
       </source_ids>
       <content>
-Completed tasks: 118
+Completed tasks: 121
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -940,6 +943,24 @@ ID: t0125_t0123_cluster_factor_mi_atp
 Completed: 2026-05-25
 Short description: PCA + KMeans on electrophys (54-d) and morphology (14-d) + varimax FA on 68-d for t0123 cells; quartile-group comparisons of high vs low MI and high vs low ATP-per-spike.
 Result summary: Results Summary: t0125 Cluster + Factor Analysis of t0123 MI vs ATP Summary Applied the canonical PCA + KMeans + varimax factor-analysis pipeline (inherited from t0108 / t0116 / t0117) to the **5,760** t0123 cells with a dual full / spiking-cohort design. The headline finding is **negative for the joint-driver hypothesis**: **zero** varimax factors satisfy `|r_MI| &gt; 0.30 AND |r_ATP| &gt; 0.30` simultaneously, in direct contrast to t0117 which found one joint DSI x PD factor. Despite the decoupled latent structure, MI and ATP are positively correlated at the cell level (**3.6x** diagonal-vs-off-diagonal corner-count imbalance), and the high-MI / low-ATP &quot;Pareto-favoured&quot; corner has **1,221** of...
+
+## NSGA-II DSI vs ATP-per-spike Bed B + 14-d morph: 60-gen replication
+ID: t0126_bedb_dsi_atp_per_spike_nsga2_60gen
+Completed: 2026-05-25
+Short description: Fresh-seed 60-gen replication of t0124 NSGA-II (DSI vs ATP-per-spike, Bed B + 14-d morph); tests whether +0.806 r(DSI,ATP) is a Carter-Bean penalty or early-NSGA-II artefact.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0126_bedb_dsi_atp_per_spike_nsga2_60gen&quot; date_completed: &quot;2026-05-25&quot; status: &quot;completed&quot; --- Results Summary -- t0126 NSGA-II DSI vs ATP-per-Spike (60-gen Replication) Summary Fresh-seed 60-gen NSGA-II replication of t0124 on the 68-d Bed B + 14-d morphology substrate (seed **8929**) ran cleanly to **60/60 generations** at $1.31 total Vast.ai spend (21.8% of the $6 cap; `NSGA2_EXIT=0`, `watchdog_tripped=false`, `OperatorStopTermination` removed from the live collection). The final 6-cell Pareto front spans DSI **[0.000, 1.000]** at ATP **[1.83e6, 7.82e6]** molecules/spike, with bootstrap r(DSI, ATP) = **+0.980 [0.972, 1.000]**; under the S-0124-01 decision...
+
+## Correct t0126 suggestions S-0126-01 and S-0126-06 (synthesised cell_trace)
+ID: t0127_correct_t0126_cell_trace_suggestions
+Completed: 2026-05-26
+Short description: Supersede S-0126-01 and S-0126-06 with one rerun-with-proper-launcher follow-up; both originals rely on cell_trace data that t0126 never recorded.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0127_correct_t0126_cell_trace_suggestions&quot; date_completed: &quot;2026-05-26&quot; status: &quot;completed&quot; --- Results Summary -- t0127 Correct t0126 cell_trace suggestions Summary Wrote two correction files marking t0126&#x27;s `S-0126-01` (multi-seed n&gt;=20 closure of S-0124-01) and `S-0126-06` (per-Pareto-cell mi / cytoplasm backfill from cell_trace JSONL) as `replace`d by a single new follow-up `S-0127-01` (rerun t0126 via `run_seed*.sh` to recover real cell_trace). Aggregator overlays now resolve the original two t0126 suggestions to the new replacement, so downstream consumers (brainstorm, suggestions-chooser) see one workable plan instead of two that depend on cell_trace...
+
+## Reproduce t0126 with signed DSI=(PD-ND)/(PD+ND) and real per-cell firing rates
+ID: t0129_t0126_signed_dsi_real_rates_1seed
+Completed: 2026-05-26
+Short description: Reproduce t0126 NSGA-II on one fresh seed (3517) with signed antipodal DSI=(PD-ND)/(PD+ND) replacing vector-sum DSI, and per-cell pd_rate_hz/nd_rate_hz from actual spikes.
+Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0129_t0126_signed_dsi_real_rates_1seed&quot; date_completed: &quot;2026-05-26&quot; status: &quot;results_complete&quot; --- Results Summary -- t0129 NSGA-II Signed DSI vs ATP-per-Spike (60-gen, Seed 3517) Summary Forked-and-corrected re-run of t0126&#x27;s NSGA-II protocol on one fresh GA seed (**3517**) with signed antipodal DSI replacing vector-sum DSI and real per-cell PD/ND firing rates replacing t0126&#x27;s `pd_rate_hz = 40` synthesised placeholder. The run completed all **60/60 generations** cleanly (`NSGA2_EXIT=0`, `watchdog_tripped=false`) at **$0.965** total Vast.ai spend (12.1% of the $8 cap), producing a **9-cell final Pareto front** spanning signed DSI **[0.000, 1.000]** at ATP...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -949,9 +970,10 @@ Result summary: Results Summary: t0125 Cluster + Factor Analysis of t0123 MI vs 
         <id>t0023_port_hanson_2019_dsgc</id>
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
+        <id>t0128_t0127_rerun_dsi_atp_3seeds</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -972,6 +994,13 @@ Status: not_started
 Effective date: 2026-05-01
 Short description: Attach a bio-realistic AIS+axon to Bed A with {HHst, Nav1.6, Kv3, Kv7}; calibrate a baseline in {peak [5,50] Hz, DSI [0.3,0.95]}; sweep 8 axes one at a time; report per-axis sensitivity.
 Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep, t0069_t0067_ais_localised_channel_sweep, t0074_channel_tuning_width_bed_a
+
+## S-0127-01: 3-seed DSI vs ATP NSGA-II rerun via run_seed*.sh wrapper
+ID: t0128_t0127_rerun_dsi_atp_3seeds
+Status: in_progress
+Effective date: 2026-05-26
+Short description: Rerun t0126 protocol verbatim on 3 fresh non-lineage seeds via the proper run_seed*.sh shell wrapper so cell_trace is recorded; pool fronts to clear n&gt;=20 and recover per-cell diagnostics.
+Dependencies: t0126_bedb_dsi_atp_per_spike_nsga2_60gen, t0127_correct_t0126_cell_trace_suggestions
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1024,14 +1053,16 @@ Dependencies: t0008_port_modeldb_189347, t0067_t0065_soma_channel_addition_sweep
         <id>dsgc-bits-per-atp-vs-niven-2007</id>
         <id>morphology-generator-geometry-consistency</id>
         <id>substrate-rate-5seed-canonical</id>
+        <id>dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact</id>
         <id>dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin</id>
         <id>high-vs-low-mi-electrophys-signature</id>
         <id>low-vs-high-atp-morphology-signature</id>
         <id>mi-atp-joint-structure-in-t0123-substrate</id>
         <id>pareto-favoured-corner-signature</id>
+        <id>does-signed-dsi-change-t0126-pareto-structure</id>
       </source_ids>
       <content>
-Answers: 51
+Answers: 53
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -1397,6 +1428,14 @@ Categories: direction-selectivity, compartmental-modeling
 The 5-seed mean LEGIT joint-pass acceptance rate is 2.58% with sample SE 1.50%, a normal-approx 95% CI of (-0.35%, 5.51%), and a bootstrap 95% CI of (0.38%, 5.53%); the point estimate is roughly 6.5x Hay 2011&#x27;s 0.40% envelope and 25.8x Druckmann 2007&#x27;s 0.10% baseline, and 3 of 5 seeds individually exceed the Hay envelope. Both 95% CIs bracket zero and both literature baselines, so this batch cannot statistically reject the literature rates despite the elevated point estimate.
 
 ## Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean Na/K-overlap penalty, and where do its top cells sit relative to the revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and historically, the original Attwell-Laughlin 2001 47% anchor)?
+ID: dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact
+Created by: t0126_bedb_dsi_atp_per_spike_nsga2_60gen on 2026-05-25
+Confidence: low
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels
+
+INSUFFICIENT EVIDENCE: only 6 legit cells passed the silence guard. The Pareto front structure cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r between DSI and ATP-per-spike across the legit top-6 cohort is r = 0.980 (95% CI: [0.972, 1.000], n_legit = 6, n_pareto = 6). Run reached 60 / 60 gens at $0.96; stop trigger n_gen_reached.
+
+## Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean Na/K-overlap penalty, and where do its top cells sit relative to the revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and historically, the original Attwell-Laughlin 2001 47% anchor)?
 ID: dsgc-dsi-vs-atp-per-spike-vs-carter-bean-attwell-laughlin
 Created by: t0124_bedb_dsi_atp_per_spike_nsga2 on 2026-05-25
 Confidence: low
@@ -1435,6 +1474,14 @@ Confidence: medium
 Categories: compartmental-modeling, voltage-gated-channels, dendritic-computation
 
 The top 5 parameters by absolute z-score difference between the high_mi_low_atp and low_mi_high_atp corners (each cell z-scored against the full-cohort standardiser, mean per corner) are: KDR_GBAR (-1.19), branch_length_cv (-1.08), BK_SOMA_GBAR (-1.06), IH_GBAR (-1.06), and RA_OHM_CM (+1.06). The Pareto-favoured corner contains 1221 spiking cells (mean MI = 0.984 bits, mean ATP = 5.34e6 molecules / spike, mean DSI = 0.237, mean PD rate = 2.61 Hz) versus 1220 cells in the dominated corner (mean MI = 0.063 bits, mean ATP = 2.61e7 molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbalance (1221 + 1220 = 2441 cells vs 343 + 341 = 684 off-diagonal) is the joint Pareto...
+
+## Does the signed-DSI re-evaluation of t0126&#x27;s protocol change the Pareto structure, or is the vector-sum / signed distinction immaterial on the antipodal pair?
+ID: does-signed-dsi-change-t0126-pareto-structure
+Created by: t0129_t0126_signed_dsi_real_rates_1seed on 2026-05-26
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels
+
+Yes. The signed-DSI re-evaluation surfaces structure that vector-sum DSI silently discards: on this single seed (3517) 95 viable cells out of 5,496 have genuinely reversed preference (R_ND &gt; R_PD, deepest reversal `dsi_signed = -0.778`) and would have been collapsed to positive magnitude under vector-sum DSI. None of these reversed cells reach the t0129 final Pareto front (they are dominated in F-space by the silent / DSI=0 cluster at the ATP minimum), but they would have been Pareto candidates under the t0126 vector-sum objective, polluting the high-magnitude region of t0126&#x27;s front with cells whose preferred direction is actually opposite to what vector-sum suggests. The sign-flip count...
       </content>
     </section>
   </sections>

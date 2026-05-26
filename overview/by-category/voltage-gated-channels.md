@@ -5,10 +5,10 @@ Ion channels whose opening probability depends on membrane voltage.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (35)](../papers/by-category/voltage-gated-channels.md) | [Answers
-(14)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
-(105)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
+(16)](../answers/by-category/voltage-gated-channels.md) | [Suggestions
+(107)](../suggestions/by-category/voltage-gated-channels.md) | [Libraries
 (3)](../libraries/by-category/voltage-gated-channels.md) | [Predictions
-(3)](../predictions/by-category/voltage-gated-channels.md)
+(5)](../predictions/by-category/voltage-gated-channels.md)
 
 ---
 
@@ -1846,7 +1846,28 @@ dendritic transients.
 | 0097 | [Literature survey: multi-objective optimisation of single-neuron models](../../overview/tasks/task_pages/t0097_multi_obj_optim.md) | completed | 2026-05-08 16:50 |
 | 0124 | [NSGA-II maximising DSI and minimising ATP-per-spike (Bed B + 14-d morph)](../../overview/tasks/task_pages/t0124_bedb_dsi_atp_per_spike_nsga2.md) | completed | 2026-05-25 02:55 |
 
-## Answers (14)
+## Answers (16)
+
+<details>
+<summary><strong>Does the signed-DSI re-evaluation of t0126's protocol change the
+Pareto structure, or is the vector-sum / signed distinction immaterial
+on the antipodal pair?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-05-26 | **Full answer**:
+[`does-signed-dsi-change-t0126-pareto-structure`](../../tasks/t0129_t0126_signed_dsi_real_rates_1seed/assets/answer/does-signed-dsi-change-t0126-pareto-structure/)
+
+Yes. The signed-DSI re-evaluation surfaces structure that vector-sum DSI silently discards: on
+this single seed (3517) 95 viable cells out of 5,496 have genuinely reversed preference (R_ND
+> R_PD, deepest reversal `dsi_signed = -0.778`) and would have been collapsed to positive
+magnitude under vector-sum DSI. None of these reversed cells reach the t0129 final Pareto
+front (they are dominated in F-space by the silent / DSI=0 cluster at the ATP minimum), but
+they would have been Pareto candidates under the t0126 vector-sum objective, polluting the
+high-magnitude region of t0126's front with cells whose preferred direction is actually
+opposite to what vector-sum suggests. The sign-flip count for t0126's own Pareto cells cannot
+be recovered because t0126 did not persist per-direction spike counts and its `pd_rate_hz =
+40` is a synthesised placeholder.
+
+</details>
 
 <details>
 <summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
@@ -1919,6 +1940,23 @@ MI = 0.984 bits, mean ATP = 5.34e6 molecules / spike, mean DSI = 0.237, mean PD 
 Hz) versus 1220 cells in the dominated corner (mean MI = 0.063 bits, mean ATP = 2.61e7
 molecules / spike, mean DSI = 0.016, mean PD rate = 12.3 Hz). The diagonal imbalance (1221 +
 1220 = 2441 cells vs 343 + 341 = 684 off-diagonal) is the joint Pareto signature.
+
+</details>
+
+<details>
+<summary><strong>Does the DSGC DSI-vs-ATP-per-spike Pareto front show a Carter-Bean
+Na/K-overlap penalty, and where do its top cells sit relative to the
+revised Howarth 2012 17% cortex / 21% cerebellum signalling-ATP budget (and
+historically, the original Attwell-Laughlin 2001 47% anchor)?</strong></summary>
+
+**Confidence**: low | **Date**: 2026-05-25 | **Full answer**:
+[`dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact`](../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/assets/answer/dsgc-dsi-vs-atp-per-spike-60gen-carter-bean-vs-artefact/)
+
+INSUFFICIENT EVIDENCE: only 6 legit cells passed the silence guard. The Pareto front structure
+cannot be quantitatively characterised under the single-seed protocol. The bootstrap Pearson r
+between DSI and ATP-per-spike across the legit top-6 cohort is r = 0.980 (95% CI: [0.972,
+1.000], n_legit = 6, n_pareto = 6). Run reached 60 / 60 gens at $0.96; stop trigger
+n_gen_reached.
 
 </details>
 
@@ -2165,7 +2203,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (88 open, 17 closed)
+## Suggestions (90 open, 17 closed)
 
 <details>
 <summary>🧪 <strong>NMDA vs Nav dichotomy on the high-DSI corner: is NMDA-driven DSI
@@ -2266,6 +2304,63 @@ single-linkage hierarchical clustering in the standardised 54-d electrophys subs
 and cross-component nearest-neighbour distance. Replicate in morphology and full-68-d. Tests
 Marder 2006 'many models, one behaviour' on t0123; motivates per-basin re-seeded NSGA-II.
 CPU-only. Recommended task types: data-analysis, answer-question.
+
+</details>
+
+<details>
+<summary>📚 <strong>Per-Pareto-cell AIS ATP/AP/cm aggregator: recover per-segment
+ATP-per-AP from saved cell traces (inherited gap from t0124)</strong>
+(S-0126-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0126_bedb_dsi_atp_per_spike_nsga2_60gen](../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/)
+
+comparator_report.json reports measured_atp_per_ap_per_cm = 0 for all 6 t0126 Pareto cells
+(label "fail", within_band=false) -- inherited verbatim from t0124. The canonical anchor
+cell's smoke-gate value (6.138e8 ATP/AP/cm, inside the Carter-Bean [1e8, 1e9] band) validates
+the recipe at smoke-gate time, but the post-run aggregator does not recompute per-segment
+ATP-per-AP at the AIS for each Pareto cell from the saved per-segment seg.ina traces. This
+forces the Carter2009 per-cell band test to NOT MEASURED on every t0122/t0124/t0126 run
+despite the per-compartment data being present in cell_trace_seed*.jsonl. Action: write
+per_cell_carter_bean_aggregator.py that (a) loads cell_trace_seed*.jsonl for each Pareto cell,
+(b) detects APs at the AIS via -20 mV crossing + 2 ms refractory, (c) integrates inward I_Na
+within +/-2 ms of each AP at each AIS segment, (d) divides by 3*e*A_cm to produce ATP/AP/cm
+per AIS segment, (e) aggregates median over AIS segments per cell, (f) tests against the
+canonical [1e8, 1e9] band and the [3e7, 3e9] PASS band, (g) emits per-cell labels in the
+updated comparator_report.json. Re-run on t0122/t0124/t0126 Pareto fronts. Distinct from
+S-0124-06 (Hallermann per-compartment alpha decomposition; a different physical quantity) and
+S-0124-08 (AP-width vs ATP/spike, somatic Vm only). Recommended task types: data-analysis,
+write-library, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Extend evaluator to record whole-cell total ATP turnover; close 4
+INDETERMINATE signalling-budget comparisons in one shot</strong>
+(S-0126-03)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-05-25 | **Source**:
+[t0126_bedb_dsi_atp_per_spike_nsga2_60gen](../../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/)
+
+t0126's compare_literature.md returns INDETERMINATE for Howarth 2012 17% cerebellum, Howarth
+2012 21% cortex, Attwell-Laughlin 2001 47% legacy, and the signalling-budget fraction more
+broadly -- all because the evaluator computes only the per-spike Na+ pump cost (signalling
+component) and not the housekeeping, glutamate-receptor, or resting-potential-maintenance
+costs needed to form the whole-cell ATP turnover denominator. 4 of 6 INDETERMINATE rows in
+t0126's per-comparator summary share this single root cause. Action: extend code/recorder.py
+and code/atp_per_spike.py to also record (a) total inward current at rest (membrane leak + Ih
++ KCNQ resting drives), (b) Na+/K+ ATPase pump current proportional to resting [Na+]i, (c)
+AMPA/NMDA receptor Na+ entry over the trial window, and (d) Ca2+ ATPase cost from CaT/CaL
+during the AP. Sum to per-second whole-cell ATP turnover at rest and during PD response.
+Re-run the t0126 protocol on the top-5 cells (single-CPU, ~30 min/cell), compute
+fraction_of_howarth_17_cortex / fraction_of_howarth_21_cerebellum /
+fraction_of_attwell_laughlin_47_legacy properly. This closes 4 INDETERMINATE comparisons
+(Howarth cortex, Howarth cerebellum, Attwell-Laughlin legacy, signalling-fraction in general).
+Distinct from S-0124-04 (which proposes an Okawa 2008 whole-retina denominator via published
+literature constants); this proposal computes the denominator INTERNALLY from the simulation.
+The two suggestions are complementary -- S-0124-04 closes the retina-specific reference,
+S-0126-03 closes the per-cell denominator. Recommended task types: write-library,
+experiment-run, data-analysis.
 
 </details>
 
