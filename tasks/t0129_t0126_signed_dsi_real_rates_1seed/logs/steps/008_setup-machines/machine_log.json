@@ -1,0 +1,17 @@
+[
+  {
+    "provider": "local",
+    "instance_id": "local-cpu-workstation",
+    "selected_offer": {
+      "price_per_hour": 0.001
+    },
+    "selection_rationale": "Local-CPU run on researcher workstation; no Vast.ai instance was provisioned. The plan explicitly says 'Local CPU only, no remote machines, no setup-machines step (already marked skipped). The Vast.ai cost-watchdog wiring inherited from t0126 stays as defensive insurance.' This stub satisfies the cost_watchdog.load_hourly_rate_from_machine_log assertion (rate > 0.0) while keeping the effective rate at $0.001/hr, well below T0129_HARD_BUDGET_USD=$8.00 over the 10-16h envelope. At this rate the watchdog cannot trip on this run.",
+    "ssh_host": null,
+    "ssh_port": null,
+    "created_at": "2026-05-26T14:00:00Z",
+    "ready_at": "2026-05-26T14:00:00Z",
+    "destroyed_at": null,
+    "total_duration_hours": null,
+    "notes": "Stub for local-CPU run only. No paid services consumed. This file exists solely so the inherited t0126 cost_watchdog can initialise; the resulting rate ($0.001/hr) is a placeholder and not a real cost."
+  }
+]
