@@ -81,8 +81,10 @@ if [ ! -f "${WORKDIR}/.stage2_uv_done" ]; then
                 uv.lock \
                 ruff.toml \
                 .gitignore \
+                tasks/t0024_port_de_rosenroll_2026_dsgc \
                 tasks/t0080_bedb_mobo_v3_dendritic_spike_nsga2 \
                 tasks/t0090_morphology_generator_diversity_test \
+                tasks/t0092_diagnose_morphology_generator_silence \
                 tasks/t0128_t0127_rerun_dsi_atp_3seeds 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
             git checkout "${BRANCH}" 2>&1 | tee -a "${WORKDIR}/bootstrap.log"
         )
