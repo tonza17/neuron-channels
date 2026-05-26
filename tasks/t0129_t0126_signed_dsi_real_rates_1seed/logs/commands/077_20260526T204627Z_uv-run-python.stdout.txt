@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\results\suggestions.json
+
+[33m[1mWARNINGS:[0m
+[33m  SG-W001 warning: suggestions[0]: title is 131 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[2]: title is 124 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[3]: title is 144 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[4]: title is 122 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[5]: title is 137 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[6]: title is 142 characters, exceeds 120[0m
+[33m  SG-W001 warning: suggestions[9]: title is 142 characters, exceeds 120[0m
+
+[33m[1mPASSED[0m â€” 0 error(s), 7 warning(s)
