@@ -39,7 +39,26 @@ echo "[run_seed3517] repo root: ${REPO_ROOT}"
 
 PY="${VENV_PYTHON:-python3}"
 
-export PYTHONPATH="${REPO_ROOT}:${PYTHONPATH:-}"
+# Windows/mingw bash uses ':' as PATH separator but Python on Windows
+# expects ';' for PYTHONPATH. When uname is *NT* (msys/git-bash on
+# Windows), convert REPO_ROOT to a native Windows path and use ';' as
+# the PYTHONPATH separator so workers launched via multiprocessing-spawn
+# can import both the repo modules and the externally-installed
+# ``neuron`` package (sitting under e.g. C:\Users\<user>\nrn-8.2.7\lib\python).
+case "$(uname -s 2>/dev/null)" in
+    *NT*|MINGW*|MSYS*|CYGWIN*)
+        REPO_ROOT_NATIVE="$(cygpath -w "${REPO_ROOT}" 2>/dev/null || echo "${REPO_ROOT}")"
+        if [ -n "${PYTHONPATH:-}" ]; then
+            export PYTHONPATH="${REPO_ROOT_NATIVE};${PYTHONPATH}"
+        else
+            export PYTHONPATH="${REPO_ROOT_NATIVE}"
+        fi
+        ;;
+    *)
+        export PYTHONPATH="${REPO_ROOT}:${PYTHONPATH:-}"
+        ;;
+esac
+echo "[run_seed3517] PYTHONPATH = ${PYTHONPATH}"
 
 SEED=3517
 RESULTS_DATA_DIR="${REPO_ROOT}/tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/data"
