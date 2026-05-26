@@ -50,10 +50,10 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0126's evaluator.py, nsga2_driver.py, run_seed*.sh wrapper, post-run analysis, and metrics builder so the fork is faithful.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-05-26T12:41:50Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\006_research-code/"
     },
     {
       "step": 7,

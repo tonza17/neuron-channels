@@ -1,0 +1,15 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0129_t0126_signed_dsi_real_rates_1seed\tasks\t0129_t0126_signed_dsi_real_rates_1seed\research\research_code.md
+
+[31m[1mERRORS:[0m
+[31m  RC-E006 error: Inline citation [t0008] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0011] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0012] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0020] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0046] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0052] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0062] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0078] has no matching Task Index entry[0m
+[31m  RC-E006 error: Inline citation [t0092] has no matching Task Index entry[0m
+
+[31m[1mFAILED[0m — 9 error(s), 0 warning(s)
