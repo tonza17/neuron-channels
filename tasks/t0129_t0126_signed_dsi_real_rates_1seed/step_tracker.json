@@ -131,10 +131,10 @@
       "step": 15,
       "name": "reporting",
       "description": "Run all verificators, capture sessions, mark task completed, push branch, open and merge PR.",
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
-      "log_file": null
+      "status": "completed",
+      "started_at": "2026-05-26T20:49:59Z",
+      "completed_at": "2026-05-26T21:05:00Z",
+      "log_file": "logs\\steps\\015_reporting/"
     }
   ]
 }
