@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="full" generated_at_utc="2026-05-26T21:09:59Z">
+<llm_context_archive preset_id="full" generated_at_utc="2026-10-27T09:42:46Z">
   <archive_summary>
     <title>Full Project Context</title>
     <description>Largest preset with detailed completed-task reports and the full project knowledge base.</description>
     <use_case>Deep project review, comprehensive planning, and long-context synthesis.</use_case>
-    <section_count>129</section_count>
-    <char_count>3251377</char_count>
-    <byte_count>3262523</byte_count>
-    <estimated_tokens>812844</estimated_tokens>
+    <section_count>130</section_count>
+    <char_count>3261364</char_count>
+    <byte_count>3272514</byte_count>
+    <estimated_tokens>815341</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -237,9 +237,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0126_bedb_dsi_atp_per_spike_nsga2_60gen</id>
         <id>t0127_correct_t0126_cell_trace_suggestions</id>
         <id>t0129_t0126_signed_dsi_real_rates_1seed</id>
+        <id>t0130_brainstorm_results_24</id>
       </source_ids>
       <content>
-Completed tasks: 121
+Completed tasks: 122
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -966,6 +967,12 @@ ID: t0129_t0126_signed_dsi_real_rates_1seed
 Completed: 2026-05-26
 Short description: Reproduce t0126 NSGA-II on one fresh seed (3517) with signed antipodal DSI=(PD-ND)/(PD+ND) replacing vector-sum DSI, and per-cell pd_rate_hz/nd_rate_hz from actual spikes.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0129_t0126_signed_dsi_real_rates_1seed&quot; date_completed: &quot;2026-05-26&quot; status: &quot;results_complete&quot; --- Results Summary -- t0129 NSGA-II Signed DSI vs ATP-per-Spike (60-gen, Seed 3517) Summary Forked-and-corrected re-run of t0126&#x27;s NSGA-II protocol on one fresh GA seed (**3517**) with signed antipodal DSI replacing vector-sum DSI and real per-cell PD/ND firing rates replacing t0126&#x27;s `pd_rate_hz = 40` synthesised placeholder. The run completed all **60/60 generations** cleanly (`NSGA2_EXIT=0`, `watchdog_tripped=false`) at **$0.965** total Vast.ai spend (12.1% of the $8 cap), producing a **9-cell final Pareto front** spanning signed DSI **[0.000, 1.000]** at ATP...
+
+## Brainstorm results session 24
+ID: t0130_brainstorm_results_24
+Completed: 2026-10-27
+Short description: Brainstorm 24: commission one standalone rd1-like Na/K remodelling task (voltage clamp, current clamp, direction selectivity, panel-D toy reproduction); suggestion cleanup deferred to next session.
+Result summary: Results Summary: Brainstorm Session 24 Summary One new task was commissioned, `t0131_rd1_na_k_remodelling_dsgc_dsi`, to test whether rd1-like Na/K remodelling of the DSGC model reproduces the researcher&#x27;s rd1 vs WT phenotype and what it does to direction selectivity. Suggestion cleanup was deferred to the next session at the researcher&#x27;s request, so **0** corrections were written. Session Overview * **Date**: 2026-10-27. * **Context**: the researcher supplied `SomeResults.pdf` (panels A-D): rd1 RGCs show higher spontaneous firing (~7 Hz vs near silent), almost no evoked spiking at +60 pA, a ~1.7x larger sustained K current and a smaller Na transient. Panel D is a preliminary toy input-output...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -976,9 +983,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0129_t0126_signe
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
         <id>t0128_t0127_rerun_dsi_atp_3seeds</id>
+        <id>t0131_rd1_na_k_remodelling_dsgc_dsi</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1556,6 +1564,134 @@ After all three NSGA-II runs complete:
   overlay still resolves cleanly through to S-0127-01 / this task&#x27;s outputs).
 * Pooled n &gt;= 20 OR an honest intervention recorded if pooled n &lt; 20 with a recommended next action
   (extra seed).
+
+## rd1-like Na/K remodelling of the DSGC model and its effect on DSI
+ID: t0131_rd1_na_k_remodelling_dsgc_dsi
+Status: not_started
+Effective date: unknown
+Short description: Calibrate soma/AIS gNa and gK scaling to rd1 vs WT clamp data, test if it predicts rd1 firing, measure signed DSI, and reproduce or refute the panel-D toy model.
+Dependencies: t0121_5seed_substrate_rate_canonical_report, t0129_t0126_signed_dsi_real_rates_1seed
+
+#### Motivation
+
+The researcher&#x27;s preliminary data (`SomeResults.pdf`, repository root, panels A-D) show that FVB/N
+rd1 retinal ganglion cells differ from mature wild-type (WT) cells in four ways: elevated
+spontaneous activity, weaker evoked spiking, a smaller voltage-gated Na current and a larger
+sustained K current. This task tests whether remodelling the soma and AIS conductances of the
+existing DSGC model reproduces that phenotype, and what the remodelling does to direction
+selectivity (project Research Questions 1 and 4). It also tests the researcher&#x27;s much simpler toy
+model of input-output distortion (panel D) against the compartmental model.
+
+#### Calibration Targets (read by eye from the figure, approximate)
+
+| Panel | WT | rd1 |
+| --- | --- | --- |
+| A: spontaneous, 2 s | Near silent | About 14 spikes in 2 s (~7 Hz), irregular or bursty, ~60 mV tall |
+| B: +60 pA step, 500 ms | About 4 adapting spikes (~8 Hz), peaks ~90, 70, 65 mV | Almost no spiking, small blips at onset |
+| C: +100 mV voltage step | Sustained outward ~2 nA, early inward Na transient | Sustained outward ~3.5 nA (~1.7x), much smaller inward transient |
+
+If the researcher supplies exact traces, replace these numbers and record the change in
+`results_detailed.md`.
+
+#### Scope
+
+All runs are local NEURON simulations. No remote machines, cost $0.
+
+* **Reference cells**: 5-10 LEGIT high-DSI cells drawn with a fixed seed from the t0121 pooled
+  parquet (dependency `t0121_5seed_substrate_rate_canonical_report`). List the chosen cell IDs.
+* **Evaluator**: reuse the signed antipodal DSI evaluator and `cell_params.jsonl` per-cell parameter
+  dump from `t0129_t0126_signed_dsi_real_rates_1seed`.
+* **Conditions**: WT-like (scale 1.0 on gNa and gK) and rd1-like (scaling from Part 1) for every
+  reference cell.
+
+#### Part 1: Voltage-Clamp Calibration (panel C)
+
+1. Replicate the +100 mV voltage step at the soma on each reference cell.
+2. Sweep soma plus AIS gNa scale (0.25-1.0x) against gK scale (1-3x) on a grid of at least 6 x 6.
+3. Choose the rd1-like scaling that matches the sustained-current ratio (~1.7x) and the reduced
+   inward transient. Set the scaling from clamp data only; do not use any firing data.
+4. Report the fitted scalings per cell and their spread across cells.
+
+#### Part 2: Current-Clamp Prediction (panels A and B)
+
+1. With the Part 1 scalings, run the +60 pA, 500 ms step for WT-like and rd1-like cells. This is an
+   out-of-sample test: report whether evoked firing collapses as in panel B.
+2. For panel A, add a weak tonic bias current or noise at rest (exploratory; any form that works is
+   acceptable, but state exactly what was used and how it was tuned). Check whether rd1-like cells
+   fire irregularly at ~7 Hz while WT-like cells stay near silent.
+3. Report f-I curves, spike amplitude, adaptation index and spontaneous rate for both conditions.
+4. If soma and AIS scaling alone does not reproduce the phenotype, add a second arm that also scales
+   dendritic channels and rerun Parts 1-2 for that arm.
+
+#### Part 3: Direction Selectivity
+
+1. Run the standard protocol for WT-like and rd1-like cells: HH on, 8 directions, fixed 1400 ms
+   trials. Use the EPSP_PASSIVE / IPSP_PASSIVE / FULL mode trio only where the existing protocol
+   calls for it.
+2. Report signed antipodal DSI = (PD - ND) / (PD + ND), PD rate and ND rate per cell and condition,
+   with and without the tonic bias from Part 2.
+3. Produce a DSI-versus-scaling heatmap over the Part 1 gNa x gK grid.
+
+#### Part 4: Reproduce or Refute Panel D
+
+Panel D is a toy model by the researcher. The same input (three Gaussian pulses at about 180, 430
+and 680 ms over 1000 ms) drives a WT-like and an rd1-like cell. Its predictions are:
+
+* WT output grows gradually with input strength (0-100, reaching ~15); rd1 output is flat and
+  saturated (~23) at all but the lowest strengths.
+* WT output is cleaner and stimulus-locked; rd1 output has an elevated baseline (~0.35), broader and
+  less distinct peaks.
+
+Steps:
+
+1. Build the simple toy model (a rate or threshold-type model with WT-like and rd1-like parameters)
+   matching this description and check that it reproduces panel D. If it cannot be reproduced from
+   the description, state that and list what is missing.
+2. Test both predictions in the NEURON model: sweep PD synaptic drive strength and compare the
+   WT-like and rd1-like output curves; drive both with the three-pulse input and compare baseline,
+   stimulus-locking and peak distinctness.
+3. State for each prediction whether it is reproduced, partly reproduced or disproved.
+
+#### Key Questions
+
+1. Does Part 1 yield rd1-like scalings that reproduce the panel C current ratio on all reference
+   cells?
+2. Do those scalings, with no firing data in the fit, collapse evoked firing at +60 pA?
+3. Can a tonic bias give ~7 Hz irregular spontaneous firing in rd1-like but not WT-like cells?
+4. Does rd1-like remodelling raise, lower or leave unchanged signed DSI, and does the answer depend
+   on the tonic bias?
+5. Does the compartmental model reproduce the panel D saturation and temporal-smearing predictions?
+
+#### Expected Outputs
+
+* Charts in `results/images/`, each embedded in `results_detailed.md`:
+  * Panel C replication: voltage-clamp current traces, WT-like vs rd1-like (time vs nA).
+  * gNa x gK calibration grid: sustained-current ratio and transient amplitude.
+  * Current-clamp traces at +60 pA and at rest, WT-like vs rd1-like, and f-I curves.
+  * Signed DSI, PD rate and ND rate by condition, plus the DSI-versus-scaling heatmap.
+  * Panel D: toy-model reproduction, and NEURON input-strength sweep and three-pulse responses.
+* One answer asset covering questions 1-5 with the evidence for each.
+* Per-cell parameter dump and results tables in `data/`.
+* Registered metric: `direction_selectivity_index` (signed), reported per condition as variants.
+
+#### Dependencies
+
+* `t0121_5seed_substrate_rate_canonical_report`: pooled LEGIT cell parquet used as the reference
+  cell source.
+* `t0129_t0126_signed_dsi_real_rates_1seed`: signed DSI evaluator and per-cell parameter-dump
+  protocol.
+
+#### Compute and Budget
+
+Local CPU only, no Vast.ai, no paid APIs. Estimated cost $0. Estimated wall-clock: a few hours for
+the clamp grid and DSI runs on 5-10 cells.
+
+#### Risks
+
+* Panel values are read by eye; calibration targets are approximate.
+* A single-cell model has no presynaptic network, so network-driven rd1 hyperactivity can only be
+  represented by an ad hoc bias.
+* Soma and AIS scaling may not be enough; the dendritic arm is the planned fallback.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -53143,6 +53279,57 @@ REQ-1 through REQ-7, REQ-12 through REQ-19, REQ-22, REQ-23 were satisfied by the
 | REQ-21 (`metrics.json` multi-variant) | Done | `results/metrics.json` has 3 variants (`t0129-seed3517-headline`, `t0129-seed3517-pareto-median`, `t0129-vs-t0126-sign-flipped`); only registered key `direction_selectivity_index` appears in `metrics`; `verify_task_metrics` PASSED |
 | REQ-22 (DSI silence-guard regression tests pass) | Done | `code/test_evaluator_dsi_signed.py` 9/9 tests pass (per `logs/steps/009_implementation/` test log) |
 | REQ-23 (smoke gate JSON persists DSI fixture) | Done | `logs/steps/009_implementation/smoke_gate.json` includes the canonical-cell DSI fixture |
+      </content>
+    </section>
+    <section id="t0130_brainstorm_results_24-results-detailed" source_kind="file">
+      <title>t0130_brainstorm_results_24 — Brainstorm results session 24 — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0130_brainstorm_results_24</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0130_brainstorm_results_24/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+#### Summary
+
+Planning-only session that commissioned `t0131_rd1_na_k_remodelling_dsgc_dsi` and deferred
+suggestion cleanup.
+
+#### Methodology
+
+1. Ran the tasks, suggestions and costs aggregators; read results summaries for t0120-t0129.
+2. Presented project state and an independent priority reassessment.
+3. Read `SomeResults.pdf` and extracted approximate calibration targets by eye.
+4. Proposed the task design, revised it after the researcher&#x27;s answers, and added the panel D
+   reproduction at the researcher&#x27;s request.
+5. Created this task folder, then `t0131_rd1_na_k_remodelling_dsgc_dsi` via `/create-task`.
+
+#### Metrics
+
+| Item | Count |
+| --- | --- |
+| Tasks created | 1 |
+| Suggestions covered | 0 |
+| Suggestions rejected | 0 |
+| Suggestions reprioritized | 0 |
+| Corrections written | 0 |
+| New suggestions | 0 |
+
+#### Limitations
+
+Planning task, no experiments run. Calibration targets in t0131 were read by eye from a PDF.
+`aggregate_answers` does not exist in this repository, so answer assets were not aggregated.
+
+#### Files Created
+
+* `tasks/t0130_brainstorm_results_24/` (plan, research placeholders, results, logs)
+* `tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/task.json`
+* `tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/task_description.md`
+
+#### Verification
+
+See `results_summary.md` and the PR description.
       </content>
     </section>
   </sections>
