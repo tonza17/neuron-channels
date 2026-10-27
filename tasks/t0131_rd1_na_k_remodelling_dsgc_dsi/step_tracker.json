@@ -122,10 +122,10 @@
       "step": 14,
       "name": "suggestions",
       "description": "Write follow-up suggestions.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-10-27T16:36:32Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\014_suggestions/"
     },
     {
       "step": 15,
