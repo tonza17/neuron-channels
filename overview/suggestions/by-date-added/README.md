@@ -1,10 +1,164 @@
 # Suggestions by Date Added
 
-521 suggestion(s) grouped by derived added date.
+528 suggestion(s) grouped by derived added date.
 
 [Back to all suggestions](../README.md)
 
 ---
+
+## 2026-10-27 (7)
+
+## High Priority
+
+<details>
+<summary>🧪 <strong>Fit rd1 scaling to a firing-aware target on quiescent cells, not
+the sustained-current ratio alone</strong> (S-0131-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0131 fits hit the grid edge (s_Na 0.25, s_K up to 3.0) and left rd1-like cells silent at -10
+mV. Using the quiescent cohort, extend the grid to s_Na 0.05-1.0 and s_K 1-6 and fit jointly
+sustained ratio 1.7, transient ratio 0.25, and evoked rate at +60 pA. Falsifiable: no scaling
+pair meets all three within 15% means Na/K scaling alone is insufficient. Recommended task
+types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rebuild WT-like reference cohort from quiescent (non-pacemaker)
+Bed B cells for rd1 tests</strong> (S-0131-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0131 found all 8 WT-like reference cells fire ~73.5 Hz at rest with no input, so panels A and
+B have no valid WT baseline. Screen the 675-cell pool for cells with 0 Hz spontaneous rate and
+>=40 Hz evoked at +60 pA; require >=8 such cells. Falsifiable: if fewer than 8 exist, the pool
+cannot support rd1 comparisons. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test synaptic and dendritic conductance scaling as the driver of
+rd1 spontaneous hyperactivity</strong> (S-0131-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Soma/AIS Na/K scaling gave rd1-like cells 0 Hz spontaneous activity; the dendritic arm gave
+only regular 5.4 Hz mean (ISI CV 0.005) versus the 4-10 Hz irregular target. Scale
+bipolar-input excitatory and inhibitory synaptic conductances and dendritic channels with
+noisy background drive, targeting 4-10 Hz and ISI CV above 0.5. Falsifiable: no setting meets
+both criteria on 5 of 8 cells. Recommended task types: experiment-run.
+
+</details>
+
+## Medium Priority
+
+<details>
+<summary>🔧 <strong>Add persistent and resurgent Na scaling to explain the unreached
+Na transient ratio (0.455 vs 0.25)</strong> (S-0131-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-03` |
+| **Kind** | technique |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0131 transient ratio only fell to 0.399-0.573 of WT-like even at the s_Na floor, suspected
+cause being unscaled persistent and resurgent Na channels. Add independent scale factors for
+these channels and rerun the 6x6 clamp grid on 8 cells. Falsifiable: the transient ratio
+reaches 0.25+-0.05 at a sustained ratio of 1.7+-0.15 or the hypothesis is rejected.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📊 <strong>Measure signed DSI of rd1-like cells with a lower spike threshold
+and voltage-based selectivity</strong> (S-0131-06)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-06` |
+| **Kind** | evaluation |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+rd1-like signed DSI was undefined on 8 of 8 cells because of the -10 mV spike threshold, while
+a post-hoc -30 mV threshold found attenuated spikes (peaks -21.8 and -29.5 mV) in 2 cells.
+Pre-declare a -30 mV threshold plus a PSP-amplitude DSI and recompute for all conditions.
+Falsifiable: DSI is defined on at least 6 of 8 rd1-like cells, else DSI is not measurable.
+Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📂 <strong>Re-read panel A-D targets from raw researcher traces instead
+of by-eye PDF values</strong> (S-0131-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-05` |
+| **Kind** | dataset |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+All t0131 calibration targets (sustained ratio 1.7, assumed transient 0.25, 11 panel D
+anchors) were read by eye from SomeResults.pdf, and absolute panel C currents (~2 nA) differ
+from model values (~480 nA) by two orders of magnitude. Obtain raw traces and cell
+capacitance, extract targets with uncertainty, and refit. Falsifiable: the sustained ratio
+target stays within 1.7+-0.2 or is revised. Recommended task types: data-analysis.
+
+</details>
+
+## Low Priority
+
+<details>
+<summary>🧪 <strong>Validate panel D toy model against NEURON using quiescent cohort
+with leave-anchors-out fitting</strong> (S-0131-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The panel D toy model matched 11 of 11 by-eye anchors by construction, while NEURON disproved
+4 of 4 predictions, but the pacemaker baseline confounds that test. Refit the toy model on 6
+anchors and predict the held-out 5, then rerun the NEURON u-sweep and three-pulse drive on
+quiescent cells. Falsifiable: held-out error above 20% or NEURON still disagrees on at least 3
+of 4. Recommended task types: comparative-analysis, experiment-run.
+
+</details>
 
 ## 2026-05-26 (11)
 

@@ -1,7 +1,7 @@
 # Suggestions: `synaptic-integration`
 
-104 suggestion(s) in category
-[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **93 open** (15 high,
+105 suggestion(s) in category
+[`synaptic-integration`](../../../meta/categories/synaptic-integration/) **94 open** (16 high,
 71 medium, 7 low), **11 closed**.
 
 [Back to all suggestions](../README.md)
@@ -376,6 +376,27 @@ x 2 gAMPA = 6 cells, 2160 trials). Pass criterion: at least one (N, gAMPA) point
 >= 5 Hz. This is the smallest single-axis test of the structural-drive hypothesis on the
 validated bar-locked substrate. Distinct from S-0052-02 (GABA-count sweep on scalar gabaMOD
 t0052, no bar-lock). Recommended task types: build-model, experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test synaptic and dendritic conductance scaling as the driver of
+rd1 spontaneous hyperactivity</strong> (S-0131-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Soma/AIS Na/K scaling gave rd1-like cells 0 Hz spontaneous activity; the dendritic arm gave
+only regular 5.4 Hz mean (ISI CV 0.005) versus the 4-10 Hz irregular target. Scale
+bipolar-input excitatory and inhibitory synaptic conductances and dendritic channels with
+noisy background drive, targeting 4-10 Hz and ISI CV above 0.5. Falsifiable: no setting meets
+both criteria on 5 of 8 cells. Recommended task types: experiment-run.
 
 </details>
 

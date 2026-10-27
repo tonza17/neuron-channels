@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-10-27T09:42:46Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-10-27T16:44:45Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>1504559</char_count>
-    <byte_count>1510348</byte_count>
-    <estimated_tokens>376139</estimated_tokens>
+    <char_count>1506473</char_count>
+    <byte_count>1512266</byte_count>
+    <estimated_tokens>376618</estimated_tokens>
     <compatibility>1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -25717,11 +25717,13 @@ Execute `t0131_rd1_na_k_remodelling_dsgc_dsi`. Hold the suggestion cleanup for b
 
 ## rd1-like Na/K remodelling of the DSGC model and its effect on DSI
 ID: t0131_rd1_na_k_remodelling_dsgc_dsi
-Status: not_started
-Effective date: unknown
+Status: completed
+Effective date: 2026-10-27
 Short description: Calibrate soma/AIS gNa and gK scaling to rd1 vs WT clamp data, test if it predicts rd1 firing, measure signed DSI, and reproduce or refute the panel-D toy model.
 Dependencies: t0121_5seed_substrate_rate_canonical_report, t0129_t0126_signed_dsi_real_rates_1seed
 Task types: experiment-run, data-analysis, comparative-analysis
+Start time: 2026-10-27T10:07:53Z
+End time: 2026-10-27T16:42:00Z
 
 #### Motivation
 
@@ -25843,6 +25845,40 @@ the clamp grid and DSI runs on 5-10 cells.
 * A single-cell model has no presynaptic network, so network-driven rd1 hyperactivity can only be
   represented by an ad hoc bias.
 * Soma and AIS scaling may not be enough; the dendritic arm is the planned fallback.
+
+### Results Summary
+
+#### Summary
+
+Local NEURON experiments on 8 LEGIT reference cells tested whether scaling soma and AIS Na and K
+conductances reproduces the researcher&#x27;s rd1 phenotype (panels A to D). The headline is mostly
+negative: only the panel C sustained-current ratio is reproduced (**1.63 to 1.70** on all 8 cells,
+every fit at the grid edge s_Na = 0.25), while evoked firing, spontaneous hyperactivity, signed DSI
+and the panel D predictions could not be reproduced because rd1-like cells never spike at the
+pre-declared -10 mV threshold.
+
+#### Metrics
+
+* **Sustained-current ratio** (rd1-like / WT-like): mean **1.674**, range **1.631 to 1.698**, 8 of 8
+  cells within 0.15 of 1.7, all fits at s_Na = **0.25** and s_K = **2.36 to 3.0**
+* **Na transient ratio**: mean **0.455** (range 0.399 to 0.573) against a 0.25 target, so the
+  transient reduction is only partly reproduced
+* **WT-like spontaneous rate**: median **73.5 Hz** (mean 78.5 Hz) without any input, versus **0 Hz**
+  for rd1-like (panel A shows the opposite); +60 pA changes nothing (40.75 vs 40.88 mean spikes)
+* **Signed DSI, WT-like**: median **0.874** (PD **86.7 Hz**, ND **3.1 Hz**), 8 of 8 cells defined
+* **Signed DSI, rd1-like**: undefined (`None`) on **8 of 8** cells with and without bias, and on 5
+  of 5 cells in the dendritic arm
+* **Panel D**: toy model matches **11 of 11** by-eye anchors within 20% (fitted to them); NEURON
+  disproves **4 of 4** predictions
+* **Cost**: **$0**, local CPU only
+
+#### Verification
+
+* `verify_task_results.py` — see the final run recorded in `results_detailed.md` (0 errors
+  required)
+* Unit tests `code/test_scaling_and_clamp.py` and `code/test_toy_model.py` — final run **8
+  passed** (two earlier runs had one failure each, fixed before the final run; see
+  `logs/commands/041_20261027T162721Z_uv-run-pytest.json`)
       </content>
     </section>
   </sections>

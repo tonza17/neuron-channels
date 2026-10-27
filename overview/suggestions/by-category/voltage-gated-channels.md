@@ -1,8 +1,8 @@
 # Suggestions: `voltage-gated-channels`
 
-107 suggestion(s) in category
-[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **90 open** (17
-high, 62 medium, 11 low), **17 closed**.
+111 suggestion(s) in category
+[`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/) **94 open** (19
+high, 63 medium, 12 low), **17 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -222,6 +222,27 @@ experiment-run, data-analysis.
 </details>
 
 <details>
+<summary>🧪 <strong>Fit rd1 scaling to a firing-aware target on quiescent cells, not
+the sustained-current ratio alone</strong> (S-0131-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-02` |
+| **Kind** | experiment |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0131 fits hit the grid edge (s_Na 0.25, s_K up to 3.0) and left rd1-like cells silent at -10
+mV. Using the quiescent cohort, extend the grid to s_Na 0.05-1.0 and s_K 1-6 and fit jointly
+sustained ratio 1.7, transient ratio 0.25, and evoked rate at +60 pA. Falsifiable: no scaling
+pair meets all three within 15% means Na/K scaling alone is insufficient. Recommended task
+types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Mg-block NMDA + bar-locked tonic GABA + AMPA-escape combination
 sweep on the t0059 substrate</strong> (S-0059-02)</summary>
 
@@ -357,6 +378,26 @@ criterion: EPSP/IPSP traces from a representative gNMDA value show no Na+ spikes
 trace is unchanged within 1e-6 mV vs current code. Recommended task types: write-library,
 infrastructure-setup. This is a project-wide infrastructure fix that benefits every future
 DSGC task.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Rebuild WT-like reference cohort from quiescent (non-pacemaker)
+Bed B cells for rd1 tests</strong> (S-0131-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-01` |
+| **Kind** | experiment |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0131 found all 8 WT-like reference cells fire ~73.5 Hz at rest with no input, so panels A and
+B have no valid WT baseline. Screen the 675-cell pool for cells with 0 Hz spontaneous rate and
+>=40 Hz evoked at +60 pA; require >=8 such cells. Falsifiable: if fewer than 8 exist, the pool
+cannot support rd1 comparisons. Recommended task types: experiment-run, data-analysis.
 
 </details>
 
@@ -552,6 +593,27 @@ Our V_rest sweep shows t0022 loses tuning at depolarised V_rest (DSI 0.046 at V=
 t0024 stays flat (DSI>=0.36). Two candidate mechanisms are Na channel inactivation and NMDA
 Mg-block relief. Run the sweep once with TTX-like Na-block (g_Na=0) and once with NMDA-block
 (g_NMDA=0) to isolate which channel class drives each model's V_rest sensitivity.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Add persistent and resurgent Na scaling to explain the unreached
+Na transient ratio (0.455 vs 0.25)</strong> (S-0131-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-03` |
+| **Kind** | technique |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+t0131 transient ratio only fell to 0.399-0.573 of WT-like even at the s_Na floor, suspected
+cause being unscaled persistent and resurgent Na channels. Add independent scale factors for
+these channels and rerun the 6x6 clamp grid on 8 cells. Falsifiable: the transient ratio
+reaches 0.25+-0.05 at a sustained ratio of 1.7+-0.15 or the hypothesis is rejected.
+Recommended task types: experiment-run.
 
 </details>
 
@@ -2245,6 +2307,27 @@ NSGA-II at the same pop=24 / gen=8 budget. The hypothesis is that the >=5 floor 
 configurations near the AIS-disabled corner that contribute to the t0080 Pareto compression.
 Compare Pareto-front geometry and joint-closest distance against t0080's >=5 result. Cost
 ~$0.75. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Validate panel D toy model against NEURON using quiescent cohort
+with leave-anchors-out fitting</strong> (S-0131-07)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-07` |
+| **Kind** | experiment |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`direction-selectivity`](../../../meta/categories/direction-selectivity/), [`voltage-gated-channels`](../../../meta/categories/voltage-gated-channels/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+The panel D toy model matched 11 of 11 by-eye anchors by construction, while NEURON disproved
+4 of 4 predictions, but the pacemaker baseline confounds that test. Refit the toy model on 6
+anchors and predict the held-out 5, then rerun the NEURON u-sweep and three-pulse drive on
+quiescent cells. Falsifiable: held-out error above 20% or NEURON still disagrees on at least 3
+of 4. Recommended task types: comparative-analysis, experiment-run.
 
 </details>
 

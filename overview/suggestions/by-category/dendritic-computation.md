@@ -1,7 +1,7 @@
 # Suggestions: `dendritic-computation`
 
-99 suggestion(s) in category
-[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **81 open** (14
+100 suggestion(s) in category
+[`dendritic-computation`](../../../meta/categories/dendritic-computation/) **82 open** (15
 high, 62 medium, 5 low), **18 closed**.
 
 [Back to all suggestions](../README.md)
@@ -359,6 +359,27 @@ dendritic NMDA, no distal Nav1.6/NaP) and run a single 8-direction x 20-seed eva
 locally. Pass: reproduce DSI within +/- 0.05 of t0076's 0.42 at PD ~ 8.34 Hz. Cheap (~$0.05,
 ~5 min wall-clock); must precede any further v3 architectural extension. Recommended task
 types: experiment-run, baseline-evaluation.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test synaptic and dendritic conductance scaling as the driver of
+rd1 spontaneous hyperactivity</strong> (S-0131-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-04` |
+| **Kind** | experiment |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`synaptic-integration`](../../../meta/categories/synaptic-integration/), [`dendritic-computation`](../../../meta/categories/dendritic-computation/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Soma/AIS Na/K scaling gave rd1-like cells 0 Hz spontaneous activity; the dendritic arm gave
+only regular 5.4 Hz mean (ISI CV 0.005) versus the 4-10 Hz irregular target. Scale
+bipolar-input excitatory and inhibitory synaptic conductances and dendritic channels with
+noisy background drive, targeting 4-10 Hz and ISI CV above 0.5. Falsifiable: no setting meets
+both criteria on 5 of 8 cells. Recommended task types: experiment-run.
 
 </details>
 

@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-21-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-17-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-53-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-54-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-132-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-521-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-528-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-4-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (51K)
-| [full](llm-context/full.xml) (815K) | [roadmap](llm-context/roadmap.xml) (161K) |
-[results](llm-context/results-deep-dive.xml) (622K) |
+| [full](llm-context/full.xml) (826K) | [roadmap](llm-context/roadmap.xml) (161K) |
+[results](llm-context/results-deep-dive.xml) (631K) |
 [assets](llm-context/literature-and-assets.xml) (80K)
 
-*Last updated: 2026-10-27 09:42 UTC*
+*Last updated: 2026-10-27 16:44 UTC*
 
 * **Budget**: **$67** spent of $100
 * **Remaining**: **$33**
@@ -61,11 +61,10 @@
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0131 | [rd1-like Na/K remodelling of the DSGC model and its effect on DSI](../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) | [`description`](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
 
@@ -85,10 +84,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (122 total)](tasks/by-status/completed.md)
+## [Recently Completed (123 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0131 | [rd1-like Na/K remodelling of the DSGC model and its effect on DSI](../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) | [`results`](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/results/results_detailed.md) | 2026-10-27 16:42 |
 | 0130 | [Brainstorm results session 24](../overview/tasks/task_pages/t0130_brainstorm_results_24.md) | [`results`](../tasks/t0130_brainstorm_results_24/results/results_detailed.md) | 2026-10-27 09:40 |
 | 0129 | [Reproduce t0126 with signed DSI=(PD-ND)/(PD+ND) and real per-cell firing rates](../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) | [`results`](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/results_detailed.md) | 2026-05-26 21:05 |
 | 0127 | [Correct t0126 suggestions S-0126-01 and S-0126-06 (synthesised cell_trace)](../overview/tasks/task_pages/t0127_correct_t0126_cell_trace_suggestions.md) | [`results`](../tasks/t0127_correct_t0126_cell_trace_suggestions/results/results_detailed.md) | 2026-05-26 00:30 |
@@ -98,9 +98,8 @@ No blocked tasks.
 | 0123 | [NSGA-II maximising MI and minimising ATP-per-spike (Bed B + 14-d morph)](../overview/tasks/task_pages/t0123_bedb_mi_atp_per_spike_nsga2.md) | [`results`](../tasks/t0123_bedb_mi_atp_per_spike_nsga2/results/results_detailed.md) | 2026-05-24 21:08 |
 | 0122 | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | [`results`](../tasks/t0122_dsi_cytoplasm_volume_nsga2/results/results_detailed.md) | 2026-05-24 06:30 |
 | 0121 | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) | [`results`](../tasks/t0121_5seed_substrate_rate_canonical_report/results/results_detailed.md) | 2026-05-24 02:25 |
-| 0120 | [Morphology generator geometry audit (15-20 cells)](../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) | [`results`](../tasks/t0120_morph_generator_geometry_audit/results/results_detailed.md) | 2026-05-24 00:45 |
 
-*112 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*113 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
@@ -125,7 +124,111 @@ No blocked tasks.
 
 ---
 
-## [Recent Suggestions (470 open)](suggestions/)
+## [Recent Suggestions (477 open)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Rebuild WT-like reference cohort from quiescent (non-pacemaker)
+Bed B cells for rd1 tests</strong> (S-0131-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+t0131 found all 8 WT-like reference cells fire ~73.5 Hz at rest with no input, so panels A and
+B have no valid WT baseline. Screen the 675-cell pool for cells with 0 Hz spontaneous rate and
+>=40 Hz evoked at +60 pA; require >=8 such cells. Falsifiable: if fewer than 8 exist, the pool
+cannot support rd1 comparisons. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Fit rd1 scaling to a firing-aware target on quiescent cells, not
+the sustained-current ratio alone</strong> (S-0131-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+t0131 fits hit the grid edge (s_Na 0.25, s_K up to 3.0) and left rd1-like cells silent at -10
+mV. Using the quiescent cohort, extend the grid to s_Na 0.05-1.0 and s_K 1-6 and fit jointly
+sustained ratio 1.7, transient ratio 0.25, and evoked rate at +60 pA. Falsifiable: no scaling
+pair meets all three within 15% means Na/K scaling alone is insufficient. Recommended task
+types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🔧 <strong>Add persistent and resurgent Na scaling to explain the unreached
+Na transient ratio (0.455 vs 0.25)</strong> (S-0131-03)</summary>
+
+**Kind**: technique | **Priority**: medium | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+t0131 transient ratio only fell to 0.399-0.573 of WT-like even at the s_Na floor, suspected
+cause being unscaled persistent and resurgent Na channels. Add independent scale factors for
+these channels and rerun the 6x6 clamp grid on 8 cells. Falsifiable: the transient ratio
+reaches 0.25+-0.05 at a sustained ratio of 1.7+-0.15 or the hypothesis is rejected.
+Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test synaptic and dendritic conductance scaling as the driver of
+rd1 spontaneous hyperactivity</strong> (S-0131-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+Soma/AIS Na/K scaling gave rd1-like cells 0 Hz spontaneous activity; the dendritic arm gave
+only regular 5.4 Hz mean (ISI CV 0.005) versus the 4-10 Hz irregular target. Scale
+bipolar-input excitatory and inhibitory synaptic conductances and dendritic channels with
+noisy background drive, targeting 4-10 Hz and ISI CV above 0.5. Falsifiable: no setting meets
+both criteria on 5 of 8 cells. Recommended task types: experiment-run.
+
+</details>
+
+<details>
+<summary>📂 <strong>Re-read panel A-D targets from raw researcher traces instead
+of by-eye PDF values</strong> (S-0131-05)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+All t0131 calibration targets (sustained ratio 1.7, assumed transient 0.25, 11 panel D
+anchors) were read by eye from SomeResults.pdf, and absolute panel C currents (~2 nA) differ
+from model values (~480 nA) by two orders of magnitude. Obtain raw traces and cell
+capacitance, extract targets with uncertainty, and refit. Falsifiable: the sustained ratio
+target stays within 1.7+-0.2 or is revised. Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>📊 <strong>Measure signed DSI of rd1-like cells with a lower spike threshold
+and voltage-based selectivity</strong> (S-0131-06)</summary>
+
+**Kind**: evaluation | **Priority**: medium | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+rd1-like signed DSI was undefined on 8 of 8 cells because of the -10 mV spike threshold, while
+a post-hoc -30 mV threshold found attenuated spikes (peaks -21.8 and -29.5 mV) in 2 cells.
+Pre-declare a -30 mV threshold plus a PSP-amplitude DSI and recompute for all conditions.
+Falsifiable: DSI is defined on at least 6 of 8 rd1-like cells, else DSI is not measurable.
+Recommended task types: data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Validate panel D toy model against NEURON using quiescent cohort
+with leave-anchors-out fitting</strong> (S-0131-07)</summary>
+
+**Kind**: experiment | **Priority**: low | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+The panel D toy model matched 11 of 11 by-eye anchors by construction, while NEURON disproved
+4 of 4 predictions, but the pacemaker baseline confounds that test. Refit the toy model on 6
+anchors and predict the held-out 5, then rerun the NEURON u-sweep and three-pulse drive on
+quiescent cells. Falsifiable: held-out error above 20% or NEURON still disagrees on at least 3
+of 4. Recommended task types: comparative-analysis, experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Re-run t0126 seed 8929 with t0129 signed-DSI evaluator to recover
@@ -186,153 +289,55 @@ sign-collapse-contaminated. Recommended task types: data-analysis, comparative-a
 
 </details>
 
-<details>
-<summary>🧪 <strong>Re-run t0124 NSGA-II under signed DSI on t0124 GA seeds to test
-whether the DSI-ATP frontier depends on sign convention</strong>
-(S-0129-04)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
-[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
-
-t0124 ran NSGA-II on DSI vs ATP/spike with vector-sum DSI as the first objective. t0129 shows
-on a single seed that 95/5,496 viable cells (1.7%) have negative signed DSI; the t0129 Pareto
-front happens to contain no reversed-preference cells (they are dominated by DSI=0 cells at
-the ATP minimum), but t0124's particular seed and termination might have surfaced reversed
-cells onto its front. Re-run the t0124 NSGA-II protocol on t0124's GA seeds with the t0129
-evaluator (signed DSI as first objective, real PD/ND rates) and report (a) cell-by-cell
-sign-flip count among t0124's recorded Pareto cells, and (b) whether the re-run Pareto front
-contains any cell with dsi_signed < 0. Expected cost: per-seed cost of t0126 envelope
-(~$1/seed). Recommended task types: experiment-run, comparative-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>Re-fit t0116 strict-cohort factor analysis using signed DSI to
-test the no-joint-factor verdict</strong> (S-0129-05)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
-[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
-
-t0116 reported zero joint DSI-PD factors on the strict-cohort (vector-sum DSI > 0.7 AND PD >
-10 Hz) pool, the finding that the memory project_truncated_cohort_artefact_confirmed.md
-attributes to range restriction. The DSI > 0.7 cutoff was applied to vector-sum DSI: any
-reversed-preference cell with |signed DSI| > 0.7 would have entered the cohort despite firing
-more in the ND direction. Recompute signed DSI on the cells in t0116's pool, drop cells with
-dsi_signed < 0.7 (the literature-correct filter), refit the factor analysis on the corrected
-strict cohort, and compare joint-factor counts and loadings to t0116's original. Decision
-rule: identical verdict means sign collapse did not materially affect cohort selection;
-different verdict means t0116's strict-cohort finding was partly sign-collapse-dependent.
-Recommended task types: data-analysis, comparative-analysis.
-
-</details>
-
-<details>
-<summary>📊 <strong>Re-fit t0125 MI/ATP cluster-factor analysis with signed-DSI
-cohort filtering to test the zero-joint-factor verdict</strong> (S-0129-06)</summary>
-
-**Kind**: evaluation | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
-[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
-
-t0125 analysed MI-vs-ATP cluster-factor structure on a single-seed MI NSGA-II run and reported
-a near-zero joint MI-ATP factor. The cohort selection and factor inputs use vector-sum DSI as
-a covariate / cohort gate. Reversed-preference cells with high |signed DSI| are mis-classified
-as preferring PD, which could distort the MI calculation (MI is direction-symmetric but cell
-labels for cohort filtering are not). Apply the signed-DSI recoding to t0125's per-cell
-parquet using whatever per-direction spike data is recoverable, refit the cluster-factor
-pipeline on the corrected cohort, and report whether the joint-factor verdict changes. If
-per-direction spike counts are not recoverable for t0125, report this as the scope-of-recovery
-limitation and recommend the smaller-scope alternative of a fresh MI NSGA-II re-run with the
-t0129 evaluator on one fresh seed. Recommended task types: data-analysis,
-comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Deep-dive (Vm traces, morphology, dendritic-spike attribution) on
-t0129 Pareto cells 4 (DSI=1.0) and 7 (DSI=0.87)</strong> (S-0129-07)</summary>
-
-**Kind**: experiment | **Priority**: medium | **Date**: 2026-05-26 | **Source**:
-[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
-
-Pareto cell 4 (gen 57, signed DSI=1.0, PD rate 6.43 Hz, ND rate 0.0 Hz, ATP 6.66 M
-molec/spike) is the canonical ND-silenced DSGC corner, and Pareto cell 7 (gen 59, DSI=0.870,
-PD rate 10.24 Hz, ND rate 0.71 Hz, ATP 5.03 M molec/spike) is the highest-PD-rate Pareto cell
-with both PD rate and ATP/spike within the Sivyer-2013 physiological band (5-15 Hz PD rate,
-sub-10 M molec/spike). Re-simulate both cells with full Vm traces at soma and 3 dendritic
-loci, render the morphology with full dendrite tree at the same orientation, and run the
-standard dendritic-spike-attribution analysis (per-compartment Nav/Kv/Ih conductance
-contributions to ATP/spike). Output: 2-cell deep-dive PNG bundle + per-cell Carter-Bean
-ATP/AP/cm decomposition + Wei2018 figure-style Vm trace plate. Recommended task types:
-experiment-run, data-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Formalise the t0129 cell_params.jsonl per-cell parameter-dump
-protocol as a project-wide NSGA-II evaluator standard</strong> (S-0129-08)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-05-26 | **Source**:
-[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
-
-t0129 introduced cell_params.jsonl as the per-cell diagnostic sink, replacing the
-env-var-driven cell_trace.jsonl pattern that t0126 used and that silently dropped data in
-worker processes (memory feedback_nsga2_launch_via_run_script and
-project_t0126_cell_trace_synthesised). The t0129 implementation captures the sink path at
-problem-constructor time (BedBV3MorphProblem.__init__), pickling it into every worker, which
-closes the failure mode. The schema (gen, cell_idx, param_vector, dsi_signed, atp_per_spike,
-pd_rate_hz, nd_rate_hz, silence_failed, n_errors) is enough to reconstruct any
-parameter-vs-objective scatter or factor analysis. Promote this to a documented project-wide
-pattern: write a meta/specifications file (or extend the existing evaluator template) defining
-the schema, the constructor-capture pattern, and a verificator that asserts cell_params.jsonl
-exists and is non-empty after Phase A. Recommended task types: infrastructure-setup,
-write-library.
-
-</details>
-
-<details>
-<summary>📊 <strong>Adopt signed antipodal DSI as the canonical DSI metric across all
-DSGC project tasks; deprecate vector-sum DSI</strong> (S-0129-09)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-26 | **Source**:
-[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
-
-The signed-vs-vector-sum DSI distinction is not aesthetic: vector-sum gives a 50%-wrong answer
-about preferred direction for 1.7% of viable cells on the t0129 cohort, and the DS-RGC
-literature (Wei 2018, Sivyer 2013) uses the signed definition exclusively. The two metrics'
-magnitudes are arithmetically equal on the antipodal pair, so adoption is zero-cost for
-existing analyses (they can re-read |dsi_signed| where they used dsi_vector_sum). Concrete
-action: (a) update meta/metrics/direction_selectivity_index/specification.md to state
-signed-antipodal as the canonical formula, (b) add a deprecation note pointing to t0129 for
-the rationale, (c) update the evaluator template and the t0080 baseline to expose dsi_signed
-as the canonical field, (d) leave t0126's frozen dsi_vector_sum field name in place per
-immutability but flag it via a metric correction overlay. Recommended task types:
-infrastructure-setup, correction.
-
-</details>
-
-<details>
-<summary>📊 <strong>Cross-task audit: enumerate every downstream task that consumed
-t0126's pd_rate_hz=40 placeholder</strong> (S-0129-10)</summary>
-
-**Kind**: evaluation | **Priority**: high | **Date**: 2026-05-26 | **Source**:
-[t0129_t0126_signed_dsi_real_rates_1seed](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/)
-
-Memory project_t0126_cell_trace_synthesised confirms t0126's per-cell pd_rate_hz=40 was a
-synthesised placeholder; t0129 confirms the true Pareto-median PD rate is 2.62 Hz and the
-Pareto-max PD rate is 10.24 Hz (off by 4x to 20x). Any downstream analysis that filtered
-cells, computed thresholds, or scored cells using t0126's pd_rate_hz is potentially
-miscalibrated. Walk every task in tasks/ that lists t0126 as a dependency or reads t0126's
-predictions asset, scan their code/research/results for references to pd_rate_hz, and produce
-a single audit table (task ID, file, line, threshold-or-statistic-used, affected-metric,
-recommended-correction). Recommended task types: data-analysis, correction.
-
-</details>
-
-*460 more open suggestions → [open suggestions](suggestions/)*
+*467 more open suggestions → [open suggestions](suggestions/)*
 
 ---
 
-## [High Priority Suggestions (82)](suggestions/)
+## [High Priority Suggestions (85)](suggestions/)
+
+<details>
+<summary>🧪 <strong>Rebuild WT-like reference cohort from quiescent (non-pacemaker)
+Bed B cells for rd1 tests</strong> (S-0131-01)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+t0131 found all 8 WT-like reference cells fire ~73.5 Hz at rest with no input, so panels A and
+B have no valid WT baseline. Screen the 675-cell pool for cells with 0 Hz spontaneous rate and
+>=40 Hz evoked at +60 pA; require >=8 such cells. Falsifiable: if fewer than 8 exist, the pool
+cannot support rd1 comparisons. Recommended task types: experiment-run, data-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Fit rd1 scaling to a firing-aware target on quiescent cells, not
+the sustained-current ratio alone</strong> (S-0131-02)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+t0131 fits hit the grid edge (s_Na 0.25, s_K up to 3.0) and left rd1-like cells silent at -10
+mV. Using the quiescent cohort, extend the grid to s_Na 0.05-1.0 and s_K 1-6 and fit jointly
+sustained ratio 1.7, transient ratio 0.25, and evoked rate at +60 pA. Falsifiable: no scaling
+pair meets all three within 15% means Na/K scaling alone is insufficient. Recommended task
+types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Test synaptic and dendritic conductance scaling as the driver of
+rd1 spontaneous hyperactivity</strong> (S-0131-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+Soma/AIS Na/K scaling gave rd1-like cells 0 Hz spontaneous activity; the dendritic arm gave
+only regular 5.4 Hz mean (ISI CV 0.005) versus the 4-10 Hz irregular target. Scale
+bipolar-input excitatory and inhibitory synaptic conductances and dendritic channels with
+noisy background drive, targeting 4-10 Hz and ISI CV above 0.5. Falsifiable: no setting meets
+both criteria on 5 of 8 cells. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Re-run t0126 seed 8929 with t0129 signed-DSI evaluator to recover
@@ -474,77 +479,32 @@ poll-progress skill. Recommended task types: infrastructure-setup, write-library
 
 </details>
 
-<details>
-<summary>🧪 <strong>Multi-seed MI/ATP NSGA-II replicate to test seed dependence of
-the zero-joint-factor verdict</strong> (S-0125-01)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-t0125's zero-joint MI x ATP varimax verdict is derived from a SINGLE NSGA-II seed (441).
-Precedent: t0116 (single seed) found no joint DSI x PD factor; t0117 (4 seeds) recovered one.
-The verdict is known to be seed-sensitive on this substrate. Action: replicate t0123 on 2-3
-additional non-round GA seeds (POP_SIZE=96, N_EVAL_SEEDS=3, N_GEN_MAX=60, COST_CAP_USD=6,
-HV-plateau auto-stop DISABLED per memory feedback_disable_hv_plateau_autostop,
-_POOL_RESTART_EVERY=10) and rerun the t0125 cluster + Kaiser-cap varimax pipeline on the
-pooled 4-seed pool. Predicted outcome: either F1's ATP loading crosses 0.30 (joint factor
-reappears) or stays decoupled (objective-pair-specific verdict confirmed). Budget ~$15-25
-Vast.ai EPYC. Recommended task types: experiment-run, data-analysis, comparative-analysis.
-
-</details>
-
-<details>
-<summary>🧪 <strong>Patch t0080 with an explicit myelinated axon to fix the
-soma-vs-axon ATP-share inversion vs Attwell 2001</strong> (S-0125-02)</summary>
-
-**Kind**: experiment | **Priority**: high | **Date**: 2026-05-25 | **Source**:
-[t0125_t0123_cluster_factor_mi_atp](../tasks/t0125_t0123_cluster_factor_mi_atp/)
-
-t0125 finds 76.7% soma / 5.5% AIS / 17.8% dendrite ATP share -- inverted from Attwell &
-Laughlin 2001's 4% soma / 82% axon / 14% dendrite rodent-cortical breakdown. methodology_notes
-and compare_literature attribute this to t0080 lacking an explicit myelinated axon (only a
-procedural AIS). Action: extend the t0080 cell builder with one or two nodes of Ranvier +
-myelin segments at realistic R_m (~50 kOhm cm^2), C_m (~0.04 uF/cm^2), and Na/K channel
-densities; re-run t0123's MI vs ATP-per-spike NSGA-II at matched compute; re-check
-soma/AIS/axon/dendrite ATP shares against Attwell 2001 Table 4 and Sengupta 2010. Test whether
-the Pareto front shifts and whether compartment-ATP diversity broadens to match the rodent
-picture. Budget ~$10-15 Vast.ai EPYC. Recommended task types: build-model, experiment-run,
-comparative-analysis.
-
-</details>
-
-<details>
-<summary>📚 <strong>Per-Pareto-cell AIS ATP/AP/cm aggregator: recover per-segment
-ATP-per-AP from saved cell traces (inherited gap from t0124)</strong>
-(S-0126-02)</summary>
-
-**Kind**: library | **Priority**: high | **Date**: 2026-05-25 | **Source**:
-[t0126_bedb_dsi_atp_per_spike_nsga2_60gen](../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/)
-
-comparator_report.json reports measured_atp_per_ap_per_cm = 0 for all 6 t0126 Pareto cells
-(label "fail", within_band=false) -- inherited verbatim from t0124. The canonical anchor
-cell's smoke-gate value (6.138e8 ATP/AP/cm, inside the Carter-Bean [1e8, 1e9] band) validates
-the recipe at smoke-gate time, but the post-run aggregator does not recompute per-segment
-ATP-per-AP at the AIS for each Pareto cell from the saved per-segment seg.ina traces. This
-forces the Carter2009 per-cell band test to NOT MEASURED on every t0122/t0124/t0126 run
-despite the per-compartment data being present in cell_trace_seed*.jsonl. Action: write
-per_cell_carter_bean_aggregator.py that (a) loads cell_trace_seed*.jsonl for each Pareto cell,
-(b) detects APs at the AIS via -20 mV crossing + 2 ms refractory, (c) integrates inward I_Na
-within +/-2 ms of each AP at each AIS segment, (d) divides by 3*e*A_cm to produce ATP/AP/cm
-per AIS segment, (e) aggregates median over AIS segments per cell, (f) tests against the
-canonical [1e8, 1e9] band and the [3e7, 3e9] PASS band, (g) emits per-cell labels in the
-updated comparator_report.json. Re-run on t0122/t0124/t0126 Pareto fronts. Distinct from
-S-0124-06 (Hallermann per-compartment alpha decomposition; a different physical quantity) and
-S-0124-08 (AP-width vs ATP/spike, somatic Vm only). Recommended task types: data-analysis,
-write-library, comparative-analysis.
-
-</details>
-
-*72 more high-priority suggestions → [high-priority suggestions](suggestions/)*
+*75 more high-priority suggestions → [high-priority suggestions](suggestions/)*
 
 ---
 
-## [Recent Answers (53 total)](answers/)
+## [Recent Answers (54 total)](answers/)
+
+<details>
+<summary><strong>Does rd1-like remodelling of soma and AIS Na and K conductances in
+the Bed B DSGC model reproduce the researcher's rd1 phenotype (panels A to
+C), and what does it do to signed direction selectivity and to the panel
+D toy-model predictions?</strong></summary>
+
+**Confidence**: medium | **Date**: 2026-10-27 | **Full answer**:
+[`does-rd1-like-na-k-remodelling-of-the-dsgc-model-reproduce-the-rd1-phenotype-and-change-dsi`](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/assets/answer/does-rd1-like-na-k-remodelling-of-the-dsgc-model-reproduce-the-rd1-phenotype-and-change-dsi/)
+
+No, only the clamp-current ratio is reproduced: the sustained-current ratio reaches 1.63 to
+1.70 on all 8 reference cells, but only at the grid edges (s_Na 0.25, s_K 2.36 to 3.0), and
+the Na transient falls to 0.40 to 0.57 of WT-like instead of 0.25. The WT-like reference cells
+fire spontaneously at a median of 73.5 Hz without any input, so panels A and B cannot be
+tested as intended. The rd1-like cells are silent in every current-clamp, bias and synaptic
+protocol (dendritic arm included), signed DSI is therefore undefined for rd1-like cells, and
+all four panel D predictions are disproved in the NEURON model, whereas the toy model matches
+its by-eye anchors by construction. This rests on local NEURON experiments on 8 LEGIT cells
+(exploratory, with by-eye targets).
+
+</details>
 
 <details>
 <summary><strong>Does the signed-DSI re-evaluation of t0126's protocol change the
@@ -719,23 +679,7 @@ the elevated point estimate.
 
 </details>
 
-<details>
-<summary><strong>Does NSGA-II with a cytoplasm-volume cost objective produce a
-high-DSI front in Cuntz 2010's predicted balancing-factor [0.2, 0.7]
-band?</strong></summary>
-
-**Confidence**: medium | **Date**: 2026-05-24 | **Full answer**:
-[`cuntz-balancing-factor-prediction-check`](../tasks/t0122_dsi_cytoplasm_volume_nsga2/assets/answer/cuntz-balancing-factor-prediction-check/)
-
-Yes. The t0122 single-seed NSGA-II run produced a high-DSI Pareto front whose top-10 cells
-(ranked by DSI) place 10 of 10 (finite bf) cells inside the Cuntz 2010 [0.2, 0.7] empirical
-band. Adding the cytoplasm-volume cost objective pushed the optimiser toward morphologies
-consistent with the Cajal wiring-economy principle. This is evidence in favour of using
-cytoplasm volume as a biological-cost regulariser in subsequent DSGC MOBO runs.
-
-</details>
-
-*43 more answers → [answers](answers/)*
+*44 more answers → [answers](answers/)*
 
 ---
 

@@ -6,7 +6,7 @@ Summation and interaction of excitatory and inhibitory synaptic inputs.
 
 **Detail pages**: [Papers (50)](../papers/by-category/synaptic-integration.md) | [Answers
 (8)](../answers/by-category/synaptic-integration.md) | [Suggestions
-(104)](../suggestions/by-category/synaptic-integration.md) | [Libraries
+(105)](../suggestions/by-category/synaptic-integration.md) | [Libraries
 (7)](../libraries/by-category/synaptic-integration.md) | [Predictions
 (2)](../predictions/by-category/synaptic-integration.md)
 
@@ -2788,7 +2788,22 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (93 open, 11 closed)
+## Suggestions (94 open, 11 closed)
+
+<details>
+<summary>🧪 <strong>Test synaptic and dendritic conductance scaling as the driver of
+rd1 spontaneous hyperactivity</strong> (S-0131-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+Soma/AIS Na/K scaling gave rd1-like cells 0 Hz spontaneous activity; the dendritic arm gave
+only regular 5.4 Hz mean (ISI CV 0.005) versus the 4-10 Hz irregular target. Scale
+bipolar-input excitatory and inhibitory synaptic conductances and dendritic channels with
+noisy background drive, targeting 4-10 Hz and ISI CV above 0.5. Falsifiable: no setting meets
+both criteria on 5 of 8 cells. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>NMDA vs Nav dichotomy on the high-DSI corner: is NMDA-driven DSI

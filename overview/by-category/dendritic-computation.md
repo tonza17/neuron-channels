@@ -6,7 +6,7 @@ Signal processing that occurs in dendrites prior to somatic spike generation.
 
 **Detail pages**: [Papers (45)](../papers/by-category/dendritic-computation.md) | [Answers
 (13)](../answers/by-category/dendritic-computation.md) | [Suggestions
-(99)](../suggestions/by-category/dendritic-computation.md) | [Datasets
+(100)](../suggestions/by-category/dendritic-computation.md) | [Datasets
 (1)](../datasets/by-category/dendritic-computation.md) | [Libraries
 (1)](../libraries/by-category/dendritic-computation.md) | [Predictions
 (6)](../predictions/by-category/dendritic-computation.md)
@@ -2665,7 +2665,22 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (81 open, 18 closed)
+## Suggestions (82 open, 18 closed)
+
+<details>
+<summary>🧪 <strong>Test synaptic and dendritic conductance scaling as the driver of
+rd1 spontaneous hyperactivity</strong> (S-0131-04)</summary>
+
+**Kind**: experiment | **Priority**: high | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+Soma/AIS Na/K scaling gave rd1-like cells 0 Hz spontaneous activity; the dendritic arm gave
+only regular 5.4 Hz mean (ISI CV 0.005) versus the 4-10 Hz irregular target. Scale
+bipolar-input excitatory and inhibitory synaptic conductances and dendritic channels with
+noisy background drive, targeting 4-10 Hz and ISI CV above 0.5. Falsifiable: no setting meets
+both criteria on 5 of 8 cells. Recommended task types: experiment-run.
+
+</details>
 
 <details>
 <summary>🧪 <strong>Deep-dive (Vm traces, morphology, dendritic-spike attribution) on

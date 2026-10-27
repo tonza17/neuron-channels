@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="roadmap" generated_at_utc="2026-10-27T09:42:46Z">
+<llm_context_archive preset_id="roadmap" generated_at_utc="2026-10-27T16:44:45Z">
   <archive_summary>
     <title>Roadmap</title>
     <description>Project planning preset centered on upcoming tasks and open suggestions.</description>
     <use_case>Deciding what to do next, prioritizing experiments, and planning follow-up work.</use_case>
     <section_count>5</section_count>
-    <char_count>642419</char_count>
-    <byte_count>642964</byte_count>
-    <estimated_tokens>160604</estimated_tokens>
+    <char_count>642223</char_count>
+    <byte_count>642768</byte_count>
+    <estimated_tokens>160555</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -234,9 +234,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0127_correct_t0126_cell_trace_suggestions</id>
         <id>t0129_t0126_signed_dsi_real_rates_1seed</id>
         <id>t0130_brainstorm_results_24</id>
+        <id>t0131_rd1_na_k_remodelling_dsgc_dsi</id>
       </source_ids>
       <content>
-Completed tasks: 122
+Completed tasks: 123
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -969,6 +970,12 @@ ID: t0130_brainstorm_results_24
 Completed: 2026-10-27
 Short description: Brainstorm 24: commission one standalone rd1-like Na/K remodelling task (voltage clamp, current clamp, direction selectivity, panel-D toy reproduction); suggestion cleanup deferred to next session.
 Result summary: Results Summary: Brainstorm Session 24 Summary One new task was commissioned, `t0131_rd1_na_k_remodelling_dsgc_dsi`, to test whether rd1-like Na/K remodelling of the DSGC model reproduces the researcher&#x27;s rd1 vs WT phenotype and what it does to direction selectivity. Suggestion cleanup was deferred to the next session at the researcher&#x27;s request, so **0** corrections were written. Session Overview * **Date**: 2026-10-27. * **Context**: the researcher supplied `SomeResults.pdf` (panels A-D): rd1 RGCs show higher spontaneous firing (~7 Hz vs near silent), almost no evoked spiking at +60 pA, a ~1.7x larger sustained K current and a smaller Na transient. Panel D is a preliminary toy input-output...
+
+## rd1-like Na/K remodelling of the DSGC model and its effect on DSI
+ID: t0131_rd1_na_k_remodelling_dsgc_dsi
+Completed: 2026-10-27
+Short description: Calibrate soma/AIS gNa and gK scaling to rd1 vs WT clamp data, test if it predicts rd1 firing, measure signed DSI, and reproduce or refute the panel-D toy model.
+Result summary: Results Summary: rd1-like Na/K Remodelling of the DSGC Model and Its Effect on DSI Summary Local NEURON experiments on 8 LEGIT reference cells tested whether scaling soma and AIS Na and K conductances reproduces the researcher&#x27;s rd1 phenotype (panels A to D). The headline is mostly negative: only the panel C sustained-current ratio is reproduced (**1.63 to 1.70** on all 8 cells, every fit at the grid edge s_Na = 0.25), while evoked firing, spontaneous hyperactivity, signed DSI and the panel D predictions could not be reproduced because rd1-like cells never spike at the pre-declared -10 mV threshold. Metrics * **Sustained-current ratio** (rd1-like / WT-like): mean **1.674**, range **1.631 to...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -979,10 +986,9 @@ Result summary: Results Summary: Brainstorm Session 24 Summary One new task was 
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
         <id>t0128_t0127_rerun_dsi_atp_3seeds</id>
-        <id>t0131_rd1_na_k_remodelling_dsgc_dsi</id>
       </source_ids>
       <content>
-Planned or active tasks: 5
+Planned or active tasks: 4
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1560,134 +1566,6 @@ After all three NSGA-II runs complete:
   overlay still resolves cleanly through to S-0127-01 / this task&#x27;s outputs).
 * Pooled n &gt;= 20 OR an honest intervention recorded if pooled n &lt; 20 with a recommended next action
   (extra seed).
-
-## rd1-like Na/K remodelling of the DSGC model and its effect on DSI
-ID: t0131_rd1_na_k_remodelling_dsgc_dsi
-Status: not_started
-Effective date: unknown
-Short description: Calibrate soma/AIS gNa and gK scaling to rd1 vs WT clamp data, test if it predicts rd1 firing, measure signed DSI, and reproduce or refute the panel-D toy model.
-Dependencies: t0121_5seed_substrate_rate_canonical_report, t0129_t0126_signed_dsi_real_rates_1seed
-
-#### Motivation
-
-The researcher&#x27;s preliminary data (`SomeResults.pdf`, repository root, panels A-D) show that FVB/N
-rd1 retinal ganglion cells differ from mature wild-type (WT) cells in four ways: elevated
-spontaneous activity, weaker evoked spiking, a smaller voltage-gated Na current and a larger
-sustained K current. This task tests whether remodelling the soma and AIS conductances of the
-existing DSGC model reproduces that phenotype, and what the remodelling does to direction
-selectivity (project Research Questions 1 and 4). It also tests the researcher&#x27;s much simpler toy
-model of input-output distortion (panel D) against the compartmental model.
-
-#### Calibration Targets (read by eye from the figure, approximate)
-
-| Panel | WT | rd1 |
-| --- | --- | --- |
-| A: spontaneous, 2 s | Near silent | About 14 spikes in 2 s (~7 Hz), irregular or bursty, ~60 mV tall |
-| B: +60 pA step, 500 ms | About 4 adapting spikes (~8 Hz), peaks ~90, 70, 65 mV | Almost no spiking, small blips at onset |
-| C: +100 mV voltage step | Sustained outward ~2 nA, early inward Na transient | Sustained outward ~3.5 nA (~1.7x), much smaller inward transient |
-
-If the researcher supplies exact traces, replace these numbers and record the change in
-`results_detailed.md`.
-
-#### Scope
-
-All runs are local NEURON simulations. No remote machines, cost $0.
-
-* **Reference cells**: 5-10 LEGIT high-DSI cells drawn with a fixed seed from the t0121 pooled
-  parquet (dependency `t0121_5seed_substrate_rate_canonical_report`). List the chosen cell IDs.
-* **Evaluator**: reuse the signed antipodal DSI evaluator and `cell_params.jsonl` per-cell parameter
-  dump from `t0129_t0126_signed_dsi_real_rates_1seed`.
-* **Conditions**: WT-like (scale 1.0 on gNa and gK) and rd1-like (scaling from Part 1) for every
-  reference cell.
-
-#### Part 1: Voltage-Clamp Calibration (panel C)
-
-1. Replicate the +100 mV voltage step at the soma on each reference cell.
-2. Sweep soma plus AIS gNa scale (0.25-1.0x) against gK scale (1-3x) on a grid of at least 6 x 6.
-3. Choose the rd1-like scaling that matches the sustained-current ratio (~1.7x) and the reduced
-   inward transient. Set the scaling from clamp data only; do not use any firing data.
-4. Report the fitted scalings per cell and their spread across cells.
-
-#### Part 2: Current-Clamp Prediction (panels A and B)
-
-1. With the Part 1 scalings, run the +60 pA, 500 ms step for WT-like and rd1-like cells. This is an
-   out-of-sample test: report whether evoked firing collapses as in panel B.
-2. For panel A, add a weak tonic bias current or noise at rest (exploratory; any form that works is
-   acceptable, but state exactly what was used and how it was tuned). Check whether rd1-like cells
-   fire irregularly at ~7 Hz while WT-like cells stay near silent.
-3. Report f-I curves, spike amplitude, adaptation index and spontaneous rate for both conditions.
-4. If soma and AIS scaling alone does not reproduce the phenotype, add a second arm that also scales
-   dendritic channels and rerun Parts 1-2 for that arm.
-
-#### Part 3: Direction Selectivity
-
-1. Run the standard protocol for WT-like and rd1-like cells: HH on, 8 directions, fixed 1400 ms
-   trials. Use the EPSP_PASSIVE / IPSP_PASSIVE / FULL mode trio only where the existing protocol
-   calls for it.
-2. Report signed antipodal DSI = (PD - ND) / (PD + ND), PD rate and ND rate per cell and condition,
-   with and without the tonic bias from Part 2.
-3. Produce a DSI-versus-scaling heatmap over the Part 1 gNa x gK grid.
-
-#### Part 4: Reproduce or Refute Panel D
-
-Panel D is a toy model by the researcher. The same input (three Gaussian pulses at about 180, 430
-and 680 ms over 1000 ms) drives a WT-like and an rd1-like cell. Its predictions are:
-
-* WT output grows gradually with input strength (0-100, reaching ~15); rd1 output is flat and
-  saturated (~23) at all but the lowest strengths.
-* WT output is cleaner and stimulus-locked; rd1 output has an elevated baseline (~0.35), broader and
-  less distinct peaks.
-
-Steps:
-
-1. Build the simple toy model (a rate or threshold-type model with WT-like and rd1-like parameters)
-   matching this description and check that it reproduces panel D. If it cannot be reproduced from
-   the description, state that and list what is missing.
-2. Test both predictions in the NEURON model: sweep PD synaptic drive strength and compare the
-   WT-like and rd1-like output curves; drive both with the three-pulse input and compare baseline,
-   stimulus-locking and peak distinctness.
-3. State for each prediction whether it is reproduced, partly reproduced or disproved.
-
-#### Key Questions
-
-1. Does Part 1 yield rd1-like scalings that reproduce the panel C current ratio on all reference
-   cells?
-2. Do those scalings, with no firing data in the fit, collapse evoked firing at +60 pA?
-3. Can a tonic bias give ~7 Hz irregular spontaneous firing in rd1-like but not WT-like cells?
-4. Does rd1-like remodelling raise, lower or leave unchanged signed DSI, and does the answer depend
-   on the tonic bias?
-5. Does the compartmental model reproduce the panel D saturation and temporal-smearing predictions?
-
-#### Expected Outputs
-
-* Charts in `results/images/`, each embedded in `results_detailed.md`:
-  * Panel C replication: voltage-clamp current traces, WT-like vs rd1-like (time vs nA).
-  * gNa x gK calibration grid: sustained-current ratio and transient amplitude.
-  * Current-clamp traces at +60 pA and at rest, WT-like vs rd1-like, and f-I curves.
-  * Signed DSI, PD rate and ND rate by condition, plus the DSI-versus-scaling heatmap.
-  * Panel D: toy-model reproduction, and NEURON input-strength sweep and three-pulse responses.
-* One answer asset covering questions 1-5 with the evidence for each.
-* Per-cell parameter dump and results tables in `data/`.
-* Registered metric: `direction_selectivity_index` (signed), reported per condition as variants.
-
-#### Dependencies
-
-* `t0121_5seed_substrate_rate_canonical_report`: pooled LEGIT cell parquet used as the reference
-  cell source.
-* `t0129_t0126_signed_dsi_real_rates_1seed`: signed DSI evaluator and per-cell parameter-dump
-  protocol.
-
-#### Compute and Budget
-
-Local CPU only, no Vast.ai, no paid APIs. Estimated cost $0. Estimated wall-clock: a few hours for
-the clamp grid and DSI runs on 5-10 cells.
-
-#### Risks
-
-* Panel values are read by eye; calibration targets are approximate.
-* A single-cell model has no presynaptic network, so network-driven rd1 hyperactivity can only be
-  represented by an ad hoc bias.
-* Soma and AIS scaling may not be enough; the dendritic arm is the planned fallback.
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">
@@ -1747,9 +1625,10 @@ the clamp grid and DSI runs on 5-10 cells.
         <id>mi-atp-joint-structure-in-t0123-substrate</id>
         <id>pareto-favoured-corner-signature</id>
         <id>does-signed-dsi-change-t0126-pareto-structure</id>
+        <id>does-rd1-like-na-k-remodelling-of-the-dsgc-model-reproduce-the-rd1-phenotype-and-change-dsi</id>
       </source_ids>
       <content>
-Answers: 53
+Answers: 54
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -2169,6 +2048,14 @@ Confidence: medium
 Categories: compartmental-modeling, direction-selectivity, retinal-ganglion-cell, voltage-gated-channels
 
 Yes. The signed-DSI re-evaluation surfaces structure that vector-sum DSI silently discards: on this single seed (3517) 95 viable cells out of 5,496 have genuinely reversed preference (R_ND &gt; R_PD, deepest reversal `dsi_signed = -0.778`) and would have been collapsed to positive magnitude under vector-sum DSI. None of these reversed cells reach the t0129 final Pareto front (they are dominated in F-space by the silent / DSI=0 cluster at the ATP minimum), but they would have been Pareto candidates under the t0126 vector-sum objective, polluting the high-magnitude region of t0126&#x27;s front with cells whose preferred direction is actually opposite to what vector-sum suggests. The sign-flip count...
+
+## Does rd1-like remodelling of soma and AIS Na and K conductances in the Bed B DSGC model reproduce the researcher&#x27;s rd1 phenotype (panels A to C), and what does it do to signed direction selectivity and to the panel D toy-model predictions?
+ID: does-rd1-like-na-k-remodelling-of-the-dsgc-model-reproduce-the-rd1-phenotype-and-change-dsi
+Created by: t0131_rd1_na_k_remodelling_dsgc_dsi on 2026-10-27
+Confidence: medium
+Categories: compartmental-modeling, direction-selectivity, voltage-gated-channels, retinal-ganglion-cell
+
+No, only the clamp-current ratio is reproduced: the sustained-current ratio reaches 1.63 to 1.70 on all 8 reference cells, but only at the grid edges (s_Na 0.25, s_K 2.36 to 3.0), and the Na transient falls to 0.40 to 0.57 of WT-like instead of 0.25. The WT-like reference cells fire spontaneously at a median of 73.5 Hz without any input, so panels A and B cannot be tested as intended. The rd1-like cells are silent in every current-clamp, bias and synaptic protocol (dendritic arm included), signed DSI is therefore undefined for rd1-like cells, and all four panel D predictions are disproved in the NEURON model, whereas the toy model matches its by-eye anchors by construction. This rests on...
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -2247,6 +2134,9 @@ Yes. The signed-DSI re-evaluation surfaces structure that vector-sum DSI silentl
         <id>S-0129-08</id>
         <id>S-0129-09</id>
         <id>S-0129-10</id>
+        <id>S-0131-01</id>
+        <id>S-0131-02</id>
+        <id>S-0131-04</id>
         <id>S-0002-01</id>
         <id>S-0002-04</id>
         <id>S-0002-05</id>
@@ -2569,6 +2459,9 @@ Yes. The signed-DSI re-evaluation surfaces structure that vector-sum DSI silentl
         <id>S-0129-05</id>
         <id>S-0129-06</id>
         <id>S-0129-07</id>
+        <id>S-0131-03</id>
+        <id>S-0131-05</id>
+        <id>S-0131-06</id>
         <id>S-0003-05</id>
         <id>S-0004-02</id>
         <id>S-0008-05</id>
@@ -2630,9 +2523,10 @@ Yes. The signed-DSI re-evaluation surfaces structure that vector-sum DSI silentl
         <id>S-0120-04</id>
         <id>S-0124-07</id>
         <id>S-0126-09</id>
+        <id>S-0131-07</id>
       </source_ids>
       <content>
-Open suggestions: 455
+Open suggestions: 462
 
 ## Paired active-vs-passive dendrite experiment to reproduce the Schachter2010 DSI gain (~0.3 -&gt; ~0.7)
 ID: S-0002-02
@@ -3137,6 +3031,27 @@ Priority: high
 Kind: evaluation
 Source task: t0129_t0126_signed_dsi_real_rates_1seed
 Memory project_t0126_cell_trace_synthesised confirms t0126&#x27;s per-cell pd_rate_hz=40 was a synthesised placeholder; t0129 confirms the true Pareto-median PD rate is 2.62 Hz and the Pareto-max PD rate is 10.24 Hz (off by 4x to 20x). Any downstream analysis that filtered cells, computed thresholds, or scored cells using t0126&#x27;s pd_rate_hz is potentially miscalibrated. Walk every task in tasks/ that lists t0126 as a dependency or reads t0126&#x27;s predictions asset, scan their code/research/results for references to pd_rate_hz, and produce a single audit table (task ID, file, line, threshold-or-statistic-used, affected-metric, recommended-correction). Recommended task types: data-analysis...
+
+## Rebuild WT-like reference cohort from quiescent (non-pacemaker) Bed B cells for rd1 tests
+ID: S-0131-01
+Priority: high
+Kind: experiment
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+t0131 found all 8 WT-like reference cells fire ~73.5 Hz at rest with no input, so panels A and B have no valid WT baseline. Screen the 675-cell pool for cells with 0 Hz spontaneous rate and &gt;=40 Hz evoked at +60 pA; require &gt;=8 such cells. Falsifiable: if fewer than 8 exist, the pool cannot support rd1 comparisons. Recommended task types: experiment-run, data-analysis.
+
+## Fit rd1 scaling to a firing-aware target on quiescent cells, not the sustained-current ratio alone
+ID: S-0131-02
+Priority: high
+Kind: experiment
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+t0131 fits hit the grid edge (s_Na 0.25, s_K up to 3.0) and left rd1-like cells silent at -10 mV. Using the quiescent cohort, extend the grid to s_Na 0.05-1.0 and s_K 1-6 and fit jointly sustained ratio 1.7, transient ratio 0.25, and evoked rate at +60 pA. Falsifiable: no scaling pair meets all three within 15% means Na/K scaling alone is insufficient. Recommended task types: experiment-run, comparative-analysis.
+
+## Test synaptic and dendritic conductance scaling as the driver of rd1 spontaneous hyperactivity
+ID: S-0131-04
+Priority: high
+Kind: experiment
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+Soma/AIS Na/K scaling gave rd1-like cells 0 Hz spontaneous activity; the dendritic arm gave only regular 5.4 Hz mean (ISI CV 0.005) versus the 4-10 Hz irregular target. Scale bipolar-input excitatory and inhibitory synaptic conductances and dendritic channels with noisy background drive, targeting 4-10 Hz and ISI CV above 0.5. Falsifiable: no setting meets both criteria on 5 of 8 cells. Recommended task types: experiment-run.
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -5392,6 +5307,27 @@ Kind: experiment
 Source task: t0129_t0126_signed_dsi_real_rates_1seed
 Pareto cell 4 (gen 57, signed DSI=1.0, PD rate 6.43 Hz, ND rate 0.0 Hz, ATP 6.66 M molec/spike) is the canonical ND-silenced DSGC corner, and Pareto cell 7 (gen 59, DSI=0.870, PD rate 10.24 Hz, ND rate 0.71 Hz, ATP 5.03 M molec/spike) is the highest-PD-rate Pareto cell with both PD rate and ATP/spike within the Sivyer-2013 physiological band (5-15 Hz PD rate, sub-10 M molec/spike). Re-simulate both cells with full Vm traces at soma and 3 dendritic loci, render the morphology with full dendrite tree at the same orientation, and run the standard dendritic-spike-attribution analysis (per-compartment Nav/Kv/Ih conductance contributions to ATP/spike). Output: 2-cell deep-dive PNG bundle +...
 
+## Add persistent and resurgent Na scaling to explain the unreached Na transient ratio (0.455 vs 0.25)
+ID: S-0131-03
+Priority: medium
+Kind: technique
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+t0131 transient ratio only fell to 0.399-0.573 of WT-like even at the s_Na floor, suspected cause being unscaled persistent and resurgent Na channels. Add independent scale factors for these channels and rerun the 6x6 clamp grid on 8 cells. Falsifiable: the transient ratio reaches 0.25+-0.05 at a sustained ratio of 1.7+-0.15 or the hypothesis is rejected. Recommended task types: experiment-run.
+
+## Re-read panel A-D targets from raw researcher traces instead of by-eye PDF values
+ID: S-0131-05
+Priority: medium
+Kind: dataset
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+All t0131 calibration targets (sustained ratio 1.7, assumed transient 0.25, 11 panel D anchors) were read by eye from SomeResults.pdf, and absolute panel C currents (~2 nA) differ from model values (~480 nA) by two orders of magnitude. Obtain raw traces and cell capacitance, extract targets with uncertainty, and refit. Falsifiable: the sustained ratio target stays within 1.7+-0.2 or is revised. Recommended task types: data-analysis.
+
+## Measure signed DSI of rd1-like cells with a lower spike threshold and voltage-based selectivity
+ID: S-0131-06
+Priority: medium
+Kind: evaluation
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+rd1-like signed DSI was undefined on 8 of 8 cells because of the -10 mV spike threshold, while a post-hoc -30 mV threshold found attenuated spikes (peaks -21.8 and -29.5 mV) in 2 cells. Pre-declare a -30 mV threshold plus a PSP-amplitude DSI and recompute for all conditions. Falsifiable: DSI is defined on at least 6 of 8 rd1-like cells, else DSI is not measurable. Recommended task types: data-analysis.
+
 ## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
 ID: S-0003-05
 Priority: low
@@ -5818,6 +5754,13 @@ Priority: low
 Kind: evaluation
 Source task: t0126_bedb_dsi_atp_per_spike_nsga2_60gen
 t0126 is the first project task to PASS the Niven 2008 vertebrate-retinal-neuron ATP/spike band [~1e6, ~1e7 molecules/spike] across the full Pareto front (all 6 cells in range; min 1.83e6 at DSI=0, max 7.82e6 at DSI=1.0). The result is reported in compare_literature.md (PASS row, direct quantitative match) but the t0124 lineage cited the paper as &#x27;Niven 2007&#x27; (research_papers.md) while the canonical bibliographic record is Niven &amp; Laughlin J Exp Biol 211(11), 2008. The citation_key drift is documented in t0126&#x27;s Limitations but not fixed at the asset level. Action: (a) verify the paper-asset folder under tasks/t0002.*/assets/paper/ (or wherever the Niven citation lives) and confirm...
+
+## Validate panel D toy model against NEURON using quiescent cohort with leave-anchors-out fitting
+ID: S-0131-07
+Priority: low
+Kind: experiment
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+The panel D toy model matched 11 of 11 by-eye anchors by construction, while NEURON disproved 4 of 4 predictions, but the pacemaker baseline confounds that test. Refit the toy model on 6 anchors and predict the held-out 5, then rerun the NEURON u-sweep and three-pulse drive on quiescent cells. Falsifiable: held-out error above 20% or NEURON still disagrees on at least 3 of 4. Recommended task types: comparative-analysis, experiment-run.
       </content>
     </section>
   </sections>

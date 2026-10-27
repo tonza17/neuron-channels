@@ -1,7 +1,7 @@
 # Suggestions: `patch-clamp`
 
-24 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **20
-open** (2 high, 15 medium, 3 low), **4 closed**.
+25 suggestion(s) in category [`patch-clamp`](../../../meta/categories/patch-clamp/) **21
+open** (2 high, 16 medium, 3 low), **4 closed**.
 
 [Back to all suggestions](../README.md)
 
@@ -258,6 +258,27 @@ full-resolution voltage / spike traces preserved, compute Gaussian-convolved ins
 rates with sigma = 25 ms over a 1400 ms window, report peak rate over the PD direction.
 Recommended task types: data-analysis (no new simulator runs needed if traces from t0083 are
 preserved; otherwise experiment-run with 2-cell budget < $0.20).
+
+</details>
+
+<details>
+<summary>📂 <strong>Re-read panel A-D targets from raw researcher traces instead
+of by-eye PDF values</strong> (S-0131-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0131-05` |
+| **Kind** | dataset |
+| **Date added** | 2026-10-27 |
+| **Source task** | [`t0131_rd1_na_k_remodelling_dsgc_dsi`](../../../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) |
+| **Source paper** | — |
+| **Categories** | [`patch-clamp`](../../../meta/categories/patch-clamp/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+All t0131 calibration targets (sustained ratio 1.7, assumed transient 0.25, 11 panel D
+anchors) were read by eye from SomeResults.pdf, and absolute panel C currents (~2 nA) differ
+from model values (~480 nA) by two orders of magnitude. Obtain raw traces and cell
+capacitance, extract targets with uncertainty, and refit. Falsifiable: the sustained ratio
+target stays within 1.7+-0.2 or is revised. Recommended task types: data-analysis.
 
 </details>
 

@@ -6,7 +6,7 @@ Electrophysiological recording technique for measuring ionic currents in cells.
 
 **Detail pages**: [Papers (33)](../papers/by-category/patch-clamp.md) | [Answers
 (3)](../answers/by-category/patch-clamp.md) | [Suggestions
-(24)](../suggestions/by-category/patch-clamp.md)
+(25)](../suggestions/by-category/patch-clamp.md)
 
 ---
 
@@ -1813,7 +1813,22 @@ for reproducing fast, reliable AP initiation in compartmental models.
 
 </details>
 
-## Suggestions (20 open, 4 closed)
+## Suggestions (21 open, 4 closed)
+
+<details>
+<summary>📂 <strong>Re-read panel A-D targets from raw researcher traces instead
+of by-eye PDF values</strong> (S-0131-05)</summary>
+
+**Kind**: dataset | **Priority**: medium | **Date**: 2026-10-27 | **Source**:
+[t0131_rd1_na_k_remodelling_dsgc_dsi](../../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/)
+
+All t0131 calibration targets (sustained ratio 1.7, assumed transient 0.25, 11 panel D
+anchors) were read by eye from SomeResults.pdf, and absolute panel C currents (~2 nA) differ
+from model values (~480 nA) by two orders of magnitude. Obtain raw traces and cell
+capacitance, extract targets with uncertainty, and refit. Falsifiable: the sustained ratio
+target stays within 1.7+-0.2 or is revised. Recommended task types: data-analysis.
+
+</details>
 
 <details>
 <summary>📊 <strong>Peak-rate re-analysis of cells 1559 / 1677 for direct comparison

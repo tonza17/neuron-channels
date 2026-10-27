@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-10-27T09:42:46Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-10-27T16:44:45Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>587699</char_count>
-    <byte_count>587885</byte_count>
-    <estimated_tokens>146924</estimated_tokens>
+    <char_count>592977</char_count>
+    <byte_count>593163</byte_count>
+    <estimated_tokens>148244</estimated_tokens>
     <compatibility>200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -538,9 +538,16 @@
         <id>S-0129-08</id>
         <id>S-0129-09</id>
         <id>S-0129-10</id>
+        <id>S-0131-01</id>
+        <id>S-0131-02</id>
+        <id>S-0131-03</id>
+        <id>S-0131-04</id>
+        <id>S-0131-05</id>
+        <id>S-0131-06</id>
+        <id>S-0131-07</id>
       </source_ids>
       <content>
-Suggestions: 521
+Suggestions: 528
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -6391,6 +6398,83 @@ Categories: direction-selectivity, compartmental-modeling
 Date added: 2026-05-26
 
 Memory project_t0126_cell_trace_synthesised confirms t0126&#x27;s per-cell pd_rate_hz=40 was a synthesised placeholder; t0129 confirms the true Pareto-median PD rate is 2.62 Hz and the Pareto-max PD rate is 10.24 Hz (off by 4x to 20x). Any downstream analysis that filtered cells, computed thresholds, or scored cells using t0126&#x27;s pd_rate_hz is potentially miscalibrated. Walk every task in tasks/ that lists t0126 as a dependency or reads t0126&#x27;s predictions asset, scan their code/research/results for references to pd_rate_hz, and produce a single audit table (task ID, file, line, threshold-or-statistic-used, affected-metric, recommended-correction). Recommended task types: data-analysis, correction.
+
+## Rebuild WT-like reference cohort from quiescent (non-pacemaker) Bed B cells for rd1 tests
+ID: S-0131-01
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+Categories: direction-selectivity, voltage-gated-channels, retinal-ganglion-cell, compartmental-modeling
+Date added: 2026-10-27
+
+t0131 found all 8 WT-like reference cells fire ~73.5 Hz at rest with no input, so panels A and B have no valid WT baseline. Screen the 675-cell pool for cells with 0 Hz spontaneous rate and &gt;=40 Hz evoked at +60 pA; require &gt;=8 such cells. Falsifiable: if fewer than 8 exist, the pool cannot support rd1 comparisons. Recommended task types: experiment-run, data-analysis.
+
+## Fit rd1 scaling to a firing-aware target on quiescent cells, not the sustained-current ratio alone
+ID: S-0131-02
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+Categories: direction-selectivity, voltage-gated-channels, retinal-ganglion-cell, compartmental-modeling
+Date added: 2026-10-27
+
+t0131 fits hit the grid edge (s_Na 0.25, s_K up to 3.0) and left rd1-like cells silent at -10 mV. Using the quiescent cohort, extend the grid to s_Na 0.05-1.0 and s_K 1-6 and fit jointly sustained ratio 1.7, transient ratio 0.25, and evoked rate at +60 pA. Falsifiable: no scaling pair meets all three within 15% means Na/K scaling alone is insufficient. Recommended task types: experiment-run, comparative-analysis.
+
+## Add persistent and resurgent Na scaling to explain the unreached Na transient ratio (0.455 vs 0.25)
+ID: S-0131-03
+Status: active
+Priority: medium
+Kind: technique
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+Categories: voltage-gated-channels, compartmental-modeling
+Date added: 2026-10-27
+
+t0131 transient ratio only fell to 0.399-0.573 of WT-like even at the s_Na floor, suspected cause being unscaled persistent and resurgent Na channels. Add independent scale factors for these channels and rerun the 6x6 clamp grid on 8 cells. Falsifiable: the transient ratio reaches 0.25+-0.05 at a sustained ratio of 1.7+-0.15 or the hypothesis is rejected. Recommended task types: experiment-run.
+
+## Test synaptic and dendritic conductance scaling as the driver of rd1 spontaneous hyperactivity
+ID: S-0131-04
+Status: active
+Priority: high
+Kind: experiment
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+Categories: synaptic-integration, dendritic-computation, retinal-ganglion-cell
+Date added: 2026-10-27
+
+Soma/AIS Na/K scaling gave rd1-like cells 0 Hz spontaneous activity; the dendritic arm gave only regular 5.4 Hz mean (ISI CV 0.005) versus the 4-10 Hz irregular target. Scale bipolar-input excitatory and inhibitory synaptic conductances and dendritic channels with noisy background drive, targeting 4-10 Hz and ISI CV above 0.5. Falsifiable: no setting meets both criteria on 5 of 8 cells. Recommended task types: experiment-run.
+
+## Re-read panel A-D targets from raw researcher traces instead of by-eye PDF values
+ID: S-0131-05
+Status: active
+Priority: medium
+Kind: dataset
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+Categories: patch-clamp, retinal-ganglion-cell
+Date added: 2026-10-27
+
+All t0131 calibration targets (sustained ratio 1.7, assumed transient 0.25, 11 panel D anchors) were read by eye from SomeResults.pdf, and absolute panel C currents (~2 nA) differ from model values (~480 nA) by two orders of magnitude. Obtain raw traces and cell capacitance, extract targets with uncertainty, and refit. Falsifiable: the sustained ratio target stays within 1.7+-0.2 or is revised. Recommended task types: data-analysis.
+
+## Measure signed DSI of rd1-like cells with a lower spike threshold and voltage-based selectivity
+ID: S-0131-06
+Status: active
+Priority: medium
+Kind: evaluation
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+Categories: direction-selectivity, retinal-ganglion-cell
+Date added: 2026-10-27
+
+rd1-like signed DSI was undefined on 8 of 8 cells because of the -10 mV spike threshold, while a post-hoc -30 mV threshold found attenuated spikes (peaks -21.8 and -29.5 mV) in 2 cells. Pre-declare a -30 mV threshold plus a PSP-amplitude DSI and recompute for all conditions. Falsifiable: DSI is defined on at least 6 of 8 rd1-like cells, else DSI is not measurable. Recommended task types: data-analysis.
+
+## Validate panel D toy model against NEURON using quiescent cohort with leave-anchors-out fitting
+ID: S-0131-07
+Status: active
+Priority: low
+Kind: experiment
+Source task: t0131_rd1_na_k_remodelling_dsgc_dsi
+Categories: direction-selectivity, voltage-gated-channels, retinal-ganglion-cell, compartmental-modeling
+Date added: 2026-10-27
+
+The panel D toy model matched 11 of 11 by-eye anchors by construction, while NEURON disproved 4 of 4 predictions, but the pacemaker baseline confounds that test. Refit the toy model on 6 anchors and predict the held-out 5, then rerun the NEURON u-sweep and three-pulse drive on quiescent cells. Falsifiable: held-out error above 20% or NEURON still disagrees on at least 3 of 4. Recommended task types: comparative-analysis, experiment-run.
       </content>
     </section>
   </sections>
