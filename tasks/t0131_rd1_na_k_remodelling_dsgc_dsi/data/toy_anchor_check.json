@@ -1,0 +1,92 @@
+{
+  "tolerance": 0.2,
+  "anchors": [
+    {
+      "name": "wt_static_u50",
+      "target": 10.0,
+      "model": 9.999999904639392,
+      "rel_err": -9.53606082987335e-09,
+      "within_tolerance": true
+    },
+    {
+      "name": "wt_static_u100",
+      "target": 15.0,
+      "model": 15.000000143040907,
+      "rel_err": 9.536060474601981e-09,
+      "within_tolerance": true
+    },
+    {
+      "name": "rd1_static_u0",
+      "target": 10.0,
+      "model": 8.391554045017187,
+      "rel_err": -0.16084459549828126,
+      "within_tolerance": true
+    },
+    {
+      "name": "rd1_static_u5",
+      "target": 23.0,
+      "model": 22.856214102825877,
+      "rel_err": -0.0062515607467009925,
+      "within_tolerance": true
+    },
+    {
+      "name": "rd1_static_u50",
+      "target": 23.0,
+      "model": 24.47249374789432,
+      "rel_err": 0.064021467299753,
+      "within_tolerance": true
+    },
+    {
+      "name": "rd1_static_u100",
+      "target": 23.0,
+      "model": 24.57294413033325,
+      "rel_err": 0.0683888752318805,
+      "within_tolerance": true
+    },
+    {
+      "name": "wt_mean_peak_relative",
+      "target": 0.88,
+      "model": 0.8800000199830859,
+      "rel_err": 2.270805210535798e-08,
+      "within_tolerance": true
+    },
+    {
+      "name": "rd1_mean_peak_relative",
+      "target": 0.88,
+      "model": 0.9992121056870825,
+      "rel_err": 0.1354683019171392,
+      "within_tolerance": true
+    },
+    {
+      "name": "wt_baseline_relative_abs_below_0.05",
+      "target": 0.0,
+      "model": 4.210176465788942e-06,
+      "rel_err": 4.210176465788942e-06,
+      "within_tolerance": true
+    },
+    {
+      "name": "rd1_baseline_relative",
+      "target": 0.35,
+      "model": 0.3417481241698479,
+      "rel_err": -0.023576788086148794,
+      "within_tolerance": true
+    },
+    {
+      "name": "rd1_min_between_peaks_relative",
+      "target": 0.3,
+      "model": 0.3416508834021923,
+      "rel_err": 0.1388362780073077,
+      "within_tolerance": true
+    }
+  ],
+  "n_anchors": 11,
+  "n_within_tolerance": 11,
+  "failed_anchors": [],
+  "missing_information": [
+    "The equations or parameters of the panel D model are not given; only curves are shown.",
+    "Units of 'RGC spike output' (spikes per what interval) and of 'strength of restored retinal input' are not stated.",
+    "The normalisation of 'relative signal' in the right panel is not stated (own maximum, common maximum or saturated rate); this toy model divides by the saturated steady state.",
+    "The absolute strength at which the three-pulse input was applied is not stated (assumed 100).",
+    "Time constants of the WT-like and rd1-like cells are not stated; they are free parameters fitted to the by-eye peak heights and between-peak minima."
+  ]
+}

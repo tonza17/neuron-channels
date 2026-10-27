@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0131_rd1_na_k_remodelling_dsgc_dsi",
+  "command": "uv run python -X utf8 -m tasks.t0131_rd1_na_k_remodelling_dsgc_dsi.code.run_clamp_grid",
+  "exit_code": 0,
+  "duration_seconds": 603.044,
+  "started_at": "2026-10-27T10:48:08Z",
+  "completed_at": "2026-10-27T10:58:11Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0131_rd1_na_k_remodelling_dsgc_dsi",
+  "stdout_file": "023_20261027T104808Z_uv-run-python.stdout.txt",
+  "stderr_file": "023_20261027T104808Z_uv-run-python.stderr.txt",
+  "stdout_lines": 139,
+  "stderr_lines": 235,
+  "truncated": false
+}

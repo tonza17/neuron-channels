@@ -1,0 +1,40 @@
+...F
+================================== FAILURES ===================================
+_____________ test_calibration_module_independent_of_firing_code ______________
+
+    def test_calibration_module_independent_of_firing_code() -> None:
+        src = (CODE_DIR / "calibration.py").read_text(encoding="utf-8")
+        tree = ast.parse(src)
+        imported: list[str] = []
+        for node in ast.walk(tree):
+            if isinstance(node, ast.ImportFrom) and node.module is not None:
+                imported.append(node.module)
+            if isinstance(node, ast.Import):
+                imported.extend(a.name for a in node.names)
+        joined = " ".join(imported)
+        for banned in ("current_clamp", "evaluator", "dsi_rules", "bias"):
+            assert banned not in joined, f"calibration.py must not import {banned}"
+        lowered = src.lower()
+>       assert "n_spikes" not in lowered and "spike_count" not in lowered and "firing" not in lowered
+E       assert ('n_spikes' not in '"""part 1 c..._tolerance\n'
+E
+E         'n_spikes' is contained here:
+E           _tolerance and 'spike_count' not in '"""part 1 c..._tolerance\n'
+E
+E         'spike_count' is contained here:
+E           _tolerance and 'firing' not in '"""part 1 c..._tolerance\n'
+E
+E         'firing' is contained here:
+E            spike or firing quantity and imports nothing from the
+E         ?           ++++++
+E           current-clamp module (a structural unit test checks that). inputs are per-grid-point clamp
+E           metrics: sustained outward current and isolated na transient; targets are their ratios to the
+E           (1.0, 1.0) reference run on the same cell....
+E
+E         ...Full output truncated (131 lines hidden), use '-vv' to show)
+
+tasks\t0131_rd1_na_k_remodelling_dsgc_dsi\code\test_scaling_and_clamp.py:154: AssertionError
+=========================== short test summary info ===========================
+FAILED tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/code/test_scaling_and_clamp.py::test_calibration_module_independent_of_firing_code
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 3 passed in 48.61s

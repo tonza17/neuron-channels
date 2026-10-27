@@ -1,0 +1,32 @@
+[dsi_soma_ais] 8 jobs, 0 already done, 8 to run
+DSI wall time 23.3 s for 8 trials
+                                       0
+cell_id              t0114_seed7755_0256
+seed_label                t0114_seed7755
+arm                             soma_ais
+condition                        wt_like
+s_na                                 1.0
+s_k                                  1.0
+i_bias_pa                           None
+sigma_noise_pa                      None
+n_seeds                                1
+pd_spikes                            151
+nd_spikes                              1
+pd_rate_hz                    107.857143
+nd_rate_hz                      0.714286
+dsi_signed                      0.986842
+dsi_unguarded                   0.986842
+low_count                          False
+n_undefined                            0
+n_trials                               8
+n_errors                               0
+recorded_pd_rate_hz           107.619048
+mean_spikes_dir_0                  151.0
+mean_spikes_dir_45                 148.0
+mean_spikes_dir_90                 145.0
+mean_spikes_dir_135                144.0
+mean_spikes_dir_180                  1.0
+mean_spikes_dir_225                  1.0
+mean_spikes_dir_270                146.0
+mean_spikes_dir_315                149.0
+GATE pd_ok True dsi_ok True

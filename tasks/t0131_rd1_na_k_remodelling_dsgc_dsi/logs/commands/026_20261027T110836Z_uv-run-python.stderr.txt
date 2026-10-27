@@ -1,0 +1,15 @@
+
+clamp_baseline:   0%|          | 0/8 [00:00<?, ?it/s]
+clamp_baseline:  12%|█▎        | 1/8 [00:03<00:27,  3.94s/it]
+clamp_baseline:  25%|██▌       | 2/8 [00:05<00:13,  2.33s/it]
+clamp_baseline:  38%|███▊      | 3/8 [00:08<00:13,  2.63s/it]
+clamp_baseline:  50%|█████     | 4/8 [00:12<00:13,  3.38s/it]
+clamp_baseline:  62%|██████▎   | 5/8 [00:13<00:06,  2.30s/it]
+clamp_baseline:  75%|███████▌  | 6/8 [00:21<00:08,  4.39s/it]
+clamp_baseline: 100%|██████████| 8/8 [01:15<00:00, 15.41s/it]
+clamp_baseline: 100%|██████████| 8/8 [01:15<00:00,  9.38s/it]
+
+clamp_sensitivity:   0%|          | 0/2 [00:00<?, ?it/s]
+clamp_sensitivity:  50%|█████     | 1/2 [00:02<00:02,  2.81s/it]
+clamp_sensitivity: 100%|██████████| 2/2 [00:08<00:00,  4.43s/it]
+clamp_sensitivity: 100%|██████████| 2/2 [00:08<00:00,  4.19s/it]

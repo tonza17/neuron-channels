@@ -1,0 +1,8 @@
+[current_clamp_soma_ais] 16 jobs, 0 already done, 16 to run
+cc wall time 68.9 s for 16 runs
+condition                   rd1_like  wt_like
+cell_id             amp_pa
+t0114_seed7755_0224 0.0          0.0     59.0
+                    60.0         0.0     59.0
+                    800.0        0.0     62.0
+{"arm": "soma_ais", "n_collapsed": 1, "n_uninformative": 0, "n_cells": 1}

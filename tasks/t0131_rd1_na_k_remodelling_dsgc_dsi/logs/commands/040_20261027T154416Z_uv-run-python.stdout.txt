@@ -1,0 +1,94 @@
+[panel_d_sweep] 288 jobs, 0 already done, 288 to run
+gate u=100 vs DSI-run WT-like PD: {"t0114_seed7755_0256|0": {"u100_spikes": 151, "dsi_run_spikes": 151, "within_10pct": true}, "t0114_seed7755_0256|1": {"u100_spikes": 151, "dsi_run_spikes": 151, "within_10pct": true}, "t0114_seed7755_0256|2": {"u100_spikes": 150, "dsi_run_spikes": 150, "within_10pct": true}, "t0106_seed44_0093|0": {"u100_spikes": 158, "dsi_run_spikes": 158, "within_10pct": true}, "t0106_seed44_0093|1": {"u100_spikes": 158, "dsi_run_spikes": 158, "within_10pct": true}, "t0106_seed44_0093|2": {"u100_spikes": 158, "dsi_run_spikes": 158, "within_10pct": true}, "t0115_seed9354_0032|0": {"u100_spikes": 61, "dsi_run_spikes": 61, "within_10pct": true}, "t0115_seed9354_0032|1": {"u100_spikes": 60, "dsi_run_spikes": 60, "within_10pct": true}, "t0115_seed9354_0032|2": {"u100_spikes": 55, "dsi_run_spikes": 55, "within_10pct": true}}
+[panel_d_pulses] 120 jobs, 0 already done, 120 to run
+panel D wall time 2529.6 s
+{
+ "series_no_bias": {
+  "conditions": [
+   "wt_like",
+   "rd1_like"
+  ],
+  "saturation_index_per_cell": {
+   "wt_like": {
+    "t0114_seed7755_0256": 1.004424778761062,
+    "t0106_seed44_0093": 1.0,
+    "t0115_seed9354_0032": 0.8579545454545455
+   },
+   "rd1_like": {
+    "t0114_seed7755_0256": null,
+    "t0106_seed44_0093": null,
+    "t0115_seed9354_0032": null
+   }
+  },
+  "median_saturation_index": {
+   "wt_like": 1.0,
+   "rd1_like": null
+  },
+  "median_baseline_hz": {
+   "wt_like": 61.442868590500005,
+   "rd1_like": 0.0
+  },
+  "predictions": {
+   "rd1_flat_saturated": {
+    "verdict": "disproved",
+    "evidence": "rd1-like output is zero at u=100 in every cell (flat at zero, not saturated)"
+   },
+   "wt_gradual_growth": {
+    "verdict": "disproved",
+    "evidence": "median WT saturation index 1.0; cells with index <= 0.6 and positive growth: 0/3"
+   },
+   "rd1_elevated_baseline": {
+    "verdict": "disproved",
+    "evidence": "rd1-like pulse response undefined (no spikes), so no elevated baseline"
+   },
+   "rd1_temporal_smearing": {
+    "verdict": "disproved",
+    "evidence": "rd1-like or WT-like pulse response undefined (no spikes)"
+   }
+  }
+ },
+ "series_with_bias": {
+  "conditions": [
+   "wt_like_with_bias",
+   "rd1_like_with_bias"
+  ],
+  "saturation_index_per_cell": {
+   "wt_like_with_bias": {
+    "t0114_seed7755_0256": 1.0,
+    "t0106_seed44_0093": 1.352112676056338,
+    "t0115_seed9354_0032": 1.0
+   },
+   "rd1_like_with_bias": {
+    "t0114_seed7755_0256": null,
+    "t0106_seed44_0093": null,
+    "t0115_seed9354_0032": null
+   }
+  },
+  "median_saturation_index": {
+   "wt_like_with_bias": 1.0,
+   "rd1_like_with_bias": null
+  },
+  "median_baseline_hz": {
+   "wt_like_with_bias": 6.90359389170438,
+   "rd1_like_with_bias": 0.0
+  },
+  "predictions": {
+   "rd1_flat_saturated": {
+    "verdict": "disproved",
+    "evidence": "rd1-like output is zero at u=100 in every cell (flat at zero, not saturated)"
+   },
+   "wt_gradual_growth": {
+    "verdict": "disproved",
+    "evidence": "median WT saturation index 1.0; cells with index <= 0.6 and positive growth: 0/3"
+   },
+   "rd1_elevated_baseline": {
+    "verdict": "disproved",
+    "evidence": "rd1-like pulse response undefined (no spikes), so no elevated baseline"
+   },
+   "rd1_temporal_smearing": {
+    "verdict": "disproved",
+    "evidence": "rd1-like or WT-like pulse response undefined (no spikes)"
+   }
+  }
+ }
+}

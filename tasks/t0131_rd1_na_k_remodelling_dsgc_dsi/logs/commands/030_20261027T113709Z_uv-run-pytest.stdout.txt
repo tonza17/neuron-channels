@@ -1,0 +1,18 @@
+......F.                                                                 [100%]
+================================== FAILURES ===================================
+_____________________ test_pulse_metrics_on_input_itself ______________________
+
+    def test_pulse_metrics_on_input_itself() -> None:
+        t = np.arange(0.0, 1000.0, 1.0)
+        m = pulse_metrics(t_ms=t, y=input_signal(t_ms=t))
+>       assert m.baseline_abs == pytest.approx(0.0, abs=1e-6)
+E       assert 7.128086541677468e-06 == 0.0 ± 1.0e-06
+E
+E         comparison failed
+E         Obtained: 7.128086541677468e-06
+E         Expected: 0.0 ± 1.0e-06
+
+tasks\t0131_rd1_na_k_remodelling_dsgc_dsi\code\test_toy_model.py:31: AssertionError
+=========================== short test summary info ===========================
+FAILED tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/code/test_toy_model.py::test_pulse_metrics_on_input_itself
+1 failed, 7 passed in 23.97s

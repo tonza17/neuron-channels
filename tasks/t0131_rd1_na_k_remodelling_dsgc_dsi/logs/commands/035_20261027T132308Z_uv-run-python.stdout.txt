@@ -1,0 +1,2 @@
+[heatmap_soma_ais] 720 jobs, 0 already done, 720 to run
+heatmap rows 180
