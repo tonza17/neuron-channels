@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0131_rd1_na_k_remodelling_dsgc_dsi",
+  "command": "uv run python -X utf8 -m arf.scripts.utils.skip_step t0131_rd1_na_k_remodelling_dsgc_dsi research-internet Local simulation task; no external information beyond the corpus is needed. setup-machines Local NEURON simulation; no remote compute. teardown No machines were set up. creative-thinking Scope is fixed by the researcher; alternative approaches are not needed. compare-literature Results are not directly comparable to published baselines; panels come from the researcher.",
+  "exit_code": 0,
+  "duration_seconds": 0.418,
+  "started_at": "2026-10-27T10:11:30Z",
+  "completed_at": "2026-10-27T10:11:31Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0131_rd1_na_k_remodelling_dsgc_dsi",
+  "stdout_file": "003_20261027T101130Z_uv-run-python.stdout.txt",
+  "stderr_file": "003_20261027T101130Z_uv-run-python.stderr.txt",
+  "stdout_lines": 7,
+  "stderr_lines": 0,
+  "truncated": false
+}

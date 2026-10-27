@@ -1,0 +1,2 @@
+rebuilt 675 cells; stratum counts {'t0106_seed44': 121, 't0112_seed77': 7, 't0114_seed7755': 484, 't0115_seed9354': 63} ; parquet match OK
+reference cells: ['t0114_seed7755_0224', 't0114_seed7755_0148', 't0114_seed7755_0312', 't0106_seed44_0113', 't0106_seed44_0063', 't0115_seed9354_0021', 't0115_seed9354_0005', 't0112_seed77_0006']

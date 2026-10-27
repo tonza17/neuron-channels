@@ -1,0 +1,17 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0131_rd1_na_k_remodelling_dsgc_dsi\tasks\t0131_rd1_na_k_remodelling_dsgc_dsi\logs
+
+[33m[1mWARNINGS:[0m
+[33m  LG-W004 warning: Command log 002_20261027T101059Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 004_20261027T101207Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 005_20261027T101338Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 006_20261027T101505Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 014_20261027T102832Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 022_20261027T104702Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 028_20261027T111006Z_uv-run-python.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 029_20261027T112644Z_uv-run-pytest.json has non-zero exit code: 1[0m
+[33m  LG-W004 warning: Command log 030_20261027T113709Z_uv-run-pytest.json has non-zero exit code: 1[0m
+[33m  LG-W007 warning: logs/sessions/ contains no captured session transcript JSONL files[0m
+[33m  LG-W008 warning: logs/sessions/capture_report.json does not exist[0m
+
+[33m[1mPASSED[0m — 0 error(s), 11 warning(s)

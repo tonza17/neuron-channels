@@ -1,0 +1,67 @@
+[dsi_soma_ais_dendrite] 480 jobs, 0 already done, 480 to run
+DSI wall time 1984.8 s for 480 trials
+                cell_id           condition  ...  dsi_signed  low_count
+0   t0114_seed7755_0256             wt_like  ...    0.986813      False
+1   t0114_seed7755_0256            rd1_like  ...         NaN       True
+2   t0114_seed7755_0256   wt_like_with_bias  ...    0.986842      False
+3   t0114_seed7755_0256  rd1_like_with_bias  ...         NaN       True
+4   t0114_seed7755_0114             wt_like  ...    0.226917      False
+5   t0114_seed7755_0114            rd1_like  ...         NaN       True
+6   t0114_seed7755_0114   wt_like_with_bias  ...    0.513514      False
+7   t0114_seed7755_0114  rd1_like_with_bias  ...         NaN       True
+8   t0114_seed7755_0349             wt_like  ...    0.986928      False
+9   t0114_seed7755_0349            rd1_like  ...         NaN       True
+10  t0114_seed7755_0349   wt_like_with_bias  ...    0.986784      False
+11  t0114_seed7755_0349  rd1_like_with_bias  ...         NaN       True
+12    t0106_seed44_0093             wt_like  ...    0.689840      False
+13    t0106_seed44_0093            rd1_like  ...         NaN       True
+14    t0106_seed44_0093   wt_like_with_bias  ...    0.752311      False
+15    t0106_seed44_0093  rd1_like_with_bias  ...         NaN       True
+16    t0106_seed44_0074             wt_like  ...    0.970674      False
+17    t0106_seed44_0074            rd1_like  ...         NaN       True
+18    t0106_seed44_0074   wt_like_with_bias  ...    0.964912      False
+19    t0106_seed44_0074  rd1_like_with_bias  ...         NaN       True
+
+[20 rows x 8 columns]
+{
+ "wt_like": {
+  "median_dsi_signed": 0.970674486803519,
+  "mean_dsi_signed": 0.7722344816574712,
+  "n_defined": 5,
+  "n_undefined": 0,
+  "median_pd_rate_hz": 107.61904761904762,
+  "median_nd_rate_hz": 1.1904761904761907,
+  "total_pd_spikes": 2110,
+  "total_nd_spikes": 345
+ },
+ "rd1_like": {
+  "median_dsi_signed": null,
+  "mean_dsi_signed": null,
+  "n_defined": 0,
+  "n_undefined": 5,
+  "median_pd_rate_hz": 0.0,
+  "median_nd_rate_hz": 0.0,
+  "total_pd_spikes": 0,
+  "total_nd_spikes": 0
+ },
+ "wt_like_with_bias": {
+  "median_dsi_signed": 0.9649122807017544,
+  "mean_dsi_signed": 0.8408725152983901,
+  "n_defined": 5,
+  "n_undefined": 0,
+  "median_pd_rate_hz": 107.3809523809524,
+  "median_nd_rate_hz": 1.4285714285714286,
+  "total_pd_spikes": 2106,
+  "total_nd_spikes": 205
+ },
+ "rd1_like_with_bias": {
+  "median_dsi_signed": null,
+  "mean_dsi_signed": null,
+  "n_defined": 0,
+  "n_undefined": 5,
+  "median_pd_rate_hz": 0.0,
+  "median_nd_rate_hz": 0.0,
+  "total_pd_spikes": 0,
+  "total_nd_spikes": 0
+ }
+}

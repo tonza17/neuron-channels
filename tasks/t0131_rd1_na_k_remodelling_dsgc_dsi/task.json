@@ -5,13 +5,13 @@
   "name": "rd1-like Na/K remodelling of the DSGC model and its effect on DSI",
   "short_description": "Calibrate soma/AIS gNa and gK scaling to rd1 vs WT clamp data, test if it predicts rd1 firing, measure signed DSI, and reproduce or refute the panel-D toy model.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [
     "t0121_5seed_substrate_rate_canonical_report",
     "t0129_t0126_signed_dsi_real_rates_1seed"
   ],
   "start_time": "2026-10-27T10:07:53Z",
-  "end_time": null,
+  "end_time": "2026-10-27T16:42:00Z",
   "expected_assets": {
     "answer": 1
   },

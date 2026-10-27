@@ -1,0 +1,55 @@
+{
+  "base_arm": "soma_ais",
+  "trigger_a_part1_sustained_reach_failed": {
+    "fired": false,
+    "rule": "max grid sustained ratio below 1.55 for any cell",
+    "failed_cells": [],
+    "max_grid_sustained_ratio_per_cell": {
+      "t0114_seed7755_0256": 1.7015520624991856,
+      "t0114_seed7755_0114": 1.663335950185477,
+      "t0114_seed7755_0349": 1.6314543571253806,
+      "t0106_seed44_0093": 1.8886509785154741,
+      "t0106_seed44_0074": 1.7321521034520064,
+      "t0115_seed9354_0032": 1.696657040971673,
+      "t0115_seed9354_0060": 1.6965801551953281,
+      "t0112_seed77_0002": 1.977986695594544
+    },
+    "n_cells_within_tolerance_of_1.7": 8
+  },
+  "trigger_b_evoked_firing_not_collapsed": {
+    "fired": false,
+    "rule": "base arm collapses +60 pA firing on fewer than 6 of 8 cells",
+    "n_collapsed": 7,
+    "n_uninformative": 1,
+    "n_cells": 8
+  },
+  "trigger_c_bias_phenotype_not_met": {
+    "fired": true,
+    "rule": "rd1-like 4-10 Hz with ISI CV above 0.5 while WT-like stays below 1 Hz",
+    "selection": {
+      "criteria_met": false,
+      "chosen": {
+        "i_bias_pa": 6400.0,
+        "sigma_noise_pa": 0.0
+      },
+      "mean_rd1_rate_hz": 0.0,
+      "mean_rd1_isi_cv": null,
+      "reason": "no combination gave rd1-like mean rate above 0 with ISI CV above 0.5; fell back to the combination with the mean rate closest to 7 Hz (ties: larger bias)"
+    },
+    "applied_all_cells": {
+      "wt_like": {
+        "mean_rate_hz": 15.625,
+        "median_rate_hz": 0.0,
+        "mean_isi_cv": 0.0024754997069224532,
+        "n_runs": 24
+      },
+      "rd1_like": {
+        "mean_rate_hz": 0.0,
+        "median_rate_hz": 0.0,
+        "mean_isi_cv": null,
+        "n_runs": 24
+      }
+    }
+  },
+  "triggered": true
+}

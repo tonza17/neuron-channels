@@ -1,0 +1,58 @@
+[spont_nobias] 16 jobs, 0 already done, 16 to run
+[spont_tune_primary] 144 jobs, 16 already done, 144 to run
+[spont_tune_extended] 168 jobs, 160 already done, 168 to run
+[spont_chosen] 48 jobs, 328 already done, 48 to run
+{
+ "arm": "soma_ais",
+ "tuning_stage_used": "extended_fallback",
+ "selection": {
+  "criteria_met": false,
+  "chosen": {
+   "i_bias_pa": 6400.0,
+   "sigma_noise_pa": 0.0
+  },
+  "mean_rd1_rate_hz": 0.0,
+  "mean_rd1_isi_cv": null,
+  "reason": "no combination gave rd1-like mean rate above 0 with ISI CV above 0.5; fell back to the combination with the mean rate closest to 7 Hz (ties: larger bias)"
+ },
+ "noise_seed_tuning": 11,
+ "noise_seeds_applied": [
+  11,
+  22,
+  33
+ ],
+ "tuning_cells": [
+  "t0114_seed7755_0256",
+  "t0114_seed7755_0114",
+  "t0114_seed7755_0349"
+ ],
+ "tuning_rule": "rd1-like only; closest mean rate to 7 Hz among combinations with mean ISI CV > 0.5; then the SAME bias and noise are applied to WT-like cells",
+ "bias_form": "DC IClamp at soma(0.5) of i_bias_pa for the whole run plus Gaussian white-noise IClamp (sigma_noise_pa, Vector.play at dt 0.1 ms, fixed seed per run)",
+ "applied_all_cells": {
+  "wt_like": {
+   "mean_rate_hz": 15.625,
+   "median_rate_hz": 0.0,
+   "mean_isi_cv": 0.0024754997069224532,
+   "n_runs": 24
+  },
+  "rd1_like": {
+   "mean_rate_hz": 0.0,
+   "median_rate_hz": 0.0,
+   "mean_isi_cv": null,
+   "n_runs": 24
+  }
+ },
+ "no_bias": {
+  "wt_like": {
+   "mean_rate_hz": 78.5,
+   "median_rate_hz": 73.5,
+   "mean_rest_vm_mv": -61.79949710859987
+  },
+  "rd1_like": {
+   "mean_rate_hz": 0.0,
+   "median_rate_hz": 0.0,
+   "mean_rest_vm_mv": -54.190155004532734
+  }
+ },
+ "trigger_c_satisfied": false
+}

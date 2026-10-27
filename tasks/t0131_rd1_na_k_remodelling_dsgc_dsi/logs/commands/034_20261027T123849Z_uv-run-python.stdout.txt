@@ -1,0 +1,79 @@
+[dsi_soma_ais] 768 jobs, 0 already done, 768 to run
+DSI wall time 2644.0 s for 768 trials
+                cell_id           condition  ...  dsi_signed  low_count
+0   t0114_seed7755_0256             wt_like  ...    0.986813      False
+1   t0114_seed7755_0256            rd1_like  ...         NaN       True
+2   t0114_seed7755_0256   wt_like_with_bias  ...    0.000000      False
+3   t0114_seed7755_0256  rd1_like_with_bias  ...         NaN       True
+4   t0114_seed7755_0114             wt_like  ...    0.226917      False
+5   t0114_seed7755_0114            rd1_like  ...         NaN       True
+6   t0114_seed7755_0114   wt_like_with_bias  ...    0.000000      False
+7   t0114_seed7755_0114  rd1_like_with_bias  ...         NaN       True
+8   t0114_seed7755_0349             wt_like  ...    0.986928      False
+9   t0114_seed7755_0349            rd1_like  ...         NaN       True
+10  t0114_seed7755_0349   wt_like_with_bias  ...    0.000000      False
+11  t0114_seed7755_0349  rd1_like_with_bias  ...         NaN       True
+12    t0106_seed44_0093             wt_like  ...    0.689840      False
+13    t0106_seed44_0093            rd1_like  ...         NaN       True
+14    t0106_seed44_0093   wt_like_with_bias  ...    0.727494      False
+15    t0106_seed44_0093  rd1_like_with_bias  ...         NaN       True
+16    t0106_seed44_0074             wt_like  ...    0.970674      False
+17    t0106_seed44_0074            rd1_like  ...         NaN       True
+18    t0106_seed44_0074   wt_like_with_bias  ...    0.000000      False
+19    t0106_seed44_0074  rd1_like_with_bias  ...         NaN       True
+20  t0115_seed9354_0032             wt_like  ...    0.795918      False
+21  t0115_seed9354_0032            rd1_like  ...         NaN       True
+22  t0115_seed9354_0032   wt_like_with_bias  ...    0.000000      False
+23  t0115_seed9354_0032  rd1_like_with_bias  ...         NaN       True
+24  t0115_seed9354_0060             wt_like  ...    0.736364      False
+25  t0115_seed9354_0060            rd1_like  ...         NaN       True
+26  t0115_seed9354_0060   wt_like_with_bias  ...    0.000000      False
+27  t0115_seed9354_0060  rd1_like_with_bias  ...         NaN       True
+28    t0112_seed77_0002             wt_like  ...    0.952381      False
+29    t0112_seed77_0002            rd1_like  ...         NaN       True
+30    t0112_seed77_0002   wt_like_with_bias  ...    0.000000      False
+31    t0112_seed77_0002  rd1_like_with_bias  ...    0.000000      False
+
+[32 rows x 8 columns]
+{
+ "wt_like": {
+  "median_dsi_signed": 0.8741496598639455,
+  "mean_dsi_signed": 0.7932294205473605,
+  "n_defined": 8,
+  "n_undefined": 0,
+  "median_pd_rate_hz": 86.66666666666666,
+  "median_nd_rate_hz": 3.095238095238096,
+  "total_pd_spikes": 2723,
+  "total_nd_spikes": 400
+ },
+ "rd1_like": {
+  "median_dsi_signed": null,
+  "mean_dsi_signed": null,
+  "n_defined": 0,
+  "n_undefined": 8,
+  "median_pd_rate_hz": 0.0,
+  "median_nd_rate_hz": 0.0,
+  "total_pd_spikes": 0,
+  "total_nd_spikes": 0
+ },
+ "wt_like_with_bias": {
+  "median_dsi_signed": 0.0,
+  "mean_dsi_signed": 0.09093673965936738,
+  "n_defined": 8,
+  "n_undefined": 0,
+  "median_pd_rate_hz": 0.7142857142857143,
+  "median_nd_rate_hz": 0.7142857142857143,
+  "total_pd_spikes": 376,
+  "total_nd_spikes": 77
+ },
+ "rd1_like_with_bias": {
+  "median_dsi_signed": 0.0,
+  "mean_dsi_signed": 0.0,
+  "n_defined": 1,
+  "n_undefined": 7,
+  "median_pd_rate_hz": 0.0,
+  "median_nd_rate_hz": 0.0,
+  "total_pd_spikes": 3,
+  "total_nd_spikes": 3
+ }
+}

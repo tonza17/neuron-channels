@@ -1,0 +1,64 @@
+{
+  "arm": "soma_ais",
+  "per_cell": {
+    "t0114_seed7755_0256": {
+      "wt_spikes_60pa": 65,
+      "rd1_spikes_60pa": 0,
+      "verdict": "collapsed",
+      "wt_spikes_0pa": 65,
+      "rd1_spikes_0pa": 0
+    },
+    "t0114_seed7755_0114": {
+      "wt_spikes_60pa": 0,
+      "rd1_spikes_60pa": 0,
+      "verdict": "uninformative",
+      "wt_spikes_0pa": 0,
+      "rd1_spikes_0pa": 0
+    },
+    "t0114_seed7755_0349": {
+      "wt_spikes_60pa": 67,
+      "rd1_spikes_60pa": 0,
+      "verdict": "collapsed",
+      "wt_spikes_0pa": 67,
+      "rd1_spikes_0pa": 0
+    },
+    "t0106_seed44_0093": {
+      "wt_spikes_60pa": 63,
+      "rd1_spikes_60pa": 0,
+      "verdict": "collapsed",
+      "wt_spikes_0pa": 63,
+      "rd1_spikes_0pa": 0
+    },
+    "t0106_seed44_0074": {
+      "wt_spikes_60pa": 45,
+      "rd1_spikes_60pa": 0,
+      "verdict": "collapsed",
+      "wt_spikes_0pa": 45,
+      "rd1_spikes_0pa": 0
+    },
+    "t0115_seed9354_0032": {
+      "wt_spikes_60pa": 28,
+      "rd1_spikes_60pa": 0,
+      "verdict": "collapsed",
+      "wt_spikes_0pa": 28,
+      "rd1_spikes_0pa": 0
+    },
+    "t0115_seed9354_0060": {
+      "wt_spikes_60pa": 28,
+      "rd1_spikes_60pa": 0,
+      "verdict": "collapsed",
+      "wt_spikes_0pa": 28,
+      "rd1_spikes_0pa": 0
+    },
+    "t0112_seed77_0002": {
+      "wt_spikes_60pa": 31,
+      "rd1_spikes_60pa": 0,
+      "verdict": "collapsed",
+      "wt_spikes_0pa": 30,
+      "rd1_spikes_0pa": 0
+    }
+  },
+  "n_collapsed": 7,
+  "n_uninformative": 1,
+  "n_cells": 8
+}

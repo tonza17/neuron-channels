@@ -1,0 +1,51 @@
+
+clamp_grid_soma_ais:   0%|          | 0/288 [00:00<?, ?it/s]
+clamp_grid_soma_ais:   0%|          | 1/288 [00:12<58:29, 12.23s/it]
+clamp_grid_soma_ais:   2%|▏         | 7/288 [00:12<06:04,  1.30s/it]
+clamp_grid_soma_ais:   3%|▎         | 8/288 [00:22<12:52,  2.76s/it]
+concurrent.futures.process._RemoteTraceback:
+"""
+Traceback (most recent call last):
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\process.py", line 254, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0131_rd1_na_k_remodelling_dsgc_dsi\tasks\t0131_rd1_na_k_remodelling_dsgc_dsi\code\clamp.py", line 215, in run_clamp_job
+    built = build_scaled(
+        vector_68d=job.vector_68d,
+        scales=ChannelScales(s_na=job.s_na, s_k=job.s_k, arm=ScalingArm(job.arm)),
+        with_synapses=False,
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0131_rd1_na_k_remodelling_dsgc_dsi\tasks\t0131_rd1_na_k_remodelling_dsgc_dsi\code\cell_factory.py", line 78, in build_scaled
+    apply_parameter_vector(cell=cell, params=params)  # type: ignore[arg-type]
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0131_rd1_na_k_remodelling_dsgc_dsi\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py", line 204, in apply_parameter_vector
+    _write_passive_and_uniform(sections=soma_dend_sections, params=params)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0131_rd1_na_k_remodelling_dsgc_dsi\tasks\t0080_bedb_mobo_v3_dendritic_spike_nsga2\code\apply_params.py", line 107, in _write_passive_and_uniform
+    setattr(seg, f"gbar_{suffix}", params.uniform_density(suffix=suffix))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: gbar_kdrt80, the mechanism does not exist at soma_t90(0.5)
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0131_rd1_na_k_remodelling_dsgc_dsi\tasks\t0131_rd1_na_k_remodelling_dsgc_dsi\code\run_clamp_grid.py", line 233, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0131_rd1_na_k_remodelling_dsgc_dsi\tasks\t0131_rd1_na_k_remodelling_dsgc_dsi\code\run_clamp_grid.py", line 90, in main
+    rows = run_jobs(
+        jobs=jobs,
+    ...<4 lines>...
+        desc=f"clamp_grid_{arm}",
+    )
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0131_rd1_na_k_remodelling_dsgc_dsi\tasks\t0131_rd1_na_k_remodelling_dsgc_dsi\code\parallel.py", line 85, in run_jobs
+    _store(fut.result(), f)
+           ~~~~~~~~~~^^
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+AttributeError: gbar_kdrt80, the mechanism does not exist at soma_t90(0.5)

@@ -1,0 +1,16 @@
+assets
+assets/answer
+code
+corrections
+intervention
+logs
+logs/commands
+logs/searches
+logs/sessions
+logs/steps
+plan
+research
+results
+results/images
+__init__.py
+code/__init__.py

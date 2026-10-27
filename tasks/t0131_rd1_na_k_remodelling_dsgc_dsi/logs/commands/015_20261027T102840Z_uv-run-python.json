@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0131_rd1_na_k_remodelling_dsgc_dsi",
+  "command": "uv run python -X utf8 -m arf.scripts.verificators.verify_research_code t0131_rd1_na_k_remodelling_dsgc_dsi",
+  "exit_code": 0,
+  "duration_seconds": 0.398,
+  "started_at": "2026-10-27T10:28:40Z",
+  "completed_at": "2026-10-27T10:28:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0131_rd1_na_k_remodelling_dsgc_dsi",
+  "stdout_file": "015_20261027T102840Z_uv-run-python.stdout.txt",
+  "stderr_file": "015_20261027T102840Z_uv-run-python.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 0,
+  "truncated": false
+}

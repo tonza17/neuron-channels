@@ -1,0 +1,1 @@
+[clamp_grid_soma_ais] 288 jobs, 288 already done, 288 to run

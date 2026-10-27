@@ -1,0 +1,11 @@
+
+current_clamp_soma_ais:   0%|          | 0/16 [00:00<?, ?it/s]
+current_clamp_soma_ais:   6%|▋         | 1/16 [00:24<06:14, 24.97s/it]
+current_clamp_soma_ais:  38%|███▊      | 6/16 [00:25<00:30,  3.09s/it]
+current_clamp_soma_ais:  38%|███▊      | 6/16 [00:40<00:30,  3.09s/it]
+current_clamp_soma_ais:  50%|█████     | 8/16 [00:51<00:51,  6.43s/it]
+current_clamp_soma_ais:  56%|█████▋    | 9/16 [00:51<00:36,  5.21s/it]
+current_clamp_soma_ais:  69%|██████▉   | 11/16 [00:51<00:17,  3.46s/it]
+current_clamp_soma_ais:  81%|████████▏ | 13/16 [00:52<00:07,  2.34s/it]
+current_clamp_soma_ais:  94%|█████████▍| 15/16 [01:08<00:04,  4.21s/it]
+current_clamp_soma_ais: 100%|██████████| 16/16 [01:08<00:00,  4.28s/it]

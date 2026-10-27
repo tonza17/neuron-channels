@@ -1,0 +1,14 @@
+[clamp_baseline] 8 jobs, 16 already done, 0 to run
+baseline wall time 0.0 s for 8 runs
+               cell_id  baseline_na  ...  na_transient_na  total_early_min_na
+0  t0114_seed7755_0256   -10.135004  ...       -16.089330          258.060213
+1  t0114_seed7755_0114    -7.680577  ...       -15.409057          277.489302
+2  t0114_seed7755_0349    -9.676973  ...       -16.185102          311.466955
+3    t0106_seed44_0093    -1.886476  ...       -13.972253          242.012590
+4    t0106_seed44_0074    -5.863703  ...       -13.611465          293.797588
+5  t0115_seed9354_0032    -0.695182  ...       -10.979007          297.933947
+6  t0115_seed9354_0060    -0.659534  ...       -11.011460          297.297954
+7    t0112_seed77_0002    -5.838286  ...       -16.680309          164.054729
+
+[8 rows x 5 columns]
+[clamp_sensitivity] 2 jobs, 4 already done, 0 to run

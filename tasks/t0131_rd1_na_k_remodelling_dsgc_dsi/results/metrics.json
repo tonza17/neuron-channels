@@ -1,0 +1,116 @@
+{
+  "variants": [
+    {
+      "variant_id": "wt-like",
+      "label": "WT-like (scale 1.0)",
+      "dimensions": {
+        "scaling": "wt_1.0",
+        "tonic_bias": false,
+        "arm": "soma_ais",
+        "n_cells_defined": 8,
+        "n_cells_undefined": 0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.8741496598639457
+      }
+    },
+    {
+      "variant_id": "rd1-like",
+      "label": "rd1-like (per-cell fitted scaling)",
+      "dimensions": {
+        "scaling": "rd1_fitted",
+        "tonic_bias": false,
+        "arm": "soma_ais",
+        "n_cells_defined": 0,
+        "n_cells_undefined": 8
+      },
+      "metrics": {
+        "direction_selectivity_index": null
+      }
+    },
+    {
+      "variant_id": "wt-like-with-bias",
+      "label": "WT-like with tonic bias",
+      "dimensions": {
+        "scaling": "wt_1.0",
+        "tonic_bias": true,
+        "arm": "soma_ais",
+        "n_cells_defined": 8,
+        "n_cells_undefined": 0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0
+      }
+    },
+    {
+      "variant_id": "rd1-like-with-bias",
+      "label": "rd1-like with tonic bias",
+      "dimensions": {
+        "scaling": "rd1_fitted",
+        "tonic_bias": true,
+        "arm": "soma_ais",
+        "n_cells_defined": 1,
+        "n_cells_undefined": 7
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.0
+      }
+    },
+    {
+      "variant_id": "wt-like-dendritic",
+      "label": "WT-like (scale 1.0) (dendritic arm)",
+      "dimensions": {
+        "scaling": "wt_1.0",
+        "tonic_bias": false,
+        "arm": "soma_ais_dendrite",
+        "n_cells_defined": 5,
+        "n_cells_undefined": 0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.970674486803519
+      }
+    },
+    {
+      "variant_id": "rd1-like-dendritic",
+      "label": "rd1-like (per-cell fitted scaling) (dendritic arm)",
+      "dimensions": {
+        "scaling": "rd1_fitted",
+        "tonic_bias": false,
+        "arm": "soma_ais_dendrite",
+        "n_cells_defined": 0,
+        "n_cells_undefined": 5
+      },
+      "metrics": {
+        "direction_selectivity_index": null
+      }
+    },
+    {
+      "variant_id": "wt-like-with-bias-dendritic",
+      "label": "WT-like with tonic bias (dendritic arm)",
+      "dimensions": {
+        "scaling": "wt_1.0",
+        "tonic_bias": true,
+        "arm": "soma_ais_dendrite",
+        "n_cells_defined": 5,
+        "n_cells_undefined": 0
+      },
+      "metrics": {
+        "direction_selectivity_index": 0.9649122807017544
+      }
+    },
+    {
+      "variant_id": "rd1-like-with-bias-dendritic",
+      "label": "rd1-like with tonic bias (dendritic arm)",
+      "dimensions": {
+        "scaling": "rd1_fitted",
+        "tonic_bias": true,
+        "arm": "soma_ais_dendrite",
+        "n_cells_defined": 0,
+        "n_cells_undefined": 5
+      },
+      "metrics": {
+        "direction_selectivity_index": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0131_rd1_na_k_remodelling_dsgc_dsi",
+  "command": "uv run python -X utf8 C:/Users/md1avn/AppData/Local/Temp/claude/C--Users-md1avn-Documents-GitHub-neuron-channels/9fef9944-0b88-4750-b7f0-04e9470cf635/scratchpad/smoke1.py",
+  "exit_code": 0,
+  "duration_seconds": 15.543,
+  "started_at": "2026-10-27T10:42:46Z",
+  "completed_at": "2026-10-27T10:43:02Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0131_rd1_na_k_remodelling_dsgc_dsi",
+  "stdout_file": "020_20261027T104246Z_uv-run-python.stdout.txt",
+  "stderr_file": "020_20261027T104246Z_uv-run-python.stderr.txt",
+  "stdout_lines": 16,
+  "stderr_lines": 0,
+  "truncated": false
+}
