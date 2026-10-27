@@ -1,0 +1,37 @@
+(675, 6)
+seed               string
+source_task_id     string
+generation          Int64
+dsi               float64
+pd_rate_hz        float64
+cell_id            string
+                                           0  ...                             2
+seed                            t0106_seed44  ...                  t0106_seed44
+source_task_id  t0106_long_pdnd_nsga2_300gen  ...  t0106_long_pdnd_nsga2_300gen
+generation                                18  ...                            21
+dsi                                 0.820513  ...                      0.519481
+pd_rate_hz                         33.809524  ...                     83.571429
+cell_id                    t0106_seed44_0000  ...             t0106_seed44_0002
+
+[6 rows x 3 columns]
+generation 8 62
+dsi 0.5 0.9938837920489297
+pd_rate_hz 30.23809523809524 122.61904761904762
+seed
+t0114_seed7755    484
+t0106_seed44      121
+t0115_seed9354     63
+t0112_seed77        7
+Name: count, dtype: int64[pyarrow]
+5760 dict_keys(['gen', 'cell_idx', 'param_vector', 'dsi_signed', 'atp_per_spike_molecules', 'pd_rate_hz', 'nd_rate_hz', 'silence_failed', 'n_errors']) 68
+                          count          mean  ...           75%           max
+gen                      5760.0  2.948333e+01  ...  4.425000e+01  5.900000e+01
+cell_idx                 5760.0  0.000000e+00  ...  0.000000e+00  0.000000e+00
+dsi_signed               5760.0  4.300086e-02  ...  0.000000e+00  1.000000e+00
+atp_per_spike_molecules  5760.0  9.303976e+08  ...  1.055352e+07  2.000000e+10
+pd_rate_hz               5760.0  3.028067e+00  ...  3.571429e+00  4.785714e+01
+nd_rate_hz               5760.0  2.696181e+00  ...  2.619048e+00  4.785714e+01
+n_errors                 5760.0  0.000000e+00  ...  0.000000e+00  0.000000e+00
+
+[7 rows x 8 columns]
+0 nan
