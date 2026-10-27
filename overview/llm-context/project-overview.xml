@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-overview" generated_at_utc="2026-05-26T21:09:59Z">
+<llm_context_archive preset_id="project-overview" generated_at_utc="2026-10-27T09:42:46Z">
   <archive_summary>
     <title>Project Overview</title>
     <description>Compact starter context for general project chats.</description>
     <use_case>General orientation, quick status questions, and lightweight strategy chats.</use_case>
     <section_count>4</section_count>
-    <char_count>201389</char_count>
-    <byte_count>201746</byte_count>
-    <estimated_tokens>50347</estimated_tokens>
+    <char_count>202956</char_count>
+    <byte_count>203313</byte_count>
+    <estimated_tokens>50739</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -232,9 +232,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
         <id>t0126_bedb_dsi_atp_per_spike_nsga2_60gen</id>
         <id>t0127_correct_t0126_cell_trace_suggestions</id>
         <id>t0129_t0126_signed_dsi_real_rates_1seed</id>
+        <id>t0130_brainstorm_results_24</id>
       </source_ids>
       <content>
-Completed tasks: 121
+Completed tasks: 122
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -961,6 +962,12 @@ ID: t0129_t0126_signed_dsi_real_rates_1seed
 Completed: 2026-05-26
 Short description: Reproduce t0126 NSGA-II on one fresh seed (3517) with signed antipodal DSI=(PD-ND)/(PD+ND) replacing vector-sum DSI, and per-cell pd_rate_hz/nd_rate_hz from actual spikes.
 Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0129_t0126_signed_dsi_real_rates_1seed&quot; date_completed: &quot;2026-05-26&quot; status: &quot;results_complete&quot; --- Results Summary -- t0129 NSGA-II Signed DSI vs ATP-per-Spike (60-gen, Seed 3517) Summary Forked-and-corrected re-run of t0126&#x27;s NSGA-II protocol on one fresh GA seed (**3517**) with signed antipodal DSI replacing vector-sum DSI and real per-cell PD/ND firing rates replacing t0126&#x27;s `pd_rate_hz = 40` synthesised placeholder. The run completed all **60/60 generations** cleanly (`NSGA2_EXIT=0`, `watchdog_tripped=false`) at **$0.965** total Vast.ai spend (12.1% of the $8 cap), producing a **9-cell final Pareto front** spanning signed DSI **[0.000, 1.000]** at ATP...
+
+## Brainstorm results session 24
+ID: t0130_brainstorm_results_24
+Completed: 2026-10-27
+Short description: Brainstorm 24: commission one standalone rd1-like Na/K remodelling task (voltage clamp, current clamp, direction selectivity, panel-D toy reproduction); suggestion cleanup deferred to next session.
+Result summary: Results Summary: Brainstorm Session 24 Summary One new task was commissioned, `t0131_rd1_na_k_remodelling_dsgc_dsi`, to test whether rd1-like Na/K remodelling of the DSGC model reproduces the researcher&#x27;s rd1 vs WT phenotype and what it does to direction selectivity. Suggestion cleanup was deferred to the next session at the researcher&#x27;s request, so **0** corrections were written. Session Overview * **Date**: 2026-10-27. * **Context**: the researcher supplied `SomeResults.pdf` (panels A-D): rd1 RGCs show higher spontaneous firing (~7 Hz vs near silent), almost no evoked spiking at +60 pA, a ~1.7x larger sustained K current and a smaller Na transient. Panel D is a preliminary toy input-output...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
@@ -971,9 +978,10 @@ Result summary: --- spec_version: &quot;2&quot; task_id: &quot;t0129_t0126_signe
         <id>t0031_fetch_paywalled_morphology_papers</id>
         <id>t0075_bio_realistic_ais_param_sweep</id>
         <id>t0128_t0127_rerun_dsi_atp_3seeds</id>
+        <id>t0131_rd1_na_k_remodelling_dsgc_dsi</id>
       </source_ids>
       <content>
-Planned or active tasks: 4
+Planned or active tasks: 5
 
 ## Port Hanson 2019 DSGC model
 ID: t0023_port_hanson_2019_dsgc
@@ -1001,6 +1009,13 @@ Status: in_progress
 Effective date: 2026-05-26
 Short description: Rerun t0126 protocol verbatim on 3 fresh non-lineage seeds via the proper run_seed*.sh shell wrapper so cell_trace is recorded; pool fronts to clear n&gt;=20 and recover per-cell diagnostics.
 Dependencies: t0126_bedb_dsi_atp_per_spike_nsga2_60gen, t0127_correct_t0126_cell_trace_suggestions
+
+## rd1-like Na/K remodelling of the DSGC model and its effect on DSI
+ID: t0131_rd1_na_k_remodelling_dsgc_dsi
+Status: not_started
+Effective date: unknown
+Short description: Calibrate soma/AIS gNa and gK scaling to rd1 vs WT clamp data, test if it predicts rd1 firing, measure signed DSI, and reproduce or refute the panel-D toy model.
+Dependencies: t0121_5seed_substrate_rate_canonical_report, t0129_t0126_signed_dsi_real_rates_1seed
       </content>
     </section>
     <section id="questions-and-answers" source_kind="aggregator">

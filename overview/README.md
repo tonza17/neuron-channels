@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-4-FF6347" alt="News"></a>
-  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-130-4682B4" alt="Tasks"></a>
+  <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-132-4682B4" alt="Tasks"></a>
   <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-521-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
@@ -28,12 +28,12 @@
 [synaptic-integration](by-category/synaptic-integration.md) |
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
-**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (50K)
-| [full](llm-context/full.xml) (813K) | [roadmap](llm-context/roadmap.xml) (159K) |
-[results](llm-context/results-deep-dive.xml) (621K) |
-[assets](llm-context/literature-and-assets.xml) (79K)
+**[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (51K)
+| [full](llm-context/full.xml) (815K) | [roadmap](llm-context/roadmap.xml) (161K) |
+[results](llm-context/results-deep-dive.xml) (622K) |
+[assets](llm-context/literature-and-assets.xml) (80K)
 
-*Last updated: 2026-05-26 21:10 UTC*
+*Last updated: 2026-10-27 09:42 UTC*
 
 * **Budget**: **$67** spent of $100
 * **Remaining**: **$33**
@@ -61,10 +61,11 @@
 
 ---
 
-## [Ready to Start (2)](tasks/by-status/not_started.md)
+## [Ready to Start (3)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
+| 0131 | [rd1-like Na/K remodelling of the DSGC model and its effect on DSI](../overview/tasks/task_pages/t0131_rd1_na_k_remodelling_dsgc_dsi.md) | [`description`](../tasks/t0131_rd1_na_k_remodelling_dsgc_dsi/task_description.md) | — |
 | 0031 | [Fetch paywalled morphology papers: Kim2014 and Sivyer2013](../overview/tasks/task_pages/t0031_fetch_paywalled_morphology_papers.md) | [`description`](../tasks/t0031_fetch_paywalled_morphology_papers/task_description.md) | 2026-04-22 |
 | 0075 | [Biologically-realistic AIS one-axis-at-a-time parameter sweep on Bed A](../overview/tasks/task_pages/t0075_bio_realistic_ais_param_sweep.md) | [`description`](../tasks/t0075_bio_realistic_ais_param_sweep/task_description.md) | 2026-05-01 |
 
@@ -84,10 +85,11 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (121 total)](tasks/by-status/completed.md)
+## [Recently Completed (122 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0130 | [Brainstorm results session 24](../overview/tasks/task_pages/t0130_brainstorm_results_24.md) | [`results`](../tasks/t0130_brainstorm_results_24/results/results_detailed.md) | 2026-10-27 09:40 |
 | 0129 | [Reproduce t0126 with signed DSI=(PD-ND)/(PD+ND) and real per-cell firing rates](../overview/tasks/task_pages/t0129_t0126_signed_dsi_real_rates_1seed.md) | [`results`](../tasks/t0129_t0126_signed_dsi_real_rates_1seed/results/results_detailed.md) | 2026-05-26 21:05 |
 | 0127 | [Correct t0126 suggestions S-0126-01 and S-0126-06 (synthesised cell_trace)](../overview/tasks/task_pages/t0127_correct_t0126_cell_trace_suggestions.md) | [`results`](../tasks/t0127_correct_t0126_cell_trace_suggestions/results/results_detailed.md) | 2026-05-26 00:30 |
 | 0126 | [NSGA-II DSI vs ATP-per-spike Bed B + 14-d morph: 60-gen replication](../overview/tasks/task_pages/t0126_bedb_dsi_atp_per_spike_nsga2_60gen.md) | [`results`](../tasks/t0126_bedb_dsi_atp_per_spike_nsga2_60gen/results/results_detailed.md) | 2026-05-25 21:55 |
@@ -97,9 +99,8 @@ No blocked tasks.
 | 0122 | [NSGA-II maximising DSI and minimising cytoplasm volume (Bed B + 14-d morph)](../overview/tasks/task_pages/t0122_dsi_cytoplasm_volume_nsga2.md) | [`results`](../tasks/t0122_dsi_cytoplasm_volume_nsga2/results/results_detailed.md) | 2026-05-24 06:30 |
 | 0121 | [Canonical 5-seed substrate-rate report (S-0112-01 batch closed)](../overview/tasks/task_pages/t0121_5seed_substrate_rate_canonical_report.md) | [`results`](../tasks/t0121_5seed_substrate_rate_canonical_report/results/results_detailed.md) | 2026-05-24 02:25 |
 | 0120 | [Morphology generator geometry audit (15-20 cells)](../overview/tasks/task_pages/t0120_morph_generator_geometry_audit.md) | [`results`](../tasks/t0120_morph_generator_geometry_audit/results/results_detailed.md) | 2026-05-24 00:45 |
-| 0119 | [Brainstorm results session 23](../overview/tasks/task_pages/t0119_brainstorm_results_23.md) | [`results`](../tasks/t0119_brainstorm_results_23/results/results_detailed.md) | 2026-05-23 00:00 |
 
-*111 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
+*112 more completed tasks → [completed tasks](tasks/by-status/completed.md)*
 
 ---
 
