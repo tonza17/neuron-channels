@@ -50,9 +50,9 @@
       "step": 6,
       "name": "research-code",
       "description": "Review t0129 evaluator, t0121 cell pool and t0080 Bed B model code to copy.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-10-27T10:20:29Z",
-      "completed_at": null,
+      "completed_at": "2026-10-27T10:29:23Z",
       "log_file": "logs\\steps\\006_research-code/"
     },
     {
