@@ -1,0 +1,1 @@
+RESULT {"cfg": {"cell": 3, "s_na": 1, "s_k": 1, "mults": {"gbar_calt80": 0, "gbar_catt80": 0}, "tstop": 400}, "n_spikes": 50, "rate_hz": 125.0, "vmean": -68.0763030132545, "vmin": -75.45018517396541, "vmax": -1.1059840918277315, "secs": 69.929438829422}

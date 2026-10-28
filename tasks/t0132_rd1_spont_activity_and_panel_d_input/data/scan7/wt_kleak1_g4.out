@@ -1,0 +1,1 @@
+RESULT {"cfg": {"cell": 3, "s_na": 1, "s_k": 1, "leaks": [{"g_us": 1.0, "e_mv": -85}], "poisson": {"rate_hz": 50, "g_us": 4, "seed": 5}, "tstop": 1500}, "n_spikes": 21, "rate_hz": 14.0, "vmean": -69.87839821394913, "vmin": -79.56803082992678, "vmax": -7.398509591190515, "secs": 289.00208854675293}
