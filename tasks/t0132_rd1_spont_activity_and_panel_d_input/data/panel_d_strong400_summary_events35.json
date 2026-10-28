@@ -1,0 +1,86 @@
+{
+  "wt": {
+    "0": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 47.333333333333336,
+      "rate_hz_sd": 7.06320670013903,
+      "in_pulse_rate_hz": 47.77777777777778,
+      "between_pulse_rate_hz": 47.14285714285714,
+      "locking_ratio": 1.0134680134680136
+    },
+    "10": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 50.0,
+      "rate_hz_sd": 7.483314773547883,
+      "in_pulse_rate_hz": 56.666666666666664,
+      "between_pulse_rate_hz": 47.14285714285714,
+      "locking_ratio": 1.202020202020202
+    },
+    "25": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 52.166666666666664,
+      "rate_hz_sd": 7.4703116103383245,
+      "in_pulse_rate_hz": 62.22222222222223,
+      "between_pulse_rate_hz": 47.85714285714286,
+      "locking_ratio": 1.3001658374792704
+    },
+    "50": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 55.0,
+      "rate_hz_sd": 6.683312551921141,
+      "in_pulse_rate_hz": 70.55555555555556,
+      "between_pulse_rate_hz": 48.33333333333334,
+      "locking_ratio": 1.4597701149425284
+    },
+    "100": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 58.166666666666664,
+      "rate_hz_sd": 6.039223643997813,
+      "in_pulse_rate_hz": 78.33333333333333,
+      "between_pulse_rate_hz": 49.523809523809526,
+      "locking_ratio": 1.5817307692307692
+    }
+  },
+  "rd1": {
+    "0": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 51.0,
+      "rate_hz_sd": 6.324555320336759,
+      "in_pulse_rate_hz": 51.666666666666664,
+      "between_pulse_rate_hz": 50.71428571428572,
+      "locking_ratio": 1.0187793427230045
+    },
+    "10": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 54.5,
+      "rate_hz_sd": 7.433034373659253,
+      "in_pulse_rate_hz": 60.0,
+      "between_pulse_rate_hz": 52.142857142857146,
+      "locking_ratio": 1.1506849315068493
+    },
+    "25": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 56.666666666666664,
+      "rate_hz_sd": 9.551032521262934,
+      "in_pulse_rate_hz": 71.11111111111111,
+      "between_pulse_rate_hz": 50.47619047619048,
+      "locking_ratio": 1.4088050314465408
+    },
+    "50": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 61.666666666666664,
+      "rate_hz_sd": 7.630348761506398,
+      "in_pulse_rate_hz": 86.1111111111111,
+      "between_pulse_rate_hz": 51.1904761904762,
+      "locking_ratio": 1.6821705426356586
+    },
+    "100": {
+      "n_trials": 6.0,
+      "rate_hz_mean": 70.16666666666667,
+      "rate_hz_sd": 7.127801593447699,
+      "in_pulse_rate_hz": 113.33333333333336,
+      "between_pulse_rate_hz": 51.666666666666664,
+      "locking_ratio": 2.193548387096775
+    }
+  }
+}

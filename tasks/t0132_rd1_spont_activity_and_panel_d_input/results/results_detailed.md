@@ -2,12 +2,15 @@
 
 ## Summary
 
-Exploratory run on one reference cell (`t0106_seed44_0093`, index 3) of the t0131 model. WT-like
-cells are intrinsic pacemakers (**122 to 130 Hz** at rest) driven by resurgent Na (`nart80`). A
-K2P-like leak of **1 µS** silences WT-like (0 Hz at rest, Vm **-75 mV**). rd1-like cells (s_Na 0.25,
-s_K 2.8, no K leak) are silent without drive and fire **9.7 Hz** under shared Poisson background
-drive, versus **1.7 Hz** for WT-like. The panel D input does not reproduce panel D: output is flat.
-This task has not been through the full ARF stages and used one cell only.
+Exploratory run on one reference cell (`t0106_seed44_0093`, index 3) of the t0131 model. **Correction
+after recounting events with a -35 mV detector** (the original -10 mV count missed attenuated
+spikes): with the shared Poisson background both cells fire about 1 event per background event,
+**47.3 Hz** WT-like versus **51.0 Hz** rd1-like (+8%), so elevated rd1 spontaneous activity is
+**not** reproduced; without any drive both are silent. Under the panel D pulses both cells give
+graded, pulse-locked output and rd1-like has the **higher gain**: at the 400 Hz input **58.2 Hz**
+(WT-like) versus **70.2 Hz** (rd1-like) at u = 100, in-pulse rate **78.3** versus **113.3 Hz**.
+Panel D (rd1 flat and saturated, WT graded) is not reproduced. One cell, hand-tuned, not run through
+the full ARF stages.
 
 ## Methodology
 
@@ -30,25 +33,39 @@ This task has not been through the full ARF stages and used one cell only.
 * K2P-like leak on WT-like: 0 Hz at 0.5 µS and above (Vm -71 to -78 mV); 122 Hz at 0.2 µS and below
 * Poisson drive (50 Hz): rd1-like 12.0 Hz at 3 µS (seed 5), 10.7 Hz (seed 9), 20.7 Hz at 3.5 µS,
   0 to 1.3 Hz at 2 to 2.5 µS; WT-like with K leak 0 Hz at 2 µS, 2.7 Hz at 3 µS, 14 Hz at 4 µS
-* Panel D weak input (6 seeds): rd1-like **9.7 Hz** at u = 0 and **9.0 Hz** at u = 100; WT-like
-  **1.7 Hz** and **2.5 Hz**; in-pulse rate does not exceed between-pulse rate for rd1-like
-  (6.1 vs 10.2 Hz at u = 100)
-* Panel D strong input (400 Hz): both cells fall (WT-like 1.2 Hz, rd1-like 8.0 Hz at u = 100), the
-  in-pulse rate drops to 0 to 0.6 Hz, which is depolarisation block
+* Panel D, event counts at -35 mV (6 seeds, `data/panel_d_summary_events35.json`, weak input of
+  100 Hz peak): WT-like **47.3 Hz** at u = 0 and **52.2 Hz** at u = 100; rd1-like **51.0** and
+  **56.7 Hz**; locking ratio (in-pulse over between-pulse rate) at u = 100 **1.30** WT-like,
+  **1.41** rd1-like
+* Panel D, strong input (400 Hz peak, `data/panel_d_strong400_summary_events35.json`): WT-like
+  **47.3 to 58.2 Hz**, rd1-like **51.0 to 70.2 Hz** over u = 0 to 100; locking ratio **1.58**
+  WT-like, **2.19** rd1-like; no saturation of rd1-like output
+* Retracted: the earlier -10 mV counts (WT-like 1.7 Hz, rd1-like 9.7 Hz at u = 0, "output falls with
+  input", "depolarisation block in the pulses") were detector artefacts. The first-pass summaries
+  `data/panel_d_summary.json` and `data/panel_d_strong400_summary.json` and the scan tables above
+  (all counted at -10 mV) should be read with that in mind; K-leak silencing at rest (no events at
+  -75 mV) is unaffected
 
 ![Panel D replication attempt: input, input-output curves, PSTH at maximum input](images/panel_d_replication.png)
 
-rd1-like output is elevated and flat across strengths, qualitatively like the panel D middle
-panel for rd1, but WT-like output does not rise gradually and neither cell locks to the pulses.
+(Original -10 mV version; superseded by the recounts below.)
 
 ![Membrane potential, no input and maximum input](images/panel_d_vm_traces.png)
 
+Recounted figures (-35 mV events), weak and strong input:
+
+![Panel D recount, weak input](images/panel_d_weak100_events35_replication.png)
+
+![Panel D recount, strong input](images/panel_d_strong400_events35_replication.png)
+
 ## Limitations
 
+* Both cells fire about once per 3 uS background event, so the "spontaneous" activity is
+  event-driven, not intrinsic; no rd1-specific intrinsic pacemaking was obtained
+* The -35 mV detector threshold was chosen after seeing the traces; not tested for sensitivity
 * One reference cell, one background level, hand-tuned (K leak 1 µS, drive 3 µS at 50 Hz)
 * The K2P-like leak and Poisson drive are added mechanisms, not part of the t0131 model
-* Input at the soma drives depolarisation block; dendritic input was not tested
-* The excitable window is narrow, so the input range that raises output is small
+* Input was delivered at the soma only; dendritic input was not tested
 
 ## Files Created
 
